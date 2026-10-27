@@ -8,9 +8,16 @@
 |---|---|
 | 仓库 | `niceDIVE/bz-migration-20261028`（public） |
 | 目录 | `incoming/muse-needs-20261027/` |
+| commit | `f663f7d`（`init: migration package docs` 088db81 之上） |
+| tag | `muse-needs-20261027` → `f663f7d` |
+| 浏览 | https://github.com/niceDIVE/bz-migration-20261028/tree/muse-needs-20261027/incoming/muse-needs-20261027 |
+| 直下 zip | https://github.com/niceDIVE/bz-migration-20261028/raw/main/incoming/muse-needs-20261027/muse-needs-20261027.zip |
 | 包 | `muse-needs-20261027.zip`（1,238,327 B，37 个文件） |
 | zip sha256 | `c61ba841c0b2fca72133d3e55d8c87126fb4ff7ca0e171481babe06f61bd8446` |
+| 本报告 sha256 | 见同目录 `SHA256SUMS.txt`（每次改动会更新） |
 | 大包（旧的，别重下） | Release `v1-20261028` |
+
+**匿名可达性实测（不带 token、走外网）**：raw 文件 `200`；zip 下载 `200` 且 `size=1238327`（与本地一致）；tag 页面 `200`。仓库 public，直接下就行。
 
 拿到 zip 后：解包 → 先读 `README.md`（八节对照）→ 再读 `变更说明.md`（落点表：哪个文件放哪、哪些是新增/替换/原样）→ 按 `.md` 里的落点表覆盖。
 
