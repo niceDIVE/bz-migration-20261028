@@ -8,8 +8,7 @@
 |---|---|
 | 仓库 | `niceDIVE/bz-migration-20261028`（public） |
 | 目录 | `incoming/muse-needs-20261027/` |
-| commit | `f663f7d`（`init: migration package docs` 088db81 之上） |
-| tag | `muse-needs-20261027` → `f663f7d` |
+| 提交 | 分支 `main`（提交信息 `incoming/muse-needs-20261027: Muse collection package`）；tag `muse-needs-20261027` = 首版打包点，**内容以 `main` 最新为准** |
 | 浏览 | https://github.com/niceDIVE/bz-migration-20261028/tree/muse-needs-20261027/incoming/muse-needs-20261027 |
 | 直下 zip | https://github.com/niceDIVE/bz-migration-20261028/raw/main/incoming/muse-needs-20261027/muse-needs-20261027.zip |
 | 包 | `muse-needs-20261027.zip`（1,238,327 B，37 个文件） |
