@@ -1,0 +1,24 @@
+# User.ExChangeJetton   (HttpConst.EXCHANFE_JETTON)
+
+## 注册点 54230: i.MessageCenter.on(s.HttpConst.EXCHANFE_JETTON, this.onExchangeChip, this);
+
+## 请求点 54236: l.NetMgr.http.sendRequest(s.HttpConst.EXCHANFE_JETTON, {
+   54228: this.numbers = 0;
+   54229: i.MessageCenter.on(s.HttpConst.BEGIN_ROLLDICE, this.onCallBackRollDice, this);
+   54230: i.MessageCenter.on(s.HttpConst.EXCHANFE_JETTON, this.onExchangeChip, this);
+   54231: i.MessageCenter.on(s.HttpConst.BEGIN_DRAGON_ROLLDICE, function(t, e) {
+   54232: 0 != e.eRet && (2 != e.eRet ? i.MessageCenter.dispatch(h.EvName.ROLL_DICE_EVENT, e) : a.default.show(r.getText("726")));
+   54233: }, this);
+   54234: };
+   54235: t.prototype.reqExchangeChip = function(t, e) {
+
+## 处理函数 onExchangeChip (54262-54270)
+ 54262: t.prototype.onExchangeChip = function(t, e) {
+ 54263: e.hasOwnProperty("curGold") && p.InventoryDB.setGold(e.curGold);
+ 54264: e.hasOwnProperty("curJetton") && p.InventoryDB.setChips(e.curJetton);
+ 54265: e.hasOwnProperty("chipTimes") && (n.RoleOtherInfo.chipTimes = e.chipTimes);
+ 54266: if (1 == e.eRet) {
+ 54267: e.hasOwnProperty("getPotency") && (c.RoleBaseInfo.potentials += e.getPotency);
+ 54268: e.hasOwnProperty("getCoins") && (c.RoleBaseInfo.coins += e.getCoins);
+ 54269: } else 2 == e.eRet ? u.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(r.getText("762"));
+ 54270: };

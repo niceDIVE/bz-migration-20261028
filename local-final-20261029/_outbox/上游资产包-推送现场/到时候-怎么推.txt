@@ -1,0 +1,13 @@
+等节点好的时候，到本目录执行一条命令即可（提交 e720822 已打好，工作树干净）：
+
+    git push origin HEAD:main
+
+推完远端 main 应从 ab3c86e 变成 e720822。可用下面这条核验：
+
+    git ls-remote https://github.com/niceDIVE/bz-migration-20261028 refs/heads/main
+
+背景（2026-10-28）：
+- 包内容 = 上游资产包 zip（25,892,133 B，sha256 c42e5a79…）+ 指令-云上Agent.md + SHA256SUMS.txt
+- 代理：.gitconfig 已指 7890；凭据在 Windows 凭据管理器，push 不用 token
+- Clash 节点当时掉了（000/握手失败），所以只差这一条 push
+- 持久备份：F:\BaoZouyxt\_incoming\bz-上游资产包-20261028\（zip + 指令 + SHA256SUMS.txt）

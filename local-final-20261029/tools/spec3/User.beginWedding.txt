@@ -1,0 +1,18 @@
+# User.beginWedding   (HttpConst.BEGIN_WEDDING)
+
+## 注册点 77028: i.MessageCenter.on(n.HttpConst.BEGIN_WEDDING, this.callBackBeginWedding, this);
+
+## 请求点 77445: _.NetMgr.http.sendRequest(n.HttpConst.BEGIN_WEDDING, {});
+   77437: _.NetMgr.http.sendRequest(n.HttpConst.DIVORCENPC, {});
+   77438: };
+   77439: e.prototype.reqMarryAward = function(t) {
+   77440: _.NetMgr.http.sendRequest(n.HttpConst.MARRY_AWARD, {
+   77441: guestID: t
+   77442: });
+   77443: };
+   77444: e.prototype.reqStartWedding = function() {
+
+## 处理函数 callBackBeginWedding (77272-77274)
+ 77272: e.prototype.callBackBeginWedding = function(t, e) {
+ 77273: 1 == e.eRet && (this.weddingType = 0);
+ 77274: };

@@ -1,0 +1,51 @@
+# User.npcRevive  (HttpConst.NPC_REVIVE)
+# 出现 1 处
+
+ 90228: t.length && p.NetMgr.http.sendRequest(a.HttpConst.KILL_NPC, o);
+ 90229: };
+ 90230: t.prototype.reliveOfNpc = function(t) {
+ 90231: var e = {
+ 90232: npcIDArr: t
+ 90233: };
+ 90234: p.NetMgr.http.sendRequest(a.HttpConst.NPC_REVIVE, e);
+ 90235: };
+ 90236: t.prototype.reqHealNpc = function(t) {
+ 90237: var e = {
+ 90238: npcID: t,
+ 90239: mpLimit: Math.floor(h.UserModel.entity.mp.limit),
+ 90240: gTime: h.UserModel.entity.totalGameTime.gameTime,
+ 90241: hg: h.UserModel.entity.hunger.remaining,
+ 90242: hgtimes: h.UserModel.entity.numStuffed
+ 90243: };
+ 90244: p.NetMgr.http.sendRequest(a.HttpConst.BEGINSAVE_NPC, e);
+ 90245: };
+ 90246: t.prototype.reqEndHealNpc = function(t) {
+ 90247: var e = {
+ 90248: speed: h.UserModel.entity.hungerConsumingSpeed.finalValue,
+ 90249: hglmt: Math.floor(h.UserModel.entity.hunger.finalValue),
+ 90250: flag: t
+ 90251: };
+ 90252: this.hearTag = t;
+ 90253: p.NetMgr.http.sendRequest(a.HttpConst.END_SAVE_NPC, e);
+ 90254: };
+ 90255: t.prototype.dogHealUI = function(t, e, o) {
+ 90256: var i = this, r = c.TimeMgr.getSTimestamp();
+ 90257: if (e > 0 && r < e) {
+ 90258: this.currentNpcId = t;
+ 90259: var a = n.getText("3169").replace(/\[1\]/, o);
+ 90260: u.default.prefabs.load("checkNpc/DeadNpc", cc.Prefab, function(t, o) {
+ 90261: var r = cc.instantiate(o);
+ 90262: f.PopUpMgr.addPopUp(r, d.LayerMgr.popUpLayer, 1, !0);
+ 90263: var s = {
+ 90264: str: a,
+ 90265: str1: n.getText("845"),
+ 90266: str2: n.getText("846"),
+ 90267: str3: "",
+ 90268: callBack: i.openHealEvent.bind(i),
+ 90269: time: e
+ 90270: };
+ 90271: r.addComponent("FightToKillUI").setData(s);
+ 90272: });
+ 90273: }
+ 90274: };
+---

@@ -1,0 +1,13 @@
+# User.recoverYoung   (HttpConst.RECOVER_YOUNG)
+
+## 注册点 64968: r.MessageCenter.on(a.HttpConst.RECOVER_YOUNG, function(o, a) {
+
+## 请求点 65303: if (19 == o) m.NetMgr.http.sendRequest(a.HttpConst.RECOVER_YOUNG, {
+   65295: f.maxmpLimit = f.curMp;
+   65296: } else if (33 == o) {
+   65297: f.curHp = k.playerInfo.entity.hp.remaining;
+   65298: f.maxhpLimit = k.playerInfo.entity.hp.limit;
+   65299: f.curMp = k.playerInfo.entity.mp.remaining;
+   65300: f.maxmpLimit = k.playerInfo.entity.mp.limit;
+   65301: f.hpfinalValue = k.playerInfo.entity.hp.finalValue;
+   65302: } else 1 == o && (f.hg = k.playerInfo.entity.hunger.remaining);

@@ -1,0 +1,99 @@
+# User.Storehouse  (HttpConst.CLAIM_TR_REWARD)
+# 出现 2 处
+
+139311: }
+139312: t.prototype.init = function() {
+139313: var t = this;
+139314: n.MessageCenter.on(r.HttpConst.GET_TR_MAP_INFO, function(t, e) {
+139315: n.MessageCenter.dispatch(a.EvName.ON_GET_TRMAP_INFO, e);
+139316: }, this);
+139317: n.MessageCenter.on(r.HttpConst.CLAIM_TR_REWARD, function(e, o) {
+139318: if (1 == o.eRet) {
+139319: var r = i.getText(987).replace(/\[1\]/, o.needItem[1]);
+139320: t.trmapID = 0;
+139321: t.getData = !1;
+139322: cc.sys.localStorage.setItem(s.RoleBaseInfo.roleID + "trmapID", JSON.stringify(t.trmapID));
+139323: n.MessageCenter.dispatch(a.EvName.OPEN_BUBBLE_UI_EVENT, {
+139324: str: r,
+139325: type: 99,
+139326: time: 3,
+139327: fightData: {
+139328: npcID: s.RoleBaseInfo.roleID
+139329: },
+139330: cb: function() {
+139331: l.default.addShowRewardUI1(o.rewardArray, 0);
+139332: }
+139333: });
+139334: } else if (0 == o.eRet) {
+139335: var c = o.hasOwnProperty("needItem") ? o.needItem[1] : 0;
+139336: r = i.getText(1005).replace(/\[1\]/, c);
+139337: n.MessageCenter.dispatch(a.EvName.OPEN_BUBBLE_UI_EVENT, {
+139338: str: r,
+139339: type: 3,
+139340: fightData: {
+139341: npcID: s.RoleBaseInfo.roleID
+139342: }
+139343: });
+139344: }
+139345: }, this);
+139346: n.MessageCenter.on(a.EvName.ON_GET_TRMAP_INFO, function(e, o) {
+139347: var i = o.placeArr.split(",");
+139348: t.origin = {
+139349: x: parseInt(i[0]),
+139350: y: parseInt(i[1])
+139351: };
+139352: t.treasurePos = {
+139353: x: parseInt(i[2]),
+139354: y: parseInt(i[3])
+139355: };
+139356: t.itemNeeded = o.needItem;
+139357: t.getData = !0;
+---
+139365: };
+139366: t.prototype.reqGetTreasure = function(t, e) {
+139367: var o = {
+139368: groupID: t,
+139369: flag: e
+139370: };
+139371: c.NetMgr.http.sendReqWithMask(r.HttpConst.CLAIM_TR_REWARD, o);
+139372: };
+139373: t.prototype.destroy = function() {
+139374: this.treasureDic = {};
+139375: this.origin = null;
+139376: this.treasurePos = null;
+139377: this.itemNeeded = 0;
+139378: this.getData = !1;
+139379: this.trmapID = 0;
+139380: };
+139381: return t;
+139382: }();
+139383: o.TreasureModel = new p();
+139384: cc._RF.pop();
+139385: }, {
+139386: "../core/events/MessageCenter": "MessageCenter",
+139387: "../gameconfigs/LangMgr": "LangMgr",
+139388: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+139389: "../net/HttpConst": "HttpConst",
+139390: "../net/NetMgr": "NetMgr",
+139391: "../utils/EvName": "EvName",
+139392: "./vos/RoleBaseInfo": "RoleBaseInfo"
+139393: } ],
+139394: TreasureSO: [ function(t, e, o) {
+139395: "use strict";
+139396: cc._RF.push(e, "2b11bgG/lNIuoLtmSncZuka", "TreasureSO");
+139397: var i, n = this && this.__extends || (i = function(t, e) {
+139398: return (i = Object.setPrototypeOf || {
+139399: __proto__: []
+139400: } instanceof Array && function(t, e) {
+139401: t.__proto__ = e;
+139402: } || function(t, e) {
+139403: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+139404: })(t, e);
+139405: }, function(t, e) {
+139406: i(t, e);
+139407: function o() {
+139408: this.constructor = t;
+139409: }
+139410: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());
+139411: }), r = this && this.__decorate || function(t, e, o, i) {
+---

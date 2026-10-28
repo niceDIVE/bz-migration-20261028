@@ -1,0 +1,197 @@
+{
+  "file": "F:\\BaoZouyxt\\tools\\index.js",
+  "found": [
+    {
+      "fn": "acceptTask",
+      "range": "",
+      "lines": []
+    },
+    {
+      "fn": "getFinishTaskAward",
+      "range": "",
+      "lines": []
+    },
+    {
+      "fn": "sycnTask",
+      "range": "",
+      "lines": []
+    },
+    {
+      "fn": "setSaveAllTaskDatas",
+      "range": "112029-112058",
+      "lines": [
+        {
+          "n": 112029,
+          "text": "e.prototype.setSaveAllTaskDatas = function(t) {"
+        },
+        {
+          "n": 112030,
+          "text": "var e = v.RoleBaseInfo.roleID;"
+        },
+        {
+          "n": 112031,
+          "text": "t.hasOwnProperty(\"acceptTaskOrder\") ? v.RoleBaseInfo.taskOrder = t.acceptTaskOrder : v.RoleBaseInfo.taskOrder.length = 0;"
+        },
+        {
+          "n": 112032,
+          "text": "v.RoleBaseInfo.finishTaskObj = {};"
+        },
+        {
+          "n": 112033,
+          "text": "if (t.hasOwnProperty(\"finishTaskObj\") && t.finishTaskObj) {"
+        },
+        {
+          "n": 112034,
+          "text": "for (var o = {}, n = t.finishTaskObj, r = 0; r < n.length; r++) {"
+        },
+        {
+          "n": 112035,
+          "text": "var a = n[r].split(\",\");"
+        },
+        {
+          "n": 112036,
+          "text": "o[a[0]] = parseInt(a[1]);"
+        },
+        {
+          "n": 112037,
+          "text": "}"
+        },
+        {
+          "n": 112038,
+          "text": "v.RoleBaseInfo.finishTaskObj = o;"
+        },
+        {
+          "n": 112039,
+          "text": "var s = JSON.stringify(o);"
+        },
+        {
+          "n": 112040,
+          "text": "_.LocalStorageMgr.setItem(e + \"$#&A\", s);"
+        },
+        {
+          "n": 112041,
+          "text": "} else if (_.LocalStorageMgr.getItem(e + \"$#&A\")) {"
+        },
+        {
+          "n": 112042,
+          "text": "var l = _.LocalStorageMgr.getItem(e + \"$#&A\"), c = JSON.parse(l);"
+        },
+        {
+          "n": 112043,
+          "text": "c && (v.RoleBaseInfo.finishTaskObj = c);"
+        },
+        {
+          "n": 112044,
+          "text": "}"
+        },
+        {
+          "n": 112045,
+          "text": "v.RoleBaseInfo.requireTaskObj = {};"
+        },
+        {
+          "n": 112046,
+          "text": "if (t.hasOwnProperty(\"acceptTaskArray\")) for (var p = t.acceptTaskArray, h = 0; h < p.length; h++) {"
+        },
+        {
+          "n": 112047,
+          "text": "var u = i.getItem(parseInt(p[h]), \"tasknew\");"
+        },
+        {
+          "n": 112048,
+          "text": "if (u) {"
+        },
+        {
+          "n": 112049,
+          "text": "var f = {"
+        },
+        {
+          "n": 112050,
+          "text": "taskId: u.TaskID,"
+        },
+        {
+          "n": 112051,
+          "text": "taskState: 0,"
+        },
+        {
+          "n": 112052,
+          "text": "taskObj: u,"
+        },
+        {
+          "n": 112053,
+          "text": "circleTaskObj: {}"
+        },
+        {
+          "n": 112054,
+          "text": "};"
+        },
+        {
+          "n": 112055,
+          "text": "v.RoleBaseInfo.finishTaskObj.hasOwnProperty(u.TaskID) || (v.RoleBaseInfo.requireTaskObj[u.TaskID] = f);"
+        },
+        {
+          "n": 112056,
+          "text": "}"
+        },
+        {
+          "n": 112057,
+          "text": "}"
+        },
+        {
+          "n": 112058,
+          "text": "};"
+        }
+      ]
+    }
+  ],
+  "hits": [
+    {
+      "n": 59578,
+      "text": "GET_TASK: \"User.acceptTask\","
+    },
+    {
+      "n": 59579,
+      "text": "FINISH_TASK: \"User.getFinishTaskAward\","
+    },
+    {
+      "n": 59640,
+      "text": "SYCN_TASK: \"User.sycnTask\","
+    },
+    {
+      "n": 111828,
+      "text": "this.setSaveAllTaskDatas(e);"
+    },
+    {
+      "n": 112029,
+      "text": "e.prototype.setSaveAllTaskDatas = function(t) {"
+    },
+    {
+      "n": 112031,
+      "text": "t.hasOwnProperty(\"acceptTaskOrder\") ? v.RoleBaseInfo.taskOrder = t.acceptTaskOrder : v.RoleBaseInfo.taskOrder.length = 0;"
+    },
+    {
+      "n": 112046,
+      "text": "if (t.hasOwnProperty(\"acceptTaskArray\")) for (var p = t.acceptTaskArray, h = 0; h < p.length; h++) {"
+    },
+    {
+      "n": 133217,
+      "text": "r.MessageCenter.on(s.HttpConst.SYCN_TASK, this.sycnTaskCallBack, this);"
+    },
+    {
+      "n": 133513,
+      "text": "e.prototype.sycnTaskCallBack = function(t, e) {"
+    },
+    {
+      "n": 133521,
+      "text": "if (e.hasOwnProperty(\"acceptTaskMap\")) {"
+    },
+    {
+      "n": 133523,
+      "text": "var n = e.acceptTaskMap;"
+    },
+    {
+      "n": 133542,
+      "text": "e.hasOwnProperty(\"acceptTaskOrder\") && e.acceptTaskOrder && (c.RoleBaseInfo.taskOrder = e.acceptTaskOrder);"
+    }
+  ],
+  "errors": "acceptTask: function not found; getFinishTaskAward: function not found; sycnTask: function not found"
+}

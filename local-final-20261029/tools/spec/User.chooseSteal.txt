@@ -1,0 +1,76 @@
+# User.chooseSteal  (HttpConst.DO_STEAL)
+# 出现 2 处
+
+130614: });
+130615: }, this);
+130616: i.MessageCenter.on(r.HttpConst.REQ_STRETCH, function(t, e) {
+130617: var o = e;
+130618: 1 == o.eRet && i.MessageCenter.dispatch(p.EvName.ON_REQ_STRETCH, o.angry);
+130619: }, this);
+130620: i.MessageCenter.on(r.HttpConst.DO_STEAL, function(t, e) {
+130621: var o = e;
+130622: 1 == o.eRet && i.MessageCenter.dispatch(p.EvName.ON_RAGE_CHANGE, o);
+130623: }, this);
+130624: i.MessageCenter.on(r.HttpConst.END_PRISON, function(t, e) {
+130625: var o = e;
+130626: 1 == o.eRet ? 2 == o.type ? i.MessageCenter.dispatch(p.EvName.ON_SENTENCE_END) : h.GSceneMgr.go2Scene(1130) : 1 == o.type ? n.default.show(a.getText(3589)) : s.default.prefabs.load("stealUI/PrisonTimeAlert", cc.Prefab, function(t, e) {
+130627: var i = cc.instantiate(e);
+130628: i.getComponent("PrisonTimeAlert").time1 = Math.floor(.001 * o.stime);
+130629: c.PopUpMgr.addPopUp(i, l.LayerMgr.popUpLayer, 1, !0);
+130630: });
+130631: }, this);
+130632: };
+130633: t.prototype.reqStretch = function(t) {
+130634: u.NetMgr.http.sendReqWithMask(r.HttpConst.REQ_STRETCH, {
+130635: npcid: t
+130636: });
+130637: };
+130638: t.prototype.reqNpcInfo = function(t) {
+130639: u.NetMgr.http.sendRequest(r.HttpConst.GET_STEAL_NPC_INFO, {
+130640: npcid: t
+130641: });
+130642: };
+130643: t.prototype.reqSteal = function(t, e) {
+130644: u.NetMgr.http.sendReqWithMask(r.HttpConst.DO_STEAL, {
+130645: npcid: t,
+130646: win: e
+130647: });
+130648: };
+130649: t.prototype.reqRelease = function(t) {
+130650: u.NetMgr.http.sendRequest(r.HttpConst.END_PRISON, {
+130651: type: t
+130652: });
+130653: };
+130654: t.prototype.reqFree = function() {
+130655: u.NetMgr.http.sendRequest(r.HttpConst.WIN_PRISON);
+130656: };
+130657: t.prototype.destroy = function() {
+130658: this.canSteal = !1;
+130659: this.inPrison = !1;
+130660: };
+---
+130661: return t;
+130662: }();
+130663: o.StealModel = new f();
+130664: cc._RF.pop();
+130665: }, {
+130666: "../core/events/MessageCenter": "MessageCenter",
+130667: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+130668: "../gameconfigs/LangMgr": "LangMgr",
+130669: "../gui/uicomponents/Alert": "Alert",
+130670: "../mgrs/BundleMgr": "BundleMgr",
+130671: "../mgrs/GSceneMgr": "GSceneMgr",
+130672: "../mgrs/LayerMgr": "LayerMgr",
+130673: "../net/HttpConst": "HttpConst",
+130674: "../net/NetMgr": "NetMgr",
+130675: "../utils/EvName": "EvName"
+130676: } ],
+130677: StoreModel: [ function(t, e, o) {
+130678: "use strict";
+130679: cc._RF.push(e, "93f68aJ2JNG1qHWtI8wb1og", "StoreModel");
+130680: Object.defineProperty(o, "__esModule", {
+130681: value: !0
+130682: });
+130683: o.StoreModel = void 0;
+130684: var i = t("../gameconfigs/LangMgr"), n = t("../gameconfigs/CFMgr"), r = t("../gameconfigs/AppData"), a = t("../core/libs/lz-string"), s = t("../utils/CryptoMgr"), l = t("../core/events/MessageCenter"), c = t("../gui/uicomponents/Alert"), p = t("../net/HttpConst"), h = t("../utils/EvName"), u = t("../mgrs/BundleMgr"), f = t("../core/ui/mgrs/PopUpMgr"), d = t("../mgrs/LayerMgr"), g = t("../net/NetMgr"), m = t("./InventoryDB"), y = t("./RoleOtherInfo"), v = t("./vos/RoleBaseInfo"), _ = t("./TalkDataModel"), S = t("./NonBattleBuffModel"), M = t("../mgrs/TimeMgr"), E = t("../mgrs/LoginMgr"), I = t("./GrowthModel"), b = t("../mgrs/UIMgr"), T = t("../mgrs/StoryDialogMgr"), C = t("./ActiveModel"), A = t("./CrossServiceModel"), k = t("./InventoryModel"), D = function() {
+---

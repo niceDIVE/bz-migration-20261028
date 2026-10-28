@@ -1,0 +1,31 @@
+第13批 C12 管家/帮手 验收：有条件通过。先堵一个白拿口，再算收口。
+（第 12 批 VIP 白领修复的合并已确认：ver=h1cc3e18f，c11 14/14，收口。）
+
+★ 白拿口（已替你修好，在本包里）
+  dispatchAward 每次领奖都发 helper.reward。派遣 30 分钟、不花任何成本，于是每 30 分钟就能领一次
+  9400 / 9717 / 10269，可以无限刷。我在 /tmp 复现过：旧版 ⑧b 失败，同一管家第二次派遣又发了一份。
+  另外领奖读的是领奖当下的 helperId，所以可以"派 1 号出去，领奖前换成 8 号"，领到 8 号的奖励。
+  修法（按 helperRewardArr 的语义，这份奖励是每位管家一次性的）：
+    · dispatch 落档时记下 P.dispatchHelper（派出去的是哪位）
+    · dispatchAward 按 dispatchHelper 发奖；该管家已经在 helperRewardArr 里就发空 {}，派遣照常算成功
+    · 发过才 push 进 helperRewardArr，领完清掉 dispatchHelper
+  本包文件：
+    core/bz-rpc-server.js   在你们合并版 7C7CD7AC… 的基础上只改 dispatch / dispatchAward 两处，md5 77d5fc1e…
+    test/c12-smoke.js       新增 ⑧b，跑出来 14/14；c11 14/14、c10 18/18 回归都通过
+  请做：覆盖后重新 build，跑 acceptance 全量 + check_reject_codes + 形状 diff，回执贴新 ver 和 md5。
+  以后的通用规则：只要奖励靠计时循环反复领，就必须有每日上限，或者每次都要付出成本；
+  表里有"已领"数组的，一律按一次性发。
+
+五项自定口径全部追认：
+  ① 买管家照表扣元宝；已拥有再买按幂等成功处理，不重复扣。5/6/7 号是 99999999 的占位，保持不可买。
+  ② 月卡 300 元宝 / 30 天，只认 type=1，到期后才能再买。
+  ③ 派遣 30 分钟。
+  ④ callData 状态：跟随中为 3，其余为 1。
+  ⑤ 档 A：派遣不结算任务产出；奖励改成上面的"每位管家一次"。
+  另外，三个并入动作（getHousekeeper / setTemplateData / receiveNotice）提前做的，也一并追认。
+  mapId 白名单加自愈通道这个处理很好。
+
+未做项：照 ISSUE-12 挂着，全部批次跑完后和 ISSUE-8、ISSUE-11 一起统一过一遍。
+
+下一步：本补丁冒烟通过后，按 relations.md 开第 14 批，两件事放在同一份回执里交。
+升级报告条件不变：存档写坏，或者能白拿钱/道具。

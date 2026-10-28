@@ -1,0 +1,37 @@
+第 2 批：道具使用（关联分析 C05，共 15 个动作）
+
+口径和第 1 批一样：不分析、不审计，写出来能玩就行。先把 00 号收尾指令做完（拍板事项、三条尾巴、跑 extract_panel），再开这一批。
+
+一、服务端已经有的 7 个，只做冒烟
+• 建号 Create、快速登录 quicklogin、读档 LoadGame：新建一个角色，退出后重进，钱、背包、门派都对得上就算过
+• 用道具 useItem：药品、礼包、装备各用一个
+• 加入门派 joinSchool、升技能 upgradeSkill、发起 PVE ReqSelfBattleInfo：各点一次
+
+二、要新写的 8 个（参数名去客户端 send 处核对，下面都给了行号）
+• rgUseItem（肉鸽里用道具，scripts3.js:73948）：照抄 useItem，把背包换成肉鸽背包。客户端还会读 mpnum，要回当前内力
+• UseSnowBall / UseBatchSnowBall / UseAllBall（index.js:122505 / 122514 / 122543）：扣雪球，回 hp。UseAllBall 另外要回 rewardArray，奖励按表发。雪球不够时回 eRet:0，存档不动
+• useItemAddition（index.js:56234）：道具附加效果。先扣道具再加属性；属性写进哪个字段，照 LoadGame 的回包来
+• BackToLogin（index.js:70349）：只回成功，不动存档
+• accountLogOff（注销账号，index.js:117200）：只回成功。绝对不要删存档、不要清字段，离线版一旦删了就找不回来
+• quitSchool（index.js:113585）：清掉 school。门派贡献和门派技能要不要一起清，看客户端退出门派时弹出的提示文案，文案怎么说就怎么做
+
+二之二、用到的表（在你导出的 dump 里）
+• 雪球：snowman.json（consolationprize 一类的格式为 "4001,10|4003,5"，4001、4003 是货币，要进钱包，不能进背包）、square_ball.json（rewardnum、rewarditem）
+• 肉鸽道具：rogue_item.json（buff 列就是效果）
+• 退门派：sect_level.json、sect_seat.json
+• 跑完 table_link 后，其余动作对应哪张表，看 out/table-links.md
+
+三、顺手做
+• 先按 02 号指令跑一遍新算法。relations.md 的 C05 下面如果列了「同面板必做」，必须一起做；列了「同面板顺手做」，就把那些拉列表、拉数据的动作一起补上，免得出现动作写完了、面板却点不开的情况
+• 新写的读数据动作，先查 out/shape-hints.md：标了「不能用 0 兜底」的字段要给数组或对象；标了「不能安全兜底」的动作要把字段给全，给不全就别回 eRet:1
+• 扣哪种货币，一律以客户端比价时读的字段为准（第 1 批 BuyMount 就是在这里出的错）
+
+四、交回
+• 改好的 bz-rpc-server.js
+• 冒烟勾选表（通过 / 点不开 / 未实测）
+• 卡住的动作，每个用一句话说明卡在哪里
+• 顺手做了哪些名单外的动作
+
+只有两种情况需要单独喊一声：一是存档被写坏，二是某个操作能白拿钱或道具。其他数值上差一点的不用报。
+
+这批做完，下一批是 C02 任务主线（共 19 个，已有 3 个）。提前说一声：circle_task.json 的数值是混淆过的对象（{"_value":[18120],"tag":"cfMon"}），用之前要先解码，可以看客户端怎么读 cfMon。

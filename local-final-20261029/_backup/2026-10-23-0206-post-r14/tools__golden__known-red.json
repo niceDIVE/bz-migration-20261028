@@ -1,0 +1,8 @@
+[
+  {
+    "item": "hotfix-patch/test/core-test-server.js",
+    "line": 65,
+    "msgSha8": "773498a9",
+    "why": "遗留项（HANDOVER.md §7-14）：gateway 时代旧断言。core-test-server.js:65 在空存档下断言 upgradeSkill 的 note.skch['1262'] === [1,0,0]，现契约发出的是 note.skch = {}（技能形状 [lv,pgr,brlv] 由 handler 按需写入），实测 undefined → deepStrictEqual 失败。不在 32 绿验收基线内；等人工改断言或归档，不许为它改 core。"
+  }
+]

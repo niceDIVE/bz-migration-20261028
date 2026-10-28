@@ -1,0 +1,17 @@
+
+--- roundC-smoke per-batch ---
+C27: 15 pass, 0 fail
+C31: 8 pass, 0 fail
+C33: 12 pass, 0 fail
+C35: 6 pass, 0 fail
+C36: 7 pass, 0 fail
+C38: 6 pass, 0 fail
+C51: 6 pass, 0 fail
+C53: 9 pass, 0 fail
+C56: 9 pass, 0 fail
+C63: 6 pass, 0 fail
+C68: 9 pass, 0 fail
+C71: 17 pass, 0 fail
+C73: 6 pass, 0 fail
+C75: 8 pass, 0 fail
+TOTAL: 124 pass, 0 fail, 124 assertions, 35 keys

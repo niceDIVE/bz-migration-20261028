@@ -1,0 +1,100 @@
+# User.washAdditionalArr  (HttpConst.WASH_ADDITION)
+# 出现 3 处
+
+144043: n.MessageCenter.on(r.HttpConst.ADD_CHANGE_BLOOD, function(e, o) {
+144044: if (1 == o.eRet) {
+144045: n.MessageCenter.dispatch(a.EvName.CHANGE_BLOOD_SUCCESS);
+144046: t.showUpgradeCartoon(1);
+144047: } else 2 == o.eRet ? s.default.show(i.getText(1064)) : 3 == o.eRet && f.StoreModel.openChargeList();
+144048: }, this);
+144049: n.MessageCenter.on(r.HttpConst.WASH_ADDITION, function(t, e) {
+144050: if (1 == e.eRet) {
+144051: var o = p.MarryModel.cycleData, i = l.RoleBaseInfo.armStrong, r = l.RoleBaseInfo.shenFa, c = l.RoleBaseInfo.bone, v = l.RoleBaseInfo.understanding;
+144052: e.hasOwnProperty("bloodArr") && (p.MarryModel.cycleData[8] = e.bloodArr);
+144053: e.hasOwnProperty("maxWuxin") && (p.MarryModel.maxWuxin = e.maxWuxin);
+144054: for (var _ in h.UserModel.entity.equipments) h.UserModel.entity.equipments[_] && (l.RoleBaseInfo.equipments[_] = h.UserModel.entity.equipments[_].id);
+144055: y.RoleOtherInfo.setAllHpAndMp2();
+144056: h.UserModel.setupEntity();
+144057: if (o.length >= 5) {
+144058: h.UserModel.entity.strength.baseValue = i + e.bloodArr[0] + o[7][0];
+144059: h.UserModel.entity.shenfa.baseValue = r + e.bloodArr[1] + o[7][1];
+144060: h.UserModel.entity.gengu.baseValue = c + e.bloodArr[2] + o[7][2];
+144061: h.UserModel.entity.perception.baseValue = v + e.bloodArr[3] + o[7][3];
+144062: }
+144063: u.JinmaiModel.parseMeridianInfo(u.JinmaiModel.acupoint2Lv);
+144064: h.UserModel.entity.hp.init();
+144065: h.UserModel.entity.mp.init();
+144066: h.UserModel.entity.hp.limit = l.RoleBaseInfo.hpLimit;
+144067: h.UserModel.entity.hp.remaining = l.RoleBaseInfo.hpRemaining;
+144068: h.UserModel.entity.mp.remaining = l.RoleBaseInfo.mpRemaining;
+144069: h.UserModel.entity.exp = l.RoleBaseInfo.exp;
+144070: n.MessageCenter.dispatch(a.EvName.CHANGE_ADDTION_SUCCESS, e);
+144071: } else 3 == e.eRet ? f.StoreModel.openChargeList() : 4 == e.eRet ? d.default.prefabs.load("marrySystem/ChildWashUI", cc.Prefab, function(t, o) {
+144072: var i = cc.instantiate(o);
+144073: i.addComponent("SetWashUI").setData(e.attrList);
+144074: g.PopUpMgr.addPopUp(i, m.LayerMgr.popUpLayer);
+144075: }) : 6 == e.eRet ? s.default.show("等级未达到要求无法洗髓") : 7 == e.eRet && s.default.show("上一世无附加属性无法洗髓");
+144076: });
+144077: };
+144078: t.prototype.showUpgradeCartoon = function(t) {
+144079: d.default.prefabs.load("uispineAct/UpgradeActionUI", cc.Prefab, function(e, o) {
+144080: var i = cc.instantiate(o);
+144081: i.getComponent("UpgradeActionUI").setData(t);
+144082: g.PopUpMgr.addPopUp(i, m.LayerMgr.popUpLayer);
+144083: });
+144084: };
+144085: t.prototype.requireWash = function(t, e, o) {
+144086: for (var i = [], n = [], a = 1; a < e.length; a++) i.push(e[a]);
+144087: for (var s = 1; s < o.length; s++) n.push(o[s]);
+144088: var p = {
+144089: roleID: l.RoleBaseInfo.roleID,
+---
+144150: } ], function(i) {
+144151: 0 == i && o.reqUpgrade(t.id, e);
+144152: });
+144153: };
+144154: t.prototype.reqWishAddtion = function(t) {
+144155: void 0 === t && (t = 0);
+144156: 0 == t ? c.NetMgr.http.sendRequest(r.HttpConst.WASH_ADDITION) : c.NetMgr.http.sendRequest(r.HttpConst.WASH_ADDITION, {
+144157: attrID: t
+144158: });
+144159: };
+144160: return t;
+144161: }();
+144162: o.WashModel = new v();
+144163: cc._RF.pop();
+144164: }, {
+144165: "../core/events/MessageCenter": "MessageCenter",
+144166: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+144167: "../gameconfigs/LangMgr": "LangMgr",
+144168: "../gui/uicomponents/Alert": "Alert",
+144169: "../mgrs/BundleMgr": "BundleMgr",
+144170: "../mgrs/LayerMgr": "LayerMgr",
+144171: "../models/StoreModel": "StoreModel",
+144172: "../net/HttpConst": "HttpConst",
+144173: "../net/NetMgr": "NetMgr",
+144174: "../utils/EvName": "EvName",
+144175: "./JinmaiModel": "JinmaiModel",
+144176: "./MarryModel": "MarryModel",
+144177: "./RoleOtherInfo": "RoleOtherInfo",
+144178: "./UserModel": "UserModel",
+144179: "./vos/RoleBaseInfo": "RoleBaseInfo"
+144180: } ],
+144181: WatchPanelMediator: [ function(t, e, o) {
+144182: "use strict";
+144183: cc._RF.push(e, "7614fR3ZT1LLYkbuwuphfrM", "WatchPanelMediator");
+144184: var i, n = this && this.__extends || (i = function(t, e) {
+144185: return (i = Object.setPrototypeOf || {
+144186: __proto__: []
+144187: } instanceof Array && function(t, e) {
+144188: t.__proto__ = e;
+144189: } || function(t, e) {
+144190: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+144191: })(t, e);
+144192: }, function(t, e) {
+144193: i(t, e);
+144194: function o() {
+144195: this.constructor = t;
+144196: }
+---
+---

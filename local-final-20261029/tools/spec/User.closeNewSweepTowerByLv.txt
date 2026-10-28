@@ -1,0 +1,99 @@
+# User.closeNewSweepTowerByLv  (HttpConst.CLOSE_NEW_SWEEP_EVENT)
+# 出现 2 处
+
+137804: l.MessageCenter.dispatch(S.EvName.BOX_SWEEP_TOGGLE_BTN_EVENT, !0);
+137805: } else {
+137806: y.default.show(a.getText(4718));
+137807: l.MessageCenter.dispatch(S.EvName.BOX_SWEEP_TOGGLE_BTN_EVENT, !0);
+137808: }
+137809: }, this);
+137810: l.MessageCenter.on(c.HttpConst.CLOSE_NEW_SWEEP_EVENT, function(e, o) {
+137811: if (1 == o.eRet) {
+137812: if (o.hasOwnProperty("batch_sweep_data")) {
+137813: var i = o.batch_sweep_data;
+137814: t.setNewSweepData(i);
+137815: }
+137816: 14 == t.sweepLv ? l.MessageCenter.dispatch(S.EvName.CHEAK_SWEEP_EVENT_EVENT, t.getSweepRewardDatas()) : t.sweepMapQuit();
+137817: t.sweepLv = 0;
+137818: }
+137819: }, this);
+137820: l.MessageCenter.on(c.HttpConst.ACTIVE_TOWER_EVENT, function(e, o) {
+137821: if (1 == o.eRet) {
+137822: t.randomMonsterData = o.npcArr;
+137823: o.hasOwnProperty("eventID") && (t.randomEventId = o.eventID);
+137824: o.hasOwnProperty("muscle") && (t.curStrengthNum = o.muscle);
+137825: o.hasOwnProperty("attrType") && (t.attriType = o.attrType);
+137826: o.hasOwnProperty("eggNpc") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];
+137827: o.hasOwnProperty("chickenLegNum") && (t.toEatNum = o.chickenLegNum);
+137828: t.canActivateStatus = !!o.hasOwnProperty("canActivateStatus") && o.canActivateStatus;
+137829: t.towerEventAy = o.hasOwnProperty("eventIds") ? o.eventIds : [];
+137830: l.MessageCenter.dispatch(S.EvName.TOWER_AUTO_FIGHT_EVENT);
+137831: }
+137832: }, this);
+137833: };
+137834: e.prototype.setNewSweepData = function(t) {
+137835: if (t.hasOwnProperty("eggs")) {
+137836: this.colorEggData = [];
+137837: for (var e in t.eggs) this.colorEggData.push(t.eggs[e]);
+137838: }
+137839: if (t.hasOwnProperty("qiyus")) {
+137840: this.qiyuDatas = [];
+137841: for (var o in t.qiyus) this.qiyuDatas.push(t.qiyus[o]);
+137842: }
+137843: if (t.hasOwnProperty("pandas")) {
+137844: this.pandaDatas = [];
+137845: for (var i in t.pandas) this.pandaDatas.push(t.pandas[i]);
+137846: }
+137847: t.hasOwnProperty("shopids") && (this.shopData = t.shopids);
+137848: if (t.hasOwnProperty("shopidsBook")) {
+137849: this.shopBookShop = [];
+137850: for (var n in t.shopidsBook) this.shopBookShop.push(t.shopidsBook[n]);
+---
+138257: isPay: e,
+138258: adCode: this.adCode
+138259: });
+138260: };
+138261: e.prototype.reqCloseNewSweepTowerByLv = function() {
+138262: if (this.sweepLv > 0) {
+138263: g.NetMgr.http.sendRequest(c.HttpConst.CLOSE_NEW_SWEEP_EVENT, {
+138264: lv: this.sweepLv
+138265: });
+138266: 14 != this.sweepLv && l.MessageCenter.dispatch(S.EvName.CLOSE_SWEEP_UI_EVENT);
+138267: }
+138268: };
+138269: e.prototype.openSweepShop = function() {
+138270: var t = this.shopData[14].eventID;
+138271: this.sweepLv = this.shopData[14].lv;
+138272: var e = r.getItem(t, "lh_event");
+138273: this.reqGetShopList(e.parameter[0], this.shopData[14].lv);
+138274: };
+138275: e.prototype.openSweepBookShop = function() {
+138276: var t = this.shopBookShop[0].eventID;
+138277: this.sweepLv = this.shopBookShop[0].lv;
+138278: var e = r.getItem(t, "lh_event");
+138279: this.reqGetShopList(e.parameter[0], this.shopBookShop[0].lv);
+138280: };
+138281: e.prototype.enterColorEgg = function(t) {
+138282: var e = this;
+138283: this.sweepLv = this.colorEggData[t].lv;
+138284: this.colorEggData[t].eventID;
+138285: if (this.colorEggData[t].egg.length > 0) {
+138286: this.elitMasterData = this.colorEggData[t].egg;
+138287: var o = r.getItem(this.elitMasterData[0], "npc"), i = this.elitMasterData;
+138288: o.AttributeType = i[2];
+138289: o.hasOwnProperty("jineng") && o.jineng.length && (o.jineng[1] = i[1]);
+138290: o.hasOwnProperty("qinggong") && o.qinggong.length && (o.qinggong[1] = i[1]);
+138291: o.hasOwnProperty("neigong") && o.neigong.length && (o.neigong[1] = i[1]);
+138292: var n = {
+138293: npcSceneID: 1,
+138294: npcID: this.elitMasterData[0],
+138295: npcData: o,
+138296: floorLv: this.sweepLv
+138297: };
+138298: b.BattleMgr.startLangHFight(n).then(function() {
+138299: l.MessageCenter.dispatch(S.EvName.CHEAK_SWEEP_EVENT_EVENT, e.getSweepRewardDatas());
+138300: });
+138301: }
+138302: };
+138303: e.prototype.enterQiyuMap = function() {
+---

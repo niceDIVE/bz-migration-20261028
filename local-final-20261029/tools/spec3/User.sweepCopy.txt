@@ -1,0 +1,13 @@
+# User.sweepCopy   (HttpConst.SWEEP_DUNGEON)
+
+## 注册点 64098: r.MessageCenter.on(a.HttpConst.SWEEP_DUNGEON, function(e, o) {
+
+## 请求点 64177: f.NetMgr.http.sendRequest(a.HttpConst.SWEEP_DUNGEON, {
+   64169: copyID: t,
+   64170: npcArr: e,
+   64171: flag: this.perfect
+   64172: };
+   64173: f.NetMgr.http.sendRequest(a.HttpConst.END_DUNGEON_ADVENTURE, i);
+   64174: };
+   64175: t.prototype.reqSweep = function(t, e, o) {
+   64176: void 0 === o && (o = 1);

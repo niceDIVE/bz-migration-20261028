@@ -1,0 +1,13 @@
+# User.chooseUsedItemAward   (HttpConst.CHOOSE_USEITEM_AWARD)
+
+## 注册点 64949: r.MessageCenter.on(a.HttpConst.CHOOSE_USEITEM_AWARD, function(t, e) {
+
+## 请求点 65431: m.NetMgr.http.sendRequest(a.HttpConst.CHOOSE_USEITEM_AWARD, {
+   65423: this.curItemId = t;
+   65424: this.boxType = e;
+   65425: m.NetMgr.http.sendRequest(a.HttpConst.GET_USEITEM_AWARD, {
+   65426: itemID: t
+   65427: });
+   65428: };
+   65429: e.prototype.reqChooseItemAward = function(t, e) {
+   65430: this.curItemId = t;

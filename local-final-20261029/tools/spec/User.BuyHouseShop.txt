@@ -1,0 +1,97 @@
+# User.BuyHouseShop  (HttpConst.BUY_HOUSE_DATA)
+# 出现 2 处
+
+ 58479: var n = s.getItem(t.adventEventId, "house_trigger"), r = t.checkDialogId(n.dialogout);
+ 58480: l.default.addDialogEvent(r, 0);
+ 58481: i.MessageCenter.dispatch(p.EvName.CLEAR_NPC_ACTION_EVENT, t.adventEventId);
+ 58482: t.destroy();
+ 58483: }
+ 58484: }, this);
+ 58485: i.MessageCenter.on(r.HttpConst.BUY_HOUSE_DATA, function(e, o) {
+ 58486: if (1 == o.eRet) {
+ 58487: var n = {
+ 58488: itemId: o.itemID,
+ 58489: num: t.itemNum
+ 58490: };
+ 58491: i.MessageCenter.dispatch(p.EvName.SALE_RANDOM_SHOP, n);
+ 58492: } else {
+ 58493: var r = s.getItem(t.adventEventId, "house_trigger"), a = t.checkDialogId(r.dialogout);
+ 58494: l.default.addDialogEvent(a, 0);
+ 58495: i.MessageCenter.dispatch(p.EvName.CLEAR_NPC_ACTION_EVENT, t.adventEventId);
+ 58496: t.destroy();
+ 58497: }
+ 58498: }, this);
+ 58499: };
+ 58500: t.prototype.setAdventEventData = function(t, e) {
+ 58501: if (0 != parseInt(t) && 1e3 != parseInt(t)) {
+ 58502: this.adventEventId = t;
+ 58503: this.adventData = s.getItem(this.adventEventId, "house_trigger");
+ 58504: this.eventID = e[t].bTime;
+ 58505: this.endTime = e[t].bTime + 1e3 * parseInt(this.adventData.continue);
+ 58506: }
+ 58507: };
+ 58508: t.prototype.reqAdvent = function() {
+ 58509: h.NetMgr.http.sendRequest(r.HttpConst.HOUSE_SPECIAL, {});
+ 58510: };
+ 58511: t.prototype.reqFinishAdventEvent = function(t, e) {
+ 58512: var o = {
+ 58513: eventID: this.eventID,
+ 58514: choose: t,
+ 58515: win: e
+ 58516: };
+ 58517: h.NetMgr.http.sendRequest(r.HttpConst.GET_SPECIAL_AWARD, o);
+ 58518: };
+ 58519: t.prototype.reqGetShopData = function() {
+ 58520: h.NetMgr.http.sendRequest(r.HttpConst.GET_HOUSE_SHOP_DATA, {
+ 58521: npcID: 10459
+ 58522: });
+ 58523: };
+ 58524: t.prototype.reqBuyShopItem = function(t, e) {
+ 58525: this.itemNum = e;
+---
+ 58526: var o = {
+ 58527: itemID: t,
+ 58528: itemNum: e
+ 58529: };
+ 58530: h.NetMgr.http.sendRequest(r.HttpConst.BUY_HOUSE_DATA, o);
+ 58531: };
+ 58532: t.prototype.getCurAdventID = function() {
+ 58533: return this.adventEventId;
+ 58534: };
+ 58535: t.prototype.eventStartDialog = function() {
+ 58536: var t = this.adventData, e = this.checkDialogId(t.dialogstart);
+ 58537: l.default.addDialogEvent(e, 0, this.showComicsUI.bind(this));
+ 58538: };
+ 58539: t.prototype.showComicsUI = function() {
+ 58540: var t = this.adventData;
+ 58541: t.picture.length > 0 && m.default.prefabs.load("comUI/ComicsStoryUI", cc.Prefab, function(e, o) {
+ 58542: var i = cc.instantiate(o);
+ 58543: f.PopUpMgr.addPopUp(i, d.LayerMgr.topLayer);
+ 58544: for (var n = [], r = 0; r < t.picture.length; r++) {
+ 58545: var a = "ui/marry/" + t.picture[r];
+ 58546: n.push(a);
+ 58547: }
+ 58548: i.addComponent("ComicsStoryUI").setData({
+ 58549: Data1: n
+ 58550: });
+ 58551: });
+ 58552: i.MessageCenter.dispatch(p.EvName.WED_NPC_ACTION_EVENT, this.adventEventId);
+ 58553: };
+ 58554: t.prototype.onLogicBattle = function(t, e) {
+ 58555: var o = this.adventData;
+ 58556: parseInt(o.npcfight) > 0 && this.enterAdventFight(o.npcfight, t, e);
+ 58557: };
+ 58558: t.prototype.enterAdventFight = function(t, e, o) {
+ 58559: var i = this, n = s.getItem(t, "npc");
+ 58560: o.NpcName = a.getText(n.NpcName);
+ 58561: o.ModelID = n.ModelID;
+ 58562: o.NpcID = t;
+ 58563: var r = {
+ 58564: npcSceneID: 1,
+ 58565: npcID: t,
+ 58566: npcData: o,
+ 58567: showbubble: !1
+ 58568: };
+ 58569: g.BattleMgr.startNpcFight(r).then(function(t) {
+ 58570: var o = t.win ? 1 : 2;
+---

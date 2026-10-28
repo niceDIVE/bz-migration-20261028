@@ -1,0 +1,51 @@
+# User.goodAndEvilBattleResult  (HttpConst.GOOD_AND_EVIL_BATTLE_RESULT)
+# 出现 1 处
+
+101409: n.hp.setLimit(t.hplmt);
+101410: n.mp.setRemaining(t.mp);
+101411: n.hp.setRemaining(t.hp <= 0 ? 1 : t.hp);
+101412: }
+101413: if (this.isGoodEvilPk) {
+101414: r.getargetType = 1;
+101415: s.NetMgr.http.sendRequest(a.HttpConst.GOOD_AND_EVIL_BATTLE_RESULT, r);
+101416: n.hp.setLimit(t.hplmt);
+101417: n.mp.setRemaining(t.mp);
+101418: n.hp.setRemaining(t.hp <= 0 ? 1 : t.hp);
+101419: }
+101420: if (e) {
+101421: var l = e.getComponent("BattleResultMediator");
+101422: this.judgeFightToKill(t, l);
+101423: if (l) {
+101424: l.winNodeBtn.active = l.winNodeBtn2.active = !1;
+101425: o || 2 == f.GSceneMgr.mode && (l.failNodeBtn1.active = !1);
+101426: }
+101427: }
+101428: };
+101429: e.prototype.judgeFightToKill = function(t, e) {
+101430: if (t.data[0]) {
+101431: var o = u.getItem(t.npcID, "npc");
+101432: 1189 == t.npcID || 1190 == t.npcID || 1191 == t.npcID || 1192 == t.npcID || o && 1 == o.nokill || d.ChiefDiscipleModel.firstRoleData.hasOwnProperty("id") && t.bID == d.ChiefDiscipleModel.firstRoleData.id ? e.winNodeBtn.active = e.winNodeBtn2.active = !1 : e.winNodeBtn.active = e.winNodeBtn2.active = !0;
+101433: }
+101434: };
+101435: e.prototype.processNormalResult = function(t) {
+101436: var e = this, o = this;
+101437: return new Promise(function(i) {
+101438: e.isGoodEvilPk ? i(null) : v.default.prefabs.load("BattleResultUI/normalBattle", cc.Prefab, function(e, n) {
+101439: var r = cc.instantiate(n);
+101440: _.PopUpMgr.addPopUp(r, S.LayerMgr.popUpLayer);
+101441: var a = r.getComponent(M.BattleResultMediator);
+101442: a.setResult(t);
+101443: a.resolve = o.fightEndCb;
+101444: o.fightEndCb = null;
+101445: i(r);
+101446: });
+101447: });
+101448: };
+101449: return e;
+101450: }(p.B1v1Base);
+101451: o.RankMgr = E;
+101452: cc._RF.pop();
+101453: }, {
+101454: "../../core/events/MessageCenter": "MessageCenter",
+101455: "../../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+---

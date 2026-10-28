@@ -1,0 +1,71 @@
+{
+  "items": [
+    {
+      "q": "Q1",
+      "answer": "getEquipmentInfo 函数定义位于 tools/index.js:65161-65165（InventoryModel 原型方法）及 tools/scripts3.js:73505-73507（RogueRoleInfo 原型方法），scripts2.js 中未定义该函数。",
+      "evidence": [
+        "tools/index.js:65161-65165",
+        "tools/scripts3.js:73505-73507"
+      ],
+      "code": "tools/index.js:65161-65165:\ne.prototype.getEquipmentInfo = function(t) {\nif (this.equipmentDic.hasOwnProperty(t)) return this.equipmentDic[t];\nvar e = b.TowerModel.getTowerEquips();\nreturn e.hasOwnProperty(t) ? e[t] : null;\n};\n\ntools/scripts3.js:73505-73507:\nt.prototype.getEquipmentInfo = function(t) {\nreturn this.equipmentDic.hasOwnProperty(t) ? this.equipmentDic[t] : null;\n};"
+    },
+    {
+      "q": "Q2",
+      "answer": "UserModel.entity 是 MainPlayerEntity 实例（继承自 BattleEntity）。putOnEquipment 与 putOffEquipment 定义在 tools/index.js:11174-11206 与 11207-11222（BattleEntity 原型方法 r 上）。",
+      "evidence": [
+        "tools/index.js:11174-11206",
+        "tools/index.js:11207-11222"
+      ],
+      "code": "tools/index.js:11174-11203 (putOnEquipment 前30行截断):\nr.putOnEquipment = function(t, e) {\nthis._equipments[e] = t;\nt.arm(this);\nif (e == c.WEAPON) {\nswitch (s.getItem(t.data.itemID, \"item\").WeaponType) {\ncase m.SWORD:\nthis.skillTypeEquipped = l.SWORD;\nbreak;\n\ncase m.BLADE:\nthis.skillTypeEquipped = l.BLADE;\nbreak;\n\ncase m.STICK:\nthis.skillTypeEquipped = l.STICK;\nbreak;\n\ncase m.WHIP:\nthis.skillTypeEquipped = l.WHIP;\nbreak;\n\ncase m.HIDDEN_WEAPON:\nthis.skillTypeEquipped = l.HIDDEN_WEAPON;\nbreak;\n\ndefault:\nthis.skillTypeEquipped = l.FIST;\n}\nthis.sType2SkillIDDic.hasOwnProperty(this.skillTypeEquipped) && (this.attackSkillEquipped = this.sType2SkillIDDic[this.skillTypeEquipped]);\n}\n\ntools/index.js:11207-11222 (putOffEquipment 全文):\nr.putOffEquipment = function(t) {\nvar e = null;\nif (this._equipments.hasOwnProperty(t) && this._equipments[t]) {\n(e = this._equipments[t]).disarm(this);\nthis._equipments[t] = null;\n}\nif (t == c.WEAPON) {\nthis.skillTypeEquipped = l.FIST;\nthis.attackSkillEquipped = this.sType2SkillIDDic[this.skillTypeEquipped];\n}\nif (e) {\nvar o = s.getItem(e.getDisplayID(), \"item\").Effect;\no && this.decreaseSuit(o);\n}\nreturn e;\n};"
+    },
+    {
+      "q": "Q3",
+      "answer": "变量/属性精确名为 timeId 在三包中仅出现在 tools/scripts2.js 的 FashionShopAlertUI / MakeUpModel 相关逻辑中共 4 处；index.js 与 scripts3.js 中 not found（仅有 timeIdAy 数组）。",
+      "evidence": [
+        "tools/scripts2.js:21326",
+        "tools/scripts2.js:21644",
+        "tools/scripts2.js:21875",
+        "tools/scripts2.js:21876"
+      ],
+      "code": "tools/scripts2.js:21326:\ne.timeId = 0;\n\ntools/scripts2.js:21644:\n1 == this.curSelectType && (this.timeId = o.ID);\n\ntools/scripts2.js:21875-21876:\nif (1 == this.curSelectType && this.timeId > 0) {\nvar t = u.MakeUpModel.getFashionTime(this.timeId);"
+    },
+    {
+      "q": "Q4",
+      "answer": "抄出 tools/scripts2.js 第 20980 至 21060 行逐字原文，包含 buyMode 赋值（第 21036 行）与 FashionShopAlertUI 声明导出（第 21044 行）。",
+      "evidence": [
+        "tools/scripts2.js:20980-21060"
+      ],
+      "code": "20980: };\n20981: e.haved = {};\n20982: return e;\n20983: }\n20984: e.prototype.onLoad = function() {\n20985: t.prototype.onLoad.call(this);\n20986: var e = u.TimeMgr.getSTimestamp(), o = d.InventoryModel.equipmentDic;\n20987: for (var i in o) {\n20988: var s = o[i].itemID, n = r.getItem(s, \"item\");\n20989: !n || 8 != n.EquipType && 9 != n.EquipType || (this.haved[s] = !0);\n20990: }\n20991: for (var a = 0, h = 0; h < 2; h++) for (var g = 0; g < 2; g++) {\n20992: var m = this.getPathByNode(\"Bg/frame/ToggleGroup\" + (h + 1) + \"/Toggle\" + (g + 1));\n20993: this.addButtonListen(m, this, this.onToggleClick, a);\n20994: a++;\n20995: var f = m.getChildByName(\"Label\");\n20996: if (1 == g) {\n20997: var v = m.getChildByName(\"Sprite\");\n20998: this.icons.push(v);\n20999: }\n21000: if (0 == h) {\n21001: this.labels1.push(f);\n21002: if ((b = c.MakeUpModel.getFashionData()[8]) > 0) {\n21003: var y = this.haved[b], I = l.UserModel.entity.getEquipment(8);\n21004: y ? f.getComponent(cc.Label).string = \"0\" : b == I ? f.getComponent(cc.Label).string = \"0\" : (C = r.getItem(b, \"fashionall\")) && (C.offtime > e ? 2 == (M = C.limit.split(\"|\")).length && M[g].split(\",\")[1] && (f.getComponent(cc.Label).string = M[g].split(\",\")[1]) : f.getComponent(cc.Label).string = \"0\");\n21005: } else f.getComponent(cc.Label).string = \"0\";\n21006: } else {\n21007: this.labels2.push(f);\n21008: var b;\n21009: if ((b = c.MakeUpModel.getFashionData()[9]) > 0) {\n21010: y = this.haved[b], I = l.UserModel.entity.getEquipment(9);\n21011: if (y) f.getComponent(cc.Label).string = \"0\"; else if (b == I) f.getComponent(cc.Label).string = \"0\"; else {\n21012: var C;\n21013: if (C = r.getItem(b, \"fashionall\")) if (C.offtime > e) {\n21014: var M;\n21015: 2 == (M = C.limit.split(\"|\")).length && M[g].split(\",\")[1] && (f.getComponent(cc.Label).string = M[g].split(\",\")[1]);\n21016: } else f.getComponent(cc.Label).string = \"0\";\n21017: }\n21018: } else f.getComponent(cc.Label).string = \"0\";\n21019: }\n21020: }\n21021: this.icons.push(this.getPathByNode(\"Bg/ticketSprite\"));\n21022: this.goldNum = this.getPathByNode(\"Bg/goldLabel\");\n21023: this.goldNum.getComponent(cc.Label).string = p.RoleBaseInfo.gold.toString();\n21024: this.ticketNum = this.getPathByNode(\"Bg/ticketLabel\");\n21025: this.ticketNum.getComponent(cc.Label).string = String(p.RoleBaseInfo.getItemNum(7298));\n21026: var _ = this.getPathByNode(\"Bg/buyButton\");\n21027: this.addButtonListen(_, this, this.onClick, 0);\n21028: var B = this.getPathByNode(\"Bg/cancelButton\");\n21029: this.addButtonListen(B, this, this.onClick, 1);\n21030: this.getPathByNode(\"Bg\").on(cc.Node.EventType.TOUCH_START, function() {\n21031: return !1;\n21032: }, this, !1);\n21033: };\n21034: e.prototype.onToggleClick = function(t) {\n21035: var e = t.node.tag1;\n21036: 0 == e ? this.buyMode[8] = 1 : 1 == e ? this.buyMode[8] = 2 : 2 == e ? this.buyMode[9] = 1 : 3 == e && (this.buyMode[9] = 2);\n21037: };\n21038: e.prototype.onClick = function(t) {\n21039: 0 == t.node.tag1 && c.MakeUpModel.reqBuyFashion(1, this.buyMode);\n21040: a.PopUpMgr.removePopUp(this.node);\n21041: };\n21042: return n([ g ], e);\n21043: }(h.UIComponent);\n21044: o.FashionShopAlertUI = m;\n21045: cc._RF.pop();\n21046: }, {\n21047: \"../../../scripts/core/ui/mgrs/PopUpMgr\": void 0,\n21048: \"../../../scripts/gameconfigs/CFMgr\": void 0,\n21049: \"../../../scripts/gui/uicomponents/UIComponent\": void 0,\n21050: \"../../../scripts/mgrs/TimeMgr\": void 0,\n21051: \"../../../scripts/models/InventoryModel\": void 0,\n21052: \"../../../scripts/models/MakeUpModel\": void 0,\n21053: \"../../../scripts/models/UserModel\": void 0,\n21054: \"../../../scripts/models/vos/RoleBaseInfo\": void 0\n21055: } ],\n21056: FashionShopMainUI: [ function(t, e, o) {\n21057: \"use strict\";\n21058: cc._RF.push(e, \"181b0Hv6n1IYoHCVI9JW5Gm\", \"FashionShopMainUI\");\n21059: var i, s = this && this.__extends || (i = function(t, e) {\n21060: return (i = Object.setPrototypeOf || {"
+    },
+    {
+      "q": "Q5",
+      "answer": "RoleBaseInfo 上的核心 getItemNum 定义位于 tools/index.js:106347-106360；另在 scripts2.js 中有 ExchangeBuyUI 辅助函数定义（20510-20513）。",
+      "evidence": [
+        "tools/index.js:106347-106360",
+        "tools/scripts2.js:20510-20513"
+      ],
+      "code": "tools/index.js:106347-106360 (RoleBaseInfo.getItemNum):\ne.prototype.getItemNum = function(t) {\nvar e = h.playerInfo.entity;\nif (1 == t) return this.gold;\nif (4001 == t) return this.coins;\nif (4003 == t) return this.potentials;\nif (4002 == t) return e.exp;\nif (8888 == t) return this.yuanbao;\nif (this._itemObj.hasOwnProperty(t)) return this._itemObj[t].numbers;\nvar o = 0, i = l.InventoryModel.getEquipmentInfo(t);\ni && (o += i.num);\nvar n = l.InventoryModel.getSpecEqArrByItemID(t);\nn && (o += n.length);\nreturn o;\n};\n\ntools/scripts2.js:20510-20513 (ExchangeBuyUI.getItemNum):\no.prototype.getItemNum = function(t) {\nvar e = l.getItem(t, \"item\");\nreturn e && 1 == e.Type ? y.EqUtils.equipNum(t) : d.RoleBaseInfo.getItemNum(t);\n};"
+    },
+    {
+      "q": "Q6",
+      "answer": "查 tbl_item.json 主键（ID 列），三行对应字段值如下：2601 (Type=1, Name=31601, BuyPrice=0, Price=0, EquipType=8)；7298 (Type=2, Name=2102521, BuyPrice=0, Price=0, EquipType=0)；7851 (Type=2, Name=2103074, BuyPrice=0, Price=0, EquipType=0)。",
+      "evidence": [
+        "tools/cfg/tbl_item.json:table[\"2601\"]",
+        "tools/cfg/tbl_item.json:table[\"7298\"]",
+        "tools/cfg/tbl_item.json:table[\"7851\"]"
+      ],
+      "code": "ID=2601: {\"Type\": 1, \"Name\": 31601, \"BuyPrice\": 0, \"Price\": 0, \"EquipType\": 8}\nID=7298: {\"Type\": 2, \"Name\": 2102521, \"BuyPrice\": 0, \"Price\": 0, \"EquipType\": 0}\nID=7851: {\"Type\": 2, \"Name\": 2103074, \"BuyPrice\": 0, \"Price\": 0, \"EquipType\": 0}"
+    },
+    {
+      "q": "Q7",
+      "answer": "抄出时装（EquipType 8/9）写入/初始化/同步进 RoleBaseInfo.equipments 的代码处（包含购买成功回包写入、全量装备同步等）。",
+      "evidence": [
+        "tools/index.js:75556-75570",
+        "tools/index.js:142526-142537",
+        "tools/index.js:144054"
+      ],
+      "code": "出处 1 (tools/index.js:75556-75570 - REQ_BUY_FASHION 回包时写入 equipments[8/9]):\nfor (var i in t.tempData) {\np.UserModel.entity.putOffEquipment(i);\nif (t.tempData[i][0] > 0) {\nvar r = h.InventoryModel.getEquipmentInfo(t.tempData[i][0]), l = {\nid: r.id,\ntype: r.type,\nitemID: r.itemID,\nattrs: r.attrs,\nnumAttr: r.numAttr,\ncrystalIds: r.crystalIds\n};\nr.itemID;\nd.RoleBaseInfo.equipments[i] = r.id;\np.UserModel.entity.putOnEquipment(new a(l), i);\n}\n}\n\n出处 2 (tools/index.js:142526-142537 - setupEntity 遍历 RoleBaseInfo.equipments 装载至 entity):\nfor (var t in h.RoleBaseInfo.equipments) if (h.RoleBaseInfo.equipments[t]) {\nvar e = _.InventoryModel.getEquipmentInfo(h.RoleBaseInfo.equipments[t]);\nif (e) {\nvar o = {\nid: e.id,\ntype: e.type,\nitemID: e.itemID,\nattrs: e.attrs,\nnumAttr: e.numAttr,\ncrystalIds: e.crystalIds\n}, c = S.InhertEquipModel.allInhertEquips, p = c.hasOwnProperty(e.id) ? c[e.id] : 0;\nthis.entity.putOnEquipment(new a(o, p), parseInt(t));\n\n出处 3 (tools/index.js:144054 - 同步 entity.equipments 回 RoleBaseInfo.equipments):\nfor (var _ in h.UserModel.entity.equipments) h.UserModel.entity.equipments[_] && (l.RoleBaseInfo.equipments[_] = h.UserModel.entity.equipments[_].id);"
+    }
+  ],
+  "unverified": []
+}

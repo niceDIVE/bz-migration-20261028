@@ -1,0 +1,260 @@
+[
+ {
+  "action": "User.BuyMarketItem",
+  "field": "userGold",
+  "usage": "v.RoleBaseInfo.gold = e.userGold",
+  "line": "131234: e.hasOwnProperty(\"userGold\") && (v.RoleBaseInfo.gold = e.userGold);"
+ },
+ {
+  "action": "User.BuyMarketItem",
+  "field": "buyTimes",
+  "usage": "this.buyTimes = e.buyTimes",
+  "line": "131236: this.buyTimes = e.buyTimes;"
+ },
+ {
+  "action": "User.BuyMarketItem",
+  "field": "buyTimes",
+  "usage": "y.RoleOtherInfo.buyTimes = e.buyTimes",
+  "line": "131237: y.RoleOtherInfo.buyTimes = e.buyTimes;"
+ },
+ {
+  "action": "User.EndPlayWooks",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "86202: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.EndPlayWooks",
+  "field": "serverTime",
+  "usage": ".001 * (e.serverTime - e.beginTime)",
+  "line": "86205: var o = .001 * (e.serverTime - e.beginTime);"
+ },
+ {
+  "action": "User.EndPlayWooks",
+  "field": "beginTime",
+  "usage": "e.serverTime - e.beginTime",
+  "line": "86205: var o = .001 * (e.serverTime - e.beginTime);"
+ },
+ {
+  "action": "User.EndPlayWooks",
+  "field": "gTime",
+  "usage": "c.UserModel.entity.totalGameTime.gameTime = e.gTime",
+  "line": "86207: c.UserModel.entity.totalGameTime.gameTime = e.gTime;"
+ },
+ {
+  "action": "User.EndPlayWooks",
+  "field": "hg",
+  "usage": "c.UserModel.entity.hunger.remaining = e.hg",
+  "line": "86208: c.UserModel.entity.hunger.remaining = e.hg;"
+ },
+ {
+  "action": "User.EndPlayWooks",
+  "field": "hgtimes",
+  "usage": "c.UserModel.entity.numStuffed = e.hgtimes",
+  "line": "86209: c.UserModel.entity.numStuffed = e.hgtimes;"
+ },
+ {
+  "action": "User.EndPlayWooks",
+  "field": "potential",
+  "usage": "this.potGot = e.potential",
+  "line": "86210: this.potGot = e.potential;"
+ },
+ {
+  "action": "User.EndPlayWooks",
+  "field": "exp",
+  "usage": "this.expGot = e.exp",
+  "line": "86211: this.expGot = e.exp;"
+ },
+ {
+  "action": "User.EndPlayWooks",
+  "field": "expExtra",
+  "usage": "this.expExtra = e.expExtra",
+  "line": "86214: e.hasOwnProperty(\"expExtra\") ? this.expExtra = e.expExtra : this.expExtra = 0;"
+ },
+ {
+  "action": "User.EndPlayWooks",
+  "field": "potentialExtra",
+  "usage": "this.potentialExtra = e.potentialExtra",
+  "line": "86215: e.hasOwnProperty(\"potentialExtra\") ? this.potentialExtra = e.potentialExtra : this.potentialExtra = 0;"
+ },
+ {
+  "action": "User.EndPlayWooks",
+  "field": "specialAny",
+  "usage": "var n = e.specialAny",
+  "line": "86217: for (var n = e.specialAny, a = 0; a < n.length; ++a) {"
+ },
+ {
+  "action": "User.FriendList",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "132209: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.FriendList",
+  "field": "uIds",
+  "usage": "this.friendChatRedUIds = e.uIds",
+  "line": "132210: this.friendChatRedUIds = e.uIds;"
+ },
+ {
+  "action": "User.FriendList",
+  "field": "friendList",
+  "usage": "for (var n in e.friendList)",
+  "line": "132212: if (e.hasOwnProperty(\"friendList\")) for (var n in e.friendList) o[e.friendList[n].friendId] = !0;"
+ },
+ {
+  "action": "User.FriendList",
+  "field": "friendList",
+  "usage": "o[e.friendList[n].friendId] = !0",
+  "line": "132212: if (e.hasOwnProperty(\"friendList\")) for (var n in e.friendList) o[e.friendList[n].friendId] = !0;"
+ },
+ {
+  "action": "User.FriendList",
+  "field": "GET_CHAT_FRIEND_LIST",
+  "usage": "i.MessageCenter.dispatch(c.EvName.GET_CHAT_FRIEND_LIST, e)",
+  "line": "132216: i.MessageCenter.dispatch(c.EvName.GET_CHAT_FRIEND_LIST, e);"
+ },
+ {
+  "action": "User.FriendList",
+  "field": "MULTIP_NEAR_PLAYER_EVENT",
+  "usage": "i.MessageCenter.dispatch(c.EvName.MULTIP_NEAR_PLAYER_EVENT, e)",
+  "line": "132217: i.MessageCenter.dispatch(c.EvName.MULTIP_NEAR_PLAYER_EVENT, e);"
+ },
+ {
+  "action": "User.FriendList",
+  "field": "GET_REQ_FRIEND_LIST",
+  "usage": "i.MessageCenter.dispatch(c.EvName.GET_REQ_FRIEND_LIST, e)",
+  "line": "132218: } else i.MessageCenter.dispatch(c.EvName.GET_REQ_FRIEND_LIST, e);"
+ },
+ {
+  "action": "User.LookFishAward",
+  "field": "awardArr",
+  "usage": "var o = e.awardArr",
+  "line": "51546: var o = e.awardArr, r = 0, s = \"\";"
+ },
+ {
+  "action": "User.ReqReview",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "113600: 1 == e.eRet ? r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id) : 2 == e.eRet ? c.default.show(i.getText(858)) : 99 == e.eRet && c.default.show(i.getText(\"480\"));"
+ },
+ {
+  "action": "User.ReqReview",
+  "field": "id",
+  "usage": "r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id)",
+  "line": "113600: 1 == e.eRet ? r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id) : 2 == e.eRet ? c.default.show(i.getText(858)) : 99 == e.eRet && c.default.show(i.getText(\"480\"));"
+ },
+ {
+  "action": "User.ReqReview",
+  "field": "eRet",
+  "usage": "2 == e.eRet",
+  "line": "113600: 1 == e.eRet ? r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id) : 2 == e.eRet ? c.default.show(i.getText(858)) : 99 == e.eRet && c.default.show(i.getText(\"480\"));"
+ },
+ {
+  "action": "User.ReqReview",
+  "field": "eRet",
+  "usage": "99 == e.eRet",
+  "line": "113600: 1 == e.eRet ? r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id) : 2 == e.eRet ? c.default.show(i.getText(858)) : 99 == e.eRet && c.default.show(i.getText(\"480\"));"
+ },
+ {
+  "action": "User.changePlayWooksState",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "86182: if (this.isPracticing && 1 == e.eRet) {"
+ },
+ {
+  "action": "User.doubleTraining",
+  "field": "skillID",
+  "usage": "this.id = o.skillID",
+  "line": "56669: this.id = o.skillID;"
+ },
+ {
+  "action": "User.doubleTraining",
+  "field": "skillLevel",
+  "usage": "this.lv = o.skillLevel",
+  "line": "56670: this.lv = o.skillLevel;"
+ },
+ {
+  "action": "User.doubleTraining",
+  "field": "itemAddition",
+  "usage": "this.itemBreakAdditionNum = o.hasOwnProperty(\"itemAddition\") ? o.itemAddition : 0",
+  "line": "56671: this.itemBreakAdditionNum = o.hasOwnProperty(\"itemAddition\") ? o.itemAddition : 0;"
+ },
+ {
+  "action": "User.doubleTraining",
+  "field": "eRet",
+  "usage": "1 == o.eRet",
+  "line": "56672: if (1 == o.eRet) {"
+ },
+ {
+  "action": "User.doubleTraining",
+  "field": "needTime",
+  "usage": "Number(o.needTime)",
+  "line": "56673: if (isNaN(Number(o.needTime))) {"
+ },
+ {
+  "action": "User.giveChildName",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "24622: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.giveChildName",
+  "field": "childName",
+  "usage": "c.MarryModel.childData.childName = e.childName",
+  "line": "24623: c.MarryModel.childData.childName = e.childName;"
+ },
+ {
+  "action": "User.giveChildName",
+  "field": "eRet",
+  "usage": "99 == e.eRet",
+  "line": "24625: } else 99 == e.eRet ? a.default.show(i.getText(\"480\")) : a.default.show(i.getText(427));"
+ },
+ {
+  "action": "User.proposeNpc",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "77124: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.proposeNpc",
+  "field": "npcID",
+  "usage": "this.proposeNpcInfo[e.npcID] = !0",
+  "line": "77125: this.proposeNpcInfo[e.npcID] = !0;"
+ },
+ {
+  "action": "User.proposeNpc",
+  "field": "eRet",
+  "usage": "2 == e.eRet",
+  "line": "77127: } else 2 == e.eRet ? p.default.show(r.getText(\"1133\")) : 10 == e.eRet ? p.default.show(r.getText(\"1141\")) : 11 == e.eRet ? p.default.show(r.getText(\"1137\")) : 12 == e.eRet ? p.default.show(r.getText(\"1166\")) : p.default.show(r.getText(\"1132\"));"
+ },
+ {
+  "action": "User.proposeNpc",
+  "field": "eRet",
+  "usage": "10 == e.eRet",
+  "line": "77127: } else 2 == e.eRet ? p.default.show(r.getText(\"1133\")) : 10 == e.eRet ? p.default.show(r.getText(\"1141\")) : 11 == e.eRet ? p.default.show(r.getText(\"1137\")) : 12 == e.eRet ? p.default.show(r.getText(\"1166\")) : p.default.show(r.getText(\"1132\"));"
+ },
+ {
+  "action": "User.proposeNpc",
+  "field": "eRet",
+  "usage": "11 == e.eRet",
+  "line": "77127: } else 2 == e.eRet ? p.default.show(r.getText(\"1133\")) : 10 == e.eRet ? p.default.show(r.getText(\"1141\")) : 11 == e.eRet ? p.default.show(r.getText(\"1137\")) : 12 == e.eRet ? p.default.show(r.getText(\"1166\")) : p.default.show(r.getText(\"1132\"));"
+ },
+ {
+  "action": "User.proposeNpc",
+  "field": "eRet",
+  "usage": "12 == e.eRet",
+  "line": "77127: } else 2 == e.eRet ? p.default.show(r.getText(\"1133\")) : 10 == e.eRet ? p.default.show(r.getText(\"1141\")) : 11 == e.eRet ? p.default.show(r.getText(\"1137\")) : 12 == e.eRet ? p.default.show(r.getText(\"1166\")) : p.default.show(r.getText(\"1132\"));"
+ },
+ {
+  "action": "User.weddingFeast",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "77136: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.weddingFeast",
+  "field": "type",
+  "usage": "this.weddingType = e.type",
+  "line": "77137: this.weddingType = e.type;"
+ }
+]

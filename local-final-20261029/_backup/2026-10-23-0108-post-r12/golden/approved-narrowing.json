@@ -1,0 +1,9 @@
+[
+ {
+  "action": "BeginTraining",
+  "path": "hanyusuiTime",
+  "escape": "closed",
+  "reason": "空请求 {} 命中新增的拒绝分支（skillID 未学会 → eRet:4），该分支不写 beginTime、也不发 hanyusuiTime。客户端回调只在 1==eRet||2==eRet 时读这两个字段（index.js:120517），4 不进门 → 不存在『字段被用到但缺席』的逃逸路径。收窄是拒绝分支的副产品，不是刻意少发。",
+  "ev": "index.js:120517"
+ }
+]

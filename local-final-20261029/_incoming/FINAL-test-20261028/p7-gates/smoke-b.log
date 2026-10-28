@@ -1,0 +1,16 @@
+
+--- smoke-b-live per-batch ---
+C20: 28 pass, 0 fail
+C21: 35 pass, 0 fail
+C26: 6 pass, 0 fail
+C28: 21 pass, 0 fail
+C32: 12 pass, 0 fail
+C39: 16 pass, 0 fail
+C40: 15 pass, 0 fail
+C41: 14 pass, 0 fail
+C47: 19 pass, 0 fail
+C48: 13 pass, 0 fail
+C49: 16 pass, 0 fail
+C72: 4 pass, 0 fail
+ISOLATION: 26 pass, 0 fail
+TOTAL: 225 pass, 0 fail, 225 assertions, 36 keys

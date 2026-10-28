@@ -1,0 +1,971 @@
+{
+ "User.AccountBindEmail": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.AnswerFriend": {
+  "handlers": [
+   "## 处理函数 answerSuccessCallBack (132274-132276)"
+  ],
+  "request_params": [
+   "roleID",
+   "fID",
+   "answer"
+  ],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "prototype"
+  ]
+ },
+ "User.ApplyFriend": {
+  "handlers": [
+   "## 处理函数 onSuccessApplayFriend (132269-132272)"
+  ],
+  "request_params": [
+   "roleID",
+   "fName"
+  ],
+  "response_fields": [
+   "default",
+   "eRet",
+   "getText",
+   "length",
+   "prototype"
+  ]
+ },
+ "User.BeginFish": {
+  "handlers": [
+   "## 处理函数 onStartFishing (51557-51573)"
+  ],
+  "request_params": [
+   "fishpondID",
+   "equipID",
+   "hg",
+   "gTime",
+   "hgtimes"
+  ],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "PopGiftModel",
+   "TimeMgr",
+   "advertisementNum",
+   "beginTime",
+   "eRet",
+   "getItem",
+   "hasOwnProperty",
+   "maxTime",
+   "prototype",
+   "serverTime"
+  ]
+ },
+ "User.BeginRollDice": {
+  "handlers": [
+   "## 处理函数 onCallBackRollDice (54255-54261)"
+  ],
+  "request_params": [
+   "numType",
+   "number",
+   "buyType"
+  ],
+  "response_fields": [
+   "EvName",
+   "InventoryDB",
+   "MessageCenter",
+   "RoleBaseInfo",
+   "default",
+   "eRet",
+   "getText",
+   "prototype"
+  ]
+ },
+ "User.BeginSaveNpc": {
+  "handlers": [
+   "## 处理函数 callBackBeginNpc (90082-90090)"
+  ],
+  "request_params": [
+   "npcID",
+   "mpLimit",
+   "gTime",
+   "hg",
+   "hgtimes"
+  ],
+  "response_fields": [
+   "beginTime",
+   "eRet",
+   "endTime",
+   "npcID",
+   "prototype"
+  ]
+ },
+ "User.BuyNpcFeel": {
+  "handlers": [
+   "## 处理函数 buyFellCallBack (77935-77937)"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "default",
+   "eRet",
+   "getText",
+   "prototype"
+  ]
+ },
+ "User.ChallengePVP": {
+  "handlers": [],
+  "request_params": [
+   "isGoodEvilPk",
+   "otherRoleID",
+   "mp",
+   "gTime",
+   "hgtimes"
+  ],
+  "response_fields": []
+ },
+ "User.CheckBattleResult": {
+  "handlers": [],
+  "request_params": [
+   "actionArr",
+   "seed",
+   "aDmgReceived",
+   "bDmgReceived",
+   "itemSkill",
+   "forwards"
+  ],
+  "response_fields": []
+ },
+ "User.CheckName": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.Create": {
+  "handlers": [],
+  "request_params": [
+   "baseValueAy"
+  ],
+  "response_fields": []
+ },
+ "User.EndFish": {
+  "handlers": [
+   "## 处理函数 onEndFishing (51576-51591)"
+  ],
+  "request_params": [
+   "fishpondID",
+   "hglmt",
+   "speed"
+  ],
+  "response_fields": [
+   "InventoryDB",
+   "awardArr",
+   "beginTime",
+   "eRet",
+   "extraArr",
+   "gTime",
+   "hg",
+   "hgtimes",
+   "hunger",
+   "numStuffed",
+   "playerInfo",
+   "prototype",
+   "push",
+   "serverTime",
+   "totalGameTime"
+  ]
+ },
+ "User.EndSaveNpc": {
+  "handlers": [
+   "## 处理函数 callBackEndNpc (90101-90111)"
+  ],
+  "request_params": [
+   "speed",
+   "hglmt",
+   "flag"
+  ],
+  "response_fields": [
+   "FishingModel",
+   "HomePlantModel",
+   "eRet",
+   "endTime",
+   "getItem",
+   "hasOwnProperty",
+   "prototype",
+   "sex"
+  ]
+ },
+ "User.FindFriend": {
+  "handlers": [
+   "## 处理函数 onSuccessFriendFind (132224-132226)"
+  ],
+  "request_params": [
+   "roleID",
+   "roleName"
+  ],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "default",
+   "eRet",
+   "getText",
+   "prototype"
+  ]
+ },
+ "User.FindFriendByID": {
+  "handlers": [
+   "## 处理函数 findFriendIdCallBack (132227-132265)"
+  ],
+  "request_params": [
+   "roleID",
+   "otherID"
+  ],
+  "response_fields": [
+   "ChiefDiscipleModel",
+   "EvName",
+   "MessageCenter",
+   "default",
+   "eRet",
+   "getText",
+   "prototype"
+  ]
+ },
+ "User.FriendDelete": {
+  "handlers": [
+   "## 处理函数 onSuccessFriendDelete (132221-132223)"
+  ],
+  "request_params": [
+   "name",
+   "flag"
+  ],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "eRet",
+   "prototype"
+  ]
+ },
+ "User.FriendList": {
+  "handlers": [
+   "## 处理函数 onSuccessFriendList (132208-132219)"
+  ],
+  "request_params": [
+   "roleID",
+   "friendType"
+  ],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "WorldChatModel",
+   "eRet",
+   "friendList",
+   "hasOwnProperty",
+   "prototype",
+   "uIds"
+  ]
+ },
+ "User.FriendRegister": {
+  "handlers": [
+   "## 处理函数 onSuccessRegistener (132273-132276)"
+  ],
+  "request_params": [
+   "roleID",
+   "roleName",
+   "roleSchool",
+   "roleArtLevel",
+   "declaration",
+   "t",
+   "operateType"
+  ],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "prototype"
+  ]
+ },
+ "User.GetBigMapSpecialEvent": {
+  "handlers": [
+   "## 处理函数 onSpecialEvents (108328-108330)"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "prototype"
+  ]
+ },
+ "User.GetBossAward": {
+  "handlers": [],
+  "request_params": [
+   "rewardDic",
+   "killReward"
+  ],
+  "response_fields": []
+ },
+ "User.GetChatAddress": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.GetOnHookFriendLis": {
+  "handlers": [
+   "## 处理函数 onGetBrList (56456-56458)"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "friendList",
+   "prototype"
+  ]
+ },
+ "User.GetRandomEventAward": {
+  "handlers": [],
+  "request_params": [
+   "adventureID",
+   "award",
+   "eventID"
+  ],
+  "response_fields": []
+ },
+ "User.GetSchoolRankList": {
+  "handlers": [
+   "## 处理函数 onGetSchoolRank (113602-113604)"
+  ],
+  "request_params": [
+   "id",
+   "school"
+  ],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "eRet",
+   "prototype"
+  ]
+ },
+ "User.GetSchoolReview": {
+  "handlers": [
+   "## 处理函数 onGetSchoolPost (113605-113610)"
+  ],
+  "request_params": [
+   "school",
+   "type",
+   "page"
+  ],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "eRet",
+   "maxPage",
+   "prototype",
+   "reviewList",
+   "type"
+  ]
+ },
+ "User.KillSelf": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.LoadGame": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.LookFishAward": {
+  "handlers": [
+   "## 处理函数 onCheckFishingRewards (51545-51553)"
+  ],
+  "request_params": [
+   "speed",
+   "fishpondID"
+  ],
+  "response_fields": [
+   "Name",
+   "awardArr",
+   "getItem",
+   "getText",
+   "prototype"
+  ]
+ },
+ "User.LookOther": {
+  "handlers": [
+   "## 处理函数 onSuccessLook (101521-101528)"
+  ],
+  "request_params": [
+   "roleID"
+  ],
+  "response_fields": [
+   "LayerMgr",
+   "PopUpMgr",
+   "addComponent",
+   "cdTime",
+   "checkType",
+   "default",
+   "eRet",
+   "prototype"
+  ]
+ },
+ "User.NewPVPBattleResult": {
+  "handlers": [
+   "## 处理函数 onUserPvpOver (101529-101535)",
+   "## 处理函数 onPvpResultCallBack (112890-112897)"
+  ],
+  "request_params": [
+   "hpmax",
+   "win",
+   "actionArr",
+   "seed",
+   "aDmgReceived",
+   "bDmgReceived"
+  ],
+  "response_fields": [
+   "CDTime",
+   "EvName",
+   "MessageCenter",
+   "RoleOtherInfo",
+   "default",
+   "eRet",
+   "getText",
+   "hasOwnProperty",
+   "prototype"
+  ]
+ },
+ "User.OnCheckBreak": {
+  "handlers": [
+   "## 处理函数 onCheckBreak (56279-56295)"
+  ],
+  "request_params": [
+   "flag",
+   "maxHP",
+   "maxMP",
+   "hglmt",
+   "speed"
+  ],
+  "response_fields": [
+   "InventoryDB",
+   "eRet",
+   "finish",
+   "gTime",
+   "hasOwnProperty",
+   "hg",
+   "hgtimes",
+   "itemAddition",
+   "prototype",
+   "roleGold",
+   "skillID",
+   "skillLevel",
+   "usedTime"
+  ]
+ },
+ "User.OnHookBreak": {
+  "handlers": [
+   "## 处理函数 onBreakReqReturn (56584-56617)"
+  ],
+  "request_params": [
+   "onHookOperate",
+   "skillID",
+   "skillLevel",
+   "hg",
+   "gTime",
+   "hgtimes"
+  ],
+  "response_fields": [
+   "Addition",
+   "RoleOtherInfo",
+   "SkillTable",
+   "Sponsor",
+   "beginTime",
+   "default",
+   "eRet",
+   "errMsg",
+   "friendName",
+   "friendSex",
+   "hasOwnProperty",
+   "itemAddition",
+   "lang",
+   "needTime",
+   "operate",
+   "prototype",
+   "serverTime",
+   "skillID",
+   "skillLevel"
+  ]
+ },
+ "User.OnlineReward": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.ReqSelfBattleInfo": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.SaveGame": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.Storehouse": {
+  "handlers": [],
+  "request_params": [
+   "groupID",
+   "flag"
+  ],
+  "response_fields": []
+ },
+ "User.TowerBattleResult": {
+  "handlers": [],
+  "request_params": [
+   "npcID",
+   "gTime",
+   "hg",
+   "hgtimes",
+   "win"
+  ],
+  "response_fields": []
+ },
+ "User.acceptCircleTask": {
+  "handlers": [
+   "## 处理函数 acccptCircleTaskCallBack (133545-133555)"
+  ],
+  "request_params": [
+   "taskID",
+   "flag"
+  ],
+  "response_fields": [
+   "RoleBaseInfo",
+   "branchid",
+   "default",
+   "eRet",
+   "getItem",
+   "hasOwnProperty",
+   "npcState",
+   "prototype",
+   "taskID",
+   "taskObj"
+  ]
+ },
+ "User.acceptTask": {
+  "handlers": [
+   "## 处理函数 getTaskCallBack (133338-133359)"
+  ],
+  "request_params": [
+   "taskID",
+   "delOrder"
+  ],
+  "response_fields": [
+   "MapBoxModel",
+   "RoleBaseInfo",
+   "default",
+   "eRet",
+   "hasOwnProperty",
+   "prototype",
+   "triggerBoxs"
+  ]
+ },
+ "User.addSpecailTask": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.boosRankList": {
+  "handlers": [
+   "## 处理函数 onGetRankList (145539-145541)"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "prototype"
+  ]
+ },
+ "User.cancelChatPk": {
+  "handlers": [],
+  "request_params": [
+   "roleUniqueId"
+  ],
+  "response_fields": []
+ },
+ "User.changeDelegateTask": {
+  "handlers": [],
+  "request_params": [
+   "taskID"
+  ],
+  "response_fields": []
+ },
+ "User.checkHireOnhook": {
+  "handlers": [],
+  "request_params": [
+   "siteID"
+  ],
+  "response_fields": []
+ },
+ "User.circleTaskAward": {
+  "handlers": [],
+  "request_params": [
+   "tIDArr",
+   "type"
+  ],
+  "response_fields": []
+ },
+ "User.clearGeSchoolClothing": {
+  "handlers": [
+   "## 处理函数 onClearCDSchool (77847-77852)"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "default",
+   "eRet",
+   "getText",
+   "prototype"
+  ]
+ },
+ "User.delegateTask": {
+  "handlers": [],
+  "request_params": [
+   "flag",
+   "name",
+   "taskID"
+  ],
+  "response_fields": []
+ },
+ "User.divorceNpc": {
+  "handlers": [
+   "## 处理函数 callBackDivorceNpc (77257-77265)"
+  ],
+  "request_params": [
+   "houseID",
+   "type"
+  ],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "default",
+   "deletePartners",
+   "eRet",
+   "getText",
+   "hasOwnProperty",
+   "npcID",
+   "prototype"
+  ]
+ },
+ "User.enterWoldBossBattle": {
+  "handlers": [
+   "## 处理函数 onGetBossData (145592-145606)"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "AttckData",
+   "BattleModel",
+   "bossCurHP",
+   "bossMaxHP",
+   "buffNum",
+   "buyNum",
+   "curAttackNum",
+   "default",
+   "eRet",
+   "flag",
+   "getText",
+   "prototype",
+   "randSeed"
+  ]
+ },
+ "User.equipSkill": {
+  "handlers": [],
+  "request_params": [
+   "skillID",
+   "skillType",
+   "hp",
+   "hplmt"
+  ],
+  "response_fields": []
+ },
+ "User.exitSchool": {
+  "handlers": [
+   "## 处理函数 exitSchoolCallBack (77888-77892)"
+  ],
+  "request_params": [
+   "npcID",
+   "taskArr"
+  ],
+  "response_fields": [
+   "RoleBaseInfo",
+   "default",
+   "getText",
+   "hasOwnProperty",
+   "length",
+   "npcIDArr",
+   "prototype",
+   "splice"
+  ]
+ },
+ "User.getCRAInfo": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.getCircleTaskAward": {
+  "handlers": [
+   "## 处理函数 getCircleTaskCallBack (133570-133581)"
+  ],
+  "request_params": [
+   "gTime"
+  ],
+  "response_fields": [
+   "Name",
+   "default",
+   "eRet",
+   "equipObj",
+   "getItem",
+   "getText",
+   "prototype",
+   "rewardArray"
+  ]
+ },
+ "User.getCircleTaskList": {
+  "handlers": [],
+  "request_params": [
+   "target"
+  ],
+  "response_fields": []
+ },
+ "User.getFinishTaskAward": {
+  "handlers": [
+   "## 处理函数 finishTaskCallBack (133383-133415)"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "MapBoxModel",
+   "RogueModel",
+   "RoleBaseInfo",
+   "clearBoxs",
+   "contribution",
+   "default",
+   "eRet",
+   "equipObj",
+   "hasOwnProperty",
+   "prototype",
+   "rewardArray",
+   "triggerBoxs"
+  ]
+ },
+ "User.getPaySignAward": {
+  "handlers": [
+   "## 处理函数 bind —— 未找到定义"
+  ],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.getSevenTaskAward": {
+  "handlers": [
+   "## 处理函数 bind —— 未找到定义"
+  ],
+  "request_params": [
+   "taskID"
+  ],
+  "response_fields": []
+ },
+ "User.getSevenTaskList": {
+  "handlers": [
+   "## 处理函数 bind —— 未找到定义"
+  ],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.hideTask": {
+  "handlers": [
+   "## 处理函数 hideTaskCallBack (133595-133600)"
+  ],
+  "request_params": [
+   "type",
+   "tIDArr"
+  ],
+  "response_fields": [
+   "EvName",
+   "MessageCenter",
+   "RoleOtherInfo",
+   "eRet",
+   "prototype"
+  ]
+ },
+ "User.hireNpcOnhook": {
+  "handlers": [],
+  "request_params": [
+   "siteID"
+  ],
+  "response_fields": []
+ },
+ "User.houseSpecial": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.joinSchool": {
+  "handlers": [
+   "## 处理函数 joinSchoolCallBack (77853-77876)"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "EvName",
+   "MapBoxModel",
+   "MessageCenter",
+   "RoleBaseInfo",
+   "cdTimeDays",
+   "clearBoxs",
+   "default",
+   "deleteTask",
+   "dialogsuccess",
+   "eRet",
+   "getItem",
+   "getText",
+   "hasOwnProperty",
+   "prototype"
+  ]
+ },
+ "User.killNpc": {
+  "handlers": [
+   "## 处理函数 callBackKilNpc (90058-90064)"
+  ],
+  "request_params": [
+   "npcIDArr",
+   "type"
+  ],
+  "response_fields": [
+   "Camp",
+   "NpcName",
+   "eRet",
+   "getItem",
+   "getText",
+   "npcIDArr",
+   "prototype"
+  ]
+ },
+ "User.login": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.marryHouse": {
+  "handlers": [
+   "## 处理函数 callBackBuyHouseEvent (77222-77229)"
+  ],
+  "request_params": [
+   "npcID",
+   "flag"
+  ],
+  "response_fields": [
+   "default",
+   "eRet",
+   "getBuildHouseObj",
+   "getText",
+   "houseID",
+   "mapid_real",
+   "prototype",
+   "type"
+  ]
+ },
+ "User.marryNpc": {
+  "handlers": [
+   "## 处理函数 callBackMarryNpcEvent (77236-77249)"
+  ],
+  "request_params": [
+   "npcID"
+  ],
+  "response_fields": [
+   "TeamModel",
+   "eRet",
+   "getItem",
+   "jineng",
+   "npcID",
+   "prototype"
+  ]
+ },
+ "User.npcRevive": {
+  "handlers": [],
+  "request_params": [
+   "type",
+   "npcIDArr"
+  ],
+  "response_fields": []
+ },
+ "User.proposeNpc": {
+  "handlers": [
+   "## 处理函数 callBackProposeNpc (77123-77128)"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "default",
+   "eRet",
+   "getText",
+   "npcID",
+   "prototype"
+  ]
+ },
+ "User.quickFinishTask": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.quicklogin": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.rankList": {
+  "handlers": [
+   "## 处理函数 onSuccessRankList (101515-101519)"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "CDTime",
+   "EvName",
+   "MessageCenter",
+   "eRet",
+   "prototype"
+  ]
+ },
+ "User.receiveNpc": {
+  "handlers": [
+   "## 处理函数 callBackReceiveNpcEvent (77230-77235)"
+  ],
+  "request_params": [
+   "type"
+  ],
+  "response_fields": [
+   "TeamModel",
+   "default",
+   "eRet",
+   "getText",
+   "npcID",
+   "prototype"
+  ]
+ },
+ "User.register": {
+  "handlers": [],
+  "request_params": [],
+  "response_fields": []
+ },
+ "User.sycnTask": {
+  "handlers": [
+   "## 处理函数 sycnTaskCallBack (133513-133520)"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "LocalStorageMgr",
+   "PlayerFinishTaskObj",
+   "RoleBaseInfo",
+   "eRet",
+   "hasOwnProperty",
+   "prototype"
+  ]
+ },
+ "User.upgradeSkill": {
+  "handlers": [],
+  "request_params": [
+   "skillID",
+   "skillArr",
+   "NPCID",
+   "flag"
+  ],
+  "response_fields": []
+ }
+}

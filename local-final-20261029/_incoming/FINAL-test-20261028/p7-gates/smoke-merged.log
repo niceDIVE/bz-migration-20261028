@@ -1,0 +1,4 @@
+PushEquip result {"eRet":1,"ItemID":7001,"ItemNum":1,"storageItem":1}
+PopEquip result {"eRet":1,"ItemID":7001,"ItemNum":1}
+
+49 passed, 0 failed.

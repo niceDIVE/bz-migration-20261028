@@ -1,0 +1,24 @@
+# User.BeginSaveNpc   (HttpConst.BEGINSAVE_NPC)
+
+## 注册点 90055: r.MessageCenter.on(a.HttpConst.BEGINSAVE_NPC, this.callBackBeginNpc, this);
+
+## 请求点 90244: p.NetMgr.http.sendRequest(a.HttpConst.BEGINSAVE_NPC, e);
+   90236: t.prototype.reqHealNpc = function(t) {
+   90237: var e = {
+   90238: npcID: t,
+   90239: mpLimit: Math.floor(h.UserModel.entity.mp.limit),
+   90240: gTime: h.UserModel.entity.totalGameTime.gameTime,
+   90241: hg: h.UserModel.entity.hunger.remaining,
+   90242: hgtimes: h.UserModel.entity.numStuffed
+   90243: };
+
+## 处理函数 callBackBeginNpc (90082-90090)
+ 90082: t.prototype.callBackBeginNpc = function(t, e) {
+ 90083: if (1 == e.eRet || 2 == e.eRet) {
+ 90084: var o = {
+ 90085: pathName: "skillsUI/HealingNpcUI",
+ 90086: scriptName: "HealingNpcUI",
+ 90087: id: e.npcID,
+ 90088: beginTime: e.beginTime,
+ 90089: endTime: e.endTime
+ 90090: };

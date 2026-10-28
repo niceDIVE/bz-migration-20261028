@@ -1,0 +1,74 @@
+# User.exchangeItem  (HttpConst.EXCHANGE_ITEM)
+# 出现 2 处
+
+ 47084: var r = cc.instantiate(n);
+ 47085: s.PopUpMgr.addPopUp(r, l.LayerMgr.popUpLayer, 1, !0);
+ 47086: r.addComponent("ExchangeBuyUI").setDatas(t.curItemObj, o.limit, 0, i);
+ 47087: });
+ 47088: }
+ 47089: }, this);
+ 47090: i.MessageCenter.on(n.HttpConst.EXCHANGE_ITEM, function(t, e) {
+ 47091: if (1 == e.eRet) {
+ 47092: i.MessageCenter.dispatch(r.EvName.EXCHANGE_ITEM_SHOP);
+ 47093: i.MessageCenter.dispatch(r.EvName.EXCHANGE_UPDATE_SHOP, e.itemID);
+ 47094: var o = h.getItem(e.itemID, "item");
+ 47095: c.default.show(p.getText(123) + p.getText(o.Name) + "x" + e.itemNum);
+ 47096: }
+ 47097: }, this);
+ 47098: };
+ 47099: t.prototype.reqExchangeItemData = function(t) {
+ 47100: this.exchangeId = t;
+ 47101: u.NetMgr.http.sendRequest(n.HttpConst.GET_CHANGE_SHOP, {
+ 47102: npcid: t
+ 47103: });
+ 47104: };
+ 47105: t.prototype.reqExchangeLimit = function(t) {
+ 47106: this.curItemObj = t;
+ 47107: u.NetMgr.http.sendRequest(n.HttpConst.GET_ITEM_DATA, {
+ 47108: itemID: t[0]
+ 47109: });
+ 47110: };
+ 47111: t.prototype.reqExchangeBuy = function(t, e) {
+ 47112: u.NetMgr.http.sendRequest(n.HttpConst.EXCHANGE_ITEM, {
+ 47113: itemID: t,
+ 47114: itemNum: e,
+ 47115: npcid: this.exchangeId
+ 47116: });
+ 47117: };
+ 47118: t.prototype.reqGardenExchange = function() {
+ 47119: u.NetMgr.http.sendRequest(n.HttpConst.GET_GARDEN_SHOP, {});
+ 47120: };
+ 47121: return t;
+ 47122: }();
+ 47123: o.ExchangeModel = new f();
+ 47124: cc._RF.pop();
+ 47125: }, {
+ 47126: "../core/events/MessageCenter": "MessageCenter",
+ 47127: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 47128: "../gameconfigs/CFMgr": "CFMgr",
+ 47129: "../gameconfigs/LangMgr": "LangMgr",
+ 47130: "../gui/uicomponents/Alert": "Alert",
+---
+ 47131: "../mgrs/BundleMgr": "BundleMgr",
+ 47132: "../mgrs/LayerMgr": "LayerMgr",
+ 47133: "../net/HttpConst": "HttpConst",
+ 47134: "../net/NetMgr": "NetMgr",
+ 47135: "../utils/EvName": "EvName"
+ 47136: } ],
+ 47137: ExpContestSkill: [ function(t, e) {
+ 47138: "use strict";
+ 47139: cc._RF.push(e, "94d98XB6UxCuKXeIe48LlxU", "ExpContestSkill");
+ 47140: function o(t, e) {
+ 47141: t.prototype = Object.create(e.prototype);
+ 47142: t.prototype.constructor = t;
+ 47143: i(t, e);
+ 47144: }
+ 47145: function i(t, e) {
+ 47146: return (i = Object.setPrototypeOf || function(t, e) {
+ 47147: t.__proto__ = e;
+ 47148: return t;
+ 47149: })(t, e);
+ 47150: }
+ 47151: var n = t("./ReckoningSkill"), r = (t("../ConfigMgr"), function(t) {
+ 47152: o(e, t);
+---

@@ -1,0 +1,51 @@
+# User.masterOutSchoolReward  (HttpConst.MASTER_OUT_SCHOOL_REWARD)
+# 出现 1 处
+
+114163: s.NetMgr.http.sendRequest(a.HttpConst.GET_MASTER_REWARD_LIST, {});
+114164: };
+114165: t.prototype.reqMasterReward = function(t) {
+114166: s.NetMgr.http.sendRequest(a.HttpConst.MASTER_REWARD, t);
+114167: };
+114168: t.prototype.reqMasterOutSchoolReward = function(t) {
+114169: s.NetMgr.http.sendRequest(a.HttpConst.MASTER_OUT_SCHOOL_REWARD, t);
+114170: };
+114171: t.prototype.reqMasterPassMerit = function(t) {
+114172: s.NetMgr.http.sendRequest(a.HttpConst.MASTER_PASS_MERIT, t);
+114173: };
+114174: t.prototype.reqPupilPassMeritReward = function() {
+114175: s.NetMgr.http.sendRequest(a.HttpConst.PUPIL_PASS_MASTER_MERIT_REWARD, {});
+114176: };
+114177: t.prototype.reqGetRemoveRedDot = function() {
+114178: s.NetMgr.http.sendRequest(a.HttpConst.GET_REMOVE_RED_DOT, {}, function() {}, !1);
+114179: };
+114180: t.prototype.getTaskListData = function() {
+114181: for (var t = [], e = this.schoolTaskData.schoolTask[this.othenSchool].taskList, o = 0; o < e.length; o++) {
+114182: var i = e[o];
+114183: -1 != i.u && i.isEgg ? t[i.u] = i : t.push(i);
+114184: }
+114185: return t;
+114186: };
+114187: t.prototype.getTaskByIndexData = function(t) {
+114188: for (var e = this.schoolTaskData.schoolTask[this.othenSchool].taskList, o = 0; o < e.length; o++) {
+114189: var i = e[o];
+114190: if (-1 != i.u && i.isEgg && i.u == t) return i;
+114191: }
+114192: return null;
+114193: };
+114194: t.prototype.getSelecSkillData = function(t) {
+114195: var e = [], o = new v.SelectSkillHelper();
+114196: o.parseData(m.SkillTable.dic);
+114197: if (0 == t) for (var i = [ 4, 5, 7, 6, 8, 9 ], r = 0; r < i.length; r++) for (var a = (l = o.getDataByType(i[r])).length - 1; a >= 0; --a) {
+114198: var s = n.getItem(l[a].id, "skill");
+114199: y.SkillModel.isSkillReplaced(l[a].id) ? l.splice(a, 1) : parseInt(l[a].id) > 0 && parseInt(l[a].id) < 7 ? e.push(l[a]) : 9 != h.RoleBaseInfo.school ? this.isMySchool(s.menpai, this.othenSchool) && e.push(l[a]) : e.push(l[a]);
+114200: } else if (1 == t) for (a = (l = o.getDataByType(3)).length - 1; a >= 0; --a) {
+114201: s = n.getItem(l[a].id, "skill");
+114202: y.SkillModel.isSkillReplaced(l[a].id) ? l.splice(a, 1) : 8 == parseInt(l[a].id) ? e.push(l[a]) : 9 != h.RoleBaseInfo.school ? this.isMySchool(s.menpai, this.othenSchool) && e.push(l[a]) : e.push(l[a]);
+114203: } else if (2 == t) {
+114204: var l;
+114205: for (a = (l = o.getDataByType(2)).length - 1; a >= 0; --a) {
+114206: s = n.getItem(l[a].id, "skill");
+114207: y.SkillModel.isSkillReplaced(l[a].id) ? l.splice(a, 1) : 7 == parseInt(l[a].id) ? e.push(l[a]) : 9 != h.RoleBaseInfo.school ? this.isMySchool(s.menpai, this.othenSchool) && e.push(l[a]) : e.push(l[a]);
+114208: }
+114209: }
+---

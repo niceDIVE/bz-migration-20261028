@@ -1,0 +1,49 @@
+# User.joinSchool   (HttpConst.JOIN_SCHOOL)
+
+## 注册点 77835: i.MessageCenter.on(r.HttpConst.JOIN_SCHOOL, this.joinSchoolCallBack, this);
+
+## 请求点 77954: 0 == t.dialogchoose ? u.NetMgr.http.sendRequest(r.HttpConst.JOIN_SCHOOL, o) : c.default.addDialogEvent(t.dialogchoose, e, null, function() {
+   77946: i.taskArr = this.getHeroTask(o);
+   77947: this.deleteTask = this.getHeroTask(o);
+   77948: if (10 != o && 11 != o) {
+   77949: var r = p.RoleOtherInfo.outSchoolAy;
+   77950: 0 == r.length ? this.sendJoinSchool(e, t, i) : 0 == o ? this.sendJoinSchool(e, t, i) : r.indexOf(o) >= 0 ? n.default.show(l.getText(1211)) : this.sendJoinSchool(e, t, i);
+   77951: } else this.sendJoinSchool(e, t, i);
+   77952: };
+   77953: e.prototype.sendJoinSchool = function(t, e, o) {
+
+## 请求点 77955: u.NetMgr.http.sendRequest(r.HttpConst.JOIN_SCHOOL, o);
+   77947: this.deleteTask = this.getHeroTask(o);
+   77948: if (10 != o && 11 != o) {
+   77949: var r = p.RoleOtherInfo.outSchoolAy;
+   77950: 0 == r.length ? this.sendJoinSchool(e, t, i) : 0 == o ? this.sendJoinSchool(e, t, i) : r.indexOf(o) >= 0 ? n.default.show(l.getText(1211)) : this.sendJoinSchool(e, t, i);
+   77951: } else this.sendJoinSchool(e, t, i);
+   77952: };
+   77953: e.prototype.sendJoinSchool = function(t, e, o) {
+   77954: 0 == t.dialogchoose ? u.NetMgr.http.sendRequest(r.HttpConst.JOIN_SCHOOL, o) : c.default.addDialogEvent(t.dialogchoose, e, null, function() {
+
+## 处理函数 joinSchoolCallBack (77853-77876)
+ 77853: e.prototype.joinSchoolCallBack = function(e, o) {
+ 77854: if (1 == o.eRet) {
+ 77855: o.hasOwnProperty("clearBoxs") && Promise.resolve().then(function() {
+ 77856: return t("../../scripts3/model3/MapBoxModel");
+ 77857: }).then(function(t) {
+ 77858: t.MapBoxModel.removeBox(o.clearBoxs);
+ 77859: });
+ 77860: a.RoleBaseInfo.masters.indexOf(this.npcId) < 0 && a.RoleBaseInfo.masters.push(this.npcId);
+ 77861: i.MessageCenter.dispatch(g.EvName.CHANGE_CV_STATE, 4);
+ 77862: this.deleteErrorTask();
+ 77863: i.MessageCenter.dispatch(g.EvName.UPDATE_PLAYER_EVENT);
+ 77864: var p = s.getItem(this.npcId, "master");
+ 77865: if (parseInt(p.dialogsuccess) > 0) {
+ 77866: var h = this;
+ 77867: c.default.addDialogEvent(p.dialogsuccess, this.npcId, function() {
+ 77868: h.deleteTask.length && n.default.show(l.getText("946"));
+ 77869: }.bind(this));
+ 77870: } else this.deleteTask.length && n.default.show(l.getText("946"));
+ 77871: this.checkTaskIsClear(p, 1);
+ 77872: } else if (5 == o.eRet) {
+ 77873: var f = o.cdTimeDays, d = {
+ 77874: 10: l.getText(6001027),
+ 77875: 11: l.getText(6001028)
+ 77876: };

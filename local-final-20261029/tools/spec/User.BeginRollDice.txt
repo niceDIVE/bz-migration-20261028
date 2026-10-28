@@ -1,0 +1,73 @@
+# User.BeginRollDice  (HttpConst.BEGIN_ROLLDICE)
+# 出现 2 处
+
+ 54223: this.numType = 0;
+ 54224: this.numbers = 0;
+ 54225: }
+ 54226: t.prototype.init = function() {
+ 54227: this.numType = 0;
+ 54228: this.numbers = 0;
+ 54229: i.MessageCenter.on(s.HttpConst.BEGIN_ROLLDICE, this.onCallBackRollDice, this);
+ 54230: i.MessageCenter.on(s.HttpConst.EXCHANFE_JETTON, this.onExchangeChip, this);
+ 54231: i.MessageCenter.on(s.HttpConst.BEGIN_DRAGON_ROLLDICE, function(t, e) {
+ 54232: 0 != e.eRet && (2 != e.eRet ? i.MessageCenter.dispatch(h.EvName.ROLL_DICE_EVENT, e) : a.default.show(r.getText("726")));
+ 54233: }, this);
+ 54234: };
+ 54235: t.prototype.reqExchangeChip = function(t, e) {
+ 54236: l.NetMgr.http.sendRequest(s.HttpConst.EXCHANFE_JETTON, {
+ 54237: roleID: c.RoleBaseInfo.roleID,
+ 54238: changeType: t,
+ 54239: changeNum: e
+ 54240: });
+ 54241: };
+ 54242: t.prototype.reqBeginDice = function(t, e, o) {
+ 54243: var i = {
+ 54244: numType: t,
+ 54245: number: e,
+ 54246: buyType: o
+ 54247: };
+ 54248: this.numType = t;
+ 54249: this.numbers = e;
+ 54250: l.NetMgr.http.sendRequest(s.HttpConst.BEGIN_ROLLDICE, i);
+ 54251: };
+ 54252: t.prototype.reqDragonBeginDice = function(t) {
+ 54253: l.NetMgr.http.sendRequest(s.HttpConst.BEGIN_DRAGON_ROLLDICE, t);
+ 54254: };
+ 54255: t.prototype.onCallBackRollDice = function(t, e) {
+ 54256: if (0 != e.eRet) if (2 != e.eRet) if (3 != e.eRet) {
+ 54257: var o = c.RoleBaseInfo.chipNum - this.numbers;
+ 54258: p.InventoryDB.setChips(o);
+ 54259: i.MessageCenter.dispatch(h.EvName.BEGIN_ROLLDICE_EVENT, e);
+ 54260: } else a.default.show(r.getText("1000")); else a.default.show(r.getText("726"));
+ 54261: };
+ 54262: t.prototype.onExchangeChip = function(t, e) {
+ 54263: e.hasOwnProperty("curGold") && p.InventoryDB.setGold(e.curGold);
+ 54264: e.hasOwnProperty("curJetton") && p.InventoryDB.setChips(e.curJetton);
+ 54265: e.hasOwnProperty("chipTimes") && (n.RoleOtherInfo.chipTimes = e.chipTimes);
+ 54266: if (1 == e.eRet) {
+ 54267: e.hasOwnProperty("getPotency") && (c.RoleBaseInfo.potentials += e.getPotency);
+ 54268: e.hasOwnProperty("getCoins") && (c.RoleBaseInfo.coins += e.getCoins);
+ 54269: } else 2 == e.eRet ? u.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(r.getText("762"));
+---
+ 54270: };
+ 54271: return t;
+ 54272: }();
+ 54273: o.GamblingModel = new f();
+ 54274: cc._RF.pop();
+ 54275: }, {
+ 54276: "../core/events/MessageCenter": "MessageCenter",
+ 54277: "../gameconfigs/LangMgr": "LangMgr",
+ 54278: "../gui/uicomponents/Alert": "Alert",
+ 54279: "../net/HttpConst": "HttpConst",
+ 54280: "../net/NetMgr": "NetMgr",
+ 54281: "../utils/EvName": "EvName",
+ 54282: "./InventoryDB": "InventoryDB",
+ 54283: "./RoleOtherInfo": "RoleOtherInfo",
+ 54284: "./StoreModel": "StoreModel",
+ 54285: "./vos/RoleBaseInfo": "RoleBaseInfo"
+ 54286: } ],
+ 54287: GameSaveModel: [ function(t, e, o) {
+ 54288: "use strict";
+ 54289: cc._RF.push(e, "7f744Z+IhNGl76W0HlFiEOM", "GameSaveModel");
+ 54290: Object.defineProperty(o, "__esModule", {
+---

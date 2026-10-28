@@ -1,0 +1,34 @@
+# User.NewPVPBattleResult   (HttpConst.USER_PVP_OVER)
+
+## 请求点 101408: s.NetMgr.http.sendRequest(a.HttpConst.USER_PVP_OVER, r);
+   101400: hpmax: n.hp.finalValue,
+   101401: win: o,
+   101402: actionArr: this.actionArr,
+   101403: seed: t.seed,
+   101404: aDmgReceived: t.data[4],
+   101405: bDmgReceived: t.data[5]
+   101406: };
+   101407: if (0 == this.isFriendPk) {
+
+## 注册点 101490: n.MessageCenter.on(r.HttpConst.USER_PVP_OVER, this.onUserPvpOver, this);
+
+## 注册点 112457: c.MessageCenter.on(_.HttpConst.USER_PVP_OVER, this.onPvpResultCallBack, this);
+
+## 处理函数 onUserPvpOver (101529-101535)
+101529: t.prototype.onUserPvpOver = function(t, e) {
+101530: if (1 == e.eRet) {
+101531: e.hasOwnProperty("CDTime") && (this.cdTime = e.CDTime);
+101532: f.RoleOtherInfo.setAllHpAndMp(e);
+101533: n.MessageCenter.dispatch(s.EvName.UPDATERANK_PK_CDTIME, e);
+101534: } else a.default.show(i.getText("933"));
+101535: };
+
+## 处理函数 onPvpResultCallBack (112890-112897)
+112890: e.prototype.onPvpResultCallBack = function(t, e) {
+112891: if (1 == e.eRet) {
+112892: e.hasOwnProperty("CDTime") && (A.RankModel.cdTime = e.CDTime);
+112893: g.RoleOtherInfo.setAllHpAndMp(e);
+112894: c.MessageCenter.dispatch(S.EvName.CHANGE_ROLE_INFO, e);
+112895: c.MessageCenter.dispatch(S.EvName.UPDATERANK, 1);
+112896: } else p.default.show(s.getText("933"));
+112897: };

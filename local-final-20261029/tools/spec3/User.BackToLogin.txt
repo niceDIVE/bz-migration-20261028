@@ -1,0 +1,13 @@
+# User.BackToLogin   (HttpConst.BACKTOLOGIN)
+
+## 注册点 70349: v.MessageCenter.on(d.HttpConst.BACKTOLOGIN, function() {}, this);
+
+## 请求点 70630: S.NetMgr.http.getSelectedHttpUrl() && S.NetMgr.http.sendRequest(d.HttpConst.BACKTOLOGIN, {
+   70622: null === (e = u.GSceneMgr.go2Scene(h.GameStates.getSavedMapID())) || void 0 === e || e.then(function() {
+   70623: C.SServerFightModel.reqLoginCrossServer(C.SServerFightModel.teamServerData);
+   70624: });
+   70625: } else t.onEnterScene();
+   70626: });
+   70627: }
+   70628: };
+   70629: e.prototype.BackToLogin = function() {

@@ -1,0 +1,97 @@
+{
+ "archivedAt": "2026-10-26T18:00:45.596Z",
+ "rules": [
+  {
+   "id": "q2-equipments-slots",
+   "field": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+   ],
+   "expect": 14,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.1"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.1"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.2"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.2"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.3"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.3"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.4"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.4"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.5"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.5"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.6"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.6"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.7"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.7"
+    ]
+   ],
+   "ev": "index.js:74785",
+   "why": "Q2：AttckData 的装备槽位改由本档 s.equipments 驱动；新存档没有装备 → 原来从抓包快照来的 1..7 槽位不再出现"
+  },
+  {
+   "id": "q2-equipments-obj",
+   "field": [
+    "equipments"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.equipments"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments"
+    ]
+   ],
+   "ev": "index.js:74785",
+   "why": "Q2：equipments 现在是\"本档无装备 → 空对象\"，空对象标记属新发路径"
+  }
+ ]
+}

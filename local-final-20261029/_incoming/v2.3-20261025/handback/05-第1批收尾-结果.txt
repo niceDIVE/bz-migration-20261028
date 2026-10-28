@@ -1,0 +1,49 @@
+第 1 批收尾结果（2026-10-25）
+
+一、拍板事项执行
+
+1. 大侠令解锁价 980 元宝：维持，未改（常量 GF_BIG_UNLOCK_PRICE = 980）。
+2. 侠客令活跃度：未接游戏内来源，仍靠维护命令 bzGrantCur（passLiveness）。
+3. 尾巴 #1：已修。
+4. 尾巴 #2：已修。
+5. 尾巴 #3：已修。
+6. BuyMount 币种：确认按客户端比价字段（RoleBaseInfo.gold）扣金条，第 1 批已改，本轮未再动。
+
+二、三条尾巴的修法与结果
+
+#1 侠客令/大侠令共用「已领」表
+   修法：键从「阶id」改成「轨道_阶id」（1_ = 侠客令，2_ = 大侠令）；
+        旧数字键在 ensureLedger 里自动迁移为 1_<id>（按侠客令，与拍板一致），幂等。
+   代码：growthFundPayload 读 claimed[track+'_'+k]；receiveGrowthReward 读写同键。
+
+#2 背包里 4003 潜能错位
+   修法：potential += 10000，并从 bag 删除 4003。修前已快照存档。
+
+#3 大侠令白送解锁
+   修法：growthBigPaid 置 0，让它按 980 元宝正常走一次购买。
+
+三、存档 diff（只列变了的字段）
+
+  快照：bz_offline_save.json.pre-tails-20261025
+        md5 b414c02264f09c237a7cb204479d6509
+
+  字段            修前            修后
+  potential       92499          102499
+  bag["4003"]     10000          已删除（键不存在）
+  growthBigPaid   1              0
+  growthClaim     2,3,4,5,      1_2,1_3,1_4,1_5,
+                  19,20,21,22    1_19,1_20,1_21,1_22
+
+  未改动：coins、gold、yuanbao、bag 其余项、skills、mounts、mountShow、alchemy。
+
+四、验证
+
+  · impl = h6271f048，selfCheck 1251 全过（failed=[]，missingRequired=[]）
+  · 验收 38/38 绿，形状冻结 C1–C8/C10–C13 全过，拒绝码 OK（动作 28）
+  · 热重载 pid 未变（6188 → 6188）
+  · 运行时确认两轨已分开：
+      getGrowupData    → 22 阶（侠客令 award1），paystata=1
+      getBigGrowupData → 22 阶（大侠令 award2），paystata=0（未解锁，解锁价 980 元宝）
+
+五、附
+  本包另含改后的 bz-rpc-server 当前版（含尾巴 #1 的代码改动）。

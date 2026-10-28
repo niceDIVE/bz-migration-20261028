@@ -1,0 +1,1 @@
+{"name":"activityshop","rows":2,"cols":["npcID","begintime","endtime","item","price"],"data":{"1009":{"npcID":1009,"begintime":1506787200,"endtime":1507478400,"item":[3017,3019,3020],"price":[10,100,1000]},"1288":{"npcID":1288,"begintime":1506787200,"endtime":4070883661,"item":[4175,4106,4220,4221,4222,4527],"price":[10,10,20,100,1000,500]}}}

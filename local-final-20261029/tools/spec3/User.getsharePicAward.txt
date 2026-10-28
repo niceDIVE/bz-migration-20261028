@@ -1,0 +1,13 @@
+# User.getsharePicAward   (HttpConst.GETSHARE_PIC_AWARD)
+
+## 注册点 64998: r.MessageCenter.on(a.HttpConst.GETSHARE_PIC_AWARD, function(t, e) {
+
+## 请求点 65443: m.NetMgr.http.sendReqWithMask(a.HttpConst.GETSHARE_PIC_AWARD, {
+   65435: };
+   65436: e.prototype.reqCanShareItem = function(t) {
+   65437: this.curItemId = t;
+   65438: m.NetMgr.http.sendReqWithMask(a.HttpConst.IS_CAN_SHARE, {
+   65439: propID: t
+   65440: });
+   65441: };
+   65442: e.prototype.reqShareReward = function() {

@@ -1,0 +1,13 @@
+# User.OpenBox   (HttpConst.OPEN_BOX_REWARD)
+
+## 注册点 54298: n.MessageCenter.on(r.HttpConst.OPEN_BOX_REWARD, function(e, o) {
+
+## 请求点 54321: a.NetMgr.http.sendRequest(r.HttpConst.OPEN_BOX_REWARD, {
+   54313: n.MessageCenter.on(r.HttpConst.SECRET_ORDER_AWARD, function(e, o) {
+   54314: t.onrSecretCdkEvent(e, o);
+   54315: }, this);
+   54316: };
+   54317: t.prototype.reqGameSaveTime = function() {
+   54318: a.NetMgr.http.sendRequest(r.HttpConst.SAVE_GAMETIME, {});
+   54319: };
+   54320: t.prototype.reqOpenBoxReward = function() {

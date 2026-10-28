@@ -1,0 +1,24 @@
+# User.divorceNpc   (HttpConst.DIVORCENPC)
+
+## 注册点 77026: i.MessageCenter.on(n.HttpConst.DIVORCENPC, this.callBackDivorceNpc, this);
+
+## 请求点 77437: _.NetMgr.http.sendRequest(n.HttpConst.DIVORCENPC, {});
+   77429: };
+   77430: e.prototype.reqBuyHouse = function(t, e) {
+   77431: _.NetMgr.http.sendRequest(n.HttpConst.BUY_HOUSE_EVENT, {
+   77432: houseID: t,
+   77433: type: e
+   77434: });
+   77435: };
+   77436: e.prototype.reqDivorceNpc = function() {
+
+## 处理函数 callBackDivorceNpc (77257-77265)
+ 77257: e.prototype.callBackDivorceNpc = function(t, e) {
+ 77258: if (1 == e.eRet) {
+ 77259: this.wifeUpdateData = {};
+ 77260: this.npcMarryState = 0;
+ 77261: this.divorceNpcMap[e.npcID] = !0;
+ 77262: i.MessageCenter.dispatch(u.EvName.DELETE_WIFE_EVENT);
+ 77263: e.hasOwnProperty("deletePartners") && T.PartnerModel.deletePartnerData(e.deletePartners);
+ 77264: } else 2 == e.eRet ? p.default.show(r.getText("1139")) : p.default.show(r.getText("1140"));
+ 77265: };

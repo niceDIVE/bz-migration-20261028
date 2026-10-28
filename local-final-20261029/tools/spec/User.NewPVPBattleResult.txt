@@ -1,0 +1,195 @@
+# User.NewPVPBattleResult  (HttpConst.USER_PVP_OVER)
+# 出现 4 处
+
+101402: actionArr: this.actionArr,
+101403: seed: t.seed,
+101404: aDmgReceived: t.data[4],
+101405: bDmgReceived: t.data[5]
+101406: };
+101407: if (0 == this.isFriendPk) {
+101408: s.NetMgr.http.sendRequest(a.HttpConst.USER_PVP_OVER, r);
+101409: n.hp.setLimit(t.hplmt);
+101410: n.mp.setRemaining(t.mp);
+101411: n.hp.setRemaining(t.hp <= 0 ? 1 : t.hp);
+101412: }
+101413: if (this.isGoodEvilPk) {
+101414: r.getargetType = 1;
+101415: s.NetMgr.http.sendRequest(a.HttpConst.GOOD_AND_EVIL_BATTLE_RESULT, r);
+101416: n.hp.setLimit(t.hplmt);
+101417: n.mp.setRemaining(t.mp);
+101418: n.hp.setRemaining(t.hp <= 0 ? 1 : t.hp);
+101419: }
+101420: if (e) {
+101421: var l = e.getComponent("BattleResultMediator");
+101422: this.judgeFightToKill(t, l);
+101423: if (l) {
+101424: l.winNodeBtn.active = l.winNodeBtn2.active = !1;
+101425: o || 2 == f.GSceneMgr.mode && (l.failNodeBtn1.active = !1);
+101426: }
+101427: }
+101428: };
+101429: e.prototype.judgeFightToKill = function(t, e) {
+101430: if (t.data[0]) {
+101431: var o = u.getItem(t.npcID, "npc");
+101432: 1189 == t.npcID || 1190 == t.npcID || 1191 == t.npcID || 1192 == t.npcID || o && 1 == o.nokill || d.ChiefDiscipleModel.firstRoleData.hasOwnProperty("id") && t.bID == d.ChiefDiscipleModel.firstRoleData.id ? e.winNodeBtn.active = e.winNodeBtn2.active = !1 : e.winNodeBtn.active = e.winNodeBtn2.active = !0;
+101433: }
+101434: };
+101435: e.prototype.processNormalResult = function(t) {
+101436: var e = this, o = this;
+101437: return new Promise(function(i) {
+101438: e.isGoodEvilPk ? i(null) : v.default.prefabs.load("BattleResultUI/normalBattle", cc.Prefab, function(e, n) {
+101439: var r = cc.instantiate(n);
+101440: _.PopUpMgr.addPopUp(r, S.LayerMgr.popUpLayer);
+101441: var a = r.getComponent(M.BattleResultMediator);
+101442: a.setResult(t);
+101443: a.resolve = o.fightEndCb;
+101444: o.fightEndCb = null;
+101445: i(r);
+101446: });
+101447: });
+101448: };
+---
+101484: }
+101485: t.prototype.init = function() {
+101486: this.checkType = 0;
+101487: this.cdTime = 0;
+101488: n.MessageCenter.on(r.HttpConst.USER_RANKLIST, this.onSuccessRankList, this);
+101489: n.MessageCenter.on(r.HttpConst.USER_LOOKOTHER, this.onSuccessLook, this);
+101490: n.MessageCenter.on(r.HttpConst.USER_PVP_OVER, this.onUserPvpOver, this);
+101491: n.MessageCenter.on(r.HttpConst.CHANGEPLACE, function(t, e) {
+101492: if (1 == e.eRet) {
+101493: n.MessageCenter.dispatch(s.EvName.UPDATERANK, 1);
+101494: a.default.show(i.getText(1121));
+101495: } else 2 == e.eRet ? a.default.show(i.getText(1119)) : 4 == e.eRet && a.default.show(i.getText(1120));
+101496: }, this);
+101497: };
+101498: t.prototype.reqRankList = function() {
+101499: l.NetMgr.http.sendRequest(r.HttpConst.USER_RANKLIST, {
+101500: roleID: c.RoleBaseInfo.roleID
+101501: }, null);
+101502: };
+101503: t.prototype.reqRankLook = function(t, e) {
+101504: this.checkType = e;
+101505: l.NetMgr.http.sendRequest(r.HttpConst.USER_LOOKOTHER, {
+101506: otherID: t
+101507: });
+101508: };
+101509: t.prototype.reqChangeRank = function(t) {
+101510: var e = {
+101511: rankNum: t
+101512: };
+101513: l.NetMgr.http.sendRequest(r.HttpConst.CHANGEPLACE, e, null, !1);
+101514: };
+101515: t.prototype.onSuccessRankList = function(t, e) {
+101516: if (1 == e.eRet) {
+101517: this.cdTime = e.CDTime;
+101518: n.MessageCenter.dispatch(s.EvName.USER_RANKLIST, e);
+101519: }
+101520: };
+101521: t.prototype.onSuccessLook = function(t, e) {
+101522: var o = this;
+101523: 1 == e.eRet && h.default.prefabs.load("comUI/RoleInfoUI", cc.Prefab, function(t, i) {
+101524: var n = cc.instantiate(i);
+101525: u.PopUpMgr.addPopUp(n, p.LayerMgr.popUpLayer, 1, !0);
+101526: n.addComponent("RankRoleInfo").showRoleInfo(e, o.checkType, o.cdTime);
+101527: });
+101528: };
+101529: t.prototype.onUserPvpOver = function(t, e) {
+101530: if (1 == e.eRet) {
+---
+112451: b.WMapAdvModel.started && this.enableAdvTriggers(!0);
+112452: };
+112453: e.prototype.addEventListeners = function() {
+112454: c.MessageCenter.on(S.EvName.REACH_DESTINATION, this.onReachDestination, this);
+112455: c.MessageCenter.on(S.EvName.BATTLE_DIALOG_EVENT, this.onFightDialogCallBack, this);
+112456: c.MessageCenter.on(S.EvName.FIGHT_OVER_EVENT, this.onFightOverCallBack, this);
+112457: c.MessageCenter.on(_.HttpConst.USER_PVP_OVER, this.onPvpResultCallBack, this);
+112458: c.MessageCenter.on(S.EvName.TASK_MOVE_NPC_EVENT, this.onNpcMoveEvent, this);
+112459: c.MessageCenter.on(S.EvName.TASK_REMOVE_NPC_EVENT, this.removeRandomNpcEvent, this);
+112460: c.MessageCenter.on(S.EvName.CHANGE_NPC_MODEL_EVENT, this.changeNpcModelImage, this);
+112461: c.MessageCenter.on(S.EvName.OPEN_BOX_REWARD, this.onOpenBoxEvent, this);
+112462: c.MessageCenter.on(S.EvName.FIGHT_TO_KILL_NPC, this.onKillNpcEvent, this);
+112463: c.MessageCenter.on(S.EvName.FINISH_TASK_NPC_STATE, this.onNpcStateEvent, this);
+112464: c.MessageCenter.on(S.EvName.UPGRADE_BED_EVENT, this.onUpgradeBedEvent, this);
+112465: c.MessageCenter.on(S.EvName.UPGRADE_STORAGE_EVENT, this.onUpgradeStorageEvent, this);
+112466: c.MessageCenter.on(S.EvName.CHANGE_PLAYER_EVENT, this.onChangePlayerEvent, this);
+112467: c.MessageCenter.on(S.EvName.PLAYER_STUDY_EVENT, this.onPlayerStudyEvent, this);
+112468: c.MessageCenter.on(S.EvName.MOVE_ON_BIG_MAP, this.moveOnBigMap, this);
+112469: c.MessageCenter.on(S.EvName.STOP_PLAYER, this.onStopPlayer, this);
+112470: c.MessageCenter.on(S.EvName.ADD_FIRST_SCHOOL_NPC, this.onAddFirstSchoolNpc, this);
+112471: c.MessageCenter.on(S.EvName.FINISH_TREASURE_EVENT, this.onRewardTreasureBox, this);
+112472: c.MessageCenter.on(S.EvName.WM_ADV_END, this.onAdventureEnd, this);
+112473: c.MessageCenter.on(S.EvName.UPDATE_PLAYER_EVENT, this.onChangeRole, this);
+112474: c.MessageCenter.on(S.EvName.HORSW_PLAYER_SHOW_DIALOG, this.horsePlayerShowDialog, this);
+112475: c.MessageCenter.on(S.EvName.ADD_COLLECT_NPC_EVENT, this.showCollectNpcs, this);
+112476: c.MessageCenter.on(S.EvName.DELETE_COLLECT_NPC_EVENT, this.deleteCollectNpc, this);
+112477: c.MessageCenter.on(S.EvName.ADD_RANDOM_NPC, this.addRandomNpc, this);
+112478: c.MessageCenter.on(S.EvName.DELETE_RANDOM_NPC, this.deleteRandomNpc, this);
+112479: c.MessageCenter.on(S.EvName.CLEAR_COLLECT_NPC_EVENT, this.deleteCopyCollectNpc, this);
+112480: c.MessageCenter.on(S.EvName.FIGHT_OVER_BACK_EVENT, this.fightBack, this);
+112481: c.MessageCenter.on(S.EvName.HIDE_NPC_EVENT, this.onHideNpcEvent, this);
+112482: c.MessageCenter.on(S.EvName.DELETE_MIST, this.deleteMist, this);
+112483: c.MessageCenter.on(S.EvName.JUMP_PLAYER, this.jumpPlayer, this);
+112484: c.MessageCenter.on(S.EvName.EXPLORE_POINT, this.explorePoint, this);
+112485: c.MessageCenter.on(S.EvName.CHANGE_PARTNER, this.changePartner, this);
+112486: c.MessageCenter.on(S.EvName.PARTNER_EVENT, this.parnterEvent, this);
+112487: c.MessageCenter.on(S.EvName.DELETE_TASK_MIST, this.deleteTaskMist, this);
+112488: c.MessageCenter.on(S.EvName.MAP_BRUSH_NPC, this.mapBrushNpc, this);
+112489: c.MessageCenter.on(S.EvName.CHANGE_MASK_LIGHT, this.changMaskLight, this);
+112490: c.MessageCenter.on(S.EvName.CHANGE_PLAYER_MOVE_STATE, this.onChangeMoveStateEvent, this);
+112491: c.MessageCenter.on(S.EvName.CHANGE_SCENE_MASK, this.onChangeSceneMask, this);
+112492: c.MessageCenter.on(S.EvName.HIDE_DART_CAR, this.onShowMiniMapOrNot, this);
+112493: c.MessageCenter.on(S.EvName.TASK_TRACK, this.onTaskTrack, this);
+112494: c.MessageCenter.on(S.EvName.ADD_EVIL_NPC_TO_SCENE, this.onAddEvilNpc2Scene, this);
+112495: c.MessageCenter.on(S.EvName.CREATE_BOX_TO_SCENE, this.generateSpecialEvents, this);
+112496: c.MessageCenter.on(S.EvName.DELEGATE_ADV_TRIGGERS, this.delegateAdvTriggers, this);
+112497: c.MessageCenter.on(S.EvName.DELETE_NODE_TASK_NPC, this.deleteNodeTaskNpc, this);
+---
+112500: c.MessageCenter.on(S.EvName.DUTY_UPDATE_NPC, this.onDutyUpdateEvt, this);
+112501: };
+112502: e.prototype.removeEventListeners = function() {
+112503: c.MessageCenter.off(S.EvName.REACH_DESTINATION, this.onReachDestination, this);
+112504: c.MessageCenter.off(S.EvName.BATTLE_DIALOG_EVENT, this.onFightDialogCallBack, this);
+112505: c.MessageCenter.off(S.EvName.FIGHT_OVER_EVENT, this.onFightOverCallBack, this);
+112506: c.MessageCenter.off(_.HttpConst.USER_PVP_OVER, this.onPvpResultCallBack, this);
+112507: c.MessageCenter.off(S.EvName.TASK_MOVE_NPC_EVENT, this.onNpcMoveEvent, this);
+112508: c.MessageCenter.off(S.EvName.TASK_REMOVE_NPC_EVENT, this.removeRandomNpcEvent, this);
+112509: c.MessageCenter.off(S.EvName.CHANGE_NPC_MODEL_EVENT, this.changeNpcModelImage, this);
+112510: c.MessageCenter.off(S.EvName.OPEN_BOX_REWARD, this.onOpenBoxEvent, this);
+112511: c.MessageCenter.off(S.EvName.FIGHT_TO_KILL_NPC, this.onKillNpcEvent, this);
+112512: c.MessageCenter.off(S.EvName.FINISH_TASK_NPC_STATE, this.onNpcStateEvent, this);
+112513: c.MessageCenter.off(S.EvName.UPGRADE_BED_EVENT, this.onUpgradeBedEvent, this);
+112514: c.MessageCenter.off(S.EvName.UPGRADE_STORAGE_EVENT, this.onUpgradeStorageEvent, this);
+112515: c.MessageCenter.off(S.EvName.CHANGE_PLAYER_EVENT, this.onChangePlayerEvent, this);
+112516: c.MessageCenter.off(S.EvName.PLAYER_STUDY_EVENT, this.onPlayerStudyEvent, this);
+112517: c.MessageCenter.off(S.EvName.MOVE_ON_BIG_MAP, this.moveOnBigMap, this);
+112518: c.MessageCenter.off(S.EvName.STOP_PLAYER, this.onStopPlayer, this);
+112519: c.MessageCenter.off(S.EvName.ADD_FIRST_SCHOOL_NPC, this.onAddFirstSchoolNpc, this);
+112520: c.MessageCenter.off(S.EvName.FINISH_TREASURE_EVENT, this.onRewardTreasureBox, this);
+112521: c.MessageCenter.off(S.EvName.WM_ADV_END, this.onAdventureEnd, this);
+112522: c.MessageCenter.off(S.EvName.UPDATE_PLAYER_EVENT, this.onChangeRole, this);
+112523: c.MessageCenter.off(S.EvName.HORSW_PLAYER_SHOW_DIALOG, this.horsePlayerShowDialog, this);
+112524: c.MessageCenter.off(S.EvName.ADD_COLLECT_NPC_EVENT, this.showCollectNpcs, this);
+112525: c.MessageCenter.off(S.EvName.DELETE_COLLECT_NPC_EVENT, this.deleteCollectNpc, this);
+112526: c.MessageCenter.off(S.EvName.ADD_RANDOM_NPC, this.addRandomNpc, this);
+112527: c.MessageCenter.off(S.EvName.DELETE_RANDOM_NPC, this.deleteRandomNpc, this);
+112528: c.MessageCenter.off(S.EvName.CLEAR_COLLECT_NPC_EVENT, this.deleteCopyCollectNpc, this);
+112529: c.MessageCenter.off(S.EvName.FIGHT_OVER_BACK_EVENT, this.fightBack, this);
+112530: c.MessageCenter.off(S.EvName.HIDE_NPC_EVENT, this.onHideNpcEvent, this);
+112531: c.MessageCenter.off(S.EvName.DELETE_MIST, this.deleteMist, this);
+112532: c.MessageCenter.off(S.EvName.JUMP_PLAYER, this.jumpPlayer, this);
+112533: c.MessageCenter.off(S.EvName.EXPLORE_POINT, this.explorePoint, this);
+112534: c.MessageCenter.off(S.EvName.CHANGE_PARTNER, this.changePartner, this);
+112535: c.MessageCenter.off(S.EvName.PARTNER_EVENT, this.parnterEvent, this);
+112536: c.MessageCenter.off(S.EvName.DELETE_TASK_MIST, this.deleteTaskMist, this);
+112537: c.MessageCenter.off(S.EvName.MAP_BRUSH_NPC, this.mapBrushNpc, this);
+112538: c.MessageCenter.off(S.EvName.CHANGE_MASK_LIGHT, this.changMaskLight, this);
+112539: c.MessageCenter.off(S.EvName.CHANGE_PLAYER_MOVE_STATE, this.onChangeMoveStateEvent, this);
+112540: c.MessageCenter.off(S.EvName.CHANGE_SCENE_MASK, this.onChangeSceneMask, this);
+112541: c.MessageCenter.off(S.EvName.HIDE_DART_CAR, this.onShowMiniMapOrNot, this);
+112542: c.MessageCenter.off(S.EvName.TASK_TRACK, this.onTaskTrack, this);
+112543: c.MessageCenter.off(S.EvName.ADD_EVIL_NPC_TO_SCENE, this.onAddEvilNpc2Scene, this);
+112544: c.MessageCenter.off(S.EvName.CREATE_BOX_TO_SCENE, this.generateSpecialEvents, this);
+112545: c.MessageCenter.off(S.EvName.DELEGATE_ADV_TRIGGERS, this.delegateAdvTriggers, this);
+112546: c.MessageCenter.off(S.EvName.DELETE_NODE_TASK_NPC, this.deleteNodeTaskNpc, this);
+---

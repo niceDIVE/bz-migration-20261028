@@ -1,0 +1,205 @@
+{
+ "archivedAt": "2026-10-25T12:49:42.462Z",
+ "rules": [
+  {
+   "id": "c02-acceptCircleTask",
+   "action": "acceptCircleTask",
+   "field": [
+    "eRet",
+    "taskID"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "acceptCircleTask",
+     "eRet"
+    ],
+    [
+     "acceptCircleTask",
+     "taskID"
+    ]
+   ],
+   "ev": "index.js:59662"
+  },
+  {
+   "id": "c02-circleTaskAward",
+   "action": "circleTaskAward",
+   "field": [
+    "eRet",
+    "rewardObj"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "circleTaskAward",
+     "eRet"
+    ],
+    [
+     "circleTaskAward",
+     "rewardObj"
+    ]
+   ],
+   "ev": "index.js:59780"
+  },
+  {
+   "id": "c02-getCircleTaskAward",
+   "action": "getCircleTaskAward",
+   "field": [
+    "eRet",
+    "rewardArray"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "getCircleTaskAward",
+     "eRet"
+    ],
+    [
+     "getCircleTaskAward",
+     "rewardArray"
+    ]
+   ],
+   "ev": "index.js:59663"
+  },
+  {
+   "id": "c02-getRogueFinishTaskAward",
+   "action": "getRogueFinishTaskAward",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "getRogueFinishTaskAward",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60544"
+  },
+  {
+   "id": "c02-getSchoolTask",
+   "action": "getSchoolTask",
+   "field": [
+    "currentServerTime",
+    "schoolTask"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "getSchoolTask",
+     "currentServerTime"
+    ],
+    [
+     "getSchoolTask",
+     "schoolTask"
+    ]
+   ],
+   "ev": "index.js:113575"
+  },
+  {
+   "id": "c02-onekeyCompleteSchoolTask",
+   "action": "onekeyCompleteSchoolTask",
+   "field": [
+    "schoolTask",
+    "weekQuickCompleteTaskTimes",
+    "equipObj"
+   ],
+   "expect": 3,
+   "allowSigma": [
+    [
+     "onekeyCompleteSchoolTask",
+     "schoolTask"
+    ],
+    [
+     "onekeyCompleteSchoolTask",
+     "weekQuickCompleteTaskTimes"
+    ],
+    [
+     "onekeyCompleteSchoolTask",
+     "equipObj"
+    ]
+   ],
+   "ev": "index.js:113583"
+  },
+  {
+   "id": "c02-quickFinishTask",
+   "action": "quickFinishTask",
+   "field": [
+    "eRet",
+    "caidan"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "quickFinishTask",
+     "eRet"
+    ],
+    [
+     "quickFinishTask",
+     "caidan"
+    ]
+   ],
+   "ev": "index.js:43497"
+  },
+  {
+   "id": "c02-schoolTaskComplete",
+   "action": "schoolTaskComplete",
+   "field": [
+    "schoolTask",
+    "equipObj"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "schoolTaskComplete",
+     "schoolTask"
+    ],
+    [
+     "schoolTaskComplete",
+     "equipObj"
+    ]
+   ],
+   "ev": "index.js:113578"
+  },
+  {
+   "id": "c02-delegateTask",
+   "action": "delegateTask",
+   "field": [
+    "sTime"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "delegateTask",
+     "sTime"
+    ]
+   ],
+   "ev": "index.js:43506"
+  },
+  {
+   "id": "c02-rogueAcceptTask",
+   "action": "rogueAcceptTask",
+   "field": [
+    "skillId",
+    "CDTime",
+    "serverTime"
+   ],
+   "expect": 3,
+   "allowSigma": [
+    [
+     "rogueAcceptTask",
+     "skillId"
+    ],
+    [
+     "rogueAcceptTask",
+     "CDTime"
+    ],
+    [
+     "rogueAcceptTask",
+     "serverTime"
+    ]
+   ],
+   "ev": "index.js:133222"
+  }
+ ]
+}

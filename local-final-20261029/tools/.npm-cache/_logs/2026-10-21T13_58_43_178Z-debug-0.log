@@ -1,0 +1,19 @@
+0 verbose cli F:\nodejs\node.exe F:\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.6.2
+2 info using node@v24.12.0
+3 silly config load:file:F:\nodejs\node_modules\npm\npmrc
+4 silly config load:file:F:\BaoZouyxt\.npmrc
+5 silly config load:file:C:\Users\WANG\.npmrc
+6 silly config load:file:C:\Users\WANG\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm view cc-reverse version
+8 verbose argv "view" "cc-reverse" "version" "--registry" "https://registry.npmjs.org"
+9 verbose logfile logs-max:10 dir:F:\BaoZouyxt\tools\.npm-cache\_logs\2026-10-21T13_58_43_178Z-
+10 verbose logfile F:\BaoZouyxt\tools\.npm-cache\_logs\2026-10-21T13_58_43_178Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET 200 https://registry.npmjs.org/cc-reverse 1293ms (cache miss)
+13 verbose cwd F:\BaoZouyxt
+14 verbose os Windows_NT 10.0.22631
+15 verbose node v24.12.0
+16 verbose npm  v11.6.2
+17 verbose exit 0
+18 info ok

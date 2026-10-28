@@ -1,0 +1,38 @@
+[
+ {
+  "action": "BeginTraining",
+  "path": "hanyusuiTime",
+  "reason": "契约字段：客户端回调 `e.hyTime = 1e3 * n.hanyusuiTime`（index.js:120521）直接乘 1e3 转毫秒当 buff 时长，少发会算成 NaN。此前形状表里没有这一项，属于漏发。",
+  "ev": "index.js:120521"
+ },
+ {
+  "action": "BuyMarketItem",
+  "path": "note",
+  "reason": "第 1 批商店交易：元宝商城扣金条后按家法回 note.eco 新余额（客户端 ECONOMY_CHNG 监听器直写 RoleBaseInfo，与 buyShopItem 同款）；拒绝路径为空对象，客户端 131256 对 4 只弹文案不读 note。",
+  "ev": "index.js:64698"
+ },
+ {
+  "action": "BuyMount",
+  "path": "note",
+  "reason": "买坐骑扣铜钱后回 note.eco 新余额（同上家法）；客户端购买分支 32144-32161 不读 note，由通用 eco 监听器消费。",
+  "ev": "index.js:64698"
+ },
+ {
+  "action": "buySchoolShop",
+  "path": "note",
+  "reason": "门派商店扣门派贡献/发物品后回 note（buyGoodAndEvilShopItem 2676-2678 同款 ivch/eqch 绝对值回执）。",
+  "ev": "index.js:113677"
+ },
+ {
+  "action": "innBuyShop",
+  "path": "note",
+  "reason": "客栈购买扣铜钱后回 note.eco 新余额；客户端 onShopBuyItem 自己读 foodBag/cookBook 绝对清单，eco 由通用监听器消费。",
+  "ev": "index.js:64698"
+ },
+ {
+  "action": "fashionEffect",
+  "path": "fashionEffect",
+  "reason": "客户端 onFashionEffect 读 e.fashionEffect 控制 fashion.active（0=关是合法业务值）；形状表 switch 分类对本动作是误报，参照 getChangeShop.shopObj 先例按实发登记。",
+  "ev": "index.js:81481"
+ }
+]

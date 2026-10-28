@@ -1,0 +1,54 @@
+﻿Muse 接手需要的文件 —— 交付包（2026-10-27 清单 / 2026-10-28 交付）
+==============================================================
+
+一句话：清单 8 节里，真正缺的只有 2 处（hotfix-patch\package.json 没有 name/scripts；
+根目录没有 RESUME.md），已补齐；其余是复核 + 打包 + 补文档。包内不含真实凭证/存档/大包。
+
+先看这两个文件
+--------------
+1. README.md                 —— 逐节回答「清单要什么 / 包里在哪 / 状态」
+2. 变更说明.md               —— 落点表（新增/替换/原样）、我改过哪两处、怎么还原、还有什么没做
+
+目录
+----
+  00-转发说明.txt            本文件
+  README.md                  清单逐节对照
+  变更说明.md                落点表 + 偏差 + 未完成项
+  SHA256SUMS.txt             sha256  相对路径（一行一个）
+  docs\
+    01-依赖与自检说明.md     Node/安装/3 个依赖用途/四条门禁期望输出/拒绝码口径/build 预期产物
+    02-批次回执-C01-C15-C19.md   16 批一句话（做了什么｜改了哪些 handler｜存档变动）
+    03-待做批次清单.md       A 轮 12 批逐批（玩法/handler/线上名/核账/付费标注/优先级建议）
+    04-交接与护栏确认.md     系统归属·用途·分发·不能动的东西（原文）+ 本次护栏自查 + 扫描结果
+    05-批号冲突裁决.md       ★ 两份 relations.md 的批号对照与裁决（读清单前必看）
+  files\
+    补齐\  index.jsc(581,088 B)、轮询.md(2,435 B)
+    修正\  package.json(已修)、package-lock.json
+    core\  15 个核心/生成物 + build-handlers.js、build.js
+    patch-live\  handlers.js（1,639,277 B 产物，ver=hcce22f0f）
+    hotfix-patch\ README.md、install.md（原样）
+  testdata\
+    bz_offline_save.example.json   脱敏示例存档（5,767 B，C19 后状态）
+    sanitize-save.js               脱敏脚本（可复现）
+    测试用例.md                     每批用例模板 + C19 真机全链样例
+
+指纹（与交接文档一致）
+----------------------
+  core\bz-rpc-server.js      md5 0AF170DEE28739D3F6729CFAACC161C1
+  patch\live\handlers.js     md5 052639579761D5E478766E1EEB293A56
+  ver=hcce22f0f  selfCheck=1426  形状 371 动作 diff 0  acceptance 57/57
+  lint 38 发放型 / OK 36 / 白名单 2 / 待查 0   拒绝码 136 / 153 / 238
+
+仓库路径 / tag
+--------------
+  本地包：F:\BaoZouyxt\_outbox\muse-needs-20261027\
+  建议仓库内落点：incoming\muse-needs-20261027\（清单第八节给的示例）
+  建议 tag / release 名：muse-needs-20261027
+  ★ 云上尚未上传：push / 建 tag / Release 属对外可见操作，等你指定仓库或明确授权；
+    包只有 3.67 MB，可直接当一个 Release 资产。
+
+需要你拍板的三件事（详见 变更说明.md §7）
+------------------------------------------
+  1. 产物要不要重建一次（会改 built= 时间戳，产物 MD5 随之变）
+  2. （低危，建议不动）core\templates.json 里的 roleID:16374 —— 只是标识符不是凭证；core 里还有两处兜底默认，改了会连带改 ver
+  3. 下一批做哪个（建议第22批 C22〔万圣宝藏楼层〕）

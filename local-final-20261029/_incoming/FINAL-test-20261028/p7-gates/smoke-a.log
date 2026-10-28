@@ -1,0 +1,14 @@
+
+--- smoke-a-live per-batch ---
+C18: 31 pass, 0 fail
+C23: 11 pass, 0 fail
+C30: 14 pass, 0 fail
+C42: 9 pass, 0 fail
+C43: 13 pass, 0 fail
+C44: 6 pass, 0 fail
+C46: 11 pass, 0 fail
+C52: 5 pass, 0 fail
+C59: 7 pass, 0 fail
+C60: 6 pass, 0 fail
+C74: 17 pass, 0 fail
+TOTAL: 130 pass, 0 fail, 130 assertions, 32 keys

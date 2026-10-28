@@ -1,0 +1,23 @@
+# User.getSnowAward   (HttpConst.GET_SNOW_REWARD)
+
+## 请求点 122497: 0 == t.boxNum ? a.default.show(n.getText(1094)) : c.NetMgr.http.sendReqWithMask(l.HttpConst.GET_SNOW_REWARD);
+   122489: if (0 == t.boxNum) {
+   122490: a.default.show(n.getText(1094));
+   122491: return;
+   122492: }
+   122493: r.MessageCenter.dispatch(p.EvName.SNOW_BALL_PO_EVENT);
+   122494: } else if (1 == t.activeType) {
+   122495: t.setFirecrackerHP(o.hp);
+   122496: t.boxNum = o.boxnum;
+
+## 注册点 122529: r.MessageCenter.on(l.HttpConst.GET_SNOW_REWARD, function(e, o) {
+
+## 请求点 122584: c.NetMgr.http.sendReqWithMask(l.HttpConst.GET_SNOW_REWARD, e);
+   122576: };
+   122577: c.NetMgr.http.sendReqWithMask(l.HttpConst.USE_BATCH_SNOW_BALL, o);
+   122578: };
+   122579: t.prototype.reqSnowReward = function(t) {
+   122580: this.treatureId = t;
+   122581: var e = {
+   122582: roleID: h.RoleBaseInfo.roleID
+   122583: };

@@ -1,0 +1,99 @@
+# User.beginMakeMedicine  (HttpConst.BEGINE_MAKE_MEDICINE)
+# 出现 2 处
+
+102126: if (1 == e.eRet) {
+102127: p.default.addShowRewardUI1(e.hasOwnProperty("rewardArray") ? e.rewardArray : {}, 0, e.equipObj);
+102128: e.type = 1;
+102129: i.MessageCenter.dispatch(s.EvName.END_CAST_EVENT, e);
+102130: } else 2 == e.eRet && h.StoreModel.openChargeList();
+102131: }, this);
+102132: i.MessageCenter.on(a.HttpConst.BEGINE_MAKE_MEDICINE, function(t, e) {
+102133: if (1 == e.eRet) {
+102134: r.TimeMgr.sserverT = e.sTime;
+102135: r.TimeMgr.startTime = Date.now();
+102136: e.type = 3;
+102137: i.MessageCenter.dispatch(s.EvName.BEGIN_CAST_EVENT, e);
+102138: }
+102139: }, this);
+102140: i.MessageCenter.on(a.HttpConst.END_MAKE_MEDICINE, function(t, e) {
+102141: if (1 == e.eRet) {
+102142: p.default.addShowRewardUI1(e.hasOwnProperty("rewardArray") ? e.rewardArray : {}, 0, e.equipObj);
+102143: e.type = 2;
+102144: i.MessageCenter.dispatch(s.EvName.END_CAST_EVENT, e);
+102145: } else 2 == e.eRet && h.StoreModel.openChargeList();
+102146: }, this);
+102147: };
+102148: t.prototype.CheckFormula = function(t) {
+102149: for (var e = 0; e < this.formulaArr.length; e++) if (t == parseInt(this.formulaArr[e])) return !0;
+102150: return !1;
+102151: };
+102152: t.prototype.reqCheckCastState = function() {
+102153: u.NetMgr.http.sendRequest(a.HttpConst.CHECK_LIVE, {});
+102154: };
+102155: t.prototype.reqBeginRecast = function(t, e) {
+102156: var o = {
+102157: itemID: t,
+102158: quality: e
+102159: };
+102160: u.NetMgr.http.sendRequest(a.HttpConst.BEGINCAST, o);
+102161: };
+102162: t.prototype.reqEndCast = function(t) {
+102163: u.NetMgr.http.sendRequest(a.HttpConst.END_CAST, {
+102164: flag: t
+102165: });
+102166: };
+102167: t.prototype.reqBuildEquip = function(t, e) {
+102168: var o = {
+102169: itemID: t,
+102170: itemNum: e
+102171: };
+102172: u.NetMgr.http.sendRequest(a.HttpConst.BEGIN_MAKE_QUIP, o);
+---
+102178: };
+102179: t.prototype.reqBeginMakeMedicine = function(t, e) {
+102180: var o = {
+102181: itemID: t,
+102182: itemNum: e
+102183: };
+102184: u.NetMgr.http.sendRequest(a.HttpConst.BEGINE_MAKE_MEDICINE, o);
+102185: };
+102186: t.prototype.reqEndMedicine = function(t) {
+102187: u.NetMgr.http.sendRequest(a.HttpConst.END_MAKE_MEDICINE, {
+102188: flag: t
+102189: });
+102190: };
+102191: return t;
+102192: }();
+102193: o.RecastModel = new f();
+102194: cc._RF.pop();
+102195: }, {
+102196: "../core/events/MessageCenter": "MessageCenter",
+102197: "../gameconfigs/LangMgr": "LangMgr",
+102198: "../gui/uicomponents/Alert": "Alert",
+102199: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+102200: "../mgrs/TimeMgr": "TimeMgr",
+102201: "../net/HttpConst": "HttpConst",
+102202: "../net/NetMgr": "NetMgr",
+102203: "../utils/EvName": "EvName",
+102204: "./InhertEquipModel": "InhertEquipModel",
+102205: "./StoreModel": "StoreModel"
+102206: } ],
+102207: ReckoningSkill: [ function(t, e) {
+102208: "use strict";
+102209: cc._RF.push(e, "6c111fJ2RZDbbsQBsu0PGvf", "ReckoningSkill");
+102210: function o(t, e) {
+102211: t.prototype = Object.create(e.prototype);
+102212: t.prototype.constructor = t;
+102213: i(t, e);
+102214: }
+102215: function i(t, e) {
+102216: return (i = Object.setPrototypeOf || function(t, e) {
+102217: t.__proto__ = e;
+102218: return t;
+102219: })(t, e);
+102220: }
+102221: var n = t("../battleinfo/RecordTypes"), r = function(t) {
+102222: o(e, t);
+102223: function e() {
+102224: return t.apply(this, arguments) || this;
+---

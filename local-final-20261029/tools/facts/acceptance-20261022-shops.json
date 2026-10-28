@@ -1,0 +1,219 @@
+﻿{
+    "generatedAt":  "2026-10-22T19:13:42.2102538+08:00",
+    "allGreen":  true,
+    "steps":  [
+                  {
+                      "cmd":  "$env:BZ_PROBE='0'; node build-handlers.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "HANDLERS OK  ver=h3f83dba9  selfCheck=1120  bytes=770592  -\u003e patch/live/handlers.js",
+                                   "FLOW     OK  bytes=17244  -\u003e patch/live/flow.js"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\wash-points.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   T4 洗完之后 LoadGame 的 cycleObj[8] 必须反映清零结果",
+                                   "  ok   T5 WashMedicine 不得回 eRet:1/2（否则清空基础属性/弹充值）",
+                                   "  ok   T6 非法 attrID 走选择框分支，不改账本",
+                                   "",
+                                   "[wash] PASS  6/6"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\battle-npc-arr.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   T4 npcArr 必须 26 格且带 HardModel（不能回模板的旧数据）",
+                                   "  ok   T5 未知 npc 也要给 26 格数组",
+                                   "  ok   T6 eRet 必须是 1（客户端只在 1 时 prepareForBattle）",
+                                   "",
+                                   "[battle] PASS  6/6"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\premium-shop.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   T7 装备类货品走 note.eqch（[1,[type,num]]），不进背包账",
+                                   "  ok   T8 bzGrantCur：加金条/元宝，负数扣且下限 0",
+                                   "  ok   T9 LoadGame 把金条/元宝投给客户端（老档也不该是 undefined）",
+                                   "",
+                                   "[shop] PASS  9/9"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\sale-coins.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   T13 装备卖光 → note.eqch[uid] = [0]（客户端 0 开头=deleteEq）",
+                                   "  ok   T14 装备只卖一部分 → note.eqch[uid] = [1, 账本数组]",
+                                   "  ok   T15 卖混装（物品+装备）时 note 三个子表齐全且各司其职",
+                                   "",
+                                   "[sale] PASS  15/15"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\trade-buy.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   T6 沙盒 → 一次都不推，但照常记账",
+                                   "  ok   T7 note 必须落在 User.buyShopItem 里（不是信封顶层）",
+                                   "  ok   T8 LoadGame 的 baseValueAy[35] 与账本 coins 一致",
+                                   "",
+                                   "[buy] PASS  8/8"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\overlay-projection.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   T12 Repeat 任务不写 done",
+                                   "  ok   T13 出售按真实形状结算",
+                                   "  ok   T14 接任务推给活客户端",
+                                   "",
+                                   "[overlay] PASS  14/14"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\l0-envelope.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   Create 后落盘",
+                                   "  ok   落盘内容可解析且含名字",
+                                   "  ok   state() 读回同一份",
+                                   "  ok   reset 清空（无 baseValueAy）",
+                                   "[L0-2] PASS 82 项"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\l0-xhr.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   impl 缺失 → 日志可见",
+                                   "  ok   abort → readyState=4 / status=0",
+                                   "  ok   abort 事件触发",
+                                   "  ok   abort 后 send 不再改写响应",
+                                   "[L0-1] PASS 21 项"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\save-migrate.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "    \"2026-10-22-0205-pre-selfcheck-isolation\",",
+                                   "    \"2026-10-22-0232-pre-skill-target\",",
+                                   "    \"2026-10-22-0250-pre-pgr-persist\"",
+                                   "  ]",
+                                   "}"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\upgrade-skill-target.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "      1",
+                                   "    ]",
+                                   "  },",
+                                   "  \"finalPotential\": 97599",
+                                   "}"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\selfcheck-nosave.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "    \"bytes\": 668,",
+                                   "    \"sha\": \"53bb1795f255\"",
+                                   "  },",
+                                   "  \"failedNames\": []",
+                                   "}"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\selfcheck-model-push.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  \"potPushes\": [],",
+                                   "  \"setSkillCalls\": [],",
+                                   "  \"setItemCalls\": [],",
+                                   "  \"addEqCalls\": []",
+                                   "}"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\drop-table.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   T6 概率掉落可复现（random=0 全中）",
+                                   "  ok   T7 概率失败也可复现（random=0.999 只拿必得）",
+                                   "  ok   T8 数据自洽（npc→drop→条目）",
+                                   "",
+                                   "[drop] PASS  8/8"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\push-grants.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   T3 打怪掉落 → 装备走 updateEq",
+                                   "  ok   T4 沙盒实例一次都不许推",
+                                   "  ok   T5 没有客户端模型时不崩",
+                                   "",
+                                   "[push] PASS  5/5"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\useitem-branches.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   T4 note.ivch 是绝对值（20 用 1 → 19，不是 -1）",
+                                   "  ok   T5 note.skch / note.eqch 是空对象（不误派发技能/装备事件）",
+                                   "  ok   T6 包里没有的物品：eRet 仍 1、不写负库存、不带分支字段",
+                                   "",
+                                   "[useitem] PASS  6/6"
+                               ]
+                  },
+                  {
+                      "cmd":  "node test\\shop-special-exchange.js",
+                      "dir":  "F:\\BaoZouyxt\\hotfix-patch",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  ok   T9 exchangeItem：扣成本、按行发货、note.ivch 绝对值、回显真物品 id",
+                                   "  ok   T10 exchangeItem 成本不足：eRet 4、账本不变",
+                                   "  ok   T11 exchangeItem 未知行 id：eRet 4",
+                                   "",
+                                   "[shops] PASS  11/11"
+                               ]
+                  },
+                  {
+                      "cmd":  "node tools\\check_shapes.js",
+                      "dir":  "F:\\BaoZouyxt",
+                      "exitCode":  0,
+                      "tail":  [
+                                   "  - EndFish:shape-for-handler  形状表条目被手写 handler 复用",
+                                   "  - EndPlayWooks:shape-for-handler  形状表条目被手写 handler 复用",
+                                   "  - EndSaveNpc:shape-for-handler  形状表条目被手写 handler 复用",
+                                   "  - ExChangeJetton:shape-for-handler  形状表条目被手写 handler 复用",
+                                   "  - FriendList:shape-for-handler  形状表条目被手写 handler 复用"
+                               ]
+                  }
+              ]
+}

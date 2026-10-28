@@ -1,0 +1,99 @@
+# User.ChallengeRoguePVP  (HttpConst.REQ_ROGUE_PVP_BATTLE)
+# 出现 2 处
+
+104095: var t = e.call(this) || this;
+104096: t.actionArr = [];
+104097: t.syncData = null;
+104098: t.itemUseResolve = null;
+104099: t.itemSkills = [];
+104100: t.creatorRoomData = null;
+104101: s.MessageCenter.on(l.HttpConst.REQ_ROGUE_PVP_BATTLE, function(e, o) {
+104102: if (1 === o.eRet) {
+104103: c.parsePlayerData(o.EnemyData);
+104104: c.parsePlayerData(o.AttckData);
+104105: if (o.AttckData.floorBuff && (!o.AttckData.hasOwnProperty("isBoss") || 0 == o.AttckData.isBoss)) {
+104106: var i = f.getItem(o.AttckData.floorBuff, "rogue_floorbuff");
+104107: if (i) {
+104108: o.AttckData.rogueFloorBuffs = i.playerbuff;
+104109: o.EnemyData.rogueFloorBuffs = i.enemybuff;
+104110: }
+104111: }
+104112: var n = c.createPlayerBattleEntity(o.AttckData), r = c.createPlayerBattleEntity(o.EnemyData);
+104113: n.roguePvpDmg = !0;
+104114: r.roguePvpDmg = !0;
+104115: r.hp.init();
+104116: r.mp.init();
+104117: r.initialHp = r.hp.remaining;
+104118: r.initialHpLimit = r.hp.limit;
+104119: r.auto = !0;
+104120: t.initBattleSystem(n, r, Date.now());
+104121: }
+104122: }, t);
+104123: s.MessageCenter.on(m.EvName.USE_NEW_ITEM_EVENT, function() {
+104124: if (t.itemUseResolve) {
+104125: t.itemUseResolve();
+104126: t.itemUseResolve = null;
+104127: }
+104128: }, t);
+104129: s.MessageCenter.on(l.HttpConst.REQ_ROGUE_PVE_COMBAT, function(e, o) {
+104130: if (1 === o.eRet) {
+104131: t.syncData = o.attArr;
+104132: c.parsePlayerData(o.AttckData);
+104133: var i = t.generateNpcData(o.npcArr, o.npcID);
+104134: if (o.AttckData.floorBuff && (!o.AttckData.hasOwnProperty("isBoss") || 0 == o.AttckData.isBoss)) {
+104135: var n = f.getItem(o.AttckData.floorBuff, "rogue_floorbuff");
+104136: if (n) {
+104137: o.AttckData.rogueFloorBuffs = n.playerbuff;
+104138: i.rogueFloorBuffs = n.enemybuff;
+104139: }
+104140: }
+104141: var r = c.createPlayerBattleEntity(o.AttckData), a = new u();
+---
+104246: var o = t.RogueModel.entity;
+104247: if (o) {
+104248: e.hp = o.hp.remaining;
+104249: e.hplimit = o.hp.limit;
+104250: e.mp = o.mp.remaining;
+104251: }
+104252: _.BattleMgr.mode == S.BattleTypes.ROGUE_PVE ? d.NetMgr.http.sendRequest(l.HttpConst.REQ_ROGUE_PVE_COMBAT, e) : d.NetMgr.http.sendRequest(l.HttpConst.REQ_ROGUE_PVP_BATTLE, e);
+104253: });
+104254: };
+104255: o.prototype.getPanelScript = function() {
+104256: return "RoguePanel";
+104257: };
+104258: o.prototype.initBattleSystem = function(t, e, o) {
+104259: return r(this, void 0, void 0, function() {
+104260: var i, n, r, s, l, c, p, u, f;
+104261: return a(this, function(a) {
+104262: switch (a.label) {
+104263: case 0:
+104264: cc.log("seed>>>>>>>" + o);
+104265: i = new h(Number(o), t, e, !1);
+104266: n = C.MadUtilsTS.getPartner(t);
+104267: r = C.MadUtilsTS.getPartner(e);
+104268: if (n || r) {
+104269: s = [ t ];
+104270: l = [ e ];
+104271: n && s.push(n);
+104272: r && l.push(r);
+104273: i.addEntityAs(s);
+104274: i.addEntityBs(l);
+104275: }
+104276: this.bs = i;
+104277: this.curIds = [ t.battleID, e.battleID ];
+104278: c = this;
+104279: I.uiMgr.showNetworkUI();
+104280: cc.sys.garbageCollect();
+104281: return [ 4, this.loadBattleRes(t, e, n, r) ];
+104282: 
+104283: case 1:
+104284: a.sent();
+104285: p = b.default.prefabs.get(this.getPanel(), cc.Prefab);
+104286: I.uiMgr.hideNetworkUI();
+104287: u = this.battleResLoader.createFightScene();
+104288: c.btPanel = cc.instantiate(p);
+104289: (f = c.btPanel.addComponent(this.getPanelScript())).setBattleSystem(i);
+104290: c.btPanel.on(m.EvName.BATTLE_ACTION, c.listen4Action, c);
+104291: c.btPanel.on(m.EvName.GAME_COMPLETE, c.onBattleComplete, c);
+104292: E.PopUpMgr.addPopUp(c.btPanel, M.LayerMgr.popUpLayer);
+---

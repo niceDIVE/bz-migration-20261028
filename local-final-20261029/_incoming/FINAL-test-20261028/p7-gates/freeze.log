@@ -1,0 +1,13 @@
+形状冻结校验：动作 382/382，字段 356，本轮 diff 0 处
+  note  C1 getFriendPartner.notFriendPartnerData 只校分类（该动作不在 337 形状动作里，无形状条目可判发/不发）
+  note  C1 getAchieveData.groupPoints 只校分类（该动作不在 337 形状动作里，无形状条目可判发/不发）
+  note  C1 getActivityCounts.dataArr 只校分类（该动作不在 337 形状动作里，无形状条目可判发/不发）
+  note  C1 getSevenTaskList.taskObj 只校分类（该动作不在 337 形状动作里，无形状条目可判发/不发）
+  note  C7/C8 差异 0 项，全部被 0 条清单规则精确覆盖
+  note  C11 时间类形状默认值全部为 0 / 未发出
+  note  C11b 已知无 handler 的 beginTime 缺口 0 项已登记在册（新增即 FAIL）
+  note  C12 src 合法 881/1130；跨动作继承 **249 项**（尚未强制清零，等 R09 决策），样本：BeginSaveNpc.npcID ← borrowed-capture:templates.json:reqSelfBattleInfo.User.ReqSelfBattleInfo.npcID , BeginTraining.skillID ← borrowed-handler:OnCheckBreak , BuyHomeCrop.limit ← borrowed-handler:getHlexchangeItemData , BuyHomeCrop.rewardArray ← borrowed-capture:templates.json:checkBattleResult.User.CheckBattleResult.rewardArray , BuyHouseShop.itemID ← borrowed-handler:equipWash
+  note  C9a 查表键超集 371 个字段（已落盘 tools/facts/lookup-keys.json）；其中属"跨动作继承"的 57 项在 C9b 通过前**不许清**（B5 批次），样本：BeginSaveNpc.npcID , BeginTraining.skillID , BuyHouseShop.itemID , BuyMount.type , BuyTowerProp.itemID
+  note  C9b 查表键取值合法性：未实现（表名为变量的项标未定）
+  note  C13 固定时钟 2 个、全部已登记用途（主时钟 1792612412000 共 67 处）
+✅ C1–C8、C10–C13 全部通过（C9b 未实现）

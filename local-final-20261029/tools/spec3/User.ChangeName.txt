@@ -1,0 +1,13 @@
+# User.ChangeName   (HttpConst.CHANGE_NAME)
+
+## 注册点 64981: r.MessageCenter.on(a.HttpConst.CHANGE_NAME, function(t, o) {
+
+## 请求点 65463: m.NetMgr.http.sendRequest(a.HttpConst.CHANGE_NAME, {
+   65455: e.prototype.reqClientGm = function(t) {
+   65456: var e = {
+   65457: gmString: t
+   65458: };
+   65459: m.NetMgr.http.sendReqWithMask(a.HttpConst.CLIENTGMCOMMON, e);
+   65460: };
+   65461: e.prototype.reqResetNameItem = function(t) {
+   65462: this.newName = t;

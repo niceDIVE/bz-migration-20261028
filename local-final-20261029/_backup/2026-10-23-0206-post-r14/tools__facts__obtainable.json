@@ -1,0 +1,2174 @@
+{
+  "ledger": {
+    "1001": {
+      "playerEquip": 1,
+      "equipments": 1
+    },
+    "1301": {
+      "bag": 2
+    },
+    "1501": {
+      "bag": 1
+    },
+    "2001": {
+      "playerEquip": 2,
+      "equipments": 1
+    },
+    "2302": {
+      "playerEquip": 2,
+      "equipments": 1
+    },
+    "2501": {
+      "playerEquip": 1,
+      "equipments": 1
+    },
+    "2601": {
+      "playerEquip": 1,
+      "equipments": 1
+    },
+    "3003": {
+      "bag": 52
+    },
+    "3007": {
+      "bag": 13
+    },
+    "3020": {
+      "bag": 17
+    },
+    "3626": {
+      "bag": 1
+    },
+    "4014": {
+      "bag": 1
+    },
+    "4015": {
+      "bag": 1
+    },
+    "4016": {
+      "bag": 1
+    },
+    "4020": {
+      "bag": 5
+    },
+    "4101": {
+      "bag": 1
+    },
+    "7027": {
+      "bag": 1
+    }
+  },
+  "items": {
+    "1": [
+      "grant~BZ_EXCHANGE"
+    ],
+    "1001": [
+      "ledger:playerEquip",
+      "ledger:equipments",
+      "drop:npc1026",
+      "drop:npc1078",
+      "drop:npc1239",
+      "drop:npc1240",
+      "drop:npc1241",
+      "drop:npc1285",
+      "drop:npc10998",
+      "drop:npc12470",
+      "drop:+15npc",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "1004": [
+      "drop:npc1007",
+      "drop:npc3108",
+      "task:720320",
+      "task:1000010",
+      "task:1000020",
+      "task:1000030",
+      "task:1000040",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "1006": [
+      "drop:npc1057",
+      "drop:npc1058",
+      "drop:npc1060",
+      "drop:npc1061",
+      "drop:npc1174",
+      "drop:npc1210",
+      "drop:npc1222",
+      "drop:npc13187",
+      "drop:+1npc",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "1105": [
+      "drop:npc1022",
+      "drop:npc1051",
+      "drop:npc1097",
+      "drop:npc1098",
+      "drop:npc1249",
+      "drop:npc3115",
+      "drop:npc310005",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "1108": [
+      "drop:npc1033",
+      "drop:npc1066",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "1109": [
+      "drop:npc1018",
+      "drop:npc1047",
+      "drop:npc1176",
+      "drop:npc1213",
+      "task:610070",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "1204": [
+      "drop:npc1044",
+      "drop:npc1273",
+      "drop:npc2015",
+      "drop:npc13563",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "1209": [
+      "task:840140",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "1301": [
+      "ledger:bag",
+      "drop:npc2005",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "1304": [
+      "drop:npc1065",
+      "drop:npc1235",
+      "drop:npc3126",
+      "drop:npc10001",
+      "drop:npc10010",
+      "drop:npc10032",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "1407": [
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "1408": [
+      "drop:npc1017",
+      "drop:npc1019",
+      "drop:npc1214",
+      "drop:npc1274",
+      "drop:npc13628",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "1509": [
+      "drop:npc1162",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "2001": [
+      "ledger:playerEquip",
+      "ledger:equipments",
+      "drop:npc1001",
+      "drop:npc1007",
+      "drop:npc1008",
+      "drop:npc1011",
+      "drop:npc1014",
+      "drop:npc1019",
+      "drop:npc1020",
+      "drop:npc1022",
+      "drop:+163npc",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "2002": [
+      "drop:npc1006",
+      "drop:npc1017",
+      "drop:npc1040",
+      "drop:npc1076",
+      "drop:npc1077",
+      "drop:npc1078",
+      "drop:npc1079",
+      "drop:npc1081",
+      "drop:+21npc",
+      "task:720330",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "2003": [
+      "drop:npc1037",
+      "drop:npc1178",
+      "drop:npc1227",
+      "drop:npc1229",
+      "drop:npc1230",
+      "drop:npc15015",
+      "drop:npc15156",
+      "task:101590",
+      "task:101850",
+      "task:101950",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "2005": [
+      "drop:npc1085",
+      "drop:npc1087",
+      "drop:npc1088",
+      "drop:npc1089",
+      "drop:npc10760",
+      "drop:npc50282",
+      "task:1000010",
+      "task:1000020",
+      "task:1000030",
+      "task:1000040",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "2006": [
+      "drop:npc1012",
+      "drop:npc1069",
+      "drop:npc1070",
+      "drop:npc1071",
+      "drop:npc1072",
+      "drop:npc1075",
+      "drop:npc1162",
+      "drop:npc1194",
+      "drop:+3npc",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "2007": [
+      "drop:npc1021",
+      "drop:npc1116",
+      "drop:npc310004",
+      "task:720210",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "2008": [
+      "drop:npc1033",
+      "drop:npc1036",
+      "drop:npc310008",
+      "task:101710",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "2102": [
+      "drop:npc1005",
+      "task:300000",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "2114": [
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "2205": [
+      "drop:npc1073",
+      "drop:npc1074",
+      "drop:npc1075",
+      "drop:npc1175",
+      "drop:npc3029",
+      "task:1000010",
+      "task:1000020",
+      "task:1000030",
+      "task:1000040",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "2302": [
+      "ledger:playerEquip",
+      "ledger:equipments",
+      "drop:npc1001",
+      "drop:npc1228",
+      "drop:npc15548",
+      "drop:npc15689",
+      "drop:npc310003",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "2306": [
+      "task:200620",
+      "task:200760",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "2501": [
+      "ledger:playerEquip",
+      "ledger:equipments",
+      "drop:npc1002",
+      "drop:npc1005",
+      "drop:npc1038",
+      "drop:npc12484",
+      "drop:npc15549",
+      "drop:npc15690",
+      "task:1000010",
+      "task:1000020",
+      "task:1000030",
+      "task:1000040",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "2504": [
+      "drop:npc1045",
+      "task:101590",
+      "task:101850",
+      "task:101950",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3001": [
+      "drop:npc1247",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "3002": [
+      "drop:npc1248",
+      "task:200230",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3003": [
+      "ledger:bag",
+      "task:200020",
+      "grant~BZ_EXCHANGE",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3005": [
+      "task:100100",
+      "task:200070",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3006": [
+      "task:100100",
+      "task:200070",
+      "task:200220",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3007": [
+      "ledger:bag",
+      "grant~BZ_EXCHANGE",
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "3101": [
+      "shelf:NPCSHOP",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3102": [
+      "task:200030",
+      "task:620630",
+      "shelf:NPCSHOP",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_NPCSHOP",
+      "grant~BZ_TASKS"
+    ],
+    "3111": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3136": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3137": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3138": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3139": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3140": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3141": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3142": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3143": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3144": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3145": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3201": [
+      "shelf:NPCSHOP",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3202": [
+      "shelf:NPCSHOP",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3203": [
+      "task:200760",
+      "shelf:NPCSHOP",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_NPCSHOP",
+      "grant~BZ_TASKS"
+    ],
+    "3204": [
+      "task:1000070",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3401": [
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "3606": [
+      "task:610210",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3607": [
+      "task:600040",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3611": [
+      "task:610170",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3612": [
+      "task:600080",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3614": [
+      "task:610110",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3616": [
+      "task:600300",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3620": [
+      "task:600130",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3621": [
+      "task:610080",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3624": [
+      "task:600180",
+      "task:600190",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3625": [
+      "task:610040",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3626": [
+      "ledger:bag",
+      "task:100010",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3627": [
+      "task:100950",
+      "task:102790",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3641": [
+      "task:600230",
+      "task:600250",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3643": [
+      "task:610220",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3655": [
+      "task:690130",
+      "shelf:NPCSHOP",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_NPCSHOP",
+      "grant~BZ_TASKS"
+    ],
+    "3656": [
+      "task:690010",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3661": [
+      "task:690050",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3662": [
+      "task:690020",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3664": [
+      "task:690060",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3665": [
+      "task:690070",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3666": [
+      "task:690080",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3669": [
+      "task:690120",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3675": [
+      "task:690030",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3676": [
+      "task:690090",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3678": [
+      "task:690100",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3680": [
+      "task:690040",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3681": [
+      "task:690110",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3702": [
+      "task:620230",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3703": [
+      "task:620570",
+      "task:620640",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3704": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3705": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3706": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3707": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3708": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3709": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3710": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3711": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3712": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3713": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "3723": [
+      "task:610340",
+      "grant~BZ_TASKS"
+    ],
+    "3740": [
+      "task:610270",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "3741": [
+      "task:690140",
+      "shelf:NPCSHOP",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_NPCSHOP",
+      "grant~BZ_TASKS"
+    ],
+    "4001": [
+      "grant~BZ_EXCHANGE"
+    ],
+    "4005": [
+      "shelf:NPCSHOP",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4007": [
+      "shelf:NPCSHOP",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4008": [
+      "task:200240",
+      "shelf:NPCSHOP",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_NPCSHOP",
+      "grant~BZ_TASKS"
+    ],
+    "4013": [
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "4014": [
+      "ledger:bag",
+      "task:100140",
+      "grant~BZ_TASKS"
+    ],
+    "4015": [
+      "ledger:bag",
+      "task:100140",
+      "grant~BZ_TASKS"
+    ],
+    "4016": [
+      "ledger:bag",
+      "task:100160",
+      "grant~BZ_TASKS"
+    ],
+    "4017": [
+      "task:100350",
+      "grant~BZ_TASKS"
+    ],
+    "4018": [
+      "task:200150",
+      "task:200170",
+      "grant~BZ_TASKS"
+    ],
+    "4019": [
+      "task:101150",
+      "grant~BZ_TASKS"
+    ],
+    "4020": [
+      "ledger:bag",
+      "task:100350",
+      "grant~BZ_TASKS"
+    ],
+    "4021": [
+      "task:700030",
+      "grant~BZ_TASKS"
+    ],
+    "4022": [
+      "task:100470",
+      "grant~BZ_TASKS"
+    ],
+    "4023": [
+      "task:100540",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "4024": [
+      "task:700080",
+      "grant~BZ_TASKS"
+    ],
+    "4025": [
+      "task:700090",
+      "grant~BZ_TASKS"
+    ],
+    "4026": [
+      "task:700100",
+      "task:700220",
+      "grant~BZ_TASKS"
+    ],
+    "4027": [
+      "task:700110",
+      "grant~BZ_TASKS"
+    ],
+    "4028": [
+      "task:100630",
+      "grant~BZ_TASKS"
+    ],
+    "4029": [
+      "task:740010",
+      "grant~BZ_TASKS"
+    ],
+    "4030": [
+      "task:740220",
+      "grant~BZ_TASKS"
+    ],
+    "4031": [
+      "task:740120",
+      "grant~BZ_TASKS"
+    ],
+    "4032": [
+      "task:770160",
+      "grant~BZ_TASKS"
+    ],
+    "4033": [
+      "task:100680",
+      "task:101190",
+      "task:101230",
+      "task:101270",
+      "task:101310",
+      "task:101350",
+      "task:101390",
+      "task:101430",
+      "task:+2",
+      "grant~BZ_TASKS"
+    ],
+    "4034": [
+      "task:770110",
+      "grant~BZ_TASKS"
+    ],
+    "4035": [
+      "task:200100",
+      "task:200110",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "4038": [
+      "task:840110",
+      "grant~BZ_TASKS"
+    ],
+    "4039": [
+      "task:840120",
+      "grant~BZ_TASKS"
+    ],
+    "4040": [
+      "task:840130",
+      "grant~BZ_TASKS"
+    ],
+    "4041": [
+      "task:720500",
+      "task:840060",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "4042": [
+      "task:840080",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "4043": [
+      "task:840140",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "4044": [
+      "task:840050",
+      "grant~BZ_TASKS"
+    ],
+    "4045": [
+      "task:840050",
+      "grant~BZ_TASKS"
+    ],
+    "4046": [
+      "task:101100",
+      "grant~BZ_TASKS"
+    ],
+    "4047": [
+      "task:101090",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "4048": [
+      "task:101000",
+      "shelf:NPCSHOP",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_NPCSHOP",
+      "grant~BZ_TASKS"
+    ],
+    "4050": [
+      "task:600070",
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP",
+      "grant~BZ_TASKS"
+    ],
+    "4059": [
+      "grant~BZ_EXCHANGE"
+    ],
+    "4060": [
+      "grant~BZ_EXCHANGE"
+    ],
+    "4061": [
+      "grant~BZ_EXCHANGE"
+    ],
+    "4090": [
+      "task:101590",
+      "task:101850",
+      "task:101950",
+      "grant~BZ_TASKS"
+    ],
+    "4095": [
+      "task:100290",
+      "grant~BZ_TASKS"
+    ],
+    "4097": [
+      "task:600310",
+      "grant~BZ_TASKS"
+    ],
+    "4098": [
+      "task:610140",
+      "grant~BZ_TASKS"
+    ],
+    "4099": [
+      "task:610130",
+      "grant~BZ_TASKS"
+    ],
+    "4100": [
+      "task:610170",
+      "grant~BZ_TASKS"
+    ],
+    "4101": [
+      "ledger:bag",
+      "task:610010",
+      "grant~BZ_TASKS"
+    ],
+    "4102": [
+      "task:610020",
+      "grant~BZ_TASKS"
+    ],
+    "4103": [
+      "task:610030",
+      "grant~BZ_TASKS"
+    ],
+    "4105": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4106": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4111": [
+      "task:800040",
+      "grant~BZ_TASKS"
+    ],
+    "4112": [
+      "task:800140",
+      "grant~BZ_TASKS"
+    ],
+    "4113": [
+      "task:800250",
+      "task:800260",
+      "grant~BZ_TASKS"
+    ],
+    "4114": [
+      "task:800070",
+      "grant~BZ_TASKS"
+    ],
+    "4115": [
+      "task:800090",
+      "grant~BZ_TASKS"
+    ],
+    "4116": [
+      "task:101540",
+      "task:101820",
+      "task:101920",
+      "grant~BZ_TASKS"
+    ],
+    "4117": [
+      "task:101590",
+      "task:101850",
+      "task:101950",
+      "grant~BZ_TASKS"
+    ],
+    "4118": [
+      "task:101760",
+      "task:101770",
+      "task:101890",
+      "grant~BZ_TASKS"
+    ],
+    "4119": [
+      "task:102080",
+      "task:102090",
+      "grant~BZ_TASKS"
+    ],
+    "4120": [
+      "task:102640",
+      "task:102680",
+      "grant~BZ_TASKS"
+    ],
+    "4121": [
+      "task:200320",
+      "task:200330",
+      "grant~BZ_TASKS"
+    ],
+    "4122": [
+      "task:200540",
+      "grant~BZ_TASKS"
+    ],
+    "4123": [
+      "task:200450",
+      "task:200480",
+      "grant~BZ_TASKS"
+    ],
+    "4124": [
+      "task:200610",
+      "grant~BZ_TASKS"
+    ],
+    "4125": [
+      "task:200690",
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP",
+      "grant~BZ_TASKS"
+    ],
+    "4126": [
+      "task:820220",
+      "grant~BZ_TASKS"
+    ],
+    "4127": [
+      "task:200730",
+      "grant~BZ_TASKS"
+    ],
+    "4128": [
+      "task:200750",
+      "grant~BZ_TASKS"
+    ],
+    "4129": [
+      "task:720400",
+      "grant~BZ_TASKS"
+    ],
+    "4130": [
+      "task:720410",
+      "grant~BZ_TASKS"
+    ],
+    "4131": [
+      "task:720390",
+      "grant~BZ_TASKS"
+    ],
+    "4132": [
+      "task:720390",
+      "grant~BZ_TASKS"
+    ],
+    "4133": [
+      "task:720420",
+      "grant~BZ_TASKS"
+    ],
+    "4134": [
+      "task:102770",
+      "task:102780",
+      "grant~BZ_TASKS"
+    ],
+    "4145": [
+      "task:820070",
+      "task:820140",
+      "grant~BZ_TASKS"
+    ],
+    "4156": [
+      "task:102900",
+      "grant~BZ_TASKS"
+    ],
+    "4157": [
+      "task:102900",
+      "grant~BZ_TASKS"
+    ],
+    "4158": [
+      "task:102910",
+      "grant~BZ_TASKS"
+    ],
+    "4159": [
+      "task:102990",
+      "grant~BZ_TASKS"
+    ],
+    "4160": [
+      "task:103150",
+      "grant~BZ_TASKS"
+    ],
+    "4161": [
+      "task:102980",
+      "task:103010",
+      "grant~BZ_TASKS"
+    ],
+    "4162": [
+      "task:203070",
+      "grant~BZ_TASKS"
+    ],
+    "4163": [
+      "task:203050",
+      "task:203080",
+      "task:203140",
+      "grant~BZ_TASKS"
+    ],
+    "4164": [
+      "task:203090",
+      "grant~BZ_TASKS"
+    ],
+    "4165": [
+      "task:204070",
+      "grant~BZ_TASKS"
+    ],
+    "4166": [
+      "task:204120",
+      "grant~BZ_TASKS"
+    ],
+    "4167": [
+      "task:204150",
+      "grant~BZ_TASKS"
+    ],
+    "4168": [
+      "task:203100",
+      "task:203110",
+      "grant~BZ_TASKS"
+    ],
+    "4169": [
+      "task:200980",
+      "grant~BZ_TASKS"
+    ],
+    "4170": [
+      "task:103490",
+      "grant~BZ_TASKS"
+    ],
+    "4171": [
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "4172": [
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "4204": [
+      "task:620060",
+      "grant~BZ_TASKS"
+    ],
+    "4205": [
+      "task:620050",
+      "grant~BZ_TASKS"
+    ],
+    "4207": [
+      "task:620550",
+      "grant~BZ_TASKS"
+    ],
+    "4209": [
+      "task:610330",
+      "grant~BZ_TASKS"
+    ],
+    "4210": [
+      "task:103780",
+      "task:103790",
+      "task:103800",
+      "grant~BZ_TASKS"
+    ],
+    "4283": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4285": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4287": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4288": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4289": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4302": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4303": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4304": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4305": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4306": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4307": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4308": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4401": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4402": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4403": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4439": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4440": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4441": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4510": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4511": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4512": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4513": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4514": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4515": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4516": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4517": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4518": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4519": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4524": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4538": [
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "4587": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "4874": [
+      "grant~BZ_EXCHANGE"
+    ],
+    "4880": [
+      "grant~BZ_EXCHANGE"
+    ],
+    "6088": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "6176": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "6230": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "6232": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "6492": [
+      "task:721320",
+      "grant~BZ_TASKS"
+    ],
+    "6625": [
+      "task:721310",
+      "grant~BZ_TASKS"
+    ],
+    "6642": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "6750": [
+      "grant~BZ_EXCHANGE"
+    ],
+    "6760": [
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "6810": [
+      "task:404550",
+      "grant~BZ_TASKS"
+    ],
+    "6811": [
+      "task:404570",
+      "grant~BZ_TASKS"
+    ],
+    "6812": [
+      "task:404640",
+      "grant~BZ_TASKS"
+    ],
+    "6833": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "6834": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "6835": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "6839": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "6842": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "6863": [
+      "task:721270",
+      "grant~BZ_TASKS"
+    ],
+    "6868": [
+      "task:721280",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "6991": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "7026": [
+      "task:100210",
+      "grant~BZ_TASKS"
+    ],
+    "7027": [
+      "ledger:bag",
+      "task:100130",
+      "grant~BZ_TASKS"
+    ],
+    "7041": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "7105": [
+      "task:1100010",
+      "grant~BZ_TASKS"
+    ],
+    "7106": [
+      "task:1100020",
+      "grant~BZ_TASKS"
+    ],
+    "7224": [
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "7225": [
+      "grant~BZ_ITEMBUYPRICE"
+    ],
+    "7226": [
+      "task:1100030",
+      "grant~BZ_TASKS"
+    ],
+    "7535": [
+      "task:100240",
+      "grant~BZ_TASKS"
+    ],
+    "7536": [
+      "task:100300",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "7537": [
+      "task:100330",
+      "grant~BZ_ITEMBUYPRICE",
+      "grant~BZ_TASKS"
+    ],
+    "7538": [
+      "task:101050",
+      "grant~BZ_TASKS"
+    ],
+    "8994": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "8997": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "9012": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "9150": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "9154": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ],
+    "9169": [
+      "shelf:NPCSHOP",
+      "grant~BZ_NPCSHOP"
+    ]
+  },
+  "unmodeledButObtainable": [
+    1,
+    1001,
+    1004,
+    1006,
+    1105,
+    1108,
+    1109,
+    1204,
+    1209,
+    1301,
+    1304,
+    1407,
+    1408,
+    1509,
+    2001,
+    2002,
+    2003,
+    2005,
+    2006,
+    2007,
+    2008,
+    2102,
+    2114,
+    2205,
+    2302,
+    2306,
+    2501,
+    2504,
+    3111,
+    3136,
+    3137,
+    3138,
+    3139,
+    3140,
+    3141,
+    3142,
+    3143,
+    3144,
+    3145,
+    3401,
+    3606,
+    3607,
+    3611,
+    3612,
+    3614,
+    3616,
+    3620,
+    3621,
+    3624,
+    3625,
+    3641,
+    3643,
+    3655,
+    3656,
+    3661,
+    3662,
+    3664,
+    3665,
+    3666,
+    3669,
+    3675,
+    3676,
+    3678,
+    3680,
+    3681,
+    3702,
+    3703,
+    3704,
+    3705,
+    3706,
+    3707,
+    3708,
+    3709,
+    3710,
+    3711,
+    3712,
+    3713,
+    3723,
+    3741,
+    4001,
+    4005,
+    4007,
+    4008,
+    4013,
+    4014,
+    4015,
+    4016,
+    4017,
+    4018,
+    4019,
+    4020,
+    4021,
+    4022,
+    4023,
+    4024,
+    4025,
+    4026,
+    4027,
+    4028,
+    4029,
+    4030,
+    4031,
+    4032,
+    4033,
+    4034,
+    4038,
+    4039,
+    4040,
+    4041,
+    4042,
+    4044,
+    4045,
+    4046,
+    4047,
+    4048,
+    4050,
+    4059,
+    4060,
+    4061,
+    4090,
+    4095,
+    4097,
+    4098,
+    4099,
+    4100,
+    4101,
+    4102,
+    4103,
+    4105,
+    4106,
+    4111,
+    4112,
+    4113,
+    4114,
+    4115,
+    4116,
+    4117,
+    4118,
+    4119,
+    4120,
+    4121,
+    4122,
+    4123,
+    4124,
+    4125,
+    4126,
+    4127,
+    4128,
+    4129,
+    4130,
+    4131,
+    4132,
+    4133,
+    4134,
+    4145,
+    4156,
+    4157,
+    4158,
+    4159,
+    4160,
+    4161,
+    4162,
+    4163,
+    4164,
+    4165,
+    4166,
+    4167,
+    4168,
+    4169,
+    4170,
+    4171,
+    4172,
+    4204,
+    4205,
+    4207,
+    4209,
+    4210,
+    4283,
+    4285,
+    4287,
+    4288,
+    4289,
+    4302,
+    4303,
+    4304,
+    4305,
+    4306,
+    4307,
+    4308,
+    4401,
+    4402,
+    4403,
+    4439,
+    4440,
+    4441,
+    4510,
+    4511,
+    4512,
+    4513,
+    4514,
+    4515,
+    4516,
+    4517,
+    4518,
+    4519,
+    4524,
+    4538,
+    4587,
+    4874,
+    4880,
+    6088,
+    6176,
+    6230,
+    6232,
+    6492,
+    6625,
+    6642,
+    6750,
+    6760,
+    6810,
+    6811,
+    6812,
+    6833,
+    6834,
+    6835,
+    6839,
+    6842,
+    6863,
+    6868,
+    6991,
+    7026,
+    7027,
+    7041,
+    7105,
+    7106,
+    7224,
+    7225,
+    7226,
+    7535,
+    7536,
+    7537,
+    7538,
+    8994,
+    8997,
+    9012,
+    9150,
+    9154,
+    9169
+  ],
+  "stats": {
+    "script": "tools/gen_obtainable.js",
+    "generatedAt": "2026-10-22T18:03:26.565Z",
+    "durMs": 59,
+    "domain": {
+      "source": "BZ_ITEMTYPE",
+      "mode": "itemtype",
+      "note": "item 表导出里\"被任务/掉落引用到的物品 → Type\"，HANDOVER §11 的 501 个未建模物品就是 522−21；BZ_DOMAIN=all 可切成判定义的字面全域（含 2251 个域外 id）",
+      "totalItems": 522,
+      "modeledItems": 21,
+      "unmodeledItems": 501
+    },
+    "totalItems": 522,
+    "obtainableCount": 265,
+    "unmodeledCount": 501,
+    "unmodeledButObtainableCount": 248,
+    "sourceCounts": {
+      "ledger": 14,
+      "drop": 25,
+      "task": 157,
+      "shelf": 84,
+      "grant": 265,
+      "grantHigh": 265,
+      "grantLiteral": 0
+    },
+    "sourceCountsUnmodeled": {
+      "ledger": 11,
+      "drop": 23,
+      "task": 145,
+      "shelf": 79,
+      "grant": 248,
+      "grantHigh": 248,
+      "grantLiteral": 0
+    },
+    "shelfDetail": {
+      "NPCSHOP": 84,
+      "GESHOP": 0,
+      "ROGUESHOP": 0
+    },
+    "shelfDetailUnmodeled": {
+      "NPCSHOP": 79,
+      "GESHOP": 0,
+      "ROGUESHOP": 0
+    },
+    "singleSourceUnmodeledItems": {
+      "grant": 18
+    },
+    "onlyViaObtainable": {
+      "grant": 18
+    },
+    "currencyIdsInList": [
+      1,
+      4001
+    ],
+    "caveats": [
+      "N=248 里含 2 个货币 id（1,4001）：它们是 rpc-server 的 CURRENCY_IDS（钱包字段，不是背包物品，卖/兑/买的成本串里出现才被算进来），按判定义成立但没有\"物品效果\"可建模；真正要问用户的是 246 个。",
+      "Grant* 全部来自\"整 handler 高估\"：bz-rpc-server.js 里没有任何 handler 用数字字面量发货（grantLiteral=0），所以 Grant* 的每个条目都是 grant~<表名>，含义是\"该表全量物品都算可获得\"，比真实可达范围大。",
+      "addItem 的发放点直接取请求里的 itemID，没有任何内容约束 → 采信它会让 Obtainable 恒真（本域 522 个全真），故不采信，已在 unresolved 逐条披露。",
+      "域外还有 2251 个 id 按判定义可获得（不含在 items 里），它们不在 BZ_ITEMTYPE 这份 item 表导出中、没有 Type/效果列，故不参与本清单。",
+      "存档 Ledger 只认 bag / playerEquip / equipments 三个容器；若线上还有别的容器（仓库/家园背包等），本表会漏。"
+    ],
+    "tableSizes": {
+      "BZ_TASKS": 674,
+      "BZ_DROP": 249,
+      "BZ_NPCSHOP": 297,
+      "BZ_EXCHANGE": 965,
+      "BZ_GESHOP": 25,
+      "BZ_ROGUESHOP": 32,
+      "BZ_FASHIONBUY": 183,
+      "BZ_ITEMBUYPRICE": 1101,
+      "BZ_ITEMTYPE": 522,
+      "BZ_ITEMEAT": 66,
+      "BZ_ITEMFUN": 96,
+      "BZ_ITEMSCH": 67,
+      "BZ_NPCDROP": 770
+    },
+    "dropDetail": {
+      "npcs": 770,
+      "groups": 249,
+      "resolvedNpc": 770,
+      "nestedGroupExpansions": 0
+    },
+    "grantDetail": {
+      "handlerCount": 87,
+      "producerHandlers": 10,
+      "producers": [
+        {
+          "handler": "getFinishTaskAward",
+          "line": 1044,
+          "positiveSites": 1,
+          "ivchSites": 0,
+          "consumptionSites": 0,
+          "literalItems": [],
+          "tables": [
+            "BZ_TASKS"
+          ],
+          "varSites": [
+            {
+              "kind": "grantItem",
+              "expr": "rk"
+            }
+          ]
+        },
+        {
+          "handler": "BuyFashion",
+          "line": 1510,
+          "positiveSites": 1,
+          "ivchSites": 1,
+          "consumptionSites": 0,
+          "literalItems": [],
+          "tables": [
+            "BZ_FASHIONBUY"
+          ],
+          "varSites": [
+            {
+              "kind": "playerEquip",
+              "expr": "gr.id"
+            },
+            {
+              "kind": "ivch",
+              "expr": "kid"
+            }
+          ]
+        },
+        {
+          "handler": "saleItem",
+          "line": 2013,
+          "positiveSites": 1,
+          "ivchSites": 1,
+          "consumptionSites": 1,
+          "literalItems": [],
+          "tables": [],
+          "varSites": [
+            {
+              "kind": "playerEquip",
+              "expr": "id"
+            },
+            {
+              "kind": "ivch",
+              "expr": "id"
+            }
+          ]
+        },
+        {
+          "handler": "buyShopItem",
+          "line": 2100,
+          "positiveSites": 1,
+          "ivchSites": 1,
+          "consumptionSites": 0,
+          "literalItems": [],
+          "tables": [
+            "BZ_NPCSHOP",
+            "BZ_ITEMBUYPRICE"
+          ],
+          "varSites": [
+            {
+              "kind": "grantItem",
+              "expr": "itemID"
+            },
+            {
+              "kind": "ivch",
+              "expr": "itemID"
+            }
+          ]
+        },
+        {
+          "handler": "buySpecialShopItem",
+          "line": 2154,
+          "positiveSites": 1,
+          "ivchSites": 1,
+          "consumptionSites": 0,
+          "literalItems": [],
+          "tables": [
+            "BZ_NPCSHOP"
+          ],
+          "varSites": [
+            {
+              "kind": "grantItem",
+              "expr": "itemID"
+            },
+            {
+              "kind": "ivch",
+              "expr": "itemID"
+            }
+          ]
+        },
+        {
+          "handler": "BuyAcitivityShop",
+          "line": 2223,
+          "positiveSites": 1,
+          "ivchSites": 1,
+          "consumptionSites": 0,
+          "literalItems": [],
+          "tables": [
+            "BZ_NPCSHOP",
+            "BZ_EXCHANGE"
+          ],
+          "varSites": [
+            {
+              "kind": "grantItem",
+              "expr": "itemID"
+            },
+            {
+              "kind": "ivch",
+              "expr": "itemID"
+            }
+          ]
+        },
+        {
+          "handler": "exchangeItem",
+          "line": 2274,
+          "positiveSites": 1,
+          "ivchSites": 2,
+          "consumptionSites": 1,
+          "literalItems": [],
+          "tables": [
+            "BZ_EXCHANGE"
+          ],
+          "varSites": [
+            {
+              "kind": "grantItem",
+              "expr": "itemID"
+            },
+            {
+              "kind": "ivch",
+              "expr": "need[ck].id"
+            },
+            {
+              "kind": "ivch",
+              "expr": "itemID"
+            }
+          ]
+        },
+        {
+          "handler": "buyGoodAndEvilShopItem",
+          "line": 2359,
+          "positiveSites": 1,
+          "ivchSites": 1,
+          "consumptionSites": 0,
+          "literalItems": [],
+          "tables": [
+            "BZ_GESHOP"
+          ],
+          "varSites": [
+            {
+              "kind": "grantItem",
+              "expr": "gid"
+            },
+            {
+              "kind": "ivch",
+              "expr": "gid"
+            }
+          ]
+        },
+        {
+          "handler": "rgShopByItem",
+          "line": 2410,
+          "positiveSites": 1,
+          "ivchSites": 2,
+          "consumptionSites": 1,
+          "literalItems": [],
+          "tables": [
+            "BZ_ROGUESHOP"
+          ],
+          "varSites": [
+            {
+              "kind": "grantItem",
+              "expr": "row.item"
+            },
+            {
+              "kind": "ivch",
+              "expr": "row.costitem"
+            },
+            {
+              "kind": "ivch",
+              "expr": "row.item"
+            }
+          ]
+        },
+        {
+          "handler": "QuickBuyItem",
+          "line": 2442,
+          "positiveSites": 1,
+          "ivchSites": 1,
+          "consumptionSites": 0,
+          "literalItems": [],
+          "tables": [
+            "BZ_ITEMBUYPRICE"
+          ],
+          "varSites": [
+            {
+              "kind": "grantItem",
+              "expr": "itemID"
+            },
+            {
+              "kind": "ivch",
+              "expr": "itemID"
+            }
+          ]
+        }
+      ],
+      "skipped": [
+        {
+          "handler": "addItem",
+          "why": "unbounded"
+        },
+        {
+          "handler": "bzBackfillRewards",
+          "why": "maintenance"
+        }
+      ],
+      "enumerableTables": [
+        "BZ_TASKS",
+        "BZ_DROP",
+        "BZ_NPCSHOP",
+        "BZ_EXCHANGE",
+        "BZ_GESHOP",
+        "BZ_ROGUESHOP",
+        "BZ_FASHIONBUY",
+        "BZ_ITEMBUYPRICE"
+      ],
+      "lookupTablesNotCountedAsProduction": [
+        "BZ_ITEMTYPE",
+        "BZ_ITEMPRICE",
+        "BZ_ITEMEAT",
+        "BZ_ITEMFUN",
+        "BZ_ITEMSCH"
+      ],
+      "overestimateNote": "grant~<表名> 的标签 = \"整 handler 高估\"：该 handler 的发放点是变量/表查找，按 R13 §3 的规定把它引用的那张产出表里的**所有**物品都算可获得；高估范围 = 该表全量（例：buyShopItem/QuickBuyItem 高估到 BZ_ITEMBUYPRICE 全表 1101 个；exchangeItem 高估到 BZ_EXCHANGE 全表 965 个，含成本物）"
+    },
+    "save": {
+      "path": "F:\\BaoZouyxt\\_backup\\2026-10-22-2222-pre-exchange-currency\\device\\bz_offline_save.json",
+      "copiesUnderBackup": 23,
+      "mtime": "2026-10-22T14:22:07.392Z",
+      "md5Before": "fbcc240eeae1dd0cb92183f4d34a6851",
+      "md5After": "fbcc240eeae1dd0cb92183f4d34a6851",
+      "md5Unchanged": true,
+      "containers": [
+        "bag",
+        "playerEquip",
+        "equipments"
+      ]
+    },
+    "guardedFiles": [
+      {
+        "key": "save",
+        "file": "F:\\BaoZouyxt\\_backup\\2026-10-22-2222-pre-exchange-currency\\device\\bz_offline_save.json",
+        "md5Before": "fbcc240eeae1dd0cb92183f4d34a6851",
+        "md5After": "fbcc240eeae1dd0cb92183f4d34a6851",
+        "unchanged": true
+      },
+      {
+        "key": "tasks",
+        "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-tasks.generated.js",
+        "md5Before": "4486247f701441f09b84278ccdab98d5",
+        "md5After": "4486247f701441f09b84278ccdab98d5",
+        "unchanged": true
+      },
+      {
+        "key": "rpc",
+        "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+        "md5Before": "992292eb8bd9cbe025eb9668cfe076f7",
+        "md5After": "992292eb8bd9cbe025eb9668cfe076f7",
+        "unchanged": true
+      },
+      {
+        "key": "liveHandlers",
+        "file": "F:\\BaoZouyxt\\hotfix-patch\\patch\\live\\handlers.js",
+        "md5Before": "071e77c37d0f16107be892a2f7735fb0",
+        "md5After": "071e77c37d0f16107be892a2f7735fb0",
+        "unchanged": true
+      }
+    ],
+    "liveHandlers": {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\patch\\live\\handlers.js",
+      "mtime": "2026-10-22T17:59:46.118Z",
+      "bannedWord": "obtainable",
+      "absoluteHits": 2,
+      "codeHits": 0,
+      "hitsMustBe": 0,
+      "strictMode": false,
+      "hits": [
+        {
+          "offset": 676994,
+          "line": 514,
+          "inComment": true
+        },
+        {
+          "offset": 677027,
+          "line": 514,
+          "inComment": true
+        }
+      ],
+      "verdict": "pass(运行路径命中 0；绝对命中 2 全在注释内)"
+    },
+    "outOfDomainObtainable": {
+      "count": 2251,
+      "unmodeledCount": 2139,
+      "perSource": {
+        "ledger": 3,
+        "drop": 127,
+        "task": 0,
+        "shelf": 259,
+        "grant": 0,
+        "grantHigh": 2247
+      },
+      "note": "不进 items；只披露（见 unresolved[out-of-domain-obtainable]）"
+    },
+    "checks": {
+      "failed": 0,
+      "passed": 7,
+      "total": 7,
+      "items": [
+        {
+          "ok": true,
+          "kind": "hard",
+          "detail": "存档副本 md5 跑前/跑后一致（未写入）"
+        },
+        {
+          "ok": true,
+          "kind": "hard",
+          "detail": "bz-tasks.generated.js md5 未变"
+        },
+        {
+          "ok": true,
+          "kind": "hard",
+          "detail": "bz-rpc-server.js md5 未变"
+        },
+        {
+          "ok": true,
+          "kind": "hard",
+          "detail": "patch\\live\\handlers.js md5 未变"
+        },
+        {
+          "ok": true,
+          "kind": "hard",
+          "detail": "live handlers.js 里 \"obtainable\" 的运行路径命中数为 0（绝对命中 2，全部在注释内）"
+        },
+        {
+          "ok": true,
+          "kind": "hard",
+          "detail": "产物目录 = F:\\BaoZouyxt\\tools\\facts"
+        },
+        {
+          "ok": true,
+          "kind": "hard",
+          "detail": "产物文件存在"
+        }
+      ]
+    }
+  },
+  "unresolved": [
+    {
+      "kind": "handler-var-grant-no-table",
+      "handler": "saleItem",
+      "siteKinds": [
+        "playerEquip(id)",
+        "ivch(id)"
+      ],
+      "negativeSites": 1,
+      "note": "该 handler 的发放点全是\"扣减后的剩余值回写\"（bagAdd 带负号），属于**消耗端**不是产出端 → 不采信"
+    },
+    {
+      "kind": "handler-mixed-ivch",
+      "handler": "saleItem",
+      "note": "ivch 回写的键既可能是产出也可能被扣物品（本文件里 ivch 只回绝对值、不带方向），按\"整 handler 高估\"处理"
+    },
+    {
+      "kind": "handler-mixed-ivch",
+      "handler": "exchangeItem",
+      "note": "ivch 回写的键既可能是产出也可能被扣物品（本文件里 ivch 只回绝对值、不带方向），按\"整 handler 高估\"处理"
+    },
+    {
+      "kind": "handler-mixed-ivch",
+      "handler": "rgShopByItem",
+      "note": "ivch 回写的键既可能是产出也可能被扣物品（本文件里 ivch 只回绝对值、不带方向），按\"整 handler 高估\"处理"
+    },
+    {
+      "kind": "handler-unbounded-grant",
+      "handler": "addItem",
+      "expr": "id",
+      "note": "target 直接取请求里的 itemID，无任何货架/奖励表约束 → 任意物品 id 都能入库。若按判定义采信，Obtainable ≡ 全部物品（本域 522 个全真），Q1 将无裁定意义；故**不采信**，单列在此披露（这是本表唯一主动放弃的高估方向）"
+    },
+    {
+      "kind": "maintenance-handler-excluded",
+      "handler": "bzBackfillRewards",
+      "note": "只从命令通道(bz.ps1)打进来，客户端协议里没有这个动作；其产出集与 BZ_TASKS 奖励重叠，采信与否不改变 Grant* 的实质结论"
+    },
+    {
+      "kind": "out-of-domain-obtainable",
+      "count": 2251,
+      "unmodeledCount": 2139,
+      "perSource": {
+        "ledger": 3,
+        "drop": 127,
+        "task": 0,
+        "shelf": 259,
+        "grant": 0,
+        "grantHigh": 2247
+      },
+      "sample": [
+        1002,
+        1003,
+        1005,
+        1007,
+        1008,
+        1009,
+        1010,
+        1011,
+        1012,
+        1013,
+        1021,
+        1022,
+        1023,
+        1024,
+        1034,
+        1035,
+        1036,
+        1037,
+        1038,
+        1039,
+        1040,
+        1041,
+        1042,
+        1091,
+        1092,
+        1097,
+        1099,
+        1101,
+        1102,
+        1103,
+        1104,
+        1106,
+        1107,
+        1110,
+        1111,
+        1112,
+        1113,
+        1115,
+        1116,
+        1120
+      ],
+      "note": "这些 id 按判定义确实\"可获得\"，但不在 BZ_ITEMTYPE（item 表导出里被引用的 522 条）里，没有 Type/效果列可判\"未建模\"，全部算进 N 会把清单撑到两千多个。故不进 items/unmodeledButObtainable，只在此披露条数；需要时可按 labelsOf 的同一套规则复算"
+    },
+    {
+      "kind": "live-bundle-comment-hits",
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\patch\\live\\handlers.js",
+      "absoluteHits": 2,
+      "codeHits": 0,
+      "lines": [
+        514,
+        514
+      ],
+      "note": "原文要求\"obtainable 命中数必须是 0\"。实测绝对命中 2，全部落在 /** … */ 注释里（core/bz-rpc-server.js:110 的\"受影响物品清单由 tools\\gen_obtainable.js 算\"），不在执行路径/字符串常量里。该注释非本脚本所写（core 与本脚本同属只读范围），要清零必须改 core 并 rebuild；本脚本按\"运行路径命中=0\"判定，并将两者都打印出来"
+    }
+  ]
+}

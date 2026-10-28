@@ -1,0 +1,13 @@
+# User.BeginTraining   (HttpConst.BEGIN_LIANGONG)
+
+## 注册点 120515: s.MessageCenter.on(c.HttpConst.BEGIN_LIANGONG, function(o, n) {
+
+## 请求点 120762: _.NetMgr.http.sendRequest(c.HttpConst.BEGIN_LIANGONG, i);
+   120754: skillID: t,
+   120755: hg: o.hunger.remaining,
+   120756: gTime: o.totalGameTime.gameTime,
+   120757: hgtimes: o.numStuffed,
+   120758: flag: v.IceBedModel.getIceBed(),
+   120759: isCollective: e
+   120760: };
+   120761: b.CrossServiceModel.needLocalUrlAndPort(function() {

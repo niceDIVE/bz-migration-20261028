@@ -1,0 +1,18 @@
+# User.FindFriend   (HttpConst.USER_FIND_FRIEND)
+
+## 注册点 132053: i.MessageCenter.on(n.HttpConst.USER_FIND_FRIEND, this.onSuccessFriendFind, this);
+
+## 请求点 132128: a.NetMgr.http.sendRequest(n.HttpConst.USER_FIND_FRIEND, e, function() {}.bind(this), !0, !1, !0);
+   132120: 0 == t && a.NetMgr.http.sendRequest(n.HttpConst.USER_FRIEND_DELETE, o, function() {});
+   132121: });
+   132122: };
+   132123: t.prototype.reqFriendFind = function(t) {
+   132124: var e = {
+   132125: roleID: r.RoleBaseInfo.roleID,
+   132126: roleName: t
+   132127: };
+
+## 处理函数 onSuccessFriendFind (132224-132226)
+132224: t.prototype.onSuccessFriendFind = function(t, e) {
+132225: 1 == e.eRet ? i.MessageCenter.dispatch(c.EvName.USER_FIND_FRIEND, e) : s.default.show(l.getText("371"));
+132226: };

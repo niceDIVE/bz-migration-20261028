@@ -1,0 +1,13 @@
+# User.houseSpecial   (HttpConst.HOUSE_SPECIAL)
+
+## 注册点 58449: i.MessageCenter.on(r.HttpConst.HOUSE_SPECIAL, function(e, o) {
+
+## 请求点 58509: h.NetMgr.http.sendRequest(r.HttpConst.HOUSE_SPECIAL, {});
+   58501: if (0 != parseInt(t) && 1e3 != parseInt(t)) {
+   58502: this.adventEventId = t;
+   58503: this.adventData = s.getItem(this.adventEventId, "house_trigger");
+   58504: this.eventID = e[t].bTime;
+   58505: this.endTime = e[t].bTime + 1e3 * parseInt(this.adventData.continue);
+   58506: }
+   58507: };
+   58508: t.prototype.reqAdvent = function() {

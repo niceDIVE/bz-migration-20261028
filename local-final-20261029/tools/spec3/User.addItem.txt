@@ -1,0 +1,13 @@
+# User.addItem   (HttpConst.ADD_ITEM)
+
+## 注册点 64912: r.MessageCenter.on(a.HttpConst.ADD_ITEM, function(t, o) {
+
+## 请求点 65358: m.NetMgr.http.sendRequest(a.HttpConst.ADD_ITEM, o);
+   65350: itemNum: e
+   65351: }, null, !1);
+   65352: };
+   65353: e.prototype.addItem = function(t, e) {
+   65354: var o = {
+   65355: itemID: t,
+   65356: itemNum: e
+   65357: };

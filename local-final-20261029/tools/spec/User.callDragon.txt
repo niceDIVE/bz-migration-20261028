@@ -1,0 +1,99 @@
+# User.callDragon  (HttpConst.CALL_DRAGON)
+# 出现 2 处
+
+ 27021: a.MessageCenter.on(s.HttpConst.STC_ANSWERINVITEJOIN_RES, function(t, e) {
+ 27022: 0 == e.Ret && v.MultiPlayerModel.reqFindNearPlayer();
+ 27023: }, this);
+ 27024: a.MessageCenter.on(s.HttpConst.STC_ANSWERINVITEJOINTEAMNOTIFY, function(t, e) {
+ 27025: 1 == e.Answer && l.default.show(i.getText(3345).replace(/\[1\]/, g.RoleOtherInfo.changeInputWordStr(e.RoleName)));
+ 27026: }, this);
+ 27027: a.MessageCenter.on(s.HttpConst.CALL_DRAGON, this.onCallDragon, this);
+ 27028: a.MessageCenter.on(s.HttpConst.GET_DRAGON, this.onGetDragon, this);
+ 27029: a.MessageCenter.on(s.HttpConst.MAKE_WISH_DRAGON, this.onMakeWishDragon, this);
+ 27030: };
+ 27031: e.prototype.setMyteamInfoData = function(e, o) {
+ 27032: if (o.hasOwnProperty("TeamBrief")) {
+ 27033: this.teamBrief = o.TeamBrief;
+ 27034: a.MessageCenter.dispatch(c.EvName.TEAM_STATE_EVENT, {});
+ 27035: }
+ 27036: if (o.hasOwnProperty("TeamMemberList")) {
+ 27037: this.myTeamAy = this.sortTeamArray(o.TeamMemberList);
+ 27038: this.setTeamMembersMap(o.TeamMemberList);
+ 27039: a.MessageCenter.dispatch(c.EvName.TEAM_MEMBER_SHOW_EVENT, {});
+ 27040: a.MessageCenter.dispatch(c.EvName.TEAM_CHANGE_EVENT, {
+ 27041: UpdateType: 2
+ 27042: });
+ 27043: }
+ 27044: if (o.hasOwnProperty("ApplyInfoList")) {
+ 27045: this.teamApplyList = [];
+ 27046: for (var i = 0; i < o.ApplyInfoList.length; i++) {
+ 27047: var n = o.ApplyInfoList[i];
+ 27048: 0 == parseInt(n.ApplyAnswer) && this.teamApplyList.push(n);
+ 27049: }
+ 27050: this.setApplyState(this.teamApplyList.length > 0);
+ 27051: }
+ 27052: o.hasOwnProperty("TeamTianJiLockData") && b.TianJiWuXingModel.initTeamTianJiLockData(o.TeamTianJiLockData);
+ 27053: o.hasOwnProperty("FiveLinesDiagramData") && b.TianJiWuXingModel.initFiveLinesDiagramData(o.FiveLinesDiagramData);
+ 27054: o.hasOwnProperty("RoleSlot") && (this.teamSlotList = o.RoleSlot);
+ 27055: o.hasOwnProperty("OpenedGear") && (h.CopyFightModel.levelMap = o.OpenedGear);
+ 27056: o.hasOwnProperty("KilledNpc") && (h.CopyFightModel.killMasterNpc = o.KilledNpc);
+ 27057: o.hasOwnProperty("MapGearList") && h.CopyFightModel.setGearDatas(o.MapGearList);
+ 27058: u.CopyCollectModel.copyCollectItem = {};
+ 27059: if (o.hasOwnProperty("CollectionRollItemInfoList")) for (var r = o.CollectionRollItemInfoList, s = 0; s < r.length; s++) {
+ 27060: var l = parseInt(r[s].CollectionId) % 8;
+ 27061: u.CopyCollectModel.copyCollectItem[l] = r[s];
+ 27062: }
+ 27063: o.hasOwnProperty("exploreBoxInfo") && Promise.resolve().then(function() {
+ 27064: return t("../../scripts3/model3/ExploreBoxModel");
+ 27065: }).then(function(t) {
+ 27066: t.ExploreBoxModel.setData(o.exploreBoxInfo);
+ 27067: });
+---
+ 27409: e.prototype.reqMakeWishDragon = function(t) {
+ 27410: T.NetMgr.http.sendRequest(s.HttpConst.MAKE_WISH_DRAGON, {
+ 27411: option: t
+ 27412: }, null, !1);
+ 27413: };
+ 27414: e.prototype.reqCallDragon = function() {
+ 27415: T.NetMgr.http.sendRequest(s.HttpConst.CALL_DRAGON, {});
+ 27416: };
+ 27417: e.prototype.reqGetDragon = function() {
+ 27418: T.NetMgr.http.sendRequest(s.HttpConst.GET_DRAGON, {});
+ 27419: };
+ 27420: e.prototype.judgeCallDragon = function() {
+ 27421: for (var t = 0; t < 7; t++) if (0 == f.RoleBaseInfo.getItemNum(7922 + t)) return !1;
+ 27422: return !0;
+ 27423: };
+ 27424: e.prototype.onCallDragon = function(t, e) {
+ 27425: 1 != e.eRet && 4 != e.eRet || a.MessageCenter.dispatch(c.EvName.SET_DATA_DRAGON, e);
+ 27426: };
+ 27427: e.prototype.onGetDragon = function(t, e) {
+ 27428: var o = {};
+ 27429: 1 == e.eRet && 0 != e.currentDragonId && (o = e);
+ 27430: _.default.prefabs.load("dragonfubenUI/AltarUI", cc.Prefab, function(t, e) {
+ 27431: var i = cc.instantiate(e);
+ 27432: M.PopUpMgr.addPopUp(i, S.LayerMgr.popUpLayer);
+ 27433: i.addComponent("AltarUI").setData(o);
+ 27434: });
+ 27435: };
+ 27436: e.prototype.onMakeWishDragon = function(t, e) {
+ 27437: 1 == e.eRet && (e.hasOwnProperty("rewardArray") ? a.MessageCenter.dispatch(c.EvName.RESET_DRAGON, e) : a.MessageCenter.dispatch(c.EvName.NEXT_WISH_DRAGON, {}));
+ 27438: };
+ 27439: e.prototype.destroy = function() {
+ 27440: this.teamBrief = {};
+ 27441: this.myTeamAy = [];
+ 27442: this.teamApplyList = [];
+ 27443: this.teamSlotList = [];
+ 27444: this.teamMembersMap = {};
+ 27445: this.itemRender = null;
+ 27446: this.isTipApply = !1;
+ 27447: this.challengeBossID = 0;
+ 27448: this.challengeTime = 0;
+ 27449: u.CopyCollectModel.destroy();
+ 27450: };
+ 27451: return e;
+ 27452: }();
+ 27453: o.CopyTeamModel = new C();
+ 27454: cc._RF.pop();
+ 27455: }, {
+---

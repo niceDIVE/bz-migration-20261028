@@ -1,0 +1,99 @@
+# User.CheckDogPartnerPVEBattleResult  (HttpConst.REQ_DOG_PARTNER_END_BATTLE)
+# 出现 2 处
+
+ 31757: n(e, t);
+ 31758: function e(e) {
+ 31759: var o = t.call(this, e) || this;
+ 31760: d.MessageCenter.on(c.HttpConst.REQ_DOG_PARTNER_PVE_BATTLE, function(t, e) {
+ 31761: 1 === e.eRet && o.prepareForBattle(e);
+ 31762: }, o);
+ 31763: d.MessageCenter.on(c.HttpConst.REQ_DOG_PARTNER_END_BATTLE, function(t, e) {
+ 31764: if (1 === e.eRet && o.fightEndCb) {
+ 31765: o.fightEndCb(e);
+ 31766: o.dispose();
+ 31767: }
+ 31768: }, o);
+ 31769: return o;
+ 31770: }
+ 31771: e.prototype.getPanelScript = function() {
+ 31772: return "DogFightPanel";
+ 31773: };
+ 31774: e.prototype.startBattle = function(t, e) {
+ 31775: var o = l.playerInfo.entity;
+ 31776: this.pID = t;
+ 31777: h.NetMgr.http.sendRequest(c.HttpConst.REQ_DOG_PARTNER_PVE_BATTLE, {
+ 31778: fpId: t,
+ 31779: fRoleID: e,
+ 31780: mp: o.mp.remaining,
+ 31781: gTime: o.totalGameTime.gameTime,
+ 31782: hgtimes: o.numStuffed
+ 31783: });
+ 31784: };
+ 31785: e.prototype.prepareForBattle = function(t) {
+ 31786: r.parsePlayerData(t);
+ 31787: this.itemSkills = t.itemSkill;
+ 31788: var e = r.createPlayerBattleEntity(t);
+ 31789: e.itemSkills = t.itemSkill;
+ 31790: e.name = a.getText("10562");
+ 31791: var o = t.dogPartnerData.fpId, i = t.dogPartnerData.fpLv, n = u.MadUtilsTS.getPartner({
+ 31792: partner2Id: o,
+ 31793: partner2lv: i
+ 31794: });
+ 31795: n.auto = !0;
+ 31796: var l = s.getItem(o, "Friend");
+ 31797: n.fakePName = l.model;
+ 31798: this.initBattleSystem(e, n, Date.now());
+ 31799: };
+ 31800: e.prototype.doComplete = function() {
+ 31801: var t = this.bs, e = t.esced, o = t.finTarget, i = t.entityA, n = t.entityB;
+ 31802: t.entityAs && t.entityAs.length > 0 && (i = t.entityAs[0]);
+ 31803: t.entityBs && t.entityBs.length > 0 && (n = t.entityBs[0]);
+---
+ 31837: seed: t.seed,
+ 31838: aDmgReceived: t.data[4],
+ 31839: bDmgReceived: t.data[5],
+ 31840: itemSkill: this.itemSkills,
+ 31841: forwards: o
+ 31842: };
+ 31843: h.NetMgr.http.sendRequest(c.HttpConst.REQ_DOG_PARTNER_END_BATTLE, a);
+ 31844: };
+ 31845: return e;
+ 31846: }(p.Local1v1Mgr);
+ 31847: o.DogFightSingMgr = m;
+ 31848: cc._RF.pop();
+ 31849: }, {
+ 31850: "../../core/events/MessageCenter": "MessageCenter",
+ 31851: "../../gameconfigs/CFMgr": "CFMgr",
+ 31852: "../../gameconfigs/LangMgr": "LangMgr",
+ 31853: "../../gui/battle/resultscripts/rewardscripts/NormalRewards": "NormalRewards",
+ 31854: "../../models/vos/PlayerInfo": "PlayerInfo",
+ 31855: "../../net/HttpConst": "HttpConst",
+ 31856: "../../net/NetMgr": "NetMgr",
+ 31857: "../../utils/MadUtils": "MadUtils",
+ 31858: "../../utils/MadUtilsTS": "MadUtilsTS",
+ 31859: "../TimeMgr": "TimeMgr",
+ 31860: "./Local1v1Mgr": "Local1v1Mgr"
+ 31861: } ],
+ 31862: DogMPBattleUI: [ function(t, e, o) {
+ 31863: "use strict";
+ 31864: cc._RF.push(e, "e15e4sNYqVBF5W4tcEJ/PV2", "DogMPBattleUI");
+ 31865: var i, n = this && this.__extends || (i = function(t, e) {
+ 31866: return (i = Object.setPrototypeOf || {
+ 31867: __proto__: []
+ 31868: } instanceof Array && function(t, e) {
+ 31869: t.__proto__ = e;
+ 31870: } || function(t, e) {
+ 31871: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+ 31872: })(t, e);
+ 31873: }, function(t, e) {
+ 31874: i(t, e);
+ 31875: function o() {
+ 31876: this.constructor = t;
+ 31877: }
+ 31878: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());
+ 31879: }), r = this && this.__decorate || function(t, e, o, i) {
+ 31880: var n, r = arguments.length, a = r < 3 ? e : null === i ? i = Object.getOwnPropertyDescriptor(e, o) : i;
+ 31881: if ("object" == typeof Reflect && "function" == typeof Reflect.decorate) a = Reflect.decorate(t, e, o, i); else for (var s = t.length - 1; s >= 0; s--) (n = t[s]) && (a = (r < 3 ? n(a) : r > 3 ? n(e, o, a) : n(e, o)) || a);
+ 31882: return r > 3 && a && Object.defineProperty(e, o, a), a;
+ 31883: };
+---

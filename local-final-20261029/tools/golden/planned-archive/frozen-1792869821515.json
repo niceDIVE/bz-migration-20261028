@@ -1,0 +1,86 @@
+{
+ "archivedAt": "2026-10-24T19:23:41.515Z",
+ "rules": [
+  {
+   "id": "B2-PASSCARDDATA-full",
+   "action": "passCardData",
+   "field": [
+    "eRet",
+    "p",
+    "n",
+    "award",
+    "goldArr",
+    "etime",
+    "passObj"
+   ],
+   "expect": 7,
+   "ev": "index.js:55872",
+   "allowSigma": [
+    [
+     "passCardData",
+     "passCard.p"
+    ],
+    [
+     "passCardData",
+     "passCard.n"
+    ],
+    [
+     "passCardData",
+     "passCard.award"
+    ],
+    [
+     "passCardData",
+     "goldArr"
+    ],
+    [
+     "passCardData",
+     "etime"
+    ],
+    [
+     "passCardData",
+     "passObj"
+    ]
+   ],
+   "why": "侠客令从「占位 eRet:2」改为「真数据 eRet:1」：数据源是真实配置表 pass_level(BZ_PASS_PRICE 四档价目 0/288/600/1000)、pass_award(BZ_PASS_ROW 12 阶 [id,liveness,award1..4])、pass_liveness(BZ_PASS_ENDTIME)。客户端 index.js:55867-55873 读 e.passCard{p,n,award}+e.goldArr 后 dispatch 给 PassCardUI(scripts2.js:8784)，其 start() 再读 this.data.etime 与 this.data.passObj(48287)；passObj 每行必须长度≥6，因为 InviteCellRender 固定循环 4 个奖励位读 this.data[2+p][0](35118)。gen_shapes 探针用空参数跑，数组/对象归一化成 [] 与 {}，故 v1 显示为 arr0/obj0；运行时 handler 下发的是一致的干净结构（并显式剔除 __meta，否则会多 push 一条垃圾行导致下标越界）。"
+  },
+  {
+   "id": "B2-PASSCARDAWARD",
+   "action": "passCardAward",
+   "field": [
+    "eRet",
+    "awardArr",
+    "rewardArray"
+   ],
+   "expect": 3,
+   "ev": "index.js:55883",
+   "allowSigma": [
+    [
+     "passCardAward",
+     "awardArr"
+    ],
+    [
+     "passCardAward",
+     "rewardArray"
+    ]
+   ],
+   "why": "补 handler 后空参数探针命中拒绝分支（passID 缺失 → eRet:4），且该动作已登记 REJECT_CODES，narrowReject 把拒绝应答剥到只剩 {eRet} ⇒ 基线里的 awardArr/rewardArray 默认 {} 不再出现（obj0→absent）。这属有意收窄：客户端 1==eRet 分支才读 awardArr/rewardArray(index.js:55879-55882)，4 只弹 getText(1093)。成功路径仍下发 awardArr=[passID,4] 与 rewardArray={物品id:数量}（工程既有口径）。"
+  },
+  {
+   "id": "B2-BUYINVITATIONCARD",
+   "action": "buyInvitationCard",
+   "field": [
+    "eRet",
+    "pass_levelID"
+   ],
+   "expect": 2,
+   "ev": "index.js:55889",
+   "allowSigma": [
+    [
+     "buyInvitationCard",
+     "pass_levelID"
+    ]
+   ],
+   "why": "补 handler 后空参数探针命中拒绝分支（pass_levelID 不合法 → eRet:4），且已登记 REJECT_CODES ⇒ narrowReject 剥掉补出来的默认 pass_levelID:0（num0→absent）。有意收窄：客户端只在 1==eRet 分支读 e.pass_levelID 回写 cardState(index.js:55885-55888)。成功路径照常回显 pass_levelID + note.eco.yuanbao。"
+  }
+ ]
+}

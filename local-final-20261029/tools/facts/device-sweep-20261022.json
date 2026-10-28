@@ -1,0 +1,84 @@
+{
+ "generatedAt": "2026-10-22T13:55:15.979Z",
+ "kind": "device-sweep",
+ "deploy": "impl=hf015c1c2 / flow=ffaec47c3 / pid 29928 / scene=gamescene",
+ "method": "adb 点屏 + 截图人工判定（主审自做，用户不需要配合）；每步截图存 hotfix-patch/probe/",
+ "health": {
+  "logLines": 182,
+  "err": 0,
+  "OBS": 0,
+  "UNKNOWN": 3,
+  "unknownNote": "neverSeenAction 是自检探针；recordAttributes 是属性上报，走通用 ACK 属预期"
+ },
+ "checks": [
+  {
+   "id": "S1",
+   "what": "每日活动面板（getAllActivity + getActivityCounts）",
+   "how": "点左上「活动」",
+   "shot": "probe/shot_k2_activity.png",
+   "result": "PASS",
+   "detail": "18 条零进度正常渲染（公告牌 0/14、危虎山副本 0/3、世界boss…），无异常"
+  },
+  {
+   "id": "S2",
+   "what": "角色面板 / 饥饿值",
+   "how": "点「角色」→ 查看",
+   "shot": "probe/shot_h7_hunger.png → 本轮 shot_k4_food.png 前后",
+   "result": "PASS",
+   "detail": "饥饿 530/540；吃糖葫芦后服务端日志 `饱食度 500 + 30 → 530（上限 540）`，上限从活客户端模型读到"
+  },
+  {
+   "id": "S3",
+   "what": "背包·消耗品·食物页（useItem 链路）",
+   "how": "角色 → 物品 → 消耗品 → 食物 → 糖葫芦 → 使用 ×1",
+   "shot": "probe/shot_k5_dialog.png / shot_k6.png",
+   "result": "PASS",
+   "detail": "数量 53→52，note.ivch 绝对值生效；无 TypeError"
+  },
+  {
+   "id": "S4",
+   "what": "成就面板（getAchieveData 六件套）",
+   "how": "点左下「成就」",
+   "shot": "probe/shot_i1_achieve.png",
+   "result": "PASS(显示) / 0 进度属预期",
+   "detail": "19 组全部 `完成度0%`。原因见 tools/facts/achieve-buckets.json：78%+ 行的进度客户端**不本地计算**，只能靠服务端 taskData"
+  },
+  {
+   "id": "S5",
+   "what": "任务面板（LoadGame 任务三件套）",
+   "how": "点「任务」",
+   "shot": "probe/shot_m3_tasks.png",
+   "result": "PASS",
+   "detail": "主线 1 条「和跟踪者对话」；支线/环 tab 可切换；已忽略任务(0)；无异常"
+  },
+  {
+   "id": "S6",
+   "what": "裁缝铺三页（GetFashionList 按页）",
+   "how": "老裁缝 → 商店 → 常驻/限时/战令",
+   "shot": "probe/shot_e1_perm_after.png / shot_e2_limit_after.png / shot_e3_pass_after.png",
+   "result": "PASS",
+   "detail": "常驻 16 件(金条) / 限时 130 件(全部售罄) / 战令 39 件(1 券)；服饰页未点，但数据侧每页都含 EquipType 8/9（常驻 8+8），走同一段代码"
+  },
+  {
+   "id": "S7",
+   "what": "时装购买（BuyFashion 新模块）",
+   "how": "常驻 → 飘逸长发 → 保存装扮 → 确认",
+   "shot": "probe/shot_g1_bought.png / shot_j1_restart.png",
+   "result": "PASS",
+   "detail": "金条 5099999→5099799；`BuyFashion OK [{slot:8,id:2601}] 金条-200`；restart 后仍戴着（playerEquip/equipments 回放）"
+  },
+  {
+   "id": "S8",
+   "what": "战斗结算 / 任务交奖（CheckBattleResult 的 rewardArray、getFinishTaskAward）",
+   "how": "尝试：点黄牛/找怪；任务面板无可交付任务",
+   "shot": "probe/shot_m2_bull.png",
+   "result": "NOT_TESTED",
+   "detail": "平安镇西当前视野内没有可攻击目标（黄牛点了只移动不对话）；主线「和跟踪者对话」未完成 → 无可交付任务。L4 的奖励对齐规则目前只有单测覆盖（r05-f2-l4 T5/T6），**端上未触发过带 rewardArray 的动作**"
+  }
+ ],
+ "conclusion": [
+  "本轮所有改动（形状表开关剔除 144 字段 / L4 改口径 / F2 饥饿上限 / 特殊转世 9）在端上均无回归：182 行日志 0 err、0 OBS",
+  "唯一未覆盖：带 rewardArray 的奖励动作（打怪结算/交任务）在端上没触发，留待玩家正常游玩时由 OBS 看守（只记录不拒绝）",
+  "服饰页（EquipType 9）建议下次进裁缝铺时顺手点一下，数据侧已就绪"
+ ]
+}

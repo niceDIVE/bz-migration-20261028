@@ -1,0 +1,99 @@
+# User.onKeyDispossHomeEvent  (HttpConst.ONE_KEY_DISPOSS_HOME_EVENT)
+# 出现 2 处
+
+ 57752: i.hasOwnProperty("exp") && (e.plantSeedData.plantExp = i.exp);
+ 57753: i.hasOwnProperty("aExp") && i.aExp > 0 && (h[7] = i.aExp);
+ 57754: if (i.hasOwnProperty("rewardArray")) for (var u in i.rewardArray) h[u] = i.rewardArray[u];
+ 57755: I.MadUtilsTS.isNullObj(h) || m.default.addShowRewardUI1(h, 0);
+ 57756: } else 2 == i.eRet ? a.default.show(n.getText(6000449)) : i.eRet;
+ 57757: }, this);
+ 57758: r.MessageCenter.on(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, function(t, o) {
+ 57759: if (1 == o.eRet) {
+ 57760: var i = !1, s = [], l = o.cropMap;
+ 57761: if (cc.js.isEmptyObject(l)) {
+ 57762: a.default.show(n.getText(6000404));
+ 57763: return;
+ 57764: }
+ 57765: for (var p in l) if (cc.js.isEmptyObject(l[p])) {
+ 57766: i = !0;
+ 57767: e.soilArr[parseInt(p)] = {
+ 57768: s: 1
+ 57769: };
+ 57770: (h = {
+ 57771: s: 1,
+ 57772: landId: 0
+ 57773: }).landId = parseInt(p);
+ 57774: s.push(h);
+ 57775: } else {
+ 57776: var h, u = {
+ 57777: m: {},
+ 57778: s: 1,
+ 57779: b: {}
+ 57780: };
+ 57781: l[p].hasOwnProperty("m") && (u.m = l[p].m);
+ 57782: l[p].hasOwnProperty("b") && (u.b = l[p].b);
+ 57783: e.soilArr[parseInt(p)] = u;
+ 57784: (h = {
+ 57785: m: {},
+ 57786: s: 1,
+ 57787: landId: 0,
+ 57788: b: {}
+ 57789: }).m = u.m;
+ 57790: h.b = u.b;
+ 57791: h.landId = parseInt(p);
+ 57792: s.push(h);
+ 57793: }
+ 57794: r.MessageCenter.dispatch(c.EvName.MULTIP_SEED_CROP, s);
+ 57795: var f = {};
+ 57796: o.hasOwnProperty("exp") && o.exp > 0 && (e.plantSeedData.plantExp = o.exp);
+ 57797: o.hasOwnProperty("aExp") && o.aExp > 0 && (f[7] = o.aExp);
+ 57798: if (o.hasOwnProperty("rewardArray")) for (var d in o.rewardArray) f[d] = o.rewardArray[d];
+---
+ 58175: var e = {
+ 58176: matureArr: t
+ 58177: };
+ 58178: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_OBTAIN_CROP, e);
+ 58179: };
+ 58180: e.prototype.reqDispossAllEvent = function() {
+ 58181: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, {});
+ 58182: };
+ 58183: e.prototype.reqFindPlayerHome = function(t) {
+ 58184: t != _.RoleBaseInfo.userName ? v.NetMgr.http.sendRequest(s.HttpConst.FIND_OTHER_HOME, {
+ 58185: fName: t
+ 58186: }) : a.default.show(n.getText(4396));
+ 58187: };
+ 58188: e.prototype.openFriendHome = function(t, e, o) {
+ 58189: var i = 3;
+ 58190: 9 == o ? i = 2 : 15 == o && (i = 1);
+ 58191: this.homeType = i;
+ 58192: this.curHomeScene = e;
+ 58193: this.reqEnterFriendHome(t);
+ 58194: };
+ 58195: e.prototype.reqEnterFriendHome = function(t) {
+ 58196: this.isUpdateData = !1;
+ 58197: this.curFriendId = t;
+ 58198: t > 0 && v.NetMgr.http.sendRequest(s.HttpConst.ENTER_OTHER_HOME, {
+ 58199: fid: t
+ 58200: });
+ 58201: };
+ 58202: e.prototype.reqUpdateFriendHome = function(t) {
+ 58203: this.isUpdateData = !0;
+ 58204: this.curFriendId = t;
+ 58205: t > 0 && v.NetMgr.http.sendRequest(s.HttpConst.ENTER_OTHER_HOME, {
+ 58206: fid: t
+ 58207: });
+ 58208: };
+ 58209: e.prototype.reqDispossHomeEvent = function(t) {
+ 58210: var e = {
+ 58211: fid: 0,
+ 58212: idx: t
+ 58213: };
+ 58214: this.curFriendId > 0 ? e.fid = this.curFriendId : delete e.fid;
+ 58215: v.NetMgr.http.sendRequest(s.HttpConst.DISPOSS_HOME_EVENT, e);
+ 58216: };
+ 58217: e.prototype.reqStealCrop = function(t) {
+ 58218: v.NetMgr.http.sendRequest(s.HttpConst.STEAL_CROP_EVENT, {
+ 58219: fid: this.curFriendId,
+ 58220: idx: t
+ 58221: });
+---

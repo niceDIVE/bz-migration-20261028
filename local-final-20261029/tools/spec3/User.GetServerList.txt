@@ -1,0 +1,33 @@
+# User.GetServerList   (HttpConst.REQ_SERVER_LIST)
+
+## 请求点 116700: a.NetMgr.selectHttp.sendRequest(n.HttpConst.REQ_SERVER_LIST, i);
+   116692: if (1 == o.eRet) {
+   116693: s.RoleBaseInfo.userAccount = o.openid;
+   116694: c.LoginMgr.token = o.session_key;
+   116695: var i = {
+   116696: account: o.openid,
+   116697: channel: e.channel,
+   116698: exam: "" !== c.LoginMgr.WXIosVer ? 1 : 0
+   116699: };
+
+## 请求点 116716: a.NetMgr.selectHttp.sendRequest(n.HttpConst.REQ_SERVER_LIST, i);
+   116708: c.LoginMgr.feedInit();
+   116709: c.LoginMgr.storeByScene(1, c.LoginMgr.getDiffMillisTime(20));
+   116710: c.LoginMgr.storeByScene(3, c.LoginMgr.getDiffMillisTime(0));
+   116711: var i = {
+   116712: account: o.openid,
+   116713: channel: e.channel,
+   116714: exam: "" !== c.LoginMgr.WXIosVer ? 1 : 0
+   116715: };
+
+## 注册点 116719: i.MessageCenter.on(n.HttpConst.REQ_SERVER_LIST, function(t, o) {
+
+## 请求点 116798: a.NetMgr.selectHttp.sendRequest(n.HttpConst.REQ_SERVER_LIST, t);
+   116790: };
+   116791: t.prototype.reqSvList = function() {
+   116792: var t = {
+   116793: account: s.RoleBaseInfo.userAccount,
+   116794: channel: this.channel,
+   116795: exam: 0
+   116796: };
+   116797: c.LoginMgr.checkMiniGame() && "" !== c.LoginMgr.WXIosVer && (t.exam = 1);

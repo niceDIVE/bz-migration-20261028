@@ -1,0 +1,99 @@
+# User.quicklogin  (HttpConst.QUICK_LOGIN)
+# 出现 2 处
+
+ 70331: this.tStr = null;
+ 70332: this.delItemObj = null;
+ 70333: this.isLoginEnter = 0;
+ 70334: }
+ 70335: e.prototype.init = function() {
+ 70336: var t = this;
+ 70337: v.MessageCenter.on(d.HttpConst.QUICK_LOGIN, function(e, o) {
+ 70338: t.onQuickLoginSuccess(o);
+ 70339: }, this);
+ 70340: v.MessageCenter.on(d.HttpConst.USER_CHECK_NAME, function(e, o) {
+ 70341: t.setRoleAttribute(o);
+ 70342: }, this);
+ 70343: v.MessageCenter.on(d.HttpConst.USER_CREATE, function(e, o) {
+ 70344: t.createRole(o);
+ 70345: }, this);
+ 70346: v.MessageCenter.on(d.HttpConst.USER_LOADGAME, function(e, o) {
+ 70347: t.loadGame(o);
+ 70348: }, this);
+ 70349: v.MessageCenter.on(d.HttpConst.BACKTOLOGIN, function() {}, this);
+ 70350: v.MessageCenter.on(d.HttpConst.USER_GETCHATADDRESS, function(e, o) {
+ 70351: t.chatServerSuccess(o);
+ 70352: }, this);
+ 70353: v.MessageCenter.on(d.HttpConst.ANNOUNCEMENT_ID, function(e, o) {
+ 70354: t.sendAnnouncePhpHttp(o);
+ 70355: }, this);
+ 70356: v.MessageCenter.on(d.HttpConst.RECORD_PHONE, function(t, e) {
+ 70357: if (1 == e.eRet) {
+ 70358: cc.sys.localStorage.setItem("huaweiPhone" + I.RoleBaseInfo.roleID, 1);
+ 70359: D.default.show(s.getText("8951"));
+ 70360: } else 2 == e.eRet ? D.default.show(s.getText("8956")) : 3 == e.eRet ? D.default.show(s.getText("8957")) : 4 == e.eRet && D.default.show(s.getText("8953"));
+ 70361: }, this);
+ 70362: v.MessageCenter.on(d.HttpConst.CHECK_ON_HOOK, function(e, o) {
+ 70363: if (1 == o.eRet) {
+ 70364: t.idleData = o.OnhookObj;
+ 70365: t.onHookScene(!0);
+ 70366: }
+ 70367: });
+ 70368: };
+ 70369: e.prototype.start = function() {
+ 70370: var t = this;
+ 70371: H.LoginMgr.login(function() {
+ 70372: t.showPrologue();
+ 70373: });
+ 70374: };
+ 70375: e.prototype.showPrologue = function() {
+ 70376: z.TESDKHelper.onSdkLogin();
+ 70377: H.LoginMgr.checkMiniGame() ? this.showSvrSelection() : cc.sys.localStorage.getItem("firstInBz") ? this.showSvrSelection() : N.default.prefabs.load("Login/PrologueUI", cc.Prefab, function(t, e) {
+---
+ 70386: Y.uiMgr.hideNetworkUI();
+ 70387: E.PopUpMgr.cleanupAll(!0);
+ 70388: cc.director.loadScene("scenes/svrselect");
+ 70389: }
+ 70390: };
+ 70391: e.prototype.login = function(t) {
+ 70392: S.NetMgr.loginHttp.sendRequest(d.HttpConst.QUICK_LOGIN, t);
+ 70393: };
+ 70394: e.prototype.onQuickLoginSuccess = function(t) {
+ 70395: t.hasOwnProperty("switchData") && (H.LoginMgr.switchData = t.switchData);
+ 70396: 1 == t.eRet ? this.platSuccessCreateInfo(t) : 2 == t.eRet ? D.default.show(s.getText(347)) : 3 == t.eRet ? D.default.show(s.getText(723)) : 4 == t.eRet ? D.default.show(s.getText(774)) : 6 == t.eRet ? D.default.show(s.getText(1122)) : 7 == t.eRet ? D.default.show(s.getText(4378)) : 8 == t.eRet ? D.default.show("登录超时，请关闭游戏后重新启动") : D.default.show("Login error! Please try again! errcode:" + t.eRet);
+ 70397: };
+ 70398: e.prototype.setRoleAttribute = function(t) {
+ 70399: if (1 == t.eRet) {
+ 70400: I.RoleBaseInfo.userName = this.roleAttribute.userName;
+ 70401: var e = 0, o = 0, i = this.roleAttribute._attributeValue;
+ 70402: if (i[0] > 0) {
+ 70403: e = Math.floor(i[0] / 4);
+ 70404: o = i[0] % 4;
+ 70405: }
+ 70406: I.RoleBaseInfo.armStrong += parseInt(i[1]) + e;
+ 70407: I.RoleBaseInfo.shenFa += parseInt(i[2]) + e;
+ 70408: I.RoleBaseInfo.bone += parseInt(i[3]) + e;
+ 70409: I.RoleBaseInfo.understanding += parseInt(i[4]) + e;
+ 70410: I.RoleBaseInfo.baseArmStrong += parseInt(i[1]) + e;
+ 70411: I.RoleBaseInfo.baseShenFa += parseInt(i[2]) + e;
+ 70412: I.RoleBaseInfo.baseBone += parseInt(i[3]) + e;
+ 70413: I.RoleBaseInfo.baseUnderstanding += parseInt(i[4]) + e;
+ 70414: for (var n = 0; n < o; ++n) switch (Math.floor(4 * Math.random())) {
+ 70415: case 3:
+ 70416: I.RoleBaseInfo.baseUnderstanding += 1;
+ 70417: I.RoleBaseInfo.understanding += 1;
+ 70418: break;
+ 70419: 
+ 70420: case 2:
+ 70421: I.RoleBaseInfo.baseBone += 1;
+ 70422: I.RoleBaseInfo.bone += 1;
+ 70423: break;
+ 70424: 
+ 70425: case 1:
+ 70426: I.RoleBaseInfo.baseShenFa += 1;
+ 70427: I.RoleBaseInfo.shenFa += 1;
+ 70428: break;
+ 70429: 
+ 70430: default:
+ 70431: I.RoleBaseInfo.baseArmStrong += 1;
+ 70432: I.RoleBaseInfo.armStrong += 1;
+---

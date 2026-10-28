@@ -1,0 +1,13 @@
+# User.BeginChangeFace   (HttpConst.REQ_BEGIN_CHANGEFACE)
+
+## 注册点 75580: s.MessageCenter.on(l.HttpConst.REQ_BEGIN_CHANGEFACE, function(t, e) {
+
+## 请求点 75755: m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BEGIN_CHANGEFACE, e);
+   75747: };
+   75748: m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BUY_FASHION, a);
+   75749: } else c.default.show(n.getText(979));
+   75750: };
+   75751: t.prototype.reqChangeFace = function(t) {
+   75752: var e = {
+   75753: type: t
+   75754: };

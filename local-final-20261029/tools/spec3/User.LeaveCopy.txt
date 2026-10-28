@@ -1,0 +1,13 @@
+# User.LeaveCopy   (HttpConst.END_DUNGEON_ADVENTURE)
+
+## 注册点 64094: r.MessageCenter.on(a.HttpConst.END_DUNGEON_ADVENTURE, function(e, o) {
+
+## 请求点 64173: f.NetMgr.http.sendRequest(a.HttpConst.END_DUNGEON_ADVENTURE, i);
+   64165: e.push(o);
+   64166: e.push(this.killedNpc[o]);
+   64167: }
+   64168: var i = {
+   64169: copyID: t,
+   64170: npcArr: e,
+   64171: flag: this.perfect
+   64172: };

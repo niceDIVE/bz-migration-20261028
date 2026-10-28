@@ -1,0 +1,127 @@
+# User.checkSpecial  (HttpConst.CHECKSPECIAL)
+# 出现 3 处
+
+122975: this.callBackFunc = null;
+122976: this.rewardsStr = "";
+122977: this.itemType = 0;
+122978: }
+122979: e.prototype.init = function() {
+122980: var t = this;
+122981: i.MessageCenter.on(n.HttpConst.CHECKSPECIAL, function(e, o) {
+122982: if (1 == o.eRet) {
+122983: i.MessageCenter.dispatch(r.EvName.CLOSE_MAIN_MENU);
+122984: i.MessageCenter.dispatch(r.EvName.CHECK_NPC_CLOSE_EVENT);
+122985: t.startAdventure();
+122986: } else {
+122987: t.callBackFunc && t.callBackFunc();
+122988: t.notAdventureUseItems(o);
+122989: }
+122990: t.rewardsStr.length > 0 && c.default.show(t.rewardsStr, null, null, l.getText(123));
+122991: }, this);
+122992: i.MessageCenter.on(n.HttpConst.ROLLDICE_EVENT, function(t, e) {
+122993: 1 != e.eRet && 2 != e.eRet && 3 != e.eRet || i.MessageCenter.dispatch(r.EvName.ROLL_DICE_EVENT, e);
+122994: }, this);
+122995: i.MessageCenter.on(n.HttpConst.BRING_SPECIAL_AWARD, function(t, e) {
+122996: 1 == e.eRet && (M.MadUtilsTS.isNullObj(e.rewardArray) && M.MadUtilsTS.isNullObj(e.equipObj) || p.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj));
+122997: }, this);
+122998: };
+122999: e.prototype.reqSpecialAdventure = function(t, e, o) {
+123000: void 0 === e && (e = null);
+123001: void 0 === o && (o = "");
+123002: var i = s.getAdventureTypeData(t), r = this.judAdventureState(i, t);
+123003: this.itemType = 0;
+123004: if (r.hasOwnProperty("type")) {
+123005: this.adventureId = r.ID;
+123006: this.callBackFunc = e;
+123007: this.rewardsStr = o;
+123008: h.NetMgr.http.sendRequest(n.HttpConst.CHECKSPECIAL, {
+123009: type: r.ID
+123010: });
+123011: }
+123012: };
+123013: e.prototype.judAdventureState = function(t, e) {
+123014: var o = {}, i = new Date(u.TimeMgr.getSTimestamp()).getHours(), n = S.GSceneMgr.getCurSceneID();
+123015: for (var r in t) {
+123016: var a = t[r], s = a.time;
+123017: if (0 == a.parameter || parseInt(a.parameter) > 0 && 4 != e && f.RumorModel.randEventArray.indexOf(parseInt(a.parameter)) >= 0 || parseInt(a.parameter) > 0 && 4 == e && f.RumorModel.getRandomEventID(d.DartModel.currentIdx) == parseInt(a.parameter) || parseInt(a.parameter) > 0 && 7 == e && n == Number(a.parameter)) {
+123018: if (!(s.length > 0)) {
+123019: o = a;
+123020: break;
+123021: }
+---
+123022: var l = E.CalendarMgr.curHour;
+123023: if (1 == s[0] && i >= parseInt(s[1]) && i < parseInt(s[2])) {
+123024: o = a;
+123025: break;
+123026: }
+123027: if (2 == s[0] && (i >= parseInt(s[1]) || i < parseInt(s[2]))) {
+123028: o = a;
+123029: break;
+123030: }
+123031: if (3 == s[0] && l >= parseInt(s[1]) && l <= parseInt(s[2])) {
+123032: o = a;
+123033: break;
+123034: }
+123035: }
+123036: }
+123037: return o;
+123038: };
+123039: e.prototype.reqRollDice = function(t) {
+123040: h.NetMgr.http.sendRequest(n.HttpConst.ROLLDICE_EVENT, t);
+123041: };
+123042: e.prototype.reqGetBringAward = function(t, e) {
+123043: h.NetMgr.http.sendRequest(n.HttpConst.BRING_SPECIAL_AWARD, {
+123044: flag: t,
+123045: type: e
+123046: });
+123047: };
+123048: e.prototype.startAdventure = function() {
+---
+123143: this.itemType = r;
+123144: if (l.hasOwnProperty("type")) {
+123145: this.adventureId = l.ID;
+123146: this.callBackFunc = o;
+123147: void 0 === i && (i = "");
+123148: this.rewardsStr = i;
+123149: h.NetMgr.http.sendRequest(n.HttpConst.CHECKSPECIAL, {
+123150: type: l.ID
+123151: });
+123152: }
+123153: };
+123154: e.prototype.judgeAdventureContion = function(t, e) {
+123155: var o = {};
+123156: for (var i in t) {
+123157: var n = t[i];
+123158: if (parseInt(n.parameter) == e) {
+123159: o = n;
+123160: break;
+123161: }
+123162: }
+123163: return o;
+123164: };
+123165: e.prototype.notAdventureUseItems = function(t) {
+123166: if (this.itemType > 0 && t.hasOwnProperty("itemID") && parseInt(t.itemID) > 0) if (1 == this.itemType) {
+123167: var e = s.getItem(t.itemID, "item");
+123168: e.itemId = t.itemID;
+123169: g.InventoryModel.itemUsePopLayer(e);
+123170: } else 2 == this.itemType && a.InventoryDB.useUseMulItem(t.itemID);
+123171: };
+123172: return e;
+123173: }();
+123174: o.SpecialAdventureModel = new I();
+123175: cc._RF.pop();
+123176: }, {
+123177: "../core/events/MessageCenter": "MessageCenter",
+123178: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+123179: "../gameconfigs/CFMgr": "CFMgr",
+123180: "../gameconfigs/LangMgr": "LangMgr",
+123181: "../gamescenes/sceneModel/CalendarMgr": "CalendarMgr",
+123182: "../gui/uicomponents/Alert": "Alert",
+123183: "../mgrs/BattleMgr": "BattleMgr",
+123184: "../mgrs/BundleMgr": "BundleMgr",
+123185: "../mgrs/GSceneMgr": "GSceneMgr",
+123186: "../mgrs/LayerMgr": "LayerMgr",
+123187: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+123188: "../mgrs/TimeMgr": "TimeMgr",
+123189: "../models/ColorVerModel": "ColorVerModel",
+---

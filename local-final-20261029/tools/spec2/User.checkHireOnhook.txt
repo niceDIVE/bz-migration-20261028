@@ -1,0 +1,13 @@
+# User.checkHireOnhook   (HttpConst.CHECK_HIRE)
+
+## 注册点 51451: r.MessageCenter.on(s.HttpConst.CHECK_HIRE, function(e, o) {
+
+## 请求点 51651: g.NetMgr.http.sendRequest(s.HttpConst.CHECK_HIRE, e);
+   51643: };
+   51644: g.NetMgr.http.sendRequest(s.HttpConst.HIRE_NPC, e);
+   51645: };
+   51646: e.prototype.reqCheckHire = function(t) {
+   51647: this.checkSiteID = t;
+   51648: var e = {
+   51649: siteID: t
+   51650: };

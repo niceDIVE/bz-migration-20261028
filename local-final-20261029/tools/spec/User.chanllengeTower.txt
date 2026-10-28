@@ -1,0 +1,110 @@
+# User.chanllengeTower  (HttpConst.TOWER_RANDOM_EVENT)
+# 出现 3 处
+
+137583: 1 == e.eRet && e.hasOwnProperty("rankArr") && h.default.prefabs.load("towerUI/TowerRank", cc.Prefab, function(t, o) {
+137584: var i = cc.instantiate(o);
+137585: u.PopUpMgr.addPopUp(i, f.LayerMgr.popUpLayer);
+137586: i.addComponent("TowerRank").setData(e.rankArr);
+137587: });
+137588: }, this);
+137589: l.MessageCenter.on(c.HttpConst.TOWER_RANDOM_EVENT, function(e, o) {
+137590: if (1 == o.eRet) {
+137591: t.sweepState = !1;
+137592: if (0 == t.eventType) {
+137593: t.curFloorNum++;
+137594: t.eventType = 1;
+137595: }
+137596: t.randomMonsterData = o.npcArr;
+137597: o.hasOwnProperty("eventID") && (t.randomEventId = o.eventID);
+137598: o.hasOwnProperty("muscle") && (t.curStrengthNum = o.muscle);
+137599: o.hasOwnProperty("attrType") && (t.attriType = o.attrType);
+137600: if (o.hasOwnProperty("equipments")) {
+137601: var i = o.equipments;
+137602: for (var r in i) {
+137603: k.playerInfo.entity.putOffEquipment(parseInt(r));
+137604: if (i[r]) {
+137605: var s = m.InventoryModel.getEquipmentInfo(i[r]);
+137606: if (s) {
+137607: var l = {
+137608: id: s.id,
+137609: type: s.type,
+137610: itemID: s.itemID,
+137611: attrs: s.attrs,
+137612: numAttr: s.numAttr,
+137613: crystalIds: s.crystalIds
+137614: }, c = I.InhertEquipModel.allInhertEquips, p = c.hasOwnProperty(s.id) ? c[s.id] : 0;
+137615: k.playerInfo.entity.putOnEquipment(new n(l, p), parseInt(r));
+137616: 1 == parseInt(r) && m.InventoryModel.freshEquipWeap(parseInt(r), l.id);
+137617: }
+137618: }
+137619: }
+137620: }
+137621: if (o.mapID > 0) {
+137622: t.towerShowMapId = o.mapID;
+137623: t.enterNextTower(o.mapID);
+137624: }
+137625: o.hasOwnProperty("eggNpc") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];
+137626: t.canActivateStatus = !!o.hasOwnProperty("canActivateStatus") && o.canActivateStatus;
+137627: t.towerEventAy = o.hasOwnProperty("eventIds") ? o.eventIds : [];
+137628: o.hasOwnProperty("chickenLegNum") && (t.toEatNum = o.chickenLegNum);
+137629: } else 4 == o.eRet ? y.default.show(a.getText(3075)) : 2 == o.eRet ? y.default.show(a.getText(1624)) : v.GSceneMgr.mode = 0;
+---
+137856: };
+137857: e.prototype.reqEnterTower = function(t) {
+137858: var e = this.curFloorNum;
+137859: this.eventType = t;
+137860: 0 == t && e++;
+137861: this.challeageState = 0;
+137862: g.NetMgr.http.sendRequest(c.HttpConst.TOWER_RANDOM_EVENT, {
+137863: lv: parseInt(e)
+137864: });
+137865: };
+137866: e.prototype.taskFinishEnterTower = function(t) {
+137867: if (this.sweepState) this.reqCloseNewSweepTowerByLv(); else {
+137868: var e = this.curFloorNum;
+137869: this.eventType = t;
+137870: 0 == t && e++;
+137871: this.challeageState = 0;
+137872: g.NetMgr.http.sendRequest(c.HttpConst.TOWER_RANDOM_EVENT, {
+137873: lv: parseInt(e)
+137874: });
+137875: }
+137876: };
+137877: e.prototype.leaveTowerShowUI = function() {
+137878: var t = this;
+137879: l.MessageCenter.dispatch(S.EvName.STOP_PLAYER);
+137880: y.default.show(a.getText("3065"), [ {
+137881: flag: 0,
+137882: name: a.getText("3066")
+137883: }, {
+137884: flag: 1,
+137885: name: a.getText("3067")
+137886: } ], function(e) {
+137887: var o = 0 == e ? 1 : 0;
+137888: t.reqLeaveTower(o);
+137889: });
+137890: };
+137891: e.prototype.reqLeaveTower = function(t) {
+137892: var e = this;
+137893: 1 == t ? A.MadUtilsTS.isNullObj(this.judgeTowerItems()) ? y.default.show(a.getText(1613), [ {
+137894: flag: 0,
+137895: name: a.getText("332")
+137896: }, {
+137897: flag: 1,
+137898: name: a.getText("333")
+137899: } ], function(e) {
+137900: 0 == e && D.ColorVerModel.changeColorBeforeOut(function() {
+137901: g.NetMgr.http.sendRequest(c.HttpConst.TOWER_LEAVE_EVENT, {
+137902: type: t
+---
+137903: });
+137904: });
+137905: }) : h.default.prefabs.load("comUI/PromptUI", cc.Prefab, function(t, o) {
+137906: var i = cc.instantiate(o);
+137907: u.PopUpMgr.addPopUp(i, f.LayerMgr.popUpLayer);
+137908: var n = "";
+137909: if (N.LoginMgr.judgeLangEn() || "en" == s.lang) {
+137910: n = [];
+137911: for (var l in e.judgeTowerItems()) {
+137912: var p = e.judgeTowerItems()[l], h = r.getItem(p.itemId, "item");
+---

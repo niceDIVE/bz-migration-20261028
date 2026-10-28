@@ -1,0 +1,17 @@
+第8批 C07 验收：通过（本包没有代码，只有这一页）
+
+  练功计时：同意。EndTraining 只清账不结算，EndMeditation 每分钟加 1 点修为，写进 baseValueAy[32]。
+    顺手修掉的空档 TypeError 也确认。
+  C07 善恶：这批先全锁，同意，理由成立（入口 JOIN_GOOD_OR_EVIL 还没做，16 个字段直读）。
+
+  补一条登记（现在不用动手）：
+    在 OPEN-ISSUES 里加一个"整套玩法被锁"清单，目前有 C07 善恶，以及 C04 的洗练/培养/青楼。
+    以后哪一批碰到 JOIN_GOOD_OR_EVIL，就把 C07 一起解锁：
+    · 加入阵营写 s.geSide；
+    · goodAndEvilData 的 16 个键给真实初值（数字类 0，字符串类 ""），保证 .toString() 不崩；
+    · helpDoneTask 的 prestige/contribution/addScore 新建 s.geScore 存档槽，按表发。
+      表里没有数额就照"原版免费的给小额、每日限次"处理，不白给钱和道具。
+    所有批次跑完后，再统一过一遍这个清单。
+
+  下一步：第 9 批 C08 PVE 战斗族（9 个），开工。
+  升级报告的条件不变：存档写坏，或者能白拿钱/道具。

@@ -1,0 +1,99 @@
+# User.ChangeBlood  (HttpConst.REQ_CHANGEBLOOD)
+# 出现 2 处
+
+144031: this.upgradeObj = {};
+144032: }
+144033: t.prototype.init = function() {
+144034: var t = this;
+144035: this.upgradeObj = {};
+144036: n.MessageCenter.on(r.HttpConst.WASH_MEDICINE, this.onWashMedicneBackCall, this);
+144037: n.MessageCenter.on(r.HttpConst.REQ_CHANGEBLOOD, function(e, o) {
+144038: if (1 == o.eRet) {
+144039: n.MessageCenter.dispatch(a.EvName.CHANGE_BLOOD_SUCCESS);
+144040: t.showUpgradeCartoon(1);
+144041: } else 2 == o.eRet ? s.default.show(i.getText(1064)) : 3 == o.eRet && f.StoreModel.openChargeList();
+144042: }, this);
+144043: n.MessageCenter.on(r.HttpConst.ADD_CHANGE_BLOOD, function(e, o) {
+144044: if (1 == o.eRet) {
+144045: n.MessageCenter.dispatch(a.EvName.CHANGE_BLOOD_SUCCESS);
+144046: t.showUpgradeCartoon(1);
+144047: } else 2 == o.eRet ? s.default.show(i.getText(1064)) : 3 == o.eRet && f.StoreModel.openChargeList();
+144048: }, this);
+144049: n.MessageCenter.on(r.HttpConst.WASH_ADDITION, function(t, e) {
+144050: if (1 == e.eRet) {
+144051: var o = p.MarryModel.cycleData, i = l.RoleBaseInfo.armStrong, r = l.RoleBaseInfo.shenFa, c = l.RoleBaseInfo.bone, v = l.RoleBaseInfo.understanding;
+144052: e.hasOwnProperty("bloodArr") && (p.MarryModel.cycleData[8] = e.bloodArr);
+144053: e.hasOwnProperty("maxWuxin") && (p.MarryModel.maxWuxin = e.maxWuxin);
+144054: for (var _ in h.UserModel.entity.equipments) h.UserModel.entity.equipments[_] && (l.RoleBaseInfo.equipments[_] = h.UserModel.entity.equipments[_].id);
+144055: y.RoleOtherInfo.setAllHpAndMp2();
+144056: h.UserModel.setupEntity();
+144057: if (o.length >= 5) {
+144058: h.UserModel.entity.strength.baseValue = i + e.bloodArr[0] + o[7][0];
+144059: h.UserModel.entity.shenfa.baseValue = r + e.bloodArr[1] + o[7][1];
+144060: h.UserModel.entity.gengu.baseValue = c + e.bloodArr[2] + o[7][2];
+144061: h.UserModel.entity.perception.baseValue = v + e.bloodArr[3] + o[7][3];
+144062: }
+144063: u.JinmaiModel.parseMeridianInfo(u.JinmaiModel.acupoint2Lv);
+144064: h.UserModel.entity.hp.init();
+144065: h.UserModel.entity.mp.init();
+144066: h.UserModel.entity.hp.limit = l.RoleBaseInfo.hpLimit;
+144067: h.UserModel.entity.hp.remaining = l.RoleBaseInfo.hpRemaining;
+144068: h.UserModel.entity.mp.remaining = l.RoleBaseInfo.mpRemaining;
+144069: h.UserModel.entity.exp = l.RoleBaseInfo.exp;
+144070: n.MessageCenter.dispatch(a.EvName.CHANGE_ADDTION_SUCCESS, e);
+144071: } else 3 == e.eRet ? f.StoreModel.openChargeList() : 4 == e.eRet ? d.default.prefabs.load("marrySystem/ChildWashUI", cc.Prefab, function(t, o) {
+144072: var i = cc.instantiate(o);
+144073: i.addComponent("SetWashUI").setData(e.attrList);
+144074: g.PopUpMgr.addPopUp(i, m.LayerMgr.popUpLayer);
+144075: }) : 6 == e.eRet ? s.default.show("等级未达到要求无法洗髓") : 7 == e.eRet && s.default.show("上一世无附加属性无法洗髓");
+144076: });
+144077: };
+---
+144132: } else 2 == e.eRet ? f.StoreModel.openChargeList() : s.default.show(i.getText("910"));
+144133: };
+144134: t.prototype.reqUpgrade = function(t, e) {
+144135: var o = {
+144136: cID: t
+144137: };
+144138: 0 == e ? c.NetMgr.http.sendRequest(r.HttpConst.REQ_CHANGEBLOOD, o) : c.NetMgr.http.sendRequest(r.HttpConst.ADD_CHANGE_BLOOD, o);
+144139: };
+144140: t.prototype.buyUpgrade = function(t, e) {
+144141: var o = this;
+144142: this.upgradeObj = t;
+144143: var n = e > 0 ? t.price2 : t.price, r = i.getText(1063).replace(/\[1\]/, n).replace(/\[2\]/, i.getText(t.name));
+144144: s.default.show(r, [ {
+144145: name: i.getText("332"),
+144146: flag: 0
+144147: }, {
+144148: name: i.getText("333"),
+144149: flag: 1
+144150: } ], function(i) {
+144151: 0 == i && o.reqUpgrade(t.id, e);
+144152: });
+144153: };
+144154: t.prototype.reqWishAddtion = function(t) {
+144155: void 0 === t && (t = 0);
+144156: 0 == t ? c.NetMgr.http.sendRequest(r.HttpConst.WASH_ADDITION) : c.NetMgr.http.sendRequest(r.HttpConst.WASH_ADDITION, {
+144157: attrID: t
+144158: });
+144159: };
+144160: return t;
+144161: }();
+144162: o.WashModel = new v();
+144163: cc._RF.pop();
+144164: }, {
+144165: "../core/events/MessageCenter": "MessageCenter",
+144166: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+144167: "../gameconfigs/LangMgr": "LangMgr",
+144168: "../gui/uicomponents/Alert": "Alert",
+144169: "../mgrs/BundleMgr": "BundleMgr",
+144170: "../mgrs/LayerMgr": "LayerMgr",
+144171: "../models/StoreModel": "StoreModel",
+144172: "../net/HttpConst": "HttpConst",
+144173: "../net/NetMgr": "NetMgr",
+144174: "../utils/EvName": "EvName",
+144175: "./JinmaiModel": "JinmaiModel",
+144176: "./MarryModel": "MarryModel",
+144177: "./RoleOtherInfo": "RoleOtherInfo",
+144178: "./UserModel": "UserModel",
+---

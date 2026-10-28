@@ -1,0 +1,99 @@
+# User.homeSpeicalAward  (HttpConst.HOME_SPECIAL_AWARD)
+# 出现 2 处
+
+ 57859: if (1 == o.eRet) {
+ 57860: I.MadUtilsTS.isNullObj(o.rewardArray) || m.default.addShowRewardUI1(o.rewardArray, 0);
+ 57861: o.hasOwnProperty("limit") && (e.shopSaleLimit = o.limit);
+ 57862: r.MessageCenter.dispatch(c.EvName.CROP_SALE_SHOP, o);
+ 57863: }
+ 57864: }, this);
+ 57865: r.MessageCenter.on(s.HttpConst.HOME_SPECIAL_AWARD, function(t, e) {
+ 57866: r.MessageCenter.dispatch(c.EvName.REMOVE_SEARCH_HOME_UI);
+ 57867: if (1 == e.eRet && e.hasOwnProperty("eid") && e.hasOwnProperty("rewardArray")) {
+ 57868: var o = {
+ 57869: itemId: 0,
+ 57870: num: 0
+ 57871: };
+ 57872: for (var i in e.rewardArray) {
+ 57873: o.itemId = i;
+ 57874: o.num = e.rewardArray[i];
+ 57875: }
+ 57876: y.PlantSystemMgr.productHomeEvent(e.eid, o);
+ 57877: }
+ 57878: }, this);
+ 57879: r.MessageCenter.on(s.HttpConst.RECOMMEND_ONESELF_HOME, function(t, o) {
+ 57880: if (1 == o.eRet) {
+ 57881: o.hasOwnProperty("homeGeMap") && (e.homeGeMap = o.homeGeMap);
+ 57882: if (o.hasOwnProperty("homeArr")) {
+ 57883: e.searchType = 0;
+ 57884: var i = o.homeArr;
+ 57885: i.sort(function(t, e) {
+ 57886: return e[5] - t[5];
+ 57887: });
+ 57888: r.MessageCenter.dispatch(c.EvName.RECOMMEND_LIST_EVENT, i);
+ 57889: }
+ 57890: var n = [], a = [];
+ 57891: if (o.hasOwnProperty("friendHome")) for (var s = 0; s < o.friendHome.length; s++) if (o.friendHome[s][5] > 0) {
+ 57892: n.push(o.friendHome[s]);
+ 57893: n.sort(function(t, e) {
+ 57894: return e[5] - t[5];
+ 57895: });
+ 57896: }
+ 57897: var l = n.length;
+ 57898: if (o.hasOwnProperty("homeArr")) {
+ 57899: for (s = 0; s < o.homeArr.length; s++) if (o.homeArr[s][5] > 0) {
+ 57900: a.push(o.homeArr[s]);
+ 57901: a.sort(function(t, e) {
+ 57902: return e[5] - t[5];
+ 57903: });
+ 57904: }
+ 57905: for (var p = 0; p < a.length; p++) n.push(a[p]);
+---
+ 58158: e.prototype.reqCropGainReward = function(t) {
+ 58159: v.NetMgr.http.sendRequest(s.HttpConst.OBTAINCROP, {
+ 58160: sIdx: t
+ 58161: });
+ 58162: };
+ 58163: e.prototype.reqHomeSpecialEvent = function() {
+ 58164: v.NetMgr.http.sendRequest(s.HttpConst.HOME_SPECIAL_AWARD, {});
+ 58165: };
+ 58166: e.prototype.reqRecommenList = function() {
+ 58167: this.homeGeMap = {};
+ 58168: v.NetMgr.http.sendRequest(s.HttpConst.RECOMMEND_ONESELF_HOME, {});
+ 58169: };
+ 58170: e.prototype.reqHomeFriendList = function() {
+ 58171: this.homeGeMap = {};
+ 58172: v.NetMgr.http.sendRequest(s.HttpConst.OTHER_PLAYER_HOME, {});
+ 58173: };
+ 58174: e.prototype.reqObtainAllCrop = function(t) {
+ 58175: var e = {
+ 58176: matureArr: t
+ 58177: };
+ 58178: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_OBTAIN_CROP, e);
+ 58179: };
+ 58180: e.prototype.reqDispossAllEvent = function() {
+ 58181: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, {});
+ 58182: };
+ 58183: e.prototype.reqFindPlayerHome = function(t) {
+ 58184: t != _.RoleBaseInfo.userName ? v.NetMgr.http.sendRequest(s.HttpConst.FIND_OTHER_HOME, {
+ 58185: fName: t
+ 58186: }) : a.default.show(n.getText(4396));
+ 58187: };
+ 58188: e.prototype.openFriendHome = function(t, e, o) {
+ 58189: var i = 3;
+ 58190: 9 == o ? i = 2 : 15 == o && (i = 1);
+ 58191: this.homeType = i;
+ 58192: this.curHomeScene = e;
+ 58193: this.reqEnterFriendHome(t);
+ 58194: };
+ 58195: e.prototype.reqEnterFriendHome = function(t) {
+ 58196: this.isUpdateData = !1;
+ 58197: this.curFriendId = t;
+ 58198: t > 0 && v.NetMgr.http.sendRequest(s.HttpConst.ENTER_OTHER_HOME, {
+ 58199: fid: t
+ 58200: });
+ 58201: };
+ 58202: e.prototype.reqUpdateFriendHome = function(t) {
+ 58203: this.isUpdateData = !0;
+ 58204: this.curFriendId = t;
+---

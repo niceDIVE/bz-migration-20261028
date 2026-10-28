@@ -1,0 +1,100 @@
+# User.childWashProperty  (HttpConst.CHILD_WASH_EVENT)
+# 出现 3 处
+
+ 24608: t.prototype.init = function() {
+ 24609: this.playType = 0;
+ 24610: this.beginTime = 0;
+ 24611: this.processNum = 0;
+ 24612: this.chooseSexId = 0;
+ 24613: r.MessageCenter.on(s.HttpConst.GIVE_CHILD_NAME, this.setChildNameCallBack, this);
+ 24614: r.MessageCenter.on(s.HttpConst.CHILD_WASH_EVENT, this.childWashCallBack, this);
+ 24615: r.MessageCenter.on(s.HttpConst.RESET_CHILD_FOSTER, this.resetChildCallBack, this);
+ 24616: r.MessageCenter.on(s.HttpConst.BEGIN_PLAY_GAME, this.beginPlayCallBack, this);
+ 24617: r.MessageCenter.on(s.HttpConst.END_PLAY_GAME, this.endPlayCallBack, this);
+ 24618: r.MessageCenter.on(s.HttpConst.CHOOSE_SEX, this.chooseSexCallBack, this);
+ 24619: r.MessageCenter.on(s.HttpConst.ADOPTCHILD, this.onAdoptChild, this);
+ 24620: };
+ 24621: t.prototype.setChildNameCallBack = function(t, e) {
+ 24622: if (1 == e.eRet) {
+ 24623: c.MarryModel.childData.childName = e.childName;
+ 24624: r.MessageCenter.dispatch(l.EvName.SET_CHILD_NAME_EVENT);
+ 24625: } else 99 == e.eRet ? a.default.show(i.getText("480")) : a.default.show(i.getText(427));
+ 24626: };
+ 24627: t.prototype.childWashCallBack = function(t, e) {
+ 24628: if (1 == e.eRet) {
+ 24629: c.MarryModel.setChildAttData(e.baseArr, e.attArr);
+ 24630: r.MessageCenter.dispatch(l.EvName.CHILD_WASH_SUCCESS_EVENT);
+ 24631: a.default.show(i.getText(2122));
+ 24632: } else 4 == e.eRet ? m.default.prefabs.load("marrySystem/ChildWashUI", cc.Prefab, function(t, o) {
+ 24633: var i = cc.instantiate(o);
+ 24634: i.addComponent("SetChildWashUI").setData(e.attrList);
+ 24635: v.PopUpMgr.addPopUp(i, y.LayerMgr.popUpLayer);
+ 24636: }) : p.StoreModel.openChargeList();
+ 24637: };
+ 24638: t.prototype.resetChildCallBack = function(t, e) {
+ 24639: if (1 == e.eRet) {
+ 24640: e.hasOwnProperty("foster_point") && (c.MarryModel.childData.foster_point = e.foster_point);
+ 24641: e.hasOwnProperty("playArr") && (c.MarryModel.childData.playArr = e.playArr);
+ 24642: m.default.prefabs.load("marrySystem/ChildPlayUI", cc.Prefab, function(t, e) {
+ 24643: var o = cc.instantiate(e);
+ 24644: v.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer, 1, !0);
+ 24645: o.addComponent("ChildPlayMenu");
+ 24646: });
+ 24647: } else 3 == e.eRet ? a.default.show(i.getText(535), [ {
+ 24648: flag: 0,
+ 24649: name: i.getText(10839)
+ 24650: }, {
+ 24651: flag: 1,
+ 24652: name: i.getText(10840)
+ 24653: } ], function(t) {
+ 24654: 0 == t && p.StoreModel.reqStoreList();
+---
+ 24707: u.NetMgr.http.sendRequest(s.HttpConst.GIVE_CHILD_NAME, {
+ 24708: childName: t
+ 24709: });
+ 24710: };
+ 24711: t.prototype.reqChildWash = function(t) {
+ 24712: void 0 === t && (t = 0);
+ 24713: 0 == t ? u.NetMgr.http.sendRequest(s.HttpConst.CHILD_WASH_EVENT) : u.NetMgr.http.sendRequest(s.HttpConst.CHILD_WASH_EVENT, {
+ 24714: attrID: t
+ 24715: });
+ 24716: };
+ 24717: t.prototype.reqChildPlayGame = function(t) {
+ 24718: var e = f.UserModel.entity, o = {
+ 24719: choose: t,
+ 24720: gTime: e.totalGameTime.gameTime,
+ 24721: hg: e.hunger.remaining,
+ 24722: hgtimes: e.numStuffed
+ 24723: };
+ 24724: u.NetMgr.http.sendRequest(s.HttpConst.BEGIN_PLAY_GAME, o);
+ 24725: };
+ 24726: t.prototype.reqChildEndPlayGame = function(t) {
+ 24727: var e = f.UserModel.entity, o = {
+ 24728: flag: t,
+ 24729: hglmt: e.hunger.limit,
+ 24730: speed: e.hungerConsumingSpeed.finalValue
+ 24731: };
+ 24732: u.NetMgr.http.sendRequest(s.HttpConst.END_PLAY_GAME, o);
+ 24733: };
+ 24734: t.prototype.getChildrenAgeDes = function() {
+ 24735: var t = f.UserModel.entity.totalGameTime.gameTime - c.MarryModel.fetationTime, e = parseInt(t), o = Math.floor(parseInt(e) / 60), n = Math.floor(parseInt(o) / 60);
+ 24736: return n < 24 ? i.getText(2084) : n >= 24 && n < 48 ? i.getText(2085) : i.getText(2086);
+ 24737: };
+ 24738: t.prototype.judgeBirthChildState = function() {
+ 24739: var t = f.UserModel.entity.totalGameTime.gameTime - c.MarryModel.fetationTime;
+ 24740: return Math.floor(parseInt(t) / 3600) >= 72;
+ 24741: };
+ 24742: t.prototype.getChildData = function() {
+ 24743: var t = n.getTable("age"), e = c.MarryModel.childData.age, o = f.UserModel.entity.totalGameTime.gameTime - e, i = Math.floor(o / 3600), r = Math.floor(i / 96), a = t[1];
+ 24744: for (var s in t) {
+ 24745: var l = t[s];
+ 24746: if (r >= l.age1 && r < l.age2) {
+ 24747: a = l;
+ 24748: break;
+ 24749: }
+ 24750: }
+ 24751: return a;
+ 24752: };
+ 24753: t.prototype.getChildAgeNum = function() {
+---
+---

@@ -1,0 +1,13 @@
+# User.Create   (HttpConst.USER_CREATE)
+
+## 注册点 70343: v.MessageCenter.on(d.HttpConst.USER_CREATE, function(e, o) {
+
+## 请求点 70997: S.NetMgr.http.sendRequest(d.HttpConst.USER_CREATE, e, function() {});
+   70989: t.push(I.RoleBaseInfo.thirst0Time);
+   70990: e = {
+   70991: baseValueAy: t
+   70992: };
+   70993: return [ 4, z.TESDKHelper.loginSet(e) ];
+   70994: 
+   70995: case 1:
+   70996: o.sent();

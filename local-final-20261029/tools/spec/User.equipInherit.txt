@@ -1,0 +1,99 @@
+# User.equipInherit  (HttpConst.EQUIP_INHERIT)
+# 出现 2 处
+
+ 61478: }
+ 61479: e.prototype.init = function() {
+ 61480: this.allInhertEquips = {};
+ 61481: this.selectEquipData = {};
+ 61482: this.inhertEquipData = {};
+ 61483: var e = this;
+ 61484: r.MessageCenter.on(a.HttpConst.EQUIP_INHERIT, function(o, n) {
+ 61485: if (1 == n.eRet) {
+ 61486: var a = n.equip;
+ 61487: e.allInhertEquips[a[0]] = a[1];
+ 61488: r.MessageCenter.dispatch(s.EvName.SELECT_INHERT_EQUIP_EVENT);
+ 61489: if (!e.isNullMap(n.rewardArray) || !e.isNullMap(n.equipObj)) {
+ 61490: l.default.addShowRewardUI1(n.rewardArray, 0, n.equipObj);
+ 61491: return;
+ 61492: }
+ 61493: c.default.show(i.getText("3768"));
+ 61494: } else 3 == n.eRet ? c.default.show(i.getText(535), [ {
+ 61495: flag: 0,
+ 61496: name: i.getText(10839)
+ 61497: }, {
+ 61498: flag: 1,
+ 61499: name: i.getText(10840)
+ 61500: } ], function(e) {
+ 61501: 0 == e && Promise.resolve().then(function() {
+ 61502: return t("./StoreModel");
+ 61503: }).then(function(t) {
+ 61504: t.StoreModel.reqStoreList();
+ 61505: });
+ 61506: }, "", !1) : 6 == n.eRet ? c.default.show(i.getText(3859)) : 8 == n.eRet ? cc.log("未获得锁定装备数据") : 9 == n.eRet && cc.log("锁定装备不能传承");
+ 61507: }, this);
+ 61508: };
+ 61509: e.prototype.setInhertEquip = function(t) {
+ 61510: if (t) {
+ 61511: this.allInhertEquips = {};
+ 61512: for (var e in t) this.allInhertEquips[e] = t[e][0];
+ 61513: }
+ 61514: };
+ 61515: e.prototype.reqInhertEquip = function(e) {
+ 61516: if (this.selectEquipData.hasOwnProperty("uID")) if (this.inhertEquipData.hasOwnProperty("uID")) {
+ 61517: var o = n.getItem(this.selectEquipData.itemId, "item"), r = n.getItem(this.inhertEquipData.itemId, "item"), s = Math.max(parseInt(o.equiplevel), parseInt(r.equiplevel)), l = n.getEquipPayData(s), p = l.item, h = n.getItem(p[0], "item"), u = l.item1, f = n.getItem(u[0], "item"), d = 1;
+ 61518: 0 == e && (d = 2);
+ 61519: var g = i.getText(3762);
+ 61520: g = (g = (g = 1 == d ? g.replace(/\[1\]/, this.getNeedCostItemNum(p[1]).toString() + i.getText(h.Name)) : g.replace(/\[1\]/, this.getNeedCostItemNum(u[1]).toString() + i.getText(f.Name))).replace(/\[2\]/, this.getEquipOrItemName(this.selectEquipData))).replace(/\[3\]/, this.getEquipOrItemName(this.inhertEquipData));
+ 61521: var m = this;
+ 61522: c.default.show(g, [ {
+ 61523: flag: 0,
+ 61524: name: i.getText(332)
+---
+ 61528: } ], function(e) {
+ 61529: if (0 == e) {
+ 61530: var o = [ m.selectEquipData.uID, m.inhertEquipData.uID ];
+ 61531: Promise.resolve().then(function() {
+ 61532: return t("../net/NetMgr");
+ 61533: }).then(function(t) {
+ 61534: t.NetMgr.http.sendReqWithMask(a.HttpConst.EQUIP_INHERIT, {
+ 61535: idArr: o,
+ 61536: type: d
+ 61537: });
+ 61538: });
+ 61539: }
+ 61540: }, "", !1);
+ 61541: } else c.default.show(i.getText(3862)); else c.default.show(i.getText(3861));
+ 61542: };
+ 61543: e.prototype.getEquipOrItemName = function(t) {
+ 61544: var e = n.getItem(t.itemId, "item"), o = "";
+ 61545: e || t.hasOwnProperty("itemId");
+ 61546: if (2 == e.Type) o = i.getText(e.Name); else if (1 == e.Type) if (this.allInhertEquips.hasOwnProperty(t.uID)) {
+ 61547: var r = this.allInhertEquips[t.uID], a = n.getItem(r, "item");
+ 61548: o = i.getText(a.Name);
+ 61549: o = (o += p.InventoryModel.getEqQuality(t.numAttr)) + "[" + i.getText(e.name_add) + "]";
+ 61550: } else {
+ 61551: o = i.getText(e.Name);
+ 61552: o += p.InventoryModel.getEqQuality(t.numAttr);
+ 61553: }
+ 61554: return o;
+ 61555: };
+ 61556: e.prototype.getInhertEquipName = function(t) {
+ 61557: var e = n.getItem(t.itemId, "item"), o = "";
+ 61558: if (this.allInhertEquips.hasOwnProperty(this.selectEquipData.uID)) {
+ 61559: var r = this.allInhertEquips[this.selectEquipData.uID], a = n.getItem(r, "item");
+ 61560: o = i.getText(a.Name);
+ 61561: } else {
+ 61562: var s = this.selectEquipData.itemId, l = n.getItem(s, "item");
+ 61563: o = i.getText(l.Name);
+ 61564: }
+ 61565: return (o += p.InventoryModel.getEqQuality(t.numAttr)) + "[" + i.getText(e.name_add) + "]";
+ 61566: };
+ 61567: e.prototype.getSelectEquipsData = function() {
+ 61568: var t = [], e = p.InventoryModel.equipmentDic;
+ 61569: for (var o in e) {
+ 61570: var i = h.EqUtils.equipChangeNormalEq(o, e[o]), r = n.getItem(i.itemId, "item");
+ 61571: !h.EqUtils.equipNum(i.uID) || !this.allInhertEquips.hasOwnProperty(o) && 1 != r.fuse && 3 != r.fuse || h.EqUtils.isDemonedEquip(i) || t.push(i);
+ 61572: }
+ 61573: return t;
+ 61574: };
+---

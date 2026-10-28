@@ -1,0 +1,17 @@
+{
+ "factFields": 356,
+ "byClass": {
+  "契约": 218,
+  "开关": 67,
+  "键集合契约": 8,
+  "惰性": 53,
+  "惰性可缺": 10
+ },
+ "switchMapActions": 99,
+ "switchMapFields": 144,
+ "switchOmittedActions": 87,
+ "statActions": 337,
+ "statFields": 1071,
+ "shapeErrors": 0,
+ "actionCount": 337
+}

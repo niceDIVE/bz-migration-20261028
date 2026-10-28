@@ -1,0 +1,175 @@
+{"t":1793296680879,"boot":"boot-2","impl":"(none)","flow":"(none)","kind":"info","msg":"XMLHttpRequest → 进程内环回（间接层 __BZ_HARNESS__.impl）"}
+{"t":1793296680881,"boot":"boot-2","impl":"(none)","flow":"(none)","kind":"info","msg":"bootstrap boot-2 文件系统就绪 /data/user/0/com.maple.madherogo/files/"}
+{"t":1793296681014,"boot":"boot-2","impl":"hf5d89bf7","flow":"(none)","kind":"info","msg":"策略层载入 hf5d89bf7"}
+{"t":1793296681100,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"info","msg":"流程层载入 ffaec47c3"}
+{"t":1793296681103,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"info","msg":"命令通道就绪 /data/user/0/com.maple.madherogo/files/bz_cmd.txt → /data/user/0/com.maple.madherogo/files/bz_res.txt"}
+{"t":1793296681623,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"scene","name":"SplashScene"}
+{"t":1793296681624,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] 进入场景 SplashScene"}
+{"t":1793296684220,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"scene","name":"gamelogo"}
+{"t":1793296684221,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] 进入场景 gamelogo"}
+{"t":1793296694053,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr register 42ms 7B"}
+{"t":1793296694141,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetServerList"}
+{"t":1793296694225,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.GetServerList 76ms 2638B"}
+{"t":1793296694253,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.TellAction"}
+{"t":1793296694290,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.TellAction 34ms 334B"}
+{"t":1793296694322,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr notice 13ms 28B"}
+{"t":1793296694431,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"scene","name":"svrselect"}
+{"t":1793296694432,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] 进入场景 svrselect"}
+{"t":1793296694434,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] 补 LoginMgr 登录态"}
+{"t":1793296694435,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] JSON.parse 读取探针已挂"}
+{"t":1793296694436,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] setServer 220 (混服26区)"}
+{"t":1793296694437,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"flow","msg":"setServer"}
+{"t":1793296694934,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R1"}
+{"t":1793296694958,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R2"}
+{"t":1793296694959,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.quicklogin"}
+{"t":1793296694962,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R3"}
+{"t":1793296694969,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R4"}
+{"t":1793296694976,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R5"}
+{"t":1793296694977,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R6"}
+{"t":1793296694990,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R7"}
+{"t":1793296695004,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R8"}
+{"t":1793296695005,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ChooseServer"}
+{"t":1793296695006,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R9"}
+{"t":1793296695011,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] onEnterGame（仅此一次）"}
+{"t":1793296695012,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] 发现未知弹窗 NetLoading 方法=[update]"}
+{"t":1793296695013,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] 发现未知弹窗 TextSubsituter 方法=[onLoad,traverseNode]"}
+{"t":1793296695013,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"flow","msg":"onEnterGame"}
+{"t":1793296695016,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R10"}
+{"t":1793296695023,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R11"}
+{"t":1793296695025,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R12"}
+{"t":1793296695029,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R13"}
+{"t":1793296695030,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R14"}
+{"t":1793296695031,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R15"}
+{"t":1793296695031,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R16"}
+{"t":1793296695032,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.quicklogin 71ms 569B"}
+{"t":1793296695033,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R17"}
+{"t":1793296695035,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R18"}
+{"t":1793296695036,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.ChooseServer 36ms 238B"}
+{"t":1793296695039,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R19"}
+{"t":1793296695054,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R20"}
+{"t":1793296695055,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.LoadGame"}
+{"t":1793296695056,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R21"}
+{"t":1793296695058,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R22"}
+{"t":1793296695058,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R23"}
+{"t":1793296695061,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R24"}
+{"t":1793296695061,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R25"}
+{"t":1793296695062,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R26"}
+{"t":1793296695068,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R27"}
+{"t":1793296695069,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R28"}
+{"t":1793296695070,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R29"}
+{"t":1793296695071,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R30"}
+{"t":1793296695072,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R31"}
+{"t":1793296695072,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] LoadGame → 快照 FZhou 任务: 完成=26 进行中=1 物品=33 种"}
+{"t":1793296695073,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R32"}
+{"t":1793296695126,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R33"}
+{"t":1793296695149,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R34"}
+{"t":1793296695155,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R35"}
+{"t":1793296695158,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R36"}
+{"t":1793296695176,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R37"}
+{"t":1793296695179,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R38"}
+{"t":1793296695187,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R39"}
+{"t":1793296695188,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R40"}
+{"t":1793296695225,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetChatAddress"}
+{"t":1793296695234,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.LoadGame 81ms 5753B"}
+{"t":1793296695259,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.GetChatAddress 25ms 697B"}
+{"t":1793296695333,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.TellAction"}
+{"t":1793296695470,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.TellAction 137ms 345B"}
+{"t":1793296695522,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"scene","name":"gamescene"}
+{"t":1793296695523,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] 进入场景 gamescene"}
+{"t":1793296695524,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] 已进入主场景 gamescene"}
+{"t":1793296695526,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[flow] 公告→onBack()"}
+{"t":1793296695526,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"flow","msg":"notice:onBack"}
+{"t":1793296710302,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getAllActivity"}
+{"t":1793296710323,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getActivityCounts"}
+{"t":1793296710329,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.getAllActivity 16ms 569B"}
+{"t":1793296710346,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.getActivityCounts 18ms 537B"}
+{"t":1793298077971,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ acceptTask p={\"taskID\":210300,\"delOrder\":[101080,100010,100060,100070,100090,100100,100120,210400,100130,100140,100150,100160,600010,100170,100190,100200,100180,610010,600020,100210],\"web\":false,\"clientVersion\":{\"android\":\"2.4.7\"},\"NeedUpdateVersion\":\"4.0.0\",\"userAccount\":\"9900012358565\",\"roleID\":16374,\"loginFlag\":1,\"inGameTime\":0,\"nonce\":\"1793298077954a0geibnu\"}"}
+{"t":1793298077972,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.acceptTask"}
+{"t":1793298078001,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.acceptTask 23ms 377B"}
+{"t":1793298079498,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ getFinishTaskAward p={\"type\":1,\"taskID\":210300,\"choose\":0,\"gTime\":0,\"web\":false,\"clientVersion\":{\"android\":\"2.4.7\"},\"NeedUpdateVersion\":\"4.0.0\",\"userAccount\":\"9900012358565\",\"roleID\":16374,\"loginFlag\":1,\"inGameTime\":0,\"nonce\":\"1793298079486oty0g1jb\"}"}
+{"t":1793298079499,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getFinishTaskAward"}
+{"t":1793298079528,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"事件回调异常(readystatechange): TypeError: Cannot read property 'Completetips' of null"}
+{"t":1793298079537,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"frame 0 e.checkTask @ assets/scripts/index.jsc:133983 (no fn ref)"}
+{"t":1793298079538,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"frame 1 e.searchkTaskList @ assets/scripts/index.jsc:133972 (no fn ref)"}
+{"t":1793298079539,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"frame 2 e.completeTask @ assets/scripts/index.jsc:133955 (no fn ref)"}
+{"t":1793298079540,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"frame 3 t.operationalTasks @ assets/scripts/index.jsc:134542 (no fn ref)"}
+{"t":1793298079540,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"frame 4 e.finishTaskCallBack @ assets/scripts/index.jsc:133470 (no fn ref)"}
+{"t":1793298079541,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"frame 5 t.dispatch @ assets/scripts/index.jsc:78381 (no fn ref)"}
+{"t":1793298079543,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"frame 6 _.onreadystatechange @ assets/scripts/index.jsc:59357 (no fn ref)"}
+{"t":1793298079544,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"frame 7 fire @ jsb-adapter/jsb-engine.js:1435 (no fn ref)"}
+{"t":1793298079544,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"frame 8 deliver @ jsb-adapter/jsb-engine.js:1488 (no fn ref)"}
+{"t":1793298079546,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"frame 9 fireTimeout @ jsb-adapter/jsb-builtin.js:2206 (no fn ref)"}
+{"t":1793298079546,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.getFinishTaskAward 20ms 569B"}
+{"t":1793298082891,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getLevelBonusData"}
+{"t":1793298082945,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.getLevelBonusData 15ms 409B"}
+{"t":1793298085893,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getAllActivity"}
+{"t":1793298085915,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getActivityCounts"}
+{"t":1793298085926,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.getAllActivity 14ms 569B"}
+{"t":1793298085935,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.getActivityCounts 19ms 537B"}
+{"t":1793298087704,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetRoldSaveTime"}
+{"t":1793298087882,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetShopAllActive"}
+{"t":1793298087884,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] GetShopAllActive → 11 个商城入口"}
+{"t":1793298087900,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.GetRoldSaveTime 150ms 377B"}
+{"t":1793298087978,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.GetShopAllActive 80ms 505B"}
+{"t":1793298089038,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetMarketList"}
+{"t":1793298089040,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] GetMarketList → 39 行（BZ_MALL 转置为位置数组）"}
+{"t":1793298089134,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.GetMarketList 17ms 2489B"}
+{"t":1793298097531,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.BuyMarketItem"}
+{"t":1793298097534,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] BuyMarketItem 7 → 10114×1，扣 1800 金条，余 10094909"}
+{"t":1793298097590,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetMarketList"}
+{"t":1793298097592,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] GetMarketList → 39 行（BZ_MALL 转置为位置数组）"}
+{"t":1793298097610,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.BuyMarketItem 28ms 505B"}
+{"t":1793298097649,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.GetMarketList 55ms 2489B"}
+{"t":1793298100909,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.recordAttributes"}
+{"t":1793298100910,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] UNKNOWN User.recordAttributes p={\"attrs\":[50,30,20,20,904,300,110,35,278,11,0,0,0,0,0,1,0,4,1,8,100,7,100],\"web\":false,\"clientVersion\":{\"android\":\"2.4.7\"},\"NeedUpdateVersion\":\"4.0.0\",\"userAccount\":\"9900012358565\",\"roleID\":16374,\"loginFlag\":1,\"inGameTime\":0,\"nonce\":\"179329"}
+{"t":1793298100954,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.recordAttributes 53ms 345B"}
+{"t":1793298105759,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1793298105762,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] ⚠ CONSUME_UNMODELED useItem reason=effectUnmodeled itemID=8143 x1（照扣、无效果；待按 Effect 家族实现）"}
+{"t":1793298105765,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 8143 x1 → 余 29"}
+{"t":1793298105798,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 24ms 409B"}
+{"t":1793298106875,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1793298106876,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] ⚠ CONSUME_UNMODELED useItem reason=effectUnmodeled itemID=8143 x1（照扣、无效果；待按 Effect 家族实现）"}
+{"t":1793298106880,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 8143 x1 → 余 28"}
+{"t":1793298106908,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 23ms 409B"}
+{"t":1793298107625,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1793298107626,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] ⚠ CONSUME_UNMODELED useItem reason=effectUnmodeled itemID=8143 x1（照扣、无效果；待按 Effect 家族实现）"}
+{"t":1793298107630,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 8143 x1 → 余 27"}
+{"t":1793298107656,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 17ms 409B"}
+{"t":1793298108669,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1793298108670,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] ⚠ CONSUME_UNMODELED useItem reason=effectUnmodeled itemID=10114 x1（照扣、无效果；待按 Effect 家族实现）"}
+{"t":1793298108673,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 10114 x1 → 余 0"}
+{"t":1793298108692,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 12ms 409B"}
+{"t":1793298122754,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1793298122757,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 3007 内力 200 + 50 → 250（上限 300）"}
+{"t":1793298122760,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 3007 x1 → 余 12"}
+{"t":1793298122780,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 16ms 473B"}
+{"t":1793298128321,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1793298128322,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 3007 内力 250 + 50 → 300（上限 300）"}
+{"t":1793298128325,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 3007 x1 → 余 11"}
+{"t":1793298128343,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 15ms 441B"}
+{"t":1793298136803,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ChooseFixDan"}
+{"t":1793298136816,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.ChooseFixDan 8ms 345B"}
+{"t":1793298138919,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ChooseFixDan"}
+{"t":1793298138932,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.ChooseFixDan 9ms 345B"}
+{"t":1793298146702,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ChooseFixDan"}
+{"t":1793298146712,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.ChooseFixDan 6ms 345B"}
+{"t":1793298155234,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1793298155236,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] ⚠ CONSUME_UNMODELED useItem reason=effectUnmodeled itemID=8905 x1（照扣、无效果；待按 Effect 家族实现）"}
+{"t":1793298155243,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 8905 x1 → 余 19"}
+{"t":1793298155269,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 16ms 409B"}
+{"t":1793298156001,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1793298156002,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] ⚠ CONSUME_UNMODELED useItem reason=effectUnmodeled itemID=8905 x1（照扣、无效果；待按 Effect 家族实现）"}
+{"t":1793298156006,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 8905 x1 → 余 18"}
+{"t":1793298156022,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 10ms 409B"}
+{"t":1793298156682,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1793298156689,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] ⚠ CONSUME_UNMODELED useItem reason=effectUnmodeled itemID=8905 x1（照扣、无效果；待按 Effect 家族实现）"}
+{"t":1793298156693,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 8905 x1 → 余 17"}
+{"t":1793298156718,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 23ms 409B"}
+{"t":1793298157950,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1793298157951,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] ⚠ CONSUME_UNMODELED useItem reason=effectUnmodeled itemID=8905 x1（照扣、无效果；待按 Effect 家族实现）"}
+{"t":1793298157956,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 8905 x1 → 余 16"}
+{"t":1793298157984,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 19ms 409B"}
+{"t":1793298167704,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1793298167705,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] ⚠ CONSUME_UNMODELED useItem reason=effectUnmodeled itemID=8905 x1（照扣、无效果；待按 Effect 家族实现）"}
+{"t":1793298167710,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 8905 x1 → 余 15"}
+{"t":1793298167737,"boot":"boot-2","impl":"hf5d89bf7","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 18ms 409B"}

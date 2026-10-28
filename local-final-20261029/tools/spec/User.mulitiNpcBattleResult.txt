@@ -1,0 +1,74 @@
+# User.mulitiNpcBattleResult  (HttpConst.REQ_MP_RESULT)
+# 出现 2 处
+
+ 89329: n(o, e);
+ 89330: function o() {
+ 89331: return null !== e && e.apply(this, arguments) || this;
+ 89332: }
+ 89333: o.prototype.onLoad = function() {
+ 89334: var t = this;
+ 89335: a.MessageCenter.on(l.HttpConst.REQ_MP_RESULT, function(e, o) {
+ 89336: var i = {
+ 89337: pass: 1
+ 89338: };
+ 89339: o.hasOwnProperty("rewardArray") && (i.rewards = o.rewardArray);
+ 89340: o.hasOwnProperty("equipObj") && (i.equips = o.equipObj);
+ 89341: o.hasOwnProperty("gemId") && (i.materias = o.gemId);
+ 89342: t.getComponent(p.BattleResultMediator).setRewards(i);
+ 89343: }, this);
+ 89344: };
+ 89345: o.prototype.onDestroy = function() {
+ 89346: a.MessageCenter.removeAll(this);
+ 89347: };
+ 89348: o.prototype.start = function() {
+ 89349: var e = s.playerInfo.entity, o = {
+ 89350: gTime: e.totalGameTime.gameTime,
+ 89351: speed: e.hungerConsumingSpeed.finalValue,
+ 89352: hgtimes: e.numStuffed
+ 89353: };
+ 89354: Promise.resolve().then(function() {
+ 89355: return t("../../../../../scripts3/model3/MonopoModel");
+ 89356: }).then(function(t) {
+ 89357: t.MonopoModel.monoFightState ? t.MonopoModel.reqDiceFight() : c.NetMgr.http.sendRequest(l.HttpConst.REQ_MP_RESULT, o);
+ 89358: });
+ 89359: };
+ 89360: return r([ h ], o);
+ 89361: }(cc.Component);
+ 89362: o.NormalMpRwds = u;
+ 89363: cc._RF.pop();
+ 89364: }, {
+ 89365: "../../../../../scripts3/model3/MonopoModel": void 0,
+ 89366: "../../../../core/events/MessageCenter": "MessageCenter",
+ 89367: "../../../../models/vos/PlayerInfo": "PlayerInfo",
+ 89368: "../../../../net/HttpConst": "HttpConst",
+ 89369: "../../../../net/NetMgr": "NetMgr",
+ 89370: "../BattleResultMediator": "BattleResultMediator"
+ 89371: } ],
+ 89372: NormalNpc: [ function(t, e, o) {
+ 89373: "use strict";
+ 89374: cc._RF.push(e, "12d44yENYZLqJ8mewJH+OHW", "NormalNpc");
+ 89375: var i, n = this && this.__extends || (i = function(t, e) {
+---
+ 89376: return (i = Object.setPrototypeOf || {
+ 89377: __proto__: []
+ 89378: } instanceof Array && function(t, e) {
+ 89379: t.__proto__ = e;
+ 89380: } || function(t, e) {
+ 89381: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+ 89382: })(t, e);
+ 89383: }, function(t, e) {
+ 89384: i(t, e);
+ 89385: function o() {
+ 89386: this.constructor = t;
+ 89387: }
+ 89388: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());
+ 89389: }), r = this && this.__decorate || function(t, e, o, i) {
+ 89390: var n, r = arguments.length, a = r < 3 ? e : null === i ? i = Object.getOwnPropertyDescriptor(e, o) : i;
+ 89391: if ("object" == typeof Reflect && "function" == typeof Reflect.decorate) a = Reflect.decorate(t, e, o, i); else for (var s = t.length - 1; s >= 0; s--) (n = t[s]) && (a = (r < 3 ? n(a) : r > 3 ? n(e, o, a) : n(e, o)) || a);
+ 89392: return r > 3 && a && Object.defineProperty(e, o, a), a;
+ 89393: };
+ 89394: Object.defineProperty(o, "__esModule", {
+ 89395: value: !0
+ 89396: });
+ 89397: o.NormalNpc = void 0;
+---

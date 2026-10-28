@@ -1,0 +1,10 @@
+﻿const fs = require('fs');
+const f = require('F:/BaoZouyxt/tools/action_facts3.json');
+const impl = new Set(['acceptTask','CheckBattleResult','CheckName','ChooseServer','Create','GetChatAddress','getCRAInfo','getFinishTaskAward','GetServerList','joinSchool','LoadGame','OpenNovice','quicklogin','ReqSelfBattleInfo','TellAction','upgradeSkill','OnCheckBreak','OnHookBreak','killNpc','BeginSaveNpc','EndSaveNpc','GetRoldSaveTime'].map(x => 'User.' + x));
+const pay = /Pay|IphonePay|cancelPay|Order/i;
+const todo = Object.keys(f).filter(k => f[k].response_fields.some(x => x !== 'hasOwnProperty') && !impl.has(k) && !pay.test(k));
+fs.writeFileSync('F:/BaoZouyxt/tools/todo54.json', JSON.stringify(todo, null, 1));
+console.log('todo:', todo.length);
+const groups = [[], [], [], [], []];
+todo.forEach((a, i) => groups[i % 5].push(a + '.txt'));
+console.log(JSON.stringify(groups));

@@ -1,0 +1,46 @@
+OK    getSignAward                         cost=0 ledger=1
+OK    getPraySignAward                     cost=0 ledger=1
+OK    submitJigsawPrePareItem              cost=1 ledger=0
+OK    diceSellPlaceGoods                   cost=1 ledger=0
+OK    diceBuyPlaceGoods                    cost=1 ledger=1
+OK    getFinishTaskAward                   cost=0 ledger=1
+ALLOW FLAG  passCardAward                        cost=0 ledger=0  // 通行证档位：passAward>=4 判已领 + 活跃度门槛（C01 已审）
+ALLOW TRUST useItem                              cost=1 ledger=0  // 先扣背包再按表发效果，p.itemID 只用来查表（C05 已审）
+OK    saleItem                             cost=1 ledger=0
+OK    buyShopItem                          cost=1 ledger=0
+OK    buySpecialShopItem                   cost=1 ledger=0
+OK    BuyAcitivityShop                     cost=1 ledger=0
+OK    exchangeItem                         cost=1 ledger=0
+OK    buyGoodAndEvilShopItem               cost=1 ledger=0
+OK    buySchoolShop                        cost=1 ledger=0
+OK    BuyMarketItem                        cost=1 ledger=0
+OK    buyEjectGift                         cost=1 ledger=0
+OK    rgShopByItem                         cost=1 ledger=0
+OK    QuickBuyItem                         cost=1 ledger=0
+OK    bzBackfillRewards                    cost=0 ledger=1
+OK    UseAllBall                           cost=1 ledger=0
+OK    getSnowAward                         cost=1 ledger=0
+OK    useItemAddition                      cost=1 ledger=0
+OK    circleTaskAward                      cost=0 ledger=1
+OK    getCircleTaskAward                   cost=0 ledger=1
+OK    quickFinishTask                      cost=1 ledger=1
+OK    getRogueFinishTaskAward              cost=0 ledger=1
+OK    GetRandomEventAward                  cost=0 ledger=1
+OK    receiveAchieveReward                 cost=0 ledger=1
+OK    receiveAchieveRateReward             cost=0 ledger=1
+OK    receiveAchieveSuitReward             cost=0 ledger=1
+OK    makeLove                             cost=0 ledger=1
+OK    receiveAnniversaryPassAward          cost=0 ledger=1
+OK    buyAnniversaryPassGift               cost=1 ledger=1
+OK    receiveAnniversaryPassTaskReward     cost=0 ledger=1
+OK    dispatchAward                        cost=0 ledger=1
+OK    getUFOCatcherData                    cost=0 ledger=1
+WARN  rewardUFO                            资格判断里用到请求参数 p.signCode —— 人工确认这些参数不是档位/身份/胜负（那类必须读存档）
+OK    rewardUFO                            cost=1 ledger=0
+OK    returnSevenDaysAwards                cost=0 ledger=1
+OK    buySkillSkinShop                     cost=1 ledger=0
+OK    obtainCrop                           cost=1 ledger=0
+OK    onKeyObtainCrop                      cost=1 ledger=0
+OK    BuyHomeCrop                          cost=1 ledger=0
+OK    ChooseSanGongDan                     cost=1 ledger=0
+lint_freebie: 发放型 handler 44 个，OK 42，待查 0（白名单 2）

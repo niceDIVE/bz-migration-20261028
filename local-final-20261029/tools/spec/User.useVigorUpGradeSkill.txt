@@ -1,0 +1,99 @@
+# User.useVigorUpGradeSkill  (HttpConst.VIGOR_UPGSKILL)
+# 出现 2 处
+
+120596: } else {
+120597: B.SchoolSquareModel.isCollective = 0;
+120598: cc.log("=======关闭练功=1========");
+120599: s.MessageCenter.dispatch(p.EvName.END_SKILL_TRAINING, !0);
+120600: }
+120601: }, this);
+120602: s.MessageCenter.on(c.HttpConst.VIGOR_UPGSKILL, function(t, e) {
+120603: s.MessageCenter.dispatch(p.EvName.REFRESH_VIGORS, e.vigor);
+120604: l.default.show(r.getText(3259).replace(/\[1\]/, f.SkillTable.getSkillLevel(e.skillID)));
+120605: }, this);
+120606: s.MessageCenter.on(c.HttpConst.CHOOSE_FIX_DAN, function(e, o) {
+120607: s.MessageCenter.dispatch(p.EvName.USE_NEW_ITEM_EVENT, o);
+120608: if (1 == o.eRet) {
+120609: s.MessageCenter.dispatch(p.EvName.SKILL_ITEM_USE_EVENT, {});
+120610: Promise.resolve().then(function() {
+120611: return t("../../scripts3/model3/PopGiftModel");
+120612: }).then(function(t) {
+120613: t.PopGiftModel.setHomeDataUI(o);
+120614: });
+120615: }
+120616: }, this);
+120617: s.MessageCenter.on(c.HttpConst.BEGIN_LIST, function(t, o) {
+120618: if (1 == o.eRet) {
+120619: e.skillQueue = o.skill;
+120620: cc.director.once(cc.Director.EVENT_AFTER_DRAW, function() {
+120621: var t = {
+120622: pathName: "skillsUI/OnhookQueueUI",
+120623: scriptName: "OnhookQueueUI"
+120624: };
+120625: g.default.promiseLoad("comUI/ONhookBgUI", t, function(e) {
+120626: var o = cc.instantiate(e);
+120627: m.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer);
+120628: var i = o.addComponent("OnhookQueueBgUI");
+120629: i.setData(t);
+120630: i.setLabelTitle(r.getText(3945));
+120631: });
+120632: });
+120633: }
+120634: }, this);
+120635: s.MessageCenter.on(c.HttpConst.IMPLANTATION, function(t, o) {
+120636: if (1 == o.eRet) {
+120637: e.skillQueue.push(e.selectId);
+120638: s.MessageCenter.dispatch(p.EvName.SELECT_QUEUE_SKILL);
+120639: } else 6 == o.eRet ? l.default.show(r.getText(4239)) : l.default.show(r.getText(3954));
+120640: }, this);
+120641: s.MessageCenter.on(c.HttpConst.REMOVE_MARTIAL, function(t, o) {
+120642: if (1 == o.eRet) {
+---
+120764: };
+120765: e.prototype.reqConvVigors2SkillLv = function(t) {
+120766: var e = {
+120767: skillID: t,
+120768: flag: v.IceBedModel.getIceBed()
+120769: };
+120770: _.NetMgr.http.sendRequest(c.HttpConst.VIGOR_UPGSKILL, e);
+120771: };
+120772: e.prototype.end = function(t) {
+120773: var e = T.playerInfo.entity;
+120774: b.CrossServiceModel.needLocalUrlAndPort(function() {
+120775: _.NetMgr.http.sendRequest(c.HttpConst.END_LIANGONG, {
+120776: hglmt: e.hunger.limit,
+120777: speed: e.hungerConsumingSpeed.finalValue,
+120778: auto: t
+120779: });
+120780: });
+120781: };
+120782: e.prototype.getSkillTopLevel = function(t) {
+120783: return Math.floor(f.SkillTable.getSkillLevel(f.SkillTable.getBaseSkillID(t)) + T.playerInfo.entity.perception.getRawValue() / i.getConstByID("34"));
+120784: };
+120785: e.prototype.getLGCost = function(t, e, o) {
+120786: o > 200 && (o = 200);
+120787: var i = this.getTrainingCoe(o);
+120788: return Math.floor(t * e * i);
+120789: };
+120790: e.prototype.getTrainingCoe = function(t) {
+120791: t > 200 && (t = 200);
+120792: var e = 1 - (t + 10 * T.playerInfo.entity.skillUpgCostRd.finalValue) / i.getConstByID("16");
+120793: e < .1 && (e = .1);
+120794: return e;
+120795: };
+120796: e.prototype.getUpgrdSpeed = function(t, e, o) {
+120797: void 0 === t && (t = !0);
+120798: void 0 === e && (e = !0);
+120799: void 0 === o && (o = !0);
+120800: void 0 === t && (t = !0);
+120801: void 0 === e && (e = !0);
+120802: void 0 === o && (o = !0);
+120803: var n = 0;
+120804: t && S.RoleBaseInfo.isvip && (n = i.getConstByID("200"));
+120805: var r = d.NonBattleBuffModel.getStatus(1043);
+120806: !o && r && d.NonBattleBuffModel.removeStatus(r);
+120807: var a = 1 + .01 * (d.NonBattleBuffModel.speedBonus + v.IceBedModel.getIceBedSp() + n);
+120808: !o && r && d.NonBattleBuffModel.addStatus(r);
+120809: var s = this.getGengu(!e);
+120810: return i.getConstByID("12") * (1 + s / i.getConstByID("13")) * a;
+---

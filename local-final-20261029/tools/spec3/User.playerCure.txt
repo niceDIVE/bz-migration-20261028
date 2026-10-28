@@ -1,0 +1,11 @@
+# User.playerCure   (HttpConst.UPLOAD_HEAL)
+
+## 请求点 119886: r.NetMgr.http.sendRequest(n.HttpConst.UPLOAD_HEAL, e, null, !1, !1);
+   119878: flag: s
+   119879: };
+   119880: r.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_SKILL_LV, l);
+   119881: };
+   119882: t.prototype.reqUploadHeal = function() {
+   119883: var t = l.UserModel.entity, e = {
+   119884: attArr: [ t.hp.remaining, t.hp.limit, t.hp.finalValue, t.mp.remaining, t.mp.limit ]
+   119885: };

@@ -1,0 +1,101 @@
+{
+  "Q1": {
+    "ID": 3626,
+    "Condition1": [],
+    "Condition2": [],
+    "Condition3": [],
+    "Condition4": [],
+    "Condition5": [],
+    "Name": 32626,
+    "Description": 37626,
+    "Type": 2,
+    "BuyPrice": 3000,
+    "Price": 0,
+    "Effect": 11,
+    "EquipType": 0,
+    "WeaponType": 0,
+    "Limit": 1,
+    "Property1": 0,
+    "Data1": 1112,
+    "Property2": 0,
+    "Data2": 0,
+    "Property3": 0,
+    "Data3": 0,
+    "Property4": 0,
+    "Data4": 0,
+    "Property5": 0,
+    "Data5": 0,
+    "BuffSet": [],
+    "equip": 0,
+    "equip1": 0,
+    "equiplevel": 0,
+    "decomposition": 0,
+    "remain": 0,
+    "canwash": 1,
+    "fightcold": 3,
+    "cd_public": 0,
+    "wq_place": 0,
+    "combat_type": [],
+    "fuse": 0,
+    "name_add": 0,
+    "quality": 0,
+    "decompose": 0,
+    "save": 0,
+    "fightlimit": [],
+    "suicide": 0,
+    "fightarray": [],
+    "suitname": 0,
+    "weaponFightType": 0,
+    "weaponFightSkin": 0,
+    "SpecialData": [],
+    "DeleteDate": [],
+    "icon_item": "0",
+    "box_condition": "0"
+  },
+  "Q2": {
+    "formulaID_search_summary": "三包搜索：index.js 命中 3 处（64793, 64794, 64795）；scripts2.js 命中 0 处 formulaID（小写 formulaId 10 处）；scripts3.js 命中 0 处。",
+    "lines_64760_64820": "64760: if (u > 0) {\n64761: var d = i.getItem(u, \"skill\");\n64762: c.default.show(n.getText(422).replace(/\\[67\\]/g, n.getText(d.Name)));\n64763: }\n64764: } else if (a.hasOwnProperty(\"rewardArray\")) if (e.batchUse) {\n64765: e.batchUse = !1;\n64766: r.MessageCenter.dispatch(s.EvName.SAVE_BOX_REWARD_EVENT, a);\n64767: } else {\n64768: v.default.addShowRewardUI1(a.rewardArray, 0, a.equipObj, {}, null, a.getKnackIds, a.gemId);\n64769: var g = [];\n64770: for (var f in a.rewardArray) g.push({\n64771: itemId: parseInt(f),\n64772: numbers: parseInt(a.rewardArray[f])\n64773: });\n64774: r.MessageCenter.dispatch(s.EvName.REWARD_ITEM, g);\n64775: } else a.hasOwnProperty(\"getKnackIds\") && v.default.addShowRewardUI1({}, 0, {}, {}, null, a.getKnackIds);\n64776: r.MessageCenter.dispatch(s.EvName.USE_NEW_ITEM_EVENT, a);\n64777: a.hasOwnProperty(\"partners\") && N.PartnerModel.updatePartners(a.partners);\n64778: if (a.hasOwnProperty(\"mpnum\")) {\n64779: if (a.note.hasOwnProperty(\"attrch\") && a.note.attrch.hasOwnProperty(\"mpTrained\")) {\n64780: l.RoleBaseInfo.mpTrained;\n64781: l.RoleBaseInfo.mpTrained = a.note.attrch.mpTrained;\n64782: }\n64783: c.default.show(n.getText(\"4671\").replace(/\\[1\\]/, a.mpnum));\n64784: }\n64785: if (a.hasOwnProperty(\"taskID\")) {\n64786: var m = {\n64787: npcState: 2,\n64788: reqTaskObj: {},\n64789: taskObj: i.getItem(a.taskID, \"tasknew\")\n64790: };\n64791: _.default.operationalTasks(0, m);\n64792: }\n64793: if (a.hasOwnProperty(\"formulaID\")) {\n64794: var y = i.getItem(a.formulaID, \"formula\");\n64795: R.RecastModel.formulaArr.push(\"\" + a.formulaID);\n64796: c.default.show(n.getText(1332).replace(/\\[1\\]/, n.getText(y.name)));\n64797: } else if (a.hasOwnProperty(\"mountID\")) {\n64798: p = !0;\n64799: Promise.resolve().then(function() {\n64800: return t(\"./RoleOtherInfo\");\n64801: }).then(function(t) {\n64802: var e = t.RoleOtherInfo.mountObj.e;\n64803: t.RoleOtherInfo.mountObj[a.mountID] = 1;\n64804: t.RoleOtherInfo.mountObj.e = a.mountID;\n64805: if (e != t.RoleOtherInfo.mountObj.e) {\n64806: cc.sys.localStorage.removeItem(l.RoleBaseInfo.roleID + \"mountID\");\n64807: r.MessageCenter.dispatch(s.EvName.CHANGE_PLAYER_EVENT);\n64808: }\n64809: });\n64810: var b = i.getItem(a.mountID, \"mount\");\n64811: b && c.default.show(n.getText(123) + n.getText(b.call));\n64812: } else if (a.hasOwnProperty(\"titleID\")) S.AchieveModel.getAchieveData().hasOwnProperty(a.titleID) ? c.default.show(n.getText(3187)) : S.AchieveModel.showTitleReward([ a.titleID ]); else if (a.hasOwnProperty(\"bloodEndTime\")) Promise.resolve().then(function() {\n64813: return t(\"./RoleOtherInfo\");\n64814: }).then(function(t) {\n64815: t.RoleOtherInfo.setBloodEndTime(a.bloodEndTime);\n64816: }); else if (a.hasOwnProperty(\"dogid\")) {\n64817: var T = i.getItem(a.dogid, \"npc\");\n64818: c.default.show(n.getText(3231).replace(/\\[1\\]/, n.getText(T.NpcName)));\n64819: } else if (a.hasOwnProperty(\"hanyusuiTime\")) {\n64820: M.NonBattleBuffModel.setBufferTotalTime(a.hanyusuiTime);"
+  },
+  "Q3": {
+    "lines_64720_64820": "64720: \n64721: case \"yuanbao\":\n64722: l.RoleBaseInfo.yuanbao = e[o];\n64723: }\n64724: r.MessageCenter.dispatch(s.EvName.SHOP_BUY_ITEM);\n64725: }, this);\n64726: r.MessageCenter.on(a.HttpConst.SELL_ITEM, function(t, o) {\n64727: if (1 == o.eRet) {\n64728: if (o.hasOwnProperty(\"note\")) {\n64729: var i = 0;\n64730: if (o.note.hasOwnProperty(\"ivch\") && !e.judgeObjectIsNull(o.note.ivch)) for (var n in o.note.ivch) i = Number(n); else if (o.note.hasOwnProperty(\"eqch\") && !e.judgeObjectIsNull(o.note.eqch)) for (var a in o.note.eqch) i = Number(a);\n64731: r.MessageCenter.dispatch(s.EvName.SHOP_BUY_ITEM, {\n64732: itemId: i\n64733: });\n64734: }\n64735: } else if (5 == o.eRet) {\n64736: cc.log(\"锁定装备不能出售\");\n64737: r.MessageCenter.dispatch(s.EvName.SHOP_BUY_ITEM);\n64738: } else if (6 == o.eRet) {\n64739: cc.log(\"服务器获取锁定装备数据出错\");\n64740: r.MessageCenter.dispatch(s.EvName.SHOP_BUY_ITEM);\n64741: }\n64742: }, this);\n64743: r.MessageCenter.on(a.HttpConst.BUY_SHOP_ITEM, function(t, o) {\n64744: if (1 == o.eRet) {\n64745: var i = 0;\n64746: if (o.hasOwnProperty(\"note\")) {\n64747: if (o.note.hasOwnProperty(\"ivch\") && !e.judgeObjectIsNull(o.note.ivch)) for (var a in o.note.ivch) i = Number(a); else if (o.note.hasOwnProperty(\"eqch\") && !e.judgeObjectIsNull(o.note.eqch)) for (var a in o.note.eqch) i = Number(a);\n64748: r.MessageCenter.dispatch(s.EvName.SHOP_BUY_ITEM, {\n64749: itemId: i\n64750: });\n64751: }\n64752: } else 4 == o.eRet && c.default.show(n.getText(\"1184\"));\n64753: }, this);\n64754: r.MessageCenter.on(a.HttpConst.USE_ITEM, function(o, a) {\n64755: if (1 == a.eRet) {\n64756: var p = !1;\n64757: if (a.note.hasOwnProperty(\"skch\")) {\n64758: var h = a.note.skch, u = 0;\n64759: for (var f in h) u = Number(f);\n64760: if (u > 0) {\n64761: var d = i.getItem(u, \"skill\");\n64762: c.default.show(n.getText(422).replace(/\\[67\\]/g, n.getText(d.Name)));\n64763: }\n64764: } else if (a.hasOwnProperty(\"rewardArray\")) if (e.batchUse) {\n64765: e.batchUse = !1;\n64766: r.MessageCenter.dispatch(s.EvName.SAVE_BOX_REWARD_EVENT, a);\n64767: } else {\n64768: v.default.addShowRewardUI1(a.rewardArray, 0, a.equipObj, {}, null, a.getKnackIds, a.gemId);\n64769: var g = [];\n64770: for (var f in a.rewardArray) g.push({\n64771: itemId: parseInt(f),\n64772: numbers: parseInt(a.rewardArray[f])\n64773: });\n64774: r.MessageCenter.dispatch(s.EvName.REWARD_ITEM, g);\n64775: } else a.hasOwnProperty(\"getKnackIds\") && v.default.addShowRewardUI1({}, 0, {}, {}, null, a.getKnackIds);\n64776: r.MessageCenter.dispatch(s.EvName.USE_NEW_ITEM_EVENT, a);\n64777: a.hasOwnProperty(\"partners\") && N.PartnerModel.updatePartners(a.partners);\n64778: if (a.hasOwnProperty(\"mpnum\")) {\n64779: if (a.note.hasOwnProperty(\"attrch\") && a.note.attrch.hasOwnProperty(\"mpTrained\")) {\n64780: l.RoleBaseInfo.mpTrained;\n64781: l.RoleBaseInfo.mpTrained = a.note.attrch.mpTrained;\n64782: }\n64783: c.default.show(n.getText(\"4671\").replace(/\\[1\\]/, a.mpnum));\n64784: }\n64785: if (a.hasOwnProperty(\"taskID\")) {\n64786: var m = {\n64787: npcState: 2,\n64788: reqTaskObj: {},\n64789: taskObj: i.getItem(a.taskID, \"tasknew\")\n64790: };\n64791: _.default.operationalTasks(0, m);\n64792: }\n64793: if (a.hasOwnProperty(\"formulaID\")) {\n64794: var y = i.getItem(a.formulaID, \"formula\");\n64795: R.RecastModel.formulaArr.push(\"\" + a.formulaID);\n64796: c.default.show(n.getText(1332).replace(/\\[1\\]/, n.getText(y.name)));\n64797: } else if (a.hasOwnProperty(\"mountID\")) {\n64798: p = !0;\n64799: Promise.resolve().then(function() {\n64800: return t(\"./RoleOtherInfo\");\n64801: }).then(function(t) {\n64802: var e = t.RoleOtherInfo.mountObj.e;\n64803: t.RoleOtherInfo.mountObj[a.mountID] = 1;\n64804: t.RoleOtherInfo.mountObj.e = a.mountID;\n64805: if (e != t.RoleOtherInfo.mountObj.e) {\n64806: cc.sys.localStorage.removeItem(l.RoleBaseInfo.roleID + \"mountID\");\n64807: r.MessageCenter.dispatch(s.EvName.CHANGE_PLAYER_EVENT);\n64808: }\n64809: });\n64810: var b = i.getItem(a.mountID, \"mount\");\n64811: b && c.default.show(n.getText(123) + n.getText(b.call));\n64812: } else if (a.hasOwnProperty(\"titleID\")) S.AchieveModel.getAchieveData().hasOwnProperty(a.titleID) ? c.default.show(n.getText(3187)) : S.AchieveModel.showTitleReward([ a.titleID ]); else if (a.hasOwnProperty(\"bloodEndTime\")) Promise.resolve().then(function() {\n64813: return t(\"./RoleOtherInfo\");\n64814: }).then(function(t) {\n64815: t.RoleOtherInfo.setBloodEndTime(a.bloodEndTime);\n64816: }); else if (a.hasOwnProperty(\"dogid\")) {\n64817: var T = i.getItem(a.dogid, \"npc\");\n64818: c.default.show(n.getText(3231).replace(/\\[1\\]/, n.getText(T.NpcName)));\n64819: } else if (a.hasOwnProperty(\"hanyusuiTime\")) {\n64820: M.NonBattleBuffModel.setBufferTotalTime(a.hanyusuiTime);",
+    "effect_branch_analysis": "在 64720-64820 区间内不存在按 item.Effect 分流的判断。该区间内处理 USE_ITEM 应答（64754 行起）是根据响应体 a 中携带的字段分流。Effect=11（秘籍）若服务端生效成功，后端在 a.note.skch 下发技能变更，进入 64757-64763 行：\n64757: if (a.note.hasOwnProperty(\"skch\")) {\n64758: var h = a.note.skch, u = 0;\n64759: for (var f in h) u = Number(f);\n64760: if (u > 0) {\n64761: var d = i.getItem(u, \"skill\");\n64762: c.default.show(n.getText(422).replace(/\\[67\\]/g, n.getText(d.Name)));\n64763: }\n64764: }"
+  },
+  "Q4": {
+    "table": "tools/cfg/dump/skill.json",
+    "item_3626_Data1": 1112,
+    "item_3626_Data2": 0,
+    "Data1_lookup": {
+      "found": true,
+      "row": {
+        "ID": 1112,
+        "Name": 10885,
+        "Description": 10975,
+        "Type": 3,
+        "Type1": 2,
+        "BigSkill": [
+          1263
+        ],
+        "Coefficient": 1.1,
+        "book": 9189,
+        "act": 1112
+      }
+    },
+    "Data2_lookup": {
+      "found": false,
+      "reason": "Data2 为 0，在 skill 表中无对应行（不存在 ID 为 0 的行）"
+    }
+  },
+  "Q5": {
+    "result": "not found",
+    "file_counts": {
+      "hotfix-patch/probe/log_dump.jsonl": {
+        "total_lines": 82,
+        "matches": 0
+      },
+      "_backup/2026-10-22-2059-pre-fashion-pages/bz_log.jsonl": {
+        "total_lines": 151,
+        "matches": 0
+      }
+    }
+  }
+}

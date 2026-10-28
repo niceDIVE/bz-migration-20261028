@@ -1,0 +1,51 @@
+# User.getSchoolMasterList  (HttpConst.GET_SCHOOL_MASTER_LIST)
+# 出现 1 处
+
+114093: I.Net.sendMsg(a.HttpConst.CTS_QUEUE_STATUS_REQ, {});
+114094: };
+114095: t.prototype.reqQuitSchoolCampaignReq = function() {
+114096: I.Net.sendMsg(a.HttpConst.CTS_QUIT_SCHOOL_CAMPAIGN_REQ, this.signData);
+114097: };
+114098: t.prototype.reqGetSchoolMasterList = function(t) {
+114099: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_MASTER_LIST, {
+114100: schoolId: t
+114101: });
+114102: };
+114103: t.prototype.reqGetSchoolPupilList = function(t) {
+114104: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_PUPIL_LIST, {
+114105: schoolId: t
+114106: });
+114107: };
+114108: t.prototype.reqGetApplyList = function() {
+114109: s.NetMgr.http.sendRequest(a.HttpConst.GET_APPLY_LIST, {});
+114110: };
+114111: t.prototype.reqRegisterPupil = function(t) {
+114112: s.NetMgr.http.sendRequest(a.HttpConst.REGISTER_PUPIL, t);
+114113: };
+114114: t.prototype.reqRegisterMaster = function(t) {
+114115: s.NetMgr.http.sendRequest(a.HttpConst.REGISTER_MASTER, t);
+114116: };
+114117: t.prototype.reqGetSchoolMaster = function(t) {
+114118: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_MASTER, t);
+114119: };
+114120: t.prototype.reqGetSchoolPupil = function(t) {
+114121: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_PUPIL, t);
+114122: };
+114123: t.prototype.reqApplyMaster = function(t) {
+114124: s.NetMgr.http.sendRequest(a.HttpConst.APPLY_MASTER, t);
+114125: };
+114126: t.prototype.reqApplyPupil = function(t) {
+114127: s.NetMgr.http.sendRequest(a.HttpConst.APPLY_PUPIL, t);
+114128: };
+114129: t.prototype.reqGetApplyInfo = function(t) {
+114130: s.NetMgr.http.sendRequest(a.HttpConst.GET_APPLY_INFO, t);
+114131: };
+114132: t.prototype.reqCancelApply = function(t) {
+114133: s.NetMgr.http.sendRequest(a.HttpConst.CANCEL_APPLY, t);
+114134: };
+114135: t.prototype.reqConfirmApply = function(t) {
+114136: s.NetMgr.http.sendRequest(a.HttpConst.CONFIRM_APPLY, t);
+114137: };
+114138: t.prototype.reqGetMasterPupilList = function(t) {
+114139: void 0 === t && (t = 2);
+---

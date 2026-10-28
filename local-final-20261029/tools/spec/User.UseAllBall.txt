@@ -1,0 +1,99 @@
+# User.UseAllBall  (HttpConst.USE_ALL_BALL)
+# 出现 2 处
+
+122537: s.default.addShowRewardUI1(o.rewardArray, 0, {});
+122538: } else 4 == o.eRet ? a.default.show(n.getText(1098)) : 3 == o.eRet ? a.default.show(n.getText(6148)) : 0 == o.eRet ? a.default.show(n.getText(1093)) : 2 == o.eRet && a.default.show(n.getText(6177));
+122539: 2 == t.activeType && (3 == o.eRet ? t.setBeastState(1) : t.setBeastState(0));
+122540: 2 == t.activeType && r.MessageCenter.dispatch(p.EvName.REFRESH_BEAST_STATE);
+122541: r.MessageCenter.dispatch(p.EvName.REMOVE_SNOWBOX_EVENT, t.treatureId);
+122542: }, this);
+122543: r.MessageCenter.on(l.HttpConst.USE_ALL_BALL, function(e, o) {
+122544: if (1 == o.eRet) {
+122545: t.setFirecrackerHP(o.hp);
+122546: f.MadUtilsTS.isNullObj(o.rewardArray) || s.default.addShowRewardUI1(o.rewardArray, 0, {});
+122547: r.MessageCenter.dispatch(p.EvName.REFRESH_FIRECRACK_EVENT);
+122548: } else a.default.show(n.getText(1093));
+122549: }, this);
+122550: };
+122551: t.prototype.getCurBox = function() {
+122552: return this.boxNum;
+122553: };
+122554: t.prototype.reqSnowActive = function(t) {
+122555: if (!this.acting) {
+122556: void 0 === t && (t = 0);
+122557: this.activeType = t;
+122558: var e = {
+122559: roleID: h.RoleBaseInfo.roleID
+122560: };
+122561: c.NetMgr.http.sendRequest(l.HttpConst.SNOWACTIVE, e);
+122562: }
+122563: };
+122564: t.prototype.reqAddSnowHp = function(t) {
+122565: var e = {
+122566: roleID: h.RoleBaseInfo.roleID,
+122567: type: t
+122568: };
+122569: c.NetMgr.http.sendReqWithMask(l.HttpConst.USE_SNOW_BALL, e);
+122570: };
+122571: t.prototype.reqAddBatchSnowHp = function(t, e) {
+122572: var o = {
+122573: roleID: h.RoleBaseInfo.roleID,
+122574: type: t,
+122575: batchType: e
+122576: };
+122577: c.NetMgr.http.sendReqWithMask(l.HttpConst.USE_BATCH_SNOW_BALL, o);
+122578: };
+122579: t.prototype.reqSnowReward = function(t) {
+122580: this.treatureId = t;
+122581: var e = {
+122582: roleID: h.RoleBaseInfo.roleID
+122583: };
+---
+122621: }
+122622: o = parseInt(n);
+122623: }
+122624: return t[o];
+122625: };
+122626: t.prototype.reqThrowFirecracker = function() {
+122627: c.NetMgr.http.sendRequest(l.HttpConst.USE_ALL_BALL, {});
+122628: };
+122629: t.prototype.setFirecrackerHP = function(t) {
+122630: this.firecrackerHp = t;
+122631: };
+122632: t.prototype.getFirecrackerItems = function() {
+122633: for (var t = [], e = i.getItem(2, "activetime").item, o = 0; o < e.length; o++) h.RoleBaseInfo.getItemNum(e[o]) && t.push(e[o]);
+122634: return t;
+122635: };
+122636: t.prototype.playerSpringAction = function() {
+122637: var t = i.getItem(2, "activetime");
+122638: parseInt(t.position);
+122639: r.MessageCenter.dispatch(p.EvName.FIRECRACK_PO_EVENT);
+122640: };
+122641: t.prototype.setCurrentActionId = function(t) {
+122642: this.snowActId = t;
+122643: };
+122644: t.prototype.destroy = function() {
+122645: this.treatureId = 0;
+122646: this.boxNum = 0;
+122647: this.currentSnowHp = 0;
+122648: this.activeType = 0;
+122649: this.snowActId = 0;
+122650: this.beastState = 0;
+122651: this.activetimeList = [];
+122652: };
+122653: t.prototype.setActiveDataList = function(t) {
+122654: this.activetimeList = t;
+122655: };
+122656: return t;
+122657: }();
+122658: o.SnowManModel = new E();
+122659: cc._RF.pop();
+122660: }, {
+122661: "../core/events/MessageCenter": "MessageCenter",
+122662: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+122663: "../gameconfigs/CFMgr": "CFMgr",
+122664: "../gameconfigs/LangMgr": "LangMgr",
+122665: "../gamescenes/helpers/NpcFactory": "NpcFactory",
+122666: "../gamescenes/maputils/MapUtils": "MapUtils",
+122667: "../gui/uicomponents/Alert": "Alert",
+---

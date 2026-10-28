@@ -1,0 +1,13 @@
+# User.upgradeStorage   (HttpConst.UPGRADE_STORAGE)
+
+## 注册点 61040: i.MessageCenter.on(n.HttpConst.UPGRADE_STORAGE, function(t, e) {
+
+## 请求点 61092: u.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_STORAGE, {});
+   61084: var e = l.getItem(t, "bedlevel");
+   61085: return parseInt(e.capacity);
+   61086: };
+   61087: t.prototype.getIceBedObj = function() {
+   61088: var t = r.MarryModel.bedLevel;
+   61089: return l.getItem(t, "bedlevel");
+   61090: };
+   61091: t.prototype.reqUpgradeStorage = function() {

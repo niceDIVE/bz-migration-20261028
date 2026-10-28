@@ -1,0 +1,13 @@
+# User.circleTaskAward   (HttpConst.CIRCLE_TASK_TASK)
+
+## 注册点 43533: i.MessageCenter.on(n.HttpConst.CIRCLE_TASK_TASK, function(e, o) {
+
+## 请求点 43610: f.NetMgr.http.sendRequest(n.HttpConst.CIRCLE_TASK_TASK, {
+   43602: t.prototype.reqChangeDelegateTask = function(t, e) {
+   43603: f.NetMgr.http.sendRequest(n.HttpConst.CHANGE_DELEGATE_TASK, {
+   43604: tIDArr: t,
+   43605: type: e
+   43606: });
+   43607: };
+   43608: t.prototype.reqGetDelegateReward = function(t, e) {
+   43609: this.curTarget = e;

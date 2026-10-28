@@ -1,0 +1,99 @@
+# User.GetClimbingTowerData  (HttpConst.ENTER_GET_CLIMBLING_EVENT)
+# 出现 2 处
+
+137545: this.towerEventAy = [];
+137546: this.sweepLv = 0;
+137547: this.eventType = 1;
+137548: }
+137549: e.prototype.init = function() {
+137550: var t = this;
+137551: l.MessageCenter.on(c.HttpConst.ENTER_GET_CLIMBLING_EVENT, function(e, o) {
+137552: if (1 == o.eRet) {
+137553: t.curFloorNum = o.towerArray[0];
+137554: t.towerItemData = o.towerArray[2];
+137555: t.maxFloor = o.towerArray[7];
+137556: t.isCanSweep = o.towerArray[6];
+137557: t.towerEquipData = {};
+137558: var n = o.towerArray[3];
+137559: t.challengeTime = o.towerArray[4];
+137560: o.towerArray[5] ? t.towerBuffer = o.towerArray[5] : t.towerBuffer = [];
+137561: t.toEatNum = o.chickenLegNum;
+137562: t.towerData = o.towerArray;
+137563: for (var r = p.UserModel.entity, a = 0; a < t.towerBuffer.length; ++a) {
+137564: var s = i.createStatusEffect(t.towerBuffer[a], r, r, 0);
+137565: r.addStatusAtOnce(s);
+137566: }
+137567: for (var l in n) t.towerEquipData[l] = n[l][1];
+137568: t.setTowerEquips(t.towerEquipData);
+137569: if (null == t.towerStartUI) {
+137570: h.default.prefabs.load("towerUI/TowerStartUI", cc.Prefab, function(e, i) {
+137571: var n = cc.instantiate(i);
+137572: u.PopUpMgr.addPopUp(n, f.LayerMgr.popUpLayer, 1, !0);
+137573: n.addComponent("TowerStartUI").setData(o.towerArray);
+137574: t.towerStartUI = n;
+137575: });
+137576: g.NetMgr.http.sendRequest(c.HttpConst.SYCN_TASK, {
+137577: roleID: d.RoleBaseInfo.roleID
+137578: }, null, !1);
+137579: }
+137580: } else cc.log("error!!");
+137581: }, this);
+137582: l.MessageCenter.on(c.HttpConst.TOWER_RANK_LIST, function(t, e) {
+137583: 1 == e.eRet && e.hasOwnProperty("rankArr") && h.default.prefabs.load("towerUI/TowerRank", cc.Prefab, function(t, o) {
+137584: var i = cc.instantiate(o);
+137585: u.PopUpMgr.addPopUp(i, f.LayerMgr.popUpLayer);
+137586: i.addComponent("TowerRank").setData(e.rankArr);
+137587: });
+137588: }, this);
+137589: l.MessageCenter.on(c.HttpConst.TOWER_RANDOM_EVENT, function(e, o) {
+137590: if (1 == o.eRet) {
+137591: t.sweepState = !1;
+---
+137849: this.shopBookShop = [];
+137850: for (var n in t.shopidsBook) this.shopBookShop.push(t.shopidsBook[n]);
+137851: }
+137852: t.hasOwnProperty("isHaveEvent") && (this.isSweepEvent = t.isHaveEvent);
+137853: };
+137854: e.prototype.reqOpenClimbingTower = function() {
+137855: g.NetMgr.http.sendReqWithMask(c.HttpConst.ENTER_GET_CLIMBLING_EVENT, {});
+137856: };
+137857: e.prototype.reqEnterTower = function(t) {
+137858: var e = this.curFloorNum;
+137859: this.eventType = t;
+137860: 0 == t && e++;
+137861: this.challeageState = 0;
+137862: g.NetMgr.http.sendRequest(c.HttpConst.TOWER_RANDOM_EVENT, {
+137863: lv: parseInt(e)
+137864: });
+137865: };
+137866: e.prototype.taskFinishEnterTower = function(t) {
+137867: if (this.sweepState) this.reqCloseNewSweepTowerByLv(); else {
+137868: var e = this.curFloorNum;
+137869: this.eventType = t;
+137870: 0 == t && e++;
+137871: this.challeageState = 0;
+137872: g.NetMgr.http.sendRequest(c.HttpConst.TOWER_RANDOM_EVENT, {
+137873: lv: parseInt(e)
+137874: });
+137875: }
+137876: };
+137877: e.prototype.leaveTowerShowUI = function() {
+137878: var t = this;
+137879: l.MessageCenter.dispatch(S.EvName.STOP_PLAYER);
+137880: y.default.show(a.getText("3065"), [ {
+137881: flag: 0,
+137882: name: a.getText("3066")
+137883: }, {
+137884: flag: 1,
+137885: name: a.getText("3067")
+137886: } ], function(e) {
+137887: var o = 0 == e ? 1 : 0;
+137888: t.reqLeaveTower(o);
+137889: });
+137890: };
+137891: e.prototype.reqLeaveTower = function(t) {
+137892: var e = this;
+137893: 1 == t ? A.MadUtilsTS.isNullObj(this.judgeTowerItems()) ? y.default.show(a.getText(1613), [ {
+137894: flag: 0,
+137895: name: a.getText("332")
+---

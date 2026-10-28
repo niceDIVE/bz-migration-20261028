@@ -1,0 +1,13 @@
+# User.UseSnowBall   (HttpConst.USE_SNOW_BALL)
+
+## 注册点 122505: r.MessageCenter.on(l.HttpConst.USE_SNOW_BALL, function(e, o) {
+
+## 请求点 122569: c.NetMgr.http.sendReqWithMask(l.HttpConst.USE_SNOW_BALL, e);
+   122561: c.NetMgr.http.sendRequest(l.HttpConst.SNOWACTIVE, e);
+   122562: }
+   122563: };
+   122564: t.prototype.reqAddSnowHp = function(t) {
+   122565: var e = {
+   122566: roleID: h.RoleBaseInfo.roleID,
+   122567: type: t
+   122568: };

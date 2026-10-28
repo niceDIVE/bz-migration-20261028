@@ -1,0 +1,99 @@
+# User.getAllServerCount  (HttpConst.GET_ALL_SERVER_COUNT)
+# 出现 2 处
+
+111007: t.prototype.init = function() {
+111008: var t = this;
+111009: this.sceneID = 0;
+111010: this.mapid = 0;
+111011: this.curSeverID = 0;
+111012: this.teamServerData = [];
+111013: r.MessageCenter.on(a.HttpConst.GET_ALL_SERVER_COUNT, function(t, e) {
+111014: if (1 == e.eRet) {
+111015: var o = e.sArr, n = e.serverArr;
+111016: d.default.prefabs.load("fuben/choose", cc.Prefab, function(t, e) {
+111017: var i = cc.instantiate(e);
+111018: m.PopUpMgr.addPopUp(i, g.LayerMgr.popUpLayer, 1, !0);
+111019: i.addComponent("SelectCopyFightChannel").setData(o, n);
+111020: });
+111021: } else if (5 == e.eRet) {
+111022: f.default.show(i.getText(9025));
+111023: E.CopyFightModel.setSelectCopyModel(1);
+111024: cc.log("Not in match time.");
+111025: } else 6 == e.eRet && f.default.show(i.getText(1093));
+111026: }, this);
+111027: r.MessageCenter.on(a.HttpConst.GET_ALL_SERVER_LIST, function(t, e) {
+111028: 1 == e.eRet ? r.MessageCenter.dispatch(s.EvName.SELECT_COPY_SERVER_EVENT, e.serverArr) : 7 == e.eRet && cc.log("等级不够奥");
+111029: }, this);
+111030: r.MessageCenter.on(a.HttpConst.CHANGE_TO_TEAMSERVER, function(e, o) {
+111031: if (1 == o.eRet) {
+111032: h.CrossServiceModel.crossServerState = 4;
+111033: t.setResetData(o);
+111034: u.loginModel.reqLoadGameServer();
+111035: b.uiMgr.showNetworkUI();
+111036: } else f.default.show("服务器忙碌中。。。");
+111037: }, this);
+111038: r.MessageCenter.on(a.HttpConst.BACK_TO_SELF_SERVER, function(e, o) {
+111039: if (1 == o.eRet) {
+111040: t.teamServerData = [];
+111041: h.CrossServiceModel.crossServerState = 5;
+111042: M.WebSocketFactory.closeSocket();
+111043: t.setResetData(o);
+111044: u.loginModel.BackToLogin();
+111045: u.loginModel.reqLoadGameServer();
+111046: }
+111047: }, this);
+111048: };
+111049: t.prototype.onEnterCrossServer = function() {
+111050: y.MultiPlayerModel.destroy();
+111051: v.CopyTeamModel.destroy();
+111052: l.LocalStorageMgr.removeItem(p.RoleBaseInfo.roleID + "$#&A");
+111053: l.LocalStorageMgr.removeItem(p.RoleBaseInfo.roleID + "$#&T");
+---
+111073: });
+111074: };
+111075: t.prototype.reqAllServerListCount = function(t, e) {
+111076: void 0 === e && (e = 1);
+111077: this.mapid = t;
+111078: this.curType = e;
+111079: c.NetMgr.http.sendRequest(a.HttpConst.GET_ALL_SERVER_COUNT, {
+111080: mapid: t,
+111081: type: e
+111082: });
+111083: };
+111084: t.prototype.reqConnectServers = function(t, e) {
+111085: var o = cc.sys.isNative ? 1 : 2;
+111086: this.sceneID = e;
+111087: c.NetMgr.http.sendRequest(a.HttpConst.CHANGE_TO_TEAMSERVER, {
+111088: ser: t,
+111089: lineid: e,
+111090: channel: o,
+111091: inser: this.curSeverID,
+111092: type: this.curType
+111093: });
+111094: };
+111095: t.prototype.reqBackSelfServer = function() {
+111096: var t = {
+111097: acc: p.RoleBaseInfo.userAccount
+111098: };
+111099: c.NetMgr.http.sendRequest(a.HttpConst.BACK_TO_SELF_SERVER, t);
+111100: };
+111101: t.prototype.tipOutServerScene = function() {
+111102: if (4 == h.CrossServiceModel.crossServerState) {
+111103: var t = I.GSceneMgr.getCurSceneID(), e = n.getItem(t, "map");
+111104: e && 2 == e.type1 ? f.default.show(i.getText("4407"), [ {
+111105: flag: 0,
+111106: name: i.getText("332")
+111107: } ], function() {
+111108: o.SServerFightModel.reqBackSelfServer();
+111109: }, "", !1) : o.SServerFightModel.reqBackSelfServer();
+111110: }
+111111: };
+111112: t.prototype.reqLoginCrossServer = function(t) {
+111113: var e = {
+111114: ip: t[0],
+111115: loginPort: t[2],
+111116: port: t[1],
+111117: newID: t[4],
+111118: newAcc: t[5]
+111119: };
+---

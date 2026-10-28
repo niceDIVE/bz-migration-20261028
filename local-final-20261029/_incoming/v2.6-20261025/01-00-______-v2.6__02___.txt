@@ -1,0 +1,55 @@
+下游包 v2.6（只换 extract_shape.py、README.md；out/ 用你们自己的）
+
+══ 一、⚠ C02 有一个能白拿奖励的口子，先修 ══
+
+  环任务这几条领奖路径只认"在不在 accepted 里"，而接任务不看领过没有、也不看是不是环任务：
+    acceptCircleTask(X) → circleTaskAward(X) 发奖 → 再 acceptCircleTask(X) → 再领 …… 无限循环
+  同样能刷：rogueAcceptTask+getRogueFinishTaskAward、delegateTask（也会把任意 X 塞进 accepted）+ 任一领奖口。
+  还有跨口重复：主线任务 X 用 getFinishTaskAward 领过（记在 s.rewarded），
+  再走 acceptCircleTask(X)+circleTaskAward(X) 又能领一遍；quickFinishTask 发了奖但不记 rewarded，
+  之后 getFinishTaskAward 还能再发一次。
+  你们的冒烟测的是"领完马上再领被拒"，没测"领完再接再领"，所以没抓到。
+
+  修法（一处共用，几行）：所有发任务奖的口子共用一本账 s.rewarded：
+    function canClaim(s, tid) {
+      s.rewarded = s.rewarded || [];
+      if (!isRepeatTask(tid)) return s.rewarded.indexOf(tid) < 0;
+      var d = todayKey();                       // 你们已有的按天键
+      if (!s.circleDay || s.circleDay.d !== d) s.circleDay = { d: d, n: 0 };
+      return s.circleDay.n < CIRCLE_DAILY_MAX;  // 环任务每日上限：先用 circle_task 表/客户端 cNum 上限，取不到先写 20
+    }
+    function markClaim(s, tid) {
+      if (!isRepeatTask(tid)) { if (s.rewarded.indexOf(tid) < 0) s.rewarded.push(tid); }
+      else s.circleDay.n++;
+    }
+  用在：circleTaskAward、getCircleTaskAward、getRogueFinishTaskAward、quickFinishTask
+       （quickFinishTask 在**扣元宝之前**判 canClaim，不过就回 2 且不扣钱）。
+  接任务口（acceptCircleTask / rogueAcceptTask / delegateTask）：tid 不在 BZ_TASKS，或非重复任务且已 rewarded，
+       回 eRet:6、不动档。
+  冒烟补一条：接→领→再接→再领，第二次必须被拒、存档逐字节不变；再补一条"主线领过→走环任务口再领"被拒。
+
+══ 二、C02 其他 ══
+  - quickFinishTask 改元宝 50：同意。"原版要真实付费的功能 → 改扣元宝/金条，价格自定"作为通用规则，以后照做不用再报。
+  - B：circle_task 表优先做，这一轮就做（列表空等于功能是死的，而且上面的每日上限、环任务白名单都要从这张表来）。
+    解码 value = _value[0] - offset 没问题，形状冻结审批照走就行。
+  - onekeyCompleteSchoolTask / schoolTaskComplete 现在不发奖也不扣东西：先这样，不算问题。
+  - 注册名和线上名错位那张对照表很有用，留在你们 facts 里。
+
+══ 三、C05 补正：收到，7602 + 每件 10% 这个修正做得好 ══
+
+══ 四、算法 v2.6：你们 trace 指出的两处都修了 ══
+  - passCardData 补抽=False：查定义的路太窄。现在 funcs 查不到会在本文件再按三种写法找，
+    找不到会打一行 trace 说明原因（下次一眼能看出卡哪）。
+  - getBigGrowupData 抽出 'prototype'：是查不到定义后退回"site 下面几行随便一个 function"导致的，
+    这个退路删了；另外过滤 prototype/call/apply/bind；函数体按花括号配平。
+  - 重发判定为空：发送行原先要求含 send/req 字样，你们的发送写法可能不符；现在只排除纯 .on 注册行。
+    调用行本身是 `1 == t && reqBigGrowUpData()` 这种条件短路也算重发。
+  - 顺手修了：`if (...) {` 之前会被认成名叫 if 的函数（会污染"所在函数"）。
+
+══ 五、请回执（短）══
+  1 C02 堵口后的冒烟结果 + 存档 diff
+  2 circle_task 表生成结果（几行、示例 2 行解码前后）
+  3 v2.6 stdout JSON + 两条 trace 原样贴回（--trace User.passCardData / --trace User.getBigGrowupData）
+  4 接着开第 4 批 C03 战斗结算
+
+升级报告条件不变：存档写坏；可白拿钱/道具。

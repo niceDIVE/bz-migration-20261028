@@ -1,0 +1,394 @@
+{
+  "generatedAt": "2026-10-22T11:01:42.281Z",
+  "scope": [
+    "tools/index.js",
+    "tools/scripts2.js",
+    "tools/scripts3.js"
+  ],
+  "actions": {
+    "GetSpecialShopData": {
+      "send": [
+        {
+          "file": "tools/index.js",
+          "line": 1641,
+          "src": [
+            "e.prototype.reqRandomShop = function(t) {",
+            "var e = {",
+            "npcID: t",
+            "};",
+            "g.NetMgr.http.sendRequest(a.HttpConst.SPECIAL_SHOP, e);",
+            "};"
+          ]
+        }
+      ],
+      "const": [
+        {
+          "file": "tools/index.js",
+          "line": 59618,
+          "src": [
+            "SPECIAL_SHOP: \"User.GetSpecialShopData\","
+          ]
+        }
+      ],
+      "consume": [
+        {
+          "file": "tools/index.js",
+          "line": 1404,
+          "src": [
+            "}",
+            "e.prototype.init = function() {",
+            "r.MessageCenter.on(a.HttpConst.SPECIAL_SHOP, this.specialShopCallBack.bind(this), this);",
+            "r.MessageCenter.on(a.HttpConst.ACTIVITE_SHOP, this.activeShppCallBack.bind(this), this);",
+            "r.MessageCenter.on(a.HttpConst.SAVR_VILLAGE, this.savrVillageCallBack.bind(this), this);"
+          ]
+        },
+        {
+          "file": "tools/index.js",
+          "line": 1468,
+          "src": [
+            "};",
+            "e.prototype.specialShopCallBack = function(t, e) {",
+            "if (e.hasOwnProperty(\"shopData\")) cc.director.once(cc.Director.EVENT_AFTER_DRAW, function() {",
+            "s.default.prefabs.load(\"comUI/ShopBgUI\", cc.Prefab, function(t, o) {",
+            "var i = cc.instantiate(o);"
+          ]
+        },
+        {
+          "file": "tools/index.js",
+          "line": 1472,
+          "src": [
+            "var i = cc.instantiate(o);",
+            "l.PopUpMgr.addPopUp(i, c.LayerMgr.popUpLayer);",
+            "i.addComponent(\"SaleShopQiMain\").showSaleShopUI(e);",
+            "});",
+            "}); else {"
+          ]
+        }
+      ],
+      "responseFields": [
+        "shopData"
+      ]
+    },
+    "getGoodAndEvilShopData": {
+      "send": [
+        {
+          "file": "tools/scripts3.js",
+          "line": 36525,
+          "src": [
+            "t.prototype.getShopData = function() {",
+            "l.NetMgr.http.sendRequest(c.HttpConst.GET_GOOD_AND_EVIL_SHOP_DATA);",
+            "};"
+          ]
+        }
+      ],
+      "const": [
+        {
+          "file": "tools/index.js",
+          "line": 60444,
+          "src": [
+            "GET_GOOD_AND_EVIL_SHOP_DATA: \"User.getGoodAndEvilShopData\","
+          ]
+        }
+      ],
+      "consume": [
+        {
+          "file": "tools/scripts3.js",
+          "line": 36358,
+          "src": [
+            "p.MessageCenter.on(c.HttpConst.BUY_TARGET_TASK_NUM, this.onBuyTargetTaskNum, this);",
+            "p.MessageCenter.on(c.HttpConst.CHECK_TARGET_TASK, this.onCheckTarget, this);",
+            "p.MessageCenter.on(c.HttpConst.GET_GOOD_AND_EVIL_SHOP_DATA, this.onGetShopData, this);",
+            "p.MessageCenter.on(c.HttpConst.BUY_GOOD_AND_EVIL_SHOP_ITEM, this.onBuy, this);",
+            "p.MessageCenter.on(c.HttpConst.GET_GOOD_AND_EVIL_RANK_DATA, this.onGetRankData, this);"
+          ]
+        },
+        {
+          "file": "tools/scripts3.js",
+          "line": 36528,
+          "src": [
+            "};",
+            "t.prototype.onGetShopData = function(t, e) {",
+            "if (1 == e.eRet) {",
+            "this.shopData = e.shop;",
+            "this.shopRefreshTime = e.nextRefreshTime;"
+          ]
+        },
+        {
+          "file": "tools/scripts3.js",
+          "line": 36529,
+          "src": [
+            "t.prototype.onGetShopData = function(t, e) {",
+            "if (1 == e.eRet) {",
+            "this.shopData = e.shop;",
+            "this.shopRefreshTime = e.nextRefreshTime;",
+            "h.default.common.load(\"ui/ge/ge_store\", cc.SpriteAtlas, function(t, e) {"
+          ]
+        },
+        {
+          "file": "tools/scripts3.js",
+          "line": 36530,
+          "src": [
+            "if (1 == e.eRet) {",
+            "this.shopData = e.shop;",
+            "this.shopRefreshTime = e.nextRefreshTime;",
+            "h.default.common.load(\"ui/ge/ge_store\", cc.SpriteAtlas, function(t, e) {",
+            "e.addRef();"
+          ]
+        }
+      ],
+      "responseFields": [
+        "eRet",
+        "shop",
+        "nextRefreshTime"
+      ]
+    },
+    "RG_GET_SHOP_DATA": {
+      "send": [
+        {
+          "file": "tools/scripts3.js",
+          "line": 71221,
+          "src": [
+            "t.prototype.getShopData = function() {",
+            "h.NetMgr.http.sendRequest(l.HttpConst.RG_GET_SHOP_DATA);",
+            "};"
+          ]
+        }
+      ],
+      "const": [
+        {
+          "file": "tools/index.js",
+          "line": 60515,
+          "src": [
+            "RG_GET_SHOP_DATA: \"User.rgGetShopData\","
+          ]
+        }
+      ],
+      "consume": [
+        {
+          "file": "tools/scripts3.js",
+          "line": 70901,
+          "src": [
+            "p.MessageCenter.on(l.HttpConst.ROGUE_EVENT_OPTION, this.onEventOption, this);",
+            "p.MessageCenter.on(l.HttpConst.ROGUE_OUTFITTING, this.onOutfitting, this);",
+            "p.MessageCenter.on(l.HttpConst.RG_GET_SHOP_DATA, this.onGetShopData, this);",
+            "p.MessageCenter.on(l.HttpConst.RG_SHOP_BY_ITEM, this.onShopBuy, this);",
+            "p.MessageCenter.on(l.HttpConst.RG_EQUIP_UPGRADE, this.onEquipUpgrade, this);"
+          ]
+        },
+        {
+          "file": "tools/scripts3.js",
+          "line": 71232,
+          "src": [
+            "};",
+            "t.prototype.onGetShopData = function(t, e) {",
+            "if (1 == e.eRet) {",
+            "this.shopData = e.shop;",
+            "this.lastSeasonRank = e.rank;"
+          ]
+        },
+        {
+          "file": "tools/scripts3.js",
+          "line": 71233,
+          "src": [
+            "t.prototype.onGetShopData = function(t, e) {",
+            "if (1 == e.eRet) {",
+            "this.shopData = e.shop;",
+            "this.lastSeasonRank = e.rank;",
+            "this.shopEndTime = e.endTime;"
+          ]
+        },
+        {
+          "file": "tools/scripts3.js",
+          "line": 71234,
+          "src": [
+            "if (1 == e.eRet) {",
+            "this.shopData = e.shop;",
+            "this.lastSeasonRank = e.rank;",
+            "this.shopEndTime = e.endTime;",
+            "this.reputationLevelId = e.reputationLevelId;"
+          ]
+        },
+        {
+          "file": "tools/scripts3.js",
+          "line": 71235,
+          "src": [
+            "this.shopData = e.shop;",
+            "this.lastSeasonRank = e.rank;",
+            "this.shopEndTime = e.endTime;",
+            "this.reputationLevelId = e.reputationLevelId;",
+            "this.sortShopData();"
+          ]
+        },
+        {
+          "file": "tools/scripts3.js",
+          "line": 71236,
+          "src": [
+            "this.lastSeasonRank = e.rank;",
+            "this.shopEndTime = e.endTime;",
+            "this.reputationLevelId = e.reputationLevelId;",
+            "this.sortShopData();",
+            "g.RogueUtil.showShop();"
+          ]
+        }
+      ],
+      "responseFields": [
+        "eRet",
+        "shop",
+        "rank",
+        "endTime",
+        "reputationLevelId"
+      ]
+    },
+    "getChangeShop": {
+      "send": [
+        {
+          "file": "tools/index.js",
+          "line": 47101,
+          "src": [
+            "t.prototype.reqExchangeItemData = function(t) {",
+            "this.exchangeId = t;",
+            "u.NetMgr.http.sendRequest(n.HttpConst.GET_CHANGE_SHOP, {",
+            "npcid: t",
+            "});",
+            "};"
+          ]
+        }
+      ],
+      "const": [
+        {
+          "file": "tools/index.js",
+          "line": 59695,
+          "src": [
+            "GET_CHANGE_SHOP: \"User.getChangeShop\","
+          ]
+        }
+      ],
+      "consume": [
+        {
+          "file": "tools/index.js",
+          "line": 47076,
+          "src": [
+            "this.exchangeId = 0;",
+            "var t = this;",
+            "i.MessageCenter.on(n.HttpConst.GET_CHANGE_SHOP, function(t, e) {",
+            "1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EXCHANGE_SHOP_DATA, e.shopObj);",
+            "}, this);"
+          ]
+        },
+        {
+          "file": "tools/index.js",
+          "line": 47077,
+          "src": [
+            "var t = this;",
+            "i.MessageCenter.on(n.HttpConst.GET_CHANGE_SHOP, function(t, e) {",
+            "1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EXCHANGE_SHOP_DATA, e.shopObj);",
+            "}, this);",
+            "i.MessageCenter.on(n.HttpConst.GET_ITEM_DATA, function(e, o) {"
+          ]
+        }
+      ],
+      "responseFields": [
+        "eRet",
+        "shopObj"
+      ]
+    },
+    "exchangeItem": {
+      "send": [
+        {
+          "file": "tools/index.js",
+          "line": 47112,
+          "src": [
+            "t.prototype.reqExchangeBuy = function(t, e) {",
+            "u.NetMgr.http.sendRequest(n.HttpConst.EXCHANGE_ITEM, {",
+            "itemID: t,",
+            "itemNum: e,",
+            "npcid: this.exchangeId",
+            "});",
+            "};"
+          ]
+        }
+      ],
+      "const": [
+        {
+          "file": "tools/index.js",
+          "line": 59698,
+          "src": [
+            "EXCHANGE_ITEM: \"User.exchangeItem\","
+          ]
+        }
+      ],
+      "consume": [
+        {
+          "file": "tools/index.js",
+          "line": 47090,
+          "src": [
+            "}",
+            "}, this);",
+            "i.MessageCenter.on(n.HttpConst.EXCHANGE_ITEM, function(t, e) {",
+            "if (1 == e.eRet) {",
+            "i.MessageCenter.dispatch(r.EvName.EXCHANGE_ITEM_SHOP);"
+          ]
+        },
+        {
+          "file": "tools/index.js",
+          "line": 47091,
+          "src": [
+            "}, this);",
+            "i.MessageCenter.on(n.HttpConst.EXCHANGE_ITEM, function(t, e) {",
+            "if (1 == e.eRet) {",
+            "i.MessageCenter.dispatch(r.EvName.EXCHANGE_ITEM_SHOP);",
+            "i.MessageCenter.dispatch(r.EvName.EXCHANGE_UPDATE_SHOP, e.itemID);"
+          ]
+        },
+        {
+          "file": "tools/index.js",
+          "line": 47093,
+          "src": [
+            "if (1 == e.eRet) {",
+            "i.MessageCenter.dispatch(r.EvName.EXCHANGE_ITEM_SHOP);",
+            "i.MessageCenter.dispatch(r.EvName.EXCHANGE_UPDATE_SHOP, e.itemID);",
+            "var o = h.getItem(e.itemID, \"item\");",
+            "c.default.show(p.getText(123) + p.getText(o.Name) + \"x\" + e.itemNum);"
+          ]
+        },
+        {
+          "file": "tools/index.js",
+          "line": 47094,
+          "src": [
+            "i.MessageCenter.dispatch(r.EvName.EXCHANGE_ITEM_SHOP);",
+            "i.MessageCenter.dispatch(r.EvName.EXCHANGE_UPDATE_SHOP, e.itemID);",
+            "var o = h.getItem(e.itemID, \"item\");",
+            "c.default.show(p.getText(123) + p.getText(o.Name) + \"x\" + e.itemNum);",
+            "}"
+          ]
+        },
+        {
+          "file": "tools/index.js",
+          "line": 47095,
+          "src": [
+            "i.MessageCenter.dispatch(r.EvName.EXCHANGE_UPDATE_SHOP, e.itemID);",
+            "var o = h.getItem(e.itemID, \"item\");",
+            "c.default.show(p.getText(123) + p.getText(o.Name) + \"x\" + e.itemNum);",
+            "}",
+            "}, this);"
+          ]
+        }
+      ],
+      "responseFields": [
+        "eRet",
+        "itemID",
+        "itemNum"
+      ]
+    }
+  },
+  "anchorMisses": [
+    "锚点未命中：scripts3.js:60444（该行是 plantingData 循环，不是常量定义；GET_GOOD_AND_EVIL_SHOP_DATA 常量定义实际在 tools/index.js:60444）",
+    "锚点命中：index.js:1637-1642",
+    "锚点命中：index.js:59618",
+    "锚点命中：scripts3.js:36524",
+    "锚点命中：index.js:47076-47078",
+    "锚点命中：index.js:47111-47116",
+    "锚点命中：index.js:59695",
+    "锚点命中：index.js:59698"
+  ]
+}

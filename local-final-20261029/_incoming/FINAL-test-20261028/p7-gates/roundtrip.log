@@ -1,0 +1,7 @@
+ROUNDTRIP actions: GetSchoolReview,rgGetShopData,getHousekeeper,getGrowupData,getFlipCard,getFriendPartner,getReturnSevenDayData,getPupilRewardList,setAdvancedTasksTip,setPlayerItemSort,getGoldConsumedRewardData,getAlchemyData,boosRankList,getOpenActive,getSchoolPupilList,getCRLActivityData,joinSchoolPrePareCamp,getReturnTaskData,GetSpecialShopData,joinSchoolSupportPrePareCamp,chooseAnniversaryPassRg,getSpringChallengeData,getSchoolSupportPrePareCamp,getReturnGift,getMasterRewardList,checkSpecial,getAchieveData,rankList,getLevelBonusData,getAdvancedTasksTip,getjigsawData,getPraySignActive,getActivity,getjigsawTaskData,getAdvancedTasksData,getSpringCelebrateData,plantTree,getwulinArenaData,getSevenTaskList,getGMGiveItemList,getSpringGiftPermanent,getGoodAndEvilShopData,getAllActivity,refreshSkillTrickExchangeData,setPlayerSkillSort,getAnniversaryPassData,getTreePlanting,getRecuit,roguePveBattleResult,getMAActivity
+ROUNDTRIP 0205 actions ok=50 threw=0 checks 8/8
+ROUNDTRIP 0232 actions ok=50 threw=0 checks 8/8
+ROUNDTRIP 0250 actions ok=50 threw=0 checks 8/8
+ROUNDTRIP REAL-COPY actions ok=50 threw=0 checks 8/8
+ROUNDTRIP empty actions ok=50 threw=0 checks 8/8
+ROUNDTRIP ALL PASS

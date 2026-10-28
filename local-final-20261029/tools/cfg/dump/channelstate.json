@@ -1,0 +1,1 @@
+{"name":"channelstate","rows":4,"cols":["id","down","up","state"],"data":{"1":{"id":1,"down":0,"up":15,"state":1468},"2":{"id":2,"down":15,"up":30,"state":1469},"3":{"id":3,"down":30,"up":50,"state":1470},"4":{"id":4,"down":50,"up":51,"state":1471}}}

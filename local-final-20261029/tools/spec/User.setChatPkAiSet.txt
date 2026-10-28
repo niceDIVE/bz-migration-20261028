@@ -1,0 +1,80 @@
+# User.setChatPkAiSet  (HttpConst.SAVE_CUSTOM_AI)
+# 出现 2 处
+
+ 28530: function t() {
+ 28531: this.pAiID = 0;
+ 28532: this.partnerEntity = null;
+ 28533: this.option = 0;
+ 28534: }
+ 28535: t.prototype.init = function() {
+ 28536: r.MessageCenter.on(i.HttpConst.SAVE_CUSTOM_AI, this.saveAiData, this);
+ 28537: r.MessageCenter.on(i.HttpConst.GET_CUSTOM_AI, this.getAIInfoData, this);
+ 28538: r.MessageCenter.on(i.HttpConst.SET_CHAT_PK_OPTION, this.onSetOption, this);
+ 28539: r.MessageCenter.on("User.getFriendPartnerAiSet", this.getAIInfoData, this);
+ 28540: r.MessageCenter.on("User.setFriendPartnerAiSet", this.saveAiData, this);
+ 28541: };
+ 28542: t.prototype.setAiSetType = function(t, e) {
+ 28543: void 0 === e && (e = null);
+ 28544: this.pAiID = t;
+ 28545: e && (this.partnerEntity = e);
+ 28546: };
+ 28547: t.prototype.saveAiData = function() {
+ 28548: a.default.show(s.getText(7049));
+ 28549: };
+ 28550: t.prototype.getAIInfoData = function(t, e) {
+ 28551: this.option = e.option;
+ 28552: r.MessageCenter.dispatch(l.EvName.ON_GET_AI_DATA, e);
+ 28553: };
+ 28554: t.prototype.onSetOption = function(t, e) {
+ 28555: if (1 == e.eRet) {
+ 28556: this.option = e.option;
+ 28557: r.MessageCenter.dispatch(l.EvName.SET_CHAT_PK_OPTION, e.option);
+ 28558: } else a.default.show(s.getText(6000813));
+ 28559: };
+ 28560: t.prototype.saveCustomAI = function(t) {
+ 28561: if (this.pAiID > 0) {
+ 28562: t.fpId = this.pAiID;
+ 28563: n.NetMgr.http.sendRequest("User.setFriendPartnerAiSet", t);
+ 28564: } else n.NetMgr.http.sendRequest(i.HttpConst.SAVE_CUSTOM_AI, t);
+ 28565: };
+ 28566: t.prototype.getCustomAI = function(t) {
+ 28567: void 0 === t && (t = 0);
+ 28568: this.pAiID > 0 ? n.NetMgr.http.sendRequest("User.getFriendPartnerAiSet", {
+ 28569: fpId: this.pAiID
+ 28570: }) : n.NetMgr.http.sendRequest(i.HttpConst.GET_CUSTOM_AI, {});
+ 28571: };
+ 28572: t.prototype.setOption = function(t) {
+ 28573: n.NetMgr.http.sendRequest(i.HttpConst.SET_CHAT_PK_OPTION, {
+ 28574: option: t
+ 28575: });
+ 28576: };
+---
+ 28577: t.prototype.extractStatusEfs = function(t) {
+ 28578: var e = c.UserModel.entity;
+ 28579: this.pAiID > 0 && (e = this.partnerEntity);
+ 28580: e.updateUltimateSkills();
+ 28581: var o = e.attackSkillEquipped, i = h.MadUtilsTS.getAvailableFeats(o, e.getSkillLv(o)), n = new Set();
+ 28582: this.getEffects(i, t, n);
+ 28583: for (var r = e.ultimateSkills.concat(e.fistUltimateSkills), a = {}, s = 0; s < r.length; s++) a[r[s]] = s;
+ 28584: r = [];
+ 28585: for (var l in a) r.push(Number(l));
+ 28586: var u = [ 1993, 1986, 1988, 1921, 1922, 1923, 2082, 2124, 2165, 2177 ], f = p.getItem(o, "skill"), d = [ 286, 287, 223, 20, 36, 304, 25, 24, 284, 281, 285, 39, 10, 268, 56 ];
+ 28587: if (f.Type1 < 3) for (var g = f.buffall, m = 0; m < g.length; m++) {
+ 28588: var y = p.getItem(g[m], "buff");
+ 28589: y && d.indexOf(y.Effect) >= 0 && this.setEffects(g[m], t, n);
+ 28590: }
+ 28591: var v = e.getSkill(o), _ = [];
+ 28592: if (v && v.spellGroups) for (var S = 0; S < v.spellGroups.length; ++S) {
+ 28593: var M = v.spellGroups[S];
+ 28594: if (M) {
+ 28595: var E = p.getItem(M.id, "skill_Trick");
+ 28596: if (2 == t) {
+ 28597: if (E.add && E.add.length > 0) {
+ 28598: var I = {
+ 28599: 12316: 4770,
+ 28600: 12317: 4771,
+ 28601: 12318: 4772,
+ 28602: 12319: {
+ 28603: 4773: [ 4777, 4778, 4780 ]
+ 28604: },
+---

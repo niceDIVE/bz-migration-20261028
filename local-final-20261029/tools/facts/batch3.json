@@ -1,0 +1,242 @@
+[
+ {
+  "action": "User.BeginRollDice",
+  "field": "eRet",
+  "usage": "0 != e.eRet",
+  "line": "17: if (0 != e.eRet) if (2 != e.eRet) if (3 != e.eRet) {"
+ },
+ {
+  "action": "User.BeginRollDice",
+  "field": "eRet",
+  "usage": "2 != e.eRet",
+  "line": "17: if (0 != e.eRet) if (2 != e.eRet) if (3 != e.eRet) {"
+ },
+ {
+  "action": "User.BeginRollDice",
+  "field": "eRet",
+  "usage": "3 != e.eRet",
+  "line": "17: if (0 != e.eRet) if (2 != e.eRet) if (3 != e.eRet) {"
+ },
+ {
+  "action": "User.EndFish",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "17: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.EndFish",
+  "field": "serverTime",
+  "usage": "e.serverTime - e.beginTime",
+  "line": "20: var o = .001 * (e.serverTime - e.beginTime);"
+ },
+ {
+  "action": "User.EndFish",
+  "field": "beginTime",
+  "usage": "e.serverTime - e.beginTime",
+  "line": "20: var o = .001 * (e.serverTime - e.beginTime);"
+ },
+ {
+  "action": "User.EndFish",
+  "field": "gTime",
+  "usage": "a.totalGameTime.gameTime = e.gTime",
+  "line": "23: a.totalGameTime.gameTime = e.gTime;"
+ },
+ {
+  "action": "User.EndFish",
+  "field": "hg",
+  "usage": "a.hunger.remaining = e.hg",
+  "line": "24: a.hunger.remaining = e.hg;"
+ },
+ {
+  "action": "User.EndFish",
+  "field": "hgtimes",
+  "usage": "a.numStuffed = e.hgtimes",
+  "line": "25: a.numStuffed = e.hgtimes;"
+ },
+ {
+  "action": "User.EndFish",
+  "field": "awardArr",
+  "usage": "for (var s in e.awardArr)",
+  "line": "26: for (var s in e.awardArr) d.InventoryDB.addItem(parseInt(s), e.awardArr[s]);"
+ },
+ {
+  "action": "User.EndFish",
+  "field": "awardArr",
+  "usage": "e.awardArr[s]",
+  "line": "26: for (var s in e.awardArr) d.InventoryDB.addItem(parseInt(s), e.awardArr[s]);"
+ },
+ {
+  "action": "User.EndFish",
+  "field": "extraArr",
+  "usage": "e.extraArr.length",
+  "line": "27: for (var u = [], f = 0; f < e.extraArr.length; f++) {"
+ },
+ {
+  "action": "User.EndFish",
+  "field": "extraArr",
+  "usage": "var g = e.extraArr[f]",
+  "line": "28: var g = e.extraArr[f];"
+ },
+ {
+  "action": "User.FriendDelete",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "17: 1 == e.eRet && i.MessageCenter.dispatch(c.EvName.USER_FRIEND_DELETE, e);"
+ },
+ {
+  "action": "User.GetSchoolReview",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "17: if (1 == e.eRet) if (1 == e.type) r.MessageCenter.dispatch(l.EvName.ON_GET_MOSTLIKED, e.reviewList); else {"
+ },
+ {
+  "action": "User.GetSchoolReview",
+  "field": "type",
+  "usage": "1 == e.type",
+  "line": "17: if (1 == e.eRet) if (1 == e.type) r.MessageCenter.dispatch(l.EvName.ON_GET_MOSTLIKED, e.reviewList); else {"
+ },
+ {
+  "action": "User.GetSchoolReview",
+  "field": "reviewList",
+  "usage": "r.MessageCenter.dispatch(l.EvName.ON_GET_MOSTLIKED, e.reviewList)",
+  "line": "17: if (1 == e.eRet) if (1 == e.type) r.MessageCenter.dispatch(l.EvName.ON_GET_MOSTLIKED, e.reviewList); else {"
+ },
+ {
+  "action": "User.GetSchoolReview",
+  "field": "maxPage",
+  "usage": "this.newPostPage < e.maxPage",
+  "line": "19: this.theresmore = this.newPostPage < e.maxPage;"
+ },
+ {
+  "action": "User.GetSchoolReview",
+  "field": "reviewList",
+  "usage": "r.MessageCenter.dispatch(l.EvName.ON_GET_PAGE, e.reviewList)",
+  "line": "20: r.MessageCenter.dispatch(l.EvName.ON_GET_PAGE, e.reviewList);"
+ },
+ {
+  "action": "User.QuickBuyItem",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "18: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.QuickBuyItem",
+  "field": "userGold",
+  "usage": "m.InventoryDB.setGold(e.userGold)",
+  "line": "19: m.InventoryDB.setGold(e.userGold);"
+ },
+ {
+  "action": "User.QuickBuyItem",
+  "field": "itemID",
+  "usage": "h.EvName.QUICK_BUY_COMPLETE + e.itemID",
+  "line": "20: l.MessageCenter.dispatch(h.EvName.QUICK_BUY_COMPLETE + e.itemID, {"
+ },
+ {
+  "action": "User.QuickBuyItem",
+  "field": "itemNum",
+  "usage": "num: e.itemNum",
+  "line": "21: num: e.itemNum"
+ },
+ {
+  "action": "User.QuickBuyItem",
+  "field": "eRet",
+  "usage": "3 == e.eRet",
+  "line": "23: } else 3 == e.eRet || c.default.show(i.getText(535), [ {"
+ },
+ {
+  "action": "User.birthChild",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "17: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.birthChild",
+  "field": "childObj",
+  "usage": "this.childData = e.childObj",
+  "line": "19: this.childData = e.childObj;"
+ },
+ {
+  "action": "User.divorceNpc",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "17: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.divorceNpc",
+  "field": "npcID",
+  "usage": "this.divorceNpcMap[e.npcID] = !0",
+  "line": "20: this.divorceNpcMap[e.npcID] = !0;"
+ },
+ {
+  "action": "User.divorceNpc",
+  "field": "deletePartners",
+  "usage": "T.PartnerModel.deletePartnerData(e.deletePartners)",
+  "line": "22: e.hasOwnProperty(\"deletePartners\") && T.PartnerModel.deletePartnerData(e.deletePartners);"
+ },
+ {
+  "action": "User.divorceNpc",
+  "field": "eRet",
+  "usage": "2 == e.eRet",
+  "line": "23: } else 2 == e.eRet ? p.default.show(r.getText(\"1139\")) : p.default.show(r.getText(\"1140\"));"
+ },
+ {
+  "action": "User.getCircleTaskAward",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "17: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.getCircleTaskAward",
+  "field": "rewardArray",
+  "usage": "A.MadUtilsTS.isNullObj(e.rewardArray)",
+  "line": "20: if (A.MadUtilsTS.isNullObj(e.rewardArray) && A.MadUtilsTS.isNullObj(e.equipObj)) C.GuideMgr.enterFirstGuide(this.finishTaskObj.taskObj.TaskID, 1); else {"
+ },
+ {
+  "action": "User.getCircleTaskAward",
+  "field": "equipObj",
+  "usage": "A.MadUtilsTS.isNullObj(e.equipObj)",
+  "line": "20: if (A.MadUtilsTS.isNullObj(e.rewardArray) && A.MadUtilsTS.isNullObj(e.equipObj)) C.GuideMgr.enterFirstGuide(this.finishTaskObj.taskObj.TaskID, 1); else {"
+ },
+ {
+  "action": "User.getCircleTaskAward",
+  "field": "rewardArray",
+  "usage": "h = e.rewardArray",
+  "line": "23: var l = \"\", h = e.rewardArray;"
+ },
+ {
+  "action": "User.marryNpc",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "17: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.marryNpc",
+  "field": "npcID",
+  "usage": "this.npcMarryState = e.npcID",
+  "line": "22: this.npcMarryState = e.npcID;"
+ },
+ {
+  "action": "User.marryNpc",
+  "field": "npcID",
+  "usage": "a.getItem(e.npcID, \"npc\")",
+  "line": "23: var o = a.getItem(e.npcID, \"npc\"), n = parseInt(o.jineng[1]);"
+ },
+ {
+  "action": "User.sycnTask",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "47: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.sycnTask",
+  "field": "PlayerFinishTaskObj",
+  "usage": "e.PlayerFinishTaskObj",
+  "line": "49: if (e.hasOwnProperty(\"PlayerFinishTaskObj\") && e.PlayerFinishTaskObj) {"
+ },
+ {
+  "action": "User.sycnTask",
+  "field": "PlayerFinishTaskObj",
+  "usage": "c.RoleBaseInfo.finishTaskObj = e.PlayerFinishTaskObj",
+  "line": "50: c.RoleBaseInfo.finishTaskObj = e.PlayerFinishTaskObj;"
+ }
+]

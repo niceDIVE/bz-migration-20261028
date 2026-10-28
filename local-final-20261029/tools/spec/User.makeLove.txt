@@ -1,0 +1,99 @@
+# User.makeLove  (HttpConst.MAKE_LOVE)
+# 出现 2 处
+
+ 77023: i.MessageCenter.on(n.HttpConst.RECEIVENPC_EVENT, this.callBackReceiveNpcEvent, this);
+ 77024: i.MessageCenter.on(n.HttpConst.MARRY_NPC_EVENT, this.callBackMarryNpcEvent, this);
+ 77025: i.MessageCenter.on(n.HttpConst.WRITE_BOOK_EVENT, this.callBackWriteBookEvent, this);
+ 77026: i.MessageCenter.on(n.HttpConst.DIVORCENPC, this.callBackDivorceNpc, this);
+ 77027: i.MessageCenter.on(n.HttpConst.MARRY_AWARD, this.callBackMarryAward, this);
+ 77028: i.MessageCenter.on(n.HttpConst.BEGIN_WEDDING, this.callBackBeginWedding, this);
+ 77029: i.MessageCenter.on(n.HttpConst.MAKE_LOVE, this.callBackMakeLove, this);
+ 77030: i.MessageCenter.on(n.HttpConst.BIRTHCHILD, this.callBackBirthild, this);
+ 77031: i.MessageCenter.on(n.HttpConst.EXILE_CHILD, this.callBackExileChild, this);
+ 77032: };
+ 77033: e.prototype.setRoleMarryInfo = function(e) {
+ 77034: e.hasOwnProperty("maxWuxin") && (this.maxWuxin = e.maxWuxin);
+ 77035: if (e.hasOwnProperty("proposeNpc")) {
+ 77036: for (var o = e.proposeNpc, i = 0; i < o.length; i++) this.proposeNpcInfo[o[i]] = !0;
+ 77037: this.rentProState = e.rentGroup;
+ 77038: this.weddingType = e.weddType;
+ 77039: this.houseMap = this.changeRealHouseData(e.houseObj);
+ 77040: this.receiveNpc = e.receiveNpc;
+ 77041: this.npcMarryState = e.marryNpc;
+ 77042: this.happinessNum = e.happinessNum;
+ 77043: for (var n = 0; n < e.leaveNpc.length; n++) this.divorceNpcMap[e.leaveNpc[n]] = !0;
+ 77044: this.guestNpcAy = e.dropNpcID;
+ 77045: this.loveState = e.bodyState;
+ 77046: y.TeamModel.setTeamState(this.receiveNpc);
+ 77047: e.hasOwnProperty("bedLevel") && (this.bedLevel = e.bedLevel);
+ 77048: e.hasOwnProperty("specialType") ? M.HouseAdventModel.setAdventEventData(e.specialType, e.specialObj) : M.HouseAdventModel.setAdventEventData(0, {});
+ 77049: e.hasOwnProperty("fetationTime") && (this.fetationTime = e.fetationTime);
+ 77050: e.hasOwnProperty("childObj") && (this.childData = e.childObj);
+ 77051: e.hasOwnProperty("cycleObj") && (this.cycleData = e.cycleObj);
+ 77052: if (this.cycleData.length) {
+ 77053: var r = this.cycleData[1].length, a = this;
+ 77054: Promise.resolve().then(function() {
+ 77055: return t("./RoleOtherInfo");
+ 77056: }).then(function(t) {
+ 77057: t.RoleOtherInfo.reBirthTime = a.cycleData[0];
+ 77058: r > 0 && (t.RoleOtherInfo.matherId = a.cycleData[1][r - 1]);
+ 77059: });
+ 77060: E.RoleOtherInfo.reBirthTime = this.cycleData[0];
+ 77061: r > 0 && (E.RoleOtherInfo.matherId = this.cycleData[1][r - 1]);
+ 77062: this.marryHouseMap = e.houseObj;
+ 77063: }
+ 77064: if (e.hasOwnProperty("wifeobj")) {
+ 77065: var s = e.wifeobj;
+ 77066: this.wifeUpdateData = {
+ 77067: eid: s.eid,
+ 77068: exp: s.exp,
+ 77069: lv: s.lv,
+---
+ 77443: };
+ 77444: e.prototype.reqStartWedding = function() {
+ 77445: _.NetMgr.http.sendRequest(n.HttpConst.BEGIN_WEDDING, {});
+ 77446: };
+ 77447: e.prototype.reqMakeLove = function(t) {
+ 77448: this.chooseType = t;
+ 77449: _.NetMgr.http.sendRequest(n.HttpConst.MAKE_LOVE, {
+ 77450: choose: t
+ 77451: });
+ 77452: };
+ 77453: e.prototype.reqDeleteChild = function(t) {
+ 77454: _.NetMgr.http.sendRequest(n.HttpConst.EXILE_CHILD, {
+ 77455: isPay: t
+ 77456: });
+ 77457: };
+ 77458: e.prototype.getMarryNpcId = function() {
+ 77459: return this.npcMarryState;
+ 77460: };
+ 77461: e.prototype.judgeWelcomeState = function(t) {
+ 77462: return !y.TeamModel.getTeamState() && !!(this.rentProState > 0 && this.weddingType > 0 && 0 == this.npcMarryState && this.proposeNpcInfo.hasOwnProperty(t));
+ 77463: };
+ 77464: e.prototype.judgeIsShowProposeBtn = function(t) {
+ 77465: if (!a.getTable("propose").hasOwnProperty(t)) return !1;
+ 77466: if (this.proposeNpcInfo.hasOwnProperty(t)) return !1;
+ 77467: if (this.divorceNpcMap.hasOwnProperty(t)) return !1;
+ 77468: if (this.npcMarryState > 0) return !1;
+ 77469: if (8 == c.RoleBaseInfo.school && !c.RoleBaseInfo.finishTaskObj.hasOwnProperty(401360)) return !1;
+ 77470: var e = a.getItem(t, "npc"), o = c.RoleBaseInfo.sexId;
+ 77471: if (0 == o || 2 == o) {
+ 77472: if (1 != parseInt(e.sex)) return !1;
+ 77473: } else if (o == parseInt(e.sex)) return !1;
+ 77474: var i = a.getItem(t, "propose"), n = c.RoleBaseInfo.finishTaskObj;
+ 77475: return !(i && !n.hasOwnProperty(i.Pre_Taskid));
+ 77476: };
+ 77477: e.prototype.isCanNpcPropose = function(t) {
+ 77478: var e = this;
+ 77479: if (this.npcMarryState > 0) p.default.show(r.getText("1137")); else {
+ 77480: var o = S.default.getIntimacy(t), i = a.getConstByID(63);
+ 77481: if (o < parseInt(i)) p.default.show(r.getText("jh2")); else {
+ 77482: var n = a.getItem(t, "propose");
+ 77483: f.default.addDialogEvent(n.Description, t, null, function() {
+ 77484: e.proposeJudgeCondition(t) ? e.reqProposeNpc(t) : p.default.show(r.getText("jh3"));
+ 77485: });
+ 77486: }
+ 77487: }
+ 77488: };
+ 77489: e.prototype.proposeJudgeCondition = function(t) {
+---

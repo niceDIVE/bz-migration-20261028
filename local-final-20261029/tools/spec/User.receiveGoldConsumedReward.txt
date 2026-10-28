@@ -1,0 +1,51 @@
+# User.receiveGoldConsumedReward  (HttpConst.RECEIVE_GOLD_CONSUME_REWARD)
+# 出现 1 处
+
+  1854: } else this.rechargedIsEnd = 1;
+  1855: };
+  1856: e.prototype.reqAddCostData = function() {
+  1857: g.NetMgr.http.sendRequest(a.HttpConst.GET_GOLD_CONSUME_REWARD_DATA, {});
+  1858: };
+  1859: e.prototype.reqAddCostReward = function(t) {
+  1860: g.NetMgr.http.sendRequest(a.HttpConst.RECEIVE_GOLD_CONSUME_REWARD, {
+  1861: id: t
+  1862: });
+  1863: };
+  1864: e.prototype.reqGetSpringData = function() {
+  1865: g.NetMgr.http.sendRequest(a.HttpConst.GET_SPRING_SEVEN_DAY_DATA, {});
+  1866: };
+  1867: e.prototype.reqSevenDaysAwards = function(t) {
+  1868: g.NetMgr.http.sendRequest(a.HttpConst.SPRING_SEVEN_DAYS_AWARDS, {
+  1869: index: t
+  1870: });
+  1871: };
+  1872: e.prototype.reqSpringAccReward = function() {
+  1873: g.NetMgr.http.sendRequest(a.HttpConst.RECEIVE_SPRING_ACC_REWARD, {});
+  1874: };
+  1875: e.prototype.showOldBeggarNpc = function(t) {
+  1876: var e = this.getRandomBeggarInfo();
+  1877: if (null != t.id && null != e && e.hasOwnProperty("map") && e.map == t.id) {
+  1878: var o = y.NpcFactory.createSceneObj({
+  1879: id: 10163
+  1880: });
+  1881: o.setPosition(cc.v3(e.coordinate[0], e.coordinate[1]));
+  1882: t.add2Scene(o);
+  1883: t.oldMan = o;
+  1884: }
+  1885: };
+  1886: e.prototype.deleteOldManNpc = function(t) {
+  1887: if (null != t.oldMan) {
+  1888: t.removeFromScene(t.oldMan);
+  1889: this.randOldManObj = {};
+  1890: t.oldMan = null;
+  1891: }
+  1892: };
+  1893: e.prototype.checkActive = function(t) {
+  1894: var e = d.RoleOtherInfo.activityList, o = !1;
+  1895: if (this.preCheckActive(t)) for (var i = 0; i < e.length; i++) if (e[i] == t) {
+  1896: o = !0;
+  1897: break;
+  1898: }
+  1899: return o;
+  1900: };
+---

@@ -1,0 +1,99 @@
+# User.UnloadingEuipment  (HttpConst.UNLOADING_EQUIP_EVENT)
+# 出现 2 处
+
+ 92794: value: !0
+ 92795: });
+ 92796: o.OneUnloadModel = void 0;
+ 92797: var i = t("../gameconfigs/CFMgr"), n = t("../gameconfigs/LangMgr"), r = t("../battlesystem/Equipment"), a = t("../core/events/MessageCenter"), s = t("../net/HttpConst"), l = t("./InhertEquipModel"), c = t("./InventoryModel"), p = t("./UserModel"), h = t("./vos/RoleBaseInfo"), u = t("../net/NetMgr"), f = t("../gui/uicomponents/Alert"), d = t("./TowerModel"), g = t("../utils/EqUtils"), m = t("./TaskSystemMgr"), y = function() {
+ 92798: function t() {}
+ 92799: t.prototype.init = function() {
+ 92800: a.MessageCenter.on(s.HttpConst.UNLOADING_EQUIP_EVENT, function(t, e) {
+ 92801: if (1 == e.eRet) for (var o in h.RoleBaseInfo.equipments) if (parseInt(o) < 8) {
+ 92802: p.UserModel.entity.putOffEquipment(parseInt(o));
+ 92803: 1 == parseInt(o) && c.InventoryModel.freshEquipWeap(1, 0);
+ 92804: }
+ 92805: }, this);
+ 92806: a.MessageCenter.on(s.HttpConst.WEAR_EQUIPMENT_ALL, function(t, e) {
+ 92807: if (1 == e.eRet) {
+ 92808: var o = e.equipments;
+ 92809: for (var i in o) {
+ 92810: p.UserModel.entity.putOffEquipment(parseInt(i));
+ 92811: if (o[i]) {
+ 92812: var n = c.InventoryModel.getEquipmentInfo(o[i]);
+ 92813: if (n) {
+ 92814: var a = {
+ 92815: id: n.id,
+ 92816: type: n.type,
+ 92817: itemID: n.itemID,
+ 92818: attrs: n.attrs,
+ 92819: numAttr: n.numAttr,
+ 92820: crystalIds: n.crystalIds
+ 92821: }, s = l.InhertEquipModel.allInhertEquips, h = s.hasOwnProperty(n.id) ? s[n.id] : 0;
+ 92822: p.UserModel.entity.putOnEquipment(new r(a, h), parseInt(i));
+ 92823: 1 == Number(i) && c.InventoryModel.freshEquipWeap(Number(i), a.id);
+ 92824: }
+ 92825: }
+ 92826: }
+ 92827: }
+ 92828: }, this);
+ 92829: };
+ 92830: t.prototype.reqUnLoadEquip = function() {
+ 92831: var t = {}, e = h.RoleBaseInfo.equipments;
+ 92832: for (var o in e) if (parseInt(o) < 8) {
+ 92833: var i = p.UserModel.entity.getEquipment(o);
+ 92834: if (i) {
+ 92835: t[o] = i.id;
+ 92836: p.UserModel.entity.putOffEquipment(parseInt(o));
+ 92837: h.RoleBaseInfo.putOnEquipment(parseInt(o), null);
+ 92838: } else t[o] = null;
+ 92839: }
+ 92840: var n = JSON.stringify(t);
+---
+ 92841: cc.sys.localStorage.setItem(h.RoleBaseInfo.roleID + "unLoadEquip", n);
+ 92842: var r = p.UserModel.entity, a = {
+ 92843: hp: r.hp.remaining,
+ 92844: hplmt: r.hp.limit,
+ 92845: mp: r.mp.remaining
+ 92846: };
+ 92847: u.NetMgr.http.sendRequest(s.HttpConst.UNLOADING_EQUIP_EVENT, a);
+ 92848: };
+ 92849: t.prototype.reqPutonAllEquip = function() {
+ 92850: f.default.show(n.getText(this.getSaveEquipState() ? 3330 : 3329));
+ 92851: var t = p.UserModel.entity, e = {
+ 92852: equipments: this.checkPutEquipsData(),
+ 92853: hp: t.hp.remaining,
+ 92854: hplmt: t.hp.limit,
+ 92855: mp: t.mp.remaining
+ 92856: };
+ 92857: u.NetMgr.http.sendRequest(s.HttpConst.WEAR_EQUIPMENT_ALL, e);
+ 92858: };
+ 92859: t.prototype.checkPutEquipsData = function() {
+ 92860: var t = h.RoleBaseInfo.roleID, e = cc.sys.localStorage.getItem(t + "unLoadEquip"), o = JSON.parse(e);
+ 92861: for (var n in o) if (o[n] && !this.judgeIsWearEquip(o[n])) o[n] = null; else if (o[n]) {
+ 92862: var a = c.InventoryModel.getEquipmentInfo(o[n]);
+ 92863: if (a) {
+ 92864: var s = {
+ 92865: id: a.id,
+ 92866: type: a.type,
+ 92867: itemID: a.itemID,
+ 92868: attrs: a.attrs,
+ 92869: numAttr: a.numAttr,
+ 92870: crystalIds: a.crystalIds
+ 92871: }, u = i.getItem(a.itemID, "item");
+ 92872: p.UserModel.entity.putOffEquipment(u.EquipType);
+ 92873: var f = l.InhertEquipModel.allInhertEquips, d = f.hasOwnProperty(a.id) ? f[a.id] : 0;
+ 92874: h.RoleBaseInfo.putOnEquipment(parseInt(n), o[n]);
+ 92875: p.UserModel.entity.putOnEquipment(new r(s, d), u.EquipType);
+ 92876: }
+ 92877: }
+ 92878: return o;
+ 92879: };
+ 92880: t.prototype.getSaveEquipState = function() {
+ 92881: var t = h.RoleBaseInfo.equipments, e = !1;
+ 92882: for (var o in t) {
+ 92883: var i = this.checkSaveEquipId(o);
+ 92884: if (i > 0 && !this.judgeIsWearEquip(i)) {
+ 92885: e = !0;
+ 92886: break;
+ 92887: }
+---

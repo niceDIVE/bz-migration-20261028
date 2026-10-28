@@ -1,0 +1,21 @@
+# User.proposeNpc   (HttpConst.PROPOSE_NPC)
+
+## 注册点 77019: i.MessageCenter.on(n.HttpConst.PROPOSE_NPC, this.callBackProposeNpc, this);
+
+## 请求点 77401: _.NetMgr.http.sendRequest(n.HttpConst.PROPOSE_NPC, {
+   77393: } ], function(t) {
+   77394: 0 == t && v.StoreModel.reqStoreList();
+   77395: }, "", !1) : p.default.show(r.getText(2116)));
+   77396: };
+   77397: e.prototype.reqBirthChild = function() {
+   77398: _.NetMgr.http.sendRequest(n.HttpConst.BIRTHCHILD, {});
+   77399: };
+   77400: e.prototype.reqProposeNpc = function(t) {
+
+## 处理函数 callBackProposeNpc (77123-77128)
+ 77123: e.prototype.callBackProposeNpc = function(t, e) {
+ 77124: if (1 == e.eRet) {
+ 77125: this.proposeNpcInfo[e.npcID] = !0;
+ 77126: this.marryPopTip(0);
+ 77127: } else 2 == e.eRet ? p.default.show(r.getText("1133")) : 10 == e.eRet ? p.default.show(r.getText("1141")) : 11 == e.eRet ? p.default.show(r.getText("1137")) : 12 == e.eRet ? p.default.show(r.getText("1166")) : p.default.show(r.getText("1132"));
+ 77128: };

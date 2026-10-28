@@ -1,0 +1,103 @@
+# User.GetNewSweepTowerData  (HttpConst.GET_NEW_SWEEP_EVENT)
+# 出现 3 处
+
+137745: t.updateTowerItem(o.rewardArray);
+137746: _.default.addShowRewardUI1(o.rewardArray, 0, {});
+137747: }
+137748: } else 3 == o.eRet ? y.default.show(a.getText(1621)) : y.default.show(a.getText(1623));
+137749: o.hasOwnProperty("batch_sweep_data") && t.setNewSweepData(o.batch_sweep_data);
+137750: }, this);
+137751: l.MessageCenter.on(c.HttpConst.GET_NEW_SWEEP_EVENT, function(e, o) {
+137752: if (1 == o.eRet) {
+137753: t.shopData = {};
+137754: t.shopBookShop = [];
+137755: t.pandaDatas = [];
+137756: t.qiyuDatas = [];
+137757: t.colorEggData = [];
+137758: t.sweepState = !0;
+137759: o.hasOwnProperty("adCode") && (t.adCode = o.adCode);
+137760: if (o.hasOwnProperty("batch_sweep_data")) {
+137761: var i = o.batch_sweep_data;
+137762: t.checkCurrentTowerItem(i.items);
+137763: t.setNewSweepData(i);
+137764: h.default.prefabs.load("towerUI/SweepUI", cc.Prefab, function(e, o) {
+137765: var i = cc.instantiate(o);
+137766: u.PopUpMgr.addPopUp(i, f.LayerMgr.popUpLayer);
+137767: i.addComponent("SweepUI").setData(t.getSweepRewardDatas());
+137768: });
+137769: }
+137770: }
+137771: }, this);
+137772: l.MessageCenter.on(c.HttpConst.NEW_TOWER_SWEEP_EVENT, function(e, o) {
+137773: t.rewardSweepList = {};
+137774: t.isAD = !1;
+137775: if (1 == o.eRet) {
+137776: t.isSweepEvent = !1;
+137777: t.curFloorNum = o.batch_sweep_data.clv;
+137778: var i = o.batch_sweep_data.awardObj;
+137779: t.rewardSweepList = i;
+137780: t.checkCurrentTowerItem(o.batch_sweep_data.items);
+137781: t.beginFloor = o.batch_sweep_data.beginLv;
+137782: t.isCanSweep = o.batch_sweep_data.canSweep;
+137783: o.hasOwnProperty("adCode") && (t.adCode = o.adCode);
+137784: t.sweepTotalLv = parseInt(o.batch_sweep_data.clv) - parseInt(o.batch_sweep_data.beginLv) + 1;
+137785: if (o.hasOwnProperty("batch_sweep_data")) {
+137786: var n = o.batch_sweep_data;
+137787: t.setNewSweepData(n);
+137788: l.MessageCenter.dispatch(S.EvName.FINISH_SWEEP_EVENT, t.getSweepRewardDatas());
+137789: }
+137790: } else if (2 == o.eRet) {
+137791: y.default.show(a.getText(4714));
+---
+138242: if (t.ColorVerModel.colorState > 0) {
+138243: t.ColorVerModel.colorState = 0;
+138244: cc.assetManager.loadBundle("bundles/colorRes", function(t, e) {
+138245: var o;
+138246: h.default.colorBd = e;
+138247: null === (o = v.GSceneMgr.go2Scene(v.GSceneMgr.getCurSceneID(), cc.v3(p.UserModel.playerPos.x, p.UserModel.playerPos.y))) || void 0 === o || o.then(function() {
+138248: g.NetMgr.http.sendRequest(c.HttpConst.GET_NEW_SWEEP_EVENT, {});
+138249: });
+138250: });
+138251: } else g.NetMgr.http.sendRequest(c.HttpConst.GET_NEW_SWEEP_EVENT, {});
+138252: });
+138253: };
+138254: e.prototype.reqNewSweepTower = function(t, e) {
+138255: g.NetMgr.http.sendRequest(c.HttpConst.NEW_TOWER_SWEEP_EVENT, {
+138256: isAd: t,
+138257: isPay: e,
+138258: adCode: this.adCode
+138259: });
+138260: };
+138261: e.prototype.reqCloseNewSweepTowerByLv = function() {
+138262: if (this.sweepLv > 0) {
+138263: g.NetMgr.http.sendRequest(c.HttpConst.CLOSE_NEW_SWEEP_EVENT, {
+138264: lv: this.sweepLv
+138265: });
+138266: 14 != this.sweepLv && l.MessageCenter.dispatch(S.EvName.CLOSE_SWEEP_UI_EVENT);
+138267: }
+138268: };
+138269: e.prototype.openSweepShop = function() {
+138270: var t = this.shopData[14].eventID;
+138271: this.sweepLv = this.shopData[14].lv;
+138272: var e = r.getItem(t, "lh_event");
+138273: this.reqGetShopList(e.parameter[0], this.shopData[14].lv);
+138274: };
+138275: e.prototype.openSweepBookShop = function() {
+138276: var t = this.shopBookShop[0].eventID;
+138277: this.sweepLv = this.shopBookShop[0].lv;
+138278: var e = r.getItem(t, "lh_event");
+138279: this.reqGetShopList(e.parameter[0], this.shopBookShop[0].lv);
+138280: };
+138281: e.prototype.enterColorEgg = function(t) {
+138282: var e = this;
+138283: this.sweepLv = this.colorEggData[t].lv;
+138284: this.colorEggData[t].eventID;
+138285: if (this.colorEggData[t].egg.length > 0) {
+138286: this.elitMasterData = this.colorEggData[t].egg;
+138287: var o = r.getItem(this.elitMasterData[0], "npc"), i = this.elitMasterData;
+138288: o.AttributeType = i[2];
+---
+138289: o.hasOwnProperty("jineng") && o.jineng.length && (o.jineng[1] = i[1]);
+138290: o.hasOwnProperty("qinggong") && o.qinggong.length && (o.qinggong[1] = i[1]);
+138291: o.hasOwnProperty("neigong") && o.neigong.length && (o.neigong[1] = i[1]);
+---

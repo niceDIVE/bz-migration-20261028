@@ -1,0 +1,99 @@
+# User.endDoubleTraining  (HttpConst.END_DOUBLE_TRAINING)
+# 出现 2 处
+
+ 56227: e.prototype.init = function() {
+ 56228: i.MessageCenter.on(l.HttpConst.USER_ONHOOK_BREAK, this.onBreakReqReturn, this);
+ 56229: i.MessageCenter.on(l.HttpConst.CHECK_BREAK, this.onCheckBreak, this);
+ 56230: i.MessageCenter.on(l.HttpConst.GET_BREAK_FRIENDLIST, this.onGetBrList, this);
+ 56231: i.MessageCenter.on(l.HttpConst.REQ_DOUBLE_BR, this.onReqDouble, this);
+ 56232: i.MessageCenter.on(l.HttpConst.USER_DOUBLE_TRAINING, this.onDoubleTraining, this);
+ 56233: i.MessageCenter.on(l.HttpConst.END_DOUBLE_TRAINING, this.onEndDoubleTraining, this);
+ 56234: i.MessageCenter.on(l.HttpConst.USE_ITEM_ADDITION, this.addBreakRate, this);
+ 56235: i.MessageCenter.on(l.HttpConst.SET_ONHOOK_WOOK_STATE, this.onHookWoodStateCh, this);
+ 56236: };
+ 56237: e.prototype.reqInstantFinish = function() {
+ 56238: this.checkBreak(1);
+ 56239: };
+ 56240: e.prototype.requestBrFriendList = function() {
+ 56241: c.NetMgr.http.sendRequest(l.HttpConst.GET_BREAK_FRIENDLIST, {});
+ 56242: };
+ 56243: e.prototype.requestDouble = function(t) {
+ 56244: var e = {
+ 56245: friendID: t,
+ 56246: sponsorName: y.RoleBaseInfo.userName
+ 56247: };
+ 56248: c.NetMgr.http.sendRequest(l.HttpConst.REQ_DOUBLE_BR, e);
+ 56249: };
+ 56250: e.prototype.requestBreak = function(t, e, o) {
+ 56251: void 0 === o && (o = null);
+ 56252: void 0 === o && (o = !1);
+ 56253: this.id = t;
+ 56254: this.lv = e;
+ 56255: var i = D.playerInfo.entity, n = {
+ 56256: onHookOperate: o ? 2 : 1,
+ 56257: skillID: t,
+ 56258: skillLevel: e,
+ 56259: hg: i.hunger.remaining,
+ 56260: gTime: i.totalGameTime.gameTime,
+ 56261: hgtimes: i.numStuffed
+ 56262: };
+ 56263: c.NetMgr.http.sendRequest(l.HttpConst.USER_ONHOOK_BREAK, n);
+ 56264: };
+ 56265: e.prototype.checkBreak = function(t) {
+ 56266: void 0 === t && (t = null);
+ 56267: void 0 === t && (t = 0);
+ 56268: var e = D.playerInfo.entity, o = {
+ 56269: flag: t,
+ 56270: maxHP: e.hp.finalValue,
+ 56271: maxMP: e.mp.finalValue,
+ 56272: hglmt: e.hunger.limit,
+ 56273: speed: e.hungerConsumingSpeed.finalValue
+---
+ 56704: e.prototype.reqEndWifeBreak = function(t) {
+ 56705: var e = D.playerInfo.entity, o = {
+ 56706: flag: t,
+ 56707: hglmt: e.hunger.limit,
+ 56708: speed: e.hungerConsumingSpeed.finalValue
+ 56709: };
+ 56710: c.NetMgr.http.sendRequest(l.HttpConst.END_DOUBLE_TRAINING, o);
+ 56711: };
+ 56712: e.prototype.onEndDoubleTraining = function(t, e) {
+ 56713: if (1 == e.eRet || 0 == e.eRet) {
+ 56714: u.FishingModel.setAutoStartHung(e);
+ 56715: if (0 == e.flag) {
+ 56716: i.MessageCenter.dispatch(h.EvName.CANCEL_BR_RET);
+ 56717: return;
+ 56718: }
+ 56719: var o = 1 == e.eRet;
+ 56720: D.playerInfo.entity.totalGameTime.gameTime = e.gTime;
+ 56721: D.playerInfo.entity.hunger.remaining = e.hg;
+ 56722: D.playerInfo.entity.numStuffed = e.hgtimes;
+ 56723: var n = {
+ 56724: skillID: e.skillID,
+ 56725: lv: e.skillLevel,
+ 56726: timeElapsed: .001 * e.usedTime,
+ 56727: success: o
+ 56728: };
+ 56729: if (e.hasOwnProperty("isSkillChangeCD")) {
+ 56730: var r = e.isSkillChangeCD;
+ 56731: n.cdSkill = r;
+ 56732: }
+ 56733: n.events = {};
+ 56734: for (var l in e.specialObj) switch (l) {
+ 56735: case "1":
+ 56736: n.events[l] = e.specialObj[l];
+ 56737: break;
+ 56738: 
+ 56739: case "2":
+ 56740: D.playerInfo.entity.mp.baseValue += e.specialObj[l];
+ 56741: n.events[l] = e.specialObj[l];
+ 56742: break;
+ 56743: 
+ 56744: case "3":
+ 56745: D.playerInfo.entity.hp.baseValue += e.specialObj[l];
+ 56746: n.events[l] = e.specialObj[l];
+ 56747: break;
+ 56748: 
+ 56749: case "4":
+ 56750: m.SkillTable.setSkill(e.skillID, m.SkillTable.getSkillLevel(e.skillID) + e.specialObj[l]);
+---

@@ -1,0 +1,12 @@
+[
+ {
+  "action": "beginPlayGame",
+  "field": "beginTime",
+  "reason": "beginTime 被客户端减法消费（scripts2.js:47303 / 58268 的 getSTimestamp()-startTimestamp），但该动作没有 handler → 默认值必然导致'一进去就已完成'。补 handler 前需先取证请求形状与结算语义（见 HANDOVER §7-3b/3e）。"
+ },
+ {
+  "action": "checkHireOnhook",
+  "field": "beginTime",
+  "reason": "同上：beginTime 被减法消费、动作无 handler。属于'诚实登记、暂不修'，不是'已修好'。"
+ }
+]

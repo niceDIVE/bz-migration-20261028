@@ -1,0 +1,1 @@
+{"name":"tableconfig","rows":6,"cols":["id","unlock_pop","cost"],"data":{"1":{"id":"1","unlock_pop":0,"cost":0},"2":{"id":"2","unlock_pop":35,"cost":500},"3":{"id":"3","unlock_pop":170,"cost":800},"4":{"id":"4","unlock_pop":475,"cost":1600},"5":{"id":"5","unlock_pop":1080,"cost":2500},"6":{"id":"6","unlock_pop":1685,"cost":3000}}}

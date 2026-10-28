@@ -1,0 +1,1 @@
+{"name":"castlejumpingfun_task","rows":2,"cols":["id","type","condition","reward","name"],"data":{"1":{"id":1,"type":1,"condition":"1","reward":[10817,1],"name":6008027},"2":{"id":2,"type":1,"condition":"2,1","reward":[10817,1],"name":6019024}}}

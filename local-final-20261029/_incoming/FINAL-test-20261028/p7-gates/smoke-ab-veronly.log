@@ -1,0 +1,7 @@
+  ok   A C46 buy->sell net negative
+  ok   A C18 buyBigGiftTime insufficient funds rejects, no change
+  ok   A locked eRet2 byte-identical (buyActivityNum, treasureAward, exchangeHlexchangeItem)
+  ok   B BEGIN sets only its slot, END clears only its slot
+  ok   B locked (doubleTraining, endDoubleTraining, sweepCopy) eRet2
+  ok   built handlers ver hf5d89bf7
+AB smoke: 6 pass, 0 fail

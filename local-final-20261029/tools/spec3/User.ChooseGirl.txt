@@ -1,0 +1,13 @@
+# User.ChooseGirl   (HttpConst.CHOOSE_GIRL_EVENT)
+
+## 注册点 51125: i.MessageCenter.on(n.HttpConst.CHOOSE_GIRL_EVENT, function(o, n) {
+
+## 请求点 51246: g.NetMgr.http.sendRequest(n.HttpConst.CHOOSE_GIRL_EVENT, e);
+   51238: this.randomAy = [];
+   51239: this.randomDialogInfo = {};
+   51240: };
+   51241: t.prototype.reqChooseGirl = function(t) {
+   51242: this.npcId = t;
+   51243: var e = {
+   51244: npcID: t
+   51245: };

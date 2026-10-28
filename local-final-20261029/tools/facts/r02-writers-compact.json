@@ -1,0 +1,2174 @@
+{
+  "generatedAt": "2026-10-21T20:54:04.183Z",
+  "source_md5": "6AD39200B2E0709877148A11BAFE8214",
+  "writers": {
+    "setItem": {
+      "def": [
+        {
+          "file": "index.js",
+          "line": 65173,
+          "text": "e.prototype.setItem = function(t, e) {"
+        },
+        {
+          "file": "index.js",
+          "line": 106277,
+          "text": "e.prototype.setItem = function(t, e) {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 26395,
+          "text": "e.prototype.setItem = function(t) {"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 73241,
+          "text": "t.prototype.setItem = function(t, e) {"
+        }
+      ],
+      "calls": [
+        {
+          "file": "index.js",
+          "line": 2539,
+          "text": "cc.sys.localStorage.setItem(m.RoleBaseInfo.userAccount + \"_admod\", i);",
+          "callerFunc": "setLastWatchTs",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 24003,
+          "text": "l.RoleBaseInfo.setItem(p[0], p[1]);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 24018,
+          "text": "for (var o in e.itemObj) parseInt(o) > 0 && parseInt(e.itemObj[o]) > 0 && l.RoleBaseInfo.setItem(parseInt(o), e.itemObj[o]);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 24406,
+          "text": "this.setItemEquipDes(p.EqUtils.getOtherEqDes(n, this.inhertEquip, this.effectTypeNum, this.materias));",
+          "callerFunc": "onShowInfo",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 24410,
+          "text": "this.setItemEquipDes(h.MakeUpModel.getFashionAttribute(m));",
+          "callerFunc": "onShowInfo",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 24413,
+          "text": "e.prototype.setItemEquipDes = function(t) {",
+          "callerFunc": "setItemEquipDes",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 24507,
+          "text": "cc.sys.localStorage.setItem(r + a.RoleBaseInfo.roleID + \"first\", l);",
+          "callerFunc": "setDeadState",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 24533,
+          "text": "cc.sys.localStorage.setItem(r + a.RoleBaseInfo.roleID + \"first\", l);",
+          "callerFunc": "saveChiefDiscipleData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 24545,
+          "text": "cc.sys.localStorage.setItem(a.RoleBaseInfo.roleID + \"chief\", e.getTime().toString());",
+          "callerFunc": "read",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 25553,
+          "text": "cc.sys.localStorage.setItem(\"ColorVerModelpullInCopyState\", t.toString());",
+          "callerFunc": "set",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 25567,
+          "text": "cc.sys.localStorage.setItem(\"ColorVerModelenterState\", t.toString());",
+          "callerFunc": "set",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 25578,
+          "text": "cc.sys.localStorage.setItem(\"colorver\", t.toString());",
+          "callerFunc": "set",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 26530,
+          "text": "S.InventoryModel.setItem(i, r - n);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 26652,
+          "text": "c.RoleBaseInfo.setItem(r, parseInt(e[i].ItemCount));",
+          "callerFunc": "saveItemData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 28165,
+          "text": "cc.sys.localStorage.setItem(\"userAccount\", r.toString());",
+          "callerFunc": "showChangeServerData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 28208,
+          "text": "m.LocalStorageMgr.setItem(\"madHeroFlag\", 0);",
+          "callerFunc": "onEnterCrossServer",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 28234,
+          "text": "cc.sys.localStorage.setItem(\"userAccount\", s.RoleBaseInfo.userAccount.toString());",
+          "callerFunc": "backOneselfServer",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 29450,
+          "text": "f.LocalStorageMgr.setItem(c.RoleBaseInfo.roleID + \"_DartCard\", e.toString());",
+          "callerFunc": "save",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 32199,
+          "text": "cc.sys.localStorage.setItem(m.RoleBaseInfo.roleID + \"mountID\", 1);",
+          "callerFunc": "setLocationMountState",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 32236,
+          "text": "_.LocalStorageMgr.setItem(\"mountVoice\" + t + m.RoleBaseInfo.roleID, e);",
+          "callerFunc": "openVoice",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 32669,
+          "text": "a.LocalStorageMgr.setItem(\"dutyDate\", i);",
+          "callerFunc": "execute",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 54353,
+          "text": "s.RoleBaseInfo.setItem(4001, t.moneyreward);",
+          "callerFunc": "onBoxSelfEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 54354,
+          "text": "s.RoleBaseInfo.setItem(4003, t.potentialreward);",
+          "callerFunc": "onBoxSelfEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 54375,
+          "text": "for (var o in e.awardData) s.RoleBaseInfo.setItem(parseInt(o), parseInt(e.awardData[o]));",
+          "callerFunc": "onrSecretCdkEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 54385,
+          "text": "l.LocalStorageMgr.setItem(\"suicided\" + s.RoleBaseInfo.roleID, JSON.stringify(1));",
+          "callerFunc": "onKillOneSelfEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 54433,
+          "text": "cc.sys.localStorage.setItem(\"settings\", JSON.stringify(t));",
+          "callerFunc": "save",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 54458,
+          "text": "n.LocalStorageMgr.getItem(this.taskGuideStateKey) ? n.LocalStorageMgr.removeItem(this.taskGuideStateKey) : n.LocalStorageMgr.setItem(this.taskGuideStateKey, 1);",
+          "callerFunc": "setTaskGuideState",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 54514,
+          "text": "n.LocalStorageMgr.setItem(\"_GS\" + r.RoleBaseInfo.roleID, e);",
+          "callerFunc": "save",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 55647,
+          "text": "a.LocalStorageMgr.setItem(\"&*%guide*&\" + e, t.toString());",
+          "callerFunc": "setBeginGuide",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 56862,
+          "text": "if (t.hasOwnProperty(\"upItemAddition\")) for (var e in t.upItemAddition) k.InventoryModel.setItem(parseInt(e), t.upItemAddition[e]);",
+          "callerFunc": "updateUseItemNum",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 62924,
+          "text": "m.LocalStorageMgr.setItem(\"inn\", 1);",
+          "callerFunc": "setInnOpened",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 64304,
+          "text": "a.RoleBaseInfo.setItem(t, e);",
+          "callerFunc": "addItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 64675,
+          "text": "for (var n in o) i.getItem(n, \"lh_temporary\") ? b.TowerModel.setItem(n, o[n]) : e.setItem(parseInt(n), o[n]);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 64681,
+          "text": "e.setItemChecked([ parseInt(i) ], 1);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 65181,
+          "text": "this.setItemChecked([ t ], 0);",
+          "callerFunc": "setItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 65585,
+          "text": "P.LocalStorageMgr.setItem([ \"newItems\", \"newEquips\", \"newKnack4Skills\" ][e] + l.RoleBaseInfo.roleID, o);",
+          "callerFunc": "signNewItems",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 65638,
+          "text": "e.prototype.setItemChecked = function(t, e) {",
+          "callerFunc": "setItemChecked",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 65661,
+          "text": "P.LocalStorageMgr.setItem([ \"newItems\", \"newEquips\", \"newKnack4Skills\", \"newMaterias\" ][e] + l.RoleBaseInfo.roleID, o);",
+          "callerFunc": "setItemChecked",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 65674,
+          "text": "P.LocalStorageMgr.setItem(\"newStates\" + l.RoleBaseInfo.roleID, {",
+          "callerFunc": "setButtonChecked",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 768,
+          "text": "cc.sys.localStorage.setItem(c.RoleBaseInfo.roleID + \"skipTigerAnim\", JSON.stringify(t));",
+          "callerFunc": "onToggle",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 20845,
+          "text": "this.setItemEveryData(this.curClickIndex, this.typeIndex);",
+          "callerFunc": "showBaseData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 20852,
+          "text": "this.setItemEveryData(this.curClickIndex, i);",
+          "callerFunc": "showTypeButton",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 20885,
+          "text": "e.prototype.setItemEveryData = function(t, e) {",
+          "callerFunc": "setItemEveryData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 24247,
+          "text": "e.prototype.setItemEquipDes = function(t) {",
+          "callerFunc": "setItemEquipDes",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 24268,
+          "text": "this.setItemEquipDes(\"\");",
+          "callerFunc": "onChangePage",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 24284,
+          "text": "this.setItemEquipDes(\"\");",
+          "callerFunc": "onTableClickBtn",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 24430,
+          "text": "this.setItemEquipDes(h.EqUtils.getEquipDesc1(o));",
+          "callerFunc": "selectedItemEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 24486,
+          "text": "this.setItemEquipDes(h.EqUtils.getEqDes(this._itemDataList[this.currentScrollIndex]));",
+          "callerFunc": "selectedEquipEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 24558,
+          "text": "this.setItemEquipDes(\"\");",
+          "callerFunc": "finishCastEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 27126,
+          "text": "v.LocalStorageMgr.setItem(\"declaration\", e.hasOwnProperty(\"declaration\") ? e.declaration : \"\");",
+          "callerFunc": "onShowFriendList",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 28350,
+          "text": "1 == this.tageType ? cc.sys.localStorage.setItem(h.RoleBaseInfo.roleID + \"hangTaskBoxTisp1\", JSON.stringify(this.isChecked)) : cc.sys.localStorage.setItem(h.RoleBaseInfo.roleID + \"hangTaskBoxTisp2\", JSON.stringify(this.isChecked));",
+          "callerFunc": "onClick",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 31353,
+          "text": "e.prototype.setItemNum = function(t) {",
+          "callerFunc": "setItemNum",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 31504,
+          "text": "this.currentSelectItem.setItemNum(h.RoleBaseInfo.getItemNum(t[0]));",
+          "callerFunc": "changeItemNumEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 35311,
+          "text": "e.prototype.setItemNum = function(t) {",
+          "callerFunc": "setItemNum",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 35769,
+          "text": "g.InventoryModel.setItemChecked([ this.data.itemId ], this.isItem ? 0 : 1);",
+          "callerFunc": "checkOldData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 35778,
+          "text": "this.data.newTag > 0 && g.InventoryModel.setItemChecked([ this.isItem ? this.data.itemId : this.data.uID ], this.isItem ? 0 : 1);",
+          "callerFunc": "setCheckState",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 35919,
+          "text": "o.prototype.setItemNum = function(t) {",
+          "callerFunc": "setItemNum",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36154,
+          "text": "if (this.currentScrollIndex < 0) this.inlayEquipInfo && this.setItemEquipDes(this.inlayEquipInfo ? I.EqUtils.getEqDes(this.inlayEquipInfo) : \"\"); else if (1 == this.currentIndex) {",
+          "callerFunc": "onUpdateDesEvt",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36157,
+          "text": "this.setItemEquipDes(t ? I.EqUtils.getEqDes(t) : \"\");",
+          "callerFunc": "onUpdateDesEvt",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36161,
+          "text": "this.setItemEquipDes(e);",
+          "callerFunc": "onUpdateDesEvt",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36188,
+          "text": "e.prototype.setItemEquipDes = function(t) {",
+          "callerFunc": "setItemEquipDes",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36247,
+          "text": "this.setItemEquipDes(I.EqUtils.getEqDes(i));",
+          "callerFunc": "onClickPane",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36250,
+          "text": "this.setItemEquipDes(a.getText(\"462\"));",
+          "callerFunc": "onClickPane",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36408,
+          "text": "this._currentSelectItem || this.setItemEquipDes(a.getText(\"462\"));",
+          "callerFunc": "oneUnLoadEquipFunc",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36503,
+          "text": "this._currentSelectItem || this.setItemEquipDes(a.getText(\"462\"));",
+          "callerFunc": "unLoadEquipFunc",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36577,
+          "text": "this.setItemEquipDes(e);",
+          "callerFunc": "selectedItemEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36608,
+          "text": "this.setItemEquipDes(I.EqUtils.getEqDes(e));",
+          "callerFunc": "selectedEquipEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36641,
+          "text": "d.InventoryModel.setItemChecked(o, e);",
+          "callerFunc": "newItemsChecked",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 40819,
+          "text": "o.prototype.setItemEquipDes = function(t) {",
+          "callerFunc": "setItemEquipDes",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 40888,
+          "text": "this.setItemEquipDes(\"\");",
+          "callerFunc": "showItemUI",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 40912,
+          "text": "I.InventoryModel.setItemChecked([ n.id ], 2);",
+          "callerFunc": "onKnackBtn",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 40925,
+          "text": "t && t.id && this.setItemEquipDes(u.SkillTable.getSkillDescription(t.id));",
+          "callerFunc": "onUpdateSkillGrasp",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 40981,
+          "text": "this.setItemEquipDes(u.SkillTable.getSkillDescription(e.id));",
+          "callerFunc": "clickItemEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 46430,
+          "text": "this.setItemList();",
+          "callerFunc": "start",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 46435,
+          "text": "e.prototype.setItemList = function() {",
+          "callerFunc": "setItemList",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 47853,
+          "text": "c.LocalStorageMgr.setItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + \"localGiftData\", JSON.stringify(t));",
+          "callerFunc": "onEnterBtn",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 47965,
+          "text": "l.LocalStorageMgr.setItem(p.RoleBaseInfo.roleID + h.RoleOtherInfo.giftendtime + \"localGiftData\", JSON.stringify(i));",
+          "callerFunc": "addList",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 49525,
+          "text": "cc.sys.localStorage.setItem(\"firstInBz\", \"1\");",
+          "callerFunc": "jumpCallBack",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 2563,
+          "text": "this.setItemSprite(p, parseInt(s[0]));",
+          "callerFunc": "showRewards",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 3411,
+          "text": "this.setItemSprite(this.spr, m);",
+          "callerFunc": "setIconSprite",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 3668,
+          "text": "this.setItemSprite(m.getChildByName(\"Icon\"), h);",
+          "callerFunc": "setData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 3699,
+          "text": "this.setItemSprite(_.getChildByName(\"Icon\"), f);",
+          "callerFunc": "setSuitData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 3918,
+          "text": "this.setItemSprite(this.rewardIcon, n[0]);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 3927,
+          "text": "this.setItemSprite(this.rewardIcon, l[0]);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 3931,
+          "text": "this.setItemSprite(this.itemIconAy[p - 1], l[0]);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 3939,
+          "text": "this.setItemSprite(this.rewardIcon, s[0]);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 5258,
+          "text": "e.prototype.setItemEquipDes = function(t) {",
+          "callerFunc": "setItemEquipDes",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 5323,
+          "text": "this.setItemEquipDes(\"\");",
+          "callerFunc": "showItemUI",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 5345,
+          "text": "t && t.id && this.setItemEquipDes(p.SkillTable.getSkillDescription(t.id));",
+          "callerFunc": "onUpdateSkillGrasp",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 5372,
+          "text": "this.setItemEquipDes(s);",
+          "callerFunc": "clickItemEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 5561,
+          "text": "this._currentSelectItem || this.setItemEquipDes(r.getText(\"462\"));",
+          "callerFunc": "unLoadEquipFunc",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 5571,
+          "text": "this.setItemEquipDes(u.EqUtils.getEqDes(i));",
+          "callerFunc": "onClickPane",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 5572,
+          "text": "} else this.setItemEquipDes(r.getText(\"462\"));",
+          "callerFunc": "onClickPane",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 5598,
+          "text": "this.setItemEquipDes(u.EqUtils.getEqDes(e));",
+          "callerFunc": "selectedEquipEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 7400,
+          "text": "this.setItemSprite(r, parseInt(s[0]));",
+          "callerFunc": "showAwards",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 7667,
+          "text": "R.LocalStorageMgr.setItem(\"anniNum\" + S.RoleBaseInfo.roleID, t);",
+          "callerFunc": "player2Progress",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 7836,
+          "text": "g.LocalStorageMgr.setItem(\"anni\" + m.RoleBaseInfo.roleID, 1);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 8145,
+          "text": "this.setItemSprite(_, C[0]);",
+          "callerFunc": "start",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 8265,
+          "text": "this.setItemSprite(u, parseInt(c[h][0]));",
+          "callerFunc": "showRewards",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 12647,
+          "text": "this.setItemSprite(t, o[0]);",
+          "callerFunc": "showItemIconSprite",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 12648,
+          "text": "this.setItemSprite(e, o[1]);",
+          "callerFunc": "showItemIconSprite",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 13699,
+          "text": "this.setItemSprite(this.icon, o[1][0]);",
+          "callerFunc": "setData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 13700,
+          "text": "this.setItemSprite(this.costIcon, o[2][0]);",
+          "callerFunc": "setData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 13961,
+          "text": "this.setItemSprite(s.getChildByName(\"icon\"), i[0]);",
+          "callerFunc": "showBase",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 15276,
+          "text": "this.setItemSprite(i, e.split(\",\")[0]);",
+          "callerFunc": "start",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 15419,
+          "text": "this.setItemSprite(o, Number(e.split(\",\")[0]));",
+          "callerFunc": "start",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 15774,
+          "text": "this.setItemSprite(this.ItemBtnicon, this.itemId);",
+          "callerFunc": "getRewardData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 15800,
+          "text": "this.setItemSprite(this.bigIcon, i.split(\",\")[0], cc.size(120, 120));",
+          "callerFunc": "initCard",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 15816,
+          "text": "this.setItemSprite(this.bigIcon, e.split(\",\")[0], cc.size(120, 120));",
+          "callerFunc": "setCards",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 15938,
+          "text": "this.setItemSprite(this.bigIcon, o.split(\",\")[0], cc.size(120, 120));",
+          "callerFunc": "onOptionBeachtreasureAward",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 16965,
+          "text": "this.setItemSprite(this.rewardIcon, i[0]);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 19714,
+          "text": "this.setItemSprite(this.iconSpr, e[0]);",
+          "callerFunc": "start",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 19794,
+          "text": "this.setItemSprite(this.iconSpr, o[0]);",
+          "callerFunc": "start",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 19888,
+          "text": "this.setItemSprite(this.rewardNodeList[t], e[0]);",
+          "callerFunc": "start",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 21145,
+          "text": "a.InventoryModel.setItem(o.itemId, c.RoleBaseInfo.getItemNum(o.itemId) + i);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 21156,
+          "text": "a.InventoryModel.setItem(s, c.RoleBaseInfo.getItemNum(s) - r);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 21410,
+          "text": "this.setItemSprite(this.icon, h.DemonModel.getCrystalItemId(t));",
+          "callerFunc": "refresh",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 22025,
+          "text": "this.setItemSprite(n.getChildByName(\"Icon\"), r[0]);",
+          "callerFunc": "onLoad",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        }
+      ]
+    },
+    "removeItem": {
+      "def": [
+        {
+          "file": "index.js",
+          "line": 69237,
+          "text": "t.prototype.removeItem = function(t) {"
+        },
+        {
+          "file": "index.js",
+          "line": 106322,
+          "text": "e.prototype.removeItem = function(t, e) {"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 73267,
+          "text": "t.prototype.removeItem = function(t, e) {"
+        }
+      ],
+      "calls": [
+        {
+          "file": "index.js",
+          "line": 64307,
+          "text": "a.RoleBaseInfo.removeItem(t, e);",
+          "callerFunc": "reduceItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 105059,
+          "text": "t.RogueRoleInfo.getItemNum(e) > 0 && t.RogueRoleInfo.removeItem(e, 1);",
+          "callerFunc": "addItem2Cd",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 52013,
+          "text": "for (var r in n) h.RoleBaseInfo.removeItem(r, n[r]);",
+          "callerFunc": "updateNpcsDatas",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        }
+      ]
+    },
+    "addItem": {
+      "def": [
+        {
+          "file": "index.js",
+          "line": 64302,
+          "text": "e.prototype.addItem = function(t, e) {"
+        },
+        {
+          "file": "index.js",
+          "line": 65353,
+          "text": "e.prototype.addItem = function(t, e) {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 509,
+          "text": "e.prototype.addItem = function(t, e) {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 14064,
+          "text": "e.prototype.addItem = function(t) {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 31547,
+          "text": "e.prototype.addItem = function() {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36857,
+          "text": "e.prototype.addItem = function(t) {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 41878,
+          "text": "e.prototype.addItem = function(t) {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 44961,
+          "text": "e.prototype.addItem = function(t, e) {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 45239,
+          "text": "e.prototype.addItem = function() {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 50493,
+          "text": "o.prototype.addItem = function(t) {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 50696,
+          "text": "o.prototype.addItem = function() {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 55809,
+          "text": "e.prototype.addItem = function() {"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 57001,
+          "text": "e.prototype.addItem = function(t) {"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 67471,
+          "text": "e.prototype.addItem = function(t) {"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 70661,
+          "text": "t.prototype.addItem = function(t) {"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 78259,
+          "text": "e.prototype.addItem = function(t, e) {"
+        }
+      ],
+      "calls": [
+        {
+          "file": "index.js",
+          "line": 2455,
+          "text": "u.InventoryDB.addItem(Number(l), n[l]);",
+          "callerFunc": "onGetAdReward",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 51586,
+          "text": "for (var s in e.awardArr) d.InventoryDB.addItem(parseInt(s), e.awardArr[s]);",
+          "callerFunc": "onEndFishing",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 51589,
+          "text": "d.InventoryDB.addItem(g[0], g[1]);",
+          "callerFunc": "onEndFishing",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 52495,
+          "text": "this.cache.addItemType(this.innerPath, e);",
+          "callerFunc": "applayChange",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 52511,
+          "text": "t.cache.addItemFrame(t.innerPath, e);",
+          "callerFunc": "i",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 52659,
+          "text": "t.prototype.addItemFrame = function(t, e, o) {",
+          "callerFunc": "addItemFrame",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 52674,
+          "text": "t.prototype.addItemType = function(t, e) {",
+          "callerFunc": "addItemType",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 56347,
+          "text": "d.InventoryDB.addItem(parseInt(I), o.specialArr[_][I]);",
+          "callerFunc": "onCheckBreak",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 56368,
+          "text": "d.InventoryDB.addItem(parseInt(I), o.specialArr[_][I]);",
+          "callerFunc": "onCheckBreak",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 56383,
+          "text": "d.InventoryDB.addItem(parseInt(I), o.specialArr[_][I]);",
+          "callerFunc": "onCheckBreak",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 56780,
+          "text": "d.InventoryDB.addItem(parseInt(y), e.specialObj[l][y]);",
+          "callerFunc": "onEndDoubleTraining",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 56801,
+          "text": "d.InventoryDB.addItem(parseInt(y), e.specialObj[l][y]);",
+          "callerFunc": "onEndDoubleTraining",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 56816,
+          "text": "d.InventoryDB.addItem(parseInt(y), e.specialObj[l][y]);",
+          "callerFunc": "onEndDoubleTraining",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 59577,
+          "text": "ADD_ITEM: \"User.addItem\",",
+          "callerFunc": "(unresolved)",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 72865,
+          "text": "e === this.myActor.id && this.addItem2Cd(t);",
+          "callerFunc": "processUsedItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 72868,
+          "text": "e.prototype.addItem2Cd = function(t) {",
+          "callerFunc": "addItem2Cd",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 86228,
+          "text": "h.InventoryDB.addItem(1, n[a].number);",
+          "callerFunc": "onEndWoodTr",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 105050,
+          "text": "o.prototype.addItem2Cd = function(e) {",
+          "callerFunc": "addItem2Cd",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 121488,
+          "text": "D.InventoryDB.addItem(parseInt(g), e[i].spArray[l][g]);",
+          "callerFunc": "onFinishBreakQueue",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 121509,
+          "text": "D.InventoryDB.addItem(parseInt(g), e[i].spArray[l][g]);",
+          "callerFunc": "onFinishBreakQueue",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 121524,
+          "text": "D.InventoryDB.addItem(parseInt(g), e[i].spArray[l][g]);",
+          "callerFunc": "onFinishBreakQueue",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 130749,
+          "text": "m.InventoryDB.addItem(1, e.gold);",
+          "callerFunc": "init",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 131138,
+          "text": "m.InventoryDB.addItem(1, r);",
+          "callerFunc": "receiveProduct",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 426,
+          "text": "this.addItem(this.titleItemData, this.content);",
+          "callerFunc": "onChangerPage",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 442,
+          "text": "this.addItem(this.titleItemData, this.content2);",
+          "callerFunc": "onChangerPage",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 495,
+          "text": "this.addItem(this.titleItemData, this.content);",
+          "callerFunc": "onClick",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 10241,
+          "text": "t.length && C.InventoryModel.addItem(t[0].id, t[0].n);",
+          "callerFunc": "closeEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 13841,
+          "text": "this.addItem(this._itemDataList);",
+          "callerFunc": "onSyncUpgradeRes",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 13990,
+          "text": "this.addItem(o);",
+          "callerFunc": "setNpcID",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 13998,
+          "text": "this.addItem(e);",
+          "callerFunc": "studyData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 31534,
+          "text": "this.addItem(this.itemList);",
+          "callerFunc": "setShowData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36339,
+          "text": "this.addItem(this.itemTypeValue, !1);",
+          "callerFunc": "showEquipInfoUI",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 36780,
+          "text": "this.addItem(t, !1);",
+          "callerFunc": "itemClassfityShow",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 41851,
+          "text": "this.addItem(this.rankList);",
+          "callerFunc": "updateAddItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 44946,
+          "text": "this.addItem(t[e], e + 1);",
+          "callerFunc": "start",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 45205,
+          "text": "this.addItem(this.itemList);",
+          "callerFunc": "setShowType",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 46609,
+          "text": "this.addItemTouchEvent();",
+          "callerFunc": "onLoad",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 46623,
+          "text": "e.prototype.addItemTouchEvent = function() {",
+          "callerFunc": "addItemTouchEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 50481,
+          "text": "e.addItem(e._itemDataList);",
+          "callerFunc": "divisionItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 50693,
+          "text": "o.addItem(o._itemDataList);",
+          "callerFunc": "divisionItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 55800,
+          "text": "this.addItem();",
+          "callerFunc": "start",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 56999,
+          "text": "this.addItem(e.rankItems);",
+          "callerFunc": "onSchoolRankRes",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 57807,
+          "text": "this.addItemInfo(n.goodCount, i, n);",
+          "callerFunc": "addGoodItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 57811,
+          "text": "this.addItemEmpty(\"\", i);",
+          "callerFunc": "addGoodItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 57837,
+          "text": "this.addItemEmpty(r.getText(6074), h);",
+          "callerFunc": "addAppointItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 57840,
+          "text": "this.addItemInfo(r.getText(6074), h, i[0]);",
+          "callerFunc": "addAppointItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 57844,
+          "text": "this.addItemEmpty(r.getText(6077), h);",
+          "callerFunc": "addAppointItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 57847,
+          "text": "this.addItemInfo(r.getText(6077), h, s[0]);",
+          "callerFunc": "addAppointItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 57849,
+          "text": "this.addItemEmpty(r.getText(6077), h);",
+          "callerFunc": "addAppointItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 57852,
+          "text": "this.addItemInfo(r.getText(6077), h, s[c]);",
+          "callerFunc": "addAppointItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 57856,
+          "text": "this.addItemEmpty(r.getText(6073), h);",
+          "callerFunc": "addAppointItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts2.js",
+          "line": 57859,
+          "text": "this.addItemInfo(r.getText(6073), h, n[0]);",
+          "callerFunc": "addAppointItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 5518,
+          "text": "this.addItem(this.itemTypeValue, !1);",
+          "callerFunc": "showEquipInfoUI",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 26139,
+          "text": "this.addItems();",
+          "callerFunc": "start",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 26195,
+          "text": "this.addItems();",
+          "callerFunc": "updateDollEvent",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 26367,
+          "text": "e.prototype.addItems = function() {",
+          "callerFunc": "addItems",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 32663,
+          "text": "this.addItemFunc();",
+          "callerFunc": "onAddClick",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 32665,
+          "text": "e.prototype.addItemFunc = function() {",
+          "callerFunc": "addItemFunc",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 32691,
+          "text": "} else if (this.lockList[1].active) this.addItemFunc(); else {",
+          "callerFunc": "onItemClick",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 66359,
+          "text": "e.addItemId = 0;",
+          "callerFunc": "e",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 66364,
+          "text": "this.addItemId = u.getConstByID(546);",
+          "callerFunc": "onLoad",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 66387,
+          "text": "this.setItemSprite(this.addIcon, this.addItemId);",
+          "callerFunc": "onLoad",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 66420,
+          "text": "var t = this, e = u.getItem(this.addItemId, \"item\");",
+          "callerFunc": "onClickAdd",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 66430,
+          "text": "if (f.RoleBaseInfo.getItemNum(this.addItemId) > 0) {",
+          "callerFunc": "onClickEnter",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 66488,
+          "text": "this.addNode.active = f.RoleBaseInfo.getItemNum(this.addItemId) > 0;",
+          "callerFunc": "refresh",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 66489,
+          "text": "this.addNode.active && (this.addNum.string = f.RoleBaseInfo.getItemNum(this.addItemId).toString());",
+          "callerFunc": "refresh",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 67483,
+          "text": "this.addItem(i);",
+          "callerFunc": "loadItems",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 67493,
+          "text": "this.addItem(i);",
+          "callerFunc": "loadItems",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 70685,
+          "text": "t.rewardArray && Object.keys(t.rewardArray).length > 0 && this.addItem(t.rewardArray);",
+          "callerFunc": "addAllReward",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 72723,
+          "text": "e.addItemId = 0;",
+          "callerFunc": "e",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 72728,
+          "text": "this.addItemId = m.getConstByID(547);",
+          "callerFunc": "onLoad",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 72750,
+          "text": "this.setItemSprite(this.addIcon, this.addItemId);",
+          "callerFunc": "onLoad",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 72769,
+          "text": "this.useItem.node.active = !t && h.RoleBaseInfo.getItemNum(this.addItemId) > 0;",
+          "callerFunc": "refresh",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 72772,
+          "text": "this.addNum.node.active && (this.addNum.string = h.RoleBaseInfo.getItemNum(this.addItemId).toString());",
+          "callerFunc": "refresh",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 72773,
+          "text": "this.useGoldNode.active = !t && h.RoleBaseInfo.getItemNum(this.addItemId) <= 0;",
+          "callerFunc": "refresh",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 72786,
+          "text": "u.RogueModel.refreshCZPrice > 0 && h.RoleBaseInfo.getItemNum(this.addItemId) <= 0 && h.RoleBaseInfo.gold < u.RogueModel.refreshCZPrice ? c.default.show(g.getText(9223)) : u.RogueModel.refreshOutfitting();",
+          "callerFunc": "onClickChange",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 72792,
+          "text": "var t = this, e = m.getItem(this.addItemId, \"item\");",
+          "callerFunc": "onClickAdd",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "scripts3.js",
+          "line": 78270,
+          "text": "this.addItem(this.rankList[o].roleID, i);",
+          "callerFunc": "loadItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        }
+      ]
+    },
+    "reduceItem": {
+      "def": [
+        {
+          "file": "index.js",
+          "line": 64306,
+          "text": "e.prototype.reduceItem = function(t, e) {"
+        },
+        {
+          "file": "index.js",
+          "line": 98907,
+          "text": "o.prototype.reduceItem = function(e) {"
+        },
+        {
+          "file": "index.js",
+          "line": 104446,
+          "text": "o.prototype.reduceItem = function(e) {"
+        }
+      ],
+      "calls": [
+        {
+          "file": "index.js",
+          "line": 56335,
+          "text": "d.InventoryDB.reduceItem(4001, M);",
+          "callerFunc": "onCheckBreak",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 56768,
+          "text": "d.InventoryDB.reduceItem(4001, c);",
+          "callerFunc": "onEndDoubleTraining",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 72874,
+          "text": "if (v.InventoryDB.getItemQuantity(t) > 0) v.InventoryDB.reduceItem(t, 1); else if (b.getItem(t, \"lh_temporary\")) {",
+          "callerFunc": "addItem2Cd",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 98885,
+          "text": "t.reduceItem(o.paramID);",
+          "callerFunc": "o",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 98911,
+          "text": "if (t.InventoryDB.getItemQuantity(e) > 0) t.InventoryDB.reduceItem(e, 1); else if (c.getItem(e, \"lh_temporary\")) {",
+          "callerFunc": "reduceItem",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 101771,
+          "text": "e || Number(o) !== Number(this.myID) || a.InventoryDB.reduceItem(t.ParamID, 1);",
+          "callerFunc": "processData",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 104215,
+          "text": "t.reduceItem(o.paramID);",
+          "callerFunc": "o",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        },
+        {
+          "file": "index.js",
+          "line": 121476,
+          "text": "D.InventoryDB.reduceItem(4001, c);",
+          "callerFunc": "onFinishBreakQueue",
+          "inFinishTask": false,
+          "inUpdateTaskData": false,
+          "inOperationalTasks": false
+        }
+      ]
+    }
+  },
+  "localStorage_noise": {
+    "count": 49,
+    "samples": [
+      {
+        "file": "index.js",
+        "line": 28192,
+        "text": "cc.sys.localStorage.removeItem(s.RoleBaseInfo.roleID + \"$#&A\");"
+      },
+      {
+        "file": "index.js",
+        "line": 28193,
+        "text": "cc.sys.localStorage.removeItem(s.RoleBaseInfo.roleID + \"$#&T\");"
+      },
+      {
+        "file": "index.js",
+        "line": 28201,
+        "text": "cc.sys.localStorage.removeItem(s.RoleBaseInfo.roleID + \"$#&A\");"
+      }
+    ]
+  },
+  "type_2_12_13": [
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "0",
+      "TaskType": "2",
+      "count": 434
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "0",
+      "TaskType": "1",
+      "count": 69
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "0",
+      "TaskType": "0",
+      "count": 10
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "0",
+      "TaskType": "3",
+      "count": 5
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "2148,0,4,12078|1132,1,1,10485|2148,1,2,12078|2148,2,2,15354",
+      "TaskType": "1",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "2180,0,5,15028|2180,0,5,15030",
+      "TaskType": "1",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "2180,0,5,15029|2180,0,5,15030",
+      "TaskType": "1",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "1132,0,5,1254",
+      "TaskType": "1",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "2004,1,1,15781|2004,2,1,15780|2004,3,1,15779|2004,4,1,15783|2004,5,1,15782",
+      "TaskType": "2",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "2213,1,1,15949|2213,2,1,15953|2213,3,2,15950|2213,4,2,15954|2214,1,1,15946|2214,2,1,15947|2214,3,1,15948|2214,6,1,15951|2214,7,1,15952|2214,8,1,15955|2214,9,1,15956|2214,4,1,15959",
+      "TaskType": "2",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "40075,1,1,17001|40075,2,1,17002|40074,3,2,17003|40074,4,2,17004|40074,2,2,16999",
+      "TaskType": "2",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "2001,7,1,16034|2239,1,2,16050|2239,0,4,16260|2218,0,4,16262|2218,0,4,16264|2218,0,4,16265",
+      "TaskType": "2",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "",
+      "TaskType": "2",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "2294,1,1,17104|2295,21,2,17106|2295,24,2,17162|2295,25,2,17163|2295,26,2,17164|2295,16,2,17104|2295,17,2,17105",
+      "TaskType": "2",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "2209,1,2,15701|2193,4,1,15728",
+      "TaskType": "2",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "2002,3,2,15709|2002,4,2,15711|2201,1,1,15712",
+      "TaskType": "2",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "2201,1,2,15712|2202,1,1,15713|2202,2,1,15714",
+      "TaskType": "2",
+      "count": 1
+    },
+    {
+      "finish_action": "[]",
+      "CompletionEvent": "2002,3,1,15709|2002,4,1,15711",
+      "TaskType": "2",
+      "count": 1
+    }
+  ],
+  "unverified": [
+    "函数名归属是静态推断：从命中行向上找最近的 '.prototype.X = function' / 'A.X = function' / 'function X' / 'X: function' / 'get|set X: function' 头，再用花括号配对求该函数体范围；匿名回调（function(){} 或 =>）内的命中归属到其外层最近的具名函数。",
+    "调用点检索是纯文本、大小写敏感的子串匹配，不区分接收者；同名不同类的方法被合并统计（例：'removeItem' 同时候中 cc.sys.localStorage.removeItem、LocalStorageMgr.prototype.removeItem(index.js:69237)、RoleBaseInfo.prototype.removeItem(index.js:106322)、scripts3.js:73267 的 removeItem），无法按对象消歧。",
+    "step1 每个模式按题面给的 --max 截断（80/40/60/60/60），未收录的超出部分见 rawCounts：{\"index.js | itemObj\\\\[\":14,\"index.js | delete .*itemObj\":1,\"index.js | Item[A-Za-z]*\\\\s*[:=]\\\\s*function\":178,\"index.js | setItem\\\\(\":80,\"index.js | reduceItem|subItem|delItem|removeItem|costItem|consumeItem\":59,\"scripts2.js | itemObj\\\\[\":0,\"scripts2.js | delete .*itemObj\":0,\"scripts2.js | Item[A-Za-z]*\\\\s*[:=]\\\\s*function\":218,\"scripts2.js | setItem\\\\(\":17,\"scripts2.js | reduceItem|subItem|delItem|removeItem|costItem|consumeItem\":13,\"scripts3.js | itemObj\\\\[\":11,\"scripts3.js | delete .*itemObj\":1,\"scripts3.js | Item[A-Za-z]*\\\\s*[:=]\\\\s*function\":324,\"scripts3.js | setItem\\\\(\":35,\"scripts3.js | reduceItem|subItem|delItem|removeItem|costItem|consumeItem\":33}。",
+    "step3 第一层（第2步调用点）按每文件 40 条截断；第二层（调用点所在函数的调用点）同样每文件 40 条截断，超出部分未收录到 reached。step3 每个 writer 每种命中最多保留 40 行，reached 只在该 writer 的第一条 row 里给出完整行号列表。",
+    "(a) 判定：MessageCenter.on/addListener 的内联回调用花括号配对求体范围；'on(EVT, this.xxx, this)' 形式把 xxx 记为回调函数名，再把同名函数整体标为 (a)。若内联回调与其它函数头在同一行，范围可能被放大到外层函数；=> 箭头函数与跨行参数列表可能漏判。",
+    "(d) 判定：'同一函数体内同时出现 sendRequest 与 HttpConst.'即标 (d)，命中函数数 index.js=434 scripts2.js=9 scripts3.js=200；未验证该 sendRequest 与写入动作之间是否有数据依赖。",
+    "(b)/(c) 判定：函数名包含 finishTask / updateTaskData（大小写不敏感）。updateTaskData 的函数头在 index.js:134522（'t.updateTaskData = function(t, e) {'），全库仅此一处定义；finishTask 相关函数共 16 个：index.js:43545:reqQuickFinishTask, index.js:133383:finishTaskCallBack, index.js:133638:reqFinishTaskMsg, index.js:133689:finishTaskAddLikeness, index.js:133708:reqCircleFinishTaskData, index.js:134301:judgeNotFinishTask, index.js:135034:getCanFinishTask, index.js:135073:getNotFinishTask, index.js:135095:finishTaskCheckUI, index.js:135164:reqTaskOrFinishTaskAction, index.js:135218:afterFinishTaskAction, scripts2.js:10209:setNotFinishTask, scripts3.js:7919:reqFinishTask, scripts3.js:16514:onFinishTask, scripts3.js:58724:deleteFinishTask, scripts3.js:88881:reqFinishTask。",
+    "所有命中判定都用『行号在 [X-3, X+3] 内』近似题面的『±3 行』；标记按函数体范围整体填充，未做逐语句数据流分析。",
+    "通过属性/字符串动态调用（如 mgrs[name](...)、EventTarget 派发、cc.Component 取组件、Promise.then(t => t.InventoryDB.reduceItem) 中的 t 绑定）没有追踪，可能漏掉部分可达路径。",
+    "step4.1 只抄 134522-134560 区间内形如 'case N:' 的行；该区间内 switch 的被判别变量 i 取自 t.taskObj.Type（index.js:134523）。",
+    "step4.2 只统计 tbl_tasknew.json 顶层键名匹配 /^[0-9]+$/ 的 4840 行（Type 为 2/12/13 的共 532 行）；finish_action 列在 JSON 里是数组（多数为 []，全表仅 2 行非空 [2,7]/[2,8] 且都不在 Type 2/12/13 内），本段按其 JSON 字面值输出。",
+    "函数名为单字母或极通用标识（e/t/o/i/set/get/clear/init/start/onClick 等）时，第2/3步的调用点检索会命中大量无关代码（例：writer addItemFrame 的第二层 reached 里出现 index.js:1~73 这类行），这些行只是同名文本匹配，不代表真实调用关系；此类 writer 的 hit 标注同样只反映文本匹配。",
+    "机械规则·定义行：行文本匹配 /(^|[^A-Za-z0-9_$])(setItem|removeItem|addItem|reduceItem)\\s*[:=]\\s*function/ 的行，来源合并 step1_writers.funcFuncLine 与 step2_callsites.text，按 file:line 去重（同一 file:line 保留先出现者，文本不同时以 step2 原文优先被覆盖，因 step2 后写入）。",
+    "机械规则·调用点：step2_callsites 中 func 等于该名字的行，去掉定义行本身与 removeItem 的 localStorage/LocalStorageMgr 缓存删除行；同 file:line 重复只保留一条。未跨函数体做任何推断。",
+    "localStorage_noise = removeItem 记录中文本含 'localStorage.removeItem' 的 26 条 + 文本含 'LocalStorageMgr.removeItem' 的 23 条（本地缓存封装，非背包），共 49 条。题面未对 setItem 立此桶：setItem.calls 中仍有 14 条文本含 'localStorage.setItem' 的行，未剔除、未另立数组。",
+    "字面账目核对：setItem step2 120 条 = step2 内定义 2 条 + 调用 118 条，另有 2 条定义只出现在 step1.funcFuncLine（index.js:106277、scripts3.js:73241），故 def 共 4；removeItem 55 = 定义 3 + noise 49 + 调用 3；addItem 94 = 定义 16 + 调用 78；reduceItem 11 = 定义 3 + 调用 8。",
+    "三个布尔字段为 callerFunc 字符串精确相等判定（不做前缀/包含/大小写匹配）。实测：step2 全表 callerFunc==='finishTaskCallBack' 0 条、==='updateTaskData' 0 条、==='operationalTasks' 1 条（index.js:134489，func=checkTaskIsClear，不属四个写入方）。因此四个写入方的全部调用点三个布尔均为 false；这只说明 step2 未把任何一条四写入方调用点归入这三个函数名，不能据此认定这三个函数体内没有背包写入。",
+    "截断未补：源 step1 各模式按 --max 截断（setItem\\( 80/17/35、reduceItem|subItem|... 105? 见 rawCounts、Item[A-Za-z]*[:=]function 180/218/324），step2/step3 亦有每文件 40 条截断；本文件仅压缩给定 JSON，未回原文补采，未收录部分无法由此判断有无。",
+    "丢弃范围（按要求）：step1_writers 其余 424 条命中行（仅用其 funcFuncLine 补定义）、step2_callsites 中非四写入方的 3795 条、step3_reachability 4361 条、step4_1_cases 5 条，均未写入；step4_2_type_2_12_13 原样 18 组照抄，未改数、未改键名顺序。"
+  ]
+}

@@ -1,0 +1,71 @@
+# User.getWashEquip  (HttpConst.GET_WASH_EQUIP)
+# 出现 2 处
+
+ 44529: value: !0
+ 44530: });
+ 44531: o.EquipWashModel = void 0;
+ 44532: var i = t("../core/events/MessageCenter"), n = t("../net/HttpConst"), r = t("../utils/EvName"), a = t("../gui/uicomponents/Alert"), s = t("../gameconfigs/LangMgr"), l = t("./StoreModel"), c = t("../net/NetMgr"), p = t("../gameconfigs/CFMgr"), h = function() {
+ 44533: function t() {}
+ 44534: t.prototype.init = function() {
+ 44535: i.MessageCenter.on(n.HttpConst.GET_WASH_EQUIP, function(t, e) {
+ 44536: 1 == e.eRet && e.hasOwnProperty("equipObj") && i.MessageCenter.dispatch(r.EvName.GET_WASH_EQUIP, e.equipObj);
+ 44537: }, this);
+ 44538: i.MessageCenter.on(n.HttpConst.EQUIP_WASH, function(t, e) {
+ 44539: if (1 == e.eRet) {
+ 44540: var o = {
+ 44541: itemId: e.itemID,
+ 44542: newAtt: e.newAtt,
+ 44543: addArr: e.addArr
+ 44544: };
+ 44545: i.MessageCenter.dispatch(r.EvName.EQUIP_WASH_EVENT, o);
+ 44546: a.default.show(s.getText(1259));
+ 44547: } else 8 == e.eRet ? a.default.show(s.getText(1261)) : 9 == e.eRet && l.StoreModel.openChargeList();
+ 44548: }, this);
+ 44549: i.MessageCenter.on(n.HttpConst.CHANGE_PROPERTY, function(t, e) {
+ 44550: 1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EQUIP_UPDATE_WASH_EVENT);
+ 44551: }, this);
+ 44552: };
+ 44553: t.prototype.reqGetWashEquipData = function() {
+ 44554: c.NetMgr.http.sendRequest(n.HttpConst.GET_WASH_EQUIP, {});
+ 44555: };
+ 44556: t.prototype.reqEquipWash = function(t, e, o, i, r) {
+ 44557: void 0 === r && (r = 0);
+ 44558: var a = {
+ 44559: itemID: t,
+ 44560: type: e,
+ 44561: lockArr: o,
+ 44562: flag: i,
+ 44563: skillId: r
+ 44564: };
+ 44565: c.NetMgr.http.sendRequest(n.HttpConst.EQUIP_WASH, a);
+ 44566: };
+ 44567: t.prototype.reqChangeEquip = function(t) {
+ 44568: c.NetMgr.http.sendRequest(n.HttpConst.CHANGE_PROPERTY, {
+ 44569: itemID: t
+ 44570: });
+ 44571: };
+ 44572: t.prototype.calculationNeedEssence = function(t, e, o, i) {
+ 44573: var n;
+ 44574: n = 1 == p.getItem(t, "item").EquipType ? p.getConstByID(83) : p.getConstByID(84);
+ 44575: var r = p.getItem({
+---
+ 44576: 3: "b",
+ 44577: 4: "a",
+ 44578: 5: "s"
+ 44579: }[o], "luckywash").a;
+ 44580: return Math.ceil(n * (e + r * (i - 1)));
+ 44581: };
+ 44582: t.prototype.calculationNeedGold = function(t, e, o, i) {
+ 44583: var n;
+ 44584: n = 1 == p.getItem(t, "item").EquipType ? p.getConstByID(83) : p.getConstByID(84);
+ 44585: var r = p.getItem({
+ 44586: 3: "b",
+ 44587: 4: "a",
+ 44588: 5: "s"
+ 44589: }[o], "luckywash").b;
+ 44590: return Math.ceil(n * (e + r * (i - 1)));
+ 44591: };
+ 44592: return t;
+ 44593: }();
+ 44594: o.EquipWashModel = new h();
+---

@@ -1,0 +1,90 @@
+# User.getHlexchangeShop  (HttpConst.GET_HLEX_CHANGESHOP)
+# 出现 2 处
+
+ 56082: this.npcID = 0;
+ 56083: this.curItemObj = [];
+ 56084: this.curItemId = 0;
+ 56085: }
+ 56086: t.prototype.init = function() {
+ 56087: this.npcID = 0;
+ 56088: i.MessageCenter.on(a.HttpConst.GET_HLEX_CHANGESHOP, this.onGetExchangeData, this);
+ 56089: i.MessageCenter.on(a.HttpConst.GET_HLEX_CHANGEITEMDATA, this.onGetExchangeItemsData, this);
+ 56090: i.MessageCenter.on(a.HttpConst.EXCHANGE_HLEX_CHANGEITEM, this.onBuyExchangeData, this);
+ 56091: };
+ 56092: t.prototype.onGetExchangeData = function(t, e) {
+ 56093: var o = this;
+ 56094: if (1 == e.eRet && e.hasOwnProperty("shopObj") && !cc.js.isEmptyObject(e.shopObj)) c.default.prefabs.load("homeSim/InnManage/InnExchangeShop", cc.Prefab, function(t, i) {
+ 56095: var r = cc.instantiate(i);
+ 56096: r.addComponent("HalloweenChangeShop").setDatas(e.shopObj, o.npcID);
+ 56097: n.PopUpMgr.addPopUp(r, p.LayerMgr.popUpLayer);
+ 56098: }); else {
+ 56099: this.npcID = 0;
+ 56100: r.default.show(s.getText(1093));
+ 56101: }
+ 56102: };
+ 56103: t.prototype.onGetExchangeItemsData = function(t, e) {
+ 56104: if (1 == e.eRet) {
+ 56105: var o = this;
+ 56106: c.default.prefabs.load("comUI/tanchuang/SelectItem", cc.Prefab, function(t, i) {
+ 56107: var r = cc.instantiate(i);
+ 56108: n.PopUpMgr.addPopUp(r, p.LayerMgr.popUpLayer, 1, !0);
+ 56109: r.addComponent("ExchangeBuyUI").setDatas(o.curItemObj, e.limit, 1);
+ 56110: });
+ 56111: }
+ 56112: };
+ 56113: t.prototype.onBuyExchangeData = function(t, e) {
+ 56114: if (1 == e.eRet) {
+ 56115: i.MessageCenter.dispatch(u.EvName.EXCHANGE_ITEM_SHOP);
+ 56116: i.MessageCenter.dispatch(u.EvName.EXCHANFE_JETTON);
+ 56117: i.MessageCenter.dispatch(u.EvName.HALLOWEEN_EXCHANGE_SHOP_EVENT);
+ 56118: i.MessageCenter.dispatch(u.EvName.WARM_UP_REFRESH_TICKET);
+ 56119: var o = h.getItem(e.itemID, "item"), n = s.getText(123);
+ 56120: "en" == f.lang && (n += " ");
+ 56121: r.default.show(n + s.getText(o.Name) + "x" + e.itemNum);
+ 56122: } else 3 == e.eRet && r.default.show(s.getText(1455));
+ 56123: };
+ 56124: t.prototype.reqExchangeItemDatas = function(t) {
+ 56125: this.npcID = t;
+ 56126: l.NetMgr.http.sendReqWithMask(a.HttpConst.GET_HLEX_CHANGESHOP, {
+ 56127: npcid: t
+ 56128: });
+---
+ 56129: };
+ 56130: t.prototype.reqGetExchangeItem = function(t) {
+ 56131: this.curItemObj = t;
+ 56132: l.NetMgr.http.sendReqWithMask(a.HttpConst.GET_HLEX_CHANGEITEMDATA, {
+ 56133: itemID: t[0]
+ 56134: });
+ 56135: };
+ 56136: t.prototype.reqExchangeItem = function(t, e) {
+ 56137: this.curItemId = t;
+ 56138: l.NetMgr.http.sendReqWithMask(a.HttpConst.EXCHANGE_HLEX_CHANGEITEM, {
+ 56139: npcid: this.npcID,
+ 56140: itemID: t,
+ 56141: itemNum: e
+ 56142: });
+ 56143: };
+ 56144: t.prototype.getNpcType = function() {
+ 56145: var t = h.getItem(this.npcID, "npc");
+ 56146: return t ? t.Type : 0;
+ 56147: };
+ 56148: t.prototype.judgeItemState = function(t) {
+ 56149: var e = !1;
+ 56150: if (t && t.length > 1) for (var o = t.split("|"), i = 0; i < o.length; i++) {
+ 56151: var n = o[i].split(",");
+ 56152: if (this.checkItemNum(n)) {
+ 56153: e = !0;
+ 56154: break;
+ 56155: }
+ 56156: }
+ 56157: return e;
+ 56158: };
+ 56159: t.prototype.checkItemNum = function(t) {
+ 56160: if (1 == t[0]) {
+ 56161: if (m.InventoryModel.fashEquipMap.hasOwnProperty(t[1])) return !0;
+ 56162: } else if (2 == t[0]) {
+ 56163: if (g.RoleOtherInfo.mountObj.hasOwnProperty(t[1])) return !0;
+ 56164: } else if (3 == t[0]) return d.RoleBaseInfo.getItemNum(t[1]) > 0;
+ 56165: return !1;
+ 56166: };
+---

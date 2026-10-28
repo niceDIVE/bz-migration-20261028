@@ -1,0 +1,51 @@
+# User.setPlayerItemSort  (HttpConst.SET_PLAYER_ITEMSORT)
+# 出现 1 处
+
+ 65051: m.NetMgr.http.sendReqWithMask(a.HttpConst.DELETE_EQUIP_LOCK, {
+ 65052: itemID: e.id
+ 65053: });
+ 65054: };
+ 65055: e.prototype.reqSetPlayerItemSort = function(t, e) {
+ 65056: void 0 === e && (e = 0);
+ 65057: m.NetMgr.http.sendReqWithMask(a.HttpConst.SET_PLAYER_ITEMSORT, {
+ 65058: itemId: t,
+ 65059: type: e
+ 65060: });
+ 65061: };
+ 65062: e.prototype.reqSetPlayerSkillSort = function(t, e) {
+ 65063: void 0 === e && (e = 0);
+ 65064: m.NetMgr.http.sendReqWithMask(a.HttpConst.SET_PLAYER_SKILLSORT, {
+ 65065: skillId: t,
+ 65066: type: e
+ 65067: });
+ 65068: };
+ 65069: e.prototype.checkEquipLocked = function(t) {
+ 65070: return this.lockEquips.indexOf(parseInt(t)) >= 0;
+ 65071: };
+ 65072: e.prototype.setLockEquips = function(t) {
+ 65073: this.lockEquips = t;
+ 65074: };
+ 65075: e.prototype.parseEqData = function(t) {
+ 65076: for (var e in t) {
+ 65077: var o = t[e], i = this.parseEq(parseInt(e), o);
+ 65078: this.addEq(i);
+ 65079: }
+ 65080: };
+ 65081: e.prototype.updateEq = function(t, e) {
+ 65082: var o = this.parseEq(t, e);
+ 65083: this.equipmentDic.hasOwnProperty(t) || this.signNewItems([ t ], 1);
+ 65084: this.deleteEq(t);
+ 65085: this.addEq(o);
+ 65086: };
+ 65087: e.prototype.deleteEq = function(t) {
+ 65088: if (this.equipmentDic.hasOwnProperty(t)) {
+ 65089: var e = this.equipmentDic[t];
+ 65090: if (this.equipByItemID.hasOwnProperty(e.itemID)) {
+ 65091: var o = this.equipByItemID[e.itemID], i = o.indexOf(e);
+ 65092: i >= 0 && o.splice(i, 1);
+ 65093: }
+ 65094: delete this.equipmentDic[t];
+ 65095: }
+ 65096: y.InhertEquipModel.allInhertEquips.hasOwnProperty(t) && delete y.InhertEquipModel.allInhertEquips[t];
+ 65097: this.fashEquipMap.hasOwnProperty(t) && delete this.fashEquipMap[t];
+---

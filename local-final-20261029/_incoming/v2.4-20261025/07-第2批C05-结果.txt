@@ -1,0 +1,95 @@
+第 2 批 C05〔道具使用〕结果（2026-10-25）
+
+范围：按 v2.4 拍的 24 个 = 主体 15 + 新写 4（CHECK_ON_HOOK / ROGUE_SYNC_WAIT_DATA / GET_SNOW_REWARD / SNOWACTIVE）+ 已有 5
+本批不做：RECORD_PHONE、BUY_NPC_FEEL、SWAP_SKILL_PROGRESS
+
+════ 一、改好的 bz-rpc-server.js ════
+
+  路径：hotfix-patch\core\bz-rpc-server.js
+  大小：243,872 B      md5：D3DE66266D7DE861BABB3CF29FA27FB8
+  线上：impl=hae459456  flow=ffaec47c3  selfCheck 1256 全过（failed=[] missingRequired=[]）
+  进程：pid 6188 未变（热重载，未重启）
+
+  新增 12 个 handler，按**线上名**注册（H 的键 = 线上名去掉 "User."）：
+    rgUseItem  rgSycnWaitData  enterSnow  UseSnowBall  UseBatchSnowBall  UseAllBall
+    getSnowAward  useItemAddition  BackToLogin  accountLogOff  quitSchool  CheckOnHook
+
+  注意两处线上名与注册名完全不同（照注册名写会静默落进 SHAPED/UNKNOWN）：
+    SNOWACTIVE        -> User.enterSnow
+    GET_SNOW_REWARD   -> User.getSnowAward
+    （同族还有 CLEAR_SXHOOL_CD->clearGeSchoolClothing、LEVEAL_SCHOOL->OutSchool、
+      SWAP_SKILL_PROGRESS->skillChange，但这三个本批或已有 handler、或不做）
+
+  gen_shapes / build_handlers / check_shape_freeze / acceptance 全绿；
+  acceptance 39/39（新增 c05-smoke 后 38->39），known-red 0，cap 0；
+  check_reject_codes OK（动作 34 / 条目 38 / 拒绝点 58）。
+
+════ 二、冒烟勾选表 ════
+
+  自动化冒烟：test/c05-smoke.js  16/16 PASS
+  （走真实 dispatch -> handler -> persist -> 应答 全链路，不是脚本桩）
+
+  【新写 12 个】全部「通过」
+    雪球线
+      enterSnow          通过  回 hp=1000 boxnum=3
+      UseSnowBall        通过  扣 1 球（50->49）、hp 1000->1100
+      UseBatchSnowBall   通过  扣 3 球（->46）、hp +300
+      UseAllBall         通过  清空雪球、按 square_ball 最高档发 10558（真进背包）
+      getSnowAward       通过  盒子 3->2、银两 +10、潜能 +5，且 bag 里**没有** 4001/4003
+    肉鸽线
+      rgUseItem          通过  肉鸽背包 1001 5->4、回 mpnum
+      rgSycnWaitData     通过  只回 eRet:1
+    其余
+      useItemAddition    通过  扣 176 2 个（10->8）、回 itemAddition=2
+      BackToLogin        通过  只回 eRet:1
+      accountLogOff      通过  只回 eRet:1，**存档逐字节不变**（已断言）
+      quitSchool         通过  school 1->0，contribution 99999 **保留**
+      CheckOnHook        通过  回 OnhookObj
+
+  【新写 12 个 · 拒绝路径】全部「通过」
+      UseSnowBall    雪球 0     -> eRet:0，应答被收窄到只剩 {eRet}，存档不动
+      UseBatchSnowBall 球不足   -> eRet:4（客户端 4 -> getText(6126)「雪球不足」）
+      UseAllBall     雪球 0     -> eRet:0
+      getSnowAward   盒子 0     -> eRet:4，存档不动
+      useItemAddition 176 为 0  -> eRet:5 静默，**绝不"不扣东西直接给加成"**
+      rgUseItem      肉鸽袋空   -> eRet:4，存档不动
+
+  【已有 5 个（CHECK_OUT_SCHOOL / EXIT_SCHOOL / LEVEAL_SCHOOL / CLEAR_SXHOOL_CD / USER_GETCHATADDRESS）】
+    标「未实测（功能层）」—— 不是坏，是本批没逐个回归：它们本批不改代码。
+    鲁棒层已覆盖：r14-catch-smoke 对全部 handler 跑空请求/毒请求，eRet 必须在登记表内、不许抛异常。
+
+════ 三、卡住的动作（各一句）════
+
+  1 UI 渲染层整体未验：雪球活动是**地图上的 NPC**（客户端 SnowManNpc.reaction @scripts3.js:83596、
+    Firecracker.reaction @31646），不是菜单入口；已定位到面板 prefab activeUI/StackFirecrackerUI
+    （scripts3.js:86407），但从主城走过去需要游戏内导航，本轮没走。
+  2 useItemAddition 扣的**物品 id 176 是假定**（唯一旁证是 SWAP_SKILL_PROGRESS 的 Const 176），
+    需要上游确认正确物品；给错 id 的后果是"扣错东西"。
+  3 rgUseItem 只扣道具、**没有 buff 效果**（rogue_item.buff 列未建模）。
+  4 雪球奖励规则是从表推的，不是原服逻辑（原服已下线无参照）：
+    getSnowAward 发当前等级 consolationprize；UseAllBall 按雪球数取 square_ball 最高档。
+  5 quitSchool 只清 school，门派贡献与门派技能**保留** —— 上游要的"看提示文案定"做不了，
+    游戏文字表不在我们 dump 里（languageList.json 只有 3 行语言清单），客户端 onQuitSchool 是空函数。
+
+════ 四、名单外顺带做的 ════
+
+  1 tools/gen_shop_tables.js 新增两张表（走生成器，未手写数据）：
+      BZ_SNOWMAN      11 档，每档 {hp, t(模型), cons(安慰奖[4001/4003 货币对])}
+      BZ_SQUARE_BALL   6 档，每档 {lv, rn(rewardnum), ri(rewarditem=10558), sz}
+    core\bz-shops.generated.js 69,519 -> 70,505 B
+  2 新增 test/c05-smoke.js（本轮自动化冒烟，已进 acceptance）
+  3 修了一个**自己引入**的真 bug：grantRewardList 内部写 note.eco[k]，
+    而我新建的 note 只有 skch/ivch/eqch -> 货币奖励分支抛 TypeError（领雪球盒奖励发不出钱）。
+    已给 4 处 note 补 eco:{}，符合"改档必须回 note.eco 新余额"的家法。
+  4 形状审批登记（家法 §6 正常流程，未跳步）：
+      planned-changes.json      第一轮 6 条（雪球 4 个动作 + useItemAddition 的 eRet/hp/sTime 形状修正）
+                                第二轮 4 条（登记 REJECT_CODES 后 narrowReject 收窄造成的发->不发）
+      approved-widening.json    +1  enterSnow.sTime（证据 index.js:122470）
+      approved-narrowing.json   +5  escape:"closed"（hp/rewardArray 的拒绝分支不可达性，各附逃逸论证）
+  5 tools/facts/reject-codes.json 新增 6 个动作的拒绝码登记，
+    ev 一律用客户端原文行算真 sha1 前 8 位（不是编的哈希）。
+
+════ 五、需要上游回的（2 条）════
+
+  A useItemAddition 该扣哪个物品 id？现在假定 176。
+  B 雪球奖励规则要不要按别的口径？现在按 snowman.consolationprize / square_ball 最高档。

@@ -1,0 +1,2 @@
+c42e5a795fdff3963e91f532cbcc5818a9afe1d027089822dacf99dad602b2f2  bz-上游资产包-20261028.zip
+dfbfe4122e50ecc2d3cf83d1cbd88ddf164e046b75a0a60bc8a309b4e7a9f976  指令-云上Agent.md

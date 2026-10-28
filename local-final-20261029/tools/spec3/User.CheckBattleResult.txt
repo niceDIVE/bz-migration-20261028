@@ -1,0 +1,13 @@
+# User.CheckBattleResult   (HttpConst.BATTLE_END_REWARD)
+
+## 请求点 69196: s.NetMgr.http.sendRequest(a.HttpConst.BATTLE_END_REWARD, h);
+   69188: actionArr: this.actionArr,
+   69189: seed: t.seed,
+   69190: aDmgReceived: t.data[4],
+   69191: bDmgReceived: t.data[5],
+   69192: itemSkill: this.itemSkills,
+   69193: forwards: o
+   69194: };
+   69195: this.isRmd ? o.push(Math.floor(1e5 * Math.random())) : Math.random() < .5 && o.shift();
+
+## 注册点 89553: a.MessageCenter.on(s.HttpConst.BATTLE_END_REWARD, function(e, o) {

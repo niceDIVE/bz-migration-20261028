@@ -1,0 +1,99 @@
+# User.UserWifeProp  (HttpConst.USE_WIFE_PROP)
+# 出现 2 处
+
+145327: if (1 == e.eRet) {
+145328: c.MarryModel.wifeUpdateData.lv = e.lv;
+145329: c.MarryModel.wifeUpdateData.exp = e.exp;
+145330: r.MessageCenter.dispatch(s.EvName.UPGRADE_WIFE_ITEM, {});
+145331: }
+145332: }, this);
+145333: r.MessageCenter.on(a.HttpConst.USE_WIFE_PROP, function(t, e) {
+145334: if (1 == e.eRet) {
+145335: var o = c.MarryModel.wifeUpdateData.lv, i = c.MarryModel.wifeUpdateData.exp, a = e.lv, l = e.exp;
+145336: c.MarryModel.wifeUpdateData.lv = e.lv;
+145337: c.MarryModel.wifeUpdateData.exp = e.exp;
+145338: for (var p = o; p < a; p++) {
+145339: var h = n.getItem(p, "partnerexp");
+145340: l += Math.floor(h.exp);
+145341: }
+145342: l -= i;
+145343: r.MessageCenter.dispatch(s.EvName.UPDATE_WIFE_IMAGE_EVENT, {
+145344: exp: l
+145345: });
+145346: }
+145347: }, this);
+145348: r.MessageCenter.on(a.HttpConst.GET_FASHION_SHOP, function(t, o) {
+145349: if (1 == (o = o).eRet && o.hasOwnProperty("shopArr")) {
+145350: for (var i = 0; i < o.shopArr.length; i++) {
+145351: var n = o.shopArr[i];
+145352: e.shopArray[n[0]] = [];
+145353: e.shopArray[n[0]] = n[1];
+145354: }
+145355: e.setCurFashion(c.MarryModel.wifeUpdateData.eid);
+145356: u.default.prefabs.load("comUI/ShopBgUI", cc.Prefab, function(t, e) {
+145357: var i = cc.instantiate(e);
+145358: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer);
+145359: i.addComponent("ShowWifeBgUI").showWifeCoatWb(o.shopArr);
+145360: });
+145361: }
+145362: }, this);
+145363: r.MessageCenter.on(a.HttpConst.WEAR_FASHION, function(e, o) {
+145364: if (1 == (o = o).eRet) {
+145365: l.default.show(i.getText(3632));
+145366: c.MarryModel.wifeUpdateData.eid = o.fasionid;
+145367: if (parseInt(o.fasionid) > 0) {
+145368: if (!c.MarryModel.wifeUpdateData.fasion.hasOwnProperty(o.fasionid)) {
+145369: var a = c.MarryModel.getWifeNpcId(), h = n.getItem(a, "propose");
+145370: p.default.addDialogEvent(h.buy, 0);
+145371: }
+145372: c.MarryModel.wifeUpdateData.fasion[o.fasionid] = 1;
+145373: }
+---
+145386: lv: t,
+145387: exp: e,
+145388: pot: o
+145389: });
+145390: };
+145391: e.prototype.reqUseItemLv = function(t) {
+145392: h.NetMgr.http.sendReqWithMask(a.HttpConst.USE_WIFE_PROP, {
+145393: propnum: t
+145394: });
+145395: };
+145396: e.prototype.reqGetFashionShop = function() {
+145397: h.NetMgr.http.sendReqWithMask(a.HttpConst.GET_FASHION_SHOP, {});
+145398: };
+145399: e.prototype.reqWearFashion = function() {
+145400: var t = c.MarryModel.wifeUpdateData.fasion;
+145401: if (0 == this.fashionId || t.hasOwnProperty(this.fashionId)) h.NetMgr.http.sendReqWithMask(a.HttpConst.WEAR_FASHION, {
+145402: fasionid: this.fashionId
+145403: }); else {
+145404: var e = this.shopArray[this.fashionId], o = n.getItem(e[0], "item"), r = i.getText(o.Name) + " x" + e[1], s = i.getText(3634).replace(/\[1\]/, r), p = this;
+145405: l.default.show(s, [ {
+145406: flag: 0,
+145407: name: i.getText("332")
+145408: }, {
+145409: flag: 1,
+145410: name: i.getText("333")
+145411: } ], function(t) {
+145412: 0 == t && h.NetMgr.http.sendReqWithMask(a.HttpConst.WEAR_FASHION, {
+145413: fasionid: p.fashionId
+145414: });
+145415: });
+145416: }
+145417: };
+145418: e.prototype.saveWifeFashion = function() {
+145419: h.NetMgr.http.sendReqWithMask(a.HttpConst.WEAR_FASHION, {
+145420: fasionid: this.fashionId
+145421: });
+145422: };
+145423: e.prototype.setCurFashion = function(t) {
+145424: this.fashionId = t;
+145425: };
+145426: e.prototype.getCurFashion = function() {
+145427: return this.fashionId;
+145428: };
+145429: e.prototype.showUserWifeProp = function() {
+145430: var t = n.getConstByID("143");
+145431: p.default.addBuyItemUI({
+145432: itemId: t
+---

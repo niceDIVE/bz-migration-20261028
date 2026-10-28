@@ -1,0 +1,241 @@
+{
+ "archivedAt": "2026-10-26T13:56:45.650Z",
+ "rules": [
+  {
+   "id": "c04-eret",
+   "field": [
+    "eRet"
+   ],
+   "expect": 17,
+   "allowSigma": [
+    [
+     "ChooseGirl",
+     "eRet"
+    ],
+    [
+     "UserWifeProp",
+     "eRet"
+    ],
+    [
+     "Whoring",
+     "eRet"
+    ],
+    [
+     "adoptChild",
+     "eRet"
+    ],
+    [
+     "beginWedding",
+     "eRet"
+    ],
+    [
+     "birthChild",
+     "eRet"
+    ],
+    [
+     "childWashProperty",
+     "eRet"
+    ],
+    [
+     "chooseSex",
+     "eRet"
+    ],
+    [
+     "divorceNpc",
+     "eRet"
+    ],
+    [
+     "getLikeEvent",
+     "eRet"
+    ],
+    [
+     "giveChildName",
+     "eRet"
+    ],
+    [
+     "makeLove",
+     "eRet"
+    ],
+    [
+     "marryNpc",
+     "eRet"
+    ],
+    [
+     "optionLikeEvent",
+     "eRet"
+    ],
+    [
+     "proposeNpc",
+     "eRet"
+    ],
+    [
+     "resetChildFoster",
+     "eRet"
+    ],
+    [
+     "upgradeWifeLevel",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:77127"
+  },
+  {
+   "id": "c04-npcid",
+   "field": [
+    "npcID"
+   ],
+   "expect": 4,
+   "allowSigma": [
+    [
+     "ChooseGirl",
+     "npcID"
+    ],
+    [
+     "divorceNpc",
+     "npcID"
+    ],
+    [
+     "marryNpc",
+     "npcID"
+    ],
+    [
+     "proposeNpc",
+     "npcID"
+    ]
+   ],
+   "ev": "index.js:77125"
+  },
+  {
+   "id": "c04-npcid-lower",
+   "field": [
+    "npcId"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "optionLikeEvent",
+     "npcId"
+    ]
+   ],
+   "ev": "index.js:51168"
+  },
+  {
+   "id": "c04-wife",
+   "field": [
+    "exp",
+    "lv"
+   ],
+   "expect": 4,
+   "allowSigma": [
+    [
+     "UserWifeProp",
+     "exp"
+    ],
+    [
+     "UserWifeProp",
+     "lv"
+    ],
+    [
+     "upgradeWifeLevel",
+     "exp"
+    ],
+    [
+     "upgradeWifeLevel",
+     "lv"
+    ]
+   ],
+   "ev": "index.js:145326"
+  },
+  {
+   "id": "c04-childobj",
+   "field": [
+    "childObj"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "adoptChild",
+     "childObj"
+    ],
+    [
+     "birthChild",
+     "childObj"
+    ]
+   ],
+   "ev": "index.js:77355"
+  },
+  {
+   "id": "c04-misc",
+   "field": [
+    "eTime",
+    "makeID",
+    "attArr",
+    "attrList",
+    "baseArr",
+    "eventId",
+    "childName",
+    "fetationTime",
+    "feel",
+    "playArr"
+   ],
+   "expect": 10,
+   "allowSigma": [
+    [
+     "ChooseGirl",
+     "eTime"
+    ],
+    [
+     "Whoring",
+     "makeID"
+    ],
+    [
+     "childWashProperty",
+     "attArr"
+    ],
+    [
+     "childWashProperty",
+     "attrList"
+    ],
+    [
+     "childWashProperty",
+     "baseArr"
+    ],
+    [
+     "getLikeEvent",
+     "eventId"
+    ],
+    [
+     "giveChildName",
+     "childName"
+    ],
+    [
+     "makeLove",
+     "fetationTime"
+    ],
+    [
+     "optionLikeEvent",
+     "feel"
+    ],
+    [
+     "resetChildFoster",
+     "playArr"
+    ]
+   ],
+   "ev": "index.js:77285"
+  },
+  {
+   "id": "c04-marryaward-equipobj",
+   "field": [
+    "equipObj"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "marryAward",
+     "equipObj"
+    ]
+   ],
+   "ev": "index.js:77269"
+  }
+ ]
+}

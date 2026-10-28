@@ -1,0 +1,99 @@
+# User.birthChild  (HttpConst.BIRTHCHILD)
+# 出现 2 处
+
+ 77024: i.MessageCenter.on(n.HttpConst.MARRY_NPC_EVENT, this.callBackMarryNpcEvent, this);
+ 77025: i.MessageCenter.on(n.HttpConst.WRITE_BOOK_EVENT, this.callBackWriteBookEvent, this);
+ 77026: i.MessageCenter.on(n.HttpConst.DIVORCENPC, this.callBackDivorceNpc, this);
+ 77027: i.MessageCenter.on(n.HttpConst.MARRY_AWARD, this.callBackMarryAward, this);
+ 77028: i.MessageCenter.on(n.HttpConst.BEGIN_WEDDING, this.callBackBeginWedding, this);
+ 77029: i.MessageCenter.on(n.HttpConst.MAKE_LOVE, this.callBackMakeLove, this);
+ 77030: i.MessageCenter.on(n.HttpConst.BIRTHCHILD, this.callBackBirthild, this);
+ 77031: i.MessageCenter.on(n.HttpConst.EXILE_CHILD, this.callBackExileChild, this);
+ 77032: };
+ 77033: e.prototype.setRoleMarryInfo = function(e) {
+ 77034: e.hasOwnProperty("maxWuxin") && (this.maxWuxin = e.maxWuxin);
+ 77035: if (e.hasOwnProperty("proposeNpc")) {
+ 77036: for (var o = e.proposeNpc, i = 0; i < o.length; i++) this.proposeNpcInfo[o[i]] = !0;
+ 77037: this.rentProState = e.rentGroup;
+ 77038: this.weddingType = e.weddType;
+ 77039: this.houseMap = this.changeRealHouseData(e.houseObj);
+ 77040: this.receiveNpc = e.receiveNpc;
+ 77041: this.npcMarryState = e.marryNpc;
+ 77042: this.happinessNum = e.happinessNum;
+ 77043: for (var n = 0; n < e.leaveNpc.length; n++) this.divorceNpcMap[e.leaveNpc[n]] = !0;
+ 77044: this.guestNpcAy = e.dropNpcID;
+ 77045: this.loveState = e.bodyState;
+ 77046: y.TeamModel.setTeamState(this.receiveNpc);
+ 77047: e.hasOwnProperty("bedLevel") && (this.bedLevel = e.bedLevel);
+ 77048: e.hasOwnProperty("specialType") ? M.HouseAdventModel.setAdventEventData(e.specialType, e.specialObj) : M.HouseAdventModel.setAdventEventData(0, {});
+ 77049: e.hasOwnProperty("fetationTime") && (this.fetationTime = e.fetationTime);
+ 77050: e.hasOwnProperty("childObj") && (this.childData = e.childObj);
+ 77051: e.hasOwnProperty("cycleObj") && (this.cycleData = e.cycleObj);
+ 77052: if (this.cycleData.length) {
+ 77053: var r = this.cycleData[1].length, a = this;
+ 77054: Promise.resolve().then(function() {
+ 77055: return t("./RoleOtherInfo");
+ 77056: }).then(function(t) {
+ 77057: t.RoleOtherInfo.reBirthTime = a.cycleData[0];
+ 77058: r > 0 && (t.RoleOtherInfo.matherId = a.cycleData[1][r - 1]);
+ 77059: });
+ 77060: E.RoleOtherInfo.reBirthTime = this.cycleData[0];
+ 77061: r > 0 && (E.RoleOtherInfo.matherId = this.cycleData[1][r - 1]);
+ 77062: this.marryHouseMap = e.houseObj;
+ 77063: }
+ 77064: if (e.hasOwnProperty("wifeobj")) {
+ 77065: var s = e.wifeobj;
+ 77066: this.wifeUpdateData = {
+ 77067: eid: s.eid,
+ 77068: exp: s.exp,
+ 77069: lv: s.lv,
+ 77070: fasion: {}
+---
+ 77392: name: r.getText(10840)
+ 77393: } ], function(t) {
+ 77394: 0 == t && v.StoreModel.reqStoreList();
+ 77395: }, "", !1) : p.default.show(r.getText(2116)));
+ 77396: };
+ 77397: e.prototype.reqBirthChild = function() {
+ 77398: _.NetMgr.http.sendRequest(n.HttpConst.BIRTHCHILD, {});
+ 77399: };
+ 77400: e.prototype.reqProposeNpc = function(t) {
+ 77401: _.NetMgr.http.sendRequest(n.HttpConst.PROPOSE_NPC, {
+ 77402: npcID: t
+ 77403: });
+ 77404: };
+ 77405: e.prototype.reqRentTeam = function(t) {
+ 77406: _.NetMgr.http.sendRequest(n.HttpConst.RENT_EVENT, {
+ 77407: type: t
+ 77408: });
+ 77409: };
+ 77410: e.prototype.reqWedding = function(t) {
+ 77411: _.NetMgr.http.sendRequest(n.HttpConst.WEEDIND_EVENT, {
+ 77412: type: t
+ 77413: });
+ 77414: };
+ 77415: e.prototype.reqWelcomeTeam = function(t) {
+ 77416: _.NetMgr.http.sendRequest(n.HttpConst.RECEIVENPC_EVENT, {
+ 77417: npcID: t
+ 77418: });
+ 77419: };
+ 77420: e.prototype.reqMarryNpc = function(t, e) {
+ 77421: this.marryFlag = e;
+ 77422: _.NetMgr.http.sendRequest(n.HttpConst.MARRY_NPC_EVENT, {
+ 77423: npcID: t,
+ 77424: flag: e
+ 77425: });
+ 77426: };
+ 77427: e.prototype.reqWriteBook = function() {
+ 77428: _.NetMgr.http.sendRequest(n.HttpConst.WRITE_BOOK_EVENT, {});
+ 77429: };
+ 77430: e.prototype.reqBuyHouse = function(t, e) {
+ 77431: _.NetMgr.http.sendRequest(n.HttpConst.BUY_HOUSE_EVENT, {
+ 77432: houseID: t,
+ 77433: type: e
+ 77434: });
+ 77435: };
+ 77436: e.prototype.reqDivorceNpc = function() {
+ 77437: _.NetMgr.http.sendRequest(n.HttpConst.DIVORCENPC, {});
+ 77438: };
+---

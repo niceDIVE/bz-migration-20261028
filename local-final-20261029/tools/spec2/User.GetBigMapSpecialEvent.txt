@@ -1,0 +1,18 @@
+# User.GetBigMapSpecialEvent   (HttpConst.SPECIAL_EVENTS)
+
+## 请求点 108229: l.NetMgr.http.sendRequest(s.HttpConst.SPECIAL_EVENTS, {});
+   108221: this.activeEventID = 0;
+   108222: this.activeTypeID = 0;
+   108223: this.currentRewardId = 0;
+   108224: this.fightLevel = 1;
+   108225: this.randEventArray = [];
+   108226: this.boxObj = null;
+   108227: }
+   108228: e.prototype.reqSpecialEvents = function() {
+
+## 注册点 108233: r.MessageCenter.on(s.HttpConst.SPECIAL_EVENTS, this.onSpecialEvents, this);
+
+## 处理函数 onSpecialEvents (108328-108330)
+108328: e.prototype.onSpecialEvents = function(t, e) {
+108329: this.onGetSpecialEvents(e);
+108330: };

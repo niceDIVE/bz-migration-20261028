@@ -1,0 +1,13 @@
+# User.equipResolve   (HttpConst.EQUIP_RESOLVE)
+
+## 注册点 64924: r.MessageCenter.on(a.HttpConst.EQUIP_RESOLVE, function(t, e) {
+
+## 请求点 65412: m.NetMgr.http.sendRequest(a.HttpConst.EQUIP_RESOLVE, {
+   65404: var l = i.getItem(o, "item");
+   65405: parseInt(l.WeaponType) != parseInt(a.WeaponType) && c.default.show(n.getText(3641).replace(/\[1\]/, s));
+   65406: }
+   65407: }
+   65408: }
+   65409: };
+   65410: e.prototype.reqResolveEquip = function(t) {
+   65411: this.curItemId = t;

@@ -1,0 +1,13 @@
+# User.AddChangeBlood   (HttpConst.ADD_CHANGE_BLOOD)
+
+## 注册点 144043: n.MessageCenter.on(r.HttpConst.ADD_CHANGE_BLOOD, function(e, o) {
+
+## 请求点 144138: 0 == e ? c.NetMgr.http.sendRequest(r.HttpConst.REQ_CHANGEBLOOD, o) : c.NetMgr.http.sendRequest(r.HttpConst.ADD_CHANGE_BLOOD, o);
+   144130: l.RoleBaseInfo.washTime = e.washTimes;
+   144131: this.showUpgradeCartoon(0);
+   144132: } else 2 == e.eRet ? f.StoreModel.openChargeList() : s.default.show(i.getText("910"));
+   144133: };
+   144134: t.prototype.reqUpgrade = function(t, e) {
+   144135: var o = {
+   144136: cID: t
+   144137: };

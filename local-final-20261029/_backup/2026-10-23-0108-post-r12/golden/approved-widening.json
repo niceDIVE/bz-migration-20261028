@@ -1,0 +1,8 @@
+[
+ {
+  "action": "BeginTraining",
+  "path": "hanyusuiTime",
+  "reason": "契约字段：客户端回调 `e.hyTime = 1e3 * n.hanyusuiTime`（index.js:120521）直接乘 1e3 转毫秒当 buff 时长，少发会算成 NaN。此前形状表里没有这一项，属于漏发。",
+  "ev": "index.js:120521"
+ }
+]

@@ -1,0 +1,1 @@
+{"name":"moonstep_active_cycle","rows":6,"cols":["id","complete","reward"],"data":{"1":{"id":1,"complete":5,"reward":[9191,5]},"2":{"id":2,"complete":10,"reward":[4003,500000]},"3":{"id":3,"complete":15,"reward":[9191,10]},"4":{"id":4,"complete":20,"reward":[4003,1500000]},"5":{"id":5,"complete":25,"reward":[10917,200]},"6":{"id":6,"complete":30,"reward":[10917,300]}}}

@@ -1,0 +1,19 @@
+# User.FriendRegister   (HttpConst.USER_FRIENDREGISTER)
+
+## 注册点 132055: i.MessageCenter.on(n.HttpConst.USER_FRIENDREGISTER, this.onSuccessRegistener, this);
+
+## 请求点 132198: a.NetMgr.http.sendRequest(n.HttpConst.USER_FRIENDREGISTER, e, function() {}.bind(this), !0, !1, !0);
+   132190: var e = {
+   132191: roleID: r.RoleBaseInfo.roleID,
+   132192: roleName: r.RoleBaseInfo.userName,
+   132193: roleSchool: r.RoleBaseInfo.school,
+   132194: roleArtLevel: d.SkillTable.skillEvaluation(),
+   132195: declaration: t.length ? t : " ",
+   132196: operateType: t.length ? 1 : 2
+   132197: };
+
+## 处理函数 onSuccessRegistener (132273-132276)
+132273: t.prototype.onSuccessRegistener = function() {};
+132274: t.prototype.answerSuccessCallBack = function(t, e) {
+132275: i.MessageCenter.dispatch(c.EvName.USER_ANSWERFRIEND, e);
+132276: };

@@ -1,0 +1,99 @@
+# User.storyExperience  (HttpConst.STORY_EXPERIENCE)
+# 出现 2 处
+
+101908: i.MessageCenter.dispatch(l.EvName.CYCLE_END);
+101909: } else if (6 == r.eRet) {
+101910: i.MessageCenter.dispatch(l.EvName.HIDE_ROLE_EVENT, !0);
+101911: n.default.show(a.getText("6372"));
+101912: } else 7 == r.eRet ? n.default.show(a.getText("6000320")) : 9 == r.eRet && n.default.show(a.getText("6003686"));
+101913: }, this);
+101914: i.MessageCenter.on(r.HttpConst.STORY_EXPERIENCE, function(t, e) {
+101915: if (1 == e.eRet) {
+101916: _.RoleBaseInfo.storyId = e.branchId;
+101917: i.MessageCenter.dispatch(l.EvName.CYCLE_END);
+101918: }
+101919: }, this);
+101920: };
+101921: e.prototype.isCycleLife = function() {
+101922: p.NetMgr.http.sendRequest(r.HttpConst.IS_CYCLE_LIFE);
+101923: };
+101924: e.prototype.onIsCycleLife = function(e, i) {
+101925: 1 == i.eRet ? o.RebirthModel.newBirthStoryState ? Promise.resolve().then(function() {
+101926: return t("../../scripts2/ui/reincarnationSys/ReincarnatMgr");
+101927: }).then(function(t) {
+101928: t.ReincarnatMgr.checkStoryEnding();
+101929: }) : u.default.prefabs.load("marrySystem/rollUI", cc.Prefab, function(t, e) {
+101930: var o = cc.instantiate(e);
+101931: f.PopUpMgr.addPopUp(o, d.LayerMgr.popUpLayer);
+101932: }) : 2 == i.eRet ? n.default.show(a.getText("6003686")) : 3 == i.eRet && n.default.show(a.getText(6013312));
+101933: };
+101934: e.prototype.reqStartCycle = function(t, e) {
+101935: this.starEnterCircleStory(t, e);
+101936: };
+101937: e.prototype.starEnterCircleStory = function(e, o) {
+101938: this.skillAy = [];
+101939: this.skillAy = e;
+101940: this.skillBaseId = o;
+101941: i.MessageCenter.dispatch(l.EvName.REBIRTH_STOP_MAP);
+101942: u.default.prefabs.load("comUI/PlayCartoonUI", cc.Prefab, function(e, o) {
+101943: var i = cc.instantiate(o);
+101944: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer);
+101945: i.addComponent(g.PlayCartoonUI).setData([ "1900000" ], function() {
+101946: Promise.resolve().then(function() {
+101947: return t("../../scripts2/ui/reincarnationSys/ReincarnatMgr");
+101948: }).then(function(t) {
+101949: t.ReincarnatMgr.enterRebirthDialog();
+101950: });
+101951: });
+101952: });
+101953: };
+101954: e.prototype.reqEndCycle = function(t, e, o) {
+---
+101967: skillArr: this.skillAy,
+101968: skillID: this.skillBaseId,
+101969: attArr: [ i, n ]
+101970: });
+101971: };
+101972: e.prototype.reqChooseExperience = function(t) {
+101973: p.NetMgr.http.sendRequest(r.HttpConst.STORY_EXPERIENCE, {
+101974: branchId: t
+101975: });
+101976: };
+101977: e.prototype.calutePowerLevelNum = function(t) {
+101978: var e = h.SkillTable.getSkillLevel(t), o = h.SkillTable.getSkillLevel(h.SkillTable.getBaseSkillID(t)), i = parseInt(o + c.UserModel.entity.perception.baseValue / 10 + h.SkillTable.dic[9].lv / 100);
+101979: return Math.min(e, i);
+101980: };
+101981: e.prototype.calutePowerState = function(t) {
+101982: var e = h.SkillTable.getSkillLevel(t), o = h.SkillTable.getSkillLevel(h.SkillTable.getBaseSkillID(t));
+101983: return e > parseInt(o + c.UserModel.entity.perception.baseValue / 10 + h.SkillTable.dic[9].lv / 100);
+101984: };
+101985: e.prototype.judgePowerValue = function(t) {
+101986: return this.calutePowerState(t);
+101987: };
+101988: e.prototype.calculatePowerValue = function(t, e) {
+101989: var o = s.getItem(t, "skill"), i = h.SkillTable.getSkillLevel(h.SkillTable.getBaseSkillID(t)) + Math.floor(c.UserModel.entity.perception.finalValue / 10) + Math.floor(h.SkillTable.dic[9].lv / 100), n = Math.min(e, i), r = s.getItem(n, "level"), a = h.SkillTable.getQualitySkillCoefficient(o, t);
+101990: return parseInt(r.zhenyuan) * a;
+101991: };
+101992: e.prototype.destroy = function() {
+101993: this.birthID = 0;
+101994: this.skillAy = [];
+101995: this.skillBaseId = 1;
+101996: };
+101997: return e;
+101998: }();
+101999: o.RebirthModel = new S();
+102000: cc._RF.pop();
+102001: }, {
+102002: "../../scripts2/ui/login/creatRoleUI/StartActionUI": void 0,
+102003: "../../scripts2/ui/reincarnationSys/ReincarnatMgr": void 0,
+102004: "../core/events/MessageCenter": "MessageCenter",
+102005: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+102006: "../gameconfigs/CFMgr": "CFMgr",
+102007: "../gameconfigs/LangMgr": "LangMgr",
+102008: "../gui/uiComSCript/PlayCartoonUI": "PlayCartoonUI",
+102009: "../gui/uicomponents/Alert": "Alert",
+102010: "../mgrs/BundleMgr": "BundleMgr",
+102011: "../mgrs/LayerMgr": "LayerMgr",
+102012: "../mgrs/SaveDataMgr": "SaveDataMgr",
+102013: "../net/HttpConst": "HttpConst",
+---

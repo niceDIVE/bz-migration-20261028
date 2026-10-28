@@ -1,0 +1,18 @@
+# User.GetOnHookFriendLis   (HttpConst.GET_BREAK_FRIENDLIST)
+
+## 注册点 56230: i.MessageCenter.on(l.HttpConst.GET_BREAK_FRIENDLIST, this.onGetBrList, this);
+
+## 请求点 56241: c.NetMgr.http.sendRequest(l.HttpConst.GET_BREAK_FRIENDLIST, {});
+   56233: i.MessageCenter.on(l.HttpConst.END_DOUBLE_TRAINING, this.onEndDoubleTraining, this);
+   56234: i.MessageCenter.on(l.HttpConst.USE_ITEM_ADDITION, this.addBreakRate, this);
+   56235: i.MessageCenter.on(l.HttpConst.SET_ONHOOK_WOOK_STATE, this.onHookWoodStateCh, this);
+   56236: };
+   56237: e.prototype.reqInstantFinish = function() {
+   56238: this.checkBreak(1);
+   56239: };
+   56240: e.prototype.requestBrFriendList = function() {
+
+## 处理函数 onGetBrList (56456-56458)
+ 56456: e.prototype.onGetBrList = function(t, e) {
+ 56457: i.MessageCenter.dispatch(h.EvName.GET_FRIEND_LIST, e.friendList);
+ 56458: };

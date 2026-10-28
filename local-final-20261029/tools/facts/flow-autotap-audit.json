@@ -1,0 +1,348 @@
+{
+  "file": "F:\\BaoZouyxt\\hotfix-patch\\live\\flow.js",
+  "hits": {
+    "A": [
+      {
+        "n": 9,
+        "text": " *   StartDialogueUI.start → 打字机；nextPage()：第 1 次跳过打字，第 2 次 1s 后加载"
+      },
+      {
+        "n": 85,
+        "text": "        log('检测到登录后流程已开始（' + POP[pi] + '），跳过 onEnterGame');"
+      },
+      {
+        "n": 125,
+        "text": "      if (c.isPlayText) { c.nextPage(); acted = '对话：跳过打字'; }"
+      },
+      {
+        "n": 126,
+        "text": "      else if (c.isComplete) { c.nextPage(); acted = '对话：推进到建角'; }"
+      },
+      {
+        "n": 128,
+        "text": "    } catch (er) { say('dlg', 'nextPage 异常 ' + er); }"
+      },
+      {
+        "n": 203,
+        "text": "/* ---- 外观：SelectAppearanceUI.onNextPage()（appearId>0 才放行） ---- */"
+      },
+      {
+        "n": 220,
+        "text": "  try { c.onNextPage(); return '外观→ShowTalentUI'; } catch (er) { say('app-next', 'onNextPage 异常 ' + er); }"
+      },
+      {
+        "n": 223,
+        "text": "/* ---- 建角后的剧情漫画：StartActionUI_N.onNextPage() ---- */"
+      },
+      {
+        "n": 234,
+        "text": "    if (!c || typeof c.onNextPage !== 'function') continue;"
+      },
+      {
+        "n": 239,
+        "text": "    try { c.onNextPage(); return '剧情推进 ' + n.name + ' #' + S.tries[k]; }"
+      },
+      {
+        "n": 240,
+        "text": "    catch (er) { say('sa', 'onNextPage 异常 ' + er); return null; }"
+      }
+    ],
+    "B": [
+      {
+        "n": 8,
+        "text": " *   SvrSelectView.onStartCreateRole → bg.active=false（进入建角流程时隐藏登录面板）"
+      },
+      {
+        "n": 51,
+        "text": "    if (n.name === 'Alert' && n.active) { n.active = false; log('隐藏 Alert'); }"
+      },
+      {
+        "n": 151,
+        "text": "  for (var i = 1; i < list.length; i++) list[i].node.active = false;"
+      },
+      {
+        "n": 255,
+        "text": "      if (Object.prototype.toString.call(o) === '[object Array]') {"
+      },
+      {
+        "n": 354,
+        "text": " *      客户端自己的关闭路径是 PopUpMgr.removePopUp(noticeUI)，但 NoticeMgr 不在全局，"
+      },
+      {
+        "n": 382,
+        "text": "      try { fn.call(hit); log('公告→' + NOTICE_METHODS[i] + '()'); return 'notice:' + NOTICE_METHODS[i]; } catch (e) {}"
+      },
+      {
+        "n": 387,
+        "text": "    node.active = false;"
+      },
+      {
+        "n": 388,
+        "text": "    node.destroy();"
+      }
+    ],
+    "C": [
+      {
+        "n": 21,
+        "text": "  lastActAt: 0, tries: {}, reported: {}, tapped: {}, done: {}, name: 'FZhou', doneScene: {},"
+      },
+      {
+        "n": 121,
+        "text": "    if (S.tapped[key]) continue;"
+      },
+      {
+        "n": 123,
+        "text": "    S.tapped[key] = 1;"
+      },
+      {
+        "n": 141,
+        "text": "  if (S.tapped[key]) return null;"
+      },
+      {
+        "n": 143,
+        "text": "  S.tapped[key] = 1;"
+      },
+      {
+        "n": 145,
+        "text": "  catch (er) { say('bp-click', 'onSelectEvent 异常 ' + er); return null; }"
+      },
+      {
+        "n": 167,
+        "text": "  if (S.tapped[key]) return null;"
+      },
+      {
+        "n": 169,
+        "text": "  S.tapped[key] = 1;"
+      },
+      {
+        "n": 173,
+        "text": "    if (btn && (btn.clickEvents || []).length) {"
+      },
+      {
+        "n": 174,
+        "text": "      cc.Component.EventHandler.emitEvents(btn.clickEvents, { type: 'click' });"
+      },
+      {
+        "n": 175,
+        "text": "      return '点击「开始转生」(clickEvents)';"
+      },
+      {
+        "n": 178,
+        "text": "  } catch (er) { say('cr-click', '开始转生异常 ' + er); }"
+      },
+      {
+        "n": 196,
+        "text": "  if (S.tapped[key]) return null;"
+      },
+      {
+        "n": 198,
+        "text": "  S.tapped[key] = 1;"
+      },
+      {
+        "n": 217,
+        "text": "  if (S.tapped[key]) return null;"
+      },
+      {
+        "n": 219,
+        "text": "  S.tapped[key] = 1;"
+      },
+      {
+        "n": 342,
+        "text": "  if (S.tapped[key]) return null;"
+      },
+      {
+        "n": 344,
+        "text": "  S.tapped[key] = 1;"
+      },
+      {
+        "n": 348,
+        "text": "  } catch (er) { say('talent-click', 'enterClickBtn 异常 ' + er); }"
+      },
+      {
+        "n": 357,
+        "text": "var NOTICE_METHODS = ['onBack', 'onClose', 'onCloseClick', 'onClickClose', 'closeUI', 'onBackClick'];"
+      }
+    ]
+  },
+  "found": [
+    {
+      "fn": "onTick",
+      "range": "397-439",
+      "lines": [
+        {
+          "n": 397,
+          "text": "function onTick(scene) {"
+        },
+        {
+          "n": 398,
+          "text": "  try {"
+        },
+        {
+          "n": 399,
+          "text": "    if (!scene) return null;"
+        },
+        {
+          "n": 400,
+          "text": "    if (S.scene !== scene.name) {"
+        },
+        {
+          "n": 401,
+          "text": "      S.scene = scene.name; log('进入场景 ' + S.scene);"
+        },
+        {
+          "n": 402,
+          "text": "    }"
+        },
+        {
+          "n": 403,
+          "text": "    if (bz.exists(bz.dir + 'bz_noauto')) return null;"
+        },
+        {
+          "n": 404,
+          "text": ""
+        },
+        {
+          "n": 405,
+          "text": "    if (scene.name === 'gamescene') {"
+        },
+        {
+          "n": 406,
+          "text": "      if (!S.done.game) { S.done.game = 1; log('已进入主场景 gamescene'); }"
+        },
+        {
+          "n": 407,
+          "text": "      var nx = stepNotice(scene);        // 主场景里也要管：公告是进游戏后才弹的"
+        },
+        {
+          "n": 408,
+          "text": "      return nx || null;"
+        },
+        {
+          "n": 409,
+          "text": "    }"
+        },
+        {
+          "n": 410,
+          "text": ""
+        },
+        {
+          "n": 411,
+          "text": "    // 读取探针：抓到字段就读出来，避免再靠猜"
+        },
+        {
+          "n": 412,
+          "text": "    try {"
+        },
+        {
+          "n": 413,
+          "text": "      var hits = window.__BZ_SPY_LOG__;"
+        },
+        {
+          "n": 414,
+          "text": "      if (hits && hits.length > (S.spySeen || 0)) {"
+        },
+        {
+          "n": 415,
+          "text": "        var delta = hits.slice(S.spySeen || 0);"
+        },
+        {
+          "n": 416,
+          "text": "        S.spySeen = hits.length;"
+        },
+        {
+          "n": 417,
+          "text": "        log('SPY +' + delta.length + '(' + hits.length + '): ' + delta.join(','));"
+        },
+        {
+          "n": 418,
+          "text": "      }"
+        },
+        {
+          "n": 419,
+          "text": "    } catch (e) {}"
+        },
+        {
+          "n": 420,
+          "text": ""
+        },
+        {
+          "n": 421,
+          "text": "    var r = [], x;"
+        },
+        {
+          "n": 422,
+          "text": "    if (scene.name === 'svrselect') { x = stepSvrSelect(scene); if (x) r.push(x); }"
+        },
+        {
+          "n": 423,
+          "text": "    x = stepDialogue(scene); if (x) r.push(x);"
+        },
+        {
+          "n": 424,
+          "text": "    x = stepCreateRole(scene); if (x) r.push(x);"
+        },
+        {
+          "n": 425,
+          "text": "    x = stepBirthPlace(scene); if (x) r.push(x);"
+        },
+        {
+          "n": 426,
+          "text": "    x = stepSelectSex(scene); if (x) r.push(x);"
+        },
+        {
+          "n": 427,
+          "text": "    x = stepAppearance(scene); if (x) r.push(x);"
+        },
+        {
+          "n": 428,
+          "text": "    x = stepStartAction(scene); if (x) r.push(x);"
+        },
+        {
+          "n": 429,
+          "text": "    stepDiscover(scene);"
+        },
+        {
+          "n": 430,
+          "text": "    x = stepTalent(scene); if (x) r.push(x);"
+        },
+        {
+          "n": 431,
+          "text": "    return r.length ? r.join(' / ') : null;"
+        },
+        {
+          "n": 432,
+          "text": "  } catch (e) {"
+        },
+        {
+          "n": 433,
+          "text": "    say('tick', 'onTick 异常 ' + e);"
+        },
+        {
+          "n": 434,
+          "text": "    return null;"
+        },
+        {
+          "n": 435,
+          "text": "  }"
+        },
+        {
+          "n": 436,
+          "text": "}"
+        },
+        {
+          "n": 437,
+          "text": ""
+        },
+        {
+          "n": 438,
+          "text": "return { onTick: onTick };"
+        },
+        {
+          "n": 439,
+          "text": ""
+        }
+      ]
+    }
+  ],
+  "errors": ""
+}

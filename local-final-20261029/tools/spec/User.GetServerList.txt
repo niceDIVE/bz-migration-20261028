@@ -1,0 +1,120 @@
+# User.GetServerList  (HttpConst.REQ_SERVER_LIST)
+# 出现 4 处
+
+116694: c.LoginMgr.token = o.session_key;
+116695: var i = {
+116696: account: o.openid,
+116697: channel: e.channel,
+116698: exam: "" !== c.LoginMgr.WXIosVer ? 1 : 0
+116699: };
+116700: a.NetMgr.selectHttp.sendRequest(n.HttpConst.REQ_SERVER_LIST, i);
+116701: }
+116702: }, this);
+116703: i.MessageCenter.on(n.HttpConst.GET_DOU_YIN_OPENID, function(t, o) {
+116704: if (1 == o.eRet) {
+116705: s.RoleBaseInfo.userAccount = o.openid;
+116706: console.log("douyin openid:=====================", o.openid);
+116707: c.LoginMgr.setupAndStartEvevt();
+116708: c.LoginMgr.feedInit();
+116709: c.LoginMgr.storeByScene(1, c.LoginMgr.getDiffMillisTime(20));
+116710: c.LoginMgr.storeByScene(3, c.LoginMgr.getDiffMillisTime(0));
+116711: var i = {
+116712: account: o.openid,
+116713: channel: e.channel,
+116714: exam: "" !== c.LoginMgr.WXIosVer ? 1 : 0
+116715: };
+116716: a.NetMgr.selectHttp.sendRequest(n.HttpConst.REQ_SERVER_LIST, i);
+116717: }
+116718: }, this);
+116719: i.MessageCenter.on(n.HttpConst.REQ_SERVER_LIST, function(t, o) {
+116720: p.TESDKHelper.trackEvent(p.TEEnum.Login);
+116721: var n = [];
+116722: for (var a in o.serverObj) n.push(o.serverObj[a]);
+116723: n.sort(function(t, e) {
+116724: return t[4] < e[4] ? -1 : t[4] > e[4] ? 1 : 0;
+116725: });
+116726: e.svrDic = o.serverObj;
+116727: e.list = n;
+116728: e.recent = o.hasOwnProperty("historyArr") ? o.historyArr : null;
+116729: o.hasOwnProperty("taptapVersion") && (e.tapVersion = o.taptapVersion);
+116730: i.MessageCenter.dispatch(r.EvName.ON_GET_SERVER_LIST);
+116731: h.talkDataModel.postData(h.TalkDataEnum.newAccount);
+116732: }, this);
+116733: var o = t.cfglist[t.id];
+116734: this.channel = t.channel;
+116735: this.url = o.url;
+116736: this.type = o.type;
+116737: return this.refreshServerList();
+116738: };
+116739: t.prototype.refreshServerList = function() {
+116740: var t = this;
+---
+116741: if (1 == this.type) return Promise.resolve();
+116742: var e = this;
+116743: return new Promise(function(o, i) {
+116744: var n = t.url + "?v=" + Date.now();
+116745: cc.assetManager.loadRemote(n, {
+116746: cacheEnabled: !1
+116747: }, function(t, r) {
+116748: if (t) {
+116749: console.error(t);
+116750: l.default.show("Network error! Plz restart!");
+116751: i(t);
+116752: } else {
+116753: var a = r.json;
+116754: if (e.svrCfg) for (var s in e.svrCfg) {
+116755: var c = e.svrCfg[s];
+116756: c.splice(0, c.length);
+---
+116757: for (var p = 0; p < a[s].length; ++p) c.push(a[s][p]);
+116758: } else e.svrCfg = a;
+116759: for (var s in e.svrCfg) e.shuffle(e.svrCfg[s]);
+---
+116792: var t = {
+116793: account: s.RoleBaseInfo.userAccount,
+116794: channel: this.channel,
+116795: exam: 0
+116796: };
+116797: c.LoginMgr.checkMiniGame() && "" !== c.LoginMgr.WXIosVer && (t.exam = 1);
+116798: a.NetMgr.selectHttp.sendRequest(n.HttpConst.REQ_SERVER_LIST, t);
+116799: };
+116800: t.prototype.reqLogSvSelection = function(t) {
+116801: a.NetMgr.selectHttp.sendRequest(n.HttpConst.LOG_SVR_SELECTION, {
+116802: SID: t,
+116803: account: s.RoleBaseInfo.userAccount,
+116804: channel: this.channel
+116805: }, function() {}, !1);
+116806: };
+116807: t.prototype.getListObj = function(t) {
+116808: var e = {
+116809: index: 0
+116810: };
+116811: this.svrCfg ? e.svrList = this.svrCfg[t] : e.svrList = [ this.url ];
+116812: return e;
+116813: };
+116814: t.prototype.autoSelect = function() {
+116815: if (this.recent && this.recent.length > 0) {
+116816: var t = this.recent[this.recent.length - 1];
+116817: if (this.svrDic[t]) return this.svrDic[t];
+116818: }
+116819: return this.list[0];
+116820: };
+116821: return t;
+116822: }();
+116823: o.sListModel = new u();
+116824: cc._RF.pop();
+116825: }, {
+116826: "../../splashscreen/TESDKHelper": void 0,
+116827: "../core/events/MessageCenter": "MessageCenter",
+116828: "../gui/uicomponents/Alert": "Alert",
+116829: "../mgrs/LoginMgr": "LoginMgr",
+116830: "../net/HttpConst": "HttpConst",
+116831: "../net/NetMgr": "NetMgr",
+116832: "../utils/EvName": "EvName",
+116833: "./TalkDataModel": "TalkDataModel",
+116834: "./vos/RoleBaseInfo": "RoleBaseInfo"
+116835: } ],
+116836: SetRandomNpcUI: [ function(t, e, o) {
+116837: "use strict";
+116838: cc._RF.push(e, "dc732ebKZVE8rckfYaxoQJW", "SetRandomNpcUI");
+---

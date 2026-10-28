@@ -1,0 +1,90 @@
+# User.isCycleLife  (HttpConst.IS_CYCLE_LIFE)
+# 出现 2 处
+
+101878: }
+101879: e.prototype.init = function() {
+101880: var e = this;
+101881: this.skillAy = [];
+101882: this.skillBaseId = 1;
+101883: this.birthID = 0;
+101884: i.MessageCenter.on(r.HttpConst.IS_CYCLE_LIFE, this.onIsCycleLife, this);
+101885: i.MessageCenter.on(r.HttpConst.CYCLE_LIFE, function(o, r) {
+101886: if (1 == r.eRet) {
+101887: var c = s.getItem(e.birthID, "Origin");
+101888: 1 == e.birthID ? u.default.prefabs.load("taskUI/StartActionUI_" + v.MarryModel.childData.sex, cc.Prefab, function(e, o) {
+101889: Promise.resolve().then(function() {
+101890: return t("../../scripts2/ui/login/creatRoleUI/StartActionUI");
+101891: }).then(function(t) {
+101892: var e = t.StartActionUI, n = cc.instantiate(o);
+101893: f.PopUpMgr.addPopUp(n, d.LayerMgr.popUpLayer);
+101894: n.getComponent(e).setData(0, function() {
+101895: i.MessageCenter.dispatch(l.EvName.HIDE_ROLE_EVENT, !0);
+101896: m.SaveDataMgr.killRoleClear();
+101897: y.loginModel.reqLoadGameServer();
+101898: }, v.MarryModel.getChildName());
+101899: });
+101900: }) : u.default.prefabs.load("comUI/PlayCartoonUI", cc.Prefab, function(t, e) {
+101901: var o = cc.instantiate(e);
+101902: f.PopUpMgr.addPopUp(o, d.LayerMgr.popUpLayer);
+101903: o.addComponent(g.PlayCartoonUI).setData(c.start_ani, function() {
+101904: m.SaveDataMgr.killRoleClear();
+101905: y.loginModel.reqLoadGameServer();
+101906: });
+101907: });
+101908: i.MessageCenter.dispatch(l.EvName.CYCLE_END);
+101909: } else if (6 == r.eRet) {
+101910: i.MessageCenter.dispatch(l.EvName.HIDE_ROLE_EVENT, !0);
+101911: n.default.show(a.getText("6372"));
+101912: } else 7 == r.eRet ? n.default.show(a.getText("6000320")) : 9 == r.eRet && n.default.show(a.getText("6003686"));
+101913: }, this);
+101914: i.MessageCenter.on(r.HttpConst.STORY_EXPERIENCE, function(t, e) {
+101915: if (1 == e.eRet) {
+101916: _.RoleBaseInfo.storyId = e.branchId;
+101917: i.MessageCenter.dispatch(l.EvName.CYCLE_END);
+101918: }
+101919: }, this);
+101920: };
+101921: e.prototype.isCycleLife = function() {
+101922: p.NetMgr.http.sendRequest(r.HttpConst.IS_CYCLE_LIFE);
+101923: };
+101924: e.prototype.onIsCycleLife = function(e, i) {
+---
+101925: 1 == i.eRet ? o.RebirthModel.newBirthStoryState ? Promise.resolve().then(function() {
+101926: return t("../../scripts2/ui/reincarnationSys/ReincarnatMgr");
+101927: }).then(function(t) {
+101928: t.ReincarnatMgr.checkStoryEnding();
+101929: }) : u.default.prefabs.load("marrySystem/rollUI", cc.Prefab, function(t, e) {
+101930: var o = cc.instantiate(e);
+101931: f.PopUpMgr.addPopUp(o, d.LayerMgr.popUpLayer);
+101932: }) : 2 == i.eRet ? n.default.show(a.getText("6003686")) : 3 == i.eRet && n.default.show(a.getText(6013312));
+101933: };
+101934: e.prototype.reqStartCycle = function(t, e) {
+101935: this.starEnterCircleStory(t, e);
+101936: };
+101937: e.prototype.starEnterCircleStory = function(e, o) {
+101938: this.skillAy = [];
+101939: this.skillAy = e;
+101940: this.skillBaseId = o;
+101941: i.MessageCenter.dispatch(l.EvName.REBIRTH_STOP_MAP);
+101942: u.default.prefabs.load("comUI/PlayCartoonUI", cc.Prefab, function(e, o) {
+101943: var i = cc.instantiate(o);
+101944: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer);
+101945: i.addComponent(g.PlayCartoonUI).setData([ "1900000" ], function() {
+101946: Promise.resolve().then(function() {
+101947: return t("../../scripts2/ui/reincarnationSys/ReincarnatMgr");
+101948: }).then(function(t) {
+101949: t.ReincarnatMgr.enterRebirthDialog();
+101950: });
+101951: });
+101952: });
+101953: };
+101954: e.prototype.reqEndCycle = function(t, e, o) {
+101955: void 0 === t && (t = 1);
+101956: void 0 === e && (e = 1);
+101957: void 0 === o && (o = 0);
+101958: this.birthID = t;
+101959: this.special && p.NetMgr.http.sendRequest(r.HttpConst.SPECIAL_CYCLE_LIFE, {
+101960: originId: t
+101961: });
+101962: var i = parseInt(c.UserModel.entity.hp.limit), n = parseInt(c.UserModel.entity.mp.limit);
+---

@@ -1,0 +1,99 @@
+# User.smallGameAward  (HttpConst.SMALL_GAME_AWARD)
+# 出现 2 处
+
+ 57222: n.MessageCenter.on(a.HttpConst.GET_ACTIVITY, function(e, o) {
+ 57223: 1 == o.eRet ? t.openActiveUI(o) : 3 == o.eRet ? t.reqActiveReward(o.type) : 4 == o.eRet ? r.default.show(i.getText(1098)) : r.default.show(i.getText(1093));
+ 57224: }, this);
+ 57225: n.MessageCenter.on(a.HttpConst.GET_ACTIVITY_AWARD, function(t, e) {
+ 57226: 1 == e.eRet ? p.default.addShowRewardUI1(e.rewardArray, 0, {}) : 4 == e.eRet ? r.default.show(i.getText(1098)) : r.default.show(i.getText(1145));
+ 57227: }, this);
+ 57228: n.MessageCenter.on(a.HttpConst.SMALL_GAME_AWARD, function(t, e) {
+ 57229: switch (e.eRet) {
+ 57230: case 1:
+ 57231: if (4 == e.type) n.MessageCenter.dispatch(s.EvName.WISH_TREE_SUCCESS_EVENT, e); else if (!h.ActiveModel.isNullMap(e.rewardArray)) {
+ 57232: p.default.addShowRewardUI1(e.rewardArray, 0, {});
+ 57233: n.MessageCenter.dispatch(s.EvName.ACTIVE_GAME_REWARD);
+ 57234: }
+ 57235: break;
+ 57236: 
+ 57237: case 2:
+ 57238: r.default.show(i.getText(1094));
+ 57239: }
+ 57240: }, this);
+ 57241: n.MessageCenter.on(a.HttpConst.GET_PILE_GAME_DATA, function(e, o) {
+ 57242: switch (o.eRet) {
+ 57243: case 1:
+ 57244: u.default.prefabs.load([ "activeUI/YoungMeihuaUI", "meihuaPile/MeihuaPileBase" ], cc.Prefab, function(t, e) {
+ 57245: var i = cc.instantiate(e[0]);
+ 57246: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer, 1, !0);
+ 57247: i.addComponent("YoungMeihuaUI").setData(o);
+ 57248: });
+ 57249: break;
+ 57250: 
+ 57251: case 2:
+ 57252: r.default.show(i.getText(1093));
+ 57253: break;
+ 57254: 
+ 57255: case 3:
+ 57256: r.default.show(i.getText(6013127));
+ 57257: n.MessageCenter.dispatch(s.EvName.HIDE_NPC_EVENT, [ t.youngPileNpcid ]);
+ 57258: break;
+ 57259: 
+ 57260: default:
+ 57261: cc.log("很致命的错误啊，问后端😈");
+ 57262: }
+ 57263: }, this);
+ 57264: n.MessageCenter.on(a.HttpConst.PILE_GAME_AWARD, function(t, e) {
+ 57265: switch (e.eRet) {
+ 57266: case 1:
+ 57267: h.ActiveModel.isNullMap(e.rewardArray) || r.default.showReward(e.rewardArray, 0, {}, {}, null, [], void 0, e.isDouble ? i.getText(6013066) : "");
+ 57268: n.MessageCenter.dispatch(s.EvName.ACTIVE_GAME_REWARD, e);
+---
+ 57324: var o = {
+ 57325: roleID: l.RoleBaseInfo.roleID,
+ 57326: type: 1,
+ 57327: score: e
+ 57328: };
+ 57329: cc.log("data", o);
+ 57330: c.NetMgr.http.sendRequest(a.HttpConst.SMALL_GAME_AWARD, o);
+ 57331: };
+ 57332: t.prototype.openActiveUI = function(t) {
+ 57333: switch (t.type) {
+ 57334: case 1:
+ 57335: u.default.prefabs.load("meihuaPile/MeihuaPileUI", cc.Prefab, function(e, o) {
+ 57336: var i = cc.instantiate(o);
+ 57337: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer, 1, !0);
+ 57338: i.addComponent("MeihuaPileUI").setData(t);
+ 57339: });
+ 57340: }
+ 57341: };
+ 57342: return t;
+ 57343: }();
+ 57344: o.HolidayActiveModel = new g();
+ 57345: cc._RF.pop();
+ 57346: }, {
+ 57347: "../core/events/MessageCenter": "MessageCenter",
+ 57348: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 57349: "../gameconfigs/LangMgr": "LangMgr",
+ 57350: "../gui/uicomponents/Alert": "Alert",
+ 57351: "../mgrs/BundleMgr": "BundleMgr",
+ 57352: "../mgrs/LayerMgr": "LayerMgr",
+ 57353: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+ 57354: "../net/HttpConst": "HttpConst",
+ 57355: "../net/NetMgr": "NetMgr",
+ 57356: "../utils/EvName": "EvName",
+ 57357: "./ActiveModel": "ActiveModel",
+ 57358: "./vos/RoleBaseInfo": "RoleBaseInfo"
+ 57359: } ],
+ 57360: HomeActiveModel: [ function(t, e, o) {
+ 57361: "use strict";
+ 57362: cc._RF.push(e, "8f722sWQ55ICLLgQnCbYLUc", "HomeActiveModel");
+ 57363: Object.defineProperty(o, "__esModule", {
+ 57364: value: !0
+ 57365: });
+ 57366: o.HomeActiveModel = void 0;
+ 57367: var i = t("../core/events/MessageCenter"), n = t("../core/ui/mgrs/PopUpMgr"), r = t("../gui/uicomponents/Alert"), a = t("../mgrs/BundleMgr"), s = t("../mgrs/LayerMgr"), l = t("../net/HttpConst"), c = t("../net/NetMgr"), p = t("../utils/EvName"), h = t("../gameconfigs/LangMgr"), u = t("./RoleOtherInfo"), f = t("./StoreModel"), d = t("../mgrs/StoryDialogMgr"), g = t("./PackageModel"), m = t("./SchoolModel"), y = function() {
+ 57368: function t() {
+ 57369: this.taskId = 0;
+ 57370: this.target = null;
+---

@@ -1,0 +1,15 @@
+# User.getSevenTaskAward   (HttpConst.REQ_SEVENREWARD_EVENT)
+
+## 注册点 57381: i.MessageCenter.on(l.HttpConst.REQ_SEVENREWARD_EVENT, this.sevenRewardCallback.bind(this), this);
+
+## 请求点 57471: c.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_SEVENREWARD_EVENT, o);
+   57463: c.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_SEVENTASK_EVENT, {});
+   57464: };
+   57465: t.prototype.reqSevenDayReward = function(t, e) {
+   57466: var o = {
+   57467: taskID: t
+   57468: };
+   57469: this.taskId = t;
+   57470: this.target = e;
+
+## 处理函数 bind —— 未找到定义

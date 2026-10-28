@@ -1,0 +1,689 @@
+{
+  "generatedAt": "2026-10-22T20:42:16.890Z",
+  "scope": {
+    "filesRead": [
+      "F:\\BaoZouyxt\\tools\\index.js",
+      "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "F:\\BaoZouyxt\\tools\\scripts3.js"
+    ],
+    "mode": "只读；node/PS 取行；未改任何源码"
+  },
+  "cycleEntry": {
+    "callSites": [
+      {
+        "file": "scripts2.js",
+        "line": 14281,
+        "code": "p.MessageCenter.on(S.EvName.CHECK_NPC_BTN_TYPE, this.selectCheckBtnCall, this);",
+        "note": "ConvstnBoard.addEventListeners（脚本2.js:14280 起）注册监听；组件名见 scripts2.js:14163 cc._RF.push(..., \"ConvstnBoard\")、14186 o.ConvstnBoard = void 0;、15642 o.ConvstnBoard = rt;"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14635,
+        "code": "o.prototype.selectCheckBtnCall = function(e, o) {",
+        "note": "ConvstnBoard.selectCheckBtnCall 定义；14706 行 break 前为本体，15642 结束组件"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 80244,
+        "code": "a.MessageCenter.dispatch(c.EvName.CHECK_NPC_BTN_TYPE, this.titleName);",
+        "note": "唯一 dispatch 点：checkBtn.onClickEvent（scripts2.js:80243 起）。组件定义 scripts2.js:80199-80265（\"checkBtn\"）"
+      },
+      {
+        "file": "index.js",
+        "line": 45549,
+        "code": "CHECK_NPC_BTN_TYPE: \"checkNpcBtnType\",",
+        "note": "EvName 常量定义"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 65917,
+        "code": "g.MessageCenter.on(m.EvName.CHECK_NPC_BTN_TYPE, this.selectCheckBtnCall, this);",
+        "note": "另一组件 SpecialNpcUI（scripts2.js:65866 o.SpecialNpcUI = void 0;）的同名监听；其 selectCheckBtnCall 在 65948，switch 仅有 case 57/88/1194（65950/65974/65980），无 case \"jh50\""
+      },
+      {
+        "file": "scripts2.js",
+        "line": 65948,
+        "code": "e.prototype.selectCheckBtnCall = function(t, e) {",
+        "note": "SpecialNpcUI 版本；与 jh50 无关（65949 switch (parseInt(e))，仅 57/88/1194）"
+      }
+    ],
+    "chain": [
+      {
+        "step": 1,
+        "file": "index.js",
+        "line": 89417,
+        "code": "e.prototype.reaction = function() {",
+        "note": "index.js:89397 o.NormalNpc = void 0;（NormalNpc 组件，NPC 点击入口）"
+      },
+      {
+        "step": 2,
+        "file": "index.js",
+        "line": 89418,
+        "code": "var t = this._npcData.Type;"
+      },
+      {
+        "step": 3,
+        "file": "index.js",
+        "line": 89420,
+        "code": "this.clickNpcEvent(t);"
+      },
+      {
+        "step": 4,
+        "file": "index.js",
+        "line": 89435,
+        "code": "e.prototype.clickNpcEvent = function(t) {"
+      },
+      {
+        "step": 5,
+        "file": "index.js",
+        "line": 89442,
+        "code": "u.NPCManager.NpcToFuncType(t, this._npcID, this._npcData, this.openConvstCmp.bind(this), this.node);"
+      },
+      {
+        "step": 6,
+        "file": "index.js",
+        "line": 87068,
+        "code": "NpcToFuncType: function(e, o, i, r, a) {",
+        "note": "switch 从 87071 起；case 列表见下一条 note 所述 grep 结果，无 case 46"
+      },
+      {
+        "step": 7,
+        "file": "index.js",
+        "line": 87349,
+        "code": "default:",
+        "note": "实测该 switch（87071-87351）共 58 个 case，其中 46 / 52 / 108 / 110 / 117 一个都没有 → 本单四个入口全部落到 default"
+      },
+      {
+        "step": 8,
+        "file": "index.js",
+        "line": 87350,
+        "code": "r();",
+        "note": "default 调用第 5 步传入的 r = this.openConvstCmp.bind(this)"
+      },
+      {
+        "step": 9,
+        "file": "index.js",
+        "line": 89445,
+        "code": "e.prototype.openConvstCmp = function() {"
+      },
+      {
+        "step": 10,
+        "file": "index.js",
+        "line": 89451,
+        "code": "l.default.prefabs.load(\"checkNpc/ConvstnBoard\", cc.Prefab, function(o, i) {"
+      },
+      {
+        "step": 11,
+        "file": "index.js",
+        "line": 89454,
+        "code": "n.addComponent(\"ConvstnBoard\").setNpcData(t, e);",
+        "note": "89446-89450 构造 t = { npcSceneID: this.sceneID, npcID: this._npcID, npcData: this._npcData }, e = this._npcData;"
+      },
+      {
+        "step": 12,
+        "file": "scripts2.js",
+        "line": 14339,
+        "code": "o.prototype.setNpcData = function(t, e) {"
+      },
+      {
+        "step": 13,
+        "file": "scripts2.js",
+        "line": 14351,
+        "code": "this.setCurrentSelectBtn(e.Type);"
+      },
+      {
+        "step": 14,
+        "file": "scripts2.js",
+        "line": 14366,
+        "code": "o.prototype.setCurrentSelectBtn = function(t) {",
+        "note": "switch (t) 于 14367"
+      },
+      {
+        "step": 15,
+        "file": "scripts2.js",
+        "line": 14453,
+        "code": "case 46:"
+      },
+      {
+        "step": 16,
+        "file": "scripts2.js",
+        "line": 14454,
+        "code": "this.btnArray = [ 87, 88, 2103, \"jh50\", 1381 ];",
+        "note": "NPC Type 46 的对话按钮表 → 含 \"jh50\"（转世按钮文本 id）。同表 87=对话、88=属性/交谈、2103、1381"
+      },
+      {
+        "step": 17,
+        "file": "scripts2.js",
+        "line": 14352,
+        "code": "this.addBtnDatas();"
+      },
+      {
+        "step": 18,
+        "file": "scripts2.js",
+        "line": 14594,
+        "code": "o.prototype.addBtnDatas = function() {",
+        "note": "14595 this.showArrayBtnList();"
+      },
+      {
+        "step": 19,
+        "file": "scripts2.js",
+        "line": 14604,
+        "code": "o.prototype.showAllBtns = function(t) {"
+      },
+      {
+        "step": 20,
+        "file": "scripts2.js",
+        "line": 14621,
+        "code": "n.setNameTitle(this.btnArray[i]);",
+        "note": ">3 个按钮时走 moreArrayBtn 分支（14619-14625）；2 个走 14607、3 个走 14615，同样 setNameTitle(this.btnArray[e])"
+      },
+      {
+        "step": 21,
+        "file": "scripts2.js",
+        "line": 80246,
+        "code": "e.prototype.setNameTitle = function(t) {",
+        "note": "80247 this.titleName = t; → 按钮持有 \"jh50\""
+      },
+      {
+        "step": 22,
+        "file": "scripts2.js",
+        "line": 80238,
+        "code": "this.addButtonListen(this.node, this, this.onClickEvent);",
+        "note": "checkBtn.onLoad 注册点击"
+      },
+      {
+        "step": 23,
+        "file": "scripts2.js",
+        "line": 80243,
+        "code": "e.prototype.onClickEvent = function() {"
+      },
+      {
+        "step": 24,
+        "file": "scripts2.js",
+        "line": 80244,
+        "code": "a.MessageCenter.dispatch(c.EvName.CHECK_NPC_BTN_TYPE, this.titleName);",
+        "note": "派发 \"jh50\""
+      },
+      {
+        "step": 25,
+        "file": "scripts2.js",
+        "line": 14635,
+        "code": "o.prototype.selectCheckBtnCall = function(e, o) {",
+        "note": "监听回调（注册点 14281）；14636 var i = this, s = o, n = this.npcData.NpcID; 14637 switch (s.toString()) {"
+      },
+      {
+        "step": 26,
+        "file": "scripts2.js",
+        "line": 15020,
+        "code": "case \"jh50\":"
+      },
+      {
+        "step": 27,
+        "file": "scripts2.js",
+        "line": 15021,
+        "code": "if (k.RoleOtherInfo.isUntie) E.default.show(a.getText(6372)); else if (F.ChildrenModel.getChildAgeNum() >= 8) if (0 == M.MarryModel.childData.foster_point) {"
+      },
+      {
+        "step": 28,
+        "file": "scripts2.js",
+        "line": 15022,
+        "code": "this.closeConvstnBoard();"
+      },
+      {
+        "step": 29,
+        "file": "scripts2.js",
+        "line": 15023,
+        "code": "et.RebirthModel.isCycleLife();",
+        "note": "et = t(\"../../../scripts/models/RebirthModel\")（scripts2.js:14187 模块表 tt 处）"
+      },
+      {
+        "step": 30,
+        "file": "scripts2.js",
+        "line": 15024,
+        "code": "} else E.default.show(a.getText(4571)); else E.default.show(a.getText(2116));",
+        "note": "失败分支：文本 4571 / 2116（未成年或已抚养点消耗）"
+      },
+      {
+        "step": 31,
+        "file": "index.js",
+        "line": 101921,
+        "code": "e.prototype.isCycleLife = function() {",
+        "note": "RebirthModel（index.js 内）"
+      },
+      {
+        "step": 32,
+        "file": "index.js",
+        "line": 101922,
+        "code": "p.NetMgr.http.sendRequest(r.HttpConst.IS_CYCLE_LIFE);"
+      },
+      {
+        "step": 33,
+        "file": "index.js",
+        "line": 101924,
+        "code": "e.prototype.onIsCycleLife = function(e, i) {",
+        "note": "回调：101925-101932；eRet==1 且 RebirthModel.newBirthStoryState → ReincarnatMgr.checkStoryEnding()，否则加载 \"marrySystem/rollUI\"（101929）；eRet==2 → 文本 6003686；eRet==3 → 文本 6013312"
+      },
+      {
+        "step": 34,
+        "file": "index.js",
+        "line": 101929,
+        "code": "}) : u.default.prefabs.load(\"marrySystem/rollUI\", cc.Prefab, function(t, e) {",
+        "note": "转世 UI 落点（非剧情态）"
+      }
+    ],
+    "dialogIds": [
+      {
+        "file": "scripts2.js",
+        "line": 14454,
+        "code": "this.btnArray = [ 87, 88, 2103, \"jh50\", 1381 ];",
+        "note": "对话按钮 id = \"jh50\"（LangMgr 文本键）；上层 NPC 类型 = Type 46"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 15020,
+        "code": "case \"jh50\":",
+        "note": "分支 id 与按钮 id 同名"
+      },
+      {
+        "file": "",
+        "line": 0,
+        "code": "未找到：剧情节点 id（搜索词 \"jh50\"）",
+        "note": "grep 全三文件 jh50 仅 2 处命中：scripts2.js:14454、scripts2.js:15020，均代码；无剧本/StoryDialog 配置 id 引用"
+      }
+    ],
+    "upperUi": [
+      {
+        "file": "index.js",
+        "line": 89397,
+        "code": "o.NormalNpc = void 0;",
+        "note": "上层 UI = checkNpc/ConvstnBoard（预制体，由 NormalNpc.openConvstCmp 加载）"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14163,
+        "code": "cc._RF.push(e, \"40fbb5QKm1PIbDjJZtq0lFp\", \"ConvstnBoard\");",
+        "note": "对话板组件 ConvstnBoard 本体（脚本2.js:14161-15710 区间）"
+      }
+    ]
+  },
+  "exchangeShop": {
+    "triggers": [
+      {
+        "file": "scripts2.js",
+        "line": 14469,
+        "code": "case 52:"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14470,
+        "code": "this.btnArray.push(818);",
+        "note": "NPC Type 52 对话按钮追加 818（initBaseData 基表 [87,88,89] → 见 14229/14232）"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14498,
+        "code": "case 68:"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14499,
+        "code": "this.btnArray.push(818);",
+        "note": "Type 68 同样追加 818"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14516,
+        "code": "case 81:"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14517,
+        "code": "this.btnArray.push(818);",
+        "note": "Type 81 同样追加 818"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14713,
+        "code": "case \"818\":"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14714,
+        "code": "13856 == n ? st.HalloweenShopModel.reqExchangeItemDatas(n) : U.default.prefabs.load(\"comUI/ComBgUI\", cc.Prefab, function(t, e) {",
+        "note": "NPC 13856 走万圣商店，其它走 ExchangeMainUI；st = t(\"../../../scripts/models/HalloweenShopModel\")（14187）"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14717,
+        "code": "o.addComponent(\"ExchangeMainUI\").setShopType(0, n);",
+        "note": "唯一实例化点（n = this.npcData.NpcID，14636）；14715 var o = cc.instantiate(e); 14716 y.PopUpMgr.addPopUp(o, X.LayerMgr.popUpLayer); 14719 this.closeConvstnBoard();"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 20543,
+        "code": "ExchangeMainUI: [ function(t, e, o) {",
+        "note": "组件定义 scripts2.js:20543-20630；20545 cc._RF.push(..., \"ExchangeMainUI\"); 20625 }(r.ComBgUI) —— 挂载在 comUI/ComBgUI 预制体上，故 addComponent(\"ExchangeMainUI\")"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 20600,
+        "code": "e.prototype.setShopType = function(t, e) {"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 20608,
+        "code": "a.ExchangeModel.reqExchangeItemData(e);",
+        "note": "reqExchangeItemData 唯一调用方；a = t(\"../../../scripts/models/ExchangeModel\")（20569）；20603 var o = [ 12631, 15986 ]; 20604 if (11713 == parseInt(e)) this.shopFlag = 1; else if (o.includes(parseInt(e))) { this.shopFlag = 2; this.curIdx = o.indexOf(parseInt(e)) + 1; }"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 20610,
+        "code": "e.prototype.onShopDataCallBack = function(t, e) {",
+        "note": "20615 l.MessageCenter.on(p.EvName.EXCHANGE_SHOP_DATA, this.onShopDataCallBack, this); 20623 this.script && this.script.showBaseData(this.currData, this.shopFlag, e); → ExchangeShowUI（20596 getComponent(\"ExchangeShowUI\")）"
+      },
+      {
+        "file": "index.js",
+        "line": 47099,
+        "code": "t.prototype.reqExchangeItemData = function(t) {",
+        "note": "ExchangeModel.reqExchangeItemData 定义"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 11482,
+        "code": "e.prototype.onShopBtn = function() {",
+        "note": "第二入口：ChatVSRewardUI（scripts2.js:11371 cc._RF.push(..., \"ChatVSRewardUI\")）的商店按钮"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 11486,
+        "code": "o.addComponent(\"ExchangeMainUI\").setShopType(0, 12631);",
+        "note": "固定 NPC 12631；11483 f.default.prefabs.load(\"comUI/ComBgUI\", ...)；11487 7 == GSceneMgr.mode 时改弹文本 7649"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 15194,
+        "code": "case \"6000488\":",
+        "note": "15196 st.HalloweenShopModel.reqExchangeItemDatas(n); 按钮 6000488 由 14592 追加（activityList 含 75 且 NpcID 10828），非 ExchangeMainUI 路径"
+      }
+    ],
+    "npcType52": [
+      {
+        "file": "scripts2.js",
+        "line": 14469,
+        "code": "case 52:",
+        "note": "\"偶货商\" 命名来自工单；本文件内只有 Type 编号与按钮 818，未见中文名映射（配置表 npc_type 不在本单范围）"
+      }
+    ]
+  },
+  "goodEvilShop": {
+    "triggers": [
+      {
+        "file": "scripts2.js",
+        "line": 14542,
+        "code": "case 108:"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14543,
+        "code": "m.RoleBaseInfo.goodEvilCamp == m.RoleBaseInfo.goodCamp && this.btnArray.push(90);",
+        "note": "Type 108 仅在正营时追加按钮 90"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14550,
+        "code": "case 110:"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14551,
+        "code": "m.RoleBaseInfo.goodEvilCamp == m.RoleBaseInfo.evilCamp && this.btnArray.push(90);",
+        "note": "Type 110 仅在邪营时追加按钮 90"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14671,
+        "code": "case \"90\":"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14672,
+        "code": "var l = this.npcData.Type, p = this.npcData.Shop;"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14692,
+        "code": "} else 108 == l || 110 == l ? Promise.resolve().then(function() {",
+        "note": "14693 return t(\"../../../scripts3/model3/GoodEvilModel\"); 14694-14696 t.GoodEvilModel.getShopData();"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14695,
+        "code": "t.GoodEvilModel.getShopData();",
+        "note": "getShopData 唯一调用方 = ConvstnBoard.selectCheckBtnCall case \"90\" 的 Type 108/110 分支（按钮 id 90，无独立面板按钮）"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 36524,
+        "code": "t.prototype.getShopData = function() {"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 36525,
+        "code": "l.NetMgr.http.sendRequest(c.HttpConst.GET_GOOD_AND_EVIL_SHOP_DATA);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 36527,
+        "code": "t.prototype.onGetShopData = function(t, e) {",
+        "note": "36533 h.default.prefabs.load(\"goodEvil/goodEvilShop/GoodEvilShopUI\", cc.Prefab, function(t, o) { 36535 s.getComponent(\"GoodEvilShopUI\").setData(e); 36536 i.PopUpMgr.addPopUp(s, d.LayerMgr.popUpLayer);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 37637,
+        "code": "cc._RF.push(e, \"c373ckz2q9Ow5QGeeR8gPx4\", \"GoodEvilShopUI\");",
+        "note": "37665 e.prefabName = \"goodEvil/goodEvilShop/GoodEvilShopUI\"; 37779 o.GoodEvilShopUI = C;"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14638,
+        "code": "case \"29\":",
+        "note": "同 switch 内的正邪入口：14642 t.GoodEvilModel.getRankData(m.RoleBaseInfo.goodEvilCamp); 按钮 29 由 14539/14547 追加（Type 107 正营 / Type 109 邪营，concat [ 6000743, 29 ]）"
+      }
+    ],
+    "npcDialogSwitch": [
+      {
+        "file": "scripts2.js",
+        "line": 14538,
+        "code": "case 107:",
+        "note": "14539 m.RoleBaseInfo.goodEvilCamp == m.RoleBaseInfo.goodCamp && (this.btnArray = this.btnArray.concat([ 6000743, 29 ]));"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14546,
+        "code": "case 109:",
+        "note": "14547 m.RoleBaseInfo.goodEvilCamp == m.RoleBaseInfo.evilCamp && (this.btnArray = this.btnArray.concat([ 6000743, 29 ]));"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14542,
+        "code": "case 108:",
+        "note": "14543 同营判定后 push(90)"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14550,
+        "code": "case 110:",
+        "note": "14551 同营判定后 push(90)"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14354,
+        "code": "o.prototype.showGoodEvilChiefBtn = function(t) {",
+        "note": "14355 this.btnArray.splice(2, 1); 14362-14363 push(6000990)/push(6000991)（Type 85 正邪掌门前置分支）"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 15106,
+        "code": "case \"6000743\":",
+        "note": "15111 t.GoodEvilModel.getPlayerData();（正邪主界面）"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 15116,
+        "code": "case \"6000990\":",
+        "note": "15120 t.GoodEvilModel.getHelpInfo();"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 15125,
+        "code": "case \"6000991\":",
+        "note": "15129 t.GoodEvilModel.getData();"
+      }
+    ]
+  },
+  "rogueShop": {
+    "triggers": [
+      {
+        "file": "scripts2.js",
+        "line": 14562,
+        "code": "case 117:"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14563,
+        "code": "this.btnArray = [ 87, 90, 6002720, 6003456, 6003678 ];",
+        "note": "江湖（Type 117）对话板按钮表：87=对话、90=商店、6002720=江湖荣耀、6003456=排行榜、6003678=天赋"
+      },
+      {
+        "file": "index.js",
+        "line": 60755,
+        "code": "var r = \"ConvstnBoard\";"
+      },
+      {
+        "file": "index.js",
+        "line": 60756,
+        "code": "117 == n.Type && (r = \"RogueConvstn\");",
+        "note": "Type 117 时改用 RogueConvstn 组件"
+      },
+      {
+        "file": "index.js",
+        "line": 60760,
+        "code": "e.pannel.addComponent(r).setNpcData(i, n);",
+        "note": "同样落到 scripts2.js:14339 setNpcData → 14351 setCurrentSelectBtn(117)"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 65423,
+        "code": "o.RogueConvstn = void 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 65424,
+        "code": "var r = t(\"../../../scripts/core/events/MessageCenter\"), a = t(\"../../../scripts/utils/EvName\"), c = t(\"../../../scripts2/ui/conversations/ConvstnBoard\"), p = t(\"../../model3/RogueModel\"), l = cc._decorator.ccclass, h = function(t) {",
+        "note": "65453 }(c.ConvstnBoard); —— RogueConvstn 继承 ConvstnBoard，未重写 selectCheckBtnCall，沿用 scripts2.js:14635"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14696,
+        "code": "}) : 117 == l ? Promise.resolve().then(function() {",
+        "note": "14697 return t(\"../../../scripts3/model3/RogueModel\"); 14698-14699 t.RogueModel.getShopData();"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 14699,
+        "code": "t.RogueModel.getShopData();",
+        "note": "getShopData 唯一调用方 = ConvstnBoard.selectCheckBtnCall case \"90\" 的 117 分支；grep getShopData 全三文件仅 3 定义（scripts3.js:36524 GoodEvil / 71220 Rogue / 82893 SkinModel）+ 3 调用（scripts2.js:14695/14699/15153），RogueShopUI 无二次调用"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 71220,
+        "code": "t.prototype.getShopData = function() {"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 71221,
+        "code": "h.NetMgr.http.sendRequest(l.HttpConst.RG_GET_SHOP_DATA);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 71231,
+        "code": "t.prototype.onGetShopData = function(t, e) {",
+        "note": "71233 this.shopData = e.shop; 71237 this.sortShopData(); 71238 g.RogueUtil.showShop();"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 76921,
+        "code": "t.prototype.showShop = function() {",
+        "note": "76922 this.show(\"rogue/shop/RogueShopUI\", !1); —— 江湖商店面板落点"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 15141,
+        "code": "case \"6002720\":",
+        "note": "同表其它按钮：15145 t.RogueModel.openRogueGlory(); 15162/15166 openRankList(); 15170/15174 reqGetTalentData(); 15178/15182 getSellData(); 15186/15190 getCastData()"
+      }
+    ]
+  },
+  "npcTypeSwitch": {
+    "file": "scripts2.js",
+    "line": 14671,
+    "rangeText": "14660-14720（工单指定 14660-14710；实际 case \"90\" 段为 14671-14706，14708 起为 case \"91\"/\"244\"）",
+    "body": [
+      { "line": 14671, "text": "case \"90\":" },
+      { "line": 14672, "text": "var l = this.npcData.Type, p = this.npcData.Shop;" },
+      { "line": 14673, "text": "if (3 == l) U.default.prefabs.load(\"comUI/ShopBgUI\", cc.Prefab, function(t, e) {" },
+      { "line": 14674, "text": "var o = cc.instantiate(e);" },
+      { "line": 14675, "text": "y.PopUpMgr.addPopUp(o, X.LayerMgr.popUpLayer);" },
+      { "line": 14676, "text": "o.addComponent(\"SaleShopBg\").showSaleShop();" },
+      { "line": 14677, "text": "}); else if (2 == l || 20 == l || 36 == l || 38 == l || 51 == l || 55 == l || 70 == l) U.default.prefabs.load(\"comUI/ShopBgUI\", cc.Prefab, function(t, e) {" },
+      { "line": 14678, "text": "var o = cc.instantiate(e);" },
+      { "line": 14679, "text": "y.PopUpMgr.addPopUp(o, X.LayerMgr.popUpLayer);" },
+      { "line": 14680, "text": "o.addComponent(\"NormalShopBgUI\").showNormalShop(p);" },
+      { "line": 14681, "text": "}); else if (26 == l) U.default.prefabs.load(\"comUI/ShopBgUI\", cc.Prefab, function(t, e) {" },
+      { "line": 14682, "text": "var o = cc.instantiate(e);" },
+      { "line": 14683, "text": "y.PopUpMgr.addPopUp(o, X.LayerMgr.popUpLayer);" },
+      { "line": 14684, "text": "o.addComponent(\"NormalShopBgUI\").showNormalShop(l, n);" },
+      { "line": 14685, "text": "}); else if (28 == l) Q.MakeUpModel.reqGetFashionList(); else if (33 == l || 35 == l) 4 == O.RumorModel.spType || 9 == O.RumorModel.spType || 7 == O.RumorModel.spType ? v.ActiveModel.reqRandomShop(n) : E.default.show(a.getText(1e3)); else if (85 == l) {" },
+      { "line": 14686, "text": "var h = r.getSectShopData(G.SchoolModel.othenSchool);" },
+      { "line": 14687, "text": "U.default.prefabs.load(\"menpai/MenpaiShopUI\", cc.Prefab, function(t, e) {" },
+      { "line": 14688, "text": "var o = cc.instantiate(e);" },
+      { "line": 14689, "text": "y.PopUpMgr.addPopUp(o, X.LayerMgr.popUpLayer);" },
+      { "line": 14690, "text": "o.addComponent(\"SchoolShopUI\").setData(h);" },
+      { "line": 14691, "text": "});" },
+      { "line": 14692, "text": "} else 108 == l || 110 == l ? Promise.resolve().then(function() {" },
+      { "line": 14693, "text": "return t(\"../../../scripts3/model3/GoodEvilModel\");" },
+      { "line": 14694, "text": "}).then(function(t) {" },
+      { "line": 14695, "text": "t.GoodEvilModel.getShopData();" },
+      { "line": 14696, "text": "}) : 117 == l ? Promise.resolve().then(function() {" },
+      { "line": 14697, "text": "return t(\"../../../scripts3/model3/RogueModel\");" },
+      { "line": 14698, "text": "}).then(function(t) {" },
+      { "line": 14699, "text": "t.RogueModel.getShopData();" },
+      { "line": 14700, "text": "}) : 122 == l && Promise.resolve().then(function() {" },
+      { "line": 14701, "text": "return t(\"../../../scripts3/utils3/RogueUtil\");" },
+      { "line": 14702, "text": "}).then(function(t) {" },
+      { "line": 14703, "text": "t.RogueUtil.showGoldEx();" },
+      { "line": 14704, "text": "});" },
+      { "line": 14705, "text": "this.closeConvstnBoard();" },
+      { "line": 14706, "text": "break;" }
+    ],
+    "typeToUi": [
+      { "type": "3", "ui": "comUI/ShopBgUI + o.addComponent(\"SaleShopBg\").showSaleShop()", "line": 14673 },
+      { "type": "2|20|36|38|51|55|70", "ui": "comUI/ShopBgUI + o.addComponent(\"NormalShopBgUI\").showNormalShop(p)", "line": 14677 },
+      { "type": "26", "ui": "comUI/ShopBgUI + o.addComponent(\"NormalShopBgUI\").showNormalShop(l, n)", "line": 14681 },
+      { "type": "28", "ui": "Q.MakeUpModel.reqGetFashionList()（无预制体直开）", "line": 14685 },
+      { "type": "33|35", "ui": "v.ActiveModel.reqRandomShop(n) 或 E.default.show(a.getText(1e3))（RumorModel.spType 判定）", "line": 14685 },
+      { "type": "85", "ui": "menpai/MenpaiShopUI + o.addComponent(\"SchoolShopUI\").setData(h)", "line": 14686 },
+      { "type": "108|110", "ui": "t.GoodEvilModel.getShopData()（→ scripts3.js:36533 加载 goodEvil/goodEvilShop/GoodEvilShopUI）", "line": 14692 },
+      { "type": "117", "ui": "t.RogueModel.getShopData()（→ scripts3.js:71238 RogueUtil.showShop() → rogue/shop/RogueShopUI）", "line": 14696 },
+      { "type": "122", "ui": "t.RogueUtil.showGoldEx()", "line": 14700 }
+    ],
+    "notCoveredTypes": [
+      {
+        "file": "",
+        "line": 0,
+        "code": "未找到：case \"90\" 内 52 / 68 / 81 分支",
+        "note": "偶货商相关 Type 52/68/81 走的是按钮 818（scripts2.js:14470/14499/14517 → case \"818\" 14713），不在 case \"90\" 内"
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+# User.wearFasion  (HttpConst.WEAR_FASHION)
+# 出现 4 处
+
+145357: var i = cc.instantiate(e);
+145358: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer);
+145359: i.addComponent("ShowWifeBgUI").showWifeCoatWb(o.shopArr);
+145360: });
+145361: }
+145362: }, this);
+145363: r.MessageCenter.on(a.HttpConst.WEAR_FASHION, function(e, o) {
+145364: if (1 == (o = o).eRet) {
+145365: l.default.show(i.getText(3632));
+145366: c.MarryModel.wifeUpdateData.eid = o.fasionid;
+145367: if (parseInt(o.fasionid) > 0) {
+145368: if (!c.MarryModel.wifeUpdateData.fasion.hasOwnProperty(o.fasionid)) {
+145369: var a = c.MarryModel.getWifeNpcId(), h = n.getItem(a, "propose");
+145370: p.default.addDialogEvent(h.buy, 0);
+145371: }
+145372: c.MarryModel.wifeUpdateData.fasion[o.fasionid] = 1;
+145373: }
+145374: r.MessageCenter.dispatch(s.EvName.UPDATE_WIFE_FASHION_EVENT, {});
+145375: r.MessageCenter.dispatch(s.EvName.UPDATE_GLOD_EVENT, {});
+145376: Promise.resolve().then(function() {
+145377: return t("../../scripts3/utils3/EvName3");
+145378: }).then(function(t) {
+145379: r.MessageCenter.dispatch(t.EvName3.UPDATE_WIFE_ROLE_EVENT, o.fasionid);
+145380: });
+145381: } else l.default.show(i.getText(3633));
+145382: }, this);
+145383: };
+145384: e.prototype.reqUpgradeWifeLevel = function(t, e, o) {
+145385: h.NetMgr.http.sendReqWithMask(a.HttpConst.UPGRADE_WIFE_LEVEL, {
+145386: lv: t,
+145387: exp: e,
+145388: pot: o
+145389: });
+145390: };
+145391: e.prototype.reqUseItemLv = function(t) {
+145392: h.NetMgr.http.sendReqWithMask(a.HttpConst.USE_WIFE_PROP, {
+145393: propnum: t
+145394: });
+145395: };
+145396: e.prototype.reqGetFashionShop = function() {
+145397: h.NetMgr.http.sendReqWithMask(a.HttpConst.GET_FASHION_SHOP, {});
+145398: };
+145399: e.prototype.reqWearFashion = function() {
+145400: var t = c.MarryModel.wifeUpdateData.fasion;
+145401: if (0 == this.fashionId || t.hasOwnProperty(this.fashionId)) h.NetMgr.http.sendReqWithMask(a.HttpConst.WEAR_FASHION, {
+145402: fasionid: this.fashionId
+145403: }); else {
+---
+145404: var e = this.shopArray[this.fashionId], o = n.getItem(e[0], "item"), r = i.getText(o.Name) + " x" + e[1], s = i.getText(3634).replace(/\[1\]/, r), p = this;
+145405: l.default.show(s, [ {
+145406: flag: 0,
+145407: name: i.getText("332")
+145408: }, {
+145409: flag: 1,
+145410: name: i.getText("333")
+145411: } ], function(t) {
+145412: 0 == t && h.NetMgr.http.sendReqWithMask(a.HttpConst.WEAR_FASHION, {
+145413: fasionid: p.fashionId
+145414: });
+145415: });
+145416: }
+145417: };
+145418: e.prototype.saveWifeFashion = function() {
+145419: h.NetMgr.http.sendReqWithMask(a.HttpConst.WEAR_FASHION, {
+145420: fasionid: this.fashionId
+145421: });
+145422: };
+145423: e.prototype.setCurFashion = function(t) {
+145424: this.fashionId = t;
+145425: };
+145426: e.prototype.getCurFashion = function() {
+145427: return this.fashionId;
+145428: };
+145429: e.prototype.showUserWifeProp = function() {
+145430: var t = n.getConstByID("143");
+145431: p.default.addBuyItemUI({
+145432: itemId: t
+145433: }, 17);
+145434: };
+145435: e.prototype.showDialog = function(t) {
+145436: var e = this, o = c.MarryModel.getWifeNpcId(), i = n.getItem(o, "propose"), r = n.getCfItem(t, "partnerfashion");
+145437: c.MarryModel.wifeUpdateData.fasion.hasOwnProperty(this.fashionId) || p.default.addSpecialDialog(i.shop, 0, function() {
+145438: var t = setTimeout(function() {
+145439: clearTimeout(t);
+145440: p.default.addDialogEvent(r.buy, 0, null, function() {
+145441: e.reqWearFashion();
+---
+145442: }, function() {
+145443: var t = setTimeout(function() {
+145444: clearTimeout(t);
+145445: p.default.addDialogEvent(i.notbuy, 0);
+145446: }, 20);
+145447: });
+145448: }, 20);
+145449: });
+145450: };
+145451: return e;
+145452: }();
+---
+145453: o.WifeUpdateModel = new g();
+145454: cc._RF.pop();
+145455: }, {
+145456: "../../scripts3/utils3/EvName3": void 0,
+145457: "../core/events/MessageCenter": "MessageCenter",
+145458: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+145459: "../gameconfigs/CFMgr": "CFMgr",
+---

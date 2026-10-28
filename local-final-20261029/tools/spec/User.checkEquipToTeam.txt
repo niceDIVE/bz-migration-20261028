@@ -1,0 +1,99 @@
+# User.checkEquipToTeam  (HttpConst.CHECK_EQUIP_TO_TEAM)
+# 出现 2 处
+
+ 28101: this.oldAccount = "";
+ 28102: this.loginReqTeamState = !1;
+ 28103: this.selectState = 0;
+ 28104: this.isHaveChatMain = !1;
+ 28105: d.MessageCenter.on(a.HttpConst.CHANGE_SERVER, this.showChangeServerData, this);
+ 28106: d.MessageCenter.on(a.HttpConst.CHANGE_WORLD_SERVER, this.onChangeWorldServer, this);
+ 28107: d.MessageCenter.on(a.HttpConst.CHECK_EQUIP_TO_TEAM, this.showCheckEquipToTeam, this);
+ 28108: };
+ 28109: e.prototype.needLocalUrlAndPort = function(t) {
+ 28110: if (E.WebSocketFactory.isCrossChat()) {
+ 28111: this.restoreLocalServer();
+ 28112: t && t();
+ 28113: this.setCrossServer();
+ 28114: } else t && t();
+ 28115: };
+ 28116: e.prototype.onChangeWorldServer = function(t, e) {
+ 28117: if (1 == e.eRet) {
+ 28118: this.oldUID = s.RoleBaseInfo.roleID;
+ 28119: this.oldAccount = s.RoleBaseInfo.userAccount;
+ 28120: var o = {};
+ 28121: o.userName = s.RoleBaseInfo.userName;
+ 28122: o.serverUrl = l.Net.getUrlStr();
+ 28123: o.serverPort = l.Net.getPort();
+ 28124: o.oldHttpIpListObj = r.NetMgr.http.getIpListObj();
+ 28125: o.oldHttpPort = r.NetMgr.http.getPort();
+ 28126: o.oldUrlAll = e.sendurl;
+ 28127: I.HangUpModel.saveCrossData(e.hookData);
+ 28128: this.oldData = o;
+ 28129: this.crossData = e;
+ 28130: this.setCrossServer();
+ 28131: E.WebSocketFactory.closeSocket();
+ 28132: u.WebSocketModel.openSocketNet("CrossChat");
+ 28133: }
+ 28134: };
+ 28135: e.prototype.setCrossServer = function() {
+ 28136: var t = new RegExp("[0-9]+.[0-9]+.[0-9]+.[0-9]+"), e = this.crossData.chatServerIP, o = (t.test(e) ? "ws" : "wss") + "://";
+ 28137: s.RoleBaseInfo.userName = this.crossData.roleName;
+ 28138: s.RoleBaseInfo.roleID = this.crossData.newID;
+ 28139: s.RoleBaseInfo.userAccount = this.crossData.newAcc;
+ 28140: var i = this.crossData.ip, n = this.crossData.gport, a = {
+ 28141: index: 0,
+ 28142: svrList: [ i ]
+ 28143: };
+ 28144: r.NetMgr.http.setUrlAndPort(a, n, r.NetMgr.http.serverID);
+ 28145: l.Net.setUrlAndPort(o + e, this.crossData.chatServerPort);
+ 28146: f.MultiPlayerModel.crossFightValue = this.crossData.power;
+ 28147: };
+---
+ 28331: var o = h.CopyFightModel.getCurCopySceneId();
+ 28332: t && o != p.GSceneMgr.getCurSceneID() && v.SServerFightModel.reqBackSelfServer();
+ 28333: }
+ 28334: return e;
+ 28335: };
+ 28336: e.prototype.reqEnterCopyFight = function() {
+ 28337: r.NetMgr.http.sendRequest(a.HttpConst.CHECK_EQUIP_TO_TEAM, {});
+ 28338: };
+ 28339: return e;
+ 28340: }();
+ 28341: o.CrossServiceModel = new b();
+ 28342: cc._RF.pop();
+ 28343: }, {
+ 28344: "../core/events/MessageCenter": "MessageCenter",
+ 28345: "../gameconfigs/AppData": "AppData",
+ 28346: "../gameconfigs/LangMgr": "LangMgr",
+ 28347: "../gui/uicomponents/Alert": "Alert",
+ 28348: "../mgrs/GSceneMgr": "GSceneMgr",
+ 28349: "../mgrs/LocalStorageMgr": "LocalStorageMgr",
+ 28350: "../mgrs/SaveDataMgr": "SaveDataMgr",
+ 28351: "../net/HttpConst": "HttpConst",
+ 28352: "../net/Net": "Net",
+ 28353: "../net/NetMgr": "NetMgr",
+ 28354: "../utils/EvName": "EvName",
+ 28355: "./CopyFightModel": "CopyFightModel",
+ 28356: "./DriverModel": "DriverModel",
+ 28357: "./GameStates": "GameStates",
+ 28358: "./HangUpModel": "HangUpModel",
+ 28359: "./LoginModel": "LoginModel",
+ 28360: "./MultiPlayerModel": "MultiPlayerModel",
+ 28361: "./RoleOtherInfo": "RoleOtherInfo",
+ 28362: "./SServerFightModel": "SServerFightModel",
+ 28363: "./ServerListModel": "ServerListModel",
+ 28364: "./vos/RoleBaseInfo": "RoleBaseInfo",
+ 28365: "./wSocket/WebSocketFactory": "WebSocketFactory",
+ 28366: "./wSocket/WebSocketModel": "WebSocketModel"
+ 28367: } ],
+ 28368: CrossSvrFightMgr: [ function(t, e, o) {
+ 28369: "use strict";
+ 28370: cc._RF.push(e, "c3634p+xApAULDnSW5PF923", "CrossSvrFightMgr");
+ 28371: var i, n = this && this.__extends || (i = function(t, e) {
+ 28372: return (i = Object.setPrototypeOf || {
+ 28373: __proto__: []
+ 28374: } instanceof Array && function(t, e) {
+ 28375: t.__proto__ = e;
+ 28376: } || function(t, e) {
+ 28377: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+---

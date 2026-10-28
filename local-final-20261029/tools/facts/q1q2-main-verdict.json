@@ -1,0 +1,93 @@
+{
+  "generatedAt": "2026-10-22T06:35:00+08:00",
+  "by": "main-auditor (主审亲读源码判定；工人只提供转录)",
+  "scopeWord": "只读取证，未改任何代码、未碰设备",
+  "deliverables": {
+    "W1": "tools/facts/q1-equip-attr.json",
+    "W2": "tools/facts/q2-active-ui.json",
+    "W3": "tools/facts/q2-cfg-active.json",
+    "main": "tools/facts/q1q2-main-verdict.json (本文件)"
+  },
+
+  "Q1_装备属性": {
+    "question": "装备的基础攻防加成到底从哪个字段来？type==1 的物品还需要补什么结构？",
+    "answer_one_line": "全来自 item 配置表的 Property1..5 + Data1..5；type==1 的 PlayerEquip 不需要 attrs，我方现有 [1,num] 结构是对的，不缺任何字段。",
+    "readonly_check_chain": [
+      {"step": 1, "what": "LoadGame 吃 equipments", "where": "index.js:111825", "raw": "this.updateEquipments(e);"},
+      {"step": 2, "what": "只做赋值，不解析", "where": "index.js:111807-111808", "raw": "e.prototype.updateEquipments = function(t) { t.hasOwnProperty(\"equipments\") && t.equipments && (v.RoleBaseInfo.equipments = t.equipments);"},
+      {"step": 3, "what": "LoadGame 吃 PlayerEquip", "where": "index.js:111879", "raw": "e.hasOwnProperty(\"PlayerEquip\") && c.InventoryModel.parseEqData(e.PlayerEquip);"},
+      {"step": 4, "what": "parseEqData 逐条 parseEq 后进 equipmentDic", "where": "index.js:65075-65080", "raw": "e.prototype.parseEqData = function(t) { for (var e in t) { var o = t[e], i = this.parseEq(parseInt(e), o); this.addEq(i); } };"},
+      {"step": 5, "what": "type==1 的取值规则（uid 即 itemID）", "where": "index.js:65117-65136", "raw": "if (1 == o.type) { o.itemID = o.id; o.num = e[1]; e[2] && (o.weaponSkinId = e[2]); } else { o.itemID = e[1]; o.num = 1; o.attrs = e[2]; ... e[3] && (o.crystalIds = e[3]); e[4] && (o.weaponSkinId = e[4]); }"},
+      {"step": 6, "what": "updatePlayerData 末尾调 setupEntity（在 parseEqData 之后）", "where": "index.js:111888", "raw": "y.UserModel.setupEntity();"},
+      {"step": 7, "what": "setupEntity 遍历 equipments 并真正穿上", "where": "index.js:142526-142537", "raw": "for (var t in h.RoleBaseInfo.equipments) if (h.RoleBaseInfo.equipments[t]) { var e = _.InventoryModel.getEquipmentInfo(h.RoleBaseInfo.equipments[t]); ... this.entity.putOnEquipment(new a(o, p), parseInt(t));"},
+      {"step": 8, "what": "getEquipmentInfo 只查 equipmentDic / 塔装", "where": "index.js:65161-65165", "raw": "e.prototype.getEquipmentInfo = function(t) { if (this.equipmentDic.hasOwnProperty(t)) return this.equipmentDic[t]; var e = b.TowerModel.getTowerEquips(); return e.hasOwnProperty(t) ? e[t] : null; };"},
+      {"step": 9, "what": "putOnEquipment 调 arm", "where": "index.js:11174-11176", "raw": "r.putOnEquipment = function(t, e) { this._equipments[e] = t; t.arm(this);"},
+      {"step": 10, "what": "arm 逐列读 item 表并加成", "where": "index.js:44737-44743", "raw": "i.arm = function(t) { for (var e = r.getItem(this._data.itemID, \"item\"), o = r.getItem(this.getDisplayID(), \"item\"), i = 1; i <= 5; ++i) { var n = \"Property\" + i; if (e.hasOwnProperty(n) && 0 != e[n]) { var l = \"Data\" + i; this.addProperty(t, e[n], e[l]); } }"},
+      {"step": 11, "what": "附加属性只对 type>=2 存在（type==1 时 attrs 为 undefined，for..in 空转不报错）", "where": "index.js:44748-44749", "raw": "var c = this._data.attrs; for (var p in c) {"},
+      {"step": 12, "what": "addProperty 的落点（Property 值=属性 id，Data 值=数值）", "where": "index.js:44695-44716", "raw": "i.addProperty = function(t, e, o, i) { ... var n = new s(Number(o)), a = r.getItem(e, \"setattributes\"); ... default: t.id2AttributeDic[e].addRawBonus(n); if (6 == e) { t.addEqMp += n.baseValue; t.id2AttributeDic[6].equipAttruteNum = n.baseValue; }"},
+      {"step": 13, "what": "数值汇总入口（equip 专属修正只作用于属性 id 6）", "where": "index.js:143297-143305", "raw": "e.prototype.newApplyBonuses = function(t, e) { ... var a = (t + o - this._equipAttriteValue) * (1 + i); return Math.ceil(a / (1 + this._equipAttriteMult)); };"},
+      {"step": 14, "what": "面板/描述用的是同一批列", "where": "index.js:43929-43931", "raw": "t.prototype.getItemOrEquipBaseAttr = function(t) { return this.getAttrute(t.Property1, t.Data1) + ... + this.getAttrute(t.Property5, t.Data5); };"}
+    ],
+    "real_data_check": {
+      "source": "tools/cfg/tbl_item.json (全量 6525 行)",
+      "samples": [
+        {"itemID": 1001, "Property1": 9, "Data1": 8, "note": "Property 9 = 身法（arm 的 case 9: t.shenfa.addRawBonus）"},
+        {"itemID": 2001, "Property2": 10, "Data2": 10, "note": "Property 10 = 根骨（case 10: t.gengu.addRawBonus）"},
+        {"itemID": 2302, "Property1": 10, "Data1": 1, "Property2": 8, "Data2": 5, "note": "根骨+1 / 力量+5"}
+      ],
+      "dataValueShape": "标量（不是数组）。注意 index.js:43948-43951 的 getAttrute 里另有 Array.isArray(e) 分支，那是 tooltip 支持 [值,百分比] 的写法，本作装备表实际是标量。"
+    },
+    "verdict": "§16.6-1『装备属性不生效：我方 PlayerEquip 是 [1,num]（无 attrs）』这个前提不成立：attrs 只服务 type>=2 的实例装备；type==1 的属性本来就全在 item 表。只要 LoadGame 同时给 equipments 与 PlayerEquip（我方两样都在给），客户端的 setupEntity 就会把属性加上去。",
+    "still_unverified": [
+      "没有实测：面板/战斗里的攻防数值是否真的比裸装高（这是客户端内部状态，源码链路已通，但没在进程内读过 UserModel.entity.attack.limit vs baseValue）。",
+      "未知：如果玩家拥有 type>=2 的实例装备（有随机词条），我方目前没有生成 attrs 的路径；只有 type==1 是安全的。"
+    ],
+    "recommended_probe_if_asked": "只读探针：读 __require('UserModel').UserModel.entity 的 attack/defense/hp 的 baseValue 与 limit，以及 RoleBaseInfo.equipments / InventoryModel.equipmentDic，三者互相对账；不写任何东西。"
+  },
+
+  "Q2_活动面板内容": {
+    "question": "推 dataArr 元素结构的方法；先只让 tab 出来、内容留空是否可行？",
+    "answer_one_line": "tab 空白根因不是 dataArr，而是 getAllActivity 回的 activityList=[]；tab 白名单就是 activityList（客户端不查配置表决定有没有这个 tab）。dataArr 是【数字数组】(day→次数)，不是对象数组。",
+    "chain": [
+      {"step": 1, "what": "我方 getAllActivity 回调里把 activityList 存进 RoleOtherInfo", "where": "index.js:57450", "raw": "e.hasOwnProperty(\"activityList\") && (u.RoleOtherInfo.activityList = e.activityList);"},
+      {"step": 2, "what": "tab 过滤用 checkActive → 只是『id 在 activityList 里』", "where": "index.js:1893-1900", "raw": "e.prototype.checkActive = function(t) { var e = d.RoleOtherInfo.activityList, o = !1; if (this.preCheckActive(t)) for (var i = 0; i < e.length; i++) if (e[i] == t) { o = !0; break; } return o; };"},
+      {"step": 3, "what": "tab 列表来自配置表 active_order（44 行），按 number/active 过滤", "where": "index.js:55347-55357", "raw": "e.prototype.getActiveSortData = function(t) { var e = n.getTable(\"active_order\"), o = []; for (var i in e) { var r = e[i]; -1 == this.themeActiveAy.indexOf(r.active) && this.getActiveState(t, r.number, r.active) && o.push(r); } o.sort(function(t, e) { return t.id - e.id; }); return o; };"},
+      {"step": 4, "what": "1001/1002 二选一由 activeObj[0] 决定（来源是 activityArrFlag）", "where": "index.js:55359-55360 / 107227", "raw": "if (1001 == e && h.RoleOtherInfo.activeObj[0]) return !0; if (1002 == e && h.RoleOtherInfo.activeObj[0] <= 0) return !0;  //  e.hasOwnProperty(\"activityArrFlag\") && (this.activeObj = e.activityArrFlag);"},
+      {"step": 5, "what": "1012/1013 由应答的 schoolActivityOpen / schoolArenaOpen", "where": "index.js:55369-55370", "raw": "if (1012 == e && 1 == t.schoolActivityOpen) return !0; if (1013 == e && 1 == t.schoolArenaOpen) return !0;"},
+      {"step": 6, "what": "每个 tab 的 prefab 名是客户端常量表，服务器不用给", "where": "scripts2.js:28534-28574", "raw": "t.map = { 1001: \"SevendayActiveUI\", 1002: \"DailyMissionUI\", 1003: \"FirstChargeUI\", 1004: \"NewGFUI\", 1005: \"EverydayActiveUI\", ... 1044: \"fishShadow/FishShadowUI\" };"},
+      {"step": 7, "what": "点 tab → 分发 CHANGE_ACTIVE_PAGE（带 prefabName/data）", "where": "scripts2.js:28913-28916", "raw": "default: this.map[e] && a.MessageCenter.dispatch(l.EvName.CHANGE_ACTIVE_PAGE, { prefabName: this.map[e] });"},
+      {"step": 8, "what": "HomeActiveUI.setData 只存两份引用", "where": "scripts2.js:29200-29204", "raw": "e.prototype.setData = function(t, e) { this.data = t; this.type = e; this.actDataMap = t.dataArr; };"},
+      {"step": 9, "what": "DailyMissionUI 拿 actDataMap，并且当【数组】用（.length + 逐项传数字）", "where": "scripts2.js:17216-17218 / 17184-17191", "raw": "setData = function(t) { this.dailyTaskData = t; }  ...  for (var e = 0; e < this.dailyTaskData.length; e++) { ... i.getComponent(\"EveryDayRender\").setData(e + 1, this.dailyTaskData[e]); }"},
+      {"step": 10, "what": "EveryDayRender 的第二个参数是『次数』，标题来自配置表 daily_active_tips", "where": "scripts2.js:20218-20227", "raw": "e.prototype.setData = function(t, e) { this.activeId = t; this.data = {}; this.numTime = e; this.data = a.getItem(this.activeId, \"daily_active_tips\"); ... }"},
+      {"step": 11, "what": "页面何时渲染：CHANGE_ACTIVE_PAGE 会把 midleNode 清空再实例化（所以换页不会叠 modal）", "where": "scripts2.js:29214-29220", "raw": "c.default.prefabs.load(\"activeUI/\" + i, cc.Prefab, function(t, s) { if (o.loadScrName == i) { o.midleNode.destroyAllChildren(); if (s) { var n = cc.instantiate(s), ..."},
+      {"step": 12, "what": "sevendays / DailyMission 分支额外读 active_order 的 tips 列", "where": "scripts2.js:29219", "raw": "\"SevendayActiveUI\" == i ? n.getComponent(\"SevendayActiveUI\").setData(o.data, o.listAy[r].tips) : \"DailyMissionUI\" == i ? n.getComponent(\"DailyMissionUI\").setData(o.actDataMap) : ..."}
+    ],
+    "config_facts": {
+      "active_order": {"rows": 44, "columns": ["id", "number", "active", "name", "tips"], "samples": [{"id": 3, "number": 1003, "active": 0, "name": 1023, "tips": 0}, {"id": 21, "number": 1004, "active": 15, "name": 4298, "tips": 4302}], "note": "name / tips 是语言表 id，不是字面文字"},
+      "active": {"rows": 88, "columns": ["id", "type", "name", "pointaward", "pointlevel", "pointlimit", "max", "awardtype", "award", "level", "awardnum", "score", "single_award", "times", "delItem", "sId", "mail", "mail_name", "mail_des", "begintime", "endtime", "activebegintime", "activeendtime", "awardbegintime", "awardendtime", "c_task"], "note": "begintime/endtime 是毫秒数组，如 [1782921600000]"},
+      "daily_active_tips": {"rows": 18, "columns": ["id", "title", "description", "isshow", "grow"]}
+    },
+    "verdict": "先只让 tab 出来、内容留空【可行】，而且不会因为空数据卡住：tab 只依赖 activityList + active_order 配置；点开某 tab 时 HomeActiveUI 会 destroyAllChildren 再实例化对应 prefab，各页自己再发请求拿数据。真正会让整屏吃触摸的是 ISSUE-1 那条（getSevenTaskList 缺 taskObj），与 dataArr 无关。",
+    "min_viable_shape": {
+      "getAllActivity": "{ eRet: 1, activityList: [<active 表里当期的 id，客户端只认这个白名单>], activityArrFlag: [0|1, 0], schoolActivityOpen: 0, schoolArenaOpen: 0, dataArr: [<数字>,...] }",
+      "dataArr_semantics": "数组；第 i 项是『第 i+1 天的次数』，DailyMissionUI 用它当循环长度和 numTime，标题与描述去 daily_active_tips 表按 id=i+1 取",
+      "note": "activityArrFlag 决定 1001（七日活动）还是 1002（每日任务）显示；两个都不给时这两页都不出现"
+    },
+    "risks": [
+      "activityList 里放当期活动 id 会让对应 tab 出现，但对应页面的数据动作（如 getSevenTaskList / getDailyPayActivity / 各小时活动）我方多数还是形状默认值 → 会开出空页；空页本身不卡（脚本走 CHANGE_ACTIVE_PAGE 替换 midleNode），但每个页面要单独验一遍不抛异常。",
+      "ISSUE-3（flow.js 的 stepNotice 兜底裸 destroy()）没修，仍是 modal 残留的隐患，与本条无关但同类。"
+    ]
+  },
+
+  "worker_acceptance": {
+    "W1": {"file": "tools/facts/q1-equip-attr.json", "bytes": 53755, "jsonParseExit": 0, "sampled": "抽 index.js:65117-65136 InventoryModel.parseEq 逐字回源码核对 → 一致（含 e[2]->weaponSkinId、e[3]->crystalIds 这些细节）。结论：转录可信。", "gap": "工单没让它抄 Equipment.arm(44737) / UserModel.setupEntity(142517)，这两处由主审亲读补上（见 Q1 链 step 10/6）。"},
+    "W2": {"file": "tools/facts/q2-active-ui.json", "bytes": 55571, "jsonParseExit": 0, "sampled": "抽 getActiveSortData(index.js:55347-55357) 与 HomeActiveUI.setData(scripts2:29200-29204) → 与主审亲读逐字一致。结论：可信。", "gap": "未覆盖 scripts2:28534 的 map（number→prefab）与 scripts2:28860-28916 的 switch 路由；主审补上。"},
+    "W3": {"file": "tools/facts/q2-cfg-active.json", "bytes": 21274, "jsonParseExit": 0, "sampled": "active 88 行 / active_order 44 行 与 cfg-index.json 一致；列名清单与 tbl 导出核对一致。结论：可信。"}
+  },
+
+  "next_actions_requiring_approval": [
+    "（不改代码即可做）一条只读探针读 UserModel.entity 的属性值，关掉『装备属性是否真生效』这条未验证项。",
+    "（要改代码）getAllActivity 回 activityList = active 表当期 id + activityArrFlag + schoolActivityOpen/schoolArenaOpen；改前按 AGENTS.md 备份 core/bz-rpc-server.js 并另开一轮问。",
+    "（要改代码）ISSUE-3：flow.js 的 stepNotice 兜底改 PopUpMgr.removePopUp。"
+  ]
+}

@@ -1,0 +1,2 @@
+POST https://bzgf.maple-game.com/900-server-166/getFinishTaskAward
+{"mod":"User","do":"getFinishTaskAward","p":{"type":1,"taskID":100010,"choose":0,"gTime":0,"taskLogID":"1,100010","web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573058298ctpksjbe"}}

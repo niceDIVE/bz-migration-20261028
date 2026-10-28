@@ -1,0 +1,98 @@
+{
+  "generatedAt": "2026-10-21T22:25:58.257Z",
+  "queries": [
+    {
+      "pattern": "\\.Reward\\b",
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "\\.Reward\\b",
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "\\.Reward\\b",
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "[\"Reward\"]",
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "[\"Reward\"]",
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "[\"Reward\"]",
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "['Reward']",
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "['Reward']",
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "['Reward']",
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "exit": 0,
+      "hits": []
+    }
+  ],
+  "classified": [],
+  "getItemImpl": [
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "startLine": 69244,
+      "endLine": 69247,
+      "lines": [
+        "69244: t.prototype.getItem = function(t) {",
+        "69245: var e = this.getUserData();",
+        "69246: return e && e.hasOwnProperty(t) ? e[t] : null;",
+        "69247: };"
+      ]
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "startLine": 21901,
+      "endLine": 21906,
+      "lines": [
+        "21901: getItem: function(t, e) {",
+        "21902: var o = this.getTable(e);",
+        "21903: if (o && o[t]) return o[t];",
+        "21904: l.show(e + \"---\\x3eID\" + t, 6);",
+        "21905: return null;",
+        "21906: },"
+      ]
+    }
+  ],
+  "unverified": [
+    "pattern: \\.Reward\\b in F:\\BaoZouyxt\\tools\\index.js (0 hits)",
+    "pattern: \\.Reward\\b in F:\\BaoZouyxt\\tools\\scripts2.js (0 hits)",
+    "pattern: \\.Reward\\b in F:\\BaoZouyxt\\tools\\scripts3.js (0 hits)",
+    "pattern: [\"Reward\"] in F:\\BaoZouyxt\\tools\\index.js (0 hits)",
+    "pattern: [\"Reward\"] in F:\\BaoZouyxt\\tools\\scripts2.js (0 hits)",
+    "pattern: [\"Reward\"] in F:\\BaoZouyxt\\tools\\scripts3.js (0 hits)",
+    "pattern: ['Reward'] in F:\\BaoZouyxt\\tools\\index.js (0 hits)",
+    "pattern: ['Reward'] in F:\\BaoZouyxt\\tools\\scripts2.js (0 hits)",
+    "pattern: ['Reward'] in F:\\BaoZouyxt\\tools\\scripts3.js (0 hits)"
+  ],
+  "out_of_scope": []
+}

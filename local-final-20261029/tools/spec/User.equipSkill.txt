@@ -1,0 +1,51 @@
+# User.equipSkill  (HttpConst.EQUIP_SKILL)
+# 出现 1 处
+
+142612: var i = o.UserModel.entity, n = {
+142613: skillID: t,
+142614: skillType: e,
+142615: hp: i.hp.remaining,
+142616: hplmt: i.hp.limit
+142617: };
+142618: v.NetMgr.http.sendReqWithMask(u.HttpConst.EQUIP_SKILL, n);
+142619: };
+142620: o.UserModel.birthdayTaskCheck = function(t) {
+142621: var e = h.RoleBaseInfo.finishTaskObj;
+142622: return !(!{
+142623: 60015: 1,
+142624: 60016: 1,
+142625: 60017: 1
+142626: }.hasOwnProperty(t) || !e.hasOwnProperty(212320) || e.hasOwnProperty(212650));
+142627: };
+142628: o.UserModel.getPlayer = function(t) {
+142629: void 0 === t && (t = !1);
+142630: var e = d.GSceneMgr.curSceneID, o = 1;
+142631: if (this.player) {
+142632: this.player.getComponent("PStater").state = C.State.STATE_IDLE;
+142633: var n = this.player.getComponent("Runner");
+142634: n.coe = 1;
+142635: n.speed = 200;
+142636: n.running = 0;
+142637: n.runState = !1;
+142638: n.stop();
+142639: this.player.getComponent("DirectionIndicator").stopDirecting();
+142640: var r = this.player.getComponent("PlayerTitle");
+142641: if (r) {
+142642: r.RoleId = h.RoleBaseInfo.roleID;
+142643: r.onResetPlayerTitle();
+142644: }
+142645: if (y.DriverModel.getLocationMountState(e)) {
+142646: var a = i.getItem(m.RoleOtherInfo.mountObj.e, "mount");
+142647: a && (o = a.speed);
+142648: }
+142649: this.entity && (n.speed = this.entity.speed.finalValue * o);
+142650: } else this.checkPlayer(e);
+142651: return this.player;
+142652: };
+142653: o.UserModel.checkPlayer = function(t, e) {
+142654: void 0 === e && (e = !1);
+142655: var o = i.getItem(t, "map");
+142656: d.GSceneMgr.mode != d.GSceneMgr.modeMap.rogue ? 7 == d.GSceneMgr.mode ? this.player = this.getRolePlayer(t, e) : o.form && o.form.length > 1 && D.default.judgeTaskCondition(o.require) ? this.player = this.getSpRolePlayer(t, o.form) : this.birthdayTaskCheck(t) ? this.player = this.getPandaPlayer(t) : o && 0 == o.fly ? this.player = 1121 == t || 1138 == t ? this.getShipPlayer(t) : 40038 == t ? this.getTeamShip(t) : this.getRolePlayer(t, e) : 0 != m.RoleOtherInfo.mountObj.e && y.DriverModel.getLocationMountState(t) ? this.player = this.getMountPlayer(t, e) : 1121 == t || 1138 == t ? this.player = this.getShipPlayer(t) : 40038 == t ? this.player = this.getTeamShip(t) : y.DriverModel.getLocationMountState(t) ? this.player = this.getMountPlayer(t, e) : this.player = this.getRolePlayer(t, e) : this.player = this.getRogueInitPlayer(t, e);
+142657: };
+142658: o.UserModel.getSpRolePlayer = function(t, e) {
+---

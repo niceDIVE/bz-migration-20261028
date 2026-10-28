@@ -1,0 +1,30 @@
+{
+ "shapeOnly": [
+  "generatedAt",
+  "sources",
+  "stat",
+  "needAuditCount",
+  "needAudit",
+  "branchOmitted",
+  "switchOmitted",
+  "actions",
+  "shapes",
+  "errors"
+ ],
+ "inTodo": [],
+ "inListener": [
+  "generatedAt",
+  "actions"
+ ],
+ "inFacts": [],
+ "unknown": [
+  "sources",
+  "stat",
+  "needAuditCount",
+  "needAudit",
+  "branchOmitted",
+  "switchOmitted",
+  "shapes",
+  "errors"
+ ]
+}

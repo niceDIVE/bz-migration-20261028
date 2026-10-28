@@ -1,0 +1,30 @@
+{
+  "round": "R18",
+  "date": "2026-10-23",
+  "note": "role:\"unreachable\" 登记 + 可执行 exitCheck。每条的判据与原文证据见 docs/audit/r18-verification.md §5 / §6。本文件是登记表，不许被脚本自动改写；改它必须同时改 hotfix-patch/test/r18-unreachable.js 的对应断言。",
+  "items": [
+    {
+      "id": 3020,
+      "name": "嫦娥月饼",
+      "effect": 15,
+      "data1": 0,
+      "role": "unreachable",
+      "why": "客户端 case 15 的拦截条件是 v.numDeaths（index.js:64423-64428），而 numDeaths 的唯一数据来源是 baseValueAy[41]（index.js:111798 LoadGame / 70454 属性同步）；我方服务端全仓无 numDeaths 写点、存档实测 baseValueAy[41]=0 ⇒ 客户端本地 return !0 拦截，请求不会发出，物品也不会被扣（实测 3020 仍 17 件）。",
+      "exitCheck": {
+        "criterion": "服务端源码里 numDeaths 命中数 = 0；且 LoadGame 应答 baseValueAy[41] 恒为 0；且服务端不许写 baseValueAy[40..49]",
+        "test": "hotfix-patch/test/r18-unreachable.js",
+        "onBreak": "一旦出现写点（例如实现战斗死亡计数），3020 立刻变可达 → 必须按 Effect 15 语义实现（减 numDeaths 并在同一处把新值推回客户端），并撤销本登记"
+      }
+    },
+    {
+      "id": 6625,
+      "effect": 13,
+      "name": "（Effect 13 礼包族，1780 件）",
+      "role": "reachable-but-unmodeled",
+      "why": "客户端对 13 零本地逻辑（无 case 13、无 default）⇒ 会照发 User.useItem（index.js:64503 return !1 → 65553 → 65333）。但我们不知道礼包内容：442 张 dump 表里没有以这族 id 为键的礼包表（6625/6810 只出现在 item 与 lh_temporary；7105/7106/7226 零命中），decrypted/ 里也没有一条 useItem 抓包 ⇒ 缺表，不能凭空构造 rewardArray。",
+      "blocker": "礼包表名（R18 Q1 的 F1-F3 判据已证不可执行：Effect 13 = 1780 件，没有一张表能装下 1780 个键）",
+      "currentBehavior": "照扣 1 件 + 打 CONSUME_UNMODELED 标签（HANDOVER §8 坑 ④：扣了没效果不许打 REJECT），不发 rewardArray",
+      "doNotPretend": "不许为了让界面有反馈而编造礼包内容；空 rewardArray 与「没有礼包」在客户端看来是同一种结果"
+    }
+  ]
+}

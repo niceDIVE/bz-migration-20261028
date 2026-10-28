@@ -1,0 +1,13 @@
+# User.PushEquip   (HttpConst.PUSH_EQUIP_STORAGE)
+
+## 注册点 61047: i.MessageCenter.on(n.HttpConst.PUSH_EQUIP_STORAGE, function(t, e) {
+
+## 请求点 61102: u.NetMgr.http.sendRequest(n.HttpConst.PUSH_EQUIP_STORAGE, {
+   61094: t.prototype.reqPopEquip = function(t, e) {
+   61095: this.popingItem = t;
+   61096: u.NetMgr.http.sendRequest(n.HttpConst.POP_EQUIP_STORAGE, {
+   61097: ItemID: t,
+   61098: ItemNum: e
+   61099: });
+   61100: };
+   61101: t.prototype.reqPushEquip = function(t, e) {

@@ -1,0 +1,1 @@
+{"name":"age","rows":3,"cols":["ID","age1","age2","model","dialog"],"data":{"1":{"ID":1,"age1":0,"age2":2,"model":[2029,2029],"dialog":[2090,2090]},"2":{"ID":2,"age1":2,"age2":5,"model":[2030,2031],"dialog":[2091,2092]},"3":{"ID":3,"age1":5,"age2":999,"model":[2032,2033],"dialog":[2093,2094]}}}

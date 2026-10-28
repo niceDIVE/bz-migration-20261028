@@ -1,0 +1,99 @@
+# User.Create  (HttpConst.USER_CREATE)
+# 出现 2 处
+
+ 70337: v.MessageCenter.on(d.HttpConst.QUICK_LOGIN, function(e, o) {
+ 70338: t.onQuickLoginSuccess(o);
+ 70339: }, this);
+ 70340: v.MessageCenter.on(d.HttpConst.USER_CHECK_NAME, function(e, o) {
+ 70341: t.setRoleAttribute(o);
+ 70342: }, this);
+ 70343: v.MessageCenter.on(d.HttpConst.USER_CREATE, function(e, o) {
+ 70344: t.createRole(o);
+ 70345: }, this);
+ 70346: v.MessageCenter.on(d.HttpConst.USER_LOADGAME, function(e, o) {
+ 70347: t.loadGame(o);
+ 70348: }, this);
+ 70349: v.MessageCenter.on(d.HttpConst.BACKTOLOGIN, function() {}, this);
+ 70350: v.MessageCenter.on(d.HttpConst.USER_GETCHATADDRESS, function(e, o) {
+ 70351: t.chatServerSuccess(o);
+ 70352: }, this);
+ 70353: v.MessageCenter.on(d.HttpConst.ANNOUNCEMENT_ID, function(e, o) {
+ 70354: t.sendAnnouncePhpHttp(o);
+ 70355: }, this);
+ 70356: v.MessageCenter.on(d.HttpConst.RECORD_PHONE, function(t, e) {
+ 70357: if (1 == e.eRet) {
+ 70358: cc.sys.localStorage.setItem("huaweiPhone" + I.RoleBaseInfo.roleID, 1);
+ 70359: D.default.show(s.getText("8951"));
+ 70360: } else 2 == e.eRet ? D.default.show(s.getText("8956")) : 3 == e.eRet ? D.default.show(s.getText("8957")) : 4 == e.eRet && D.default.show(s.getText("8953"));
+ 70361: }, this);
+ 70362: v.MessageCenter.on(d.HttpConst.CHECK_ON_HOOK, function(e, o) {
+ 70363: if (1 == o.eRet) {
+ 70364: t.idleData = o.OnhookObj;
+ 70365: t.onHookScene(!0);
+ 70366: }
+ 70367: });
+ 70368: };
+ 70369: e.prototype.start = function() {
+ 70370: var t = this;
+ 70371: H.LoginMgr.login(function() {
+ 70372: t.showPrologue();
+ 70373: });
+ 70374: };
+ 70375: e.prototype.showPrologue = function() {
+ 70376: z.TESDKHelper.onSdkLogin();
+ 70377: H.LoginMgr.checkMiniGame() ? this.showSvrSelection() : cc.sys.localStorage.getItem("firstInBz") ? this.showSvrSelection() : N.default.prefabs.load("Login/PrologueUI", cc.Prefab, function(t, e) {
+ 70378: var o = cc.instantiate(e);
+ 70379: E.PopUpMgr.addPopUp(o, R.LayerMgr.topLayer, 1);
+ 70380: });
+ 70381: };
+ 70382: e.prototype.showSvrSelection = function(t) {
+ 70383: void 0 === t && (t = 0);
+---
+ 70991: baseValueAy: t
+ 70992: };
+ 70993: return [ 4, z.TESDKHelper.loginSet(e) ];
+ 70994: 
+ 70995: case 1:
+ 70996: o.sent();
+ 70997: S.NetMgr.http.sendRequest(d.HttpConst.USER_CREATE, e, function() {});
+ 70998: return [ 2 ];
+ 70999: }
+ 71000: });
+ 71001: });
+ 71002: };
+ 71003: e.prototype.sendAnnouncePhpHttp = function(t) {
+ 71004: if (null != t.data && "" != t.data) {
+ 71005: this.tStr = t.data;
+ 71006: D.default.show(t.data);
+ 71007: }
+ 71008: };
+ 71009: e.prototype.requestBulletin = function() {
+ 71010: var t = r.platformID > 0 ? r.platfStr : "meple", e = P.RoleOtherInfo.serverName;
+ 71011: S.NetMgr.http.sendPHPHttpMsg(d.HttpConst.ANNOUNCEMENT_ID, "channel=" + t.toString() + "&servername=" + e, function() {}.bind(this));
+ 71012: };
+ 71013: return e;
+ 71014: }();
+ 71015: o.loginModel = new Z();
+ 71016: cc._RF.pop();
+ 71017: }, {
+ 71018: "../../scripts3/mgrs3/WuLinAssemblyMgr": void 0,
+ 71019: "../../scripts3/model3/AdvancedTaskModel": void 0,
+ 71020: "../../scripts3/model3/DelegateModel": void 0,
+ 71021: "../../scripts3/model3/EquipSplitModel": void 0,
+ 71022: "../../scripts3/model3/LevelBonusModel": void 0,
+ 71023: "../../scripts3/model3/PopGiftModel": void 0,
+ 71024: "../../scripts3/model3/TrickLotteryModel": void 0,
+ 71025: "../../scripts3/net3/MessNet": void 0,
+ 71026: "../../splashscreen/TESDKHelper": void 0,
+ 71027: "../core/events/MessageCenter": "MessageCenter",
+ 71028: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 71029: "../gameconfigs/AppData": "AppData",
+ 71030: "../gameconfigs/CFMgr": "CFMgr",
+ 71031: "../gameconfigs/LangMgr": "LangMgr",
+ 71032: "../gui/guidUI/GuideMgr": "GuideMgr",
+ 71033: "../gui/uicomponents/Alert": "Alert",
+ 71034: "../mgrs/BundleMgr": "BundleMgr",
+ 71035: "../mgrs/GSceneMgr": "GSceneMgr",
+ 71036: "../mgrs/LayerMgr": "LayerMgr",
+ 71037: "../mgrs/LocalStorageMgr": "LocalStorageMgr",
+---

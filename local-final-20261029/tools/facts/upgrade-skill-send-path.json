@@ -1,0 +1,528 @@
+{
+  "task": "WO-3",
+  "items": [
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119830,
+      "text": "var n = parseInt(o);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119831,
+      "text": "if (e[o][0] > 0) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119832,
+      "text": "s.SkillTable.setSkill(n, e[o][0]);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119833,
+      "text": "s.SkillTable.setUpgrdPgr(n, e[o][1]);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119834,
+      "text": "s.SkillTable.setBrLv(n, e[o][2]);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119835,
+      "text": "} else 0 == e[o][0] && s.SkillTable.abolishSkill(n);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119836,
+      "text": "i.MessageCenter.dispatch(a.EvName.SELECT_SKILL_CALL_BACK, {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119837,
+      "text": "skillId: n,"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119838,
+      "text": "data: e"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119839,
+      "text": "});"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119840,
+      "text": "}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119841,
+      "text": "}, this);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119842,
+      "text": "i.MessageCenter.on(n.HttpConst.UPGRADE_SKILL_LV, function(t, e) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119843,
+      "text": "i.MessageCenter.dispatch(a.EvName.SYNC_UPGRADE_RES, e.eRet);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119844,
+      "text": "e.hasOwnProperty(\"returnPro\") && u.default.show(p.getText(\"6003371\").replace(/\\[1\\]/, e.returnPro));"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119845,
+      "text": "}, this);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119846,
+      "text": "i.MessageCenter.on(n.HttpConst.SWAP_SKILL_PROGRESS, function(e, o) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119847,
+      "text": "if (1 == o.eRet) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119848,
+      "text": "i.MessageCenter.dispatch(a.EvName.ON_SWAP_SKILLS, o);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119849,
+      "text": "i.MessageCenter.dispatch(a.EvName.SHOW_SKILL_CHILD_UI, {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119850,
+      "text": "viewName: \"MartialAartsUI\","
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119851,
+      "text": "scriptName: \"MartialAartsUI\""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119852,
+      "text": "});"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119853,
+      "text": "} else if (4 == o.eRet) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119854,
+      "text": "var n = c.getConstByID(\"176\"), r = c.getItem(n, \"item\");"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119855,
+      "text": "u.default.show(p.getText(4420).replace(/\\[1\\]/, p.getText(r.Name)));"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119856,
+      "text": "} else if (14 == o.eRet) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119857,
+      "text": "var s = c.getConstByID([ 252, 240, 253 ][t.skillType]);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119858,
+      "text": "(y = o.changeCD + 864e5 * s - o.serverTime) < 0 && (y = 0);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119859,
+      "text": "var l = Math.floor(y / 864e5), h = Math.floor((y - 864e5 * l) / 36e5), f = Math.floor((y - 864e5 * l - 36e5 * h) / 6e4), d = Math.floor((y - 864e5 * l - 36e5 * h - 6e4 * f) / 1e3);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119860,
+      "text": "u.default.show(p.getText([ 6155, 6154, 6156 ][t.skillType]).replace(/\\[1\\]/, l).replace(/\\[2\\]/, h).replace(/\\[3\\]/, f).replace(/\\[4\\]/, d));"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119861,
+      "text": "i.MessageCenter.dispatch(a.EvName.REFRESH_SWAP_CD, o.changeCD);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119862,
+      "text": "} else if (16 == o.eRet) u.default.show(p.getText(3582)); else if (17 == o.eRet || 18 == o.eRet) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119863,
+      "text": "var g = 17 == o.eRet ? t.skillA : t.skillB, m = c.getItem(g, \"skill\"), y = (s = m.newCD, "
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119864,
+      "text": "o.changeCD + 864e5 * s - o.serverTime), v = (l = Math.floor(y / 864e5), h = Math.floor((y - 864e5 * l) / 36e5), "
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119865,
+      "text": "f = Math.floor((y - 864e5 * l - 36e5 * h) / 6e4), p.getText(6152).replace(/\\[1\\]/, p.getText(m.Name)));"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119866,
+      "text": "l > 0 && (v += l + p.getText(3784));"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119867,
+      "text": "v += h + p.getText(3785);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119868,
+      "text": "v += f + p.getText(1414);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119869,
+      "text": "u.default.show(v);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119870,
+      "text": "}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119871,
+      "text": "}, this);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119872,
+      "text": "};"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119873,
+      "text": "t.prototype.reqChangeSkillLv = function(t, e, o, i, a, s) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119874,
+      "text": "var l = {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119875,
+      "text": "skillID: t,"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119876,
+      "text": "skillArr: [ e, Math.floor(o), i ],"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119877,
+      "text": "NPCID: a,"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119878,
+      "text": "flag: s"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119879,
+      "text": "};"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119880,
+      "text": "r.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_SKILL_LV, l);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119881,
+      "text": "};"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119882,
+      "text": "t.prototype.reqUploadHeal = function() {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119883,
+      "text": "var t = l.UserModel.entity, e = {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119884,
+      "text": "attArr: [ t.hp.remaining, t.hp.limit, t.hp.finalValue, t.mp.remaining, t.mp.limit ]"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119885,
+      "text": "};"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119886,
+      "text": "r.NetMgr.http.sendRequest(n.HttpConst.UPLOAD_HEAL, e, null, !1, !1);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119887,
+      "text": "};"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119888,
+      "text": "t.prototype.isSkillReplaced = function(t) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119889,
+      "text": "for (var e = c.getItem(t, \"skill\"); e.Replace; ) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119890,
+      "text": "if (s.SkillTable.getSkillLevel(e.Replace) > 0) return !0;"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119891,
+      "text": "e = c.getItem(e.Replace, \"skill\");"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119892,
+      "text": "}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119893,
+      "text": "return !1;"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119894,
+      "text": "};"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119895,
+      "text": "t.prototype.reqSwapSkills = function(t, e, o) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119896,
+      "text": "this.skillType = o;"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119897,
+      "text": "this.skillA = t;"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119898,
+      "text": "this.skillB = e;"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119899,
+      "text": "var i = {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119900,
+      "text": "roleID: h.RoleBaseInfo.roleID,"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119901,
+      "text": "skillA: t,"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119902,
+      "text": "skillB: e,"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119903,
+      "text": "skillType: o"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119904,
+      "text": "};"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119905,
+      "text": "r.NetMgr.http.sendRequest(n.HttpConst.SWAP_SKILL_PROGRESS, i);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 101967,
+      "text": "skillArr: this.skillAy,"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119876,
+      "text": "skillArr: [ e, Math.floor(o), i ],"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 120584,
+      "text": "if (o.hasOwnProperty(\"skillArr\") && o.skillArr.length) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 120586,
+      "text": "e.skillQueue = o.skillArr;"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 120587,
+      "text": "e.start(o.skillArr[0], B.SchoolSquareModel.isCollective);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 90059,
+      "text": "this.upSkills = t.skillArr;"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 59581,
+      "text": "UPGRADE_SKILL_LV: \"User.upgradeSkill\","
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119842,
+      "text": "i.MessageCenter.on(n.HttpConst.UPGRADE_SKILL_LV, function(t, e) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119880,
+      "text": "r.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_SKILL_LV, l);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 119873,
+      "text": "t.prototype.reqChangeSkillLv = function(t, e, o, i, a, s) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "line": 13927,
+      "text": "h.SkillModel.reqChangeSkillLv(t, e.lv, e.pgr, e.brlv, this.teacher, this.type);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 45131,
+      "text": "UPGRADE_SKILL: \"upgradeSkill\","
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 59581,
+      "text": "UPGRADE_SKILL_LV: \"User.upgradeSkill\","
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73608,
+      "text": "this.upgradeSkill({"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73614,
+      "text": "t.prototype.upgradeSkill = function(t) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73657,
+      "text": "this.upgradeSkill({"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "grep skillArr F:\\BaoZouyxt\\tools\\index.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\index.js 命中 5 条: 101967, 119876, 120584, 120586, 120587"
+    },
+    {
+      "cmd": "grep skillArr F:\\BaoZouyxt\\tools\\scripts2.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\scripts2.js 命中 0 条"
+    },
+    {
+      "cmd": "grep skillArr F:\\BaoZouyxt\\tools\\scripts3.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\scripts3.js 命中 1 条: 90059"
+    },
+    {
+      "cmd": "grep UPGRADE_SKILL_LV F:\\BaoZouyxt\\tools\\index.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\index.js 命中 3 条: 59581, 119842, 119880"
+    },
+    {
+      "cmd": "grep UPGRADE_SKILL_LV F:\\BaoZouyxt\\tools\\scripts2.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\scripts2.js 命中 0 条"
+    },
+    {
+      "cmd": "grep UPGRADE_SKILL_LV F:\\BaoZouyxt\\tools\\scripts3.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\scripts3.js 命中 0 条"
+    },
+    {
+      "cmd": "grep reqChangeSkillLv F:\\BaoZouyxt\\tools\\index.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\index.js 命中 1 条: 119873"
+    },
+    {
+      "cmd": "grep reqChangeSkillLv F:\\BaoZouyxt\\tools\\scripts2.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\scripts2.js 命中 1 条: 13927"
+    },
+    {
+      "cmd": "grep reqChangeSkillLv F:\\BaoZouyxt\\tools\\scripts3.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\scripts3.js 命中 0 条"
+    },
+    {
+      "cmd": "grep upgradeSkill F:\\BaoZouyxt\\tools\\index.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\index.js 命中 2 条: 45131, 59581"
+    },
+    {
+      "cmd": "grep upgradeSkill F:\\BaoZouyxt\\tools\\scripts2.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\scripts2.js 命中 0 条"
+    },
+    {
+      "cmd": "grep upgradeSkill F:\\BaoZouyxt\\tools\\scripts3.js",
+      "exit": 0,
+      "out": "F:\\BaoZouyxt\\tools\\scripts3.js 命中 3 条: 73608, 73614, 73657"
+    }
+  ],
+  "unverified": []
+}

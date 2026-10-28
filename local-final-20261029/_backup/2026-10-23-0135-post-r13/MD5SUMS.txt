@@ -1,0 +1,9 @@
+﻿122F5305CD7F2AA00CB504EB0AE2A623  hotfix-patch\core\bz-rpc-server.js
+3DC6FF90C14E6782D84518E42FA0B60D  hotfix-patch\core\bz-handler-impl.js
+C14D5881E9B056FA8EA75275FBEA9A18  hotfix-patch\build-handlers.js
+7E7117EE26C0EEA2DAEE46A6C114E512  hotfix-patch\patch\live\handlers.js
+33EC6047E3683E608789F54510AD0E1C  hotfix-patch\test\r13-reject-codes.js
+34B273FF6E6A191920BC6F03C07ADEB7  tools\facts\reject-codes.json
+E4A3B708DA983D684BBB8D06B8B3903D  tools\check_reject_codes.js
+A7389A3E9E2729310C7999F173F6A152  HANDOVER.md
+34A56C8556E497928C0FF40DC4B1CC1A  docs\sota\outbox\21-R14-r13-landed.txt

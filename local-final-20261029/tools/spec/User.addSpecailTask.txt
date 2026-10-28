@@ -1,0 +1,51 @@
+# User.addSpecailTask  (HttpConst.LEVEAL_TWONTTASK)
+# 出现 1 处
+
+133691: if ("0" != e) for (var o = e.split("|"), n = 0; n < o.length; n++) {
+133692: var r = o[n].split(",");
+133693: r.length > 1 && (0 == parseInt(r[0]) ? E.default.setNcpIntimacy(r[1], parseInt(r[2])) : E.default.setSchoolIntimacy(r[0], parseInt(r[2]), -1));
+133694: }
+133695: };
+133696: e.prototype.addSpeciTask = function() {
+133697: p.NetMgr.http.sendRequest(s.HttpConst.LEVEAL_TWONTTASK, {
+133698: taskID: "L1000,1"
+133699: }, function() {});
+133700: };
+133701: e.prototype.reqCircleGetTaskData = function(t) {
+133702: var e = {
+133703: taskID: t,
+133704: flag: "zntehzd"
+133705: };
+133706: p.NetMgr.http.sendReqWithMask(s.HttpConst.ACCEPTCIRCLETASK, e);
+133707: };
+133708: e.prototype.reqCircleFinishTaskData = function(t) {
+133709: var e = S.UserModel.entity, o = t.taskObj, i = {
+133710: taskID: o.TaskID,
+133711: retData: 0,
+133712: gTime: e.totalGameTime.gameTime
+133713: };
+133714: if (5 == o.Type || 7 == o.Type) i.retData = t.reqTaskObj.circleTaskObj.visitNpc; else if (6 == o.Type) i.retData = t.reqTaskObj.circleTaskObj.evilObj.npcId; else if (8 == o.Type) {
+133715: i.retData = t.reqTaskObj.circleTaskObj.collectItem;
+133716: var n = this.deleteItemID(t.reqTaskObj.circleTaskObj.collectItem);
+133717: i.itemType = n.itemType;
+133718: i.ItemID = n.ItemID;
+133719: }
+133720: p.NetMgr.http.sendReqWithMask(s.HttpConst.GETCIRCLETASK, i);
+133721: };
+133722: e.prototype.reqHideTask = function(t, e) {
+133723: var o = {
+133724: type: t,
+133725: tIDArr: e
+133726: };
+133727: this.hideType = t;
+133728: this.taskAy = e;
+133729: p.NetMgr.http.sendReqWithMask(s.HttpConst.HIDE_TASK, o);
+133730: };
+133731: e.prototype.taskGuideJudge = function(t, e) {
+133732: var o = !1;
+133733: if (I.default.getTaskGuideState()) return o;
+133734: if (1e3 == parseInt(t) || 5e3 == parseInt(t)) {
+133735: for (var n = i.getWorldMapSceneData(e), r = 0; r < n.length; r++) if (this.checkNeedGuideScene(n[r])) {
+133736: o = !0;
+133737: break;
+---

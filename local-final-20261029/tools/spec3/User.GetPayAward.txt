@@ -1,0 +1,29 @@
+# User.GetPayAward   (HttpConst.REQ_PRODUCT)
+
+## 注册点 130733: l.MessageCenter.on(p.HttpConst.REQ_PRODUCT, this.onGetProduct, this);
+
+## 请求点 130914: g.NetMgr.http.sendRequest(p.HttpConst.REQ_PRODUCT, e, function() {});
+   130906: cc.log(t);
+   130907: if (!A.CrossServiceModel.isEnterCrossServer(!1) && !o.StoreModel.sucessRewardOrderObj.includes(t)) if ("mycard" == r.platfStr) try {
+   130908: this.reqMyCardProduct(t);
+   130909: } catch (t) {} else {
+   130910: var e = {
+   130911: tradeID: t,
+   130912: platId: r.platformID
+   130913: };
+
+## 处理函数 onGetProduct (130934-130947)
+130934: e.prototype.onGetProduct = function(t, e) {
+130935: var o = this, i = this.unresolvedOrderDic[e.orderId];
+130936: if (i) {
+130937: ++i.numTried;
+130938: if (1 == e.eRet) {
+130939: this.receiveProduct(e.curGold, e);
+130940: this.receiveYuanBao(e.curYuanbao);
+130941: this.updateMonthCard(e);
+130942: this.updateFirstState();
+130943: if (cc.sys.isNative && 0 == r.platformID) {
+130944: E.LoginMgr.rewardSuccess(e.orderId);
+130945: 0 == C.ActiveModel.rechargedIsEnd && l.MessageCenter.dispatch(h.EvName.UPDATE_RECHARGED_BUTTON, {});
+130946: l.MessageCenter.dispatch(h.EvName.UPDATE_DAILY_GIFT_QUAN, {});
+130947: }

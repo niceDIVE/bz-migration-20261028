@@ -1,0 +1,57 @@
+{
+  "items": [
+    {
+      "q": "Q1",
+      "answer": "通用网络层/分发层（index.js 59199-59356）完全不判断 eRet，只处理 HTTP status、errorCode、clientVersion、doubleLogin、lock、serverMaintain 等，解密解压后直接按协议号 dispatch 派发；eRet 仅在各个动作的回调内部判断。",
+      "evidence": [
+        "index.js:59200",
+        "index.js:59204",
+        "index.js:59218",
+        "index.js:59231",
+        "index.js:59245",
+        "index.js:59259",
+        "index.js:59332",
+        "index.js:59335"
+      ],
+      "code": "59200: if (4 == _.readyState && _.status >= 200 && _.status <= 207) {\n59201: e._isRequesting = !1;\n59202: !0 === e._curCacheData[3] && h.uiMgr.hideNetworkUI();\n59203: var n = _.responseText, a = JSON.parse(n);\n59204: if (a.errorCode && 1 == a.errorCode) {\n59205: u.default.show(s.getText(792), [ {\n59206: flag: 0,\n59207: name: s.getText(634)\n59208: } ], function() {\n59209: cc.game.end();\n59210: });\n59211: return;\n59212: }\n...\n59332: f.MessageCenter.dispatch(I, b ? g : g[I]);\n59333: } else {\n59334: null == g.protocol ? g.protocol = i : i = g.protocol;\n59335: f.MessageCenter.dispatch(i, g);\n59336: }"
+    },
+    {
+      "q": "Q2",
+      "answer": "三包中没有任何 getItem(..., \"errorcode\") 用法；F:\\BaoZouyxt\\tools\\cfg\\dump\\ 下不存在 errorcode 配置文件（not found）；三包中仅在通用网络层 index.js:59204 出现过一次 a.errorCode。",
+      "evidence": [
+        "index.js:59204"
+      ],
+      "code": "59204: if (a.errorCode && 1 == a.errorCode) {\n59205: u.default.show(s.getText(792), [ {\n59206: flag: 0,\n59207: name: s.getText(634)\n59208: } ], function() {\n59209: cc.game.end();\n59210: });\n59211: return;\n59212: }"
+    },
+    {
+      "q": "Q3",
+      "answer": "isCycleLife/cycleLife/specialCycleLife 全部仅在 index.js 内发送：Line 101922 (IS_CYCLE_LIFE)、Line 101959 (SPECIAL_CYCLE_LIFE)、Line 101963 (CYCLE_LIFE)。向上 40 行内无 RoleBaseInfo/RoleOtherInfo/InventoryModel setter，无 killRoleClear，无 loadScene/cc.sys.localStorage.setItem，无按钮禁用/遮罩/isRequesting 手动置位。",
+      "evidence": [
+        "index.js:101922",
+        "index.js:101959",
+        "index.js:101963"
+      ],
+      "code": "101920: };\n101921: e.prototype.isCycleLife = function() {\n101922: p.NetMgr.http.sendRequest(r.HttpConst.IS_CYCLE_LIFE);\n101923: };\n...\n101954: e.prototype.reqEndCycle = function(t, e, o) {\n101955: void 0 === t && (t = 1);\n101956: void 0 === e && (e = 1);\n101957: void 0 === o && (o = 0);\n101958: this.birthID = t;\n101959: this.special && p.NetMgr.http.sendRequest(r.HttpConst.SPECIAL_CYCLE_LIFE, {\n101960: originId: t\n101961: });\n101962: var i = parseInt(c.UserModel.entity.hp.limit), n = parseInt(c.UserModel.entity.mp.limit);\n101963: p.NetMgr.http.sendRequest(r.HttpConst.CYCLE_LIFE, {\n101964: isReserved: o,\n101965: branchId: e,\n101966: originId: t,\n101967: skillArr: this.skillAy,\n101968: skillID: this.skillBaseId,\n101969: attArr: [ i, n ]\n101970: });\n101971: };"
+    },
+    {
+      "q": "Q4",
+      "answer": "CYCLE_LIFE 回调对 eRet 分支为：1 成功、6/7/9 弹窗提示；无 switch(eRet)，无级联三元处理 2/9/4；若 eRet=2 或 4 则落入未命中任何分支（静默丢弃）；无 default 分支；无状态/标志复原操作。IS_CYCLE_LIFE 回调仅处理 1/2/3，无 4/9。SPECIAL_CYCLE_LIFE 无独立监听器。",
+      "evidence": [
+        "index.js:101886-101913",
+        "index.js:101925-101932"
+      ],
+      "code": "101885: i.MessageCenter.on(r.HttpConst.CYCLE_LIFE, function(o, r) {\n101886: if (1 == r.eRet) {\n...\n101908: i.MessageCenter.dispatch(l.EvName.CYCLE_END);\n101909: } else if (6 == r.eRet) {\n101910: i.MessageCenter.dispatch(l.EvName.HIDE_ROLE_EVENT, !0);\n101911: n.default.show(a.getText(\"6372\"));\n101912: } else 7 == r.eRet ? n.default.show(a.getText(\"6000320\")) : 9 == r.eRet && n.default.show(a.getText(\"6003686\"));\n101913: }, this);\n...\n101924: e.prototype.onIsCycleLife = function(e, i) {\n101925: 1 == i.eRet ? o.RebirthModel.newBirthStoryState ? Promise.resolve().then(function() {\n101926: return t(\"../../scripts2/ui/reincarnationSys/ReincarnatMgr\");\n101927: }).then(function(t) {\n101928: t.ReincarnatMgr.checkStoryEnding();\n101929: }) : u.default.prefabs.load(\"marrySystem/rollUI\", cc.Prefab, function(t, e) {\n101930: var o = cc.instantiate(e);\n101931: f.PopUpMgr.addPopUp(o, d.LayerMgr.popUpLayer);\n101932: }) : 2 == i.eRet ? n.default.show(a.getText(\"6003686\")) : 3 == i.eRet && n.default.show(a.getText(6013312));\n101933: };"
+    },
+    {
+      "q": "Q5",
+      "answer": "killRoleClear 定义于 index.js:111744。转世流程中它严格在发送后、且仅在 CYCLE_LIFE 收到 1 == r.eRet 成功回调内被调用（index.js:101896 与 101904），发送前及失败/拒绝分支均未调用。",
+      "evidence": [
+        "index.js:111744-111754",
+        "index.js:101896",
+        "index.js:101904"
+      ],
+      "code": "111744: e.prototype.killRoleClear = function() {\n111745: _.LocalStorageMgr.removeItem(v.RoleBaseInfo.roleID + \"$#&T\");\n111746: _.LocalStorageMgr.removeItem(v.RoleBaseInfo.roleID + \"$#&A\");\n111747: _.LocalStorageMgr.removeItem(\"Legacy\" + v.RoleBaseInfo.roleID);\n111748: _.LocalStorageMgr.removeItem(v.RoleBaseInfo.userAccount + \"_nbbm\");\n111749: u.MarryHouseModel.destroy();\n111750: r.DartModel.destroy();\n111751: a.GameStates.destroy();\n111752: S.StealModel.destroy();\n111753: V.GuideMgr.destroy();\n111754: };"
+    }
+  ],
+  "unverified": []
+}

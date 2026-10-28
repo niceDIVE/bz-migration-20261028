@@ -1,0 +1,14 @@
+{
+ "shaped": {},
+ "unknown": {
+  "recordAttributes": 1,
+  "neverSeenAction": 2
+ },
+ "req": {
+  "ReqSelfBattleInfo": 6,
+  "CheckBattleResult": 6,
+  "acceptTask": 4,
+  "getFinishTaskAward": 4
+ },
+ "lines": 194
+}

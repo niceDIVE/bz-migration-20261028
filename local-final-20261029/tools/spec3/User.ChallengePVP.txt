@@ -1,0 +1,13 @@
+# User.ChallengePVP   (HttpConst.USER_PVP)
+
+## 注册点 101326: r.MessageCenter.on(a.HttpConst.USER_PVP, function(t, o) {
+
+## 请求点 101355: s.NetMgr.http.sendRequest(a.HttpConst.USER_PVP, o);
+   101347: t.hasOwnProperty("isGoodEvilPk") ? this.isGoodEvilPk = t.isGoodEvilPk : this.isGoodEvilPk = !1;
+   101348: var o = {
+   101349: otherRoleID: t.rid,
+   101350: mp: e.mp.remaining,
+   101351: gTime: e.totalGameTime.gameTime,
+   101352: hgtimes: e.numStuffed
+   101353: };
+   101354: t.hasOwnProperty("flag") && (o.flag = t.flag);

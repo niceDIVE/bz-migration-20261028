@@ -1,0 +1,1558 @@
+{
+ "generatedAt": "2026-10-21T22:00:28.184Z",
+ "window": 40,
+ "actionsWithFields": 160,
+ "actionsWithTable": 72,
+ "map": {
+  "User.OnHookBreak": {
+   "fields": [
+    "skillID",
+    "skillLevel",
+    "itemAddition",
+    "needTime",
+    "operate",
+    "eRet",
+    "serverTime",
+    "beginTime",
+    "Sponsor",
+    "friendName",
+    "friendSex",
+    "Addition"
+   ],
+   "tables": {
+    "wood": [
+     {
+      "file": "index.js",
+      "line": 56639,
+      "text": "var l = r.getItem(y.RoleBaseInfo.isvip ? 2 : 1, \"wood\");"
+     }
+    ]
+   }
+  },
+  "User.DoublePractice": {
+   "fields": [
+    "eRet",
+    "needTime"
+   ],
+   "tables": {
+    "wood": [
+     {
+      "file": "index.js",
+      "line": 56407,
+      "text": "var R = r.getItem(y.RoleBaseInfo.isvip ? 2 : 1, \"wood\");"
+     }
+    ]
+   }
+  },
+  "User.BuyMarketItem": {
+   "fields": [
+    "userGold",
+    "buyTimes"
+   ],
+   "tables": {
+    "mall": [
+     {
+      "file": "index.js",
+      "line": 131240,
+      "text": "var o = n.getItem(this.buyItemId, \"mall\");"
+     }
+    ],
+    "item": [
+     {
+      "file": "index.js",
+      "line": 131251,
+      "text": "var a = n.getItem(o.Data[0], \"item\");"
+     }
+    ]
+   }
+  },
+  "User.GetPayShowData": {
+   "fields": [
+    "eRet",
+    "ShopArray"
+   ],
+   "tables": {
+    "mall": [
+     {
+      "file": "index.js",
+      "line": 131240,
+      "text": "var o = n.getItem(this.buyItemId, \"mall\");"
+     }
+    ],
+    "item": [
+     {
+      "file": "index.js",
+      "line": 131251,
+      "text": "var a = n.getItem(o.Data[0], \"item\");"
+     }
+    ]
+   }
+  },
+  "User.BeginPlayWooks": {
+   "fields": [
+    "eRet",
+    "beginTime",
+    "serverTime",
+    "maxTime"
+   ],
+   "tables": {
+    "wood": [
+     {
+      "file": "index.js",
+      "line": 86191,
+      "text": "var o = i.getItem(l.RoleBaseInfo.isvip ? 2 : 1, \"wood\");"
+     },
+     {
+      "file": "index.js",
+      "line": 86204,
+      "text": "i.getItem(l.RoleBaseInfo.isvip ? 2 : 1, \"wood\").Hp;"
+     }
+    ]
+   }
+  },
+  "User.EndPlayWooks": {
+   "fields": [
+    "eRet",
+    "serverTime",
+    "beginTime",
+    "gTime",
+    "hg",
+    "hgtimes",
+    "potential",
+    "exp",
+    "expExtra",
+    "potentialExtra",
+    "specialAny"
+   ],
+   "tables": {
+    "wood": [
+     {
+      "file": "index.js",
+      "line": 86191,
+      "text": "var o = i.getItem(l.RoleBaseInfo.isvip ? 2 : 1, \"wood\");"
+     },
+     {
+      "file": "index.js",
+      "line": 86204,
+      "text": "i.getItem(l.RoleBaseInfo.isvip ? 2 : 1, \"wood\").Hp;"
+     }
+    ]
+   }
+  },
+  "User.changePlayWooksState": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "wood": [
+     {
+      "file": "index.js",
+      "line": 86191,
+      "text": "var o = i.getItem(l.RoleBaseInfo.isvip ? 2 : 1, \"wood\");"
+     },
+     {
+      "file": "index.js",
+      "line": 86204,
+      "text": "i.getItem(l.RoleBaseInfo.isvip ? 2 : 1, \"wood\").Hp;"
+     }
+    ]
+   }
+  },
+  "User.BeginFish": {
+   "fields": [
+    "eRet",
+    "serverTime",
+    "beginTime",
+    "advertisementNum",
+    "maxTime"
+   ],
+   "tables": {
+    "item": [
+     {
+      "file": "index.js",
+      "line": 51548,
+      "text": "var c = i.getItem(l, \"item\");"
+     }
+    ],
+    "fishpond": [
+     {
+      "file": "index.js",
+      "line": 51563,
+      "text": "if (3 == i.getItem(this.pondID, \"fishpond\").type) r.MessageCenter.dispatch(l.EvName.START_BUILD_HUNG_EVENT, !1); else {"
+     },
+     {
+      "file": "index.js",
+      "line": 51597,
+      "text": "}, v = i.getItem(this.pondID, \"fishpond\");"
+     }
+    ]
+   }
+  },
+  "User.EndFish": {
+   "fields": [
+    "eRet",
+    "serverTime",
+    "beginTime",
+    "gTime",
+    "hg",
+    "hgtimes",
+    "awardArr",
+    "extraArr"
+   ],
+   "tables": {
+    "item": [
+     {
+      "file": "index.js",
+      "line": 51548,
+      "text": "var c = i.getItem(l, \"item\");"
+     }
+    ],
+    "fishpond": [
+     {
+      "file": "index.js",
+      "line": 51563,
+      "text": "if (3 == i.getItem(this.pondID, \"fishpond\").type) r.MessageCenter.dispatch(l.EvName.START_BUILD_HUNG_EVENT, !1); else {"
+     },
+     {
+      "file": "index.js",
+      "line": 51597,
+      "text": "}, v = i.getItem(this.pondID, \"fishpond\");"
+     }
+    ]
+   }
+  },
+  "User.LookFishAward": {
+   "fields": [
+    "awardArr"
+   ],
+   "tables": {
+    "item": [
+     {
+      "file": "index.js",
+      "line": 51548,
+      "text": "var c = i.getItem(l, \"item\");"
+     }
+    ],
+    "fishpond": [
+     {
+      "file": "index.js",
+      "line": 51563,
+      "text": "if (3 == i.getItem(this.pondID, \"fishpond\").type) r.MessageCenter.dispatch(l.EvName.START_BUILD_HUNG_EVENT, !1); else {"
+     }
+    ]
+   }
+  },
+  "User.enterWoldBossBattle": {
+   "fields": [
+    "flag",
+    "bossCurHP",
+    "bossMaxHP",
+    "curAttackNum",
+    "randSeed",
+    "buyNum",
+    "buffNum",
+    "eRet",
+    "AttckData"
+   ],
+   "tables": {
+    "map": [
+     {
+      "file": "index.js",
+      "line": 145575,
+      "text": "var e = n.getItem(this.mapID, \"map\"), o = n.getItem(this.bossID, \"npc\");"
+     },
+     {
+      "file": "index.js",
+      "line": 145608,
+      "text": "var o = n.getItem(this.mapID, \"map\"), i = n.getItem(this.bossID, \"npc\"), a = r.getText(863).replace(/\\[1\\]/, r.getText(i.NpcName)).replace(/\\[3\\]/, r.getText(o."
+     }
+    ]
+   }
+  },
+  "User.checkUploadAttackDamge": {
+   "fields": [
+    "eRet",
+    "killBoss",
+    "killBossName",
+    "bossMaxHP",
+    "bossCurHP",
+    "CDTime",
+    "maxPotentialLimit"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 145548,
+      "text": "var i = n.getItem(this.bossID, \"npc\");"
+     },
+     {
+      "file": "index.js",
+      "line": 145551,
+      "text": "var a = n.getItem(this.bossID, \"npc\"), s = r.getText(864).replace(/\\[1\\]/, r.getText(a.NpcName)).replace(/\\[2\\]/, o.killBossName);"
+     }
+    ],
+    "map": [
+     {
+      "file": "index.js",
+      "line": 145575,
+      "text": "var e = n.getItem(this.mapID, \"map\"), o = n.getItem(this.bossID, \"npc\");"
+     }
+    ]
+   }
+  },
+  "User.doubleTraining": {
+   "fields": [
+    "skillID",
+    "skillLevel",
+    "itemAddition",
+    "eRet",
+    "needTime"
+   ],
+   "tables": {
+    "wood": [
+     {
+      "file": "index.js",
+      "line": 56639,
+      "text": "var l = r.getItem(y.RoleBaseInfo.isvip ? 2 : 1, \"wood\");"
+     }
+    ]
+   }
+  },
+  "User.acceptTask": {
+   "fields": [
+    "eRet",
+    "triggerBoxs"
+   ],
+   "tables": {
+    "tasknew": [
+     {
+      "file": "index.js",
+      "line": 133324,
+      "text": "var p = i.getItem(s, \"tasknew\");"
+     }
+    ],
+    "tasktime": [
+     {
+      "file": "index.js",
+      "line": 133371,
+      "text": "var d = i.getItem(this.npcTaskInfo.taskObj.TaskID, \"tasktime\");"
+     }
+    ],
+    "skill": [
+     {
+      "file": "index.js",
+      "line": 133374,
+      "text": "var g = i.getItem(o.skillId, \"skill\"), m = o.CDTime - o.serverTime, y = Math.floor(m / 864e5), v = Math.floor((m - 864e5 * y) / 36e5), _ = Math.floor((m - 864e5"
+     }
+    ]
+   }
+  },
+  "User.getFinishTaskAward": {
+   "fields": [
+    "eRet",
+    "triggerBoxs",
+    "clearBoxs",
+    "rewardArray",
+    "equipObj",
+    "contribution"
+   ],
+   "tables": {
+    "tasktime": [
+     {
+      "file": "index.js",
+      "line": 133371,
+      "text": "var d = i.getItem(this.npcTaskInfo.taskObj.TaskID, \"tasktime\");"
+     }
+    ],
+    "skill": [
+     {
+      "file": "index.js",
+      "line": 133374,
+      "text": "var g = i.getItem(o.skillId, \"skill\"), m = o.CDTime - o.serverTime, y = Math.floor(m / 864e5), v = Math.floor((m - 864e5 * y) / 36e5), _ = Math.floor((m - 864e5"
+     }
+    ]
+   }
+  },
+  "User.joinSchool": {
+   "fields": [
+    "eRet",
+    "clearBoxs",
+    "cdTimeDays"
+   ],
+   "tables": {
+    "master": [
+     {
+      "file": "index.js",
+      "line": 77864,
+      "text": "var p = s.getItem(this.npcId, \"master\");"
+     },
+     {
+      "file": "index.js",
+      "line": 77900,
+      "text": "var i = o.npcID, r = s.getItem(i, \"master\");"
+     }
+    ]
+   }
+  },
+  "User.exitSchool": {
+   "fields": [
+    "npcIDArr"
+   ],
+   "tables": {
+    "master": [
+     {
+      "file": "index.js",
+      "line": 77864,
+      "text": "var p = s.getItem(this.npcId, \"master\");"
+     },
+     {
+      "file": "index.js",
+      "line": 77900,
+      "text": "var i = o.npcID, r = s.getItem(i, \"master\");"
+     },
+     {
+      "file": "index.js",
+      "line": 77924,
+      "text": "r = s.getItem(o.npcID, \"master\");"
+     }
+    ],
+    "skill": [
+     {
+      "file": "index.js",
+      "line": 77925,
+      "text": "var d = o.CDTime - o.serverTime, g = Math.floor(d / 864e5), _ = Math.floor((d - 864e5 * g) / 36e5), S = Math.floor((d - 864e5 * g - 36e5 * _) / 6e4), M = s.getI"
+     }
+    ]
+   }
+  },
+  "User.clearGeSchoolClothing": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "master": [
+     {
+      "file": "index.js",
+      "line": 77864,
+      "text": "var p = s.getItem(this.npcId, \"master\");"
+     }
+    ]
+   }
+  },
+  "User.killNpc": {
+   "fields": [
+    "eRet",
+    "npcIDArr"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 90061,
+      "text": "var r = i.getItem(e.npcIDArr[0], \"npc\"), a = {"
+     },
+     {
+      "file": "index.js",
+      "line": 90071,
+      "text": "var l = i.getItem(e.npcIDArr[s], \"npc\"), p = i.getConstByID(51);"
+     },
+     {
+      "file": "index.js",
+      "line": 90078,
+      "text": "var h = i.getItem(e.npcIDArr[0], \"npc\"), m = n.getText(\"843\").replace(/\\[1\\]/, n.getText(h.NpcName));"
+     },
+     {
+      "file": "index.js",
+      "line": 90098,
+      "text": "4 == i.getItem(e.npcID, \"npc\").sex && this.setDogHangState(!0);"
+     }
+    ]
+   }
+  },
+  "User.BeginSaveNpc": {
+   "fields": [
+    "eRet",
+    "npcID",
+    "beginTime",
+    "endTime"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 90061,
+      "text": "var r = i.getItem(e.npcIDArr[0], \"npc\"), a = {"
+     },
+     {
+      "file": "index.js",
+      "line": 90071,
+      "text": "var l = i.getItem(e.npcIDArr[s], \"npc\"), p = i.getConstByID(51);"
+     },
+     {
+      "file": "index.js",
+      "line": 90078,
+      "text": "var h = i.getItem(e.npcIDArr[0], \"npc\"), m = n.getText(\"843\").replace(/\\[1\\]/, n.getText(h.NpcName));"
+     },
+     {
+      "file": "index.js",
+      "line": 90098,
+      "text": "4 == i.getItem(e.npcID, \"npc\").sex && this.setDogHangState(!0);"
+     },
+     {
+      "file": "index.js",
+      "line": 90105,
+      "text": "var n = i.getItem(this.currentNpcId, \"npc\");"
+     }
+    ]
+   }
+  },
+  "User.EndSaveNpc": {
+   "fields": [
+    "eRet",
+    "endTime"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 90071,
+      "text": "var l = i.getItem(e.npcIDArr[s], \"npc\"), p = i.getConstByID(51);"
+     },
+     {
+      "file": "index.js",
+      "line": 90078,
+      "text": "var h = i.getItem(e.npcIDArr[0], \"npc\"), m = n.getText(\"843\").replace(/\\[1\\]/, n.getText(h.NpcName));"
+     },
+     {
+      "file": "index.js",
+      "line": 90098,
+      "text": "4 == i.getItem(e.npcID, \"npc\").sex && this.setDogHangState(!0);"
+     },
+     {
+      "file": "index.js",
+      "line": 90105,
+      "text": "var n = i.getItem(this.currentNpcId, \"npc\");"
+     }
+    ]
+   }
+  },
+  "User.BuyNpcFeel": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "master": [
+     {
+      "file": "index.js",
+      "line": 77900,
+      "text": "var i = o.npcID, r = s.getItem(i, \"master\");"
+     },
+     {
+      "file": "index.js",
+      "line": 77924,
+      "text": "r = s.getItem(o.npcID, \"master\");"
+     },
+     {
+      "file": "index.js",
+      "line": 77931,
+      "text": "var I = s.getItem(o.npcID, \"master\");"
+     },
+     {
+      "file": "index.js",
+      "line": 77939,
+      "text": "var e = s.getItem(t, \"master\");"
+     }
+    ],
+    "skill": [
+     {
+      "file": "index.js",
+      "line": 77925,
+      "text": "var d = o.CDTime - o.serverTime, g = Math.floor(d / 864e5), _ = Math.floor((d - 864e5 * g) / 36e5), S = Math.floor((d - 864e5 * g - 36e5 * _) / 6e4), M = s.getI"
+     }
+    ]
+   }
+  },
+  "User.sycnTask": {
+   "fields": [
+    "eRet",
+    "PlayerFinishTaskObj"
+   ],
+   "tables": {
+    "tasknew": [
+     {
+      "file": "index.js",
+      "line": 133551,
+      "text": "}, r = c.RoleBaseInfo.finishTaskObj, s = c.RoleBaseInfo.requireTaskObj, l = i.getItem(e.taskID, \"tasknew\");"
+     }
+    ]
+   }
+  },
+  "User.receiveNpc": {
+   "fields": [
+    "eRet",
+    "npcID"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 77243,
+      "text": "var o = a.getItem(e.npcID, \"npc\"), n = parseInt(o.jineng[1]);"
+     }
+    ]
+   }
+  },
+  "User.closedBook": {
+   "fields": [
+    "eRet",
+    "npcID",
+    "deletePartners"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 77243,
+      "text": "var o = a.getItem(e.npcID, \"npc\"), n = parseInt(o.jineng[1]);"
+     },
+     {
+      "file": "index.js",
+      "line": 77279,
+      "text": "var o = this, i = a.getItem(1299, \"npc\"), n = 0, s = e.eRet;"
+     }
+    ]
+   }
+  },
+  "User.marryHouse": {
+   "fields": [
+    "eRet",
+    "houseID",
+    "type"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 77243,
+      "text": "var o = a.getItem(e.npcID, \"npc\"), n = parseInt(o.jineng[1]);"
+     }
+    ]
+   }
+  },
+  "User.marryNpc": {
+   "fields": [
+    "eRet",
+    "npcID"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 77243,
+      "text": "var o = a.getItem(e.npcID, \"npc\"), n = parseInt(o.jineng[1]);"
+     },
+     {
+      "file": "index.js",
+      "line": 77279,
+      "text": "var o = this, i = a.getItem(1299, \"npc\"), n = 0, s = e.eRet;"
+     }
+    ]
+   }
+  },
+  "User.divorceNpc": {
+   "fields": [
+    "eRet",
+    "npcID",
+    "deletePartners"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 77243,
+      "text": "var o = a.getItem(e.npcID, \"npc\"), n = parseInt(o.jineng[1]);"
+     },
+     {
+      "file": "index.js",
+      "line": 77279,
+      "text": "var o = this, i = a.getItem(1299, \"npc\"), n = 0, s = e.eRet;"
+     }
+    ]
+   }
+  },
+  "User.marryAward": {
+   "fields": [
+    "eRet",
+    "guestID",
+    "rewardArray",
+    "equipObj"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 77243,
+      "text": "var o = a.getItem(e.npcID, \"npc\"), n = parseInt(o.jineng[1]);"
+     },
+     {
+      "file": "index.js",
+      "line": 77279,
+      "text": "var o = this, i = a.getItem(1299, \"npc\"), n = 0, s = e.eRet;"
+     }
+    ]
+   }
+  },
+  "User.beginWedding": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 77243,
+      "text": "var o = a.getItem(e.npcID, \"npc\"), n = parseInt(o.jineng[1]);"
+     },
+     {
+      "file": "index.js",
+      "line": 77279,
+      "text": "var o = this, i = a.getItem(1299, \"npc\"), n = 0, s = e.eRet;"
+     }
+    ]
+   }
+  },
+  "User.makeLove": {
+   "fields": [
+    "eRet",
+    "fetationTime"
+   ],
+   "tables": {
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 77243,
+      "text": "var o = a.getItem(e.npcID, \"npc\"), n = parseInt(o.jineng[1]);"
+     },
+     {
+      "file": "index.js",
+      "line": 77279,
+      "text": "var o = this, i = a.getItem(1299, \"npc\"), n = 0, s = e.eRet;"
+     }
+    ]
+   }
+  },
+  "User.acceptCircleTask": {
+   "fields": [
+    "eRet",
+    "taskID"
+   ],
+   "tables": {
+    "tasknew": [
+     {
+      "file": "index.js",
+      "line": 133551,
+      "text": "}, r = c.RoleBaseInfo.finishTaskObj, s = c.RoleBaseInfo.requireTaskObj, l = i.getItem(e.taskID, \"tasknew\");"
+     }
+    ],
+    "item": [
+     {
+      "file": "index.js",
+      "line": 133579,
+      "text": "var f = i.getItem(u, \"item\");"
+     }
+    ]
+   }
+  },
+  "User.getCircleTaskAward": {
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "equipObj"
+   ],
+   "tables": {
+    "tasknew": [
+     {
+      "file": "index.js",
+      "line": 133551,
+      "text": "}, r = c.RoleBaseInfo.finishTaskObj, s = c.RoleBaseInfo.requireTaskObj, l = i.getItem(e.taskID, \"tasknew\");"
+     }
+    ],
+    "item": [
+     {
+      "file": "index.js",
+      "line": 133579,
+      "text": "var f = i.getItem(u, \"item\");"
+     }
+    ]
+   }
+  },
+  "User.OutSchool": {
+   "fields": [
+    "eRet",
+    "clearBoxs",
+    "npcID",
+    "addComponent",
+    "textArr",
+    "rewardArray",
+    "oldSchool",
+    "npcIDArr",
+    "CDTime",
+    "serverTime",
+    "skillId"
+   ],
+   "tables": {
+    "master": [
+     {
+      "file": "index.js",
+      "line": 77864,
+      "text": "var p = s.getItem(this.npcId, \"master\");"
+     },
+     {
+      "file": "index.js",
+      "line": 77900,
+      "text": "var i = o.npcID, r = s.getItem(i, \"master\");"
+     },
+     {
+      "file": "index.js",
+      "line": 77924,
+      "text": "r = s.getItem(o.npcID, \"master\");"
+     },
+     {
+      "file": "index.js",
+      "line": 77931,
+      "text": "var I = s.getItem(o.npcID, \"master\");"
+     },
+     {
+      "file": "index.js",
+      "line": 77939,
+      "text": "var e = s.getItem(t, \"master\");"
+     }
+    ],
+    "skill": [
+     {
+      "file": "index.js",
+      "line": 77925,
+      "text": "var d = o.CDTime - o.serverTime, g = Math.floor(d / 864e5), _ = Math.floor((d - 864e5 * g) / 36e5), S = Math.floor((d - 864e5 * g - 36e5 * _) / 6e4), M = s.getI"
+     }
+    ]
+   }
+  },
+  "User.CheckOutSchool": {
+   "fields": [
+    "npcID",
+    "eRet",
+    "CDTime",
+    "serverTime",
+    "skillId"
+   ],
+   "tables": {
+    "master": [
+     {
+      "file": "index.js",
+      "line": 78008,
+      "text": "return 1 == s.getItem(t, \"master\").graduate;"
+     },
+     {
+      "file": "index.js",
+      "line": 78022,
+      "text": "var o = s.getItem(e.npcID, \"master\");"
+     }
+    ],
+    "skill": [
+     {
+      "file": "index.js",
+      "line": 78024,
+      "text": "var i = e.CDTime - e.serverTime, r = Math.floor(i / 864e5), c = Math.floor((i - 864e5 * r) / 36e5), p = Math.floor((i - 864e5 * r - 36e5 * c) / 6e4), h = s.getI"
+     }
+    ]
+   }
+  },
+  "User.birthChild": {
+   "fields": [
+    "eRet",
+    "childObj"
+   ],
+   "tables": {
+    "propose": [
+     {
+      "file": "index.js",
+      "line": 77356,
+      "text": "var o = a.getItem(this.npcMarryState, \"propose\");"
+     }
+    ]
+   }
+  },
+  "User.exileChild": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "propose": [
+     {
+      "file": "index.js",
+      "line": 77356,
+      "text": "var o = a.getItem(this.npcMarryState, \"propose\");"
+     }
+    ]
+   }
+  },
+  "User.getGiftPermanentAward": {
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "tables": {
+    "item": [
+     {
+      "file": "index.js",
+      "line": 131130,
+      "text": "var o = i.getText(10837) + \"\\n\\n\", r = n.getItem(8888, \"item\");"
+     },
+     {
+      "file": "index.js",
+      "line": 131142,
+      "text": "var s = n.getItem(1, \"item\");"
+     }
+    ]
+   }
+  },
+  "User.refreshGiftAward": {
+   "fields": [
+    "eRet",
+    "giftAwards"
+   ],
+   "tables": {
+    "item": [
+     {
+      "file": "index.js",
+      "line": 131130,
+      "text": "var o = i.getText(10837) + \"\\n\\n\", r = n.getItem(8888, \"item\");"
+     }
+    ]
+   }
+  },
+  "User.hideTask": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "item": [
+     {
+      "file": "index.js",
+      "line": 133579,
+      "text": "var f = i.getItem(u, \"item\");"
+     }
+    ]
+   }
+  },
+  "User.GetShopAllActive": {
+   "fields": [
+    "eRet",
+    "shopActiveList",
+    "shopActiveData",
+    "activeEndTime"
+   ],
+   "tables": {
+    "mall": [
+     {
+      "file": "index.js",
+      "line": 131240,
+      "text": "var o = n.getItem(this.buyItemId, \"mall\");"
+     }
+    ],
+    "item": [
+     {
+      "file": "index.js",
+      "line": 131251,
+      "text": "var a = n.getItem(o.Data[0], \"item\");"
+     }
+    ]
+   }
+  },
+  "User.getChatPkAiSet": {
+   "fields": [
+    "option"
+   ],
+   "tables": {
+    "skill": [
+     {
+      "file": "index.js",
+      "line": 28586,
+      "text": "var u = [ 1993, 1986, 1988, 1921, 1922, 1923, 2082, 2124, 2165, 2177 ], f = p.getItem(o, \"skill\"), d = [ 286, 287, 223, 20, 36, 304, 25, 24, 284, 281, 285, 39, "
+     }
+    ],
+    "buff": [
+     {
+      "file": "index.js",
+      "line": 28588,
+      "text": "var y = p.getItem(g[m], \"buff\");"
+     }
+    ]
+   }
+  },
+  "User.setChatPkOption": {
+   "fields": [
+    "eRet",
+    "option"
+   ],
+   "tables": {
+    "skill": [
+     {
+      "file": "index.js",
+      "line": 28586,
+      "text": "var u = [ 1993, 1986, 1988, 1921, 1922, 1923, 2082, 2124, 2165, 2177 ], f = p.getItem(o, \"skill\"), d = [ 286, 287, 223, 20, 36, 304, 25, 24, 284, 281, 285, 39, "
+     }
+    ],
+    "buff": [
+     {
+      "file": "index.js",
+      "line": 28588,
+      "text": "var y = p.getItem(g[m], \"buff\");"
+     }
+    ],
+    "skill_Trick": [
+     {
+      "file": "index.js",
+      "line": 28595,
+      "text": "var E = p.getItem(M.id, \"skill_Trick\");"
+     }
+    ]
+   }
+  },
+  "User.intoSchoolSquare": {
+   "fields": [
+    "eRet",
+    "intoSchool",
+    "isSchoolAward",
+    "schoolTitle"
+   ],
+   "tables": {
+    "map": [
+     {
+      "file": "index.js",
+      "line": 114492,
+      "text": "var t = n.getItem(this.curMapId, \"map\").random_locate;"
+     }
+    ]
+   }
+  },
+  "User.quitSchoolSquare": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "map": [
+     {
+      "file": "index.js",
+      "line": 114492,
+      "text": "var t = n.getItem(this.curMapId, \"map\").random_locate;"
+     }
+    ]
+   }
+  },
+  "User.intoCollectiveCultivation": {
+   "fields": [
+    "surplusTime",
+    "rewardArray",
+    "eRet"
+   ],
+   "tables": {
+    "map": [
+     {
+      "file": "index.js",
+      "line": 114492,
+      "text": "var t = n.getItem(this.curMapId, \"map\").random_locate;"
+     }
+    ]
+   }
+  },
+  "User.productUnlock": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62382,
+      "text": "var l = i.getItem(e.showRewardCookBook, \"cookbookconfig\"), c = {"
+     }
+    ]
+   }
+  },
+  "User.productStart": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62382,
+      "text": "var l = i.getItem(e.showRewardCookBook, \"cookbookconfig\"), c = {"
+     }
+    ]
+   }
+  },
+  "User.productReceive": {
+   "fields": [
+    "eRet",
+    "foodBag"
+   ],
+   "tables": {
+    "dishconfig": [
+     {
+      "file": "index.js",
+      "line": 62253,
+      "text": "var c = i.getItem(a, \"dishconfig\");"
+     }
+    ],
+    "foodconfig": [
+     {
+      "file": "index.js",
+      "line": 62289,
+      "text": "var a = i.getItem(o, \"foodconfig\"), l = n.getText(a.name) + \"*\" + t[o];"
+     }
+    ]
+   }
+  },
+  "User.productAccelerate": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62382,
+      "text": "var l = i.getItem(e.showRewardCookBook, \"cookbookconfig\"), c = {"
+     }
+    ]
+   }
+  },
+  "User.dishUnlock": {
+   "fields": [
+    "eRet",
+    "unlockDish"
+   ],
+   "tables": {
+    "dishconfig": [
+     {
+      "file": "index.js",
+      "line": 62253,
+      "text": "var c = i.getItem(a, \"dishconfig\");"
+     }
+    ],
+    "foodconfig": [
+     {
+      "file": "index.js",
+      "line": 62289,
+      "text": "var a = i.getItem(o, \"foodconfig\"), l = n.getText(a.name) + \"*\" + t[o];"
+     }
+    ]
+   }
+  },
+  "User.cookUnlock": {
+   "fields": [
+    "eRet",
+    "foodBag",
+    "cookData"
+   ],
+   "tables": {
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62382,
+      "text": "var l = i.getItem(e.showRewardCookBook, \"cookbookconfig\"), c = {"
+     }
+    ]
+   }
+  },
+  "User.cookStart": {
+   "fields": [
+    "eRet",
+    "foodBag",
+    "cookData"
+   ],
+   "tables": {
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62382,
+      "text": "var l = i.getItem(e.showRewardCookBook, \"cookbookconfig\"), c = {"
+     }
+    ]
+   }
+  },
+  "User.cookReceive": {
+   "fields": [
+    "eRet",
+    "foodBag",
+    "cookData"
+   ],
+   "tables": {
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62382,
+      "text": "var l = i.getItem(e.showRewardCookBook, \"cookbookconfig\"), c = {"
+     }
+    ]
+   }
+  },
+  "User.cookAccelerate": {
+   "fields": [
+    "eRet",
+    "foodBag",
+    "cookData"
+   ],
+   "tables": {
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62382,
+      "text": "var l = i.getItem(e.showRewardCookBook, \"cookbookconfig\"), c = {"
+     }
+    ]
+   }
+  },
+  "User.startEatByTable": {
+   "fields": [
+    "eRet",
+    "gn",
+    "tableData"
+   ],
+   "tables": {
+    "foodconfig": [
+     {
+      "file": "index.js",
+      "line": 62581,
+      "text": "var c = i.getItem(l, \"foodconfig\"), p = 0;"
+     }
+    ],
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62587,
+      "text": "var f = i.getItem(e.cookBook[u], \"cookbookconfig\");"
+     }
+    ]
+   }
+  },
+  "User.endEatByTable": {
+   "fields": [
+    "eRet",
+    "tableList"
+   ],
+   "tables": {
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62587,
+      "text": "var f = i.getItem(e.cookBook[u], \"cookbookconfig\");"
+     }
+    ]
+   }
+  },
+  "User.getHlexchangeShop": {
+   "fields": [
+    "eRet",
+    "shopObj"
+   ],
+   "tables": {
+    "item": [
+     {
+      "file": "index.js",
+      "line": 56119,
+      "text": "var o = h.getItem(e.itemID, \"item\"), n = s.getText(123);"
+     }
+    ]
+   }
+  },
+  "User.getHlexchangeItemData": {
+   "fields": [
+    "eRet",
+    "limit"
+   ],
+   "tables": {
+    "item": [
+     {
+      "file": "index.js",
+      "line": 56119,
+      "text": "var o = h.getItem(e.itemID, \"item\"), n = s.getText(123);"
+     }
+    ],
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 56145,
+      "text": "var t = h.getItem(this.npcID, \"npc\");"
+     }
+    ]
+   }
+  },
+  "User.exchangeHlexchangeItem": {
+   "fields": [
+    "eRet",
+    "itemID",
+    "itemNum"
+   ],
+   "tables": {
+    "item": [
+     {
+      "file": "index.js",
+      "line": 56119,
+      "text": "var o = h.getItem(e.itemID, \"item\"), n = s.getText(123);"
+     }
+    ],
+    "npc": [
+     {
+      "file": "index.js",
+      "line": 56145,
+      "text": "var t = h.getItem(this.npcID, \"npc\");"
+     }
+    ]
+   }
+  },
+  "User.getInnBag": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "dishconfig": [
+     {
+      "file": "index.js",
+      "line": 62253,
+      "text": "var c = i.getItem(a, \"dishconfig\");"
+     }
+    ],
+    "foodconfig": [
+     {
+      "file": "index.js",
+      "line": 62289,
+      "text": "var a = i.getItem(o, \"foodconfig\"), l = n.getText(a.name) + \"*\" + t[o];"
+     }
+    ]
+   }
+  },
+  "User.getInnCook": {
+   "fields": [
+    "eRet",
+    "unlockDish",
+    "cookBook"
+   ],
+   "tables": {
+    "dishconfig": [
+     {
+      "file": "index.js",
+      "line": 62253,
+      "text": "var c = i.getItem(a, \"dishconfig\");"
+     }
+    ],
+    "foodconfig": [
+     {
+      "file": "index.js",
+      "line": 62289,
+      "text": "var a = i.getItem(o, \"foodconfig\"), l = n.getText(a.name) + \"*\" + t[o];"
+     }
+    ]
+   }
+  },
+  "User.createOrderByHotVal": {
+   "fields": [
+    "eRet",
+    "orderId"
+   ],
+   "tables": {
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62382,
+      "text": "var l = i.getItem(e.showRewardCookBook, \"cookbookconfig\"), c = {"
+     }
+    ]
+   }
+  },
+  "User.completeOrderByHotVal": {
+   "fields": [
+    "eRet",
+    "hotVal",
+    "cookBook",
+    "mhv",
+    "dishBag",
+    "showRewardCookBook"
+   ],
+   "tables": {
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62382,
+      "text": "var l = i.getItem(e.showRewardCookBook, \"cookbookconfig\"), c = {"
+     }
+    ]
+   }
+  },
+  "User.getInnRank": {
+   "fields": [
+    "eRet",
+    "innRankList"
+   ],
+   "tables": {
+    "foodconfig": [
+     {
+      "file": "index.js",
+      "line": 62581,
+      "text": "var c = i.getItem(l, \"foodconfig\"), p = 0;"
+     }
+    ],
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62587,
+      "text": "var f = i.getItem(e.cookBook[u], \"cookbookconfig\");"
+     }
+    ]
+   }
+  },
+  "User.getInnShop": {
+   "fields": [
+    "eRet",
+    "innSimShopDatas"
+   ],
+   "tables": {
+    "foodconfig": [
+     {
+      "file": "index.js",
+      "line": 62581,
+      "text": "var c = i.getItem(l, \"foodconfig\"), p = 0;"
+     }
+    ],
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62587,
+      "text": "var f = i.getItem(e.cookBook[u], \"cookbookconfig\");"
+     }
+    ]
+   }
+  },
+  "User.innBuyShop": {
+   "fields": [
+    "eRet",
+    "foodBag"
+   ],
+   "tables": {
+    "foodconfig": [
+     {
+      "file": "index.js",
+      "line": 62581,
+      "text": "var c = i.getItem(l, \"foodconfig\"), p = 0;"
+     }
+    ],
+    "cookbookconfig": [
+     {
+      "file": "index.js",
+      "line": 62587,
+      "text": "var f = i.getItem(e.cookBook[u], \"cookbookconfig\");"
+     }
+    ]
+   }
+  },
+  "User.callDragon": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "map": [
+     {
+      "file": "index.js",
+      "line": 27387,
+      "text": "if (2 == r.getItem(e, \"map\").type1) {"
+     }
+    ]
+   }
+  },
+  "User.getNewGiftPermanent": {
+   "fields": [
+    "eRet",
+    "giftDatas"
+   ],
+   "tables": {
+    "item": [
+     {
+      "file": "index.js",
+      "line": 131130,
+      "text": "var o = i.getText(10837) + \"\\n\\n\", r = n.getItem(8888, \"item\");"
+     },
+     {
+      "file": "index.js",
+      "line": 131142,
+      "text": "var s = n.getItem(1, \"item\");"
+     },
+     {
+      "file": "index.js",
+      "line": 131150,
+      "text": "var f = n.getItem(u, \"item\");"
+     }
+    ]
+   }
+  },
+  "User.rogueAcceptTask": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "tasktime": [
+     {
+      "file": "index.js",
+      "line": 133251,
+      "text": "var h = i.getItem(this.npcTaskInfo.taskObj.TaskID, \"tasktime\");"
+     }
+    ],
+    "skill": [
+     {
+      "file": "index.js",
+      "line": 133254,
+      "text": "var u = i.getItem(o.skillId, \"skill\"), f = o.CDTime - o.serverTime, d = Math.floor(f / 864e5), g = Math.floor((f - 864e5 * d) / 36e5), m = Math.floor((f - 864e5"
+     }
+    ]
+   }
+  },
+  "User.getRogueFinishTaskAward": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "tasktime": [
+     {
+      "file": "index.js",
+      "line": 133251,
+      "text": "var h = i.getItem(this.npcTaskInfo.taskObj.TaskID, \"tasktime\");"
+     }
+    ],
+    "skill": [
+     {
+      "file": "index.js",
+      "line": 133254,
+      "text": "var u = i.getItem(o.skillId, \"skill\"), f = o.CDTime - o.serverTime, d = Math.floor(f / 864e5), g = Math.floor((f - 864e5 * d) / 36e5), m = Math.floor((f - 864e5"
+     }
+    ]
+   }
+  },
+  "User.isCycleLife": {
+   "fields": [
+    "eRet"
+   ],
+   "tables": {
+    "Origin": [
+     {
+      "file": "index.js",
+      "line": 101887,
+      "text": "var c = s.getItem(e.birthID, \"Origin\");"
+     }
+    ]
+   }
+  }
+ }
+}

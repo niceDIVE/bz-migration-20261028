@@ -1,0 +1,69 @@
+# User.GetRoldSaveTime  (HttpConst.SAVE_GAMETIME)
+# 出现 2 处
+
+ 54295: function t() {}
+ 54296: t.prototype.init = function() {
+ 54297: var t = this;
+ 54298: n.MessageCenter.on(r.HttpConst.OPEN_BOX_REWARD, function(e, o) {
+ 54299: t.onBoxSelfEvent(o);
+ 54300: }, this);
+ 54301: n.MessageCenter.on(r.HttpConst.SAVE_GAMETIME, function(e, o) {
+ 54302: t.onSaveTimeEvent(o);
+ 54303: }, this);
+ 54304: n.MessageCenter.on(r.HttpConst.ANNOUNCEMENT_ID, function() {
+ 54305: cc.log("dd");
+ 54306: }, this);
+ 54307: n.MessageCenter.on(r.HttpConst.SCROLLSCREEN, function(t, e) {
+ 54308: e.data && "" != e.data && n.MessageCenter.dispatch(p.EvName.CHATSCROLL_EVENT, e.data);
+ 54309: }, this);
+ 54310: n.MessageCenter.on(r.HttpConst.KILL_SELF, function(e, o) {
+ 54311: t.onKillOneSelfEvent(e, o);
+ 54312: }, this);
+ 54313: n.MessageCenter.on(r.HttpConst.SECRET_ORDER_AWARD, function(e, o) {
+ 54314: t.onrSecretCdkEvent(e, o);
+ 54315: }, this);
+ 54316: };
+ 54317: t.prototype.reqGameSaveTime = function() {
+ 54318: a.NetMgr.http.sendRequest(r.HttpConst.SAVE_GAMETIME, {});
+ 54319: };
+ 54320: t.prototype.reqOpenBoxReward = function() {
+ 54321: a.NetMgr.http.sendRequest(r.HttpConst.OPEN_BOX_REWARD, {
+ 54322: roleID: s.RoleBaseInfo.roleID
+ 54323: }, function() {
+ 54324: console.log("error");
+ 54325: });
+ 54326: };
+ 54327: t.prototype.sendKilloneselfMsg = function() {
+ 54328: var t = i.getText(1068), e = "", o = [];
+ 54329: s.RoleBaseInfo.isvip || 1 != s.RoleBaseInfo.teleport || o.push(1072);
+ 54330: if (o.length > 1) for (var n = 0; n < o.length; n++) e = e + "\n             " + (n + 1).toString() + "." + i.getText(o[n]); else 1 == o.length && (e = e + "\n             " + i.getText(o[0]));
+ 54331: var l;
+ 54332: l = o.length > 0 ? t.replace(/\[1\]/, e) + "\n" + i.getText(1069) : i.getText(1069);
+ 54333: h.default.prefabs.load("comUI/PromptUI", cc.Prefab, function(t, e) {
+ 54334: var o = cc.instantiate(e);
+ 54335: u.PopUpMgr.addPopUp(o, f.LayerMgr.popUpLayer);
+ 54336: o.addComponent("PromptUI").setData(l, !0, null, function() {
+ 54337: m.RoleOtherInfo.isUntie ? c.default.show(i.getText(6372)) : a.NetMgr.http.sendRequest(r.HttpConst.KILL_SELF, {
+ 54338: roleID: s.RoleBaseInfo.roleID
+ 54339: }, function() {
+ 54340: console.log("error");
+ 54341: });
+---
+ 54342: });
+ 54343: });
+ 54344: };
+ 54345: t.prototype.onBoxSelfEvent = function(t) {
+ 54346: if (1 == t.eRet) {
+ 54347: l.LocalStorageMgr.removeItem("Legacy" + s.RoleBaseInfo.roleID);
+ 54348: for (var e = {}, o = {}, r = 0; r < t.itemObj.length; r++) {
+ 54349: var a = t.itemObj[r];
+ 54350: d.InventoryModel.updateEq(a[0], a[1]);
+ 54351: o[a[0]] = a[1];
+ 54352: }
+ 54353: s.RoleBaseInfo.setItem(4001, t.moneyreward);
+ 54354: s.RoleBaseInfo.setItem(4003, t.potentialreward);
+ 54355: e[4001] = t.moneyreward;
+ 54356: e[4003] = t.potentialreward;
+ 54357: 0 == t.itemObj.length && 0 == t.potentialreward && 0 == t.moneyreward ? c.default.show(i.getText("26023")) : g.default.addShowRewardUI1(e, 0, o);
+ 54358: } else c.default.show(i.getText("26023"));
+---

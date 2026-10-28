@@ -1,0 +1,99 @@
+# User.getDropAward  (HttpConst.GET_DROP_AWARD)
+# 出现 2 处
+
+ 65030: r.MessageCenter.on(a.HttpConst.DELETE_EQUIP_LOCK, function(t, o) {
+ 65031: if (1 == o.eRet) {
+ 65032: e.lockEquips = o.equipLocks;
+ 65033: r.MessageCenter.dispatch(s.EvName.REFRESH_LOCK_ARRAY, o.equipLocks);
+ 65034: }
+ 65035: }, this);
+ 65036: r.MessageCenter.on(a.HttpConst.GET_DROP_AWARD, function(t, e) {
+ 65037: 1 == e.eRet && r.MessageCenter.dispatch(s.EvName.RECEIVED_DROP_AWARD, e);
+ 65038: }, this);
+ 65039: };
+ 65040: e.prototype.reqGetEquipLocks = function() {
+ 65041: m.NetMgr.http.sendReqWithMask(a.HttpConst.GET_EQUIP_LOCKS, {});
+ 65042: };
+ 65043: e.prototype.reqAddEquipLock = function(t) {
+ 65044: var e = o.InventoryModel.getEquipmentInfo(t);
+ 65045: m.NetMgr.http.sendReqWithMask(a.HttpConst.ADD_EQUIP_LOCK, {
+ 65046: itemID: e.id
+ 65047: });
+ 65048: };
+ 65049: e.prototype.reqDeleteEquipLock = function(t) {
+ 65050: var e = o.InventoryModel.getEquipmentInfo(t);
+ 65051: m.NetMgr.http.sendReqWithMask(a.HttpConst.DELETE_EQUIP_LOCK, {
+ 65052: itemID: e.id
+ 65053: });
+ 65054: };
+ 65055: e.prototype.reqSetPlayerItemSort = function(t, e) {
+ 65056: void 0 === e && (e = 0);
+ 65057: m.NetMgr.http.sendReqWithMask(a.HttpConst.SET_PLAYER_ITEMSORT, {
+ 65058: itemId: t,
+ 65059: type: e
+ 65060: });
+ 65061: };
+ 65062: e.prototype.reqSetPlayerSkillSort = function(t, e) {
+ 65063: void 0 === e && (e = 0);
+ 65064: m.NetMgr.http.sendReqWithMask(a.HttpConst.SET_PLAYER_SKILLSORT, {
+ 65065: skillId: t,
+ 65066: type: e
+ 65067: });
+ 65068: };
+ 65069: e.prototype.checkEquipLocked = function(t) {
+ 65070: return this.lockEquips.indexOf(parseInt(t)) >= 0;
+ 65071: };
+ 65072: e.prototype.setLockEquips = function(t) {
+ 65073: this.lockEquips = t;
+ 65074: };
+ 65075: e.prototype.parseEqData = function(t) {
+ 65076: for (var e in t) {
+---
+ 65468: m.NetMgr.http.sendRequest(a.HttpConst.SAN_GONG, {
+ 65469: skillID: e,
+ 65470: propID: t
+ 65471: });
+ 65472: };
+ 65473: e.prototype.reqGetDropAward = function(t) {
+ 65474: m.NetMgr.http.sendRequest(a.HttpConst.GET_DROP_AWARD, {
+ 65475: drops: t
+ 65476: });
+ 65477: };
+ 65478: e.prototype.updateEquipItem = function(t, e) {
+ 65479: if (this.equipmentDic.hasOwnProperty(e)) {
+ 65480: this.equipmentDic[e].itemID = t[1];
+ 65481: this.equipmentDic[e].attrs = t[2];
+ 65482: }
+ 65483: };
+ 65484: e.prototype.killRewardEq = function(t, e) {
+ 65485: var o = this.parseEq(t, e);
+ 65486: this.killDeleteEq(t);
+ 65487: this.addEq(o);
+ 65488: };
+ 65489: e.prototype.killDeleteEq = function(t) {
+ 65490: if (this.equipmentDic.hasOwnProperty(t)) {
+ 65491: var e = this.equipmentDic[t];
+ 65492: if (this.equipByItemID.hasOwnProperty(e.itemID)) {
+ 65493: var o = this.equipByItemID[e.itemID], i = o.indexOf(e);
+ 65494: i >= 0 && o.splice(i, 1);
+ 65495: }
+ 65496: delete this.equipmentDic[t];
+ 65497: }
+ 65498: };
+ 65499: e.prototype.itemUsePopLayer = function(e) {
+ 65500: var o = this, r = i.getItem(e.itemId, "item");
+ 65501: if (!d.InventoryDB.useItem(r)) if (1 == r.Effect || 2 == r.Effect || 3 == r.Effect || 4 == r.Effect || 47 == r.Effect || 19 == r.Effect || 32 == r.Effect || 34 == r.Effect) p.default.prefabs.load("comUI/tanchuang/ChooseItemUI", cc.Prefab, function(t, e) {
+ 65502: var o = cc.instantiate(e);
+ 65503: h.PopUpMgr.addPopUp(o, u.LayerMgr.popUpLayer, 1, !0);
+ 65504: o.addComponent("BatchUsedUI").setData(r);
+ 65505: }); else if (9 == r.Effect || 61 == r.Effect) p.default.prefabs.load("noticeboard/LetterUI", cc.Prefab, function(t, e) {
+ 65506: var o = cc.instantiate(e);
+ 65507: h.PopUpMgr.addPopUp(o, u.LayerMgr.popUpLayer, 1, !0);
+ 65508: o.addComponent("LetterUI").setData(r);
+ 65509: }); else if (27 == r.Effect) {
+ 65510: if (C.CrossServiceModel.isEnterCrossServer()) return;
+ 65511: p.default.prefabs.load("itemsUI/rename", cc.Prefab, function(t, e) {
+ 65512: var o = cc.instantiate(e);
+ 65513: h.PopUpMgr.addPopUp(o, u.LayerMgr.popUpLayer, 1, !0);
+ 65514: o.addComponent("ResetNewName");
+---

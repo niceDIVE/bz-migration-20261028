@@ -1,0 +1,16 @@
+{
+  "name": "hotfix-patch",
+  "private": true,
+  "scripts": {
+    "build": "node build-handlers.js",
+    "acceptance": "node ../tools/acceptance.js",
+    "lint": "node ../tools/lint_freebie.js core/bz-rpc-server.js",
+    "freeze:diff": "node ../tools/check_shape_freeze.js --diff",
+    "rejects": "node ../tools/check_reject_codes.js"
+  },
+  "dependencies": {
+    "aes-js": "^3.1.2",
+    "js-md5": "^0.9.2",
+    "lz-string": "^1.5.0"
+  }
+}

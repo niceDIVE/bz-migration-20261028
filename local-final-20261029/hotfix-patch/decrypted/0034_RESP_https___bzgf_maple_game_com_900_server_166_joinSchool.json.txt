@@ -1,0 +1,2 @@
+status=200 https://bzgf.maple-game.com/900-server-166/joinSchool
+{"error":0,"p":"User.joinSchool","User.joinSchool":{"eRet":1,"note":{"attrch":{},"skch":{}},"npcID":1003},"achievement":{"red":true,"achieveRateId":0}}

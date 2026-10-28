@@ -1,0 +1,51 @@
+# User.GetIosPayShowData  (HttpConst.GET_IOSPAY_SHOW_DATA)
+# 出现 1 处
+
+131001: this.objData = {
+131002: back: 1
+131003: };
+131004: null != t && (this.objData = {
+131005: back: t.back
+131006: });
+131007: r.mode == r.M_WEB || (cc.sys.os == cc.sys.OS_IOS && 1 == r.specialEdition ? g.NetMgr.http.sendRequest(p.HttpConst.GET_IOSPAY_SHOW_DATA, {
+131008: roleID: v.RoleBaseInfo.roleID
+131009: }) : g.NetMgr.http.sendRequest(p.HttpConst.GET_PAY_SHOW_DATA, {
+131010: roleID: v.RoleBaseInfo.roleID
+131011: }));
+131012: };
+131013: e.prototype.reqYuanBaoList = function(t) {
+131014: void 0 === t && (t = null);
+131015: this.objData = {
+131016: back: 1
+131017: };
+131018: null != t && (this.objData = {
+131019: back: t.back
+131020: });
+131021: g.NetMgr.http.sendRequest(p.HttpConst.GET_PAY_SHOW_DATA, {
+131022: roleID: v.RoleBaseInfo.roleID,
+131023: type: 1
+131024: });
+131025: };
+131026: e.prototype.reqDayGiftList = function(t) {
+131027: void 0 === t && (t = null);
+131028: this.objData = {
+131029: back: 1
+131030: };
+131031: null != t && (this.objData = {
+131032: back: t.back
+131033: });
+131034: g.NetMgr.http.sendRequest(p.HttpConst.GET_NEW_GIFT_PERMANENT, {
+131035: roleID: v.RoleBaseInfo.roleID
+131036: });
+131037: };
+131038: e.prototype.reqAnnPassGiftShop = function(t) {
+131039: void 0 === t && (t = null);
+131040: this.objData = {
+131041: back: 1
+131042: };
+131043: null != t && (this.objData = {
+131044: back: t.back
+131045: });
+131046: g.NetMgr.http.sendRequest(p.HttpConst.ANN_PASS_GET_GIFT_DATA, {
+131047: roleID: v.RoleBaseInfo.roleID
+---

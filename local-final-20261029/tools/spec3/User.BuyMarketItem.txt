@@ -1,0 +1,21 @@
+# User.BuyMarketItem   (HttpConst.BUY_MARKET_ITEM)
+
+## 注册点 130734: l.MessageCenter.on(p.HttpConst.BUY_MARKET_ITEM, this.onPaySuccess, this);
+
+## 请求点 131210: g.NetMgr.http.sendRequest(p.HttpConst.BUY_MARKET_ITEM, o, null, !0);
+   131202: e.prototype.reqBuyItem = function(t, e) {
+   131203: var o = {
+   131204: roleID: v.RoleBaseInfo.roleID,
+   131205: ID: t,
+   131206: itemNum: e
+   131207: };
+   131208: this.buyItemId = t;
+   131209: this.buyItemNum = e;
+
+## 处理函数 onPaySuccess (131233-131238)
+131233: e.prototype.onPaySuccess = function(t, e) {
+131234: e.hasOwnProperty("userGold") && (v.RoleBaseInfo.gold = e.userGold);
+131235: if (e.hasOwnProperty("buyTimes")) {
+131236: this.buyTimes = e.buyTimes;
+131237: y.RoleOtherInfo.buyTimes = e.buyTimes;
+131238: }

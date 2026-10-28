@@ -1,0 +1,51 @@
+# User.playerCure  (HttpConst.UPLOAD_HEAL)
+# 出现 1 处
+
+119880: r.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_SKILL_LV, l);
+119881: };
+119882: t.prototype.reqUploadHeal = function() {
+119883: var t = l.UserModel.entity, e = {
+119884: attArr: [ t.hp.remaining, t.hp.limit, t.hp.finalValue, t.mp.remaining, t.mp.limit ]
+119885: };
+119886: r.NetMgr.http.sendRequest(n.HttpConst.UPLOAD_HEAL, e, null, !1, !1);
+119887: };
+119888: t.prototype.isSkillReplaced = function(t) {
+119889: for (var e = c.getItem(t, "skill"); e.Replace; ) {
+119890: if (s.SkillTable.getSkillLevel(e.Replace) > 0) return !0;
+119891: e = c.getItem(e.Replace, "skill");
+119892: }
+119893: return !1;
+119894: };
+119895: t.prototype.reqSwapSkills = function(t, e, o) {
+119896: this.skillType = o;
+119897: this.skillA = t;
+119898: this.skillB = e;
+119899: var i = {
+119900: roleID: h.RoleBaseInfo.roleID,
+119901: skillA: t,
+119902: skillB: e,
+119903: skillType: o
+119904: };
+119905: r.NetMgr.http.sendRequest(n.HttpConst.SWAP_SKILL_PROGRESS, i);
+119906: };
+119907: t.prototype.destroy = function() {};
+119908: return t;
+119909: }();
+119910: o.SkillModel = new f();
+119911: cc._RF.pop();
+119912: }, {
+119913: "../core/events/MessageCenter": "MessageCenter",
+119914: "../gameconfigs/CFMgr": "CFMgr",
+119915: "../gameconfigs/LangMgr": "LangMgr",
+119916: "../gui/uicomponents/Alert": "Alert",
+119917: "../net/HttpConst": "HttpConst",
+119918: "../net/NetMgr": "NetMgr",
+119919: "../utils/EvName": "EvName",
+119920: "./SkillTable": "SkillTable",
+119921: "./UserModel": "UserModel",
+119922: "./vos/RoleBaseInfo": "RoleBaseInfo"
+119923: } ],
+119924: SkillPlayerBase: [ function(t, e, o) {
+119925: "use strict";
+119926: cc._RF.push(e, "3806f6MDipHfIQj7OLDQfiY", "SkillPlayerBase");
+---

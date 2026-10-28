@@ -1,0 +1,75 @@
+回执 第12批 C11〔周年通行证〕（2026-10-27）
+
+══ 部署指纹 ══
+  构建：ver=h70337301｜flow=ffaec47c3｜pid 22577（全程热重载，pid 未变）
+  selfCheck 1320 全过，implErr=null
+  patch\live\handlers.js            1,564,251 B  md5 D51DADE441681C28F80CBFB8DE84FB9D
+  core\bz-rpc-server.js               433,894 B  md5 AB7BE4F9056728B45D57D61D4F57F0DC
+  core\bz-c11.generated.js（新表）      4,058 B  md5 96341B64EF57465617A3A24EFAA32C56
+  tools\gen_c11_tables.js（新生成器）   9,107 B  md5 EAFC126FB5799757FEE3801F0CAEA572
+  形状基线 342 动作（+5），diff 0；拒绝码 动作 103 / 条目 117 / 拒绝点 170；acceptance 51/51
+
+══ 一、交付：7 个 handler（relations.md:84-89 全做）══
+  线上名（双源核对 index.js:60587-60595 与 actions.json:787-795，**未纠正任何拼写**）：
+    ANN_PASS_GET_DATA          → User.getAnniversaryPassData（send scripts3.js:7894，无载荷）
+    ANN_PASS_BUY_UP            → User.buyAnniversaryPass（7897，无载荷）
+    ANN_PASS_RECEIVE_AWARD     → User.receiveAnniversaryPassAward（7904，{id,vip}）
+    ANN_PASS_GET_GIFT_DATA     → User.getAnniversaryPassGift（index.js:131046，{roleID}）
+    ANN_PASS_BUY_GIFT          → User.buyAnniversaryPassGift（index.js:131058，{giftId}）
+    ANN_PASS_BUY_LIVENESS      → User.buyAnniversaryPassLiveness（7907，{num}）
+    ★ANN_PASS_FINISH_TASK      → User.receiveAnniversaryPassTaskReward（7920，{taskId}）——**不叫 finishTask**
+  ★ 上游"ANN_PASS_BUY_LIVENESS 可能已下线"**已推翻**：入口实存（scripts3.js:18448 BuyItemUI29，
+    弹窗点 AnniversaryMainUI:7763 与 AnniversaryBuildingUI:7438）。
+  第 37 批的 ANN_PASS_START_ROGUE / ANN_PASS_CHOOS_ROGUE 未做（发送点 7912/7915、调用点 8153/8039 已抄进取证）。
+
+══ 二、契约（裸读崩点，缺一个就 TypeError）══
+  GET_DATA：`anniversaryPassData` 七字段全裸读（scripts3.js:7821-7828）——rd/vrd/dt 必须是**数组**、
+    td/dv 必须是**对象**、n/vip 数字；`endtime` 裸读且是**毫秒**（面板 7574 (e-t)/1e3）。
+    ★面板（AnniversaryMainUI）就在本键 1 分支里 new（7831）→ 本键回不对，其余 6 个全不可达。
+  FINISH_TASK：`dt` 必须是**数组**（7880 .length/.includes，且整体覆盖 receivedTasks）；
+    `rewardArray` **无守卫**（7886）→ 必给。拒绝应答已收窄到只剩 eRet（REJECT_ALLOW）。
+  BUY_GIFT：`rewardArray` 无守卫（131064）；整包透传 REFRESH_GIFT_DATA，客户端读
+    **`giftData`（单数）**字典 {giftId: 新已购数} 刷已购（scripts2.js:67466）→ 必带。
+  RECEIVE_AWARD：回包 vip/id **必须回显请求值**（7852-7853，错档会把已领记进另一条数组）。
+
+══ 三、礼包 = 通用商店 type 11（本批最关键的隐蔽契约）══
+  GET_GIFT_DATA 不自开面板：dispatch(STORE_SHOW_UI,{type:11,back:1,data:giftDatas})（index.js:131051-131054）
+  → 通用商店 openBuyGoldEvent 的 **type 11 分支（scripts2.js:8550-8572）按下标取 11 元数组**：
+    [0]ID [1]Name [2]name2 [3]des [4]limitnum [5]award(**原串**，67216 split('|')/split(',')) [6]imgname
+    [7]money(**数字**) [8]**已购次数**（67563 用 limitnum-num 显剩余——不是表的 num 列！）[9]保留 [10]endTime
+  行给成对象就废；形状表旧兜底 `giftDatas:[]` 是"空货架"。
+
+══ 四、自定口径申报（4 项，改任一个都要新拍板）══
+  1. `endtime` = 开启时 now + 30 天（表 anniversary_pass_liveness 窗口 2026-09-29→10-17 已过期，
+     照表发倒计时恒空白；面板 7573 要求 endT>0）。过期会自动续期。
+  2. VIP 档 300 元宝（**表里没有价格列**；同侠客令 buyInvitationCard 的"自定离线价"先例，不接真实付费）。
+  3. 买活跃度扣 **gold**（客户端 18436 比对 RoleBaseInfo.gold），单价 **10 gold/点**（getPriceValue 公式未取证），
+     上限 565 = 表 maxLiveness = 客户端 7763 同值；超上限部分钳掉不整单拒。
+  4. 礼包按**元宝**扣（表 price 60/300/680/980，与 bz-rpc-server.js:1344 参照值 980 交叉吻合）、限购照表 limit。
+
+══ 五、未做项（都已登记 docs\OPEN-ISSUES.md ISSUE-11）══
+  1. 活跃度来源不结算（anniversary_pass_liveness 5 行 type/parameter 语义未取证，且窗口已过期）
+     → 当前活跃度只能买。
+  2. 任务进度 dv 不累计 → FINISH_TASK 正常流程恒 notReached 2（结构正确、玩法暂不产生，同 C10 cleanDeadCrop；
+     服务端日志已留 REJECT 痕迹）。7 种 type 的计数来源未取证。
+  3. anniversary_pass_evnet（5 行）沉底：type 数组 / require("32,10") 语义未取证。表名拼作 evnet，**不是笔误**。
+  4. 真机 UI 视觉（楼块贴图/礼包图 an_gift1..4/倒计时文案）只验了"不崩 + 数据对"。
+
+══ 六、真机全链（客户端模型方法驱动，全部真实 XHR 回环）══
+  GET_DATA（面板开、endT=now+30d 落模型）→ GET_GIFT_DATA（货架）→ buyAnniversaryPass（vip=1，-300 元宝）
+  → buyAnniversaryPassLiveness（n=10，-100 gold）→ receiveAnniversaryPassAward 行2 免费+VIP
+  （rd=[2] / vrd=[2]，潜能 +110000）→ buyAnniversaryPassGift 行1（-60 元宝，发 gold×60+9864×500+6658×20，
+  已购 1/1）→ receiveAnniversaryPassTaskReward（notReached 2 拒绝留痕，存档不动）。
+  存档变动均为正常玩法结果：消费 360 元宝 + 100 gold。
+
+══ 七、门禁 ══
+  gen_c11_tables exit 0（22 阶/7 任务/4 礼包/上限 565）｜形状 diff 0（342 动作）
+  reject-codes OK 103/117/170｜acceptance 51/51｜c11-smoke 13/13｜c10-smoke 18/18（回归）｜r14 3/3（回归）
+  验收工人（gemini-3.8-flash-low）按 8 条命令工单独立复跑 **8/8**，与主审对撞一致（facts\C11）。
+
+══ 八、坑（对面重算/复用时注意）══
+  1. 新动作必须登记 `tools\todo_shapes.json`，否则 gen_shapes 根本不扫（本批 5 键漏登记被抓住）。
+  2. handler 里引用生成表一律过守卫（annTable()），绝不裸引用 `BZ_C11` —— r14 冒烟直接 require core，无生成模块。
+  3. 调 grantRewardList 的 note 必须三元 {ivch:{},eqch:{},eco:{}}（award 含 4003=潜能/1=金条等货币）。
+  4. else 兜底分支的提示不算专属分支 → 拒绝码 tier 必须 2（R2a）。
+  5. `--diff` 输出经 PowerShell Out-File utf8 落盘带 BOM，按行解析要剥 \uFEFF。

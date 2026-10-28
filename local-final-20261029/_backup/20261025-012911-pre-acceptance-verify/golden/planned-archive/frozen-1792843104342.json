@@ -1,0 +1,108 @@
+{
+ "archivedAt": "2026-10-24T11:58:24.342Z",
+ "rules": [
+  {
+   "id": "shop1-narrow-BuyMarketItem-20261024",
+   "kind": "handler-fixes",
+   "action": "BuyMarketItem",
+   "field": [
+    "userGold",
+    "buyTimes",
+    "note"
+   ],
+   "expect": 3,
+   "ev": "index.js:131234",
+   "why": "BuyMarketItem 登记 reject-codes 后，narrowReject 把空参拒绝应答剥到只剩 eRet。这修的是真雷：客户端 131234 在判 eRet 之前无条件读 userGold，而 fillShape 会借 quicklogin 模板补 userGold:20 —— 拒绝一次就把客户端金条显示改写成 20。剥掉后 hasOwnProperty 为假，不再改写。",
+   "allowSigma": [
+    [
+     "BuyMarketItem",
+     "userGold"
+    ],
+    [
+     "BuyMarketItem",
+     "buyTimes"
+    ],
+    [
+     "BuyMarketItem",
+     "note"
+    ]
+   ]
+  },
+  {
+   "id": "shop1-narrow-BuyMount-20261024",
+   "kind": "handler-fixes",
+   "action": "BuyMount",
+   "field": [
+    "note",
+    "sync",
+    "type"
+   ],
+   "expect": 3,
+   "ev": "index.js:32142",
+   "why": "BuyMount 登记后拒绝应答剥到只剩 eRet。客户端 32142 用应答 type 分流（1=展示分支/其它=购买分支），type 缺席 → 1 != undefined 仍走购买分支 → 3 → getText(1000)，行为安全；sync 只在展示分支读，不影响。",
+   "allowSigma": [
+    [
+     "BuyMount",
+     "note"
+    ],
+    [
+     "BuyMount",
+     "sync"
+    ],
+    [
+     "BuyMount",
+     "type"
+    ]
+   ]
+  },
+  {
+   "id": "shop1-narrow-buySchoolShop-20261024",
+   "kind": "handler-fixes",
+   "action": "buySchoolShop",
+   "field": [
+    "note",
+    "rewardArray",
+    "updateSchoolContribution"
+   ],
+   "expect": 3,
+   "ev": "index.js:113673",
+   "why": "buySchoolShop 登记后拒绝应答剥到只剩 eRet；客户端 113672-113680 只有 1==eRet 一个分支，剥掉的 rewardArray/updateSchoolContribution/note 在 4 路径上无人读。",
+   "allowSigma": [
+    [
+     "buySchoolShop",
+     "note"
+    ],
+    [
+     "buySchoolShop",
+     "rewardArray"
+    ],
+    [
+     "buySchoolShop",
+     "updateSchoolContribution"
+    ]
+   ]
+  },
+  {
+   "id": "shop1-narrow-innBuyShop-20261024",
+   "kind": "handler-fixes",
+   "action": "innBuyShop",
+   "field": [
+    "note",
+    "foodBag"
+   ],
+   "expect": 2,
+   "ev": "index.js:62578",
+   "why": "innBuyShop 登记后拒绝应答剥到只剩 eRet；客户端 62577-62594 在 1==eRet 才读 foodBag/cookBook，6 分支只弹 getText(202201181)。",
+   "allowSigma": [
+    [
+     "innBuyShop",
+     "note"
+    ],
+    [
+     "innBuyShop",
+     "foodBag"
+    ]
+   ]
+  }
+ ]
+}

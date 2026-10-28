@@ -1,0 +1,93 @@
+# User.receiveBindingRecuitAward  (HttpConst.RECEIVE_BIND_RECUITAWARD)
+# 出现 2 处
+
+102368: if (1 == r.eRet) {
+102369: c.default.addShowRewardUI1(r.rewardArray, 0, {});
+102370: 1 == t.awardState ? o.RecruitModel.requestGetRecuirt(1) : o.RecruitModel.requestGetRecuirt(2);
+102371: i.MessageCenter.dispatch(a.EvName.CLEAN_INVITEE_TIPS);
+102372: } else 3 == r.eRet ? n.default.show("数据为空") : 4 == r.eRet ? n.default.show("无此玩家数据") : 6 == r.eRet ? n.default.show("奖励未完成") : 7 == r.eRet ? n.default.show("未绑定邀请码") : 8 == r.eRet && n.default.show("未绑定邀请码,无法领取奖励");
+102373: }, this);
+102374: i.MessageCenter.on(r.HttpConst.RECEIVE_BIND_RECUITAWARD, function(t, e) {
+102375: if (1 == e.eRet) {
+102376: c.default.addShowRewardUI1(e.rewardArray, 0, {});
+102377: i.MessageCenter.dispatch(a.EvName.CLEAN_RECRUIT_BIND_ITEMNODE);
+102378: } else 6 == e.eRet && n.default.show("奖励已领取");
+102379: }, this);
+102380: };
+102381: t.prototype.requestGetRecuirt = function(t) {
+102382: var e = {
+102383: roleID: s.RoleBaseInfo.roleID,
+102384: type: t
+102385: };
+102386: l.NetMgr.http.sendRequest(r.HttpConst.GET_RECUIT_MESSAGE, e);
+102387: };
+102388: t.prototype.requestBoundRecruit = function() {
+102389: var t = {
+102390: roleID: s.RoleBaseInfo.roleID
+102391: };
+102392: l.NetMgr.http.sendRequest(r.HttpConst.CREATE_RECUIT_CODE, t);
+102393: };
+102394: t.prototype.requestBoundInvitee = function(t) {
+102395: var e = {
+102396: roleID: s.RoleBaseInfo.roleID,
+102397: code: t
+102398: };
+102399: l.NetMgr.http.sendRequest(r.HttpConst.BIND_RECUIT_CODE, e);
+102400: };
+102401: t.prototype.requestAward = function(t, e) {
+102402: this.awardState = e;
+102403: var o = {
+102404: roleID: s.RoleBaseInfo.roleID,
+102405: id: t
+102406: };
+102407: l.NetMgr.http.sendRequest(r.HttpConst.RECEIVE_RECUIT_AWARD, o);
+102408: };
+102409: t.prototype.requestBindingRecruitAward = function(t, e) {
+102410: var o = {
+102411: roleID: s.RoleBaseInfo.roleID,
+102412: bindingRoleId: t,
+102413: id: e
+102414: };
+---
+102415: l.NetMgr.http.sendRequest(r.HttpConst.RECEIVE_BIND_RECUITAWARD, o);
+102416: };
+102417: return t;
+102418: }();
+102419: o.RecruitModel = new p();
+102420: cc._RF.pop();
+102421: }, {
+102422: "../core/events/MessageCenter": "MessageCenter",
+102423: "../gui/uicomponents/Alert": "Alert",
+102424: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+102425: "../net/HttpConst": "HttpConst",
+102426: "../net/NetMgr": "NetMgr",
+102427: "../utils/EvName": "EvName",
+102428: "./vos/RoleBaseInfo": "RoleBaseInfo"
+102429: } ],
+102430: RectUtils: [ function(t, e, o) {
+102431: "use strict";
+102432: cc._RF.push(e, "43af2sCE75IIoWZnCQWY5zQ", "RectUtils");
+102433: Object.defineProperty(o, "__esModule", {
+102434: value: !0
+102435: });
+102436: o.RectUtils = void 0;
+102437: o.RectUtils = {
+102438: rectContainsRect: function(t, e) {
+102439: var o = e.x + e.width, i = e.y + e.height, n = t.x + t.width, r = t.y + t.height;
+102440: return e.x >= t.x && e.x < n && e.y >= t.y && e.y < r && o > t.x && o <= n && i > t.y && i <= r;
+102441: },
+102442: rectIntersectsRect: function(t, e) {
+102443: return Math.max(t.x, e.x) <= Math.min(t.x + t.width, e.x + e.width) && Math.max(t.y, e.y) <= Math.min(t.y + t.height, e.y + e.height);
+102444: }
+102445: };
+102446: cc._RF.pop();
+102447: }, {} ],
+102448: ReplaceUltSkillSpell: [ function(t, e) {
+102449: "use strict";
+102450: cc._RF.push(e, "050bbsK3ZpKi7Vd3Lc91Zki", "ReplaceUltSkillSpell");
+102451: function o(t, e) {
+102452: t.prototype = Object.create(e.prototype);
+102453: t.prototype.constructor = t;
+102454: i(t, e);
+102455: }
+---

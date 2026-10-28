@@ -1,0 +1,25 @@
+{
+ "archivedAt": "2026-10-22T16:22:34.454Z",
+ "rules": [
+  {
+   "id": "C11b-two-more-20261023",
+   "kind": "handler-fixes",
+   "field": [
+    "beginTime"
+   ],
+   "expect": 2,
+   "ev": "scripts2.js:13167",
+   "why": "补 beginPlayGame / checkHireOnhook 两个最小 handler（SOTA R10 §1 第 4 条：A7 成立则是正在发生的缺陷，K=2，应提前）。证据：beginPlayGame 回调把 n.beginTime 存进 ChildrenModel.beginTime（index.js:24663），消费端 scripts2.js:13167/13178 拿 `TimeMgr.getSTimestamp() - ChildrenModel.beginTime` 算已玩时长；checkHireOnhook 回调在 index.js:51516 直接 `(getSTimestamp() - beginTime) * 0.001` 累进 timeElapsed。默认值 0 会让『已进行时长』巨大。两个 handler 只回 eRet + beginTime=env.now()，其余字段交给 fillShape 兜底。",
+   "allowSigma": [
+    [
+     "beginPlayGame",
+     "beginTime"
+    ],
+    [
+     "checkHireOnhook",
+     "beginTime"
+    ]
+   ]
+  }
+ ]
+}

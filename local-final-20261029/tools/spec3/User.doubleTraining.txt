@@ -1,0 +1,24 @@
+# User.doubleTraining   (HttpConst.USER_DOUBLE_TRAINING)
+
+## 注册点 56232: i.MessageCenter.on(l.HttpConst.USER_DOUBLE_TRAINING, this.onDoubleTraining, this);
+
+## 请求点 56666: c.NetMgr.http.sendRequest(l.HttpConst.USER_DOUBLE_TRAINING, i);
+   56658: this.lv = e;
+   56659: var o = D.playerInfo.entity, i = {
+   56660: skillID: t,
+   56661: hg: o.hunger.remaining,
+   56662: gTime: o.totalGameTime.gameTime,
+   56663: hgtimes: o.numStuffed,
+   56664: mpLimit: o.mp.limit
+   56665: };
+
+## 处理函数 onDoubleTraining (56668-56676)
+ 56668: e.prototype.onDoubleTraining = function(e, o) {
+ 56669: this.id = o.skillID;
+ 56670: this.lv = o.skillLevel;
+ 56671: this.itemBreakAdditionNum = o.hasOwnProperty("itemAddition") ? o.itemAddition : 0;
+ 56672: if (1 == o.eRet) {
+ 56673: if (isNaN(Number(o.needTime))) {
+ 56674: s.default.show(JSON.stringify(o));
+ 56675: return;
+ 56676: }

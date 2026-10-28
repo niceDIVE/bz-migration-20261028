@@ -1,0 +1,37 @@
+转发说明（给我方转上游用，30 秒能看完）
+第9批 C08〔PVE 战斗族〕回执 · 2026-10-27
+
+══ 一句话 ══
+第9批 C08 已交付上线（impl=h744ad0f4，acceptance 48/48，真机探针 6 发全通、存档零写入），
+其中有 4 个问题需要上游一句话裁定；本包就是全部要发的东西，没有别的文件要单独发。
+
+══ 包里有什么（按打开顺序）══
+  01-receipt-batch9-c08.txt   回执正本——先看这个。§九 是等回话的 4 问（每问都写了"默认处置"）
+  02-manifest.txt             指纹与校验方式：部署 impl/flow/md5、每个文件 md5·字节、怎么自己跑测试、没带什么
+  core\                       完整一套 core（rpc-server + templates + 三个 generated）→ 解包即可跑测试
+  bz-rpc-server.js            改动的源文件（与 core\ 里那份同一份，md5 一致）
+  facts\C1-c08-forensics.md   取证与策略（为什么这么切批次：C07 的"全锁"在本批会卡死）
+  facts\C2-c08-execution.md   执行记录（改了什么、行号、踩坑与纠正、未验证项）
+  facts\C3-scoutG-reqkeys.md  九键客户端契约逐行摘录（930 行）
+  facts\C4-scoutH-existing.md 线上现状（9 个动作原来一条 handler 都没有）
+  facts\C5-open-issues-*.md   ISSUE-8「整套玩法被锁」清单 + ISSUE-9「等上游回话的 4 问」
+  test\                       45 个测试（新增 c08-smoke.js 11 条）
+
+══ 我要上游回的就 4 句（回执 §九 有全文）══
+  Q1 那 4 个"保留未实现"的动作（肉鸽 PVP + MPPVE 三兄弟）怎么处置？  ① 维持现状【默认】 ② 改 eRet 2 拒绝
+  Q2 AttckData 的战斗数值按哪套装备算？                            ① 维持抓包快照【默认】 ② 给 parseEq 口径
+  Q3 要不要做"服务端持血"（attArr 逐招回填）？                       ① 不排【默认】 ② 立专项
+  Q4 drop:dedup 自检断言 vs drop-table「两次赢发两次」谁对？          ① 以 drop-table 为准【默认】 ② 以 dedup 为准
+  → 回复只需要一句，例如：「Q1 选②、Q2 选①、Q3 不排、Q4 以 drop-table 为准」
+
+  ⚠ 不回话也行：本批已按 4 个"默认"交付完了，代码不会自己动。
+
+══ 怎么自验（离线，3 步）══
+  1) 解包，算 core\bz-rpc-server.js 的 md5 → 应等于 39750A3C33FDEF7A86004350638E43A4
+  2) node test/c08-smoke.js            → 期望 "c08-smoke: 全部通过（11 条）"
+  3) node test/drop-table.js           → 期望 "[drop] PASS  8/8"（复核老口径没被改坏）
+
+══ 另一条已经落地的东西（不用回话，只是告知）══
+  上游第 8 批验收时交代的登记已做：docs\OPEN-ISSUES.md 新增 ISSUE-8「整套玩法被锁」清单
+  （8-1 善恶 / 8-2 洗练·寄养·性别 / 8-3 妻子养成 / 8-4 青楼），含善恶解锁三必做
+  （s.geSide / goodAndEvilData 16 键真实初值 / s.geScore 按表发、不白给）。

@@ -1,0 +1,11 @@
+{
+  "hits": [
+    {
+      "file": "index.js",
+      "n": 119873,
+      "text": "t.prototype.reqChangeSkillLv = function(t, e, o, i, a, s) {"
+    }
+  ],
+  "found": [],
+  "errors": ""
+}

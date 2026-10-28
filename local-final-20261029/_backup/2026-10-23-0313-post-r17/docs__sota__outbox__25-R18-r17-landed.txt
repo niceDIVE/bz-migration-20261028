@@ -1,0 +1,154 @@
+【指令】
+你是一位资深客户端逆向与静态分析方向的架构顾问。这是第 25 批材料（上一批 24 号：R16 处置 + 3 问；你的回执是 R17）。
+本批是**对 R17 的逐条处置 + 时间炸弹修复（含 live 实测）+ Effect 28 落地 + 一批原文证据（供你继续判 Effect 13/11/15）+ 3 个新问题**。
+回答规则（沿用）：
+1. 结论要么带条件说明，要么带可执行形式；不接受"建议考虑"。
+2. 凡是你推断的、材料里没有明说的，一律标注【推断】；材料没有的直说"材料未提供"。
+3. 必须给一段"反例"。
+4. 严格按末尾编号格式输出。
+5. 约束不变：不能改客户端、不能加数据库、**仓库仍然不是 git**。
+
+────────────────────────────────────────────────────────
+【一、部署与基线】
+
+`impl=h84faae07 / flow=ffaec47c3`，`pid 29928`（热重载，未重启），`selfCheck passed=1242 / failed=[] / missingRequired=[]`。
+验收：`node tools\acceptance.js` → **项=35 绿=35 已知红=0 cap=0**；`test\*.js` **32 套全绿**；冻结 C1–C8/C10–C13 全绿、diff 0。
+**live 实测（活动窗口平移，见 §2.1）**：
+```
+LoadGame → activityResource = {"67":[null,1793301157473]}   serverTime = 1792696357472
+          → 结束时间 = now + 604800001 ms（≈7 天），不再是抓包时的 2026-10-28
+```
+
+────────────────────────────────────────────────────────
+【二、R17 逐条处置】
+
+| # | R17 条目 | 处置 |
+|---|---|---|
+| 1 | §1-1 catchCode 缺口（handled 抽取看不到 `!eRet` / 不等号 / 末尾 else） | **仍未做**（如实）：71 个动作的调用点还没扫。当前这 16 个动作的 `handled` 也是"只认 `X == eRet`"抽出来的，**这个缺口是真的**，已列入下一批第一步。 |
+| 2 | §1-2 `repushLive` 自身抛异常会吞应答 | 上一批已改成逐段 try + 保证 return；本批无改动。 |
+| 3 | §1-3 "判据不改"的理由有缺口（来源集合若取生成器输入就不恒真） | **接受**。你的说法对：我把"来源集合"默认成产物里那一份，所以恒真。现在不改（优先级低），但记下正确方向：来源集合应取 `templates.json` + `cfg\dump\*` 的**输入侧**。 |
+| 4 | §1-5 时间炸弹（活动窗口是抓包静态值） | **已修 + live 实测**（§2.1），按你给的"相对 env.now() 平移"方案。 |
+| 5 | §1-4 C13 盲区（`.a.js`/`.b.js` 12 处未登记却绿） | **已修**：C13 扫描范围纳入 `tools\golden\` 与点开头文件；两个遗留文件（C4 确定性测试的临时产物）按用户裁定移到 `_backup\2026-10-23-0311-c4-leftover\`。修完仍绿（C13 32 处，全部登记）。 |
+| 6 | §2 Effect 13 判据 | **未实现，但证据已闭合到"客户端什么都不做"**（§3.1）：无 `case 13`、无 `default`、无任何本地特判，只发 `User.useItem` 然后**只显示服务端回包**。所以 13 的语义完全在服务端 → 缺的是"礼包表"名（Q1）。 |
+| 7 | §3 Effect 28 | **已实现（称号）**，证据 + 实现 + 回归见 §3.2。 |
+| 8 | §4 Effect 5 维持拒绝 + 两个条件 | 条件已核（§3.3）：`getSkillItem` 只判 `dic.hasOwnProperty`，而 `dic` 只收 `lv>0`（`120050`）⇒ **`T` ≡ 已学会**，"已学会则拒绝"成立。`BZ_ITEMFX[id][0]` 的 TypeError 已按你的反例 1 改成 `(fx || [])[0]`。 |
+| 9 | §4 "真正可能错的是 Effect 11" | **成立，已登记未实现**（§3.4）：`T ? b.ConditionUp : b.Condition` + `64401-64417` 走 `ConsultUI`（"选技能"界面），说明原版对已学会**允许继续用、按 ConditionUp 判升级**；我们现在的 `eRet:5` 拒绝是错的。卡在："ConsultUI 不在 `index.js`，无法闭合它最终发哪个请求"。 |
+| 10 | §5 排序（先 7027） | **已做**：7027 落地。3020/Effect 15 未做（Q3）。 |
+
+§2.1 时间炸弹的修法（可直接复用）：
+```js
+// 只平移 activityResource，不碰快照里别的时间（如 housekeeper.taskRtm）
+var REBASE_ACTIVITY_WINDOWS = true;
+function rebaseActivityWindows(holder, fromMs, toMs) {      // from = 抓包时刻, to = now
+  var d = toMs - fromMs;
+  ...对 activityResource 里每个 >1.6e12 的数字 +d（支持 [start,end] 与嵌套 map）...
+}
+// Create:  var tplCaptureTime = num(r.serverTime, 0); r.serverTime = env.now(); rebase(r, tplCaptureTime, r.serverTime);
+// LoadGame: 先取 base.serverTime（快照里的抓包值）→ 再覆盖成 now → rebase(base, snapCapture, now)
+```
+实测：`1793177770630 + (1792696357472 - 1792572970629) = 1793301157473` ✔（与 live 回包一致）。
+常量一行可回退；已按你的要求把它列成"行为变更"给用户裁定，用户**同意平移**。
+
+────────────────────────────────────────────────────────
+【三、本批拿到的原文证据（都带行号，供你继续判）】
+
+§3.1 Effect 13（`tools\index.js`，全部原文）：
+```
+64321: if (2 == e.Type) switch (e.Effect) {          ← 只有 1,2,3,4,5,6,7,11,9,15,18,19,22,23,25,45,46,47
+64502: }                                            ← **无 case 13、无 default**
+64503: return !1;
+65268: if ((8 == o || 13 == o) && T.PackageModel.judgePackageLimit()) return !0;   ← 13 在 useItemFunc 里唯一一行（背包上限）
+65553: this.useItemFunc(e.itemId, r.Effect, 1);      ← itemUsePopLayer 的兜底
+65333: } else s ? m.NetMgr.http.sendRequest(a.HttpConst.USE_ITEM, f) : m.NetMgr.http.sendReqWithMask(a.HttpConst.USE_ITEM, f);
+65273-65276: f = { itemID: e, itemNum: r };          ← 请求只有这两个字段
+```
+成功回调（`64754-64911`）**只有三支**：`note.skch`(64757) / `hasOwnProperty("rewardArray")`(64764→`addShowRewardUI1(a.rewardArray,0,a.equipObj,{},null,a.getKnackIds,a.gemId)` 64768 + `REWARD_ITEM` 64774) / `getKnackIds`(64775)。
+**`ivch` 在 64754-64911 里 0 次出现**（`59569: INVENTORY_CHNG: "ivch"` 是另一条 note 事件通道）。
+⇒ 我们的判断：13 的应答需要 `rewardArray`（展示）+ `note.ivch`（模型落地，走 note 事件通道），二者必须守恒（你说的 Σ 断言）。
+
+§3.2 Effect 28 落地（称号）：
+- **名字判据**（你的第 1 步就定死了）：live `LangMgr.getText` 实读 —— `7027.Name=2102250` →「"烙饼试吃员"称号」、`7026=2102249` →「"测试员"称号」。
+- **表归属**：`Data1=2044/2045` 命中 `player_title.json`（410 行、id 到 2388，2044→name 66044、2045→name 66045）；`mount.json`（72 行、id 1001..1072）与 `fashionall.json` 都**没有** 2044/2045。
+- **客户端分支**：无 `case 28`、无 `default`；`useItemFunc` 里无 28 分支；只发 `{itemID,itemNum}`。
+- **应答契约**：`64812: } else if (a.hasOwnProperty("titleID")) S.AchieveModel.getAchieveData().hasOwnProperty(a.titleID) ? show(getText(3187)) : S.AchieveModel.showTitleReward([a.titleID]);`
+- **实现**：`giveTitleId = (use > 0 && fx[0] === 28 && fx[1] > 0)`；扣减后写 `s.titles[String(id)] = 1`；
+  应答在 **BRANCH_ONLY 删除之后**注入 `inner.titleID`（`titleID` 正在那份"形状表补出来要清掉"的清单里，顺序错了会被自己删掉）。
+- 回归 `test\r17-effect28.js` 3 条：T1 使用→`titleID:2045` + 物品 -1 + 称号入账；T2 空库存→**不许凭空发称号**；T3 活动窗口平移。
+- ⚠ 未验：真实客户端点一次 7027 看是否弹称号（需要玩家背包里有这件，我不动玩家存档）。
+
+§3.3 Effect 5 的两个条件（已核）：
+```
+120070: o.SkillTable.getSkillItem = function(t) { return this.dic.hasOwnProperty(t) ? this.dic[t.toString()] : null; }
+120050: for (var c in n) if (n[c].hasOwnProperty("lv") && n[c].lv > 0) { this.setSkill(c, n[c].lv); ... }   ← 只收 lv>0
+120166: o.SkillTable.isSkillLearned = function(t) { return this.dic.hasOwnProperty(t.toString()) && this.dic[t].lv > 0; }
+120120/120122: setSkill → dic[t] = new SkillItem(); dic[t].lv = e;     120138: abolishSkill → delete this.dic[t]
+70504: T.SkillTable.init(e.skillMap, e.cycleLifeRetains);               ← 填充入口（loadGame）
+119832: s.SkillTable.setSkill(n, e[o][0]);                              ← skch 推送增量写
+```
+⇒ `dic` 里不可能有 `lv==0` 的项 → `getSkillItem` 非 null **等价于**"已学会" ⇒ `case 5` 的"已学会→提示 243→本地拦截"成立，
+我们收到的 Effect 5 请求只可能是"未学会"；`eRet:5` 只是分叉兜底。§3.3 也回答了你 A1。
+
+§3.4 Effect 11 已学会分支（**现有行为是错的，已登记**）：
+```
+64383: var b = i.getItem(e.ID, "master_book"), T = h.SkillTable.getSkillItem(e.Data1), C = T ? b.ConditionUp : b.Condition;
+64384: if (!judgeTaskCondition(C) || !judgeMasterSchoolState(b.Menpai)) { …提示… return !0; }
+64401: var k = [], D = e.Data1, N = T ? i.getItem(T.lv, "level") : null, R = i.getItem(D, "skill"), P = getQualitySkillCoefficient(R, D);
+64402-64412: k.push({id:D, lv:T.lv, pgr: …, selected:!1})  /  k.push({id:D, lv:0, pgr:0, selected:!1})
+64413-64417: prefabs.load("skillsUI/ConsultUI") → addComponent("ConsultUI").studyData(e.ID, k)
+```
+⇒ `T` 非空（=已学会）时走 `ConditionUp` 与"带当前等级"的列表 → **原版允许对已学会技能继续用**（升级路径）。
+我们现在的 `ITEMSCH/Effect 11` 对已学会一律 `eRet:5` 且不扣 → 玩家的书永远升不到 2 级。
+**卡点**：`ConsultUI.studyData` 的实现不在 `index.js`（grep 只命中 64413/64416 两处调用），所以"点了确定之后发哪个请求"无法闭合
+（候选 `UPGRADE_SKILL_LV: "User.upgradeSkill"` 59581 / `CHOOSE_FIX_DAN: "User.ChooseFixDan"` 59810，后者是 Effect 41 的路径）。
+已按你的要求登记为 known-unimplemented，不再以"正确的拒绝"身份存在。
+
+§3.5 Effect 15（3020「嫦娥月饼」，Data1=0）—— 事实先摆出来：
+```
+case 15 原文：64423: case 15:
+                64424: if (0 == v.numDeaths) { s.default.show(n.getText(4374)); return !0; }
+                64428: break;
+live 实读：getText(4374) = 「没有伤痕,不需要使用美肤露」
+物品名：live getText(32020) = 「嫦娥月饼」（Type=2, Effect=15, Data1=0）
+```
+
+────────────────────────────────────────────────────────
+【四、没做的（如实交代）】
+
+1. Effect 13 / 15 / 24 / 6 / 8 未实现；Effect 11 的已学会分支未改（登记）。
+2. 87 动作的 catchCode 表 + handled 抽取扩展（R17 §1-1）未做。
+3. R5（动作×原因夹具 + 业务哈希 + 门控两态）未实现。
+4. 端上点屏：Effect 28 的真实点击未验（需要背包里有 7027 且玩家同意消耗）。
+
+────────────────────────────────────────────────────────
+【五、我要你回答的 3 件事】
+
+Q1（Effect 13 的礼包表在哪）
+  §3.1 已证明客户端对 13 **零本地逻辑**，只显示服务端回包。请你给**取表路径**的判据：
+  ① 我们手里有 `cfg\dump\` 442 张表 + live 可 `__require('ConfigMgr').getTable(<名>)`，能否用"该表以 6625/6810/7105/7106/7226 为主键、
+     且行里含 itemID 数组/奖励组"这个特征把表筛出来？还是必须先知道表名？
+  ② 若筛出的是"奖励组"表（值形如 `{itemID:count}`），Effect 13 的正确应答是不是
+     `rewardArray = 该组` + `note.ivch = 现有数量 + 各奖励数量`（净额）？
+  ③ `6810 → Data1=4567`（唯一 Data1≠自身 ID）那件，应该按"发 4567 这件"还是"以 6810 自身 id 查礼包表"？请给判据。
+
+Q2（Effect 11 已学会的正确服务端行为）
+  如果 `ConsultUI` 不在 `index.js` 里，原版"已学会 → 升级"的请求就无法从客户端证据闭合。
+  请判：我们是否可以**直接在 `useItem` 里做**"+1 级（封顶读 `level` 表）+ 扣 1 件 + `note.skch`"，
+  让客户端走 `64757` 的"恭喜你学会了X"？（还是应该先找 `ConsultUI` 的资源文件，确认它发的是 `User.upgradeSkill`？）
+  另外：`level` 表的"封顶"字段叫什么（我们只 dump 了 item/skill 表，`level.json` 还没查）——需要我先把 `level` 表 dump 下来吗？
+
+Q3（Effect 15 = 美肤露？那 3020「嫦娥月饼」怎么解释）
+  `case 15` 只有一条拦截：`numDeaths == 0` → 提示 4374「没有伤痕,不需要使用美肤露」，然后 `break`（继续发 USE_ITEM）。
+  但物品 3020 的名字是「嫦娥月饼」，看名字不像"美肤"。
+  请判：① Effect 15 的语义到底是什么（清死亡计数？清疤痕？加属性？）；② 3020 这个"名字与 Effect 不符"是不是因为
+  `item.full.json` 的 `Effect` 列在活动道具上被复用（节日道具套用了 15 的行为）？③ 我们该不该给 3020 做效果，还是登记为"待判"。
+
+────────────────────────────────────────────────────────
+【输出格式（严格 1-7，不许增删小标题）】
+
+1. 结论（≤6 句）：§2 十项处置各自成立否；§3.2/§3.3/§3.4 的三处判断是否成立
+2. Q1 答（Effect 13 的礼包表取法与应答形态）
+3. Q2 答（Effect 11 已学会：能否直接在 useItem 里 +1 级）
+4. Q3 答（Effect 15 语义 + 3020 名字不符的解释）
+5. 对"下一批顺序"的意见：我准备按 ① 87 动作 catchCode ② Effect 11 ③ Effect 13 ④ 3020/15 ⑤ R5 走，要不要换
+6. 反例：我这批处置在什么具体场景下会出错
+7. 假设：哪条前提不成立时，你上面哪些结论失效（按编号点名）

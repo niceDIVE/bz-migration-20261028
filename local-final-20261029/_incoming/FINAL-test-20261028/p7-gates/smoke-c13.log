@@ -1,0 +1,13 @@
+  ok   【⓪】C14 表在产物里可见（狗粮 6285 / 100 / 10000 / 11193→11194）
+  ok   【①】3 个活键在 H 里；4 个原不做键均为 ISSUE-14 锁仓桩
+  ok   【②】getHomeList：dog 建模对象 + 二次打开稳定
+  ok   【③】lookDogLog：1 + log 空数组
+  ok   【④】FeedDog 拒绝：非狗粮 / 数量非法 / 狗粮不足 → 2，拒绝不写档
+  ok   【⑤】FeedDog 成功：真扣狗粮 + progress + note.ivch
+  ok   【⑥】FeedDog 喂满：progress 封顶 10000 + bigDog 升级
+  ok   【⑦】FeedDog 已满：再喂 → 2（full），不写档
+  ok   【⑧】DogBattleResult：桥接 win + endTime + 狗状态回健康
+  ok   【⑨】拒绝应答收窄：REJECT_ALLOW=[] → 拒绝应答只有 eRet
+  ok   【⑩】新档缺 s.bag：FeedDog 不抛错、回 2、不写档（上游验收小修回归）
+
+c14-smoke: 全部通过（11 条）

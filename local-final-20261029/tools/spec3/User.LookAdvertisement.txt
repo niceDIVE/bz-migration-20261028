@@ -1,0 +1,5 @@
+# User.LookAdvertisement   (HttpConst.GET_AD_REWARD)
+
+## 注册点 2409: i.MessageCenter.on(n.HttpConst.GET_AD_REWARD, this.onGetAdReward.bind(this), this);
+
+## 处理函数 bind —— 未找到定义

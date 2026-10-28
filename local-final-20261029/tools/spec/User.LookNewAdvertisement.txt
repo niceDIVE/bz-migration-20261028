@@ -1,0 +1,99 @@
+# User.LookNewAdvertisement  (HttpConst.GET_NEW_AD_REWARD)
+# 出现 2 处
+
+  2404: }
+  2405: t.prototype.init = function() {
+  2406: var t = this;
+  2407: i.MessageCenter.on(n.HttpConst.GET_NUMADS_AVAILABLE, this.onGetNumAds.bind(this), this);
+  2408: i.MessageCenter.on(n.HttpConst.GET_NEW_NUMADS_AVAILABLE, this.onGetNumAds.bind(this), this);
+  2409: i.MessageCenter.on(n.HttpConst.GET_AD_REWARD, this.onGetAdReward.bind(this), this);
+  2410: i.MessageCenter.on(n.HttpConst.GET_NEW_AD_REWARD, this.onGetAdReward.bind(this), this);
+  2411: i.MessageCenter.on("ADShowBegin", function() {
+  2412: i.MessageCenter.dispatch(r.EvName.BEGIN_PLAYING_AD);
+  2413: });
+  2414: i.MessageCenter.on("ADShowFailed", function() {});
+  2415: i.MessageCenter.on("ADShowComplete", function() {});
+  2416: i.MessageCenter.on("ADUserClickAd", function() {});
+  2417: i.MessageCenter.on("ADAdClosed", function() {});
+  2418: i.MessageCenter.on("ADQualify4Reward", function() {
+  2419: var e = 0;
+  2420: 1e3 == t.adContext && (e = p.RumorModel.eventID);
+  2421: t.reqAdReward(t.adContext, e);
+  2422: });
+  2423: i.MessageCenter.on("ADUnqualify4Reward", function() {});
+  2424: i.MessageCenter.on("WxShareReward", function() {
+  2425: 0 == t.isItemShare ? t.reqAdReward(1002, 0) : h.InventoryModel.reqShareReward();
+  2426: });
+  2427: };
+  2428: t.prototype.ADShowBegin = function() {};
+  2429: t.prototype.ADShowFailed = function() {};
+  2430: t.prototype.ADShowComplete = function() {};
+  2431: t.prototype.ADUserClickAd = function() {};
+  2432: t.prototype.ADAdClosed = function() {};
+  2433: t.prototype.ADQualify4Reward = function() {
+  2434: var t = 0;
+  2435: 1e3 == this.adContext && (t = p.RumorModel.eventID);
+  2436: this.reqAdReward(this.adContext, t);
+  2437: };
+  2438: t.prototype.ADUnqualify4Reward = function() {};
+  2439: t.prototype.WxShareReward = function() {
+  2440: if (0 == this.isItemShare) {
+  2441: this.reqAdReward(1002, 0);
+  2442: console.log("adtest>>>>>>>>>>>>>>>>1>>>>>>>>WxShareReward");
+  2443: } else {
+  2444: h.InventoryModel.reqShareReward();
+  2445: console.log("adtest>>>>>>>>>>>>>>>>2>>>>>>>>WxShareReward");
+  2446: }
+  2447: };
+  2448: t.prototype.onGetNumAds = function(t, e) {
+  2449: i.MessageCenter.dispatch(r.EvName.REQ_ADINFO_RET, e);
+  2450: };
+---
+  2481: if (b.TowerModel.isAD && 1 == t) i.MessageCenter.dispatch(r.EvName.AD_LOOK_FINISH_EVENT); else {
+  2482: var o = {
+  2483: artLevel: d.SkillTable.skillEvaluation(),
+  2484: typeID: t,
+  2485: eventID: e
+  2486: };
+  2487: g.NetMgr.http.sendRequest(n.HttpConst.GET_NEW_AD_REWARD, o);
+  2488: }
+  2489: };
+  2490: t.prototype.showAd = function(t) {
+  2491: if (!M.LoginMgr.judgeLangEn()) {
+  2492: if (cc.sys.isNative && cc.sys.os == cc.sys.OS_ANDROID && "tw" == l.lang) {
+  2493: this.adContext = t;
+  2494: jsb.reflection.callStaticMethod("com/maple/madherogo/AppActivity", "showAd", "(Ljava/lang/String;)Z", "");
+  2495: return !0;
+  2496: }
+  2497: if ("tw" == l.lang && cc.sys.os == cc.sys.OS_IOS) {
+  2498: this.adContext = t;
+  2499: o.AdModel.ADQualify4Reward();
+  2500: return !0;
+  2501: }
+  2502: }
+  2503: var e = this.getPlacementID(t);
+  2504: if (!e) return !1;
+  2505: if (!this.isReady(e)) {
+  2506: f.default.show("Ads not ready!");
+  2507: return !1;
+  2508: }
+  2509: this.platformShowAd(e);
+  2510: this.adContext = t;
+  2511: return !0;
+  2512: };
+  2513: t.prototype.isReady = function(t) {
+  2514: var e = !1;
+  2515: if (cc.sys.isNative) switch (cc.sys.os) {
+  2516: case cc.sys.OS_ANDROID:
+  2517: e = jsb.reflection.callStaticMethod("com/maple/madherogo/AppActivity", "isReady", "(Ljava/lang/String;)Z", t);
+  2518: break;
+  2519: 
+  2520: case cc.sys.OS_IOS:
+  2521: e = jsb.reflection.callStaticMethod("AppController", "isReady:", t);
+  2522: } else e = cc.sys.platform == cc.sys.BYTEDANCE_GAME ? E.ByteDanceModel.isReady() : cc.sys.platform == cc.sys.WECHAT_GAME || I.WeiXinQQModel.isMiniGame() ? I.WeiXinQQModel.isReady() : M.LoginMgr.isAdVideoReady();
+  2523: return e;
+  2524: };
+  2525: t.prototype.platformShowAd = function(t) {
+  2526: if (cc.sys.isNative) switch (cc.sys.os) {
+  2527: case cc.sys.OS_ANDROID:
+---

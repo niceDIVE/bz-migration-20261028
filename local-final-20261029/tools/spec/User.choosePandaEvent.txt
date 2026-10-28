@@ -1,0 +1,103 @@
+# User.choosePandaEvent  (HttpConst.TOWER_CHOOSE_PANDA_EVENT)
+# 出现 3 处
+
+137667: } ], function(e) {
+137668: var i = r.getItem(o.eventArr[e], "lh_panda");
+137669: t.reqSelectPandaEvent(e, i.event);
+137670: });
+137671: }
+137672: }, this);
+137673: l.MessageCenter.on(c.HttpConst.TOWER_CHOOSE_PANDA_EVENT, function(e, o) {
+137674: if (1 == o.eRet) {
+137675: var n = r.getItem(t.pandaEventId, "lh_event");
+137676: if (1 == n.type || 8 == n.type) t.enterNextTower(n.parameter[0]); else if (o.hasOwnProperty("rewardArray")) {
+137677: t.updateTowerItem(o.rewardArray);
+137678: _.default.addShowRewardUI1(o.rewardArray, 0, {});
+137679: l.MessageCenter.dispatch(S.EvName.UPDATE_TOWER_ITEM_EVENT);
+137680: } else if (o.hasOwnProperty("buffID")) {
+137681: t.towerBuffer.push(o.buffID);
+137682: var s = r.getItem(o.buffID, "buff"), c = {
+137683: str: a.getText(s.Description)
+137684: };
+137685: h.default.prefabs.load("comUI/KillDeadUI", cc.Prefab, function(t, e) {
+137686: var o = cc.instantiate(e);
+137687: u.PopUpMgr.addPopUp(o, f.LayerMgr.popUpLayer);
+137688: o.addComponent("KillDeadUI").setData(c);
+137689: });
+137690: var d = p.UserModel.entity, g = i.createStatusEffect(o.buffID, d, d, 0);
+137691: d.addStatusAtOnce(g);
+137692: }
+137693: l.MessageCenter.dispatch(S.EvName.TOWER_DELETE_NPC_EVENT, 0);
+137694: o.hasOwnProperty("batch_sweep_data") && t.setNewSweepData(o.batch_sweep_data);
+137695: 1 != n.type && 8 != n.type && l.MessageCenter.dispatch(S.EvName.CHEAK_SWEEP_EVENT_EVENT, t.getSweepRewardDatas());
+137696: }
+137697: }, this);
+137698: l.MessageCenter.on(c.HttpConst.TOWER_LEAVE_EVENT, function(e, o) {
+137699: if (1 == o.eRet) {
+137700: t.sweepState = !1;
+137701: m.InventoryModel.equipmentDic = {};
+137702: m.InventoryModel.equipByItemID = {};
+137703: C.SaveDataMgr.updateEquipments(o);
+137704: o.hasOwnProperty("PlayerEquip") && m.InventoryModel.parseEqData(o.PlayerEquip);
+137705: for (var i in d.RoleBaseInfo.equipments) {
+137706: var n = p.UserModel.entity.getEquipment(i), r = d.RoleBaseInfo.equipments[i];
+137707: if (n) {
+137708: var a = n.id;
+137709: r && a != r ? t.setLeaveTowerEquips(r, i) : r || p.UserModel.entity.putOffEquipment(parseInt(i));
+137710: } else r && t.setLeaveTowerEquips(r, i);
+137711: }
+137712: m.InventoryModel.cleanLHTempSigns();
+137713: t.exitTower();
+---
+137966: 0 == t ? g.NetMgr.http.sendRequest(c.HttpConst.TOWER_GET_PANDA_EVENT, {}) : g.NetMgr.http.sendRequest(c.HttpConst.TOWER_GET_PANDA_EVENT, {
+137967: lv: t
+137968: });
+137969: };
+137970: e.prototype.reqSelectPandaEvent = function(t, e) {
+137971: this.pandaEventId = e;
+137972: this.sweepState ? g.NetMgr.http.sendRequest(c.HttpConst.TOWER_CHOOSE_PANDA_EVENT, {
+137973: idx: t,
+137974: lv: this.sweepLv
+137975: }) : g.NetMgr.http.sendRequest(c.HttpConst.TOWER_CHOOSE_PANDA_EVENT, {
+137976: idx: t
+137977: });
+137978: };
+137979: e.prototype.reqLookPandaNpc = function(t) {
+137980: var e = this;
+137981: this.pandaNpcId = t.id;
+137982: if (3 == t.type) this.sweepState ? g.NetMgr.http.sendRequest(c.HttpConst.LOOK_SECRET_PANDA_EVENT, {
+137983: npcID: t.id,
+137984: lv: this.sweepLv
+137985: }) : g.NetMgr.http.sendRequest(c.HttpConst.LOOK_SECRET_PANDA_EVENT, {
+137986: npcID: t.id
+137987: }); else {
+137988: if (this.towerTreasureUI) return;
+137989: h.default.prefabs.load("towerUI/TowerTreasureUI", cc.Prefab, function(o, i) {
+137990: var n = cc.instantiate(i);
+137991: u.PopUpMgr.addPopUp(n, f.LayerMgr.popUpLayer, 1, !0);
+137992: n.addComponent("TowerTreasureUI").setData(t);
+137993: e.towerTreasureUI = n;
+137994: });
+137995: }
+137996: };
+137997: e.prototype.reqChooseSecretEvent = function(t, e) {
+137998: var o = {};
+137999: o = void 0 === e ? {
+138000: npcID: t
+138001: } : {
+138002: npcID: t,
+138003: secret: e
+138004: };
+138005: this.sweepState && (o.lv = this.sweepLv);
+138006: g.NetMgr.http.sendRequest(c.HttpConst.SELECT_SECRET_PANDA_EVENT, o);
+138007: };
+138008: e.prototype.startChanllengeTower = function() {
+138009: v.GSceneMgr.mode = 2;
+138010: this.curMapId = 2038;
+138011: this.enterX = p.UserModel.player.x;
+138012: this.enterY = p.UserModel.player.y;
+---
+138013: this.reqEnterTower(1);
+138014: };
+138015: e.prototype.exitTower = function() {
+---

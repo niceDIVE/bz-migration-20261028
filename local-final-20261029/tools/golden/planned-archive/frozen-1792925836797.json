@@ -1,0 +1,99 @@
+{
+ "archivedAt": "2026-10-25T10:57:16.797Z",
+ "rules": [
+  {
+   "id": "c05-UseAllBall",
+   "action": "UseAllBall",
+   "field": [
+    "eRet",
+    "hp"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "UseAllBall",
+     "eRet"
+    ],
+    [
+     "UseAllBall",
+     "hp"
+    ]
+   ],
+   "ev": "index.js:122543"
+  },
+  {
+   "id": "c05-UseBatchSnowBall",
+   "action": "UseBatchSnowBall",
+   "field": [
+    "eRet",
+    "hp"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "UseBatchSnowBall",
+     "hp"
+    ]
+   ],
+   "ev": "index.js:122514"
+  },
+  {
+   "id": "c05-UseSnowBall",
+   "action": "UseSnowBall",
+   "field": [
+    "eRet",
+    "hp"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "UseSnowBall",
+     "eRet"
+    ],
+    [
+     "UseSnowBall",
+     "hp"
+    ]
+   ],
+   "ev": "index.js:122505"
+  },
+  {
+   "id": "c05-enterSnow",
+   "action": "enterSnow",
+   "field": [
+    "hp",
+    "sTime"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "enterSnow",
+     "hp"
+    ],
+    [
+     "enterSnow",
+     "sTime"
+    ]
+   ],
+   "ev": "index.js:122470"
+  },
+  {
+   "id": "c05-getSnowAward",
+   "action": "getSnowAward",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "ev": "index.js:122529"
+  },
+  {
+   "id": "c05-useItemAddition",
+   "action": "useItemAddition",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "ev": "index.js:56234"
+  }
+ ]
+}

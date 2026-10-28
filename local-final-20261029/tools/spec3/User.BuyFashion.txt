@@ -1,0 +1,23 @@
+# User.BuyFashion   (HttpConst.REQ_BUY_FASHION)
+
+## 注册点 75553: s.MessageCenter.on(l.HttpConst.REQ_BUY_FASHION, function(e, o) {
+
+## 请求点 75748: m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BUY_FASHION, a);
+   75740: var r = p.UserModel.entity.getEquipment(i);
+   75741: (!r || r && r.id != this.currentFashion[i]) && (o[i] = [ this.currentFashion[i], t, e[i] ]);
+   75742: }
+   75743: if (o.hasOwnProperty(8) || o.hasOwnProperty(9)) {
+   75744: this.tempData = o;
+   75745: var a = {
+   75746: itemObj: o
+   75747: };
+
+## 请求点 75769: m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BUY_FASHION, {
+   75761: });
+   75762: };
+   75763: t.prototype.unLoadCoatAndFa = function() {
+   75764: var t = p.UserModel.entity.getEquipment(8);
+   75765: if (t && (2634 == t.id || 2635 == t.id)) {
+   75766: this.tempData = {
+   75767: 8: 0
+   75768: };

@@ -1,0 +1,7 @@
+  ok   UseDebris：包里只剩 1 件，扣完后落盘为空（不被守卫回滚）
+  ok   UseDebris：包里多件时只扣目标件，其余不动
+  ok   useCard：包里只剩 1 件，扣完后落盘为空（不被守卫回滚）
+  ok   useCard：包里多件时只扣目标件，其余不动
+  ok   useTreasure：包里只剩 1 件，扣完后落盘为空（不被守卫回滚）
+  ok   useTreasure：包里多件时只扣目标件，其余不动
+[shrink] PASS 6/6

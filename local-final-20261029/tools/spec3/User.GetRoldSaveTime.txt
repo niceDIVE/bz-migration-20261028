@@ -1,0 +1,13 @@
+# User.GetRoldSaveTime   (HttpConst.SAVE_GAMETIME)
+
+## 注册点 54301: n.MessageCenter.on(r.HttpConst.SAVE_GAMETIME, function(e, o) {
+
+## 请求点 54318: a.NetMgr.http.sendRequest(r.HttpConst.SAVE_GAMETIME, {});
+   54310: n.MessageCenter.on(r.HttpConst.KILL_SELF, function(e, o) {
+   54311: t.onKillOneSelfEvent(e, o);
+   54312: }, this);
+   54313: n.MessageCenter.on(r.HttpConst.SECRET_ORDER_AWARD, function(e, o) {
+   54314: t.onrSecretCdkEvent(e, o);
+   54315: }, this);
+   54316: };
+   54317: t.prototype.reqGameSaveTime = function() {

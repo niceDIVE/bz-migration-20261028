@@ -1,0 +1,1444 @@
+{
+ "generatedAt": "2026-10-21T20:23:56.030Z",
+ "source": "tools/cfg/tbl_tasknew.json / tbl_item.json / tbl_drop.json / npc_compact.json",
+ "basis": "docs/sota/inbox/R01-reply-fix.txt §3(V1/V2/V5) §6反例2(Repeat)",
+ "counts": {
+  "tasks": 4840,
+  "columns": 40,
+  "spPairs": 1227,
+  "spDistinctItems": 875,
+  "spDistinctItemsMissingInItemTable": 282
+ },
+ "v1": {
+  "pairs": 1227,
+  "distinctItems": 875,
+  "missingInItemTable": 282,
+  "byScope": {
+   "direct": 720,
+   "closure": 745,
+   "pairsTotal": 1227
+  },
+  "columnHistogram": {
+   "Fight": 498,
+   "ReceiveNpc": 321,
+   "FinishNpc": 349,
+   "likability": 5,
+   "Pre-Require": 218,
+   "CompletionEvent": 15,
+   "ReceiveEvent": 5,
+   "Type": 24,
+   "transfer": 2,
+   "Completetips": 7,
+   "item_npc": 1
+  },
+  "missingOnly": {
+   "pairs": 335,
+   "hitDirect": 327,
+   "hitClosure": 327,
+   "columnHistogram": {
+    "Fight": 322,
+    "ReceiveNpc": 203,
+    "FinishNpc": 231,
+    "likability": 3,
+    "CompletionEvent": 15,
+    "ReceiveEvent": 4,
+    "Pre-Require": 1
+   },
+   "examples": [
+    {
+     "taskId": 100070,
+     "itemId": 310003,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "ancestors": 2
+    },
+    {
+     "taskId": 100080,
+     "itemId": 310003,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "ancestors": 2
+    },
+    {
+     "taskId": 100130,
+     "itemId": 1028,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "ancestors": 7
+    },
+    {
+     "taskId": 100280,
+     "itemId": 310007,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "ancestors": 24
+    },
+    {
+     "taskId": 100470,
+     "itemId": 1177,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "ancestors": 8
+    },
+    {
+     "taskId": 100670,
+     "itemId": 310005,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "ancestors": 56
+    },
+    {
+     "taskId": 100780,
+     "itemId": 1220,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "ancestors": 110
+    },
+    {
+     "taskId": 100810,
+     "itemId": 1219,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "ancestors": 104
+    },
+    {
+     "taskId": 100840,
+     "itemId": 1217,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "ancestors": 108
+    },
+    {
+     "taskId": 100900,
+     "itemId": 1218,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "ancestors": 106
+    },
+    {
+     "taskId": 101180,
+     "itemId": 1090,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc",
+      "map_guide"
+     ],
+     "ancestors": 56
+    },
+    {
+     "taskId": 101220,
+     "itemId": 1076,
+     "directCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "closureCols": [
+      "Fight",
+      "ReceiveNpc",
+      "FinishNpc"
+     ],
+     "ancestors": 56
+    }
+   ]
+  },
+  "control": {
+   "note": "对照组 = 能在 item 表查到的 SpRequire 物品 id；两组命中率接近 = V1 命中是数字巧合",
+   "controlItems": 593,
+   "pairs": 892,
+   "hitDirect": 393,
+   "hitPct": 44.1,
+   "columnHistogram": {
+    "Fight": 176,
+    "ReceiveNpc": 118,
+    "FinishNpc": 118,
+    "Pre-Require": 217,
+    "Type": 24,
+    "likability": 2,
+    "transfer": 2,
+    "Completetips": 7,
+    "ReceiveEvent": 1,
+    "item_npc": 1
+   },
+   "valueSetOverlap": {
+    "missing": {
+     "Pre-Require": {
+      "ids": 9,
+      "pct": 3.2
+     },
+     "Pre-Picture": {
+      "ids": 0,
+      "pct": 0
+     },
+     "Fight": {
+      "ids": 277,
+      "pct": 98.2
+     },
+     "ReceiveNpc": {
+      "ids": 184,
+      "pct": 65.2
+     },
+     "FinishNpc": {
+      "ids": 198,
+      "pct": 70.2
+     },
+     "Completetips": {
+      "ids": 0,
+      "pct": 0
+     },
+     "Picture": {
+      "ids": 0,
+      "pct": 0
+     },
+     "Reward": {
+      "ids": 3,
+      "pct": 1.1
+     },
+     "likability": {
+      "ids": 14,
+      "pct": 5
+     },
+     "Type": {
+      "ids": 0,
+      "pct": 0
+     },
+     "Repeat": {
+      "ids": 0,
+      "pct": 0
+     },
+     "Chain": {
+      "ids": 0,
+      "pct": 0
+     },
+     "transfer": {
+      "ids": 6,
+      "pct": 2.1
+     },
+     "map_guide": {
+      "ids": 15,
+      "pct": 5.3
+     },
+     "task_begin": {
+      "ids": 0,
+      "pct": 0
+     },
+     "ReceiveEvent": {
+      "ids": 6,
+      "pct": 2.1
+     },
+     "CompletionEvent": {
+      "ids": 17,
+      "pct": 6
+     },
+     "TaskType": {
+      "ids": 0,
+      "pct": 0
+     },
+     "track": {
+      "ids": 0,
+      "pct": 0
+     },
+     "item_npc": {
+      "ids": 0,
+      "pct": 0
+     },
+     "branchid": {
+      "ids": 0,
+      "pct": 0
+     },
+     "chapterid": {
+      "ids": 0,
+      "pct": 0
+     },
+     "roadAni": {
+      "ids": 0,
+      "pct": 0
+     },
+     "rogue_drop": {
+      "ids": 0,
+      "pct": 0
+     }
+    },
+    "control": {
+     "Pre-Require": {
+      "ids": 195,
+      "pct": 32.9
+     },
+     "Pre-Picture": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "Fight": {
+      "ids": 156,
+      "pct": 26.3
+     },
+     "ReceiveNpc": {
+      "ids": 119,
+      "pct": 20.1
+     },
+     "FinishNpc": {
+      "ids": 116,
+      "pct": 19.6
+     },
+     "Completetips": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "Picture": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "Reward": {
+      "ids": 9,
+      "pct": 1.5
+     },
+     "likability": {
+      "ids": 5,
+      "pct": 0.8
+     },
+     "Type": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "Repeat": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "Chain": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "transfer": {
+      "ids": 8,
+      "pct": 1.3
+     },
+     "map_guide": {
+      "ids": 9,
+      "pct": 1.5
+     },
+     "task_begin": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "ReceiveEvent": {
+      "ids": 4,
+      "pct": 0.7
+     },
+     "CompletionEvent": {
+      "ids": 6,
+      "pct": 1
+     },
+     "TaskType": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "track": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "item_npc": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "branchid": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "chapterid": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "roadAni": {
+      "ids": 1,
+      "pct": 0.2
+     },
+     "rogue_drop": {
+      "ids": 1,
+      "pct": 0.2
+     }
+    }
+   }
+  }
+ },
+ "v5": {
+  "totalTasks": 4840,
+  "roots": 279,
+  "reachable": 2211,
+  "unreachable": 2629,
+  "tasksReferencingMissingItem": 335,
+  "missingTasksUnreachable": 186,
+  "missingItemIdsOnlyInDeadTasks": 157,
+  "missingItemIdsOnlyInDeadSample": [
+   10644,
+   10646,
+   10648,
+   12013,
+   1253,
+   11347,
+   11356,
+   11357,
+   11585,
+   13458,
+   13487,
+   13497,
+   15133,
+   15173,
+   15175,
+   15418,
+   15815,
+   16485,
+   16499,
+   16993
+  ],
+  "deadSample": [
+   106120,
+   106130,
+   106140,
+   106150,
+   106160,
+   106170,
+   106180,
+   106190,
+   106200,
+   106210,
+   106220,
+   106230,
+   106240,
+   106250,
+   106260,
+   106270,
+   106280,
+   106290,
+   106300,
+   106310
+  ]
+ },
+ "repeat": {
+  "repeatTasks": 121,
+  "farmRisk": 77,
+  "farms": [
+   {
+    "taskId": 206380,
+    "Repeat": 1,
+    "SpRequire": "4315,1",
+    "Reward": 206387,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 206390,
+    "Repeat": 1,
+    "SpRequire": "4316,1",
+    "Reward": 206397,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 209900,
+    "Repeat": 1,
+    "SpRequire": "4483,1",
+    "Reward": 209907,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 209910,
+    "Repeat": 1,
+    "SpRequire": "4484,1",
+    "Reward": 209907,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 211230,
+    "Repeat": 1,
+    "SpRequire": "6750,1",
+    "Reward": 211237,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300000,
+    "Repeat": 1,
+    "SpRequire": "3003,2",
+    "Reward": 300007,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300010,
+    "Repeat": 1,
+    "SpRequire": "1001,1",
+    "Reward": 300017,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300020,
+    "Repeat": 1,
+    "SpRequire": "3006,1",
+    "Reward": 300027,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300030,
+    "Repeat": 1,
+    "SpRequire": "1028",
+    "Reward": 300037,
+    "Type": 3,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300040,
+    "Repeat": 1,
+    "SpRequire": "4105,1",
+    "Reward": 300047,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300050,
+    "Repeat": 1,
+    "SpRequire": "1032",
+    "Reward": 300057,
+    "Type": 3,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300060,
+    "Repeat": 1,
+    "SpRequire": "1034",
+    "Reward": 300067,
+    "Type": 3,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300070,
+    "Repeat": 1,
+    "SpRequire": "4107,1",
+    "Reward": 300077,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300080,
+    "Repeat": 1,
+    "SpRequire": "1170",
+    "Reward": 300027,
+    "Type": 3,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300090,
+    "Repeat": 1,
+    "SpRequire": "2002,1",
+    "Reward": 300017,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300100,
+    "Repeat": 1,
+    "SpRequire": "4090,1",
+    "Reward": 300027,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300110,
+    "Repeat": 1,
+    "SpRequire": "1006,1",
+    "Reward": 300027,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300120,
+    "Repeat": 1,
+    "SpRequire": "4201,1",
+    "Reward": 300017,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300130,
+    "Repeat": 1,
+    "SpRequire": "4202,1",
+    "Reward": 300017,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300140,
+    "Repeat": 1,
+    "SpRequire": "3002,10",
+    "Reward": 300017,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300150,
+    "Repeat": 1,
+    "SpRequire": "4110,5",
+    "Reward": 300027,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300170,
+    "Repeat": 1,
+    "SpRequire": "1065",
+    "Reward": 300017,
+    "Type": 3,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300180,
+    "Repeat": 1,
+    "SpRequire": "4005,10",
+    "Reward": 300017,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300190,
+    "Repeat": 1,
+    "SpRequire": "1108,1",
+    "Reward": 300027,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300200,
+    "Repeat": 1,
+    "SpRequire": "4053,3",
+    "Reward": 300027,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300210,
+    "Repeat": 1,
+    "SpRequire": "4001,15000",
+    "Reward": 300217,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300220,
+    "Repeat": 1,
+    "SpRequire": "1273",
+    "Reward": 300027,
+    "Type": 3,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300230,
+    "Repeat": 1,
+    "SpRequire": "4007,5",
+    "Reward": 300217,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300250,
+    "Repeat": 1,
+    "SpRequire": "4001,10000",
+    "Reward": 300217,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   },
+   {
+    "taskId": 300270,
+    "Repeat": 1,
+    "SpRequire": "4307,1",
+    "Reward": 300057,
+    "Type": 2,
+    "TaskType": 2,
+    "downstream": 0
+   }
+  ]
+ },
+ "prefixHistogram": {
+  "10": 27,
+  "11": 98,
+  "12": 49,
+  "13": 6,
+  "15": 41,
+  "16": 41,
+  "17": 12,
+  "20": 1,
+  "30": 3,
+  "31": 4
+ },
+ "crossTable": {
+  "dropItemsDistinct": 298,
+  "npcDropItemsDistinct": 0,
+  "missingFoundInDrop": 0,
+  "missingFoundInNpcDrop": 0,
+  "missingFoundInItemTableAsOtherCol": 0
+ },
+ "v1PairsSample": [
+  {
+   "taskId": 100070,
+   "itemId": 310003,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 2
+  },
+  {
+   "taskId": 100080,
+   "itemId": 310003,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 2
+  },
+  {
+   "taskId": 100130,
+   "itemId": 1028,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 7
+  },
+  {
+   "taskId": 100150,
+   "itemId": 4015,
+   "count": 1,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [],
+   "ancestors": 9
+  },
+  {
+   "taskId": 100180,
+   "itemId": 4016,
+   "count": 1,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [],
+   "ancestors": 12
+  },
+  {
+   "taskId": 100190,
+   "itemId": 4016,
+   "count": 1,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [],
+   "ancestors": 12
+  },
+  {
+   "taskId": 100210,
+   "itemId": 2034,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 15
+  },
+  {
+   "taskId": 100240,
+   "itemId": 1303,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight"
+   ],
+   "closureCols": [
+    "Fight"
+   ],
+   "ancestors": 22
+  },
+  {
+   "taskId": 100250,
+   "itemId": 3001,
+   "count": 2,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [
+    "Reward"
+   ],
+   "ancestors": 18
+  },
+  {
+   "taskId": 100280,
+   "itemId": 310007,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 24
+  },
+  {
+   "taskId": 100290,
+   "itemId": 3101,
+   "count": 1,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [],
+   "ancestors": 25
+  },
+  {
+   "taskId": 100290,
+   "itemId": 3401,
+   "count": 1,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [],
+   "ancestors": 25
+  },
+  {
+   "taskId": 100300,
+   "itemId": 4095,
+   "count": 1,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [],
+   "ancestors": 26
+  },
+  {
+   "taskId": 100330,
+   "itemId": 1198,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 29
+  },
+  {
+   "taskId": 100420,
+   "itemId": 1199,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 3
+  },
+  {
+   "taskId": 100440,
+   "itemId": 1199,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 4
+  },
+  {
+   "taskId": 100470,
+   "itemId": 1177,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 8
+  },
+  {
+   "taskId": 100490,
+   "itemId": 4028,
+   "count": 1,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [],
+   "ancestors": 10
+  },
+  {
+   "taskId": 100520,
+   "itemId": 4022,
+   "count": 1,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [],
+   "ancestors": 16
+  },
+  {
+   "taskId": 100600,
+   "itemId": 4022,
+   "count": 1,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [],
+   "ancestors": 13
+  },
+  {
+   "taskId": 100670,
+   "itemId": 310005,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 56
+  },
+  {
+   "taskId": 100680,
+   "itemId": 1023,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 57
+  },
+  {
+   "taskId": 100690,
+   "itemId": 4033,
+   "count": 1,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [],
+   "ancestors": 98
+  },
+  {
+   "taskId": 100720,
+   "itemId": 1216,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 112
+  },
+  {
+   "taskId": 100750,
+   "itemId": 1215,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 114
+  },
+  {
+   "taskId": 100780,
+   "itemId": 1220,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 110
+  },
+  {
+   "taskId": 100810,
+   "itemId": 1219,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 104
+  },
+  {
+   "taskId": 100840,
+   "itemId": 1217,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 108
+  },
+  {
+   "taskId": 100870,
+   "itemId": 1221,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 101
+  },
+  {
+   "taskId": 100900,
+   "itemId": 1218,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 106
+  },
+  {
+   "taskId": 100930,
+   "itemId": 1222,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 116
+  },
+  {
+   "taskId": 101120,
+   "itemId": 4001,
+   "count": 100,
+   "missing": false,
+   "directCols": [],
+   "closureCols": [],
+   "ancestors": 22
+  },
+  {
+   "taskId": 101180,
+   "itemId": 1090,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc",
+    "map_guide"
+   ],
+   "ancestors": 56
+  },
+  {
+   "taskId": 101220,
+   "itemId": 1076,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 56
+  },
+  {
+   "taskId": 101260,
+   "itemId": 1157,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 56
+  },
+  {
+   "taskId": 101300,
+   "itemId": 1141,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 56
+  },
+  {
+   "taskId": 101340,
+   "itemId": 1106,
+   "count": null,
+   "missing": false,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 56
+  },
+  {
+   "taskId": 101380,
+   "itemId": 1170,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 56
+  },
+  {
+   "taskId": 101420,
+   "itemId": 1128,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 56
+  },
+  {
+   "taskId": 101460,
+   "itemId": 1058,
+   "count": null,
+   "missing": true,
+   "directCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "closureCols": [
+    "Fight",
+    "ReceiveNpc",
+    "FinishNpc"
+   ],
+   "ancestors": 56
+  }
+ ],
+ "missingItemTableIds": [
+  310003,
+  1028,
+  310007,
+  1177,
+  310005,
+  1220,
+  1219,
+  1217,
+  1218,
+  1090,
+  1076,
+  1157,
+  1170,
+  1128,
+  1058,
+  1066,
+  1065,
+  1171,
+  3027,
+  310008,
+  3049,
+  1093,
+  1176,
+  10644,
+  10646,
+  10648,
+  11148,
+  11160,
+  11126,
+  11127,
+  11176,
+  11226,
+  11684,
+  11703,
+  11936,
+  11959,
+  12040,
+  11965,
+  12013,
+  12079,
+  1252,
+  12289,
+  15346,
+  15032,
+  15044,
+  15356,
+  15352,
+  15350,
+  15351,
+  15353,
+  15290,
+  15300,
+  15096,
+  15349,
+  3053,
+  1257,
+  1069,
+  1168,
+  1071,
+  1166
+ ]
+}
