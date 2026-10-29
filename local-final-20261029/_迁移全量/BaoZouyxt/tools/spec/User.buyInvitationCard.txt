@@ -1,0 +1,99 @@
+# User.buyInvitationCard  (HttpConst.BUY_INVITATIONCARD)
+# 出现 2 处
+
+ 55854: this.paperNum = 0;
+ 55855: this.award = {};
+ 55856: this.cardState = 0;
+ 55857: this.goldAy = [];
+ 55858: i.MessageCenter.on(n.HttpConst.PASS_CARD_DATA, this.onGetPassCardData, this);
+ 55859: i.MessageCenter.on(n.HttpConst.PASS_CARD_REWARD, this.onGetPassCardReward, this);
+ 55860: i.MessageCenter.on(n.HttpConst.BUY_INVITATIONCARD, this.onBuyInvitationCard, this);
+ 55861: i.MessageCenter.on(n.HttpConst.GET_TREASURE_FLOOR, this.onGetTreasureFloor, this);
+ 55862: i.MessageCenter.on(n.HttpConst.ENTER_NEXT_FLOOR, this.onEnterNextFloor, this);
+ 55863: i.MessageCenter.on(n.HttpConst.GET_TREASURE_AWARD, this.onGetTreasureAward, this);
+ 55864: i.MessageCenter.on(n.HttpConst.CAN_BUYACTIVITY_NUM, this.onCanBuyActivityNum, this);
+ 55865: i.MessageCenter.on(n.HttpConst.BUY_ACTIVITY_NUM, this.onBuyActivityNum, this);
+ 55866: };
+ 55867: t.prototype.onGetPassCardData = function(t, e) {
+ 55868: if (1 == e.eRet) {
+ 55869: this.cardState = parseInt(e.passCard.p);
+ 55870: this.paperNum = e.passCard.n;
+ 55871: this.award = e.passCard.award;
+ 55872: this.goldAy = e.goldArr;
+ 55873: i.MessageCenter.dispatch(r.EvName.PASSCARD_DATA_EVENT, e);
+ 55874: } else if (2 == e.eRet) {
+ 55875: a.RoleOtherInfo.passCardAction = 0;
+ 55876: i.MessageCenter.dispatch(r.EvName.UPDATE_PASSCARD_DATA_EVENT, {});
+ 55877: }
+ 55878: };
+ 55879: t.prototype.onGetPassCardReward = function(t, e) {
+ 55880: if (1 == e.eRet) {
+ 55881: this.award[e.awardArr[0]] = e.awardArr[1];
+ 55882: s.default.addShowRewardUI1(e.rewardArray, 0, {});
+ 55883: } else 4 == e.eRet && l.default.show(c.getText(1093));
+ 55884: };
+ 55885: t.prototype.onBuyInvitationCard = function(t, e) {
+ 55886: if (1 == e.eRet) {
+ 55887: this.cardState = e.pass_levelID;
+ 55888: i.MessageCenter.dispatch(r.EvName.PAY_GOLD_INVITE, e.pass_levelID);
+ 55889: } else 4 == e.eRet ? l.default.show(c.getText(1093)) : 2 == e.eRet && l.default.show(c.getText(535), [ {
+ 55890: flag: 0,
+ 55891: name: c.getText(10839)
+ 55892: }, {
+ 55893: flag: 1,
+ 55894: name: c.getText(10840)
+ 55895: } ], function(t) {
+ 55896: 0 == t && p.StoreModel.reqStoreList({
+ 55897: type: 2,
+ 55898: back: 0
+ 55899: });
+ 55900: }, "", !1);
+---
+ 55962: });
+ 55963: };
+ 55964: t.prototype.reqGetInviteData = function() {
+ 55965: h.NetMgr.http.sendReqWithMask(n.HttpConst.PASS_CARD_DATA, {});
+ 55966: };
+ 55967: t.prototype.reqUpGradeCard = function(t) {
+ 55968: h.NetMgr.http.sendReqWithMask(n.HttpConst.BUY_INVITATIONCARD, {
+ 55969: pass_levelID: t
+ 55970: });
+ 55971: };
+ 55972: t.prototype.reqGetInviteReward = function(t) {
+ 55973: h.NetMgr.http.sendReqWithMask(n.HttpConst.PASS_CARD_REWARD, {
+ 55974: passID: t
+ 55975: });
+ 55976: };
+ 55977: t.prototype.reqGetTowerNum = function(t) {
+ 55978: var e = this;
+ 55979: this.sceneId = t;
+ 55980: var o = u.getConstByID("221");
+ 55981: this.curFloorNum > 0 ? f.RoleBaseInfo.getItemNum(o) > 0 ? l.default.show(c.getText(5067), [ {
+ 55982: name: c.getText("332"),
+ 55983: flag: 0
+ 55984: }, {
+ 55985: name: c.getText("333"),
+ 55986: flag: 1
+ 55987: } ], function(t) {
+ 55988: 0 == t && e.reqEnterTreasure(e.curFloorNum + 1);
+ 55989: }) : l.default.show(c.getText(3802)) : h.NetMgr.http.sendReqWithMask(n.HttpConst.GET_TREASURE_FLOOR, {});
+ 55990: };
+ 55991: t.prototype.reqEnterTreasure = function(t) {
+ 55992: h.NetMgr.http.sendReqWithMask(n.HttpConst.ENTER_NEXT_FLOOR, {
+ 55993: floor: t
+ 55994: });
+ 55995: };
+ 55996: t.prototype.reqGetTreasureReward = function(t) {
+ 55997: this.selectIndex = t;
+ 55998: h.NetMgr.http.sendReqWithMask(n.HttpConst.GET_TREASURE_AWARD, {
+ 55999: idx: t - 1
+ 56000: });
+ 56001: };
+ 56002: t.prototype.enterToScene = function(t, e) {
+ 56003: if (this.sceneId > 0) {
+ 56004: this.boxNum = t;
+ 56005: this.showTipFlag = e;
+ 56006: d.GSceneMgr.mode = 3;
+ 56007: this.entrX = g.UserModel.playerPos.x;
+ 56008: this.entrY = g.UserModel.playerPos.y;
+---

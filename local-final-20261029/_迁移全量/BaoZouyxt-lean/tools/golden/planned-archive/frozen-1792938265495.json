@@ -1,0 +1,89 @@
+{
+ "archivedAt": "2026-10-25T14:24:25.495Z",
+ "rules": [
+  {
+   "id": "V26-C02-1",
+   "action": "delegateTask",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "reason": "v2.6 堵口：delegateTask 原来没有任何拒绝分支，taskID 非法也回 eRet:1 并把该 id 塞进 accepted（上游点名的第三条白拿路径）。新增 acceptable() 闸后，非法/已领过的 id 回 eRet:4。这是**有意的**行为改动，不是意外漂移。",
+   "ev": "index.js:43506"
+  },
+  {
+   "id": "V26-C02-2",
+   "action": "delegateTask",
+   "field": [
+    "sTime"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "delegateTask",
+     "sTime"
+    ]
+   ],
+   "reason": "拒绝分支只回 {eRet:4}（narrowReject 收窄），不再带 sTime。逃逸结论 closed：客户端 DELEGATE_TASK 回调只在 1==eRet 分支读 o.sTime（index.js:43510 `time: o.sTime`），4 分支只 cc.log、不解引用。成功路径照常下发 sTime=env.now()。",
+   "ev": "index.js:43510"
+  },
+  {
+   "id": "V26-C02-3",
+   "action": "rogueAcceptTask",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "reason": "v2.6 堵口：rogueAcceptTask 原来对 taskID 不设任何条件，任意 X 都能进 accepted（上游点名的第二条白拿路径）。新增 acceptable() 闸后，非法/已领过的 id 回 eRet:4。",
+   "ev": "index.js:133225"
+  },
+  {
+   "id": "V26-C02-4",
+   "action": "rogueAcceptTask",
+   "field": [
+    "skillId"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "rogueAcceptTask",
+     "skillId"
+    ]
+   ],
+   "reason": "拒绝分支收窄到 {eRet:4}，不带 skillId。逃逸结论 closed：客户端 getRogueTaskCallBack 的 4 分支（index.js:133250-133252）只查 tasktime 表并 show(getText(1093))，不读 o.skillId；skillId 只在 6 分支（133253）被 getItem(o.skillId).Name 读取 —— 所以我们**故意回 4 不回 6**。",
+   "ev": "index.js:133250"
+  },
+  {
+   "id": "V26-C02-5",
+   "action": "rogueAcceptTask",
+   "field": [
+    "CDTime"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "rogueAcceptTask",
+     "CDTime"
+    ]
+   ],
+   "reason": "同上：CDTime 只在客户端 6 分支参与 `o.CDTime - o.serverTime` 的倒计时计算（index.js:133254），4 分支不读，故缺席无逃逸路径。",
+   "ev": "index.js:133250"
+  },
+  {
+   "id": "V26-C02-6",
+   "action": "rogueAcceptTask",
+   "field": [
+    "serverTime"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "rogueAcceptTask",
+     "serverTime"
+    ]
+   ],
+   "reason": "同上：serverTime 只与 CDTime 一起在 6 分支被读（index.js:133254），4 分支不读，缺席无逃逸路径。",
+   "ev": "index.js:133250"
+  }
+ ]
+}

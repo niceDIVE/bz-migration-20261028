@@ -1,0 +1,80 @@
+# User.reviveMulti  (HttpConst.LANGH_MP_REVIVE)
+# 出现 2 处
+
+ 67594: var r = t("../../core/events/MessageCenter"), a = t("../../gui/battle/resultscripts/rewardscripts/LangHRwds"), s = t("../../gui/mpbattle/TowerMPBattleUI"), l = t("../../models/MPBattleModel"), c = t("../../models/StoreModel"), p = t("../../net/HttpConst"), h = t("../../net/NetMgr"), u = t("../../utils/EvName"), f = t("../BundleMgr"), d = t("./SPMpBtMgr"), g = t("../../gameconfigs/LangMgr"), m = t("../../core/ui/mgrs/PopUpMgr"), y = t("../LayerMgr"), v = function(e) {
+ 67595: n(o, e);
+ 67596: function o() {
+ 67597: var t = e.call(this) || this;
+ 67598: t.revivePanel = null;
+ 67599: t.revived = !1;
+ 67600: r.MessageCenter.on(p.HttpConst.LANGH_MP_REVIVE, function(e, o) {
+ 67601: if (2 === o.eRet) c.StoreModel.openChargeList(); else if (t.btUI) {
+ 67602: if (t.revivePanel) {
+ 67603: m.PopUpMgr.removePopUp(t.revivePanel);
+ 67604: f.default.prefabs.release("towerUI/RevivePanel", cc.Prefab);
+ 67605: }
+ 67606: t.revivePanel = null;
+ 67607: t.btUI.emit(u.EvName.BUY_REVIVE_RESULT, o.eRet);
+ 67608: t.playWithData(o);
+ 67609: }
+ 67610: }, t);
+ 67611: return t;
+ 67612: }
+ 67613: o.prototype.postProcess = function(o) {
+ 67614: var i = this, n = this;
+ 67615: e.prototype.postProcess.call(this, o);
+ 67616: o.on(u.EvName.BUY_REVIVE, function() {
+ 67617: f.default.prefabs.load("towerUI/RevivePanel", cc.Prefab, function(e, o) {
+ 67618: Promise.resolve().then(function() {
+ 67619: return t("../../../scripts2/ui/towerSystem/RevivePanel");
+ 67620: }).then(function(t) {
+ 67621: var e = t.RevivePanel, r = cc.instantiate(o);
+ 67622: i.revivePanel = r;
+ 67623: var a = r.getComponent(e);
+ 67624: a.description.string = g.getText(1625).replace(/\[1\]/g, i.state.reviveCost);
+ 67625: a.setCb(function(t) {
+ 67626: var e = 0;
+ 67627: n.battleUI && n.battleUI.myActor && n.battleUI.myActor.id && n.battleUI.myActor.isPartner && (e = n.battleUI.myActor.id);
+ 67628: h.NetMgr.http.sendRequest(p.HttpConst.LANGH_MP_REVIVE, {
+ 67629: flag: t,
+ 67630: battleID: e
+ 67631: });
+ 67632: });
+ 67633: m.PopUpMgr.addPopUp(r, y.LayerMgr.popUpLayer);
+ 67634: });
+ 67635: });
+ 67636: });
+ 67637: };
+ 67638: o.prototype.processEnd = function(t, e) {
+ 67639: null == e || e.addComponent(a.LangHRwds);
+ 67640: l.MPBattleModel.reqTowerEnd(t.npcID, t.data[0]);
+---
+ 67641: };
+ 67642: o.prototype.getPanelScript = function() {
+ 67643: return s.TowerMPBattleUI;
+ 67644: };
+ 67645: return o;
+ 67646: }(d.SPMpBtMgr);
+ 67647: o.LangHMpMgr = v;
+ 67648: cc._RF.pop();
+ 67649: }, {
+ 67650: "../../../scripts2/ui/towerSystem/RevivePanel": void 0,
+ 67651: "../../core/events/MessageCenter": "MessageCenter",
+ 67652: "../../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 67653: "../../gameconfigs/LangMgr": "LangMgr",
+ 67654: "../../gui/battle/resultscripts/rewardscripts/LangHRwds": "LangHRwds",
+ 67655: "../../gui/mpbattle/TowerMPBattleUI": "TowerMPBattleUI",
+ 67656: "../../models/MPBattleModel": "MPBattleModel",
+ 67657: "../../models/StoreModel": "StoreModel",
+ 67658: "../../net/HttpConst": "HttpConst",
+ 67659: "../../net/NetMgr": "NetMgr",
+ 67660: "../../utils/EvName": "EvName",
+ 67661: "../BundleMgr": "BundleMgr",
+ 67662: "../LayerMgr": "LayerMgr",
+ 67663: "./SPMpBtMgr": "SPMpBtMgr"
+ 67664: } ],
+ 67665: LangHRwds: [ function(t, e, o) {
+ 67666: "use strict";
+ 67667: cc._RF.push(e, "653c6MzeztDQZblgdpXXJNz", "LangHRwds");
+ 67668: var i, n = this && this.__extends || (i = function(t, e) {
+---

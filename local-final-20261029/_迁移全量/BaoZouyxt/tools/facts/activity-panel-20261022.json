@@ -1,0 +1,2138 @@
+{
+  "generatedAt": "2026-10-22T11:18:46.826Z",
+  "scope": {
+    "files": [
+      "tools/index.js",
+      "tools/scripts2.js",
+      "tools/scripts3.js"
+    ],
+    "configDir": "tools/cfg/dump/"
+  },
+  "getAllActivity": {
+    "consumer": {
+      "file": "index.js",
+      "line": 57446,
+      "body": [
+        {
+          "line": 57446,
+          "text": "t.prototype.onGetAllActivity = function(t, e) {"
+        },
+        {
+          "line": 57447,
+          "text": "e.hasOwnProperty(\"geSchoolTaskRed\") && (u.RoleOtherInfo.warmUpRed = e.geSchoolTaskRed);"
+        },
+        {
+          "line": 57448,
+          "text": "e.hasOwnProperty(\"geNianshouTaskRed\") && u.RoleOtherInfo.setActivityData(78, e.geNianshouTaskRed);"
+        },
+        {
+          "line": 57449,
+          "text": "e.hasOwnProperty(\"jigsawRed\") && (u.RoleOtherInfo.jigsawRed = e.jigsawRed);"
+        },
+        {
+          "line": 57450,
+          "text": "e.hasOwnProperty(\"activityList\") && (u.RoleOtherInfo.activityList = e.activityList);"
+        },
+        {
+          "line": 57451,
+          "text": "e.hasOwnProperty(\"idType\") && (m.SchoolModel.idRwType = e.idType);"
+        },
+        {
+          "line": 57452,
+          "text": "e.hasOwnProperty(\"scratchLottoFree\") && u.RoleOtherInfo.setActivityData(66, !0);"
+        },
+        {
+          "line": 57453,
+          "text": "e.hasOwnProperty(\"supportCamp\") && u.RoleOtherInfo.setActivityData(68, e.supportCamp);"
+        },
+        {
+          "line": 57454,
+          "text": "e.hasOwnProperty(\"digcellTaskRed\") && u.RoleOtherInfo.setActivityData(79, e.digcellTaskRed);"
+        },
+        {
+          "line": 57455,
+          "text": "e.hasOwnProperty(\"activityShows\") && (this.activeShowList = e.activityShows);"
+        },
+        {
+          "line": 57456,
+          "text": "e.hasOwnProperty(\"calendar\") && e.calendar > 0 ? this.calendarStr = e.calendar.toString() : this.calendarStr = \"\";"
+        },
+        {
+          "line": 57457,
+          "text": "u.RoleOtherInfo.setActivityData(80, e.transGiftShow);"
+        },
+        {
+          "line": 57458,
+          "text": "u.RoleOtherInfo.activeObj[0] ? this.reqSevenDayActive() : this.reqEveryDayActive();"
+        },
+        {
+          "line": 57459,
+          "text": "};"
+        }
+      ]
+    },
+    "dataSource": {
+      "requestConst": "index.js:60248  GET_ALL_ACTIVITY: \"User.getAllActivity\"",
+      "sender": "index.js:57481-57485 reqGetAllActivity -> sendReqWithMask(HttpConst.GET_ALL_ACTIVITY,{})",
+      "registrar": "index.js:57384 MessageCenter.on(GET_ALL_ACTIVITY, this.onGetAllActivity, this)"
+    },
+    "fields": [
+      {
+        "name": "geSchoolTaskRed",
+        "evidence": "index.js:57447",
+        "usage": "-> RoleOtherInfo.warmUpRed"
+      },
+      {
+        "name": "geNianshouTaskRed",
+        "evidence": "index.js:57448",
+        "usage": "-> RoleOtherInfo.setActivityData(78, value)"
+      },
+      {
+        "name": "jigsawRed",
+        "evidence": "index.js:57449",
+        "usage": "-> RoleOtherInfo.jigsawRed"
+      },
+      {
+        "name": "activityList",
+        "evidence": "index.js:57450",
+        "usage": "-> RoleOtherInfo.activityList"
+      },
+      {
+        "name": "idType",
+        "evidence": "index.js:57451",
+        "usage": "-> SchoolModel.idRwType"
+      },
+      {
+        "name": "scratchLottoFree",
+        "evidence": "index.js:57452",
+        "usage": "存在即 setActivityData(66, !0)"
+      },
+      {
+        "name": "supportCamp",
+        "evidence": "index.js:57453",
+        "usage": "-> setActivityData(68, value)"
+      },
+      {
+        "name": "digcellTaskRed",
+        "evidence": "index.js:57454",
+        "usage": "-> setActivityData(79, value)"
+      },
+      {
+        "name": "activityShows",
+        "evidence": "index.js:57455",
+        "usage": "-> HomeActiveModel.activeShowList"
+      },
+      {
+        "name": "calendar",
+        "evidence": "index.js:57456",
+        "usage": ">0 则 calendarStr = String(calendar)，否则 \"\""
+      },
+      {
+        "name": "transGiftShow",
+        "evidence": "index.js:57457",
+        "usage": "-> setActivityData(80, value)（无 hasOwnProperty 保护）"
+      }
+    ]
+  },
+  "activityListHits": [
+    {
+      "file": "index.js",
+      "line": 1894,
+      "text": "var e = d.RoleOtherInfo.activityList, o = !1;",
+      "usage": "ActiveModel.checkActive 内取局部变量 e=activityList，随后 1895 循环比较 e[i]==t 判定活动是否开启"
+    },
+    {
+      "file": "index.js",
+      "line": 1907,
+      "text": "for (var e = d.RoleOtherInfo.activityList, o = 0; o < e.length; o++) e[o] == t && e.splice(o, 1);",
+      "usage": "ActiveModel.outTimeActive 内遍历 activityList，命中即 e.splice(o,1) 原地删除"
+    },
+    {
+      "file": "index.js",
+      "line": 57450,
+      "text": "e.hasOwnProperty(\"activityList\") && (u.RoleOtherInfo.activityList = e.activityList);",
+      "usage": "getAllActivity 应答 hasOwnProperty(\"activityList\") -> 赋值 RoleOtherInfo.activityList（全包唯一服务端写入点）"
+    },
+    {
+      "file": "index.js",
+      "line": 78930,
+      "text": "} else if (101 == parseInt(i.Type) || 103 == parseInt(i.Type)) S.LoginMgr.isMiniIos(3) || (o = e.addComponent(\"MiniNpc\")); else if (105 == parseInt(i.Type)) A.RoleOtherInfo.activityList && A.RoleOtherInfo.activityList.includes(46) && (o = e.addComponent(\"MiniNpc\")); else if (112 == parseInt(i.Type)) C.MultiPlayerModel.wulinMgr && 2 == C.MultiPlayerModel.wulinMgr.matchType && (o = e.addComponent(\"MiniNpc\")); else if (80 == parseInt(i.Type)) A.RoleOtherInfo.activityList.indexOf(25) >= 0 && (o = e.addComponent(\"MiniNpc\")).setNpcScale(1e3 / 667); else if (82 == parseInt(i.Type)) A.RoleOtherInfo.activityList.indexOf(1025) >= 0 && (o = e.addComponent(\"MiniNpc\")); else if (114 == parseInt(i.Type)) (A.RoleOtherInfo.activityList.includes(62) || A.RoleOtherInfo.activityList.includes(68)) && (o = e.addComponent(\"MiniNpc\")); else if (12508 == parseInt(t.id) || 12569 == parseInt(t.id)) A.RoleOtherInfo.activityList.includes(69) && (o = e.addComponent(\"MiniNpc\")); else if (125 == parseInt(i.Type)) T.ActiveModel.checkActive(73) && (o = e.addComponent(\"MiniNpc\")); else if (126 == parseInt(i.Type)) b.TimeMgr.getSTimestamp() < 1e3 * A.RoleOtherInfo.mEndTime && (o = e.addComponent(\"MiniNpc\")); else if (127 == parseInt(i.Type)) {",
+      "usage": "单行 if-else 链内多处判读：includes(46)、indexOf(25)>=0、indexOf(1025)>=0、includes(62)/includes(68)、includes(69)，逐项决定是否 addComponent(\"MiniNpc\")"
+    },
+    {
+      "file": "index.js",
+      "line": 90346,
+      "text": "if (!d.RoleOtherInfo.activityList || !d.RoleOtherInfo.activityList.includes(46)) return null;",
+      "usage": "if (!activityList || !activityList.includes(46)) return null; 缺失即直接返回 null"
+    },
+    {
+      "file": "index.js",
+      "line": 90348,
+      "text": "} else if (112 == parseInt(r.Type)) f.MultiPlayerModel.wulinMgr && 2 == f.MultiPlayerModel.wulinMgr.matchType && (o = e.addComponent(\"NormalNpc\")); else if (80 == parseInt(r.Type)) d.RoleOtherInfo.activityList.indexOf(25) >= 0 && (o = e.addComponent(\"NormalNpc\")).setNpcScale(1e3 / 667); else if (82 == parseInt(r.Type)) d.RoleOtherInfo.activityList.indexOf(1025) >= 0 && (o = e.addComponent(\"NormalNpc\")); else if (83 == parseInt(r.Type)) o = e.addComponent(\"NPC83\"); else if (114 == parseInt(r.Type)) (d.RoleOtherInfo.activityList.includes(62) || d.RoleOtherInfo.activityList.includes(68)) && (o = e.addComponent(\"NormalNpc\")); else if (12508 == parseInt(t.id) || 12569 == parseInt(t.id)) d.RoleOtherInfo.activityList.includes(69) && (o = e.addComponent(\"HumanNpc\")); else if (119 == parseInt(r.Type)) (o = e.addComponent(\"RogueNpc\")).tag = 99; else if (125 == parseInt(r.Type)) c.ActiveModel.checkActive(73) && (o = e.addComponent(\"NormalNpc\")); else if (126 == parseInt(r.Type)) l.TimeMgr.getSTimestamp() < 1e3 * d.RoleOtherInfo.mEndTime && (o = e.addComponent(\"Npc\")); else if (127 == parseInt(r.Type)) {",
+      "usage": "同 78930 的 NormalNpc/HumanNpc 分支：indexOf(25)、indexOf(1025)、includes(62)/includes(68)、includes(69)"
+    },
+    {
+      "file": "index.js",
+      "line": 98305,
+      "text": "if (0 != this.activeID && l.RoleOtherInfo.activityList.indexOf(this.activeID) < 0) {",
+      "usage": "transmit 类 execute 内 indexOf(this.activeID) < 0 则 show(getText(1093)) 并 return，不切场景"
+    },
+    {
+      "file": "index.js",
+      "line": 107174,
+      "text": "this.activityList = [];",
+      "usage": "构造函数默认值 this.activityList = []"
+    },
+    {
+      "file": "index.js",
+      "line": 107250,
+      "text": "if (e.hasOwnProperty(\"activityList\")) {",
+      "usage": "RoleOtherInfo.setRoleInfo 中 if (hasOwnProperty(\"activityList\")) 分支入口"
+    },
+    {
+      "file": "index.js",
+      "line": 107251,
+      "text": "this.activityList = e.activityList;",
+      "usage": "登录应答字段 activityList -> this.activityList"
+    },
+    {
+      "file": "index.js",
+      "line": 107252,
+      "text": "this.activityList.indexOf(92) >= 0 && Promise.resolve().then(function() {",
+      "usage": "this.activityList.indexOf(92) >= 0 时动态 import scripts3/model3/DragonAdventModel 并调用 setActivityList()"
+    },
+    {
+      "file": "index.js",
+      "line": 108102,
+      "text": "this.activityList = [];",
+      "usage": "另一类实例构造函数默认值 this.activityList = []"
+    },
+    {
+      "file": "index.js",
+      "line": 108137,
+      "text": "if (o.RoleOtherInfo.activityList.indexOf(91) >= 0) for (var t = [ 20, 40, 60 ], e = 0; e < t.length; e++) {",
+      "usage": "setActiveRedFun 内 if (activityList.indexOf(91) >= 0) 才把 castlejumpingfun_reward 20/40/60 装进 activeItemData"
+    },
+    {
+      "file": "index.js",
+      "line": 108143,
+      "text": "if (this.activityList.indexOf(t) >= 0 && this.activeRedMap.hasOwnProperty(t)) {",
+      "usage": "getActiveItemNum 内 this.activityList.indexOf(t) >= 0 且 activeRedMap 有该键才继续取值"
+    },
+    {
+      "file": "index.js",
+      "line": 122440,
+      "text": "var o = _.RoleOtherInfo.activityList.includes(S.ActiveIDEnum.ClimbingTower), i = M.GSceneMgr.getCurSceneID();",
+      "usage": "includes(S.ActiveIDEnum.ClimbingTower) 决定是否 createTransferNpc"
+    },
+    {
+      "file": "index.js",
+      "line": 131304,
+      "text": "y.RoleOtherInfo.activityList.indexOf(23) >= 0 ? g.NetMgr.http.sendRequest(p.HttpConst.GET_GIFT_DATA, {",
+      "usage": "openOptionalGiftUI：indexOf(23) >= 0 -> sendRequest(GET_GIFT_DATA)"
+    },
+    {
+      "file": "index.js",
+      "line": 131306,
+      "text": "}) : y.RoleOtherInfo.activityList.indexOf(64) >= 0 && g.NetMgr.http.sendRequest(p.HttpConst.NEW_OPTIONALGIFT_DATA, {",
+      "usage": "indexOf(64) >= 0 -> sendRequest(NEW_OPTIONALGIFT_DATA)"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 14592,
+      "text": "k.RoleOtherInfo.activityList.indexOf(75) >= 0 && 10828 == this.npcData.NpcID && this.btnArray.push(\"6000488\");",
+      "usage": "indexOf(75) >= 0 && 10828 == this.npcData.NpcID -> btnArray.push(\"6000488\")"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 29857,
+      "text": "this.goldFurnaceBtn.active = !n && d.RoleOtherInfo.activityList.indexOf(67) >= 0;",
+      "usage": "this.goldFurnaceBtn.active = !n && activityList.indexOf(67) >= 0"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 30127,
+      "text": "var t = d.RoleOtherInfo.activityList.indexOf(67);",
+      "usage": "onCloseAlchemyEvent：indexOf(67) 取下标"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 30128,
+      "text": "d.RoleOtherInfo.activityList.splice(t, 1);",
+      "usage": "splice(t,1) 原地移除 67 后 goldFurnaceBtn.active=false"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 30967,
+      "text": "var e = d.RoleOtherInfo.activityList.indexOf(67);",
+      "usage": "onGoldFurnaceBtn：indexOf(67) 取下标"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 30968,
+      "text": "d.RoleOtherInfo.activityList.splice(e, 1);",
+      "usage": "splice(e,1) 原地移除 67"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 31099,
+      "text": "if (-1 == d.RoleOtherInfo.activityList.indexOf(92)) {",
+      "usage": "if (-1 == activityList.indexOf(92)) 则把 [19,84,93,94] 并入红点列表 s"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 31139,
+      "text": "for (var s in this.newActiveNodeMap) this.newActiveNodeMap[s].btn.active = !i && d.RoleOtherInfo.activityList.indexOf(Number(s)) >= 0;",
+      "usage": "遍历 newActiveNodeMap，activityList.indexOf(Number(s)) >= 0 决定 btn.active"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 20982,
+      "text": "d.RoleOtherInfo.activityList.includes(62) ? t = c.getSchool(this.data) : d.RoleOtherInfo.activityList.includes(68) && (t = c.getText(10 == this.data ? 6001875 : 6001876));",
+      "usage": "includes(62) -> getSchool(this.data)；includes(68) -> getText(6001875/6001876)"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 31991,
+      "text": "-1 == u.RoleOtherInfo.activityList.indexOf(96) && cc.sys.localStorage.removeItem(\"FishShadowAction\");",
+      "usage": "-1 == indexOf(96) 时 cc.sys.localStorage.removeItem(\"FishShadowAction\")"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 90377,
+      "text": "this.btnRebate.active = M.RoleOtherInfo.activityList.includes(65);",
+      "usage": "this.btnRebate.active = activityList.includes(65)"
+    }
+  ],
+  "localConfigTables": [
+    {
+      "name": "active_order",
+      "evidence": [
+        "index.js:55348  var e = n.getTable(\"active_order\"), o = [];",
+        "scripts3.js:27633  var e = d.getTable(\"active_order\"), o = {};",
+        "scripts3.js:93671  var t = p.getItem(23, \"active_order\");"
+      ],
+      "consumedBy": "GrowthModel.getActiveSortData（index.js:55347-55356），由 HomeActiveUI.onLoad 在 scripts2.js:29182 调用"
+    },
+    {
+      "name": "active",
+      "evidence": [
+        "scripts2.js:67728  var c = this.data[t + s].activeId, l = a.getItem(c, \"active\");",
+        "scripts3.js:44214  var t = Math.floor(Math.max(a.getItem(65, \"active\").endtime - h.TimeMgr.getSTimestamp(), 0) / 1e3);"
+      ],
+      "consumedBy": "按活动 id 取 active 表 endtime"
+    },
+    {
+      "name": "activetime",
+      "evidence": [
+        "index.js:122633  i.getItem(2, \"activetime\").item",
+        "index.js:122637  var t = i.getItem(2, \"activetime\");",
+        "scripts3.js:55304  this.activeData = u.getItem(3, \"activetime\");",
+        "scripts3.js:83744  var t = r.getItem(2, \"activetime\");"
+      ],
+      "consumedBy": "SnowManModel 等按 type 取时段"
+    },
+    {
+      "name": "active_store",
+      "evidence": [
+        "scripts3.js:30755  var o = h.getItem(e[0], \"active_store\");"
+      ],
+      "consumedBy": "活动礼包"
+    },
+    {
+      "name": "active_signup",
+      "evidence": [
+        "scripts3.js:55181  u.getItem(t + 1, \"active_signup\").reward1.split(\",\")",
+        "scripts3.js:55210  var o = u.getItem(e + 1, \"active_signup\").reward1.split(\",\");"
+      ],
+      "consumedBy": "报名奖励"
+    },
+    {
+      "name": "castlejumpingfun_reward",
+      "evidence": [
+        "index.js:108138  var i = r.getItem(t[e], \"castlejumpingfun_reward\"), n = t[e];"
+      ],
+      "consumedBy": "activityList 含 91 时装配 activeItemData"
+    }
+  ],
+  "activityArrFlag": {
+    "hits": [
+      {
+        "file": "index.js",
+        "line": 107227,
+        "text": "e.hasOwnProperty(\"activityArrFlag\") && (this.activeObj = e.activityArrFlag);",
+        "usage": "setRoleInfo 里 hasOwnProperty(\"activityArrFlag\") -> this.activeObj = e.activityArrFlag（即 RoleOtherInfo.activeObj）"
+      }
+    ],
+    "readSites": [
+      {
+        "file": "index.js",
+        "line": 107142,
+        "text": "this.activeObj = [ 0, 0 ];"
+      },
+      {
+        "file": "index.js",
+        "line": 55359,
+        "text": "if (1001 == e && h.RoleOtherInfo.activeObj[0]) return !0;"
+      },
+      {
+        "file": "index.js",
+        "line": 55360,
+        "text": "if (1002 == e && h.RoleOtherInfo.activeObj[0] <= 0) return !0;"
+      },
+      {
+        "file": "index.js",
+        "line": 55361,
+        "text": "if (1003 == e && (0 != h.RoleOtherInfo.activeObj[1] || 0 == f.ActiveModel.rechargedIsEnd) && 0 != m.HomeActiveModel.activeShowList[0]) return !0;"
+      },
+      {
+        "file": "index.js",
+        "line": 57391,
+        "text": "u.RoleOtherInfo.activeObj[0] = 0;"
+      },
+      {
+        "file": "index.js",
+        "line": 57422,
+        "text": "u.RoleOtherInfo.activeObj[1] = 0;"
+      },
+      {
+        "file": "index.js",
+        "line": 57458,
+        "text": "u.RoleOtherInfo.activeObj[0] ? this.reqSevenDayActive() : this.reqEveryDayActive();"
+      },
+      {
+        "file": "index.js",
+        "line": 107585,
+        "text": "return this.activeObj[1];"
+      },
+      {
+        "file": "index.js",
+        "line": 107588,
+        "text": "this.activeObj[1] = 0;"
+      },
+      {
+        "file": "index.js",
+        "line": 131175,
+        "text": "if (1 == y.RoleOtherInfo.activeObj[1]) {"
+      },
+      {
+        "file": "index.js",
+        "line": 131176,
+        "text": "y.RoleOtherInfo.activeObj[1] = 2;"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 9068,
+        "text": "M.RoleOtherInfo.activeObj[0] ? _.HomeActiveModel.reqSevenDayActive({"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 9077,
+        "text": "M.RoleOtherInfo.activeObj[0] ? _.HomeActiveModel.reqSevenDayActive({"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 22845,
+        "text": "var t = l.RoleOtherInfo.activeObj[1];"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 22983,
+        "text": "var e = l.RoleOtherInfo.activeObj[1];"
+      }
+    ],
+    "usage": "赋值：index.js:107227（登录 setRoleInfo 应答字段 activityArrFlag -> RoleOtherInfo.activeObj），默认值 index.js:107142 [0,0]。读取点全为 activeObj：index.js:55359 (1001 项判定 activeObj[0] 真值)、55360 (1002 项判定 activeObj[0]<=0)、55361 (1003 项判定 activeObj[1]!=0)、57458 (activeObj[0] ? reqSevenDayActive : reqEveryDayActive 即决定拉 getSevenTaskList 还是 getActivityCounts)、57391/57422 (置 0)、107585 getFirstRewardState 返回 activeObj[1]、107588 置 0、131175/131176 (1->2 并派发 FIRST_RECHARGE_REWRAD)、scripts2.js:9068/9077 (activeObj[0] ? reqSevenDayActive(...))、scripts2.js:22845/22983 (取 activeObj[1])。"
+  },
+  "activityShows": {
+    "hits": [
+      {
+        "file": "index.js",
+        "line": 57455,
+        "text": "e.hasOwnProperty(\"activityShows\") && (this.activeShowList = e.activityShows);",
+        "usage": "getAllActivity 应答 hasOwnProperty(\"activityShows\") -> HomeActiveModel.activeShowList"
+      }
+    ],
+    "readSites": [
+      {
+        "file": "index.js",
+        "line": 57373,
+        "text": "this.activeShowList = [ 1, 1 ];"
+      },
+      {
+        "file": "index.js",
+        "line": 55361,
+        "text": "if (1003 == e && (0 != h.RoleOtherInfo.activeObj[1] || 0 == f.ActiveModel.rechargedIsEnd) && 0 != m.HomeActiveModel.activeShowList[0]) return !0;"
+      },
+      {
+        "file": "index.js",
+        "line": 55362,
+        "text": "if (1004 == e && 0 != m.HomeActiveModel.activeShowList[1]) return !0;"
+      },
+      {
+        "file": "index.js",
+        "line": 57493,
+        "text": "this.activeShowList = [ 1, 1 ];"
+      }
+    ],
+    "usage": "赋值：index.js:57455（getAllActivity 应答 activityShows -> HomeActiveModel.activeShowList），默认值 index.js:57373 [1,1]、destroy 复位 index.js:57493。读取点：index.js:55361 用 activeShowList[0]、55362 用 activeShowList[1]，均为与 0 比较后决定 1003/1004 活动项是否开启。"
+  },
+  "schoolActivityOpen": {
+    "hits": [
+      {
+        "file": "index.js",
+        "line": 55369,
+        "text": "if (1012 == e && 1 == t.schoolActivityOpen) return !0;",
+        "usage": "getActiveState 内 1012 == e 且 1 == t.schoolActivityOpen -> 该活动项判定为开启"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 56309,
+        "text": "1 == this.data.schoolActivityOpen && (t = 7037);",
+        "usage": "SchoolArenaDescribeUI.start：1 == this.data.schoolActivityOpen -> 标题文本 id 取自 7037"
+      }
+    ],
+    "usage": "两处均读应答层对象：index.js:55369 的 t 是 55351 getActiveState(t,r.number,r.active) 的首参，来源 55347 getActiveSortData(t)，调用点 scripts2.js:29182 GrowthModel.getActiveSortData(e.data)（e.data 即 HomeActiveUI.setData 注入的活动应答）；scripts2.js:56309 的 this.data 由 scripts2.js:29219 addComponent(\"SchoolArenaDescribeUI\").setData(o.data) 注入。字段未在本地做默认值初始化。"
+  },
+  "schoolArenaOpen": {
+    "hits": [
+      {
+        "file": "index.js",
+        "line": 55370,
+        "text": "if (1013 == e && 1 == t.schoolArenaOpen) return !0;",
+        "usage": "getActiveState 内 1013 == e 且 1 == t.schoolArenaOpen -> 该活动项判定为开启"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 56310,
+        "text": "1 == this.data.schoolArenaOpen && (t = 7038);",
+        "usage": "SchoolArenaDescribeUI.start：1 == this.data.schoolArenaOpen -> 标题文本 id 取 7038"
+      }
+    ],
+    "usage": "同 schoolActivityOpen，同一应答对象、同一注入路径；index.js:55369/55370 是同一条 if 链里的两个并列分支（1012/1013）。"
+  },
+  "dataArrHits": [
+    {
+      "file": "index.js",
+      "line": 48479,
+      "text": "e.dataArr = null;"
+    },
+    {
+      "file": "index.js",
+      "line": 54941,
+      "text": "if (o.dataArr && o.dataArr.length >= 1) {"
+    },
+    {
+      "file": "index.js",
+      "line": 54942,
+      "text": "n.attackMpCost = o.dataArr.pop();"
+    },
+    {
+      "file": "index.js",
+      "line": 54943,
+      "text": "for (var r = [], a = 0; a < o.dataArr.length; ++a) {"
+    },
+    {
+      "file": "index.js",
+      "line": 54944,
+      "text": "var s = o.dataArr[a];"
+    },
+    {
+      "file": "index.js",
+      "line": 55053,
+      "text": "if (u && u.dataArr) {"
+    },
+    {
+      "file": "index.js",
+      "line": 55055,
+      "text": "c.dataArr = u.dataArr;"
+    },
+    {
+      "file": "index.js",
+      "line": 55092,
+      "text": "if (s && s.dataArr) {"
+    },
+    {
+      "file": "index.js",
+      "line": 55094,
+      "text": "a.dataArr = s.dataArr;"
+    },
+    {
+      "file": "index.js",
+      "line": 55117,
+      "text": "if (i && i.dataArr) {"
+    },
+    {
+      "file": "index.js",
+      "line": 55119,
+      "text": "o.dataArr = i.dataArr;"
+    },
+    {
+      "file": "index.js",
+      "line": 57437,
+      "text": "data: e.dataArr",
+      "usage": "everydayActiveCallback(getActivityCounts 应答) 把 e.dataArr 作为 data 派发 EvName.STORE_SHOW_UI"
+    },
+    {
+      "file": "index.js",
+      "line": 73364,
+      "text": "e.dataArr = [];"
+    },
+    {
+      "file": "index.js",
+      "line": 73576,
+      "text": "this.checkUniqueskillRelease(this.dataArr);"
+    },
+    {
+      "file": "index.js",
+      "line": 110855,
+      "text": "if (n && n.dataArr) {"
+    },
+    {
+      "file": "index.js",
+      "line": 110857,
+      "text": "t.dataArr = n.dataArr;"
+    },
+    {
+      "file": "index.js",
+      "line": 110884,
+      "text": "if (o.dataArr && o.dataArr.length >= 1) {"
+    },
+    {
+      "file": "index.js",
+      "line": 110885,
+      "text": "n.attackMpCost = o.dataArr.pop();"
+    },
+    {
+      "file": "index.js",
+      "line": 110886,
+      "text": "for (var r = [], a = 0; a < o.dataArr.length; ++a) {"
+    },
+    {
+      "file": "index.js",
+      "line": 110887,
+      "text": "var s = o.dataArr[a];"
+    },
+    {
+      "file": "index.js",
+      "line": 110911,
+      "text": "if (i && i.dataArr) {"
+    },
+    {
+      "file": "index.js",
+      "line": 110913,
+      "text": "o.dataArr = i.dataArr;"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 16498,
+      "text": "e.dataArr = [];"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 16645,
+      "text": "this.dataArr = t;"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 16657,
+      "text": "if (this.dataArr.length < this.maxNumItems) {"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 16661,
+      "text": "s.getComponent(\"SingleAIItem\").setData(this.conditionTree, this.actionTree, (this.dataArr.length ? this.dataArr.length : 0) + 1);"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 26610,
+      "text": "e.dataArr = [];"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 26668,
+      "text": "var e = !1, o = this.dataArr[t];"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 26685,
+      "text": "this.dataArr[0] = e;"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 26686,
+      "text": "this.dataArr[1] = [];"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 26698,
+      "text": "this.dataArr[1] = o;"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 26706,
+      "text": "this.dataArr[this.index][this.selectTag][0] = 2;"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 26751,
+      "text": "if (this.dataArr[t].length && this.itemList[this.index].length != this.dataArr[t].length) {"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 26769,
+      "text": "var t = this.dataArr[this.index], e = cc.instantiate(this.itemTemplate);"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 29203,
+      "text": "this.actDataMap = t.dataArr;",
+      "usage": "HomeActiveUI.setData(t,e) 内 this.actDataMap = t.dataArr（全响应对象的 dataArr）"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46020,
+      "text": "e.dataArr = [];"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46117,
+      "text": "o >= this.dataArr[this.index].length && (o -= this.dataArr[0].length);"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46118,
+      "text": "this.dataArr[this.index][o][0] = 2;"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46132,
+      "text": "this.dataArr[1] = o;"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46136,
+      "text": "this.layout.changetotal(this.dataArr[this.index].length);"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46148,
+      "text": "this.dataArr[0] = e;"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46149,
+      "text": "this.dataArr[1] = [];"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46155,
+      "text": "if (this.dataArr[t].length > 0) {"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46172,
+      "text": "this.layout.total(this.dataArr[t].length).then(function() {"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46178,
+      "text": "var o = this.dataArr[this.index][e];"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46200,
+      "text": "this.dataArr[this.index][t].splice(t, 1);"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 46201,
+      "text": "this.layout.total(this.dataArr[this.index].length);"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 48263,
+      "text": "e.dataArr = [];"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 48345,
+      "text": "this.dataArr = [];"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 48346,
+      "text": "for (var e in t) this.dataArr.push(t[e]);"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 48351,
+      "text": "for (var t = 0, e = a.HalloweenModel.paperNum, o = a.HalloweenModel.award, i = a.HalloweenModel.cardState, s = 0; s < this.dataArr.length && !(e < this.dataArr[s][1]); s++) {"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 48353,
+      "text": "if (o.hasOwnProperty(this.dataArr[s][0])) {"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 48354,
+      "text": "if (o[this.dataArr[s][0]] < i) break;"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 48355,
+      "text": "} else if (e > this.dataArr[s][1]) break;"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 48366,
+      "text": "e.setData(this.dataArr[this.idx], this.curRecruitValue, this.scrollView);"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 48368,
+      "text": "this.doLoad = this.idx < this.dataArr.length;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 4481,
+      "text": "e.dataArr = [];"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 4531,
+      "text": "this.dataArr = [];"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 4534,
+      "text": "this.dataArr.push(e.rewardCfg[i]);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 4540,
+      "text": "this.layout.total(this.dataArr.length).then(function() {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 4548,
+      "text": "this.tag > 0 && (this.dataArr[this.tag - 1][0] = 2);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 4550,
+      "text": "this.layout.changetotal(this.dataArr.length);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 4554,
+      "text": "var o = this.dataArr[e];"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 4565,
+      "text": "l.ActiveModel.reqAddCostReward(this.dataArr[t][7]);"
+    }
+  ],
+  "tables": [
+    {
+      "name": "active",
+      "file": "cfg/dump/active.json",
+      "columns": [
+        "id",
+        "type",
+        "name",
+        "pointaward",
+        "pointlevel",
+        "pointlimit",
+        "max",
+        "awardtype",
+        "award",
+        "level",
+        "awardnum",
+        "score",
+        "single_award",
+        "times",
+        "delItem",
+        "sId",
+        "mail",
+        "mail_name",
+        "mail_des",
+        "begintime",
+        "endtime",
+        "activebegintime",
+        "activeendtime",
+        "awardbegintime",
+        "awardendtime",
+        "c_task"
+      ],
+      "rows": 88,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "type": 1,
+            "name": "梅花桩",
+            "pointaward": "4003,100,0.12|3078,100,0.12",
+            "pointlevel": 1,
+            "pointlimit": 500,
+            "max": 5,
+            "awardtype": 1,
+            "award": "0",
+            "level": 0,
+            "awardnum": 0,
+            "score": 0,
+            "single_award": 0,
+            "times": 0,
+            "delItem": "0",
+            "sId": 0,
+            "mail": "0",
+            "mail_name": 0,
+            "mail_des": 0,
+            "begintime": [
+              1782921600000
+            ],
+            "endtime": [
+              1784131199000
+            ],
+            "activebegintime": [
+              1782921600000
+            ],
+            "activeendtime": [
+              1784131199000
+            ],
+            "awardbegintime": [],
+            "awardendtime": [],
+            "c_task": []
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "type": 1,
+            "name": "打猎",
+            "pointaward": "4003,100,0.04|3078,100,0.04",
+            "pointlevel": 1,
+            "pointlimit": 500,
+            "max": 5,
+            "awardtype": 1,
+            "award": "0",
+            "level": 0,
+            "awardnum": 0,
+            "score": 0,
+            "single_award": 0,
+            "times": 0,
+            "delItem": "0",
+            "sId": 0,
+            "mail": "0",
+            "mail_name": 0,
+            "mail_des": 0,
+            "begintime": [
+              1592755200000
+            ],
+            "endtime": [
+              1594137540000
+            ],
+            "activebegintime": [
+              1592755200000
+            ],
+            "activeendtime": [
+              1594137540000
+            ],
+            "awardbegintime": [],
+            "awardendtime": [],
+            "c_task": []
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "type": 1,
+            "name": "钓鱼",
+            "pointaward": "4003,100,0.04|3078,100,0.04",
+            "pointlevel": 1,
+            "pointlimit": 500,
+            "max": 5,
+            "awardtype": 1,
+            "award": "0",
+            "level": 0,
+            "awardnum": 0,
+            "score": 0,
+            "single_award": 0,
+            "times": 0,
+            "delItem": "0",
+            "sId": 0,
+            "mail": "0",
+            "mail_name": 0,
+            "mail_des": 0,
+            "begintime": [
+              1592755200000
+            ],
+            "endtime": [
+              1594137540000
+            ],
+            "activebegintime": [
+              1592755200000
+            ],
+            "activeendtime": [
+              1594137540000
+            ],
+            "awardbegintime": [],
+            "awardendtime": [],
+            "c_task": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "active_inform",
+      "file": "cfg/dump/active_inform.json",
+      "columns": [
+        "id",
+        "text",
+        "description"
+      ],
+      "rows": 8,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "text": 3884,
+            "description": 3894
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "text": 3885,
+            "description": 3895
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "text": 3886,
+            "description": 3896
+          }
+        }
+      ]
+    },
+    {
+      "name": "active_order",
+      "file": "cfg/dump/active_order.json",
+      "columns": [
+        "id",
+        "number",
+        "active",
+        "name",
+        "tips"
+      ],
+      "rows": 44,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 3,
+            "number": 1003,
+            "active": 0,
+            "name": 1023,
+            "tips": 0
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 21,
+            "number": 1004,
+            "active": 15,
+            "name": 4298,
+            "tips": 4302
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 2,
+            "number": 1009,
+            "active": 19,
+            "name": 4411,
+            "tips": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "active_signup",
+      "file": "cfg/dump/active_signup.json",
+      "columns": [
+        "id",
+        "reward1"
+      ],
+      "rows": 7,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "reward1": "9208,5"
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "reward1": "7652,5"
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "reward1": "9208,5"
+          }
+        }
+      ]
+    },
+    {
+      "name": "active_store",
+      "file": "cfg/dump/active_store.json",
+      "columns": [
+        "id",
+        "name1",
+        "name2",
+        "description",
+        "limit",
+        "num",
+        "award",
+        "buy_price",
+        "ingots_price",
+        "picture"
+      ],
+      "rows": 6,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "name1": 6000500,
+            "name2": 6000500,
+            "description": 6000169,
+            "limit": 1,
+            "num": 1,
+            "award": "9208,5",
+            "buy_price": 0,
+            "ingots_price": 0,
+            "picture": "actgift1"
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "name1": 6000501,
+            "name2": 6000501,
+            "description": 6000169,
+            "limit": 1,
+            "num": 1,
+            "award": "9208,12|9209,8",
+            "buy_price": 0,
+            "ingots_price": 300,
+            "picture": "actgift2"
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "name1": 6000502,
+            "name2": 6000502,
+            "description": 6000169,
+            "limit": 1,
+            "num": 1,
+            "award": "1,60|9208,12|9209,12",
+            "buy_price": 60,
+            "ingots_price": 0,
+            "picture": "actgift3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "activetime",
+      "file": "cfg/dump/activetime.json",
+      "columns": [
+        "type",
+        "begintime",
+        "endtime",
+        "isdaily",
+        "awardnum",
+        "basicpotential",
+        "basicexp",
+        "basicmoney",
+        "coefficient",
+        "begintime1",
+        "endtime1",
+        "position",
+        "name",
+        "awardbegintime",
+        "awardendtime",
+        "item"
+      ],
+      "rows": 3,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "type": 1,
+            "begintime": 1378994561000,
+            "endtime": 1379080961000,
+            "isdaily": 1,
+            "awardnum": 1,
+            "basicpotential": 1,
+            "basicexp": 0,
+            "basicmoney": 1,
+            "coefficient": 1,
+            "begintime1": 0,
+            "endtime1": 0,
+            "position": 0,
+            "name": "堆雪人",
+            "awardbegintime": [
+              20,
+              0
+            ],
+            "awardendtime": [
+              23,
+              59,
+              59
+            ],
+            "item": [
+              4232,
+              4233,
+              4234,
+              4235
+            ]
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "type": 2,
+            "begintime": 1752681600000,
+            "endtime": 1753804799000,
+            "isdaily": 1,
+            "awardnum": 1,
+            "basicpotential": 1,
+            "basicexp": 0,
+            "basicmoney": 1,
+            "coefficient": 1,
+            "begintime1": 1378994561000,
+            "endtime1": 1379080961000,
+            "position": 0,
+            "name": "春节/作业活动",
+            "awardbegintime": [
+              20,
+              0
+            ],
+            "awardendtime": [
+              23,
+              59,
+              59
+            ],
+            "item": [
+              10538,
+              10539,
+              10540
+            ]
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "type": 3,
+            "begintime": 1736956800000,
+            "endtime": 1738943999000,
+            "isdaily": 1,
+            "awardnum": 1,
+            "basicpotential": 1,
+            "basicexp": 0,
+            "basicmoney": 1,
+            "coefficient": 1,
+            "begintime1": 1611123867000,
+            "endtime1": 1613663940000,
+            "position": 0,
+            "name": "春节炸年兽活动",
+            "awardbegintime": [
+              20,
+              0
+            ],
+            "awardendtime": [
+              23,
+              59,
+              59
+            ],
+            "item": [
+              10129,
+              10130,
+              10131,
+              10132
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "activityshop",
+      "file": "cfg/dump/activityshop.json",
+      "columns": [
+        "npcID",
+        "begintime",
+        "endtime",
+        "item",
+        "price"
+      ],
+      "rows": 2,
+      "first3": [
+        {
+          "key": "1009",
+          "row": {
+            "npcID": 1009,
+            "begintime": 1506787200,
+            "endtime": 1507478400,
+            "item": [
+              3017,
+              3019,
+              3020
+            ],
+            "price": [
+              10,
+              100,
+              1000
+            ]
+          }
+        },
+        {
+          "key": "1288",
+          "row": {
+            "npcID": 1288,
+            "begintime": 1506787200,
+            "endtime": 4070883661,
+            "item": [
+              4175,
+              4106,
+              4220,
+              4221,
+              4222,
+              4527
+            ],
+            "price": [
+              10,
+              10,
+              20,
+              100,
+              1000,
+              500
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "home_plant_adventure",
+      "file": "cfg/dump/home_plant_adventure.json",
+      "columns": [
+        "id",
+        "type",
+        "weight",
+        "fatebonus",
+        "describe",
+        "reward",
+        "local"
+      ],
+      "rows": 5,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "type": 1,
+            "weight": 1,
+            "fatebonus": 500,
+            "describe": 3306,
+            "reward": 4807,
+            "local": [
+              1008,
+              1118,
+              1119,
+              1120
+            ]
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "type": 1,
+            "weight": 1,
+            "fatebonus": 500,
+            "describe": 3307,
+            "reward": 4806,
+            "local": [
+              1008,
+              1118,
+              1119,
+              1120
+            ]
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "type": 1,
+            "weight": 2,
+            "fatebonus": 200,
+            "describe": 3308,
+            "reward": 4805,
+            "local": [
+              1008,
+              1118,
+              1119,
+              1120
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "home_plant_crop",
+      "file": "cfg/dump/home_plant_crop.json",
+      "columns": [
+        "seed",
+        "seednum",
+        "plant",
+        "exp",
+        "seedtime",
+        "seedling",
+        "grow",
+        "mature",
+        "ten",
+        "fifty",
+        "hundred",
+        "matureitem",
+        "maturenum",
+        "tenitem",
+        "tennum",
+        "fiftyitem",
+        "fiftynum",
+        "hundreditem",
+        "hundrednum",
+        "weed",
+        "disinsection",
+        "effect",
+        "follow",
+        "active",
+        "start",
+        "end",
+        "speed"
+      ],
+      "rows": 53,
+      "first3": [
+        {
+          "key": "4777",
+          "row": {
+            "seed": 4777,
+            "seednum": 1,
+            "plant": 32901,
+            "exp": 80000,
+            "seedtime": 28800,
+            "seedling": 28800,
+            "grow": 28800,
+            "mature": 345600,
+            "ten": 864000,
+            "fifty": 1296000,
+            "hundred": 0,
+            "matureitem": 3901,
+            "maturenum": 1,
+            "tenitem": 4808,
+            "tennum": 1,
+            "fiftyitem": 4837,
+            "fiftynum": 1,
+            "hundreditem": 4866,
+            "hundrednum": 1,
+            "weed": 6131,
+            "disinsection": 6137,
+            "effect": 0.1,
+            "follow": 6094,
+            "active": 6339,
+            "start": 1561132800000,
+            "end": 1561996800000,
+            "speed": [
+              1008
+            ]
+          }
+        },
+        {
+          "key": "4778",
+          "row": {
+            "seed": 4778,
+            "seednum": 1,
+            "plant": 32902,
+            "exp": 80000,
+            "seedtime": 57600,
+            "seedling": 57600,
+            "grow": 57600,
+            "mature": 691200,
+            "ten": 864000,
+            "fifty": 1728000,
+            "hundred": 0,
+            "matureitem": 3902,
+            "maturenum": 1,
+            "tenitem": 4809,
+            "tennum": 1,
+            "fiftyitem": 4838,
+            "fiftynum": 1,
+            "hundreditem": 4867,
+            "hundrednum": 1,
+            "weed": 6131,
+            "disinsection": 6137,
+            "effect": 0.1,
+            "follow": 6095,
+            "active": 6339,
+            "start": 1561132800000,
+            "end": 1561996800000,
+            "speed": [
+              1008
+            ]
+          }
+        },
+        {
+          "key": "4779",
+          "row": {
+            "seed": 4779,
+            "seednum": 1,
+            "plant": 32903,
+            "exp": 80000,
+            "seedtime": 144000,
+            "seedling": 144000,
+            "grow": 144000,
+            "mature": 864000,
+            "ten": 1296000,
+            "fifty": 1728000,
+            "hundred": 0,
+            "matureitem": 3903,
+            "maturenum": 1,
+            "tenitem": 4810,
+            "tennum": 1,
+            "fiftyitem": 4839,
+            "fiftynum": 1,
+            "hundreditem": 4868,
+            "hundrednum": 1,
+            "weed": 6131,
+            "disinsection": 6137,
+            "effect": 0.1,
+            "follow": 6096,
+            "active": 6339,
+            "start": 1561132800000,
+            "end": 1561996800000,
+            "speed": [
+              1008
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "home_plant_cropevent",
+      "file": "cfg/dump/home_plant_cropevent.json",
+      "columns": [
+        "id",
+        "type",
+        "time",
+        "probability",
+        "addtime",
+        "master",
+        "friend",
+        "icon",
+        "event",
+        "develop"
+      ],
+      "rows": 4,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "type": 1,
+            "time": 1800,
+            "probability": 50,
+            "addtime": 300,
+            "master": 10,
+            "friend": 10,
+            "icon": "shijian_base_icon",
+            "event": 3311,
+            "develop": []
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "type": 2,
+            "time": 7200,
+            "probability": 100,
+            "addtime": 300,
+            "master": 10,
+            "friend": 10,
+            "icon": "quefei_shijian",
+            "event": 3312,
+            "develop": []
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "type": 1,
+            "time": 1800,
+            "probability": 50,
+            "addtime": 300,
+            "master": 10,
+            "friend": 10,
+            "icon": "queshui_shijian",
+            "event": 3313,
+            "develop": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "home_plant_details",
+      "file": "cfg/dump/home_plant_details.json",
+      "columns": [
+        "id",
+        "num"
+      ],
+      "rows": 27,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "num": 7200
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "num": 86400
+          }
+        },
+        {
+          "key": "6",
+          "row": {
+            "id": 6,
+            "num": 100
+          }
+        }
+      ]
+    },
+    {
+      "name": "home_plant_exp",
+      "file": "cfg/dump/home_plant_exp.json",
+      "columns": [
+        "id",
+        "exp"
+      ],
+      "rows": 15,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "exp": 0
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "exp": 3640
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "exp": 16200
+          }
+        }
+      ]
+    },
+    {
+      "name": "home_plant_follow",
+      "file": "cfg/dump/home_plant_follow.json",
+      "columns": [
+        "id",
+        "period",
+        "follow",
+        "num",
+        "time",
+        "ratio",
+        "num1",
+        "weight1",
+        "num2",
+        "weight2",
+        "num3",
+        "weight3",
+        "num4",
+        "weight4",
+        "num5",
+        "weight5"
+      ],
+      "rows": 4,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "period": 1,
+            "follow": 1,
+            "num": 100,
+            "time": 1,
+            "ratio": 2.5,
+            "num1": 5,
+            "weight1": 12.5,
+            "num2": 4,
+            "weight2": 62.5,
+            "num3": 3,
+            "weight3": 250,
+            "num4": 2,
+            "weight4": 750,
+            "num5": 1,
+            "weight5": 1500
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "period": 2,
+            "follow": 1,
+            "num": 100,
+            "time": 1,
+            "ratio": 2.5,
+            "num1": 5,
+            "weight1": 25,
+            "num2": 4,
+            "weight2": 125,
+            "num3": 3,
+            "weight3": 500,
+            "num4": 2,
+            "weight4": 1500,
+            "num5": 1,
+            "weight5": 1500
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "period": 3,
+            "follow": 1,
+            "num": 100,
+            "time": 1,
+            "ratio": 2.5,
+            "num1": 5,
+            "weight1": 6.25,
+            "num2": 4,
+            "weight2": 31.25,
+            "num3": 3,
+            "weight3": 125,
+            "num4": 2,
+            "weight4": 375,
+            "num5": 1,
+            "weight5": 1500
+          }
+        }
+      ]
+    },
+    {
+      "name": "home_plant_sale",
+      "file": "cfg/dump/home_plant_sale.json",
+      "columns": [
+        "ID",
+        "id",
+        "chance",
+        "chance1",
+        "price",
+        "price1",
+        "exp",
+        "roll",
+        "weight"
+      ],
+      "rows": 87,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "ID": 1,
+            "id": 4808,
+            "chance": 100,
+            "chance1": 0,
+            "price": [
+              16,
+              120
+            ],
+            "price1": [
+              0,
+              0
+            ],
+            "exp": [
+              80000,
+              2500000
+            ],
+            "roll": 0,
+            "weight": 0
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "ID": 2,
+            "id": 4809,
+            "chance": 100,
+            "chance1": 0,
+            "price": [
+              32,
+              240
+            ],
+            "price1": [
+              0,
+              0
+            ],
+            "exp": [
+              80000,
+              2500000
+            ],
+            "roll": 0,
+            "weight": 0
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "ID": 3,
+            "id": 4810,
+            "chance": 100,
+            "chance1": 0,
+            "price": [
+              64,
+              480
+            ],
+            "price1": [
+              0,
+              0
+            ],
+            "exp": [
+              80000,
+              2500000
+            ],
+            "roll": 0,
+            "weight": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "home_plant_show",
+      "file": "cfg/dump/home_plant_show.json",
+      "columns": [
+        "seed",
+        "zhongzi",
+        "youmiao",
+        "chengzhang",
+        "chengshu",
+        "shangpin",
+        "zhenpin",
+        "juepin",
+        "chiwan",
+        "toucai",
+        "guanghuan",
+        "chonghaizz",
+        "chonghaiym",
+        "chonghaisz",
+        "chonghaics",
+        "period"
+      ],
+      "rows": 53,
+      "first3": [
+        {
+          "key": "4777",
+          "row": {
+            "seed": 4777,
+            "zhongzi": "yezi_zz",
+            "youmiao": "yezi_ym",
+            "chengzhang": "shengzhang_3901",
+            "chengshu": "chengshu_3901",
+            "shangpin": "chengshu_3901",
+            "zhenpin": "chengshu_3901",
+            "juepin": "chengshu_3901",
+            "chiwan": "chiwan_cao",
+            "toucai": "toucai_cao",
+            "guanghuan": "guanghuan",
+            "chonghaizz": "chonghaizz",
+            "chonghaiym": "chonghaiyzym",
+            "chonghaisz": "chonghaiyzsz",
+            "chonghaics": "chonghaiyzcs",
+            "period": [
+              3150,
+              3151,
+              3152,
+              3153,
+              3154,
+              3155,
+              3156
+            ]
+          }
+        },
+        {
+          "key": "4778",
+          "row": {
+            "seed": 4778,
+            "zhongzi": "yezi_zz",
+            "youmiao": "yezi_ym",
+            "chengzhang": "shengzhang_3902",
+            "chengshu": "chengshu_3902",
+            "shangpin": "chengshu_3902",
+            "zhenpin": "chengshu_3902",
+            "juepin": "chengshu_3902",
+            "chiwan": "chiwan_cao",
+            "toucai": "toucai_cao",
+            "guanghuan": "guanghuan",
+            "chonghaizz": "chonghaizz",
+            "chonghaiym": "chonghaiyzym",
+            "chonghaisz": "chonghaiyzsz",
+            "chonghaics": "chonghaiyzcs",
+            "period": [
+              3150,
+              3151,
+              3152,
+              3153,
+              3154,
+              3155,
+              3156
+            ]
+          }
+        },
+        {
+          "key": "4779",
+          "row": {
+            "seed": 4779,
+            "zhongzi": "yezi_zz",
+            "youmiao": "yezi_ym",
+            "chengzhang": "shengzhang_3903",
+            "chengshu": "chengshu_3903",
+            "shangpin": "chengshu_3903",
+            "zhenpin": "chengshu_3903",
+            "juepin": "chengshu_3903",
+            "chiwan": "chiwan_cao",
+            "toucai": "toucai_cao",
+            "guanghuan": "guanghuan",
+            "chonghaizz": "chonghaizz",
+            "chonghaiym": "chonghaiyzym",
+            "chonghaisz": "chonghaiyzsz",
+            "chonghaics": "chonghaiyzcs",
+            "period": [
+              3150,
+              3151,
+              3152,
+              3153,
+              3154,
+              3155,
+              3156
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "sevenTask": {
+    "consumer": {
+      "file": "index.js",
+      "line": 57387,
+      "body": [
+        {
+          "line": 57387,
+          "text": "t.prototype.sevenTaskCallback = function(t, e) {"
+        },
+        {
+          "line": 57388,
+          "text": "if (e.hasOwnProperty(\"taskObj\")) {"
+        },
+        {
+          "line": 57389,
+          "text": "if (this.checkNull(e.taskObj)) {"
+        },
+        {
+          "line": 57390,
+          "text": "this.reqEveryDayActive();"
+        },
+        {
+          "line": 57391,
+          "text": "u.RoleOtherInfo.activeObj[0] = 0;"
+        },
+        {
+          "line": 57392,
+          "text": "return;"
+        },
+        {
+          "line": 57393,
+          "text": "}"
+        },
+        {
+          "line": 57394,
+          "text": "this.objData ? i.MessageCenter.dispatch(p.EvName.STORE_SHOW_UI, {"
+        },
+        {
+          "line": 57395,
+          "text": "type: this.objData.type,"
+        },
+        {
+          "line": 57396,
+          "text": "back: this.objData.back,"
+        },
+        {
+          "line": 57397,
+          "text": "data: e"
+        },
+        {
+          "line": 57398,
+          "text": "}) : a.default.prefabs.load(\"comUI/ComBgUI\", cc.Prefab, function(t, o) {"
+        },
+        {
+          "line": 57399,
+          "text": "var i = cc.instantiate(o);"
+        },
+        {
+          "line": 57400,
+          "text": "i.addComponent(\"HomeActiveUI\").setData(e);"
+        },
+        {
+          "line": 57401,
+          "text": "n.PopUpMgr.addPopUp(i, s.LayerMgr.popUpLayer);"
+        },
+        {
+          "line": 57402,
+          "text": "});"
+        },
+        {
+          "line": 57403,
+          "text": "}"
+        },
+        {
+          "line": 57404,
+          "text": "this.objData = null;"
+        }
+      ]
+    },
+    "dataSource": {
+      "requestConst": "index.js:59622  REQ_SEVENTASK_EVENT: \"User.getSevenTaskList\"",
+      "sender": "index.js:57460-57463 reqSevenDayActive -> sendReqWithMask(HttpConst.REQ_SEVENTASK_EVENT,{})",
+      "registrar": "index.js:57380 MessageCenter.on(REQ_SEVENTASK_EVENT, this.sevenTaskCallback.bind(this), this)"
+    },
+    "fields": [
+      {
+        "name": "taskObj",
+        "evidence": "index.js:57388  if (e.hasOwnProperty(\"taskObj\")) {",
+        "usage": "checkNull(e.taskObj) 全空 -> reqEveryDayActive() 并 activeObj[0]=0；否则整包 e 传给 HomeActiveUI.setData(e) / STORE_SHOW_UI data:e"
+      }
+    ]
+  },
+  "activityCounts": {
+    "consumer": {
+      "file": "index.js",
+      "line": 57431,
+      "body": [
+        {
+          "line": 57431,
+          "text": "t.prototype.everydayActiveCallback = function(t, e) {"
+        },
+        {
+          "line": 57432,
+          "text": "if (1 == e.eRet) {"
+        },
+        {
+          "line": 57433,
+          "text": "e.hasOwnProperty(\"SevenDaysArr\") && (u.RoleOtherInfo.SevenDaysArr = e.SevenDaysArr);"
+        },
+        {
+          "line": 57434,
+          "text": "this.objData ? i.MessageCenter.dispatch(p.EvName.STORE_SHOW_UI, {"
+        },
+        {
+          "line": 57435,
+          "text": "type: this.objData.type,"
+        },
+        {
+          "line": 57436,
+          "text": "back: this.objData.back,"
+        },
+        {
+          "line": 57437,
+          "text": "data: e.dataArr"
+        },
+        {
+          "line": 57438,
+          "text": "}) : a.default.prefabs.load(\"comUI/ComBgUI\", cc.Prefab, function(t, o) {"
+        },
+        {
+          "line": 57439,
+          "text": "var i = cc.instantiate(o);"
+        },
+        {
+          "line": 57440,
+          "text": "n.PopUpMgr.addPopUp(i, s.LayerMgr.popUpLayer);"
+        },
+        {
+          "line": 57441,
+          "text": "i.addComponent(\"HomeActiveUI\").setData(e);"
+        },
+        {
+          "line": 57442,
+          "text": "});"
+        },
+        {
+          "line": 57443,
+          "text": "}"
+        },
+        {
+          "line": 57444,
+          "text": "this.objData = null;"
+        }
+      ]
+    },
+    "dataSource": {
+      "requestConst": "index.js:59716  GET_EVERYDAY_ACTIVE: \"User.getActivityCounts\"",
+      "sender": "index.js:57476-57479 reqEveryDayActive -> sendReqWithMask(HttpConst.GET_EVERYDAY_ACTIVE,{})",
+      "registrar": "index.js:57383 MessageCenter.on(GET_EVERYDAY_ACTIVE, this.everydayActiveCallback.bind(this), this)"
+    },
+    "fields": [
+      {
+        "name": "SevenDaysArr",
+        "evidence": "index.js:57433  e.hasOwnProperty(\"SevenDaysArr\") && (u.RoleOtherInfo.SevenDaysArr = e.SevenDaysArr);"
+      },
+      {
+        "name": "dataArr",
+        "evidence": "index.js:57437  data: e.dataArr",
+        "usage": "STORE_SHOW_UI 的 data；同时整包 e 传给 HomeActiveUI.setData(e)，UI 内 scripts2.js:29203 this.actDataMap = t.dataArr"
+      }
+    ]
+  }
+}

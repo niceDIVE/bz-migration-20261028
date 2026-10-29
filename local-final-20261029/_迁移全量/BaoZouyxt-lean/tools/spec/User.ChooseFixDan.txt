@@ -1,0 +1,99 @@
+# User.ChooseFixDan  (HttpConst.CHOOSE_FIX_DAN)
+# 出现 2 处
+
+120600: }
+120601: }, this);
+120602: s.MessageCenter.on(c.HttpConst.VIGOR_UPGSKILL, function(t, e) {
+120603: s.MessageCenter.dispatch(p.EvName.REFRESH_VIGORS, e.vigor);
+120604: l.default.show(r.getText(3259).replace(/\[1\]/, f.SkillTable.getSkillLevel(e.skillID)));
+120605: }, this);
+120606: s.MessageCenter.on(c.HttpConst.CHOOSE_FIX_DAN, function(e, o) {
+120607: s.MessageCenter.dispatch(p.EvName.USE_NEW_ITEM_EVENT, o);
+120608: if (1 == o.eRet) {
+120609: s.MessageCenter.dispatch(p.EvName.SKILL_ITEM_USE_EVENT, {});
+120610: Promise.resolve().then(function() {
+120611: return t("../../scripts3/model3/PopGiftModel");
+120612: }).then(function(t) {
+120613: t.PopGiftModel.setHomeDataUI(o);
+120614: });
+120615: }
+120616: }, this);
+120617: s.MessageCenter.on(c.HttpConst.BEGIN_LIST, function(t, o) {
+120618: if (1 == o.eRet) {
+120619: e.skillQueue = o.skill;
+120620: cc.director.once(cc.Director.EVENT_AFTER_DRAW, function() {
+120621: var t = {
+120622: pathName: "skillsUI/OnhookQueueUI",
+120623: scriptName: "OnhookQueueUI"
+120624: };
+120625: g.default.promiseLoad("comUI/ONhookBgUI", t, function(e) {
+120626: var o = cc.instantiate(e);
+120627: m.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer);
+120628: var i = o.addComponent("OnhookQueueBgUI");
+120629: i.setData(t);
+120630: i.setLabelTitle(r.getText(3945));
+120631: });
+120632: });
+120633: }
+120634: }, this);
+120635: s.MessageCenter.on(c.HttpConst.IMPLANTATION, function(t, o) {
+120636: if (1 == o.eRet) {
+120637: e.skillQueue.push(e.selectId);
+120638: s.MessageCenter.dispatch(p.EvName.SELECT_QUEUE_SKILL);
+120639: } else 6 == o.eRet ? l.default.show(r.getText(4239)) : l.default.show(r.getText(3954));
+120640: }, this);
+120641: s.MessageCenter.on(c.HttpConst.REMOVE_MARTIAL, function(t, o) {
+120642: if (1 == o.eRet) {
+120643: var i = e.skillQueue;
+120644: i.indexOf(e.selectId) >= 0 && e.skillQueue.splice(i.indexOf(e.selectId), 1);
+120645: s.MessageCenter.dispatch(p.EvName.SELECT_QUEUE_SKILL);
+120646: }
+---
+121037: };
+121038: this.showListUI(u);
+121039: }
+121040: }
+121041: };
+121042: e.prototype.usedItemUpgradeSkill = function(t, e, o) {
+121043: _.NetMgr.http.sendReqWithMask(c.HttpConst.CHOOSE_FIX_DAN, {
+121044: skillID: t,
+121045: propID: e,
+121046: propNum: o
+121047: });
+121048: };
+121049: e.prototype.showOnhookQueueUI = function() {
+121050: this.reqSkillQueue();
+121051: };
+121052: e.prototype.getSkillNeedTime = function(t) {
+121053: for (var e = f.SkillTable.getSkillItem(t), o = this.getUpgrdSpeed(), r = n.maxSkillLevel, a = this.getSkillTopLevel(t), s = 0, l = e.lv; ;l++) if (1 == i.getItem(l, "level").NeedBreak && e.brlv < l) {
+121054: s = l;
+121055: break;
+121056: }
+121057: var c = Math.min(r, a), p = Math.min(c, s), h = this.getCostExpTime(t, e, p), u = Math.ceil(h / o);
+121058: cc.log("时间-" + u);
+121059: return I.RumorModel.showSecondTime(u);
+121060: };
+121061: e.prototype.getSkillNeedTimeNumbers = function(t) {
+121062: for (var e = f.SkillTable.getSkillItem(t), o = this.getUpgrdSpeed(), r = n.maxSkillLevel, a = this.getSkillTopLevel(t), s = 0, l = e.lv; ;l++) if (1 == i.getItem(l, "level").NeedBreak && e.brlv < l) {
+121063: s = l;
+121064: break;
+121065: }
+121066: var c = Math.min(r, a), p = Math.min(c, s), h = this.getCostExpTime(t, e, p), u = Math.floor(h / o);
+121067: cc.log("时间-" + u);
+121068: return u;
+121069: };
+121070: e.prototype.getCostExpTime = function(t, e, o) {
+121071: for (var n = e.lv, r = e.pgr, a = 0, s = n; s < o; s++) {
+121072: var l = i.getItem(t, "skill"), c = i.getItem(s, "level"), p = f.SkillTable.getQualitySkillCoefficient(l, t);
+121073: a += Math.floor(c.SkillPotential * p);
+121074: }
+121075: return a - r;
+121076: };
+121077: e.prototype.reqSkillQueue = function() {
+121078: _.NetMgr.http.sendRequest(c.HttpConst.BEGIN_LIST, {});
+121079: };
+121080: e.prototype.startBreakQueue = function(t, e) {
+121081: this.breakType = e;
+121082: this.breaking = t;
+121083: g.default.prefabs.load("skillsUI/BreakQueueUI", cc.Prefab, function(t, e) {
+---

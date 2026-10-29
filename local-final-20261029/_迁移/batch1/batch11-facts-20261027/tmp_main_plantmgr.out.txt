@@ -1,0 +1,269 @@
+=== PlantSystemMgr tools\index.js L95563-L95830
+L95563| PlantSystemMgr: [ function(t, e, o) {
+L95564| "use strict";
+L95565| cc._RF.push(e, "18eddtgeXBMIZzvOvKnXSsh", "PlantSystemMgr");
+L95566| Object.defineProperty(o, "__esModule", {
+L95567| value: !0
+L95568| });
+L95569| o.PlantSystemMgr = void 0;
+L95570| var i = t("../gameconfigs/CFMgr"), n = t("../gameconfigs/LangMgr"), r = t("../gui/uicomponents/Alert"), a = t("../models/HomePlantModel"), s = t("../models/vos/RoleBaseInfo"), l = t("./TimeMgr"), c = function() {
+L95571| function t() {}
+L95572| t.prototype.getCurStateNeedTime = function(t, e, o) {
+L95573| for (var n = i.getItem(t, "home_plant_crop"), r = {
+L95574| 0: 0,
+L95575| 1: n.seedtime,
+L95576| 2: n.seedling,
+L95577| 3: n.grow,
+L95578| 4: n.mature,
+L95579| 5: n.ten,
+L95580| 6: n.fifty,
+L95581| 7: n.hundred
+L95582| }[e], s = n.speed, l = a.HomePlantModel.curHomeScene, c = -1, p = 0; p < s.length; p++) if (l == s[p]) {
+L95583| c = p;
+L95584| break;
+L95585| }
+L95586| c >= 0 && (r *= 1 - n.effect);
+L95587| o.hasOwnProperty("eid") && o.eid > 0 && (r += i.getItem(o.eid, "home_plant_cropevent").addtime);
+L95588| return r;
+L95589| };
+L95590| t.prototype.getCropShowTime = function(t, e, o) {
+L95591| var n = e, r = .001 * l.TimeMgr.getSTimestamp(), a = 0, s = 0;
+L95592| o.hasOwnProperty("m") && o.m.hasOwnProperty("c") && (s = o.m.c);
+L95593| var c = i.getItem(2, "home_plant_details").num;
+L95594| s > 0 && (a = s * c);
+L95595| var p = r - n + a;
+L95596| p <= 0 && (p = 0);
+L95597| return p;
+L95598| };
+L95599| t.prototype.getCropPestState = function(t) {
+L95600| var e = 1;
+L95601| if (t.hasOwnProperty("eid") && 4 == t.eid) {
+L95602| var o = i.getItem(t.eid, "home_plant_cropevent"), n = .001 * l.TimeMgr.getSTimestamp(), r = o.develop[0], a = o.develop[0] + o.develop[1], s = o.develop[0] + o.develop[1] + o.develop[2], c = n - t.et;
+L95603| c <= r ? e = 1 : c <= a ? e = 2 : c <= s && (e = 3);
+L95604| }
+L95605| return e;
+L95606| };
+L95607| t.prototype.getSceneObjectPosition = function(t, e) {
+L95608| var o = {
+L95609| 1147: cc.v2(299, 689),
+L95610| 1118: cc.v2(758, 670),
+L95611| 1119: cc.v2(0, 587),
+L95612| 1120: cc.v2(128, 497)
+L95613| }, i = {
+L95614| 1147: cc.v2(740, 777),
+L95615| 1118: cc.v2(365, 680),
+L95616| 1119: cc.v2(650, 731),
+L95617| 1120: cc.v2(1119, 839)
+L95618| }, n = {
+L95619| 1147: cc.v2(1295, 539),
+L95620| 1118: cc.v2(1275, 650),
+L95621| 1119: cc.v2(1300, 440),
+L95622| 1120: cc.v2(1280, 290)
+L95623| }, r = {
+L95624| 1147: cc.v2(789, 70),
+L95625| 1118: cc.v2(173, 400),
+L95626| 1119: cc.v2(938, 720),
+L95627| 1120: cc.v2(900, 560)
+L95628| }, a = {
+L95629| 1147: cc.v2(90, 160),
+L95630| 1118: cc.v2(333, 70),
+L95631| 1119: cc.v2(0, 350),
+L95632| 1120: cc.v2(0, 480)
+L95633| }, s = cc.v2(0, 0);
+L95634| "dog" == e ? s = o[t] : "door" == e ? s = i[t] : "water" == e ? s = n[t] : "sale" == e ? s = r[t] : "friend" == e && (s = a[t]);
+L95635| return s;
+L95636| };
+L95637| t.prototype.getDogMovePox = function(t, e) {
+L95638| var o = {
+L95639| 1147: cc.v2(475, 689),
+L95640| 1118: cc.v2(451, 650),
+L95641| 1119: cc.v2(445, 620),
+L95642| 1120: cc.v2(380, 510)
+L95643| }, i = {
+L95644| 1147: cc.v2(245, 36),
+L95645| 1118: cc.v2(224, 5),
+L95646| 1119: cc.v2(235, 0),
+L95647| 1120: cc.v2(180, 80)
+L95648| }, n = {
+L95649| 1147: cc.v2(495, 21),
+L95650| 1118: cc.v2(432, 32),
+L95651| 1119: cc.v2(465, 0),
+L95652| 1120: cc.v2(410, 80)
+L95653| }, r = cc.v2(0, 0);
+L95654| "A" == e ? r = o[t] : "B" == e ? r = i[t] : "C" == e && (r = n[t]);
+L95655| return r;
+L95656| };
+L95657| t.prototype.getLandStartPox = function(t, e) {
+L95658| var o = {
+L95659| 1147: cc.v2(582, 498),
+L95660| 1118: cc.v2(698, 431),
+L95661| 1119: cc.v2(521, 386),
+L95662| 1120: cc.v2(537, 367)
+L95663| }, i = {
+L95664| 1147: cc.v2(499, 514),
+L95665| 1118: cc.v2(573, 468),
+L95666| 1119: cc.v2(473, 424),
+L95667| 1120: cc.v2(445, 368)
+L95668| }, n = {
+L95669| 1147: cc.v2(299, 514),
+L95670| 1118: cc.v2(455, 468),
+L95671| 1119: cc.v2(298, 425),
+L95672| 1120: cc.v2(295, 368)
+L95673| };
+L95674| cc.v2(0, 0);
+L95675| return 4 == e ? o[t] : 9 == e ? i[t] : n[t];
+L95676| };
+L95677| t.prototype.getCropGrowingTime = function(t, e) {
+L95678| for (var o = i.getItem(e, "home_plant_crop"), n = a.HomePlantModel.curHomeScene, r = -1, s = 1, l = o.speed, c = 0; c < l.length; c++) if (n == l[c]) {
+L95679| r = c;
+L95680| break;
+L95681| }
+L95682| r >= 0 && (s = 1 - o.effect);
+L95683| var p = i.getItem(e, "home_plant_crop"), h = 0;
+L95684| 2 == t ? h = p.seedtime * s : 3 == t ? h = parseInt(p.seedtime + p.seedling) * s : 4 == t ? h = parseInt(p.seedtime + p.seedling + p.grow) * s : 5 == t ? h = parseInt(p.seedtime + p.seedling + p.grow + p.mature) * s : 6 == t ? h = …[len=391]
+L95685| return 0 + h;
+L95686| };
+L95687| t.prototype.setButtonTipStateValue = function() {
+L95688| if (!cc.sys.localStorage.getItem(s.RoleBaseInfo.roleID + "homeCrop")) {
+L95689| r.default.show(n.getText(3318));
+L95690| cc.sys.localStorage.setItem(s.RoleBaseInfo.roleID + "homeCrop", "1");
+L95691| }
+L95692| };
+L95693| t.prototype.productHomeEvent = function(t, e) {
+L95694| var o = i.getItem(t, "home_plant_adventure"), a = n.getText(3161), s = n.getText(o.describe), l = i.getItem(e.itemId, "item"), c = s + "\n" + n.getText(750) + "  " + n.getText(l.Name) + " x" + e.num;
+L95695| r.default.show(c, [ {
+L95696| flag: 0,
+L95697| name: n.getText("11505")
+L95698| } ], null, a, !1);
+L95699| };
+L95700| return t;
+L95701| }();
+L95702| o.PlantSystemMgr = new c();
+L95703| cc._RF.pop();
+L95704| }, {
+L95705| "../gameconfigs/CFMgr": "CFMgr",
+L95706| "../gameconfigs/LangMgr": "LangMgr",
+L95707| "../gui/uicomponents/Alert": "Alert",
+L95708| "../models/HomePlantModel": "HomePlantModel",
+L95709| "../models/vos/RoleBaseInfo": "RoleBaseInfo",
+L95710| "./TimeMgr": "TimeMgr"
+L95711| } ],
+L95712| Platform: [ function(t, e) {
+L95713| "use strict";
+L95714| cc._RF.push(e, "1844dtG5cRB64Bm5N6bTDzV", "Platform");
+L95715| e.exports = {
+L95716| NONE: "test",
+L95717| QZONE: "wanba",
+L95718| LEDU: "ledu",
+L95719| JINBANG: "jinbang",
+L95720| P9130: "p9130",
+L95721| MAPLE: "maple",
+L95722| LIYU: "liyu",
+L95723| P4399: "4399",
+L95724| FB: "facebook",
+L95725| YUEWEN: "pyuewen",
+L95726| COCOS: "cocos",
+L95727| HUAWEI: "huaweih5",
+L95728| QQINST: "qqinst",
+L95729| BDINST: "baiduinst",
+L95730| LEYU: "yule",
+L95731| P7K7K: "7k7k",
+L95732| HUAREN: "huaren",
+L95733| DOUYIN: "douyin",
+L95734| YIAI: "yiai",
+L95735| H5360: "h5360",
+L95736| H5BAIDU: "h5baidu"
+L95737| };
+L95738| cc._RF.pop();
+L95739| }, {} ],
+L95740| PlayCartoonUI: [ function(t, e, o) {
+L95741| "use strict";
+L95742| cc._RF.push(e, "ddf71xLL3BICZZ1KtInZucD", "PlayCartoonUI");
+L95743| var i, n = this && this.__extends || (i = function(t, e) {
+L95744| return (i = Object.setPrototypeOf || {
+L95745| __proto__: []
+L95746| } instanceof Array && function(t, e) {
+L95747| t.__proto__ = e;
+L95748| } || function(t, e) {
+L95749| for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+L95750| })(t, e);
+L95751| }, function(t, e) {
+L95752| i(t, e);
+L95753| function o() {
+L95754| this.constructor = t;
+L95755| }
+L95756| t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());
+L95757| }), r = this && this.__decorate || function(t, e, o, i) {
+L95758| var n, r = arguments.length, a = r < 3 ? e : null === i ? i = Object.getOwnPropertyDescriptor(e, o) : i;
+L95759| if ("object" == typeof Reflect && "function" == typeof Reflect.decorate) a = Reflect.decorate(t, e, o, i); else for (var s = t.length - 1; s >= 0; s--) (n = t[s]) && (a = (r < 3 ? n(a) : r > 3 ? n(e, o, a) : n(e, o)) || a);
+L95760| return r > 3 && a && Object.defineProperty(e, o, a), a;
+L95761| };
+L95762| Object.defineProperty(o, "__esModule", {
+L95763| value: !0
+L95764| });
+L95765| o.PlayCartoonUI = void 0;
+L95766| var a = t("../../gameconfigs/AppData"), s = t("../../core/ui/mgrs/PopUpMgr"), l = t("../../models/vos/RoleBaseInfo"), c = t("../uicomponents/UIComponent"), p = t("../../mgrs/BundleMgr"), h = t("../../mgrs/LoginMgr"), u = cc._decor …[len=261]
+L95767| n(e, t);
+L95768| function e() {
+L95769| var e = null !== t && t.apply(this, arguments) || this;
+L95770| e.prefabName = "comUI/PlayCartoonUI";
+L95771| e.sprite = null;
+L95772| e.currentIndex = 0;
+L95773| e.callBack = null;
+L95774| e.resKeyAy = [];
+L95775| return e;
+L95776| }
+L95777| e.prototype.onLoad = function() {
+L95778| t.prototype.onLoad.call(this);
+L95779| this.currentIndex = 0;
+L95780| this.callBack = null;
+L95781| this.sprite = this.getPathByNode("sprite");
+L95782| this.addButtonListen(this.node, this, this.nextCallBack);
+L95783| };
+L95784| e.prototype.setData = function(t, e) {
+L95785| void 0 === e && (e = null);
+L95786| this.callBack = e;
+L95787| for (var o = 0; o < t.length; o++) this.resKeyAy.push(t[o]);
+L95788| };
+L95789| e.prototype.start = function() {
+L95790| var t = this.resKeyAy[0];
+L95791| t && this.showSprite(t);
+L95792| };
+L95793| e.prototype.showSprite = function(t) {
+L95794| var e = l.RoleBaseInfo.sexId, o = a.lang, i = [ "ui/manhua/" + t, "ui/multilingual/" + o.toString() + "/pic/" + t, "ui/manhua/" + t + "_" + e, "ui/multilingual/" + o.toString() + "/pic/" + t + "_" + e ], n = "", r = cc.assetManage …[len=254]
+L95795| if (h.LoginMgr.checkMiniGame() && r) {
+L95796| for (var s = null, c = 0; c < i.length; c++) if (s = r.getInfoWithPath(i[c], cc.Texture2D)) {
+L95797| n = i[c];
+L95798| break;
+L95799| }
+L95800| s || (r = p.default.common);
+L95801| } else r = p.default.common;
+L95802| if ("" != n) this.setSpriteFrame(this.sprite, n, !0, null, r); else for (s = null, 
+L95803| c = 0; c < i.length; c++) if (s = r.getInfoWithPath(i[c], cc.Texture2D)) {
+L95804| this.setSpriteFrame(this.sprite, i[c], !0, null, r);
+L95805| break;
+L95806| }
+L95807| };
+L95808| e.prototype.nextCallBack = function() {
+L95809| this.currentIndex++;
+L95810| if (this.currentIndex < this.resKeyAy.length) {
+L95811| var t = this.resKeyAy[this.currentIndex];
+L95812| this.showSprite(t);
+L95813| } else s.PopUpMgr.removePopUp(this.node);
+L95814| };
+L95815| e.prototype.onDestroy = function() {
+L95816| t.prototype.onDestroy.call(this);
+L95817| this.callBack && this.callBack();
+L95818| };
+L95819| return r([ u ], e);
+L95820| }(c.UIComponent);
+L95821| o.PlayCartoonUI = f;
+L95822| cc._RF.pop();
+L95823| }, {
+L95824| "../../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+L95825| "../../gameconfigs/AppData": "AppData",
+L95826| "../../mgrs/BundleMgr": "BundleMgr",
+L95827| "../../mgrs/LoginMgr": "LoginMgr",
+L95828| "../../models/vos/RoleBaseInfo": "RoleBaseInfo",
+L95829| "../uicomponents/UIComponent": "UIComponent"
+L95830| } ],

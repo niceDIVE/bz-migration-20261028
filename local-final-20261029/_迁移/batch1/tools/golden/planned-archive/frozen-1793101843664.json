@@ -1,0 +1,374 @@
+{
+ "archivedAt": "2026-10-27T11:50:43.664Z",
+ "rules": [
+  {
+   "id": "c15-getReturnGift",
+   "action": "getReturnGift",
+   "field": [
+    "eRet",
+    "ID",
+    "nameID",
+    "getGold",
+    "money",
+    "isBuy",
+    "isAward"
+   ],
+   "expect": 19,
+   "allowSigma": [
+    [
+     "getReturnGift",
+     "eRet"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[0].ID"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[0].nameID"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[0].getGold"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[0].money"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[0].isBuy"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[0].isAward"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[1].ID"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[1].nameID"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[1].getGold"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[1].money"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[1].isBuy"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[1].isAward"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[2].ID"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[2].nameID"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[2].getGold"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[2].money"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[2].isBuy"
+    ],
+    [
+     "getReturnGift",
+     "giftDatas[2].isAward"
+    ]
+   ],
+   "ev": "index.js:60245",
+   "why": "C15 礼包拉取（scripts3.js:63542）：eRet 1 + giftDatas 3 档纯展示（Return_store：isBuy=0 按钮禁用、isAward=0 不自动领、money 照表 Price、nameID 照表 name）。档 A 防付费白拿。"
+  },
+  {
+   "id": "c15-getReturnSevenDayData",
+   "action": "getReturnSevenDayData",
+   "field": [
+    "eRet",
+    "sevenDaysArr",
+    "triggerTime"
+   ],
+   "expect": 3,
+   "allowSigma": [
+    [
+     "getReturnSevenDayData",
+     "eRet"
+    ],
+    [
+     "getReturnSevenDayData",
+     "sevenDaysArr[0]"
+    ],
+    [
+     "getReturnSevenDayData",
+     "triggerTime"
+    ]
+   ],
+   "ev": "index.js:60240",
+   "why": "C15 七日门（scripts3.js:63559-63566 + scripts2.js:28970-28977 / 29214）：eRet==1 才切页开 ReturnUI；sevenDaysArr=状态数组（首日 [1]=可领）；triggerTime=回归期起点 ms（常开=now，countdown=trigger+864e5×14）。"
+  },
+  {
+   "id": "c15-getReturnTaskData",
+   "action": "getReturnTaskData",
+   "field": [
+    "eRet",
+    "tasks",
+    "liveness",
+    "livenessDatas",
+    "triggerTime"
+   ],
+   "expect": 37,
+   "allowSigma": [
+    [
+     "getReturnTaskData",
+     "eRet"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[0][0]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[0][1]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[0][2]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[1][0]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[1][1]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[1][2]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[2][0]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[2][1]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[2][2]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[3][0]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[3][1]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[3][2]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[4][0]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[4][1]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[4][2]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[5][0]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[5][1]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[5][2]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[6][0]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[6][1]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[6][2]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[7][0]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[7][1]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[7][2]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[8][0]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[8][1]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[8][2]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[9][0]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[9][1]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[9][2]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[10][0]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[10][1]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.tasks[10][2]"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.liveness"
+    ],
+    [
+     "getReturnTaskData",
+     "oldReturnData.livenessDatas"
+    ],
+    [
+     "getReturnTaskData",
+     "triggerTime"
+    ]
+   ],
+   "ev": "index.js:60241",
+   "why": "C15 任务面板（scripts3.js:63568 / 63700-63865）：oldReturnData={tasks:11×[id,0,state],liveness,livenessDatas}；档 A 诚实空态（state 全 0、liveness 0）——离线无任务埋点，不伪造进度。"
+  },
+  {
+   "id": "c15-receiveReturnDailyTask",
+   "action": "receiveReturnDailyTask",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "receiveReturnDailyTask",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60243",
+   "why": "C15 任务领取（scripts3.js:63581）：档 A 任务恒未完成 → eRet 2（监听只有 1 分支，静默）。"
+  },
+  {
+   "id": "c15-receiveLivenessAward",
+   "action": "receiveLivenessAward",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "receiveLivenessAward",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60244",
+   "why": "C15 活跃度领取（scripts3.js:63587）：档 A liveness 恒 0 → eRet 2（监听只有 1 分支，静默）。"
+  },
+  {
+   "id": "c15-receiveReturnGiftAward",
+   "action": "receiveReturnGiftAward",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "receiveReturnGiftAward",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60246",
+   "why": "C15 礼包领取（scripts3.js:63551）：付费礼包（Return_store Price 25/68/98）离线无支付通道 → 防白拿恒拒 2。"
+  },
+  {
+   "id": "c15-refreshReturnGiftAward",
+   "action": "refreshReturnGiftAward",
+   "field": [
+    "eRet",
+    "giftAwards"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "refreshReturnGiftAward",
+     "eRet"
+    ],
+    [
+     "refreshReturnGiftAward",
+     "giftAwards"
+    ]
+   ],
+   "ev": "index.js:60247",
+   "why": "C15 礼包刷新（scripts3.js:63554）：giftAwards 空数组（档 A 纯展示，不自动领）。"
+  },
+  {
+   "id": "c15-returnSevenDaysAwards",
+   "action": "returnSevenDaysAwards",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "returnSevenDaysAwards",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60242",
+   "why": "C15 七日领取（scripts3.js:63575）：空请求走 notReady → eRet 2（未开面板/未到天；防刷每天一次）。成功路径才带 sevenDaysArr/rewardArray。"
+  }
+ ]
+}

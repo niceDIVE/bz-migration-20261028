@@ -1,0 +1,49 @@
+# User.OnHookBreak   (HttpConst.USER_ONHOOK_BREAK)
+
+## 注册点 56228: i.MessageCenter.on(l.HttpConst.USER_ONHOOK_BREAK, this.onBreakReqReturn, this);
+
+## 请求点 56263: c.NetMgr.http.sendRequest(l.HttpConst.USER_ONHOOK_BREAK, n);
+   56255: var i = D.playerInfo.entity, n = {
+   56256: onHookOperate: o ? 2 : 1,
+   56257: skillID: t,
+   56258: skillLevel: e,
+   56259: hg: i.hunger.remaining,
+   56260: gTime: i.totalGameTime.gameTime,
+   56261: hgtimes: i.numStuffed
+   56262: };
+
+## 处理函数 onBreakReqReturn (56584-56617)
+ 56584: e.prototype.onBreakReqReturn = function(t, e) {
+ 56585: if (e.hasOwnProperty("skillID") && e.hasOwnProperty("skillLevel")) {
+ 56586: this.id = e.skillID;
+ 56587: this.lv = e.skillLevel;
+ 56588: var o = !1;
+ 56589: this.itemBreakAdditionNum = e.hasOwnProperty("itemAddition") ? e.itemAddition : 0;
+ 56590: if (isNaN(Number(e.needTime))) s.default.show(JSON.stringify(e)); else if (1 == e.operate) {
+ 56591: switch (e.eRet) {
+ 56592: case 4:
+ 56593: this.isDouble = !1;
+ 56594: this.breakBonus = 0;
+ 56595: this.totalTime = e.needTime + Math.floor(.001 * (e.serverTime - e.beginTime));
+ 56596: this.timeRemaining = e.needTime;
+ 56597: this.actFriends = null;
+ 56598: o = !0;
+ 56599: break;
+ 56600: 
+ 56601: case 5:
+ 56602: this.isDouble = !0;
+ 56603: this.totalTime = e.needTime + Math.floor(.001 * (e.serverTime - e.beginTime));
+ 56604: this.timeRemaining = e.needTime;
+ 56605: this.starter = e.Sponsor;
+ 56606: this.friend = g.RoleOtherInfo.changeInputWordStr(e.friendName);
+ 56607: this.friendSex = e.friendSex;
+ 56608: this.breakBonus = e.Addition;
+ 56609: o = !0;
+ 56610: break;
+ 56611: 
+ 56612: default:
+ 56613: this.isBreaking = !1;
+ 56614: if (1 == e.eRet || 3 == e.eRet) {
+ 56615: m.SkillTable.setBrLv(e.skillID, e.skillLevel);
+ 56616: s.default.show(p.errMsg[n.lang][2]);
+ 56617: }

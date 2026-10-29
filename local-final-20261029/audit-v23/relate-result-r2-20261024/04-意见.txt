@@ -1,0 +1,31 @@
+第 4 步：看结果的几句话（6 条）
+================================
+依据：out\relations.md（第 2 轮，config 已按下面第 2 条改过并随包交回）。
+
+1) 上一轮点名的 8 处全对上了，逐条核过：交易 C01、任务主线 C02、婚姻子女 C04、
+   道具使用 C05、打坐练功 C06（END_DAZUO / END_LIANGONG 带 ⚠ 提醒）、成就 C16、
+   斗狗 C13、龙 C15（BEGIN_DRAGON_ROLLDICE 这次进来了）。副本→成就/任务的联动
+   也进了表头的「已知联动」。
+
+2) 新冒出来的问题：默认参数下 C01 曾是 35 个的「经济枢纽簇」——rw 满分边把
+   建号/登录（USER_CREATE / QUICK_LOGIN / USER_LOADGAME）、成就主查询
+   GET_ACHIEVE_DATA、USE_ITEM 全拽离了各自家族。按指令直接改了 config（随包交回，
+   共 3 处）：① 新增「核心账本」family；② 「任务主线」match 加 (?!ROGUE_)；
+   ③ familyWeight 2.0→3.0。改前的两版对照也随包（relations.默认配置-对照 / fam2.0-对照）。
+
+3) 改后体检：12 个 family 各自集中在同一个簇（商店交易 C01 收缩成 26 个纯商店/
+   装备动作），孤立 372→370，簇 76；GET_ACHIEVE_DATA 回成就族，USE_ITEM 回道具家族。
+
+4) C05 是混编簇（15 个：建号/登录/登出 + 道具使用 + JOIN_SCHOOL / QUIT_SCHOOL /
+   UPGRADE_SKILL_LV / REQ_PVE_BATTLE）。写作顺序上没毛病（都是动核心账本的，
+   排第 2 批合理），但它的〔道具使用〕标签是「多数家族」，别当成共享契约看。
+
+5) ROGUE_ACCEPT_TASK / ROGUE_FINISHTASK_REWARD 仍留在 C02——不是 family 拉的
+   （match 已剔除 ROGUE_），是 rw:accepted + token:TASK：它们跟主任务共写同一个
+   accepted 字段。裁定可接受，不算错。
+
+6) 两个交给上游的发现：a) 孤立 370 里剩下的 BUY_*（BUY_TICKET、BUY_HOME_CROP、
+   BUY_HOUSE_EVENT、BUY_NPC_FEEL…）各自是活动/家园的小玩法，我没硬塞进「商店交易」，
+   硬拉会重新养出枢纽簇，手下各自发现时再加行；b) User.sycnPlayerItemData（三大重建
+   入口之一，回空=清背包）registry 状态是 PUSH，不在本轮 699 范围里——分析器够不到它，
+   这是登记表的口径问题，建议确认它该不该进范围。

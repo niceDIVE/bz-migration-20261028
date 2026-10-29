@@ -1,0 +1,75 @@
+# User.GetGMGiveItem  (HttpConst.GET_GMGIVE_ITEM)
+# 出现 2 处
+
+ 88280: });
+ 88281: o.NetworkModel = void 0;
+ 88282: var i = t("../core/events/MessageCenter"), n = t("../net/HttpConst"), r = t("../net/NetMgr"), a = t("../utils/EvName"), s = t("./AchieveModel"), l = t("./vos/RoleBaseInfo"), c = function() {
+ 88283: function t() {}
+ 88284: t.prototype.init = function() {
+ 88285: i.MessageCenter.on(n.HttpConst.GET_GMGIVE_ITEM_LIST, this.sendOnlineList, this);
+ 88286: i.MessageCenter.on(n.HttpConst.GET_GMGIVE_ITEM, function(t, e) {
+ 88287: if (1 == e.eRet) {
+ 88288: i.MessageCenter.dispatch(a.EvName.GM_GET_REWARD, e);
+ 88289: if (e.titleID && e.titleID > 0) {
+ 88290: var o = e.titleID, n = e.expireTime, r = {};
+ 88291: r[o] = n;
+ 88292: s.AchieveModel.setAchieveData(r);
+ 88293: }
+ 88294: }
+ 88295: });
+ 88296: };
+ 88297: t.prototype.reqGetOnlineList = function() {
+ 88298: r.NetMgr.http.sendRequest(n.HttpConst.GET_GMGIVE_ITEM_LIST, {
+ 88299: roleID: l.RoleBaseInfo.roleID
+ 88300: }, function() {}.bind(this));
+ 88301: };
+ 88302: t.prototype.sendOnlineList = function(t, e) {
+ 88303: i.MessageCenter.dispatch(a.EvName.GET_GMGIVE_ITEM_LIST, e);
+ 88304: };
+ 88305: t.prototype.reqGMGetReward = function(t) {
+ 88306: var e = {
+ 88307: indexID: t
+ 88308: };
+ 88309: r.NetMgr.http.sendRequest(n.HttpConst.GET_GMGIVE_ITEM, e);
+ 88310: };
+ 88311: return t;
+ 88312: }();
+ 88313: o.NetworkModel = new c();
+ 88314: cc._RF.pop();
+ 88315: }, {
+ 88316: "../core/events/MessageCenter": "MessageCenter",
+ 88317: "../net/HttpConst": "HttpConst",
+ 88318: "../net/NetMgr": "NetMgr",
+ 88319: "../utils/EvName": "EvName",
+ 88320: "./AchieveModel": "AchieveModel",
+ 88321: "./vos/RoleBaseInfo": "RoleBaseInfo"
+ 88322: } ],
+ 88323: NetworkUI: [ function(t, e, o) {
+ 88324: "use strict";
+ 88325: cc._RF.push(e, "784cfp6HwBH75Yz+QwtSBnK", "NetworkUI");
+ 88326: var i, n = this && this.__extends || (i = function(t, e) {
+---
+ 88327: return (i = Object.setPrototypeOf || {
+ 88328: __proto__: []
+ 88329: } instanceof Array && function(t, e) {
+ 88330: t.__proto__ = e;
+ 88331: } || function(t, e) {
+ 88332: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+ 88333: })(t, e);
+ 88334: }, function(t, e) {
+ 88335: i(t, e);
+ 88336: function o() {
+ 88337: this.constructor = t;
+ 88338: }
+ 88339: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());
+ 88340: }), r = this && this.__decorate || function(t, e, o, i) {
+ 88341: var n, r = arguments.length, a = r < 3 ? e : null === i ? i = Object.getOwnPropertyDescriptor(e, o) : i;
+ 88342: if ("object" == typeof Reflect && "function" == typeof Reflect.decorate) a = Reflect.decorate(t, e, o, i); else for (var s = t.length - 1; s >= 0; s--) (n = t[s]) && (a = (r < 3 ? n(a) : r > 3 ? n(e, o, a) : n(e, o)) || a);
+ 88343: return r > 3 && a && Object.defineProperty(e, o, a), a;
+ 88344: };
+ 88345: Object.defineProperty(o, "__esModule", {
+ 88346: value: !0
+ 88347: });
+ 88348: o.NetworkUI = void 0;
+ 88349: var a = t("../../core/events/MessageCenter"), s = t("../../core/ui/mgrs/PopUpMgr"), l = t("../../mgrs/BundleMgr"), c = t("../../mgrs/GSceneMgr"), p = t("../../utils/EvName"), h = t("../uiComSCript/ComBgUI"), u = cc._decorator.ccclass, f = function(t) {
+---

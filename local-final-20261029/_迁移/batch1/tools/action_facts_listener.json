@@ -1,0 +1,5684 @@
+{
+ "generatedAt": "2026-10-21T19:33:38.921Z",
+ "source": "tools/index.js",
+ "method": "MessageCenter.on(<ns>.HttpConst.NAME, function(p1, p2){...}) 匿名回调 + 括号配平 + p2.字段 抽取",
+ "stats": {
+  "consts": 815,
+  "listeners": 249,
+  "actions": 249,
+  "fields": 667
+ },
+ "actions": {
+  "equipTitle": {
+   "constName": "EQUIP_TITLE",
+   "onLine": 609,
+   "span": [
+    609,
+    616
+   ],
+   "fields": [
+    "eRet",
+    "flag",
+    "id"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 610,
+    "flag": 611,
+    "id": 611
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "flag": "1 == o.flag ? t.playerTitle.e = o.id : t.playerTitle.e = 0;",
+    "id": "1 == o.flag ? t.playerTitle.e = o.id : t.playerTitle.e = 0;"
+   }
+  },
+  "getEnterAward": {
+   "constName": "BYTEDANCE_ENTER_AWARD",
+   "onLine": 21268,
+   "span": [
+    21268,
+    21274
+   ],
+   "fields": [
+    "eRet",
+    "equipObj",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 21269,
+    "equipObj": 21271,
+    "rewardArray": 21271
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "equipObj": "s.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj);",
+    "rewardArray": "s.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj);"
+   }
+  },
+  "getCreateRoleActivity": {
+   "constName": "GET_CREATE_ROLE_ACT",
+   "onLine": 23052,
+   "span": [
+    23052,
+    23068
+   ],
+   "fields": [
+    "birthId",
+    "createTime",
+    "eRet",
+    "faceId",
+    "talnetId"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "birthId": 23055,
+    "createTime": 23064,
+    "eRet": 23053,
+    "faceId": 23056,
+    "talnetId": 23061
+   },
+   "evidence": {
+    "birthId": "t.birthIdId = o.birthId < 283 ? parseInt(o.birthId) + 4 : parseInt(o.birthId);",
+    "createTime": "i.getComponent(\"ChangeIdUI\").setData(o.createTime);",
+    "eRet": "if (0 == o.eRet) n.default.show(a.getText(1093)); else if (1 == o.eRet) {",
+    "faceId": "t.appearId = o.faceId < 302 ? parseInt(o.faceId) + 10 : parseInt(o.faceId);",
+    "talnetId": "t.talentId = o.talnetId;"
+   }
+  },
+  "resetRole": {
+   "constName": "RESET_ROLE",
+   "onLine": 23069,
+   "span": [
+    23069,
+    23085
+   ],
+   "fields": [
+    "birthId",
+    "eRet",
+    "faceId",
+    "rewardArray",
+    "talnetId"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "birthId": 23074,
+    "eRet": 23070,
+    "faceId": 23075,
+    "rewardArray": 23077,
+    "talnetId": 23076
+   },
+   "evidence": {
+    "birthId": "h.RoleBaseInfo.birthIdId = o.birthId;",
+    "eRet": "if (0 == o.eRet) {",
+    "faceId": "h.RoleBaseInfo.appearId = o.faceId;",
+    "rewardArray": "o.hasOwnProperty(\"rewardArray\") && d.default.addShowRewardUI1(o.rewardArray, 0, {});",
+    "talnetId": "h.RoleBaseInfo.talentId = o.talnetId;"
+   }
+  },
+  "getCRAInfo": {
+   "constName": "GET_CREATE_INFO",
+   "onLine": 23086,
+   "span": [
+    23086,
+    23093
+   ],
+   "fields": [
+    "birthId",
+    "eRet",
+    "faceId",
+    "talnetId"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "birthId": 23088,
+    "eRet": 23087,
+    "faceId": 23089,
+    "talnetId": 23090
+   },
+   "evidence": {
+    "birthId": "o.hasOwnProperty(\"birthId\") && (t.birthIdId = o.birthId);",
+    "eRet": "if (2 == o.eRet) i.MessageCenter.dispatch(u.EvName.RECEIVE_CREATE_INFO); else if (1 == o.eRet) {",
+    "faceId": "o.hasOwnProperty(\"faceId\") && (t.appearId = o.faceId);",
+    "talnetId": "o.hasOwnProperty(\"talnetId\") && (t.talentId = o.talnetId);"
+   }
+  },
+  "jionChatPkServer": {
+   "constName": "JOIN_CHATPK_SERVER",
+   "onLine": 23962,
+   "span": [
+    23962,
+    23971
+   ],
+   "fields": [
+    "agreeOfflineMatch",
+    "eRet",
+    "newAcc",
+    "signData",
+    "signData.roleUniqueId"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "agreeOfflineMatch": 23967,
+    "eRet": 23963,
+    "newAcc": 23966,
+    "signData": 23964,
+    "signData.roleUniqueId": 23965
+   },
+   "evidence": {
+    "agreeOfflineMatch": "t.officeMatch = o.agreeOfflineMatch;",
+    "eRet": "if (1 == o.eRet) {",
+    "newAcc": "t.newAccount = o.newAcc;",
+    "signData": "t.signData = o.signData;",
+    "signData.roleUniqueId": "t.roleUniqueId = o.signData.roleUniqueId;"
+   }
+  },
+  "sycnPlayerItemData": {
+   "constName": "SYCNPLAYERITEAMDATA",
+   "onLine": 24014,
+   "span": [
+    24014,
+    24020
+   ],
+   "fields": [
+    "eRet",
+    "itemObj"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 24015,
+    "itemObj": 24018
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "itemObj": "for (var o in e.itemObj) parseInt(o) > 0 && parseInt(e.itemObj[o]) > 0 && l.RoleBaseInfo.setItem(parseInt(o), e.itemObj[o]);"
+   }
+  },
+  "cancelChatPk": {
+   "constName": "CANCEL_CHAT_PK",
+   "onLine": 24021,
+   "span": [
+    24021,
+    24026
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 24022
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet && 0 == t.cancelPkState) {"
+   }
+  },
+  "ChatPkActivity": {
+   "constName": "CHAT_PK_ACTIVITY",
+   "onLine": 24027,
+   "span": [
+    24027,
+    24032
+   ],
+   "fields": [
+    "NpcId",
+    "eRet",
+    "option"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "NpcId": 24030,
+    "eRet": 24028,
+    "option": 24029
+   },
+   "evidence": {
+    "NpcId": "a.MessageCenter.dispatch(m.EvName.CHAT_MATCH_NPC_EVENT, e.NpcId);",
+    "eRet": "if (1 == e.eRet) {",
+    "option": "this.chatPkOption = e.option;"
+   }
+  },
+  "receiveChatPkSportsPointAward": {
+   "constName": "RECEIVE_CHAT_PK_POINTAWARD",
+   "onLine": 24033,
+   "span": [
+    24033,
+    24035
+   ],
+   "fields": [
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "rewardArray": 24034
+   },
+   "evidence": {
+    "rewardArray": "e.hasOwnProperty(\"rewardArray\") && E.default.addShowRewardUI1(e.rewardArray, 0, {});"
+   }
+  },
+  "shcoolFirstHonor": {
+   "constName": "SCHOOL_FIRST_HONOR",
+   "onLine": 24446,
+   "span": [
+    24446,
+    24460
+   ],
+   "fields": [
+    "eRet",
+    "id",
+    "school"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 24447,
+    "id": 24450,
+    "school": 24453
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "id": "id: o.id",
+    "school": "if (o.hasOwnProperty(\"school\") && o.school == t.schoolId) {"
+   }
+  },
+  "collect": {
+   "constName": "COLLECT",
+   "onLine": 25208,
+   "span": [
+    25208,
+    25224
+   ],
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 25209,
+    "rewardArray": 25210
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "rewardArray": "if (o.hasOwnProperty(\"rewardArray\") && !d.MadUtilsTS.isNullObj(o.rewardArray)) {"
+   }
+  },
+  "chooseState": {
+   "constName": "CHOOSE_STATE",
+   "onLine": 29352,
+   "span": [
+    29352,
+    29354
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 29353
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet && (s.RoleOtherInfo.randomNpcLevel = t.selectTag);"
+   }
+  },
+  "ReqDogPartnerBattleInfo": {
+   "constName": "REQ_DOG_PARTNER_PVE_BATTLE",
+   "onLine": 31760,
+   "span": [
+    31760,
+    31762
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 31761
+   },
+   "evidence": {
+    "eRet": "1 === e.eRet && o.prepareForBattle(e);"
+   }
+  },
+  "CheckDogPartnerPVEBattleResult": {
+   "constName": "REQ_DOG_PARTNER_END_BATTLE",
+   "onLine": 31763,
+   "span": [
+    31763,
+    31768
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 31764
+   },
+   "evidence": {
+    "eRet": "if (1 === e.eRet && o.fightEndCb) {"
+   }
+  },
+  "GetMountsList": {
+   "constName": "GET_MOUNTSLIST",
+   "onLine": 32123,
+   "span": [
+    32123,
+    32140
+   ],
+   "fields": [
+    "MountsArr",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "MountsArr": 32137,
+    "eRet": 32124
+   },
+   "evidence": {
+    "MountsArr": "r.addComponent(\"DriverShopBg\").setData(e.MountsArr, 0);",
+    "eRet": "if (1 == e.eRet) {"
+   }
+  },
+  "BuyMount": {
+   "constName": "BUY_MOUNT",
+   "onLine": 32141,
+   "span": [
+    32141,
+    32173
+   ],
+   "fields": [
+    "eRet",
+    "sync",
+    "type"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 32144,
+    "sync": 32170,
+    "type": 32142
+   },
+   "evidence": {
+    "eRet": "if (1 == i.eRet) {",
+    "sync": "g.RoleOtherInfo.isSyncMount = 1 == i.sync;",
+    "type": "if (1 != i.type) {"
+   }
+  },
+  "getCircleTaskList": {
+   "constName": "GET_CIRCLE_TASK_LIST",
+   "onLine": 43487,
+   "span": [
+    43487,
+    43496
+   ],
+   "fields": [
+    "cNum",
+    "eRet",
+    "taskArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "cNum": 43489,
+    "eRet": 43488,
+    "taskArr": 43493
+   },
+   "evidence": {
+    "cNum": "t.entrustNum = o.cNum;",
+    "eRet": "if (1 == o.eRet) {",
+    "taskArr": "i.addComponent(\"HangTaskBg\").showHangTaskUI(o.taskArr);"
+   }
+  },
+  "quickFinishTask": {
+   "constName": "QUICK_FINISH_TASK",
+   "onLine": 43497,
+   "span": [
+    43497,
+    43505
+   ],
+   "fields": [
+    "caidan",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "caidan": 43501,
+    "eRet": 43498
+   },
+   "evidence": {
+    "caidan": "caidan: o.caidan",
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "delegateTask": {
+   "constName": "DELEGATE_TASK",
+   "onLine": 43506,
+   "span": [
+    43506,
+    43514
+   ],
+   "fields": [
+    "eRet",
+    "sTime"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 43507,
+    "sTime": 43510
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "sTime": "time: o.sTime"
+   }
+  },
+  "changeDelegateTask": {
+   "constName": "CHANGE_DELEGATE_TASK",
+   "onLine": 43515,
+   "span": [
+    43515,
+    43532
+   ],
+   "fields": [
+    "eRet",
+    "num",
+    "taskObj"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 43516,
+    "num": 43529,
+    "taskObj": 43518
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "num": "t.entrustNum = o.num;",
+    "taskObj": "for (var r in o.taskObj) {"
+   }
+  },
+  "circleTaskAward": {
+   "constName": "CIRCLE_TASK_TASK",
+   "onLine": 43533,
+   "span": [
+    43533,
+    43540
+   ],
+   "fields": [
+    "eRet",
+    "rewardObj"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 43534,
+    "rewardObj": 43538
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "rewardObj": "u.default.addShowRewardUI1(o.rewardObj, 0);"
+   }
+  },
+  "getWashEquip": {
+   "constName": "GET_WASH_EQUIP",
+   "onLine": 44535,
+   "span": [
+    44535,
+    44537
+   ],
+   "fields": [
+    "eRet",
+    "equipObj"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 44536,
+    "equipObj": 44536
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet && e.hasOwnProperty(\"equipObj\") && i.MessageCenter.dispatch(r.EvName.GET_WASH_EQUIP, e.equipObj);",
+    "equipObj": "1 == e.eRet && e.hasOwnProperty(\"equipObj\") && i.MessageCenter.dispatch(r.EvName.GET_WASH_EQUIP, e.equipObj);"
+   }
+  },
+  "equipWash": {
+   "constName": "EQUIP_WASH",
+   "onLine": 44538,
+   "span": [
+    44538,
+    44548
+   ],
+   "fields": [
+    "addArr",
+    "eRet",
+    "itemID",
+    "newAtt"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "addArr": 44543,
+    "eRet": 44539,
+    "itemID": 44541,
+    "newAtt": 44542
+   },
+   "evidence": {
+    "addArr": "addArr: e.addArr",
+    "eRet": "if (1 == e.eRet) {",
+    "itemID": "itemId: e.itemID,",
+    "newAtt": "newAtt: e.newAtt,"
+   }
+  },
+  "changeProperty": {
+   "constName": "CHANGE_PROPERTY",
+   "onLine": 44549,
+   "span": [
+    44549,
+    44551
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 44550
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EQUIP_UPDATE_WASH_EVENT);"
+   }
+  },
+  "getBankList": {
+   "constName": "GET_BANK_LIST",
+   "onLine": 46889,
+   "span": [
+    46889,
+    46895
+   ],
+   "fields": [
+    "bankList",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "bankList": 46892,
+    "eRet": 46890
+   },
+   "evidence": {
+    "bankList": "i.getComponent(\"StartExamUI\").setData(o.bankList);",
+    "eRet": "1 == o.eRet && (t.isActive ? cc.log(\"进入活动答题\") : a.default.prefabs.load(\"Question/NormalTest\", cc.Prefab, function(t, e) {"
+   }
+  },
+  "getPaperList": {
+   "constName": "GET_PAPER_LIST",
+   "onLine": 46896,
+   "span": [
+    46896,
+    46901
+   ],
+   "fields": [
+    "bankId",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "bankId": 46898,
+    "eRet": 46897
+   },
+   "evidence": {
+    "bankId": "t.bankId = o.bankId;",
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "getQuestionList": {
+   "constName": "GET_QUESTION_LIST",
+   "onLine": 46902,
+   "span": [
+    46902,
+    46912
+   ],
+   "fields": [
+    "currentAnswerNum",
+    "eRet",
+    "paperId",
+    "questionMaxNum"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "currentAnswerNum": 46906,
+    "eRet": 46903,
+    "paperId": 46904,
+    "questionMaxNum": 46906
+   },
+   "evidence": {
+    "currentAnswerNum": "o.currentAnswerNum >= o.questionMaxNum ? t.answerResult() : a.default.prefabs.load(\"Question/Paper\", cc.Prefab, function(e, i) {",
+    "eRet": "if (1 == o.eRet) {",
+    "paperId": "t.paperId = o.paperId;",
+    "questionMaxNum": "o.currentAnswerNum >= o.questionMaxNum ? t.answerResult() : a.default.prefabs.load(\"Question/Paper\", cc.Prefab, function(e, i) {"
+   }
+  },
+  "anserQuestion": {
+   "constName": "ANSWER_QUESTION",
+   "onLine": 46913,
+   "span": [
+    46913,
+    46915
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 46914
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet ? i.MessageCenter.dispatch(c.EvName.UPDATE_ANSWER_PAGE, e) : 2 == e.eRet && r.default.show(p.getText(1093));"
+   }
+  },
+  "answerResult": {
+   "constName": "ANSWER_RESULT",
+   "onLine": 46916,
+   "span": [
+    46916,
+    46927
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 46917
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "resetAnswer": {
+   "constName": "RESET_ANSWER",
+   "onLine": 46928,
+   "span": [
+    46928,
+    46940
+   ],
+   "fields": [
+    "eRet",
+    "paperId",
+    "rightNum"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 46929,
+    "paperId": 46932,
+    "rightNum": 46931
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "paperId": "o.paperId = t.paperId;",
+    "rightNum": "o.rightNum = 0;"
+   }
+  },
+  "answerReward": {
+   "constName": "ANSWER_REWARD",
+   "onLine": 46941,
+   "span": [
+    46941,
+    46946
+   ],
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 46942,
+    "rewardArray": 46944
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "rewardArray": "o.hasOwnProperty(\"rewardArray\") && f.default.addShowRewardUI1(o.rewardArray, 0);"
+   }
+  },
+  "getChangeShop": {
+   "constName": "GET_CHANGE_SHOP",
+   "onLine": 47076,
+   "span": [
+    47076,
+    47078
+   ],
+   "fields": [
+    "eRet",
+    "shopObj"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 47077,
+    "shopObj": 47077
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EXCHANGE_SHOP_DATA, e.shopObj);",
+    "shopObj": "1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EXCHANGE_SHOP_DATA, e.shopObj);"
+   }
+  },
+  "getItemData": {
+   "constName": "GET_ITEM_DATA",
+   "onLine": 47079,
+   "span": [
+    47079,
+    47089
+   ],
+   "fields": [
+    "eRet",
+    "limit",
+    "limittype"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 47080,
+    "limit": 47086,
+    "limittype": 47082
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "limit": "r.addComponent(\"ExchangeBuyUI\").setDatas(t.curItemObj, o.limit, 0, i);",
+    "limittype": "o.hasOwnProperty(\"limittype\") && (i = o.limittype);"
+   }
+  },
+  "exchangeItem": {
+   "constName": "EXCHANGE_ITEM",
+   "onLine": 47090,
+   "span": [
+    47090,
+    47097
+   ],
+   "fields": [
+    "eRet",
+    "itemID",
+    "itemNum"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 47091,
+    "itemID": 47093,
+    "itemNum": 47095
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "itemID": "i.MessageCenter.dispatch(r.EvName.EXCHANGE_UPDATE_SHOP, e.itemID);",
+    "itemNum": "c.default.show(p.getText(123) + p.getText(o.Name) + \"x\" + e.itemNum);"
+   }
+  },
+  "explore": {
+   "constName": "GET_EXPLORE",
+   "onLine": 47186,
+   "span": [
+    47186,
+    47205
+   ],
+   "fields": [
+    "eRet",
+    "eventId",
+    "eventType",
+    "eventValue",
+    "fixedEvents",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 47187,
+    "eventId": 47189,
+    "eventType": 47189,
+    "eventValue": 47189,
+    "fixedEvents": 47200,
+    "rewardArray": 47188
+   },
+   "evidence": {
+    "eRet": "if (1 == i.eRet) {",
+    "eventId": "0 == i.eventType ? e.resultData.resultMsg = \"7105\" : t.getResultMsg(i.eventType, i.eventValue, i.eventId);",
+    "eventType": "0 == i.eventType ? e.resultData.resultMsg = \"7105\" : t.getResultMsg(i.eventType, i.eventValue, i.eventId);",
+    "eventValue": "0 == i.eventType ? e.resultData.resultMsg = \"7105\" : t.getResultMsg(i.eventType, i.eventValue, i.eventId);",
+    "fixedEvents": "if (i.hasOwnProperty(\"fixedEvents\")) {",
+    "rewardArray": "i.hasOwnProperty(\"rewardArray\") && (e.resultData.rewards = i.rewardArray);"
+   }
+  },
+  "GetWhoreData": {
+   "constName": "WHORING_GIRL_EVENT",
+   "onLine": 51112,
+   "span": [
+    51112,
+    51124
+   ],
+   "fields": [
+    "eRet",
+    "girlData"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 51113,
+    "girlData": 51115
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "girlData": "o.hasOwnProperty(\"girlData\") && (e.girlData = o.girlData);"
+   }
+  },
+  "ChooseGirl": {
+   "constName": "CHOOSE_GIRL_EVENT",
+   "onLine": 51125,
+   "span": [
+    51125,
+    51144
+   ],
+   "fields": [
+    "eRet",
+    "eTime",
+    "npcID"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 51126,
+    "eTime": 51142,
+    "npcID": 51142
+   },
+   "evidence": {
+    "eRet": "if (1 == n.eRet) {",
+    "eTime": "t.girlData[n.npcID] = n.eTime;",
+    "npcID": "t.girlData[n.npcID] = n.eTime;"
+   }
+  },
+  "Whoring": {
+   "constName": "WHORING_EVENT",
+   "onLine": 51145,
+   "span": [
+    51145,
+    51154
+   ],
+   "fields": [
+    "eRet",
+    "makeID"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 51146,
+    "makeID": 51147
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "makeID": "var i = o.makeID, n = c.getItem(i, \"make\"), r = t.randomGirl[t.npcId], a = r.reality, s = r.picture;"
+   }
+  },
+  "getLikeEvent": {
+   "constName": "INVITE_NPC_GETLIKE",
+   "onLine": 51155,
+   "span": [
+    51155,
+    51164
+   ],
+   "fields": [
+    "eRet",
+    "eventId"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 51156,
+    "eventId": 51157
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "eventId": "var i = c.getItem(o.eventId, \"like_event\");"
+   }
+  },
+  "optionLikeEvent": {
+   "constName": "INVITE_NPC_OPTION",
+   "onLine": 51165,
+   "span": [
+    51165,
+    51175
+   ],
+   "fields": [
+    "delTaskIds",
+    "eRet",
+    "feel",
+    "npcId"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "delTaskIds": 51170,
+    "eRet": 51167,
+    "feel": 51168,
+    "npcId": 51168
+   },
+   "evidence": {
+    "delTaskIds": "o.hasOwnProperty(\"delTaskIds\") && S.TaskModel.clearRogueTaskData(o.delTaskIds);",
+    "eRet": "if (1 == o.eRet) {",
+    "feel": "var n = o.npcId, r = o.feel;",
+    "npcId": "var n = o.npcId, r = o.feel;"
+   }
+  },
+  "hireNpcOnhook": {
+   "constName": "HIRE_NPC",
+   "onLine": 51428,
+   "span": [
+    51428,
+    51450
+   ],
+   "fields": [
+    "eRet",
+    "siteID"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 51429,
+    "siteID": 51434
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "siteID": "var o, s = i.getItem(e.siteID, \"fishpond\");"
+   }
+  },
+  "checkHireOnhook": {
+   "constName": "CHECK_HIRE",
+   "onLine": 51451,
+   "span": [
+    51451,
+    51543
+   ],
+   "fields": [
+    "beginTime",
+    "eRet",
+    "maxTime",
+    "serverTime",
+    "siteID"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "beginTime": 51516,
+    "eRet": 51454,
+    "maxTime": 51453,
+    "serverTime": 51516,
+    "siteID": 51474
+   },
+   "evidence": {
+    "beginTime": "t.timeElapsed = .001 * (o.serverTime - o.beginTime);",
+    "eRet": "if (1 == o.eRet) {",
+    "maxTime": "o.hasOwnProperty(\"maxTime\") && (t.maxTime = o.maxTime);",
+    "serverTime": "t.timeElapsed = .001 * (o.serverTime - o.beginTime);",
+    "siteID": "} else if (2 != o.eRet) if (i.getItem(o.siteID, \"fishpond\").type != s.type) {"
+   }
+  },
+  "beginDragonRollDice": {
+   "constName": "BEGIN_DRAGON_ROLLDICE",
+   "onLine": 54231,
+   "span": [
+    54231,
+    54233
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 54232
+   },
+   "evidence": {
+    "eRet": "0 != e.eRet && (2 != e.eRet ? i.MessageCenter.dispatch(h.EvName.ROLL_DICE_EVENT, e) : a.default.show(r.getText(\"726\")));"
+   }
+  },
+  "OpenBox": {
+   "constName": "OPEN_BOX_REWARD",
+   "onLine": 54298,
+   "span": [
+    54298,
+    54300
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "GetRoldSaveTime": {
+   "constName": "SAVE_GAMETIME",
+   "onLine": 54301,
+   "span": [
+    54301,
+    54303
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "KillSelf": {
+   "constName": "KILL_SELF",
+   "onLine": 54310,
+   "span": [
+    54310,
+    54312
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "GetSecretOrderAward": {
+   "constName": "SECRET_ORDER_AWARD",
+   "onLine": 54313,
+   "span": [
+    54313,
+    54315
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "getTeamSkill": {
+   "constName": "GET_TEAM_ULTSKILLS",
+   "onLine": 54935,
+   "span": [
+    54935,
+    54952
+   ],
+   "fields": [
+    "atkSkillID",
+    "dataArr",
+    "eRet"
+   ],
+   "hints": {
+    "dataArr": "array"
+   },
+   "fieldLines": {
+    "atkSkillID": 54949,
+    "dataArr": 54941,
+    "eRet": 54937
+   },
+   "evidence": {
+    "atkSkillID": "o.hasOwnProperty(\"atkSkillID\") && (n.atkSkillID = o.atkSkillID);",
+    "dataArr": "if (o.dataArr && o.dataArr.length >= 1) {",
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "getTeamFighterInfo": {
+   "constName": "GET_TEAM_FIGHTER_INFO",
+   "onLine": 54953,
+   "span": [
+    54953,
+    54959
+   ],
+   "fields": [
+    "battleID",
+    "eRet",
+    "info"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "battleID": 54956,
+    "eRet": 54955,
+    "info": 54955
+   },
+   "evidence": {
+    "battleID": "id: o.battleID,",
+    "eRet": "1 == o.eRet && o.info && (null === (i = e.btUI) || void 0 === i || i.emit(h.EvName.SHOW_MP_PLAYER_INFO, {",
+    "info": "1 == o.eRet && o.info && (null === (i = e.btUI) || void 0 === i || i.emit(h.EvName.SHOW_MP_PLAYER_INFO, {"
+   }
+  },
+  "getActivity": {
+   "constName": "GET_ACTIVITY",
+   "onLine": 57222,
+   "span": [
+    57222,
+    57224
+   ],
+   "fields": [
+    "eRet",
+    "type"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57223,
+    "type": 57223
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet ? t.openActiveUI(o) : 3 == o.eRet ? t.reqActiveReward(o.type) : 4 == o.eRet ? r.default.show(i.getText(1098)) : r.default.show(i.getText(1",
+    "type": "1 == o.eRet ? t.openActiveUI(o) : 3 == o.eRet ? t.reqActiveReward(o.type) : 4 == o.eRet ? r.default.show(i.getText(1098)) : r.default.show(i.getText(1"
+   }
+  },
+  "getActivityAward": {
+   "constName": "GET_ACTIVITY_AWARD",
+   "onLine": 57225,
+   "span": [
+    57225,
+    57227
+   ],
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57226,
+    "rewardArray": 57226
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet ? p.default.addShowRewardUI1(e.rewardArray, 0, {}) : 4 == e.eRet ? r.default.show(i.getText(1098)) : r.default.show(i.getText(1145));",
+    "rewardArray": "1 == e.eRet ? p.default.addShowRewardUI1(e.rewardArray, 0, {}) : 4 == e.eRet ? r.default.show(i.getText(1098)) : r.default.show(i.getText(1145));"
+   }
+  },
+  "smallGameAward": {
+   "constName": "SMALL_GAME_AWARD",
+   "onLine": 57228,
+   "span": [
+    57228,
+    57240
+   ],
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "type"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57229,
+    "rewardArray": 57231,
+    "type": 57231
+   },
+   "evidence": {
+    "eRet": "switch (e.eRet) {",
+    "rewardArray": "if (4 == e.type) n.MessageCenter.dispatch(s.EvName.WISH_TREE_SUCCESS_EVENT, e); else if (!h.ActiveModel.isNullMap(e.rewardArray)) {",
+    "type": "if (4 == e.type) n.MessageCenter.dispatch(s.EvName.WISH_TREE_SUCCESS_EVENT, e); else if (!h.ActiveModel.isNullMap(e.rewardArray)) {"
+   }
+  },
+  "getPileGameData": {
+   "constName": "GET_PILE_GAME_DATA",
+   "onLine": 57241,
+   "span": [
+    57241,
+    57263
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57242
+   },
+   "evidence": {
+    "eRet": "switch (o.eRet) {"
+   }
+  },
+  "pileGameAward": {
+   "constName": "PILE_GAME_AWARD",
+   "onLine": 57264,
+   "span": [
+    57264,
+    57291
+   ],
+   "fields": [
+    "eRet",
+    "isDouble",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57265,
+    "isDouble": 57267,
+    "rewardArray": 57267
+   },
+   "evidence": {
+    "eRet": "switch (e.eRet) {",
+    "isDouble": "h.ActiveModel.isNullMap(e.rewardArray) || r.default.showReward(e.rewardArray, 0, {}, {}, null, [], void 0, e.isDouble ? i.getText(6013066) : \"\");",
+    "rewardArray": "h.ActiveModel.isNullMap(e.rewardArray) || r.default.showReward(e.rewardArray, 0, {}, {}, null, [], void 0, e.isDouble ? i.getText(6013066) : \"\");"
+   }
+  },
+  "buildHomeFarm": {
+   "constName": "BUILD_HOMEFRARM",
+   "onLine": 57573,
+   "span": [
+    57573,
+    57578
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57574
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "removalHomeFarm": {
+   "constName": "MOVE_HOME_FRAM",
+   "onLine": 57579,
+   "span": [
+    57579,
+    57584
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57580
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "getHomeList": {
+   "constName": "GETHOME_LIST",
+   "onLine": 57585,
+   "span": [
+    57585,
+    57635
+   ],
+   "fields": [
+    "bShop",
+    "dog",
+    "eRet",
+    "exp",
+    "friendPartnerAward",
+    "recentSeeds",
+    "soilArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "bShop": 57597,
+    "dog": 57595,
+    "eRet": 57586,
+    "exp": 57594,
+    "friendPartnerAward": 57633,
+    "recentSeeds": 57592,
+    "soilArr": 57593
+   },
+   "evidence": {
+    "bShop": "i.hasOwnProperty(\"bShop\") && (e.homeShop = i.bShop);",
+    "dog": "i.hasOwnProperty(\"dog\") && (e.dogData = i.dog);",
+    "eRet": "if (1 == i.eRet) {",
+    "exp": "e.plantSeedData.plantExp = i.exp;",
+    "friendPartnerAward": "i.hasOwnProperty(\"friendPartnerAward\") && (e.rewardData = i.friendPartnerAward);",
+    "recentSeeds": "i.recentSeeds ? e.recentSs = i.recentSeeds : e.recentSs.length = 0;"
+   }
+  },
+  "seedCrop": {
+   "constName": "SEED_CROP",
+   "onLine": 57636,
+   "span": [
+    57636,
+    57653
+   ],
+   "fields": [
+    "crop",
+    "crop.m",
+    "eRet",
+    "sIdx"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "crop": 57642,
+    "crop.m": 57642,
+    "eRet": 57637,
+    "sIdx": 57638
+   },
+   "evidence": {
+    "crop": "o.crop.hasOwnProperty(\"m\") && (n.m = o.crop.m);",
+    "crop.m": "o.crop.hasOwnProperty(\"m\") && (n.m = o.crop.m);",
+    "eRet": "if (1 == o.eRet) {",
+    "sIdx": "var i = o.sIdx, n = {"
+   }
+  },
+  "batchSeedCrop": {
+   "constName": "BATCH_SEED_CROP",
+   "onLine": 57654,
+   "span": [
+    57654,
+    57675
+   ],
+   "fields": [
+    "crops",
+    "eRet",
+    "recentSeeds"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "crops": 57657,
+    "eRet": 57655,
+    "recentSeeds": 57672
+   },
+   "evidence": {
+    "crops": "for (var n in o.crops) {",
+    "eRet": "if (1 == o.eRet) {",
+    "recentSeeds": "e.recentSs = o.recentSeeds;"
+   }
+  },
+  "changeSate": {
+   "constName": "CROP_CHANGE_STATE",
+   "onLine": 57676,
+   "span": [
+    57676,
+    57697
+   ],
+   "fields": [
+    "crop",
+    "crop.b",
+    "crop.m",
+    "eRet",
+    "sIdx"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "crop": 57683,
+    "crop.b": 57684,
+    "crop.m": 57683,
+    "eRet": 57677,
+    "sIdx": 57685
+   },
+   "evidence": {
+    "crop": "o.crop.hasOwnProperty(\"m\") && (i.m = o.crop.m);",
+    "crop.b": "o.crop.hasOwnProperty(\"b\") && (i.b = o.crop.b);",
+    "crop.m": "o.crop.hasOwnProperty(\"m\") && (i.m = o.crop.m);",
+    "eRet": "if (1 == o.eRet || 3 == o.eRet) {",
+    "sIdx": "e.soilArr[o.sIdx] = i;"
+   }
+  },
+  "obtainCrop": {
+   "constName": "OBTAINCROP",
+   "onLine": 57698,
+   "span": [
+    57698,
+    57725
+   ],
+   "fields": [
+    "aExp",
+    "eRet",
+    "exp",
+    "rewardArray",
+    "sIdx"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "aExp": 57711,
+    "eRet": 57699,
+    "exp": 57710,
+    "rewardArray": 57712,
+    "sIdx": 57700
+   },
+   "evidence": {
+    "aExp": "o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);",
+    "eRet": "if (1 == o.eRet) {",
+    "exp": "o.hasOwnProperty(\"exp\") && (e.plantSeedData.plantExp = o.exp);",
+    "rewardArray": "if (o.hasOwnProperty(\"rewardArray\")) for (var a in o.rewardArray) n[a] = o.rewardArray[a];",
+    "sIdx": "e.soilArr[o.sIdx] = {"
+   }
+  },
+  "onKeyObtainCrop": {
+   "constName": "ONE_KEY_OBTAIN_CROP",
+   "onLine": 57726,
+   "span": [
+    57726,
+    57757
+   ],
+   "fields": [
+    "aExp",
+    "eRet",
+    "exp",
+    "matureArr",
+    "obtainLands",
+    "rewardArray"
+   ],
+   "hints": {
+    "obtainLands": "array"
+   },
+   "fieldLines": {
+    "aExp": 57753,
+    "eRet": 57727,
+    "exp": 57752,
+    "matureArr": 57728,
+    "obtainLands": 57735,
+    "rewardArray": 57754
+   },
+   "evidence": {
+    "aExp": "i.hasOwnProperty(\"aExp\") && i.aExp > 0 && (h[7] = i.aExp);",
+    "eRet": "if (1 == i.eRet) {",
+    "exp": "i.hasOwnProperty(\"exp\") && (e.plantSeedData.plantExp = i.exp);",
+    "matureArr": "i.hasOwnProperty(\"matureArr\") && Promise.resolve().then(function() {",
+    "obtainLands": "if (i.obtainLands.length <= 0) {",
+    "rewardArray": "if (i.hasOwnProperty(\"rewardArray\")) for (var u in i.rewardArray) h[u] = i.rewardArray[u];"
+   }
+  },
+  "onKeyDispossHomeEvent": {
+   "constName": "ONE_KEY_DISPOSS_HOME_EVENT",
+   "onLine": 57758,
+   "span": [
+    57758,
+    57801
+   ],
+   "fields": [
+    "aExp",
+    "cropMap",
+    "eRet",
+    "exp",
+    "flag",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "aExp": 57797,
+    "cropMap": 57760,
+    "eRet": 57759,
+    "exp": 57796,
+    "flag": 57799,
+    "rewardArray": 57798
+   },
+   "evidence": {
+    "aExp": "o.hasOwnProperty(\"aExp\") && o.aExp > 0 && (f[7] = o.aExp);",
+    "cropMap": "var i = !1, s = [], l = o.cropMap;",
+    "eRet": "if (1 == o.eRet) {",
+    "exp": "o.hasOwnProperty(\"exp\") && o.exp > 0 && (e.plantSeedData.plantExp = o.exp);",
+    "flag": "I.MadUtilsTS.isNullObj(f) ? 0 != o.flag || i ? i && a.default.show(n.getText(3171)) : a.default.show(n.getText(3268)) : m.default.addShowRewardUI1(f, ",
+    "rewardArray": "if (o.hasOwnProperty(\"rewardArray\")) for (var d in o.rewardArray) f[d] = o.rewardArray[d];"
+   }
+  },
+  "reclaimLand": {
+   "constName": "RECLAIM_LAND",
+   "onLine": 57802,
+   "span": [
+    57802,
+    57810
+   ],
+   "fields": [
+    "eRet",
+    "sIdx"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57803,
+    "sIdx": 57804
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "sIdx": "e.soilArr[o.sIdx] = {"
+   }
+  },
+  "cleanDeadCrop": {
+   "constName": "CLEAN_DEAD_CROP",
+   "onLine": 57811,
+   "span": [
+    57811,
+    57824
+   ],
+   "fields": [
+    "eRet",
+    "sIdx"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57812,
+    "sIdx": 57813
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "sIdx": "e.soilArr[o.sIdx] = {"
+   }
+  },
+  "expediteCrop": {
+   "constName": "EXPEDITE_CROP",
+   "onLine": 57825,
+   "span": [
+    57825,
+    57846
+   ],
+   "fields": [
+    "crop",
+    "crop.b",
+    "crop.m",
+    "eRet",
+    "sIdx"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "crop": 57832,
+    "crop.b": 57833,
+    "crop.m": 57832,
+    "eRet": 57826,
+    "sIdx": 57834
+   },
+   "evidence": {
+    "crop": "o.crop.hasOwnProperty(\"m\") && (i.m = o.crop.m);",
+    "crop.b": "o.crop.hasOwnProperty(\"b\") && (i.b = o.crop.b);",
+    "crop.m": "o.crop.hasOwnProperty(\"m\") && (i.m = o.crop.m);",
+    "eRet": "if (1 == o.eRet) {",
+    "sIdx": "e.soilArr[o.sIdx] = i;"
+   }
+  },
+  "getBackShop": {
+   "constName": "GET_BACK_SHOP",
+   "onLine": 57847,
+   "span": [
+    57847,
+    57857
+   ],
+   "fields": [
+    "eRet",
+    "limit",
+    "shopArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57848,
+    "limit": 57849,
+    "shopArr": 57848
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) if (o.hasOwnProperty(\"shopArr\")) {",
+    "limit": "o.hasOwnProperty(\"limit\") && (e.shopSaleLimit = o.limit);",
+    "shopArr": "if (1 == o.eRet) if (o.hasOwnProperty(\"shopArr\")) {"
+   }
+  },
+  "BuyHomeCrop": {
+   "constName": "BUY_HOME_CROP",
+   "onLine": 57858,
+   "span": [
+    57858,
+    57864
+   ],
+   "fields": [
+    "eRet",
+    "limit",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57859,
+    "limit": 57861,
+    "rewardArray": 57860
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "limit": "o.hasOwnProperty(\"limit\") && (e.shopSaleLimit = o.limit);",
+    "rewardArray": "I.MadUtilsTS.isNullObj(o.rewardArray) || m.default.addShowRewardUI1(o.rewardArray, 0);"
+   }
+  },
+  "homeSpeicalAward": {
+   "constName": "HOME_SPECIAL_AWARD",
+   "onLine": 57865,
+   "span": [
+    57865,
+    57878
+   ],
+   "fields": [
+    "eRet",
+    "eid",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57867,
+    "eid": 57867,
+    "rewardArray": 57867
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet && e.hasOwnProperty(\"eid\") && e.hasOwnProperty(\"rewardArray\")) {",
+    "eid": "if (1 == e.eRet && e.hasOwnProperty(\"eid\") && e.hasOwnProperty(\"rewardArray\")) {",
+    "rewardArray": "if (1 == e.eRet && e.hasOwnProperty(\"eid\") && e.hasOwnProperty(\"rewardArray\")) {"
+   }
+  },
+  "recommendOHomes": {
+   "constName": "RECOMMEND_ONESELF_HOME",
+   "onLine": 57879,
+   "span": [
+    57879,
+    57912
+   ],
+   "fields": [
+    "eRet",
+    "friendHome",
+    "homeArr",
+    "homeGeMap"
+   ],
+   "hints": {
+    "friendHome": "array",
+    "homeArr": "array"
+   },
+   "fieldLines": {
+    "eRet": 57880,
+    "friendHome": 57891,
+    "homeArr": 57882,
+    "homeGeMap": 57881
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "friendHome": "if (o.hasOwnProperty(\"friendHome\")) for (var s = 0; s < o.friendHome.length; s++) if (o.friendHome[s][5] > 0) {",
+    "homeArr": "if (o.hasOwnProperty(\"homeArr\")) {",
+    "homeGeMap": "o.hasOwnProperty(\"homeGeMap\") && (e.homeGeMap = o.homeGeMap);"
+   }
+  },
+  "findOHomes": {
+   "constName": "OTHER_PLAYER_HOME",
+   "onLine": 57913,
+   "span": [
+    57913,
+    57947
+   ],
+   "fields": [
+    "eRet",
+    "homeArr",
+    "homeGeMap",
+    "recommendHomeArr"
+   ],
+   "hints": {
+    "homeArr": "array",
+    "recommendHomeArr": "array"
+   },
+   "fieldLines": {
+    "eRet": 57914,
+    "homeArr": 57918,
+    "homeGeMap": 57915,
+    "recommendHomeArr": 57933
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "homeArr": "if (o.hasOwnProperty(\"homeArr\")) {",
+    "homeGeMap": "o.hasOwnProperty(\"homeGeMap\") && (e.homeGeMap = o.homeGeMap);",
+    "recommendHomeArr": "if (o.hasOwnProperty(\"recommendHomeArr\")) {"
+   }
+  },
+  "findOhter": {
+   "constName": "FIND_OTHER_HOME",
+   "onLine": 57948,
+   "span": [
+    57948,
+    57950
+   ],
+   "fields": [
+    "eRet",
+    "findArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 57949,
+    "findArr": 57949
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet ? o.hasOwnProperty(\"findArr\") && (o.findArr[0] == _.RoleBaseInfo.roleID ? a.default.show(n.getText(3253)) : e.openFriendHome(o.findArr[0],",
+    "findArr": "1 == o.eRet ? o.hasOwnProperty(\"findArr\") && (o.findArr[0] == _.RoleBaseInfo.roleID ? a.default.show(n.getText(3253)) : e.openFriendHome(o.findArr[0],"
+   }
+  },
+  "getFriendHomeList": {
+   "constName": "ENTER_OTHER_HOME",
+   "onLine": 57951,
+   "span": [
+    57951,
+    57978
+   ],
+   "fields": [
+    "dog",
+    "eRet",
+    "exp",
+    "flag",
+    "friendPartnerId",
+    "soilArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "dog": 57958,
+    "eRet": 57952,
+    "exp": 57963,
+    "flag": 57965,
+    "friendPartnerId": 57959,
+    "soilArr": 57954
+   },
+   "evidence": {
+    "dog": "o.hasOwnProperty(\"dog\") && (e.dogData = o.dog);",
+    "eRet": "if (1 == o.eRet) {",
+    "exp": "e.plantSeedData.plantExp = o.exp;",
+    "flag": "e.isFriend = o.flag;",
+    "friendPartnerId": "if (o.hasOwnProperty(\"friendPartnerId\")) {",
+    "soilArr": "if (o.hasOwnProperty(\"soilArr\")) {"
+   }
+  },
+  "dispossHomeEvent": {
+   "constName": "DISPOSS_HOME_EVENT",
+   "onLine": 57979,
+   "span": [
+    57979,
+    58006
+   ],
+   "fields": [
+    "aExp",
+    "crop",
+    "crop.b",
+    "crop.m",
+    "eRet",
+    "exp",
+    "flag",
+    "idx",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "aExp": 58001,
+    "crop": 57980,
+    "crop.b": 57987,
+    "crop.m": 57986,
+    "eRet": 58005,
+    "exp": 58000,
+    "flag": 58003,
+    "idx": 57988,
+    "rewardArray": 58002
+   },
+   "evidence": {
+    "aExp": "o.hasOwnProperty(\"aExp\") && (l[7] = o.aExp);",
+    "crop": "if (o.hasOwnProperty(\"crop\")) {",
+    "crop.b": "o.crop.hasOwnProperty(\"b\") && (i.b = o.crop.b);",
+    "crop.m": "o.crop.hasOwnProperty(\"m\") && (i.m = o.crop.m);",
+    "eRet": "2 == o.eRet ? a.default.show(n.getText(3268)) : 3 == o.eRet ? a.default.show(n.getText(3317)) : -1 == o.eRet && a.default.show(n.getText(3320));",
+    "exp": "o.hasOwnProperty(\"exp\") && o.exp > 0 && (e.plantSeedData.plantExp = o.exp);"
+   }
+  },
+  "stealCrop": {
+   "constName": "STEAL_CROP_EVENT",
+   "onLine": 58007,
+   "span": [
+    58007,
+    58046
+   ],
+   "fields": [
+    "aExp",
+    "crop",
+    "crop.b",
+    "crop.m",
+    "eRet",
+    "exp",
+    "idx",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "aExp": 58028,
+    "crop": 58014,
+    "crop.b": 58015,
+    "crop.m": 58014,
+    "eRet": 58008,
+    "exp": 58027,
+    "idx": 58016,
+    "rewardArray": 58029
+   },
+   "evidence": {
+    "aExp": "o.hasOwnProperty(\"aExp\") && (p[7] = o.aExp);",
+    "crop": "o.crop.hasOwnProperty(\"m\") && (s.m = o.crop.m);",
+    "crop.b": "o.crop.hasOwnProperty(\"b\") ? s.b = o.crop.b : delete s.b;",
+    "crop.m": "o.crop.hasOwnProperty(\"m\") && (s.m = o.crop.m);",
+    "eRet": "if (1 == o.eRet || 3 == o.eRet || 4 == o.eRet) {",
+    "exp": "o.hasOwnProperty(\"exp\") && (e.plantSeedData.plantExp = o.exp);"
+   }
+  },
+  "lookDogLog": {
+   "constName": "LOOK_DOG_LOG",
+   "onLine": 58047,
+   "span": [
+    58047,
+    58049
+   ],
+   "fields": [
+    "eRet",
+    "log"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 58048,
+    "log": 58048
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet && e.hasOwnProperty(\"log\") && r.MessageCenter.dispatch(c.EvName.HOME_LOG_EVENT, e.log);",
+    "log": "1 == e.eRet && e.hasOwnProperty(\"log\") && r.MessageCenter.dispatch(c.EvName.HOME_LOG_EVENT, e.log);"
+   }
+  },
+  "DogBattleResult": {
+   "constName": "DOG_BATTLE_RESULT",
+   "onLine": 58050,
+   "span": [
+    58050,
+    58052
+   ],
+   "fields": [
+    "eRet",
+    "endTime",
+    "win"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 58051,
+    "endTime": 58051,
+    "win": 58051
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet && o.win && e.setDogCurState(0, o.endTime);",
+    "endTime": "1 == o.eRet && o.win && e.setDogCurState(0, o.endTime);",
+    "win": "1 == o.eRet && o.win && e.setDogCurState(0, o.endTime);"
+   }
+  },
+  "FeedDog": {
+   "constName": "FEED_DOG",
+   "onLine": 58053,
+   "span": [
+    58053,
+    58059
+   ],
+   "fields": [
+    "bigDog",
+    "eRet",
+    "progress"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "bigDog": 58056,
+    "eRet": 58054,
+    "progress": 58055
+   },
+   "evidence": {
+    "bigDog": "o.hasOwnProperty(\"bigDog\") && (e.dogData.id = o.bigDog);",
+    "eRet": "if (1 == o.eRet) {",
+    "progress": "o.hasOwnProperty(\"progress\") && (e.dogData.p = o.progress);"
+   }
+  },
+  "houseSpecial": {
+   "constName": "HOUSE_SPECIAL",
+   "onLine": 58449,
+   "span": [
+    58449,
+    58459
+   ],
+   "fields": [
+    "eRet",
+    "eventID",
+    "type"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 58450,
+    "eventID": 58453,
+    "type": 58451
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "eventID": "t.eventID = o.eventID;",
+    "type": "if (0 != parseInt(o.type) && 1e3 != parseInt(o.type)) {"
+   }
+  },
+  "getSpecialAward": {
+   "constName": "GET_SPECIAL_AWARD",
+   "onLine": 58460,
+   "span": [
+    58460,
+    58472
+   ],
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 58461,
+    "rewardArray": 58462
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "rewardArray": "if (o.hasOwnProperty(\"rewardArray\")) {"
+   }
+  },
+  "GetHouseShopData": {
+   "constName": "GET_HOUSE_SHOP_DATA",
+   "onLine": 58473,
+   "span": [
+    58473,
+    58484
+   ],
+   "fields": [
+    "shopData"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "shopData": 58474
+   },
+   "evidence": {
+    "shopData": "if (o.hasOwnProperty(\"shopData\")) m.default.prefabs.load(\"comUI/ShopBgUI\", cc.Prefab, function(t, e) {"
+   }
+  },
+  "BuyHouseShop": {
+   "constName": "BUY_HOUSE_DATA",
+   "onLine": 58485,
+   "span": [
+    58485,
+    58498
+   ],
+   "fields": [
+    "eRet",
+    "itemID"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 58486,
+    "itemID": 58488
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "itemID": "itemId: o.itemID,"
+   }
+  },
+  "upgradeBed": {
+   "constName": "UPGRADE_BED",
+   "onLine": 61033,
+   "span": [
+    61033,
+    61039
+   ],
+   "fields": [
+    "bedLevel",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "bedLevel": 61035,
+    "eRet": 61034
+   },
+   "evidence": {
+    "bedLevel": "r.MarryModel.bedLevel = e.bedLevel;",
+    "eRet": "if (1 == e.eRet) {"
+   }
+  },
+  "upgradeStorage": {
+   "constName": "UPGRADE_STORAGE",
+   "onLine": 61040,
+   "span": [
+    61040,
+    61046
+   ],
+   "fields": [
+    "eRet",
+    "level"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 61041,
+    "level": 61042
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "level": "r.MarryModel.storageLevel = e.level;"
+   }
+  },
+  "PushEquip": {
+   "constName": "PUSH_EQUIP_STORAGE",
+   "onLine": 61047,
+   "span": [
+    61047,
+    61059
+   ],
+   "fields": [
+    "ItemID",
+    "ItemNum",
+    "eRet",
+    "storageItem"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "ItemID": 61051,
+    "ItemNum": 61052,
+    "eRet": 61048,
+    "storageItem": 61051
+   },
+   "evidence": {
+    "ItemID": "var o = r.MarryModel.parseStorageEq(e.ItemID, e.storageItem);",
+    "ItemNum": "o.num = e.ItemNum;",
+    "eRet": "if (1 == e.eRet) {",
+    "storageItem": "var o = r.MarryModel.parseStorageEq(e.ItemID, e.storageItem);"
+   }
+  },
+  "PopEquip": {
+   "constName": "POP_EQUIP_STORAGE",
+   "onLine": 61060,
+   "span": [
+    61060,
+    61069
+   ],
+   "fields": [
+    "ItemID",
+    "ItemNum",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "ItemID": 61065,
+    "ItemNum": 61065,
+    "eRet": 61061
+   },
+   "evidence": {
+    "ItemID": "n.hasOwnProperty(o.ItemID) && (n[o.ItemID].num == o.ItemNum ? delete n[o.ItemID] : n[o.ItemID].num = n[o.ItemID].num - o.ItemNum);",
+    "ItemNum": "n.hasOwnProperty(o.ItemID) && (n[o.ItemID].num == o.ItemNum ? delete n[o.ItemID] : n[o.ItemID].num = n[o.ItemID].num - o.ItemNum);",
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "equipInherit": {
+   "constName": "EQUIP_INHERIT",
+   "onLine": 61484,
+   "span": [
+    61484,
+    61507
+   ],
+   "fields": [
+    "eRet",
+    "equip",
+    "equipObj",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 61485,
+    "equip": 61486,
+    "equipObj": 61489,
+    "rewardArray": 61489
+   },
+   "evidence": {
+    "eRet": "if (1 == n.eRet) {",
+    "equip": "var a = n.equip;",
+    "equipObj": "if (!e.isNullMap(n.rewardArray) || !e.isNullMap(n.equipObj)) {",
+    "rewardArray": "if (!e.isNullMap(n.rewardArray) || !e.isNullMap(n.equipObj)) {"
+   }
+  },
+  "getCopyData": {
+   "constName": "GET_DUNGEON_INFO",
+   "onLine": 64071,
+   "span": [
+    64071,
+    64074
+   ],
+   "fields": [
+    "copyArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "copyArr": 64072
+   },
+   "evidence": {
+    "copyArr": "var o = e.copyArr;"
+   }
+  },
+  "EneterCopy": {
+   "constName": "ENTER_DUNGEON",
+   "onLine": 64075,
+   "span": [
+    64075,
+    64084
+   ],
+   "fields": [
+    "copyID",
+    "eRet",
+    "state"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "copyID": 64077,
+    "eRet": 64076,
+    "state": 64078
+   },
+   "evidence": {
+    "copyID": "t.dungeonID = o.copyID;",
+    "eRet": "if (1 == o.eRet) {",
+    "state": "t.level = o.state - 1;"
+   }
+  },
+  "BuyChallengeCount": {
+   "constName": "BUY_DG_CHALLENGE",
+   "onLine": 64085,
+   "span": [
+    64085,
+    64093
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 64086
+   },
+   "evidence": {
+    "eRet": "if (2 == o.eRet) {"
+   }
+  },
+  "LeaveCopy": {
+   "constName": "END_DUNGEON_ADVENTURE",
+   "onLine": 64094,
+   "span": [
+    64094,
+    64097
+   ],
+   "fields": [
+    "liveness",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "liveness": 64095,
+    "rewardArray": 64095
+   },
+   "evidence": {
+    "liveness": "t.showRewards(o.rewardArray, o.liveness);",
+    "rewardArray": "t.showRewards(o.rewardArray, o.liveness);"
+   }
+  },
+  "sweepCopy": {
+   "constName": "SWEEP_DUNGEON",
+   "onLine": 64098,
+   "span": [
+    64098,
+    64108
+   ],
+   "fields": [
+    "copyID",
+    "eRet",
+    "liveness",
+    "rewardArray",
+    "state"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "copyID": 64105,
+    "eRet": 64099,
+    "liveness": 64099,
+    "rewardArray": 64099,
+    "state": 64105
+   },
+   "evidence": {
+    "copyID": "var r = i.getItem(o.copyID, \"fuben\").exp[o.state - 1];",
+    "eRet": "if (1 == o.eRet) t.showRewards(o.rewardArray, o.liveness); else if (3 == o.eRet) g.LoginMgr.isMiniIos(1) ? l.default.show(n.getText(591)) : l.default.",
+    "liveness": "if (1 == o.eRet) t.showRewards(o.rewardArray, o.liveness); else if (3 == o.eRet) g.LoginMgr.isMiniIos(1) ? l.default.show(n.getText(591)) : l.default.",
+    "rewardArray": "if (1 == o.eRet) t.showRewards(o.rewardArray, o.liveness); else if (3 == o.eRet) g.LoginMgr.isMiniIos(1) ? l.default.show(n.getText(591)) : l.default.",
+    "state": "var r = i.getItem(o.copyID, \"fuben\").exp[o.state - 1];"
+   }
+  },
+  "saleItem": {
+   "constName": "SELL_ITEM",
+   "onLine": 64726,
+   "span": [
+    64726,
+    64742
+   ],
+   "fields": [
+    "eRet",
+    "note",
+    "note.eqch",
+    "note.ivch"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 64727,
+    "note": 64728,
+    "note.eqch": 64730,
+    "note.ivch": 64730
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "note": "if (o.hasOwnProperty(\"note\")) {",
+    "note.eqch": "if (o.note.hasOwnProperty(\"ivch\") && !e.judgeObjectIsNull(o.note.ivch)) for (var n in o.note.ivch) i = Number(n); else if (o.note.hasOwnProperty(\"eqch",
+    "note.ivch": "if (o.note.hasOwnProperty(\"ivch\") && !e.judgeObjectIsNull(o.note.ivch)) for (var n in o.note.ivch) i = Number(n); else if (o.note.hasOwnProperty(\"eqch"
+   }
+  },
+  "buyShopItem": {
+   "constName": "BUY_SHOP_ITEM",
+   "onLine": 64743,
+   "span": [
+    64743,
+    64753
+   ],
+   "fields": [
+    "eRet",
+    "note",
+    "note.eqch",
+    "note.ivch"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 64744,
+    "note": 64746,
+    "note.eqch": 64747,
+    "note.ivch": 64747
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "note": "if (o.hasOwnProperty(\"note\")) {",
+    "note.eqch": "if (o.note.hasOwnProperty(\"ivch\") && !e.judgeObjectIsNull(o.note.ivch)) for (var a in o.note.ivch) i = Number(a); else if (o.note.hasOwnProperty(\"eqch",
+    "note.ivch": "if (o.note.hasOwnProperty(\"ivch\") && !e.judgeObjectIsNull(o.note.ivch)) for (var a in o.note.ivch) i = Number(a); else if (o.note.hasOwnProperty(\"eqch"
+   }
+  },
+  "useItem": {
+   "constName": "USE_ITEM",
+   "onLine": 64754,
+   "span": [
+    64754,
+    64873
+   ],
+   "fields": [
+    "avatarInfo",
+    "bloodEndTime",
+    "dogid",
+    "eRet",
+    "endMonthCardTime",
+    "equipObj",
+    "formulaID",
+    "gemId",
+    "genGuDan",
+    "getKnackIds",
+    "hanyusuiTime",
+    "housekeeper",
+    "housekeeper.helperId",
+    "itemID",
+    "itemRealgarMap",
+    "mountID",
+    "mpnum",
+    "note",
+    "note.attrch",
+    "note.skch",
+    "partners",
+    "rewardArray",
+    "rewardSkillSkin",
+    "stealFlag",
+    "taskID",
+    "titleID",
+    "wArr",
+    "wId"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "avatarInfo": 64835,
+    "bloodEndTime": 64812,
+    "dogid": 64816,
+    "eRet": 64755,
+    "endMonthCardTime": 64829,
+    "equipObj": 64768,
+    "formulaID": 64793,
+    "gemId": 64768,
+    "genGuDan": 64822,
+    "getKnackIds": 64768,
+    "hanyusuiTime": 64819,
+    "housekeeper": 64859,
+    "housekeeper.helperId": 64860,
+    "itemID": 64831,
+    "itemRealgarMap": 64847,
+    "mountID": 64797,
+    "mpnum": 64778,
+    "note": 64757,
+    "note.attrch": 64779,
+    "note.skch": 64758,
+    "partners": 64777,
+    "rewardArray": 64764,
+    "rewardSkillSkin": 64851,
+    "stealFlag": 64826,
+    "taskID": 64785,
+    "titleID": 64812,
+    "wArr": 64873,
+    "wId": 64869
+   },
+   "evidence": {
+    "avatarInfo": "if (a.hasOwnProperty(\"avatarInfo\")) {",
+    "bloodEndTime": "} else if (a.hasOwnProperty(\"titleID\")) S.AchieveModel.getAchieveData().hasOwnProperty(a.titleID) ? c.default.show(n.getText(3187)) : S.AchieveModel.s",
+    "dogid": "}); else if (a.hasOwnProperty(\"dogid\")) {",
+    "eRet": "if (1 == a.eRet) {",
+    "endMonthCardTime": "} else if (a.hasOwnProperty(\"endMonthCardTime\")) {",
+    "equipObj": "v.default.addShowRewardUI1(a.rewardArray, 0, a.equipObj, {}, null, a.getKnackIds, a.gemId);"
+   }
+  },
+  "addItem": {
+   "constName": "ADD_ITEM",
+   "onLine": 64912,
+   "span": [
+    64912,
+    64923
+   ],
+   "fields": [
+    "eRet",
+    "note",
+    "note.eqch",
+    "note.ivch"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 64913,
+    "note": 64914,
+    "note.eqch": 64917,
+    "note.ivch": 64914
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "note": "if (o.note.hasOwnProperty(\"ivch\") && !e.judgeObjectIsNull(o.note.ivch)) {",
+    "note.eqch": "} else if (o.note.hasOwnProperty(\"eqch\") && !e.judgeObjectIsNull(o.note.eqch)) {",
+    "note.ivch": "if (o.note.hasOwnProperty(\"ivch\") && !e.judgeObjectIsNull(o.note.ivch)) {"
+   }
+  },
+  "equipResolve": {
+   "constName": "EQUIP_RESOLVE",
+   "onLine": 64924,
+   "span": [
+    64924,
+    64931
+   ],
+   "fields": [
+    "eRet",
+    "itemID",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 64925,
+    "itemID": 64928,
+    "rewardArray": 64926
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "itemID": "itemId: e.itemID",
+    "rewardArray": "v.default.addShowRewardUI1(e.rewardArray, 0);"
+   }
+  },
+  "equipBatchResolve": {
+   "constName": "EQUIP_BATCH_RESOLVE",
+   "onLine": 64932,
+   "span": [
+    64932,
+    64937
+   ],
+   "fields": [
+    "eRet",
+    "itemIDs",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 64933,
+    "itemIDs": 64935,
+    "rewardArray": 64934
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "itemIDs": "r.MessageCenter.dispatch(s.EvName.BATCH_DECOMPOSE_SUCCESS_EVENT, e.itemIDs);",
+    "rewardArray": "v.default.addShowRewardUI1(e.rewardArray, 0);"
+   }
+  },
+  "getUsedItemAward": {
+   "constName": "GET_USEITEM_AWARD",
+   "onLine": 64938,
+   "span": [
+    64938,
+    64948
+   ],
+   "fields": [
+    "awardObj",
+    "awardStates",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "awardObj": 64944,
+    "awardStates": 64945,
+    "eRet": 64939
+   },
+   "evidence": {
+    "awardObj": "items: o.awardObj,",
+    "awardStates": "states: o.awardStates",
+    "eRet": "1 == o.eRet && (1 == e.batchType ? p.default.prefabs.load(\"itemsUI/SelectItemReward\", cc.Prefab, function(t, i) {"
+   }
+  },
+  "chooseUsedItemAward": {
+   "constName": "CHOOSE_USEITEM_AWARD",
+   "onLine": 64949,
+   "span": [
+    64949,
+    64967
+   ],
+   "fields": [
+    "cData",
+    "chooseID",
+    "delItemObj",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "cData": 64952,
+    "chooseID": 64951,
+    "delItemObj": 64961,
+    "eRet": 64950
+   },
+   "evidence": {
+    "cData": "v.default.addShowRewardUI1(e.cData);",
+    "chooseID": "e.chooseID;",
+    "delItemObj": "var n = e.delItemObj;",
+    "eRet": "if (1 == e.eRet) {"
+   }
+  },
+  "recoverYoung": {
+   "constName": "RECOVER_YOUNG",
+   "onLine": 64968,
+   "span": [
+    64968,
+    64980
+   ],
+   "fields": [
+    "eRet",
+    "itemNum"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 64969,
+    "itemNum": 64974
+   },
+   "evidence": {
+    "eRet": "if (1 == a.eRet) {",
+    "itemNum": "t.RoleOtherInfo.buyAgeTime += a.itemNum * parseInt(l.Data1);"
+   }
+  },
+  "ChangeName": {
+   "constName": "CHANGE_NAME",
+   "onLine": 64981,
+   "span": [
+    64981,
+    64988
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 64982
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "ChooseSanGongDan": {
+   "constName": "SAN_GONG",
+   "onLine": 64989,
+   "span": [
+    64989,
+    64994
+   ],
+   "fields": [
+    "backpro",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "backpro": 64992,
+    "eRet": 64990
+   },
+   "evidence": {
+    "backpro": "c.default.show(n.getText(123) + e.backpro + n.getText(37));",
+    "eRet": "if (1 == e.eRet) {"
+   }
+  },
+  "isCanShare": {
+   "constName": "IS_CAN_SHARE",
+   "onLine": 64995,
+   "span": [
+    64995,
+    64997
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 64996
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet && r.MessageCenter.dispatch(s.EvName.SHARE_ITEM_REWRAD_EVENT, e);"
+   }
+  },
+  "getsharePicAward": {
+   "constName": "GETSHARE_PIC_AWARD",
+   "onLine": 64998,
+   "span": [
+    64998,
+    65000
+   ],
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 64999,
+    "rewardArray": 64999
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet ? v.default.addShowRewardUI1(e.rewardArray, 0) : c.default.show(n.getText(1093));",
+    "rewardArray": "1 == e.eRet ? v.default.addShowRewardUI1(e.rewardArray, 0) : c.default.show(n.getText(1093));"
+   }
+  },
+  "Addmaster": {
+   "constName": "ADD_SEX_KILL",
+   "onLine": 65001,
+   "span": [
+    65001,
+    65014
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 65002
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {"
+   }
+  },
+  "equipWeapon": {
+   "constName": "PUT_ON_EQUIPMENT",
+   "onLine": 65015,
+   "span": [
+    65015,
+    65020
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 65016
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {"
+   }
+  },
+  "getEquipLock": {
+   "constName": "GET_EQUIP_LOCKS",
+   "onLine": 65021,
+   "span": [
+    65021,
+    65023
+   ],
+   "fields": [
+    "eRet",
+    "equipLocks"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 65022,
+    "equipLocks": 65022
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet && (e.lockEquips = o.equipLocks);",
+    "equipLocks": "1 == o.eRet && (e.lockEquips = o.equipLocks);"
+   }
+  },
+  "addEquipLock": {
+   "constName": "ADD_EQUIP_LOCK",
+   "onLine": 65024,
+   "span": [
+    65024,
+    65029
+   ],
+   "fields": [
+    "eRet",
+    "equipLocks"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 65025,
+    "equipLocks": 65026
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "equipLocks": "e.lockEquips = o.equipLocks;"
+   }
+  },
+  "delEquipLock": {
+   "constName": "DELETE_EQUIP_LOCK",
+   "onLine": 65030,
+   "span": [
+    65030,
+    65035
+   ],
+   "fields": [
+    "eRet",
+    "equipLocks"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 65031,
+    "equipLocks": 65032
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "equipLocks": "e.lockEquips = o.equipLocks;"
+   }
+  },
+  "getDropAward": {
+   "constName": "GET_DROP_AWARD",
+   "onLine": 65036,
+   "span": [
+    65036,
+    65038
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 65037
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet && r.MessageCenter.dispatch(s.EvName.RECEIVED_DROP_AWARD, e);"
+   }
+  },
+  "upgradeVein": {
+   "constName": "UPGRADE_ACUPOINT",
+   "onLine": 66504,
+   "span": [
+    66504,
+    66522
+   ],
+   "fields": [
+    "eRet",
+    "lv",
+    "psych",
+    "veinID"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 66506,
+    "lv": 66507,
+    "psych": 66518,
+    "veinID": 66507
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "lv": "4001 == o.veinID && 1 == o.lv && u.default.prefabs.load(\"comUI/PromptUI\", cc.Prefab, function(t, e) {",
+    "psych": "c.RoleBaseInfo.zhenyuan = o.psych;",
+    "veinID": "4001 == o.veinID && 1 == o.lv && u.default.prefabs.load(\"comUI/PromptUI\", cc.Prefab, function(t, e) {"
+   }
+  },
+  "restVein": {
+   "constName": "RESET_ACUPOINT",
+   "onLine": 66523,
+   "span": [
+    66523,
+    66537
+   ],
+   "fields": [
+    "eRet",
+    "psych"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 66525,
+    "psych": 66533
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "psych": "c.RoleBaseInfo.zhenyuan = o.psych;"
+   }
+  },
+  "reviveMulti": {
+   "constName": "LANGH_MP_REVIVE",
+   "onLine": 67600,
+   "span": [
+    67600,
+    67610
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 67601
+   },
+   "evidence": {
+    "eRet": "if (2 === o.eRet) c.StoreModel.openChargeList(); else if (t.btUI) {"
+   }
+  },
+  "TowerBattleResult": {
+   "constName": "SERVER_NPC_BATTLE_END",
+   "onLine": 67698,
+   "span": [
+    67698,
+    67722
+   ],
+   "fields": [
+    "awardObj",
+    "batch_sweep_data",
+    "eRet",
+    "gemId",
+    "muscle",
+    "rewardArray",
+    "win"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "awardObj": 67705,
+    "batch_sweep_data": 67715,
+    "eRet": 67702,
+    "gemId": 67711,
+    "muscle": 67714,
+    "rewardArray": 67707,
+    "win": 67703
+   },
+   "evidence": {
+    "awardObj": "o.hasOwnProperty(\"awardObj\") && (i.rewards = o.awardObj);",
+    "batch_sweep_data": "if (o.hasOwnProperty(\"batch_sweep_data\")) {",
+    "eRet": "if (1 == o.eRet) {",
+    "gemId": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);",
+    "muscle": "o.hasOwnProperty(\"muscle\") && (s.TowerModel.curStrengthNum = o.muscle);",
+    "rewardArray": "if (o.hasOwnProperty(\"rewardArray\")) {"
+   }
+  },
+  "revive": {
+   "constName": "LANGH_REVIVE",
+   "onLine": 67767,
+   "span": [
+    67767,
+    67785
+   ],
+   "fields": [
+    "battleID",
+    "eRet",
+    "roleID"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "battleID": 67770,
+    "eRet": 67768,
+    "roleID": 67770
+   },
+   "evidence": {
+    "battleID": "t.bs.revive(o.roleID, o.battleID);",
+    "eRet": "switch (o.eRet) {",
+    "roleID": "t.bs.revive(o.roleID, o.battleID);"
+   }
+  },
+  "ReqSelfBattleInfo": {
+   "constName": "REQ_PVE_BATTLE",
+   "onLine": 69157,
+   "span": [
+    69157,
+    69159
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 69158
+   },
+   "evidence": {
+    "eRet": "1 === e.eRet && o.prepareForBattle(e);"
+   }
+  },
+  "quicklogin": {
+   "constName": "QUICK_LOGIN",
+   "onLine": 70337,
+   "span": [
+    70337,
+    70339
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "CheckName": {
+   "constName": "USER_CHECK_NAME",
+   "onLine": 70340,
+   "span": [
+    70340,
+    70342
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "Create": {
+   "constName": "USER_CREATE",
+   "onLine": 70343,
+   "span": [
+    70343,
+    70345
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "LoadGame": {
+   "constName": "USER_LOADGAME",
+   "onLine": 70346,
+   "span": [
+    70346,
+    70348
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "GetChatAddress": {
+   "constName": "USER_GETCHATADDRESS",
+   "onLine": 70350,
+   "span": [
+    70350,
+    70352
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "recordPhone": {
+   "constName": "RECORD_PHONE",
+   "onLine": 70356,
+   "span": [
+    70356,
+    70361
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 70357
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {"
+   }
+  },
+  "CheckOnHook": {
+   "constName": "CHECK_ON_HOOK",
+   "onLine": 70362,
+   "span": [
+    70362,
+    70367
+   ],
+   "fields": [
+    "OnhookObj",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "OnhookObj": 70364,
+    "eRet": 70363
+   },
+   "evidence": {
+    "OnhookObj": "t.idleData = o.OnhookObj;",
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "BeginTitivate": {
+   "constName": "REQ_BEGINTITIVATE",
+   "onLine": 75529,
+   "span": [
+    75529,
+    75536
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 75530
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "BuyFashion": {
+   "constName": "REQ_BUY_FASHION",
+   "onLine": 75553,
+   "span": [
+    75553,
+    75579
+   ],
+   "fields": [
+    "eRet",
+    "titivateObj"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 75554,
+    "titivateObj": 75555
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "titivateObj": "o.hasOwnProperty(\"titivateObj\") && t.read(o.titivateObj);"
+   }
+  },
+  "BeginChangeFace": {
+   "constName": "REQ_BEGIN_CHANGEFACE",
+   "onLine": 75580,
+   "span": [
+    75580,
+    75585
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 75581
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {"
+   }
+  },
+  "AddChangeFace": {
+   "constName": "ADD_CHANGE_FACE",
+   "onLine": 75586,
+   "span": [
+    75586,
+    75591
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 75587
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {"
+   }
+  },
+  "setPlayerCardWingId": {
+   "constName": "SET_PLAYER_WING_ID",
+   "onLine": 75592,
+   "span": [
+    75592,
+    75598
+   ],
+   "fields": [
+    "eRet",
+    "wId"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 75593,
+    "wId": 75594
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "wId": "S.RoleOtherInfo.wId = e.wId;"
+   }
+  },
+  "upFashionFaceState": {
+   "constName": "SET_YP_EFFECT_STATE",
+   "onLine": 75599,
+   "span": [
+    75599,
+    75605
+   ],
+   "fields": [
+    "eRet",
+    "titivateObj"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 75600,
+    "titivateObj": 75601
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "titivateObj": "o.hasOwnProperty(\"titivateObj\") && t.read(o.titivateObj);"
+   }
+  },
+  "changePower": {
+   "constName": "CHANGE_POWER",
+   "onLine": 85100,
+   "span": [
+    85100,
+    85105
+   ],
+   "fields": [
+    "eRet",
+    "power"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 85101,
+    "power": 85102
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "power": "e.fightValue = o.power;"
+   }
+  },
+  "GetGMGiveItem": {
+   "constName": "GET_GMGIVE_ITEM",
+   "onLine": 88286,
+   "span": [
+    88286,
+    88295
+   ],
+   "fields": [
+    "eRet",
+    "expireTime",
+    "titleID"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 88287,
+    "expireTime": 88290,
+    "titleID": 88289
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "expireTime": "var o = e.titleID, n = e.expireTime, r = {};",
+    "titleID": "if (e.titleID && e.titleID > 0) {"
+   }
+  },
+  "scortResult": {
+   "constName": "SCORTRESULT",
+   "onLine": 88446,
+   "span": [
+    88446,
+    88448
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 88447
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet && (1 == t.adventureType ? s.SpecialAdventureModel.reqSpecialAdventure(4, null) : 2 == t.adventureType && s.SpecialAdventureModel.reqSpeci"
+   }
+  },
+  "mulitiNpcBattleResult": {
+   "constName": "REQ_MP_RESULT",
+   "onLine": 89335,
+   "span": [
+    89335,
+    89343
+   ],
+   "fields": [
+    "equipObj",
+    "gemId",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "equipObj": 89340,
+    "gemId": 89341,
+    "rewardArray": 89339
+   },
+   "evidence": {
+    "equipObj": "o.hasOwnProperty(\"equipObj\") && (i.equips = o.equipObj);",
+    "gemId": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);",
+    "rewardArray": "o.hasOwnProperty(\"rewardArray\") && (i.rewards = o.rewardArray);"
+   }
+  },
+  "CheckBattleResult": {
+   "constName": "BATTLE_END_REWARD",
+   "onLine": 89553,
+   "span": [
+    89553,
+    89561
+   ],
+   "fields": [
+    "equipObj",
+    "gemId",
+    "rewardArray",
+    "win"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "equipObj": 89557,
+    "gemId": 89558,
+    "rewardArray": 89556,
+    "win": 89555
+   },
+   "evidence": {
+    "equipObj": "o.hasOwnProperty(\"equipObj\") && (i.equips = o.equipObj);",
+    "gemId": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);",
+    "rewardArray": "o.hasOwnProperty(\"rewardArray\") && (i.rewards = o.rewardArray);",
+    "win": "n.win = o.win;"
+   }
+  },
+  "UnloadingEuipment": {
+   "constName": "UNLOADING_EQUIP_EVENT",
+   "onLine": 92800,
+   "span": [
+    92800,
+    92805
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 92801
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) for (var o in h.RoleBaseInfo.equipments) if (parseInt(o) < 8) {"
+   }
+  },
+  "PutOnEquipment": {
+   "constName": "WEAR_EQUIPMENT_ALL",
+   "onLine": 92806,
+   "span": [
+    92806,
+    92828
+   ],
+   "fields": [
+    "eRet",
+    "equipments"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 92807,
+    "equipments": 92808
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "equipments": "var o = e.equipments;"
+   }
+  },
+  "enterPVEBattle": {
+   "constName": "REQ_LANGHUAN_COMBAT",
+   "onLine": 98832,
+   "span": [
+    98832,
+    98851
+   ],
+   "fields": [
+    "AttckData",
+    "AttckData.tower",
+    "attArr",
+    "eRet",
+    "gold",
+    "npcArr",
+    "npcID",
+    "randSeed"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "AttckData": 98836,
+    "AttckData.tower": 98844,
+    "attArr": 98834,
+    "eRet": 98833,
+    "gold": 98835,
+    "npcArr": 98846,
+    "npcID": 98846,
+    "randSeed": 98849
+   },
+   "evidence": {
+    "AttckData": "var i = o.AttckData;",
+    "AttckData.tower": "t.tower && (o.AttckData.tower = 1);",
+    "attArr": "t.syncData = o.attArr;",
+    "eRet": "if (1 === o.eRet) {",
+    "gold": "t.reviveCost = o.gold;",
+    "npcArr": "var s = l.createPlayerBattleEntity(o.AttckData), h = t.generateNpcData(o.npcArr, o.npcID), u = new p();"
+   }
+  },
+  "beginPVEBattle": {
+   "constName": "PVE_ACTION",
+   "onLine": 98852,
+   "span": [
+    98852,
+    98904
+   ],
+   "fields": [
+    "action",
+    "attArr",
+    "eRet",
+    "paramID",
+    "paramID1",
+    "paramID2"
+   ],
+   "hints": {
+    "attArr": "array"
+   },
+   "fieldLines": {
+    "action": 98878,
+    "attArr": 98854,
+    "eRet": 98853,
+    "paramID": 98880,
+    "paramID1": 98880,
+    "paramID2": 98877
+   },
+   "evidence": {
+    "action": "switch (o.action) {",
+    "attArr": "t.syncData = o.attArr;",
+    "eRet": "if (1 === o.eRet) {",
+    "paramID": "t.bs.castSkill(i, o.paramID, 0, o.paramID1);",
+    "paramID1": "t.bs.castSkill(i, o.paramID, 0, o.paramID1);",
+    "paramID2": "o.paramID2 && \"\" != o.paramID2 && (i = o.paramID2);"
+   }
+  },
+  "ChallengePVP": {
+   "constName": "USER_PVP",
+   "onLine": 101326,
+   "span": [
+    101326,
+    101342
+   ],
+   "fields": [
+    "AttckData",
+    "AttckData.getargetType",
+    "EnemyData",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "AttckData": 101330,
+    "AttckData.getargetType": 101328,
+    "EnemyData": 101329,
+    "eRet": 101327
+   },
+   "evidence": {
+    "AttckData": "h.parsePlayerData(o.AttckData);",
+    "AttckData.getargetType": "e.isGoodEvilPk && (o.AttckData.getargetType = 1);",
+    "EnemyData": "h.parsePlayerData(o.EnemyData);",
+    "eRet": "if (1 === o.eRet) {"
+   }
+  },
+  "ChangePlace": {
+   "constName": "CHANGEPLACE",
+   "onLine": 101491,
+   "span": [
+    101491,
+    101496
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 101492
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {"
+   }
+  },
+  "cycleLife": {
+   "constName": "CYCLE_LIFE",
+   "onLine": 101885,
+   "span": [
+    101885,
+    101913
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 101886
+   },
+   "evidence": {
+    "eRet": "if (1 == r.eRet) {"
+   }
+  },
+  "storyExperience": {
+   "constName": "STORY_EXPERIENCE",
+   "onLine": 101914,
+   "span": [
+    101914,
+    101919
+   ],
+   "fields": [
+    "branchId",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "branchId": 101916,
+    "eRet": 101915
+   },
+   "evidence": {
+    "branchId": "_.RoleBaseInfo.storyId = e.branchId;",
+    "eRet": "if (1 == e.eRet) {"
+   }
+  },
+  "checkLive": {
+   "constName": "CHECK_LIVE",
+   "onLine": 102090,
+   "span": [
+    102090,
+    102099
+   ],
+   "fields": [
+    "formulaArr",
+    "inherit"
+   ],
+   "hints": {
+    "inherit": "array"
+   },
+   "fieldLines": {
+    "formulaArr": 102091,
+    "inherit": 102092
+   },
+   "evidence": {
+    "formulaArr": "o.hasOwnProperty(\"formulaArr\") && (t.formulaArr = o.formulaArr);",
+    "inherit": "o.hasOwnProperty(\"inherit\") && o.inherit.length && c.InhertEquipModel.allInhertEquips.hasOwnProperty(o.inherit[0]) && delete c.InhertEquipModel.allInh"
+   }
+  },
+  "beginCast": {
+   "constName": "BEGINCAST",
+   "onLine": 102100,
+   "span": [
+    102100,
+    102108
+   ],
+   "fields": [
+    "eRet",
+    "inherit",
+    "sTime",
+    "type"
+   ],
+   "hints": {
+    "inherit": "array"
+   },
+   "fieldLines": {
+    "eRet": 102101,
+    "inherit": 102107,
+    "sTime": 102102,
+    "type": 102104
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "inherit": "e.hasOwnProperty(\"inherit\") && e.inherit.length && c.InhertEquipModel.allInhertEquips.hasOwnProperty(e.inherit[0]) && delete c.InhertEquipModel.allInh",
+    "sTime": "r.TimeMgr.sserverT = e.sTime;",
+    "type": "e.type = 1;"
+   }
+  },
+  "endCast": {
+   "constName": "END_CAST",
+   "onLine": 102109,
+   "span": [
+    102109,
+    102116
+   ],
+   "fields": [
+    "eRet",
+    "equipObj",
+    "inherit",
+    "type"
+   ],
+   "hints": {
+    "inherit": "array"
+   },
+   "fieldLines": {
+    "eRet": 102110,
+    "equipObj": 102112,
+    "inherit": 102111,
+    "type": 102113
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "equipObj": "p.default.addShowRewardUI1({}, 0, e.equipObj);",
+    "inherit": "e.hasOwnProperty(\"inherit\") && e.inherit.length && (c.InhertEquipModel.allInhertEquips[e.inherit[0]] = e.inherit[1]);",
+    "type": "e.type = 0;"
+   }
+  },
+  "beginMake": {
+   "constName": "BEGIN_MAKE_QUIP",
+   "onLine": 102117,
+   "span": [
+    102117,
+    102124
+   ],
+   "fields": [
+    "eRet",
+    "sTime",
+    "type"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 102118,
+    "sTime": 102119,
+    "type": 102121
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "sTime": "r.TimeMgr.sserverT = e.sTime;",
+    "type": "e.type = 2;"
+   }
+  },
+  "endMake": {
+   "constName": "END_MAKE_QUIP",
+   "onLine": 102125,
+   "span": [
+    102125,
+    102131
+   ],
+   "fields": [
+    "eRet",
+    "equipObj",
+    "rewardArray",
+    "type"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 102126,
+    "equipObj": 102127,
+    "rewardArray": 102127,
+    "type": 102128
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "equipObj": "p.default.addShowRewardUI1(e.hasOwnProperty(\"rewardArray\") ? e.rewardArray : {}, 0, e.equipObj);",
+    "rewardArray": "p.default.addShowRewardUI1(e.hasOwnProperty(\"rewardArray\") ? e.rewardArray : {}, 0, e.equipObj);",
+    "type": "e.type = 1;"
+   }
+  },
+  "beginMakeMedicine": {
+   "constName": "BEGINE_MAKE_MEDICINE",
+   "onLine": 102132,
+   "span": [
+    102132,
+    102139
+   ],
+   "fields": [
+    "eRet",
+    "sTime",
+    "type"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 102133,
+    "sTime": 102134,
+    "type": 102136
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "sTime": "r.TimeMgr.sserverT = e.sTime;",
+    "type": "e.type = 3;"
+   }
+  },
+  "endMakeMedicine": {
+   "constName": "END_MAKE_MEDICINE",
+   "onLine": 102140,
+   "span": [
+    102140,
+    102146
+   ],
+   "fields": [
+    "eRet",
+    "equipObj",
+    "rewardArray",
+    "type"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 102141,
+    "equipObj": 102142,
+    "rewardArray": 102142,
+    "type": 102143
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "equipObj": "p.default.addShowRewardUI1(e.hasOwnProperty(\"rewardArray\") ? e.rewardArray : {}, 0, e.equipObj);",
+    "rewardArray": "p.default.addShowRewardUI1(e.hasOwnProperty(\"rewardArray\") ? e.rewardArray : {}, 0, e.equipObj);",
+    "type": "e.type = 2;"
+   }
+  },
+  "receiveRecuitAward": {
+   "constName": "RECEIVE_RECUIT_AWARD",
+   "onLine": 102367,
+   "span": [
+    102367,
+    102373
+   ],
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 102368,
+    "rewardArray": 102369
+   },
+   "evidence": {
+    "eRet": "if (1 == r.eRet) {",
+    "rewardArray": "c.default.addShowRewardUI1(r.rewardArray, 0, {});"
+   }
+  },
+  "receiveBindingRecuitAward": {
+   "constName": "RECEIVE_BIND_RECUITAWARD",
+   "onLine": 102374,
+   "span": [
+    102374,
+    102379
+   ],
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 102375,
+    "rewardArray": 102376
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "rewardArray": "c.default.addShowRewardUI1(e.rewardArray, 0, {});"
+   }
+  },
+  "ChallengeRoguePVP": {
+   "constName": "REQ_ROGUE_PVP_BATTLE",
+   "onLine": 104101,
+   "span": [
+    104101,
+    104122
+   ],
+   "fields": [
+    "AttckData",
+    "AttckData.floorBuff",
+    "AttckData.isBoss",
+    "AttckData.rogueFloorBuffs",
+    "EnemyData",
+    "EnemyData.rogueFloorBuffs",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "AttckData": 104104,
+    "AttckData.floorBuff": 104105,
+    "AttckData.isBoss": 104105,
+    "AttckData.rogueFloorBuffs": 104108,
+    "EnemyData": 104103,
+    "EnemyData.rogueFloorBuffs": 104109,
+    "eRet": 104102
+   },
+   "evidence": {
+    "AttckData": "c.parsePlayerData(o.AttckData);",
+    "AttckData.floorBuff": "if (o.AttckData.floorBuff && (!o.AttckData.hasOwnProperty(\"isBoss\") || 0 == o.AttckData.isBoss)) {",
+    "AttckData.isBoss": "if (o.AttckData.floorBuff && (!o.AttckData.hasOwnProperty(\"isBoss\") || 0 == o.AttckData.isBoss)) {",
+    "AttckData.rogueFloorBuffs": "o.AttckData.rogueFloorBuffs = i.playerbuff;",
+    "EnemyData": "c.parsePlayerData(o.EnemyData);",
+    "EnemyData.rogueFloorBuffs": "o.EnemyData.rogueFloorBuffs = i.enemybuff;"
+   }
+  },
+  "enterRoguePVEBattle": {
+   "constName": "REQ_ROGUE_PVE_COMBAT",
+   "onLine": 104129,
+   "span": [
+    104129,
+    104191
+   ],
+   "fields": [
+    "AttckData",
+    "AttckData.eliteBuffs",
+    "AttckData.floorBuff",
+    "AttckData.isBoss",
+    "AttckData.rogueFloorBuffs",
+    "attArr",
+    "eRet",
+    "exchangeNpcArr",
+    "npcArr",
+    "npcID",
+    "randSeed"
+   ],
+   "hints": {
+    "attArr": "array",
+    "exchangeNpcArr": "array"
+   },
+   "fieldLines": {
+    "AttckData": 104132,
+    "AttckData.eliteBuffs": 104152,
+    "AttckData.floorBuff": 104134,
+    "AttckData.isBoss": 104134,
+    "AttckData.rogueFloorBuffs": 104137,
+    "attArr": 104131,
+    "eRet": 104130,
+    "exchangeNpcArr": 104162,
+    "npcArr": 104133,
+    "npcID": 104133,
+    "randSeed": 104153
+   },
+   "evidence": {
+    "AttckData": "c.parsePlayerData(o.AttckData);",
+    "AttckData.eliteBuffs": "if (o.AttckData.hasOwnProperty(\"eliteBuffs\") && o.AttckData.eliteBuffs.length > 0) for (var s = o.AttckData.eliteBuffs, l = 0; l < s.length; l++) if (",
+    "AttckData.floorBuff": "if (o.AttckData.floorBuff && (!o.AttckData.hasOwnProperty(\"isBoss\") || 0 == o.AttckData.isBoss)) {",
+    "AttckData.isBoss": "if (o.AttckData.floorBuff && (!o.AttckData.hasOwnProperty(\"isBoss\") || 0 == o.AttckData.isBoss)) {",
+    "AttckData.rogueFloorBuffs": "o.AttckData.rogueFloorBuffs = n.playerbuff;",
+    "attArr": "t.syncData = o.attArr;"
+   }
+  },
+  "beginRoguePVEBattle": {
+   "constName": "ROGUE_PVE_ACTION",
+   "onLine": 104192,
+   "span": [
+    104192,
+    104239
+   ],
+   "fields": [
+    "action",
+    "attArr",
+    "eRet",
+    "paramID",
+    "paramID1",
+    "paramID2"
+   ],
+   "hints": {
+    "attArr": "array"
+   },
+   "fieldLines": {
+    "action": 104208,
+    "attArr": 104194,
+    "eRet": 104193,
+    "paramID": 104210,
+    "paramID1": 104210,
+    "paramID2": 104207
+   },
+   "evidence": {
+    "action": "switch (o.action) {",
+    "attArr": "t.syncData = o.attArr;",
+    "eRet": "if (1 === o.eRet) {",
+    "paramID": "t.bs.castSkill(i, o.paramID, 0, o.paramID1);",
+    "paramID1": "t.bs.castSkill(i, o.paramID, 0, o.paramID1);",
+    "paramID2": "o.paramID2 && \"\" != o.paramID2 && (i = o.paramID2);"
+   }
+  },
+  "beginRogueMultiPVEBattle": {
+   "constName": "ROGUE_MPPVE_ACTION",
+   "onLine": 105258,
+   "span": [
+    105258,
+    105260
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 105259
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet && t.playWithData(o);"
+   }
+  },
+  "refreshNotice": {
+   "constName": "REFRESHNOTICE",
+   "onLine": 108234,
+   "span": [
+    108234,
+    108237
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 108236
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet && parseInt(t.activeTypeID) > 0 ? a.default.show(i.getText(\"1114\")) : 6 == o.eRet && a.default.show(i.getText(\"6000320\"));"
+   }
+  },
+  "GetNoticeAward": {
+   "constName": "GETNOTICE_REWARD",
+   "onLine": 108238,
+   "span": [
+    108238,
+    108254
+   ],
+   "fields": [
+    "eRet",
+    "liveness",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 108239,
+    "liveness": 108246,
+    "rewardArray": 108241
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "liveness": "if (o.liveness) {",
+    "rewardArray": "for (var l in o.rewardArray) {"
+   }
+  },
+  "getSpecialevts": {
+   "constName": "GET_SPECIALEVTS",
+   "onLine": 108255,
+   "span": [
+    108255,
+    108257
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 108256
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet && r.MessageCenter.dispatch(c.EvName.NOTICE_BOOK_EVENT, e);"
+   }
+  },
+  "enterMultiPVEBattle": {
+   "constName": "INIT_MPPVE_BATTLE",
+   "onLine": 110844,
+   "span": [
+    110844,
+    110869
+   ],
+   "fields": [
+    "battleData",
+    "gold",
+    "linepID",
+    "npcID"
+   ],
+   "hints": {
+    "linepID": "array"
+   },
+   "fieldLines": {
+    "battleData": 110850,
+    "gold": 110847,
+    "linepID": 110848,
+    "npcID": 110845
+   },
+   "evidence": {
+    "battleData": "o.battleData && e.playWithData(o.battleData);",
+    "gold": "o.hasOwnProperty(\"gold\") && (e.state.reviveCost = Number(o.gold));",
+    "linepID": "o.linepID && o.linepID.length > 0 && (o.linepID = o.linepID[0]);",
+    "npcID": "e.state.mainNpc = Number(o.npcID);"
+   }
+  },
+  "startMultiPVEBattle": {
+   "constName": "START_MPPVE_BATTLE",
+   "onLine": 110870,
+   "span": [
+    110870,
+    110875
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 110871
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "beginMultiPVEBattle": {
+   "constName": "MPPVE_ACTION",
+   "onLine": 110876,
+   "span": [
+    110876,
+    110878
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 110877
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet && e.playWithData(o);"
+   }
+  },
+  "getMultiPVESkill": {
+   "constName": "GET_MP_ULTSKILLS",
+   "onLine": 110879,
+   "span": [
+    110879,
+    110895
+   ],
+   "fields": [
+    "atkSkillID",
+    "dataArr",
+    "eRet"
+   ],
+   "hints": {
+    "dataArr": "array"
+   },
+   "fieldLines": {
+    "atkSkillID": 110892,
+    "dataArr": 110884,
+    "eRet": 110881
+   },
+   "evidence": {
+    "atkSkillID": "o.hasOwnProperty(\"atkSkillID\") && (n.atkSkillID = o.atkSkillID);",
+    "dataArr": "if (o.dataArr && o.dataArr.length >= 1) {",
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "getFighterInfo": {
+   "constName": "REQ_MPPVE_FIGHTER_INFO",
+   "onLine": 110896,
+   "span": [
+    110896,
+    110902
+   ],
+   "fields": [
+    "battleID",
+    "eRet",
+    "info"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "battleID": 110899,
+    "eRet": 110898,
+    "info": 110898
+   },
+   "evidence": {
+    "battleID": "id: o.battleID,",
+    "eRet": "1 == o.eRet && o.info && (null === (i = e.btUI) || void 0 === i || i.emit(h.EvName.SHOW_MP_PLAYER_INFO, {",
+    "info": "1 == o.eRet && o.info && (null === (i = e.btUI) || void 0 === i || i.emit(h.EvName.SHOW_MP_PLAYER_INFO, {"
+   }
+  },
+  "getAllServerCount": {
+   "constName": "GET_ALL_SERVER_COUNT",
+   "onLine": 111013,
+   "span": [
+    111013,
+    111026
+   ],
+   "fields": [
+    "eRet",
+    "sArr",
+    "serverArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 111014,
+    "sArr": 111015,
+    "serverArr": 111015
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "sArr": "var o = e.sArr, n = e.serverArr;",
+    "serverArr": "var o = e.sArr, n = e.serverArr;"
+   }
+  },
+  "getAllServerList": {
+   "constName": "GET_ALL_SERVER_LIST",
+   "onLine": 111027,
+   "span": [
+    111027,
+    111029
+   ],
+   "fields": [
+    "eRet",
+    "serverArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 111028,
+    "serverArr": 111028
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet ? r.MessageCenter.dispatch(s.EvName.SELECT_COPY_SERVER_EVENT, e.serverArr) : 7 == e.eRet && cc.log(\"等级不够奥\");",
+    "serverArr": "1 == e.eRet ? r.MessageCenter.dispatch(s.EvName.SELECT_COPY_SERVER_EVENT, e.serverArr) : 7 == e.eRet && cc.log(\"等级不够奥\");"
+   }
+  },
+  "changeToTeamServer": {
+   "constName": "CHANGE_TO_TEAMSERVER",
+   "onLine": 111030,
+   "span": [
+    111030,
+    111037
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 111031
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "backToSelfServer": {
+   "constName": "BACK_TO_SELF_SERVER",
+   "onLine": 111038,
+   "span": [
+    111038,
+    111047
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 111039
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "getWxXyxOpenID": {
+   "constName": "GET_WX_XYX_OPENID",
+   "onLine": 116691,
+   "span": [
+    116691,
+    116702
+   ],
+   "fields": [
+    "eRet",
+    "openid",
+    "session_key"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 116692,
+    "openid": 116693,
+    "session_key": 116694
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "openid": "s.RoleBaseInfo.userAccount = o.openid;",
+    "session_key": "c.LoginMgr.token = o.session_key;"
+   }
+  },
+  "getDouYinOpenID": {
+   "constName": "GET_DOU_YIN_OPENID",
+   "onLine": 116703,
+   "span": [
+    116703,
+    116718
+   ],
+   "fields": [
+    "eRet",
+    "openid"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 116704,
+    "openid": 116705
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "openid": "s.RoleBaseInfo.userAccount = o.openid;"
+   }
+  },
+  "GetServerList": {
+   "constName": "REQ_SERVER_LIST",
+   "onLine": 116719,
+   "span": [
+    116719,
+    116732
+   ],
+   "fields": [
+    "historyArr",
+    "serverObj",
+    "taptapVersion"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "historyArr": 116728,
+    "serverObj": 116722,
+    "taptapVersion": 116729
+   },
+   "evidence": {
+    "historyArr": "e.recent = o.hasOwnProperty(\"historyArr\") ? o.historyArr : null;",
+    "serverObj": "for (var a in o.serverObj) n.push(o.serverObj[a]);",
+    "taptapVersion": "o.hasOwnProperty(\"taptapVersion\") && (e.tapVersion = o.taptapVersion);"
+   }
+  },
+  "upgradeSkill": {
+   "constName": "UPGRADE_SKILL_LV",
+   "onLine": 119842,
+   "span": [
+    119842,
+    119845
+   ],
+   "fields": [
+    "eRet",
+    "returnPro"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 119843,
+    "returnPro": 119844
+   },
+   "evidence": {
+    "eRet": "i.MessageCenter.dispatch(a.EvName.SYNC_UPGRADE_RES, e.eRet);",
+    "returnPro": "e.hasOwnProperty(\"returnPro\") && u.default.show(p.getText(\"6003371\").replace(/\\[1\\]/, e.returnPro));"
+   }
+  },
+  "skillChange": {
+   "constName": "SWAP_SKILL_PROGRESS",
+   "onLine": 119846,
+   "span": [
+    119846,
+    119871
+   ],
+   "fields": [
+    "changeCD",
+    "eRet",
+    "serverTime"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "changeCD": 119858,
+    "eRet": 119847,
+    "serverTime": 119858
+   },
+   "evidence": {
+    "changeCD": "(y = o.changeCD + 864e5 * s - o.serverTime) < 0 && (y = 0);",
+    "eRet": "if (1 == o.eRet) {",
+    "serverTime": "(y = o.changeCD + 864e5 * s - o.serverTime) < 0 && (y = 0);"
+   }
+  },
+  "BeginTraining": {
+   "constName": "BEGIN_LIANGONG",
+   "onLine": 120515,
+   "span": [
+    120515,
+    120573
+   ],
+   "fields": [
+    "beginTime",
+    "eRet",
+    "hanyusuiTime",
+    "isCollective",
+    "skillID"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "beginTime": 120518,
+    "eRet": 120516,
+    "hanyusuiTime": 120521,
+    "isCollective": 120523,
+    "skillID": 120517
+   },
+   "evidence": {
+    "beginTime": "e.startTimestamp = n.beginTime;",
+    "eRet": "if (1 == n.eRet || 2 == n.eRet) {",
+    "hanyusuiTime": "e.hyTime = 1e3 * n.hanyusuiTime;",
+    "isCollective": "if (n.hasOwnProperty(\"isCollective\")) if (0 == n.isCollective) if (2 == e.isSchoolLiang) {",
+    "skillID": "e.skill2Upgrade = n.skillID;"
+   }
+  },
+  "EndTraining": {
+   "constName": "END_LIANGONG",
+   "onLine": 120574,
+   "span": [
+    120574,
+    120601
+   ],
+   "fields": [
+    "genguTime",
+    "hanyusuiTime",
+    "isCollective",
+    "isSchoolAward",
+    "skillArr",
+    "skillid"
+   ],
+   "hints": {
+    "skillArr": "array"
+   },
+   "fieldLines": {
+    "genguTime": 120578,
+    "hanyusuiTime": 120579,
+    "isCollective": 120582,
+    "isSchoolAward": 120581,
+    "skillArr": 120584,
+    "skillid": 120590
+   },
+   "evidence": {
+    "genguTime": "u.RoleOtherInfo.gengudanTime = o.genguTime;",
+    "hanyusuiTime": "d.NonBattleBuffModel.setBufferTotalTime(o.hanyusuiTime);",
+    "isCollective": "o.hasOwnProperty(\"isCollective\") && (B.SchoolSquareModel.isCollective = o.isCollective);",
+    "isSchoolAward": "o.hasOwnProperty(\"isSchoolAward\") && (B.SchoolSquareModel.isSchoolAward = o.isSchoolAward);",
+    "skillArr": "if (o.hasOwnProperty(\"skillArr\") && o.skillArr.length) {",
+    "skillid": "if (o.hasOwnProperty(\"skillid\")) {"
+   }
+  },
+  "useVigorUpGradeSkill": {
+   "constName": "VIGOR_UPGSKILL",
+   "onLine": 120602,
+   "span": [
+    120602,
+    120605
+   ],
+   "fields": [
+    "skillID",
+    "vigor"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "skillID": 120604,
+    "vigor": 120603
+   },
+   "evidence": {
+    "skillID": "l.default.show(r.getText(3259).replace(/\\[1\\]/, f.SkillTable.getSkillLevel(e.skillID)));",
+    "vigor": "s.MessageCenter.dispatch(p.EvName.REFRESH_VIGORS, e.vigor);"
+   }
+  },
+  "ChooseFixDan": {
+   "constName": "CHOOSE_FIX_DAN",
+   "onLine": 120606,
+   "span": [
+    120606,
+    120616
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120608
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "BeginList": {
+   "constName": "BEGIN_LIST",
+   "onLine": 120617,
+   "span": [
+    120617,
+    120634
+   ],
+   "fields": [
+    "eRet",
+    "skill"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120618,
+    "skill": 120619
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "skill": "e.skillQueue = o.skill;"
+   }
+  },
+  "Implantation": {
+   "constName": "IMPLANTATION",
+   "onLine": 120635,
+   "span": [
+    120635,
+    120640
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120636
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "removeMartial": {
+   "constName": "REMOVE_MARTIAL",
+   "onLine": 120641,
+   "span": [
+    120641,
+    120647
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120642
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "addBreakQueue": {
+   "constName": "ADD_BREAK_QUEUE",
+   "onLine": 120648,
+   "span": [
+    120648,
+    120650
+   ],
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120649,
+    "qr": 120649
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet && e.updateBreakQueueData(o.qr);",
+    "qr": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+   }
+  },
+  "removeBreakQueue": {
+   "constName": "REMOVE_BREAK_QUEUE",
+   "onLine": 120651,
+   "span": [
+    120651,
+    120653
+   ],
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120652,
+    "qr": 120652
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet && e.updateBreakQueueData(o.qr);",
+    "qr": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+   }
+  },
+  "goldBreakCurrentSkill": {
+   "constName": "GOLD_BREAK_CUR_SKILL",
+   "onLine": 120654,
+   "span": [
+    120654,
+    120662
+   ],
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120655,
+    "qr": 120656
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "qr": "e.updateBreakQueueData(o.qr, !0);"
+   }
+  },
+  "goldBreakAllSkill": {
+   "constName": "GOLD_BREAK_ALL_SKILL",
+   "onLine": 120663,
+   "span": [
+    120663,
+    120671
+   ],
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120664,
+    "qr": 120665
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "qr": "e.updateBreakQueueData(o.qr, !0);"
+   }
+  },
+  "onBatchBreakByGold": {
+   "constName": "BATCH_BREAK_BY_GOLD",
+   "onLine": 120672,
+   "span": [
+    120672,
+    120692
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120673
+   },
+   "evidence": {
+    "eRet": "if (1 == i.eRet) {"
+   }
+  },
+  "beginHookBreakList": {
+   "constName": "BEGIN_HOOK_BREAK_LIST",
+   "onLine": 120693,
+   "span": [
+    120693,
+    120712
+   ],
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120694,
+    "qr": 120695
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "qr": "var i = o.qr;"
+   }
+  },
+  "stopBreaklist": {
+   "constName": "STOP_BREAK_LIST",
+   "onLine": 120713,
+   "span": [
+    120713,
+    120731
+   ],
+   "fields": [
+    "eRet",
+    "qr",
+    "qr.f"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120714,
+    "qr": 120714,
+    "qr.f": 120714
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) if (o.qr.f) e.updateBreakQueueData(o.qr); else {",
+    "qr": "if (1 == o.eRet) if (o.qr.f) e.updateBreakQueueData(o.qr); else {",
+    "qr.f": "if (1 == o.eRet) if (o.qr.f) e.updateBreakQueueData(o.qr); else {"
+   }
+  },
+  "getHookBreakList": {
+   "constName": "REFRESH_HOOK_BREAK_LIST",
+   "onLine": 120732,
+   "span": [
+    120732,
+    120740
+   ],
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120733,
+    "qr": 120734
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "qr": "e.updateBreakQueueData(o.qr, !0);"
+   }
+  },
+  "onQueueCheckBreak": {
+   "constName": "QUEUE_CHECK_BREAK",
+   "onLine": 120741,
+   "span": [
+    120741,
+    120749
+   ],
+   "fields": [
+    "eRet",
+    "gTime",
+    "hg",
+    "hgtimes"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 120742,
+    "gTime": 120743,
+    "hg": 120744,
+    "hgtimes": 120745
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "gTime": "k.UserModel.entity.totalGameTime.gameTime = o.gTime;",
+    "hg": "k.UserModel.entity.hunger.remaining = o.hg;",
+    "hgtimes": "k.UserModel.entity.numStuffed = o.hgtimes;"
+   }
+  },
+  "checkTiger": {
+   "constName": "REQ_INSERT_COINS",
+   "onLine": 122283,
+   "span": [
+    122283,
+    122286
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 122284
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet || 5 == e.eRet || (4 == e.eRet ? r.default.show(i.getText(1455)) : 6 == e.eRet && r.default.show(i.getText(4283)));"
+   }
+  },
+  "OpenTiger": {
+   "constName": "OPEN_TIGER",
+   "onLine": 122287,
+   "span": [
+    122287,
+    122294
+   ],
+   "fields": [
+    "num"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "num": 122288
+   },
+   "evidence": {
+    "num": "o.SlotMachModel.useTime = e.hasOwnProperty(\"num\") ? e.num : 0;"
+   }
+  },
+  "ClearingTiger": {
+   "constName": "CLEAEING_TIGER",
+   "onLine": 122295,
+   "span": [
+    122295,
+    122297
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 122296
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet && (o.SlotMachModel.useTime = 0);"
+   }
+  },
+  "enterSnow": {
+   "constName": "SNOWACTIVE",
+   "onLine": 122462,
+   "span": [
+    122462,
+    122504
+   ],
+   "fields": [
+    "boxnum",
+    "eRet",
+    "hp",
+    "sTime"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "boxnum": 122467,
+    "eRet": 122463,
+    "hp": 122466,
+    "sTime": 122470
+   },
+   "evidence": {
+    "boxnum": "t.boxNum = o.boxnum;",
+    "eRet": "if (0 == o.eRet) 0 == t.activeType ? a.default.show(n.getText(4061)) : a.default.show(n.getText(1093)); else if (2 == o.eRet) if (2 == t.activeType) {",
+    "hp": "t.setSnowManHp(o.hp);",
+    "sTime": "o.sTime;"
+   }
+  },
+  "UseSnowBall": {
+   "constName": "USE_SNOW_BALL",
+   "onLine": 122505,
+   "span": [
+    122505,
+    122513
+   ],
+   "fields": [
+    "eRet",
+    "hp"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 122506,
+    "hp": 122507
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "hp": "t.setSnowManHp(o.hp);"
+   }
+  },
+  "UseBatchSnowBall": {
+   "constName": "USE_BATCH_SNOW_BALL",
+   "onLine": 122514,
+   "span": [
+    122514,
+    122528
+   ],
+   "fields": [
+    "eRet",
+    "hp"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 122515,
+    "hp": 122517
+   },
+   "evidence": {
+    "eRet": "t.setBeastState(o.eRet);",
+    "hp": "t.setSnowManHp(o.hp);"
+   }
+  },
+  "getSnowAward": {
+   "constName": "GET_SNOW_REWARD",
+   "onLine": 122529,
+   "span": [
+    122529,
+    122542
+   ],
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 122530,
+    "rewardArray": 122532
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "rewardArray": "var l = o.rewardArray;"
+   }
+  },
+  "UseAllBall": {
+   "constName": "USE_ALL_BALL",
+   "onLine": 122543,
+   "span": [
+    122543,
+    122549
+   ],
+   "fields": [
+    "eRet",
+    "hp",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 122544,
+    "hp": 122545,
+    "rewardArray": 122546
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "hp": "t.setFirecrackerHP(o.hp);",
+    "rewardArray": "f.MadUtilsTS.isNullObj(o.rewardArray) || s.default.addShowRewardUI1(o.rewardArray, 0, {});"
+   }
+  },
+  "checkSpecial": {
+   "constName": "CHECKSPECIAL",
+   "onLine": 122981,
+   "span": [
+    122981,
+    122991
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 122982
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "rollDice": {
+   "constName": "ROLLDICE_EVENT",
+   "onLine": 122992,
+   "span": [
+    122992,
+    122994
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 122993
+   },
+   "evidence": {
+    "eRet": "1 != e.eRet && 2 != e.eRet && 3 != e.eRet || i.MessageCenter.dispatch(r.EvName.ROLL_DICE_EVENT, e);"
+   }
+  },
+  "bringSpecialAward": {
+   "constName": "BRING_SPECIAL_AWARD",
+   "onLine": 122995,
+   "span": [
+    122995,
+    122997
+   ],
+   "fields": [
+    "eRet",
+    "equipObj",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 122996,
+    "equipObj": 122996,
+    "rewardArray": 122996
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet && (M.MadUtilsTS.isNullObj(e.rewardArray) && M.MadUtilsTS.isNullObj(e.equipObj) || p.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj",
+    "equipObj": "1 == e.eRet && (M.MadUtilsTS.isNullObj(e.rewardArray) && M.MadUtilsTS.isNullObj(e.equipObj) || p.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj",
+    "rewardArray": "1 == e.eRet && (M.MadUtilsTS.isNullObj(e.rewardArray) && M.MadUtilsTS.isNullObj(e.equipObj) || p.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj"
+   }
+  },
+  "getShopItem": {
+   "constName": "GET_SPGOODS_LIST",
+   "onLine": 123373,
+   "span": [
+    123373,
+    123375
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "buySpecialShopItem": {
+   "constName": "BUY_SPECIAL_GOODS",
+   "onLine": 123376,
+   "span": [
+    123376,
+    123378
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "getNpcSteal": {
+   "constName": "GET_STEAL_NPC_INFO",
+   "onLine": 130603,
+   "span": [
+    130603,
+    130615
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "stealGoods": {
+   "constName": "REQ_STRETCH",
+   "onLine": 130616,
+   "span": [
+    130616,
+    130619
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "chooseSteal": {
+   "constName": "DO_STEAL",
+   "onLine": 130620,
+   "span": [
+    130620,
+    130623
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "OutPrison": {
+   "constName": "END_PRISON",
+   "onLine": 130624,
+   "span": [
+    130624,
+    130631
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "h5Pay": {
+   "constName": "H5_BUY_ITEM",
+   "onLine": 130747,
+   "span": [
+    130747,
+    130757
+   ],
+   "fields": [
+    "endMonthCardTime",
+    "gold"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "endMonthCardTime": 130754,
+    "gold": 130748
+   },
+   "evidence": {
+    "endMonthCardTime": "e.hasOwnProperty(\"endMonthCardTime\") && (v.RoleBaseInfo.endMonthCardTime = e.endMonthCardTime);",
+    "gold": "if (e.hasOwnProperty(\"gold\")) {"
+   }
+  },
+  "GetMarketList": {
+   "constName": "GET_MARKETLIST",
+   "onLine": 130760,
+   "span": [
+    130760,
+    130774
+   ],
+   "fields": [
+    "buyTimes",
+    "eRet",
+    "market",
+    "nextRefreshTime",
+    "serverTime"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "buyTimes": 130772,
+    "eRet": 130761,
+    "market": 130767,
+    "nextRefreshTime": 130771,
+    "serverTime": 130770
+   },
+   "evidence": {
+    "buyTimes": "o.hasOwnProperty(\"buyTimes\") ? t.buyTimes = o.buyTimes : t.buyTimes = y.RoleOtherInfo.buyTimes;",
+    "eRet": "if (1 == o.eRet) {",
+    "market": "market: o.market,",
+    "nextRefreshTime": "t.nextRefreshTime = o.nextRefreshTime;",
+    "serverTime": "t.serverTime = o.serverTime;"
+   }
+  },
+  "GetGiftData": {
+   "constName": "GET_GIFT_DATA",
+   "onLine": 130776,
+   "span": [
+    130776,
+    130796
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 130777
+   },
+   "evidence": {
+    "eRet": "if (0 == o.eRet) {"
+   }
+  },
+  "buyGiftPermanent": {
+   "constName": "BUY_GIFT_PERMANENT",
+   "onLine": 130797,
+   "span": [
+    130797,
+    130806
+   ],
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 130798,
+    "rewardArray": 130799
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "rewardArray": "T.default.addShowRewardUI1(e.rewardArray, 0, {});"
+   }
+  },
+  "getOptionalGiftData": {
+   "constName": "NEW_OPTIONALGIFT_DATA",
+   "onLine": 130807,
+   "span": [
+    130807,
+    130830
+   ],
+   "fields": [
+    "eRet",
+    "type"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 130808,
+    "type": 130821
+   },
+   "evidence": {
+    "eRet": "if (0 == o.eRet) {",
+    "type": "o.type = 1;"
+   }
+  },
+  "GetClimbingTowerData": {
+   "constName": "ENTER_GET_CLIMBLING_EVENT",
+   "onLine": 137551,
+   "span": [
+    137551,
+    137581
+   ],
+   "fields": [
+    "chickenLegNum",
+    "eRet",
+    "towerArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "chickenLegNum": 137561,
+    "eRet": 137552,
+    "towerArray": 137553
+   },
+   "evidence": {
+    "chickenLegNum": "t.toEatNum = o.chickenLegNum;",
+    "eRet": "if (1 == o.eRet) {",
+    "towerArray": "t.curFloorNum = o.towerArray[0];"
+   }
+  },
+  "towerRank": {
+   "constName": "TOWER_RANK_LIST",
+   "onLine": 137582,
+   "span": [
+    137582,
+    137588
+   ],
+   "fields": [
+    "eRet",
+    "rankArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 137583,
+    "rankArr": 137583
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet && e.hasOwnProperty(\"rankArr\") && h.default.prefabs.load(\"towerUI/TowerRank\", cc.Prefab, function(t, o) {",
+    "rankArr": "1 == e.eRet && e.hasOwnProperty(\"rankArr\") && h.default.prefabs.load(\"towerUI/TowerRank\", cc.Prefab, function(t, o) {"
+   }
+  },
+  "chanllengeTower": {
+   "constName": "TOWER_RANDOM_EVENT",
+   "onLine": 137589,
+   "span": [
+    137589,
+    137630
+   ],
+   "fields": [
+    "attrType",
+    "canActivateStatus",
+    "chickenLegNum",
+    "eRet",
+    "eggNpc",
+    "equipments",
+    "eventID",
+    "eventIds",
+    "mapID",
+    "muscle",
+    "npcArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "attrType": 137599,
+    "canActivateStatus": 137626,
+    "chickenLegNum": 137628,
+    "eRet": 137590,
+    "eggNpc": 137625,
+    "equipments": 137600,
+    "eventID": 137597,
+    "eventIds": 137627,
+    "mapID": 137621,
+    "muscle": 137598,
+    "npcArr": 137596
+   },
+   "evidence": {
+    "attrType": "o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);",
+    "canActivateStatus": "t.canActivateStatus = !!o.hasOwnProperty(\"canActivateStatus\") && o.canActivateStatus;",
+    "chickenLegNum": "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);",
+    "eRet": "if (1 == o.eRet) {",
+    "eggNpc": "o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];",
+    "equipments": "if (o.hasOwnProperty(\"equipments\")) {"
+   }
+  },
+  "GetTowerSpecialShop": {
+   "constName": "TOWER_SPECIAL_SHOP",
+   "onLine": 137631,
+   "span": [
+    137631,
+    137638
+   ],
+   "fields": [
+    "eRet",
+    "shopData"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 137632,
+    "shopData": 137632
+   },
+   "evidence": {
+    "eRet": "1 == o.eRet ? o.hasOwnProperty(\"shopData\") && null == t.mysticShopUI && h.default.prefabs.load(\"towerUI/MysticShopUI\", cc.Prefab, function(e, i) {",
+    "shopData": "1 == o.eRet ? o.hasOwnProperty(\"shopData\") && null == t.mysticShopUI && h.default.prefabs.load(\"towerUI/MysticShopUI\", cc.Prefab, function(e, i) {"
+   }
+  },
+  "BuyTowerProp": {
+   "constName": "TOWER_BUY_PROP",
+   "onLine": 137639,
+   "span": [
+    137639,
+    137654
+   ],
+   "fields": [
+    "eRet",
+    "hjzcNum",
+    "itemID"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 137640,
+    "hjzcNum": 137650,
+    "itemID": 137642
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "hjzcNum": "o.hasOwnProperty(\"hjzcNum\") && (t.towerItemData[5] = o.hjzcNum);",
+    "itemID": "itemId: o.itemID,"
+   }
+  },
+  "getPandaEvent": {
+   "constName": "TOWER_GET_PANDA_EVENT",
+   "onLine": 137655,
+   "span": [
+    137655,
+    137672
+   ],
+   "fields": [
+    "eRet",
+    "eventArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 137656,
+    "eventArr": 137656
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet && o.hasOwnProperty(\"eventArr\")) {",
+    "eventArr": "if (1 == o.eRet && o.hasOwnProperty(\"eventArr\")) {"
+   }
+  },
+  "choosePandaEvent": {
+   "constName": "TOWER_CHOOSE_PANDA_EVENT",
+   "onLine": 137673,
+   "span": [
+    137673,
+    137697
+   ],
+   "fields": [
+    "batch_sweep_data",
+    "buffID",
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "batch_sweep_data": 137694,
+    "buffID": 137680,
+    "eRet": 137674,
+    "rewardArray": 137676
+   },
+   "evidence": {
+    "batch_sweep_data": "o.hasOwnProperty(\"batch_sweep_data\") && t.setNewSweepData(o.batch_sweep_data);",
+    "buffID": "} else if (o.hasOwnProperty(\"buffID\")) {",
+    "eRet": "if (1 == o.eRet) {",
+    "rewardArray": "if (1 == n.type || 8 == n.type) t.enterNextTower(n.parameter[0]); else if (o.hasOwnProperty(\"rewardArray\")) {"
+   }
+  },
+  "leaveTower": {
+   "constName": "TOWER_LEAVE_EVENT",
+   "onLine": 137698,
+   "span": [
+    137698,
+    137717
+   ],
+   "fields": [
+    "PlayerEquip",
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "PlayerEquip": 137704,
+    "eRet": 137699,
+    "rewardArray": 137714
+   },
+   "evidence": {
+    "PlayerEquip": "o.hasOwnProperty(\"PlayerEquip\") && m.InventoryModel.parseEqData(o.PlayerEquip);",
+    "eRet": "if (1 == o.eRet) {",
+    "rewardArray": "o.hasOwnProperty(\"rewardArray\") && _.default.addShowRewardUI1(o.rewardArray, 0, {});"
+   }
+  },
+  "getEventAward": {
+   "constName": "TOWER_GET_REWARD_BOX",
+   "onLine": 137718,
+   "span": [
+    137718,
+    137727
+   ],
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 137719,
+    "rewardArray": 137722
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "rewardArray": "if (0 == t.challeageState && !A.MadUtilsTS.isNullObj(o.rewardArray)) {"
+   }
+  },
+  "lookSecretEvent": {
+   "constName": "LOOK_SECRET_PANDA_EVENT",
+   "onLine": 137728,
+   "span": [
+    137728,
+    137741
+   ],
+   "fields": [
+    "eRet",
+    "secret"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 137729,
+    "secret": 137731
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "secret": "i.secret = o.secret;"
+   }
+  },
+  "chooseSecretEvent": {
+   "constName": "SELECT_SECRET_PANDA_EVENT",
+   "onLine": 137742,
+   "span": [
+    137742,
+    137750
+   ],
+   "fields": [
+    "batch_sweep_data",
+    "eRet",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "batch_sweep_data": 137749,
+    "eRet": 137743,
+    "rewardArray": 137744
+   },
+   "evidence": {
+    "batch_sweep_data": "o.hasOwnProperty(\"batch_sweep_data\") && t.setNewSweepData(o.batch_sweep_data);",
+    "eRet": "if (1 == o.eRet) {",
+    "rewardArray": "if (!A.MadUtilsTS.isNullObj(o.rewardArray)) {"
+   }
+  },
+  "GetNewSweepTowerData": {
+   "constName": "GET_NEW_SWEEP_EVENT",
+   "onLine": 137751,
+   "span": [
+    137751,
+    137771
+   ],
+   "fields": [
+    "adCode",
+    "batch_sweep_data",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "adCode": 137759,
+    "batch_sweep_data": 137760,
+    "eRet": 137752
+   },
+   "evidence": {
+    "adCode": "o.hasOwnProperty(\"adCode\") && (t.adCode = o.adCode);",
+    "batch_sweep_data": "if (o.hasOwnProperty(\"batch_sweep_data\")) {",
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "newSweepTower": {
+   "constName": "NEW_TOWER_SWEEP_EVENT",
+   "onLine": 137772,
+   "span": [
+    137772,
+    137809
+   ],
+   "fields": [
+    "adCode",
+    "batch_sweep_data",
+    "batch_sweep_data.awardObj",
+    "batch_sweep_data.beginLv",
+    "batch_sweep_data.canSweep",
+    "batch_sweep_data.clv",
+    "batch_sweep_data.items",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "adCode": 137783,
+    "batch_sweep_data": 137785,
+    "batch_sweep_data.awardObj": 137778,
+    "batch_sweep_data.beginLv": 137781,
+    "batch_sweep_data.canSweep": 137782,
+    "batch_sweep_data.clv": 137777,
+    "batch_sweep_data.items": 137780,
+    "eRet": 137775
+   },
+   "evidence": {
+    "adCode": "o.hasOwnProperty(\"adCode\") && (t.adCode = o.adCode);",
+    "batch_sweep_data": "if (o.hasOwnProperty(\"batch_sweep_data\")) {",
+    "batch_sweep_data.awardObj": "var i = o.batch_sweep_data.awardObj;",
+    "batch_sweep_data.beginLv": "t.beginFloor = o.batch_sweep_data.beginLv;",
+    "batch_sweep_data.canSweep": "t.isCanSweep = o.batch_sweep_data.canSweep;",
+    "batch_sweep_data.clv": "t.curFloorNum = o.batch_sweep_data.clv;"
+   }
+  },
+  "closeNewSweepTowerByLv": {
+   "constName": "CLOSE_NEW_SWEEP_EVENT",
+   "onLine": 137810,
+   "span": [
+    137810,
+    137819
+   ],
+   "fields": [
+    "batch_sweep_data",
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "batch_sweep_data": 137812,
+    "eRet": 137811
+   },
+   "evidence": {
+    "batch_sweep_data": "if (o.hasOwnProperty(\"batch_sweep_data\")) {",
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "activateTowerEvent": {
+   "constName": "ACTIVE_TOWER_EVENT",
+   "onLine": 137820,
+   "span": [
+    137820,
+    137832
+   ],
+   "fields": [
+    "attrType",
+    "canActivateStatus",
+    "chickenLegNum",
+    "eRet",
+    "eggNpc",
+    "eventID",
+    "eventIds",
+    "muscle",
+    "npcArr"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "attrType": 137825,
+    "canActivateStatus": 137828,
+    "chickenLegNum": 137827,
+    "eRet": 137821,
+    "eggNpc": 137826,
+    "eventID": 137823,
+    "eventIds": 137829,
+    "muscle": 137824,
+    "npcArr": 137822
+   },
+   "evidence": {
+    "attrType": "o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);",
+    "canActivateStatus": "t.canActivateStatus = !!o.hasOwnProperty(\"canActivateStatus\") && o.canActivateStatus;",
+    "chickenLegNum": "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);",
+    "eRet": "if (1 == o.eRet) {",
+    "eggNpc": "o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];",
+    "eventID": "o.hasOwnProperty(\"eventID\") && (t.randomEventId = o.eventID);"
+   }
+  },
+  "BeginMeditation": {
+   "constName": "START_DAZUO",
+   "onLine": 138880,
+   "span": [
+    138880,
+    138887
+   ],
+   "fields": [
+    "beginTime",
+    "eRet",
+    "hyTime"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "beginTime": 138882,
+    "eRet": 138881,
+    "hyTime": 138883
+   },
+   "evidence": {
+    "beginTime": "t.startTimestamp = o.beginTime;",
+    "eRet": "if (1 == o.eRet || 2 == o.eRet) {",
+    "hyTime": "t.hyTime = 1e3 * o.hyTime;"
+   }
+  },
+  "EndMeditation": {
+   "constName": "END_DAZUO",
+   "onLine": 138888,
+   "span": [
+    138888,
+    138895
+   ],
+   "fields": [
+    "genguTime",
+    "hanyusuiTime",
+    "note",
+    "note.attrch"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "genguTime": 138890,
+    "hanyusuiTime": 138891,
+    "note": 138892,
+    "note.attrch": 138892
+   },
+   "evidence": {
+    "genguTime": "h.RoleOtherInfo.gengudanTime = o.genguTime;",
+    "hanyusuiTime": "p.NonBattleBuffModel.setBufferTotalTime(o.hanyusuiTime);",
+    "note": "o.note.hasOwnProperty(\"attrch\") && o.note.attrch.hasOwnProperty(\"mpTrained\") && (d.RoleBaseInfo.mpTrained = o.note.attrch.mpTrained);",
+    "note.attrch": "o.note.hasOwnProperty(\"attrch\") && o.note.attrch.hasOwnProperty(\"mpTrained\") && (d.RoleBaseInfo.mpTrained = o.note.attrch.mpTrained);"
+   }
+  },
+  "BeginRecoverMP": {
+   "constName": "BEGIN_RECOVER_MP",
+   "onLine": 138896,
+   "span": [
+    138896,
+    138902
+   ],
+   "fields": [
+    "eRet",
+    "serverTime"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 138897,
+    "serverTime": 138898
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "serverTime": "t.recoverStartTS = o.serverTime;"
+   }
+  },
+  "EndRecoverMP": {
+   "constName": "END_RECOVER_MP",
+   "onLine": 138903,
+   "span": [
+    138903,
+    138908
+   ],
+   "fields": [
+    "genguTime",
+    "hanyusuiTime"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "genguTime": 138904,
+    "hanyusuiTime": 138905
+   },
+   "evidence": {
+    "genguTime": "h.RoleOtherInfo.gengudanTime = e.genguTime;",
+    "hanyusuiTime": "p.NonBattleBuffModel.setBufferTotalTime(e.hanyusuiTime);"
+   }
+  },
+  "getVigor": {
+   "constName": "GET_VIGOR",
+   "onLine": 138909,
+   "span": [
+    138909,
+    138911
+   ],
+   "fields": [
+    "vigor"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "vigor": 138910
+   },
+   "evidence": {
+    "vigor": "r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);"
+   }
+  },
+  "useVigorMeditation": {
+   "constName": "VIGOR_DAZUO",
+   "onLine": 138912,
+   "span": [
+    138912,
+    138915
+   ],
+   "fields": [
+    "vigor"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "vigor": 138913
+   },
+   "evidence": {
+    "vigor": "r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);"
+   }
+  },
+  "UseDebris": {
+   "constName": "GET_TR_MAP_INFO",
+   "onLine": 139314,
+   "span": [
+    139314,
+    139316
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  },
+  "Storehouse": {
+   "constName": "CLAIM_TR_REWARD",
+   "onLine": 139317,
+   "span": [
+    139317,
+    139345
+   ],
+   "fields": [
+    "eRet",
+    "needItem",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 139318,
+    "needItem": 139319,
+    "rewardArray": 139331
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {",
+    "needItem": "var r = i.getText(987).replace(/\\[1\\]/, o.needItem[1]);",
+    "rewardArray": "l.default.addShowRewardUI1(o.rewardArray, 0);"
+   }
+  },
+  "equipUpgrade": {
+   "constName": "REQ_EQUIP_UPGRADE",
+   "onLine": 142020,
+   "span": [
+    142020,
+    142057
+   ],
+   "fields": [
+    "eRet",
+    "equipInherit",
+    "playerEquip"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 142021,
+    "equipInherit": 142026,
+    "playerEquip": 142023
+   },
+   "evidence": {
+    "eRet": "switch (e.eRet) {",
+    "equipInherit": "e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));",
+    "playerEquip": "if (e.hasOwnProperty(\"playerEquip\")) {"
+   }
+  },
+  "EquipSuitsUpgrade": {
+   "constName": "EUIQP_SUITS_UPGRADE",
+   "onLine": 142058,
+   "span": [
+    142058,
+    142094
+   ],
+   "fields": [
+    "eRet",
+    "equipInherit",
+    "playerEquip"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 142059,
+    "equipInherit": 142064,
+    "playerEquip": 142061
+   },
+   "evidence": {
+    "eRet": "switch (e.eRet) {",
+    "equipInherit": "e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));",
+    "playerEquip": "if (e.hasOwnProperty(\"playerEquip\")) {"
+   }
+  },
+  "GetRandomEventAward": {
+   "constName": "REQ_WM_ADV_RWD",
+   "onLine": 143814,
+   "span": [
+    143814,
+    143840
+   ],
+   "fields": [
+    "liveness",
+    "npcArr",
+    "rewardArray"
+   ],
+   "hints": {
+    "npcArr": "array"
+   },
+   "fieldLines": {
+    "liveness": 143820,
+    "npcArr": 143820,
+    "rewardArray": 143816
+   },
+   "evidence": {
+    "liveness": "var c = i.hasOwnProperty(\"npcArr\") && i.npcArr && i.npcArr.length > 0, p = i.hasOwnProperty(\"liveness\");",
+    "npcArr": "var c = i.hasOwnProperty(\"npcArr\") && i.npcArr && i.npcArr.length > 0, p = i.hasOwnProperty(\"liveness\");",
+    "rewardArray": "if (i.hasOwnProperty(\"rewardArray\")) for (var l in i.rewardArray) {"
+   }
+  },
+  "ChangeBlood": {
+   "constName": "REQ_CHANGEBLOOD",
+   "onLine": 144037,
+   "span": [
+    144037,
+    144042
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 144038
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "AddChangeBlood": {
+   "constName": "ADD_CHANGE_BLOOD",
+   "onLine": 144043,
+   "span": [
+    144043,
+    144048
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 144044
+   },
+   "evidence": {
+    "eRet": "if (1 == o.eRet) {"
+   }
+  },
+  "washAdditionalArr": {
+   "constName": "WASH_ADDITION",
+   "onLine": 144049,
+   "span": [
+    144049,
+    144076
+   ],
+   "fields": [
+    "attrList",
+    "bloodArr",
+    "eRet",
+    "maxWuxin"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "attrList": 144073,
+    "bloodArr": 144052,
+    "eRet": 144050,
+    "maxWuxin": 144053
+   },
+   "evidence": {
+    "attrList": "i.addComponent(\"SetWashUI\").setData(e.attrList);",
+    "bloodArr": "e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);",
+    "eRet": "if (1 == e.eRet) {",
+    "maxWuxin": "e.hasOwnProperty(\"maxWuxin\") && (p.MarryModel.maxWuxin = e.maxWuxin);"
+   }
+  },
+  "LoginReq": {
+   "constName": "SERVER_CHECK_LOGIN",
+   "onLine": 144494,
+   "span": [
+    144494,
+    144496
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 144495
+   },
+   "evidence": {
+    "eRet": "e.eRet;"
+   }
+  },
+  "upgradeWifeLevel": {
+   "constName": "UPGRADE_WIFE_LEVEL",
+   "onLine": 145326,
+   "span": [
+    145326,
+    145332
+   ],
+   "fields": [
+    "eRet",
+    "exp",
+    "lv"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 145327,
+    "exp": 145329,
+    "lv": 145328
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "exp": "c.MarryModel.wifeUpdateData.exp = e.exp;",
+    "lv": "c.MarryModel.wifeUpdateData.lv = e.lv;"
+   }
+  },
+  "UserWifeProp": {
+   "constName": "USE_WIFE_PROP",
+   "onLine": 145333,
+   "span": [
+    145333,
+    145347
+   ],
+   "fields": [
+    "eRet",
+    "exp",
+    "lv"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 145334,
+    "exp": 145335,
+    "lv": 145335
+   },
+   "evidence": {
+    "eRet": "if (1 == e.eRet) {",
+    "exp": "var o = c.MarryModel.wifeUpdateData.lv, i = c.MarryModel.wifeUpdateData.exp, a = e.lv, l = e.exp;",
+    "lv": "var o = c.MarryModel.wifeUpdateData.lv, i = c.MarryModel.wifeUpdateData.exp, a = e.lv, l = e.exp;"
+   }
+  },
+  "getFasionShop": {
+   "constName": "GET_FASHION_SHOP",
+   "onLine": 145348,
+   "span": [
+    145348,
+    145362
+   ],
+   "fields": [
+    "shopArr"
+   ],
+   "hints": {
+    "shopArr": "array"
+   },
+   "fieldLines": {
+    "shopArr": 145349
+   },
+   "evidence": {
+    "shopArr": "if (1 == (o = o).eRet && o.hasOwnProperty(\"shopArr\")) {"
+   }
+  },
+  "wearFasion": {
+   "constName": "WEAR_FASHION",
+   "onLine": 145363,
+   "span": [
+    145363,
+    145382
+   ],
+   "fields": [
+    "fasionid"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "fasionid": 145366
+   },
+   "evidence": {
+    "fasionid": "c.MarryModel.wifeUpdateData.eid = o.fasionid;"
+   }
+  },
+  "GetBossAward": {
+   "constName": "GET_BOSS_REWARD",
+   "onLine": 145522,
+   "span": [
+    145522,
+    145533
+   ],
+   "fields": [
+    "eRet",
+    "firstName",
+    "killName",
+    "killObj",
+    "rewardArray"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 145523,
+    "firstName": 145527,
+    "killName": 145528,
+    "killObj": 145530,
+    "rewardArray": 145529
+   },
+   "evidence": {
+    "eRet": "3 == e.eRet ? c.default.show(r.getText(1127)) : 2 == e.eRet ? c.default.show(r.getText(1128)) : 1 == e.eRet && m.default.prefabs.load(\"worldBoss/Damag",
+    "firstName": "firstPlayer: e.firstName,",
+    "killName": "lastKill: e.killName,",
+    "killObj": "killReward: e.killObj",
+    "rewardArray": "rewardDic: e.rewardArray,"
+   }
+  },
+  "Impeach": {
+   "constName": "TIP_OFF_USER",
+   "onLine": 146091,
+   "span": [
+    146091,
+    146093
+   ],
+   "fields": [
+    "eRet"
+   ],
+   "hints": {},
+   "fieldLines": {
+    "eRet": 146092
+   },
+   "evidence": {
+    "eRet": "1 == e.eRet && v.default.show(l.getText(1548));"
+   }
+  },
+  "AddSubtitleReq": {
+   "constName": "ADD_SUBTITLEREQ",
+   "onLine": 146252,
+   "span": [
+    146252,
+    146254
+   ],
+   "fields": [],
+   "hints": {},
+   "fieldLines": {},
+   "evidence": {}
+  }
+ }
+}

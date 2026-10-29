@@ -1,0 +1,99 @@
+# User.optionLikeEvent  (HttpConst.INVITE_NPC_OPTION)
+# 出现 2 处
+
+ 51159: r.default.addDialogEvent(i.dialogue, e.npcId, null, e.reqGetInviteReward.bind(e));
+ 51160: } else if (4 == o.eRet) {
+ 51161: e.inviteEventObj = {};
+ 51162: r.default.addDialogEvent(1810121, 0);
+ 51163: }
+ 51164: }, this);
+ 51165: i.MessageCenter.on(n.HttpConst.INVITE_NPC_OPTION, function(t, o) {
+ 51166: var i;
+ 51167: if (1 == o.eRet) {
+ 51168: var n = o.npcId, r = o.feel;
+ 51169: p.default.setNcpIntimacy(n, r);
+ 51170: o.hasOwnProperty("delTaskIds") && S.TaskModel.clearRogueTaskData(o.delTaskIds);
+ 51171: null === (i = _.GSceneMgr.go2Scene(e.inviteEventObj.map)) || void 0 === i || i.then(function() {
+ 51172: e.checkLikeReward(r);
+ 51173: });
+ 51174: } else 6 == o.eRet ? s.default.show(l.getText("9223")) : s.default.show(l.getText("1455"));
+ 51175: }, this);
+ 51176: };
+ 51177: t.prototype.checkLikeReward = function(t) {
+ 51178: for (var e = this.inviteEventObj.text.split("|"), o = "", i = 0; i < e.length; i++) {
+ 51179: var n = e[i].split(",");
+ 51180: if (t == Number(n[0])) {
+ 51181: o = n[1].toString();
+ 51182: break;
+ 51183: }
+ 51184: }
+ 51185: s.default.show(l.getText(o));
+ 51186: };
+ 51187: t.prototype.showBrothelEndUI = function(t, e) {
+ 51188: void 0 === e && (e = 0);
+ 51189: var o = {
+ 51190: data: {
+ 51191: type: e,
+ 51192: makeId: t
+ 51193: }
+ 51194: };
+ 51195: h.default.prefabs.load("comUI/BrothelUI", cc.Prefab, function(t, e) {
+ 51196: var i = cc.instantiate(e);
+ 51197: u.PopUpMgr.addPopUp(i, f.LayerMgr.popUpLayer);
+ 51198: var n = i.addComponent("BrothelUI");
+ 51199: n.setData(o);
+ 51200: n.setLabelTitle("");
+ 51201: });
+ 51202: };
+ 51203: t.prototype.showPlayPic = function(t) {
+ 51204: var e = this;
+ 51205: h.default.prefabs.load("comUI/PlayCartoonUI", cc.Prefab, function(o, i) {
+---
+ 51368: } ], function(e) {
+ 51369: 0 == e ? t.reqSelectOption(1) : t.reqSelectOption(0);
+ 51370: }, "", !1);
+ 51371: } else s.default.show(l.getText("9223"));
+ 51372: };
+ 51373: t.prototype.reqSelectOption = function(t) {
+ 51374: g.NetMgr.http.sendRequest(n.HttpConst.INVITE_NPC_OPTION, {
+ 51375: isDelItem: t
+ 51376: });
+ 51377: };
+ 51378: return t;
+ 51379: }();
+ 51380: o.FindGirlModel = new M();
+ 51381: cc._RF.pop();
+ 51382: }, {
+ 51383: "../core/events/MessageCenter": "MessageCenter",
+ 51384: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 51385: "../gameconfigs/CFMgr": "CFMgr",
+ 51386: "../gameconfigs/LangMgr": "LangMgr",
+ 51387: "../gui/uicomponents/Alert": "Alert",
+ 51388: "../mgrs/BundleMgr": "BundleMgr",
+ 51389: "../mgrs/GSceneMgr": "GSceneMgr",
+ 51390: "../mgrs/LayerMgr": "LayerMgr",
+ 51391: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+ 51392: "../mgrs/TimeMgr": "TimeMgr",
+ 51393: "../net/HttpConst": "HttpConst",
+ 51394: "../net/NetMgr": "NetMgr",
+ 51395: "../utils/EvName": "EvName",
+ 51396: "./IntimacyModel": "IntimacyModel",
+ 51397: "./RumorModel": "RumorModel",
+ 51398: "./TaskModel": "TaskModel",
+ 51399: "./UserModel": "UserModel",
+ 51400: "./vos/RoleBaseInfo": "RoleBaseInfo"
+ 51401: } ],
+ 51402: FishingModel: [ function(t, e, o) {
+ 51403: "use strict";
+ 51404: cc._RF.push(e, "f9f14sCDz1JjaGmflW9UK5H", "FishingModel");
+ 51405: Object.defineProperty(o, "__esModule", {
+ 51406: value: !0
+ 51407: });
+ 51408: o.FishingModel = o.FishingModels = void 0;
+ 51409: var i = t("../gameconfigs/CFMgr"), n = t("../gameconfigs/LangMgr"), r = t("../core/events/MessageCenter"), a = t("../gui/uicomponents/Alert"), s = t("../net/HttpConst"), l = t("../utils/EvName"), c = t("../mgrs/BundleMgr"), p = t("../core/ui/mgrs/PopUpMgr"), h = t("../mgrs/LayerMgr"), u = t("./vos/RoleBaseInfo"), f = t("./MuzhuangModel"), d = t("./InventoryDB"), g = t("../net/NetMgr"), m = t("./InventoryModel"), y = t("./vos/PlayerInfo"), v = t("../mgrs/TimeMgr"), _ = function() {
+ 51410: function e() {
+ 51411: this.timeRemaining = 0;
+ 51412: this.timeElapsed = 0;
+ 51413: this.pondID = 0;
+ 51414: this.numAdChances = 0;
+---

@@ -1,0 +1,302 @@
+[
+ {
+  "action": "User.ApplyFriend",
+  "field": "eRet",
+  "usage": "Number(e.eRet) - 1",
+  "line": "132270: var o = [ 4846, 378, 371, 373, 379, 372, 737, 736 ], i = Number(e.eRet) - 1;"
+ },
+ {
+  "action": "User.ApplyFriend",
+  "field": "eRet",
+  "usage": "e.eRet - 1",
+  "line": "132271: !isNaN(i) && i >= 0 && i < o.length && s.default.show(l.getText(o[e.eRet - 1]));"
+ },
+ {
+  "action": "User.BuyNpcFeel",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "77936: 1 == e.eRet ? h.default.setNcpIntimacy(this.npcId, 10) : 2 == e.eRet && n.default.show(l.getText(1100));"
+ },
+ {
+  "action": "User.BuyNpcFeel",
+  "field": "eRet",
+  "usage": "2 == e.eRet",
+  "line": "77936: 1 == e.eRet ? h.default.setNcpIntimacy(this.npcId, 10) : 2 == e.eRet && n.default.show(l.getText(1100));"
+ },
+ {
+  "action": "User.ExChangeJetton",
+  "field": "curGold",
+  "usage": "p.InventoryDB.setGold(e.curGold)",
+  "line": "54263: e.hasOwnProperty(\"curGold\") && p.InventoryDB.setGold(e.curGold);"
+ },
+ {
+  "action": "User.ExChangeJetton",
+  "field": "curJetton",
+  "usage": "p.InventoryDB.setChips(e.curJetton)",
+  "line": "54264: e.hasOwnProperty(\"curJetton\") && p.InventoryDB.setChips(e.curJetton);"
+ },
+ {
+  "action": "User.ExChangeJetton",
+  "field": "chipTimes",
+  "usage": "n.RoleOtherInfo.chipTimes = e.chipTimes",
+  "line": "54265: e.hasOwnProperty(\"chipTimes\") && (n.RoleOtherInfo.chipTimes = e.chipTimes);"
+ },
+ {
+  "action": "User.ExChangeJetton",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "54266: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.ExChangeJetton",
+  "field": "getPotency",
+  "usage": "c.RoleBaseInfo.potentials += e.getPotency",
+  "line": "54267: e.hasOwnProperty(\"getPotency\") && (c.RoleBaseInfo.potentials += e.getPotency);"
+ },
+ {
+  "action": "User.ExChangeJetton",
+  "field": "getCoins",
+  "usage": "c.RoleBaseInfo.coins += e.getCoins",
+  "line": "54268: e.hasOwnProperty(\"getCoins\") && (c.RoleBaseInfo.coins += e.getCoins);"
+ },
+ {
+  "action": "User.ExChangeJetton",
+  "field": "eRet",
+  "usage": "2 == e.eRet",
+  "line": "54269: } else 2 == e.eRet ? u.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(r.getText(\"762\"));"
+ },
+ {
+  "action": "User.ExChangeJetton",
+  "field": "eRet",
+  "usage": "3 == e.eRet",
+  "line": "54269: } else 2 == e.eRet ? u.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(r.getText(\"762\"));"
+ },
+ {
+  "action": "User.GetFashionList",
+  "field": "type",
+  "usage": "1 == e.type",
+  "line": "75623: 1 == e.type && this.setFashionTime(e.FashionTimeMap);"
+ },
+ {
+  "action": "User.GetFashionList",
+  "field": "FashionTimeMap",
+  "usage": "this.setFashionTime(e.FashionTimeMap)",
+  "line": "75623: 1 == e.type && this.setFashionTime(e.FashionTimeMap);"
+ },
+ {
+  "action": "User.GetFashionList",
+  "field": "showFashionNewShop",
+  "usage": "a.addComponent(\"FashionShopMainUI\").showFashionNewShop(e)",
+  "line": "75638: a.addComponent(\"FashionShopMainUI\").showFashionNewShop(e);"
+ },
+ {
+  "action": "User.LookOther",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "101523: 1 == e.eRet && h.default.prefabs.load(\"comUI/RoleInfoUI\", cc.Prefab, function(t, i) {"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "144100: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "armStrong",
+  "usage": "l.RoleBaseInfo.baseArmStrong = e.armStrong",
+  "line": "144101: l.RoleBaseInfo.baseArmStrong = e.armStrong;"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "shenFa",
+  "usage": "l.RoleBaseInfo.baseShenFa = e.shenFa",
+  "line": "144102: l.RoleBaseInfo.baseShenFa = e.shenFa;"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "bone",
+  "usage": "l.RoleBaseInfo.baseBone = e.bone",
+  "line": "144103: l.RoleBaseInfo.baseBone = e.bone;"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "understanding",
+  "usage": "l.RoleBaseInfo.baseUnderstanding = e.understanding",
+  "line": "144104: l.RoleBaseInfo.baseUnderstanding = e.understanding;"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "armStrong",
+  "usage": "l.RoleBaseInfo.armStrong = e.armStrong",
+  "line": "144105: l.RoleBaseInfo.armStrong = e.armStrong;"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "shenFa",
+  "usage": "l.RoleBaseInfo.shenFa = e.shenFa",
+  "line": "144106: l.RoleBaseInfo.shenFa = e.shenFa;"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "bone",
+  "usage": "l.RoleBaseInfo.bone = e.bone",
+  "line": "144107: l.RoleBaseInfo.bone = e.bone;"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "understanding",
+  "usage": "l.RoleBaseInfo.understanding = e.understanding",
+  "line": "144108: l.RoleBaseInfo.understanding = e.understanding;"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "bloodArr",
+  "usage": "p.MarryModel.cycleData[8] = e.bloodArr",
+  "line": "144109: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "fosterArr",
+  "usage": "p.MarryModel.cycleData[7] = e.fosterArr",
+  "line": "144110: e.hasOwnProperty(\"fosterArr\") && (p.MarryModel.cycleData[7] = e.fosterArr);"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "maxWuxin",
+  "usage": "p.MarryModel.maxWuxin = e.maxWuxin",
+  "line": "144111: e.hasOwnProperty(\"maxWuxin\") && (p.MarryModel.maxWuxin = e.maxWuxin);"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "armStrong",
+  "usage": "h.UserModel.entity.strength.baseValue = e.armStrong + o[7][0] + o[8][0]",
+  "line": "144117: h.UserModel.entity.strength.baseValue = e.armStrong + o[7][0] + o[8][0];"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "shenFa",
+  "usage": "h.UserModel.entity.shenfa.baseValue = e.shenFa + o[7][1] + o[8][1]",
+  "line": "144118: h.UserModel.entity.shenfa.baseValue = e.shenFa + o[7][1] + o[8][1];"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "bone",
+  "usage": "h.UserModel.entity.gengu.baseValue = e.bone + o[7][2] + o[8][2]",
+  "line": "144119: h.UserModel.entity.gengu.baseValue = e.bone + o[7][2] + o[8][2];"
+ },
+ {
+  "action": "User.WashMedicine",
+  "field": "understanding",
+  "usage": "h.UserModel.entity.perception.baseValue = e.understanding + o[7][3] + o[8][3]",
+  "line": "144120: h.UserModel.entity.perception.baseValue = e.understanding + o[7][3] + o[8][3];"
+ },
+ {
+  "action": "User.checkUploadAttackDamge",
+  "field": "eRet",
+  "usage": "2 == o.eRet",
+  "line": "145543: if (2 == o.eRet) {"
+ },
+ {
+  "action": "User.checkUploadAttackDamge",
+  "field": "eRet",
+  "usage": "3 == o.eRet",
+  "line": "145546: } else if (3 == o.eRet) {"
+ },
+ {
+  "action": "User.checkUploadAttackDamge",
+  "field": "killBoss",
+  "usage": "h.RoleBaseInfo.roleID == o.killBoss",
+  "line": "145547: if (h.RoleBaseInfo.roleID == o.killBoss) if (this.win) c.default.show(r.getText(882)); else {"
+ },
+ {
+  "action": "User.checkUploadAttackDamge",
+  "field": "killBossName",
+  "usage": "replace(/\\[2\\]/, o.killBossName)",
+  "line": "145551: var a = n.getItem(this.bossID, \"npc\"), s = r.getText(864).replace(/\\[1\\]/, r.getText(a.NpcName)).replace(/\\[2\\]/, o.killBossName);"
+ },
+ {
+  "action": "User.checkUploadAttackDamge",
+  "field": "eRet",
+  "usage": "1 == o.eRet",
+  "line": "145554: } else if (1 == o.eRet) {"
+ },
+ {
+  "action": "User.checkUploadAttackDamge",
+  "field": "bossMaxHP",
+  "usage": "this.bossHpMax = o.bossMaxHP",
+  "line": "145555: this.bossHpMax = o.bossMaxHP;"
+ },
+ {
+  "action": "User.checkUploadAttackDamge",
+  "field": "bossCurHP",
+  "usage": "this.bossHp = o.bossCurHP",
+  "line": "145556: this.bossHp = o.bossCurHP;"
+ },
+ {
+  "action": "User.checkUploadAttackDamge",
+  "field": "CDTime",
+  "usage": "u.TimeMgr.getSTimestamp() + o.CDTime",
+  "line": "145557: this.nxtAvailableTs = u.TimeMgr.getSTimestamp() + o.CDTime;"
+ },
+ {
+  "action": "User.checkUploadAttackDamge",
+  "field": "maxPotentialLimit",
+  "usage": "o.hasOwnProperty(\"maxPotentialLimit\") && o.maxPotentialLimit",
+  "line": "145561: o.hasOwnProperty(\"maxPotentialLimit\") && o.maxPotentialLimit && c.default.show(r.getText(6016943));"
+ },
+ {
+  "action": "User.checkUploadAttackDamge",
+  "field": "setAllHpAndMp",
+  "usage": "t.RoleOtherInfo.setAllHpAndMp(o)",
+  "line": "145565: t.RoleOtherInfo.setAllHpAndMp(o);"
+ },
+ {
+  "action": "User.endDoubleTraining",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "56713: if (1 == e.eRet || 0 == e.eRet) {"
+ },
+ {
+  "action": "User.endDoubleTraining",
+  "field": "eRet",
+  "usage": "0 == e.eRet",
+  "line": "56713: if (1 == e.eRet || 0 == e.eRet) {"
+ },
+ {
+  "action": "User.endDoubleTraining",
+  "field": "setAutoStartHung",
+  "usage": "u.FishingModel.setAutoStartHung(e)",
+  "line": "56714: u.FishingModel.setAutoStartHung(e);"
+ },
+ {
+  "action": "User.endDoubleTraining",
+  "field": "flag",
+  "usage": "0 == e.flag",
+  "line": "56715: if (0 == e.flag) {"
+ },
+ {
+  "action": "User.makeLove",
+  "field": "eRet",
+  "usage": "s = e.eRet",
+  "line": "77279: var o = this, i = a.getItem(1299, \"npc\"), n = 0, s = e.eRet;"
+ },
+ {
+  "action": "User.makeLove",
+  "field": "fetationTime",
+  "usage": "this.fetationTime = e.fetationTime",
+  "line": "77285: this.fetationTime = e.fetationTime;"
+ },
+ {
+  "action": "User.rankList",
+  "field": "eRet",
+  "usage": "1 == e.eRet",
+  "line": "101516: if (1 == e.eRet) {"
+ },
+ {
+  "action": "User.rankList",
+  "field": "CDTime",
+  "usage": "this.cdTime = e.CDTime",
+  "line": "101517: this.cdTime = e.CDTime;"
+ }
+]

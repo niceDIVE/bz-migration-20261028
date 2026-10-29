@@ -1,0 +1,2 @@
+POST http://150.158.217.220:9898/ChooseServer
+{"mod":"User","do":"ChooseServer","p":{"SID":220,"account":"9900012358565","channel":3,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":0,"loginFlag":"1","inGameTime":0,"nonce":"1792572730676yfq5lh63"}}

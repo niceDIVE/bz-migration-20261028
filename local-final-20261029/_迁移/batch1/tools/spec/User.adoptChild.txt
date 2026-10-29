@@ -1,0 +1,99 @@
+# User.adoptChild  (HttpConst.ADOPTCHILD)
+# 出现 2 处
+
+ 24613: r.MessageCenter.on(s.HttpConst.GIVE_CHILD_NAME, this.setChildNameCallBack, this);
+ 24614: r.MessageCenter.on(s.HttpConst.CHILD_WASH_EVENT, this.childWashCallBack, this);
+ 24615: r.MessageCenter.on(s.HttpConst.RESET_CHILD_FOSTER, this.resetChildCallBack, this);
+ 24616: r.MessageCenter.on(s.HttpConst.BEGIN_PLAY_GAME, this.beginPlayCallBack, this);
+ 24617: r.MessageCenter.on(s.HttpConst.END_PLAY_GAME, this.endPlayCallBack, this);
+ 24618: r.MessageCenter.on(s.HttpConst.CHOOSE_SEX, this.chooseSexCallBack, this);
+ 24619: r.MessageCenter.on(s.HttpConst.ADOPTCHILD, this.onAdoptChild, this);
+ 24620: };
+ 24621: t.prototype.setChildNameCallBack = function(t, e) {
+ 24622: if (1 == e.eRet) {
+ 24623: c.MarryModel.childData.childName = e.childName;
+ 24624: r.MessageCenter.dispatch(l.EvName.SET_CHILD_NAME_EVENT);
+ 24625: } else 99 == e.eRet ? a.default.show(i.getText("480")) : a.default.show(i.getText(427));
+ 24626: };
+ 24627: t.prototype.childWashCallBack = function(t, e) {
+ 24628: if (1 == e.eRet) {
+ 24629: c.MarryModel.setChildAttData(e.baseArr, e.attArr);
+ 24630: r.MessageCenter.dispatch(l.EvName.CHILD_WASH_SUCCESS_EVENT);
+ 24631: a.default.show(i.getText(2122));
+ 24632: } else 4 == e.eRet ? m.default.prefabs.load("marrySystem/ChildWashUI", cc.Prefab, function(t, o) {
+ 24633: var i = cc.instantiate(o);
+ 24634: i.addComponent("SetChildWashUI").setData(e.attrList);
+ 24635: v.PopUpMgr.addPopUp(i, y.LayerMgr.popUpLayer);
+ 24636: }) : p.StoreModel.openChargeList();
+ 24637: };
+ 24638: t.prototype.resetChildCallBack = function(t, e) {
+ 24639: if (1 == e.eRet) {
+ 24640: e.hasOwnProperty("foster_point") && (c.MarryModel.childData.foster_point = e.foster_point);
+ 24641: e.hasOwnProperty("playArr") && (c.MarryModel.childData.playArr = e.playArr);
+ 24642: m.default.prefabs.load("marrySystem/ChildPlayUI", cc.Prefab, function(t, e) {
+ 24643: var o = cc.instantiate(e);
+ 24644: v.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer, 1, !0);
+ 24645: o.addComponent("ChildPlayMenu");
+ 24646: });
+ 24647: } else 3 == e.eRet ? a.default.show(i.getText(535), [ {
+ 24648: flag: 0,
+ 24649: name: i.getText(10839)
+ 24650: }, {
+ 24651: flag: 1,
+ 24652: name: i.getText(10840)
+ 24653: } ], function(t) {
+ 24654: 0 == t && p.StoreModel.reqStoreList();
+ 24655: }, "", !1) : 4 == e.eRet && a.default.show(i.getText(4753));
+ 24656: };
+ 24657: t.prototype.beginPlayCallBack = function(t, e) {
+ 24658: if (1 == e.eRet) {
+ 24659: this.playType = e.choose;
+---
+ 24790: flag: 0,
+ 24791: name: i.getText(332)
+ 24792: }, {
+ 24793: flag: 1,
+ 24794: name: i.getText(333)
+ 24795: } ], function(e) {
+ 24796: 0 == e && u.NetMgr.http.sendRequest(s.HttpConst.ADOPTCHILD, {
+ 24797: adoptChildSex: t
+ 24798: });
+ 24799: }, "", !1);
+ 24800: };
+ 24801: t.prototype.destroy = function() {
+ 24802: this.beginTime = 0;
+ 24803: this.playType = 0;
+ 24804: this.processNum = 0;
+ 24805: };
+ 24806: return t;
+ 24807: }();
+ 24808: o.ChildrenModel = new E();
+ 24809: cc._RF.pop();
+ 24810: }, {
+ 24811: "../core/events/MessageCenter": "MessageCenter",
+ 24812: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 24813: "../gameconfigs/CFMgr": "CFMgr",
+ 24814: "../gameconfigs/LangMgr": "LangMgr",
+ 24815: "../gui/uicomponents/Alert": "Alert",
+ 24816: "../mgrs/BundleMgr": "BundleMgr",
+ 24817: "../mgrs/LayerMgr": "LayerMgr",
+ 24818: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+ 24819: "../mgrs/TimeMgr": "TimeMgr",
+ 24820: "../net/HttpConst": "HttpConst",
+ 24821: "../net/NetMgr": "NetMgr",
+ 24822: "../utils/EvName": "EvName",
+ 24823: "./FishingModel": "FishingModel",
+ 24824: "./MarryModel": "MarryModel",
+ 24825: "./RoleOtherInfo": "RoleOtherInfo",
+ 24826: "./SkillTable": "SkillTable",
+ 24827: "./StoreModel": "StoreModel",
+ 24828: "./UserModel": "UserModel",
+ 24829: "./vos/RoleBaseInfo": "RoleBaseInfo"
+ 24830: } ],
+ 24831: ChildrenNpc: [ function(t, e, o) {
+ 24832: "use strict";
+ 24833: cc._RF.push(e, "fc933OItXtBooTRZLtc5BSg", "ChildrenNpc");
+ 24834: var i, n = this && this.__extends || (i = function(t, e) {
+ 24835: return (i = Object.setPrototypeOf || {
+ 24836: __proto__: []
+---

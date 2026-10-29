@@ -1,0 +1,200 @@
+L37631| };
+L37632| e.prototype.removeEventListeners = function() {
+L37633| c.MessageCenter.off(d.EvName.ALL_CROP_DATA_EVENT, this.onUpdataCropCallBack, this);
+L37634| c.MessageCenter.off(d.EvName.SEED_CROP_EVENT, this.onSeedCropCallBack, this);
+L37635| c.MessageCenter.off(d.EvName.HOME_LAND_EVENT, this.onlandUpdateCallBack, this);
+L37636| };
+L37637| e.prototype.start = function() {
+L37638| this.progress.getComponent(cc.Sprite).fillRange = 0;
+L37639| this.setTimeText();
+L37640| this.schedule(this.updateCropState.bind(this), 1);
+L37641| };
+L37642| e.prototype.updateCropState = function() {
+L37643| this.refrashTimetemp > 0 && this.refrashTimetemp--;
+L37644| if (0 == this.refrashTimetemp) {
+L37645| this.refrashTimetemp = this.refrashTime;
+L37646| p.HomePlantModel.reqRefrashSoild(this.landId);
+L37647| }
+L37648| if (0 != this.totalTime && !(this.cropCurFinishT > this.totalTime)) {
+L37649| this.setTimeText();
+L37650| this.isRefrashCrop();
+L37651| }
+L37652| };
+L37653| e.prototype.setData = function(t) {
+L37654| this.datas = t.datas;
+L37655| this.landId = t.id;
+L37656| this.cropState = 0;
+L37657| this.addPlantObject();
+L37658| this.seedCrop(t.datas);
+L37659| this.showCropPic();
+L37660| };
+L37661| e.prototype.onClick = function() {
+L37662| p.HomePlantModel.openPlantEvent(this.landId);
+L37663| };
+L37664| e.prototype.onUpdataCropCallBack = function() {
+L37665| if (p.HomePlantModel.soilArr[this.landId].hasOwnProperty("m")) {
+L37666| this.seedCrop(p.HomePlantModel.soilArr[this.landId]);
+L37667| this.datas.hasOwnProperty("m") && this.datas.m.hasOwnProperty("id") && this.showCropPic();
+L37668| }
+L37669| };
+L37670| e.prototype.onSeedCropCallBack = function(t, e) {
+L37671| this.updateLandData(e);
+L37672| };
+L37673| e.prototype.updateLandData = function(t) {
+L37674| if (this.landId == t.landId) {
+L37675| this.seedCrop(t);
+L37676| this.datas.hasOwnProperty("m") && this.datas.m.hasOwnProperty("id") && this.showCropPic();
+L37677| }
+L37678| };
+L37679| e.prototype.onlandUpdateCallBack = function(t, e) {
+L37680| if (e == this.landId) {
+L37681| this.landCan.active = !0;
+L37682| this.lands.active = !1;
+L37683| }
+L37684| };
+L37685| e.prototype.addPlantObject = function() {
+L37686| this.datas.hasOwnProperty("m") && this.datas.m.hasOwnProperty("b") && (this.datas.pox = Math.floor(5 * Math.random()));
+L37687| if (this.datas.hasOwnProperty("s")) {
+L37688| this.landCan.active = 1 == this.datas.s;
+L37689| this.lands.active = !(1 == this.datas.s);
+L37690| }
+L37691| };
+L37692| e.prototype.seedCrop = function(t) {
+L37693| var e = this.getRandomIndex(t);
+L37694| -1 == e && delete this.datas.pox;
+L37695| this.datas = t;
+L37696| e > -1 && (this.datas.pox = e);
+L37697| this.icon.active = !1;
+L37698| for (var o = 0; o < 5; o++) this.companionNode[o].removeAllChildren();
+L37699| this.cropState = 0;
+L37700| this.progressBar.active = !1;
+L37701| this.labelName.active = !1;
+L37702| this.progreLabel.active = !1;
+L37703| this.zuowu.removeAllChildren();
+L37704| this.datas.hasOwnProperty("m") && this.datas.m.hasOwnProperty("s") && (this.cropState = this.datas.m.s);
+L37705| this.setTimeText();
+L37706| };
+L37707| e.prototype.getRandomIndex = function(t) {
+L37708| var e = -1, o = this.datas;
+L37709| t.hasOwnProperty("m") && t.m.hasOwnProperty("b") && (e = o.hasOwnProperty("pox") ? o.pox : Math.floor(5 * Math.random()));
+L37710| return e;
+L37711| };
+L37712| e.prototype.isRefrashCrop = function() {
+L37713| var t = this.totalTime;
+L37714| if (this.cropCurFinishT >= t && !this.isRefresh) {
+L37715| this.isRefresh = !0;
+L37716| p.HomePlantModel.reqRefrashSoild(this.landId);
+L37717| }
+L37718| };
+L37719| e.prototype.setTimeText = function() {
+L37720| if (0 != this.cropState) {
+L37721| if (this.datas.hasOwnProperty("m") && this.cropState > 0) {
+L37722| this.bgTime = this.getCurBeganTime();
+L37723| this.totalTime = l.PlantSystemMgr.getCurStateNeedTime(this.datas.m.id, this.cropState, this.datas.m);
+L37724| this.cropCurFinishT = l.PlantSystemMgr.getCropShowTime(this.totalTime, this.bgTime, this.datas);
+L37725| if (this.datas.m.hasOwnProperty("at")) {
+L37726| this.refrashTime = this.datas.m.at;
+L37727| this.refrashTimetemp = this.refrashTime;
+L37728| }
+L37729| var t = r.getItem(this.datas.m.id, "home_plant_crop"), e = r.getItem(this.datas.m.id, "home_plant_show");
+L37730| this.labelName.active = !0;
+L37731| this.labelName.getComponent(cc.Label).string = a.getText(t.plant) + "(" + a.getText(e.period[this.cropState - 1]) + ")";
+L37732| }
+L37733| if (0 != this.totalTime && 7 != this.cropState) {
+L37734| var o = this.totalTime;
+L37735| this.cropCurFinishT = l.PlantSystemMgr.getCropShowTime(o, this.bgTime, this.datas);
+L37736| if (this.cropCurFinishT >= 0 && o >= this.cropCurFinishT) {
+L37737| this.progressBar.active = !0;
+L37738| this.progreLabel.active = !0;
+L37739| this.progress.getComponent(cc.Sprite).fillRange = this.cropCurFinishT / o;
+L37740| this.progreLabel.getComponent(cc.Label).string = h.InventoryDB.getDayDurationTime(o - this.cropCurFinishT);
+L37741| }
+L37742| } else {
+L37743| this.progressBar.active = !1;
+L37744| this.progreLabel.active = !0;
+L37745| this.progreLabel.getComponent(cc.Label).string = a.getText(3246);
+L37746| }
+L37747| } else {
+L37748| this.progressBar.active = !1;
+L37749| this.progreLabel.active = !1;
+L37750| }
+L37751| };
+L37752| e.prototype.showCropPic = function() {
+L37753| if (this.datas.hasOwnProperty("m") && this.datas.m.hasOwnProperty("id")) {
+L37754| var t = r.getItem(this.datas.m.id, "home_plant_show"), e = {
+L37755| 0: t.chiwan,
+L37756| 1: t.zhongzi,
+L37757| 2: t.youmiao,
+L37758| 3: t.chengzhang,
+L37759| 4: t.chengshu,
+L37760| 5: t.shangpin,
+L37761| 6: t.zhenpin,
+L37762| 7: t.juepin
+L37763| }, o = cc.assetManager.getBundle("plants");
+L37764| if (t) {
+L37765| var i = e[this.cropState], s = i + "/" + i;
+L37766| this.addSpineNode(this.zuowu, s, "atk", 0, .8, o);
+L37767| }
+L37768| if (this.datas.m.hasOwnProperty("eid") && this.datas.m.eid > 0) {
+L37769| if (4 == this.datas.m.eid) {
+L37770| var n = this.getCropPeatData(), a = n + "/" + n;
+L37771| this.addSpineNode(this.zuowu, a, "atk", 1, .8, o);
+L37772| }
+L37773| this.setCropEventImage(this.datas.m.eid);
+L37774| }
+L37775| if (this.cropState > 0 && this.datas.m.hasOwnProperty("b")) for (var c = this.datas.pox, l = t.chengzhang + "/" + t.chengzhang, p = 0; p < 5; p++) p == c && this.addSpineNode(this.companionNode[c], l, "atk", 0, .6, o);
+L37776| this.showGuangCircle();
+L37777| }
+L37778| };
+L37779| e.prototype.showGuangCircle = function() {
+L37780| var t = r.getItem(this.datas.m.id, "home_plant_show");
+L37781| if (this.cropState >= 5) {
+L37782| var e = t.guanghuan + "_" + this.cropState, o = e + "/" + e;
+L37783| this.addSpineNode(this.zuowu, o, "atk", 3, .8, cc.assetManager.getBundle("plants"));
+L37784| }
+L37785| };
+L37786| e.prototype.setCropEventImage = function(t) {
+L37787| var e = r.getItem(t, "home_plant_cropevent").icon;
+L37788| this.icon.active = !0;
+L37789| this.setSpriteFrame(this.icon, e, !0, null, cc.assetManager.getBundle("cultivation"));
+L37790| };
+L37791| e.prototype.getCurBeganTime = function() {
+L37792| var t = 0, e = 0, o = 0;
+L37793| if (this.datas.hasOwnProperty("m")) {
+L37794| this.datas.m.hasOwnProperty("t") && (t = this.datas.m.t);
+L37795| this.datas.m.hasOwnProperty("id") && (e = l.PlantSystemMgr.getCropGrowingTime(this.cropState, this.datas.m.id));
+L37796| this.datas.m.hasOwnProperty("pt") && (o = this.datas.m.pt);
+L37797| }
+L37798| return t + e + o;
+L37799| };
+L37800| e.prototype.getCropPeatData = function() {
+L37801| var t = r.getItem(this.datas.m.id, "home_plant_show"), e = {
+L37802| 1: t.chonghaizz,
+L37803| 2: t.chonghaiym,
+L37804| 3: t.chonghaisz,
+L37805| 4: t.chonghaics,
+L37806| 5: t.chonghaics,
+L37807| 6: t.chonghaics,
+L37808| 7: t.chonghaics
+L37809| }, o = l.PlantSystemMgr.getCropPestState(this.datas.m);
+L37810| return 1 == this.cropState || 2 == this.cropState ? e[this.cropState] : e[this.cropState] + "_" + o;
+L37811| };
+L37812| e.prototype.addSpineNode = function(t, e, o, i, s, n) {
+L37813| void 0 === n && (n = null);
+L37814| var r = cc.instantiate(this.spineNode);
+L37815| r.setScale(cc.v3(s, s, s));
+L37816| this.setSkeletonData(r, e, o, s, 0, null, !0, !0, n);
+L37817| t.addChild(r);
+L37818| };
+L37819| return n([ g ], e);
+L37820| }(u.UIComponent);
+L37821| o.LandUI = m;
+L37822| cc._RF.pop();
+L37823| }, {
+L37824| "../../../scripts/core/events/MessageCenter": void 0,
+L37825| "../../../scripts/gameconfigs/CFMgr": void 0,
+L37826| "../../../scripts/gameconfigs/LangMgr": void 0,
+L37827| "../../../scripts/gui/uicomponents/UIComponent": void 0,
+L37828| "../../../scripts/mgrs/PlantSystemMgr": void 0,
+L37829| "../../../scripts/models/HomePlantModel": void 0,
+L37830| "../../../scripts/models/InventoryDB": void 0,

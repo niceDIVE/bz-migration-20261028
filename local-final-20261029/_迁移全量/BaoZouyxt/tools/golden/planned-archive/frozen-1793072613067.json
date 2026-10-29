@@ -1,0 +1,144 @@
+{
+ "archivedAt": "2026-10-27T03:43:33.067Z",
+ "rules": [
+  {
+   "id": "c13-buyUFORefreshTimes",
+   "field": [
+    "eRet"
+   ],
+   "action": "buyUFORefreshTimes",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "buyUFORefreshTimes",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60252",
+   "why": "C13 买刷新：空请求 fresh save 元宝 0 < 100（拍板⑥自定价）→ eRet 5（3633 分支 25809-25811）；满 3 次 → 7（8060）"
+  },
+  {
+   "id": "c13-getUFOCatcherData",
+   "field": [
+    "eRet",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "refreshTimes",
+    "freeRefreshTimes",
+    "buyRefreshTimes",
+    "buyCoinCount",
+    "signId",
+    "8117",
+    "8119",
+    "8120",
+    "eqch",
+    "eco"
+   ],
+   "action": "getUFOCatcherData",
+   "expect": 16,
+   "allowSigma": [
+    [
+     "getUFOCatcherData",
+     "eRet"
+    ],
+    [
+     "getUFOCatcherData",
+     "rewardPool.1"
+    ],
+    [
+     "getUFOCatcherData",
+     "rewardPool.2"
+    ],
+    [
+     "getUFOCatcherData",
+     "rewardPool.3"
+    ],
+    [
+     "getUFOCatcherData",
+     "rewardPool.4"
+    ],
+    [
+     "getUFOCatcherData",
+     "rewardPool.5"
+    ],
+    [
+     "getUFOCatcherData",
+     "refreshTimes"
+    ],
+    [
+     "getUFOCatcherData",
+     "freeRefreshTimes"
+    ],
+    [
+     "getUFOCatcherData",
+     "buyRefreshTimes"
+    ],
+    [
+     "getUFOCatcherData",
+     "buyCoinCount"
+    ],
+    [
+     "getUFOCatcherData",
+     "signId"
+    ],
+    [
+     "getUFOCatcherData",
+     "note.ivch.8117"
+    ],
+    [
+     "getUFOCatcherData",
+     "note.ivch.8119"
+    ],
+    [
+     "getUFOCatcherData",
+     "note.ivch.8120"
+    ],
+    [
+     "getUFOCatcherData",
+     "note.eqch"
+    ],
+    [
+     "getUFOCatcherData",
+     "note.eco"
+    ]
+   ],
+   "ev": "index.js:60251",
+   "why": "C13 面板开关（夹娃娃机 NPC NpcFuncType97，index.js:87583）：eRet 1 + rewardPool（{难度id:数量}，initItems 25824 按 package_difficulty 摆放）+ 三次数 + signId + note.ivch（首开赠送三档爪子各 3 把，拍板④自定口径）；字段全守卫"
+  },
+  {
+   "id": "c13-rewardUFO",
+   "field": [
+    "eRet"
+   ],
+   "action": "rewardUFO",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "rewardUFO",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60254",
+   "why": "C13 抓取：空请求 itemId=0 非爪 → eRet 15（8060 分支 25766；任何非 1 → 客户端恒 CATCH_DOLL_EVENT null 25767，拒绝安全）。拍板②服务端权威判中；成功路径才带 rewardArray/autoRefresh/rewardPool/note"
+  },
+  {
+   "id": "c13-useUFOrefresh",
+   "field": [
+    "eRet"
+   ],
+   "action": "useUFOrefresh",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "useUFOrefresh",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60253",
+   "why": "C13 刷新（★线上名 useUFOrefresh）：空请求 fresh 档 freeRefreshTimes=1（首开赠送）→ 刷新成功重生成池子 + signId+1；若无偿则 6（8060，25781）"
+  }
+ ]
+}

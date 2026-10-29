@@ -1,0 +1,303 @@
+[
+ {
+  "kind": "value",
+  "action": "batchSeedCrop",
+  "path": "eRet",
+  "s0": "num+",
+  "s1": "num+"
+ },
+ {
+  "kind": "del",
+  "action": "batchSeedCrop",
+  "path": "crops",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "batchSeedCrop",
+  "path": "recentSeeds",
+  "s0": "num0",
+  "s1": "absent"
+ },
+ {
+  "kind": "value",
+  "action": "changeSate",
+  "path": "eRet",
+  "s0": "num+",
+  "s1": "num-"
+ },
+ {
+  "kind": "del",
+  "action": "changeSate",
+  "path": "crop.b",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "changeSate",
+  "path": "crop.m",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "changeSate",
+  "path": "sIdx",
+  "s0": "num0",
+  "s1": "absent"
+ },
+ {
+  "kind": "value",
+  "action": "cleanDeadCrop",
+  "path": "eRet",
+  "s0": "num+",
+  "s1": "num+"
+ },
+ {
+  "kind": "del",
+  "action": "cleanDeadCrop",
+  "path": "sIdx",
+  "s0": "num0",
+  "s1": "absent"
+ },
+ {
+  "kind": "value",
+  "action": "dispossHomeEvent",
+  "path": "eRet",
+  "s0": "num+",
+  "s1": "num+"
+ },
+ {
+  "kind": "del",
+  "action": "dispossHomeEvent",
+  "path": "crop.b",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "dispossHomeEvent",
+  "path": "crop.m",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "dispossHomeEvent",
+  "path": "exp",
+  "s0": "num0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "dispossHomeEvent",
+  "path": "flag",
+  "s0": "num0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "dispossHomeEvent",
+  "path": "idx",
+  "s0": "num0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "dispossHomeEvent",
+  "path": "rewardArray",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "value",
+  "action": "expediteCrop",
+  "path": "eRet",
+  "s0": "num+",
+  "s1": "num+"
+ },
+ {
+  "kind": "del",
+  "action": "expediteCrop",
+  "path": "crop.b",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "expediteCrop",
+  "path": "crop.m",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "expediteCrop",
+  "path": "sIdx",
+  "s0": "num0",
+  "s1": "absent"
+ },
+ {
+  "kind": "value",
+  "action": "getFriendHomeList",
+  "path": "soilArr",
+  "s0": "obj0",
+  "s1": "arr0"
+ },
+ {
+  "kind": "value",
+  "action": "getHomeList",
+  "path": "recentSeeds",
+  "s0": "num0",
+  "s1": "arr0"
+ },
+ {
+  "kind": "del",
+  "action": "getHomeList",
+  "path": "soilArr",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "value",
+  "action": "obtainCrop",
+  "path": "eRet",
+  "s0": "num+",
+  "s1": "num+"
+ },
+ {
+  "kind": "del",
+  "action": "obtainCrop",
+  "path": "exp",
+  "s0": "num0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "obtainCrop",
+  "path": "rewardArray",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "obtainCrop",
+  "path": "sIdx",
+  "s0": "num0",
+  "s1": "absent"
+ },
+ {
+  "kind": "value",
+  "action": "stealCrop",
+  "path": "eRet",
+  "s0": "num+",
+  "s1": "num+"
+ },
+ {
+  "kind": "del",
+  "action": "stealCrop",
+  "path": "crop.b",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "stealCrop",
+  "path": "crop.m",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "stealCrop",
+  "path": "exp",
+  "s0": "num0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "stealCrop",
+  "path": "idx",
+  "s0": "num0",
+  "s1": "absent"
+ },
+ {
+  "kind": "del",
+  "action": "stealCrop",
+  "path": "rewardArray",
+  "s0": "obj0",
+  "s1": "absent"
+ },
+ {
+  "kind": "add",
+  "action": "getHomeList",
+  "path": "soilArr[0].s",
+  "s0": "absent",
+  "s1": "num+"
+ },
+ {
+  "kind": "add",
+  "action": "getHomeList",
+  "path": "soilArr[1].s",
+  "s0": "absent",
+  "s1": "num+"
+ },
+ {
+  "kind": "add",
+  "action": "getHomeList",
+  "path": "soilArr[2].s",
+  "s0": "absent",
+  "s1": "num+"
+ },
+ {
+  "kind": "add",
+  "action": "getHomeList",
+  "path": "soilArr[3].s",
+  "s0": "absent",
+  "s1": "num+"
+ },
+ {
+  "kind": "add",
+  "action": "getHomeList",
+  "path": "bShop",
+  "s0": "absent",
+  "s1": "num0"
+ },
+ {
+  "kind": "add",
+  "action": "onKeyDispossHomeEvent",
+  "path": "aExp",
+  "s0": "absent",
+  "s1": "num0"
+ },
+ {
+  "kind": "add",
+  "action": "onKeyObtainCrop",
+  "path": "aExp",
+  "s0": "absent",
+  "s1": "num0"
+ },
+ {
+  "kind": "add",
+  "action": "onKeyObtainCrop",
+  "path": "note.ivch",
+  "s0": "absent",
+  "s1": "obj0"
+ },
+ {
+  "kind": "add",
+  "action": "onKeyObtainCrop",
+  "path": "note.eqch",
+  "s0": "absent",
+  "s1": "obj0"
+ },
+ {
+  "kind": "add",
+  "action": "onKeyObtainCrop",
+  "path": "note.eco",
+  "s0": "absent",
+  "s1": "obj0"
+ }
+]

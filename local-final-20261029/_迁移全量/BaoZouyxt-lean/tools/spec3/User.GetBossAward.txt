@@ -1,0 +1,13 @@
+# User.GetBossAward   (HttpConst.GET_BOSS_REWARD)
+
+## 注册点 145522: a.MessageCenter.on(s.HttpConst.GET_BOSS_REWARD, function(t, e) {
+
+## 请求点 145537: p.NetMgr.http.sendRequest(s.HttpConst.GET_BOSS_REWARD);
+   145529: rewardDic: e.rewardArray,
+   145530: killReward: e.killObj
+   145531: });
+   145532: });
+   145533: }, this);
+   145534: a.MessageCenter.on(l.EvName.UPLOAD_WB_DMG_DATA, this.onUploadDmgData, this);
+   145535: };
+   145536: e.prototype.reqBossReward = function() {

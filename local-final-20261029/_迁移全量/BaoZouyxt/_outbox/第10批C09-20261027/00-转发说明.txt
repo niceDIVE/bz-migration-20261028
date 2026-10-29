@@ -1,0 +1,34 @@
+转发说明（给我方转上游用，30 秒能看完）
+第10批 C09〔技巧摸奖〕回执 · 2026-10-27
+
+══ 一句话 ══
+第10批 C09 已交付上线（impl=hefbb1ad4，acceptance 49/49，摸奖界面真机点通、三抽账对得上、存档零异常）。
+8 个主体动作里 **7 个实现、4 个锁**（分解/合成缺产物表），另外顺带修了两个真机才暴露的坑。
+本包就是全部要发的东西，没有别的文件要单独发。
+
+══ 包里有什么（按打开顺序）══
+  01-receipt-batch10-c09.txt   回执正本——先看这个。§七 是要你知道/回话的 5 条
+  02-manifest.txt             指纹与校验方式：部署 impl/flow/md5、每个文件 md5·字节、怎么自己跑测试、没带什么
+  core\                       完整一套 core（rpc-server + templates + 四个 generated，含新的 bz-c09.generated.js）
+  bz-rpc-server.js            改动的源（与 core\ 里那份同一份，md5 一致）
+  facts\C1-c09-forensics.md   取证与策略（口径、必带字段、4 个锁的理由）
+  facts\C2-c09-execution.md   执行记录（改了什么、踩的坑、真机验证、临时改档说明）
+  facts\C3-scoutJ-reqkeys.md  11 键客户端契约逐行（839 行）
+  facts\C4-scoutK-tables.md   配置表（扣费/产物/限次/两个可疑字段）
+  facts\C5-scoutM-ui-fields.md UI 对回包的字段读点（哪些裸读、缺了崩）
+  facts\C6-scoutN-store-entry.md 商城/摸奖入口的真相（页签来自 GetShopAllActive，不是 GetPayShowData）
+  facts\C7-open-issues.md     ISSUE-8 锁死清单 + ISSUE-9 四问裁定
+  test\                       46 个测试（新增 c09-smoke.js 11 条）
+
+══ 我要上游回的就 2 句（回执 §七 有全文）══
+  Q1 摸奖的两列权重分工（drop_probability 抽组 / probability 抽品质）—— 客户端 0 读取点，是表结构+拍板定的，请追认
+  Q2 仍锁的 4 个（装备分解两件 + 口诀合成两件）要不要解锁 —— 给我"装备分解产物表 / 口诀合成表"我就做
+  → 回复例如：「Q1 追认、Q2 先锁着」
+
+  ⚠ 另有 3 条只是告知：①真档的 skills 1/7/8/9 被临时抬到 100 用于验界面（用户同意、有备份、不回滚）；
+    ②摸奖门槛 `>= getConst(435)=100` 保留；③`getKnackLotteryHistory` 只回空数组（记录结构未取证）。
+
+══ 怎么自验（离线，3 步）══
+  1) 解包，算 core\bz-rpc-server.js 的 md5 → 应等于 211B2E536D57D1C831131A3089452F43
+  2) node test/c09-smoke.js    → 期望 "c09-smoke: 全部通过（11 条）"
+  3) node test/c08-smoke.js    → 期望 "c08-smoke: 全部通过（12 条）"（复核上一批没被碰坏）

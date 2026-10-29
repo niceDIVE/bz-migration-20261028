@@ -1,0 +1,99 @@
+# User.ReqMiguPay  (HttpConst.REQ_MIGU_PAY)
+# 出现 2 处
+
+130732: l.MessageCenter.on(p.HttpConst.IOS_PAY, this.onGetProduct, this);
+130733: l.MessageCenter.on(p.HttpConst.REQ_PRODUCT, this.onGetProduct, this);
+130734: l.MessageCenter.on(p.HttpConst.BUY_MARKET_ITEM, this.onPaySuccess, this);
+130735: l.MessageCenter.on(p.HttpConst.CANCEL_PAY, this.onCancelPay, this);
+130736: l.MessageCenter.on(p.HttpConst.QUICK_BUY, this.onQuickBuy, this);
+130737: l.MessageCenter.on(p.HttpConst.PREPARE_IOS_PAY, this.onPrepareIOSPay, this);
+130738: l.MessageCenter.on(p.HttpConst.REQ_MIGU_PAY, this.onGetMiguPaySign, this);
+130739: l.MessageCenter.on(p.HttpConst.GET_MYCARD_AUTH, this.onGetMyCardAuth, this);
+130740: l.MessageCenter.on(p.HttpConst.MYCARD_REQ_PRODUCT, this.onGetProduct, this);
+130741: l.MessageCenter.on(p.HttpConst.GET_NEW_GIFT_PERMANENT, this.giftPermanentCallback, this);
+130742: l.MessageCenter.on(p.HttpConst.GET_PERMANENT_REWARD, this.getPermanentRewardCallback, this);
+130743: l.MessageCenter.on(p.HttpConst.REFRESH_GIFT_AWARD, this.refreshGiftAwardCallback, this);
+130744: l.MessageCenter.on(p.HttpConst.ANN_PASS_GET_GIFT_DATA, this.onGetAnnPassGiftData, this);
+130745: l.MessageCenter.on(p.HttpConst.ANN_PASS_BUY_GIFT, this.onBuyAnnPassGift, this);
+130746: l.MessageCenter.on(h.EvName.IOS_PAY_SUCCEED, function() {}, this);
+130747: l.MessageCenter.on(p.HttpConst.H5_BUY_ITEM, function(t, e) {
+130748: if (e.hasOwnProperty("gold")) {
+130749: m.InventoryDB.addItem(1, e.gold);
+130750: var o = i.getText(10837) + "\n\n", r = n.getItem(1, "item");
+130751: o += "      " + i.getText(r.Name) + "x" + e.gold;
+130752: c.default.show(o);
+130753: }
+130754: e.hasOwnProperty("endMonthCardTime") && (v.RoleBaseInfo.endMonthCardTime = e.endMonthCardTime);
+130755: l.MessageCenter.dispatch(h.EvName.GET_PRODUCT);
+130756: l.MessageCenter.dispatch(h.EvName.BUY_MARKET_ITEM_EVENT);
+130757: }, this);
+130758: l.MessageCenter.on(h.EvName.IOS_PAY_FAILED, function() {}, this);
+130759: l.MessageCenter.on("IOS_ReceiveResponse", function() {}, this);
+130760: l.MessageCenter.on(p.HttpConst.GET_MARKETLIST, function(e, o) {
+130761: if (1 == o.eRet) {
+130762: var i = 0;
+130763: null != t.objData && t.objData.hasOwnProperty("back") && (i = t.objData.back);
+130764: t.objData = null;
+130765: l.MessageCenter.dispatch(h.EvName.STORE_SHOW_UI, {
+130766: type: 1,
+130767: market: o.market,
+130768: back: i
+130769: });
+130770: t.serverTime = o.serverTime;
+130771: t.nextRefreshTime = o.nextRefreshTime;
+130772: o.hasOwnProperty("buyTimes") ? t.buyTimes = o.buyTimes : t.buyTimes = y.RoleOtherInfo.buyTimes;
+130773: }
+130774: }, this);
+130775: l.MessageCenter.on(p.HttpConst.GET_SHOP_ALL_ACTIVE, this.onGetShopAllActive, this);
+130776: l.MessageCenter.on(p.HttpConst.GET_GIFT_DATA, function(e, o) {
+130777: if (0 == o.eRet) {
+130778: c.default.show(i.getText("1093"));
+---
+130915: }
+130916: };
+130917: e.prototype.reqMigoPay = function(t) {
+130918: var e = {
+130919: productID: t
+130920: };
+130921: g.NetMgr.http.sendRequest(p.HttpConst.REQ_MIGU_PAY, e);
+130922: };
+130923: e.prototype.onGetMiguPaySign = function(t, e) {
+130924: this.payData = e;
+130925: this.payData = {
+130926: productID: this.miguPayObj.id.toString()
+130927: };
+130928: var o = g.NetMgr.http.serverID + "M0M" + this.miguPayObj.id.toString();
+130929: cc.log(o);
+130930: try {
+130931: this.productDic[this.payData.productID];
+130932: } catch (t) {}
+130933: };
+130934: e.prototype.onGetProduct = function(t, e) {
+130935: var o = this, i = this.unresolvedOrderDic[e.orderId];
+130936: if (i) {
+130937: ++i.numTried;
+130938: if (1 == e.eRet) {
+130939: this.receiveProduct(e.curGold, e);
+130940: this.receiveYuanBao(e.curYuanbao);
+130941: this.updateMonthCard(e);
+130942: this.updateFirstState();
+130943: if (cc.sys.isNative && 0 == r.platformID) {
+130944: E.LoginMgr.rewardSuccess(e.orderId);
+130945: 0 == C.ActiveModel.rechargedIsEnd && l.MessageCenter.dispatch(h.EvName.UPDATE_RECHARGED_BUTTON, {});
+130946: l.MessageCenter.dispatch(h.EvName.UPDATE_DAILY_GIFT_QUAN, {});
+130947: }
+130948: } else 3 == e.eRet && cc.sys.isNative && 0 == r.platformID && E.LoginMgr.rewardSuccess(e.orderId);
+130949: 4 == e.eRet && 2 != i.numTries && (i.numTries = 2);
+130950: if (2 == e.eRet && 5 != i.numTries) {
+130951: i.numTries = 3;
+130952: this.deleteOrder(e.orderId);
+130953: }
+130954: if (i.numTried >= i.numTries) this.deleteOrder(e.orderId); else {
+130955: if (3 == e.eRet) return;
+130956: var n = setTimeout(function() {
+130957: o.reqProduct(e.orderId);
+130958: clearTimeout(n);
+130959: }, 3e3);
+130960: }
+130961: e.hasOwnProperty("flag") && 1 == e.flag && (y.RoleOtherInfo.rechargeLimitArr[1] = 2);
+---

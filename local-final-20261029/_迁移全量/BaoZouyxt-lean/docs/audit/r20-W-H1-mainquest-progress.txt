@@ -1,0 +1,250 @@
+=== 第一步：tasknew 表结构 ===
+文件路径: tools/cfg/dump/tasknew.json
+rows 总数: 4842（data字典键数: 4842）
+cols 列数: 40
+cols 全列表:
+  [01] TaskID
+  [02] Pre-Require
+  [03] Pre-Picture
+  [04] Fight
+  [05] ReceiveNpc
+  [06] ReceiveDialog
+  [07] UnfinishDialog
+  [08] FinishDialog
+  [09] Requiretips
+  [10] Require
+  [11] SpRequire
+  [12] FinishNpc
+  [13] Completetips
+  [14] Picture
+  [15] Reward
+  [16] likability
+  [17] Record
+  [18] Type
+  [19] Repeat
+  [20] Chain
+  [21] textdescribe
+  [22] transfer
+  [23] map_guide
+  [24] task_begin
+  [25] receive_action
+  [26] finish_action
+  [27] ReceiveEvent
+  [28] CompletionEvent
+  [29] TaskType
+  [30] FriendBuff
+  [31] FriendAward
+  [32] track
+  [33] Fake_ReceiveNpc
+  [34] Fake_FinishNpc
+  [35] item_npc
+  [36] branchid
+  [37] chapterid
+  [38] roadAni
+  [39] clear_task
+  [40] rogue_drop
+
+=== 第二步：任务链/分类候选字段及其取值分布 ===
+字段: Pre-Require | 不同取值数: 3743
+    4,2,2000|0: 506
+    0: 275
+    32,11|0: 20
+    32,10|0: 19
+    1,101070,0|0: 16
+    1,213640,0|0: 13
+    2,15,1|0: 9
+    1,207000,0|0: 8
+    4,8,2000|0: 8
+    1,103400,0|0: 6
+    1,200200,0|1,200270,4|0: 6
+    1,208280,0|0: 6
+    4,1,2000|0: 6
+    1,210600,0|0: 6
+    1,611780,0|0: 6
+    1,617760,0|0: 6
+    1,104700,0|0: 5
+    1,106750,0|0: 5
+    1,107020,0|0: 5
+    1,107310,0|0: 5
+字段: Pre-Picture | 不同取值数: 27
+    []: 4812
+    [2, 210940]: 4
+    [2, 113140]: 2
+    [2, 2020502]: 1
+    [1, 2020503]: 1
+    [1, 2020502]: 1
+    [2, 2020503]: 1
+    [1, 211440]: 1
+    [2, 212330]: 1
+    [2, 212580, 212582, 212581]: 1
+    [2, 211440]: 1
+    [1, 216780]: 1
+    [1, 218120]: 1
+    [1, 218210]: 1
+    [1, 218250]: 1
+    [1, 218280]: 1
+    [1, 6103001, 6103002]: 1
+    [2, 7205901, 7205902, 7205903]: 1
+    [2, 209167]: 1
+    [2, 209163]: 1
+字段: SpRequire | 不同取值数: 843
+    0: 3743
+    : 41
+    4001,5000: 14
+    4001,1000: 12
+    4001,50000: 11
+    4001,3000: 9
+    4001,10000: 7
+    1,200: 7
+    4001,100: 6
+    1034: 6
+    4001,4000: 6
+    4001,2000: 5
+    7089,1: 5
+    1028: 4
+    1177: 4
+    1065: 4
+    1171: 4
+    4119,1: 4
+    3003,10: 4
+    4001,500: 4
+字段: Type | 不同取值数: 12
+    1: 3849
+    2: 530
+    3: 454
+    5: 1
+    6: 1
+    7: 1
+    8: 1
+    10: 1
+    9: 1
+    11: 1
+    12: 1
+    13: 1
+字段: Chain | 不同取值数: 265
+    1: 938
+    219: 123
+    225: 105
+    34: 96
+    163: 78
+    220: 72
+    205: 69
+    74: 69
+    204: 63
+    18: 59
+    32: 58
+    274: 57
+    136: 56
+    3: 55
+    36: 54
+    172: 51
+    129: 49
+    193: 49
+    98: 48
+    20: 47
+字段: map_guide | 不同取值数: 76
+    0: 4691
+    1090: 10
+    1008: 7
+    1010: 6
+    2008: 6
+    2006: 4
+    1048: 4
+    2002: 4
+    2014: 4
+    1040: 4
+    1079: 4
+    1076: 4
+    1017: 3
+    1015: 3
+    1065: 3
+    1050: 3
+    1063: 3
+    1149: 2
+    1018: 2
+    1016: 2
+字段: TaskType | 不同取值数: 4
+    2: 3628
+    1: 1024
+    3: 154
+    0: 36
+字段: branchid | 不同取值数: 2
+    0: 3904
+    1: 938
+字段: chapterid | 不同取值数: 4
+    0: 3904
+    3: 913
+    2: 16
+    1: 9
+
+=== 第三步：玩家任务定位与字段取值 ===
+说明: tasknew.json 表结构中无 "Name" 字段，已标注为「无Name列(表中缺失)」。
+TaskID: 101080 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=0, Pre-Picture=[], SpRequire=0, Type=1, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=1
+TaskID: 100010 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=0, Pre-Picture=[], SpRequire=0, Type=1, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=1
+TaskID: 100060 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100010,0|0, Pre-Picture=[], SpRequire=0, Type=1, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=1
+TaskID: 100070 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100060,1|0, Pre-Picture=[], SpRequire=310003, Type=3, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=1
+TaskID: 100090 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100070,0|1,100080,0|1, Pre-Picture=[], SpRequire=0, Type=1, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=2
+TaskID: 100100 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100090,0|0, Pre-Picture=[], SpRequire=0, Type=1, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=2
+TaskID: 100120 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100100,0|0, Pre-Picture=[], SpRequire=0, Type=1, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=2
+TaskID: 210400 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100100,0|0, Pre-Picture=[], SpRequire=0, Type=1, Chain=135, map_guide=0, TaskType=2, branchid=0, chapterid=0
+TaskID: 100130 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100120,0|0, Pre-Picture=[], SpRequire=1028, Type=3, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=2
+TaskID: 100140 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100130,0|0, Pre-Picture=[], SpRequire=0, Type=1, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=2
+TaskID: 100150 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100140,0|0, Pre-Picture=[], SpRequire=4015,1, Type=2, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=2
+TaskID: 100160 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100150,0|0, Pre-Picture=[], SpRequire=0, Type=1, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=2
+TaskID: 600010 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100160,0|4,1,20|0, Pre-Picture=[], SpRequire=3003,10, Type=2, Chain=53, map_guide=1003, TaskType=2, branchid=0, chapterid=0
+TaskID: 100170 | Name: (无Name列) | 状态: [accepted,done] | Pre-Require=1,100160,0|0, Pre-Picture=[], SpRequire=0, Type=1, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=2
+TaskID: 100190 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100170,2|0, Pre-Picture=[], SpRequire=4016,1, Type=2, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=2
+TaskID: 100200 | Name: (无Name列) | 状态: [accepted,done] | Pre-Require=1,100180,0|1,100190,0|1, Pre-Picture=[], SpRequire=0, Type=1, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=2
+TaskID: 100180 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=1,100170,1|0, Pre-Picture=[], SpRequire=4016,1, Type=2, Chain=1, map_guide=0, TaskType=1, branchid=1, chapterid=2
+TaskID: 610010 | Name: (无Name列) | 状态: [accepted,done,rewarded] | Pre-Require=2,15,1|0, Pre-Picture=[], SpRequire=4008,1, Type=2, Chain=59, map_guide=1010, TaskType=2, branchid=0, chapterid=0
+TaskID: 610020 | Name: (无Name列) | 状态: [accepted] | Pre-Require=1,610010,0|0, Pre-Picture=[], SpRequire=0, Type=1, Chain=59, map_guide=0, TaskType=2, branchid=0, chapterid=0
+TaskID: 600020 | Name: (无Name列) | 状态: [accepted] | Pre-Require=1,600010,0|0, Pre-Picture=[], SpRequire=0, Type=1, Chain=53, map_guide=0, TaskType=2, branchid=0, chapterid=0
+TaskID: 210410 | Name: (无Name列) | 状态: [accepted,done] | Pre-Require=1,210400,0|0, Pre-Picture=[], SpRequire=0, Type=1, Chain=135, map_guide=0, TaskType=2, branchid=0, chapterid=0
+
+=== 第四步：三个比例计算 ===
+(a) 若存在某个"主线"标记：
+【证据说明】
+在 tasknew 表中：
+1. 字段 TaskType 取值为 1, 2, 3, 0。玩家 done 中的任务有 15 个落在 TaskType=1，4 个落在 TaskType=2。
+2. 字段 Chain 取值为 1..274 等。其中 Chain=1 共 938 行，且在全表中恰好与 branchid=1、chapterid!=0 完全一一对应；同时关联 StoryChapter.json（主线章节配置，branchid=1对应序章/第一章等主线章节ID如100070）。玩家做过的 15 个 TaskType=1 任务全部在 Chain=1 (branchid=1) 下。
+3. 字段 chapterid 在 Chain=1 中分为 1 (9行)、2 (16行)、3 (913行)。玩家做过的 15 个主线任务分别落在 chapterid=1 (4个) 与 chapterid=2 (11个)。
+
+因此分别给出三个层级的主线口径数字：
+口径 A1 [以 TaskType=1 为主线标记]:
+  N = 1024, D = 15, R = 13, 完成百分比 (D/N) = 1.4648% (15/1024)
+口径 A2 [以 Chain=1 / branchid=1 为主线标记]:
+  N = 938, D = 15, R = 13, 完成百分比 (D/N) = 1.5991% (15/938)
+口径 A3 [以 chapterid=1 为主线第1章标记]:
+  N = 9, D = 4, R = 4, 完成百分比 (D/N) = 44.4444% (4/9)
+口径 A4 [以 chapterid in (1, 2) 为主线前两章标记]:
+  N = 25, D = 15, R = 13, 完成百分比 (D/N) = 60.0000% (15/25)
+口径 A5 [以 Type=1 标记]:
+  N = 3849, D = 12, R = 9, 完成百分比 (D/N) = 0.3118% (12/3849)
+
+(b) 玩家 accepted / done 任务所属分类分布:
+【按 Chain 分类】
+  Chain 1: 该分类总行数=938, accepted=15, done=15, rewarded=13, 完成度=1.60%
+  Chain 53: 该分类总行数=4, accepted=2, done=1, rewarded=1, 完成度=25.00%
+  Chain 59: 该分类总行数=4, accepted=2, done=1, rewarded=1, 完成度=25.00%
+  Chain 135: 该分类总行数=3, accepted=2, done=2, rewarded=1, 完成度=66.67%
+【按 TaskType 分类】
+  TaskType 1: 该分类总行数=1024, accepted=15, done=15, rewarded=13, 完成度=1.46%
+  TaskType 2: 该分类总行数=3628, accepted=6, done=4, rewarded=3, 完成度=0.11%
+【按 chapterid 分类】
+  chapterid 0: 该分类总行数=3904, accepted=6, done=4, rewarded=3, 完成度=0.10%
+  chapterid 1: 该分类总行数=9, accepted=4, done=4, rewarded=4, 完成度=44.44%
+  chapterid 2: 该分类总行数=16, accepted=11, done=11, rewarded=9, 完成度=68.75%
+【按 Type 分类】
+  Type 1: 该分类总行数=3849, accepted=14, done=12, rewarded=9, 完成度=0.31%
+  Type 2: 该分类总行数=530, accepted=5, done=5, rewarded=5, 完成度=0.94%
+  Type 3: 该分类总行数=454, accepted=2, done=2, rewarded=2, 完成度=0.44%
+
+(c) 全表口径参考数:
+玩家 done 任务总数: 19
+在 tasknew 里能找到的数量: 19 / 19
+找不到的名单: 无（全部找到）
+玩家 accepted 任务总数: 21
+在 tasknew 里能找到的数量: 21 / 21
+找不到的名单: 无（全部找到）
+
+未验证

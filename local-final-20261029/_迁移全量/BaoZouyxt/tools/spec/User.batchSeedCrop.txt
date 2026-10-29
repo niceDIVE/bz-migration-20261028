@@ -1,0 +1,110 @@
+# User.batchSeedCrop  (HttpConst.BATCH_SEED_CROP)
+# 出现 3 处
+
+ 57648: };
+ 57649: a.m = n.m;
+ 57650: a.landId = i;
+ 57651: r.MessageCenter.dispatch(c.EvName.SEED_CROP_EVENT, a);
+ 57652: }
+ 57653: }, this);
+ 57654: r.MessageCenter.on(s.HttpConst.BATCH_SEED_CROP, function(t, o) {
+ 57655: if (1 == o.eRet) {
+ 57656: var i = [];
+ 57657: for (var n in o.crops) {
+ 57658: var a = parseInt(n), s = o.crops[n], l = {
+ 57659: m: {},
+ 57660: s: 1
+ 57661: };
+ 57662: s.m && Object.assign(l.m, s.m);
+ 57663: e.soilArr[a] = l;
+ 57664: var p = {
+ 57665: m: s.m,
+ 57666: s: 1,
+ 57667: landId: 0
+ 57668: };
+ 57669: p.landId = a;
+ 57670: i.push(p);
+ 57671: }
+ 57672: e.recentSs = o.recentSeeds;
+ 57673: r.MessageCenter.dispatch(c.EvName.BATCH_SEED_CROP_EVENT, i);
+ 57674: }
+ 57675: });
+ 57676: r.MessageCenter.on(s.HttpConst.CROP_CHANGE_STATE, function(t, o) {
+ 57677: if (1 == o.eRet || 3 == o.eRet) {
+ 57678: var i = {
+ 57679: m: {},
+ 57680: s: 1,
+ 57681: b: {}
+ 57682: };
+ 57683: o.crop.hasOwnProperty("m") && (i.m = o.crop.m);
+ 57684: o.crop.hasOwnProperty("b") && (i.b = o.crop.b);
+ 57685: e.soilArr[o.sIdx] = i;
+ 57686: var s = {
+ 57687: m: {},
+ 57688: s: 1,
+ 57689: landId: 0,
+ 57690: b: {}
+ 57691: };
+ 57692: s.m = i.m;
+ 57693: s.b = i.b;
+ 57694: s.landId = o.sIdx;
+---
+ 58105: this.isUpdateData = !0;
+ 58106: v.NetMgr.http.sendRequest(s.HttpConst.GETHOME_LIST, {});
+ 58107: };
+ 58108: e.prototype.reqPlantingMsg = function(t, e) {
+ 58109: var o = {};
+ 58110: o[t] = e;
+ 58111: v.NetMgr.http.sendRequest(s.HttpConst.BATCH_SEED_CROP, {
+ 58112: seedCrops: o
+ 58113: });
+ 58114: };
+ 58115: e.prototype.reqMultiPlanting = function(t, e) {
+ 58116: for (var o = {}, i = 0, n = 0; n < this.soilArr.length; n++) if (!this.soilArr[n].m && this.soilArr[n].s > 0) {
+ 58117: o[n] = t;
+ 58118: if (++i >= e) break;
+ 58119: }
+ 58120: i < e && cc.error("数量不匹配？");
+ 58121: v.NetMgr.http.sendRequest(s.HttpConst.BATCH_SEED_CROP, {
+ 58122: seedCrops: o
+ 58123: });
+ 58124: };
+ 58125: e.prototype.reqRefrashSoild = function(t) {
+ 58126: this.curFriendId > 0 ? v.NetMgr.http.sendRequest(s.HttpConst.CROP_CHANGE_STATE, {
+ 58127: sIdx: t,
+ 58128: fid: this.curFriendId
+ 58129: }, null, !1) : v.NetMgr.http.sendRequest(s.HttpConst.CROP_CHANGE_STATE, {
+ 58130: sIdx: t
+ 58131: }, null, !1);
+ 58132: };
+ 58133: e.prototype.reqReclaimLand = function(t) {
+ 58134: v.NetMgr.http.sendRequest(s.HttpConst.RECLAIM_LAND, {
+ 58135: sIdx: t
+ 58136: });
+ 58137: };
+ 58138: e.prototype.reqCleanCrop = function(t) {
+ 58139: v.NetMgr.http.sendRequest(s.HttpConst.CLEAN_DEAD_CROP, {
+ 58140: sIdx: t
+ 58141: });
+ 58142: };
+ 58143: e.prototype.reqAccelarteCrop = function(t) {
+ 58144: v.NetMgr.http.sendRequest(s.HttpConst.EXPEDITE_CROP, {
+ 58145: sIdx: t,
+ 58146: num: 1
+ 58147: });
+ 58148: };
+ 58149: e.prototype.reqGetSaleShop = function() {
+ 58150: v.NetMgr.http.sendRequest(s.HttpConst.GET_BACK_SHOP, {});
+ 58151: };
+---
+ 58152: e.prototype.reqBuyHomeCrop = function(t, e) {
+ 58153: v.NetMgr.http.sendRequest(s.HttpConst.BUY_HOME_CROP, {
+ 58154: itemID: t,
+ 58155: itemNum: e
+ 58156: });
+ 58157: };
+ 58158: e.prototype.reqCropGainReward = function(t) {
+ 58159: v.NetMgr.http.sendRequest(s.HttpConst.OBTAINCROP, {
+ 58160: sIdx: t
+ 58161: });
+---

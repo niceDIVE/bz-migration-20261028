@@ -1,0 +1,70 @@
+{
+ "archivedAt": "2026-10-25T10:59:17.300Z",
+ "rules": [
+  {
+   "id": "c05-narrow-UseAllBall",
+   "action": "UseAllBall",
+   "field": [
+    "hp",
+    "rewardArray"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "UseAllBall",
+     "hp"
+    ],
+    [
+     "UseAllBall",
+     "rewardArray"
+    ]
+   ],
+   "ev": "index.js:122543"
+  },
+  {
+   "id": "c05-narrow-UseBatchSnowBall",
+   "action": "UseBatchSnowBall",
+   "field": [
+    "hp"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "UseBatchSnowBall",
+     "hp"
+    ]
+   ],
+   "ev": "index.js:122514"
+  },
+  {
+   "id": "c05-narrow-UseSnowBall",
+   "action": "UseSnowBall",
+   "field": [
+    "hp"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "UseSnowBall",
+     "hp"
+    ]
+   ],
+   "ev": "index.js:122505"
+  },
+  {
+   "id": "c05-narrow-getSnowAward",
+   "action": "getSnowAward",
+   "field": [
+    "rewardArray"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "getSnowAward",
+     "rewardArray"
+    ]
+   ],
+   "ev": "index.js:122529"
+  }
+ ]
+}

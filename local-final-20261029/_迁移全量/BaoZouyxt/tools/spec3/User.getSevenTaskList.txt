@@ -1,0 +1,15 @@
+# User.getSevenTaskList   (HttpConst.REQ_SEVENTASK_EVENT)
+
+## 注册点 57380: i.MessageCenter.on(l.HttpConst.REQ_SEVENTASK_EVENT, this.sevenTaskCallback.bind(this), this);
+
+## 请求点 57463: c.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_SEVENTASK_EVENT, {});
+   57455: e.hasOwnProperty("activityShows") && (this.activeShowList = e.activityShows);
+   57456: e.hasOwnProperty("calendar") && e.calendar > 0 ? this.calendarStr = e.calendar.toString() : this.calendarStr = "";
+   57457: u.RoleOtherInfo.setActivityData(80, e.transGiftShow);
+   57458: u.RoleOtherInfo.activeObj[0] ? this.reqSevenDayActive() : this.reqEveryDayActive();
+   57459: };
+   57460: t.prototype.reqSevenDayActive = function(t) {
+   57461: void 0 === t && (t = null);
+   57462: this.objData = t;
+
+## 处理函数 bind —— 未找到定义

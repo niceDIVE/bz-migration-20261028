@@ -1,0 +1,99 @@
+# User.marryHouse  (HttpConst.BUY_HOUSE_EVENT)
+# 出现 2 处
+
+ 77016: this.chooseType = 1;
+ 77017: }
+ 77018: e.prototype.init = function() {
+ 77019: i.MessageCenter.on(n.HttpConst.PROPOSE_NPC, this.callBackProposeNpc, this);
+ 77020: i.MessageCenter.on(n.HttpConst.RENT_EVENT, this.callBackRentEvent, this);
+ 77021: i.MessageCenter.on(n.HttpConst.WEEDIND_EVENT, this.callBackWeedindEvent, this);
+ 77022: i.MessageCenter.on(n.HttpConst.BUY_HOUSE_EVENT, this.callBackBuyHouseEvent, this);
+ 77023: i.MessageCenter.on(n.HttpConst.RECEIVENPC_EVENT, this.callBackReceiveNpcEvent, this);
+ 77024: i.MessageCenter.on(n.HttpConst.MARRY_NPC_EVENT, this.callBackMarryNpcEvent, this);
+ 77025: i.MessageCenter.on(n.HttpConst.WRITE_BOOK_EVENT, this.callBackWriteBookEvent, this);
+ 77026: i.MessageCenter.on(n.HttpConst.DIVORCENPC, this.callBackDivorceNpc, this);
+ 77027: i.MessageCenter.on(n.HttpConst.MARRY_AWARD, this.callBackMarryAward, this);
+ 77028: i.MessageCenter.on(n.HttpConst.BEGIN_WEDDING, this.callBackBeginWedding, this);
+ 77029: i.MessageCenter.on(n.HttpConst.MAKE_LOVE, this.callBackMakeLove, this);
+ 77030: i.MessageCenter.on(n.HttpConst.BIRTHCHILD, this.callBackBirthild, this);
+ 77031: i.MessageCenter.on(n.HttpConst.EXILE_CHILD, this.callBackExileChild, this);
+ 77032: };
+ 77033: e.prototype.setRoleMarryInfo = function(e) {
+ 77034: e.hasOwnProperty("maxWuxin") && (this.maxWuxin = e.maxWuxin);
+ 77035: if (e.hasOwnProperty("proposeNpc")) {
+ 77036: for (var o = e.proposeNpc, i = 0; i < o.length; i++) this.proposeNpcInfo[o[i]] = !0;
+ 77037: this.rentProState = e.rentGroup;
+ 77038: this.weddingType = e.weddType;
+ 77039: this.houseMap = this.changeRealHouseData(e.houseObj);
+ 77040: this.receiveNpc = e.receiveNpc;
+ 77041: this.npcMarryState = e.marryNpc;
+ 77042: this.happinessNum = e.happinessNum;
+ 77043: for (var n = 0; n < e.leaveNpc.length; n++) this.divorceNpcMap[e.leaveNpc[n]] = !0;
+ 77044: this.guestNpcAy = e.dropNpcID;
+ 77045: this.loveState = e.bodyState;
+ 77046: y.TeamModel.setTeamState(this.receiveNpc);
+ 77047: e.hasOwnProperty("bedLevel") && (this.bedLevel = e.bedLevel);
+ 77048: e.hasOwnProperty("specialType") ? M.HouseAdventModel.setAdventEventData(e.specialType, e.specialObj) : M.HouseAdventModel.setAdventEventData(0, {});
+ 77049: e.hasOwnProperty("fetationTime") && (this.fetationTime = e.fetationTime);
+ 77050: e.hasOwnProperty("childObj") && (this.childData = e.childObj);
+ 77051: e.hasOwnProperty("cycleObj") && (this.cycleData = e.cycleObj);
+ 77052: if (this.cycleData.length) {
+ 77053: var r = this.cycleData[1].length, a = this;
+ 77054: Promise.resolve().then(function() {
+ 77055: return t("./RoleOtherInfo");
+ 77056: }).then(function(t) {
+ 77057: t.RoleOtherInfo.reBirthTime = a.cycleData[0];
+ 77058: r > 0 && (t.RoleOtherInfo.matherId = a.cycleData[1][r - 1]);
+ 77059: });
+ 77060: E.RoleOtherInfo.reBirthTime = this.cycleData[0];
+ 77061: r > 0 && (E.RoleOtherInfo.matherId = this.cycleData[1][r - 1]);
+ 77062: this.marryHouseMap = e.houseObj;
+---
+ 77425: });
+ 77426: };
+ 77427: e.prototype.reqWriteBook = function() {
+ 77428: _.NetMgr.http.sendRequest(n.HttpConst.WRITE_BOOK_EVENT, {});
+ 77429: };
+ 77430: e.prototype.reqBuyHouse = function(t, e) {
+ 77431: _.NetMgr.http.sendRequest(n.HttpConst.BUY_HOUSE_EVENT, {
+ 77432: houseID: t,
+ 77433: type: e
+ 77434: });
+ 77435: };
+ 77436: e.prototype.reqDivorceNpc = function() {
+ 77437: _.NetMgr.http.sendRequest(n.HttpConst.DIVORCENPC, {});
+ 77438: };
+ 77439: e.prototype.reqMarryAward = function(t) {
+ 77440: _.NetMgr.http.sendRequest(n.HttpConst.MARRY_AWARD, {
+ 77441: guestID: t
+ 77442: });
+ 77443: };
+ 77444: e.prototype.reqStartWedding = function() {
+ 77445: _.NetMgr.http.sendRequest(n.HttpConst.BEGIN_WEDDING, {});
+ 77446: };
+ 77447: e.prototype.reqMakeLove = function(t) {
+ 77448: this.chooseType = t;
+ 77449: _.NetMgr.http.sendRequest(n.HttpConst.MAKE_LOVE, {
+ 77450: choose: t
+ 77451: });
+ 77452: };
+ 77453: e.prototype.reqDeleteChild = function(t) {
+ 77454: _.NetMgr.http.sendRequest(n.HttpConst.EXILE_CHILD, {
+ 77455: isPay: t
+ 77456: });
+ 77457: };
+ 77458: e.prototype.getMarryNpcId = function() {
+ 77459: return this.npcMarryState;
+ 77460: };
+ 77461: e.prototype.judgeWelcomeState = function(t) {
+ 77462: return !y.TeamModel.getTeamState() && !!(this.rentProState > 0 && this.weddingType > 0 && 0 == this.npcMarryState && this.proposeNpcInfo.hasOwnProperty(t));
+ 77463: };
+ 77464: e.prototype.judgeIsShowProposeBtn = function(t) {
+ 77465: if (!a.getTable("propose").hasOwnProperty(t)) return !1;
+ 77466: if (this.proposeNpcInfo.hasOwnProperty(t)) return !1;
+ 77467: if (this.divorceNpcMap.hasOwnProperty(t)) return !1;
+ 77468: if (this.npcMarryState > 0) return !1;
+ 77469: if (8 == c.RoleBaseInfo.school && !c.RoleBaseInfo.finishTaskObj.hasOwnProperty(401360)) return !1;
+ 77470: var e = a.getItem(t, "npc"), o = c.RoleBaseInfo.sexId;
+ 77471: if (0 == o || 2 == o) {
+---

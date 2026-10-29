@@ -1,0 +1,13 @@
+# User.EndTraining   (HttpConst.END_LIANGONG)
+
+## 注册点 120574: s.MessageCenter.on(c.HttpConst.END_LIANGONG, function(t, o) {
+
+## 请求点 120775: _.NetMgr.http.sendRequest(c.HttpConst.END_LIANGONG, {
+   120767: skillID: t,
+   120768: flag: v.IceBedModel.getIceBed()
+   120769: };
+   120770: _.NetMgr.http.sendRequest(c.HttpConst.VIGOR_UPGSKILL, e);
+   120771: };
+   120772: e.prototype.end = function(t) {
+   120773: var e = T.playerInfo.entity;
+   120774: b.CrossServiceModel.needLocalUrlAndPort(function() {

@@ -1,0 +1,59 @@
+{
+  "verdict": "PASS",
+  "cases": 2,
+  "byVia": {
+    "generated": 2
+  },
+  "judge": {
+    "cases": 2,
+    "pass": 2,
+    "fail": 0,
+    "crossFail": 0,
+    "byCode": {}
+  },
+  "regressions": 1,
+  "regress": [
+    {
+      "id": "saleItem.equip90001",
+      "action": "User.saleItem",
+      "via": "generated",
+      "diffs": [
+        {
+          "path": "$.eRet",
+          "a": 1,
+          "b": 0,
+          "kind": "value"
+        },
+        {
+          "path": "$.note",
+          "a": {
+            "eqch": {
+              "90001": [
+                0
+              ]
+            },
+            "eco": {
+              "coins": 1030
+            }
+          },
+          "kind": "missingB"
+        }
+      ]
+    }
+  ],
+  "perCase": [
+    {
+      "id": "saleItem.equip90001@replay",
+      "action": "User.saleItem",
+      "verdict": "PASS",
+      "fails": []
+    },
+    {
+      "id": "saleItem.2001x2@replay",
+      "action": "User.saleItem",
+      "verdict": "PASS",
+      "fails": []
+    }
+  ],
+  "totalMs": 0.51
+}

@@ -1,0 +1,99 @@
+# User.acceptCircleTask  (HttpConst.ACCEPTCIRCLETASK)
+# 出现 2 处
+
+133212: this.trackMapId = "";
+133213: this.trackNpcId = 0;
+133214: this.clickPageId = 0;
+133215: r.MessageCenter.on(s.HttpConst.GET_TASK, this.getTaskCallBack, this);
+133216: r.MessageCenter.on(s.HttpConst.FINISH_TASK, this.finishTaskCallBack, this);
+133217: r.MessageCenter.on(s.HttpConst.SYCN_TASK, this.sycnTaskCallBack, this);
+133218: r.MessageCenter.on(s.HttpConst.ACCEPTCIRCLETASK, this.acccptCircleTaskCallBack, this);
+133219: r.MessageCenter.on(s.HttpConst.GETCIRCLETASK, this.getCircleTaskCallBack, this);
+133220: r.MessageCenter.on(s.HttpConst.HIDE_TASK, this.hideTaskCallBack, this);
+133221: r.MessageCenter.on(l.EvName.FIGHT_TASK_DATA_SET, this.onSetFightTaskCallBack, this);
+133222: r.MessageCenter.on(s.HttpConst.ROGUE_ACCEPT_TASK, this.getRogueTaskCallBack, this);
+133223: r.MessageCenter.on(s.HttpConst.ROGUE_FINISHTASK_REWARD, this.finishRogueTaskCallBack, this);
+133224: };
+133225: e.prototype.getRogueTaskCallBack = function(e, o) {
+133226: if (1 == o.eRet) {
+133227: if (0 == this.isOrBubble) {
+133228: this.npcTaskInfo.hasOwnProperty("taskObj") && this.clearHideTask(this.npcTaskInfo.taskObj.TaskID);
+133229: b.default.operationalTasks(0, this.npcTaskInfo);
+133230: if (b.default.blankTaskArray.length) return;
+133231: var s = this.npcTaskInfo.taskObj.Fight;
+133232: if (s > 0) {
+133233: T.BattleMgr.startRoguePVEFight({
+133234: npcID: s
+133235: });
+133236: c.RoleBaseInfo.autoFightTaskId = this.npcTaskInfo.taskObj.TaskID;
+133237: return;
+133238: }
+133239: var p = b.default.judgeCurTaskIsFinish(this.npcTaskInfo.taskObj.TaskID, this.npcId);
+133240: 1 == p.npcState && b.default.finishTaskCheckUI(p);
+133241: } else if (1 == this.isOrBubble) {
+133242: b.default.operationalTasks(0, this.npcTaskInfo);
+133243: r.MessageCenter.dispatch(l.EvName.ON_BUBBLE_TASK, 1);
+133244: } else 2 == this.isOrBubble && b.default.operationalTasks(0, this.npcTaskInfo);
+133245: Promise.resolve().then(function() {
+133246: return t("../../scripts3/model3/RogueModel");
+133247: }).then(function(t) {
+133248: return t.RogueModel.checkTaskTips();
+133249: });
+133250: } else if (4 == o.eRet) {
+133251: var h = i.getItem(this.npcTaskInfo.taskObj.TaskID, "tasktime");
+133252: h && h.hasOwnProperty("overtimetips_on") && 0 == h.overtimetips_on && a.default.show(n.getText("1093"));
+133253: } else if (6 == o.eRet) {
+133254: var u = i.getItem(o.skillId, "skill"), f = o.CDTime - o.serverTime, d = Math.floor(f / 864e5), g = Math.floor((f - 864e5 * d) / 36e5), m = Math.floor((f - 864e5 * d - 36e5 * g) / 6e4), y = n.getText(6079).replace(/\[1\]/, n.getText(u.Name));
+133255: d > 0 && (y += d + n.getText(3784));
+133256: y += g + n.getText(3785);
+133257: y += m + n.getText(1414);
+133258: a.default.show(y);
+---
+133700: };
+133701: e.prototype.reqCircleGetTaskData = function(t) {
+133702: var e = {
+133703: taskID: t,
+133704: flag: "zntehzd"
+133705: };
+133706: p.NetMgr.http.sendReqWithMask(s.HttpConst.ACCEPTCIRCLETASK, e);
+133707: };
+133708: e.prototype.reqCircleFinishTaskData = function(t) {
+133709: var e = S.UserModel.entity, o = t.taskObj, i = {
+133710: taskID: o.TaskID,
+133711: retData: 0,
+133712: gTime: e.totalGameTime.gameTime
+133713: };
+133714: if (5 == o.Type || 7 == o.Type) i.retData = t.reqTaskObj.circleTaskObj.visitNpc; else if (6 == o.Type) i.retData = t.reqTaskObj.circleTaskObj.evilObj.npcId; else if (8 == o.Type) {
+133715: i.retData = t.reqTaskObj.circleTaskObj.collectItem;
+133716: var n = this.deleteItemID(t.reqTaskObj.circleTaskObj.collectItem);
+133717: i.itemType = n.itemType;
+133718: i.ItemID = n.ItemID;
+133719: }
+133720: p.NetMgr.http.sendReqWithMask(s.HttpConst.GETCIRCLETASK, i);
+133721: };
+133722: e.prototype.reqHideTask = function(t, e) {
+133723: var o = {
+133724: type: t,
+133725: tIDArr: e
+133726: };
+133727: this.hideType = t;
+133728: this.taskAy = e;
+133729: p.NetMgr.http.sendReqWithMask(s.HttpConst.HIDE_TASK, o);
+133730: };
+133731: e.prototype.taskGuideJudge = function(t, e) {
+133732: var o = !1;
+133733: if (I.default.getTaskGuideState()) return o;
+133734: if (1e3 == parseInt(t) || 5e3 == parseInt(t)) {
+133735: for (var n = i.getWorldMapSceneData(e), r = 0; r < n.length; r++) if (this.checkNeedGuideScene(n[r])) {
+133736: o = !0;
+133737: break;
+133738: }
+133739: } else o = this.checkNeedGuideScene(e);
+133740: return o;
+133741: };
+133742: e.prototype.checkNeedGuideScene = function(t) {
+133743: for (var e = i.getNeedGuideTaskList(t), o = !1, n = 0; n < e.length; n++) {
+133744: var r = e[n];
+133745: if (b.default.checkTaskTime(r.TaskID) && this.checkTaskIsRequire(r.TaskID)) {
+133746: o = !0;
+---

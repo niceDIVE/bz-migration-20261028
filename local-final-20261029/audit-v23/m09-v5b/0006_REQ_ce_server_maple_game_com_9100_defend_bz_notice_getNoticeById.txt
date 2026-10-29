@@ -1,0 +1,2 @@
+POST https://notice-server.maple-game.com:9100/defend/bz/notice/getNoticeById
+noticeType=0&serverType=3

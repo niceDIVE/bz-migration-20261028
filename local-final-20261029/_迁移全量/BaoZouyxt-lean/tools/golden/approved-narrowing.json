@@ -1,0 +1,212 @@
+[
+ {
+  "action": "batchSeedCrop",
+  "path": "crops",
+  "escape": "closed",
+  "ev": "index.js:57654",
+  "reason": "C10：空请求（无存档）时 handler 走 eRet 2 拒绝 → 旧的 SHAPED 兜底 crops/recentSeeds 不再出现在空请求路径上；真请求由 handler 回真实地块；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "batchSeedCrop",
+  "path": "recentSeeds",
+  "escape": "closed",
+  "ev": "index.js:57654",
+  "reason": "C10：空请求（无存档）时 handler 走 eRet 2 拒绝 → 旧的 SHAPED 兜底 crops/recentSeeds 不再出现在空请求路径上；真请求由 handler 回真实地块；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "changeSate",
+  "path": "crop.b",
+  "escape": "closed",
+  "ev": "index.js:57676",
+  "reason": "C10：空请求无地块 → eRet -1（回调 -1 分支 = getText(3320)，index.js:57696）；crop/sIdx 只在成功路径出现；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "changeSate",
+  "path": "crop.m",
+  "escape": "closed",
+  "ev": "index.js:57676",
+  "reason": "C10：空请求无地块 → eRet -1（回调 -1 分支 = getText(3320)，index.js:57696）；crop/sIdx 只在成功路径出现；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "changeSate",
+  "path": "sIdx",
+  "escape": "closed",
+  "ev": "index.js:57676",
+  "reason": "C10：空请求无地块 → eRet -1（回调 -1 分支 = getText(3320)，index.js:57696）；crop/sIdx 只在成功路径出现；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "cleanDeadCrop",
+  "path": "sIdx",
+  "escape": "closed",
+  "ev": "index.js:57811",
+  "reason": "C10：本批无枯死模型 → 恒 eRet 2（回调只有 1 分支、无 else，57811-57824）；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "dispossHomeEvent",
+  "path": "crop.b",
+  "escape": "closed",
+  "ev": "index.js:57979",
+  "reason": "C10：回调先看有没有 crop 再看 eRet（57980）→ 拒绝应答**刻意不带** crop/idx/exp/flag/rewardArray；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "dispossHomeEvent",
+  "path": "crop.m",
+  "escape": "closed",
+  "ev": "index.js:57979",
+  "reason": "C10：回调先看有没有 crop 再看 eRet（57980）→ 拒绝应答**刻意不带** crop/idx/exp/flag/rewardArray；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "dispossHomeEvent",
+  "path": "exp",
+  "escape": "closed",
+  "ev": "index.js:57979",
+  "reason": "C10：回调先看有没有 crop 再看 eRet（57980）→ 拒绝应答**刻意不带** crop/idx/exp/flag/rewardArray；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "dispossHomeEvent",
+  "path": "flag",
+  "escape": "closed",
+  "ev": "index.js:57979",
+  "reason": "C10：回调先看有没有 crop 再看 eRet（57980）→ 拒绝应答**刻意不带** crop/idx/exp/flag/rewardArray；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "dispossHomeEvent",
+  "path": "idx",
+  "escape": "closed",
+  "ev": "index.js:57979",
+  "reason": "C10：回调先看有没有 crop 再看 eRet（57980）→ 拒绝应答**刻意不带** crop/idx/exp/flag/rewardArray；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "dispossHomeEvent",
+  "path": "rewardArray",
+  "escape": "closed",
+  "ev": "index.js:57979",
+  "reason": "C10：回调先看有没有 crop 再看 eRet（57980）→ 拒绝应答**刻意不带** crop/idx/exp/flag/rewardArray；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "expediteCrop",
+  "path": "crop.b",
+  "escape": "closed",
+  "ev": "index.js:57825",
+  "reason": "C10：空请求无作物 → eRet 2（getText(1455)，57845）；成功路径才带 crop/sIdx；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "expediteCrop",
+  "path": "crop.m",
+  "escape": "closed",
+  "ev": "index.js:57825",
+  "reason": "C10：空请求无作物 → eRet 2（getText(1455)，57845）；成功路径才带 crop/sIdx；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "expediteCrop",
+  "path": "sIdx",
+  "escape": "closed",
+  "ev": "index.js:57825",
+  "reason": "C10：空请求无作物 → eRet 2（getText(1455)，57845）；成功路径才带 crop/sIdx；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "getHomeList",
+  "path": "soilArr",
+  "escape": "closed",
+  "ev": "index.js:57585",
+  "reason": "C10 必做项：soilArr 从\"对象 {}\"改成数组（客户端按 .length/下标用）；旧基线里的对象形态不再成立；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "obtainCrop",
+  "path": "exp",
+  "escape": "closed",
+  "ev": "index.js:57698",
+  "reason": "C10：空请求无地块 → eRet 2（**刻意不用 3**：3 分支裸读并把 m.s 置 0，57714-57723）；exp/rewardArray/sIdx 只在成功路径；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "obtainCrop",
+  "path": "rewardArray",
+  "escape": "closed",
+  "ev": "index.js:57698",
+  "reason": "C10：空请求无地块 → eRet 2（**刻意不用 3**：3 分支裸读并把 m.s 置 0，57714-57723）；exp/rewardArray/sIdx 只在成功路径；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "obtainCrop",
+  "path": "sIdx",
+  "escape": "closed",
+  "ev": "index.js:57698",
+  "reason": "C10：空请求无地块 → eRet 2（**刻意不用 3**：3 分支裸读并把 m.s 置 0，57714-57723）；exp/rewardArray/sIdx 只在成功路径；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "stealCrop",
+  "path": "crop.b",
+  "escape": "closed",
+  "ev": "index.js:58007",
+  "reason": "C10：档 A 锁好友家 → 空请求也 eRet 2（3317 文案，58031-58041）；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "stealCrop",
+  "path": "crop.m",
+  "escape": "closed",
+  "ev": "index.js:58007",
+  "reason": "C10：档 A 锁好友家 → 空请求也 eRet 2（3317 文案，58031-58041）；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "stealCrop",
+  "path": "exp",
+  "escape": "closed",
+  "ev": "index.js:58007",
+  "reason": "C10：档 A 锁好友家 → 空请求也 eRet 2（3317 文案，58031-58041）；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "stealCrop",
+  "path": "idx",
+  "escape": "closed",
+  "ev": "index.js:58007",
+  "reason": "C10：档 A 锁好友家 → 空请求也 eRet 2（3317 文案，58031-58041）；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "stealCrop",
+  "path": "rewardArray",
+  "escape": "closed",
+  "ev": "index.js:58007",
+  "reason": "C10：档 A 锁好友家 → 空请求也 eRet 2（3317 文案，58031-58041）；\"发→不发\"的逃逸结论：该路径只在成功分支里被读，拒绝时客户端不读它（否则会 TypeError），故不发是安全方向"
+ },
+ {
+  "action": "getHomeList",
+  "path": "bShop",
+  "escape": "closed",
+  "ev": "index.js:57585",
+  "reason": "C10 后续修正：bShop 被形状表归为\"开关\"，发 0 会刷\"开关字段值不合法\"（真机日志实证，client 57597 用 hasOwnProperty）。改为不发 —— 客户端 homeShop 仍为默认 0，行为等价；逃逸结论：该路径只在 1==eRet 分支里被读，回 2 后客户端不读它"
+ },
+ {
+  "action": "homeSpeicalAward",
+  "path": "eid",
+  "escape": "closed",
+  "ev": "index.js:59855",
+  "reason": "C10 同面板修复：SHAPED 兜底的 {eRet:1,eid:0,rewardArray:{}} 会让客户端 productHomeEvent(0,…) 裸读 null 表的 .describe → 真机 TypeError（index.js:95694）。改成 eRet 2（回调里只 dispatch REMOVE_SEARCH_HOME_UI，57866），eid/rewardArray 一并收掉；逃逸结论：该路径只在 1==eRet 分支里被读，回 2 后客户端不读它"
+ },
+ {
+  "action": "homeSpeicalAward",
+  "path": "rewardArray",
+  "escape": "closed",
+  "ev": "index.js:59855",
+  "reason": "C10 同面板修复：SHAPED 兜底的 {eRet:1,eid:0,rewardArray:{}} 会让客户端 productHomeEvent(0,…) 裸读 null 表的 .describe → 真机 TypeError（index.js:95694）。改成 eRet 2（回调里只 dispatch REMOVE_SEARCH_HOME_UI，57866），eid/rewardArray 一并收掉；逃逸结论：该路径只在 1==eRet 分支里被读，回 2 后客户端不读它"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr",
+  "escape": "closed",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）；逃逸结论：该路径只在成功分支被读，拒绝时不发"
+ },
+ {
+  "action": "BuyHomeCrop",
+  "path": "limit",
+  "escape": "closed",
+  "ev": "index.js:57858",
+  "reason": "C10 商店：BuyHomeCrop 的**线上名是大写 B**（index.js:59853 `BUY_HOME_CROP: \"User.BuyHomeCrop\"`），本场先写成小写 buyHomeCrop → 客户端请求落到 SHAPED 兜底（真机日志实证 `SHAPED User.BuyHomeCrop`）。改名后空请求走 eRet 2（无 else 静默），成功路径才带 rewardArray/limit；逃逸结论：只在 1==eRet 分支读，拒绝时不发"
+ },
+ {
+  "action": "BuyHomeCrop",
+  "path": "rewardArray",
+  "escape": "closed",
+  "ev": "index.js:57858",
+  "reason": "C10 商店：BuyHomeCrop 的**线上名是大写 B**（index.js:59853 `BUY_HOME_CROP: \"User.BuyHomeCrop\"`），本场先写成小写 buyHomeCrop → 客户端请求落到 SHAPED 兜底（真机日志实证 `SHAPED User.BuyHomeCrop`）。改名后空请求走 eRet 2（无 else 静默），成功路径才带 rewardArray/limit；逃逸结论：只在 1==eRet 分支读，拒绝时不发"
+ }
+]

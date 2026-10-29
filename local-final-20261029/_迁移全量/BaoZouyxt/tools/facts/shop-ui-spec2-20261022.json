@@ -1,0 +1,1228 @@
+{
+  "generatedAt": "2026-10-22T11:07:33.157Z",
+  "goodEvilShop": {
+    "register": {
+      "file": "tools/scripts3.js",
+      "line": 36358,
+      "text": "p.MessageCenter.on(c.HttpConst.GET_GOOD_AND_EVIL_SHOP_DATA, this.onGetShopData, this);",
+      "const": "GET_GOOD_AND_EVIL_SHOP_DATA",
+      "block": {
+        "name": "GE register (MessageCenter.on)",
+        "file": "tools/scripts3.js",
+        "line": 36358,
+        "endLine": 36358,
+        "body": [
+          {
+            "line": 36358,
+            "text": "p.MessageCenter.on(c.HttpConst.GET_GOOD_AND_EVIL_SHOP_DATA, this.onGetShopData, this);"
+          }
+        ]
+      }
+    },
+    "callback": {
+      "file": "tools/scripts3.js",
+      "line": 36527,
+      "endLine": 36540,
+      "body": [
+        {
+          "line": 36527,
+          "text": "t.prototype.onGetShopData = function(t, e) {"
+        },
+        {
+          "line": 36528,
+          "text": "if (1 == e.eRet) {"
+        },
+        {
+          "line": 36529,
+          "text": "this.shopData = e.shop;"
+        },
+        {
+          "line": 36530,
+          "text": "this.shopRefreshTime = e.nextRefreshTime;"
+        },
+        {
+          "line": 36531,
+          "text": "h.default.common.load(\"ui/ge/ge_store\", cc.SpriteAtlas, function(t, e) {"
+        },
+        {
+          "line": 36532,
+          "text": "e.addRef();"
+        },
+        {
+          "line": 36533,
+          "text": "h.default.prefabs.load(\"goodEvil/goodEvilShop/GoodEvilShopUI\", cc.Prefab, function(t, o) {"
+        },
+        {
+          "line": 36534,
+          "text": "var s = cc.instantiate(o);"
+        },
+        {
+          "line": 36535,
+          "text": "s.getComponent(\"GoodEvilShopUI\").setData(e);"
+        },
+        {
+          "line": 36536,
+          "text": "i.PopUpMgr.addPopUp(s, d.LayerMgr.popUpLayer);"
+        },
+        {
+          "line": 36537,
+          "text": "});"
+        },
+        {
+          "line": 36538,
+          "text": "});"
+        },
+        {
+          "line": 36539,
+          "text": "}"
+        },
+        {
+          "line": 36540,
+          "text": "};"
+        }
+      ]
+    },
+    "fields": [
+      "eRet",
+      "shop",
+      "nextRefreshTime"
+    ],
+    "requestSender": {
+      "name": "GE getShopData (sendRequest)",
+      "file": "tools/scripts3.js",
+      "line": 36524,
+      "endLine": 36526,
+      "body": [
+        {
+          "line": 36524,
+          "text": "t.prototype.getShopData = function() {"
+        },
+        {
+          "line": 36525,
+          "text": "l.NetMgr.http.sendRequest(c.HttpConst.GET_GOOD_AND_EVIL_SHOP_DATA);"
+        },
+        {
+          "line": 36526,
+          "text": "};"
+        }
+      ]
+    },
+    "modelAssigns": [
+      {
+        "field": "shopData",
+        "line": 36529,
+        "text": "this.shopData = e.shop;"
+      },
+      {
+        "field": "shopRefreshTime",
+        "line": 36530,
+        "text": "this.shopRefreshTime = e.nextRefreshTime;"
+      }
+    ]
+  },
+  "rogueShop": {
+    "register": {
+      "file": "tools/scripts3.js",
+      "line": 70901,
+      "text": "p.MessageCenter.on(l.HttpConst.RG_GET_SHOP_DATA, this.onGetShopData, this);",
+      "const": "RG_GET_SHOP_DATA",
+      "block": {
+        "name": "Rogue register (MessageCenter.on)",
+        "file": "tools/scripts3.js",
+        "line": 70901,
+        "endLine": 70901,
+        "body": [
+          {
+            "line": 70901,
+            "text": "p.MessageCenter.on(l.HttpConst.RG_GET_SHOP_DATA, this.onGetShopData, this);"
+          }
+        ]
+      }
+    },
+    "callback": {
+      "file": "tools/scripts3.js",
+      "line": 71231,
+      "endLine": 71240,
+      "body": [
+        {
+          "line": 71231,
+          "text": "t.prototype.onGetShopData = function(t, e) {"
+        },
+        {
+          "line": 71232,
+          "text": "if (1 == e.eRet) {"
+        },
+        {
+          "line": 71233,
+          "text": "this.shopData = e.shop;"
+        },
+        {
+          "line": 71234,
+          "text": "this.lastSeasonRank = e.rank;"
+        },
+        {
+          "line": 71235,
+          "text": "this.shopEndTime = e.endTime;"
+        },
+        {
+          "line": 71236,
+          "text": "this.reputationLevelId = e.reputationLevelId;"
+        },
+        {
+          "line": 71237,
+          "text": "this.sortShopData();"
+        },
+        {
+          "line": 71238,
+          "text": "g.RogueUtil.showShop();"
+        },
+        {
+          "line": 71239,
+          "text": "} else 2 == e.eRet && n.default.show(a.getText(6003739));"
+        },
+        {
+          "line": 71240,
+          "text": "};"
+        }
+      ]
+    },
+    "ui": {
+      "file": "tools/scripts3.js",
+      "line": 75384,
+      "name": "RogueShopUI",
+      "blocks": [
+        {
+          "name": "RogueShopUI.onLoad (tail)",
+          "file": "tools/scripts3.js",
+          "line": 75443,
+          "endLine": 75446,
+          "body": [
+            {
+              "line": 75443,
+              "text": "this.endTime.string = c.getText(6001944).replace(/\\[1\\]/g, this.getTimeStr());"
+            },
+            {
+              "line": 75444,
+              "text": "this.scroll.active = !0;"
+            },
+            {
+              "line": 75445,
+              "text": "this.content.getComponent(u.default).total(Math.ceil(l.RogueModel.shopData.length / 3));"
+            },
+            {
+              "line": 75446,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "RogueShopUI.getTimeStr",
+          "file": "tools/scripts3.js",
+          "line": 75469,
+          "endLine": 75472,
+          "body": [
+            {
+              "line": 75469,
+              "text": "e.prototype.getTimeStr = function() {"
+            },
+            {
+              "line": 75470,
+              "text": "var t = new Date(l.RogueModel.shopEndTime);"
+            },
+            {
+              "line": 75471,
+              "text": "return t.getFullYear().toString() + c.getText(3609) + (t.getMonth() + 1).toString() + c.getText(3610) + t.getDate().toString() + c.getText(3611);"
+            },
+            {
+              "line": 75472,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "RogueShopUI.refreshItemEvent",
+          "file": "tools/scripts3.js",
+          "line": 75477,
+          "endLine": 75481,
+          "body": [
+            {
+              "line": 75477,
+              "text": "e.prototype.refreshItemEvent = function(t, e) {"
+            },
+            {
+              "line": 75478,
+              "text": "t.active = !0;"
+            },
+            {
+              "line": 75479,
+              "text": "t.getComponent(\"RogueLineItem\").setData(e);"
+            },
+            {
+              "line": 75480,
+              "text": "t.getComponent(\"RogueLineItem\").refresh();"
+            },
+            {
+              "line": 75481,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "RogueLineItem.refresh",
+          "file": "tools/scripts3.js",
+          "line": 69698,
+          "endLine": 69706,
+          "body": [
+            {
+              "line": 69698,
+              "text": "e.prototype.refresh = function() {"
+            },
+            {
+              "line": 69699,
+              "text": "this.layout.destroyAllChildren();"
+            },
+            {
+              "line": 69700,
+              "text": "for (var t = 0, e = 3 * this.data; t < 3 && e < a.RogueModel.shopData.length; t++, "
+            },
+            {
+              "line": 69701,
+              "text": "e++) {"
+            },
+            {
+              "line": 69702,
+              "text": "var o = cc.instantiate(this.item);"
+            },
+            {
+              "line": 69703,
+              "text": "o.getComponent(\"RogueShopItem\").setData(e);"
+            },
+            {
+              "line": 69704,
+              "text": "this.layout.addChild(o);"
+            },
+            {
+              "line": 69705,
+              "text": "}"
+            },
+            {
+              "line": 69706,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "RogueShopItem.onLoad (tail)",
+          "file": "tools/scripts3.js",
+          "line": 75284,
+          "endLine": 75312,
+          "body": [
+            {
+              "line": 75284,
+              "text": "e.prototype.onLoad = function() {"
+            },
+            {
+              "line": 75285,
+              "text": "t.prototype.onLoad.call(this);"
+            },
+            {
+              "line": 75286,
+              "text": "this.cost = this.getPathByNode(\"cost\").getComponent(cc.Label);"
+            },
+            {
+              "line": 75287,
+              "text": "this.nameLabel = this.getPathByNode(\"name\").getComponent(cc.Label);"
+            },
+            {
+              "line": 75288,
+              "text": "this.limit = this.getPathByNode(\"limitBg/limit\").getComponent(cc.Label);"
+            },
+            {
+              "line": 75289,
+              "text": "this.rank = this.getPathByNode(\"rankMaskNode/rank\").getComponent(cc.Label);"
+            },
+            {
+              "line": 75290,
+              "text": "this.time = this.getPathByNode(\"time\").getComponent(cc.Label);"
+            },
+            {
+              "line": 75291,
+              "text": "this.addButtonListen(this.node, this, this.onClick);"
+            },
+            {
+              "line": 75292,
+              "text": "var e = l.RogueModel.shopData[this.data];"
+            },
+            {
+              "line": 75293,
+              "text": "this.costId = e.costitem;"
+            },
+            {
+              "line": 75294,
+              "text": "this.setSpriteFrame(this.costIcon, \"ui/rogue/cost\" + this.costId.toString());"
+            },
+            {
+              "line": 75295,
+              "text": "this.cost.string = e.cost.toString();"
+            },
+            {
+              "line": 75296,
+              "text": "var o = a.getItem(e.item, \"item\");"
+            },
+            {
+              "line": 75297,
+              "text": "this.nameLabel.string = c.getText(o.Name);"
+            },
+            {
+              "line": 75298,
+              "text": "this.setItemSprite(this.icon, e.item);"
+            },
+            {
+              "line": 75299,
+              "text": "this.limitBg.active = e.refresh > 0;"
+            },
+            {
+              "line": 75300,
+              "text": "if (this.limitBg.active) {"
+            },
+            {
+              "line": 75301,
+              "text": "this.setSpriteFrame(this.limitBg, \"ui/rogue/shop\" + (e.refresh < 4 ? \"1\" : \"2\"));"
+            },
+            {
+              "line": 75302,
+              "text": "this.limit.string = this.getRefreshStr(e);"
+            },
+            {
+              "line": 75303,
+              "text": "}"
+            },
+            {
+              "line": 75304,
+              "text": "this.refreshLimitMask();"
+            },
+            {
+              "line": 75305,
+              "text": "if (this.limitMaskNode.active) this.rankMaskNode.active = !1; else {"
+            },
+            {
+              "line": 75306,
+              "text": "this.rankMaskNode.active = l.RogueModel.reputationLevelId < e.reputation;"
+            },
+            {
+              "line": 75307,
+              "text": "if (this.rankMaskNode.active) {"
+            },
+            {
+              "line": 75308,
+              "text": "var i = a.getItem(e.reputation, \"rogue_reputation\");"
+            },
+            {
+              "line": 75309,
+              "text": "this.rank.string = \"【\" + c.getText(i.name) + \"】\";"
+            },
+            {
+              "line": 75310,
+              "text": "}"
+            },
+            {
+              "line": 75311,
+              "text": "}"
+            },
+            {
+              "line": 75312,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "RogueShopItem.update",
+          "file": "tools/scripts3.js",
+          "line": 75313,
+          "endLine": 75320,
+          "body": [
+            {
+              "line": 75313,
+              "text": "e.prototype.update = function() {"
+            },
+            {
+              "line": 75314,
+              "text": "var t = l.RogueModel.shopData[this.data];"
+            },
+            {
+              "line": 75315,
+              "text": "if (t.closetime > 0) {"
+            },
+            {
+              "line": 75316,
+              "text": "this.time.node.active = !0;"
+            },
+            {
+              "line": 75317,
+              "text": "var e = Math.floor(Math.max(t.closetime - m.TimeMgr.getSTimestamp(), 0) / 1e3);"
+            },
+            {
+              "line": 75318,
+              "text": "this.time.string = f.RumorModel.showSecond2DayTime(e);"
+            },
+            {
+              "line": 75319,
+              "text": "} else this.time.node.active = !1;"
+            },
+            {
+              "line": 75320,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "RogueShopItem.refreshLimitMask",
+          "file": "tools/scripts3.js",
+          "line": 75327,
+          "endLine": 75330,
+          "body": [
+            {
+              "line": 75327,
+              "text": "e.prototype.refreshLimitMask = function() {"
+            },
+            {
+              "line": 75328,
+              "text": "var t = l.RogueModel.shopData[this.data];"
+            },
+            {
+              "line": 75329,
+              "text": "this.limitMaskNode.active = 0 == t.refresh && t.buyCount >= t.num;"
+            },
+            {
+              "line": 75330,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "RogueShopItem.getRefreshStr",
+          "file": "tools/scripts3.js",
+          "line": 75336,
+          "endLine": 75338,
+          "body": [
+            {
+              "line": 75336,
+              "text": "e.prototype.getRefreshStr = function(t) {"
+            },
+            {
+              "line": 75337,
+              "text": "return c.getText([ 6002707, 6002708, 6002709, 6002710 ][t.refresh - 1]).replace(/\\[1\\]/g, t.buyCount.toString() + \"/\" + t.num.toString());"
+            },
+            {
+              "line": 75338,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "RogueShopItem.onClick",
+          "file": "tools/scripts3.js",
+          "line": 75343,
+          "endLine": 75361,
+          "body": [
+            {
+              "line": 75343,
+              "text": "e.prototype.onClick = function() {"
+            },
+            {
+              "line": 75344,
+              "text": "var t = l.RogueModel.shopData[this.data];"
+            },
+            {
+              "line": 75345,
+              "text": "if (!this.rankMaskNode.active && !this.limitMaskNode.active) if (t.buyCount >= t.num) g.default.show(c.getText(6003610)); else if (0 != t.rank && (l.RogueModel.lastSeasonRank <= 0 || l.RogueModel.lastSeasonRank > t.rank)) g.default.show(c.getText(6002735)); else {"
+            },
+            {
+              "line": 75346,
+              "text": "var e = a.getItem(t.item, \"item\");"
+            },
+            {
+              "line": 75347,
+              "text": "h.RogueUtil.showBuy({"
+            },
+            {
+              "line": 75348,
+              "text": "price: t.cost,"
+            },
+            {
+              "line": 75349,
+              "text": "priceDes: this.getPriceDes(),"
+            },
+            {
+              "line": 75350,
+              "text": "notEnoughPriceTip: c.getText(7863),"
+            },
+            {
+              "line": 75351,
+              "text": "havePriceNum: p.RoleBaseInfo.getItemNum(this.costId),"
+            },
+            {
+              "line": 75352,
+              "text": "haveItemNum: p.RoleBaseInfo.getItemNum(t.item),"
+            },
+            {
+              "line": 75353,
+              "text": "limit: t.num - t.buyCount,"
+            },
+            {
+              "line": 75354,
+              "text": "name: c.getText(e.Name),"
+            },
+            {
+              "line": 75355,
+              "text": "des: c.getText(e.Description),"
+            },
+            {
+              "line": 75356,
+              "text": "buyFunc: function(e) {"
+            },
+            {
+              "line": 75357,
+              "text": "l.RogueModel.shopBuy(t.id, e);"
+            },
+            {
+              "line": 75358,
+              "text": "}"
+            },
+            {
+              "line": 75359,
+              "text": "});"
+            },
+            {
+              "line": 75360,
+              "text": "}"
+            },
+            {
+              "line": 75361,
+              "text": "};"
+            }
+          ]
+        }
+      ]
+    },
+    "fields": [
+      "eRet",
+      "shop",
+      "rank",
+      "endTime",
+      "reputationLevelId"
+    ],
+    "requestSender": {
+      "name": "Rogue getShopData (sendRequest)",
+      "file": "tools/scripts3.js",
+      "line": 71220,
+      "endLine": 71222,
+      "body": [
+        {
+          "line": 71220,
+          "text": "t.prototype.getShopData = function() {"
+        },
+        {
+          "line": 71221,
+          "text": "h.NetMgr.http.sendRequest(l.HttpConst.RG_GET_SHOP_DATA);"
+        },
+        {
+          "line": 71222,
+          "text": "};"
+        }
+      ]
+    },
+    "sortCalledFromCallback": {
+      "name": "Rogue sortShopData",
+      "file": "tools/scripts3.js",
+      "line": 71223,
+      "endLine": 71230,
+      "body": [
+        {
+          "line": 71223,
+          "text": "t.prototype.sortShopData = function() {"
+        },
+        {
+          "line": 71224,
+          "text": "this.shopData.sort(function(t, e) {"
+        },
+        {
+          "line": 71225,
+          "text": "return t.id <= e.id;"
+        },
+        {
+          "line": 71226,
+          "text": "});"
+        },
+        {
+          "line": 71227,
+          "text": "this.shopData.sort(function(t, e) {"
+        },
+        {
+          "line": 71228,
+          "text": "return t.refresh <= e.refresh;"
+        },
+        {
+          "line": 71229,
+          "text": "});"
+        },
+        {
+          "line": 71230,
+          "text": "};"
+        }
+      ]
+    },
+    "modelAssigns": [
+      {
+        "field": "shopData",
+        "line": 71233,
+        "text": "this.shopData = e.shop;"
+      },
+      {
+        "field": "lastSeasonRank",
+        "line": 71234,
+        "text": "this.lastSeasonRank = e.rank;"
+      },
+      {
+        "field": "shopEndTime",
+        "line": 71235,
+        "text": "this.shopEndTime = e.endTime;"
+      },
+      {
+        "field": "reputationLevelId",
+        "line": 71236,
+        "text": "this.reputationLevelId = e.reputationLevelId;"
+      }
+    ],
+    "uiFields": [
+      "shopData",
+      "shopEndTime",
+      "reputationLevelId",
+      "lastSeasonRank",
+      "costitem",
+      "cost",
+      "item",
+      "refresh",
+      "reputation",
+      "closetime",
+      "buyCount",
+      "num",
+      "rank",
+      "id",
+      "data"
+    ],
+    "uiFieldsVerify": [
+      {
+        "field": "shopData",
+        "present": true
+      },
+      {
+        "field": "shopEndTime",
+        "present": true
+      },
+      {
+        "field": "reputationLevelId",
+        "present": true
+      },
+      {
+        "field": "lastSeasonRank",
+        "present": true
+      },
+      {
+        "field": "costitem",
+        "present": true
+      },
+      {
+        "field": "cost",
+        "present": true
+      },
+      {
+        "field": "item",
+        "present": true
+      },
+      {
+        "field": "refresh",
+        "present": true
+      },
+      {
+        "field": "reputation",
+        "present": true
+      },
+      {
+        "field": "closetime",
+        "present": true
+      },
+      {
+        "field": "buyCount",
+        "present": true
+      },
+      {
+        "field": "num",
+        "present": true
+      },
+      {
+        "field": "rank",
+        "present": true
+      },
+      {
+        "field": "id",
+        "present": true
+      },
+      {
+        "field": "data",
+        "present": true
+      }
+    ]
+  },
+  "extras": {
+    "goodEvilUI": {
+      "file": "tools/scripts3.js",
+      "classLine": 37635,
+      "name": "GoodEvilShopUI",
+      "note": "GoodEvilShopUI 未定义 setData（继承 UIComponent），数据经 this.data / GoodEvilModel 读取",
+      "blocks": [
+        {
+          "name": "GE UI setData call site",
+          "file": "tools/scripts3.js",
+          "line": 36531,
+          "endLine": 36538,
+          "body": [
+            {
+              "line": 36531,
+              "text": "h.default.common.load(\"ui/ge/ge_store\", cc.SpriteAtlas, function(t, e) {"
+            },
+            {
+              "line": 36532,
+              "text": "e.addRef();"
+            },
+            {
+              "line": 36533,
+              "text": "h.default.prefabs.load(\"goodEvil/goodEvilShop/GoodEvilShopUI\", cc.Prefab, function(t, o) {"
+            },
+            {
+              "line": 36534,
+              "text": "var s = cc.instantiate(o);"
+            },
+            {
+              "line": 36535,
+              "text": "s.getComponent(\"GoodEvilShopUI\").setData(e);"
+            },
+            {
+              "line": 36536,
+              "text": "i.PopUpMgr.addPopUp(s, d.LayerMgr.popUpLayer);"
+            },
+            {
+              "line": 36537,
+              "text": "});"
+            },
+            {
+              "line": 36538,
+              "text": "});"
+            }
+          ]
+        },
+        {
+          "name": "GoodEvilShopUI.update",
+          "file": "tools/scripts3.js",
+          "line": 37704,
+          "endLine": 37707,
+          "body": [
+            {
+              "line": 37704,
+              "text": "e.prototype.update = function() {"
+            },
+            {
+              "line": 37705,
+              "text": "var t = Math.floor(Math.max(d.GoodEvilModel.shopRefreshTime - p.TimeMgr.getSTimestamp(), 0) / 1e3);"
+            },
+            {
+              "line": 37706,
+              "text": "this.remainTime.string = u.getText(6000553) + l.RumorModel.showSecondTime(t);"
+            },
+            {
+              "line": 37707,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "GoodEvilShopUI.load_recode",
+          "file": "tools/scripts3.js",
+          "line": 37729,
+          "endLine": 37732,
+          "body": [
+            {
+              "line": 37729,
+              "text": "e.prototype.load_recode = function() {"
+            },
+            {
+              "line": 37730,
+              "text": "var t = this.content.getComponent(\"UISuperLayout\"), e = Math.ceil(d.GoodEvilModel.shopData.length / 3);"
+            },
+            {
+              "line": 37731,
+              "text": "t.total(e);"
+            },
+            {
+              "line": 37732,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "GoodEvilShopUI.onRefreshEvent",
+          "file": "tools/scripts3.js",
+          "line": 37733,
+          "endLine": 37736,
+          "body": [
+            {
+              "line": 37733,
+              "text": "e.prototype.onRefreshEvent = function(t, e) {"
+            },
+            {
+              "line": 37734,
+              "text": "t.getComponent(\"GoodEvilLineItem\").setData(e);"
+            },
+            {
+              "line": 37735,
+              "text": "t.getComponent(\"GoodEvilLineItem\").refresh();"
+            },
+            {
+              "line": 37736,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "GoodEvilLineItem.refresh",
+          "file": "tools/scripts3.js",
+          "line": 35922,
+          "endLine": 35930,
+          "body": [
+            {
+              "line": 35922,
+              "text": "e.prototype.refresh = function() {"
+            },
+            {
+              "line": 35923,
+              "text": "this.layout.removeAllChildren();"
+            },
+            {
+              "line": 35924,
+              "text": "for (var t = 0, e = 3 * this.data; t < 3 && e < a.GoodEvilModel.shopData.length; t++, "
+            },
+            {
+              "line": 35925,
+              "text": "e++) {"
+            },
+            {
+              "line": 35926,
+              "text": "var o = cc.instantiate(this.item);"
+            },
+            {
+              "line": 35927,
+              "text": "o.getComponent(\"GoodEvilShopItem\").setData(e);"
+            },
+            {
+              "line": 35928,
+              "text": "this.layout.addChild(o);"
+            },
+            {
+              "line": 35929,
+              "text": "}"
+            },
+            {
+              "line": 35930,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "GoodEvilShopItem.refresh",
+          "file": "tools/scripts3.js",
+          "line": 37597,
+          "endLine": 37614,
+          "body": [
+            {
+              "line": 37597,
+              "text": "e.prototype.refresh = function() {"
+            },
+            {
+              "line": 37598,
+              "text": "var t = c.GoodEvilModel.shopData[this.data];"
+            },
+            {
+              "line": 37599,
+              "text": "this.nameLabel.string = a.getText(t.Name);"
+            },
+            {
+              "line": 37600,
+              "text": "this.setSpriteFrameName(this.icon, \"storeUI\", \"shop\" + t.Name, null, cc.assetManager.getBundle(\"store\"));"
+            },
+            {
+              "line": 37601,
+              "text": "var e = p.GoodEvilUtil.getMyPrestigeLv() >= t.rankopen;"
+            },
+            {
+              "line": 37602,
+              "text": "this.limit.node.active = e && t.rankNum > 0;"
+            },
+            {
+              "line": 37603,
+              "text": "if (this.limit.node.active) {"
+            },
+            {
+              "line": 37604,
+              "text": "var o = a.getText(5074);"
+            },
+            {
+              "line": 37605,
+              "text": "o = (o = o.replace(/\\[1\\]/g, (t.rankNum - t.buyCount).toString())).replace(/\\[2\\]/g, t.rankNum.toString());"
+            },
+            {
+              "line": 37606,
+              "text": "this.limit.string = o;"
+            },
+            {
+              "line": 37607,
+              "text": "}"
+            },
+            {
+              "line": 37608,
+              "text": "this.lvBg.active = !e;"
+            },
+            {
+              "line": 37609,
+              "text": "var i = f.RoleBaseInfo.goodEvilCamp == f.RoleBaseInfo.goodCamp ? \"label_2\" : \"label_1\";"
+            },
+            {
+              "line": 37610,
+              "text": "this.setSpriteFrameName(this.lvBg, \"ui/ge/ge_store\", i);"
+            },
+            {
+              "line": 37611,
+              "text": "this.lv.string = p.GoodEvilUtil.getPrestigeLvDes(t.rankopen);"
+            },
+            {
+              "line": 37612,
+              "text": "this.setSpriteFrame(this.costIcon, f.RoleBaseInfo.goodEvilCamp == f.RoleBaseInfo.goodCamp ? \"ui/ge/g_icon\" : \"ui/ge/e_icon\");"
+            },
+            {
+              "line": 37613,
+              "text": "this.costNum.string = t.Price;"
+            },
+            {
+              "line": 37614,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "GoodEvilShopItem.refreshAfterBuy",
+          "file": "tools/scripts3.js",
+          "line": 37581,
+          "endLine": 37588,
+          "body": [
+            {
+              "line": 37581,
+              "text": "e.prototype.refreshAfterBuy = function(t, e) {"
+            },
+            {
+              "line": 37582,
+              "text": "var o = c.GoodEvilModel.shopData[this.data];"
+            },
+            {
+              "line": 37583,
+              "text": "if (o.id == e && o.rankNum > 0) {"
+            },
+            {
+              "line": 37584,
+              "text": "var i = a.getText(5074);"
+            },
+            {
+              "line": 37585,
+              "text": "i = (i = i.replace(/\\[1\\]/g, (o.rankNum - o.buyCount).toString())).replace(/\\[2\\]/g, o.rankNum.toString());"
+            },
+            {
+              "line": 37586,
+              "text": "this.limit.string = i;"
+            },
+            {
+              "line": 37587,
+              "text": "}"
+            },
+            {
+              "line": 37588,
+              "text": "};"
+            }
+          ]
+        },
+        {
+          "name": "GoodEvilShopItem.onClick",
+          "file": "tools/scripts3.js",
+          "line": 37589,
+          "endLine": 37596,
+          "body": [
+            {
+              "line": 37589,
+              "text": "e.prototype.onClick = function() {"
+            },
+            {
+              "line": 37590,
+              "text": "var t = this, e = c.GoodEvilModel.shopData[this.data];"
+            },
+            {
+              "line": 37591,
+              "text": "e.rankNum > 0 && e.buyCount >= e.rankNum ? l.default.show(a.getText(6000732)) : h.default.prefabs.load(\"goodEvil/goodEvilShop/GoodEvilBuyUI\", cc.Prefab, function(e, o) {"
+            },
+            {
+              "line": 37592,
+              "text": "var i = cc.instantiate(o);"
+            },
+            {
+              "line": 37593,
+              "text": "i.getComponent(\"GoodEvilBuyUI\").setData(t.data);"
+            },
+            {
+              "line": 37594,
+              "text": "d.PopUpMgr.addPopUp(i, u.LayerMgr.popUpLayer, d.Modal.Translucent, !0);"
+            },
+            {
+              "line": 37595,
+              "text": "});"
+            },
+            {
+              "line": 37596,
+              "text": "};"
+            }
+          ]
+        }
+      ],
+      "uiFields": [
+        "shopData",
+        "shopRefreshTime",
+        "Name",
+        "rankopen",
+        "rankNum",
+        "buyCount",
+        "Price",
+        "id",
+        "data"
+      ],
+      "uiFieldsVerify": [
+        {
+          "field": "shopData",
+          "present": true
+        },
+        {
+          "field": "shopRefreshTime",
+          "present": true
+        },
+        {
+          "field": "Name",
+          "present": true
+        },
+        {
+          "field": "rankopen",
+          "present": true
+        },
+        {
+          "field": "rankNum",
+          "present": true
+        },
+        {
+          "field": "buyCount",
+          "present": true
+        },
+        {
+          "field": "Price",
+          "present": true
+        },
+        {
+          "field": "id",
+          "present": true
+        },
+        {
+          "field": "data",
+          "present": true
+        }
+      ],
+      "showShopCall": {
+        "name": "RogueUtil.showShop",
+        "file": "tools/scripts3.js",
+        "line": 76921,
+        "endLine": 76923,
+        "body": [
+          {
+            "line": 76921,
+            "text": "t.prototype.showShop = function() {"
+          },
+          {
+            "line": 76922,
+            "text": "this.show(\"rogue/shop/RogueShopUI\", !1);"
+          },
+          {
+            "line": 76923,
+            "text": "};"
+          }
+        ]
+      }
+    },
+    "otherOnGetShopDataNotSurveyed": [
+      {
+        "file": "tools/scripts3.js",
+        "line": 82904,
+        "note": "第三个 onGetShopData，范围外未摘录"
+      }
+    ],
+    "geFieldsVerify": [
+      {
+        "field": "eRet",
+        "present": true
+      },
+      {
+        "field": "shop",
+        "present": true
+      },
+      {
+        "field": "nextRefreshTime",
+        "present": true
+      }
+    ],
+    "rgFieldsVerify": [
+      {
+        "field": "eRet",
+        "present": true
+      },
+      {
+        "field": "shop",
+        "present": true
+      },
+      {
+        "field": "rank",
+        "present": true
+      },
+      {
+        "field": "endTime",
+        "present": true
+      },
+      {
+        "field": "reputationLevelId",
+        "present": true
+      }
+    ],
+    "sameNameCollisions": {
+      "onGetShopData": [
+        31443,
+        36527,
+        71231,
+        82904
+      ],
+      "getShopData": [
+        36524,
+        71220,
+        82893
+      ]
+    }
+  }
+}

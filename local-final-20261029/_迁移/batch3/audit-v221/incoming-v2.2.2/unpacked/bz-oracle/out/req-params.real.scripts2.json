@@ -1,0 +1,252 @@
+{
+  "GET_LARGE_EXTRA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:1760",
+      "F:/BaoZouyxt/tools/scripts2.js:11314"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "p.RoleBaseInfo.roleID",
+          "h.RoleBaseInfo.roleID"
+        ],
+        "sites": 2,
+        "type": "expr",
+        "optional": false
+      },
+      "turnType": {
+        "samples": [
+          "this.type"
+        ],
+        "sites": 2,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getLargeExtra"
+  },
+  "GET_CHAT_PK_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:11416",
+      "F:/BaoZouyxt/tools/scripts2.js:11460"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "h.RoleBaseInfo.roleID"
+        ],
+        "sites": 2,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getChatPkAward"
+  },
+  "RECEIVE_CHAT_PK_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:11467"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "h.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveChatPkAward"
+  },
+  "RESET_CHILD_FOSTER": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:12967"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "g.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.resetChildFoster"
+  },
+  "ADD_CHILD_FOSTER": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:12976",
+      "F:/BaoZouyxt/tools/scripts2.js:12987"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "e"
+        ],
+        "sites": 2,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.addChildFoster"
+  },
+  "GET_SKILL_CHANGE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:39023"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "b.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getSkillChange"
+  },
+  "GET_GIFT_PAY_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:47580"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "p.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "chooseid": {
+        "samples": [
+          "this.configid"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getGiftPayData"
+  },
+  "RECEIVE_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:47592"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "p.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "chooseid": {
+        "samples": [
+          "this.configid"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "chooseArr": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.ReceiveGift"
+  },
+  "RECORD_ATTRIBUTES": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:49917"
+    ],
+    "params": {
+      "attrs": {
+        "samples": [
+          "a"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "SELL_ITEM": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:54921"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.saleItem"
+  },
+  "CHECK_LARGE_EXTRA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:76242",
+      "F:/BaoZouyxt/tools/scripts2.js:76250"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "b.RoleBaseInfo.roleID"
+        ],
+        "sites": 2,
+        "type": "expr",
+        "optional": false
+      },
+      "type": {
+        "samples": [
+          "1",
+          "2"
+        ],
+        "sites": 2,
+        "type": "number",
+        "optional": false
+      },
+      "turnType": {
+        "samples": [
+          "this.type"
+        ],
+        "sites": 2,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.checkLargeExtra"
+  },
+  "SEVEN_DAYS_AWARDS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts2.js:81451"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "c.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.SevenDaysAwards"
+  },
+  "__unresolved": []
+}

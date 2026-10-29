@@ -1,0 +1,21 @@
+# User.changePlayWooksState   (HttpConst.PAUSE_WOOD_TRAINING)
+
+## 注册点 86177: r.MessageCenter.on(a.HttpConst.PAUSE_WOOD_TRAINING, this.onPauseWoodTr, this);
+
+## 请求点 86287: u.NetMgr.http.sendRequest(a.HttpConst.PAUSE_WOOD_TRAINING, {});
+   86279: maxHP: t.hp.finalValue,
+   86280: maxMP: t.mp.finalValue,
+   86281: hglmt: t.hunger.limit,
+   86282: speed: t.hungerConsumingSpeed.finalValue
+   86283: };
+   86284: u.NetMgr.http.sendRequest(a.HttpConst.END_WOOD_TRAINING, e);
+   86285: };
+   86286: t.prototype.reqPauseWoodTr = function() {
+
+## 处理函数 onPauseWoodTr (86181-86186)
+ 86181: t.prototype.onPauseWoodTr = function(t, e) {
+ 86182: if (this.isPracticing && 1 == e.eRet) {
+ 86183: this.isPracticing = !1;
+ 86184: r.MessageCenter.dispatch(s.EvName.REQ_END_WOOD_RET, !1);
+ 86185: _.FishingModel.setAutoStartHung({});
+ 86186: }

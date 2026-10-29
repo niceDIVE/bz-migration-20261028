@@ -1,0 +1,1 @@
+# User.wxPay   (HttpConst.GET_WECHAT_SIGN)

@@ -1,0 +1,6322 @@
+{
+ "generatedAt": "2026-10-21T20:02:12.453Z",
+ "npc": {
+  "total": 6551,
+  "withDrop": 867,
+  "noDrop": 5684
+ },
+ "dropItems": 19,
+ "needItems": 875,
+ "coveredItems": 4,
+ "missingItems": 871,
+ "covered": [
+  {
+   "itemId": 1301,
+   "tasks": [
+    102580
+   ],
+   "npcs": [
+    2005
+   ]
+  },
+  {
+   "itemId": 1204,
+   "tasks": [
+    107180
+   ],
+   "npcs": [
+    2015
+   ]
+  },
+  {
+   "itemId": 2001,
+   "tasks": [
+    207120,
+    600220
+   ],
+   "npcs": [
+    1198,
+    1199,
+    1231
+   ]
+  },
+  {
+   "itemId": 1302,
+   "tasks": [
+    840170
+   ],
+   "npcs": [
+    2009
+   ]
+  }
+ ],
+ "missing": [
+  {
+   "itemId": 310003,
+   "tasks": [
+    100070,
+    100080
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1028,
+   "tasks": [
+    100130,
+    300030,
+    600160
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4015,
+   "tasks": [
+    100150
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4016,
+   "tasks": [
+    100180,
+    100190
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 2034,
+   "tasks": [
+    100210
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1303,
+   "tasks": [
+    100240
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 3001,
+   "tasks": [
+    100250,
+    620150,
+    840310
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 310007,
+   "tasks": [
+    100280
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 3101,
+   "tasks": [
+    100290,
+    901350
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3401,
+   "tasks": [
+    100290,
+    206670,
+    206690
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4095,
+   "tasks": [
+    100300
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1198,
+   "tasks": [
+    100330
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1199,
+   "tasks": [
+    100420,
+    100440
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1177,
+   "tasks": [
+    100470,
+    300340,
+    610170
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4028,
+   "tasks": [
+    100490
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4022,
+   "tasks": [
+    100520,
+    100600
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 310005,
+   "tasks": [
+    100670
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1023,
+   "tasks": [
+    100680
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4033,
+   "tasks": [
+    100690
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1216,
+   "tasks": [
+    100720
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1215,
+   "tasks": [
+    100750
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1220,
+   "tasks": [
+    100780
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1219,
+   "tasks": [
+    100810
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1217,
+   "tasks": [
+    100840
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1221,
+   "tasks": [
+    100870
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1218,
+   "tasks": [
+    100900
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1222,
+   "tasks": [
+    100930
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4001,
+   "tasks": [
+    101120,
+    101690,
+    102590
+   ],
+   "itemType": 3
+  },
+  {
+   "itemId": 1090,
+   "tasks": [
+    101180
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1076,
+   "tasks": [
+    101220
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1157,
+   "tasks": [
+    101260
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1141,
+   "tasks": [
+    101300
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1106,
+   "tasks": [
+    101340
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1170,
+   "tasks": [
+    101380,
+    300080
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1128,
+   "tasks": [
+    101420
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1058,
+   "tasks": [
+    101460
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1066,
+   "tasks": [
+    101480,
+    101650
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 3010,
+   "tasks": [
+    101570
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1065,
+   "tasks": [
+    101640,
+    102030,
+    300170
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1171,
+   "tasks": [
+    101700,
+    405100,
+    610060
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4118,
+   "tasks": [
+    101780,
+    101790,
+    101900
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4116,
+   "tasks": [
+    101840,
+    101940,
+    102020
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4090,
+   "tasks": [
+    101860,
+    300100
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3012,
+   "tasks": [
+    102000,
+    102010
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4119,
+   "tasks": [
+    102100,
+    102110,
+    102120
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3027,
+   "tasks": [
+    102190
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 3003,
+   "tasks": [
+    102280,
+    106890,
+    111680
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1034,
+   "tasks": [
+    102530,
+    102770,
+    102780
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 310008,
+   "tasks": [
+    102600
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 3049,
+   "tasks": [
+    102640,
+    102680,
+    102700
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4120,
+   "tasks": [
+    102650,
+    102660,
+    102690
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4134,
+   "tasks": [
+    102790
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10099,
+   "tasks": [
+    102910,
+    103300
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4156,
+   "tasks": [
+    102930,
+    103010
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4157,
+   "tasks": [
+    102930,
+    103010
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4158,
+   "tasks": [
+    102930,
+    102990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4159,
+   "tasks": [
+    103010
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4161,
+   "tasks": [
+    103020
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10098,
+   "tasks": [
+    103170,
+    103330
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10097,
+   "tasks": [
+    103380
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10226,
+   "tasks": [
+    103610
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10215,
+   "tasks": [
+    103710
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10220,
+   "tasks": [
+    103720
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4225,
+   "tasks": [
+    103850
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10236,
+   "tasks": [
+    103920
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10237,
+   "tasks": [
+    103990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10235,
+   "tasks": [
+    104060
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4224,
+   "tasks": [
+    104100
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4223,
+   "tasks": [
+    104120
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1093,
+   "tasks": [
+    104200
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10317,
+   "tasks": [
+    104230,
+    104290
+   ],
+   "itemType": 25
+  },
+  {
+   "itemId": 10318,
+   "tasks": [
+    104410
+   ],
+   "itemType": 25
+  },
+  {
+   "itemId": 10316,
+   "tasks": [
+    104520
+   ],
+   "itemType": 25
+  },
+  {
+   "itemId": 10321,
+   "tasks": [
+    104590
+   ],
+   "itemType": 25
+  },
+  {
+   "itemId": 4246,
+   "tasks": [
+    104770,
+    104810
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4251,
+   "tasks": [
+    104770,
+    104810
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4248,
+   "tasks": [
+    104770,
+    104810
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4249,
+   "tasks": [
+    104770,
+    104810
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4250,
+   "tasks": [
+    104770,
+    104810
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10335,
+   "tasks": [
+    104780
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4247,
+   "tasks": [
+    104810
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10333,
+   "tasks": [
+    104840
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10350,
+   "tasks": [
+    104860
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4276,
+   "tasks": [
+    105260
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1193,
+   "tasks": [
+    105270,
+    206930,
+    404860
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 10361,
+   "tasks": [
+    105330
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1176,
+   "tasks": [
+    105420,
+    207140,
+    400520
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4277,
+   "tasks": [
+    105470
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1111,
+   "tasks": [
+    105670
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4280,
+   "tasks": [
+    105680
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4370,
+   "tasks": [
+    105870
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4371,
+   "tasks": [
+    105880
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10524,
+   "tasks": [
+    105920
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4372,
+   "tasks": [
+    105940
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10528,
+   "tasks": [
+    106000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10535,
+   "tasks": [
+    106070
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10619,
+   "tasks": [
+    106260
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10625,
+   "tasks": [
+    106270
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10627,
+   "tasks": [
+    106280
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10586,
+   "tasks": [
+    106290
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10644,
+   "tasks": [
+    106520
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10646,
+   "tasks": [
+    106540
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10648,
+   "tasks": [
+    106560
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4427,
+   "tasks": [
+    106580
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4428,
+   "tasks": [
+    106590
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4429,
+   "tasks": [
+    106600
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4430,
+   "tasks": [
+    106610
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4431,
+   "tasks": [
+    106620
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10753,
+   "tasks": [
+    106780
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4444,
+   "tasks": [
+    106840
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10757,
+   "tasks": [
+    106860
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10756,
+   "tasks": [
+    106910
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4051,
+   "tasks": [
+    106930,
+    211390,
+    403370
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4053,
+   "tasks": [
+    106930,
+    203050,
+    206940
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4110,
+   "tasks": [
+    106930,
+    300150,
+    400970
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10759,
+   "tasks": [
+    106950
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3007,
+   "tasks": [
+    106960,
+    200200,
+    211390
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4446,
+   "tasks": [
+    106980
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10758,
+   "tasks": [
+    106990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4451,
+   "tasks": [
+    107230
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4452,
+   "tasks": [
+    107230
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4453,
+   "tasks": [
+    107230
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4454,
+   "tasks": [
+    107250
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10710,
+   "tasks": [
+    107270
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10743,
+   "tasks": [
+    107280
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10744,
+   "tasks": [
+    107290
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4450,
+   "tasks": [
+    107390
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11148,
+   "tasks": [
+    107620
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11160,
+   "tasks": [
+    107930
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11126,
+   "tasks": [
+    108060
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11127,
+   "tasks": [
+    108070
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11176,
+   "tasks": [
+    108480
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11226,
+   "tasks": [
+    109040,
+    109070
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6072,
+   "tasks": [
+    109130,
+    109190
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6071,
+   "tasks": [
+    109270,
+    109290
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11684,
+   "tasks": [
+    109550,
+    109630
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11703,
+   "tasks": [
+    109830,
+    109840
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6785,
+   "tasks": [
+    109950
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11936,
+   "tasks": [
+    110040
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4447,
+   "tasks": [
+    110060
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4449,
+   "tasks": [
+    110080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4448,
+   "tasks": [
+    110140
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3111,
+   "tasks": [
+    110180
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11959,
+   "tasks": [
+    110280
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12040,
+   "tasks": [
+    110290,
+    110300
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6944,
+   "tasks": [
+    110310
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4456,
+   "tasks": [
+    110310
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11965,
+   "tasks": [
+    110470
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6931,
+   "tasks": [
+    110530
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6932,
+   "tasks": [
+    110540
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6962,
+   "tasks": [
+    110550
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6983,
+   "tasks": [
+    111280
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10684,
+   "tasks": [
+    111460
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 12013,
+   "tasks": [
+    111550
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12079,
+   "tasks": [
+    111610
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1252,
+   "tasks": [
+    111800
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 7012,
+   "tasks": [
+    111960
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7015,
+   "tasks": [
+    112050,
+    112060,
+    112070
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 12289,
+   "tasks": [
+    112340
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 7701,
+   "tasks": [
+    112570
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 15346,
+   "tasks": [
+    112600
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15032,
+   "tasks": [
+    112670
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15044,
+   "tasks": [
+    112830
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15356,
+   "tasks": [
+    112850
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15352,
+   "tasks": [
+    112950
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15350,
+   "tasks": [
+    113010
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15351,
+   "tasks": [
+    113020
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15353,
+   "tasks": [
+    113030
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15290,
+   "tasks": [
+    113040
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15300,
+   "tasks": [
+    113050
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15096,
+   "tasks": [
+    113210
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 7658,
+   "tasks": [
+    113370
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 15349,
+   "tasks": [
+    113400
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1007,
+   "tasks": [
+    200320,
+    200330,
+    400790
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 3053,
+   "tasks": [
+    200450
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4124,
+   "tasks": [
+    200620,
+    401270
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1114,
+   "tasks": [
+    200650,
+    200660,
+    207170
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4060,
+   "tasks": [
+    200670,
+    203050,
+    400860
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4008,
+   "tasks": [
+    200680,
+    400710,
+    401930
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4125,
+   "tasks": [
+    200700
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4169,
+   "tasks": [
+    200800
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10065,
+   "tasks": [
+    200850
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10060,
+   "tasks": [
+    200910
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10058,
+   "tasks": [
+    200920
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4056,
+   "tasks": [
+    203050,
+    206940,
+    300490
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4059,
+   "tasks": [
+    203050
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4061,
+   "tasks": [
+    203050,
+    405430,
+    610330
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1408,
+   "tasks": [
+    203080
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4163,
+   "tasks": [
+    203100
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4164,
+   "tasks": [
+    203110
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4162,
+   "tasks": [
+    203140
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4168,
+   "tasks": [
+    203160
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4486,
+   "tasks": [
+    203170
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4485,
+   "tasks": [
+    203380,
+    203390
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10892,
+   "tasks": [
+    203560
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10895,
+   "tasks": [
+    203570
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4487,
+   "tasks": [
+    203590
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4488,
+   "tasks": [
+    203600
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1257,
+   "tasks": [
+    204050,
+    204190,
+    616080
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4165,
+   "tasks": [
+    204090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1018,
+   "tasks": [
+    204120
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4166,
+   "tasks": [
+    204130
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1069,
+   "tasks": [
+    204150,
+    617120
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4167,
+   "tasks": [
+    204160
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3077,
+   "tasks": [
+    206110
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3078,
+   "tasks": [
+    206120
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3079,
+   "tasks": [
+    206130,
+    610500
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4315,
+   "tasks": [
+    206380
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4316,
+   "tasks": [
+    206390
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10386,
+   "tasks": [
+    206440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10387,
+   "tasks": [
+    206450
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10388,
+   "tasks": [
+    206460
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10389,
+   "tasks": [
+    206470
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10390,
+   "tasks": [
+    206480
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10391,
+   "tasks": [
+    206500
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10393,
+   "tasks": [
+    206520
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10394,
+   "tasks": [
+    206530
+   ],
+   "itemType": 19
+  },
+  {
+   "itemId": 10395,
+   "tasks": [
+    206560
+   ],
+   "itemType": 19
+  },
+  {
+   "itemId": 10397,
+   "tasks": [
+    206570
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1168,
+   "tasks": [
+    206610,
+    206630,
+    617270
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10398,
+   "tasks": [
+    206660
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10399,
+   "tasks": [
+    206680
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10400,
+   "tasks": [
+    206700
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1238,
+   "tasks": [
+    206730
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1071,
+   "tasks": [
+    206740,
+    617130
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1123,
+   "tasks": [
+    206750
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1166,
+   "tasks": [
+    206770,
+    207160,
+    616150
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1137,
+   "tasks": [
+    206810,
+    617770
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 10401,
+   "tasks": [
+    206860
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10403,
+   "tasks": [
+    206970
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1156,
+   "tasks": [
+    207110
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10404,
+   "tasks": [
+    207270
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1509,
+   "tasks": [
+    207290
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 10406,
+   "tasks": [
+    207310
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10405,
+   "tasks": [
+    207320
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1249,
+   "tasks": [
+    207350,
+    208170
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10396,
+   "tasks": [
+    207370
+   ],
+   "itemType": 19
+  },
+  {
+   "itemId": 1245,
+   "tasks": [
+    207380
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4333,
+   "tasks": [
+    207420,
+    207520,
+    207650
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10413,
+   "tasks": [
+    207440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10416,
+   "tasks": [
+    207450
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10415,
+   "tasks": [
+    207460
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10414,
+   "tasks": [
+    207470
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10417,
+   "tasks": [
+    207540
+   ],
+   "itemType": 19
+  },
+  {
+   "itemId": 10418,
+   "tasks": [
+    207550
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10419,
+   "tasks": [
+    207560
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10421,
+   "tasks": [
+    207570
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10420,
+   "tasks": [
+    207580
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10422,
+   "tasks": [
+    207590
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10424,
+   "tasks": [
+    207670
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10425,
+   "tasks": [
+    207690
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10426,
+   "tasks": [
+    207710
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10427,
+   "tasks": [
+    207730
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10423,
+   "tasks": [
+    207740
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10430,
+   "tasks": [
+    207800
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10432,
+   "tasks": [
+    207810
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10431,
+   "tasks": [
+    207820
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10433,
+   "tasks": [
+    207830
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10429,
+   "tasks": [
+    207840
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1253,
+   "tasks": [
+    207970
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4171,
+   "tasks": [
+    208000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4172,
+   "tasks": [
+    208000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10583,
+   "tasks": [
+    208060
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4416,
+   "tasks": [
+    208120
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10577,
+   "tasks": [
+    208230
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10696,
+   "tasks": [
+    208450
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4443,
+   "tasks": [
+    208510
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10700,
+   "tasks": [
+    208530
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10796,
+   "tasks": [
+    208570
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4462,
+   "tasks": [
+    208630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 2114,
+   "tasks": [
+    208810
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4457,
+   "tasks": [
+    208860
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4458,
+   "tasks": [
+    208860
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4459,
+   "tasks": [
+    208860
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4460,
+   "tasks": [
+    208860
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4461,
+   "tasks": [
+    208860
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4466,
+   "tasks": [
+    209060
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4467,
+   "tasks": [
+    209080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4468,
+   "tasks": [
+    209110
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4469,
+   "tasks": [
+    209220
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4470,
+   "tasks": [
+    209290
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4471,
+   "tasks": [
+    209440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10856,
+   "tasks": [
+    209450
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10854,
+   "tasks": [
+    209460
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10850,
+   "tasks": [
+    209470
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10868,
+   "tasks": [
+    209680,
+    209830
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10870,
+   "tasks": [
+    209690,
+    209840
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10872,
+   "tasks": [
+    209700,
+    209850,
+    209880
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4483,
+   "tasks": [
+    209900
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4484,
+   "tasks": [
+    209910
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3130,
+   "tasks": [
+    210030,
+    401340
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3131,
+   "tasks": [
+    210030
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3132,
+   "tasks": [
+    210030
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1105,
+   "tasks": [
+    210050,
+    401880,
+    740190
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 11045,
+   "tasks": [
+    210140
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11042,
+   "tasks": [
+    210200
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11311,
+   "tasks": [
+    210340
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11313,
+   "tasks": [
+    210350
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6278,
+   "tasks": [
+    210500
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11347,
+   "tasks": [
+    210550
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11356,
+   "tasks": [
+    210760
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11357,
+   "tasks": [
+    210810
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6301,
+   "tasks": [
+    211020,
+    211080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6302,
+   "tasks": [
+    211020,
+    211090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6303,
+   "tasks": [
+    211020,
+    211060
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6304,
+   "tasks": [
+    211020,
+    211070
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11585,
+   "tasks": [
+    211200
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1,
+   "tasks": [
+    211220,
+    403640,
+    403790
+   ],
+   "itemType": 6
+  },
+  {
+   "itemId": 6750,
+   "tasks": [
+    211230
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6760,
+   "tasks": [
+    211240
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3002,
+   "tasks": [
+    211390,
+    300140,
+    600120
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6960,
+   "tasks": [
+    211400
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6975,
+   "tasks": [
+    211400
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7090,
+   "tasks": [
+    211580
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7089,
+   "tasks": [
+    211680,
+    211700,
+    211710
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 13458,
+   "tasks": [
+    212380
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 13487,
+   "tasks": [
+    212490
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 13497,
+   "tasks": [
+    212550
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 7828,
+   "tasks": [
+    212560
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 15133,
+   "tasks": [
+    213040
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15173,
+   "tasks": [
+    213210
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15175,
+   "tasks": [
+    213220
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15418,
+   "tasks": [
+    213350
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15815,
+   "tasks": [
+    213580
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15786,
+   "tasks": [
+    213720
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15791,
+   "tasks": [
+    213730
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15908,
+   "tasks": [
+    214320
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15926,
+   "tasks": [
+    214370
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15962,
+   "tasks": [
+    214530
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15957,
+   "tasks": [
+    214540
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16485,
+   "tasks": [
+    215200
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 9805,
+   "tasks": [
+    215230
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 16499,
+   "tasks": [
+    215350
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 9822,
+   "tasks": [
+    215440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 16993,
+   "tasks": [
+    215780
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16997,
+   "tasks": [
+    216460
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10294,
+   "tasks": [
+    216500
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 17008,
+   "tasks": [
+    216630
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16952,
+   "tasks": [
+    216820
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 17074,
+   "tasks": [
+    217150,
+    217160
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 17075,
+   "tasks": [
+    217170,
+    217180
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1001,
+   "tasks": [
+    300010
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 3006,
+   "tasks": [
+    300020,
+    700200
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4105,
+   "tasks": [
+    300040,
+    400610,
+    400620
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1032,
+   "tasks": [
+    300050
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4107,
+   "tasks": [
+    300070
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 2002,
+   "tasks": [
+    300090
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1006,
+   "tasks": [
+    300110
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4201,
+   "tasks": [
+    300120
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4202,
+   "tasks": [
+    300130
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4005,
+   "tasks": [
+    300180,
+    610080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1108,
+   "tasks": [
+    300190
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1273,
+   "tasks": [
+    300220
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4007,
+   "tasks": [
+    300230,
+    770110
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4307,
+   "tasks": [
+    300270
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4308,
+   "tasks": [
+    300280
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1029,
+   "tasks": [
+    300290,
+    600190
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1304,
+   "tasks": [
+    300300,
+    610870
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1259,
+   "tasks": [
+    300330
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 2302,
+   "tasks": [
+    300350
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1167,
+   "tasks": [
+    300370
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1407,
+   "tasks": [
+    300380
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4524,
+   "tasks": [
+    300390
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4587,
+   "tasks": [
+    300400
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6230,
+   "tasks": [
+    300420
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6232,
+   "tasks": [
+    300430
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6842,
+   "tasks": [
+    300440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7041,
+   "tasks": [
+    300500
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 8997,
+   "tasks": [
+    300530
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 8994,
+   "tasks": [
+    300570
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9012,
+   "tasks": [
+    300580
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9154,
+   "tasks": [
+    300590
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9169,
+   "tasks": [
+    300600
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4281,
+   "tasks": [
+    400140
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3108,
+   "tasks": [
+    400290
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4282,
+   "tasks": [
+    400300
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4283,
+   "tasks": [
+    400310
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1036,
+   "tasks": [
+    400340
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4092,
+   "tasks": [
+    400410
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4089,
+   "tasks": [
+    400420,
+    404500
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4284,
+   "tasks": [
+    400430
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4285,
+   "tasks": [
+    400490,
+    401020
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4290,
+   "tasks": [
+    400530
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4286,
+   "tasks": [
+    400540
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4106,
+   "tasks": [
+    400590
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4287,
+   "tasks": [
+    400670
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4288,
+   "tasks": [
+    400800
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4052,
+   "tasks": [
+    400970,
+    403390,
+    610100
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3117,
+   "tasks": [
+    401000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4289,
+   "tasks": [
+    401030
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4302,
+   "tasks": [
+    401060
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4303,
+   "tasks": [
+    401070
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1154,
+   "tasks": [
+    401090
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4304,
+   "tasks": [
+    401110
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4305,
+   "tasks": [
+    401140
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3120,
+   "tasks": [
+    401200
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1298,
+   "tasks": [
+    401260
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4306,
+   "tasks": [
+    401290
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4399,
+   "tasks": [
+    401370
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4402,
+   "tasks": [
+    401390
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4406,
+   "tasks": [
+    401400
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10554,
+   "tasks": [
+    401440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4401,
+   "tasks": [
+    401470
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10556,
+   "tasks": [
+    401550
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4403,
+   "tasks": [
+    401580
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4400,
+   "tasks": [
+    401590
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4414,
+   "tasks": [
+    401600
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4439,
+   "tasks": [
+    401750
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10760,
+   "tasks": [
+    401790
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4440,
+   "tasks": [
+    401820
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4441,
+   "tasks": [
+    401970
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4442,
+   "tasks": [
+    401980
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1240,
+   "tasks": [
+    402010
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4493,
+   "tasks": [
+    402040
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10907,
+   "tasks": [
+    402070
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4503,
+   "tasks": [
+    403140
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11054,
+   "tasks": [
+    403220
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4557,
+   "tasks": [
+    403230
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4558,
+   "tasks": [
+    403260
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4559,
+   "tasks": [
+    403290
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4608,
+   "tasks": [
+    403420
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4609,
+   "tasks": [
+    403420
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6088,
+   "tasks": [
+    403530
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11233,
+   "tasks": [
+    403600
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6142,
+   "tasks": [
+    403610
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11234,
+   "tasks": [
+    403720
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11254,
+   "tasks": [
+    403830,
+    404720,
+    404850
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11255,
+   "tasks": [
+    403900
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11256,
+   "tasks": [
+    403930
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6174,
+   "tasks": [
+    403970
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6175,
+   "tasks": [
+    403970
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6176,
+   "tasks": [
+    403970
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6177,
+   "tasks": [
+    403970
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6178,
+   "tasks": [
+    404010
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6184,
+   "tasks": [
+    404060
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11284,
+   "tasks": [
+    404070
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6179,
+   "tasks": [
+    404100
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11300,
+   "tasks": [
+    404170
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11261,
+   "tasks": [
+    404370
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6180,
+   "tasks": [
+    404400
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6181,
+   "tasks": [
+    404400
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11262,
+   "tasks": [
+    404440
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11728,
+   "tasks": [
+    404510
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11730,
+   "tasks": [
+    404550
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6811,
+   "tasks": [
+    404560
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6812,
+   "tasks": [
+    404580
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6837,
+   "tasks": [
+    404740
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11740,
+   "tasks": [
+    404810
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6838,
+   "tasks": [
+    404830
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11746,
+   "tasks": [
+    404840
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6839,
+   "tasks": [
+    404940
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6831,
+   "tasks": [
+    405000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6832,
+   "tasks": [
+    405000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6833,
+   "tasks": [
+    405000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6834,
+   "tasks": [
+    405000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6835,
+   "tasks": [
+    405000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4901,
+   "tasks": [
+    405000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4902,
+   "tasks": [
+    405000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4880,
+   "tasks": [
+    405000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4874,
+   "tasks": [
+    405000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6836,
+   "tasks": [
+    405000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6954,
+   "tasks": [
+    405140
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 12032,
+   "tasks": [
+    405230
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6963,
+   "tasks": [
+    405270
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1261,
+   "tasks": [
+    405280
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12113,
+   "tasks": [
+    405320
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12125,
+   "tasks": [
+    405390
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12171,
+   "tasks": [
+    405470
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12175,
+   "tasks": [
+    405500
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12179,
+   "tasks": [
+    405540
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15269,
+   "tasks": [
+    405700
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15298,
+   "tasks": [
+    405740
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 8975,
+   "tasks": [
+    405790
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 8976,
+   "tasks": [
+    405850
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 8992,
+   "tasks": [
+    405950
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 8993,
+   "tasks": [
+    405990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 15345,
+   "tasks": [
+    406070
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 8998,
+   "tasks": [
+    406100
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1271,
+   "tasks": [
+    406210
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15419,
+   "tasks": [
+    406290
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 9015,
+   "tasks": [
+    406320
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 15403,
+   "tasks": [
+    406330
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15442,
+   "tasks": [
+    406470
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 9148,
+   "tasks": [
+    406500
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9149,
+   "tasks": [
+    406530
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9150,
+   "tasks": [
+    406530
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9151,
+   "tasks": [
+    406530
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9152,
+   "tasks": [
+    406550,
+    406590
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 15463,
+   "tasks": [
+    406660
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 9165,
+   "tasks": [
+    406710
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 15481,
+   "tasks": [
+    406740
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 9167,
+   "tasks": [
+    406790
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9166,
+   "tasks": [
+    406850
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9670,
+   "tasks": [
+    407090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9711,
+   "tasks": [
+    407090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 16042,
+   "tasks": [
+    407170
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16068,
+   "tasks": [
+    407180
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16067,
+   "tasks": [
+    407190
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16035,
+   "tasks": [
+    407260
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16065,
+   "tasks": [
+    407470
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16039,
+   "tasks": [
+    407480
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16066,
+   "tasks": [
+    407490
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4050,
+   "tasks": [
+    600080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3201,
+   "tasks": [
+    600210
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1008,
+   "tasks": [
+    600230
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4097,
+   "tasks": [
+    600300
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4101,
+   "tasks": [
+    610040
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4102,
+   "tasks": [
+    610040
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4103,
+   "tasks": [
+    610040
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4098,
+   "tasks": [
+    610150,
+    610160
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4099,
+   "tasks": [
+    610150,
+    610160
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1172,
+   "tasks": [
+    610200
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 3105,
+   "tasks": [
+    610250
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1276,
+   "tasks": [
+    610310
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4209,
+   "tasks": [
+    610320
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3715,
+   "tasks": [
+    610350
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3704,
+   "tasks": [
+    610360
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3705,
+   "tasks": [
+    610360
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3706,
+   "tasks": [
+    610360
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3707,
+   "tasks": [
+    610360
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3708,
+   "tasks": [
+    610360
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3709,
+   "tasks": [
+    610360
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3710,
+   "tasks": [
+    610360
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3711,
+   "tasks": [
+    610360
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3712,
+   "tasks": [
+    610360
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3713,
+   "tasks": [
+    610360
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10369,
+   "tasks": [
+    610430
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10367,
+   "tasks": [
+    610480
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 3085,
+   "tasks": [
+    610530
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3087,
+   "tasks": [
+    610590
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3088,
+   "tasks": [
+    610610
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3089,
+   "tasks": [
+    610620
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3086,
+   "tasks": [
+    610620
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4349,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4350,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4351,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4352,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4353,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4354,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4355,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4356,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4357,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4358,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4359,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4360,
+   "tasks": [
+    610630
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3090,
+   "tasks": [
+    610640
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3091,
+   "tasks": [
+    610660
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10770,
+   "tasks": [
+    610740
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1048,
+   "tasks": [
+    610790
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10911,
+   "tasks": [
+    610850
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10915,
+   "tasks": [
+    610940
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 2006,
+   "tasks": [
+    610950,
+    611010
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 1044,
+   "tasks": [
+    611100
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4498,
+   "tasks": [
+    611170
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10929,
+   "tasks": [
+    611230
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10933,
+   "tasks": [
+    611240
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10934,
+   "tasks": [
+    611250
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10935,
+   "tasks": [
+    611260
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10931,
+   "tasks": [
+    611360
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4499,
+   "tasks": [
+    611470
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10941,
+   "tasks": [
+    611500
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4500,
+   "tasks": [
+    611530
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10942,
+   "tasks": [
+    611550,
+    611580
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4510,
+   "tasks": [
+    611610,
+    612080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4511,
+   "tasks": [
+    611610,
+    612080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4512,
+   "tasks": [
+    611610,
+    612080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4513,
+   "tasks": [
+    611610,
+    612080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4514,
+   "tasks": [
+    611610,
+    612080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4515,
+   "tasks": [
+    611610,
+    612080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4516,
+   "tasks": [
+    611610,
+    612080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4517,
+   "tasks": [
+    611610,
+    612080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4518,
+   "tasks": [
+    611610,
+    612080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4519,
+   "tasks": [
+    611610,
+    612080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10946,
+   "tasks": [
+    611630
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4505,
+   "tasks": [
+    611730
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4504,
+   "tasks": [
+    611850
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4506,
+   "tasks": [
+    611870
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10994,
+   "tasks": [
+    611890
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4507,
+   "tasks": [
+    611940
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4508,
+   "tasks": [
+    611990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4521,
+   "tasks": [
+    611990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4522,
+   "tasks": [
+    611990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4523,
+   "tasks": [
+    611990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3136,
+   "tasks": [
+    612090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3137,
+   "tasks": [
+    612090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3138,
+   "tasks": [
+    612090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3139,
+   "tasks": [
+    612090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3140,
+   "tasks": [
+    612090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3141,
+   "tasks": [
+    612090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3142,
+   "tasks": [
+    612090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3143,
+   "tasks": [
+    612090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3144,
+   "tasks": [
+    612090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3145,
+   "tasks": [
+    612090
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11050,
+   "tasks": [
+    612150,
+    612170
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11269,
+   "tasks": [
+    612230
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11293,
+   "tasks": [
+    612260
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4048,
+   "tasks": [
+    612300
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6183,
+   "tasks": [
+    612300
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6268,
+   "tasks": [
+    612450
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11338,
+   "tasks": [
+    612460
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11344,
+   "tasks": [
+    612470
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11361,
+   "tasks": [
+    612530
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11524,
+   "tasks": [
+    614580
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11529,
+   "tasks": [
+    614640
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11530,
+   "tasks": [
+    614650
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11526,
+   "tasks": [
+    614660
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6460,
+   "tasks": [
+    614720
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11543,
+   "tasks": [
+    614820
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11551,
+   "tasks": [
+    614920
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6374,
+   "tasks": [
+    614990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6375,
+   "tasks": [
+    614990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6376,
+   "tasks": [
+    614990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6377,
+   "tasks": [
+    614990
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6393,
+   "tasks": [
+    615040
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6378,
+   "tasks": [
+    615240
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11580,
+   "tasks": [
+    615270
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11570,
+   "tasks": [
+    615330
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6499,
+   "tasks": [
+    615470
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1102,
+   "tasks": [
+    615550
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 11657,
+   "tasks": [
+    615560
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1101,
+   "tasks": [
+    615580
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 6642,
+   "tasks": [
+    615660
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11783,
+   "tasks": [
+    615840
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11781,
+   "tasks": [
+    615880
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11779,
+   "tasks": [
+    615890
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11777,
+   "tasks": [
+    615900
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6844,
+   "tasks": [
+    615910
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11918,
+   "tasks": [
+    615990
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11914,
+   "tasks": [
+    616010
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11916,
+   "tasks": [
+    616030
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6883,
+   "tasks": [
+    616050
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6884,
+   "tasks": [
+    616050
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6885,
+   "tasks": [
+    616050
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6886,
+   "tasks": [
+    616050
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6887,
+   "tasks": [
+    616050
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1169,
+   "tasks": [
+    616140
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6892,
+   "tasks": [
+    616180
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11924,
+   "tasks": [
+    616200
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6893,
+   "tasks": [
+    616250
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 12044,
+   "tasks": [
+    616270,
+    616280
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12046,
+   "tasks": [
+    616300
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12048,
+   "tasks": [
+    616310
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12056,
+   "tasks": [
+    616380
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6991,
+   "tasks": [
+    616390
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4071,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4072,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4073,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4074,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4075,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4076,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4077,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4078,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4079,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4080,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4081,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4082,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4083,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4084,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4085,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4086,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4087,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4088,
+   "tasks": [
+    616440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 12400,
+   "tasks": [
+    616530
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12402,
+   "tasks": [
+    616640
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 7225,
+   "tasks": [
+    616650
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4418,
+   "tasks": [
+    616650,
+    616740
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 12418,
+   "tasks": [
+    616720
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12396,
+   "tasks": [
+    616770
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12408,
+   "tasks": [
+    616810
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12410,
+   "tasks": [
+    616840
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 7224,
+   "tasks": [
+    616860
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1083,
+   "tasks": [
+    616920,
+    617810
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 7407,
+   "tasks": [
+    616970
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7431,
+   "tasks": [
+    617070
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7408,
+   "tasks": [
+    617140
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7473,
+   "tasks": [
+    617280
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7486,
+   "tasks": [
+    617280
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7487,
+   "tasks": [
+    617280
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 16188,
+   "tasks": [
+    617400
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16191,
+   "tasks": [
+    617410
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12891,
+   "tasks": [
+    617490
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12887,
+   "tasks": [
+    617600
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12889,
+   "tasks": [
+    617630
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1047,
+   "tasks": [
+    617780
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1150,
+   "tasks": [
+    617790
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1072,
+   "tasks": [
+    617800
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1134,
+   "tasks": [
+    617820,
+    840300
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 7833,
+   "tasks": [
+    617830
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9481,
+   "tasks": [
+    619000
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4205,
+   "tasks": [
+    620060
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4204,
+   "tasks": [
+    620070
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10100,
+   "tasks": [
+    620140
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 3202,
+   "tasks": [
+    620150
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10115,
+   "tasks": [
+    620260
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10116,
+   "tasks": [
+    620270
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10109,
+   "tasks": [
+    620370
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10111,
+   "tasks": [
+    620380
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1292,
+   "tasks": [
+    620420
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4207,
+   "tasks": [
+    620560
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1291,
+   "tasks": [
+    620580,
+    620620
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4021,
+   "tasks": [
+    700040
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4024,
+   "tasks": [
+    700120
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4025,
+   "tasks": [
+    700120
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4026,
+   "tasks": [
+    700120
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4027,
+   "tasks": [
+    700120
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10032,
+   "tasks": [
+    720270
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10003,
+   "tasks": [
+    720280
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10005,
+   "tasks": [
+    720300
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10007,
+   "tasks": [
+    720350
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4129,
+   "tasks": [
+    720410
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4130,
+   "tasks": [
+    720420
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4131,
+   "tasks": [
+    720420
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4132,
+   "tasks": [
+    720420
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4133,
+   "tasks": [
+    720430
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10009,
+   "tasks": [
+    720460
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10010,
+   "tasks": [
+    720510
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10034,
+   "tasks": [
+    720930
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10035,
+   "tasks": [
+    720940
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10509,
+   "tasks": [
+    721030
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 10503,
+   "tasks": [
+    721060
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4347,
+   "tasks": [
+    721160
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4348,
+   "tasks": [
+    721160
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6456,
+   "tasks": [
+    721190,
+    721200,
+    721270
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6457,
+   "tasks": [
+    721210,
+    721290,
+    721330
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6458,
+   "tasks": [
+    721220,
+    721300,
+    721340
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6484,
+   "tasks": [
+    721230,
+    721310
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6483,
+   "tasks": [
+    721240,
+    721320
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 12518,
+   "tasks": [
+    721480
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12520,
+   "tasks": [
+    721500
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12524,
+   "tasks": [
+    721510
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12532,
+   "tasks": [
+    721590
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12542,
+   "tasks": [
+    721650
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12546,
+   "tasks": [
+    721660
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12548,
+   "tasks": [
+    721670
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 13656,
+   "tasks": [
+    721940,
+    722100,
+    722190
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 7853,
+   "tasks": [
+    722170
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 13899,
+   "tasks": [
+    722240
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 13901,
+   "tasks": [
+    722410
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 8126,
+   "tasks": [
+    722510
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 16619,
+   "tasks": [
+    722750
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16620,
+   "tasks": [
+    722780
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16621,
+   "tasks": [
+    722790
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16622,
+   "tasks": [
+    722810
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16623,
+   "tasks": [
+    722850
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16624,
+   "tasks": [
+    722930
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16626,
+   "tasks": [
+    722940
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16625,
+   "tasks": [
+    722990
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 17136,
+   "tasks": [
+    723520
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 17262,
+   "tasks": [
+    723680
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 17192,
+   "tasks": [
+    723800
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 17193,
+   "tasks": [
+    723830
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 17194,
+   "tasks": [
+    723840
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10755,
+   "tasks": [
+    723850
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 17195,
+   "tasks": [
+    723860
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 17197,
+   "tasks": [
+    723940
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 17214,
+   "tasks": [
+    724200
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 10728,
+   "tasks": [
+    724400
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 17199,
+   "tasks": [
+    724420
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4029,
+   "tasks": [
+    740020
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4031,
+   "tasks": [
+    740130
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4030,
+   "tasks": [
+    740210
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1045,
+   "tasks": [
+    760120,
+    770150,
+    770160
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 1147,
+   "tasks": [
+    760130
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4013,
+   "tasks": [
+    770110
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1014,
+   "tasks": [
+    770140
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4032,
+   "tasks": [
+    770170
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4034,
+   "tasks": [
+    770180
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4111,
+   "tasks": [
+    800070
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4113,
+   "tasks": [
+    800070,
+    800160
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4115,
+   "tasks": [
+    800100
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4114,
+   "tasks": [
+    800100
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4112,
+   "tasks": [
+    800150
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 2085,
+   "tasks": [
+    800250,
+    800260
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 3059,
+   "tasks": [
+    820050
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1231,
+   "tasks": [
+    820070,
+    820140
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4126,
+   "tasks": [
+    820230
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4041,
+   "tasks": [
+    840070
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4038,
+   "tasks": [
+    840120,
+    840130,
+    840140
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4039,
+   "tasks": [
+    840140
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4040,
+   "tasks": [
+    840140
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4043,
+   "tasks": [
+    840150
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4044,
+   "tasks": [
+    840220
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4045,
+   "tasks": [
+    840220
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4046,
+   "tasks": [
+    840230
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 1110,
+   "tasks": [
+    840270
+   ],
+   "itemType": 1
+  },
+  {
+   "itemId": 4754,
+   "tasks": [
+    840280
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 15656,
+   "tasks": [
+    850230
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15664,
+   "tasks": [
+    850240
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15675,
+   "tasks": [
+    850250
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15677,
+   "tasks": [
+    850300
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15801,
+   "tasks": [
+    850410
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 9302,
+   "tasks": [
+    850440,
+    850460
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 15735,
+   "tasks": [
+    850560
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 9305,
+   "tasks": [
+    850590
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 9304,
+   "tasks": [
+    850620
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 15725,
+   "tasks": [
+    850640
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15726,
+   "tasks": [
+    850650
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 9306,
+   "tasks": [
+    850730
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 15752,
+   "tasks": [
+    850780
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 15753,
+   "tasks": [
+    850800
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11068,
+   "tasks": [
+    900020
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11069,
+   "tasks": [
+    900030
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11070,
+   "tasks": [
+    900040
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11071,
+   "tasks": [
+    900050
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11021,
+   "tasks": [
+    900060
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11011,
+   "tasks": [
+    900070,
+    900090
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4526,
+   "tasks": [
+    900080
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11020,
+   "tasks": [
+    900110
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11018,
+   "tasks": [
+    900140
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11019,
+   "tasks": [
+    900150
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4527,
+   "tasks": [
+    900170
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4528,
+   "tasks": [
+    900210
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4529,
+   "tasks": [
+    900230
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4530,
+   "tasks": [
+    900270
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4531,
+   "tasks": [
+    900290
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4532,
+   "tasks": [
+    900290
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4533,
+   "tasks": [
+    900290
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4534,
+   "tasks": [
+    900290
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11023,
+   "tasks": [
+    900350
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4538,
+   "tasks": [
+    900370
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11026,
+   "tasks": [
+    900450
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11036,
+   "tasks": [
+    900530
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11034,
+   "tasks": [
+    900540
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11092,
+   "tasks": [
+    900600,
+    900620
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11097,
+   "tasks": [
+    900720
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11096,
+   "tasks": [
+    900740,
+    900770
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4627,
+   "tasks": [
+    900780
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11102,
+   "tasks": [
+    900800
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11103,
+   "tasks": [
+    900860
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11104,
+   "tasks": [
+    900870
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11101,
+   "tasks": [
+    900990
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11186,
+   "tasks": [
+    901030
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 4752,
+   "tasks": [
+    901130
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6070,
+   "tasks": [
+    901190
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6077,
+   "tasks": [
+    901200
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6078,
+   "tasks": [
+    901210
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11321,
+   "tasks": [
+    901320
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11323,
+   "tasks": [
+    901330
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 6274,
+   "tasks": [
+    901400
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 6353,
+   "tasks": [
+    901440
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 11489,
+   "tasks": [
+    901470
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11487,
+   "tasks": [
+    901500
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11492,
+   "tasks": [
+    901530
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 11491,
+   "tasks": [
+    901540
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12592,
+   "tasks": [
+    901600,
+    901610
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 12594,
+   "tasks": [
+    901620
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 7488,
+   "tasks": [
+    901660
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7489,
+   "tasks": [
+    901670
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 4062,
+   "tasks": [
+    1000070
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7102,
+   "tasks": [
+    1100010
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7103,
+   "tasks": [
+    1100020
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 7104,
+   "tasks": [
+    1100030
+   ],
+   "itemType": 2
+  },
+  {
+   "itemId": 16141,
+   "tasks": [
+    20000030
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16151,
+   "tasks": [
+    20000100
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16154,
+   "tasks": [
+    20000130
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16164,
+   "tasks": [
+    20000140
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16175,
+   "tasks": [
+    20000210
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16194,
+   "tasks": [
+    20000310
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16195,
+   "tasks": [
+    20000320
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16196,
+   "tasks": [
+    20000330
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16306,
+   "tasks": [
+    20001120
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16309,
+   "tasks": [
+    20001160
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16310,
+   "tasks": [
+    20001170
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16311,
+   "tasks": [
+    20001190
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16312,
+   "tasks": [
+    20001200
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16317,
+   "tasks": [
+    20001210
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16319,
+   "tasks": [
+    20001220
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16320,
+   "tasks": [
+    20001230
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16323,
+   "tasks": [
+    20001270
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16325,
+   "tasks": [
+    20001300
+   ],
+   "itemType": null
+  },
+  {
+   "itemId": 16326,
+   "tasks": [
+    20001310
+   ],
+   "itemType": null
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+# User.marryNpc   (HttpConst.MARRY_NPC_EVENT)
+
+## 注册点 77024: i.MessageCenter.on(n.HttpConst.MARRY_NPC_EVENT, this.callBackMarryNpcEvent, this);
+
+## 请求点 77422: _.NetMgr.http.sendRequest(n.HttpConst.MARRY_NPC_EVENT, {
+   77414: };
+   77415: e.prototype.reqWelcomeTeam = function(t) {
+   77416: _.NetMgr.http.sendRequest(n.HttpConst.RECEIVENPC_EVENT, {
+   77417: npcID: t
+   77418: });
+   77419: };
+   77420: e.prototype.reqMarryNpc = function(t, e) {
+   77421: this.marryFlag = e;
+
+## 处理函数 callBackMarryNpcEvent (77236-77249)
+ 77236: e.prototype.callBackMarryNpcEvent = function(t, e) {
+ 77237: if (1 == e.eRet) {
+ 77238: y.TeamModel.destroy();
+ 77239: this.receiveNpc = 0;
+ 77240: this.rentProState = 0;
+ 77241: if (1 == this.marryFlag) {
+ 77242: this.npcMarryState = e.npcID;
+ 77243: var o = a.getItem(e.npcID, "npc"), n = parseInt(o.jineng[1]);
+ 77244: this.wifeUpdateData = {
+ 77245: lv: n,
+ 77246: exp: 0,
+ 77247: eid: 0,
+ 77248: fasion: {}
+ 77249: };

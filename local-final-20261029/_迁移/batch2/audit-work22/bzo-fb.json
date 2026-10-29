@@ -1,0 +1,8 @@
+{
+  "attempt": 1,
+  "fails": [
+    "L1.NO_RESP 应答体不是对象",
+    "L5.RULE 守恒式不成立：卖出得 Price×num 铜币（物品）（d('coins') === T.item[p.itemID].Price * p.num）",
+    "L5.RULE 守恒式不成立：卖出减 num 个物品（dbag(p.itemID) === -p.num）"
+  ]
+}

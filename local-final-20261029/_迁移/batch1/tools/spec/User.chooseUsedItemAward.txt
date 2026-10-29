@@ -1,0 +1,99 @@
+# User.chooseUsedItemAward  (HttpConst.CHOOSE_USEITEM_AWARD)
+# 出现 2 处
+
+ 64943: itemID: e.curItemId,
+ 64944: items: o.awardObj,
+ 64945: states: o.awardStates
+ 64946: });
+ 64947: }) : 2 == e.batchType && c.default.showBatchSelectDialog([ e.curItemId, o.awardObj, o.awardStates ]));
+ 64948: }, this);
+ 64949: r.MessageCenter.on(a.HttpConst.CHOOSE_USEITEM_AWARD, function(t, e) {
+ 64950: if (1 == e.eRet) {
+ 64951: e.chooseID;
+ 64952: v.default.addShowRewardUI1(e.cData);
+ 64953: var o = [];
+ 64954: for (var i in e.cData) o.push({
+ 64955: itemId: parseInt(i),
+ 64956: numbers: e.cData[i]
+ 64957: });
+ 64958: r.MessageCenter.dispatch(s.EvName.REWARD_ITEM, o);
+ 64959: r.MessageCenter.dispatch(s.EvName.USE_NEW_ITEM_EVENT, e);
+ 64960: } else if (15 == e.eRet) {
+ 64961: var n = e.delItemObj;
+ 64962: if (n && !cc.js.isEmptyObject(n)) {
+ 64963: n && c.default.showReward(n, 0, {}, {}, null, null, "6000572");
+ 64964: r.MessageCenter.dispatch(s.EvName.USE_NEW_ITEM_EVENT, e);
+ 64965: }
+ 64966: }
+ 64967: }, this);
+ 64968: r.MessageCenter.on(a.HttpConst.RECOVER_YOUNG, function(o, a) {
+ 64969: if (1 == a.eRet) {
+ 64970: var l = i.getItem(e.curItemId, "item");
+ 64971: Promise.resolve().then(function() {
+ 64972: return t("./RoleOtherInfo");
+ 64973: }).then(function(t) {
+ 64974: t.RoleOtherInfo.buyAgeTime += a.itemNum * parseInt(l.Data1);
+ 64975: k.playerInfo.entity.numJindan = t.RoleOtherInfo.buyAgeTime;
+ 64976: });
+ 64977: c.default.show(n.getText(1214).replace(/\[1\]/, a.itemNum * l.Data1));
+ 64978: r.MessageCenter.dispatch(s.EvName.USE_NEW_ITEM_EVENT, a);
+ 64979: } else 2 == a.eRet ? c.default.show(n.getText(1181)) : 3 == a.eRet ? c.default.show(n.getText(1173)) : 4 == a.eRet && c.default.show(n.getText(1174));
+ 64980: }, this);
+ 64981: r.MessageCenter.on(a.HttpConst.CHANGE_NAME, function(t, o) {
+ 64982: if (1 == o.eRet) {
+ 64983: l.RoleBaseInfo.userName = e.newName;
+ 64984: r.MessageCenter.dispatch(s.EvName.SET_NEW_NAME_EVENT);
+ 64985: r.MessageCenter.dispatch(s.EvName.USE_NEW_ITEM_EVENT, o);
+ 64986: r.MessageCenter.dispatch(s.EvName.UPDATA_TITLE_NAME);
+ 64987: } else 2 == o.eRet ? c.default.show(n.getText(427)) : 3 == o.eRet ? c.default.show(n.getText(1631)) : 99 == o.eRet && c.default.show(n.getText("480"));
+ 64988: }, this);
+ 64989: r.MessageCenter.on(a.HttpConst.SAN_GONG, function(t, e) {
+---
+ 65425: m.NetMgr.http.sendRequest(a.HttpConst.GET_USEITEM_AWARD, {
+ 65426: itemID: t
+ 65427: });
+ 65428: };
+ 65429: e.prototype.reqChooseItemAward = function(t, e) {
+ 65430: this.curItemId = t;
+ 65431: m.NetMgr.http.sendRequest(a.HttpConst.CHOOSE_USEITEM_AWARD, {
+ 65432: itemID: t,
+ 65433: cData: e
+ 65434: });
+ 65435: };
+ 65436: e.prototype.reqCanShareItem = function(t) {
+ 65437: this.curItemId = t;
+ 65438: m.NetMgr.http.sendReqWithMask(a.HttpConst.IS_CAN_SHARE, {
+ 65439: propID: t
+ 65440: });
+ 65441: };
+ 65442: e.prototype.reqShareReward = function() {
+ 65443: m.NetMgr.http.sendReqWithMask(a.HttpConst.GETSHARE_PIC_AWARD, {
+ 65444: propID: A.AdModel.isItemShare
+ 65445: });
+ 65446: };
+ 65447: e.prototype.judgeObjectIsNull = function(t) {
+ 65448: var e = !0;
+ 65449: for (var o in t) {
+ 65450: e = !1;
+ 65451: break;
+ 65452: }
+ 65453: return e;
+ 65454: };
+ 65455: e.prototype.reqClientGm = function(t) {
+ 65456: var e = {
+ 65457: gmString: t
+ 65458: };
+ 65459: m.NetMgr.http.sendReqWithMask(a.HttpConst.CLIENTGMCOMMON, e);
+ 65460: };
+ 65461: e.prototype.reqResetNameItem = function(t) {
+ 65462: this.newName = t;
+ 65463: m.NetMgr.http.sendRequest(a.HttpConst.CHANGE_NAME, {
+ 65464: newName: t
+ 65465: });
+ 65466: };
+ 65467: e.prototype.reqSangong = function(t, e) {
+ 65468: m.NetMgr.http.sendRequest(a.HttpConst.SAN_GONG, {
+ 65469: skillID: e,
+ 65470: propID: t
+ 65471: });
+---

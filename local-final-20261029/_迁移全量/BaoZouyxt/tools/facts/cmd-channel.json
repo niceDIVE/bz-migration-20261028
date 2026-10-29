@@ -1,0 +1,266 @@
+{
+  "file": "F:\\BaoZouyxt\\hotfix-patch\\hook\\bz-bootstrap.js",
+  "hits": {
+    "A": [
+      {
+        "n": 4,
+        "text": " *   1. 命令通道（文件：bz_cmd.txt → bz_res.txt），额外支持 reload / ver / selfcheck / reset / log / scene"
+      },
+      {
+        "n": 152,
+        "text": "    var cmdPath = DIR + 'bz_cmd.txt', resPath = DIR + 'bz_res.txt', seqPath = DIR + 'bz_res_seq.txt';"
+      }
+    ],
+    "B": [
+      {
+        "n": 4,
+        "text": " *   1. 命令通道（文件：bz_cmd.txt → bz_res.txt），额外支持 reload / ver / selfcheck / reset / log / scene"
+      },
+      {
+        "n": 152,
+        "text": "    var cmdPath = DIR + 'bz_cmd.txt', resPath = DIR + 'bz_res.txt', seqPath = DIR + 'bz_res_seq.txt';"
+      }
+    ],
+    "C": [
+      {
+        "n": 215,
+        "text": "    setInterval(function () {"
+      },
+      {
+        "n": 228,
+        "text": "    setInterval(function () {"
+      },
+      {
+        "n": 284,
+        "text": "    setTimeout(waitFs, 100);"
+      }
+    ],
+    "D": [
+      {
+        "n": 54,
+        "text": "      exists: function (p) { try { return !!(utils && utils.isFileExist(p)); } catch (e) { return false; } },"
+      },
+      {
+        "n": 55,
+        "text": "      remove: function (p) { try { return !!(utils && utils.removeFile && utils.removeFile(p)); } catch (e) { return false; } },"
+      },
+      {
+        "n": 219,
+        "text": "      try { utils.removeFile(cmdPath); } catch (e) {}"
+      }
+    ]
+  },
+  "found": [
+    {
+      "range": "1-25",
+      "lines": [
+        {
+          "n": 1,
+          "text": "/* bz-bootstrap —— 薄引导（几乎永不改）"
+        },
+        {
+          "n": 2,
+          "text": " *"
+        },
+        {
+          "n": 3,
+          "text": " * 只做五件事："
+        },
+        {
+          "n": 4,
+          "text": " *   1. 命令通道（文件：bz_cmd.txt → bz_res.txt），额外支持 reload / ver / selfcheck / reset / log / scene"
+        },
+        {
+          "n": 5,
+          "text": " *   2. XHR 替换（所有方法转发到 globalThis.__BZ_HARNESS__.impl，间接层）"
+        },
+        {
+          "n": 6,
+          "text": " *   3. 全局错误捕获（window.onerror / unhandledrejection / console.error / cc.error）→ JSONL 日志"
+        },
+        {
+          "n": 7,
+          "text": " *   4. 场景变化记录 + ready 标记文件（bz_ready.json）"
+        },
+        {
+          "n": 8,
+          "text": " *   5. 从 <writable>/hotfix/live/handlers.js 载入策略层，可 reload 热替换"
+        },
+        {
+          "n": 9,
+          "text": " *"
+        },
+        {
+          "n": 10,
+          "text": " * 契约：handlers.js 通过 new Function('bz', src) 求值，必须 return"
+        },
+        {
+          "n": 11,
+          "text": " *   { version, handle(req) -> {status,text,meta}, selfCheck() -> {ok,...}, reset() }"
+        },
+        {
+          "n": 12,
+          "text": " * 任何异常都不得阻断引擎加载。"
+        },
+        {
+          "n": 13,
+          "text": " */"
+        },
+        {
+          "n": 14,
+          "text": ";(function () {"
+        },
+        {
+          "n": 15,
+          "text": "  'use strict';"
+        },
+        {
+          "n": 16,
+          "text": "  if (window.__BZ_BOOT__) return;"
+        },
+        {
+          "n": 17,
+          "text": ""
+        },
+        {
+          "n": 18,
+          "text": "  var BOOT_VER = 'boot-1';"
+        },
+        {
+          "n": 19,
+          "text": "  var H = {"
+        },
+        {
+          "n": 20,
+          "text": "    bootVer: BOOT_VER, implVer: '(none)', flowVer: '(none)', impl: null, flow: null,"
+        },
+        {
+          "n": 21,
+          "text": "    implError: null, flowError: null,"
+        },
+        {
+          "n": 22,
+          "text": "    startedAt: Date.now(), logBuf: [], rpc: 0, scene: '', filesReady: false,"
+        },
+        {
+          "n": 23,
+          "text": "  };"
+        },
+        {
+          "n": 24,
+          "text": "  window.__BZ_BOOT__ = H;"
+        },
+        {
+          "n": 25,
+          "text": "  window.__BZ_HARNESS__ = H;"
+        }
+      ]
+    },
+    {
+      "range": "140-164",
+      "lines": [
+        {
+          "n": 140,
+          "text": "    try {"
+        },
+        {
+          "n": 141,
+          "text": "      if (typeof window.createBzXHRClass !== 'function') { consoleLine('bz-xhr 未加载'); return; }"
+        },
+        {
+          "n": 142,
+          "text": "      window.XMLHttpRequest = window.createBzXHRClass("
+        },
+        {
+          "n": 143,
+          "text": "        function () { return H.impl; },"
+        },
+        {
+          "n": 144,
+          "text": "        function (m) { log({ kind: 'xhr', msg: String(m) }); }"
+        },
+        {
+          "n": 145,
+          "text": "      );"
+        },
+        {
+          "n": 146,
+          "text": "      log({ kind: 'info', msg: 'XMLHttpRequest → 进程内环回（间接层 __BZ_HARNESS__.impl）' });"
+        },
+        {
+          "n": 147,
+          "text": "    } catch (e) { consoleLine('installXHR 异常: ' + e); }"
+        },
+        {
+          "n": 148,
+          "text": "  }"
+        },
+        {
+          "n": 149,
+          "text": ""
+        },
+        {
+          "n": 150,
+          "text": "  // ---------- 命令通道 ----------"
+        },
+        {
+          "n": 151,
+          "text": "  function installCommandChannel() {"
+        },
+        {
+          "n": 152,
+          "text": "    var cmdPath = DIR + 'bz_cmd.txt', resPath = DIR + 'bz_res.txt', seqPath = DIR + 'bz_res_seq.txt';"
+        },
+        {
+          "n": 153,
+          "text": "    function reply(t) { try { utils.writeStringToFile(String(t) + '\\n<<DONE>>', resPath); } catch (e) {} }"
+        },
+        {
+          "n": 154,
+          "text": "    function trunc(v) {"
+        },
+        {
+          "n": 155,
+          "text": "      var s;"
+        },
+        {
+          "n": 156,
+          "text": "      try { s = typeof v === 'string' ? v : JSON.stringify(v); } catch (e) { s = String(v); }"
+        },
+        {
+          "n": 157,
+          "text": "      if (s === undefined) s = String(v);"
+        },
+        {
+          "n": 158,
+          "text": "      return s.length > 4000 ? s.slice(0, 4000) + '...<truncated>' : s;"
+        },
+        {
+          "n": 159,
+          "text": "    }"
+        },
+        {
+          "n": 160,
+          "text": "    function exec(cmd) {"
+        },
+        {
+          "n": 161,
+          "text": "      cmd = String(cmd || '').trim();"
+        },
+        {
+          "n": 162,
+          "text": "      if (!cmd) return 'EMPTY';"
+        },
+        {
+          "n": 163,
+          "text": "      var m = cmd.match(/^(\\w+):([\\s\\S]*)$/);"
+        },
+        {
+          "n": 164,
+          "text": "      var op = m ? m[1] : cmd, arg = m ? m[2] : '';"
+        }
+      ]
+    }
+  ],
+  "errors": ""
+}

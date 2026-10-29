@@ -1,0 +1,13 @@
+# User.isCanShare   (HttpConst.IS_CAN_SHARE)
+
+## 注册点 64995: r.MessageCenter.on(a.HttpConst.IS_CAN_SHARE, function(t, e) {
+
+## 请求点 65438: m.NetMgr.http.sendReqWithMask(a.HttpConst.IS_CAN_SHARE, {
+   65430: this.curItemId = t;
+   65431: m.NetMgr.http.sendRequest(a.HttpConst.CHOOSE_USEITEM_AWARD, {
+   65432: itemID: t,
+   65433: cData: e
+   65434: });
+   65435: };
+   65436: e.prototype.reqCanShareItem = function(t) {
+   65437: this.curItemId = t;

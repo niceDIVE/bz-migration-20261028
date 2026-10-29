@@ -1,0 +1,109 @@
+【指令】
+你是一位资深游戏后端架构顾问。这是第 12 批材料（上一批 11 号：阶段总览；你的回执是 R04）。
+本批是**本轮实测问题报告**：一次"玩家实测 → 定位 → 修复"的完整闭环，包含 6 个具体故障与 4 个架构层面的疑问。
+请只回答末尾列明的 5 件事。
+
+回答规则（沿用）：
+1. 结论要么带条件说明（"当 X 时"），要么带可执行形式（代码/命令/断言）；不接受"建议考虑"。
+2. 凡是你推断的、材料里没有明说的，一律标注【推断】；材料里没有的信息直接说"材料未提供"。
+3. 必须给一段"反例"：我这套判断在什么具体场景下会出错。只附和的内容会被我整段丢弃。
+4. 严格按末尾编号格式输出，不要合并、不要增删小标题。
+5. 约束不变：不能改客户端（只能进程内替换网络层 / 单文件存档）、不能加数据库、不能让客户端上报击杀数。
+
+────────────────────────────────────────────────────────
+【一、本轮部署与基线（不变）】
+单机离线：官方 APK 零改动，补丁在客户端可写目录、在**游戏进程内**应答它自己的网络请求。
+本轮版本演进：`h550cd851 → h8f628b6c → hc772dbca`（全程热重载；仅一次因客户端崩溃 restart）。
+自检 1120 项全绿；外部测试 **23 套**全绿；玩家存档无损（gold/coins/bag/potential 前后一致）。
+
+【二、本轮修好的 6 个实测故障（全部有源码依据 + 活进程证据）】
+
+F1 用消耗品后崩溃（"秘籍白吃"）
+- 现象：用掉秘籍（3626）→ 客户端 `TypeError: Cannot read property 'name' of null @ index.jsc:64796`；物品已消耗、效果未生效。
+- 真因：形状表给 `useItem` 补了 `formulaID:0` 等"分支选择器"字段；客户端用 `hasOwnProperty("formulaID")`
+  当开关 → `getItem(0,"formula")` 得 null → `n.getText(y.name)` 崩。
+- **更隐蔽的一层**：旧修复在 handler 里删字段，但 `dispatch` 是"先 handler、后 `fillShape`"，
+  `fillShape` 又把形状表里的字段补回来 → **修复从未生效**；而自检断言"形状字段必须在应答里"恰好因为补回来而永远绿。
+- 修法：在**生成器**里剔除（`SHAPE_OMIT`），handler 删除只作防御；新增回归用例（必须加载形状表才能复现该路径）。
+- 判据：凡"`hasOwnProperty` 当开关"的字段，缺省一律不发。
+
+F2 食物不加饱食度
+- 真因：客户端**不做本地应用**——请求带 `hg`=当前剩余（index.js:65302），只有应答 `note.attrch.hunger`
+  才会落地（59325 逐键 dispatch → 59571 `ATTR_CHANGE="attrch"` → 142440-142441 直接赋值）。
+  我们以前只回 `note.ivch/skch/eqch`。
+- 修法：生成 `BZ_ITEMEAT`（Type==2 && Effect==1 → Data1，66 种）；`useItem` 回
+  `note.attrch.hunger = hg + Data1×数量`（无 `hg` 不发、不瞎猜）。
+
+F3 裁缝铺点页签卡死（客户端崩溃，用户实测）
+- 真因：`User.GetFashionList` 只有"形状应答"，缺 `type`/`FashionArr` →
+  `FashionShopNewUI.showItem` 不执行（scripts2:21436-21437）→ `curSelectType` 未初始化 →
+  点页签 `btns[undefined].getChildByName` 崩（21830）→ UI 死掉。
+- 修法：真 handler 回 `{eRet:1, type:回声, FashionArr:[[物品id,0]×266]}`（`BZ_FASHION`=fashionall 266 行）。
+
+F4 伙伴界面每帧崩（日志刷屏，拖性能）
+- 真因：`getFriendPartner` 形状应答缺 `notFriendPartnerData` → `lockFriendData=undefined`（scripts3:58456）
+  → `checkTaskFinishState` 每帧 `hasOwnProperty of undefined`（59334）。
+- 修法：真 handler 回 `notFriendPartnerData:{}, friendPartnerDatas:{}, isUnlock:0, happinessNum:0`。
+
+F5 成就面板空白（用户实测）
+- 真因：`checkGroupOpen = gPoints.hasOwnProperty(组id)`（scripts3:3045）；空 `groupPoints` → 零组 → 零条目。
+- 修法：`groupPoints` 补全 19 个组 id（`BZ_ACHIEVE_GROUPS`=achieve_group 19 行），值 0。
+
+F6 活动面板"内容空"
+- 真因两层：①`getActivityState` 的 1001/1002 tab 判据在 `RoleOtherInfo.activeObj`（来自 LoadGame 的
+  `activityArrFlag`）；②`getActivityCounts.dataArr` 回了对象 `{}`，而 `DailyMissionUI.start` 把它当
+  **标量数组**（`dataArr.length` 循环）→ 0 行。
+- 修法：`activityArrFlag=[0,0]` + `dataArr=[0×18]`（18=daily_active_tips 行数）+
+  `activityShows=[0,0]`（关掉含付费入口的 1003/1004 tab）。
+
+【三、架构层面的四个疑问（本轮暴露的）】
+D1 **形状表的边界**：哪些字段是"契约"（客户端无条件读）、哪些是"开关"（hasOwnProperty 判断）、哪些是"惰性"？
+   现在的分法靠人工逐动作看消费端；F1 证明生成器知道的还不够。
+D2 **隐式内联数据**：F3 是一类"UI 在 onLoad/start 里直接读内联数组/对象初始化"的地方，形状表覆盖不到。
+D3 **服务端权威数据不可恢复**：转世（`cycleLife` 成功后客户端 `killRoleClear()`+整档重放；重置规则不在客户端）。
+   我们选择 `isCycleLife→eRet:2`、`cycleLife→eRet:9` 拒绝（不伪造新一世）。
+D4 **世界数据不可达**：兑换（偶货商 Type52）、江湖（玄天神龙 Type117）、转世（Type46 ID1312）的 npc 在
+   `Map=0`——不在任何世界地图上，玩家永远走不到。要不要做"维护动作召唤"入口？
+
+【四、本轮新增观测能力】
+- `save.meta.actionStats`（R04 Q4 落地）：只内存计数、随下一次业务写落盘、沙箱不计数、meta 不参与守卫。
+- L4 观察守卫：handler 写账本但应答没文档化（或 `note` 值不是绝对值）→ 日志 `OBS 未解释差额`；
+  **只记录不拒绝**；奖励类（带 `rewardArray`）与维护动作（`bz*`）豁免；沙箱完全不观察。
+
+【五、数据资产增量（本轮）】
+`BZ_EXCHANGE`(10 npc/1220 行) / `BZ_GESHOP`(25) / `BZ_ROGUESHOP`(33) / `BZ_ITEMEAT`(66) /
+`BZ_FASHION`(266) / `BZ_ACHIEVE_GROUPS`(19) + `BZ_NPCSHOP` 的 `m` 元数据(payment/page/isserver/endtime)。
+
+【六、我要你回答的 5 件事】
+
+Q1（形状表边界）
+   已知：`fillShape` 只补缺、不覆盖；生成器产出形状表；自检断言"形状字段都在应答里"。
+   请给：一套**可脚本化的**"契约/开关/惰性"判别法（输入：客户端源码 + 形状表），
+   以及 F1 那类"开关字段"在生成器里的最小规则（不改客户端的前提下）。
+
+Q2（隐式内联数据）
+   F3 的崩溃点是 `showItem()` 直接读 `data.FashionArr[u][0]` 初始化 `curSelectType`。
+   请给：一个**从客户端 UI 的 onLoad/start 反推必需内联字段**的自动扫描思路
+   （如何区分"无条件必需"与"有默认值可缺"）。
+
+Q3（权威数据缺失）
+   转世拒绝策略：`isCycleLife→2`（入口提示）、`cycleLife→9`（确认提示）、`specialCycleLife→4`。
+   请给：这种"拒绝"会不会在某些分支留下坏状态（例如客户端先本地改了模型再发请求）？给只读判别步骤。
+
+Q4（不可达入口）
+   `Map=0` 的入口（兑换/江湖/转世）如果做"维护动作召唤"（命令通道触发、直接把 UI 拉起来），
+   请给：边界建议——哪些东西可以伪造、哪些一伪造就会破坏存档一致性。
+
+Q5（施工顺序）
+   候选：成就进度追踪 / 七日活动（taskObj） / 活动任务链（每日任务完成+领奖） / 兑换&江湖入口 / 转世。
+   请按"玩家可感知价值 × 风险"排序，并给每项的第一步判别动作。
+
+【回答格式（严格）】
+1. 结论（≤5 句）：我这套阶段判断有没有明显错位
+2. Q1 答（判别法 + 生成器最小规则）
+3. Q2 答（扫描思路 + 判别条件）
+4. Q3 答（判别步骤 + 会不会留坏状态）
+5. Q4 答（边界建议）
+6. Q5 答（排序 + 每项第一步）
+7. 反例：我这套判断在什么场景下会错
+8. 假设：哪条前提不成立时，你上面哪些结论失效

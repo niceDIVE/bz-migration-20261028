@@ -1,0 +1,15 @@
+# User.GetvillainAward   (HttpConst.SAVR_VILLAGE)
+
+## 注册点 1406: r.MessageCenter.on(a.HttpConst.SAVR_VILLAGE, this.savrVillageCallBack.bind(this), this);
+
+## 请求点 1753: g.NetMgr.http.sendRequest(a.HttpConst.SAVR_VILLAGE, o);
+   1745: };
+   1746: e.prototype.reqGetvillain = function(t, e) {
+   1747: var o = {
+   1748: eventID: this.ActiveEventId,
+   1749: typeID: t,
+   1750: flag: e ? 1 : 0
+   1751: };
+   1752: o.npcIDArr = this.serverToKillNpc();
+
+## 处理函数 bind —— 未找到定义

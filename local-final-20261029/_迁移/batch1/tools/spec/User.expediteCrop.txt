@@ -1,0 +1,99 @@
+# User.expediteCrop  (HttpConst.EXPEDITE_CROP)
+# 出现 2 处
+
+ 57819: };
+ 57820: i.landId = o.sIdx;
+ 57821: r.MessageCenter.dispatch(c.EvName.SEED_CROP_EVENT, i);
+ 57822: a.default.show(n.getText(3171));
+ 57823: }
+ 57824: }, this);
+ 57825: r.MessageCenter.on(s.HttpConst.EXPEDITE_CROP, function(t, o) {
+ 57826: if (1 == o.eRet) {
+ 57827: var i = {
+ 57828: m: {},
+ 57829: s: 1,
+ 57830: b: {}
+ 57831: };
+ 57832: o.crop.hasOwnProperty("m") && (i.m = o.crop.m);
+ 57833: o.crop.hasOwnProperty("b") && (i.b = o.crop.b);
+ 57834: e.soilArr[o.sIdx] = i;
+ 57835: var s = {
+ 57836: m: {},
+ 57837: s: 1,
+ 57838: landId: 0,
+ 57839: b: {}
+ 57840: };
+ 57841: s.m = i.m;
+ 57842: s.b = i.b;
+ 57843: s.landId = o.sIdx;
+ 57844: r.MessageCenter.dispatch(c.EvName.SEED_CROP_EVENT, s);
+ 57845: } else 2 == o.eRet ? a.default.show(n.getText(1455)) : 3 == o.eRet ? a.default.show(n.getText(1455)) : -1 == o.eRet ? a.default.show(n.getText(3320)) : 6 == o.eRet && a.default.show(n.getText(3248));
+ 57846: }, this);
+ 57847: r.MessageCenter.on(s.HttpConst.GET_BACK_SHOP, function(t, o) {
+ 57848: if (1 == o.eRet) if (o.hasOwnProperty("shopArr")) {
+ 57849: o.hasOwnProperty("limit") && (e.shopSaleLimit = o.limit);
+ 57850: null == e.homeShopBgUI && f.default.prefabs.load("comUI/ShopBgUI", cc.Prefab, function(t, i) {
+ 57851: var n = cc.instantiate(i);
+ 57852: d.PopUpMgr.addPopUp(n, g.LayerMgr.popUpLayer);
+ 57853: n.addComponent("HomeShopBgUI").setData(o.shopArr);
+ 57854: e.homeShopBgUI = n;
+ 57855: });
+ 57856: } else a.default.show(n.getText(3325)); else a.default.show(n.getText(3325));
+ 57857: }, this);
+ 57858: r.MessageCenter.on(s.HttpConst.BUY_HOME_CROP, function(t, o) {
+ 57859: if (1 == o.eRet) {
+ 57860: I.MadUtilsTS.isNullObj(o.rewardArray) || m.default.addShowRewardUI1(o.rewardArray, 0);
+ 57861: o.hasOwnProperty("limit") && (e.shopSaleLimit = o.limit);
+ 57862: r.MessageCenter.dispatch(c.EvName.CROP_SALE_SHOP, o);
+ 57863: }
+ 57864: }, this);
+ 57865: r.MessageCenter.on(s.HttpConst.HOME_SPECIAL_AWARD, function(t, e) {
+---
+ 58138: e.prototype.reqCleanCrop = function(t) {
+ 58139: v.NetMgr.http.sendRequest(s.HttpConst.CLEAN_DEAD_CROP, {
+ 58140: sIdx: t
+ 58141: });
+ 58142: };
+ 58143: e.prototype.reqAccelarteCrop = function(t) {
+ 58144: v.NetMgr.http.sendRequest(s.HttpConst.EXPEDITE_CROP, {
+ 58145: sIdx: t,
+ 58146: num: 1
+ 58147: });
+ 58148: };
+ 58149: e.prototype.reqGetSaleShop = function() {
+ 58150: v.NetMgr.http.sendRequest(s.HttpConst.GET_BACK_SHOP, {});
+ 58151: };
+ 58152: e.prototype.reqBuyHomeCrop = function(t, e) {
+ 58153: v.NetMgr.http.sendRequest(s.HttpConst.BUY_HOME_CROP, {
+ 58154: itemID: t,
+ 58155: itemNum: e
+ 58156: });
+ 58157: };
+ 58158: e.prototype.reqCropGainReward = function(t) {
+ 58159: v.NetMgr.http.sendRequest(s.HttpConst.OBTAINCROP, {
+ 58160: sIdx: t
+ 58161: });
+ 58162: };
+ 58163: e.prototype.reqHomeSpecialEvent = function() {
+ 58164: v.NetMgr.http.sendRequest(s.HttpConst.HOME_SPECIAL_AWARD, {});
+ 58165: };
+ 58166: e.prototype.reqRecommenList = function() {
+ 58167: this.homeGeMap = {};
+ 58168: v.NetMgr.http.sendRequest(s.HttpConst.RECOMMEND_ONESELF_HOME, {});
+ 58169: };
+ 58170: e.prototype.reqHomeFriendList = function() {
+ 58171: this.homeGeMap = {};
+ 58172: v.NetMgr.http.sendRequest(s.HttpConst.OTHER_PLAYER_HOME, {});
+ 58173: };
+ 58174: e.prototype.reqObtainAllCrop = function(t) {
+ 58175: var e = {
+ 58176: matureArr: t
+ 58177: };
+ 58178: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_OBTAIN_CROP, e);
+ 58179: };
+ 58180: e.prototype.reqDispossAllEvent = function() {
+ 58181: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, {});
+ 58182: };
+ 58183: e.prototype.reqFindPlayerHome = function(t) {
+ 58184: t != _.RoleBaseInfo.userName ? v.NetMgr.http.sendRequest(s.HttpConst.FIND_OTHER_HOME, {
+---

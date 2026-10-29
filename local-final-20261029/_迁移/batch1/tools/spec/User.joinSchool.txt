@@ -1,0 +1,101 @@
+# User.joinSchool  (HttpConst.JOIN_SCHOOL)
+# 出现 3 处
+
+ 77829: 101320: 1,
+ 77830: 101360: 1,
+ 77831: 101400: 1,
+ 77832: 101440: 1
+ 77833: };
+ 77834: this.deleteTask = [];
+ 77835: i.MessageCenter.on(r.HttpConst.JOIN_SCHOOL, this.joinSchoolCallBack, this);
+ 77836: i.MessageCenter.on(r.HttpConst.EXIT_SCHOOL, this.exitSchoolCallBack, this);
+ 77837: i.MessageCenter.on(r.HttpConst.BUY_NPC_FEEL, this.buyFellCallBack, this);
+ 77838: i.MessageCenter.on(r.HttpConst.LEVEAL_SCHOOL, this.levealSchoolCallBack, this);
+ 77839: i.MessageCenter.on(r.HttpConst.CHECK_OUT_SCHOOL, this.onCheckOutSchool, this);
+ 77840: i.MessageCenter.on(r.HttpConst.CLEAR_SXHOOL_CD, this.onClearCDSchool, this);
+ 77841: Promise.resolve().then(function() {
+ 77842: return t("../../scripts3/gamescenes3/maputils3/GoodEvilUtil");
+ 77843: }).then(function(t) {
+ 77844: e.goodEvilUtil = t.GoodEvilUtil;
+ 77845: });
+ 77846: };
+ 77847: e.prototype.onClearCDSchool = function(t, e) {
+ 77848: 1 == e.eRet ? n.default.show(l.getText(6001029), [ {
+ 77849: name: l.getText("6001032"),
+ 77850: flag: 0
+ 77851: } ]) : 5 == e.eRet && n.default.show(l.getText(9223));
+ 77852: };
+ 77853: e.prototype.joinSchoolCallBack = function(e, o) {
+ 77854: if (1 == o.eRet) {
+ 77855: o.hasOwnProperty("clearBoxs") && Promise.resolve().then(function() {
+ 77856: return t("../../scripts3/model3/MapBoxModel");
+ 77857: }).then(function(t) {
+ 77858: t.MapBoxModel.removeBox(o.clearBoxs);
+ 77859: });
+ 77860: a.RoleBaseInfo.masters.indexOf(this.npcId) < 0 && a.RoleBaseInfo.masters.push(this.npcId);
+ 77861: i.MessageCenter.dispatch(g.EvName.CHANGE_CV_STATE, 4);
+ 77862: this.deleteErrorTask();
+ 77863: i.MessageCenter.dispatch(g.EvName.UPDATE_PLAYER_EVENT);
+ 77864: var p = s.getItem(this.npcId, "master");
+ 77865: if (parseInt(p.dialogsuccess) > 0) {
+ 77866: var h = this;
+ 77867: c.default.addDialogEvent(p.dialogsuccess, this.npcId, function() {
+ 77868: h.deleteTask.length && n.default.show(l.getText("946"));
+ 77869: }.bind(this));
+ 77870: } else this.deleteTask.length && n.default.show(l.getText("946"));
+ 77871: this.checkTaskIsClear(p, 1);
+ 77872: } else if (5 == o.eRet) {
+ 77873: var f = o.cdTimeDays, d = {
+ 77874: 10: l.getText(6001027),
+ 77875: 11: l.getText(6001028)
+---
+ 77948: if (10 != o && 11 != o) {
+ 77949: var r = p.RoleOtherInfo.outSchoolAy;
+ 77950: 0 == r.length ? this.sendJoinSchool(e, t, i) : 0 == o ? this.sendJoinSchool(e, t, i) : r.indexOf(o) >= 0 ? n.default.show(l.getText(1211)) : this.sendJoinSchool(e, t, i);
+ 77951: } else this.sendJoinSchool(e, t, i);
+ 77952: };
+ 77953: e.prototype.sendJoinSchool = function(t, e, o) {
+ 77954: 0 == t.dialogchoose ? u.NetMgr.http.sendRequest(r.HttpConst.JOIN_SCHOOL, o) : c.default.addDialogEvent(t.dialogchoose, e, null, function() {
+ 77955: u.NetMgr.http.sendRequest(r.HttpConst.JOIN_SCHOOL, o);
+ 77956: }.bind(this), function() {
+ 77957: c.default.addDialogEvent(t.dialoglatter, e);
+ 77958: }.bind(this));
+ 77959: a.RoleBaseInfo.masterTaskId = 0;
+ 77960: };
+ 77961: e.prototype.betrayMasterMsg = function(t) {
+ 77962: var e = this;
+ 77963: p.RoleOtherInfo.isUntie ? n.default.show(l.getText(6372)) : n.default.show(l.getText(6114), [ {
+ 77964: flag: 0,
+ 77965: name: l.getText("332")
+ 77966: }, {
+ 77967: flag: 1,
+ 77968: name: l.getText("333")
+ 77969: } ], function(o) {
+ 77970: if (0 == o) {
+ 77971: e.npcId = t;
+ 77972: var i = {
+ 77973: npcID: t,
+ 77974: taskArr: []
+ 77975: };
+ 77976: i.taskArr = e.getHeroTask(0);
+ 77977: e.deleteTask = e.getHeroTask(0);
+ 77978: u.NetMgr.http.sendRequest(r.HttpConst.EXIT_SCHOOL, i);
+ 77979: }
+ 77980: });
+ 77981: };
+ 77982: e.prototype.addNpcIntimacy = function(t) {
+ 77983: this.npcId = t;
+ 77984: u.NetMgr.http.sendRequest(r.HttpConst.BUY_NPC_FEEL, {
+ 77985: npcid: t
+ 77986: });
+ 77987: };
+ 77988: e.prototype.deleteErrorTask = function() {
+ 77989: for (var t = 0; t < this.deleteTask.length; t++) a.RoleBaseInfo.finishTaskObj.hasOwnProperty(this.deleteTask[t]) && delete a.RoleBaseInfo.finishTaskObj[this.deleteTask[t]];
+ 77990: this.deleteTask = [];
+ 77991: };
+ 77992: e.prototype.getHeroTask = function(t) {
+ 77993: var e = f.UserModel.entity.school, o = t, i = [], n = this.getSchoolTask(), r = this.getJudgeTask();
+ 77994: if (0 == e && 9 == o || 9 == e && 0 == o) cc.log("----------"); else if (e != o) {
+---
+ 77995: var s = a.RoleBaseInfo.finishTaskObj;
+---

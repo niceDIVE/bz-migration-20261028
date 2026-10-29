@@ -1,0 +1,12 @@
+# User.IosChooseProduct   (HttpConst.PREPARE_IOS_PAY)
+
+## 注册点 130737: l.MessageCenter.on(p.HttpConst.PREPARE_IOS_PAY, this.onPrepareIOSPay, this);
+
+## 处理函数 onPrepareIOSPay (131201-131207)
+131201: e.prototype.onPrepareIOSPay = function() {};
+131202: e.prototype.reqBuyItem = function(t, e) {
+131203: var o = {
+131204: roleID: v.RoleBaseInfo.roleID,
+131205: ID: t,
+131206: itemNum: e
+131207: };

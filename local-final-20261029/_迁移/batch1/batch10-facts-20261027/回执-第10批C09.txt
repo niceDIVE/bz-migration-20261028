@@ -1,0 +1,74 @@
+回执 第10批 C09〔技巧摸奖〕（2026-10-27）
+
+══ 部署指纹 ══
+  构建：ver=hefbb1ad4（链 hda45aa7d→hefbb1ad4）｜flow=ffaec47c3｜pid 22577（本次为验界面重启过一次，随后的热重载 pid 不变）
+  selfCheck 1286 全过，implErr=null
+  patch\live\handlers.js            1,492,613 B  md5 4AAE8E937C8C59CCE9F4083AEBD261E3
+  core\bz-rpc-server.js               383,776 B  md5 211B2E536D57D1C831131A3089452F43
+  core\bz-c09.generated.js（新表）     18,899 B  md5 3298DB7C005579DD08E7F81E53ABBB09
+
+══ 一、交付：7 个实现 + 4 个锁 + 2 个顺带补的崩点 ══
+  实现（按 relations.md:68-73 的 8 主 + 3 同面板，共 11 个动作）：
+    · 摸奖三键：getKnackLottery / knackLottery / getKnackLotteryHistory
+    · 口诀四键：getSkillGrasp / skillGrasp / changeSkillKnack / rgChangeSkillKnack（注意上游原文拼写 **SKNACK**，未纠正）
+  锁（eRet 2 优雅拒，应答收窄到只有 eRet）：
+    · resolveEquip / batchResolveEquip（装备分解）
+    · resolveKnack / batchResolveKnack（口诀合成）
+    理由：444 张 dump 里没有分解/合成产物表（`tbl_item.decomposition` 只有档位 1/2/3、`decompose` 全 0，
+    没有 `*resolve*`/`*compose*` 表）。"奖励 id 对不上钱包就只显示"这条挡不住"根本没有 id 可给"——
+    给空奖励等于把装备/口诀吞了，所以锁。
+  顺带补（不在批次名单，但不补就崩）：
+    · getSkillTrickExchangeData / refreshSkillTrickExchangeData（口诀兑换面板，回空兑换店、零奖励面）
+
+══ 二、扣费与产物（口径都有表依据）══
+  扣费：券 = 道具 **9191**，单抽 1 张 / 十连 10 张，每日免费 1 次；**不花金币元宝**（`coin_item=[]`）。
+       机台 = `skill_Trick_Lotterymachine` 行 1（type=1 常驻）。行 2/3 是限时池，窗口
+       `1790697600000→1792339199000`（≈2026-09-28→10-18）**已过期**，故 `lotteryArr` 只暴露 [1]。
+  产物（按你 2026-10-27 拍板"两表分工"）：
+    ① `skill_Trick_Drop`（230 行 = 46 技能 × 5 组，权重恒 400/200/100/200/100）按 `drop_probability` 抽组
+    ② 机台 `probability`（"1,640|2,200|3,100|4,40|5,20"）按权重抽品质 1..5
+    ③ 组 × 品质 → `skill_Trick` 里那一行的 ID（例：组 100001 = 10001..10005）
+    ④ knackId 进 `s.skillGrasp.knackBag`，应答回 `showKnack:[{knackId}…]`
+  ⚠ **申报**：①②两列权重**客户端都 0 读取点**（纯服务端语义），分工是"表结构 + 你的拍板"，不是抓包实证。
+  ⚠ **申报**：`skill_Trick.item_quantity`（5/25/50/125/250）含义未定，本批**不当发奖依据**（每抽只给 1 个 knackId）。
+
+══ 三、防重（"同一次抽奖不能重复领"）══
+  请求里没有 nonce（只有 `{lotteryId, lotteryType, skillId}`）→ 靠**先扣后发**：任何重复请求都会再扣一次券，
+  所以重复 ≠ 白拿；扣券/发放/落盘在同一个 persist 里；异常走 dispatch 的 catch 回拒绝码、绝不回成功。
+  另外客户端只有一处发送点（`reqLottery` scripts3.js:90078）且进程内 XHR 同步返回 200 → 没有自动重发路径。
+
+══ 四、真机验证（界面点出来的，不是探针）══
+  摸奖三抽全通：
+    第 1 次 `用掉今日免费额度` → 抽到 [12331]，**券仍是 2 张**（免费不扣）
+    第 2 次 `扣 1 张 9191，余 1` → [11591]
+    第 3 次 `扣 1 张 9191，余 0` → [11457]
+    奖励框"获得…"后面是正常文字 → `showKnack → TrickRewardUI` 链通
+    最终存档：`bag.9191` 无、`knackBag=[12331,11591,11457]`、`knackFree={d:"2026-10-27",n:1}`
+  口诀兑换面板：远程实调 → `空兑换店（无兑换表）`，**无异常**（修之前是 TypeError）。
+
+══ 五、顺带修掉的两个真问题（都是真机才暴露的）══
+  1. **`OBS 未解释差额 knackLottery: bag.9191 2→1`**：扣了券却没在应答 `note.ivch` 里报扣完的绝对值，
+     观察守卫只能记一笔"解释不了的差额"。已补（单位：扣券后的绝对值）。
+  2. **`User.getSkillTrickExchangeData` 未实现 → 客户端 TypeError**：
+     `onGetTrickExchangeData`（scripts3.js:89728）裸读 `o.nextRefreshTime`，我们回 `{eRet:1}` 没有内层对象 → 抛。
+     已补空兑换店（结构对、列表空、零奖励面）。
+
+══ 六、门禁 ══
+  acceptance **49/49 绿**（+c09-smoke 11 条），known-red 0，cap 0
+  check_shape_freeze：C09 的 11 个动作**不在 337 基线**（gen_shapes 不收录，同 C07 口径）→ **diff 0，无需审批**
+  check_reject_codes OK：动作 **84** / 条目 **98** / 拒绝点 **127**（+7 动作登记）
+  冒烟：c09 11/11、c08 12/12、c07 2/2、c06 10/10、c04 12/12、v271 15/15 …
+  热重载：pid 22577 不变，selfCheck 1286 全过
+
+══ 七、要你知道 / 要你回话的 ══
+  1. **魔改过真档（已获用户同意，这里如实申报）**：摸奖门槛是 `getMyRoleArtLv() >= getConst(435)=100`，
+     原档算出来只有 41。为验界面，用维护动作 `bzPatch` 把 **skills 1/7/8/9 抬到 [100,0,1]**（原 40/40/40/21）。
+     整档备份 `_backup\savedata-20261027-023103-pre-knackgate\`。**用户决定不回滚**。
+  2. **门槛要不要留**：`>= 100` 是原版设计（`tbl_constant` ID 435 = 100）。本批没动它。要放宽得你拍板。
+  3. **待追认**（同上 §二的两个 ⚠）：两列权重分工、`item_quantity` 语义。
+  4. **仍锁的 4 个**要不要解锁：需要"装备分解产物表 / 口诀合成表"，给表我就做。
+  5. `getKnackLotteryHistory` 只回空数组（`TrickPoolRecordUI` 的记录结构未取证），不算缺陷但也不能显示历史。
+
+  升级报告的条件不变：存档写坏，或者能白拿钱/道具（均未发生；本批 7 个动作里发奖的只有摸奖一条，
+  且**先扣券后发**、重复请求再扣。真机三抽券 2→1→0，账对得上）。
+  进度：C01✅ C02✅ C05✅ C03✅ C16✅ C04✅ C06✅ C07✅ C08✅(档A) C09✅(7做/4锁) → 下一批 C10（8 个，农作物，relations.md:77）。

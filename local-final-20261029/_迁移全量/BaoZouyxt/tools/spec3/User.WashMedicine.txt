@@ -1,0 +1,38 @@
+# User.WashMedicine   (HttpConst.WASH_MEDICINE)
+
+## 注册点 144036: n.MessageCenter.on(r.HttpConst.WASH_MEDICINE, this.onWashMedicneBackCall, this);
+
+## 请求点 144097: c.NetMgr.http.sendRequest(r.HttpConst.WASH_MEDICINE, p);
+   144089: roleID: l.RoleBaseInfo.roleID,
+   144090: armStrong: t[1] - 10,
+   144091: shenFa: t[2] - 10,
+   144092: bone: t[3] - 10,
+   144093: understanding: t[4] - 10,
+   144094: addArr: i,
+   144095: fosterArr: n
+   144096: };
+
+## 处理函数 onWashMedicneBackCall (144099-144121)
+144099: t.prototype.onWashMedicneBackCall = function(t, e) {
+144100: if (1 == e.eRet) {
+144101: l.RoleBaseInfo.baseArmStrong = e.armStrong;
+144102: l.RoleBaseInfo.baseShenFa = e.shenFa;
+144103: l.RoleBaseInfo.baseBone = e.bone;
+144104: l.RoleBaseInfo.baseUnderstanding = e.understanding;
+144105: l.RoleBaseInfo.armStrong = e.armStrong;
+144106: l.RoleBaseInfo.shenFa = e.shenFa;
+144107: l.RoleBaseInfo.bone = e.bone;
+144108: l.RoleBaseInfo.understanding = e.understanding;
+144109: e.hasOwnProperty("bloodArr") && (p.MarryModel.cycleData[8] = e.bloodArr);
+144110: e.hasOwnProperty("fosterArr") && (p.MarryModel.cycleData[7] = e.fosterArr);
+144111: e.hasOwnProperty("maxWuxin") && (p.MarryModel.maxWuxin = e.maxWuxin);
+144112: var o = p.MarryModel.cycleData;
+144113: for (var n in h.UserModel.entity.equipments) h.UserModel.entity.equipments[n] && (l.RoleBaseInfo.equipments[n] = h.UserModel.entity.equipments[n].id);
+144114: y.RoleOtherInfo.setAllHpAndMp2();
+144115: h.UserModel.setupEntity();
+144116: if (o.length >= 5) {
+144117: h.UserModel.entity.strength.baseValue = e.armStrong + o[7][0] + o[8][0];
+144118: h.UserModel.entity.shenfa.baseValue = e.shenFa + o[7][1] + o[8][1];
+144119: h.UserModel.entity.gengu.baseValue = e.bone + o[7][2] + o[8][2];
+144120: h.UserModel.entity.perception.baseValue = e.understanding + o[7][3] + o[8][3];
+144121: }

@@ -1,0 +1,99 @@
+# User.checkLive  (HttpConst.CHECK_LIVE)
+# 出现 2 处
+
+102084: function t() {
+102085: this.formulaArr = [];
+102086: this.formulaArr = [];
+102087: }
+102088: t.prototype.init = function() {
+102089: var t = this;
+102090: i.MessageCenter.on(a.HttpConst.CHECK_LIVE, function(e, o) {
+102091: o.hasOwnProperty("formulaArr") && (t.formulaArr = o.formulaArr);
+102092: o.hasOwnProperty("inherit") && o.inherit.length && c.InhertEquipModel.allInhertEquips.hasOwnProperty(o.inherit[0]) && delete c.InhertEquipModel.allInhertEquips[o.inherit[0]];
+102093: i.MessageCenter.dispatch(s.EvName.CHANG_MENU_PAGE, {
+102094: index: 3,
+102095: viewName: "forgingUI/ForgingSystemUI",
+102096: scriptName: "ForgingSystemUI",
+102097: data: o
+102098: });
+102099: }, this);
+102100: i.MessageCenter.on(a.HttpConst.BEGINCAST, function(t, e) {
+102101: if (1 == e.eRet) {
+102102: r.TimeMgr.sserverT = e.sTime;
+102103: r.TimeMgr.startTime = Date.now();
+102104: e.type = 1;
+102105: i.MessageCenter.dispatch(s.EvName.BEGIN_CAST_EVENT, e);
+102106: } else 7 == e.eRet ? n.default.show(l.getText(1345)) : 8 == e.eRet ? cc.log("服务器获取锁定装备数据出错") : 9 == e.eRet && cc.log("锁定装备不能分解");
+102107: e.hasOwnProperty("inherit") && e.inherit.length && c.InhertEquipModel.allInhertEquips.hasOwnProperty(e.inherit[0]) && delete c.InhertEquipModel.allInhertEquips[e.inherit[0]];
+102108: }, this);
+102109: i.MessageCenter.on(a.HttpConst.END_CAST, function(t, e) {
+102110: if (1 == e.eRet) {
+102111: e.hasOwnProperty("inherit") && e.inherit.length && (c.InhertEquipModel.allInhertEquips[e.inherit[0]] = e.inherit[1]);
+102112: p.default.addShowRewardUI1({}, 0, e.equipObj);
+102113: e.type = 0;
+102114: i.MessageCenter.dispatch(s.EvName.END_CAST_EVENT, e);
+102115: } else 2 == e.eRet && h.StoreModel.openChargeList();
+102116: }, this);
+102117: i.MessageCenter.on(a.HttpConst.BEGIN_MAKE_QUIP, function(t, e) {
+102118: if (1 == e.eRet) {
+102119: r.TimeMgr.sserverT = e.sTime;
+102120: r.TimeMgr.startTime = Date.now();
+102121: e.type = 2;
+102122: i.MessageCenter.dispatch(s.EvName.BEGIN_CAST_EVENT, e);
+102123: }
+102124: }, this);
+102125: i.MessageCenter.on(a.HttpConst.END_MAKE_QUIP, function(t, e) {
+102126: if (1 == e.eRet) {
+102127: p.default.addShowRewardUI1(e.hasOwnProperty("rewardArray") ? e.rewardArray : {}, 0, e.equipObj);
+102128: e.type = 1;
+102129: i.MessageCenter.dispatch(s.EvName.END_CAST_EVENT, e);
+102130: } else 2 == e.eRet && h.StoreModel.openChargeList();
+---
+102147: };
+102148: t.prototype.CheckFormula = function(t) {
+102149: for (var e = 0; e < this.formulaArr.length; e++) if (t == parseInt(this.formulaArr[e])) return !0;
+102150: return !1;
+102151: };
+102152: t.prototype.reqCheckCastState = function() {
+102153: u.NetMgr.http.sendRequest(a.HttpConst.CHECK_LIVE, {});
+102154: };
+102155: t.prototype.reqBeginRecast = function(t, e) {
+102156: var o = {
+102157: itemID: t,
+102158: quality: e
+102159: };
+102160: u.NetMgr.http.sendRequest(a.HttpConst.BEGINCAST, o);
+102161: };
+102162: t.prototype.reqEndCast = function(t) {
+102163: u.NetMgr.http.sendRequest(a.HttpConst.END_CAST, {
+102164: flag: t
+102165: });
+102166: };
+102167: t.prototype.reqBuildEquip = function(t, e) {
+102168: var o = {
+102169: itemID: t,
+102170: itemNum: e
+102171: };
+102172: u.NetMgr.http.sendRequest(a.HttpConst.BEGIN_MAKE_QUIP, o);
+102173: };
+102174: t.prototype.reqEndMakeEquip = function(t) {
+102175: u.NetMgr.http.sendRequest(a.HttpConst.END_MAKE_QUIP, {
+102176: flag: t
+102177: });
+102178: };
+102179: t.prototype.reqBeginMakeMedicine = function(t, e) {
+102180: var o = {
+102181: itemID: t,
+102182: itemNum: e
+102183: };
+102184: u.NetMgr.http.sendRequest(a.HttpConst.BEGINE_MAKE_MEDICINE, o);
+102185: };
+102186: t.prototype.reqEndMedicine = function(t) {
+102187: u.NetMgr.http.sendRequest(a.HttpConst.END_MAKE_MEDICINE, {
+102188: flag: t
+102189: });
+102190: };
+102191: return t;
+102192: }();
+102193: o.RecastModel = new f();
+---

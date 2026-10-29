@@ -1,0 +1,134 @@
+# User.equipTitle  (HttpConst.EQUIP_TITLE)
+# 出现 3 处
+
+   603: function t() {
+   604: this.playerTitle = {};
+   605: this.curIndex = 0;
+   606: }
+   607: t.prototype.init = function() {
+   608: var t = this;
+   609: r.MessageCenter.on(a.HttpConst.EQUIP_TITLE, function(e, o) {
+   610: if (1 == o.eRet) {
+   611: 1 == o.flag ? t.playerTitle.e = o.id : t.playerTitle.e = 0;
+   612: l.UserModel.entity.setTitle(t.playerTitle.e);
+   613: r.MessageCenter.dispatch(s.EvName.SELECT_ACHIEVE_EVENT, t.curIndex);
+   614: r.MessageCenter.dispatch(s.EvName.UPDATA_TITLE_NAME);
+   615: }
+   616: }, this);
+   617: r.MessageCenter.on(s.EvName.GET_TITLE_EVENT, function(e, o) {
+   618: t.showTitleReward(o);
+   619: }, this);
+   620: r.MessageCenter.on(a.HttpConst.TITLE_DEL, function(e, o) {
+   621: var i = parseInt(o);
+   622: i > 0 && t.deleteTitle(i);
+   623: }, this);
+   624: };
+   625: t.prototype.setAchieveData = function(t) {
+   626: for (var e in t) this.playerTitle[e] = t[e];
+   627: this.playerTitle.hasOwnProperty("e") && 2001 == this.playerTitle.e && (this.playerTitle.e = 0);
+   628: this.checkTitleBuff();
+   629: l.UserModel.entity.setTitle(this.playerTitle.e ? this.playerTitle.e : 0);
+   630: };
+   631: t.prototype.getAchieveData = function() {
+   632: return this.playerTitle;
+   633: };
+   634: t.prototype.getAchieveEndT = function(t) {
+   635: return this.playerTitle[t] > 1 ? this.playerTitle[t] : -1;
+   636: };
+   637: t.prototype.deleteTitle = function(t) {
+   638: if (this.playerTitle[t] > 1 && this.playerTitle.e && this.playerTitle.e > 0) {
+   639: delete this.playerTitle[t];
+   640: if (this.playerTitle.e && this.playerTitle.e == t) {
+   641: this.playerTitle.e = 0;
+   642: l.UserModel.entity.setTitle(0);
+   643: r.MessageCenter.dispatch(s.EvName.UPDATA_TITLE_NAME);
+   644: }
+   645: }
+   646: };
+   647: t.prototype.reqEquipTitle = function(t, e, o) {
+   648: this.curIndex = o;
+   649: c.NetMgr.http.sendRequest(a.HttpConst.EQUIP_TITLE, {
+---
+   650: id: t,
+   651: flag: e
+   652: });
+   653: };
+   654: t.prototype.showTitleReward = function(t) {
+   655: for (var e = "", o = 0; o < t.length; o++) {
+   656: var r = i.getItem(t[o], "player_title");
+   657: e = e + "\n" + n.getText(r.name);
+   658: this.playerTitle.hasOwnProperty(t[o]) || (this.playerTitle[t[o]] = 0);
+   659: }
+   660: p.default.show(e, [], null, n.getText(1451));
+   661: };
+   662: t.prototype.checkTitleBuff = function(t) {
+   663: void 0 === t && (t = 0);
+   664: var e = {};
+   665: if (t) {
+   666: var o = i.getItem(t, "player_title"), n = o.title_buff > 0 ? o.title_buff : 0;
+   667: (a = u.NonBattleBuffModel.getStatus(n)) && u.NonBattleBuffModel.removeStatus(a);
+   668: }
+   669: for (var r in this.playerTitle) if ("e" != r && (l = i.getItem(r, "player_title").title_buff) > 0) {
+   670: var a;
+   671: (a = u.NonBattleBuffModel.getStatus(l)) && u.NonBattleBuffModel.removeStatus(a);
+   672: e.hasOwnProperty(l) || (e[l] = 0);
+   673: var s = this.playerTitle[r] > 1 ? this.playerTitle[r] : -1;
+   674: -1 != e[l] && s > e[l] && (e[l] = s);
+   675: }
+   676: for (var r in e) {
+   677: var l = parseInt(r), c = h.default.getTimeBasedBuff(l);
+   678: if (e[r] > 0) {
+   679: var p = f.TimeMgr.getSTimestamp(), d = e[r] - p;
+   680: if (d < 0) continue;
+   681: c.startTimestamp = Date.now();
+   682: c.duration = d;
+   683: } else c.unlimited = !0;
+   684: u.NonBattleBuffModel.addStatus(c);
+   685: }
+   686: };
+   687: t.prototype.destroy = function() {
+   688: this.playerTitle = {};
+   689: this.curIndex = 0;
+---
+   690: r.MessageCenter.off(a.HttpConst.EQUIP_TITLE, function() {}, this);
+   691: };
+   692: return t;
+   693: }();
+   694: o.AchieveModel = new d();
+   695: cc._RF.pop();
+   696: }, {
+   697: "../core/events/MessageCenter": "MessageCenter",
+   698: "../gameconfigs/CFMgr": "CFMgr",
+   699: "../gameconfigs/LangMgr": "LangMgr",
+   700: "../gui/uicomponents/Alert": "Alert",
+   701: "../mgrs/TimeMgr": "TimeMgr",
+   702: "../models/UserModel": "UserModel",
+   703: "../net/HttpConst": "HttpConst",
+   704: "../net/NetMgr": "NetMgr",
+   705: "../utils/EvName": "EvName",
+   706: "./NonBattleBuffModel": "NonBattleBuffModel",
+   707: "./timebasedbuffs/TimeBasedBuffFactory": "TimeBasedBuffFactory"
+   708: } ],
+   709: ActionBase: [ function(t, e, o) {
+   710: "use strict";
+   711: cc._RF.push(e, "41454+7NHdCeapdR8fgbRNa", "ActionBase");
+   712: Object.defineProperty(o, "__esModule", {
+   713: value: !0
+   714: });
+   715: o.ActionBase = void 0;
+   716: var i = t("../../../mgrs/BattlePlayMgr"), n = function() {
+   717: function t(t, e, o) {
+   718: this.actorDic = null;
+   719: this.btPanel = null;
+   720: this.performer = null;
+   721: this.dotInfos = [];
+   722: this.item = t;
+   723: this.actorDic = e;
+   724: this.btPanel = o;
+   725: t.length >= 2 && (this.performer = this.actorDic[t[3]]);
+   726: }
+   727: t.prototype.play = function() {
+   728: var t = this;
+   729: return this.takeActions().then(function() {
+   730: return t.actionComplete();
+---

@@ -1,0 +1,13 @@
+# User.AddSubtitleReq   (HttpConst.ADD_SUBTITLEREQ)
+
+## 注册点 146252: h.MessageCenter.on(u.HttpConst.ADD_SUBTITLEREQ, function(t, e) {
+
+## 请求点 146417: f.NetMgr.http.sendReqWithMask(u.HttpConst.ADD_SUBTITLEREQ, {});
+   146409: 1 == this.lookType ? f.NetMgr.chatPkHttp.sendRequest(u.HttpConst.REQ_SUBTITLE_ADD, t, null, !0) : -1 == this.lookType ? f.NetMgr.wulinHttp.sendRequest(u.HttpConst.REQ_SUBTITLE_ADD, t, null, !0) : f.NetMgr.chatFightHttp.sendRequest(u.HttpConst.REQ_SUBTITLE_ADD, t, null, !0);
+   146410: };
+   146411: e.prototype.reqGetAddSubtitle = function(t, e, o) {
+   146412: this.addSubtitleData = {
+   146413: battle_id: t,
+   146414: insert_offset: e,
+   146415: insert_content: o
+   146416: };

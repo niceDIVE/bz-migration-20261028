@@ -1,0 +1,93 @@
+# User.clearGeSchoolClothing  (HttpConst.CLEAR_SXHOOL_CD)
+# 出现 2 处
+
+ 77834: this.deleteTask = [];
+ 77835: i.MessageCenter.on(r.HttpConst.JOIN_SCHOOL, this.joinSchoolCallBack, this);
+ 77836: i.MessageCenter.on(r.HttpConst.EXIT_SCHOOL, this.exitSchoolCallBack, this);
+ 77837: i.MessageCenter.on(r.HttpConst.BUY_NPC_FEEL, this.buyFellCallBack, this);
+ 77838: i.MessageCenter.on(r.HttpConst.LEVEAL_SCHOOL, this.levealSchoolCallBack, this);
+ 77839: i.MessageCenter.on(r.HttpConst.CHECK_OUT_SCHOOL, this.onCheckOutSchool, this);
+ 77840: i.MessageCenter.on(r.HttpConst.CLEAR_SXHOOL_CD, this.onClearCDSchool, this);
+ 77841: Promise.resolve().then(function() {
+ 77842: return t("../../scripts3/gamescenes3/maputils3/GoodEvilUtil");
+ 77843: }).then(function(t) {
+ 77844: e.goodEvilUtil = t.GoodEvilUtil;
+ 77845: });
+ 77846: };
+ 77847: e.prototype.onClearCDSchool = function(t, e) {
+ 77848: 1 == e.eRet ? n.default.show(l.getText(6001029), [ {
+ 77849: name: l.getText("6001032"),
+ 77850: flag: 0
+ 77851: } ]) : 5 == e.eRet && n.default.show(l.getText(9223));
+ 77852: };
+ 77853: e.prototype.joinSchoolCallBack = function(e, o) {
+ 77854: if (1 == o.eRet) {
+ 77855: o.hasOwnProperty("clearBoxs") && Promise.resolve().then(function() {
+ 77856: return t("../../scripts3/model3/MapBoxModel");
+ 77857: }).then(function(t) {
+ 77858: t.MapBoxModel.removeBox(o.clearBoxs);
+ 77859: });
+ 77860: a.RoleBaseInfo.masters.indexOf(this.npcId) < 0 && a.RoleBaseInfo.masters.push(this.npcId);
+ 77861: i.MessageCenter.dispatch(g.EvName.CHANGE_CV_STATE, 4);
+ 77862: this.deleteErrorTask();
+ 77863: i.MessageCenter.dispatch(g.EvName.UPDATE_PLAYER_EVENT);
+ 77864: var p = s.getItem(this.npcId, "master");
+ 77865: if (parseInt(p.dialogsuccess) > 0) {
+ 77866: var h = this;
+ 77867: c.default.addDialogEvent(p.dialogsuccess, this.npcId, function() {
+ 77868: h.deleteTask.length && n.default.show(l.getText("946"));
+ 77869: }.bind(this));
+ 77870: } else this.deleteTask.length && n.default.show(l.getText("946"));
+ 77871: this.checkTaskIsClear(p, 1);
+ 77872: } else if (5 == o.eRet) {
+ 77873: var f = o.cdTimeDays, d = {
+ 77874: 10: l.getText(6001027),
+ 77875: 11: l.getText(6001028)
+ 77876: };
+ 77877: m.default.prefabs.load("comUI/MasterAlertUI", cc.Prefab, function(t, e) {
+ 77878: var i = cc.instantiate(e);
+ 77879: y.PopUpMgr.addPopUp(i, v.LayerMgr.topLayer);
+ 77880: i.addComponent("MasterAlertUI").setData(d[o.seniorSchool].replace(/\[1\]/, f.toString()), null, function() {
+---
+ 77881: u.NetMgr.http.sendRequest(r.HttpConst.CLEAR_SXHOOL_CD, {
+ 77882: school: o.seniorSchool
+ 77883: });
+ 77884: });
+ 77885: });
+ 77886: }
+ 77887: };
+ 77888: e.prototype.exitSchoolCallBack = function(t, e) {
+ 77889: if (e.hasOwnProperty("npcIDArr") && e.npcIDArr.length) for (var o = a.RoleBaseInfo.masters, i = 0; i < o.length; i++) for (var r = 0; r < e.npcIDArr.length; r++) o[i] == e.npcIDArr[r] && o.splice(i, 1);
+ 77890: this.deleteTask.length ? n.default.show(l.getText("836") + l.getText("947")) : n.default.show(l.getText("836"));
+ 77891: this.deleteErrorTask();
+ 77892: };
+ 77893: e.prototype.levealSchoolCallBack = function(e, o) {
+ 77894: if (1 == o.eRet) {
+ 77895: o.hasOwnProperty("clearBoxs") && Promise.resolve().then(function() {
+ 77896: return t("../../scripts3/model3/MapBoxModel");
+ 77897: }).then(function(t) {
+ 77898: t.MapBoxModel.removeBox(o.clearBoxs);
+ 77899: });
+ 77900: var i = o.npcID, r = s.getItem(i, "master");
+ 77901: c.default.addDialogEvent(r.dialog, i, function() {
+ 77902: r.picture.length ? m.default.prefabs.load("taskUI/OutSchoolPic_" + a.RoleBaseInfo.sexId.toString(), cc.Prefab, function(t, e) {
+ 77903: var o = cc.instantiate(e);
+ 77904: o.addComponent("OutSchoolPic").setPicFun(r.picture[0]);
+ 77905: y.PopUpMgr.addPopUp(o, v.LayerMgr.popUpLayer);
+ 77906: }) : o.hasOwnProperty("isSeniorSchool") && o.hasOwnProperty("textArr") && m.default.prefabs.load("goodEvil/goodEvilCareer/GoodEvilCareerUI", cc.Prefab, function(t, e) {
+ 77907: var i = cc.instantiate(e);
+ 77908: i.getComponent("GoodEvilCareerUI").setMyData(!0, o.textArr, o.hasOwnProperty("rewardArray") ? o.rewardArray : null);
+ 77909: y.PopUpMgr.addPopUp(i);
+ 77910: });
+ 77911: }.bind(this));
+ 77912: o.hasOwnProperty("oldSchool") && p.RoleOtherInfo.outSchoolAy.push(o.oldSchool);
+ 77913: if (o.hasOwnProperty("npcIDArr") && o.npcIDArr.length) for (var h = a.RoleBaseInfo.masters, u = 0; u < h.length; u++) for (var f = 0; f < o.npcIDArr.length; f++) h[u] == o.npcIDArr[f] && h.splice(u, 1);
+ 77914: o.hasOwnProperty("isSeniorSchool") && Promise.resolve().then(function() {
+ 77915: return t("../../scripts3/mgrs3/GoodEvilMgr");
+ 77916: }).then(function(t) {
+ 77917: a.RoleBaseInfo.goodEvilCamp = 0;
+ 77918: a.RoleBaseInfo.goodEvilPrestige = 0;
+ 77919: a.RoleBaseInfo.goodEvilContribution = 0;
+ 77920: t.GoodEvilMgr.clearTask();
+ 77921: });
+---

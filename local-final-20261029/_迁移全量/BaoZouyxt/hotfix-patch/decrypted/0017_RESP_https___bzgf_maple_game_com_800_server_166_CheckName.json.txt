@@ -1,0 +1,2 @@
+status=200 https://bzgf.maple-game.com/800-server-166/CheckName
+{"eRet":1}

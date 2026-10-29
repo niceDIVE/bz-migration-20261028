@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-10-22T11:07:25.990Z",
+  "saleShopUI": {
+    "file": "tools/scripts2.js",
+    "line": 55062,
+    "body": [
+      "e.prototype.showSaleShopUI = function(t) {",
+      "this.randomData = t;",
+      "if (t.curGold) {",
+      "u.RoleBaseInfo.gold = t.curGold;",
+      "this.goldNum.getComponent(cc.Label).string = \" \" + u.RoleBaseInfo.gold;",
+      "}",
+      "var e = this;",
+      "a.default.prefabs.load(\"shopUI/ItemsqiUI\", cc.Prefab, function(o, i) {",
+      "var s = cc.instantiate(i);",
+      "e.middleNode.addChild(s);",
+      "s.addComponent(\"SaleShopQiUI\").setShowData(t, 6, e);",
+      "e.curLayer = s;",
+      "});",
+      "a.default.prefabs.load(\"shopUI/ItemstabqiUI\", cc.Prefab, function(t, o) {",
+      "var i = cc.instantiate(o);",
+      "i.addComponent(\"SaleShopQiBtnList\");",
+      "e.Bg.addChild(i);",
+      "});",
+      "};"
+    ],
+    "fields": [
+      "curGold"
+    ]
+  },
+  "exchangeShop": {
+    "register": {
+      "file": "tools/scripts2.js",
+      "line": 20615,
+      "src": [
+        "l.MessageCenter.on(p.EvName.EXCHANGE_SHOP_DATA, this.onShopDataCallBack, this);"
+      ]
+    },
+    "callback": {
+      "file": "tools/scripts2.js",
+      "line": 20610,
+      "body": [
+        "e.prototype.onShopDataCallBack = function(t, e) {",
+        "this.currData = e;",
+        "this.script && this.script.showBaseData(e, this.shopFlag, this.curIdx);",
+        "};"
+      ]
+    },
+    "fields": []
+  }
+}

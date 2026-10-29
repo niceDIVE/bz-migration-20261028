@@ -1,0 +1,22 @@
+# User.killNpc   (HttpConst.KILL_NPC)
+
+## 注册点 90054: r.MessageCenter.on(a.HttpConst.KILL_NPC, this.callBackKilNpc, this);
+
+## 请求点 90228: t.length && p.NetMgr.http.sendRequest(a.HttpConst.KILL_NPC, o);
+   90220: s.RoleBaseInfo.deadNpc = {};
+   90221: };
+   90222: t.prototype.reqKillOfNpc = function(t, e) {
+   90223: this.killType = e;
+   90224: var o = {
+   90225: npcIDArr: t,
+   90226: type: e
+   90227: };
+
+## 处理函数 callBackKilNpc (90058-90064)
+ 90058: t.prototype.callBackKilNpc = function(t, e) {
+ 90059: if (1 == e.eRet) {
+ 90060: if (1 == this.killType) {
+ 90061: var r = i.getItem(e.npcIDArr[0], "npc"), a = {
+ 90062: str: n.getText(2 == r.Camp ? "841" : "840").replace(/1/, n.getText(r.NpcName)),
+ 90063: clearValue: 1
+ 90064: };

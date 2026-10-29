@@ -1,0 +1,13 @@
+# User.EndRecoverMP   (HttpConst.END_RECOVER_MP)
+
+## 注册点 138903: r.MessageCenter.on(s.HttpConst.END_RECOVER_MP, function(t, e) {
+
+## 请求点 138927: u.NetMgr.http.sendRequest(s.HttpConst.END_RECOVER_MP, e);
+   138919: };
+   138920: t.prototype.endRecoverMp = function() {
+   138921: var t = m.playerInfo.entity, e = {
+   138922: curMp: t.mp.remaining,
+   138923: mplmt: t.mp.limit,
+   138924: bTime: this.recoverStartTS,
+   138925: flag: f.IceBedModel.getIceBed()
+   138926: };

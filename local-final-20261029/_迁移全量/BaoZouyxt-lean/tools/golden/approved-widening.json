@@ -1,0 +1,686 @@
+[
+ {
+  "action": "getHomeList",
+  "path": "soilArr[0].s",
+  "ev": "index.js:57585",
+  "reason": "C10 必做项：soilArr 从\"对象 {}\"改成数组（客户端按 .length/下标用）；旧基线里的对象形态不再成立；本条是新增字段，客户端读取点见证据行"
+ },
+ {
+  "action": "getHomeList",
+  "path": "soilArr[1].s",
+  "ev": "index.js:57585",
+  "reason": "C10 必做项：soilArr 从\"对象 {}\"改成数组（客户端按 .length/下标用）；旧基线里的对象形态不再成立；本条是新增字段，客户端读取点见证据行"
+ },
+ {
+  "action": "getHomeList",
+  "path": "soilArr[2].s",
+  "ev": "index.js:57585",
+  "reason": "C10 必做项：soilArr 从\"对象 {}\"改成数组（客户端按 .length/下标用）；旧基线里的对象形态不再成立；本条是新增字段，客户端读取点见证据行"
+ },
+ {
+  "action": "getHomeList",
+  "path": "soilArr[3].s",
+  "ev": "index.js:57585",
+  "reason": "C10 必做项：soilArr 从\"对象 {}\"改成数组（客户端按 .length/下标用）；旧基线里的对象形态不再成立；本条是新增字段，客户端读取点见证据行"
+ },
+ {
+  "action": "getHomeList",
+  "path": "bShop",
+  "ev": "index.js:57585",
+  "reason": "C10 必做项：soilArr 从\"对象 {}\"改成数组（客户端按 .length/下标用）；旧基线里的对象形态不再成立；本条是新增字段，客户端读取点见证据行"
+ },
+ {
+  "action": "onKeyDispossHomeEvent",
+  "path": "aExp",
+  "ev": "index.js:57758",
+  "reason": "C10：cropMap 空 → 客户端弹 6000404；旧 SHAPED 的其它字段不再出现；本条是新增字段，客户端读取点见证据行"
+ },
+ {
+  "action": "onKeyObtainCrop",
+  "path": "aExp",
+  "ev": "index.js:57726",
+  "reason": "C10：obtainLands 为空 → 客户端弹 69193；本条是新增字段，客户端读取点见证据行"
+ },
+ {
+  "action": "onKeyObtainCrop",
+  "path": "note.ivch",
+  "ev": "index.js:57726",
+  "reason": "C10：obtainLands 为空 → 客户端弹 69193；本条是新增字段，客户端读取点见证据行"
+ },
+ {
+  "action": "onKeyObtainCrop",
+  "path": "note.eqch",
+  "ev": "index.js:57726",
+  "reason": "C10：obtainLands 为空 → 客户端弹 69193；本条是新增字段，客户端读取点见证据行"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[0][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[0][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[0][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[1][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[1][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[1][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[2][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[2][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[2][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[3][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[3][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[3][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[4][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[4][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[4][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[5][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[5][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[5][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[6][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[6][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[6][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[7][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[7][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[7][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[8][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[8][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[8][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[9][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[9][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[9][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[10][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[10][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[10][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[11][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[11][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[11][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[12][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[12][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[12][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[13][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[13][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[13][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[14][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[14][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[14][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[15][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[15][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[15][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[16][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[16][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[16][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[17][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[17][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[17][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[18][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[18][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[18][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[19][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[19][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[19][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[20][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[20][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[20][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[21][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[21][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[21][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[22][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[22][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[22][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[23][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[23][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[23][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[24][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[24][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[24][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[25][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[25][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[25][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[26][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[26][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[26][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[27][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[27][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[27][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[28][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[28][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[28][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[29][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[29][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[29][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[30][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[30][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[30][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[31][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[31][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[31][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[32][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[32][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[32][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[33][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[33][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[33][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[34][0]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[34][1]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ },
+ {
+  "action": "getBackShop",
+  "path": "shopArr[34][2]",
+  "ev": "index.js:57847",
+  "reason": "C10 商店：新增 getBackShop 货架（35 行种子 × [itemId, tag, 单价] 三元组）。契约见 scoutT-homeshop.md（scripts2.js:31545/31337/31343）；不给 shopArr 客户端弹 3325。单价取 item.Price（用户拍板平价）"
+ }
+]

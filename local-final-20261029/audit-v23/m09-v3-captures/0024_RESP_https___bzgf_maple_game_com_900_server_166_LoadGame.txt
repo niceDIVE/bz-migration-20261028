@@ -1,0 +1,4 @@
+status=200 https://bzgf.maple-game.com/900-server-166/LoadGame
+{
+  "errorCode": 1
+}

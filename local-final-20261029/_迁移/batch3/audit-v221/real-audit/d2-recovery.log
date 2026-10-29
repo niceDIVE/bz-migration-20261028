@@ -1,0 +1,139 @@
+[02:52:03] start, local probe md5=02b61da1f8d225091f91fbd5e9805ed1
+[02:52:06] round 1: shell dead
+[02:53:03] round 2: shell dead
+[02:54:00] round 3: shell dead
+[02:54:57] round 4: shell dead
+[02:55:55] round 5: shell dead
+[02:56:52] round 6: shell dead
+[02:57:49] round 7: shell dead
+[02:58:46] round 8: shell dead
+[02:59:44] round 9: shell dead
+[03:00:41] round 10: shell dead
+[03:01:38] round 11: shell dead
+[03:02:35] round 12: shell dead
+[03:03:33] round 13: shell dead
+[03:04:30] round 14: shell dead
+[03:05:27] round 15: shell dead
+[03:06:24] round 16: shell dead
+[03:07:22] round 17: shell dead
+[03:08:19] round 18: shell dead
+[03:09:16] round 19: shell dead
+[03:10:13] round 20: shell dead
+[03:11:10] round 21: shell dead
+[03:12:08] round 22: shell dead
+[03:13:05] round 23: shell dead
+[03:14:02] round 24: shell dead
+[03:14:59] round 25: shell dead
+[03:15:57] round 26: shell dead
+[03:16:54] round 27: shell dead
+[03:17:51] round 28: shell dead
+[03:18:48] round 29: shell dead
+[03:19:46] round 30: shell dead
+[03:20:43] round 31: shell dead
+[03:21:40] round 32: shell dead
+[03:22:37] round 33: shell dead
+[03:23:34] round 34: shell dead
+[03:24:32] round 35: shell dead
+[03:25:29] round 36: shell dead
+[03:26:26] round 37: shell dead
+[03:27:23] round 38: shell dead
+[03:28:21] round 39: shell dead
+[03:29:18] round 40: shell dead
+[03:30:15] round 41: shell dead
+[03:31:12] round 42: shell dead
+[03:32:09] round 43: shell dead
+[03:33:07] round 44: shell dead
+[03:34:04] round 45: shell dead
+[03:35:01] round 46: shell dead
+[03:35:58] round 47: shell dead
+[03:36:56] round 48: shell dead
+[03:37:53] round 49: shell dead
+[03:38:50] round 50: shell dead
+[03:39:47] round 51: shell dead
+[03:40:44] round 52: shell dead
+[03:41:42] round 53: shell dead
+[03:42:39] round 54: shell dead
+[03:43:36] round 55: shell dead
+[03:44:33] round 56: shell dead
+[03:45:31] round 57: shell dead
+[03:46:28] round 58: shell dead
+[03:47:25] round 59: shell dead
+[03:48:22] round 60: shell dead
+[03:49:20] round 61: shell dead
+[03:50:17] round 62: shell dead
+[03:51:14] round 63: shell dead
+[03:52:11] round 64: shell dead
+[03:53:08] round 65: shell dead
+[03:54:06] round 66: shell dead
+[03:55:03] round 67: shell dead
+[03:56:00] round 68: shell dead
+[03:56:57] round 69: shell dead
+[03:57:55] round 70: shell dead
+[03:58:52] round 71: shell dead
+[03:59:49] round 72: shell dead
+[04:00:46] round 73: shell dead
+[04:01:43] round 74: shell dead
+[04:02:41] round 75: shell dead
+[04:03:38] round 76: shell dead
+[04:04:35] round 77: shell dead
+[04:05:32] round 78: shell dead
+[04:06:30] round 79: shell dead
+[04:07:27] round 80: shell dead
+[04:08:24] round 81: shell dead
+[04:09:21] round 82: shell dead
+[04:10:18] round 83: shell dead
+[04:11:16] round 84: shell dead
+[04:12:13] round 85: shell dead
+[04:13:10] round 86: shell dead
+[04:14:07] round 87: shell dead
+[04:15:05] round 88: shell dead
+[04:16:02] round 89: shell dead
+[04:16:59] round 90: shell dead
+[04:17:56] round 91: shell dead
+[04:18:56] round 92: shell dead
+[04:19:55] round 93: shell dead
+[04:20:54] round 94: shell dead
+[04:21:54] round 95: shell dead
+[04:22:53] round 96: shell dead
+[04:23:52] round 97: shell dead
+[04:24:51] round 98: shell dead
+[04:25:51] round 99: shell dead
+[04:26:48] round 100: shell alive
+[04:26:48] round 100: push/md5 mismatch (got ), retry
+[04:27:46] round 101: shell alive
+[04:27:46] round 101: push/md5 mismatch (got ), retry
+[04:28:43] round 102: shell alive
+[04:28:43] round 102: push/md5 mismatch (got ), retry
+[04:29:40] round 103: shell alive
+[04:29:41] round 103: push/md5 mismatch (got ), retry
+[04:30:38] round 104: shell alive
+[04:30:38] round 104: push/md5 mismatch (got ), retry
+[04:31:35] round 105: shell alive
+[04:31:36] round 105: push/md5 mismatch (got ), retry
+[04:32:33] round 106: shell alive
+[04:32:33] round 106: push/md5 mismatch (got ), retry
+[04:33:30] round 107: shell alive
+[04:33:30] round 107: push/md5 mismatch (got ), retry
+[04:34:28] round 108: shell alive
+[04:34:28] round 108: push/md5 mismatch (got ), retry
+[04:35:25] round 109: shell alive
+[04:35:25] round 109: push/md5 mismatch (got ), retry
+[04:36:23] round 110: shell alive
+[04:36:23] round 110: push/md5 mismatch (got ), retry
+[04:37:20] round 111: shell alive
+[04:37:20] round 111: push/md5 mismatch (got ), retry
+[04:38:18] round 112: shell alive
+[04:38:18] round 112: push/md5 mismatch (got ), retry
+[04:39:15] round 113: shell alive
+[04:39:15] round 113: push/md5 mismatch (got ), retry
+[04:40:13] round 114: shell alive
+[04:40:13] round 114: push/md5 mismatch (got ), retry
+[04:41:10] round 115: shell alive
+[04:41:10] round 115: push/md5 mismatch (got ), retry
+[04:42:08] round 116: shell alive
+[04:42:08] round 116: push/md5 mismatch (got ), retry
+[04:43:05] round 117: shell alive
+[04:43:05] round 117: push/md5 mismatch (got ), retry
+[04:44:03] round 118: shell alive
+02b61da1f8d225091f91fbd5e9805ed1  /data/data/com.maple.madherogo/files/hotfix/jsb-adapter/jsb-engine.js
+[04:44:05] round 118: probe deployed + game restarted, DONE

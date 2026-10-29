@@ -1,0 +1,32 @@
+{
+  "id": "audit.fp4.no-save",
+  "action": "User.buyShopItem",
+  "req": {
+    "mod": "User",
+    "do": "buyShopItem",
+    "p": {
+      "itemID": 2001,
+      "num": 2
+    }
+  },
+  "resp": {
+    "eRet": 1,
+    "note": {
+      "ivch": {
+        "2001": 999
+      },
+      "eco": {
+        "coins": 123456
+      }
+    }
+  },
+  "transport": "game",
+  "rawTransport": {
+    "code": 200
+  },
+  "exceptions": [],
+  "toasts": [],
+  "probe": {
+    "mode": "wrap-on"
+  }
+}

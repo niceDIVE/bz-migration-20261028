@@ -1,0 +1,13 @@
+# User.LoadGame   (HttpConst.USER_LOADGAME)
+
+## 注册点 70346: v.MessageCenter.on(d.HttpConst.USER_LOADGAME, function(e, o) {
+
+## 请求点 70925: S.NetMgr.http.sendRequest(d.HttpConst.USER_LOADGAME, t);
+   70917: };
+   70918: e = y.LocalStorageMgr.getItem(I.RoleBaseInfo.roleID + "$#&A");
+   70919: (o = y.LocalStorageMgr.getItem(I.RoleBaseInfo.roleID + "$#&T")) && "undefined" != o && (i = JSON.parse(o)).length && (t.taskFlag = i.length);
+   70920: e && "undefined" != o && (r = JSON.parse(e)) && (t.finishTaskFlag = Object.keys(r).length);
+   70921: return [ 4, z.TESDKHelper.loginSet(t) ];
+   70922: 
+   70923: case 1:
+   70924: n.sent();

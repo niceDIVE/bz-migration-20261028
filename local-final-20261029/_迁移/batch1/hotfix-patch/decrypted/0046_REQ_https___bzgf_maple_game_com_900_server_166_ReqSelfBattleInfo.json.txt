@@ -1,0 +1,2 @@
+POST https://bzgf.maple-game.com/900-server-166/ReqSelfBattleInfo
+{"mod":"User","do":"ReqSelfBattleInfo","p":{"npcID":310003,"isRmd":false,"mp":200,"gTime":0,"hgtimes":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"17925730867343ufsg1q0"}}

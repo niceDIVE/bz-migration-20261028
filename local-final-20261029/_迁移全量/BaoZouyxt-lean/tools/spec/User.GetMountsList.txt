@@ -1,0 +1,99 @@
+# User.GetMountsList  (HttpConst.GET_MOUNTSLIST)
+# 出现 2 处
+
+ 32117: }
+ 32118: e.prototype.init = function() {
+ 32119: var e = this;
+ 32120: this.curSelectMounstId = 0;
+ 32121: this.mountState = !1;
+ 32122: this.isShopState = !1;
+ 32123: a.MessageCenter.on(u.HttpConst.GET_MOUNTSLIST, function(t, e) {
+ 32124: if (1 == e.eRet) {
+ 32125: var o = new Promise(function(t) {
+ 32126: c.default.prefabs.load("home/stable", cc.Prefab, function(e, o) {
+ 32127: t(o);
+ 32128: });
+ 32129: }), n = new Promise(function(t) {
+ 32130: c.default.prefabs.load("comUI/ShopBgUI", cc.Prefab, function(e, o) {
+ 32131: t(o);
+ 32132: });
+ 32133: });
+ 32134: Promise.all([ o, n ]).then(function(t) {
+ 32135: var o = i(t, 2), n = (o[0], o[1]), r = cc.instantiate(n);
+ 32136: s.PopUpMgr.addPopUp(r, h.LayerMgr.popUpLayer);
+ 32137: r.addComponent("DriverShopBg").setData(e.MountsArr, 0);
+ 32138: });
+ 32139: }
+ 32140: }, this);
+ 32141: a.MessageCenter.on(u.HttpConst.BUY_MOUNT, function(o, i) {
+ 32142: if (1 != i.type) {
+ 32143: var r = g.RoleOtherInfo.mountObj.e;
+ 32144: if (1 == i.eRet) {
+ 32145: g.RoleOtherInfo.mountObj.e = e.curSelectMounstId;
+ 32146: e.curSelectMounstId > 0 && (g.RoleOtherInfo.mountObj[e.curSelectMounstId] = 0);
+ 32147: l.default.show(n.getText(1538));
+ 32148: a.MessageCenter.dispatch(d.EvName.SUCCESS_SAVE_MOUNT_EVENT);
+ 32149: if (r != g.RoleOtherInfo.mountObj.e) {
+ 32150: cc.sys.localStorage.removeItem(m.RoleBaseInfo.roleID + "mountID");
+ 32151: e.unloadMountState(!1);
+ 32152: e.mountSaveValue && e.setLocationMountState();
+ 32153: p.GSceneMgr.setMountBundleRes(function() {
+ 32154: a.MessageCenter.dispatch(d.EvName.CHANGE_PLAYER_EVENT);
+ 32155: });
+ 32156: Promise.resolve().then(function() {
+ 32157: return t("../../scripts3/utils3/EvName3");
+ 32158: }).then(function(t) {
+ 32159: a.MessageCenter.dispatch(t.EvName3.MOUNT_CHANGED);
+ 32160: });
+ 32161: }
+ 32162: } else 3 == i.eRet ? l.default.show(n.getText(1e3)) : Promise.resolve().then(function() {
+ 32163: return t("./StoreModel");
+---
+ 32170: g.RoleOtherInfo.isSyncMount = 1 == i.sync;
+ 32171: a.MessageCenter.dispatch(d.EvName.SET_ROLEINFO_MOUNT);
+ 32172: }
+ 32173: }, this);
+ 32174: };
+ 32175: e.prototype.reqDriverList = function() {
+ 32176: f.NetMgr.http.sendRequest(u.HttpConst.GET_MOUNTSLIST, {}, function() {}.bind(this));
+ 32177: };
+ 32178: e.prototype.reqBuyMount = function(t, e) {
+ 32179: void 0 === e && (e = 0);
+ 32180: this.curSelectMounstId = t;
+ 32181: f.NetMgr.http.sendRequest(u.HttpConst.BUY_MOUNT, {
+ 32182: moutsID: parseInt(t),
+ 32183: type: e
+ 32184: });
+ 32185: };
+ 32186: e.prototype.initMountState = function() {
+ 32187: console.log("roleid = " + m.RoleBaseInfo.roleID);
+ 32188: if (cc.sys.localStorage.getItem(m.RoleBaseInfo.roleID + "mountID")) {
+ 32189: this.mountState = !1;
+ 32190: this.mountSaveValue = !0;
+ 32191: } else this.mountSaveValue = !1;
+ 32192: };
+ 32193: e.prototype.setLocationMountState = function() {
+ 32194: if (this.mountSaveValue) {
+ 32195: this.mountSaveValue = !1;
+ 32196: cc.sys.localStorage.removeItem(m.RoleBaseInfo.roleID + "mountID");
+ 32197: } else {
+ 32198: this.mountSaveValue = !0;
+ 32199: cc.sys.localStorage.setItem(m.RoleBaseInfo.roleID + "mountID", 1);
+ 32200: }
+ 32201: };
+ 32202: e.prototype.getLocationMountState = function(t) {
+ 32203: void 0 === t && (t = null);
+ 32204: return !this.mountState && !!this.isCanUseMount(t) && parseInt(g.RoleOtherInfo.mountObj.e) > 0 && !this.mountSaveValue;
+ 32205: };
+ 32206: e.prototype.isCanUseMount = function(t) {
+ 32207: void 0 === t && (t = null);
+ 32208: return !!(this.isMapShowMount(t) && parseInt(g.RoleOtherInfo.mountObj.e) > 0);
+ 32209: };
+ 32210: e.prototype.isMapShowMount = function(t) {
+ 32211: void 0 === t && (t = null);
+ 32212: null == t && (t = p.GSceneMgr.curSceneID);
+ 32213: var e = r.getItem(t, "map");
+ 32214: return !(!e || 1 != e.fly);
+ 32215: };
+ 32216: e.prototype.unloadMountState = function(t) {
+---

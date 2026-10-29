@@ -1,0 +1,585 @@
+{
+  "generatedAt": "2026-10-21T22:15:36.445Z",
+  "tables": [
+    {
+      "file": "active.json",
+      "bytes": 37178,
+      "realRows": 88,
+      "indexKeys": 0,
+      "columns": [
+        "id",
+        "type",
+        "name",
+        "pointaward",
+        "pointlevel",
+        "pointlimit",
+        "max",
+        "awardtype",
+        "award",
+        "level",
+        "awardnum",
+        "score",
+        "single_award",
+        "times",
+        "delItem",
+        "sId",
+        "mail",
+        "mail_name",
+        "mail_des",
+        "begintime",
+        "endtime",
+        "activebegintime",
+        "activeendtime",
+        "awardbegintime",
+        "awardendtime",
+        "c_task"
+      ],
+      "sampleRows": [
+        "{\"id\":1,\"type\":1,\"name\":\"梅花桩\",\"pointaward\":\"4003,100,0.12|3078,100,0.12\",\"pointlevel\":1,\"pointlimit\":500,\"max\":5,\"awardtype\":1,\"award\":\"0\",\"level\":0,\"awardnum\":0,\"score\":0,\"single_award\":0,\"times\":0,\"delItem\":\"0\",\"sId\":0,\"mail\":\"0\",\"mail_name\":0,\"mail_des\":0,\"begintime\":[1782921600000],\"endtime\":[17... (truncated)",
+        "{\"id\":2,\"type\":1,\"name\":\"打猎\",\"pointaward\":\"4003,100,0.04|3078,100,0.04\",\"pointlevel\":1,\"pointlimit\":500,\"max\":5,\"awardtype\":1,\"award\":\"0\",\"level\":0,\"awardnum\":0,\"score\":0,\"single_award\":0,\"times\":0,\"delItem\":\"0\",\"sId\":0,\"mail\":\"0\",\"mail_name\":0,\"mail_des\":0,\"begintime\":[1592755200000],\"endtime\":[159... (truncated)"
+      ],
+      "structureShape": "name, rows, cols, data"
+    },
+    {
+      "file": "active_order.json",
+      "bytes": 3015,
+      "realRows": 44,
+      "indexKeys": 0,
+      "columns": [
+        "id",
+        "number",
+        "active",
+        "name",
+        "tips"
+      ],
+      "sampleRows": [
+        "{\"id\":3,\"number\":1003,\"active\":0,\"name\":1023,\"tips\":0}",
+        "{\"id\":21,\"number\":1004,\"active\":15,\"name\":4298,\"tips\":4302}"
+      ],
+      "structureShape": "name, rows, cols, data"
+    },
+    {
+      "file": "active_inform.json",
+      "bytes": 429,
+      "realRows": 8,
+      "indexKeys": 0,
+      "columns": [
+        "id",
+        "text",
+        "description"
+      ],
+      "sampleRows": [
+        "{\"id\":1,\"text\":3884,\"description\":3894}",
+        "{\"id\":2,\"text\":3885,\"description\":3895}"
+      ],
+      "structureShape": "name, rows, cols, data"
+    },
+    {
+      "file": "active_signup.json",
+      "bytes": 291,
+      "realRows": 7,
+      "indexKeys": 0,
+      "columns": [
+        "id",
+        "reward1"
+      ],
+      "sampleRows": [
+        "{\"id\":1,\"reward1\":\"9208,5\"}",
+        "{\"id\":2,\"reward1\":\"7652,5\"}"
+      ],
+      "structureShape": "name, rows, cols, data"
+    },
+    {
+      "file": "active_store.json",
+      "bytes": 1144,
+      "realRows": 6,
+      "indexKeys": 0,
+      "columns": [
+        "id",
+        "name1",
+        "name2",
+        "description",
+        "limit",
+        "num",
+        "award",
+        "buy_price",
+        "ingots_price",
+        "picture"
+      ],
+      "sampleRows": [
+        "{\"id\":1,\"name1\":6000500,\"name2\":6000500,\"description\":6000169,\"limit\":1,\"num\":1,\"award\":\"9208,5\",\"buy_price\":0,\"ingots_price\":0,\"picture\":\"actgift1\"}",
+        "{\"id\":2,\"name1\":6000501,\"name2\":6000501,\"description\":6000169,\"limit\":1,\"num\":1,\"award\":\"9208,12|9209,8\",\"buy_price\":0,\"ingots_price\":300,\"picture\":\"actgift2\"}"
+      ],
+      "structureShape": "name, rows, cols, data"
+    },
+    {
+      "file": "activetime.json",
+      "bytes": 1182,
+      "realRows": 3,
+      "indexKeys": 0,
+      "columns": [
+        "type",
+        "begintime",
+        "endtime",
+        "isdaily",
+        "awardnum",
+        "basicpotential",
+        "basicexp",
+        "basicmoney",
+        "coefficient",
+        "begintime1",
+        "endtime1",
+        "position",
+        "name",
+        "awardbegintime",
+        "awardendtime",
+        "item"
+      ],
+      "sampleRows": [
+        "{\"type\":1,\"begintime\":1378994561000,\"endtime\":1379080961000,\"isdaily\":1,\"awardnum\":1,\"basicpotential\":1,\"basicexp\":0,\"basicmoney\":1,\"coefficient\":1,\"begintime1\":0,\"endtime1\":0,\"position\":0,\"name\":\"堆雪人\",\"awardbegintime\":[20,0],\"awardendtime\":[23,59,59],\"item\":[4232,4233,4234,4235]}",
+        "{\"type\":2,\"begintime\":1752681600000,\"endtime\":1753804799000,\"isdaily\":1,\"awardnum\":1,\"basicpotential\":1,\"basicexp\":0,\"basicmoney\":1,\"coefficient\":1,\"begintime1\":1378994561000,\"endtime1\":1379080961000,\"position\":0,\"name\":\"春节/作业活动\",\"awardbegintime\":[20,0],\"awardendtime\":[23,59,59],\"item\":[10538,10539,... (truncated)"
+      ],
+      "structureShape": "name, rows, cols, data"
+    },
+    {
+      "file": "activityshop.json",
+      "bytes": 344,
+      "realRows": 2,
+      "indexKeys": 0,
+      "columns": [
+        "npcID",
+        "begintime",
+        "endtime",
+        "item",
+        "price"
+      ],
+      "sampleRows": [
+        "{\"npcID\":1009,\"begintime\":1506787200,\"endtime\":1507478400,\"item\":[3017,3019,3020],\"price\":[10,100,1000]}",
+        "{\"npcID\":1288,\"begintime\":1506787200,\"endtime\":4070883661,\"item\":[4175,4106,4220,4221,4222,4527],\"price\":[10,10,20,100,1000,500]}"
+      ],
+      "structureShape": "name, rows, cols, data"
+    },
+    {
+      "file": "sevenday.json",
+      "bytes": 642,
+      "realRows": 7,
+      "indexKeys": 0,
+      "columns": [
+        "day",
+        "name",
+        "main",
+        "timestart",
+        "target"
+      ],
+      "sampleRows": [
+        "{\"day\":1,\"name\":7771001,\"main\":7772001,\"timestart\":1,\"target\":[1,6,12,19]}",
+        "{\"day\":2,\"name\":7771002,\"main\":7772002,\"timestart\":2,\"target\":[11,13,7,23]}"
+      ],
+      "structureShape": "name, rows, cols, data"
+    },
+    {
+      "file": "Return_SevenDay.json",
+      "bytes": 347,
+      "realRows": 7,
+      "indexKeys": 0,
+      "columns": [
+        "id",
+        "reward1"
+      ],
+      "sampleRows": [
+        "{\"id\":1,\"reward1\":\"1,50|8905,20\"}",
+        "{\"id\":2,\"reward1\":\"6089,1|8905,20\"}"
+      ],
+      "structureShape": "name, rows, cols, data"
+    },
+    {
+      "file": "Return_Daily.json",
+      "bytes": 1140,
+      "realRows": 11,
+      "indexKeys": 0,
+      "columns": [
+        "id",
+        "type",
+        "limit",
+        "describe",
+        "reward",
+        "liveness"
+      ],
+      "sampleRows": [
+        "{\"id\":1,\"type\":1,\"limit\":[],\"describe\":0,\"reward\":\"8905,5|6069,2\",\"liveness\":2}",
+        "{\"id\":2,\"type\":2,\"limit\":[1,1],\"describe\":0,\"reward\":\"8905,6|3092,1|6069,1\",\"liveness\":4}"
+      ],
+      "structureShape": "name, rows, cols, data"
+    },
+    {
+      "file": "daily_active_tips.json",
+      "bytes": 1392,
+      "realRows": 18,
+      "indexKeys": 0,
+      "columns": [
+        "id",
+        "title",
+        "description",
+        "isshow",
+        "grow"
+      ],
+      "sampleRows": [
+        "{\"id\":1,\"title\":7775001,\"description\":7776001,\"isshow\":1,\"grow\":3}",
+        "{\"id\":2,\"title\":7775002,\"description\":7776002,\"isshow\":1,\"grow\":0}"
+      ],
+      "structureShape": "name, rows, cols, data"
+    },
+    {
+      "file": "AutoDailyTask.json",
+      "bytes": 505,
+      "realRows": 5,
+      "indexKeys": 0,
+      "columns": [
+        "id",
+        "type",
+        "task",
+        "cost",
+        "level",
+        "timecost",
+        "des"
+      ],
+      "sampleRows": [
+        "{\"id\":\"1\",\"type\":1,\"task\":1,\"cost\":1,\"level\":50,\"timecost\":10,\"des\":6000326}",
+        "{\"id\":\"2\",\"type\":1,\"task\":2,\"cost\":1,\"level\":50,\"timecost\":10,\"des\":6000328}"
+      ],
+      "structureShape": "name, rows, cols, data"
+    }
+  ],
+  "cfgIndexMatches": [
+    {
+      "table": "active",
+      "rows": 88,
+      "columns": [
+        "id",
+        "type",
+        "name",
+        "pointaward",
+        "pointlevel",
+        "pointlimit",
+        "max",
+        "awardtype",
+        "award",
+        "level",
+        "awardnum",
+        "score",
+        "single_award",
+        "times",
+        "delItem",
+        "sId",
+        "mail",
+        "mail_name",
+        "mail_des",
+        "begintime",
+        "endtime",
+        "activebegintime",
+        "activeendtime",
+        "awardbegintime",
+        "awardendtime",
+        "c_task"
+      ]
+    },
+    {
+      "table": "active_inform",
+      "rows": 8,
+      "columns": [
+        "id",
+        "text",
+        "description"
+      ]
+    },
+    {
+      "table": "active_order",
+      "rows": 44,
+      "columns": [
+        "id",
+        "number",
+        "active",
+        "name",
+        "tips"
+      ]
+    },
+    {
+      "table": "active_signup",
+      "rows": 7,
+      "columns": [
+        "id",
+        "reward1"
+      ]
+    },
+    {
+      "table": "active_store",
+      "rows": 6,
+      "columns": [
+        "id",
+        "name1",
+        "name2",
+        "description",
+        "limit",
+        "num",
+        "award",
+        "buy_price",
+        "ingots_price",
+        "picture"
+      ]
+    },
+    {
+      "table": "activetime",
+      "rows": 3,
+      "columns": [
+        "type",
+        "begintime",
+        "endtime",
+        "isdaily",
+        "awardnum",
+        "basicpotential",
+        "basicexp",
+        "basicmoney",
+        "coefficient",
+        "begintime1",
+        "endtime1",
+        "position",
+        "name",
+        "awardbegintime",
+        "awardendtime",
+        "item"
+      ]
+    },
+    {
+      "table": "activityshop",
+      "rows": 2,
+      "columns": [
+        "npcID",
+        "begintime",
+        "endtime",
+        "item",
+        "price"
+      ]
+    },
+    {
+      "table": "AutoDailyTask",
+      "rows": 5,
+      "columns": [
+        "id",
+        "type",
+        "task",
+        "cost",
+        "level",
+        "timecost",
+        "des"
+      ]
+    },
+    {
+      "table": "daily_active_tips",
+      "rows": 18,
+      "columns": [
+        "id",
+        "title",
+        "description",
+        "isshow",
+        "grow"
+      ]
+    },
+    {
+      "table": "koicarp_active",
+      "rows": 13,
+      "columns": [
+        "id",
+        "level",
+        "type",
+        "weight",
+        "reward"
+      ]
+    },
+    {
+      "table": "koicarp_active_box",
+      "rows": 10,
+      "columns": [
+        "id",
+        "reward",
+        "limit",
+        "condition"
+      ]
+    },
+    {
+      "table": "koicarp_active_task",
+      "rows": 7,
+      "columns": [
+        "id",
+        "type",
+        "condition",
+        "reward",
+        "name"
+      ]
+    },
+    {
+      "table": "lottery_active_reward",
+      "rows": 13,
+      "columns": [
+        "id",
+        "times",
+        "reward"
+      ]
+    },
+    {
+      "table": "moonstep_active",
+      "rows": 20,
+      "columns": [
+        "id",
+        "icon",
+        "type",
+        "condition",
+        "instruction",
+        "describe"
+      ]
+    },
+    {
+      "table": "moonstep_active_cycle",
+      "rows": 6,
+      "columns": [
+        "id",
+        "complete",
+        "reward"
+      ]
+    },
+    {
+      "table": "moonstep_active_task",
+      "rows": 7,
+      "columns": [
+        "id",
+        "type",
+        "condition",
+        "reward",
+        "name"
+      ]
+    },
+    {
+      "table": "planting_active",
+      "rows": 3,
+      "columns": [
+        "id",
+        "treename",
+        "progress2",
+        "progress3",
+        "progress4",
+        "reward",
+        "describe",
+        "picture1",
+        "picture2",
+        "picture3",
+        "picture4"
+      ]
+    },
+    {
+      "table": "Return_Daily",
+      "rows": 11,
+      "columns": [
+        "id",
+        "type",
+        "limit",
+        "describe",
+        "reward",
+        "liveness"
+      ]
+    },
+    {
+      "table": "Return_SevenDay",
+      "rows": 7,
+      "columns": [
+        "id",
+        "reward1"
+      ]
+    },
+    {
+      "table": "sevenday",
+      "rows": 7,
+      "columns": [
+        "day",
+        "name",
+        "main",
+        "timestart",
+        "target"
+      ]
+    }
+  ],
+  "bundleRefs": [
+    "F:/BaoZouyxt/tools/index.js:2133: this.name = \"active\";",
+    "F:/BaoZouyxt/tools/index.js:2137: this.name = \"active\";",
+    "F:/BaoZouyxt/tools/index.js:19304: return [ 4, Promise.all([ v(\"item\"), v(\"sevendaySign\"), v(\"active\"), v(\"active_black\"), v(\"illustrate\"), v(\"cultivation\"), v(\"fashion\"), v(\"plants\") ]) ];",
+    "F:/BaoZouyxt/tools/index.js:55348: var e = n.getTable(\"active_order\"), o = [];",
+    "F:/BaoZouyxt/tools/index.js:85246: if (\"team\" == e || \"crossSTeam\" == e || \"active\" == e || \"wulinAssembly\" == e) {",
+    "F:/BaoZouyxt/tools/index.js:85279: if (\"active\" != o) if (\"mount\" == o) {",
+    "F:/BaoZouyxt/tools/index.js:85516: }) : \"active\" == e && u.Net.sendMsg(s.HttpConst.CTS_MAPSUTDYSTATE, {",
+    "F:/BaoZouyxt/tools/index.js:122464: u.WebSocketModel.openSocketNet(\"active\");",
+    "F:/BaoZouyxt/tools/index.js:122482: u.WebSocketModel.openSocketNet(\"active\");",
+    "F:/BaoZouyxt/tools/index.js:122499: u.WebSocketModel.openSocketNet(\"active\");",
+    "F:/BaoZouyxt/tools/scripts2.js:8155: } else this.titleName.getComponent(cc.Label).string = \"active\" == i ? h.getText(\"6127\").replace(/\\[1\\]/, o).toString() : h.getText(\"1476\").replace(/\\[1\\]/, o).toString();",
+    "F:/BaoZouyxt/tools/scripts2.js:62137: this.dayInfo = r.getItem(this.curDay, \"sevenday\");",
+    "F:/BaoZouyxt/tools/scripts2.js:67728: var c = this.data[t + s].activeId, l = a.getItem(c, \"active\");",
+    "F:/BaoZouyxt/tools/scripts2.js:80930: cc.assetManager.getBundle(\"active\").get(\"meihuazhuang/mhzassets\", cc.SpriteAtlas);",
+    "F:/BaoZouyxt/tools/scripts2.js:80980: this.setSpriteFrameName(this.node, \"meihuazhuang/mhzassets\", \"littledart\", null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts2.js:81037: cc.assetManager.getBundle(\"active\").get(\"meihuazhuang/mhzassets\", cc.SpriteAtlas);",
+    "F:/BaoZouyxt/tools/scripts2.js:81086: this.setSpriteFrameName(this.node, \"meihuazhuang/mhzassets\", e, null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:7381: this.setSpriteFrameName(e, \"anniversary_pass/anniversary\", \"\" + this.config.picture, null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:7537: I && this.setSpriteFrame(M, \"anniversary_pass/anniversary_pass_upgrade\" + (\"en\" == d.lang ? \"_en\" : \"\"), void 0, void 0, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:7551: e.setSpriteFrameName(t, \"anniversary_pass/anniversary\", t.name + (s ? \"_lock\" : \"\"), null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:7637: this.setSpriteFrameName(p, \"anniversary_pass/anniversary\", p.name, null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:14147: this.activeNode = this.getPathByNode(\"active\");",
+    "F:/BaoZouyxt/tools/scripts3.js:16176: cc.assetManager.getBundle(\"active\").load(\"nianshou/zhuniankuaile2\", sp.SkeletonData, function(e, o) {",
+    "F:/BaoZouyxt/tools/scripts3.js:16846: var s = 0 == d.ColorVerModel.colorState ? \"active\" : \"active_black\";",
+    "F:/BaoZouyxt/tools/scripts3.js:19236: this.setSpriteFrame(this.redPacket, \"packet/\" + t, !0, null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:19790: var e = cc.assetManager.getBundle(\"active\");",
+    "F:/BaoZouyxt/tools/scripts3.js:25117: d ? this.setSpriteFrameName(this.shapeSp, \"cell/cell\", h[1], null, cc.assetManager.getBundle(\"active\")) : a = \"\";",
+    "F:/BaoZouyxt/tools/scripts3.js:25209: l ? e.setSpriteFrameName(e.shapeSp, \"cell/cell\", a[1], null, cc.assetManager.getBundle(\"active\")) : n = \"\";",
+    "F:/BaoZouyxt/tools/scripts3.js:27227: var o = cc.assetManager.getBundle(\"active\");",
+    "F:/BaoZouyxt/tools/scripts3.js:27344: var s = this.getPathByNode(\"bg2/bgSprite/titleSprite\"), n = cc.assetManager.getBundle(\"active\");",
+    "F:/BaoZouyxt/tools/scripts3.js:27633: var e = d.getTable(\"active_order\"), o = {};",
+    "F:/BaoZouyxt/tools/scripts3.js:27925: for (var t = cc.assetManager.getBundle(\"active\"), e = c.getTable(\"training_reward\"), o = M.DragonAdventModel.dragonRewardData, i = M.DragonAdventModel.rewardOrderList, s = 0; s < this.bgList.length; s++) {",
+    "F:/BaoZouyxt/tools/scripts3.js:30756: this.setSpriteFrame(this.icon, \"springfestival/\" + o.picture, !0, null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:31687: cc.assetManager.getBundle(\"active\").release(\"zuoye/zhuniankuaile\", sp.SkeletonData);",
+    "F:/BaoZouyxt/tools/scripts3.js:31698: cc.assetManager.getBundle(\"active\").load(\"zuoye/zhuniankuaile\", sp.SkeletonData, function(o, i) {",
+    "F:/BaoZouyxt/tools/scripts3.js:32783: this.setSpriteFrameName(this.node, \"cell/cell\", \"cell1\", null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:32786: this.setSpriteFrameName(this.node, \"cell/cell\", t, null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:32896: this.setSpriteFrameName(this.node, \"cell/cell\", \"cell2\", null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:32900: t ? this.setSpriteFrameName(this.node, \"cell/cell\", \"cell2\", null, cc.assetManager.getBundle(\"active\")) : this.setSpriteFrameName(this.node, \"ui/event/event\", \"objframe\", null, cc.assetManager.getBundle(\"common\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:40582: var s = cc.assetManager.getBundle(\"active\"), n = this.checkExchangeSpritPath(\"anniversary_jigsaw/jigsaw_u\", s);",
+    "F:/BaoZouyxt/tools/scripts3.js:40792: this.setSpriteFrame(this.node, \"anniversary_jigsaw/\" + t.icon, !0, null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:40812: this.setSpriteFrame(this.node, \"anniversary_jigsaw/\" + t.icon, !0, null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:40951: this.setSpriteFrame(this.node, \"anniversary_jigsaw/\" + t.icon, !0, null, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:42758: var t = cc.assetManager.getBundle(\"active\"), e = g.JumpingFunModel.getMapDataType();",
+    "F:/BaoZouyxt/tools/scripts3.js:44214: var t = Math.floor(Math.max(a.getItem(65, \"active\").endtime - h.TimeMgr.getSTimestamp(), 0) / 1e3);",
+    "F:/BaoZouyxt/tools/scripts3.js:45307: for (var t = cc.assetManager.getBundle(\"active\"), e = c.getTable(\"wulintreasure_reward\"), o = 0; o < this.bgList.length; o++) {",
+    "F:/BaoZouyxt/tools/scripts3.js:45881: var e = this.getComponent(P.default), o = cc.assetManager.getBundle(\"active\");",
+    "F:/BaoZouyxt/tools/scripts3.js:53636: var n = cc.assetManager.getBundle(\"active\"), r = \"mysterywish/fashion\";",
+    "F:/BaoZouyxt/tools/scripts3.js:53699: var e = cc.assetManager.getBundle(\"active\"), o = h.getTable(\"mysterywish_reward\"), i = [], s = this.getRewardRound();",
+    "F:/BaoZouyxt/tools/scripts3.js:55089: var r = cc.assetManager.getBundle(\"active\"), a = this.getPathByNode(\"scrollview/view/content/active_1/img\"), c = this.getPathByNode(\"scrollview/view/content/active_2/img\"), p = \"\";",
+    "F:/BaoZouyxt/tools/scripts3.js:55783: var i = cc.assetManager.getBundle(\"active\");",
+    "F:/BaoZouyxt/tools/scripts3.js:62717: }, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:88731: this.setSpriteFrame(i, \"torch/\" + o.pic, !0, function() {}, cc.assetManager.getBundle(\"active\"));",
+    "F:/BaoZouyxt/tools/scripts3.js:89109: var s = 0 == d.ColorVerModel.colorState ? \"active\" : \"active_black\";",
+    "F:/BaoZouyxt/tools/scripts3.js:89178: var o = 0 == d.ColorVerModel.colorState ? \"active\" : \"active_black\";",
+    "F:/BaoZouyxt/tools/scripts3.js:93671: var t = p.getItem(23, \"active_order\");"
+  ],
+  "unverified": [
+    "未检索到模式 \"ACTIVE\"，查询文件: F:/BaoZouyxt/tools/index.js",
+    "未检索到模式 \"ACTIVE\"，查询文件: F:/BaoZouyxt/tools/scripts2.js",
+    "未检索到模式 \"ACTIVE\"，查询文件: F:/BaoZouyxt/tools/scripts3.js",
+    "未检索到模式 \"ACTIVE_ORDER\"，查询文件: F:/BaoZouyxt/tools/index.js",
+    "未检索到模式 \"ACTIVE_ORDER\"，查询文件: F:/BaoZouyxt/tools/scripts2.js",
+    "未检索到模式 \"ACTIVE_ORDER\"，查询文件: F:/BaoZouyxt/tools/scripts3.js",
+    "未检索到模式 \"SEVENDAY\"，查询文件: F:/BaoZouyxt/tools/index.js",
+    "未检索到模式 \"SEVENDAY\"，查询文件: F:/BaoZouyxt/tools/scripts2.js",
+    "未检索到模式 \"SEVENDAY\"，查询文件: F:/BaoZouyxt/tools/scripts3.js",
+    "未检索到模式 \"daily_active\"，查询文件: F:/BaoZouyxt/tools/index.js",
+    "未检索到模式 \"daily_active\"，查询文件: F:/BaoZouyxt/tools/scripts2.js",
+    "未检索到模式 \"daily_active\"，查询文件: F:/BaoZouyxt/tools/scripts3.js",
+    "未检索到模式 \"DAILY_ACTIVE\"，查询文件: F:/BaoZouyxt/tools/index.js",
+    "未检索到模式 \"DAILY_ACTIVE\"，查询文件: F:/BaoZouyxt/tools/scripts2.js",
+    "未检索到模式 \"DAILY_ACTIVE\"，查询文件: F:/BaoZouyxt/tools/scripts3.js"
+  ],
+  "out_of_scope": []
+}

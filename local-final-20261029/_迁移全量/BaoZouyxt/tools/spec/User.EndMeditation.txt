@@ -1,0 +1,99 @@
+# User.EndMeditation  (HttpConst.END_DAZUO)
+# 出现 2 处
+
+138882: t.startTimestamp = o.beginTime;
+138883: t.hyTime = 1e3 * o.hyTime;
+138884: p.NonBattleBuffModel.setBufferCostStartTime(o.hyTime, o.beginTime);
+138885: r.MessageCenter.dispatch(l.EvName.START_NG_TRAINING);
+138886: }
+138887: }, this);
+138888: r.MessageCenter.on(s.HttpConst.END_DAZUO, function(e, o) {
+138889: t.startTimestamp = 0;
+138890: h.RoleOtherInfo.gengudanTime = o.genguTime;
+138891: p.NonBattleBuffModel.setBufferTotalTime(o.hanyusuiTime);
+138892: o.note.hasOwnProperty("attrch") && o.note.attrch.hasOwnProperty("mpTrained") && (d.RoleBaseInfo.mpTrained = o.note.attrch.mpTrained);
+138893: c.FishingModel.setAutoStartHung(o);
+138894: r.MessageCenter.dispatch(l.EvName.END_NG_TRAINING);
+138895: }, this);
+138896: r.MessageCenter.on(s.HttpConst.BEGIN_RECOVER_MP, function(e, o) {
+138897: if (1 == o.eRet) {
+138898: t.recoverStartTS = o.serverTime;
+138899: p.NonBattleBuffModel.tbbByID.hasOwnProperty(1043) && (t.hyTime = p.NonBattleBuffModel.tbbByID[1043].duration);
+138900: r.MessageCenter.dispatch(l.EvName.ON_MP_RECOVER_STARTED, 0);
+138901: }
+138902: }, this);
+138903: r.MessageCenter.on(s.HttpConst.END_RECOVER_MP, function(t, e) {
+138904: h.RoleOtherInfo.gengudanTime = e.genguTime;
+138905: p.NonBattleBuffModel.setBufferTotalTime(e.hanyusuiTime);
+138906: r.MessageCenter.dispatch(l.EvName.CHANGE_ROLE_INFO);
+138907: r.MessageCenter.dispatch(l.EvName.CLOSE_ROLE_HANG_EVENT);
+138908: }, this);
+138909: r.MessageCenter.on(s.HttpConst.GET_VIGOR, function(t, e) {
+138910: r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);
+138911: }, this);
+138912: r.MessageCenter.on(s.HttpConst.VIGOR_DAZUO, function(t, e) {
+138913: r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);
+138914: a.default.show(n.getText(3259).replace(/\[1\]/, m.playerInfo.entity.mp.limit));
+138915: }, this);
+138916: };
+138917: t.prototype.startRecoverMp = function() {
+138918: u.NetMgr.http.sendRequest(s.HttpConst.BEGIN_RECOVER_MP, {});
+138919: };
+138920: t.prototype.endRecoverMp = function() {
+138921: var t = m.playerInfo.entity, e = {
+138922: curMp: t.mp.remaining,
+138923: mplmt: t.mp.limit,
+138924: bTime: this.recoverStartTS,
+138925: flag: f.IceBedModel.getIceBed()
+138926: };
+138927: u.NetMgr.http.sendRequest(s.HttpConst.END_RECOVER_MP, e);
+138928: };
+---
+138956: y.SkillUtils.getMaxNGBonus(t);
+138957: var e = m.playerInfo.entity, o = {
+138958: skillID: t.skillID,
+138959: hglmt: e.hunger.limit,
+138960: speed: e.hungerConsumingSpeed.finalValue
+138961: };
+138962: u.NetMgr.http.sendRequest(s.HttpConst.END_DAZUO, o);
+138963: };
+138964: t.prototype.getTrainingSpeed = function() {
+138965: var t = 0;
+138966: d.RoleBaseInfo.isvip && (t = i.getConstByID("200"));
+138967: var e = 1 + .01 * (p.NonBattleBuffModel.speedBonus + f.IceBedModel.getIceBedSp() + t), o = g.SkillUpgradeModel.getGengu();
+138968: return i.getConstByID("31") * (1 + o / i.getConstByID("13")) * e;
+138969: };
+138970: t.prototype.destroy = function() {
+138971: this.isTraining = !1;
+138972: this.startTimestamp = 0;
+138973: this.svmd = "";
+138974: };
+138975: return t;
+138976: }();
+138977: o.TrainingMpModel = new v();
+138978: cc._RF.pop();
+138979: }, {
+138980: "../core/events/MessageCenter": "MessageCenter",
+138981: "../gameconfigs/CFMgr": "CFMgr",
+138982: "../gameconfigs/LangMgr": "LangMgr",
+138983: "../gui/uicomponents/Alert": "Alert",
+138984: "../net/HttpConst": "HttpConst",
+138985: "../net/NetMgr": "NetMgr",
+138986: "../utils/EvName": "EvName",
+138987: "../utils/SkillUtils": "SkillUtils",
+138988: "./FishingModel": "FishingModel",
+138989: "./IceBedModel": "IceBedModel",
+138990: "./NonBattleBuffModel": "NonBattleBuffModel",
+138991: "./RoleOtherInfo": "RoleOtherInfo",
+138992: "./SkillUpgradeModel": "SkillUpgradeModel",
+138993: "./vos/PlayerInfo": "PlayerInfo",
+138994: "./vos/RoleBaseInfo": "RoleBaseInfo"
+138995: } ],
+138996: TransferAction: [ function(t, e, o) {
+138997: "use strict";
+138998: cc._RF.push(e, "d520baq/l5Ipb6Y0QwXrn1Z", "TransferAction");
+138999: var i, n = this && this.__extends || (i = function(t, e) {
+139000: return (i = Object.setPrototypeOf || {
+139001: __proto__: []
+139002: } instanceof Array && function(t, e) {
+---

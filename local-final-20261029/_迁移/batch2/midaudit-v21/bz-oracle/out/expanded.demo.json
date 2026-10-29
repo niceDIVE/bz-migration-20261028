@@ -1,0 +1,124 @@
+{
+  "_说明": "forge/tools/expand-handlers.js（AST 引擎）自动产出；人工条目放 config/contract-overrides.json（加载在后，优先）",
+  "actions": {
+    "ACCEPT_SCHOOL_TASK": {
+      "action": "User.acceptSchoolTask",
+      "extraFields": {
+        "eRet": {
+          "switch": false,
+          "plain": true,
+          "reads": [
+            {
+              "file": "demo-client.js",
+              "line": 11,
+              "mode": "AST展开"
+            }
+          ],
+          "nested": null
+        },
+        "taskId": {
+          "switch": false,
+          "plain": true,
+          "reads": [
+            {
+              "file": "demo-client.js",
+              "line": 13,
+              "mode": "AST展开"
+            }
+          ],
+          "nested": null
+        },
+        "autoObj": {
+          "switch": true,
+          "plain": true,
+          "reads": [
+            {
+              "file": "demo-client.js",
+              "line": 14,
+              "mode": "AST展开"
+            },
+            {
+              "file": "demo-client.js",
+              "line": 14,
+              "mode": "AST展开"
+            },
+            {
+              "file": "demo-client.js",
+              "line": 18,
+              "mode": "AST展开1跳"
+            }
+          ],
+          "nested": null,
+          "subFields": {
+            "flag": true
+          }
+        },
+        "taskList": {
+          "switch": false,
+          "plain": true,
+          "reads": [
+            {
+              "file": "demo-client.js",
+              "line": 17,
+              "mode": "AST展开1跳"
+            }
+          ],
+          "nested": null
+        },
+        "cdTime": {
+          "switch": false,
+          "plain": true,
+          "reads": [
+            {
+              "file": "demo-client.js",
+              "line": 17,
+              "mode": "AST展开1跳"
+            }
+          ],
+          "nested": null
+        }
+      },
+      "closed": true,
+      "closedBy": "expand-handlers/ast（onAcceptSchoolTask@demo-client.js:10 → applyAuto@demo-client.js:18 → render@demo-client.js:17）",
+      "_visited": [
+        "onAcceptSchoolTask@demo-client.js:10",
+        "applyAuto@demo-client.js:18",
+        "render@demo-client.js:17"
+      ]
+    },
+    "SELL_ITEM": {
+      "action": "User.saleItem",
+      "extraFields": {
+        "eRet": {
+          "switch": false,
+          "plain": true,
+          "reads": [
+            {
+              "file": "demo-client.js",
+              "line": 19,
+              "mode": "AST展开"
+            }
+          ],
+          "nested": null
+        }
+      },
+      "closed": true,
+      "closedBy": "expand-handlers/ast（onSellBack@demo-client.js:19）",
+      "_visited": [
+        "onSellBack@demo-client.js:19"
+      ]
+    }
+  },
+  "__meta": {
+    "gen": "2026-10-23T06:52:51.394Z",
+    "depth": 3,
+    "tally": {
+      "engine": "ast",
+      "tried": 2,
+      "closed": 2,
+      "stillOpen": 0,
+      "noSource": 0,
+      "fieldsAdded": 6
+    }
+  }
+}

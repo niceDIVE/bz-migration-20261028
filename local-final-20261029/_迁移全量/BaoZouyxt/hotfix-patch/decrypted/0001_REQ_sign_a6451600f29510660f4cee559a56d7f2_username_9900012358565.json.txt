@@ -1,0 +1,2 @@
+GET https://h5xf.fy-game.com/app/cp_new/register.php?agent=meple100221&time=1792572547051&sign=a6451600f29510660f4cee559a56d7f2&username=9900012358565
+(null)

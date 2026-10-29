@@ -1,0 +1,444 @@
+{
+  "hits": {
+    "A": [
+      {
+        "file": "index.js",
+        "n": 60488,
+        "text": "GET_ALCHEMY_DATA: \"User.getAlchemyData\","
+      }
+    ],
+    "B": [
+      {
+        "file": "index.js",
+        "n": 60391,
+        "text": "GET_LEVEL_BONUS_DATA: \"User.getLevelBonusData\","
+      }
+    ]
+  },
+  "found": [
+    {
+      "file": "index.js",
+      "fn": "?",
+      "range": "60463-60513",
+      "lines": [
+        {
+          "n": 60463,
+          "text": "TITLE_DEL: \"delTitleId\","
+        },
+        {
+          "n": 60464,
+          "text": "JOIN_PREPARE_CAMP: \"User.joinSchoolPrePareCamp\","
+        },
+        {
+          "n": 60465,
+          "text": "GET_SCHOOL_PREPARE_TASK_DATA: \"User.getSchoolPrepareTaskData\","
+        },
+        {
+          "n": 60466,
+          "text": "GET_SCHOOL_SUPPORT_PREPARE_TASK_DATA: \"User.getSchoolSupportPrepareTaskData\","
+        },
+        {
+          "n": 60467,
+          "text": "SCHOOL_PREPARE_BUY_NUM: \"User.schoolPrePareBuyNum\","
+        },
+        {
+          "n": 60468,
+          "text": "SCHOOL_SUPPORT_PREPARE_BUY_NUM: \"User.schoolSupportPrePareBuyNum\","
+        },
+        {
+          "n": 60469,
+          "text": "SCHOOL_PREPARE_TASK_COMPLETE: \"User.schoolPrePareTaskComplete\","
+        },
+        {
+          "n": 60470,
+          "text": "SCHOOL_SUPPORT_PREPARE_TASK_COMPLETE: \"User.schoolSupportPrePareTaskComplete\","
+        },
+        {
+          "n": 60471,
+          "text": "SCHOOL_PREPARE_TASK_REFRESH: \"User.schoolPrePareTaskRefresh\","
+        },
+        {
+          "n": 60472,
+          "text": "SCHOOL_SUPPORT_PREPARE_TASK_REFRESH: \"User.schoolSupportPrePareTaskRefresh\","
+        },
+        {
+          "n": 60473,
+          "text": "SUBMIT_SCHOOL_PREPARE_ITEM: \"User.submitSchoolPrePareItem\","
+        },
+        {
+          "n": 60474,
+          "text": "SUBMIT_SCHOOL_SUPPORT_PREPARE_ITEM: \"User.submitSchoolSupportPrePareItem\","
+        },
+        {
+          "n": 60475,
+          "text": "SCHOOL_PREPARE_RECEIVE_WAGES: \"User.schoolPrePareReceiveWages\","
+        },
+        {
+          "n": 60476,
+          "text": "SCHOOL_SUPPORT_PREPARE_RECEIVE_WAGES: \"User.schoolSupportPrePareReceiveWages\","
+        },
+        {
+          "n": 60477,
+          "text": "NEW_OPTIONALGIFT_DATA: \"User.getOptionalGiftData\","
+        },
+        {
+          "n": 60478,
+          "text": "NEW_OPTIONAL_BUY_GIFT: \"User.buyOptionalGift\","
+        },
+        {
+          "n": 60479,
+          "text": "GET_LOTTERY_ACTIVE_REWARD_DATA: \"User.getLotteryActiveRewardData\","
+        },
+        {
+          "n": 60480,
+          "text": "RECEIVE_LOTTERY_ACTIVE_REWARD: \"User.receiveLotteryActiveReward\","
+        },
+        {
+          "n": 60481,
+          "text": "OPEN_RANDOM_BOX: \"User.openRandomBox\","
+        },
+        {
+          "n": 60482,
+          "text": "GET_ADVANCED_TASKS_DATA: \"User.getAdvancedTasksData\","
+        },
+        {
+          "n": 60483,
+          "text": "RECEIVE_ADVANCED_TASK: \"User.receiveAdvancedTask\","
+        },
+        {
+          "n": 60484,
+          "text": "RECEIVE_ADVANCED_TASK_REWARD: \"User.receiveAdvancedTaskReward\","
+        },
+        {
+          "n": 60485,
+          "text": "SET_ADVANCED_TASKS_TIP: \"User.setAdvancedTasksTip\","
+        },
+        {
+          "n": 60486,
+          "text": "STARTLOOK_AD: \"User.startLookAdvertisement\","
+        },
+        {
+          "n": 60487,
+          "text": "GET_ADVANCED_TASKS_TIP: \"User.getAdvancedTasksTip\","
+        },
+        {
+          "n": 60488,
+          "text": "GET_ALCHEMY_DATA: \"User.getAlchemyData\","
+        },
+        {
+          "n": 60489,
+          "text": "BUY_FORMULA_DATA: \"User.buyFormula\","
+        },
+        {
+          "n": 60490,
+          "text": "ALCHEMY_ALCHEMYFORMULA: \"User.alchemyFormula\","
+        },
+        {
+          "n": 60491,
+          "text": "ALCHEMY_REWARD: \"User.alchemyReward\","
+        },
+        {
+          "n": 60492,
+          "text": "MEND_ALCHEMY_FORMULA: \"User.mendalchemyReward\","
+        },
+        {
+          "n": 60493,
+          "text": "UPGRAADE_ALCHEMY: \"User.upgradeAlchemy\","
+        },
+        {
+          "n": 60494,
+          "text": "GET_SCRATH_LOTTO: \"User.getScratchLotto\","
+        },
+        {
+          "n": 60495,
+          "text": "SCRAPING_LOTTERY: \"User.scrapingLottery\","
+        },
+        {
+          "n": 60496,
+          "text": "BUY_TICKET: \"User.buyTicket\","
+        },
+        {
+          "n": 60497,
+          "text": "SUPPORT_PREPARE_CAMP: \"User.joinSchoolSupportPrePareCamp\","
+        },
+        {
+          "n": 60498,
+          "text": "GET_SUPPORT_PREPARE_CAMP: \"User.getSchoolSupportPrePareCamp\","
+        },
+        {
+          "n": 60499,
+          "text": "GET_NATIONAL_DAY_COPY: \"User.getNationalDayCopy\","
+        },
+        {
+          "n": 60500,
+          "text": "REQ_ROGUE_PVE_BATTLE: \"User.ReqRogueSelfBattleInfo\","
+        },
+        {
+          "n": 60501,
+          "text": "ROGUE_PVE_BATTLE_END: \"User.CheckRoguePVEBattleResult\","
+        },
+        {
+          "n": 60502,
+          "text": "REQ_ROGUE_PVP_BATTLE: \"User.ChallengeRoguePVP\","
+        },
+        {
+          "n": 60503,
+          "text": "ROGUE_PVP_BATTLE_END: \"User.NewRoguePVPBattleResult\","
+        },
+        {
+          "n": 60504,
+          "text": "ENTER_PVE_ROGUE_FIGHT: \"User.enterRogueMulitiNpcBattle\","
+        },
+        {
+          "n": 60505,
+          "text": "SERVER_ROGUE_NPC_BATTLE_END: \"User.rogueBattleResult\","
+        },
+        {
+          "n": 60506,
+          "text": "ROGUE_MPPVE_ACTION: \"User.beginRogueMultiPVEBattle\","
+        },
+        {
+          "n": 60507,
+          "text": "GET_ROGUE_DATA: \"User.getRogueData\","
+        },
+        {
+          "n": 60508,
+          "text": "START_ROGUE_EXPLORE: \"User.startRogueExplore\","
+        },
+        {
+          "n": 60509,
+          "text": "END_ROGUE_EXPLORE: \"User.endRogueExplore\","
+        },
+        {
+          "n": 60510,
+          "text": "LAST_TIME_ROGUE_EXPLORE: \"User.lastTimeRogueExplore\","
+        },
+        {
+          "n": 60511,
+          "text": "ROGUE_BUY_STORE: \"User.rogueBuyStore\","
+        },
+        {
+          "n": 60512,
+          "text": "ROGUE_STORE_TRUNK_END: \"User.rogueStoreTrunkEnd\","
+        },
+        {
+          "n": 60513,
+          "text": "ROGUE_EVENT_OPTION: \"User.rogueEventOption\","
+        }
+      ]
+    },
+    {
+      "file": "index.js",
+      "fn": "?",
+      "range": "60366-60416",
+      "lines": [
+        {
+          "n": 60366,
+          "text": "STC_WULIN_TEAM_INVITE_NOTIFY: \"WuLinTeamInviteNotify\","
+        },
+        {
+          "n": 60367,
+          "text": "STC_WULIN_TEAM_APPLY_ANSWER_NOTIFY: \"WuLinTeamApplyAnswerNotify\","
+        },
+        {
+          "n": 60368,
+          "text": "STC_WULIN_TEAM_INVITE_ANSWER_NOTIFY: \"WuLinTeamInviteAnswerNotify\","
+        },
+        {
+          "n": 60369,
+          "text": "STC_WULIN_TEAM_INFO_NOTIFY: \"WuLinTeamInfoNotify\","
+        },
+        {
+          "n": 60370,
+          "text": "STC_WULIN_TEAM_LEAVE_NOTIFY: \"WuLinTeamLeaveNotify\","
+        },
+        {
+          "n": 60371,
+          "text": "STC_WULIN_TEAM_RING_UPDATE_NOTIFY: \"WuLinTeamRingUpdateNotify\","
+        },
+        {
+          "n": 60372,
+          "text": "STC_WULIN_BATTLE_TEAM_END_AWARD_SHOW: \"WuLinBattleTeamEndAwardShow\","
+        },
+        {
+          "n": 60373,
+          "text": "STC_WULIN_TEAM_ELIMINATE_INFO: \"TeamEliminateInfo\","
+        },
+        {
+          "n": 60374,
+          "text": "REQ_WULIN_TEAM_ASSEMBLY_INFO: \"see_wu_lin_assembly_team_apply_info\","
+        },
+        {
+          "n": 60375,
+          "text": "REQ_WULIN_TEAM_SCORE_RANK: \"see_wu_lin_assembly_team_score_rank\","
+        },
+        {
+          "n": 60376,
+          "text": "REQ_WULIN_TEAM_ELIMINATE: \"see_wu_lin_assembly_team_eliminate\","
+        },
+        {
+          "n": 60377,
+          "text": "STC_WULIN_TEAM_POST_ADDR: \"WuLinTeamPostAddr\","
+        },
+        {
+          "n": 60378,
+          "text": "CTS_DEL_MESSAGE_REQ: \"DelMessageReq\","
+        },
+        {
+          "n": 60379,
+          "text": "STC_DEL_MESSAGE_RES: \"DelMessageRes\","
+        },
+        {
+          "n": 60380,
+          "text": "STC_HORSE_RACE_LAMP: \"HorseRaceLamp\","
+        },
+        {
+          "n": 60381,
+          "text": "STC_MESSAGE_LIST_NOTIFY: \"MessageListNotify\","
+        },
+        {
+          "n": 60382,
+          "text": "STC_HORSE_RACE_LAMP_WRAPPER: \"HorseRaceLampWrapper\","
+        },
+        {
+          "n": 60383,
+          "text": "GET_MA_ACTIVITY: \"User.getMAActivity\","
+        },
+        {
+          "n": 60384,
+          "text": "SUBMIT_NUM_MA: \"User.submitNumMA\","
+        },
+        {
+          "n": 60385,
+          "text": "REWARD_MA_ACTIVITY: \"User.rewardMAActivity\","
+        },
+        {
+          "n": 60386,
+          "text": "GET_NEW_GIFT_PERMANENT: \"User.getNewGiftPermanent\","
+        },
+        {
+          "n": 60387,
+          "text": "BUY_GIFT_PERMANENT: \"User.buyGiftPermanent\","
+        },
+        {
+          "n": 60388,
+          "text": "GFUI_BUY_GIFT: \"User.buyGiftTime\","
+        },
+        {
+          "n": 60389,
+          "text": "GFUI_BUY_BIG_GIFT: \"User.buyBigGiftTime\","
+        },
+        {
+          "n": 60390,
+          "text": "UP_PUSH_SWITCH: \"User.upPushSwitch\","
+        },
+        {
+          "n": 60391,
+          "text": "GET_LEVEL_BONUS_DATA: \"User.getLevelBonusData\","
+        },
+        {
+          "n": 60392,
+          "text": "RECEIVE_BONUS_AWARD: \"User.receiveBonusAward\","
+        },
+        {
+          "n": 60393,
+          "text": "GET_HOUSE_KEEPER: \"User.getHousekeeper\","
+        },
+        {
+          "n": 60394,
+          "text": "BUTLER_DISPATCH: \"User.dispatch\","
+        },
+        {
+          "n": 60395,
+          "text": "DISPATCH_AWARD: \"User.dispatchAward\","
+        },
+        {
+          "n": 60396,
+          "text": "SET_BUTLER: \"User.setHelper\","
+        },
+        {
+          "n": 60397,
+          "text": "BUY_BUTLER: \"User.buyHelper\","
+        },
+        {
+          "n": 60398,
+          "text": "BUY_BUTLER_VIP: \"User.buyMonthlyFee\","
+        },
+        {
+          "n": 60399,
+          "text": "SET_TEMPLATE_DATA: \"User.setTemplateData\","
+        },
+        {
+          "n": 60400,
+          "text": "GET_EVALUATE_DATA: \"User.getEvaluateData\","
+        },
+        {
+          "n": 60401,
+          "text": "PUSH_EVALUATE_DATA: \"User.pushEvaluateData\","
+        },
+        {
+          "n": 60402,
+          "text": "RECEIVE_NOTICE: \"User.receiveNotice\","
+        },
+        {
+          "n": 60403,
+          "text": "RECEIVE_HELPER_REWARD: \"User.receiveHelperReward\","
+        },
+        {
+          "n": 60404,
+          "text": "GET_GOLD_CONSUME_REWARD_DATA: \"User.getGoldConsumedRewardData\","
+        },
+        {
+          "n": 60405,
+          "text": "RECEIVE_GOLD_CONSUME_REWARD: \"User.receiveGoldConsumedReward\","
+        },
+        {
+          "n": 60406,
+          "text": "GET_SKILL_TRICK_EXCHANGE_DATA: \"User.getSkillTrickExchangeData\","
+        },
+        {
+          "n": 60407,
+          "text": "REFRESH_SKILL_TRICK_EXCHANGE_DATA: \"User.refreshSkillTrickExchangeData\","
+        },
+        {
+          "n": 60408,
+          "text": "SKILL_TRICK_EXCHANGE_INDEX: \"User.skillTrickExchangeIndex\","
+        },
+        {
+          "n": 60409,
+          "text": "ONE_KEY_OBTAIN_CROP: \"User.onKeyObtainCrop\","
+        },
+        {
+          "n": 60410,
+          "text": "ONE_KEY_DISPOSS_HOME_EVENT: \"User.onKeyDispossHomeEvent\","
+        },
+        {
+          "n": 60411,
+          "text": "GET_KNACK_LOTTERY: \"User.getKnackLottery\","
+        },
+        {
+          "n": 60412,
+          "text": "KNACK_LOTTERY: \"User.knackLottery\","
+        },
+        {
+          "n": 60413,
+          "text": "GET_KNACK_LOTTERY_HISTORY: \"User.getKnackLotteryHistory\","
+        },
+        {
+          "n": 60414,
+          "text": "RECEIVE_ACHIEVEMENT_REWARD: \"User.receiveAchievementReward\","
+        },
+        {
+          "n": 60415,
+          "text": "GET_SPRING_SEVEN_DAY_DATA: \"User.getSpringSevenDayData\","
+        },
+        {
+          "n": 60416,
+          "text": "SPRING_SEVEN_DAYS_AWARDS: \"User.springSevenDaysAwards\","
+        }
+      ]
+    }
+  ],
+  "includesLines": [],
+  "errors": ""
+}

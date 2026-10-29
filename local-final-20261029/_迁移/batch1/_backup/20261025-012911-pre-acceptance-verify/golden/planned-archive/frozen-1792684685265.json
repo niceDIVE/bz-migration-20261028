@@ -1,0 +1,30 @@
+{
+ "archivedAt": "2026-10-22T15:58:05.265Z",
+ "rules": [
+  {
+   "id": "C11b-begin-times-20261023",
+   "kind": "handler-fixes",
+   "field": [
+    "beginTime",
+    "hanyusuiTime"
+   ],
+   "expect": 3,
+   "ev": "index.js:120518",
+   "why": "补 BeginMeditation / BeginTraining 两个 handler（SOTA R09 §4 M1）：beginTime 必须回**请求时刻**的 env.now()，因为客户端把它存进 startTimestamp 后用 scripts2.js:47303 / 58268 的 getSTimestamp()-startTimestamp 算剩余时长；默认值（常量或 0）都会导致'一进去就已完成'。hanyusuiTime 是契约字段（index.js:120521 `e.hyTime = 1e3 * n.hanyusuiTime`），少发会算成 NaN，先给 0 并发声。",
+   "allowSigma": [
+    [
+     "BeginMeditation",
+     "beginTime"
+    ],
+    [
+     "BeginTraining",
+     "beginTime"
+    ],
+    [
+     "BeginTraining",
+     "hanyusuiTime"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+# User.getSpecialAward   (HttpConst.GET_SPECIAL_AWARD)
+
+## 注册点 58460: i.MessageCenter.on(r.HttpConst.GET_SPECIAL_AWARD, function(e, o) {
+
+## 请求点 58517: h.NetMgr.http.sendRequest(r.HttpConst.GET_SPECIAL_AWARD, o);
+   58509: h.NetMgr.http.sendRequest(r.HttpConst.HOUSE_SPECIAL, {});
+   58510: };
+   58511: t.prototype.reqFinishAdventEvent = function(t, e) {
+   58512: var o = {
+   58513: eventID: this.eventID,
+   58514: choose: t,
+   58515: win: e
+   58516: };

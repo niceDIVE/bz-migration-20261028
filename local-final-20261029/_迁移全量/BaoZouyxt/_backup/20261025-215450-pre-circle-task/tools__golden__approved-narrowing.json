@@ -1,0 +1,240 @@
+[
+  {
+    "action": "passCardAward",
+    "path": "awardArr",
+    "escape": "closed",
+    "reason": "侠客令领奖的拒绝应答（eRet:4，已登记 REJECT_CODES）被 narrowReject 剥到只剩 {eRet}，基线里 awardArr 的默认 {} 不再出现。逃逸结论：客户端 index.js:55879-55882 只在 1==eRet 分支读 e.awardArr[0]/[1]，4 走 55883 只弹 getText(1093)，不解引用该字段 → 不存在「用到但缺席」。成功路径照常下发 awardArr=[passID,4]。",
+    "ev": "index.js:55883"
+  },
+  {
+    "action": "passCardAward",
+    "path": "rewardArray",
+    "escape": "closed",
+    "reason": "同上：rewardArray 只在 1==eRet 分支交给 addShowRewardUI1（index.js:55882）；拒绝分支不读，故缺席无逃逸路径。成功路径按工程既有口径下发 {物品id:数量}。",
+    "ev": "index.js:55883"
+  },
+  {
+    "action": "buyInvitationCard",
+    "path": "pass_levelID",
+    "escape": "closed",
+    "reason": "侠客令升档的拒绝应答（eRet:4，已登记 REJECT_CODES）被 narrowReject 剥到只剩 {eRet}，基线里 pass_levelID 的默认 0 不再出现。逃逸结论：客户端 index.js:55885-55888 只在 1==eRet 分支读 e.pass_levelID 回写 cardState；4 走 55889 弹 getText(1093)，不解引用 → 无逃逸路径。成功路径照常回显 pass_levelID。",
+    "ev": "index.js:55889"
+  },
+  {
+    "action": "BeginTraining",
+    "path": "hanyusuiTime",
+    "escape": "closed",
+    "reason": "空请求 {} 命中新增的拒绝分支（skillID 未学会 → eRet:4），该分支不写 beginTime、也不发 hanyusuiTime。客户端回调只在 1==eRet||2==eRet 时读这两个字段（index.js:120517），4 不进门 → 不存在『字段被用到但缺席』的逃逸路径。收窄是拒绝分支的副产品，不是刻意少发。",
+    "ev": "index.js:120517"
+  },
+  {
+    "action": "BeginTraining",
+    "path": "beginTime",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:120516"
+  },
+  {
+    "action": "BeginTraining",
+    "path": "skillID",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:120516"
+  },
+  {
+    "action": "BuyFashion",
+    "path": "titivateObj",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:75578"
+  },
+  {
+    "action": "QuickBuyItem",
+    "path": "note",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:130888"
+  },
+  {
+    "action": "QuickBuyItem",
+    "path": "itemID",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:130888"
+  },
+  {
+    "action": "QuickBuyItem",
+    "path": "itemNum",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:130888"
+  },
+  {
+    "action": "QuickBuyItem",
+    "path": "userGold",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:130888"
+  },
+  {
+    "action": "WashMedicine",
+    "path": "armStrong",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:144132"
+  },
+  {
+    "action": "WashMedicine",
+    "path": "shenFa",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:144132"
+  },
+  {
+    "action": "WashMedicine",
+    "path": "bone",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:144132"
+  },
+  {
+    "action": "WashMedicine",
+    "path": "understanding",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:144132"
+  },
+  {
+    "action": "WashMedicine",
+    "path": "bloodArr",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:144132"
+  },
+  {
+    "action": "WashMedicine",
+    "path": "maxWuxin",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:144132"
+  },
+  {
+    "action": "WashMedicine",
+    "path": "fosterArr",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:144132"
+  },
+  {
+    "action": "buyShopItem",
+    "path": "note",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:64752"
+  },
+  {
+    "action": "exchangeItem",
+    "path": "note",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:47091"
+  },
+  {
+    "action": "exchangeItem",
+    "path": "itemID",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:47091"
+  },
+  {
+    "action": "exchangeItem",
+    "path": "itemNum",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:47091"
+  },
+  {
+    "action": "washAdditionalArr",
+    "path": "bloodArr",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:144071"
+  },
+  {
+    "action": "washAdditionalArr",
+    "path": "maxWuxin",
+    "escape": "closed",
+    "reason": "SOTA R14 §1 第 1 条：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject）。这些字段原本只是 fillShape 从形状表补的默认值（0 / 空对象），客户端在该拒绝码的分支里一条都不读 —— 空请求 {} 命中拒绝分支，回调里只有 eRet 相等判断与提示文本，没有对这个字段的解引用，故不存在\"用到但缺席\"的逃逸路径。",
+    "ev": "index.js:144071"
+  },
+  {
+    "action": "upgradeSkill",
+    "path": "returnPro",
+    "escape": "closed",
+    "reason": "R20 Q4 纠错：删掉 returnPro 之后，客户端 index.js:119844 的 `hasOwnProperty(\"returnPro\") &&` 短路为假，不弹窗、不取值，不存在「字段被用到但缺席」的逃逸路径；形状表把它判成 switch 字段（值是 0 非法）；原版抓包 0036/0039 也没有这个字段。",
+    "ev": "index.js:119844"
+  },
+  {
+    "action": "UseAllBall",
+    "path": "hp",
+    "escape": "closed",
+    "reason": "摔炮拒绝（eRet:0，已登记 REJECT_CODES 并用 tier 2 静默）被 narrowReject 剥到只剩 {eRet}，基线里 hp:0 不再出现。逃逸结论：客户端 index.js:122544-122548 只有 1==eRet 分支读 o.hp（setFirecrackerHP），0 落 else 只弹 getText(1093) → 不存在「用到但缺席」。成功路径照常下发 hp 数字。",
+    "ev": "index.js:122543"
+  },
+  {
+    "action": "UseAllBall",
+    "path": "rewardArray",
+    "escape": "closed",
+    "reason": "同上：rewardArray 只在 1==eRet 分支交给 addShowRewardUI1（index.js:122546）；拒绝分支不读该字段。成功路径按工程既有口径下发 {物品id:数量}。",
+    "ev": "index.js:122543"
+  },
+  {
+    "action": "UseBatchSnowBall",
+    "path": "hp",
+    "escape": "closed",
+    "reason": "批量雪球拒绝（eRet:4 → getText(6126)）被收窄，基线 hp:0 不再出现。逃逸结论：index.js:122515-122528 只有 1==eRet 读 o.hp；4 分支只弹 6126 并 dispatch，不解引用 hp。成功路径下发 hp 数字。",
+    "ev": "index.js:122514"
+  },
+  {
+    "action": "UseSnowBall",
+    "path": "hp",
+    "escape": "closed",
+    "reason": "单发雪球拒绝（eRet:0）被收窄，基线 hp:0 不再出现。逃逸结论：index.js:122506-122513 只有 1==eRet 读 o.hp；0 落 else 弹 getText(1093)。成功路径下发 hp 数字。",
+    "ev": "index.js:122505"
+  },
+  {
+    "action": "getSnowAward",
+    "path": "rewardArray",
+    "escape": "closed",
+    "reason": "领雪球盒奖励拒绝（eRet:4 → getText(1098)）被收窄，基线 rewardArray:{} 不再出现。逃逸结论：index.js:122530-122542 只有 1==eRet 遍历 rewardArray；4 分支只弹 1098。成功路径下发 {物品id:数量}。",
+    "ev": "index.js:122529"
+  },
+  {
+    "action": "acceptCircleTask",
+    "path": "taskID",
+    "escape": "closed",
+    "reason": "taskID 非法（回 6）时 narrowReject 把应答剥成只剩 eRet，基线里 taskID:101080 不再出现。逃逸结论：客户端 6 分支（index.js:133218 段）只 show(getText(1093))，不解引用 e.taskID；成功路径照常下发 taskID。",
+    "ev": "index.js:59662"
+  },
+  {
+    "action": "circleTaskAward",
+    "path": "rewardObj",
+    "escape": "closed",
+    "reason": "任务不在 accepted（回 4）时被收窄，rewardObj:{} 不再出现。逃逸结论：客户端只有 1==eRet 分支读 o.rewardObj 交给 addShowRewardUI1；4 分支只 show(getText(931))。",
+    "ev": "index.js:59780"
+  },
+  {
+    "action": "getCircleTaskAward",
+    "path": "rewardArray",
+    "escape": "closed",
+    "reason": "同上：4 分支只 show(getText(931))，不读 rewardArray；成功路径照常下发 {物品id:数量}。",
+    "ev": "index.js:59663"
+  },
+  {
+    "action": "quickFinishTask",
+    "path": "caidan",
+    "escape": "closed",
+    "reason": "本动作**永远**回 eRet:2（走充值框，不免费完成），所以 caidan:0 在基线上不再出现。逃逸结论：客户端只在 1==eRet 的 QUICK_FINISH_TASK_EVENT 分支读 caidan；2 分支走 openChargeList 不读该字段。",
+    "ev": "index.js:43497"
+  }
+]

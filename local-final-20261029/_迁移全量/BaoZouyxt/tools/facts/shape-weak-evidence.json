@@ -1,0 +1,2480 @@
+{
+ "counts": {
+  "name": 40,
+  "fallback": 40,
+  "listener-1": 139,
+  "usage-1": 36
+ },
+ "items": [
+  {
+   "action": "BeginList",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 17109,
+   "evid": [
+    "index.js:120628  var i = o.addComponent(\"OnhookQueueBgUI\");"
+   ]
+  },
+  {
+   "action": "BeginList",
+   "field": "skill",
+   "conf": "usage-1",
+   "type": "array",
+   "line": 17117,
+   "evid": [
+    "index.js:21731"
+   ]
+  },
+  {
+   "action": "BuyMount",
+   "field": "sync",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 17549,
+   "evid": [
+    "index.js:32170  g.RoleOtherInfo.isSyncMount = 1 == i.sync;"
+   ]
+  },
+  {
+   "action": "BuyTowerProp",
+   "field": "hjzcNum",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 17609,
+   "evid": [
+    "index.js:137650  o.hasOwnProperty(\"hjzcNum\") && (t.towerItemData[5] = o.hjzcNum);"
+   ]
+  },
+  {
+   "action": "ChallengeRoguePVP",
+   "field": "AttckData.floorBuff",
+   "conf": "listener-1",
+   "type": "object",
+   "line": 17708,
+   "evid": [
+    "index.js:104105  if (o.AttckData.floorBuff && (!o.AttckData.hasOwnProperty(\"isBoss\") || 0 == o.AttckData.isBoss)) {"
+   ]
+  },
+  {
+   "action": "ChallengeRoguePVP",
+   "field": "AttckData.rogueFloorBuffs",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 17725,
+   "evid": [
+    "index.js:75080"
+   ]
+  },
+  {
+   "action": "ChallengeRoguePVP",
+   "field": "EnemyData.rogueFloorBuffs",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 17744,
+   "evid": [
+    "index.js:75080"
+   ]
+  },
+  {
+   "action": "CheckBattleResult",
+   "field": "gemId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 17828,
+   "evid": [
+    "index.js:89558  o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+   ]
+  },
+  {
+   "action": "ChooseGirl",
+   "field": "eTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 17969,
+   "evid": [
+    "index.js:51142  t.girlData[n.npcID] = n.eTime;"
+   ]
+  },
+  {
+   "action": "ChooseSanGongDan",
+   "field": "backpro",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18008,
+   "evid": [
+    "index.js:64992  c.default.show(n.getText(123) + e.backpro + n.getText(37));"
+   ]
+  },
+  {
+   "action": "EndMeditation",
+   "field": "genguTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18202,
+   "evid": [
+    "index.js:138890  h.RoleOtherInfo.gengudanTime = o.genguTime;"
+   ]
+  },
+  {
+   "action": "EndRecoverMP",
+   "field": "genguTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18391,
+   "evid": [
+    "index.js:138904  h.RoleOtherInfo.gengudanTime = e.genguTime;"
+   ]
+  },
+  {
+   "action": "EndTraining",
+   "field": "genguTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18463,
+   "evid": [
+    "index.js:120578  u.RoleOtherInfo.gengudanTime = o.genguTime;"
+   ]
+  },
+  {
+   "action": "EndTraining",
+   "field": "skillid",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18505,
+   "evid": [
+    "index.js:120590  if (o.hasOwnProperty(\"skillid\")) {"
+   ]
+  },
+  {
+   "action": "EneterCopy",
+   "field": "copyID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18540,
+   "evid": [
+    "index.js:64077  t.dungeonID = o.copyID;"
+   ]
+  },
+  {
+   "action": "EquipSuitsUpgrade",
+   "field": "equipInherit",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18580,
+   "evid": [
+    "index.js:142064  e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));"
+   ]
+  },
+  {
+   "action": "FeedDog",
+   "field": "bigDog",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18689,
+   "evid": [
+    "index.js:58056  o.hasOwnProperty(\"bigDog\") && (e.dogData.id = o.bigDog);"
+   ]
+  },
+  {
+   "action": "GetBossAward",
+   "field": "firstName",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18770,
+   "evid": [
+    "index.js:145527  firstPlayer: e.firstName,"
+   ]
+  },
+  {
+   "action": "GetBossAward",
+   "field": "killName",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18778,
+   "evid": [
+    "index.js:145528  lastKill: e.killName,"
+   ]
+  },
+  {
+   "action": "GetBossAward",
+   "field": "killObj",
+   "conf": "name",
+   "type": "object",
+   "line": 18808,
+   "evid": [
+    "命名启发 killObj"
+   ]
+  },
+  {
+   "action": "GetClimbingTowerData",
+   "field": "chickenLegNum",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18828,
+   "evid": [
+    "index.js:137561  t.toEatNum = o.chickenLegNum;"
+   ]
+  },
+  {
+   "action": "GetGMGiveItem",
+   "field": "expireTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18909,
+   "evid": [
+    "index.js:88290  var o = e.titleID, n = e.expireTime, r = {};"
+   ]
+  },
+  {
+   "action": "GetMarketList",
+   "field": "market",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 18988,
+   "evid": [
+    "index.js:130767  market: o.market,"
+   ]
+  },
+  {
+   "action": "GetMountsList",
+   "field": "MountsArr",
+   "conf": "name",
+   "type": "array",
+   "line": 19038,
+   "evid": [
+    "命名启发 MountsArr"
+   ]
+  },
+  {
+   "action": "GetNoticeAward",
+   "field": "liveness",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 19108,
+   "evid": [
+    "index.js:108246  if (o.liveness) {"
+   ]
+  },
+  {
+   "action": "GetRandomEventAward",
+   "field": "liveness",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 19263,
+   "evid": [
+    "index.js:143820  var c = i.hasOwnProperty(\"npcArr\") && i.npcArr && i.npcArr.length > 0, p = i.hasOwnProperty(\"liveness\");"
+   ]
+  },
+  {
+   "action": "GetShopAllActive",
+   "field": "activeEndTime",
+   "conf": "fallback",
+   "type": "number",
+   "line": 19364,
+   "evid": []
+  },
+  {
+   "action": "GetShopAllActive",
+   "field": "shopActiveList",
+   "conf": "name",
+   "type": "array",
+   "line": 19379,
+   "evid": [
+    "命名启发 shopActiveList"
+   ]
+  },
+  {
+   "action": "LeaveCopy",
+   "field": "liveness",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 19523,
+   "evid": [
+    "index.js:64095  t.showRewards(o.rewardArray, o.liveness);"
+   ]
+  },
+  {
+   "action": "OutSchool",
+   "field": "addComponent",
+   "conf": "fallback",
+   "type": "number",
+   "line": 19908,
+   "evid": []
+  },
+  {
+   "action": "PopEquip",
+   "field": "ItemID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 20062,
+   "evid": [
+    "index.js:61065  n.hasOwnProperty(o.ItemID) && (n[o.ItemID].num == o.ItemNum ? delete n[o.ItemID] : n[o.ItemID].num = n[o.ItemID].num - o.ItemNum);"
+   ]
+  },
+  {
+   "action": "PushEquip",
+   "field": "ItemID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 20102,
+   "evid": [
+    "index.js:61051  var o = r.MarryModel.parseStorageEq(e.ItemID, e.storageItem);"
+   ]
+  },
+  {
+   "action": "PushEquip",
+   "field": "storageItem",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 20119,
+   "evid": [
+    "index.js:61051  var o = r.MarryModel.parseStorageEq(e.ItemID, e.storageItem);"
+   ]
+  },
+  {
+   "action": "TowerBattleResult",
+   "field": "gemId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 20324,
+   "evid": [
+    "index.js:67711  o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+   ]
+  },
+  {
+   "action": "TowerBattleResult",
+   "field": "muscle",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 20332,
+   "evid": [
+    "index.js:67714  o.hasOwnProperty(\"muscle\") && (s.TowerModel.curStrengthNum = o.muscle);"
+   ]
+  },
+  {
+   "action": "UseAllBall",
+   "field": "hp",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 20404,
+   "evid": [
+    "index.js:1726"
+   ]
+  },
+  {
+   "action": "UseBatchSnowBall",
+   "field": "hp",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 20435,
+   "evid": [
+    "index.js:1726"
+   ]
+  },
+  {
+   "action": "UseSnowBall",
+   "field": "hp",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 20465,
+   "evid": [
+    "index.js:1726"
+   ]
+  },
+  {
+   "action": "Whoring",
+   "field": "makeID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 20611,
+   "evid": [
+    "index.js:51147  var i = o.makeID, n = c.getItem(i, \"make\"), r = t.randomGirl[t.npcId], a = r.reality, s = r.picture;"
+   ]
+  },
+  {
+   "action": "acceptSchoolTask",
+   "field": "acceptSchoolTask",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 20695,
+   "evid": [
+    "index.js:113634"
+   ]
+  },
+  {
+   "action": "acceptTask",
+   "field": "triggerBoxs",
+   "conf": "fallback",
+   "type": "number",
+   "line": 20717,
+   "evid": []
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "attrType",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 20766,
+   "evid": [
+    "index.js:137825  o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);"
+   ]
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "chickenLegNum",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 20783,
+   "evid": [
+    "index.js:137827  o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);"
+   ]
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "eggNpc",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 20791,
+   "evid": [
+    "index.js:137826  o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];"
+   ]
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "eventIds",
+   "conf": "name",
+   "type": "array",
+   "line": 20808,
+   "evid": [
+    "命名启发 eventIds"
+   ]
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "muscle",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 20816,
+   "evid": [
+    "index.js:137824  "
+   ]
+  },
+  {
+   "action": "addBreakQueue",
+   "field": "qr",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 20872,
+   "evid": [
+    "index.js:120714"
+   ]
+  },
+  {
+   "action": "addEquipLock",
+   "field": "equipLocks",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 20891,
+   "evid": [
+    "index.js:65026  e.lockEquips = o.equipLocks;"
+   ]
+  },
+  {
+   "action": "batchSeedCrop",
+   "field": "crops",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 21128,
+   "evid": [
+    "index.js:57658"
+   ]
+  },
+  {
+   "action": "batchSeedCrop",
+   "field": "recentSeeds",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 21117,
+   "evid": [
+    "index.js:57672  e.recentSs = o.recentSeeds;"
+   ]
+  },
+  {
+   "action": "beginCast",
+   "field": "sTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 21156,
+   "evid": [
+    "index.js:102102  r.TimeMgr.sserverT = e.sTime;"
+   ]
+  },
+  {
+   "action": "beginHookBreakList",
+   "field": "qr",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 21223,
+   "evid": [
+    "index.js:120714"
+   ]
+  },
+  {
+   "action": "beginHookBreakList",
+   "field": "setData",
+   "conf": "name",
+   "type": "object",
+   "line": 21224,
+   "evid": [
+    "命名启发 setData"
+   ]
+  },
+  {
+   "action": "beginHookBreakList",
+   "field": "setLabelTitle",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 21212,
+   "evid": [
+    "index.js:120709  o.setLabelTitle(r.getText(263));"
+   ]
+  },
+  {
+   "action": "beginMake",
+   "field": "sTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 21244,
+   "evid": [
+    "index.js:102119  r.TimeMgr.sserverT = e.sTime;"
+   ]
+  },
+  {
+   "action": "beginMakeMedicine",
+   "field": "sTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 21283,
+   "evid": [
+    "index.js:102134  r.TimeMgr.sserverT = e.sTime;"
+   ]
+  },
+  {
+   "action": "beginPVEBattle",
+   "field": "paramID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 21339,
+   "evid": [
+    "index.js:98880  t.bs.castSkill(i, o.paramID, 0, o.paramID1);"
+   ]
+  },
+  {
+   "action": "beginPVEBattle",
+   "field": "paramID1",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 21347,
+   "evid": [
+    "index.js:98880  t.bs.castSkill(i, o.paramID, 0, o.paramID1);"
+   ]
+  },
+  {
+   "action": "beginPVEBattle",
+   "field": "paramID2",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 21355,
+   "evid": [
+    "index.js:98877  o.paramID2 && \"\" != o.paramID2 && (i = o.paramID2);"
+   ]
+  },
+  {
+   "action": "beginRoguePVEBattle",
+   "field": "paramID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 21467,
+   "evid": [
+    "index.js:104210  t.bs.castSkill(i, o.paramID, 0, o.paramID1);"
+   ]
+  },
+  {
+   "action": "beginRoguePVEBattle",
+   "field": "paramID1",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 21475,
+   "evid": [
+    "index.js:104210  t.bs.castSkill(i, o.paramID, 0, o.paramID1);"
+   ]
+  },
+  {
+   "action": "beginRoguePVEBattle",
+   "field": "paramID2",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 21483,
+   "evid": [
+    "index.js:104207  o.paramID2 && \"\" != o.paramID2 && (i = o.paramID2);"
+   ]
+  },
+  {
+   "action": "buyActivityNum",
+   "field": "activeNum",
+   "conf": "fallback",
+   "type": "number",
+   "line": 21612,
+   "evid": []
+  },
+  {
+   "action": "buyInvitationCard",
+   "field": "pass_levelID",
+   "conf": "fallback",
+   "type": "number",
+   "line": 21716,
+   "evid": []
+  },
+  {
+   "action": "buySchoolShop",
+   "field": "updateSchoolContribution",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 21776,
+   "evid": [
+    "index.js:113674"
+   ]
+  },
+  {
+   "action": "changeSate",
+   "field": "crop.b",
+   "conf": "listener-1",
+   "type": "object",
+   "line": 22045,
+   "evid": [
+    "index.js:57684  o.crop.hasOwnProperty(\"b\") && (i.b = o.crop.b);"
+   ]
+  },
+  {
+   "action": "changeSate",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 22062,
+   "evid": [
+    "index.js:57685  e.soilArr[o.sIdx] = i;"
+   ]
+  },
+  {
+   "action": "changeServer",
+   "field": "newID",
+   "conf": "fallback",
+   "type": "number",
+   "line": 22106,
+   "evid": []
+  },
+  {
+   "action": "changeWorldServer",
+   "field": "hookData",
+   "conf": "name",
+   "type": "object",
+   "line": 22156,
+   "evid": [
+    "命名启发 hookData"
+   ]
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "attrType",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 22176,
+   "evid": [
+    "index.js:137599  o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);"
+   ]
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "chickenLegNum",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 22193,
+   "evid": [
+    "index.js:137628  o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);"
+   ]
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "eggNpc",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 22201,
+   "evid": [
+    "index.js:137625  o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];"
+   ]
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "eventIds",
+   "conf": "name",
+   "type": "array",
+   "line": 22226,
+   "evid": [
+    "命名启发 eventIds"
+   ]
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "muscle",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 22243,
+   "evid": [
+    "index.js:137598  "
+   ]
+  },
+  {
+   "action": "checkHireOnhook",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 22311,
+   "evid": [
+    "index.js:51462  o.addComponent(\"MiningBeginUI\").setData(u);"
+   ]
+  },
+  {
+   "action": "checkHireOnhook",
+   "field": "siteID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 22345,
+   "evid": [
+    "index.js:51474  } else if (2 != o.eRet) if (i.getItem(o.siteID, \"fishpond\").type != s.type) {"
+   ]
+  },
+  {
+   "action": "childWashProperty",
+   "field": "attrList",
+   "conf": "name",
+   "type": "array",
+   "line": 22510,
+   "evid": [
+    "命名启发 attrList"
+   ]
+  },
+  {
+   "action": "childWashProperty",
+   "field": "baseArr",
+   "conf": "name",
+   "type": "array",
+   "line": 22518,
+   "evid": [
+    "命名启发 baseArr"
+   ]
+  },
+  {
+   "action": "choosePandaEvent",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 22550,
+   "evid": [
+    "index.js:137688  o.addComponent(\"KillDeadUI\").setData(c);"
+   ]
+  },
+  {
+   "action": "choosePandaEvent",
+   "field": "buffID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 22567,
+   "evid": [
+    "index.js:137680  } else if (o.hasOwnProperty(\"buffID\")) {"
+   ]
+  },
+  {
+   "action": "chooseUsedItemAward",
+   "field": "cData",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 22698,
+   "evid": [
+    "index.js:64956"
+   ]
+  },
+  {
+   "action": "chooseUsedItemAward",
+   "field": "chooseID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 22679,
+   "evid": [
+    "index.js:64951  e.chooseID;"
+   ]
+  },
+  {
+   "action": "chooseUsedItemAward",
+   "field": "delItemObj",
+   "conf": "name",
+   "type": "object",
+   "line": 22700,
+   "evid": [
+    "命名启发 delItemObj"
+   ]
+  },
+  {
+   "action": "cleanDeadCrop",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 22750,
+   "evid": [
+    "index.js:57813  e.soilArr[o.sIdx] = {"
+   ]
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "cookBook",
+   "conf": "usage-1",
+   "type": "array",
+   "line": 22885,
+   "evid": [
+    "index.js:62586"
+   ]
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "hotVal",
+   "conf": "fallback",
+   "type": "number",
+   "line": 22902,
+   "evid": []
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "mhv",
+   "conf": "fallback",
+   "type": "number",
+   "line": 22908,
+   "evid": []
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "showRewardCookBook",
+   "conf": "fallback",
+   "type": "number",
+   "line": 22914,
+   "evid": []
+  },
+  {
+   "action": "cookAccelerate",
+   "field": "cookData",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 22989,
+   "evid": [
+    "index.js:62420"
+   ]
+  },
+  {
+   "action": "cookReceive",
+   "field": "cookData",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 23031,
+   "evid": [
+    "index.js:62420"
+   ]
+  },
+  {
+   "action": "cookStart",
+   "field": "cookData",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 23073,
+   "evid": [
+    "index.js:62420"
+   ]
+  },
+  {
+   "action": "cookUnlock",
+   "field": "cookData",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 23115,
+   "evid": [
+    "index.js:62420"
+   ]
+  },
+  {
+   "action": "delEquipLock",
+   "field": "equipLocks",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 23167,
+   "evid": [
+    "index.js:65032  e.lockEquips = o.equipLocks;"
+   ]
+  },
+  {
+   "action": "delegateTask",
+   "field": "sTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 23197,
+   "evid": [
+    "index.js:43510  time: o.sTime"
+   ]
+  },
+  {
+   "action": "dispossHomeEvent",
+   "field": "aExp",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 23259,
+   "evid": [
+    "index.js:58001  o.hasOwnProperty(\"aExp\") && (l[7] = o.aExp);"
+   ]
+  },
+  {
+   "action": "dispossHomeEvent",
+   "field": "crop.b",
+   "conf": "listener-1",
+   "type": "object",
+   "line": 23278,
+   "evid": [
+    "index.js:57987  o.crop.hasOwnProperty(\"b\") && (i.b = o.crop.b);"
+   ]
+  },
+  {
+   "action": "endEatByTable",
+   "field": "tableList",
+   "conf": "name",
+   "type": "array",
+   "line": 23547,
+   "evid": [
+    "命名启发 tableList"
+   ]
+  },
+  {
+   "action": "endPlayGame",
+   "field": "progree",
+   "conf": "fallback",
+   "type": "number",
+   "line": 23686,
+   "evid": []
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "boxArr",
+   "conf": "name",
+   "type": "array",
+   "line": 23775,
+   "evid": [
+    "命名启发 boxArr"
+   ]
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "floor",
+   "conf": "fallback",
+   "type": "number",
+   "line": 23792,
+   "evid": []
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "isStatus",
+   "conf": "fallback",
+   "type": "number",
+   "line": 23798,
+   "evid": []
+  },
+  {
+   "action": "enterRoguePVEBattle",
+   "field": "AttckData.floorBuff",
+   "conf": "listener-1",
+   "type": "object",
+   "line": 23934,
+   "evid": [
+    "index.js:104134  if (o.AttckData.floorBuff && (!o.AttckData.hasOwnProperty(\"isBoss\") || 0 == o.AttckData.isBoss)) {"
+   ]
+  },
+  {
+   "action": "enterRoguePVEBattle",
+   "field": "AttckData.rogueFloorBuffs",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 23951,
+   "evid": [
+    "index.js:75080"
+   ]
+  },
+  {
+   "action": "enterSnow",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 24031,
+   "evid": [
+    "index.js:122479  o.addComponent(\"StackFirecrackerUI\");"
+   ]
+  },
+  {
+   "action": "enterSnow",
+   "field": "boxnum",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 24039,
+   "evid": [
+    "index.js:122467  t.boxNum = o.boxnum;"
+   ]
+  },
+  {
+   "action": "enterSnow",
+   "field": "hp",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 24068,
+   "evid": [
+    "index.js:1726"
+   ]
+  },
+  {
+   "action": "enterSnow",
+   "field": "sTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 24055,
+   "evid": [
+    "index.js:122470  o.sTime;"
+   ]
+  },
+  {
+   "action": "equipBatchResolve",
+   "field": "itemIDs",
+   "conf": "name",
+   "type": "array",
+   "line": 24186,
+   "evid": [
+    "命名启发 itemIDs"
+   ]
+  },
+  {
+   "action": "equipUpgrade",
+   "field": "equipInherit",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 24357,
+   "evid": [
+    "index.js:142026  e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));"
+   ]
+  },
+  {
+   "action": "equipWash",
+   "field": "addArr",
+   "conf": "usage-1",
+   "type": "array",
+   "line": 24397,
+   "evid": [
+    "index.js:35607"
+   ]
+  },
+  {
+   "action": "equipWash",
+   "field": "newAtt",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 24414,
+   "evid": [
+    "index.js:44542  newAtt: e.newAtt,"
+   ]
+  },
+  {
+   "action": "expediteCrop",
+   "field": "crop.b",
+   "conf": "listener-1",
+   "type": "object",
+   "line": 24595,
+   "evid": [
+    "index.js:57833  o.crop.hasOwnProperty(\"b\") && (i.b = o.crop.b);"
+   ]
+  },
+  {
+   "action": "expediteCrop",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 24612,
+   "evid": [
+    "index.js:57834  e.soilArr[o.sIdx] = i;"
+   ]
+  },
+  {
+   "action": "explore",
+   "field": "eventId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 24646,
+   "evid": [
+    "index.js:47189  0 == i.eventType ? e.resultData.resultMsg = \"7105\" : t.getResultMsg(i.eventType, i.eventValue, i.eventId);"
+   ]
+  },
+  {
+   "action": "explore",
+   "field": "eventValue",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 24663,
+   "evid": [
+    "index.js:47189  0 == i.eventType ? e.resultData.resultMsg = \"7105\" : t.getResultMsg(i.eventType, i.eventValue, i.eventId);"
+   ]
+  },
+  {
+   "action": "explore",
+   "field": "fixedEvents",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 24671,
+   "evid": [
+    "index.js:47200  if (i.hasOwnProperty(\"fixedEvents\")) {"
+   ]
+  },
+  {
+   "action": "findOhter",
+   "field": "findArr",
+   "conf": "usage-1",
+   "type": "array",
+   "line": 24795,
+   "evid": [
+    "index.js:57949"
+   ]
+  },
+  {
+   "action": "getAllActivity",
+   "field": "calendar",
+   "conf": "fallback",
+   "type": "number",
+   "line": 24905,
+   "evid": []
+  },
+  {
+   "action": "getAllActivity",
+   "field": "digcellTaskRed",
+   "conf": "fallback",
+   "type": "number",
+   "line": 24911,
+   "evid": []
+  },
+  {
+   "action": "getAllActivity",
+   "field": "geNianshouTaskRed",
+   "conf": "fallback",
+   "type": "number",
+   "line": 24917,
+   "evid": []
+  },
+  {
+   "action": "getAllActivity",
+   "field": "geSchoolTaskRed",
+   "conf": "fallback",
+   "type": "number",
+   "line": 24923,
+   "evid": []
+  },
+  {
+   "action": "getAllActivity",
+   "field": "supportCamp",
+   "conf": "fallback",
+   "type": "number",
+   "line": 24946,
+   "evid": []
+  },
+  {
+   "action": "getAllActivity",
+   "field": "transGiftShow",
+   "conf": "fallback",
+   "type": "number",
+   "line": 24952,
+   "evid": []
+  },
+  {
+   "action": "getAllServerCount",
+   "field": "sArr",
+   "conf": "name",
+   "type": "array",
+   "line": 24989,
+   "evid": [
+    "命名启发 sArr"
+   ]
+  },
+  {
+   "action": "getAllServerCount",
+   "field": "serverArr",
+   "conf": "name",
+   "type": "array",
+   "line": 24997,
+   "evid": [
+    "命名启发 serverArr"
+   ]
+  },
+  {
+   "action": "getAllServerList",
+   "field": "serverArr",
+   "conf": "name",
+   "type": "array",
+   "line": 25028,
+   "evid": [
+    "命名启发 serverArr"
+   ]
+  },
+  {
+   "action": "getApplyInfo",
+   "field": "masterInfo",
+   "conf": "name",
+   "type": "object",
+   "line": 25120,
+   "evid": [
+    "命名启发 masterInfo"
+   ]
+  },
+  {
+   "action": "getApplyInfo",
+   "field": "pupilInfo",
+   "conf": "name",
+   "type": "object",
+   "line": 25121,
+   "evid": [
+    "命名启发 pupilInfo"
+   ]
+  },
+  {
+   "action": "getBackShop",
+   "field": "shopArr",
+   "conf": "usage-1",
+   "type": "array",
+   "line": 25150,
+   "evid": [
+    "index.js:145350"
+   ]
+  },
+  {
+   "action": "getBankList",
+   "field": "bankList",
+   "conf": "name",
+   "type": "array",
+   "line": 25181,
+   "evid": [
+    "命名启发 bankList"
+   ]
+  },
+  {
+   "action": "getCRAInfo",
+   "field": "birthId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25211,
+   "evid": [
+    "index.js:23088  o.hasOwnProperty(\"birthId\") && (t.birthIdId = o.birthId);"
+   ]
+  },
+  {
+   "action": "getCRAInfo",
+   "field": "faceId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25219,
+   "evid": [
+    "index.js:23089  o.hasOwnProperty(\"faceId\") && (t.appearId = o.faceId);"
+   ]
+  },
+  {
+   "action": "getCRAInfo",
+   "field": "talnetId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25227,
+   "evid": [
+    "index.js:23090  o.hasOwnProperty(\"talnetId\") && (t.talentId = o.talnetId);"
+   ]
+  },
+  {
+   "action": "getChangeShop",
+   "field": "shopObj",
+   "conf": "name",
+   "type": "object",
+   "line": 25270,
+   "evid": [
+    "命名启发 shopObj"
+   ]
+  },
+  {
+   "action": "getCircleTaskList",
+   "field": "cNum",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25363,
+   "evid": [
+    "index.js:43489  t.entrustNum = o.cNum;"
+   ]
+  },
+  {
+   "action": "getCopyData",
+   "field": "copyArr",
+   "conf": "name",
+   "type": "array",
+   "line": 25402,
+   "evid": [
+    "命名启发 copyArr"
+   ]
+  },
+  {
+   "action": "getCreateRoleActivity",
+   "field": "birthId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25432,
+   "evid": [
+    "index.js:23055  t.birthIdId = o.birthId < 283 ? parseInt(o.birthId) + 4 : parseInt(o.birthId);"
+   ]
+  },
+  {
+   "action": "getCreateRoleActivity",
+   "field": "createTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25440,
+   "evid": [
+    "index.js:23064  i.getComponent(\"ChangeIdUI\").setData(o.createTime);"
+   ]
+  },
+  {
+   "action": "getCreateRoleActivity",
+   "field": "faceId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25448,
+   "evid": [
+    "index.js:23056  t.appearId = o.faceId < 302 ? parseInt(o.faceId) + 10 : parseInt(o.faceId);"
+   ]
+  },
+  {
+   "action": "getCreateRoleActivity",
+   "field": "talnetId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25456,
+   "evid": [
+    "index.js:23061  t.talentId = o.talnetId;"
+   ]
+  },
+  {
+   "action": "getDouYinOpenID",
+   "field": "openid",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25489,
+   "evid": [
+    "index.js:116705  s.RoleBaseInfo.userAccount = o.openid;"
+   ]
+  },
+  {
+   "action": "getDragon",
+   "field": "currentDragonId",
+   "conf": "fallback",
+   "type": "number",
+   "line": 25521,
+   "evid": []
+  },
+  {
+   "action": "getEquipLock",
+   "field": "equipLocks",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25589,
+   "evid": [
+    "index.js:65022  1 == o.eRet && (e.lockEquips = o.equipLocks);"
+   ]
+  },
+  {
+   "action": "getFinishTaskAward",
+   "field": "contribution",
+   "conf": "fallback",
+   "type": "number",
+   "line": 25731,
+   "evid": []
+  },
+  {
+   "action": "getFinishTaskAward",
+   "field": "triggerBoxs",
+   "conf": "fallback",
+   "type": "number",
+   "line": 25754,
+   "evid": []
+  },
+  {
+   "action": "getFriendHomeList",
+   "field": "dog",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25786,
+   "evid": [
+    "index.js:57958  o.hasOwnProperty(\"dog\") && (e.dogData = o.dog);"
+   ]
+  },
+  {
+   "action": "getHlexchangeShop",
+   "field": "shopObj",
+   "conf": "name",
+   "type": "object",
+   "line": 25935,
+   "evid": [
+    "命名启发 shopObj"
+   ]
+  },
+  {
+   "action": "getHomeList",
+   "field": "bShop",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25954,
+   "evid": [
+    "index.js:57597  i.hasOwnProperty(\"bShop\") && (e.homeShop = i.bShop);"
+   ]
+  },
+  {
+   "action": "getHomeList",
+   "field": "dog",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25962,
+   "evid": [
+    "index.js:57595  i.hasOwnProperty(\"dog\") && (e.dogData = i.dog);"
+   ]
+  },
+  {
+   "action": "getHomeList",
+   "field": "friendPartnerAward",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25979,
+   "evid": [
+    "index.js:57633  i.hasOwnProperty(\"friendPartnerAward\") && (e.rewardData = i.friendPartnerAward);"
+   ]
+  },
+  {
+   "action": "getHomeList",
+   "field": "recentSeeds",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 25987,
+   "evid": [
+    "index.js:57592  i.recentSeeds ? e.recentSs = i.recentSeeds : e.recentSs.length = 0;"
+   ]
+  },
+  {
+   "action": "getHookBreakList",
+   "field": "qr",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 26042,
+   "evid": [
+    "index.js:120714"
+   ]
+  },
+  {
+   "action": "getInn",
+   "field": "costDishMap",
+   "conf": "name",
+   "type": "object",
+   "line": 26101,
+   "evid": [
+    "命名启发 costDishMap"
+   ]
+  },
+  {
+   "action": "getInn",
+   "field": "showRewardPop",
+   "conf": "fallback",
+   "type": "number",
+   "line": 26071,
+   "evid": []
+  },
+  {
+   "action": "getInn",
+   "field": "tableEndTime",
+   "conf": "fallback",
+   "type": "number",
+   "line": 26086,
+   "evid": []
+  },
+  {
+   "action": "getInn",
+   "field": "tableStartTime",
+   "conf": "fallback",
+   "type": "number",
+   "line": 26092,
+   "evid": []
+  },
+  {
+   "action": "getInnCook",
+   "field": "cookBook",
+   "conf": "usage-1",
+   "type": "array",
+   "line": 26147,
+   "evid": [
+    "index.js:62586"
+   ]
+  },
+  {
+   "action": "getInnCookList",
+   "field": "cookList",
+   "conf": "name",
+   "type": "array",
+   "line": 26188,
+   "evid": [
+    "命名启发 cookList"
+   ]
+  },
+  {
+   "action": "getInnRank",
+   "field": "innRankList",
+   "conf": "name",
+   "type": "array",
+   "line": 26252,
+   "evid": [
+    "命名启发 innRankList"
+   ]
+  },
+  {
+   "action": "getItemData",
+   "field": "limittype",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 26323,
+   "evid": [
+    "index.js:47082  o.hasOwnProperty(\"limittype\") && (i = o.limittype);"
+   ]
+  },
+  {
+   "action": "getLikeEvent",
+   "field": "eventId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 26354,
+   "evid": [
+    "index.js:51157  var i = c.getItem(o.eventId, \"like_event\");"
+   ]
+  },
+  {
+   "action": "getMasterPupilList",
+   "field": "passMeritRewardState",
+   "conf": "fallback",
+   "type": "number",
+   "line": 26394,
+   "evid": []
+  },
+  {
+   "action": "getMasterPupilList",
+   "field": "removeApplyList",
+   "conf": "usage-1",
+   "type": "array",
+   "line": 26400,
+   "evid": [
+    "index.js:132515"
+   ]
+  },
+  {
+   "action": "getMasterPupilList",
+   "field": "roleList",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 26422,
+   "evid": [
+    "index.js:132521"
+   ]
+  },
+  {
+   "action": "getMultiPVESkill",
+   "field": "dataArr.pop",
+   "conf": "listener-1",
+   "type": "object",
+   "line": 26457,
+   "evid": [
+    "index.js:110885  n.attackMpCost = o.dataArr.pop();"
+   ]
+  },
+  {
+   "action": "getPandaEvent",
+   "field": "eventArr",
+   "conf": "usage-1",
+   "type": "array",
+   "line": 26552,
+   "evid": [
+    "index.js:137657"
+   ]
+  },
+  {
+   "action": "getPayAuth",
+   "field": "AuthCode",
+   "conf": "fallback",
+   "type": "number",
+   "line": 26615,
+   "evid": []
+  },
+  {
+   "action": "getQuestionList",
+   "field": "currentAnswerNum",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 26643,
+   "evid": [
+    "index.js:46906  o.currentAnswerNum >= o.questionMaxNum ? t.answerResult() : a.default.prefabs.load(\"Question/Paper\", cc.Prefab, function(e, i) {"
+   ]
+  },
+  {
+   "action": "getQuestionList",
+   "field": "questionMaxNum",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 26660,
+   "evid": [
+    "index.js:46906  o.currentAnswerNum >= o.questionMaxNum ? t.answerResult() : a.default.prefabs.load(\"Question/Paper\", cc.Prefab, function(e, i) {"
+   ]
+  },
+  {
+   "action": "getSchoolMaster",
+   "field": "masterInfo",
+   "conf": "name",
+   "type": "object",
+   "line": 26851,
+   "evid": [
+    "命名启发 masterInfo"
+   ]
+  },
+  {
+   "action": "getSchoolMaster",
+   "field": "pupilInfo",
+   "conf": "name",
+   "type": "object",
+   "line": 26852,
+   "evid": [
+    "命名启发 pupilInfo"
+   ]
+  },
+  {
+   "action": "getSchoolPupil",
+   "field": "masterInfo",
+   "conf": "name",
+   "type": "object",
+   "line": 26902,
+   "evid": [
+    "命名启发 masterInfo"
+   ]
+  },
+  {
+   "action": "getSchoolPupil",
+   "field": "pupilInfo",
+   "conf": "name",
+   "type": "object",
+   "line": 26903,
+   "evid": [
+    "命名启发 pupilInfo"
+   ]
+  },
+  {
+   "action": "getSchoolRoleInfo",
+   "field": "masterInfo",
+   "conf": "name",
+   "type": "object",
+   "line": 26953,
+   "evid": [
+    "命名启发 masterInfo"
+   ]
+  },
+  {
+   "action": "getSchoolRoleInfo",
+   "field": "pupilInfo",
+   "conf": "name",
+   "type": "object",
+   "line": 26954,
+   "evid": [
+    "命名启发 pupilInfo"
+   ]
+  },
+  {
+   "action": "getSchoolTask",
+   "field": "currentServerTime",
+   "conf": "fallback",
+   "type": "number",
+   "line": 27006,
+   "evid": []
+  },
+  {
+   "action": "getSchoolTask",
+   "field": "xyTodaySchoolId",
+   "conf": "fallback",
+   "type": "number",
+   "line": 27030,
+   "evid": []
+  },
+  {
+   "action": "getTeamSkill",
+   "field": "dataArr.pop",
+   "conf": "listener-1",
+   "type": "object",
+   "line": 27181,
+   "evid": [
+    "index.js:54942  n.attackMpCost = o.dataArr.pop();"
+   ]
+  },
+  {
+   "action": "getTreasureFloor",
+   "field": "floor",
+   "conf": "fallback",
+   "type": "number",
+   "line": 27216,
+   "evid": []
+  },
+  {
+   "action": "getUsedItemAward",
+   "field": "awardObj",
+   "conf": "usage-1",
+   "type": "array",
+   "line": 27244,
+   "evid": [
+    "index.js:67706"
+   ]
+  },
+  {
+   "action": "getUsedItemAward",
+   "field": "awardStates",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 27252,
+   "evid": [
+    "index.js:64945  states: o.awardStates"
+   ]
+  },
+  {
+   "action": "getVigor",
+   "field": "vigor",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 27283,
+   "evid": [
+    "index.js:138910  r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);"
+   ]
+  },
+  {
+   "action": "getWxXyxOpenID",
+   "field": "openid",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 27343,
+   "evid": [
+    "index.js:116693  s.RoleBaseInfo.userAccount = o.openid;"
+   ]
+  },
+  {
+   "action": "getWxXyxOpenID",
+   "field": "session_key",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 27351,
+   "evid": [
+    "index.js:116694  c.LoginMgr.token = o.session_key;"
+   ]
+  },
+  {
+   "action": "goldBreakAllSkill",
+   "field": "qr",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 27456,
+   "evid": [
+    "index.js:120714"
+   ]
+  },
+  {
+   "action": "goldBreakCurrentSkill",
+   "field": "qr",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 27486,
+   "evid": [
+    "index.js:120714"
+   ]
+  },
+  {
+   "action": "hireNpcOnhook",
+   "field": "siteID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 27567,
+   "evid": [
+    "index.js:51434  var o, s = i.getItem(e.siteID, \"fishpond\");"
+   ]
+  },
+  {
+   "action": "homeSpeicalAward",
+   "field": "eid",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 27597,
+   "evid": [
+    "index.js:57867  if (1 == e.eRet && e.hasOwnProperty(\"eid\") && e.hasOwnProperty(\"rewardArray\")) {"
+   ]
+  },
+  {
+   "action": "intoSchoolSquare",
+   "field": "schoolTitle",
+   "conf": "fallback",
+   "type": "number",
+   "line": 27827,
+   "evid": []
+  },
+  {
+   "action": "jionChatPkServer",
+   "field": "agreeOfflineMatch",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 27878,
+   "evid": [
+    "index.js:23967  t.officeMatch = o.agreeOfflineMatch;"
+   ]
+  },
+  {
+   "action": "joinSchool",
+   "field": "cdTimeDays",
+   "conf": "fallback",
+   "type": "number",
+   "line": 27942,
+   "evid": []
+  },
+  {
+   "action": "lookDogLog",
+   "field": "log",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 28052,
+   "evid": [
+    "index.js:58048  1 == e.eRet && e.hasOwnProperty(\"log\") && r.MessageCenter.dispatch(c.EvName.HOME_LOG_EVENT, e.log);"
+   ]
+  },
+  {
+   "action": "lookSecretEvent",
+   "field": "secret",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 28082,
+   "evid": [
+    "index.js:137731  i.secret = o.secret;"
+   ]
+  },
+  {
+   "action": "marryAward",
+   "field": "guestID",
+   "conf": "fallback",
+   "type": "number",
+   "line": 28175,
+   "evid": []
+  },
+  {
+   "action": "marryHouse",
+   "field": "houseID",
+   "conf": "fallback",
+   "type": "number",
+   "line": 28216,
+   "evid": []
+  },
+  {
+   "action": "mulitiNpcBattleResult",
+   "field": "gemId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 28293,
+   "evid": [
+    "index.js:89341  o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+   ]
+  },
+  {
+   "action": "newSweepTower",
+   "field": "batch_sweep_data.awardObj",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 28357,
+   "evid": [
+    "index.js:67706"
+   ]
+  },
+  {
+   "action": "newSweepTower",
+   "field": "batch_sweep_data.beginLv",
+   "conf": "listener-1",
+   "type": "object",
+   "line": 28365,
+   "evid": [
+    "index.js:137781  t.beginFloor = o.batch_sweep_data.beginLv;"
+   ]
+  },
+  {
+   "action": "newSweepTower",
+   "field": "batch_sweep_data.canSweep",
+   "conf": "listener-1",
+   "type": "object",
+   "line": 28373,
+   "evid": [
+    "index.js:137782  t.isCanSweep = o.batch_sweep_data.canSweep;"
+   ]
+  },
+  {
+   "action": "newSweepTower",
+   "field": "batch_sweep_data.clv",
+   "conf": "listener-1",
+   "type": "object",
+   "line": 28381,
+   "evid": [
+    "index.js:137777  t.curFloorNum = o.batch_sweep_data.clv;"
+   ]
+  },
+  {
+   "action": "obtainCrop",
+   "field": "aExp",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 28426,
+   "evid": [
+    "index.js:57711  o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);"
+   ]
+  },
+  {
+   "action": "obtainCrop",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 28452,
+   "evid": [
+    "index.js:57700  e.soilArr[o.sIdx] = {"
+   ]
+  },
+  {
+   "action": "onBatchBreakByGold",
+   "field": "setData",
+   "conf": "name",
+   "type": "object",
+   "line": 28504,
+   "evid": [
+    "命名启发 setData"
+   ]
+  },
+  {
+   "action": "onBatchBreakByGold",
+   "field": "setLabelTitle",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 28493,
+   "evid": [
+    "index.js:120684  i.setLabelTitle(\"\");"
+   ]
+  },
+  {
+   "action": "onKeyDispossHomeEvent",
+   "field": "aExp",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 28524,
+   "evid": [
+    "index.js:57797  o.hasOwnProperty(\"aExp\") && o.aExp > 0 && (f[7] = o.aExp);"
+   ]
+  },
+  {
+   "action": "onKeyDispossHomeEvent",
+   "field": "cropMap",
+   "conf": "name",
+   "type": "object",
+   "line": 28571,
+   "evid": [
+    "命名启发 cropMap"
+   ]
+  },
+  {
+   "action": "onKeyObtainCrop",
+   "field": "aExp",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 28593,
+   "evid": [
+    "index.js:57753  i.hasOwnProperty(\"aExp\") && i.aExp > 0 && (h[7] = i.aExp);"
+   ]
+  },
+  {
+   "action": "optionLikeEvent",
+   "field": "delTaskIds",
+   "conf": "name",
+   "type": "array",
+   "line": 28774,
+   "evid": [
+    "命名启发 delTaskIds"
+   ]
+  },
+  {
+   "action": "optionLikeEvent",
+   "field": "feel",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 28782,
+   "evid": [
+    "index.js:51168  var n = o.npcId, r = o.feel;"
+   ]
+  },
+  {
+   "action": "passCardData",
+   "field": "goldArr",
+   "conf": "name",
+   "type": "array",
+   "line": 28868,
+   "evid": [
+    "命名启发 goldArr"
+   ]
+  },
+  {
+   "action": "quickFinishTask",
+   "field": "caidan",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 29077,
+   "evid": [
+    "index.js:43501  caidan: o.caidan"
+   ]
+  },
+  {
+   "action": "quitSchool",
+   "field": "openSchoolFirstTryBgUI",
+   "conf": "fallback",
+   "type": "number",
+   "line": 29118,
+   "evid": []
+  },
+  {
+   "action": "reclaimLand",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 29359,
+   "evid": [
+    "index.js:57804  e.soilArr[o.sIdx] = {"
+   ]
+  },
+  {
+   "action": "redeemTable",
+   "field": "hotVal",
+   "conf": "fallback",
+   "type": "number",
+   "line": 29471,
+   "evid": []
+  },
+  {
+   "action": "redeemTable",
+   "field": "mhv",
+   "conf": "fallback",
+   "type": "number",
+   "line": 29477,
+   "evid": []
+  },
+  {
+   "action": "removeBreakQueue",
+   "field": "qr",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 29549,
+   "evid": [
+    "index.js:120714"
+   ]
+  },
+  {
+   "action": "resetChildFoster",
+   "field": "foster_point",
+   "conf": "fallback",
+   "type": "number",
+   "line": 29642,
+   "evid": []
+  },
+  {
+   "action": "resetChildFoster",
+   "field": "playArr",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 29660,
+   "evid": [
+    "index.js:77090"
+   ]
+  },
+  {
+   "action": "resetRole",
+   "field": "birthId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 29679,
+   "evid": [
+    "index.js:23074  h.RoleBaseInfo.birthIdId = o.birthId;"
+   ]
+  },
+  {
+   "action": "resetRole",
+   "field": "faceId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 29687,
+   "evid": [
+    "index.js:23075  h.RoleBaseInfo.appearId = o.faceId;"
+   ]
+  },
+  {
+   "action": "resetRole",
+   "field": "talnetId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 29704,
+   "evid": [
+    "index.js:23076  h.RoleBaseInfo.talentId = o.talnetId;"
+   ]
+  },
+  {
+   "action": "restVein",
+   "field": "psych",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 29737,
+   "evid": [
+    "index.js:66533  c.RoleBaseInfo.zhenyuan = o.psych;"
+   ]
+  },
+  {
+   "action": "schoolAppoint",
+   "field": "appointDatas",
+   "conf": "usage-1",
+   "type": "array",
+   "line": 29892,
+   "evid": [
+    "index.js:113862"
+   ]
+  },
+  {
+   "action": "seedCrop",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 30100,
+   "evid": [
+    "index.js:57638  var i = o.sIdx, n = {"
+   ]
+  },
+  {
+   "action": "setPlayerCardMoutsSycn",
+   "field": "sycn",
+   "conf": "fallback",
+   "type": "number",
+   "line": 30229,
+   "evid": []
+  },
+  {
+   "action": "skillChange",
+   "field": "changeCD",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 30351,
+   "evid": [
+    "index.js:119858  (y = o.changeCD + 864e5 * s - o.serverTime) < 0 && (y = 0);"
+   ]
+  },
+  {
+   "action": "startEatByTable",
+   "field": "gn",
+   "conf": "fallback",
+   "type": "number",
+   "line": 30432,
+   "evid": []
+  },
+  {
+   "action": "stealCrop",
+   "field": "aExp",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 30470,
+   "evid": [
+    "index.js:58028  o.hasOwnProperty(\"aExp\") && (p[7] = o.aExp);"
+   ]
+  },
+  {
+   "action": "stealCrop",
+   "field": "crop.b",
+   "conf": "listener-1",
+   "type": "object",
+   "line": 30489,
+   "evid": [
+    "index.js:58015  o.crop.hasOwnProperty(\"b\") ? s.b = o.crop.b : delete s.b;"
+   ]
+  },
+  {
+   "action": "stopBreaklist",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 30562,
+   "evid": [
+    "index.js:120719  o.addComponent(\"MainMenuUI\").setData({"
+   ]
+  },
+  {
+   "action": "stopBreaklist",
+   "field": "qr",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 30592,
+   "evid": [
+    "index.js:120714"
+   ]
+  },
+  {
+   "action": "storyExperience",
+   "field": "branchId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 30613,
+   "evid": [
+    "index.js:101916  _.RoleBaseInfo.storyId = e.branchId;"
+   ]
+  },
+  {
+   "action": "sweepCopy",
+   "field": "copyID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 30643,
+   "evid": [
+    "index.js:64105  var r = i.getItem(o.copyID, \"fuben\").exp[o.state - 1];"
+   ]
+  },
+  {
+   "action": "sweepCopy",
+   "field": "liveness",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 30651,
+   "evid": [
+    "index.js:64099  if (1 == o.eRet) t.showRewards(o.rewardArray, o.liveness); else if (3 == o.eRet) g.LoginMgr.isMiniIos(1) ? l.default.show(n.getText(591)) : l.default."
+   ]
+  },
+  {
+   "action": "towerRank",
+   "field": "rankArr",
+   "conf": "name",
+   "type": "array",
+   "line": 30830,
+   "evid": [
+    "命名启发 rankArr"
+   ]
+  },
+  {
+   "action": "treasureAward",
+   "field": "isStatus",
+   "conf": "fallback",
+   "type": "number",
+   "line": 30871,
+   "evid": []
+  },
+  {
+   "action": "upgradeVein",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31022,
+   "evid": [
+    "index.js:66510  var i = o.addComponent(\"PromptUI\");"
+   ]
+  },
+  {
+   "action": "upgradeVein",
+   "field": "psych",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31039,
+   "evid": [
+    "index.js:66518  c.RoleBaseInfo.zhenyuan = o.psych;"
+   ]
+  },
+  {
+   "action": "upgradeVein",
+   "field": "veinID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31047,
+   "evid": [
+    "index.js:66507  4001 == o.veinID && 1 == o.lv && u.default.prefabs.load(\"comUI/PromptUI\", cc.Prefab, function(t, e) {"
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "bloodEndTime",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31130,
+   "evid": [
+    "index.js:64812  } else if (a.hasOwnProperty(\"titleID\")) S.AchieveModel.getAchieveData().hasOwnProperty(a.titleID) ? c.default.show(n.getText(3187)) : S.AchieveModel.s"
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "dogid",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31138,
+   "evid": [
+    "index.js:64816  }); else if (a.hasOwnProperty(\"dogid\")) {"
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "formulaID",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31163,
+   "evid": [
+    "index.js:64793  "
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "gemId",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31171,
+   "evid": [
+    "index.js:64768  "
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "genGuDan",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31179,
+   "evid": [
+    "index.js:64822  "
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "getKnackIds",
+   "conf": "name",
+   "type": "array",
+   "line": 31187,
+   "evid": [
+    "命名启发 getKnackIds"
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "itemRealgarMap",
+   "conf": "name",
+   "type": "object",
+   "line": 31370,
+   "evid": [
+    "命名启发 itemRealgarMap"
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "mpnum",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31247,
+   "evid": [
+    "index.js:64778  "
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "note.skch",
+   "conf": "name",
+   "type": "object",
+   "line": 31279,
+   "evid": [
+    "命名启发 skch"
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "partners",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31287,
+   "evid": [
+    "index.js:64777  "
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "rewardSkillSkin",
+   "conf": "usage-1",
+   "type": "object",
+   "line": 31382,
+   "evid": [
+    "index.js:64854"
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "stealFlag",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31312,
+   "evid": [
+    "index.js:64826  "
+   ]
+  },
+  {
+   "action": "useVigorMeditation",
+   "field": "vigor",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31439,
+   "evid": [
+    "index.js:138913  r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);"
+   ]
+  },
+  {
+   "action": "useVigorUpGradeSkill",
+   "field": "vigor",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31478,
+   "evid": [
+    "index.js:120603  s.MessageCenter.dispatch(p.EvName.REFRESH_VIGORS, e.vigor);"
+   ]
+  },
+  {
+   "action": "washAdditionalArr",
+   "field": "attrList",
+   "conf": "name",
+   "type": "array",
+   "line": 31509,
+   "evid": [
+    "命名启发 attrList"
+   ]
+  },
+  {
+   "action": "wearFasion",
+   "field": "fasionid",
+   "conf": "listener-1",
+   "type": "number",
+   "line": 31557,
+   "evid": [
+    "index.js:145366  c.MarryModel.wifeUpdateData.eid = o.fasionid;"
+   ]
+  }
+ ]
+}

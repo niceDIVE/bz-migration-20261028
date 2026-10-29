@@ -1,0 +1,13 @@
+# User.getCopyData   (HttpConst.GET_DUNGEON_INFO)
+
+## 注册点 64071: r.MessageCenter.on(a.HttpConst.GET_DUNGEON_INFO, function(t, e) {
+
+## 请求点 64145: f.NetMgr.http.sendRequest(a.HttpConst.GET_DUNGEON_INFO, e);
+   64137: this.perfect = !1;
+   64138: this.completeMap = {};
+   64139: this.buyCount = 0;
+   64140: };
+   64141: t.prototype.reqDungeonData = function(t) {
+   64142: var e = {
+   64143: copyID: t
+   64144: };

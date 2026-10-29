@@ -1,0 +1,99 @@
+# User.beginHookBreakList  (HttpConst.BEGIN_HOOK_BREAK_LIST)
+# 出现 2 处
+
+120687: return t("../../scripts3/model3/PopGiftModel");
+120688: }).then(function(t) {
+120689: t.PopGiftModel.setHomeDataUI(i);
+120690: });
+120691: } else 11 == i.eRet && O.StoreModel.openChargeList();
+120692: }, this);
+120693: s.MessageCenter.on(c.HttpConst.BEGIN_HOOK_BREAK_LIST, function(t, o) {
+120694: if (1 == o.eRet) {
+120695: var i = o.qr;
+120696: e.updateBreakQueueData(i);
+120697: e.breakData = i;
+120698: m.PopUpMgr.cleanup();
+120699: var n = {
+120700: pathName: "comUI/ONHookUI",
+120701: scriptName: "BreakQueueUI",
+120702: wife: e.breakType > 1
+120703: };
+120704: g.default.promiseLoad("comUI/ONhookBgUI", n, function(t) {
+120705: var e = cc.instantiate(t);
+120706: m.PopUpMgr.addPopUp(e, y.LayerMgr.popUpLayer);
+120707: var o = e.addComponent("BreakBgUI");
+120708: o.setData(n);
+120709: o.setLabelTitle(r.getText(263));
+120710: });
+120711: }
+120712: }, this);
+120713: s.MessageCenter.on(c.HttpConst.STOP_BREAK_LIST, function(t, o) {
+120714: if (1 == o.eRet) if (o.qr.f) e.updateBreakQueueData(o.qr); else {
+120715: e.breakData = {};
+120716: s.MessageCenter.dispatch(p.EvName.ON_HOOK_BG_CLOSE);
+120717: 1 == e.breakType && g.default.prefabs.load("home/MainMenuUI", cc.Prefab, function(t, e) {
+120718: var o = cc.instantiate(e);
+120719: o.addComponent("MainMenuUI").setData({
+120720: tag: 2,
+120721: tag1: 1
+120722: });
+120723: m.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer);
+120724: });
+120725: e.breakQueue = [];
+120726: e.doneList = [];
+120727: e.costArr = {};
+120728: e.breaking = !1;
+120729: e.breakType = 0;
+120730: }
+120731: });
+120732: s.MessageCenter.on(c.HttpConst.REFRESH_HOOK_BREAK_LIST, function(t, o) {
+120733: if (1 == o.eRet) {
+---
+121100: skills: t,
+121101: type: this.breakType,
+121102: hg: a.hunger.remaining,
+121103: gTime: a.totalGameTime.gameTime,
+121104: hgtimes: a.numStuffed
+121105: };
+121106: _.NetMgr.http.sendReqWithMask(c.HttpConst.BEGIN_HOOK_BREAK_LIST, s);
+121107: }
+121108: };
+121109: e.prototype.locJoinQueue = function(t) {
+121110: var e = o.SkillUpgradeModel.breakQueue, n = i.getConstByID(287);
+121111: if (e.length >= n) l.default.show(r.getText(7391)); else {
+121112: for (var a = f.SkillTable.dic[t].brlv, c = o.SkillUpgradeModel.calBreakTime(a, this.breakType), h = 0; h < e.length; h++) {
+121113: a = f.SkillTable.dic[e[h]].brlv;
+121114: c += o.SkillUpgradeModel.calBreakTime(a, this.breakType);
+121115: }
+121116: this.breakQueue.push(t);
+121117: this.selectId = t;
+121118: s.MessageCenter.dispatch(p.EvName.ADD_BREAK_QUEUE, {
+121119: time: c
+121120: });
+121121: }
+121122: };
+121123: e.prototype.locRemoveQueue = function(t) {
+121124: var e = o.SkillUpgradeModel.breakQueue;
+121125: if (e.length <= 0) cc.log("出错了，列表还没东西呢"); else {
+121126: var i = o.SkillUpgradeModel.costArr, n = f.SkillTable.dic[t].brlv, r = e.indexOf(t);
+121127: if (!(r >= 0)) {
+121128: cc.log("发生甚么事了，列表里可没有这个技能啊");
+121129: return;
+121130: }
+121131: e.splice(r, 1);
+121132: i[t] = 0;
+121133: for (var a = 0, l = 0; l < e.length; l++) {
+121134: n = f.SkillTable.dic[e[l]].brlv;
+121135: a += o.SkillUpgradeModel.calBreakTime(n, this.breakType);
+121136: }
+121137: this.selectId = t;
+121138: s.MessageCenter.dispatch(p.EvName.ADD_BREAK_QUEUE, {
+121139: time: a
+121140: });
+121141: }
+121142: };
+121143: e.prototype.addSkillBreakRate = function(t) {
+121144: this.costArr[this.selectId] ? this.costArr[this.selectId] += t : this.costArr[this.selectId] = t;
+121145: s.MessageCenter.dispatch(p.EvName.USE_BREAK_ITEM);
+121146: };
+---

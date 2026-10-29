@@ -1,0 +1,1 @@
+{"name":"dodge","rows":5,"cols":["id","location","weight","speed"],"data":{"1":{"id":1,"location":1,"weight":5,"speed":500},"2":{"id":2,"location":2,"weight":5,"speed":500},"3":{"id":3,"location":3,"weight":5,"speed":500},"4":{"id":4,"location":4,"weight":5,"speed":400},"5":{"id":5,"location":5,"weight":5,"speed":400}}}

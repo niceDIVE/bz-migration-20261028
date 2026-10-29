@@ -1,0 +1,99 @@
+# User.Impeach  (HttpConst.TIP_OFF_USER)
+# 出现 2 处
+
+146085: h.MessageCenter.on(u.HttpConst.STC_PRIVATE_CHAT_NOTIFY, function(t, o) {
+146086: e.saveFriendChatData(o.SenderId, o);
+146087: p.tempListNum.hasOwnProperty(o.SenderId) ? p.tempListNum[o.SenderId] += o.SendContext.length : p.tempListNum[o.SenderId] = o.SendContext.length;
+146088: p.tempListNum[o.SenderId] > 99 && (p.tempListNum[o.SenderId] = 99);
+146089: h.MessageCenter.dispatch(m.EvName.FRIEND_MESSAGE_NOTIFY, o.SenderId);
+146090: }, this);
+146091: h.MessageCenter.on(u.HttpConst.TIP_OFF_USER, function(t, e) {
+146092: 1 == e.eRet && v.default.show(l.getText(1548));
+146093: }, this);
+146094: h.MessageCenter.on(u.HttpConst.STC_SUBTITLE_POST_ADDR, function(t, o) {
+146095: if (o.hasOwnProperty("postAddr")) {
+146096: e.fightVideoUrl = o.postAddr;
+146097: f.NetMgr.chatFightHttp.initSetServerUrl(o.postAddr, 1);
+146098: f.NetMgr.chatPkHttp.initSetServerUrl(o.worldPostAddr, 0);
+146099: }
+146100: }, this);
+146101: h.MessageCenter.on(u.HttpConst.STC_WULIN_POST_ADDR, function(e, o) {
+146102: if (o.hasOwnProperty("wuLinPostAddr")) {
+146103: f.NetMgr.wulinHttp.initSetServerUrl(o.wuLinPostAddr, 2);
+146104: h.MessageCenter.dispatch(m.EvName.WULIN_HTTP_CONNECTED);
+146105: Promise.resolve().then(function() {
+146106: return t("../../scripts3/mgrs3/WuLinAssemblyMgr");
+146107: }).then(function(t) {
+146108: t.WuLinAssemblyMgr.onGetKeyUrl();
+146109: });
+146110: }
+146111: }, this);
+146112: h.MessageCenter.on(u.HttpConst.STC_WULIN_TEAM_POST_ADDR, function(e, o) {
+146113: if (o.hasOwnProperty("wuLinTeamPostAddr")) {
+146114: f.NetMgr.wulinHttp.initSetServerUrl(o.wuLinTeamPostAddr, 2);
+146115: h.MessageCenter.dispatch(m.EvName.WULIN_HTTP_CONNECTED);
+146116: Promise.resolve().then(function() {
+146117: return t("../../scripts3/mgrs3/WuLinAssemblyMgr");
+146118: }).then(function(t) {
+146119: t.WuLinAssemblyMgr.onGetKeyUrl();
+146120: });
+146121: }
+146122: }, this);
+146123: h.MessageCenter.on(u.HttpConst.RES_SUBTITLE_NEW, function(t, e) {
+146124: e.data && h.MessageCenter.dispatch(m.EvName.CHAT_PK_VIDEO_EVENT, e.data);
+146125: }, this);
+146126: h.MessageCenter.on(u.HttpConst.RES_SUBTITLE_HOT, function(t, e) {
+146127: e.data && h.MessageCenter.dispatch(m.EvName.CHAT_PK_VIDEO_EVENT, e.data);
+146128: }, this);
+146129: h.MessageCenter.on(u.HttpConst.RES_SUBTITLE_SEE, function(t, o) {
+146130: e.pvp3DataLog = {};
+146131: o && o.data && o.data.logs || cc.log("video is Error!");
+---
+146269: }, this);
+146270: };
+146271: e.prototype.tipOff = function(t) {
+146272: var e = {
+146273: limitID: t
+146274: };
+146275: f.NetMgr.http.sendRequest(u.HttpConst.TIP_OFF_USER, e);
+146276: };
+146277: e.prototype.readFriendChatData = function(t) {
+146278: var e = d.RoleBaseInfo.roleID;
+146279: if (cc.sys.localStorage.getItem("fChat" + e)) {
+146280: var o = cc.sys.localStorage.getItem("fChat" + e), i = JSON.parse(o);
+146281: for (var n in i) if (t.hasOwnProperty(n)) this.friendChatData[n] = i[n]; else {
+146282: this.friendChatData.hasOwnProperty(n) && delete this.friendChatData[n];
+146283: delete i[n];
+146284: }
+146285: var r = JSON.stringify(i);
+146286: cc.sys.localStorage.setItem("fChat" + e, r);
+146287: }
+146288: };
+146289: e.prototype.saveFriendChatData = function(t, e) {
+146290: this.friendChatData.hasOwnProperty(t) || (this.friendChatData[t] = {
+146291: id: t,
+146292: chatAy: []
+146293: });
+146294: for (var o = 0; o < e.SendContext.length; o++) {
+146295: var i = {
+146296: SenderId: e.SenderId,
+146297: SenderName: e.SenderName,
+146298: SenderTitle: e.SenderTitle,
+146299: SendContext: e.SendContext[o],
+146300: school: e.school ? e.school : 0,
+146301: sendTime: e.sendTime[o]
+146302: };
+146303: this.friendChatData[t].chatAy.push(i);
+146304: }
+146305: var n = JSON.stringify(this.friendChatData);
+146306: cc.sys.localStorage.setItem("fChat" + d.RoleBaseInfo.roleID, n);
+146307: };
+146308: e.prototype.deleteFriendChat = function(t) {
+146309: if (cc.sys.localStorage.getItem("fChat" + d.RoleBaseInfo.roleID)) {
+146310: var e = cc.sys.localStorage.getItem("fChat" + d.RoleBaseInfo.roleID), o = JSON.parse(e);
+146311: o.hasOwnProperty(t) && delete o[t];
+146312: this.friendChatData.hasOwnProperty(t) && delete this.friendChatData[t];
+146313: var i = JSON.stringify(o);
+146314: cc.sys.localStorage.setItem("fChat" + d.RoleBaseInfo.roleID, i);
+146315: }
+---

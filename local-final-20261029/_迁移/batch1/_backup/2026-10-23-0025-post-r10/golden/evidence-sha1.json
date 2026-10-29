@@ -1,0 +1,11426 @@
+{
+ "frozenAt": "2026-10-22T16:22:34.524Z",
+ "fields": {
+  "eRet": [
+   {
+    "bundle": "index.js",
+    "line": 610,
+    "sha1": "c64a85c6e339"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1424,
+    "sha1": "b60c6d71a8f7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1438,
+    "sha1": "b60c6d71a8f7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1447,
+    "sha1": "8e93c7b40488"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1454,
+    "sha1": "e94bbfb2b2e8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1457,
+    "sha1": "5a54fa281cbd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1461,
+    "sha1": "38efe27fa32c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1485,
+    "sha1": "b60c6d71a8f7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1493,
+    "sha1": "f8114de05f22"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1503,
+    "sha1": "f2e9494791cb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1516,
+    "sha1": "35340ae28c70"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1565,
+    "sha1": "98f2fba9232d"
+   }
+  ],
+  "advertisementNum": [
+   {
+    "bundle": "index.js",
+    "line": 51561,
+    "sha1": "1ae602f0d920"
+   }
+  ],
+  "beginTime": [
+   {
+    "bundle": "index.js",
+    "line": 24663,
+    "sha1": "85ee59c2868d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 86192,
+    "sha1": "85ee59c2868d"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 28442,
+    "sha1": "b71caa3ff218"
+   },
+   {
+    "bundle": "index.js",
+    "line": 34,
+    "sha1": "8ddc127d231f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56,
+    "sha1": "4a0cd94f7888"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56,
+    "sha1": "4a0cd94f7888"
+   },
+   {
+    "bundle": "index.js",
+    "line": 92,
+    "sha1": "8ddc127d231f"
+   }
+  ],
+  "maxTime": [
+   {
+    "bundle": "index.js",
+    "line": 51453,
+    "sha1": "86f105be6a10"
+   },
+   {
+    "bundle": "index.js",
+    "line": 51562,
+    "sha1": "4af5194f6e17"
+   },
+   {
+    "bundle": "index.js",
+    "line": 51786,
+    "sha1": "4a2484dd9995"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56410,
+    "sha1": "5df59fe1cd03"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56486,
+    "sha1": "3ad17ee073f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56521,
+    "sha1": "3ad17ee073f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56528,
+    "sha1": "3131b029d7f8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56642,
+    "sha1": "beff86716463"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70645,
+    "sha1": "8512e2193ba2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 86194,
+    "sha1": "7a537df0ea8e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20,
+    "sha1": "b2af100f4939"
+   }
+  ],
+  "serverTime": [
+   {
+    "bundle": "index.js",
+    "line": 86193,
+    "sha1": "0f49629acb6b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107591,
+    "sha1": "84b8bbcdf226"
+   }
+  ],
+  "skill": [
+   {
+    "bundle": "index.js",
+    "line": 19118,
+    "sha1": "b15fe0c051d7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 21731,
+    "sha1": "af65e1c89959"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43905,
+    "sha1": "ba2f943e1011"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106853,
+    "sha1": "b73aa3bacff5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 127618,
+    "sha1": "d4790045496d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 127619,
+    "sha1": "39edc9e64a0f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 127647,
+    "sha1": "d4790045496d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 127648,
+    "sha1": "39edc9e64a0f"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 34803,
+    "sha1": "38ee23cfc783"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 58338,
+    "sha1": "6b9d6143b6f5"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 64522,
+    "sha1": "896e48243d4f"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 67444,
+    "sha1": "3b87320ff11d"
+   }
+  ],
+  "hyTime": [
+   {
+    "bundle": "scripts2.js",
+    "line": 17481,
+    "sha1": "8b128edb9f67"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 17500,
+    "sha1": "8b128edb9f67"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 38139,
+    "sha1": "10460deb00d5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 38166,
+    "sha1": "10460deb00d5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 53163,
+    "sha1": "8b128edb9f67"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 58088,
+    "sha1": "10460deb00d5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 58117,
+    "sha1": "10460deb00d5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 64625,
+    "sha1": "e2a67b7fd47c"
+   }
+  ],
+  "endTime": [
+   {
+    "bundle": "index.js",
+    "line": 1539,
+    "sha1": "cb83a6190ea5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 50939,
+    "sha1": "44255f000859"
+   },
+   {
+    "bundle": "index.js",
+    "line": 90108,
+    "sha1": "575c8762b445"
+   },
+   {
+    "bundle": "index.js",
+    "line": 90117,
+    "sha1": "e34af39c8620"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 28443,
+    "sha1": "d648a47f9f57"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 28469,
+    "sha1": "bba114d1fd90"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 43272,
+    "sha1": "bba114d1fd90"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 67486,
+    "sha1": "b26565725d6f"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 6692,
+    "sha1": "0412f0c117b4"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 17259,
+    "sha1": "50827d99994b"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 19492,
+    "sha1": "b43bb3ddbb9d"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 27244,
+    "sha1": "930b6599561a"
+   }
+  ],
+  "npcID": [
+   {
+    "bundle": "index.js",
+    "line": 14149,
+    "sha1": "07be67e254fb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 14340,
+    "sha1": "1cb819588890"
+   },
+   {
+    "bundle": "index.js",
+    "line": 14749,
+    "sha1": "7d88c4d604a4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 14970,
+    "sha1": "a72da96c2821"
+   },
+   {
+    "bundle": "index.js",
+    "line": 14974,
+    "sha1": "2887823ce99e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15014,
+    "sha1": "a72da96c2821"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15088,
+    "sha1": "5ca5048b2d79"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19662,
+    "sha1": "88dfe000534d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 48190,
+    "sha1": "e5253b86df18"
+   },
+   {
+    "bundle": "index.js",
+    "line": 48840,
+    "sha1": "277901116773"
+   },
+   {
+    "bundle": "index.js",
+    "line": 50583,
+    "sha1": "d0ecf10ced73"
+   },
+   {
+    "bundle": "index.js",
+    "line": 67239,
+    "sha1": "a72da96c2821"
+   }
+  ],
+  "hanyusuiTime": [
+   {
+    "bundle": "index.js",
+    "line": 64819,
+    "sha1": "c44f1b5e7592"
+   }
+  ],
+  "isCollective": [
+   {
+    "bundle": "index.js",
+    "line": 70763,
+    "sha1": "209005f1c3c1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70807,
+    "sha1": "209005f1c3c1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 97593,
+    "sha1": "5841d300f621"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111836,
+    "sha1": "a36143fcd2c4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 115162,
+    "sha1": "97476a64eaba"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120523,
+    "sha1": "82dcaf52e454"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120582,
+    "sha1": "9a3ab798d4b3"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 31045,
+    "sha1": "7f53b91ae8dc"
+   }
+  ],
+  "skillID": [
+   {
+    "bundle": "index.js",
+    "line": 6348,
+    "sha1": "1639bc50aff9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56483,
+    "sha1": "6e20b54d168b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56585,
+    "sha1": "a4b5521a3e30"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56586,
+    "sha1": "233e7fe3266f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56669,
+    "sha1": "2c3b508a7412"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20,
+    "sha1": "b2af100f4939"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20,
+    "sha1": "b2af100f4939"
+   },
+   {
+    "bundle": "index.js",
+    "line": 158,
+    "sha1": "512221112bbb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 158,
+    "sha1": "512221112bbb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 163,
+    "sha1": "23deae10c7d5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 164,
+    "sha1": "03a5d4a9bca4"
+   }
+  ],
+  "titivateObj": [
+   {
+    "bundle": "index.js",
+    "line": 74223,
+    "sha1": "16ec7bebabfe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 74894,
+    "sha1": "e43ebecb1c32"
+   },
+   {
+    "bundle": "index.js",
+    "line": 75555,
+    "sha1": "ce14f74c3fc4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 75601,
+    "sha1": "ce14f74c3fc4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 95886,
+    "sha1": "669e5aea0801"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107676,
+    "sha1": "0811d9542912"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107810,
+    "sha1": "0d06212af7c0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107814,
+    "sha1": "d9e98f71f01f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107859,
+    "sha1": "e585fcd951cd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107861,
+    "sha1": "7c4889be4c3f"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 53703,
+    "sha1": "0790634ad459"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 38204,
+    "sha1": "1c7090eb7bc5"
+   }
+  ],
+  "limit": [
+   {
+    "bundle": "index.js",
+    "line": 16260,
+    "sha1": "65d515ea0dc3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 16341,
+    "sha1": "65d515ea0dc3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 16396,
+    "sha1": "f6fefcd65ae4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20583,
+    "sha1": "cdf8908cbaba"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20741,
+    "sha1": "91f21cdf0140"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20748,
+    "sha1": "32c64fecc161"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20755,
+    "sha1": "074d509ffbf4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20762,
+    "sha1": "8053d4fac37e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20770,
+    "sha1": "fba363a05e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 32221,
+    "sha1": "543255ee3625"
+   },
+   {
+    "bundle": "index.js",
+    "line": 34359,
+    "sha1": "65ca623f7ab7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 34365,
+    "sha1": "f198e170b112"
+   }
+  ],
+  "rewardArray": [
+   {
+    "bundle": "index.js",
+    "line": 1529,
+    "sha1": "74a8603533a5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1530,
+    "sha1": "700486e4bd2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 23077,
+    "sha1": "0b3f451e2ca6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24034,
+    "sha1": "6938707fee55"
+   },
+   {
+    "bundle": "index.js",
+    "line": 25210,
+    "sha1": "c829cfd5579d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 27437,
+    "sha1": "359dd29d1bc6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46944,
+    "sha1": "0bf527cb3a9a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 47188,
+    "sha1": "352e8bdd3fa3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57231,
+    "sha1": "e2eb408bae8b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57412,
+    "sha1": "c1c370ceb2c1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57419,
+    "sha1": "c1c370ceb2c1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57427,
+    "sha1": "c1c370ceb2c1"
+   }
+  ],
+  "itemID": [
+   {
+    "bundle": "index.js",
+    "line": 24318,
+    "sha1": "ff4edb93d9cf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24327,
+    "sha1": "14a6f99edbac"
+   },
+   {
+    "bundle": "index.js",
+    "line": 25905,
+    "sha1": "432aa914809c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 25918,
+    "sha1": "9b0c5fdf2bac"
+   },
+   {
+    "bundle": "index.js",
+    "line": 44289,
+    "sha1": "c2a22caf3419"
+   },
+   {
+    "bundle": "index.js",
+    "line": 44315,
+    "sha1": "a9a20122d6bf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64689,
+    "sha1": "a449594bd1db"
+   },
+   {
+    "bundle": "index.js",
+    "line": 65090,
+    "sha1": "1e486957d779"
+   },
+   {
+    "bundle": "index.js",
+    "line": 65492,
+    "sha1": "1e486957d779"
+   },
+   {
+    "bundle": "index.js",
+    "line": 65712,
+    "sha1": "27baccd0d073"
+   },
+   {
+    "bundle": "index.js",
+    "line": 65713,
+    "sha1": "a8b96016179d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107636,
+    "sha1": "6f5bdc26d999"
+   }
+  ],
+  "buyTimes": [
+   {
+    "bundle": "index.js",
+    "line": 107224,
+    "sha1": "190c4a9abed1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 130772,
+    "sha1": "0e2dc22e62a6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 131235,
+    "sha1": "f9cc11e46a22"
+   },
+   {
+    "bundle": "index.js",
+    "line": 131236,
+    "sha1": "fa7de888796b"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 6749,
+    "sha1": "7e3a7022d389"
+   }
+  ],
+  "userGold": [
+   {
+    "bundle": "index.js",
+    "line": 131234,
+    "sha1": "5cf804a9f3cd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55779,
+    "sha1": "958ec2ca71d5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55795,
+    "sha1": "958ec2ca71d5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55804,
+    "sha1": "958ec2ca71d5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 8821,
+    "sha1": "b762a4a226b6"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 8827,
+    "sha1": "b762a4a226b6"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 21023,
+    "sha1": "958ec2ca71d5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 45167,
+    "sha1": "44ed3cbd9b8a"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 45237,
+    "sha1": "44ed3cbd9b8a"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 61128,
+    "sha1": "9cdebf896771"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 6843,
+    "sha1": "e49459a96f1c"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 28561,
+    "sha1": "f76d96647db3"
+   }
+  ],
+  "type": [
+   {
+    "bundle": "index.js",
+    "line": 1273,
+    "sha1": "9bfd308bb449"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1709,
+    "sha1": "b94b5edc987e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1736,
+    "sha1": "07a46f5dd783"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1757,
+    "sha1": "611d492ca6c7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4155,
+    "sha1": "33691b2de3fb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4159,
+    "sha1": "32bd966f6139"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4481,
+    "sha1": "f7b038b55101"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4486,
+    "sha1": "c9cb72d14ab7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7391,
+    "sha1": "bb395566bd81"
+   },
+   {
+    "bundle": "index.js",
+    "line": 10003,
+    "sha1": "537f2e24072a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11028,
+    "sha1": "331f10e8e022"
+   },
+   {
+    "bundle": "index.js",
+    "line": 13604,
+    "sha1": "8940b2cfcdf3"
+   }
+  ],
+  "hjzcNum": [
+   {
+    "bundle": "index.js",
+    "line": 137650,
+    "sha1": "6f033c8fceda"
+   }
+  ],
+  "AttckData": [
+   {
+    "bundle": "index.js",
+    "line": 18033,
+    "sha1": "accc875b7f78"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18034,
+    "sha1": "92f056573490"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18036,
+    "sha1": "9feada7c0d2a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 98844,
+    "sha1": "ae0c493e39b3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 100380,
+    "sha1": "6197eed492d1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 100418,
+    "sha1": "e933b34aca85"
+   },
+   {
+    "bundle": "index.js",
+    "line": 100431,
+    "sha1": "6197eed492d1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101328,
+    "sha1": "73bc979f7c8f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104105,
+    "sha1": "6e322343f681"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104106,
+    "sha1": "7c49bb8764f4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104108,
+    "sha1": "b79c047d3649"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104134,
+    "sha1": "6e322343f681"
+   }
+  ],
+  "getargetType": [
+   {
+    "bundle": "index.js",
+    "line": 74776,
+    "sha1": "56be49837fa1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 126112,
+    "sha1": "91a0158cff0d"
+   }
+  ],
+  "EnemyData": [
+   {
+    "bundle": "index.js",
+    "line": 18037,
+    "sha1": "a22dce5da5eb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 100381,
+    "sha1": "93f5238305a0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 100420,
+    "sha1": "4f75df7ce98c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 100432,
+    "sha1": "93f5238305a0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104109,
+    "sha1": "811a24d89bd0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5,
+    "sha1": "e6a3e1050625"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 52,
+    "sha1": "0b5055762c53"
+   }
+  ],
+  "floorBuff": [
+   {
+    "bundle": "index.js",
+    "line": 18033,
+    "sha1": "accc875b7f78"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104105,
+    "sha1": "6e322343f681"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104134,
+    "sha1": "6e322343f681"
+   }
+  ],
+  "isBoss": [
+   {
+    "bundle": "index.js",
+    "line": 14100,
+    "sha1": "061efda7b3df"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18063,
+    "sha1": "3bd014e247a4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 30189,
+    "sha1": "52d40b389b22"
+   },
+   {
+    "bundle": "index.js",
+    "line": 30211,
+    "sha1": "a27045145937"
+   },
+   {
+    "bundle": "index.js",
+    "line": 32606,
+    "sha1": "8d23bd776d53"
+   },
+   {
+    "bundle": "index.js",
+    "line": 92418,
+    "sha1": "2a7e60e28b65"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104105,
+    "sha1": "6e322343f681"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104134,
+    "sha1": "6e322343f681"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104148,
+    "sha1": "39f2f509b2dd"
+   }
+  ],
+  "rogueFloorBuffs": [
+   {
+    "bundle": "index.js",
+    "line": 75080,
+    "sha1": "c716bab1b62f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104164,
+    "sha1": "810b1f67eeaf"
+   }
+  ],
+  "option": [
+   {
+    "bundle": "index.js",
+    "line": 24029,
+    "sha1": "a48368d98dd5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 28551,
+    "sha1": "051e95925641"
+   },
+   {
+    "bundle": "index.js",
+    "line": 28556,
+    "sha1": "051e95925641"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 88949,
+    "sha1": "18bf86fa5a52"
+   }
+  ],
+  "equipObj": [
+   {
+    "bundle": "index.js",
+    "line": 44536,
+    "sha1": "191debde0ac4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 89340,
+    "sha1": "79f44febe7c0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 89557,
+    "sha1": "79f44febe7c0"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 25712,
+    "sha1": "b2a415f67a67"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 25715,
+    "sha1": "b2a415f67a67"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 43397,
+    "sha1": "df591f816c9f"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 2052,
+    "sha1": "279f75359e06"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 43514,
+    "sha1": "df591f816c9f"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 71528,
+    "sha1": "6c5e3c26d6c3"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 84922,
+    "sha1": "279f75359e06"
+   }
+  ],
+  "gemId": [
+   {
+    "bundle": "index.js",
+    "line": 67711,
+    "sha1": "fa019c9677ec"
+   },
+   {
+    "bundle": "index.js",
+    "line": 89341,
+    "sha1": "fa019c9677ec"
+   },
+   {
+    "bundle": "index.js",
+    "line": 89558,
+    "sha1": "fa019c9677ec"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 43398,
+    "sha1": "157f2d0c05bf"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 24429,
+    "sha1": "60b1ab1924d3"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 43515,
+    "sha1": "157f2d0c05bf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 52,
+    "sha1": "0b5055762c53"
+   }
+  ],
+  "win": [
+   {
+    "bundle": "index.js",
+    "line": 1734,
+    "sha1": "cb18034bd0a0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 13088,
+    "sha1": "07a77f4062c2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 14978,
+    "sha1": "c68c22e9b67b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15003,
+    "sha1": "8c2b48f6f6af"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15023,
+    "sha1": "c68c22e9b67b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15093,
+    "sha1": "c68c22e9b67b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15116,
+    "sha1": "aaca7332e19c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15119,
+    "sha1": "23c738e9f0e7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24488,
+    "sha1": "ce8c8ccd9c17"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24565,
+    "sha1": "ce8c8ccd9c17"
+   },
+   {
+    "bundle": "index.js",
+    "line": 25248,
+    "sha1": "32db993d6c49"
+   },
+   {
+    "bundle": "index.js",
+    "line": 32597,
+    "sha1": "f403fe237508"
+   }
+  ],
+  "OnhookObj": [
+   {
+    "bundle": "index.js",
+    "line": 70505,
+    "sha1": "0c79c72a7c7d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111836,
+    "sha1": "a36143fcd2c4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111839,
+    "sha1": "ca1343e93fc8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111842,
+    "sha1": "913ae707ac4a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111901,
+    "sha1": "43ea601952e0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111903,
+    "sha1": "0c79c72a7c7d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70506,
+    "sha1": "b8932f0afa0f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70642,
+    "sha1": "099c8216606a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70642,
+    "sha1": "099c8216606a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70643,
+    "sha1": "52f9bf5c6387"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70643,
+    "sha1": "52f9bf5c6387"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70644,
+    "sha1": "a2e889aaa18e"
+   }
+  ],
+  "CDTime": [
+   {
+    "bundle": "index.js",
+    "line": 101159,
+    "sha1": "361e916c29e7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101185,
+    "sha1": "361e916c29e7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101517,
+    "sha1": "617bd874ad41"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101531,
+    "sha1": "806cc850e9b1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 112892,
+    "sha1": "0f891f4cd32b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 150,
+    "sha1": "a40197bbfeb7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 150,
+    "sha1": "a40197bbfeb7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 153,
+    "sha1": "0de44574bced"
+   },
+   {
+    "bundle": "index.js",
+    "line": 155,
+    "sha1": "345ea528bf8d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 155,
+    "sha1": "345ea528bf8d"
+   }
+  ],
+  "skillId": [
+   {
+    "bundle": "scripts2.js",
+    "line": 76687,
+    "sha1": "96a77a0a879a"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 24666,
+    "sha1": "84f387a967b0"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 24721,
+    "sha1": "84f387a967b0"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 24749,
+    "sha1": "49e61d01a92c"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 24781,
+    "sha1": "49e61d01a92c"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 56306,
+    "sha1": "65456a033243"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 56380,
+    "sha1": "eb5417a50ea5"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 58336,
+    "sha1": "aa5c69da4772"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 81456,
+    "sha1": "785a9da41a12"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 89732,
+    "sha1": "6abe5d28cb57"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 89759,
+    "sha1": "687feaabbf45"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 89779,
+    "sha1": "687feaabbf45"
+   }
+  ],
+  "eTime": [
+   {
+    "bundle": "scripts3.js",
+    "line": 90060,
+    "sha1": "bc5eaf995390"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 75443,
+    "sha1": "c7bdf1af7d35"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 82070,
+    "sha1": "a9a3e89b2e08"
+   }
+  ],
+  "needTime": [
+   {
+    "bundle": "index.js",
+    "line": 56423,
+    "sha1": "bee7b2e2413c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56427,
+    "sha1": "061b2942fe09"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56428,
+    "sha1": "0ee802223066"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56440,
+    "sha1": "3ff45973ecd9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56444,
+    "sha1": "6ff5dd2d7e87"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56445,
+    "sha1": "023fe881c5f4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56488,
+    "sha1": "ef7ea32ceaa1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56492,
+    "sha1": "9885b43303cd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56493,
+    "sha1": "32a67775c77e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56590,
+    "sha1": "bb1804be98b0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56595,
+    "sha1": "6ff5dd2d7e87"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56596,
+    "sha1": "023fe881c5f4"
+   }
+  ],
+  "awardArr": [
+   {
+    "bundle": "index.js",
+    "line": 51586,
+    "sha1": "3592a955ea05"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55881,
+    "sha1": "a52ec3125bfc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 117746,
+    "sha1": "0491124b7c22"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 47543,
+    "sha1": "6c0d6603847b"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 47600,
+    "sha1": "068099fa87e2"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 81379,
+    "sha1": "37af5325c10a"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 81412,
+    "sha1": "b1a8d0a5d881"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 54374,
+    "sha1": "6c0d6603847b"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 54447,
+    "sha1": "068099fa87e2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   }
+  ],
+  "extraArr": [
+   {
+    "bundle": "index.js",
+    "line": 51587,
+    "sha1": "c33825dc6caf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 51588,
+    "sha1": "d1a0a12e1d23"
+   }
+  ],
+  "note": [
+   {
+    "bundle": "index.js",
+    "line": 59325,
+    "sha1": "6699434800a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64728,
+    "sha1": "b36d3ba764a2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64730,
+    "sha1": "142449ef756a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64746,
+    "sha1": "b36d3ba764a2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64747,
+    "sha1": "7df61df0e0db"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64757,
+    "sha1": "9c4a1c81d72b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64758,
+    "sha1": "196f08b26eb9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64779,
+    "sha1": "b4ed0a830c97"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64781,
+    "sha1": "01fab0068892"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64914,
+    "sha1": "86c7184b2394"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64915,
+    "sha1": "b6c572958d6f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64917,
+    "sha1": "3c38496e1aa1"
+   }
+  ],
+  "attrch": [
+   {
+    "bundle": "index.js",
+    "line": 64779,
+    "sha1": "b4ed0a830c97"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64781,
+    "sha1": "01fab0068892"
+   },
+   {
+    "bundle": "index.js",
+    "line": 138892,
+    "sha1": "b7522892e66b"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 73968,
+    "sha1": "874fcdac0944"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 73970,
+    "sha1": "17948f9c79be"
+   }
+  ],
+  "exp": [
+   {
+    "bundle": "index.js",
+    "line": 13098,
+    "sha1": "8f5f5841d01d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15095,
+    "sha1": "53377461fb6a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57710,
+    "sha1": "6da47b9aa406"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57752,
+    "sha1": "549e7b70b630"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57796,
+    "sha1": "2f3af4261b38"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58000,
+    "sha1": "2f3af4261b38"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58027,
+    "sha1": "6da47b9aa406"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58288,
+    "sha1": "794a011a86cf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64081,
+    "sha1": "c35e355d4ab2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64105,
+    "sha1": "c35e355d4ab2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 74377,
+    "sha1": "ea688d22359f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 78931,
+    "sha1": "96d2e59a7d37"
+   }
+  ],
+  "expExtra": [
+   {
+    "bundle": "index.js",
+    "line": 86214,
+    "sha1": "d188b69ed1d0"
+   }
+  ],
+  "potential": [
+   {
+    "bundle": "index.js",
+    "line": 86210,
+    "sha1": "0a2ea8a5fb2c"
+   }
+  ],
+  "potentialExtra": [
+   {
+    "bundle": "index.js",
+    "line": 86215,
+    "sha1": "8914eeccf942"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 44018,
+    "sha1": "a0075ad9dff6"
+   }
+  ],
+  "specialAny": [
+   {
+    "bundle": "index.js",
+    "line": 111,
+    "sha1": "14b444c47892"
+   },
+   {
+    "bundle": "index.js",
+    "line": 112,
+    "sha1": "063ab839b6d4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 399,
+    "sha1": "fa5c7470ff69"
+   },
+   {
+    "bundle": "index.js",
+    "line": 401,
+    "sha1": "b5d5a4aae911"
+   },
+   {
+    "bundle": "index.js",
+    "line": 412,
+    "sha1": "2e30501a85db"
+   },
+   {
+    "bundle": "index.js",
+    "line": 430,
+    "sha1": "ee847252b8f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 430,
+    "sha1": "ee847252b8f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 657,
+    "sha1": "afd9c499a93c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 657,
+    "sha1": "afd9c499a93c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 660,
+    "sha1": "bc58f6967215"
+   }
+  ],
+  "isSchoolAward": [
+   {
+    "bundle": "index.js",
+    "line": 111838,
+    "sha1": "9a6efdff3034"
+   },
+   {
+    "bundle": "index.js",
+    "line": 114499,
+    "sha1": "571df39fed94"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120581,
+    "sha1": "8e228169ee54"
+   }
+  ],
+  "skillArr": [
+   {
+    "bundle": "index.js",
+    "line": 120584,
+    "sha1": "201165a50154"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120587,
+    "sha1": "799733e15386"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 90059,
+    "sha1": "4fb55f77c973"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120637,
+    "sha1": "7bcf92123e2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120644,
+    "sha1": "5788637f5d75"
+   },
+   {
+    "bundle": "index.js",
+    "line": 121172,
+    "sha1": "367a4bc55592"
+   },
+   {
+    "bundle": "index.js",
+    "line": 121265,
+    "sha1": "f65d7901a629"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 35602,
+    "sha1": "40c3035b3fec"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 35604,
+    "sha1": "2360223f3531"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 35634,
+    "sha1": "07c00d6c7d3f"
+   }
+  ],
+  "skillid": [
+   {
+    "bundle": "index.js",
+    "line": 19099,
+    "sha1": "542ccdf92f82"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19104,
+    "sha1": "b8d6c2f93991"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19118,
+    "sha1": "b15fe0c051d7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120590,
+    "sha1": "0a0592d95404"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 56380,
+    "sha1": "eb5417a50ea5"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 80379,
+    "sha1": "113044684693"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 80381,
+    "sha1": "252890876c73"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 80389,
+    "sha1": "63ff71f20a16"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 80399,
+    "sha1": "332ffd8e7857"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 80500,
+    "sha1": "7ace9d786abf"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 80842,
+    "sha1": "38a056c0e441"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 81372,
+    "sha1": "a3481ae04a31"
+   }
+  ],
+  "state": [
+   {
+    "bundle": "index.js",
+    "line": 4545,
+    "sha1": "fdfd24e4d311"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4701,
+    "sha1": "43927ea661ae"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4752,
+    "sha1": "ab4a3c1310dd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5306,
+    "sha1": "5355014d502c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 9008,
+    "sha1": "3a6d27f92666"
+   },
+   {
+    "bundle": "index.js",
+    "line": 9010,
+    "sha1": "ade17465bd52"
+   },
+   {
+    "bundle": "index.js",
+    "line": 9340,
+    "sha1": "6e4c95500f08"
+   },
+   {
+    "bundle": "index.js",
+    "line": 9355,
+    "sha1": "d4003ae163b8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 9510,
+    "sha1": "04521fcb43f5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 9689,
+    "sha1": "9709931f18b2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 9701,
+    "sha1": "9709931f18b2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 9800,
+    "sha1": "f0fc22d694be"
+   }
+  ],
+  "equipInherit": [
+   {
+    "bundle": "index.js",
+    "line": 142026,
+    "sha1": "5eafddd3e538"
+   },
+   {
+    "bundle": "index.js",
+    "line": 142064,
+    "sha1": "5eafddd3e538"
+   }
+  ],
+  "playerEquip": [
+   {
+    "bundle": "index.js",
+    "line": 142023,
+    "sha1": "539207a3eaa6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 142025,
+    "sha1": "471f8f8a0b50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 142061,
+    "sha1": "539207a3eaa6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 142063,
+    "sha1": "471f8f8a0b50"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 28880,
+    "sha1": "fb0e000860be"
+   }
+  ],
+  "chipTimes": [
+   {
+    "bundle": "index.js",
+    "line": 54265,
+    "sha1": "abe6e1ca49f7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107225,
+    "sha1": "555fa20e6bb5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 7253,
+    "sha1": "7872fd20657e"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 7337,
+    "sha1": "7872fd20657e"
+   }
+  ],
+  "curGold": [
+   {
+    "bundle": "index.js",
+    "line": 54263,
+    "sha1": "6465c590efd5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 55064,
+    "sha1": "d1a59f4a50eb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55779,
+    "sha1": "958ec2ca71d5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55795,
+    "sha1": "958ec2ca71d5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55804,
+    "sha1": "958ec2ca71d5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 8821,
+    "sha1": "b762a4a226b6"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 8827,
+    "sha1": "b762a4a226b6"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 21023,
+    "sha1": "958ec2ca71d5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 45167,
+    "sha1": "44ed3cbd9b8a"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 45237,
+    "sha1": "44ed3cbd9b8a"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 61128,
+    "sha1": "9cdebf896771"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 6843,
+    "sha1": "e49459a96f1c"
+   }
+  ],
+  "curJetton": [
+   {
+    "bundle": "index.js",
+    "line": 54264,
+    "sha1": "24c9a4d82f9e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70459,
+    "sha1": "15d438c8a715"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111906,
+    "sha1": "50a721eb6568"
+   },
+   {
+    "bundle": "index.js",
+    "line": 8808,
+    "sha1": "169e46051fef"
+   },
+   {
+    "bundle": "index.js",
+    "line": 8839,
+    "sha1": "91879ca1029f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 23408,
+    "sha1": "32ce30f8322e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 23456,
+    "sha1": "169e46051fef"
+   },
+   {
+    "bundle": "index.js",
+    "line": 52044,
+    "sha1": "1f3d038e262e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 67088,
+    "sha1": "5db340d160af"
+   },
+   {
+    "bundle": "index.js",
+    "line": 118982,
+    "sha1": "3b0554a50e74"
+   },
+   {
+    "bundle": "index.js",
+    "line": 143191,
+    "sha1": "91879ca1029f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 143238,
+    "sha1": "169e46051fef"
+   }
+  ],
+  "getCoins": [
+   {
+    "bundle": "index.js",
+    "line": 54268,
+    "sha1": "ef099cd7ce32"
+   }
+  ],
+  "getPotency": [
+   {
+    "bundle": "index.js",
+    "line": 54267,
+    "sha1": "891eacb86871"
+   }
+  ],
+  "bigDog": [
+   {
+    "bundle": "index.js",
+    "line": 58056,
+    "sha1": "f078f45b923f"
+   }
+  ],
+  "progress": [
+   {
+    "bundle": "index.js",
+    "line": 24660,
+    "sha1": "8a7f6b76d65f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 51695,
+    "sha1": "db77a7b6b24d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58055,
+    "sha1": "1506f5b445ed"
+   },
+   {
+    "bundle": "index.js",
+    "line": 63836,
+    "sha1": "089232a04b82"
+   },
+   {
+    "bundle": "index.js",
+    "line": 63839,
+    "sha1": "7df0df9e8d56"
+   },
+   {
+    "bundle": "index.js",
+    "line": 63891,
+    "sha1": "7df0df9e8d56"
+   },
+   {
+    "bundle": "index.js",
+    "line": 63923,
+    "sha1": "694465bb8dd2"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 4468,
+    "sha1": "162df38484fe"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 4861,
+    "sha1": "4e9229fb2345"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 5619,
+    "sha1": "50373d83ad8a"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 5624,
+    "sha1": "408e5a121ccf"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 13174,
+    "sha1": "d37785b4dbc3"
+   }
+  ],
+  "friendList": [
+   {
+    "bundle": "index.js",
+    "line": 80033,
+    "sha1": "671922ff151d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 80039,
+    "sha1": "717e23749ef8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 80042,
+    "sha1": "34548890b1ec"
+   },
+   {
+    "bundle": "index.js",
+    "line": 80045,
+    "sha1": "defd02aa9962"
+   },
+   {
+    "bundle": "index.js",
+    "line": 80054,
+    "sha1": "de626408b80a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 80060,
+    "sha1": "1f4f8cef7883"
+   },
+   {
+    "bundle": "index.js",
+    "line": 80067,
+    "sha1": "1f4f8cef7883"
+   },
+   {
+    "bundle": "index.js",
+    "line": 80090,
+    "sha1": "b34227d406f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 80093,
+    "sha1": "a327c75f76e4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 132212,
+    "sha1": "e87aec9bbb20"
+   },
+   {
+    "bundle": "index.js",
+    "line": 132418,
+    "sha1": "671922ff151d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 132419,
+    "sha1": "717e23749ef8"
+   }
+  ],
+  "uIds": [
+   {
+    "bundle": "index.js",
+    "line": 132070,
+    "sha1": "659c72924db8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 132210,
+    "sha1": "659c72924db8"
+   }
+  ],
+  "chickenLegNum": [
+   {
+    "bundle": "index.js",
+    "line": 137628,
+    "sha1": "727f2e911c56"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137827,
+    "sha1": "727f2e911c56"
+   }
+  ],
+  "towerArray": [
+   {
+    "bundle": "index.js",
+    "line": 137553,
+    "sha1": "da942504ded4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137554,
+    "sha1": "dfc12a178e83"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137555,
+    "sha1": "617ec923e024"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137556,
+    "sha1": "fb0f95583b56"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137558,
+    "sha1": "f5d2c0ddeea0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137559,
+    "sha1": "4fb35a4dd114"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137560,
+    "sha1": "16370483130e"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 75017,
+    "sha1": "8edda2e3d997"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 75020,
+    "sha1": "de6ab6e7f441"
+   }
+  ],
+  "expireTime": [
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111,
+    "sha1": "14b444c47892"
+   },
+   {
+    "bundle": "index.js",
+    "line": 112,
+    "sha1": "063ab839b6d4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 399,
+    "sha1": "fa5c7470ff69"
+   },
+   {
+    "bundle": "index.js",
+    "line": 401,
+    "sha1": "b5d5a4aae911"
+   }
+  ],
+  "titleID": [
+   {
+    "bundle": "index.js",
+    "line": 4189,
+    "sha1": "f7aac98b4cd2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64812,
+    "sha1": "37378859c4ac"
+   },
+   {
+    "bundle": "index.js",
+    "line": 88289,
+    "sha1": "56fe52165552"
+   },
+   {
+    "bundle": "index.js",
+    "line": 96537,
+    "sha1": "0d521add7bf1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 109732,
+    "sha1": "f7aac98b4cd2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133439,
+    "sha1": "f806a71237cd"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 71212,
+    "sha1": "56fe52165552"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 71676,
+    "sha1": "56fe52165552"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   }
+  ],
+  "shopData": [
+   {
+    "bundle": "index.js",
+    "line": 1468,
+    "sha1": "6f1456bacdcc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58474,
+    "sha1": "4f679317e1f8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137632,
+    "sha1": "368b287a1dd0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 138270,
+    "sha1": "9642d1789375"
+   },
+   {
+    "bundle": "index.js",
+    "line": 138271,
+    "sha1": "15b9e0e963f1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 138273,
+    "sha1": "6878d38e405f"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 32072,
+    "sha1": "92a86ac4f55d"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 45171,
+    "sha1": "92a86ac4f55d"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 55232,
+    "sha1": "92a86ac4f55d"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 13862,
+    "sha1": "943c65b8db32"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 13875,
+    "sha1": "ff609df41935"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 13885,
+    "sha1": "878c2bb665d8"
+   }
+  ],
+  "market": [
+   {
+    "bundle": "index.js",
+    "line": 5,
+    "sha1": "e6a3e1050625"
+   },
+   {
+    "bundle": "index.js",
+    "line": 59,
+    "sha1": "26b6ad505f6d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 240,
+    "sha1": "06c96841973b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 432,
+    "sha1": "205c9c9a4d30"
+   },
+   {
+    "bundle": "index.js",
+    "line": 432,
+    "sha1": "205c9c9a4d30"
+   },
+   {
+    "bundle": "index.js",
+    "line": 435,
+    "sha1": "7a118f91dc00"
+   },
+   {
+    "bundle": "index.js",
+    "line": 609,
+    "sha1": "04d3c1aad872"
+   },
+   {
+    "bundle": "index.js",
+    "line": 620,
+    "sha1": "065f987a9c08"
+   },
+   {
+    "bundle": "index.js",
+    "line": 649,
+    "sha1": "b6838ad6b86e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 690,
+    "sha1": "2842b2b6f9d8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 853,
+    "sha1": "3d3c5a40d87c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1105,
+    "sha1": "957a15d1ce36"
+   }
+  ],
+  "nextRefreshTime": [
+   {
+    "bundle": "scripts3.js",
+    "line": 36530,
+    "sha1": "54700b5f0200"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 89728,
+    "sha1": "727e00213363"
+   },
+   {
+    "bundle": "index.js",
+    "line": 6,
+    "sha1": "6582ff9f66dc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 6,
+    "sha1": "6582ff9f66dc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 6,
+    "sha1": "6582ff9f66dc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   }
+  ],
+  "adCode": [
+   {
+    "bundle": "index.js",
+    "line": 137759,
+    "sha1": "bc42e90ac921"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137783,
+    "sha1": "bc42e90ac921"
+   }
+  ],
+  "batch_sweep_data": [
+   {
+    "bundle": "index.js",
+    "line": 67715,
+    "sha1": "bca8703435e0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137694,
+    "sha1": "a2cf64f12be8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137749,
+    "sha1": "a2cf64f12be8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137760,
+    "sha1": "bca8703435e0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137777,
+    "sha1": "03ebbda29cad"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137778,
+    "sha1": "f583f0a60877"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137780,
+    "sha1": "f61bbe862667"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137781,
+    "sha1": "c32692738f96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137782,
+    "sha1": "a263bc016406"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137784,
+    "sha1": "e9af8a2b797c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137785,
+    "sha1": "bca8703435e0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137812,
+    "sha1": "bca8703435e0"
+   }
+  ],
+  "liveness": [
+   {
+    "bundle": "index.js",
+    "line": 108246,
+    "sha1": "b692d6bb4fb3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 143820,
+    "sha1": "a25470ef1d30"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 7524,
+    "sha1": "a8d9fb2e3a63"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 7608,
+    "sha1": "2949f0ba2415"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 7615,
+    "sha1": "2949f0ba2415"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 63821,
+    "sha1": "783819314164"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19,
+    "sha1": "a5f7e6da7fa3"
+   }
+  ],
+  "curYuanbao": [
+   {
+    "bundle": "index.js",
+    "line": 54365,
+    "sha1": "23c4d18e7872"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 8824,
+    "sha1": "66ab7cfb33f8"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 8828,
+    "sha1": "66ab7cfb33f8"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 6844,
+    "sha1": "73fbad62b6b5"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 30841,
+    "sha1": "5560e272c2eb"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 34178,
+    "sha1": "8c027d2f97f4"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 46710,
+    "sha1": "f76f221d16d6"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 94571,
+    "sha1": "33ba14f9b0f9"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 98095,
+    "sha1": "4a2caa5d30c3"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 98837,
+    "sha1": "fae711eb2220"
+   }
+  ],
+  "orderId": [
+   {
+    "bundle": "index.js",
+    "line": 63395,
+    "sha1": "4a3a041aa682"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 33913,
+    "sha1": "1b4762a8a927"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 52,
+    "sha1": "0b5055762c53"
+   },
+   {
+    "bundle": "index.js",
+    "line": 60,
+    "sha1": "80a15b87ac9b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 71,
+    "sha1": "4e8718c2dfc9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72,
+    "sha1": "21f05d8b999f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101,
+    "sha1": "175ee3d6a0a1"
+   }
+  ],
+  "ShopArray": [
+   {
+    "bundle": "index.js",
+    "line": 131213,
+    "sha1": "ee9d259425ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 131216,
+    "sha1": "5e0ff213646b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 131217,
+    "sha1": "04651ce0e561"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 46462,
+    "sha1": "05d6e91df38e"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 46464,
+    "sha1": "4f35b8da6b56"
+   }
+  ],
+  "npcArr": [
+   {
+    "bundle": "index.js",
+    "line": 19664,
+    "sha1": "103b826dc292"
+   },
+   {
+    "bundle": "index.js",
+    "line": 69025,
+    "sha1": "8cbb6cfe4f55"
+   },
+   {
+    "bundle": "index.js",
+    "line": 143820,
+    "sha1": "a25470ef1d30"
+   },
+   {
+    "bundle": "index.js",
+    "line": 143831,
+    "sha1": "30c26b1da815"
+   },
+   {
+    "bundle": "index.js",
+    "line": 143832,
+    "sha1": "ccfcee1ac5c0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 143833,
+    "sha1": "7c73ac2bddf8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 138104,
+    "sha1": "f2fb39a8c3b5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 138111,
+    "sha1": "c2a03c458648"
+   },
+   {
+    "bundle": "index.js",
+    "line": 138114,
+    "sha1": "8c7b6e232c95"
+   },
+   {
+    "bundle": "index.js",
+    "line": 138121,
+    "sha1": "2bc9f6642cf9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 138121,
+    "sha1": "2bc9f6642cf9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 138229,
+    "sha1": "4ce2094e8da6"
+   }
+  ],
+  "activeEndTime": [
+   {
+    "bundle": "index.js",
+    "line": 131275,
+    "sha1": "7aa1e68ffb8b"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 27902,
+    "sha1": "78865ab95e71"
+   }
+  ],
+  "shopActiveData": [
+   {
+    "bundle": "index.js",
+    "line": 131274,
+    "sha1": "7b983f1cf67d"
+   }
+  ],
+  "shopActiveList": [
+   {
+    "bundle": "index.js",
+    "line": 131273,
+    "sha1": "472e812ca9f8"
+   }
+  ],
+  "girlData": [
+   {
+    "bundle": "index.js",
+    "line": 51115,
+    "sha1": "2294ed6c89bc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 51142,
+    "sha1": "fefa0d42f4c7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 51264,
+    "sha1": "d2384ad3c3c0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 51341,
+    "sha1": "ff2732a22365"
+   }
+  ],
+  "finish": [
+   {
+    "bundle": "scripts2.js",
+    "line": 1354,
+    "sha1": "37cd762bbd83"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1505,
+    "sha1": "7ce4c962377c"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1509,
+    "sha1": "e0a5bb31e0aa"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1518,
+    "sha1": "09871a9d1c64"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 216,
+    "sha1": "6c40b29e9bb8"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 786,
+    "sha1": "e64aba0c6b71"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 1117,
+    "sha1": "9df0af0dd5bf"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 93777,
+    "sha1": "5b7ea3fbcb48"
+   }
+  ],
+  "itemAddition": [
+   {
+    "bundle": "index.js",
+    "line": 56283,
+    "sha1": "a80803b124d5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56434,
+    "sha1": "1773a5a43773"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56451,
+    "sha1": "1c9c3c0377e5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56499,
+    "sha1": "3a0d8ec2e87d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56589,
+    "sha1": "1c9c3c0377e5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56671,
+    "sha1": "1773a5a43773"
+   }
+  ],
+  "roleGold": [
+   {
+    "bundle": "index.js",
+    "line": 56289,
+    "sha1": "7cfc0be9ff19"
+   },
+   {
+    "bundle": "index.js",
+    "line": 121428,
+    "sha1": "62c0af0041e6"
+   }
+  ],
+  "skillLevel": [
+   {
+    "bundle": "index.js",
+    "line": 56484,
+    "sha1": "31c07991f129"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56585,
+    "sha1": "a4b5521a3e30"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56587,
+    "sha1": "6b5046778699"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56670,
+    "sha1": "428e2d0ccd15"
+   }
+  ],
+  "usedTime": [
+   {
+    "bundle": "index.js",
+    "line": 121430,
+    "sha1": "78eb3e5164d6"
+   }
+  ],
+  "Addition": [
+   {
+    "bundle": "index.js",
+    "line": 56432,
+    "sha1": "05cb2d5ade7a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56449,
+    "sha1": "08394c7c7dad"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56497,
+    "sha1": "8e267eaae470"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56608,
+    "sha1": "08394c7c7dad"
+   }
+  ],
+  "Sponsor": [
+   {
+    "bundle": "index.js",
+    "line": 56446,
+    "sha1": "5058162c9cca"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56494,
+    "sha1": "b45f787baab3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56605,
+    "sha1": "5058162c9cca"
+   }
+  ],
+  "friendSex": [
+   {
+    "bundle": "index.js",
+    "line": 56431,
+    "sha1": "d6cf9e755422"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56448,
+    "sha1": "278bf44d7adf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56496,
+    "sha1": "7eb38a314948"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56607,
+    "sha1": "278bf44d7adf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 124,
+    "sha1": "35064d72bd1a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 130,
+    "sha1": "9d0a254c249e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 426,
+    "sha1": "a4a2d1544b96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 609,
+    "sha1": "04d3c1aad872"
+   }
+  ],
+  "operate": [
+   {
+    "bundle": "index.js",
+    "line": 51782,
+    "sha1": "dabd1b42314f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56403,
+    "sha1": "4cca65f19da6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56482,
+    "sha1": "5c6fe7c4db41"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56590,
+    "sha1": "bb1804be98b0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56624,
+    "sha1": "4904a9437bb8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56627,
+    "sha1": "67f133f700dd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56635,
+    "sha1": "d5492e8ca111"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70642,
+    "sha1": "099c8216606a"
+   }
+  ],
+  "num": [
+   {
+    "bundle": "index.js",
+    "line": 39654,
+    "sha1": "73f987e6717f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 40928,
+    "sha1": "18da271225d6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 44284,
+    "sha1": "e6941a46e139"
+   },
+   {
+    "bundle": "index.js",
+    "line": 44285,
+    "sha1": "e9afe921de72"
+   },
+   {
+    "bundle": "index.js",
+    "line": 44310,
+    "sha1": "92ed8d1e6144"
+   },
+   {
+    "bundle": "index.js",
+    "line": 44311,
+    "sha1": "2b9d05e6e5b0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 88922,
+    "sha1": "e61eed79e0fd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 122288,
+    "sha1": "8174df68d40a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 131818,
+    "sha1": "cbd15137a59c"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1896,
+    "sha1": "2f8f49a7ee71"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 30306,
+    "sha1": "8f39121c58d3"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 33680,
+    "sha1": "467bbb962c27"
+   }
+  ],
+  "addComponent": [
+   {
+    "bundle": "index.js",
+    "line": 48534,
+    "sha1": "897010dec0aa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 48544,
+    "sha1": "c07e97be089a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 75247,
+    "sha1": "646bf9aa017b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 94812,
+    "sha1": "fd57bf539084"
+   },
+   {
+    "bundle": "index.js",
+    "line": 94813,
+    "sha1": "86c5ab8c12d6"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 41131,
+    "sha1": "5666e90d2460"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 41450,
+    "sha1": "5666e90d2460"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 17933,
+    "sha1": "4e691da8dece"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 25506,
+    "sha1": "b1373f3d0bd8"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 26125,
+    "sha1": "9fa8f69cee8e"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 55816,
+    "sha1": "a734e8fe2b7c"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 56752,
+    "sha1": "9d7897951192"
+   }
+  ],
+  "clearBoxs": [
+   {
+    "bundle": "index.js",
+    "line": 77855,
+    "sha1": "7de64109f4f7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 77895,
+    "sha1": "7de64109f4f7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133396,
+    "sha1": "7de64109f4f7"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 44604,
+    "sha1": "08db7ad74c52"
+   }
+  ],
+  "npcIDArr": [
+   {
+    "bundle": "index.js",
+    "line": 1539,
+    "sha1": "cb83a6190ea5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 77889,
+    "sha1": "66b24f7df5ee"
+   },
+   {
+    "bundle": "index.js",
+    "line": 77913,
+    "sha1": "e236ab94d2da"
+   },
+   {
+    "bundle": "index.js",
+    "line": 90061,
+    "sha1": "c802fbf5d01d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 90070,
+    "sha1": "30ed9a7f6f6d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 90071,
+    "sha1": "63494c9bf2b3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 90072,
+    "sha1": "1118eac91532"
+   },
+   {
+    "bundle": "index.js",
+    "line": 90078,
+    "sha1": "8c4e1577dd94"
+   }
+  ],
+  "oldSchool": [
+   {
+    "bundle": "index.js",
+    "line": 77912,
+    "sha1": "afd71659796e"
+   }
+  ],
+  "textArr": [
+   {
+    "bundle": "index.js",
+    "line": 77906,
+    "sha1": "97116c1827e7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 103614,
+    "sha1": "bc76699850e9"
+   }
+  ],
+  "ItemID": [
+   {
+    "bundle": "index.js",
+    "line": 25345,
+    "sha1": "b479f44b7622"
+   },
+   {
+    "bundle": "index.js",
+    "line": 26779,
+    "sha1": "3a8bdef24883"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111,
+    "sha1": "14b444c47892"
+   },
+   {
+    "bundle": "index.js",
+    "line": 112,
+    "sha1": "063ab839b6d4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 130,
+    "sha1": "9d0a254c249e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 399,
+    "sha1": "fa5c7470ff69"
+   },
+   {
+    "bundle": "index.js",
+    "line": 401,
+    "sha1": "b5d5a4aae911"
+   },
+   {
+    "bundle": "index.js",
+    "line": 412,
+    "sha1": "2e30501a85db"
+   },
+   {
+    "bundle": "index.js",
+    "line": 426,
+    "sha1": "a4a2d1544b96"
+   }
+  ],
+  "ItemNum": [
+   {
+    "bundle": "index.js",
+    "line": 61065,
+    "sha1": "4f85b93446dc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72524,
+    "sha1": "a099d8c1e956"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72579,
+    "sha1": "8dbabc10e12f"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 30306,
+    "sha1": "8f39121c58d3"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 6240,
+    "sha1": "ba44de67b377"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 7182,
+    "sha1": "70d4297f6188"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 15001,
+    "sha1": "70d4297f6188"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 34921,
+    "sha1": "70d4297f6188"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 35707,
+    "sha1": "2ebb8fbfbdc9"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 37689,
+    "sha1": "f93a72e03c84"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 37702,
+    "sha1": "f93a72e03c84"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 37859,
+    "sha1": "3fe8d5a9053a"
+   }
+  ],
+  "equipments": [
+   {
+    "bundle": "index.js",
+    "line": 4133,
+    "sha1": "f7cd3d1c60cb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24314,
+    "sha1": "f3d83040647d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24315,
+    "sha1": "403af372f286"
+   },
+   {
+    "bundle": "index.js",
+    "line": 74786,
+    "sha1": "2b60cd6daeb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 75568,
+    "sha1": "852b1be2cdbb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106394,
+    "sha1": "4a6b2f6ac0a6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106818,
+    "sha1": "d2acfeb1da2e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106832,
+    "sha1": "dd9c7fd5e193"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106833,
+    "sha1": "b5095d8f53c5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106855,
+    "sha1": "21a8f25b8885"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106856,
+    "sha1": "68caf2272e75"
+   },
+   {
+    "bundle": "index.js",
+    "line": 109715,
+    "sha1": "e207fc68f27c"
+   }
+  ],
+  "itemNum": [
+   {
+    "bundle": "index.js",
+    "line": 24996,
+    "sha1": "72c3dd8421bb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 131451,
+    "sha1": "72c3dd8421bb"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1868,
+    "sha1": "72c3dd8421bb"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1873,
+    "sha1": "8dddcbf3efc8"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1877,
+    "sha1": "72c3dd8421bb"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1880,
+    "sha1": "7be840963632"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1882,
+    "sha1": "5b8189aa2c10"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1887,
+    "sha1": "4191f9e2de11"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1893,
+    "sha1": "fea8656a33f4"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1979,
+    "sha1": "72c3dd8421bb"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1999,
+    "sha1": "72c3dd8421bb"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 2004,
+    "sha1": "72c3dd8421bb"
+   }
+  ],
+  "id": [
+   {
+    "bundle": "index.js",
+    "line": 1877,
+    "sha1": "f7286c77e021"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11262,
+    "sha1": "4a36a32160d4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11275,
+    "sha1": "2a6f9dba3b61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11432,
+    "sha1": "a1057f6bbaa4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11497,
+    "sha1": "235d934ad614"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11505,
+    "sha1": "2e38400c720b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11754,
+    "sha1": "b68244f5ada9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 12048,
+    "sha1": "49b53b3bcbe4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 12054,
+    "sha1": "9172a7f0ee62"
+   },
+   {
+    "bundle": "index.js",
+    "line": 12118,
+    "sha1": "a8c4ca8e9886"
+   },
+   {
+    "bundle": "index.js",
+    "line": 12146,
+    "sha1": "2706c6208e4a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 12271,
+    "sha1": "49b53b3bcbe4"
+   }
+  ],
+  "needItem": [
+   {
+    "bundle": "index.js",
+    "line": 139319,
+    "sha1": "486be8dbd27e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 139335,
+    "sha1": "6ecb33b37093"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 75868,
+    "sha1": "8b5b50eeae15"
+   }
+  ],
+  "awardObj": [
+   {
+    "bundle": "index.js",
+    "line": 67705,
+    "sha1": "a4d5dfceb75c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 67706,
+    "sha1": "d5b07027b214"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 420,
+    "sha1": "b227cd627a7c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 480,
+    "sha1": "e9e530eed9f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 656,
+    "sha1": "ca55844d3a0a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 666,
+    "sha1": "8f03437c716f"
+   }
+  ],
+  "muscle": [
+   {
+    "bundle": "index.js",
+    "line": 67714,
+    "sha1": "274c91b78288"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137598,
+    "sha1": "954a9b51b560"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137824,
+    "sha1": "954a9b51b560"
+   }
+  ],
+  "hp": [
+   {
+    "bundle": "index.js",
+    "line": 1726,
+    "sha1": "9c8f4e7c0ff2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5592,
+    "sha1": "3579fbe7e576"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5617,
+    "sha1": "a824bade7f4e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11340,
+    "sha1": "54be4160feb7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11341,
+    "sha1": "5cb837531845"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11349,
+    "sha1": "54be4160feb7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11350,
+    "sha1": "5cb837531845"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11395,
+    "sha1": "504197d2c8cf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11398,
+    "sha1": "11f66de84b90"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11399,
+    "sha1": "1c3097840684"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11402,
+    "sha1": "98a287cad721"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11403,
+    "sha1": "1c3097840684"
+   }
+  ],
+  "lv": [
+   {
+    "bundle": "index.js",
+    "line": 2331,
+    "sha1": "6c0720781825"
+   },
+   {
+    "bundle": "index.js",
+    "line": 2342,
+    "sha1": "6e09cc575edc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 112017,
+    "sha1": "8f88d8b5f059"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120050,
+    "sha1": "e07a6456fa69"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120858,
+    "sha1": "9f03ef74e732"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120861,
+    "sha1": "a4ceca022d6e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120910,
+    "sha1": "8d4ed9f1e1db"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120919,
+    "sha1": "c1d4c3a3ea40"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120938,
+    "sha1": "8d4ed9f1e1db"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120947,
+    "sha1": "c1d4c3a3ea40"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120974,
+    "sha1": "c1d4c3a3ea40"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120988,
+    "sha1": "27f3d0a5f526"
+   }
+  ],
+  "armStrong": [
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 34,
+    "sha1": "8ddc127d231f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56,
+    "sha1": "4a0cd94f7888"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56,
+    "sha1": "4a0cd94f7888"
+   },
+   {
+    "bundle": "index.js",
+    "line": 92,
+    "sha1": "8ddc127d231f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 94,
+    "sha1": "da8f668cec2f"
+   }
+  ],
+  "bloodArr": [
+   {
+    "bundle": "index.js",
+    "line": 144052,
+    "sha1": "9b65555295b1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 144058,
+    "sha1": "ef1a6c748ce4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 144059,
+    "sha1": "459b10cb9bed"
+   },
+   {
+    "bundle": "index.js",
+    "line": 144060,
+    "sha1": "3b0c7a1f988b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 144061,
+    "sha1": "d5d62f5de374"
+   },
+   {
+    "bundle": "index.js",
+    "line": 144109,
+    "sha1": "9b65555295b1"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 12248,
+    "sha1": "491f9264eeea"
+   }
+  ],
+  "bone": [
+   {
+    "bundle": "index.js",
+    "line": 9238,
+    "sha1": "abdf155697c9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 649,
+    "sha1": "b6838ad6b86e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 681,
+    "sha1": "28c9475d22c5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 682,
+    "sha1": "2d132efc8816"
+   },
+   {
+    "bundle": "index.js",
+    "line": 683,
+    "sha1": "efdb3890679f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 776,
+    "sha1": "fa9938ea706d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 777,
+    "sha1": "5705da21f8ee"
+   },
+   {
+    "bundle": "index.js",
+    "line": 778,
+    "sha1": "b89bd70b26ea"
+   },
+   {
+    "bundle": "index.js",
+    "line": 779,
+    "sha1": "ae799df57e75"
+   },
+   {
+    "bundle": "index.js",
+    "line": 782,
+    "sha1": "356155f61ed6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 818,
+    "sha1": "1a8bc9dd1cbd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 819,
+    "sha1": "c7db19c92f3b"
+   }
+  ],
+  "fosterArr": [
+   {
+    "bundle": "index.js",
+    "line": 144110,
+    "sha1": "1350d7762f82"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 12249,
+    "sha1": "41457fa5b57f"
+   }
+  ],
+  "maxWuxin": [
+   {
+    "bundle": "index.js",
+    "line": 77034,
+    "sha1": "e4ce84c59dfa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 144053,
+    "sha1": "9df051011ce9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 144111,
+    "sha1": "9df051011ce9"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 12250,
+    "sha1": "5f7d7605a9c3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19,
+    "sha1": "a5f7e6da7fa3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   }
+  ],
+  "shenFa": [
+   {
+    "bundle": "index.js",
+    "line": 130,
+    "sha1": "9d0a254c249e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 426,
+    "sha1": "a4a2d1544b96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 609,
+    "sha1": "04d3c1aad872"
+   },
+   {
+    "bundle": "index.js",
+    "line": 613,
+    "sha1": "9dae1eb28ed3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 614,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 617,
+    "sha1": "2e0e95d1fe51"
+   },
+   {
+    "bundle": "index.js",
+    "line": 620,
+    "sha1": "065f987a9c08"
+   },
+   {
+    "bundle": "index.js",
+    "line": 643,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 657,
+    "sha1": "afd9c499a93c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 690,
+    "sha1": "2842b2b6f9d8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 767,
+    "sha1": "67ab137da893"
+   }
+  ],
+  "understanding": [
+   {
+    "bundle": "index.js",
+    "line": 894,
+    "sha1": "584c9e1601ec"
+   },
+   {
+    "bundle": "index.js",
+    "line": 2039,
+    "sha1": "a68b6001f27b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 2060,
+    "sha1": "da6a3dddb464"
+   },
+   {
+    "bundle": "index.js",
+    "line": 2587,
+    "sha1": "d85ccb5fdb60"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4416,
+    "sha1": "663f90e7f524"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4417,
+    "sha1": "34a8e7dbd213"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4545,
+    "sha1": "fdfd24e4d311"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4672,
+    "sha1": "50138ccce542"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4701,
+    "sha1": "43927ea661ae"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4708,
+    "sha1": "3a7f525c1a16"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4731,
+    "sha1": "382971846d43"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4752,
+    "sha1": "ab4a3c1310dd"
+   }
+  ],
+  "makeID": [
+   {
+    "bundle": "index.js",
+    "line": 77308,
+    "sha1": "f5f7b6686614"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 420,
+    "sha1": "b227cd627a7c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 480,
+    "sha1": "e9e530eed9f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 656,
+    "sha1": "ca55844d3a0a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 666,
+    "sha1": "8f03437c716f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 669,
+    "sha1": "1290d3fcd4e2"
+   }
+  ],
+  "taskID": [
+   {
+    "bundle": "index.js",
+    "line": 64785,
+    "sha1": "b45973f49d8c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133552,
+    "sha1": "50e200b9d1d5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133830,
+    "sha1": "adb54060a15d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 130,
+    "sha1": "9d0a254c249e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 426,
+    "sha1": "a4a2d1544b96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 609,
+    "sha1": "04d3c1aad872"
+   },
+   {
+    "bundle": "index.js",
+    "line": 613,
+    "sha1": "9dae1eb28ed3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 614,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 617,
+    "sha1": "2e0e95d1fe51"
+   },
+   {
+    "bundle": "index.js",
+    "line": 620,
+    "sha1": "065f987a9c08"
+   },
+   {
+    "bundle": "index.js",
+    "line": 643,
+    "sha1": "caf5e0a44f50"
+   }
+  ],
+  "acceptSchoolTask": [
+   {
+    "bundle": "index.js",
+    "line": 113634,
+    "sha1": "2b98dfba2385"
+   }
+  ],
+  "dateFinishTimes": [
+   {
+    "bundle": "index.js",
+    "line": 113614,
+    "sha1": "9a9931e02bc4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113631,
+    "sha1": "29521024680b"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 59017,
+    "sha1": "b36436e8392d"
+   }
+  ],
+  "triggerBoxs": [
+   {
+    "bundle": "index.js",
+    "line": 133340,
+    "sha1": "6da98db3b48c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133391,
+    "sha1": "6da98db3b48c"
+   }
+  ],
+  "attrType": [
+   {
+    "bundle": "index.js",
+    "line": 137599,
+    "sha1": "367285943637"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137825,
+    "sha1": "367285943637"
+   }
+  ],
+  "canActivateStatus": [
+   {
+    "bundle": "index.js",
+    "line": 46227,
+    "sha1": "8d5a4e6ed862"
+   },
+   {
+    "bundle": "index.js",
+    "line": 78726,
+    "sha1": "e066aecdce56"
+   },
+   {
+    "bundle": "index.js",
+    "line": 91949,
+    "sha1": "d11b25967252"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137626,
+    "sha1": "31168fb0b09e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137828,
+    "sha1": "31168fb0b09e"
+   }
+  ],
+  "eggNpc": [
+   {
+    "bundle": "index.js",
+    "line": 137625,
+    "sha1": "2a5144b46c23"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137826,
+    "sha1": "2a5144b46c23"
+   }
+  ],
+  "eventID": [
+   {
+    "bundle": "index.js",
+    "line": 29435,
+    "sha1": "fa1295a8d925"
+   },
+   {
+    "bundle": "index.js",
+    "line": 108289,
+    "sha1": "fb06d1f2c6f1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 108335,
+    "sha1": "ff715e7d90c5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 108339,
+    "sha1": "91be37699911"
+   },
+   {
+    "bundle": "index.js",
+    "line": 136014,
+    "sha1": "787012b38060"
+   },
+   {
+    "bundle": "index.js",
+    "line": 136031,
+    "sha1": "ca71246a5fed"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137597,
+    "sha1": "18cf1b48182b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137823,
+    "sha1": "18cf1b48182b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 138306,
+    "sha1": "82b6e9a1d9ae"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   }
+  ],
+  "eventIds": [
+   {
+    "bundle": "index.js",
+    "line": 137627,
+    "sha1": "a74df2d23369"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137829,
+    "sha1": "a74df2d23369"
+   }
+  ],
+  "qr": [
+   {
+    "bundle": "index.js",
+    "line": 120714,
+    "sha1": "2563399300b7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 420,
+    "sha1": "b227cd627a7c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 480,
+    "sha1": "e9e530eed9f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 656,
+    "sha1": "ca55844d3a0a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 666,
+    "sha1": "8f03437c716f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 669,
+    "sha1": "1290d3fcd4e2"
+   }
+  ],
+  "equipLocks": [
+   {
+    "bundle": "index.js",
+    "line": 111844,
+    "sha1": "795cde97d11c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 65070,
+    "sha1": "da0d6ef4b7fd"
+   }
+  ],
+  "eqch": [
+   {
+    "bundle": "index.js",
+    "line": 64730,
+    "sha1": "142449ef756a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64747,
+    "sha1": "7df61df0e0db"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64917,
+    "sha1": "3c38496e1aa1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 130,
+    "sha1": "9d0a254c249e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 426,
+    "sha1": "a4a2d1544b96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 609,
+    "sha1": "04d3c1aad872"
+   },
+   {
+    "bundle": "index.js",
+    "line": 613,
+    "sha1": "9dae1eb28ed3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 614,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 617,
+    "sha1": "2e0e95d1fe51"
+   },
+   {
+    "bundle": "index.js",
+    "line": 620,
+    "sha1": "065f987a9c08"
+   },
+   {
+    "bundle": "index.js",
+    "line": 643,
+    "sha1": "caf5e0a44f50"
+   }
+  ],
+  "ivch": [
+   {
+    "bundle": "index.js",
+    "line": 64730,
+    "sha1": "142449ef756a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64747,
+    "sha1": "7df61df0e0db"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64914,
+    "sha1": "86c7184b2394"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 420,
+    "sha1": "b227cd627a7c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 480,
+    "sha1": "e9e530eed9f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 656,
+    "sha1": "ca55844d3a0a"
+   }
+  ],
+  "childObj": [
+   {
+    "bundle": "index.js",
+    "line": 77050,
+    "sha1": "bd3cf79f109b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 77355,
+    "sha1": "fd369e6302ee"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24623,
+    "sha1": "1479f6dbbbbf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24640,
+    "sha1": "0947d340288d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24641,
+    "sha1": "8c019de40e56"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24743,
+    "sha1": "8acbfde004b8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24754,
+    "sha1": "54084f37839f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24778,
+    "sha1": "2be65d404a4c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24867,
+    "sha1": "9c1bd4407863"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55434,
+    "sha1": "f82105e866e5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 77086,
+    "sha1": "943f9fb09940"
+   },
+   {
+    "bundle": "index.js",
+    "line": 77087,
+    "sha1": "9603e76a1052"
+   }
+  ],
+  "affiliationSchool": [
+   {
+    "bundle": "index.js",
+    "line": 113616,
+    "sha1": "f8bee52bb990"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 15532,
+    "sha1": "b2d01253b050"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 15545,
+    "sha1": "9faf1a26db7f"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 15548,
+    "sha1": "a220f7edd157"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 59213,
+    "sha1": "19a18b508d2d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 124,
+    "sha1": "35064d72bd1a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 613,
+    "sha1": "9dae1eb28ed3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 614,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 617,
+    "sha1": "2e0e95d1fe51"
+   }
+  ],
+  "upRoleSchoolLevel": [
+   {
+    "bundle": "index.js",
+    "line": 113701,
+    "sha1": "ee88536bbe6f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113702,
+    "sha1": "9f65e45a8698"
+   }
+  ],
+  "crops": [
+   {
+    "bundle": "index.js",
+    "line": 57658,
+    "sha1": "0d36c2f49235"
+   }
+  ],
+  "recentSeeds": [
+   {
+    "bundle": "index.js",
+    "line": 57592,
+    "sha1": "8279c2a80238"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57592,
+    "sha1": "8279c2a80238"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57592,
+    "sha1": "8279c2a80238"
+   }
+  ],
+  "inherit": [
+   {
+    "bundle": "index.js",
+    "line": 24359,
+    "sha1": "a71e52407e76"
+   },
+   {
+    "bundle": "index.js",
+    "line": 74791,
+    "sha1": "e8888c48a597"
+   },
+   {
+    "bundle": "index.js",
+    "line": 102092,
+    "sha1": "7bdb7182bc68"
+   },
+   {
+    "bundle": "index.js",
+    "line": 102107,
+    "sha1": "0901d2a1ba4c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 102111,
+    "sha1": "9341883286fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107824,
+    "sha1": "d555d7fb8974"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 24869,
+    "sha1": "4716fa2f6b17"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 24870,
+    "sha1": "324e853c5766"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 53682,
+    "sha1": "43f301807f55"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 53687,
+    "sha1": "2c56544987e6"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 53692,
+    "sha1": "b49d4f32604c"
+   }
+  ],
+  "sTime": [
+   {
+    "bundle": "scripts2.js",
+    "line": 28055,
+    "sha1": "aab5c412ffa4"
+   }
+  ],
+  "action": [
+   {
+    "bundle": "index.js",
+    "line": 5370,
+    "sha1": "17e93f7fa7ea"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5371,
+    "sha1": "33bfd37f91cb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5416,
+    "sha1": "b2e0df0fe004"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5417,
+    "sha1": "a9e2f1b729bb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5427,
+    "sha1": "01839032d278"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5440,
+    "sha1": "239e8949fadc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5508,
+    "sha1": "61e3d68129dd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5550,
+    "sha1": "1c232d419d61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5600,
+    "sha1": "307c52f4497f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5608,
+    "sha1": "dad2ba6fafba"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5619,
+    "sha1": "4088f3e4272d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5696,
+    "sha1": "61e3d68129dd"
+   }
+  ],
+  "attArr": [
+   {
+    "bundle": "index.js",
+    "line": 98855,
+    "sha1": "4e2089867c74"
+   },
+   {
+    "bundle": "index.js",
+    "line": 98856,
+    "sha1": "7154a6afa86c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 98857,
+    "sha1": "1ac9087406cc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 98858,
+    "sha1": "e5412b4aae4e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 98863,
+    "sha1": "9ab29f2e1b5f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 98864,
+    "sha1": "cc08d5fdab9c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 98865,
+    "sha1": "d6c2fb3d9a30"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104183,
+    "sha1": "4e2089867c74"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104184,
+    "sha1": "dbad71ab4fec"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104185,
+    "sha1": "253597e03909"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104186,
+    "sha1": "6aa9d2214d43"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104187,
+    "sha1": "9839eda72944"
+   }
+  ],
+  "paramID2": [
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 420,
+    "sha1": "b227cd627a7c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 480,
+    "sha1": "e9e530eed9f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 656,
+    "sha1": "ca55844d3a0a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 666,
+    "sha1": "8f03437c716f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 669,
+    "sha1": "1290d3fcd4e2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 740,
+    "sha1": "4edfe8648f0a"
+   }
+  ],
+  "choose": [
+   {
+    "bundle": "index.js",
+    "line": 24659,
+    "sha1": "61f83119fa7b"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 47546,
+    "sha1": "23557e166a99"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 47589,
+    "sha1": "15c0cc37ccdc"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 47705,
+    "sha1": "814f8504d47e"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 47819,
+    "sha1": "e3a38797a86b"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 47838,
+    "sha1": "a684b2023d48"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 54377,
+    "sha1": "23557e166a99"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 54437,
+    "sha1": "15c0cc37ccdc"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 54562,
+    "sha1": "df7b98e4124f"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 54679,
+    "sha1": "e3a38797a86b"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 54696,
+    "sha1": "a684b2023d48"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 65683,
+    "sha1": "a701c6527852"
+   }
+  ],
+  "activeNum": [
+   {
+    "bundle": "index.js",
+    "line": 55942,
+    "sha1": "cd3775a501dd"
+   }
+  ],
+  "pass_levelID": [
+   {
+    "bundle": "index.js",
+    "line": 55887,
+    "sha1": "c3bc74afb031"
+   }
+  ],
+  "updateSchoolContribution": [
+   {
+    "bundle": "index.js",
+    "line": 113674,
+    "sha1": "9ae0e52dc193"
+   }
+  ],
+  "gold": [
+   {
+    "bundle": "index.js",
+    "line": 51360,
+    "sha1": "7ee722bcfa42"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55779,
+    "sha1": "958ec2ca71d5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55795,
+    "sha1": "958ec2ca71d5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55804,
+    "sha1": "958ec2ca71d5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 110847,
+    "sha1": "f6cc24418bbf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 130748,
+    "sha1": "47ca7f0f40fa"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1887,
+    "sha1": "4191f9e2de11"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 2325,
+    "sha1": "093e676bfa24"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 5991,
+    "sha1": "c9ac20e067fe"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 5994,
+    "sha1": "35e39918a988"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 6146,
+    "sha1": "b1abc04ef1aa"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 6149,
+    "sha1": "d0294a617f03"
+   }
+  ],
+  "StoreModel": [
+   {
+    "bundle": "index.js",
+    "line": 24636,
+    "sha1": "b900bf35c721"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24654,
+    "sha1": "81256a5dcfd3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24686,
+    "sha1": "569a498adb31"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24698,
+    "sha1": "e3b01c914634"
+   },
+   {
+    "bundle": "index.js",
+    "line": 32165,
+    "sha1": "2caebb75491b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43504,
+    "sha1": "07a0306fd6b9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 44547,
+    "sha1": "eef60249c43f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54269,
+    "sha1": "d8c79bd9dabb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54364,
+    "sha1": "5f445ea782f1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54365,
+    "sha1": "23c4d18e7872"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54366,
+    "sha1": "3b470eb37d11"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55300,
+    "sha1": "e64c4e211d2b"
+   }
+  ],
+  "taskObj": [
+   {
+    "bundle": "index.js",
+    "line": 43519,
+    "sha1": "88cfea4c38c0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57388,
+    "sha1": "d883bba4aaf0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57389,
+    "sha1": "e0792fa54e8a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133115,
+    "sha1": "6c4a6342025e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133146,
+    "sha1": "052c41dcb07a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133228,
+    "sha1": "4210667170e3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133231,
+    "sha1": "8e095221a908"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133236,
+    "sha1": "9a591d16bbf2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133239,
+    "sha1": "d5ac3b53133c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133251,
+    "sha1": "e7945d1f86e8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133270,
+    "sha1": "d6bd7d67ada9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 133271,
+    "sha1": "a9331ada2bb4"
+   }
+  ],
+  "power": [
+   {
+    "bundle": "index.js",
+    "line": 74839,
+    "sha1": "4786fae8d629"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111804,
+    "sha1": "3949e3a56b0f"
+   }
+  ],
+  "crop": [
+   {
+    "bundle": "index.js",
+    "line": 57642,
+    "sha1": "b00b6981a2a5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57683,
+    "sha1": "bf0330acbe31"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57684,
+    "sha1": "29faa6857a41"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57832,
+    "sha1": "bf0330acbe31"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57833,
+    "sha1": "29faa6857a41"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57980,
+    "sha1": "2a7eed84536a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57986,
+    "sha1": "bf0330acbe31"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57987,
+    "sha1": "29faa6857a41"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58014,
+    "sha1": "513b4118f999"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58015,
+    "sha1": "a5f602f7d176"
+   }
+  ],
+  "b": [
+   {
+    "bundle": "index.js",
+    "line": 57684,
+    "sha1": "29faa6857a41"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57782,
+    "sha1": "6781249ed96f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57833,
+    "sha1": "29faa6857a41"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57987,
+    "sha1": "29faa6857a41"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58015,
+    "sha1": "a5f602f7d176"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58023,
+    "sha1": "644aebd6dfec"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58293,
+    "sha1": "237173817463"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58297,
+    "sha1": "09f34c5423f0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58298,
+    "sha1": "a50c281f5501"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 37686,
+    "sha1": "7e59a3a28de1"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 37709,
+    "sha1": "72e3453853fe"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 37775,
+    "sha1": "11b825646cef"
+   }
+  ],
+  "m": [
+   {
+    "bundle": "index.js",
+    "line": 57642,
+    "sha1": "b00b6981a2a5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57683,
+    "sha1": "bf0330acbe31"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57715,
+    "sha1": "f64025c01701"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57722,
+    "sha1": "633d1fbbaa04"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57781,
+    "sha1": "2925186bd45e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57832,
+    "sha1": "bf0330acbe31"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57986,
+    "sha1": "bf0330acbe31"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58014,
+    "sha1": "513b4118f999"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58116,
+    "sha1": "7dcadb040acc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58251,
+    "sha1": "78854686caf8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58291,
+    "sha1": "79b6b7fe1cfa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58343,
+    "sha1": "d49d80828175"
+   }
+  ],
+  "sIdx": [
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 420,
+    "sha1": "b227cd627a7c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 480,
+    "sha1": "e9e530eed9f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 656,
+    "sha1": "ca55844d3a0a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 666,
+    "sha1": "8f03437c716f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 669,
+    "sha1": "1290d3fcd4e2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 740,
+    "sha1": "4edfe8648f0a"
+   }
+  ],
+  "newAcc": [
+   {
+    "bundle": "index.js",
+    "line": 111138,
+    "sha1": "992d30fab89b"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 95797,
+    "sha1": "a1e83255be0d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 130,
+    "sha1": "9d0a254c249e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 426,
+    "sha1": "a4a2d1544b96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 609,
+    "sha1": "04d3c1aad872"
+   },
+   {
+    "bundle": "index.js",
+    "line": 613,
+    "sha1": "9dae1eb28ed3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 614,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 617,
+    "sha1": "2e0e95d1fe51"
+   },
+   {
+    "bundle": "index.js",
+    "line": 620,
+    "sha1": "065f987a9c08"
+   },
+   {
+    "bundle": "index.js",
+    "line": 643,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 657,
+    "sha1": "afd9c499a93c"
+   }
+  ],
+  "newID": [
+   {
+    "bundle": "index.js",
+    "line": 5592,
+    "sha1": "3579fbe7e576"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72672,
+    "sha1": "3101c8913424"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72769,
+    "sha1": "d8a31cf320a5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72773,
+    "sha1": "921765aa1726"
+   },
+   {
+    "bundle": "index.js",
+    "line": 73005,
+    "sha1": "b1dab9b8b466"
+   },
+   {
+    "bundle": "index.js",
+    "line": 73026,
+    "sha1": "7a399b75188e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 73042,
+    "sha1": "5f73a9382a00"
+   },
+   {
+    "bundle": "index.js",
+    "line": 83855,
+    "sha1": "0159b4b68a91"
+   },
+   {
+    "bundle": "index.js",
+    "line": 84159,
+    "sha1": "24662cadf90a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 96970,
+    "sha1": "6abea50499ed"
+   },
+   {
+    "bundle": "index.js",
+    "line": 105359,
+    "sha1": "8a08b9ae94c6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 105570,
+    "sha1": "3af90730bf75"
+   }
+  ],
+  "mapID": [
+   {
+    "bundle": "index.js",
+    "line": 137621,
+    "sha1": "bbaad4e6fbbe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145573,
+    "sha1": "ac71a9a755cf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145652,
+    "sha1": "205398f1082c"
+   }
+  ],
+  "siteID": [
+   {
+    "bundle": "index.js",
+    "line": 51474,
+    "sha1": "9ad8a84f094c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 51494,
+    "sha1": "114c8b406bde"
+   }
+  ],
+  "formulaArr": [
+   {
+    "bundle": "index.js",
+    "line": 64795,
+    "sha1": "5e98a9a17a99"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70465,
+    "sha1": "207691f77709"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70514,
+    "sha1": "207691f77709"
+   },
+   {
+    "bundle": "index.js",
+    "line": 102091,
+    "sha1": "36c7b1698ca5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 102149,
+    "sha1": "8824424c829e"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 24305,
+    "sha1": "dec32535b31d"
+   }
+  ],
+  "bossCurHP": [
+   {
+    "bundle": "index.js",
+    "line": 145556,
+    "sha1": "aabf0a655228"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145594,
+    "sha1": "99431bcca3c8"
+   }
+  ],
+  "bossMaxHP": [
+   {
+    "bundle": "index.js",
+    "line": 145555,
+    "sha1": "9456e955890b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145595,
+    "sha1": "362d21245a85"
+   }
+  ],
+  "killBoss": [
+   {
+    "bundle": "index.js",
+    "line": 145547,
+    "sha1": "bb3c1e4faa74"
+   }
+  ],
+  "maxPotentialLimit": [
+   {
+    "bundle": "index.js",
+    "line": 145561,
+    "sha1": "2e96e93d7a24"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145610,
+    "sha1": "4399786815de"
+   }
+  ],
+  "baseArr": [
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19,
+    "sha1": "a5f7e6da7fa3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 94,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 94,
+    "sha1": "da8f668cec2f"
+   }
+  ],
+  "buffID": [
+   {
+    "bundle": "index.js",
+    "line": 137680,
+    "sha1": "5314f9179f6f"
+   }
+  ],
+  "cData": [
+   {
+    "bundle": "index.js",
+    "line": 64956,
+    "sha1": "06bcd1ef0070"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 24474,
+    "sha1": "06bcd1ef0070"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 70953,
+    "sha1": "06bcd1ef0070"
+   }
+  ],
+  "chooseID": [
+   {
+    "bundle": "scripts2.js",
+    "line": 47989,
+    "sha1": "28b12a63456c"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 54834,
+    "sha1": "28b12a63456c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 52,
+    "sha1": "0b5055762c53"
+   },
+   {
+    "bundle": "index.js",
+    "line": 60,
+    "sha1": "80a15b87ac9b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 71,
+    "sha1": "4e8718c2dfc9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72,
+    "sha1": "21f05d8b999f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101,
+    "sha1": "175ee3d6a0a1"
+   }
+  ],
+  "delItemObj": [
+   {
+    "bundle": "index.js",
+    "line": 70531,
+    "sha1": "2253a2a9ded6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70886,
+    "sha1": "b847a8dbc565"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111,
+    "sha1": "14b444c47892"
+   },
+   {
+    "bundle": "index.js",
+    "line": 112,
+    "sha1": "063ab839b6d4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 399,
+    "sha1": "fa5c7470ff69"
+   },
+   {
+    "bundle": "index.js",
+    "line": 401,
+    "sha1": "b5d5a4aae911"
+   },
+   {
+    "bundle": "index.js",
+    "line": 412,
+    "sha1": "2e30501a85db"
+   },
+   {
+    "bundle": "index.js",
+    "line": 430,
+    "sha1": "ee847252b8f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 430,
+    "sha1": "ee847252b8f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 657,
+    "sha1": "afd9c499a93c"
+   }
+  ],
+  "rewardObj": [
+   {
+    "bundle": "index.js",
+    "line": 103613,
+    "sha1": "f49c9913df13"
+   },
+   {
+    "bundle": "index.js",
+    "line": 103614,
+    "sha1": "bc76699850e9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 103616,
+    "sha1": "83f70d79f250"
+   },
+   {
+    "bundle": "index.js",
+    "line": 103629,
+    "sha1": "28fc4538fb46"
+   },
+   {
+    "bundle": "index.js",
+    "line": 103631,
+    "sha1": "c2ad9b765013"
+   },
+   {
+    "bundle": "index.js",
+    "line": 103636,
+    "sha1": "716bb1592822"
+   },
+   {
+    "bundle": "index.js",
+    "line": 103815,
+    "sha1": "ade6645098cf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 103816,
+    "sha1": "825eaae88a00"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 2077,
+    "sha1": "ade6645098cf"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 2078,
+    "sha1": "825eaae88a00"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 84947,
+    "sha1": "ade6645098cf"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 84948,
+    "sha1": "825eaae88a00"
+   }
+  ],
+  "deletePartners": [
+   {
+    "bundle": "index.js",
+    "line": 77263,
+    "sha1": "b2940b807ce6"
+   }
+  ],
+  "cookBook": [
+   {
+    "bundle": "index.js",
+    "line": 62264,
+    "sha1": "4205c6fd5692"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62377,
+    "sha1": "4205c6fd5692"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62586,
+    "sha1": "9d4c56e47de8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62587,
+    "sha1": "bee90f43729b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62590,
+    "sha1": "4205c6fd5692"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62708,
+    "sha1": "4f65ab49545a"
+   }
+  ],
+  "dishBag": [
+   {
+    "bundle": "index.js",
+    "line": 62379,
+    "sha1": "3dc82f9501c7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62425,
+    "sha1": "935ed95fc62f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62427,
+    "sha1": "0bc8d2f9f059"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62617,
+    "sha1": "96ba22db2bda"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62710,
+    "sha1": "73e8dab5ceb1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62736,
+    "sha1": "962ef64d7dc7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62749,
+    "sha1": "329d0f075055"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5,
+    "sha1": "e6a3e1050625"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19,
+    "sha1": "a5f7e6da7fa3"
+   }
+  ],
+  "hotVal": [
+   {
+    "bundle": "index.js",
+    "line": 62376,
+    "sha1": "a5e4c6605497"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62633,
+    "sha1": "a5e4c6605497"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62671,
+    "sha1": "a5e4c6605497"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62712,
+    "sha1": "8b1ac595904d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62952,
+    "sha1": "4f9cbe4f340d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 63781,
+    "sha1": "568b0215b3cd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19,
+    "sha1": "a5f7e6da7fa3"
+   }
+  ],
+  "mhv": [
+   {
+    "bundle": "index.js",
+    "line": 62378,
+    "sha1": "3c1305f26ee8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62635,
+    "sha1": "3c1305f26ee8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62672,
+    "sha1": "3c1305f26ee8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62713,
+    "sha1": "c983b603c4d3"
+   }
+  ],
+  "showRewardCookBook": [
+   {
+    "bundle": "index.js",
+    "line": 62381,
+    "sha1": "81c9c14cb9a2"
+   }
+  ],
+  "cookData": [
+   {
+    "bundle": "index.js",
+    "line": 62420,
+    "sha1": "095c4c209898"
+   }
+  ],
+  "foodBag": [
+   {
+    "bundle": "index.js",
+    "line": 62280,
+    "sha1": "1336b8523dea"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62418,
+    "sha1": "3b5c58d02b53"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62582,
+    "sha1": "0bf3f2dc9f3f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62584,
+    "sha1": "dc6397997a5b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62711,
+    "sha1": "6907ba94e465"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62744,
+    "sha1": "3f4dd2b4050d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 5,
+    "sha1": "e6a3e1050625"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   }
+  ],
+  "unlockDish": [
+   {
+    "bundle": "index.js",
+    "line": 62256,
+    "sha1": "9cdb2cfb2890"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62263,
+    "sha1": "9cdb2cfb2890"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62723,
+    "sha1": "435411e59b7c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 52,
+    "sha1": "0b5055762c53"
+   },
+   {
+    "bundle": "index.js",
+    "line": 60,
+    "sha1": "80a15b87ac9b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 71,
+    "sha1": "4e8718c2dfc9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72,
+    "sha1": "21f05d8b999f"
+   }
+  ],
+  "aExp": [
+   {
+    "bundle": "index.js",
+    "line": 57711,
+    "sha1": "25e28a200926"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57753,
+    "sha1": "f72175a271f1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57797,
+    "sha1": "67c515c4e0d5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58001,
+    "sha1": "a9726b2296bc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58028,
+    "sha1": "87a5491b0605"
+   }
+  ],
+  "flag": [
+   {
+    "bundle": "index.js",
+    "line": 611,
+    "sha1": "580d96770dfa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1582,
+    "sha1": "85727d950656"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54371,
+    "sha1": "3e7e099081bc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56715,
+    "sha1": "53ebfeed5c94"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57799,
+    "sha1": "169c17a9c3ff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72418,
+    "sha1": "dd19c94bc37f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72947,
+    "sha1": "e7d6fb2cbd88"
+   },
+   {
+    "bundle": "index.js",
+    "line": 98230,
+    "sha1": "771381334188"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101354,
+    "sha1": "7a6c1edf3ec0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 130961,
+    "sha1": "43537c895f89"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145593,
+    "sha1": "e31e32d5d7a3"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 3989,
+    "sha1": "68836355b937"
+   }
+  ],
+  "idx": [
+   {
+    "bundle": "index.js",
+    "line": 55916,
+    "sha1": "5dc7629cc47f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55926,
+    "sha1": "5dc7629cc47f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 61322,
+    "sha1": "5910799f3991"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 10914,
+    "sha1": "f015f0474f69"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 26775,
+    "sha1": "31ac89a6240d"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48368,
+    "sha1": "eac771b978ee"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 61527,
+    "sha1": "54c1493facfe"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 74978,
+    "sha1": "a3e8cda3396c"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 74987,
+    "sha1": "c3b80e73f504"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 87944,
+    "sha1": "c6ce46cca5cf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   }
+  ],
+  "tableList": [
+   {
+    "bundle": "index.js",
+    "line": 62626,
+    "sha1": "eac23a8f158b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62722,
+    "sha1": "a4b8dd8b0b7a"
+   }
+  ],
+  "battleData": [
+   {
+    "bundle": "index.js",
+    "line": 54907,
+    "sha1": "0b32d42bcb8c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55050,
+    "sha1": "b6683a18e84b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 73630,
+    "sha1": "a0c01e96c494"
+   },
+   {
+    "bundle": "index.js",
+    "line": 102636,
+    "sha1": "6a1f5a935e21"
+   },
+   {
+    "bundle": "index.js",
+    "line": 102637,
+    "sha1": "e0f2c0983b1e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 102742,
+    "sha1": "f56d3776abb8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 110852,
+    "sha1": "949d7a98ff80"
+   },
+   {
+    "bundle": "index.js",
+    "line": 146144,
+    "sha1": "c1434b045a75"
+   },
+   {
+    "bundle": "index.js",
+    "line": 146454,
+    "sha1": "6b9ad9769d2e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 146455,
+    "sha1": "706ff89dd342"
+   },
+   {
+    "bundle": "index.js",
+    "line": 146507,
+    "sha1": "489d98b488a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 146571,
+    "sha1": "a315e1de76eb"
+   }
+  ],
+  "linepID": [
+   {
+    "bundle": "index.js",
+    "line": 110848,
+    "sha1": "0277bee85f3b"
+   }
+  ],
+  "boxNum": [
+   {
+    "bundle": "index.js",
+    "line": 55914,
+    "sha1": "f020d8053878"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55924,
+    "sha1": "f020d8053878"
+   },
+   {
+    "bundle": "index.js",
+    "line": 122489,
+    "sha1": "7b5b875020b4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 122497,
+    "sha1": "b9d7e408607c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 34,
+    "sha1": "8ddc127d231f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56,
+    "sha1": "4a0cd94f7888"
+   },
+   {
+    "bundle": "index.js",
+    "line": 56,
+    "sha1": "4a0cd94f7888"
+   }
+  ],
+  "floor": [
+   {
+    "bundle": "index.js",
+    "line": 3073,
+    "sha1": "2a614eae435a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 6050,
+    "sha1": "8d48560e9151"
+   },
+   {
+    "bundle": "index.js",
+    "line": 16057,
+    "sha1": "c0f83103dc86"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22161,
+    "sha1": "9d8999a88a0d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22513,
+    "sha1": "e76b96a04c48"
+   },
+   {
+    "bundle": "index.js",
+    "line": 26857,
+    "sha1": "eabafc05b341"
+   },
+   {
+    "bundle": "index.js",
+    "line": 29391,
+    "sha1": "ee25778b0b5b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36917,
+    "sha1": "b33f62ffd902"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43031,
+    "sha1": "ccf99b23f91d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 49115,
+    "sha1": "9046ee18f6c2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 50940,
+    "sha1": "c4f20f62f2cf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55907,
+    "sha1": "8c93c40d5efe"
+   }
+  ],
+  "isStatus": [
+   {
+    "bundle": "index.js",
+    "line": 55915,
+    "sha1": "244cdd28debf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55925,
+    "sha1": "244cdd28debf"
+   }
+  ],
+  "tower": [
+   {
+    "bundle": "index.js",
+    "line": 41430,
+    "sha1": "c3bcbe4033e4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 74364,
+    "sha1": "abbcf8eb952f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 74769,
+    "sha1": "def7df6f4a3f"
+   }
+  ],
+  "randSeed": [
+   {
+    "bundle": "index.js",
+    "line": 6,
+    "sha1": "6582ff9f66dc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 6,
+    "sha1": "6582ff9f66dc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 6,
+    "sha1": "6582ff9f66dc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 126,
+    "sha1": "cc649522bdc0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 612,
+    "sha1": "734fd0ea1999"
+   }
+  ],
+  "eliteBuffs": [
+   {
+    "bundle": "index.js",
+    "line": 104152,
+    "sha1": "70a98839bad4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104168,
+    "sha1": "92ade892f580"
+   },
+   {
+    "bundle": "index.js",
+    "line": 124,
+    "sha1": "35064d72bd1a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 613,
+    "sha1": "9dae1eb28ed3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 614,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 617,
+    "sha1": "2e0e95d1fe51"
+   },
+   {
+    "bundle": "index.js",
+    "line": 643,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 768,
+    "sha1": "1b371a1abc08"
+   },
+   {
+    "bundle": "index.js",
+    "line": 768,
+    "sha1": "1b371a1abc08"
+   }
+  ],
+  "exchangeNpcArr": [
+   {
+    "bundle": "index.js",
+    "line": 104162,
+    "sha1": "8696bd7a9b44"
+   },
+   {
+    "bundle": "index.js",
+    "line": 104163,
+    "sha1": "f57870553b84"
+   }
+  ],
+  "buyNum": [
+   {
+    "bundle": "index.js",
+    "line": 145598,
+    "sha1": "7a9d9ccaa0e0"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 83112,
+    "sha1": "ce2083b8de91"
+   }
+  ],
+  "curAttackNum": [
+   {
+    "bundle": "index.js",
+    "line": 145596,
+    "sha1": "bc7792157092"
+   }
+  ],
+  "equip": [
+   {
+    "bundle": "index.js",
+    "line": 27688,
+    "sha1": "5c868db50bf7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 68741,
+    "sha1": "01d668d00772"
+   },
+   {
+    "bundle": "index.js",
+    "line": 68779,
+    "sha1": "67b5fc38dc98"
+   },
+   {
+    "bundle": "index.js",
+    "line": 74060,
+    "sha1": "ddc2b728eb66"
+   },
+   {
+    "bundle": "index.js",
+    "line": 74069,
+    "sha1": "ddc2b728eb66"
+   },
+   {
+    "bundle": "index.js",
+    "line": 80939,
+    "sha1": "4c71f9d99b48"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137236,
+    "sha1": "1c10a5b5db17"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 12545,
+    "sha1": "32df6ef4c5fa"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 12552,
+    "sha1": "7e79b52e67d3"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 12578,
+    "sha1": "228556ac22bb"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 12585,
+    "sha1": "5279fa327eb1"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 12591,
+    "sha1": "2e34ae04e487"
+   }
+  ],
+  "addArr": [
+   {
+    "bundle": "index.js",
+    "line": 35607,
+    "sha1": "11771356f422"
+   },
+   {
+    "bundle": "index.js",
+    "line": 35612,
+    "sha1": "ec08b01be81b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 34,
+    "sha1": "8ddc127d231f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   }
+  ],
+  "newAtt": [
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 420,
+    "sha1": "b227cd627a7c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 480,
+    "sha1": "e9e530eed9f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 656,
+    "sha1": "ca55844d3a0a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 666,
+    "sha1": "8f03437c716f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 669,
+    "sha1": "1290d3fcd4e2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 740,
+    "sha1": "4edfe8648f0a"
+   }
+  ],
+  "eventId": [
+   {
+    "bundle": "scripts3.js",
+    "line": 51150,
+    "sha1": "35e7da6a80ef"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 51451,
+    "sha1": "ddb96da6e7ff"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 52687,
+    "sha1": "d40559c4c72c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19,
+    "sha1": "a5f7e6da7fa3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   }
+  ],
+  "eventType": [
+   {
+    "bundle": "index.js",
+    "line": 47189,
+    "sha1": "0672a938ac4e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 108292,
+    "sha1": "4235c73762b0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137592,
+    "sha1": "5839cb4748b8"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23198,
+    "sha1": "9f8aaafa18ed"
+   }
+  ],
+  "fixedEvents": [
+   {
+    "bundle": "index.js",
+    "line": 47200,
+    "sha1": "136543f05c34"
+   }
+  ],
+  "fashionEffect": [
+   {
+    "bundle": "index.js",
+    "line": 74891,
+    "sha1": "28ad14ebd837"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111862,
+    "sha1": "1408d849330e"
+   }
+  ],
+  "homeArr": [
+   {
+    "bundle": "index.js",
+    "line": 57882,
+    "sha1": "1597ec6914c7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57898,
+    "sha1": "1597ec6914c7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57899,
+    "sha1": "5dd878e0c831"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57900,
+    "sha1": "ff7a10cfe275"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57918,
+    "sha1": "1597ec6914c7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57919,
+    "sha1": "ae50b0b3ced2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57926,
+    "sha1": "1dfc125455d9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57927,
+    "sha1": "8991732a0c61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   }
+  ],
+  "homeGeMap": [
+   {
+    "bundle": "index.js",
+    "line": 57881,
+    "sha1": "174219395191"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57915,
+    "sha1": "174219395191"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 59396,
+    "sha1": "efb5f826d5f2"
+   }
+  ],
+  "recommendHomeArr": [
+   {
+    "bundle": "index.js",
+    "line": 57933,
+    "sha1": "ecaa506e7cfe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57934,
+    "sha1": "f60d71e48d7b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57935,
+    "sha1": "e4486ed76521"
+   }
+  ],
+  "findArr": [
+   {
+    "bundle": "index.js",
+    "line": 57949,
+    "sha1": "8fe409868a3c"
+   }
+  ],
+  "activityList": [
+   {
+    "bundle": "index.js",
+    "line": 57450,
+    "sha1": "6e247f47379c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 90346,
+    "sha1": "1add8cf87fe0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 98305,
+    "sha1": "5d378e22fe31"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107250,
+    "sha1": "97e4b8564b7c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107251,
+    "sha1": "48d770874abe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107252,
+    "sha1": "c542a979714c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 108137,
+    "sha1": "42231ff4ec2d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 108143,
+    "sha1": "45571eec6fc6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 122440,
+    "sha1": "38749c985c96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 131304,
+    "sha1": "a04397c548a6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 131306,
+    "sha1": "21c0ec1693f6"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 14592,
+    "sha1": "b32bf3c97bb6"
+   }
+  ],
+  "activityShows": [
+   {
+    "bundle": "index.js",
+    "line": 57455,
+    "sha1": "99fcdbab636c"
+   }
+  ],
+  "calendar": [
+   {
+    "bundle": "index.js",
+    "line": 57456,
+    "sha1": "80fa9814ba95"
+   }
+  ],
+  "digcellTaskRed": [
+   {
+    "bundle": "index.js",
+    "line": 57454,
+    "sha1": "0b94402221bd"
+   }
+  ],
+  "geNianshouTaskRed": [
+   {
+    "bundle": "index.js",
+    "line": 57448,
+    "sha1": "a04c194bb1ea"
+   }
+  ],
+  "geSchoolTaskRed": [
+   {
+    "bundle": "index.js",
+    "line": 57447,
+    "sha1": "0f1dce650467"
+   }
+  ],
+  "idType": [
+   {
+    "bundle": "index.js",
+    "line": 52051,
+    "sha1": "fd2263ee5e90"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57451,
+    "sha1": "2f8931130bbc"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56028,
+    "sha1": "4344aa053ea5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56035,
+    "sha1": "4344aa053ea5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56042,
+    "sha1": "4344aa053ea5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56107,
+    "sha1": "97cea613cf1c"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56146,
+    "sha1": "d5b3fd11a8c8"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56151,
+    "sha1": "af2b703ff641"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56157,
+    "sha1": "ed05d5e2e344"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56240,
+    "sha1": "f7f1b9e7efa9"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 27019,
+    "sha1": "0c271bc1b077"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 80050,
+    "sha1": "0a8543beabef"
+   }
+  ],
+  "jigsawRed": [
+   {
+    "bundle": "index.js",
+    "line": 57449,
+    "sha1": "f30b6e8c5bf2"
+   }
+  ],
+  "supportCamp": [
+   {
+    "bundle": "index.js",
+    "line": 57453,
+    "sha1": "d2d6f0f15cf3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107266,
+    "sha1": "ad0af4858c56"
+   },
+   {
+    "bundle": "index.js",
+    "line": 130,
+    "sha1": "9d0a254c249e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 426,
+    "sha1": "a4a2d1544b96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 609,
+    "sha1": "04d3c1aad872"
+   },
+   {
+    "bundle": "index.js",
+    "line": 613,
+    "sha1": "9dae1eb28ed3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 614,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 617,
+    "sha1": "2e0e95d1fe51"
+   },
+   {
+    "bundle": "index.js",
+    "line": 620,
+    "sha1": "065f987a9c08"
+   },
+   {
+    "bundle": "index.js",
+    "line": 643,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 657,
+    "sha1": "afd9c499a93c"
+   }
+  ],
+  "sArr": [
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 52,
+    "sha1": "0b5055762c53"
+   },
+   {
+    "bundle": "index.js",
+    "line": 60,
+    "sha1": "80a15b87ac9b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 71,
+    "sha1": "4e8718c2dfc9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72,
+    "sha1": "21f05d8b999f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106,
+    "sha1": "6518e836be73"
+   }
+  ],
+  "serverArr": [
+   {
+    "bundle": "index.js",
+    "line": 111,
+    "sha1": "14b444c47892"
+   },
+   {
+    "bundle": "index.js",
+    "line": 112,
+    "sha1": "063ab839b6d4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 399,
+    "sha1": "fa5c7470ff69"
+   },
+   {
+    "bundle": "index.js",
+    "line": 401,
+    "sha1": "b5d5a4aae911"
+   },
+   {
+    "bundle": "index.js",
+    "line": 412,
+    "sha1": "2e30501a85db"
+   },
+   {
+    "bundle": "index.js",
+    "line": 430,
+    "sha1": "ee847252b8f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 430,
+    "sha1": "ee847252b8f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 657,
+    "sha1": "afd9c499a93c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 657,
+    "sha1": "afd9c499a93c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 660,
+    "sha1": "bc58f6967215"
+   }
+  ],
+  "giftDatas": [
+   {
+    "bundle": "scripts3.js",
+    "line": 30668,
+    "sha1": "4527b9778d63"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 30755,
+    "sha1": "23f1636d039c"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 30929,
+    "sha1": "bb5392edea46"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 30940,
+    "sha1": "f15e6e62e9ec"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 30941,
+    "sha1": "0c5aa1616c40"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 31452,
+    "sha1": "40be7921d836"
+   },
+   {
+    "bundle": "index.js",
+    "line": 34,
+    "sha1": "8ddc127d231f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 46,
+    "sha1": "fd8feea775ce"
+   }
+  ],
+  "masterInfo": [
+   {
+    "bundle": "index.js",
+    "line": 113941,
+    "sha1": "0a8ce3c0d976"
+   }
+  ],
+  "pupilInfo": [
+   {
+    "bundle": "index.js",
+    "line": 113941,
+    "sha1": "0a8ce3c0d976"
+   }
+  ],
+  "roleInfo": [
+   {
+    "bundle": "index.js",
+    "line": 101643,
+    "sha1": "56a802debd7b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106709,
+    "sha1": "51bff202f7d4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106710,
+    "sha1": "0b2be5003b30"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106711,
+    "sha1": "7e1c34e96117"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106713,
+    "sha1": "e1a91f78feb2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106714,
+    "sha1": "4987a7829f25"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106715,
+    "sha1": "7f0a94a033b0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106726,
+    "sha1": "044dc4f671b3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106758,
+    "sha1": "3f9af17e60c0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107006,
+    "sha1": "d0b152866591"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107007,
+    "sha1": "1316358cf87d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107023,
+    "sha1": "804ece192120"
+   }
+  ],
+  "shopArr": [
+   {
+    "bundle": "index.js",
+    "line": 57848,
+    "sha1": "2b1c33e7ce6a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145349,
+    "sha1": "4f5e86c10562"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145350,
+    "sha1": "505ea893c9ea"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145351,
+    "sha1": "8e63239782ee"
+   }
+  ],
+  "birthId": [
+   {
+    "bundle": "index.js",
+    "line": 23088,
+    "sha1": "7f8764c395d9"
+   }
+  ],
+  "faceId": [
+   {
+    "bundle": "index.js",
+    "line": 23089,
+    "sha1": "b3d4c7ad8486"
+   }
+  ],
+  "talnetId": [
+   {
+    "bundle": "index.js",
+    "line": 23090,
+    "sha1": "712c53283e98"
+   }
+  ],
+  "shopObj": [
+   {
+    "bundle": "index.js",
+    "line": 56094,
+    "sha1": "effd1fb48c9f"
+   }
+  ],
+  "taskArr": [
+   {
+    "bundle": "scripts3.js",
+    "line": 23329,
+    "sha1": "0733a431d159"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23412,
+    "sha1": "ade6b5cac6ac"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23413,
+    "sha1": "f2f212ac2357"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23461,
+    "sha1": "1f3174f3bf81"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23462,
+    "sha1": "f2f212ac2357"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23463,
+    "sha1": "1d7c611387f3"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23473,
+    "sha1": "a46a02ff28f5"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23474,
+    "sha1": "51ad4b9d1ab8"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23475,
+    "sha1": "505fe7ceba24"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23502,
+    "sha1": "6aec52967183"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23503,
+    "sha1": "d182bf5fa9d9"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23504,
+    "sha1": "df8d9fcb30c2"
+   }
+  ],
+  "copyArr": [
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 52,
+    "sha1": "0b5055762c53"
+   },
+   {
+    "bundle": "index.js",
+    "line": 60,
+    "sha1": "80a15b87ac9b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 71,
+    "sha1": "4e8718c2dfc9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72,
+    "sha1": "21f05d8b999f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106,
+    "sha1": "6518e836be73"
+   }
+  ],
+  "createTime": [
+   {
+    "bundle": "index.js",
+    "line": 132526,
+    "sha1": "16fef45f8c15"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 24040,
+    "sha1": "a5cef2e55909"
+   }
+  ],
+  "openid": [
+   {
+    "bundle": "index.js",
+    "line": 23715,
+    "sha1": "c0ea1868244e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 23715,
+    "sha1": "c0ea1868244e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 28234,
+    "sha1": "e0df3332c816"
+   },
+   {
+    "bundle": "index.js",
+    "line": 28234,
+    "sha1": "e0df3332c816"
+   },
+   {
+    "bundle": "index.js",
+    "line": 69482,
+    "sha1": "4540107a74c0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 69501,
+    "sha1": "4540107a74c0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 69521,
+    "sha1": "4540107a74c0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 69540,
+    "sha1": "4540107a74c0"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 47751,
+    "sha1": "ff3ed13bb840"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 47751,
+    "sha1": "ff3ed13bb840"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 47751,
+    "sha1": "ff3ed13bb840"
+   }
+  ],
+  "currentDragonId": [
+   {
+    "bundle": "scripts2.js",
+    "line": 1089,
+    "sha1": "e82e456ac45a"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 1096,
+    "sha1": "69c11bcd3414"
+   }
+  ],
+  "battleID": [
+   {
+    "bundle": "index.js",
+    "line": 5137,
+    "sha1": "43883babd53f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 10000,
+    "sha1": "43883babd53f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 10236,
+    "sha1": "a686981af9ce"
+   },
+   {
+    "bundle": "index.js",
+    "line": 10237,
+    "sha1": "2e7cb6943a18"
+   },
+   {
+    "bundle": "index.js",
+    "line": 10238,
+    "sha1": "985ef719913c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 10310,
+    "sha1": "975385885561"
+   },
+   {
+    "bundle": "index.js",
+    "line": 10408,
+    "sha1": "f22bd940d0f7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11374,
+    "sha1": "ab789e12425f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11378,
+    "sha1": "67d198fba449"
+   },
+   {
+    "bundle": "index.js",
+    "line": 11511,
+    "sha1": "8df50b6a660f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 13454,
+    "sha1": "6ad2f9deaa19"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15959,
+    "sha1": "946a47dc912d"
+   }
+  ],
+  "info": [
+   {
+    "bundle": "index.js",
+    "line": 5603,
+    "sha1": "26e9bb08cc5d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54955,
+    "sha1": "3d2bf6fafd88"
+   },
+   {
+    "bundle": "index.js",
+    "line": 96981,
+    "sha1": "26e9bb08cc5d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 110898,
+    "sha1": "3d2bf6fafd88"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 51501,
+    "sha1": "6841106eb4c5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 130,
+    "sha1": "9d0a254c249e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 426,
+    "sha1": "a4a2d1544b96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 609,
+    "sha1": "04d3c1aad872"
+   },
+   {
+    "bundle": "index.js",
+    "line": 613,
+    "sha1": "9dae1eb28ed3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 614,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 617,
+    "sha1": "2e0e95d1fe51"
+   }
+  ],
+  "contribution": [
+   {
+    "bundle": "index.js",
+    "line": 133411,
+    "sha1": "63d52dacad31"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 35350,
+    "sha1": "087ab33a8255"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 35368,
+    "sha1": "087ab33a8255"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 35639,
+    "sha1": "6ed469a39b29"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 35798,
+    "sha1": "df975f62eb96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 850,
+    "sha1": "e121b67ca4fa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 850,
+    "sha1": "e121b67ca4fa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 850,
+    "sha1": "e121b67ca4fa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 851,
+    "sha1": "4c1af0be0021"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1797,
+    "sha1": "4a9b439331a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1804,
+    "sha1": "4a9b439331a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1810,
+    "sha1": "4a9b439331a1"
+   }
+  ],
+  "dog": [
+   {
+    "bundle": "index.js",
+    "line": 57595,
+    "sha1": "e9b1d9178346"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57958,
+    "sha1": "9ca6365efefb"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48523,
+    "sha1": "03aecda8cf71"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48536,
+    "sha1": "679d2bd83feb"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48600,
+    "sha1": "235c6ceb42e7"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48645,
+    "sha1": "5666ed0e8617"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48646,
+    "sha1": "7c6acca4ba56"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48649,
+    "sha1": "235c6ceb42e7"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48747,
+    "sha1": "843f9b3cbcca"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48750,
+    "sha1": "bd985aade14d"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48786,
+    "sha1": "c176a03205ba"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48813,
+    "sha1": "b3b67726b6a2"
+   }
+  ],
+  "friendPartnerId": [
+   {
+    "bundle": "index.js",
+    "line": 57959,
+    "sha1": "78e22f7284b2"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48660,
+    "sha1": "575627329a2e"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48665,
+    "sha1": "a0784e8f7392"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 57480,
+    "sha1": "f72ea9bc17b5"
+   }
+  ],
+  "soilArr": [
+   {
+    "bundle": "index.js",
+    "line": 57593,
+    "sha1": "a7bf9c204eba"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57643,
+    "sha1": "11195a4de27f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57663,
+    "sha1": "4cc2a8f5faa5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57685,
+    "sha1": "5bd9371e1833"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57700,
+    "sha1": "c4bb886ea4c2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57715,
+    "sha1": "f64025c01701"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57740,
+    "sha1": "7dd0444ef85c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57767,
+    "sha1": "848e9e5048d3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57783,
+    "sha1": "b33f46232017"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57804,
+    "sha1": "c4bb886ea4c2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57813,
+    "sha1": "c4bb886ea4c2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57834,
+    "sha1": "5bd9371e1833"
+   }
+  ],
+  "bShop": [
+   {
+    "bundle": "index.js",
+    "line": 57597,
+    "sha1": "67c3bbbba459"
+   }
+  ],
+  "friendPartnerAward": [
+   {
+    "bundle": "index.js",
+    "line": 57633,
+    "sha1": "361810946046"
+   }
+  ],
+  "costDishMap": [
+   {
+    "bundle": "index.js",
+    "line": 62687,
+    "sha1": "67825bd67dae"
+   }
+  ],
+  "showRewardPop": [
+   {
+    "bundle": "index.js",
+    "line": 62688,
+    "sha1": "ceb8ee8a50cb"
+   }
+  ],
+  "showRewardPrice": [
+   {
+    "bundle": "index.js",
+    "line": 62685,
+    "sha1": "9a524dfaa8bf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62686,
+    "sha1": "8148a2da3a51"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19,
+    "sha1": "a5f7e6da7fa3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   }
+  ],
+  "cookList": [
+   {
+    "bundle": "index.js",
+    "line": 62709,
+    "sha1": "7d0450130c11"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62786,
+    "sha1": "5406e56b0ac0"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 33550,
+    "sha1": "03eb31d1cd93"
+   }
+  ],
+  "productList": [
+   {
+    "bundle": "index.js",
+    "line": 62721,
+    "sha1": "2c3a3c7889f9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62795,
+    "sha1": "4514fb21ad84"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 32686,
+    "sha1": "e1bc58cb886f"
+   }
+  ],
+  "limittype": [
+   {
+    "bundle": "index.js",
+    "line": 47082,
+    "sha1": "be5de652642d"
+   }
+  ],
+  "isMaster": [
+   {
+    "bundle": "index.js",
+    "line": 111855,
+    "sha1": "6d2087a69593"
+   },
+   {
+    "bundle": "index.js",
+    "line": 132513,
+    "sha1": "8afb8c087167"
+   },
+   {
+    "bundle": "index.js",
+    "line": 132522,
+    "sha1": "d3f41b73158f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 132534,
+    "sha1": "e6f900ae7431"
+   },
+   {
+    "bundle": "index.js",
+    "line": 132539,
+    "sha1": "430df06daa1d"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56043,
+    "sha1": "c3e92c3e3ed6"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56146,
+    "sha1": "d5b3fd11a8c8"
+   }
+  ],
+  "passMeritRewardState": [
+   {
+    "bundle": "index.js",
+    "line": 132518,
+    "sha1": "cbfd276fd387"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 80069,
+    "sha1": "3eed3fd1d759"
+   }
+  ],
+  "removeApplyList": [
+   {
+    "bundle": "index.js",
+    "line": 132515,
+    "sha1": "02ff7a0efbf2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 132516,
+    "sha1": "fa2bf45aae36"
+   }
+  ],
+  "roleList": [
+   {
+    "bundle": "index.js",
+    "line": 132521,
+    "sha1": "017e0e49f05d"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56041,
+    "sha1": "94ef5cab3fe8"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 56144,
+    "sha1": "5ca3b852fbe0"
+   }
+  ],
+  "atkSkillID": [
+   {
+    "bundle": "index.js",
+    "line": 54949,
+    "sha1": "8ac25066a36d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55066,
+    "sha1": "71be50eb1b96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55105,
+    "sha1": "0632e8f34f37"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55130,
+    "sha1": "a7e81b0df388"
+   },
+   {
+    "bundle": "index.js",
+    "line": 110865,
+    "sha1": "c7af5276eebd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 110892,
+    "sha1": "8ac25066a36d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 110921,
+    "sha1": "a7e81b0df388"
+   }
+  ],
+  "dataArr": [
+   {
+    "bundle": "index.js",
+    "line": 54941,
+    "sha1": "db843de48b9e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54942,
+    "sha1": "b88209571668"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54943,
+    "sha1": "5e1b6c964494"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54944,
+    "sha1": "239fb16ebd06"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55053,
+    "sha1": "631aa566eb78"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55092,
+    "sha1": "5acbfc1f7fd6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55117,
+    "sha1": "931126c3c9fa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 110855,
+    "sha1": "737daef9371f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 110884,
+    "sha1": "db843de48b9e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 110885,
+    "sha1": "b88209571668"
+   },
+   {
+    "bundle": "index.js",
+    "line": 110886,
+    "sha1": "5e1b6c964494"
+   },
+   {
+    "bundle": "index.js",
+    "line": 110887,
+    "sha1": "239fb16ebd06"
+   }
+  ],
+  "eventArr": [
+   {
+    "bundle": "index.js",
+    "line": 137656,
+    "sha1": "2d5eb2958770"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137657,
+    "sha1": "6ccd2ae464d1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137668,
+    "sha1": "2e2bcf76db1a"
+   }
+  ],
+  "bankId": [
+   {
+    "bundle": "scripts2.js",
+    "line": 13347,
+    "sha1": "cbf0df96e0f4"
+   }
+  ],
+  "currentAnswerNum": [
+   {
+    "bundle": "scripts2.js",
+    "line": 1301,
+    "sha1": "46ec7c939264"
+   }
+  ],
+  "paperId": [
+   {
+    "bundle": "scripts2.js",
+    "line": 13357,
+    "sha1": "0f7c46553d55"
+   }
+  ],
+  "questionMaxNum": [
+   {
+    "bundle": "index.js",
+    "line": 46906,
+    "sha1": "b3272257a6fd"
+   }
+  ],
+  "removeNotice": [
+   {
+    "bundle": "index.js",
+    "line": 88015,
+    "sha1": "184ff5ede405"
+   }
+  ],
+  "appointList": [
+   {
+    "bundle": "index.js",
+    "line": 113799,
+    "sha1": "3848fe12def3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113806,
+    "sha1": "f39b807db304"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113807,
+    "sha1": "007172f1fb45"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113808,
+    "sha1": "c25c8ca7c60a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113809,
+    "sha1": "0ec5c4bc3fd4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113810,
+    "sha1": "1f9a230917ef"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113816,
+    "sha1": "ef3b97a5b155"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113823,
+    "sha1": "f39b807db304"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113824,
+    "sha1": "007172f1fb45"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113825,
+    "sha1": "c25c8ca7c60a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113826,
+    "sha1": "0ec5c4bc3fd4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113827,
+    "sha1": "1f9a230917ef"
+   }
+  ],
+  "npcList": [
+   {
+    "bundle": "index.js",
+    "line": 113718,
+    "sha1": "f76598a15e5d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113721,
+    "sha1": "9a975b750819"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 57284,
+    "sha1": "2c1605943695"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 57294,
+    "sha1": "3ed2cee8b6d5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 57295,
+    "sha1": "e282bf204a2d"
+   }
+  ],
+  "schoolTask": [
+   {
+    "bundle": "index.js",
+    "line": 113614,
+    "sha1": "9a9931e02bc4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113632,
+    "sha1": "a76d48ee600c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113635,
+    "sha1": "a5e888bf6f40"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113645,
+    "sha1": "79b17463b4e7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113646,
+    "sha1": "6d2b6dae6762"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113647,
+    "sha1": "a3f5944accbb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113648,
+    "sha1": "d047b73df076"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113658,
+    "sha1": "d33fed306dba"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113661,
+    "sha1": "f6dad05c452e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113662,
+    "sha1": "f3ff2969324d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113675,
+    "sha1": "ea5bcba41aee"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113688,
+    "sha1": "79b17463b4e7"
+   }
+  ],
+  "weekQuickCompleteTaskTimes": [
+   {
+    "bundle": "index.js",
+    "line": 113615,
+    "sha1": "9fa6e1e38cd3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113687,
+    "sha1": "9fa6e1e38cd3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 52,
+    "sha1": "0b5055762c53"
+   },
+   {
+    "bundle": "index.js",
+    "line": 60,
+    "sha1": "80a15b87ac9b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 71,
+    "sha1": "4e8718c2dfc9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 72,
+    "sha1": "21f05d8b999f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 101,
+    "sha1": "175ee3d6a0a1"
+   }
+  ],
+  "childName": [
+   {
+    "bundle": "index.js",
+    "line": 24867,
+    "sha1": "9c1bd4407863"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55434,
+    "sha1": "f82105e866e5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 66272,
+    "sha1": "2916d830e786"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24867,
+    "sha1": "9c1bd4407863"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 66272,
+    "sha1": "2916d830e786"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 66272,
+    "sha1": "2916d830e786"
+   }
+  ],
+  "endMonthCardTime": [
+   {
+    "bundle": "index.js",
+    "line": 64829,
+    "sha1": "cd0534fee61a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 70461,
+    "sha1": "14a355d6e7fd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 130754,
+    "sha1": "e6099b5d309a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 131169,
+    "sha1": "50a0fbb39167"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19,
+    "sha1": "a5f7e6da7fa3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 34,
+    "sha1": "8ddc127d231f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   }
+  ],
+  "eid": [
+   {
+    "bundle": "index.js",
+    "line": 57867,
+    "sha1": "21da299fbcb2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58261,
+    "sha1": "cc139354cf65"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58265,
+    "sha1": "c7ecf175a763"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58275,
+    "sha1": "b18599d2d4a5"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58295,
+    "sha1": "9ae233cb804f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 95587,
+    "sha1": "72593ed06e1d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 95601,
+    "sha1": "3966e80a59af"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107033,
+    "sha1": "23cc49fbd726"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 5248,
+    "sha1": "8dc161db0152"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 37768,
+    "sha1": "9185fa61d07e"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 37769,
+    "sha1": "a7f035b471b2"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 58168,
+    "sha1": "628cbe2be08f"
+   }
+  ],
+  "surplusTime": [
+   {
+    "bundle": "index.js",
+    "line": 111840,
+    "sha1": "663072d2ad59"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111842,
+    "sha1": "913ae707ac4a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 114514,
+    "sha1": "6996c64d57e6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 850,
+    "sha1": "e121b67ca4fa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 850,
+    "sha1": "e121b67ca4fa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 850,
+    "sha1": "e121b67ca4fa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 851,
+    "sha1": "4c1af0be0021"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1797,
+    "sha1": "4a9b439331a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1804,
+    "sha1": "4a9b439331a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1810,
+    "sha1": "4a9b439331a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1815,
+    "sha1": "4a9b439331a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1835,
+    "sha1": "4a9b439331a1"
+   }
+  ],
+  "signData": [
+   {
+    "bundle": "index.js",
+    "line": 23965,
+    "sha1": "b8f3e91607d0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24169,
+    "sha1": "4e9a58d8a80d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24170,
+    "sha1": "74a80da2ea31"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113748,
+    "sha1": "939aa89c7c12"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113749,
+    "sha1": "b9f95b7ac568"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113750,
+    "sha1": "6fbc090480b7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113751,
+    "sha1": "6f57e5e6ffd8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113752,
+    "sha1": "eb4534ca859c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113753,
+    "sha1": "f336507c2add"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113754,
+    "sha1": "6ff87d312036"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113755,
+    "sha1": "ce1da80bb391"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113757,
+    "sha1": "b0719b1663b9"
+   }
+  ],
+  "intoSchool": [
+   {
+    "bundle": "index.js",
+    "line": 74338,
+    "sha1": "b64e908f6015"
+   },
+   {
+    "bundle": "index.js",
+    "line": 85077,
+    "sha1": "3d990fa08e2d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 85205,
+    "sha1": "276fe7311a4b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 88187,
+    "sha1": "f05324e62509"
+   },
+   {
+    "bundle": "index.js",
+    "line": 88195,
+    "sha1": "f05324e62509"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111837,
+    "sha1": "9450d9d0c8bf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111839,
+    "sha1": "ca1343e93fc8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 114429,
+    "sha1": "861a28e890eb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 114491,
+    "sha1": "861a28e890eb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 114498,
+    "sha1": "87c401f3b2c9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 115777,
+    "sha1": "0bc225e76780"
+   },
+   {
+    "bundle": "index.js",
+    "line": 115778,
+    "sha1": "3d2f68b59dc1"
+   }
+  ],
+  "schoolTitle": [
+   {
+    "bundle": "index.js",
+    "line": 111833,
+    "sha1": "205207c19c6d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 114500,
+    "sha1": "74b65dc8e94b"
+   }
+  ],
+  "roleUniqueId": [
+   {
+    "bundle": "index.js",
+    "line": 13454,
+    "sha1": "6ad2f9deaa19"
+   },
+   {
+    "bundle": "index.js",
+    "line": 146424,
+    "sha1": "386384868e61"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 11709,
+    "sha1": "68ffeef1a2cf"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 10354,
+    "sha1": "79577d155e33"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 11318,
+    "sha1": "42d1c38adcdd"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 11995,
+    "sha1": "bf460c016c9d"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 12311,
+    "sha1": "4d979a763982"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 12324,
+    "sha1": "606e071ec873"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 96557,
+    "sha1": "248cd2e4010f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   }
+  ],
+  "cdTimeDays": [
+   {
+    "bundle": "index.js",
+    "line": 150,
+    "sha1": "a40197bbfeb7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 150,
+    "sha1": "a40197bbfeb7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 155,
+    "sha1": "345ea528bf8d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 155,
+    "sha1": "345ea528bf8d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 679,
+    "sha1": "d51e34b67a1d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 881,
+    "sha1": "0205e835b185"
+   },
+   {
+    "bundle": "index.js",
+    "line": 887,
+    "sha1": "17896811ec89"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1233,
+    "sha1": "654c6d5bf032"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1249,
+    "sha1": "4ceaf9b13689"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1254,
+    "sha1": "f152580a100a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1528,
+    "sha1": "4bd3e826c97e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1531,
+    "sha1": "e806726c6ede"
+   }
+  ],
+  "PlayerEquip": [
+   {
+    "bundle": "index.js",
+    "line": 111879,
+    "sha1": "dd3c0b164a68"
+   },
+   {
+    "bundle": "index.js",
+    "line": 137704,
+    "sha1": "9931442e38a8"
+   }
+  ],
+  "log": [
+   {
+    "bundle": "index.js",
+    "line": 30303,
+    "sha1": "5fdaf8a48cbb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 30309,
+    "sha1": "40e33ba335b0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 30319,
+    "sha1": "cf6bc87290d0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 58048,
+    "sha1": "a230a6bb8779"
+   },
+   {
+    "bundle": "index.js",
+    "line": 61506,
+    "sha1": "2cce9dc1d200"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64930,
+    "sha1": "753f8b7fca68"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64936,
+    "sha1": "753f8b7fca68"
+   },
+   {
+    "bundle": "index.js",
+    "line": 94527,
+    "sha1": "fc1f03e0f9c3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 102106,
+    "sha1": "4c57a198b1c2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111028,
+    "sha1": "583604d4267a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145044,
+    "sha1": "a5e433deb4fd"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 22586,
+    "sha1": "112c3967e937"
+   }
+  ],
+  "secret": [
+   {
+    "bundle": "scripts2.js",
+    "line": 75376,
+    "sha1": "eee452b5e223"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 75376,
+    "sha1": "eee452b5e223"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 75376,
+    "sha1": "eee452b5e223"
+   }
+  ],
+  "fetationTime": [
+   {
+    "bundle": "index.js",
+    "line": 77049,
+    "sha1": "74f1683bb6bb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 77285,
+    "sha1": "764f05f2dc81"
+   }
+  ],
+  "items": [
+   {
+    "bundle": "index.js",
+    "line": 107357,
+    "sha1": "713c17ba19f4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107359,
+    "sha1": "aa77321c713c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107438,
+    "sha1": "3e3f5ba4a8f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107439,
+    "sha1": "24b5a8484e44"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107443,
+    "sha1": "39476c5fcb73"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107508,
+    "sha1": "f9cfdf10c7ed"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107509,
+    "sha1": "d0e62b4bcbfd"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 2273,
+    "sha1": "0471719cff13"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 2281,
+    "sha1": "9a2bcac27b86"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 2282,
+    "sha1": "6726d7c2593e"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 2283,
+    "sha1": "21a7e2145d84"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 3990,
+    "sha1": "7ecb6e81ffaf"
+   }
+  ],
+  "cropMap": [
+   {
+    "bundle": "index.js",
+    "line": 6,
+    "sha1": "6582ff9f66dc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 6,
+    "sha1": "6582ff9f66dc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 6,
+    "sha1": "6582ff9f66dc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 125,
+    "sha1": "b2f00afbd485"
+   },
+   {
+    "bundle": "index.js",
+    "line": 126,
+    "sha1": "cc649522bdc0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 612,
+    "sha1": "734fd0ea1999"
+   }
+  ],
+  "matureArr": [
+   {
+    "bundle": "index.js",
+    "line": 57728,
+    "sha1": "e89e2eee6d26"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23350,
+    "sha1": "85c4ec8bc8f8"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 30209,
+    "sha1": "a9167db321d4"
+   }
+  ],
+  "obtainLands": [
+   {
+    "bundle": "index.js",
+    "line": 57735,
+    "sha1": "b4c9378f87e2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57739,
+    "sha1": "2efcc485bd21"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57740,
+    "sha1": "7dd0444ef85c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57747,
+    "sha1": "d9e1187d3c77"
+   }
+  ],
+  "delTaskIds": [
+   {
+    "bundle": "index.js",
+    "line": 51170,
+    "sha1": "32075145c0b3"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 70984,
+    "sha1": "a7f4d378eaba"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 71455,
+    "sha1": "a7f4d378eaba"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 71757,
+    "sha1": "a7f4d378eaba"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 71826,
+    "sha1": "a7f4d378eaba"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 71831,
+    "sha1": "a7f4d378eaba"
+   }
+  ],
+  "feel": [
+   {
+    "bundle": "index.js",
+    "line": 130,
+    "sha1": "9d0a254c249e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 135,
+    "sha1": "b767f7e54287"
+   },
+   {
+    "bundle": "index.js",
+    "line": 426,
+    "sha1": "a4a2d1544b96"
+   },
+   {
+    "bundle": "index.js",
+    "line": 609,
+    "sha1": "04d3c1aad872"
+   },
+   {
+    "bundle": "index.js",
+    "line": 613,
+    "sha1": "9dae1eb28ed3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 614,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 617,
+    "sha1": "2e0e95d1fe51"
+   },
+   {
+    "bundle": "index.js",
+    "line": 620,
+    "sha1": "065f987a9c08"
+   },
+   {
+    "bundle": "index.js",
+    "line": 643,
+    "sha1": "caf5e0a44f50"
+   },
+   {
+    "bundle": "index.js",
+    "line": 657,
+    "sha1": "afd9c499a93c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 690,
+    "sha1": "2842b2b6f9d8"
+   },
+   {
+    "bundle": "index.js",
+    "line": 767,
+    "sha1": "67ab137da893"
+   }
+  ],
+  "npcId": [
+   {
+    "bundle": "index.js",
+    "line": 20092,
+    "sha1": "498d695315fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20178,
+    "sha1": "d6a8b2e12fb1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20188,
+    "sha1": "dfffcc08cc9e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20195,
+    "sha1": "22d2dd342bbe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20202,
+    "sha1": "47824f9d5100"
+   },
+   {
+    "bundle": "index.js",
+    "line": 26431,
+    "sha1": "84ea34b1d219"
+   },
+   {
+    "bundle": "index.js",
+    "line": 78953,
+    "sha1": "498d695315fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 78967,
+    "sha1": "d6a8b2e12fb1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 78977,
+    "sha1": "dfffcc08cc9e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 78984,
+    "sha1": "22d2dd342bbe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 85866,
+    "sha1": "2d55a0d94d8f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 87446,
+    "sha1": "afdb1ca37509"
+   }
+  ],
+  "goldArr": [
+   {
+    "bundle": "index.js",
+    "line": 55872,
+    "sha1": "5d55044332b0"
+   }
+  ],
+  "passCard": [
+   {
+    "bundle": "index.js",
+    "line": 55869,
+    "sha1": "90df779e9095"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55870,
+    "sha1": "e6edb341c1de"
+   },
+   {
+    "bundle": "index.js",
+    "line": 55871,
+    "sha1": "18fabdcac49c"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 48289,
+    "sha1": "09fb00f9de36"
+   }
+  ],
+  "isDouble": [
+   {
+    "bundle": "index.js",
+    "line": 57267,
+    "sha1": "a8363605ab81"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 3870,
+    "sha1": "c2b2768d1e95"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 4627,
+    "sha1": "70aefe58dcec"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 4830,
+    "sha1": "14ac41294448"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 11147,
+    "sha1": "7182bfadf1db"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 21816,
+    "sha1": "a0acf3eacdbc"
+   }
+  ],
+  "caidan": [
+   {
+    "bundle": "scripts2.js",
+    "line": 27989,
+    "sha1": "de1312ed3267"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24,
+    "sha1": "a64fe47a9016"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 202,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 215,
+    "sha1": "4e077d148fb4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 420,
+    "sha1": "b227cd627a7c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 480,
+    "sha1": "e9e530eed9f2"
+   },
+   {
+    "bundle": "index.js",
+    "line": 656,
+    "sha1": "ca55844d3a0a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 666,
+    "sha1": "8f03437c716f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 669,
+    "sha1": "1290d3fcd4e2"
+   }
+  ],
+  "friendHome": [
+   {
+    "bundle": "index.js",
+    "line": 57891,
+    "sha1": "0edaec949276"
+   },
+   {
+    "bundle": "index.js",
+    "line": 57892,
+    "sha1": "8d61c3112747"
+   }
+  ],
+  "giftAwards": [
+   {
+    "bundle": "scripts3.js",
+    "line": 63555,
+    "sha1": "cac078dd0fed"
+   }
+  ],
+  "rightNum": [
+   {
+    "bundle": "scripts2.js",
+    "line": 1299,
+    "sha1": "30801ce97e28"
+   }
+  ],
+  "foster_point": [
+   {
+    "bundle": "index.js",
+    "line": 24640,
+    "sha1": "0947d340288d"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 12948,
+    "sha1": "06f7463e7ee7"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 12957,
+    "sha1": "46fa780be64c"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 12971,
+    "sha1": "e0caf43bfc4c"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 15021,
+    "sha1": "9c2ab281efdd"
+   }
+  ],
+  "playArr": [
+   {
+    "bundle": "index.js",
+    "line": 24641,
+    "sha1": "8c019de40e56"
+   },
+   {
+    "bundle": "index.js",
+    "line": 77090,
+    "sha1": "4e57f6fcab09"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 12255,
+    "sha1": "b90bc5af99d1"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 12949,
+    "sha1": "66a8ccae8a45"
+   }
+  ],
+  "roleID": [
+   {
+    "bundle": "index.js",
+    "line": 5592,
+    "sha1": "3579fbe7e576"
+   },
+   {
+    "bundle": "index.js",
+    "line": 6039,
+    "sha1": "c02e4ad83d6e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 13454,
+    "sha1": "6ad2f9deaa19"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24452,
+    "sha1": "97efec9ea228"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24511,
+    "sha1": "2b95871dc3c4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24537,
+    "sha1": "f6c40f0ac915"
+   },
+   {
+    "bundle": "index.js",
+    "line": 26252,
+    "sha1": "601d47af3011"
+   },
+   {
+    "bundle": "index.js",
+    "line": 28118,
+    "sha1": "5ba93e597608"
+   },
+   {
+    "bundle": "index.js",
+    "line": 28158,
+    "sha1": "5ba93e597608"
+   },
+   {
+    "bundle": "index.js",
+    "line": 28191,
+    "sha1": "bb8f68f3ea36"
+   },
+   {
+    "bundle": "index.js",
+    "line": 32188,
+    "sha1": "6b831adc4dfd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54914,
+    "sha1": "8b70013b0986"
+   }
+  ],
+  "appointDatas": [
+   {
+    "bundle": "index.js",
+    "line": 113862,
+    "sha1": "1c133f2814bc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113863,
+    "sha1": "e18890ba6a0f"
+   }
+  ],
+  "upSchoolTaskCP": [
+   {
+    "bundle": "index.js",
+    "line": 113660,
+    "sha1": "f096b225f09b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113661,
+    "sha1": "f6dad05c452e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113662,
+    "sha1": "f3ff2969324d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113663,
+    "sha1": "2dadc94a1549"
+   }
+  ],
+  "school": [
+   {
+    "bundle": "index.js",
+    "line": 4169,
+    "sha1": "aa22f7c0ef4a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4498,
+    "sha1": "29bd07a3086d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 24453,
+    "sha1": "f967fab81df0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 77469,
+    "sha1": "7e5389122779"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113151,
+    "sha1": "cdc1f16b7b5b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113732,
+    "sha1": "f1365d17a27d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113734,
+    "sha1": "de3ef6445a9a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113757,
+    "sha1": "b0719b1663b9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113766,
+    "sha1": "75e602223e92"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113767,
+    "sha1": "b583a8faf33b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 113782,
+    "sha1": "51fc272063ed"
+   },
+   {
+    "bundle": "index.js",
+    "line": 114199,
+    "sha1": "ea0b28d38ea7"
+   }
+  ],
+  "e": [
+   {
+    "bundle": "index.js",
+    "line": 627,
+    "sha1": "b5e72faf0cc0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 629,
+    "sha1": "b704e1b9bbac"
+   },
+   {
+    "bundle": "index.js",
+    "line": 638,
+    "sha1": "1a76e36639cc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 640,
+    "sha1": "36d95fe385e4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 28161,
+    "sha1": "8b71660485ef"
+   },
+   {
+    "bundle": "index.js",
+    "line": 28166,
+    "sha1": "904362967a3f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 32149,
+    "sha1": "200169effeb0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64805,
+    "sha1": "2457d1ba9258"
+   },
+   {
+    "bundle": "index.js",
+    "line": 68824,
+    "sha1": "dce22cc02302"
+   },
+   {
+    "bundle": "index.js",
+    "line": 76858,
+    "sha1": "9fab99a07fc6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 81167,
+    "sha1": "f519acb94e94"
+   },
+   {
+    "bundle": "index.js",
+    "line": 106722,
+    "sha1": "c82eef05695b"
+   }
+  ],
+  "wId": [
+   {
+    "bundle": "index.js",
+    "line": 64869,
+    "sha1": "dfe31d8cc513"
+   },
+   {
+    "bundle": "index.js",
+    "line": 74893,
+    "sha1": "922cc5f27d5d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107807,
+    "sha1": "002f6f9be29d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 107856,
+    "sha1": "a9b9d7fd4425"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111863,
+    "sha1": "384f28d1d45b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111,
+    "sha1": "14b444c47892"
+   },
+   {
+    "bundle": "index.js",
+    "line": 112,
+    "sha1": "063ab839b6d4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 399,
+    "sha1": "fa5c7470ff69"
+   },
+   {
+    "bundle": "index.js",
+    "line": 401,
+    "sha1": "b5d5a4aae911"
+   },
+   {
+    "bundle": "index.js",
+    "line": 412,
+    "sha1": "2e30501a85db"
+   }
+  ],
+  "changeCD": [
+   {
+    "bundle": "scripts2.js",
+    "line": 39118,
+    "sha1": "e4d9f06b5de0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 162,
+    "sha1": "03c50ea6ad19"
+   },
+   {
+    "bundle": "index.js",
+    "line": 165,
+    "sha1": "5cfcf29476a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 667,
+    "sha1": "0da5d315af81"
+   },
+   {
+    "bundle": "index.js",
+    "line": 667,
+    "sha1": "0da5d315af81"
+   },
+   {
+    "bundle": "index.js",
+    "line": 671,
+    "sha1": "3b2031667fc9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 671,
+    "sha1": "3b2031667fc9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 684,
+    "sha1": "fa707c1e8d73"
+   },
+   {
+    "bundle": "index.js",
+    "line": 911,
+    "sha1": "f819e929c4aa"
+   },
+   {
+    "bundle": "index.js",
+    "line": 914,
+    "sha1": "e14cb2813fad"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1172,
+    "sha1": "7cd025729f68"
+   },
+   {
+    "bundle": "index.js",
+    "line": 1172,
+    "sha1": "7cd025729f68"
+   }
+  ],
+  "gn": [
+   {
+    "bundle": "index.js",
+    "line": 62612,
+    "sha1": "f54949928411"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62714,
+    "sha1": "dd05ef04e010"
+   }
+  ],
+  "tableData": [
+   {
+    "bundle": "index.js",
+    "line": 62614,
+    "sha1": "2a4d26821e13"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62643,
+    "sha1": "2a4d26821e13"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62660,
+    "sha1": "2a4d26821e13"
+   }
+  ],
+  "f": [
+   {
+    "bundle": "index.js",
+    "line": 528,
+    "sha1": "61f37b7faa70"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4738,
+    "sha1": "dd3e1e50b238"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4781,
+    "sha1": "c5c34fc9e390"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4789,
+    "sha1": "c5c34fc9e390"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4795,
+    "sha1": "c5c34fc9e390"
+   },
+   {
+    "bundle": "index.js",
+    "line": 9423,
+    "sha1": "104367e68e29"
+   },
+   {
+    "bundle": "index.js",
+    "line": 120714,
+    "sha1": "2563399300b7"
+   },
+   {
+    "bundle": "index.js",
+    "line": 121383,
+    "sha1": "7145e76ac050"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 15741,
+    "sha1": "a135e1973e39"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 15810,
+    "sha1": "a135e1973e39"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 15993,
+    "sha1": "5d88f3d143a3"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 46241,
+    "sha1": "6c1eac56c389"
+   }
+  ],
+  "branchId": [
+   {
+    "bundle": "index.js",
+    "line": 111877,
+    "sha1": "09b06d7b1cc2"
+   }
+  ],
+  "itemObj": [
+   {
+    "bundle": "index.js",
+    "line": 24018,
+    "sha1": "0238c23655cd"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54348,
+    "sha1": "117fa7ec930e"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54349,
+    "sha1": "6bfc86f635f6"
+   },
+   {
+    "bundle": "index.js",
+    "line": 54357,
+    "sha1": "40b530ac6180"
+   },
+   {
+    "bundle": "index.js",
+    "line": 112027,
+    "sha1": "4c8960dcac94"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 7161,
+    "sha1": "9cca9d675c41"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 7162,
+    "sha1": "ee3b9ef89c30"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 7242,
+    "sha1": "ad38e6610b35"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 7243,
+    "sha1": "ee3b9ef89c30"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 7326,
+    "sha1": "a8ad554012c7"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 7327,
+    "sha1": "ee3b9ef89c30"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 7411,
+    "sha1": "cabd60fb18d8"
+   }
+  ],
+  "PlayerFinishTaskObj": [
+   {
+    "bundle": "index.js",
+    "line": 133516,
+    "sha1": "ebafcf65f90b"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20097,
+    "sha1": "1fc9c14e94ff"
+   },
+   {
+    "bundle": "index.js",
+    "line": 20098,
+    "sha1": "737581e60e9c"
+   },
+   {
+    "bundle": "index.js",
+    "line": 53248,
+    "sha1": "5dbc4d4b45a0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 53248,
+    "sha1": "5dbc4d4b45a0"
+   },
+   {
+    "bundle": "index.js",
+    "line": 62435,
+    "sha1": "0c19657f53c4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 66923,
+    "sha1": "eefca134fbe3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 66923,
+    "sha1": "eefca134fbe3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 74338,
+    "sha1": "b64e908f6015"
+   },
+   {
+    "bundle": "index.js",
+    "line": 74338,
+    "sha1": "b64e908f6015"
+   },
+   {
+    "bundle": "index.js",
+    "line": 76804,
+    "sha1": "9a41c4265fe4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 76804,
+    "sha1": "9a41c4265fe4"
+   }
+  ],
+  "rankArr": [
+   {
+    "bundle": "index.js",
+    "line": 137583,
+    "sha1": "e98ae05f8f43"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 41848,
+    "sha1": "b03e635730b9"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 41849,
+    "sha1": "df80098921ab"
+   }
+  ],
+  "bedLevel": [
+   {
+    "bundle": "index.js",
+    "line": 77047,
+    "sha1": "b44f83e8b747"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19,
+    "sha1": "a5f7e6da7fa3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 34,
+    "sha1": "8ddc127d231f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 36,
+    "sha1": "da8f668cec2f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   },
+   {
+    "bundle": "index.js",
+    "line": 43,
+    "sha1": "175ee3d6a0a1"
+   }
+  ],
+  "returnPro": [
+   {
+    "bundle": "index.js",
+    "line": 119844,
+    "sha1": "9e3a9bc5b637"
+   }
+  ],
+  "level": [
+   {
+    "bundle": "index.js",
+    "line": 11275,
+    "sha1": "2a6f9dba3b61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 21895,
+    "sha1": "f13e3639962a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22122,
+    "sha1": "8db218d937c9"
+   },
+   {
+    "bundle": "index.js",
+    "line": 64195,
+    "sha1": "2803ad0306bc"
+   },
+   {
+    "bundle": "index.js",
+    "line": 77093,
+    "sha1": "3577d3301822"
+   },
+   {
+    "bundle": "index.js",
+    "line": 77094,
+    "sha1": "281ef79c9193"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 12155,
+    "sha1": "fe691755e54e"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 14975,
+    "sha1": "3c6450ca7793"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 34958,
+    "sha1": "2f5bbe78ba24"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 57818,
+    "sha1": "5cb084dce656"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 57823,
+    "sha1": "c302d4ba1b48"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 57827,
+    "sha1": "89eea80bfd03"
+   }
+  ],
+  "helperId": [
+   {
+    "bundle": "scripts3.js",
+    "line": 23238,
+    "sha1": "d8355f5b3a25"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 23326,
+    "sha1": "1ea9b6fe8a5b"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 71386,
+    "sha1": "b145c35499f9"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 97695,
+    "sha1": "fb313f9c0f42"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 97958,
+    "sha1": "4488d1791280"
+   },
+   {
+    "bundle": "index.js",
+    "line": 3,
+    "sha1": "acc1158b66fe"
+   },
+   {
+    "bundle": "index.js",
+    "line": 4,
+    "sha1": "9080357dfe1f"
+   },
+   {
+    "bundle": "index.js",
+    "line": 7,
+    "sha1": "1ceb7d866e61"
+   },
+   {
+    "bundle": "index.js",
+    "line": 15,
+    "sha1": "0ec781f73bde"
+   },
+   {
+    "bundle": "index.js",
+    "line": 18,
+    "sha1": "a491a6249366"
+   },
+   {
+    "bundle": "index.js",
+    "line": 19,
+    "sha1": "a5f7e6da7fa3"
+   },
+   {
+    "bundle": "index.js",
+    "line": 22,
+    "sha1": "65fcb5001fff"
+   }
+  ],
+  "skch": [
+   {
+    "bundle": "index.js",
+    "line": 64757,
+    "sha1": "9c4a1c81d72b"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 73950,
+    "sha1": "a1b1ecd6221d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 111,
+    "sha1": "14b444c47892"
+   },
+   {
+    "bundle": "index.js",
+    "line": 112,
+    "sha1": "063ab839b6d4"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145,
+    "sha1": "85e97648821a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145,
+    "sha1": "85e97648821a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 149,
+    "sha1": "8e3b5cadbd5d"
+   },
+   {
+    "bundle": "index.js",
+    "line": 154,
+    "sha1": "c2294320415a"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 326,
+    "sha1": "34d62f8aafdf"
+   },
+   {
+    "bundle": "index.js",
+    "line": 399,
+    "sha1": "fa5c7470ff69"
+   },
+   {
+    "bundle": "index.js",
+    "line": 401,
+    "sha1": "b5d5a4aae911"
+   }
+  ],
+  "fasionid": [
+   {
+    "bundle": "index.js",
+    "line": 145367,
+    "sha1": "90bbd95852bb"
+   },
+   {
+    "bundle": "index.js",
+    "line": 145368,
+    "sha1": "56c83a976801"
+   }
+  ],
+  "formulaID": [
+   {
+    "bundle": "index.js",
+    "line": 64793,
+    "sha1": "2cc016482d97"
+   }
+  ],
+  "FashionArr": [
+   {
+    "bundle": "scripts2.js",
+    "line": 21461,
+    "sha1": "6e20fb3efafd"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 21462,
+    "sha1": "eda04765ea5e"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 21482,
+    "sha1": "78eb903110f5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 21483,
+    "sha1": "2b963b0b0158"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 21501,
+    "sha1": "78eb903110f5"
+   },
+   {
+    "bundle": "scripts2.js",
+    "line": 21502,
+    "sha1": "2b963b0b0158"
+   }
+  ],
+  "notFriendPartnerData": [
+   {
+    "bundle": "scripts3.js",
+    "line": 58456,
+    "sha1": "88593afc9e4f"
+   }
+  ],
+  "groupPoints": [
+   {
+    "bundle": "scripts3.js",
+    "line": 2932,
+    "sha1": "2ce49974cec7"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 3042,
+    "sha1": "ac5e4d5d282c"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 3042,
+    "sha1": "ac5e4d5d282c"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 3042,
+    "sha1": "ac5e4d5d282c"
+   },
+   {
+    "bundle": "scripts3.js",
+    "line": 3045,
+    "sha1": "92200c09722d"
+   }
+  ]
+ }
+}

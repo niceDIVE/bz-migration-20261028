@@ -1,0 +1,121 @@
+# User.BuyFashion  (HttpConst.REQ_BUY_FASHION)
+# 出现 3 处
+
+ 75547: Promise.all([ o, n ]).then(function(t) {
+ 75548: var o = i(t, 2), n = (o[0], o[1]), r = cc.instantiate(n);
+ 75549: v.PopUpMgr.addPopUp(r, _.LayerMgr.popUpLayer);
+ 75550: r.addComponent("FashionShopMainUI").showFashionShop(e);
+ 75551: });
+ 75552: });
+ 75553: s.MessageCenter.on(l.HttpConst.REQ_BUY_FASHION, function(e, o) {
+ 75554: if (1 == o.eRet) {
+ 75555: o.hasOwnProperty("titivateObj") && t.read(o.titivateObj);
+ 75556: for (var i in t.tempData) {
+ 75557: p.UserModel.entity.putOffEquipment(i);
+ 75558: if (t.tempData[i][0] > 0) {
+ 75559: var r = h.InventoryModel.getEquipmentInfo(t.tempData[i][0]), l = {
+ 75560: id: r.id,
+ 75561: type: r.type,
+ 75562: itemID: r.itemID,
+ 75563: attrs: r.attrs,
+ 75564: numAttr: r.numAttr,
+ 75565: crystalIds: r.crystalIds
+ 75566: };
+ 75567: r.itemID;
+ 75568: d.RoleBaseInfo.equipments[i] = r.id;
+ 75569: p.UserModel.entity.putOnEquipment(new a(l), i);
+ 75570: }
+ 75571: }
+ 75572: s.MessageCenter.dispatch(u.EvName.UPDATE_PLAYER_EVENT);
+ 75573: c.default.show(n.getText("980"));
+ 75574: s.MessageCenter.dispatch(u.EvName.BUY_FASHION_SUCCESS, t.tempData);
+ 75575: t.tempData = {};
+ 75576: t.currentFashion = {};
+ 75577: 0 == t.tableType || (1 == t.tableType ? s.MessageCenter.dispatch(u.EvName.CHANGE_FASHION_SHOP_MONEY_NUM_EVENT, d.RoleBaseInfo.getItemNum(7298)) : s.MessageCenter.dispatch(u.EvName.CHANGE_FASHION_SHOP_MONEY_NUM_EVENT, d.RoleBaseInfo.getItemNum(7851)));
+ 75578: } else 2 == o.eRet ? c.default.show(n.getText("968")) : 3 == o.eRet ? f.StoreModel.openChargeList() : 4 == o.eRet ? c.default.show(n.getText("1161")) : 7 == o.eRet && c.default.show(n.getText("1455"));
+ 75579: }, this);
+ 75580: s.MessageCenter.on(l.HttpConst.REQ_BEGIN_CHANGEFACE, function(t, e) {
+ 75581: if (1 == e.eRet) {
+ 75582: c.default.show(n.getText(1053));
+ 75583: s.MessageCenter.dispatch(u.EvName.CHANGE_FACE_SUCESS, 0);
+ 75584: } else c.default.show(n.getText(1051));
+ 75585: }, this);
+ 75586: s.MessageCenter.on(l.HttpConst.ADD_CHANGE_FACE, function(t, e) {
+ 75587: if (1 == e.eRet) {
+ 75588: c.default.show(n.getText(1053));
+ 75589: s.MessageCenter.dispatch(u.EvName.CHANGE_FACE_SUCESS, 0);
+ 75590: } else c.default.show(n.getText(1051));
+ 75591: }, this);
+ 75592: s.MessageCenter.on(l.HttpConst.SET_PLAYER_WING_ID, function(t, e) {
+ 75593: if (1 == e.eRet) {
+---
+ 75742: }
+ 75743: if (o.hasOwnProperty(8) || o.hasOwnProperty(9)) {
+ 75744: this.tempData = o;
+ 75745: var a = {
+ 75746: itemObj: o
+ 75747: };
+ 75748: m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BUY_FASHION, a);
+ 75749: } else c.default.show(n.getText(979));
+ 75750: };
+ 75751: t.prototype.reqChangeFace = function(t) {
+ 75752: var e = {
+ 75753: type: t
+ 75754: };
+ 75755: m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BEGIN_CHANGEFACE, e);
+ 75756: };
+ 75757: t.prototype.reqGetFashionList = function(t) {
+ 75758: void 0 === t && (t = 0);
+ 75759: m.NetMgr.http.sendReqWithMask(l.HttpConst.GET_FASHION_LIST, {
+ 75760: type: t
+ 75761: });
+ 75762: };
+ 75763: t.prototype.unLoadCoatAndFa = function() {
+ 75764: var t = p.UserModel.entity.getEquipment(8);
+ 75765: if (t && (2634 == t.id || 2635 == t.id)) {
+ 75766: this.tempData = {
+ 75767: 8: 0
+ 75768: };
+ 75769: m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BUY_FASHION, {
+ 75770: itemObj: {
+ 75771: 8: 0
+ 75772: }
+ 75773: });
+ 75774: }
+ 75775: };
+ 75776: t.prototype.reqAddChangeFace = function(t) {
+ 75777: var e = {
+ 75778: type: t
+ 75779: };
+ 75780: m.NetMgr.http.sendReqWithMask(l.HttpConst.ADD_CHANGE_FACE, e);
+ 75781: };
+ 75782: t.prototype.reqFashionEffect = function(t) {
+ 75783: var e = {
+ 75784: id: t
+ 75785: };
+ 75786: m.NetMgr.http.sendRequest(l.HttpConst.FASHION_EFFECT, e);
+ 75787: };
+ 75788: t.prototype.reqSetWingId = function(t) {
+---
+ 75789: var e = {
+ 75790: wId: t
+ 75791: };
+ 75792: m.NetMgr.http.sendRequest(l.HttpConst.SET_PLAYER_WING_ID, e);
+ 75793: };
+ 75794: t.prototype.reqSetYpEffect = function(t) {
+ 75795: m.NetMgr.http.sendRequest(l.HttpConst.SET_YP_EFFECT_STATE, {
+ 75796: state: t
+ 75797: });
+ 75798: };
+ 75799: t.prototype.getNewFashionID = function(t) {
+ 75800: void 0 === t && (t = {});
+ 75801: var e = 0;
+ 75802: for (var o in this.currentFashion) if (parseInt(this.currentFashion[o]) > 0) {
+ 75803: e = this.checkTitivateValue(parseInt(this.currentFashion[o]), t);
+ 75804: break;
+ 75805: }
+ 75806: return e;
+ 75807: };
+ 75808: t.prototype.curCoatFashionID = function() {
+ 75809: for (var t = [ 8, 9 ], e = 0, o = 0; o < t.length; o++) {
+---

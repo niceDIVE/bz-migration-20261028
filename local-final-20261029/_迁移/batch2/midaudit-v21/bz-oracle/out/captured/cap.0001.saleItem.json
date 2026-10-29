@@ -1,0 +1,50 @@
+{
+  "id": "cap.0001.saleItem",
+  "action": "User.saleItem",
+  "req": {
+    "mod": "User",
+    "do": "saleItem",
+    "p": {
+      "itemID": 2001,
+      "num": 1
+    }
+  },
+  "resp": {
+    "eRet": 1,
+    "note": {
+      "ivch": {
+        "2001": 6
+      },
+      "eco": {
+        "coins": 930
+      }
+    }
+  },
+  "envelope": {
+    "error": 0,
+    "code": 200,
+    "p": "User.saleItem",
+    "User.saleItem": {
+      "eRet": 1,
+      "note": {
+        "ivch": {
+          "2001": 6
+        },
+        "eco": {
+          "coins": 930
+        }
+      }
+    }
+  },
+  "transport": "game",
+  "rawTransport": {
+    "code": 200
+  },
+  "meta": {
+    "source": "har",
+    "startedDateTime": "2026-01-01T00:00:01Z",
+    "url": "http://game.example/game"
+  },
+  "exceptions": [],
+  "toasts": []
+}

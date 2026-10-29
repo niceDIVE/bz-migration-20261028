@@ -1,0 +1,23 @@
+{
+ "archivedAt": "2026-10-22T15:43:25.295Z",
+ "rules": [
+  {
+   "id": "C11-time0-20261023",
+   "kind": "value-rewrite",
+   "field": [
+    "beginTime",
+    "serverTime",
+    "CDTime",
+    "endTime",
+    "hyTime",
+    "startTime",
+    "refreshTime",
+    "cdTime"
+   ],
+   "expect": 10,
+   "sigmaChangeAllowed": true,
+   "ev": "scripts2.js:47303",
+   "why": "C11（SOTA R08）：时间类字段作为**形状默认值**时不许是正数时间戳。客户端真的拿它做减法 —— scripts2.js:47303 `(duration-(getSTimestamp()-startTimestamp))/1e3`、scripts2.js:58268 同款 —— 一个构建时刻常量会让 now-默认值 天然很大，表现为进度一开始就完成/溢出。改 0 后由 handler 在请求时给 env.now() 真值。本批 10 项差异全部是 num+→num0，逐条证据见 docs/audit/c11-time-defaults.md。"
+  }
+ ]
+}

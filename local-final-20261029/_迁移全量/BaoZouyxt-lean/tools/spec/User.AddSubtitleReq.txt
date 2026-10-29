@@ -1,0 +1,99 @@
+# User.AddSubtitleReq  (HttpConst.ADD_SUBTITLEREQ)
+# 出现 2 处
+
+146246: }, this);
+146247: h.MessageCenter.on(u.HttpConst.CHAT_PROPERTY_CHANGE, function(t, o) {
+146248: var i = o.TextProperty.split(",");
+146249: e.roleAchieve = [];
+146250: if (i.length) for (var n = 0; n < i.length; n++) e.roleAchieve.push(i[n]);
+146251: }, this);
+146252: h.MessageCenter.on(u.HttpConst.ADD_SUBTITLEREQ, function(t, e) {
+146253: p.reqAddSubtitle(e);
+146254: }, this);
+146255: h.MessageCenter.on(u.HttpConst.STC_ROOM_RECEIVE_MSG_RES, function(t, e) {
+146256: var o = e.BattleRoomChatMessage, i = {
+146257: SenderName: o.SenderName,
+146258: SendContext: o.Content,
+146259: SenderTitle: "",
+146260: type: 0,
+146261: priority: 3
+146262: };
+146263: h.MessageCenter.dispatch(m.EvName.WULIN_CHAT_MSG, i);
+146264: }, this);
+146265: h.MessageCenter.on(u.HttpConst.STC_ROOM_RECEIVE_USE_ITEM_RES, function(t, e) {
+146266: e.type = 1;
+146267: e.priority = 2;
+146268: h.MessageCenter.dispatch(m.EvName.WULIN_CHAT_MSG, e);
+146269: }, this);
+146270: };
+146271: e.prototype.tipOff = function(t) {
+146272: var e = {
+146273: limitID: t
+146274: };
+146275: f.NetMgr.http.sendRequest(u.HttpConst.TIP_OFF_USER, e);
+146276: };
+146277: e.prototype.readFriendChatData = function(t) {
+146278: var e = d.RoleBaseInfo.roleID;
+146279: if (cc.sys.localStorage.getItem("fChat" + e)) {
+146280: var o = cc.sys.localStorage.getItem("fChat" + e), i = JSON.parse(o);
+146281: for (var n in i) if (t.hasOwnProperty(n)) this.friendChatData[n] = i[n]; else {
+146282: this.friendChatData.hasOwnProperty(n) && delete this.friendChatData[n];
+146283: delete i[n];
+146284: }
+146285: var r = JSON.stringify(i);
+146286: cc.sys.localStorage.setItem("fChat" + e, r);
+146287: }
+146288: };
+146289: e.prototype.saveFriendChatData = function(t, e) {
+146290: this.friendChatData.hasOwnProperty(t) || (this.friendChatData[t] = {
+146291: id: t,
+146292: chatAy: []
+---
+146411: e.prototype.reqGetAddSubtitle = function(t, e, o) {
+146412: this.addSubtitleData = {
+146413: battle_id: t,
+146414: insert_offset: e,
+146415: insert_content: o
+146416: };
+146417: f.NetMgr.http.sendReqWithMask(u.HttpConst.ADD_SUBTITLEREQ, {});
+146418: };
+146419: e.prototype.reqLookVideo = function(t, e, o) {
+146420: if (L.BattleMgr.inBattle) v.default.show(l.getText(3143)); else {
+146421: this.fightTime = e;
+146422: this.battleId = t;
+146423: this.lookType = o;
+146424: 1 == o ? 0 != S.ChatVSFightModel.roleUniqueId ? f.NetMgr.chatPkHttp.sendRequest(u.HttpConst.REQ_SUBTITLE_SEE, {
+146425: battle_id: t
+146426: }, null, !0) : v.default.show(l.getText("4520")) : -1 == o ? f.NetMgr.wulinHttp.sendRequest(u.HttpConst.REQ_SUBTITLE_SEE, {
+146427: battle_id: t
+146428: }, null, !0) : f.NetMgr.chatFightHttp.sendRequest(u.HttpConst.REQ_SUBTITLE_SEE, {
+146429: battle_id: t
+146430: }, null, !0);
+146431: }
+146432: };
+146433: e.prototype.reqWulinChannelChatMsg = function(t) {
+146434: g.Net.sendMsg(u.HttpConst.CTS_ROOM_SEND_MSG_REQ, {
+146435: Content: t
+146436: });
+146437: };
+146438: e.prototype.removeBlockStringFunc = function(t) {
+146439: return U.LoginMgr.judgeLangEn() ? t : t.replace(/[ ]|[\r\n]/g, "");
+146440: };
+146441: e.prototype.gmcheckLookVideo = function(t, e) {
+146442: 0 == e ? f.NetMgr.chatFightHttp.sendRequest(u.HttpConst.REQ_SUBTITLE_SEE, {
+146443: battle_id: t
+146444: }, null, !0) : f.NetMgr.chatPkHttp.sendRequest(u.HttpConst.REQ_SUBTITLE_SEE, {
+146445: battle_id: t
+146446: }, null, !0);
+146447: };
+146448: e.prototype.initNextVideo = function() {
+146449: return i(this, void 0, void 0, function() {
+146450: var t, e, o, i, r, s, l, p, h, u, f, d, g, y, v, _ = this;
+146451: return n(this, function(n) {
+146452: switch (n.label) {
+146453: case 0:
+146454: if (this.battle3v3Data.battleData.length <= 0) return [ 2, !0 ];
+146455: t = this.battle3v3Data.battleData.shift();
+146456: e = JSON.parse(t).AttckData;
+146457: o = JSON.parse(t).EnemyData;
+---

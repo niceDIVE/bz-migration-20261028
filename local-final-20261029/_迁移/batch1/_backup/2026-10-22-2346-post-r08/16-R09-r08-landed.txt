@@ -1,0 +1,120 @@
+【指令】
+你是一位资深客户端逆向与静态分析方向的架构顾问。这是第 16 批材料（上一批 15 号：C1–C6 落地 + 3 个新问题；你的回执是 R08）。
+本批是**对 R08 的处置回报 + 两条"你的假设不成立"的实证 + 三处我方自纠 + 3 个新问题**。
+回答规则（沿用）：
+1. 结论要么带条件说明，要么带可执行形式（代码/命令/断言）；不接受"建议考虑""应该注意"。
+2. 凡是你推断的、材料里没有明说的，一律标注【推断】；材料没有的直接说"材料未提供"。
+3. 必须给一段"反例"：我这套判断在什么具体场景下会出错。
+4. 严格按末尾编号格式输出。
+5. 约束不变：不能改客户端（只能进程内替换网络层 / 单文件存档）、不能加数据库。
+
+────────────────────────────────────────────────────────
+【一、部署与基线】
+
+`impl=h4d4f26fc / flow=ffaec47c3`，`pid 29928` 热重载未重启，`scene=gamescene`，`implErr=null / flowErr=null`。
+进程内自检 **1232**；自动化验收 **32 条全过**（27 套回归 + 兑换验收器 + 形状冻结断言 + 分类器 + 生成器 + 构建）；
+设备存档 md5 与改前一致（`FBCC240EEAE1DD0CB92183F4D34A6851`），真机 `err=0`。
+
+R08 的判据我全部采纳并落地：C7（sigma）、C8（清单精确计数）、C10（冻结前校验/拒绝冻结）、
+C11（时间类默认值必须 0 或不发）、C12（`src` 溯源）、D1 补强（输入摘要闸门）。**分类器本身仍然一个字没改。**
+
+────────────────────────────────────────────────────────
+【二、你的两条假设不成立（都逐行核过原文，你那边的结论请作废或改写）】
+
+H1（ECONOMY_CHNG 可能是累加）→ **不成立：六个 case 全是赋值**
+逐字（`tools/index.js`）：
+  64701  `l.RoleBaseInfo.coins = e[o];`
+  64705  `l.RoleBaseInfo.potentials = e[o];`        ← ptt
+  64709  `l.RoleBaseInfo.gold = e[o];`
+  64713/64714 `k.playerInfo.entity.exp = e[o]; l.RoleBaseInfo.exp = e[o];`
+  64718  `l.RoleBaseInfo.chipNum = e[o];`
+  64722  `l.RoleBaseInfo.yuanbao = e[o];`
+另：三包里确实有 8 处 `RoleBaseInfo.potentials += ...`（`index.js:23994/23997/24006/54267/54268/86213` 等），
+但它们**不在 ECO 监听器里**（是本地发奖路径），与本议题无关。
+⇒ 所以"发新余额"的语义是对的，你担心的"显示翻倍到下次 LoadGame"不会发生。R07 的 118 行兑换同此结论。
+
+H2（客户端可能不读 beginTime，固定常量会降级为无害）→ **不成立：它是活字段，而且被拿去做减法**
+  `tools/index.js:138880-138886`（START_DAZUO / BeginMeditation）
+    `if (1 == o.eRet || 2 == o.eRet) { t.startTimestamp = o.beginTime; t.hyTime = 1e3 * o.hyTime; NonBattleBuffModel.setBufferCostStartTime(o.hyTime, o.beginTime); ... }`
+  `tools/index.js:120515-120523`（BEGIN_LIANGONG / BeginTraining）
+    `e.startTimestamp = n.beginTime; E.TimeMgr.sserverT = n.beginTime; E.TimeMgr.startTime = Date.now(); ...`
+  消费端（真的做减法）：
+  `tools/scripts2.js:47303`  `var e = tbbByID[1043].duration, o = tbbByID[1043].startTimestamp, i = (e - (l.TimeMgr.getSTimestamp() - o)) / 1e3;`
+  `tools/scripts2.js:58268`  `var B = SkillUpgradeModel.startTimestamp, L = .001 * (TimeMgr.getSTimestamp() - B), S = SchoolSquareModel.surplusTime - L, ...`
+⇒ 固定常量会让 `getSTimestamp() - startTimestamp` 天然很大 → 剩余时间 ≤ 0 → **一进打坐/练功就"已完成"**。
+⇒ 按你 Q2 的判别第 3 步，结论是"**必须补 handler**，返回请求时刻的 `env.now()`"，不是"无害常量"。
+
+**处置**：已按 C11 把时间类形状默认值全部压成 0（只 10 个 (动作,路径) 差异，见 `docs/audit/c11-time-defaults.md`），
+那只是止血；两个动作的 handler 补写列为下一步（M1）。
+
+────────────────────────────────────────────────────────
+【三、我方三处自纠（都是自己踩出来的，不许隐瞒）】
+
+E1 **C11 的正则把非时间字段误伤了，是 C7 当场抓到的**
+我第一版 `isTimeField` 写成 `/^cd/i`，于是 `chooseUsedItemAward.cData` 被判成时间字段、默认值从 `{}` 变 `0`。
+`--diff` 输出是 `value | chooseUsedItemAward | cData | "{}" → 0 | sigma obj0→num0` —— 正是你设计 sigma 想抓的
+"路径不变、值变、且类型族变了"。已把正则收紧成 `/^cdtime\d*$/i`。**这说明 C7 不是纸面条款。**
+
+E2 **冻结成功后旧清单规则不退休，C8 会把下一轮直接搞红**
+第一次 `--freeze` 成功后，`planned-changes.json` 里的规则还留着（expect 10）；下一轮 `--freeze` 报
+"规则期望匹配 10 项，实得 0"。已加机制：冻结成功 → 规则写进 `planned-archive/frozen-<ts>.json` → 清空清单；
+并且冻结模式对"0 匹配"的规则按**过期**处理（归档），校验模式仍按严格精确计数。
+
+E3 **我用 PowerShell `Set-Content` 改了含中文的 .js，把文件写坏**
+`check_shape_freeze.js` 被写成乱码、`node --check` 直接语法错。这份仓库的纪律文档里早就写着
+"含中文的文件只许用 edit/write 工具"，我自己违反了。已从备份恢复并用 edit 工具重做。
+⇒ 这条有一个**方法学后果**：如果 CI 只看 md5 是否变化，这类"编码级破坏"和其他改动无法区分。
+所以我建议把"编码自检"也进闸门（见 Q1）。
+
+────────────────────────────────────────────────────────
+【四、C1–C12 落地后的现状（全部可复跑）】
+
+- C1–C8、C10–C12 全绿；**C9 未实现**（脚本每次都会打印"未实现"，不许当它通过）。
+- C11：337 个动作里 10 个 (动作,路径) 的时间类默认值由"正数时间戳"改成 0；全部进了 `planned-changes` 的
+  一条规则（`expect:10`，`sigmaChangeAllowed:true`，证据 `scripts2.js:47303`），冻结前 C10 校验通过。
+- C12：`src` 已给每个形状字段记溯源，量化结果 —— **867/1071 合法、204 项是"跨动作继承"**。样本：
+  `BeginTraining.skillID ← borrowed-handler:OnCheckBreak`、
+  `BuyHomeCrop.rewardArray ← borrowed-capture:templates.json:checkBattleResult...`、
+  `BuyMarketItem.userGold ← borrowed-capture:templates.json:quicklogin.userGold`。
+  204 项目前**只计数上报、不 FAIL**（清零会让 204 个默认值同时变，得先有分批策略，见 Q2）。
+- 生成器新增两道闸门：① 启动时比对 `facts/field-classes.json` 的 `inputDigest`（三包 md5）与当前三包，不一致中止；
+  ② 变异运行（`BZ_MUTATE`）**不写产物**，且 C1b 断言"变异前后产物 md5 不变"。
+
+────────────────────────────────────────────────────────
+【五、我要你回答的 3 件事】
+
+Q1（编码/改写类破坏能不能进闸门）
+E3 那类破坏（用错工具/编码把含中文的源码写坏）现在只能靠人眼。请给：
+(a) **一个可判定的编码断言**：对 `tools/*.js`、`hotfix-patch/core/*.js`、`tools/golden/*.json`，怎么在 CI 里
+    "证明文件是合法 UTF-8 且没有 U+FFFD"？给出可直接跑的 Node 代码与阈值（是否要连 BOM、CRLF 一起管，给判据）。
+(b) 更进一步：怎么区分"**内容被改**"与"**仅编码被改坏**"（同一段逻辑文本）？如果做不到，明说做不到，别给启发式。
+
+Q2（204 项跨动作继承怎么清零才不制造第二场事故）
+你 R08 判"合法继承是空集，选 (a) 禁止"。我认同方向，但一次性清零会让 204 个默认值同时变成中性值，
+其中一批会触发 sigma 变化（例如 `type` 从具体数字变 0、`rewardArray` 从空对象变 0）。
+我的担心：这些默认值现在虽然"语义上来自别的动作"，但它们同时是**当前线上行为**的一部分；
+一次性换掉等于把 204 个未验证的行为同时改掉 —— 而你自己的 C3 教训就是"别在同一批里混进没验证的改动"。
+请给：
+(a) **分批策略的可判定判据**（按什么切批：`src` 类型？字段类型？`byConf`？涉及动作数？给排序规则与每批上限）；
+(b) 每一批必须过什么断言才算"这批可以冻"（要能写成代码）；
+(c) 有没有一批是可以"零风险先做"的（例如 `borrowed-capture` 里那些**抓包真值本来就属于本动作**、
+    只是我的 evid 前缀匹配写松了的那部分）—— 如果有，先做这一批，请给识别条件。
+
+Q3（下一步先做哪个：补 handler 还是 span 收益统计）
+两条候选：
+  M1 补 `BeginMeditation` / `BeginTraining` 的 handler（客户端消费方式已逐字取证；风险是"奖励/结算语义未知"，
+     还要连带看 `EndMeditation`（`index.js:138888` 注册 / `:138962` 发送）与 `EndTraining`（`:120574` / `:120775`））；
+  M2 写 `tools/span_gain.js` 跑 R08 Q3 的收益统计，再决定要不要做 §7-3 的 span 改造。
+请给：**按"消除已知缺陷数 / 引入风险 / 可验证性"的判据排出先后**（要可算，不要倾向），并说明
+"如果 M2 的结论是 R ≤ 10（不做改造），M1 是否就自动升为第一优先"。
+
+────────────────────────────────────────────────────────
+【输出格式（严格 1-7，不许增删小标题）】
+
+1. 结论（≤6 句）：H1/H2 作废后，你 R08 的哪些结论要改写；我这批处置有没有错位
+2. Q1 答（(a) 编码断言可直接跑的代码 + 判据；(b) "内容被改 vs 编码被改坏"能不能判，明说）
+3. Q2 答（(a) 分批判据 (b) 每批的过关断言 (c) 是否有零风险先做的那一批及其识别条件）
+4. Q3 答（M1 vs M2 的可算排序 + "R≤10 时 M1 是否自动升第一"）
+5. 对 E1（`cData` 误伤被 C7 抓到）与 E2（旧清单规则不退休）这两个自纠的判断
+6. 反例：我这批处置在什么具体场景下会出错
+7. 假设：哪条前提不成立时，你上面哪些结论失效（按编号点名）

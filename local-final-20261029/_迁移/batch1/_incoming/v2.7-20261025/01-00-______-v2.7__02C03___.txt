@@ -1,0 +1,43 @@
+下游包 v2.7（只换 extract_shape.py 和 README.md，out/ 用你们自己的）
+
+══ 一、C02 堵口：验收通过 ══
+  三处偏差都对：isRepeatable 取并集、用环任务白名单、rogueAcceptTask 拒绝回 4。修前修后的重现对比很到位。
+  acceptTask 不收紧也同意，共用账本已经把所有领奖口拦住了。
+  每日 20 次总上限：先这样。实测真顶到上限，就改成按任务分别计次，不用再来问。
+
+  环任务发奖接线（这一轮做）：
+    circleTaskAward / getCircleTaskAward 认 BZ_CIRCLE_TASK，按当前档位发 m 银两、e 经验、p 潜能。
+    银两写进客户端比价时读的那个字段（和 C01 同口径）。
+    走 canClaim/markClaim。接好后，quickFinishTask 对环任务正常扣 50 元宝。
+    award[1] 是显示经验还是潜能（35/36 文案不明）：维持 [m,e]，小差别可以接受。
+
+══ 二、C03 三件事的拍板 ══
+  1 那 7 个结算口的奖励：先在 tools/cfg/dump 里找表，不用我给。
+    - TowerBattleResult / chanllengeTower / choosePandaEvent：找以塔层 lv 为键的表（tower*、climb*、sweep*、panda* 之类）。
+      表里有 npc id 的走 BZ_NPCDROP（和 CheckBattleResult 同口径）；有直接奖励列的按列发。
+    - activateTowerEvent：按 eventID 找事件表。
+    - mulitiNpcBattleResult / goodAndEvilBattleResult：把 o / r 的构造处读完（89340、101415 往上），有 npcID 就走 BZ_NPCDROP。
+      goodAndEvil 的 prestige/contribution 只认表值，不认客户端传上来的数。
+    - rogueBattleResult：同上，有 npcID 就发，没有就只 ack。
+    找不到表就保持只 ack，不报。不准拿客户端传上来的数值当奖励。
+  2 GetRandomEventAward：顺着 award 参数 e 往上追。如果它是客户端拿 eventID/adventureID 从某张配置表读出来的，
+    服务端就用同一个键读 dump 里的同一张表来发（等于服务端自己算），客户端传的 award 只记日志。
+    追不到来源就保持一件不发。
+  3 两个肉鸽结算可以反复刷：不加限次。打怪掉落本来就是玩法，和 CheckBattleResult 同口径，不算白拿。
+  diceBattleResult 回 0：同意，等以后做大富翁那批再说。
+
+══ 三、算法：v2.6 的 649/625 说明 ══
+  字段增多是真的（补抽生效，container 113→208）。unsafe 625 几乎全是重发判定的误报：
+  我把判据放得太宽了（裸 else、!this. 在 6 行窗口里随处可见）。
+  另外 v2.5 的 235 也不能当基准：它根本没认出 NetMgr.http.sendRequest( 这种发送写法，漏报不少。
+  v2.7 的改法：只认真正的发送调用；判空只认"长度为 0 / 等于 null / 取反"这几种；窗口回到 4 行；
+  stdout 拆出 unsafeByCrash 和 unsafeByRetry 两个数；调用方 trace 不再命中一个就停。
+  请注意，上轮 scripts2.js:46175 其实根本没被判过，是前一个调用方命中后 break 掉了。
+
+══ 四、请回执（短）══
+  1 C02 环任务发奖接线后的冒烟结果（接→领→再领被拒，发的数等于表值）
+  2 C03 补表：7 个口各自找到的表和键，或者"没表，只 ack"
+  3 v2.7 的 stdout JSON，以及 --trace User.getBigGrowupData 原样贴回（重点看 46175 那行的判空结论）
+  4 然后开第 5 批（按 relations.md 的顺序，C16 成就）
+
+升级报告的条件不变：存档写坏，或者能白拿钱/道具。

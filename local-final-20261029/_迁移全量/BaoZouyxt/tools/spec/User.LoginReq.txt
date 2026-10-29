@@ -1,0 +1,109 @@
+# User.LoginReq  (HttpConst.SERVER_CHECK_LOGIN)
+# 出现 3 处
+
+144488: var e = this;
+144489: this.linkData = {};
+144490: this.netWorkType = -1;
+144491: this.isConnectServer = !1;
+144492: this.cTimeUpdate = null;
+144493: this.teamID = 0;
+144494: n.MessageCenter.on(r.HttpConst.SERVER_CHECK_LOGIN, function(t, e) {
+144495: e.eRet;
+144496: }, this);
+144497: n.MessageCenter.on(r.HttpConst.STC_LINKID, function(t, o) {
+144498: e.linkData = o;
+144499: e.reqGameServerLogin(o);
+144500: }, this);
+144501: n.MessageCenter.on(r.HttpConst.STC_LOGINREQ, function(t, o) {
+144502: if (0 == o.Ret) {
+144503: e.teamID = o.teamId;
+144504: a.WebSocketFactory.successConnect(e.teamID > 0);
+144505: s.CopyFightModel.setCopyInfoData(o);
+144506: }
+144507: }, this);
+144508: n.MessageCenter.on(r.HttpConst.STC_ERRPR_NOTIFY, function(t, e) {
+144509: l.Net.errorFunction(parseInt(e.error));
+144510: }, this);
+144511: n.MessageCenter.on("Pong", function() {
+144512: l.Net.setChecked();
+144513: }, this);
+144514: var o = this;
+144515: n.MessageCenter.on(c.EvName.NET_WORK_CONNECT_EVENT, function() {
+144516: if (l.Net.connectTime > 5) h.default.show(i.getText(1501)); else if (a.WebSocketFactory.socketMgr && null == o.cTimeUpdate) {
+144517: l.Net.connectTime++;
+144518: var t = 1500 * l.Net.connectTime;
+144519: o.cTimeUpdate = setTimeout(function() {
+144520: clearTimeout(o.cTimeUpdate);
+144521: o.cTimeUpdate = null;
+144522: a.WebSocketFactory.socketMgr && l.Net.connectWebSocket();
+144523: }, t);
+144524: }
+144525: }, this);
+144526: n.MessageCenter.on(c.EvName.NET_WORK_RECONNECT_EVENT, function() {
+144527: Promise.resolve().then(function() {
+144528: return t("../../mgrs/BattleMgr");
+144529: }).then(function(t) {
+144530: if ("wulinAssembly" == e.curSocket && t.BattleMgr.inBattle) {
+144531: if (l.Net.connectTime > 5) {
+144532: a.WebSocketFactory.reconnectFailed(function() {
+144533: h.default.show(i.getText(1501));
+144534: });
+---
+144553: e.prototype.reqGameServerLogin = function(t) {
+144554: var e = {
+144555: linkID: t.linkID,
+144556: loginTime: t.loginTime,
+144557: passBackSign: t.passBackSign
+144558: };
+144559: p.NetMgr.http.sendRequest(r.HttpConst.SERVER_CHECK_LOGIN, e);
+144560: };
+144561: e.prototype.reqResetGameServerLogin = function(t) {
+144562: var e = {
+144563: linkID: t.linkID,
+144564: loginTime: t.loginTime,
+144565: passBackSign: t.passBackSign,
+144566: flag: 1
+144567: };
+144568: p.NetMgr.http.sendRequest(r.HttpConst.SERVER_CHECK_LOGIN, e);
+144569: };
+144570: e.prototype.openSocketNet = function(t, e) {
+144571: void 0 === e && (e = 0);
+144572: void 0 === e && (e = 0);
+144573: this.curSocket = t;
+144574: a.WebSocketFactory.createSocketObject(t, e);
+144575: };
+144576: e.prototype.destroy = function() {
+144577: this.linkData = {};
+144578: this.netWorkType = -1;
+144579: this.isConnectServer = !1;
+144580: this.cTimeUpdate = null;
+144581: this.teamID = 0;
+144582: };
+144583: return e;
+144584: }();
+144585: o.WebSocketModel = new u();
+144586: cc._RF.pop();
+144587: }, {
+144588: "../../core/events/MessageCenter": "MessageCenter",
+144589: "../../gameconfigs/LangMgr": "LangMgr",
+144590: "../../gui/uicomponents/Alert": "Alert",
+144591: "../../mgrs/BattleMgr": "BattleMgr",
+144592: "../../models/CopyFightModel": "CopyFightModel",
+144593: "../../net/HttpConst": "HttpConst",
+144594: "../../net/Net": "Net",
+144595: "../../net/NetMgr": "NetMgr",
+144596: "../../utils/EvName": "EvName",
+144597: "./WebSocketFactory": "WebSocketFactory"
+144598: } ],
+144599: WedHouseModel: [ function(t, e, o) {
+---
+144600: "use strict";
+144601: cc._RF.push(e, "54d919gqjtNSbY55wQbiGJP", "WedHouseModel");
+144602: Object.defineProperty(o, "__esModule", {
+144603: value: !0
+144604: });
+144605: o.WedHouseModel = void 0;
+144606: var i = function() {
+144607: function t() {
+144608: this.wifeNpc = null;
+---

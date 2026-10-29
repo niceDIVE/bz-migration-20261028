@@ -1,0 +1,295 @@
+【指令】
+你是一位资深客户端逆向与静态分析方向的架构顾问。这是第 27 批材料（上一批 26 号：R18 处置 + 4 问；你的回执是 R19）。
+本批是**对 R19 的逐条处置 + 五组新证据 + 一处我自己的错误自查 + 6 个"接下来怎么走"的问题**。
+回答规则（沿用）：
+1. 结论要么带条件说明，要么带可执行形式；不接受"建议考虑"。
+2. 凡是你推断的、材料里没有明说的，一律标注【推断】；材料没有的直说"材料未提供"。
+3. 必须给一段"反例"。
+4. 严格按末尾编号格式输出。
+5. 约束不变：不能改客户端、不能加数据库、**仓库仍然不是 git**。
+6. 本批所有证据都可在本机复算；标「实测」的句子都有命令/行号。
+
+────────────────────────────────────────────────────────
+【一、部署与基线】
+
+**仓库（已构建、未推设备）**：`impl=h713227ba`，`selfCheck passed=1242 / failed=[] / missingRequired=[]`。
+**设备（仍在跑上一版）**：`impl=hc1455196`，`pid 29928`，`flow=ffaec47c3`，`scene=gamescene`。
+> 为什么没推：你 R19 §8 第 1 条要求"已上线两处事后确认或回滚"，我据此停手，等用户裁定后再推。所以**设备上现在没有**本批新增的两处改动（过期称号过滤、Create 的 `[41]` 归零）。
+
+验收（**独立工人跑的，不是我自己说绿**）：`node tools\acceptance.js` → `ACCEPTANCE OK 项=38 绿=38 已知红=0 cap=0`，退出码 0；
+`r18-titleobj-projection` 6/6、`r18-skch-lv0` 5/5、`r18-unreachable` 8/8；`check_shape_freeze` 退出码 0。
+定点复核（工人独立读文件）：`bz-rpc-server.js:1029 s.baseValueAy[41] = 0;`、`:1139 if (tv <= now) { tExpired++; continue; }`、
+facts 里 3020=`unreachable` / 6625=`reachable-but-unmodeled`。
+存档未动：`roleID=16374 FZhou`，背包 `3626:1`、`7027:1`、`3020:17` 全在。
+
+────────────────────────────────────────────────────────
+【二、R19 逐条处置】
+
+| # | R19 条目 | 处置 |
+|---|---|---|
+| 1 | §1 你说我 §2-10 把"观察已被静态证据取代"说过头了 | **接受**。改正措辞：静态证据闭合的是**请求链**，原版**应答语义**没闭合；而端上实测也闭合不了应答语义（这条你 Q4① 又讲了一遍，我接受）。 |
+| 2 | §1-2 / Q4③ Effect 13 不许登记 `unreachable` | **接受，已改**：`tools\facts\r18-unreachable.json` 里 6625 的 role 改为 `reachable-but-unmodeled`，并加断言 T5 禁止把它标成 unreachable。 |
+| 3 | §1-3 Q3① 我的 exitCheck 写法会让 LoadGame 自己判红 | **接受，已按 U1/U2/U3 重写**（§3.5 附实现）。 |
+| 4 | §1-4 Q4① 端上实测不该做 | **接受**，不做，玩家 1 件道具一件没动。 |
+| 5 | §1-5 Q4③ 给 17 件 3020 单列分类 = 多余动作 | **接受**，不做。 |
+| 6 | §1-6 §5 顺序要换 | **接受**，已按你的顺序：全表探针（做过）→ level 表（早就 dump 过，见 §3.4 的说明）→ ②卡在用户裁定 → ③catchCode。 |
+| 7 | §1-7 我漏了 R17 要求的「214 个毫秒字面量按 30 天筛」 | **接受，已补做且范围更大**（§3.4：7726 个毫秒 + 2311 个秒级，30 天内到期 18 条）。这是本批最有价值的一条。 |
+| 8 | §2 Q1 Effect 11 两侧改法 | **设计判定我接受，但没开工**：它推翻已裁定的 ITEMSCH 行为，按 §8 第 2 条要用户裁定，我在等。**但抓包补了一条你没预料到的证据**（§3.1）。 |
+| 9 | §2② Q1 前提一：一本书 = 一次 upgradeSkill | 同上，等裁定。 |
+| 10 | §2③ Q1 三个可观测漏洞（客户端报等级 / 书不扣 / 张冠李戴） | **接受**，已登记为"只读 `skillArr` 的现状风险"，未改。 |
+| 11 | §3 Q2 P1-P4 | **P1/P2/P3 全做完了**（§3.2/§3.3），**P4 做完一半**（tips 渲染只剩 `c.getText(t.Description)` 一条，见 §3.3）。结论：客户端不含礼包内容这件事，证据链基本闭合了。 |
+| 12 | §3② Effect 13 应"拒绝且不扣" | **接受技术判定，但没落地**：它推翻用户此前的"未建模物品照扣"裁定，按 §8 第 3 条等裁定；裁决前维持 `CONSUME_UNMODELED`。 |
+| 13 | §3③ `box_condition` 语义 | 按你的办法统计了分布（§3.3），**材料仍未提供语义**，我只报事实不猜。 |
+| 14 | §4② Q3② 17 件 3020 | 不动，另按你说的核了"能卖"这条路（§4 第 3 条如实交代：没核完）。 |
+| 15 | §4③ Q3③ 将来实现死亡计数 | **接受你的三条**（存 `s.numDeaths`、上传只"忽略并覆盖"、来源只认战斗结算）。**已经先把"上传不得采信"落地了一半**：`Create` 里 `[41]` 强制归零（§3.5）。 |
+| 16 | §5 顺序 | 接受。 |
+| 17 | §8 六条重新裁定清单 | **全部转成用户裁定请求，一条没自行放行**（§5）。 |
+
+────────────────────────────────────────────────────────
+【三、本批新证据】
+
+### 3.1 原版服务端 `upgradeSkill` 的**请求与应答抓包**（一直躺在仓库里，前几轮都以为没有）
+
+你 Q4① 让我 grep `decrypted/` 和 `templates.json` 的 `flag` / `NPCID`。捞到了：
+`hotfix-patch\decrypted\0035,0036,0037,0039_*upgradeSkill.json.txt`（`captures\bz_capture\` 同内容），
+`nonce` = 1792573065628 / 1792573070377，与 `templates.json` 的抓包 serverTime 同一会话。
+
+```
+0035 REQ  p = {"skillID":1262, "skillArr":[1,0,1], "NPCID":1003, "flag":0, ...}
+0036 RESP {"error":0,"p":"User.upgradeSkill","User.upgradeSkill":
+            {"eRet":1,"note":{"eco":{},"skch":{"1262":[1,0,0]}}},
+          "achievement":{"red":true,"achieveRateId":0,"nIds":[102]}}
+
+0037 REQ  p = {"skillID":1112, "skillArr":[1,0,1], "NPCID":1003, "flag":0, ...}
+0039 RESP {"error":0,"p":"User.upgradeSkill","User.upgradeSkill":
+            {"eRet":1,"note":{"eco":{},"skch":{"1112":[1,0,0]}}},
+          "achievement":{"red":true,"achieveRateId":0,"nIds":[117]}}
+```
+
+与我方（`bz-rpc-server.js:1261` 起）的差异：
+
+| 字段 | 原版 | 我方 | 我的读法 |
+|---|---|---|---|
+| `note.skch[id][2]`（brlv） | **0** | `reqBrlv \|\| 1` → 1 | 客户端发 `[1,0,1]`、原版回 `[1,0,0]` ⇒ **服务端确实不原样回传上报值**，这支撑你"服务端自己算"的判定 |
+| `note.eco` | `{}`（空） | `{ptt: 潜能}` | 多余字段；R11 已定"客户端不读 eco" |
+| 顶层 `potential` | 无 | 有 | 多余 |
+| `returnPro` | 无 | 有，值 0 | ⚠ 自检一直在报"开关字段值不合法 `upgradeSkill.returnPro=0`"：它在形状表里是 switch 字段，**缺省不发**才对；抓包也没有 |
+| `achievement` | 带 `nIds:[102]` | `clone(TPL.create.achievement)` | 模板里有没有 `nIds` 待核 |
+
+**这不是 `flag:1`（书）的抓包**：`NPCID=1003` 是 NPC、`flag=0`。所以书那条路径仍然是你 Q1② 的设计判定【推断】。
+请判（Q4）：上面这五处差异里，哪些属于"纠错、不需要用户裁定就能改"，哪些属于"改变行为、要进裁定包"。
+
+### 3.2 表集完整性：客户端 454 张，我们 dump 442 张真表，差集 12 张**全部 0 行**
+
+探针（只读，`probe\list_tables.js`）拉 `CFMgr.dic` 全名单：`dicCount=454`。
+与我们 `tools\cfg\dump`（目录里 444 个文件 = **442 张真表 + `item.full.json` + `_index.json`**）做差集：
+
+```
+客户端有、我们没 dump（12 张，全部 rows=0）：
+  Attribute_conversion age_attr back colorLoad luckywash notifications
+  recharge recharge_apple recharge_applepaid recharge_qq recharge_shenhe themeactivitie
+我们 dump 了、客户端没有同名：_index（我们自己写的索引文件）
+```
+
+⇒ 你 Q4② 要求的"差集"这一项**已做，且为空集以外的部分全是空表**。这条同时回答了我上一批留的"442 是否等于全表"。
+
+### 3.3 Effect 13 取证：P1 / P3 / 列扫描 / P4
+
+- **P1（物品行内嵌）**：6625 / 6810 / 7105 / 7106 / 7226 五件的 `Data2..Data5` **全为 0**，且 `item` 表根本没有 `Property1..5` 列（`item.full.json` 的字段是 `ID,Type,Effect,Data1..5,Name,Description,Price,BuyPrice,Limit,EquipType,WeaponType`）。全 1780 件 Effect 13 里，`Data2` 非零只有 19 件（非零值 100% 命中 item ID 集合），`Data4` 非零 33.67% 但值恒为 1（= 铜币 id），没有"内嵌一组物品"的形态。
+- **P3（资源里搜键）**：`client-analysis` / `$out` / `decrypted` 全文搜 7105、7106、7226 —— **0 命中**（唯一 3 条命中是我自己写的扫描脚本）。`client-analysis\bundles\706353064` 是**穿山甲广告 SDK 的 Android res**（457 条目：422 个 `res/layout/tt_*.xml` + `lib/*.so` + `resources.arsc`），不是游戏 JS 分包。
+- **列扫描（我加的一道，比 P1 更宽）**：442 张表 × 每一列，找任何单元格等于这 5 个 id 或含它们。结果 24 处，剔掉 `item` 自身与列同名巧合后只剩：`tasknew` 有 5 行把它们当**任务奖励**发（`Reward` 列），`title` 表 2 行 `titleid` 恰好同号（与礼包无关）。
+- **P4（tips 渲染）**：`case 13` / `== 13` / `13 ==` 三包共 64 行（复核了你 §3.1 的"零本地分支"结论）；物品描述的**定义**只有一条 `scripts3.js:66852 e.prototype.getItemDes = function()`，体内是 `c.getText(t.Description)`，**没有任何按 Effect 分派的解析**；`可能获得/probability/possibleGet` 共 34 行，逐个看都不是礼包预览。
+- `box_condition`：`item` 表里这一列在 5 件上的 `known=0`；分布统计没有跨表命中的规律，**语义仍未提供**。
+
+### 3.4 时间炸弹：全量筛完（7726 个毫秒 + 2311 个秒级）
+
+你 §1-7 说我只处理了 `activityResource` 里 1 个数字、剩 213 个没筛。实际范围比 214 大一个量级：
+
+```
+毫秒字面量: 7726 个，涉及 41 张表（exchange 1719 / drop 1446 / tasktime 1374 / merchant 940 / hlexchange 546 / …）
+已过去:     6126 个
+30 天内到期: 18 个 ← 这才是"会自己关掉"的那批
+10 位秒级:   2311 个（另含 create.serverOpenTime=1790524800、create.currentServerEndTime=1798300800）
+```
+
+18 条的构成（全部带行号，见 `docs\audit\r19-W-A-timebomb.txt` 的 D 段）：
+
+```
+templates  create.serverTime               1792572970629 (2026-10-21T08:56Z)
+templates  create.activityResource.67[1]   1793177770630 (2026-10-28)  ← 已平移
+active     data.27.endtime[0]              1793030399000 (2026-10-26T15:59Z)
+active     data.55.endtime[0]              1792943999000 (2026-10-25T15:59Z)
+exchange   data.2200..2212.endtime         1793030399000 (2026-10-26T15:59Z)   ← 13 行
+mall       data.39.shopend[0]              1792943999000 (2026-10-25T15:59Z)
+```
+
+三件事请你判（Q3）：
+① 判定"是不是炸弹"的**可执行判据**是什么？（我手上只有"值落在未来 30 天内 + 字段名像时间"这种弱判据；真正要判的是"哪个字段被客户端拿去和 `serverTime` 比较"。我可以穷举读点，但需要你给判据形态。）
+② `create.currentServerEndTime = 1798300800`（2026-12-26）和 `serverOpenTime` 这两个**10 位秒级**字段，会不会被客户端用来关闭整个游戏入口？如果是，它才是最大的一颗。
+③ 配置表里的时间**改不了**（不能改客户端），只能靠进程内 monkey-patch `CFMgr.getItem` 去 rebase——这条手段本身合规吗？（我们的边界是"在客户端自己的可写目录放本地补丁、进程内应答它自己的请求"，改它自己 `getItem` 的返回值算不算越界？）
+
+⚠ **一处材料矛盾，先报**：你 R19 §1-7 说"R17 要求把 **214** 个毫秒字面量按 30 天内到期筛一遍，剩下的 213 个没查"。这个 214 我对不上任何一次我扫过的集合：
+`templates.json` 里毫秒字面量只有 **4** 个（`serverTime` / `housekeeper.curTime` / `housekeeper.taskRtm` / `activityResource.67[1]`）；
+442 张 dump + 模板合计是 **7726** 个。214 这个数出自哪份材料（R17 原文？还是你复算的某个子集口径），请点名，否则我只能按 7726 这个全量口径汇报。
+
+### 3.5 缺口 #2 的真实规模：**63**，不是 87
+
+上一批我转述的"87 个动作"是把"我方 handler 数"当成了"需要 catchCode 的动作数"。对齐后：
+
+```
+客户端动作常量        1125（index.js:59491-60615）
+  其中 发送点+应答处理器 711 ；只发不收 33 ；只注册不发送 192 ；纯常量 189
+我方 handler            87（含 4 个维护命令 + 1 个别名）⇒ 协议动作 82
+  客户端会读应答的       79（无 MessageCenter.on 的只有 ChooseServer / TellAction / specialCycleLife）
+现有 catchCode          16（tools\facts\reject-codes.json）
+真实缺口                63
+```
+
+⚠ 这条的判据我改过一次：**第一次派工时我把"内联回调"当成"会读应答"的唯一标志**，得出"只有 20 个动作读应答"的假结论（见 §四）。本客户端 918 处应答是 `MessageCenter.on(xxx.HttpConst.X, fn)` 注册的。
+
+`handled` 抽取的三类盲区已有真实实例（`derive_catch_codes.js:25-29` 的推导是"从码池挑第一个没被 `forbidden` 排除的"，少排除一个就挑错一个）：
+
+```
+假值判断   scripts3.js:13284  e.eRet && c.default.prefabs.load("shopUI/AutoSaveAlertUI", …)
+不等号     scripts3.js:50852  if (1 != e.eRet) {
+           index.js:54232    0 != e.eRet && (2 != e.eRet ? … : …)
+末尾 else  index.js:54374     if (1 == e.eRet) { … } else { … }
+           scripts3.js:23171-23178
+```
+
+### 3.6 U1/U2/U3 已落地（你 Q3① 的正确写法）
+
+```
+U1 任何带 baseValueAy 的应答，[41] 必须 === 0        → test\r18-unreachable.js T8（扫 LoadGame/Create/sycn* 四类应答）
+U2 整包赋值白名单：全仓 6 处，唯一"整包吃请求数组"的是 Create:1017，接收后强制 [41]=0（新增位点即判红）→ T6/T7
+U3 代码里 numDeaths 命中数 = 0（注释不算，先剥注释再扫）        → T1
+```
+
+`Create` 的洞是真的：`1017 r.baseValueAy = p.baseValueAy;` → `1029 s.baseValueAy[41] = 0;` → `1032 r.baseValueAy = normalizeBaseValueAy(s.baseValueAy);`（落账与应答都归零）。T7 用 `evil[41]=7` 活体复现，修前会进存档。
+另按你反例 2 加了 `tv <= now` 的过期过滤（`:1139`），按你反例 1 加了同进程双实例测试（T5，证实 `clone` 是深拷贝、`TPL.create` 未被写脏）。
+
+### 3.7 时间字段的读点穷举（工人跑了一遍，**我复核后以本节为准**）
+
+工人给的 [CMP] 判定是"±6 行内出现 `getSTimestamp`/`serverTime`/`Date.now`"的启发式，**漏得厉害**（`activityResource` 被报成"1 读点 0 比较"，实际比较就在下方 2 行）。以下三条是我逐个读过原文的：
+
+```
+① create.currentServerEndTime  →  index.js:107246
+     e.hasOwnProperty("currentServerEndTime") && (this.serverOpenTime = e.currentServerEndTime);
+   ⇒ 它被赋给了 serverOpenTime（而且**覆盖**模板里的 serverOpenTime=1790524800），然后两处比较：
+     index.js:27401  .001 * TimeMgr.getSTimestamp() <= RoleOtherInfo.serverOpenTime ? ColorVerModel.changeColorBeforeEnter(...) : ...
+     index.js:85179  .001 * TimeMgr.getSTimestamp() <= serverOpenTime ? ColorVerModel.setPullInCopyState(0) : setPullInCopyState(1)
+   ⇒ 语义是**配色/主题版本开关**（`ColorVerModel`），不是"关服"。到期日 2026-12-26 之后会翻到另一支。
+
+② activityResource  →  index.js:107263  this.activeResData = e.activityResource
+   唯一消费点 scripts2.js:31067-31086 `checkActivityCountDown`：`var t = TimeMgr.getSTimestamp(), e = RoleOtherInfo.activeResData;`
+     e[67][1] > t  → furnaceLabel 倒计时 / goldFurnaceBtn 显隐
+     e[92][1] > t  → 活动 92 的 tip
+   ⇒ R17 的平移**是有效负载**，不是安慰剂：不平移的话 2026-10-28 之后 67 号的炉子倒计时与按钮会消失。
+
+③ mall.shopend  →  三个包里 **0 个读点**（可能由别的 bundle 读，也可能就是没人读）⇒ 对它做平移可能纯属多余。
+```
+
+⇒ 你 Q3① 要的"判定判据"，我现在只有半条可执行的：**"字段出现在 `getSTimestamp()` 的三元比较里"**才算炸弹；光看字段名是错的（`contextServerEndTime` 那类名字骗人，`activeResData` 那种中间变量又把比较藏起来）。
+
+### 3.8 两件小事的事实核查（你 R19 §4② 与 §3.1 顺带提到的）
+
+- **`achievement.nIds`**：客户端确实用它弹成就提示 —— `scripts3.js:2884-2896` 在 `ACHV_CHANGE` 监听器里遍历 `o.nIds`，按配置分类后 `this.showAchieveTip(s)`。
+  我方 `ach()`（`bz-rpc-server.js:333`）= `clone(TPL.create.achievement)`，而模板里 **`create.achievement` = `{"red":false,"achieveRateId":0}`，没有 `nIds`**（`getChatAddress` 那份才有 `"nIds":[354]`）。
+  ⇒ 我们从来没弹过任何成就提示；这对"不影响可玩性"是事实，对"还原原版"是缺口。**未改**。
+- **3020 能不能卖**：`item.full.json` 的 3020 = `Price: 20000`；客户端出售走 `SELL_ITEM`+`saleArr`（通用路径）；卖物品 handler 里**对 Effect 15 无任何特判**；`test\sale-coins.js` 的 15 个用例**没有任何一个提到 3020/Effect 15**。
+  ⇒ "能卖"成立（走通用路径），但**没有专门用例**；17 件 × 20000 = 34 万铜钱的通道是通的。要不要给它补一条用例，请你判（Q2③ 的附带项）。
+
+────────────────────────────────────────────────────────
+【四、我本批犯的错（自查，两条，不求安慰只要判据）】
+
+1. **工单判据写错，白跑一轮**：D1 那版把"内联回调"当"会读应答"，得出"724 个动作只发不收"，我当成事实准备汇报，抽样一查是假的（§3.5）。错在**我用一个便宜的代理指标替代了真判据**，而且没先抽样。
+2. **把"工具已 dump 过"当成"不用再核"**：`level.json` 早就在 `tools\cfg\dump`（999 行，含 `SkillPotential/SkillMoney/NeedBreak`），但你 R19 §5 说"等裁定时可以先 dump level 表"，我第一反应是"已经 dump 了"，差一点就漏掉"dump 了≠核对过列名与公式"。补核结果：`getLGCost` = `Math.floor(t * e * i)`（`index.js:120788`），`getSkillTopLevel` = `getSkillLevel(getBaseSkillID(t)) + perception / const34`（`index.js:120783`），`maxSkillLevel` 定义在 `index.js:21874`。
+
+请判（Q6）：我这两类错（**用代理指标替代真判据**、**把"存在"当"核过"**）在本批其它结论里还藏着吗？特别是 §3.5 的 `MessageCenter.on` 判据本身：一个动作注册了 `on()` 但 handler 里**根本不读 eRet**（只读数据字段）时，catchCode 对它仍然没意义——我这个新判据是不是也有同类盲区？
+
+────────────────────────────────────────────────────────
+【五、没做的（如实交代）】
+
+1. **没推设备**：`h713227ba` 只在仓库，设备仍 `hc1455196`（等你 §8 第 1 条的裁定）。
+2. Effect 11 两侧、Effect 13 拒绝门控**都没开工**（等用户裁定，§5 清单第 2/3 条）。
+3. 63 条 catchCode 一条没补；`handled` 抽取扩展还没写（等的正是本批 Q1/Q2 的判据）。
+4. 时间炸弹一条没修（等的正是 Q3 的判据）。
+5. `achievement.nIds`：已核（§3.8），模板里没有、我方从不弹成就提示；**没改**。
+6. "3020 能卖"：已核（§3.8，Price=20000、通用出售路径、无特判），但**没有专门用例**；等 Q2③ 的判决。
+7. `docs\HANDOVER` 的基线数字仍未改（文档许可在用户，§5 清单第 5 条）。
+
+────────────────────────────────────────────────────────
+【六、我要你回答的 6 件事】
+
+> 编号 ① 是"我打算怎么做"的技术判定，②-⑥ 是同一类。**这些都不归玩家判，归你判**；玩家只保留许可（动他的资产/文档）。
+
+Q1（`handled` 抽取扩展：规则怎么定才算"抓全了"）
+  现状：推导是"码池里挑第一个没被 forbidden 排除的"，三类写法抽漏就给错码。
+  请给：① 三类写法（假值判断 / 不等号 / 末尾 else）各自的**抽取规则判据**（要能写成可执行断言的形式，例如"handler 里出现 `X != eRet` 就把该分支的返回值加入 handled"）；
+  ② **反向用例**怎么设计才算证明"抓全了"（我想到的是：对每个动作构造 4 种应答各打一遍，断言客户端分支走向，但材料未提供"—客户端分支走向怎么观测"这一点，请判可不可行）；
+  ③ 有没有第四类我还没发现的写法（你手上有 R18/R19 全量材料，能点名更好）。
+
+Q2（63 条怎么分批、怎么验收）
+  请判：① 分批依据（按 handler 复杂度？按客户端分支数？按调用频率？）；
+  ② 每条码是否必须**举证到客户端具体分支**（"该动作失败时客户端读 eRet 的哪一行、走哪条路"）——如果是，63 条 × 1 行证据的工作量我接受，但请你给"证据最少要长什么样"的格式；
+  ③ 现有 16 条在 `handled` 扩展后**可能变值**，这时候要不要冻结旧值、只允许新增（棘轮），还是允许重算并留 diff？
+
+Q3（时间炸弹：判据与合规）
+  见 §3.4 的三个问题（判定判据 / `currentServerEndTime` 是否最大一颗 / monkey-patch `CFMgr.getItem` 算不算越界）。
+
+Q4（原版抓包的效力边界）
+  见 §3.1 的五个差异。请判：① 哪些是"纠错"（不需要用户裁定就能改：例如删掉非法的 `returnPro`）；
+  ② 哪些必须进裁定包（例如 brlv 从 1 改 0 会改变客户端显示）；
+  ③ `flag=0` 的 NPC 路径抓包，能推出多少 `flag=1` 书路径的行为？请明说"能推的"和"不能推的"各是哪些字段。
+
+Q5（下一步顺序：等裁定期间干什么）
+  用户 7 条裁定还没下来（其中第 2 条 Effect 11 是最大的一块）。请给在**等裁定期间**的最优顺序，候选：
+  a) `handled` 抽取扩展（纯测试与工具，不改行为）；
+  b) 63 条 catchCode（纯数据，但依赖 a）；
+  c) 时间炸弹的"读点穷举"（只做取证：把每个时间字段的客户端读点找出来，不动代码）；
+  d) `achievement.nIds` + 3020 能卖 这两件小事；
+  e) 别的。
+  我倾向 a → c → b → d，请判这个顺序对不对（我不需要你同意我，需要你给对的）。
+
+Q6（我的判据盲区）
+  见 §四末：`MessageCenter.on` 判据是否也有"注册了但不读 eRet"的盲区？请给一个可执行办法，把"注册了 on 但 handler 完全不读 eRet"的动作排掉（这决定 63 这个数字会不会还要缩）。
+
+────────────────────────────────────────────────────────
+【七、给你的额外约束（沿用上一批 §六，本批加第 5 条）】
+
+1. 我对"自己想做的事"倾向自我合理化：凡我主动提出的做法（顺序、要不要做、加分类），按"先假定它不成立"审。
+2. 我对你的结论也倾向附和：请主动找我错，回答里至少一条是否定我的；若确实没有，必须明说并逐条给查验依据。
+3. 不许给折中方案：判"不成立"就直接给替代路径或"材料未提供"。
+4. **单独回答**：我会不会因为既往许可，把本该重新取得裁定的事当成已批？若是，列出本批必须重新取得用户裁定的动作清单。
+5. **本批新增**：我报的每个数字都请当成"待复算"而不是"已确认"。如果你发现我哪个数字的口径可疑（例如 §3.2 的 443/454、§3.5 的 79/63），请直接点名要我用什么命令复算——我上一批已经因为判据错误报过一次假数字（§四第 1 条）。
+
+────────────────────────────────────────────────────────
+【八、参考材料清单（都在本机，可直接读）】
+
+| 文件 | 内容 |
+|---|---|
+| `docs\audit\r19-original-upgradeskill-capture.md` | §3.1 的抓包原文 + 五处差异表 |
+| `docs\audit\r19-W-A-timebomb.txt` (1.9MB) / `r19-W-A-D-section.txt` | §3.4 全量筛查；D 段 18 条 |
+| `docs\audit\r19-W-B-effect13-p1p4.txt` | §3.3 P1/P4 原始清单 |
+| `docs\audit\r19-W-C1-capture-hunt.txt` | 抓包猎全文（含 0035/0036/0037/0039） |
+| `docs\audit\r19-W-C2-p3-assets.txt` | P3 扫描与 zip 判定 |
+| `docs\audit\r19-W-C3-basevalueay-writes.txt` | U2 的 6 处整包赋值清单 |
+| `docs\audit\r19-W-D1-sendpoints.txt` / `r19-W-D1b-sendpoints-corrected.txt` | 发送点分类（**旧版结论已作废**） |
+| `docs\audit\r19-W-D2-handled-blind.txt` | handled 盲区实例 |
+| `docs\audit\r19-catchcode-scope.md` | §3.5 的三个口径与复算命令 |
+| `docs\audit\r19-P2-table-diff.txt` / `r19-P5-column-scan.txt` | §3.2 差集 / §3.3 列扫描原始输出 |
+| `docs\audit\r20-W-F1-timefields-readpoints.txt` | §3.7 时间字段读点（**[CMP] 用的是 ±6 行启发式，已知会漏**，结论以 §3.7 正文为准） |
+| `docs\audit\r20-W-F2-nids-sell3020.txt` | §3.8 nIds 与 3020 可卖性原始取证 |
+
+────────────────────────────────────────────────────────
+【输出格式（严格 1-9，不许增删小标题）】
+
+1. 结论（≤6 句）：§2 的十七项处置各自成立否；§三 五组新证据里哪几条推翻或修正了你 R19 的判断
+2. Q1 答（handled 抽取的规则判据 + 反向用例 + 第四类写法）
+3. Q2 答（63 条的分批、举证格式、旧码变值怎么处理）
+4. Q3 答（时间炸弹的判定判据 + currentServerEndTime + monkey-patch 合规性）
+5. Q4 答（抓包五处差异：纠错 vs 裁定包；flag=0 能推到 flag=1 的边界）
+6. Q5 答（等裁定期间的最优顺序，并明说我提的 a→c→b→d 对不对）
+7. Q6 答（我的判据盲区：on 但读 eRet 的排除办法；63 会不会再缩）
+8. 反例：我这批处置在什么具体场景下会出错
+9. 假设：哪条前提不成立时，你上面哪些结论失效（按编号点名）

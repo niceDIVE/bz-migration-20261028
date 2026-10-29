@@ -1,0 +1,4306 @@
+{
+ "generatedAt": "2026-10-22T14:01:17.469Z",
+ "question": "Effect 码语义：药品（回血/回内）与秘籍（学技能）该按哪列、走哪个落地点",
+ "evidenceChain": [
+  "index.js:65264-65302 useItemFunc 按 item.Effect 决定请求带哪些上限参数（客户端只在该 Effect 才带）",
+  "index.js:142391-142500 note.attrch 是唯一落地通道，键名见 attrchKeys",
+  "index.js:64754-64763 note.skch 只弹提示、不写模型"
+ ],
+ "attrchKeys": [
+  "mpTrained",
+  "mpbase",
+  "hpbase",
+  "curmp",
+  "curhp",
+  "hplmt",
+  "exp",
+  "evil",
+  "school",
+  "seniorSchool",
+  "ndeath",
+  "hunger",
+  "nhgtimes",
+  "gtime",
+  "luck",
+  "appearBase",
+  "armStrong",
+  "shenFa",
+  "bone",
+  "savvy",
+  "hitChBase",
+  "dodgeBase",
+  "atkBase",
+  "defenseBase"
+ ],
+ "effectTable": [
+  {
+   "effect": 13,
+   "count": 1780,
+   "samples": [
+    {
+     "id": 3018,
+     "Type": 2,
+     "Data1": 3018,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 10000,
+     "desId": 37018
+    },
+    {
+     "id": 3057,
+     "Type": 2,
+     "Data1": 3057,
+     "Data2": 3060,
+     "Data3": 1,
+     "BuyPrice": 100,
+     "Price": 100,
+     "desId": 37057
+    },
+    {
+     "id": 3058,
+     "Type": 2,
+     "Data1": 3058,
+     "Data2": 3061,
+     "Data3": 1,
+     "BuyPrice": 100,
+     "Price": 100,
+     "desId": 37058
+    },
+    {
+     "id": 3059,
+     "Type": 2,
+     "Data1": 3059,
+     "Data2": 3062,
+     "Data3": 1,
+     "BuyPrice": 100,
+     "Price": 100,
+     "desId": 37059
+    },
+    {
+     "id": 3064,
+     "Type": 2,
+     "Data1": 3064,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37064
+    },
+    {
+     "id": 3065,
+     "Type": 2,
+     "Data1": 3065,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37065
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 0,
+   "count": 840,
+   "samples": [
+    {
+     "id": 1,
+     "Type": 6,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 35000
+    },
+    {
+     "id": 2,
+     "Type": 7,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 0
+    },
+    {
+     "id": 3,
+     "Type": 8,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 0
+    },
+    {
+     "id": 4,
+     "Type": 9,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 0
+    },
+    {
+     "id": 5,
+     "Type": 12,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 0
+    },
+    {
+     "id": 7,
+     "Type": 14,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 0
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 38,
+   "count": 560,
+   "samples": [
+    {
+     "id": 3079,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37079
+    },
+    {
+     "id": 3081,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37081
+    },
+    {
+     "id": 3082,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 20000,
+     "desId": 37082
+    },
+    {
+     "id": 3083,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 30000,
+     "desId": 37083
+    },
+    {
+     "id": 3084,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 40000,
+     "desId": 37084
+    },
+    {
+     "id": 3085,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37085
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 39,
+   "count": 455,
+   "samples": [
+    {
+     "id": 3077,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 1000,
+     "desId": 37077
+    },
+    {
+     "id": 3078,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 1000,
+     "desId": 37078
+    },
+    {
+     "id": 3117,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37117
+    },
+    {
+     "id": 3118,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37118
+    },
+    {
+     "id": 3119,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37119
+    },
+    {
+     "id": 3120,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37120
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 28,
+   "count": 385,
+   "samples": [
+    {
+     "id": 3950,
+     "Type": 2,
+     "Data1": 1015,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37950
+    },
+    {
+     "id": 3951,
+     "Type": 2,
+     "Data1": 1016,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37951
+    },
+    {
+     "id": 3952,
+     "Type": 2,
+     "Data1": 1017,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37952
+    },
+    {
+     "id": 3956,
+     "Type": 2,
+     "Data1": 1018,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37956
+    },
+    {
+     "id": 3957,
+     "Type": 2,
+     "Data1": 1019,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37957
+    },
+    {
+     "id": 3958,
+     "Type": 2,
+     "Data1": 1020,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37958
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 37,
+   "count": 354,
+   "samples": [
+    {
+     "id": 3510,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37510
+    },
+    {
+     "id": 3511,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37511
+    },
+    {
+     "id": 3512,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37512
+    },
+    {
+     "id": 3513,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37513
+    },
+    {
+     "id": 3514,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37514
+    },
+    {
+     "id": 3515,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37515
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 20,
+   "count": 282,
+   "samples": [
+    {
+     "id": 3351,
+     "Type": 2,
+     "Data1": 131,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37351
+    },
+    {
+     "id": 3352,
+     "Type": 2,
+     "Data1": 132,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37352
+    },
+    {
+     "id": 3353,
+     "Type": 2,
+     "Data1": 133,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37353
+    },
+    {
+     "id": 3354,
+     "Type": 2,
+     "Data1": 134,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37354
+    },
+    {
+     "id": 3355,
+     "Type": 2,
+     "Data1": 135,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37355
+    },
+    {
+     "id": 3356,
+     "Type": 2,
+     "Data1": 136,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37356
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 36,
+   "count": 264,
+   "samples": [
+    {
+     "id": 3060,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100000,
+     "Price": 0,
+     "desId": 37060
+    },
+    {
+     "id": 3061,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100000,
+     "Price": 0,
+     "desId": 37061
+    },
+    {
+     "id": 3062,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100000,
+     "Price": 0,
+     "desId": 37062
+    },
+    {
+     "id": 3063,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 1000,
+     "desId": 37063
+    },
+    {
+     "id": 3092,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37092
+    },
+    {
+     "id": 3113,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37113
+    }
+   ],
+   "hint": {
+    "acts": "券类（限时券/战令券）",
+    "req": "无（不是\"使用\"，是被消耗）",
+    "evid": "tools/cfg/tbl_item.json 7298/7851 Effect=36",
+    "attrch": "—",
+    "impl": "不适用"
+   }
+  },
+  {
+   "effect": 5,
+   "count": 240,
+   "samples": [
+    {
+     "id": 3146,
+     "Type": 2,
+     "Data1": 1265,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37146
+    },
+    {
+     "id": 3147,
+     "Type": 2,
+     "Data1": 1266,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37147
+    },
+    {
+     "id": 3601,
+     "Type": 2,
+     "Data1": 1083,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37601
+    },
+    {
+     "id": 3602,
+     "Type": 2,
+     "Data1": 1084,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37602
+    },
+    {
+     "id": 3603,
+     "Type": 2,
+     "Data1": 1085,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37603
+    },
+    {
+     "id": 3604,
+     "Type": 2,
+     "Data1": 1086,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37604
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 57,
+   "count": 233,
+   "samples": [
+    {
+     "id": 9048,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304271
+    },
+    {
+     "id": 9049,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304272
+    },
+    {
+     "id": 9063,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304286
+    },
+    {
+     "id": 9064,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304287
+    },
+    {
+     "id": 9065,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304288
+    },
+    {
+     "id": 9066,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304289
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 18,
+   "count": 227,
+   "samples": [
+    {
+     "id": 3056,
+     "Type": 2,
+     "Data1": 3056,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 1000,
+     "desId": 37056
+    },
+    {
+     "id": 3093,
+     "Type": 2,
+     "Data1": 3093,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37093
+    },
+    {
+     "id": 3097,
+     "Type": 2,
+     "Data1": 3097,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37097
+    },
+    {
+     "id": 3169,
+     "Type": 2,
+     "Data1": 3169,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37169
+    },
+    {
+     "id": 3954,
+     "Type": 2,
+     "Data1": 3954,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37954
+    },
+    {
+     "id": 3962,
+     "Type": 2,
+     "Data1": 3962,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37962
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 24,
+   "count": 106,
+   "samples": [
+    {
+     "id": 3111,
+     "Type": 2,
+     "Data1": 1260,
+     "Data2": 11525,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37111
+    },
+    {
+     "id": 3114,
+     "Type": 2,
+     "Data1": 1261,
+     "Data2": 11525,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37114
+    },
+    {
+     "id": 3128,
+     "Type": 2,
+     "Data1": 1190,
+     "Data2": 10826,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37128
+    },
+    {
+     "id": 3321,
+     "Type": 2,
+     "Data1": 1189,
+     "Data2": 10826,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37321
+    },
+    {
+     "id": 3322,
+     "Type": 2,
+     "Data1": 1190,
+     "Data2": 10826,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37322
+    },
+    {
+     "id": 3323,
+     "Type": 2,
+     "Data1": 1191,
+     "Data2": 10826,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37323
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 1,
+   "count": 79,
+   "samples": [
+    {
+     "id": 3001,
+     "Type": 2,
+     "Data1": 150,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 300,
+     "Price": 100,
+     "desId": 37001
+    },
+    {
+     "id": 3002,
+     "Type": 2,
+     "Data1": 300,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 600,
+     "Price": 200,
+     "desId": 37002
+    },
+    {
+     "id": 3003,
+     "Type": 2,
+     "Data1": 30,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 60,
+     "Price": 20,
+     "desId": 37003
+    },
+    {
+     "id": 3004,
+     "Type": 2,
+     "Data1": 500,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 1500,
+     "Price": 500,
+     "desId": 37004
+    },
+    {
+     "id": 3005,
+     "Type": 2,
+     "Data1": 30,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 75,
+     "Price": 25,
+     "desId": 37005
+    },
+    {
+     "id": 3006,
+     "Type": 2,
+     "Data1": 100,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 200,
+     "Price": 65,
+     "desId": 37006
+    }
+   ],
+   "hint": {
+    "acts": "hunger(饱食度)",
+    "req": "hg",
+    "evid": "index.js:65302",
+    "attrch": "hunger",
+    "impl": "yes（§19.17-① 已实现）"
+   }
+  },
+  {
+   "effect": 9,
+   "count": 76,
+   "samples": [
+    {
+     "id": 5000,
+     "Type": 2,
+     "Data1": 300000,
+     "Data2": 1300000,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 100,
+     "desId": 39000
+    },
+    {
+     "id": 5001,
+     "Type": 2,
+     "Data1": 300010,
+     "Data2": 1300001,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 100,
+     "desId": 39001
+    },
+    {
+     "id": 5002,
+     "Type": 2,
+     "Data1": 300020,
+     "Data2": 1300002,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 100,
+     "desId": 39002
+    },
+    {
+     "id": 5003,
+     "Type": 2,
+     "Data1": 300030,
+     "Data2": 1300003,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 100,
+     "desId": 39003
+    },
+    {
+     "id": 5004,
+     "Type": 2,
+     "Data1": 300040,
+     "Data2": 1300004,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 500,
+     "desId": 39004
+    },
+    {
+     "id": 5005,
+     "Type": 2,
+     "Data1": 300050,
+     "Data2": 1300005,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 500,
+     "desId": 39005
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 11,
+   "count": 67,
+   "samples": [
+    {
+     "id": 3608,
+     "Type": 2,
+     "Data1": 1090,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37608
+    },
+    {
+     "id": 3626,
+     "Type": 2,
+     "Data1": 1112,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37626
+    },
+    {
+     "id": 3627,
+     "Type": 2,
+     "Data1": 1113,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37627
+    },
+    {
+     "id": 3628,
+     "Type": 2,
+     "Data1": 1114,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37628
+    },
+    {
+     "id": 3629,
+     "Type": 2,
+     "Data1": 1115,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37629
+    },
+    {
+     "id": 3630,
+     "Type": 2,
+     "Data1": 1116,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 0,
+     "desId": 37630
+    }
+   ],
+   "hint": {
+    "acts": "技能（秘籍）",
+    "req": "无附加参数（只带 itemID/itemNum）",
+    "evid": "index.js:65273-65302（11 不落任何分支）",
+    "attrch": "note.skch（只弹提示，不写模型：64754-64763）",
+    "impl": "no（需要服务端写 skills 档）"
+   }
+  },
+  {
+   "effect": 17,
+   "count": 56,
+   "samples": [
+    {
+     "id": 4094,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 500,
+     "desId": 38094
+    },
+    {
+     "id": 4176,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 500,
+     "desId": 38176
+    },
+    {
+     "id": 4177,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 500,
+     "desId": 38177
+    },
+    {
+     "id": 4178,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 500,
+     "desId": 38178
+    },
+    {
+     "id": 4179,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 500,
+     "desId": 38179
+    },
+    {
+     "id": 4180,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 500,
+     "desId": 38180
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 3,
+   "count": 53,
+   "samples": [
+    {
+     "id": 3007,
+     "Type": 2,
+     "Data1": 50,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 120,
+     "Price": 60,
+     "desId": 37007
+    },
+    {
+     "id": 3012,
+     "Type": 2,
+     "Data1": 750,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 6000,
+     "Price": 2000,
+     "desId": 37012
+    },
+    {
+     "id": 3013,
+     "Type": 2,
+     "Data1": 1500,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 12000,
+     "Price": 4000,
+     "desId": 37013
+    },
+    {
+     "id": 3070,
+     "Type": 2,
+     "Data1": 1000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37070
+    },
+    {
+     "id": 3072,
+     "Type": 2,
+     "Data1": 1500,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37072
+    },
+    {
+     "id": 3201,
+     "Type": 2,
+     "Data1": 200,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3000,
+     "Price": 1000,
+     "desId": 37201
+    }
+   ],
+   "hint": {
+    "acts": "mp(内力)",
+    "req": "curMp + maxmpLimit",
+    "evid": "index.js:65280-65282",
+    "attrch": "curmp",
+    "impl": "no"
+   }
+  },
+  {
+   "effect": 2,
+   "count": 43,
+   "samples": [
+    {
+     "id": 3010,
+     "Type": 2,
+     "Data1": 1000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 4500,
+     "Price": 1500,
+     "desId": 37010
+    },
+    {
+     "id": 3011,
+     "Type": 2,
+     "Data1": 2000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 9000,
+     "Price": 3000,
+     "desId": 37011
+    },
+    {
+     "id": 3069,
+     "Type": 2,
+     "Data1": 1000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37069
+    },
+    {
+     "id": 3071,
+     "Type": 2,
+     "Data1": 1500,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37071
+    },
+    {
+     "id": 3101,
+     "Type": 2,
+     "Data1": 200,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 1500,
+     "Price": 500,
+     "desId": 37101
+    },
+    {
+     "id": 3102,
+     "Type": 2,
+     "Data1": 500,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 3750,
+     "Price": 1250,
+     "desId": 37102
+    }
+   ],
+   "hint": {
+    "acts": "hp(生命)",
+    "req": "curHp + maxhpLimit",
+    "evid": "index.js:65277-65279",
+    "attrch": "curhp（上限 hplmt）",
+    "impl": "no"
+   }
+  },
+  {
+   "effect": 74,
+   "count": 32,
+   "samples": [
+    {
+     "id": 10087,
+     "Type": 25,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305310
+    },
+    {
+     "id": 10088,
+     "Type": 25,
+     "Data1": 2,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305311
+    },
+    {
+     "id": 10089,
+     "Type": 25,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305312
+    },
+    {
+     "id": 10090,
+     "Type": 25,
+     "Data1": 2,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305313
+    },
+    {
+     "id": 10091,
+     "Type": 25,
+     "Data1": 2,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305314
+    },
+    {
+     "id": 10092,
+     "Type": 25,
+     "Data1": 3,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305315
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 77,
+   "count": 25,
+   "samples": [
+    {
+     "id": 10134,
+     "Type": 2,
+     "Data1": 100,
+     "Data2": 100,
+     "Data3": 100,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305357
+    },
+    {
+     "id": 10135,
+     "Type": 2,
+     "Data1": 100,
+     "Data2": 100,
+     "Data3": 100,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305358
+    },
+    {
+     "id": 10410,
+     "Type": 2,
+     "Data1": 10410,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305633
+    },
+    {
+     "id": 10411,
+     "Type": 2,
+     "Data1": 10411,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305634
+    },
+    {
+     "id": 10412,
+     "Type": 2,
+     "Data1": 10412,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305635
+    },
+    {
+     "id": 10485,
+     "Type": 2,
+     "Data1": 10485,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305708
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 67,
+   "count": 23,
+   "samples": [
+    {
+     "id": 9686,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304909
+    },
+    {
+     "id": 9747,
+     "Type": 2,
+     "Data1": 7,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304970
+    },
+    {
+     "id": 9748,
+     "Type": 2,
+     "Data1": 8,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304971
+    },
+    {
+     "id": 9780,
+     "Type": 2,
+     "Data1": 12,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305003
+    },
+    {
+     "id": 9781,
+     "Type": 2,
+     "Data1": 13,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305004
+    },
+    {
+     "id": 9785,
+     "Type": 2,
+     "Data1": 14,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305008
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 25,
+   "count": 22,
+   "samples": [
+    {
+     "id": 3311,
+     "Type": 2,
+     "Data1": 700,
+     "Data2": 500,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37311
+    },
+    {
+     "id": 3312,
+     "Type": 2,
+     "Data1": 1500,
+     "Data2": 1000,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37312
+    },
+    {
+     "id": 3313,
+     "Type": 2,
+     "Data1": 2500,
+     "Data2": 1500,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37313
+    },
+    {
+     "id": 3314,
+     "Type": 2,
+     "Data1": 4000,
+     "Data2": 2000,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37314
+    },
+    {
+     "id": 3315,
+     "Type": 2,
+     "Data1": 6000,
+     "Data2": 3000,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37315
+    },
+    {
+     "id": 4929,
+     "Type": 2,
+     "Data1": 1000,
+     "Data2": 700,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2300152
+    }
+   ],
+   "hint": {
+    "acts": "hp+mp 双补",
+    "req": "curHp/maxhpLimit/curMp/maxmpLimit",
+    "evid": "index.js:65286-65290",
+    "attrch": "curhp / curmp",
+    "impl": "no"
+   }
+  },
+  {
+   "effect": 8,
+   "count": 21,
+   "samples": [
+    {
+     "id": 4059,
+     "Type": 2,
+     "Data1": 3060,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38059
+    },
+    {
+     "id": 4063,
+     "Type": 2,
+     "Data1": 3061,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38063
+    },
+    {
+     "id": 4064,
+     "Type": 2,
+     "Data1": 3062,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38064
+    },
+    {
+     "id": 4211,
+     "Type": 2,
+     "Data1": 4211,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38211
+    },
+    {
+     "id": 6576,
+     "Type": 1,
+     "Data1": 981,
+     "Data2": 36,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301799
+    },
+    {
+     "id": 6577,
+     "Type": 1,
+     "Data1": 654,
+     "Data2": 10,
+     "Data3": 10,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301800
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 78,
+   "count": 19,
+   "samples": [
+    {
+     "id": 10326,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305549
+    },
+    {
+     "id": 10327,
+     "Type": 2,
+     "Data1": 2,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305550
+    },
+    {
+     "id": 10408,
+     "Type": 2,
+     "Data1": 3,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305631
+    },
+    {
+     "id": 10409,
+     "Type": 2,
+     "Data1": 4,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305632
+    },
+    {
+     "id": 10521,
+     "Type": 2,
+     "Data1": 5,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305744
+    },
+    {
+     "id": 10522,
+     "Type": 2,
+     "Data1": 6,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305745
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 22,
+   "count": 17,
+   "samples": [
+    {
+     "id": 4465,
+     "Type": 2,
+     "Data1": 999999,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38465
+    },
+    {
+     "id": 4473,
+     "Type": 2,
+     "Data1": 2020503,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38473
+    },
+    {
+     "id": 4485,
+     "Type": 2,
+     "Data1": 203210,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38485
+    },
+    {
+     "id": 6299,
+     "Type": 2,
+     "Data1": 888888,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2301522
+    },
+    {
+     "id": 6960,
+     "Type": 2,
+     "Data1": 888899,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302183
+    },
+    {
+     "id": 6975,
+     "Type": 2,
+     "Data1": 888898,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302198
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 26,
+   "count": 17,
+   "samples": [
+    {
+     "id": 3133,
+     "Type": 2,
+     "Data1": 1003,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37133
+    },
+    {
+     "id": 3151,
+     "Type": 2,
+     "Data1": 1004,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 37151
+    },
+    {
+     "id": 4525,
+     "Type": 2,
+     "Data1": 1001,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 38525
+    },
+    {
+     "id": 4588,
+     "Type": 2,
+     "Data1": 1005,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38588
+    },
+    {
+     "id": 4612,
+     "Type": 2,
+     "Data1": 1006,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38612
+    },
+    {
+     "id": 4690,
+     "Type": 2,
+     "Data1": 1007,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38690
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 6,
+   "count": 16,
+   "samples": [
+    {
+     "id": 3014,
+     "Type": 2,
+     "Data1": 200,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 6000,
+     "Price": 2000,
+     "desId": 37014
+    },
+    {
+     "id": 3015,
+     "Type": 2,
+     "Data1": 500,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 15000,
+     "Price": 5000,
+     "desId": 37015
+    },
+    {
+     "id": 3401,
+     "Type": 2,
+     "Data1": 200,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 6000,
+     "Price": 2000,
+     "desId": 37401
+    },
+    {
+     "id": 4269,
+     "Type": 2,
+     "Data1": 500,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 15000,
+     "Price": 5000,
+     "desId": 38269
+    },
+    {
+     "id": 6564,
+     "Type": 1,
+     "Data1": 981,
+     "Data2": 31,
+     "Data3": 2,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301787
+    },
+    {
+     "id": 6565,
+     "Type": 1,
+     "Data1": 654,
+     "Data2": 8,
+     "Data3": 10,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301788
+    }
+   ],
+   "hint": {
+    "acts": "hp 上限相关",
+    "req": "maxhpLimit + hpfinalValue",
+    "evid": "index.js:65283-65285",
+    "attrch": "hplmt / hpbase",
+    "impl": "no"
+   }
+  },
+  {
+   "effect": 16,
+   "count": 15,
+   "samples": [
+    {
+     "id": 3016,
+     "Type": 2,
+     "Data1": 10,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 10000,
+     "desId": 37016
+    },
+    {
+     "id": 3073,
+     "Type": 2,
+     "Data1": 10,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37073
+    },
+    {
+     "id": 4270,
+     "Type": 2,
+     "Data1": 10,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 10000,
+     "desId": 38270
+    },
+    {
+     "id": 6924,
+     "Type": 2,
+     "Data1": 5,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 10000,
+     "desId": 2302147
+    },
+    {
+     "id": 6925,
+     "Type": 2,
+     "Data1": 10,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 10000,
+     "desId": 2302148
+    },
+    {
+     "id": 6926,
+     "Type": 2,
+     "Data1": 15,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 10000,
+     "desId": 2302149
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 4,
+   "count": 13,
+   "samples": [
+    {
+     "id": 3301,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 150000,
+     "Price": 50000,
+     "desId": 37301
+    },
+    {
+     "id": 6552,
+     "Type": 1,
+     "Data1": 981,
+     "Data2": 36,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301775
+    },
+    {
+     "id": 6553,
+     "Type": 1,
+     "Data1": 818,
+     "Data2": 10,
+     "Data3": 12,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301776
+    },
+    {
+     "id": 6554,
+     "Type": 1,
+     "Data1": 5,
+     "Data2": 5,
+     "Data3": 5,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301777
+    },
+    {
+     "id": 6555,
+     "Type": 1,
+     "Data1": 5,
+     "Data2": 7,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301778
+    },
+    {
+     "id": 6556,
+     "Type": 1,
+     "Data1": 8,
+     "Data2": 1145,
+     "Data3": 2,
+     "BuyPrice": 45000,
+     "Price": 100,
+     "desId": 2301779
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 7,
+   "count": 13,
+   "samples": [
+    {
+     "id": 6570,
+     "Type": 1,
+     "Data1": 654,
+     "Data2": 31,
+     "Data3": 5,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301793
+    },
+    {
+     "id": 6571,
+     "Type": 1,
+     "Data1": 818,
+     "Data2": 10,
+     "Data3": 10,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301794
+    },
+    {
+     "id": 6572,
+     "Type": 1,
+     "Data1": 10,
+     "Data2": 0,
+     "Data3": 5,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301795
+    },
+    {
+     "id": 6573,
+     "Type": 1,
+     "Data1": 5,
+     "Data2": 7,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301796
+    },
+    {
+     "id": 6574,
+     "Type": 1,
+     "Data1": 10,
+     "Data2": 981,
+     "Data3": 2,
+     "BuyPrice": 45000,
+     "Price": 100,
+     "desId": 2301797
+    },
+    {
+     "id": 6575,
+     "Type": 1,
+     "Data1": 5,
+     "Data2": 981,
+     "Data3": 5,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2301798
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 33,
+   "count": 13,
+   "samples": [
+    {
+     "id": 4934,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 1372,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2300157
+    },
+    {
+     "id": 4984,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 1373,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2300207
+    },
+    {
+     "id": 6019,
+     "Type": 2,
+     "Data1": 3000,
+     "Data2": 1367,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2301242
+    },
+    {
+     "id": 6020,
+     "Type": 2,
+     "Data1": 4000,
+     "Data2": 1368,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2301243
+    },
+    {
+     "id": 6021,
+     "Type": 2,
+     "Data1": 5000,
+     "Data2": 1369,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2301244
+    },
+    {
+     "id": 6022,
+     "Type": 2,
+     "Data1": 6500,
+     "Data2": 1370,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2301245
+    }
+   ],
+   "hint": {
+    "acts": "hp/mp + 最终值",
+    "req": "curHp/curMp/limits + hpfinalValue",
+    "evid": "index.js:65296-65301",
+    "attrch": "curhp / curmp / hplmt",
+    "impl": "no"
+   }
+  },
+  {
+   "effect": 19,
+   "count": 12,
+   "samples": [
+    {
+     "id": 4109,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 38109
+    },
+    {
+     "id": 4935,
+     "Type": 2,
+     "Data1": 2,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 2300158
+    },
+    {
+     "id": 4985,
+     "Type": 2,
+     "Data1": 3,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 2300208
+    },
+    {
+     "id": 6035,
+     "Type": 2,
+     "Data1": 4,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 2301258
+    },
+    {
+     "id": 8181,
+     "Type": 1,
+     "Data1": 981,
+     "Data2": 31,
+     "Data3": 2,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2303404
+    },
+    {
+     "id": 8182,
+     "Type": 1,
+     "Data1": 654,
+     "Data2": 8,
+     "Data3": 10,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2303405
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 14,
+   "count": 11,
+   "samples": [
+    {
+     "id": 3017,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 15000,
+     "Price": 5000,
+     "desId": 37017
+    },
+    {
+     "id": 3074,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37074
+    },
+    {
+     "id": 4220,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 15000,
+     "Price": 5000,
+     "desId": 38220
+    },
+    {
+     "id": 4271,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 15000,
+     "Price": 5000,
+     "desId": 38271
+    },
+    {
+     "id": 7725,
+     "Type": 1,
+     "Data1": 2445,
+     "Data2": 31,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302948
+    },
+    {
+     "id": 7726,
+     "Type": 1,
+     "Data1": 1112,
+     "Data2": 13,
+     "Data3": 12,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302949
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 49,
+   "count": 11,
+   "samples": [
+    {
+     "id": 7518,
+     "Type": 2,
+     "Data1": 1031,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302741
+    },
+    {
+     "id": 7875,
+     "Type": 2,
+     "Data1": 1031,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2303098
+    },
+    {
+     "id": 8216,
+     "Type": 2,
+     "Data1": 517,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2303439
+    },
+    {
+     "id": 8905,
+     "Type": 2,
+     "Data1": 1033,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304128
+    },
+    {
+     "id": 8909,
+     "Type": 2,
+     "Data1": 1034,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304132
+    },
+    {
+     "id": 8974,
+     "Type": 2,
+     "Data1": 1035,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304197
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 48,
+   "count": 10,
+   "samples": [
+    {
+     "id": 7446,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302669
+    },
+    {
+     "id": 7447,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302670
+    },
+    {
+     "id": 7448,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302671
+    },
+    {
+     "id": 7449,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302672
+    },
+    {
+     "id": 7450,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302673
+    },
+    {
+     "id": 7451,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302674
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 15,
+   "count": 9,
+   "samples": [
+    {
+     "id": 3019,
+     "Type": 2,
+     "Data1": -1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 10000,
+     "desId": 37019
+    },
+    {
+     "id": 3020,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 1000,
+     "Price": 20000,
+     "desId": 37020
+    },
+    {
+     "id": 3075,
+     "Type": 2,
+     "Data1": -1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 10000,
+     "desId": 37075
+    },
+    {
+     "id": 4221,
+     "Type": 2,
+     "Data1": -1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 10000,
+     "desId": 38221
+    },
+    {
+     "id": 4222,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 1000,
+     "Price": 20000,
+     "desId": 38222
+    },
+    {
+     "id": 4273,
+     "Type": 2,
+     "Data1": -1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 10000,
+     "desId": 38273
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 21,
+   "count": 9,
+   "samples": [
+    {
+     "id": 4435,
+     "Type": 2,
+     "Data1": 4435,
+     "Data2": 1,
+     "Data3": 40,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38435
+    },
+    {
+     "id": 4436,
+     "Type": 2,
+     "Data1": 4436,
+     "Data2": 1,
+     "Data3": 83,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38436
+    },
+    {
+     "id": 8193,
+     "Type": 1,
+     "Data1": 981,
+     "Data2": 36,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2303416
+    },
+    {
+     "id": 8194,
+     "Type": 1,
+     "Data1": 654,
+     "Data2": 10,
+     "Data3": 10,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2303417
+    },
+    {
+     "id": 8195,
+     "Type": 1,
+     "Data1": 5,
+     "Data2": 5,
+     "Data3": 3,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2303418
+    },
+    {
+     "id": 8196,
+     "Type": 1,
+     "Data1": 8,
+     "Data2": 6,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2303419
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 32,
+   "count": 9,
+   "samples": [
+    {
+     "id": 6089,
+     "Type": 2,
+     "Data1": 18000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2301312
+    },
+    {
+     "id": 6090,
+     "Type": 2,
+     "Data1": 36000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2301313
+    },
+    {
+     "id": 6091,
+     "Type": 2,
+     "Data1": 54000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2301314
+    },
+    {
+     "id": 6092,
+     "Type": 2,
+     "Data1": 72000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2301315
+    },
+    {
+     "id": 6093,
+     "Type": 2,
+     "Data1": 90000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2301316
+    },
+    {
+     "id": 9039,
+     "Type": 2,
+     "Data1": 18000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304262
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 46,
+   "count": 9,
+   "samples": [
+    {
+     "id": 6915,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302138
+    },
+    {
+     "id": 6916,
+     "Type": 2,
+     "Data1": 2,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302139
+    },
+    {
+     "id": 6917,
+     "Type": 2,
+     "Data1": 3,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302140
+    },
+    {
+     "id": 6918,
+     "Type": 2,
+     "Data1": 4,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302141
+    },
+    {
+     "id": 6919,
+     "Type": 2,
+     "Data1": 5,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302142
+    },
+    {
+     "id": 6920,
+     "Type": 2,
+     "Data1": 6,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302143
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 76,
+   "count": 8,
+   "samples": [
+    {
+     "id": 10121,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305344
+    },
+    {
+     "id": 10122,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305345
+    },
+    {
+     "id": 10123,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305346
+    },
+    {
+     "id": 10124,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305347
+    },
+    {
+     "id": 10125,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305348
+    },
+    {
+     "id": 10126,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305349
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 10,
+   "count": 7,
+   "samples": [
+    {
+     "id": 7749,
+     "Type": 1,
+     "Data1": 889,
+     "Data2": 38,
+     "Data3": 5,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302972
+    },
+    {
+     "id": 7750,
+     "Type": 1,
+     "Data1": 889,
+     "Data2": 13,
+     "Data3": 12,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302973
+    },
+    {
+     "id": 7751,
+     "Type": 1,
+     "Data1": 6,
+     "Data2": 6,
+     "Data3": 5,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302974
+    },
+    {
+     "id": 7752,
+     "Type": 1,
+     "Data1": 6,
+     "Data2": 7,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302975
+    },
+    {
+     "id": 7753,
+     "Type": 1,
+     "Data1": 6,
+     "Data2": 1778,
+     "Data3": 2,
+     "BuyPrice": 45000,
+     "Price": 100,
+     "desId": 2302976
+    },
+    {
+     "id": 7754,
+     "Type": 1,
+     "Data1": 6,
+     "Data2": 1778,
+     "Data3": 2,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302977
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 12,
+   "count": 7,
+   "samples": [
+    {
+     "id": 7755,
+     "Type": 1,
+     "Data1": 2223,
+     "Data2": 31,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302978
+    },
+    {
+     "id": 7756,
+     "Type": 1,
+     "Data1": 889,
+     "Data2": 13,
+     "Data3": 12,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302979
+    },
+    {
+     "id": 7757,
+     "Type": 1,
+     "Data1": 6,
+     "Data2": 6,
+     "Data3": 5,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302980
+    },
+    {
+     "id": 7758,
+     "Type": 1,
+     "Data1": 6,
+     "Data2": 7,
+     "Data3": 0,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302981
+    },
+    {
+     "id": 7759,
+     "Type": 1,
+     "Data1": 6,
+     "Data2": 1778,
+     "Data3": 2,
+     "BuyPrice": 45000,
+     "Price": 100,
+     "desId": 2302982
+    },
+    {
+     "id": 7760,
+     "Type": 1,
+     "Data1": 6,
+     "Data2": 1778,
+     "Data3": 2,
+     "BuyPrice": 30000,
+     "Price": 100,
+     "desId": 2302983
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 75,
+   "count": 7,
+   "samples": [
+    {
+     "id": 10118,
+     "Type": 2,
+     "Data1": 1906,
+     "Data2": 400,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305341
+    },
+    {
+     "id": 10352,
+     "Type": 2,
+     "Data1": 2396,
+     "Data2": 600,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305575
+    },
+    {
+     "id": 10353,
+     "Type": 2,
+     "Data1": 2397,
+     "Data2": 600,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305576
+    },
+    {
+     "id": 10354,
+     "Type": 2,
+     "Data1": 2398,
+     "Data2": 600,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305577
+    },
+    {
+     "id": 10355,
+     "Type": 2,
+     "Data1": 2399,
+     "Data2": 600,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305578
+    },
+    {
+     "id": 10356,
+     "Type": 2,
+     "Data1": 2400,
+     "Data2": 600,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305579
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 45,
+   "count": 6,
+   "samples": [
+    {
+     "id": 6909,
+     "Type": 2,
+     "Data1": 4168,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302132
+    },
+    {
+     "id": 6910,
+     "Type": 2,
+     "Data1": 4169,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302133
+    },
+    {
+     "id": 6911,
+     "Type": 2,
+     "Data1": 4170,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302134
+    },
+    {
+     "id": 6912,
+     "Type": 2,
+     "Data1": 4171,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302135
+    },
+    {
+     "id": 6913,
+     "Type": 2,
+     "Data1": 4172,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302136
+    },
+    {
+     "id": 6914,
+     "Type": 2,
+     "Data1": 4173,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302137
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 52,
+   "count": 6,
+   "samples": [
+    {
+     "id": 7838,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 7359
+    },
+    {
+     "id": 7839,
+     "Type": 2,
+     "Data1": 2,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 7360
+    },
+    {
+     "id": 7840,
+     "Type": 2,
+     "Data1": 3,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 7361
+    },
+    {
+     "id": 7841,
+     "Type": 2,
+     "Data1": 4,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 7362
+    },
+    {
+     "id": 7842,
+     "Type": 2,
+     "Data1": 5,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 7363
+    },
+    {
+     "id": 7843,
+     "Type": 2,
+     "Data1": 6,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 7364
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 81,
+   "count": 6,
+   "samples": [
+    {
+     "id": 10745,
+     "Type": 2,
+     "Data1": 44,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305968
+    },
+    {
+     "id": 10746,
+     "Type": 2,
+     "Data1": 45,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305969
+    },
+    {
+     "id": 10747,
+     "Type": 2,
+     "Data1": 46,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305970
+    },
+    {
+     "id": 10748,
+     "Type": 2,
+     "Data1": 47,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305971
+    },
+    {
+     "id": 10749,
+     "Type": 2,
+     "Data1": 48,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305972
+    },
+    {
+     "id": 10750,
+     "Type": 2,
+     "Data1": 49,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305973
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 61,
+   "count": 5,
+   "samples": [
+    {
+     "id": 9265,
+     "Type": 2,
+     "Data1": 300610,
+     "Data2": 1300061,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304488
+    },
+    {
+     "id": 9303,
+     "Type": 2,
+     "Data1": 300620,
+     "Data2": 1300064,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304526
+    },
+    {
+     "id": 9373,
+     "Type": 2,
+     "Data1": 300000,
+     "Data2": 1300000,
+     "Data3": 0,
+     "BuyPrice": 100,
+     "Price": 100,
+     "desId": 2304596
+    },
+    {
+     "id": 9411,
+     "Type": 2,
+     "Data1": 300630,
+     "Data2": 13000630,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304634
+    },
+    {
+     "id": 9547,
+     "Type": 2,
+     "Data1": 407010,
+     "Data2": 1407010,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304770
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 23,
+   "count": 4,
+   "samples": [
+    {
+     "id": 3316,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 37316
+    },
+    {
+     "id": 4567,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 38567
+    },
+    {
+     "id": 6623,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2301846
+    },
+    {
+     "id": 7502,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2302725
+    }
+   ],
+   "hint": {
+    "acts": "hp/mp 按 finalValue 补满",
+    "req": "curHp/maxhpLimit/curMp/maxmpLimit(finalValue)",
+    "evid": "index.js:65291-65295",
+    "attrch": "curhp / curmp",
+    "impl": "no"
+   }
+  },
+  {
+   "effect": 41,
+   "count": 4,
+   "samples": [
+    {
+     "id": 6658,
+     "Type": 2,
+     "Data1": 10000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 3000,
+     "desId": 2301881
+    },
+    {
+     "id": 7379,
+     "Type": 2,
+     "Data1": 100,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 500,
+     "desId": 2302602
+    },
+    {
+     "id": 10227,
+     "Type": 2,
+     "Data1": 50000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 3000,
+     "desId": 2305450
+    },
+    {
+     "id": 10841,
+     "Type": 2,
+     "Data1": 10000,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2306064
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 44,
+   "count": 4,
+   "samples": [
+    {
+     "id": 6847,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302070
+    },
+    {
+     "id": 6848,
+     "Type": 2,
+     "Data1": 3,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302071
+    },
+    {
+     "id": 6849,
+     "Type": 2,
+     "Data1": 7,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302072
+    },
+    {
+     "id": 7362,
+     "Type": 2,
+     "Data1": 30,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302585
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 29,
+   "count": 3,
+   "samples": [
+    {
+     "id": 4745,
+     "Type": 2,
+     "Data1": 14400,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38745
+    },
+    {
+     "id": 9038,
+     "Type": 2,
+     "Data1": 14400,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304261
+    },
+    {
+     "id": 10229,
+     "Type": 2,
+     "Data1": 14400,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305452
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 70,
+   "count": 3,
+   "samples": [
+    {
+     "id": 9809,
+     "Type": 2,
+     "Data1": 5,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305032
+    },
+    {
+     "id": 10037,
+     "Type": 2,
+     "Data1": 6,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305260
+    },
+    {
+     "id": 10038,
+     "Type": 2,
+     "Data1": 7,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305261
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 30,
+   "count": 2,
+   "samples": [
+    {
+     "id": 4756,
+     "Type": 2,
+     "Data1": 11193,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38756
+    },
+    {
+     "id": 4757,
+     "Type": 2,
+     "Data1": 11194,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38757
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 34,
+   "count": 2,
+   "samples": [
+    {
+     "id": 6253,
+     "Type": 2,
+     "Data1": 86400,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2301476
+    },
+    {
+     "id": 10225,
+     "Type": 2,
+     "Data1": 86400,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305448
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 62,
+   "count": 2,
+   "samples": [
+    {
+     "id": 9412,
+     "Type": 2,
+     "Data1": 10,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304635
+    },
+    {
+     "id": 9413,
+     "Type": 2,
+     "Data1": 11,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304636
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 72,
+   "count": 2,
+   "samples": [
+    {
+     "id": 9870,
+     "Type": 2,
+     "Data1": 90,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305093
+    },
+    {
+     "id": 9871,
+     "Type": 2,
+     "Data1": 88,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305094
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 79,
+   "count": 2,
+   "samples": [
+    {
+     "id": 10340,
+     "Type": 2,
+     "Data1": 10340,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305563
+    },
+    {
+     "id": 10341,
+     "Type": 2,
+     "Data1": 10341,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305564
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 27,
+   "count": 1,
+   "samples": [
+    {
+     "id": 4647,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 38647
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 35,
+   "count": 1,
+   "samples": [
+    {
+     "id": 6273,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 1000,
+     "desId": 2301496
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 40,
+   "count": 1,
+   "samples": [
+    {
+     "id": 6370,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2301593
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 42,
+   "count": 1,
+   "samples": [
+    {
+     "id": 6774,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 100,
+     "desId": 2301997
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 47,
+   "count": 1,
+   "samples": [
+    {
+     "id": 7365,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 3000,
+     "desId": 2302588
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 50,
+   "count": 1,
+   "samples": [
+    {
+     "id": 7662,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2302885
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 51,
+   "count": 1,
+   "samples": [
+    {
+     "id": 7782,
+     "Type": 2,
+     "Data1": 120,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2303005
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 53,
+   "count": 1,
+   "samples": [
+    {
+     "id": 7911,
+     "Type": 2,
+     "Data1": 30,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2303134
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 58,
+   "count": 1,
+   "samples": [
+    {
+     "id": 9258,
+     "Type": 2,
+     "Data1": 100,
+     "Data2": 10,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304481
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 59,
+   "count": 1,
+   "samples": [
+    {
+     "id": 9301,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 10,
+     "Price": 0,
+     "desId": 6000828
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 60,
+   "count": 1,
+   "samples": [
+    {
+     "id": 9325,
+     "Type": 20,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304548
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 64,
+   "count": 1,
+   "samples": [
+    {
+     "id": 9501,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304724
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 68,
+   "count": 1,
+   "samples": [
+    {
+     "id": 9773,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304996
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 69,
+   "count": 1,
+   "samples": [
+    {
+     "id": 9774,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2304997
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 71,
+   "count": 1,
+   "samples": [
+    {
+     "id": 9851,
+     "Type": 2,
+     "Data1": 0,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305074
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 73,
+   "count": 1,
+   "samples": [
+    {
+     "id": 10025,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305248
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 80,
+   "count": 1,
+   "samples": [
+    {
+     "id": 10484,
+     "Type": 2,
+     "Data1": 10000,
+     "Data2": 10000,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2305707
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 82,
+   "count": 1,
+   "samples": [
+    {
+     "id": 10831,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2306054
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  },
+  {
+   "effect": 83,
+   "count": 1,
+   "samples": [
+    {
+     "id": 10906,
+     "Type": 2,
+     "Data1": 1,
+     "Data2": 0,
+     "Data3": 0,
+     "BuyPrice": 0,
+     "Price": 0,
+     "desId": 2306129
+    }
+   ],
+   "hint": {
+    "acts": "未知（未在 useItemFunc 的分支表里）",
+    "req": "未知",
+    "evid": "index.js:65264-65302 无此分支",
+    "attrch": "未知",
+    "impl": "unknown"
+   }
+  }
+ ],
+ "languageTable": "not in tools/cfg/dump/（442 张里没有 language 表）→ 需要端上 getText 取样"
+}

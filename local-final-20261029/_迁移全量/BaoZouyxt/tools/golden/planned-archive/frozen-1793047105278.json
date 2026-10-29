@@ -1,0 +1,27 @@
+{
+ "archivedAt": "2026-10-26T20:38:25.278Z",
+ "rules": [
+  {
+   "id": "c10d-BuyHomeCrop",
+   "field": [
+    "eRet",
+    "limit",
+    "rewardArray"
+   ],
+   "action": "BuyHomeCrop",
+   "expect": 3,
+   "allowSigma": [
+    [
+     "BuyHomeCrop",
+     "limit"
+    ],
+    [
+     "BuyHomeCrop",
+     "rewardArray"
+    ]
+   ],
+   "ev": "index.js:57858",
+   "why": "C10 商店：BuyHomeCrop 的**线上名是大写 B**（index.js:59853 `BUY_HOME_CROP: \"User.BuyHomeCrop\"`），本场先写成小写 buyHomeCrop → 客户端请求落到 SHAPED 兜底（真机日志实证 `SHAPED User.BuyHomeCrop`）。改名后空请求走 eRet 2（无 else 静默），成功路径才带 rewardArray/limit"
+  }
+ ]
+}

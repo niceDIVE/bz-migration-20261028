@@ -1,0 +1,104 @@
+# User.BuyTowerProp  (HttpConst.TOWER_BUY_PROP)
+# 出现 3 处
+
+137633: var n = cc.instantiate(i);
+137634: u.PopUpMgr.addPopUp(n, f.LayerMgr.popUpLayer);
+137635: n.getComponent("MysticShopUI").setData(o);
+137636: t.mysticShopUI = n;
+137637: }) : cc.log("error!!");
+137638: }, this);
+137639: l.MessageCenter.on(c.HttpConst.TOWER_BUY_PROP, function(e, o) {
+137640: if (1 == o.eRet) {
+137641: var i = {
+137642: itemId: o.itemID,
+137643: num: t.sum
+137644: };
+137645: if (r.getItem(o.itemID, "lh_temporary")) {
+137646: var n = {};
+137647: n[o.itemID] = t.sum;
+137648: t.updateTowerItem(n);
+137649: }
+137650: o.hasOwnProperty("hjzcNum") && (t.towerItemData[5] = o.hjzcNum);
+137651: l.MessageCenter.dispatch(S.EvName.UPDATE_TOWER_ITEM_EVENT);
+137652: l.MessageCenter.dispatch(S.EvName.MYSTIC_SHOP_EVENT, i);
+137653: } else 2 == o.eRet ? y.default.show(a.getText(3073)) : 3 == o.eRet || y.default.show(a.getText("1184"));
+137654: }, this);
+137655: l.MessageCenter.on(c.HttpConst.TOWER_GET_PANDA_EVENT, function(e, o) {
+137656: if (1 == o.eRet && o.hasOwnProperty("eventArr")) {
+137657: var i = r.getItem(o.eventArr[0], "lh_panda"), n = r.getItem(o.eventArr[1], "lh_panda"), s = r.getItem(o.eventArr[2], "lh_panda");
+137658: y.default.show(a.getText(5922), [ {
+137659: name: a.getText(i.name),
+137660: flag: 0
+137661: }, {
+137662: name: a.getText(n.name),
+137663: flag: 1
+137664: }, {
+137665: name: a.getText(s.name),
+137666: flag: 2
+137667: } ], function(e) {
+137668: var i = r.getItem(o.eventArr[e], "lh_panda");
+137669: t.reqSelectPandaEvent(e, i.event);
+137670: });
+137671: }
+137672: }, this);
+137673: l.MessageCenter.on(c.HttpConst.TOWER_CHOOSE_PANDA_EVENT, function(e, o) {
+137674: if (1 == o.eRet) {
+137675: var n = r.getItem(t.pandaEventId, "lh_event");
+137676: if (1 == n.type || 8 == n.type) t.enterNextTower(n.parameter[0]); else if (o.hasOwnProperty("rewardArray")) {
+137677: t.updateTowerItem(o.rewardArray);
+137678: _.default.addShowRewardUI1(o.rewardArray, 0, {});
+137679: l.MessageCenter.dispatch(S.EvName.UPDATE_TOWER_ITEM_EVENT);
+---
+137948: npcID: t,
+137949: lv: e
+137950: });
+137951: };
+137952: e.prototype.reqBuyTowerItem = function(t, e) {
+137953: this.sum = e;
+137954: this.sweepState ? g.NetMgr.http.sendRequest(c.HttpConst.TOWER_BUY_PROP, {
+137955: itemID: t,
+137956: itemNum: e,
+137957: lv: this.sweepLv
+137958: }) : g.NetMgr.http.sendRequest(c.HttpConst.TOWER_BUY_PROP, {
+137959: itemID: t,
+137960: itemNum: e
+137961: });
+137962: };
+137963: e.prototype.reqGetPandaEvent = function(t) {
+137964: void 0 === t && (t = 0);
+137965: void 0 === t && (t = 0);
+137966: 0 == t ? g.NetMgr.http.sendRequest(c.HttpConst.TOWER_GET_PANDA_EVENT, {}) : g.NetMgr.http.sendRequest(c.HttpConst.TOWER_GET_PANDA_EVENT, {
+137967: lv: t
+137968: });
+137969: };
+137970: e.prototype.reqSelectPandaEvent = function(t, e) {
+137971: this.pandaEventId = e;
+137972: this.sweepState ? g.NetMgr.http.sendRequest(c.HttpConst.TOWER_CHOOSE_PANDA_EVENT, {
+137973: idx: t,
+137974: lv: this.sweepLv
+137975: }) : g.NetMgr.http.sendRequest(c.HttpConst.TOWER_CHOOSE_PANDA_EVENT, {
+137976: idx: t
+137977: });
+137978: };
+137979: e.prototype.reqLookPandaNpc = function(t) {
+137980: var e = this;
+137981: this.pandaNpcId = t.id;
+137982: if (3 == t.type) this.sweepState ? g.NetMgr.http.sendRequest(c.HttpConst.LOOK_SECRET_PANDA_EVENT, {
+137983: npcID: t.id,
+137984: lv: this.sweepLv
+137985: }) : g.NetMgr.http.sendRequest(c.HttpConst.LOOK_SECRET_PANDA_EVENT, {
+137986: npcID: t.id
+137987: }); else {
+137988: if (this.towerTreasureUI) return;
+137989: h.default.prefabs.load("towerUI/TowerTreasureUI", cc.Prefab, function(o, i) {
+137990: var n = cc.instantiate(i);
+137991: u.PopUpMgr.addPopUp(n, f.LayerMgr.popUpLayer, 1, !0);
+137992: n.addComponent("TowerTreasureUI").setData(t);
+137993: e.towerTreasureUI = n;
+137994: });
+---
+137995: }
+137996: };
+137997: e.prototype.reqChooseSecretEvent = function(t, e) {
+137998: var o = {};
+---

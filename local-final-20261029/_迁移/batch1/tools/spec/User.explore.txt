@@ -1,0 +1,99 @@
+# User.explore  (HttpConst.GET_EXPLORE)
+# 出现 2 处
+
+ 47180: this.mapHasExploredIds = {};
+ 47181: this.resultData = [];
+ 47182: this.isComplete = {};
+ 47183: }
+ 47184: t.prototype.init = function() {
+ 47185: var t = this, e = this;
+ 47186: r.MessageCenter.on(a.HttpConst.GET_EXPLORE, function(o, i) {
+ 47187: if (1 == i.eRet) {
+ 47188: i.hasOwnProperty("rewardArray") && (e.resultData.rewards = i.rewardArray);
+ 47189: 0 == i.eventType ? e.resultData.resultMsg = "7105" : t.getResultMsg(i.eventType, i.eventValue, i.eventId);
+ 47190: } else if (6 == i.eRet) {
+ 47191: t.addMapHasExploredIds(t.resultData.mapId, t.resultData.exploreId);
+ 47192: t.checkMapComplete(t.resultData.mapId) || (e.resultData.resultMsg = "7105");
+ 47193: } else if (7 == i.eRet) {
+ 47194: e.isComplete[e.resultData.mapId] = !0;
+ 47195: if (e.checkMapComplete(e.resultData.mapId)) {
+ 47196: e.resultData.resultMsg = "7106";
+ 47197: e.isExplore = !1;
+ 47198: } else e.resultData.resultMsg = "7105";
+ 47199: }
+ 47200: if (i.hasOwnProperty("fixedEvents")) {
+ 47201: t.flag = 0;
+ 47202: e.mapHasExploredIds[e.resultData.mapId] = i.fixedEvents;
+ 47203: }
+ 47204: r.MessageCenter.dispatch(s.EvName.EXPLORE_POINT, e.resultData);
+ 47205: }, this);
+ 47206: };
+ 47207: t.prototype.getResultMsg = function(t, e, o) {
+ 47208: this.addMapHasExploredIds(this.resultData.mapId, this.resultData.exploreId);
+ 47209: this.resultData.isOpen = !0;
+ 47210: this.resultData.exploreId = o;
+ 47211: if (0 != this.resultData.exploreId) {
+ 47212: var r = n.getItem(this.resultData.exploreId, "mapExplore");
+ 47213: r.tips > 0 && (this.resultData.resultMsg = i.getText(r.tips));
+ 47214: }
+ 47215: switch (t) {
+ 47216: case 2:
+ 47217: p.default.judgeNoNpcTask(e);
+ 47218: break;
+ 47219: 
+ 47220: case 3:
+ 47221: var a = parseInt(e);
+ 47222: this.resultData.resultMsg = i.getText(a > 0 ? "7107" : "7108").replace(/\[1\]/, Math.abs(a));
+ 47223: }
+ 47224: };
+ 47225: t.prototype.checkMapComplete = function(t) {
+ 47226: return this.isComplete[t] && 0 == this.mapExploreId.length;
+---
+ 47257: this.resultData.exploreId = e;
+ 47258: this.resultData.exploreX = o;
+ 47259: this.resultData.exploreY = i;
+ 47260: this.resultData.resultMsg = "";
+ 47261: this.resultData.rewards = {};
+ 47262: this.resultData.isOpen = !1;
+ 47263: l.NetMgr.http.sendRequest(a.HttpConst.GET_EXPLORE, {
+ 47264: mapID: t,
+ 47265: eventID: e,
+ 47266: roleID: c.RoleBaseInfo.roleID,
+ 47267: flag: this.flag
+ 47268: });
+ 47269: };
+ 47270: return t;
+ 47271: }();
+ 47272: o.ExploreEventModel = new h();
+ 47273: cc._RF.pop();
+ 47274: }, {
+ 47275: "../core/events/MessageCenter": "MessageCenter",
+ 47276: "../gameconfigs/CFMgr": "CFMgr",
+ 47277: "../gameconfigs/LangMgr": "LangMgr",
+ 47278: "../models/TaskSystemMgr": "TaskSystemMgr",
+ 47279: "../net/HttpConst": "HttpConst",
+ 47280: "../net/NetMgr": "NetMgr",
+ 47281: "../utils/EvName": "EvName",
+ 47282: "./vos/RoleBaseInfo": "RoleBaseInfo"
+ 47283: } ],
+ 47284: ExtrDmgB: [ function(t, e) {
+ 47285: "use strict";
+ 47286: cc._RF.push(e, "2a339FtCABP5oGnl8HBAi3b", "ExtrDmgB");
+ 47287: function o(t, e) {
+ 47288: t.prototype = Object.create(e.prototype);
+ 47289: t.prototype.constructor = t;
+ 47290: i(t, e);
+ 47291: }
+ 47292: function i(t, e) {
+ 47293: return (i = Object.setPrototypeOf || function(t, e) {
+ 47294: t.__proto__ = e;
+ 47295: return t;
+ 47296: })(t, e);
+ 47297: }
+ 47298: var n = t("../battleinfo/RecordTypes"), r = t("../ConfigMgr"), a = t("../Flags"), s = function(t) {
+ 47299: o(e, t);
+ 47300: function e() {
+ 47301: return t.apply(this, arguments) || this;
+ 47302: }
+ 47303: var i = e.prototype;
+---

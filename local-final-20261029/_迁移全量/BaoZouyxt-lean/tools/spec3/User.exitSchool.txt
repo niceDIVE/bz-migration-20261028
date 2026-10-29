@@ -1,0 +1,20 @@
+# User.exitSchool   (HttpConst.EXIT_SCHOOL)
+
+## 注册点 77836: i.MessageCenter.on(r.HttpConst.EXIT_SCHOOL, this.exitSchoolCallBack, this);
+
+## 请求点 77978: u.NetMgr.http.sendRequest(r.HttpConst.EXIT_SCHOOL, i);
+   77970: if (0 == o) {
+   77971: e.npcId = t;
+   77972: var i = {
+   77973: npcID: t,
+   77974: taskArr: []
+   77975: };
+   77976: i.taskArr = e.getHeroTask(0);
+   77977: e.deleteTask = e.getHeroTask(0);
+
+## 处理函数 exitSchoolCallBack (77888-77892)
+ 77888: e.prototype.exitSchoolCallBack = function(t, e) {
+ 77889: if (e.hasOwnProperty("npcIDArr") && e.npcIDArr.length) for (var o = a.RoleBaseInfo.masters, i = 0; i < o.length; i++) for (var r = 0; r < e.npcIDArr.length; r++) o[i] == e.npcIDArr[r] && o.splice(i, 1);
+ 77890: this.deleteTask.length ? n.default.show(l.getText("836") + l.getText("947")) : n.default.show(l.getText("836"));
+ 77891: this.deleteErrorTask();
+ 77892: };

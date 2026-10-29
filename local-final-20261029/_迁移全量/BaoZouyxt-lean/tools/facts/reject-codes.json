@@ -1,0 +1,3543 @@
+{
+ "useItem": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   2,
+   4,
+   5,
+   6,
+   8,
+   10,
+   11,
+   13,
+   15,
+   16
+  ],
+  "promptOnly": [
+   4,
+   5,
+   6,
+   8,
+   10,
+   11,
+   13,
+   16
+  ],
+  "defaultCode": 5,
+  "codes": [
+   {
+    "code": 5,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "recipeLearned"
+    ],
+    "tier": 1,
+    "ev": "index.js:64906#f4b68de2",
+    "note": "1333=你已经学会此配方了（常量文本，无解引用）"
+   },
+   {
+    "code": 3,
+    "role": "reject",
+    "reasons": [
+     "effectUnmodeled"
+    ],
+    "tier": 2,
+    "ev": "index.js:64895#74d98906",
+    "tierWhy": "客户端 if 链 64755-64910 里 3 没有分支（链止于 16，无 else 兜底）→ 静默；4 会弹 988『开启该道具需消耗[1]个[2]』并解引用 item.Data2，5 会弹『你已经学会此配方了』，都不贴切（R14 反例 3）",
+    "note": "未建模效果=不扣、静默、留 REJECT 日志；开关在 rpc 的 REJECT_UNMODELED_ITEMS"
+   }
+  ]
+ },
+ "BeginTraining": {
+  "success": [
+   1,
+   2
+  ],
+  "handled": [
+   1,
+   2,
+   3
+  ],
+  "promptOnly": [
+   3
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notLearned"
+    ],
+    "tier": 2,
+    "ev": "index.js:120516#6ca3ca8c",
+    "tierWhy": "3 有提示但 423 的正文是『[68]已经达到瓶颈了,需要闭关突破,方可继续修炼提升』（与『未学会』不符），且 index.js:120570 先 getItem(n.skillID,\"skill\") 再取 .Name，id 不在 item 表会 TypeError",
+    "note": ""
+   }
+  ]
+ },
+ "BuyFashion": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   2,
+   3,
+   4,
+   7
+  ],
+  "promptOnly": [
+   2,
+   4,
+   7
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:75578#3c88f4d7",
+    "note": "3=openChargeList 开充值界面，不算提示分支"
+   }
+  ]
+ },
+ "buyShopItem": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   4
+  ],
+  "promptOnly": [
+   4
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:64752#738fbfa5",
+    "note": ""
+   }
+  ]
+ },
+ "buySpecialShopItem": {
+  "success": [
+   1
+  ],
+  "handled": [],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:123376#388728c3",
+    "note": "回调体只有一行 dispatch(REFRESH_SP_SHOP)，无 eRet 分支"
+   }
+  ]
+ },
+ "BuyAcitivityShop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   4,
+   5,
+   6,
+   7,
+   9
+  ],
+  "promptOnly": [
+   4,
+   5,
+   6,
+   7,
+   9
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:1493#f8114de0",
+    "note": ""
+   }
+  ]
+ },
+ "exchangeItem": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:47091#b60c6d71",
+    "note": "只判 1，其余码静默"
+   }
+  ]
+ },
+ "buyGoodAndEvilShopItem": {
+  "success": [],
+  "handled": [],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:60445#cdeb4da5",
+    "note": "全包只有常量行，无 MessageCenter.on 注册 → 消费端未取证"
+   }
+  ]
+ },
+ "rgShopByItem": {
+  "success": [],
+  "handled": [],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:60516#f2e0db61",
+    "note": "同上"
+   }
+  ]
+ },
+ "QuickBuyItem": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   3
+  ],
+  "promptOnly": [
+   3
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:130888#ccca76f3",
+    "tierWhy": "3 的提示 getText(535) 属『快速购买界面/材料不足』语义，对拒绝不适用；4 静默不误导",
+    "note": ""
+   }
+  ]
+ },
+ "washAdditionalArr": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   3,
+   4,
+   6,
+   7
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "flow",
+    "reads": [
+     "attrList"
+    ],
+    "ev": "index.js:144071#39e4454a",
+    "note": "4 不是拒绝：load(\"marrySystem/ChildWashUI\") 弹『选洗哪条』界面，我们回 4 + attrList（4 段字符串）"
+   }
+  ]
+ },
+ "isCycleLife": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   2,
+   3
+  ],
+  "promptOnly": [
+   2,
+   3
+  ],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:101932#786b9ac6",
+    "note": ""
+   }
+  ]
+ },
+ "cycleLife": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   6,
+   7,
+   9
+  ],
+  "promptOnly": [
+   7,
+   9
+  ],
+  "defaultCode": 9,
+  "codes": [
+   {
+    "code": 9,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:101912#39aacac2",
+    "note": ""
+   }
+  ]
+ },
+ "specialCycleLife": {
+  "success": [],
+  "handled": [],
+  "promptOnly": [],
+  "defaultCode": 9,
+  "codes": [
+   {
+    "code": 9,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:60185#ac46ff95",
+    "note": "无注册行，消费端未取证"
+   }
+  ]
+ },
+ "WashMedicine": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   2,
+   "else"
+  ],
+  "promptOnly": [
+   "else"
+  ],
+  "defaultCode": 0,
+  "codes": [
+   {
+    "code": 0,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:144132#08aa3179",
+    "note": "0 落到 else show(getText(\"910\")) → 有提示"
+   }
+  ]
+ },
+ "FindFriendByID": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   "else"
+  ],
+  "promptOnly": [
+   "else"
+  ],
+  "defaultCode": 0,
+  "codes": [
+   {
+    "code": 0,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:132264#5666525b",
+    "note": "0 落到 else show(getText(\"371\")) → 有提示"
+   }
+  ]
+ },
+ "buyFormula": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   2
+  ],
+  "promptOnly": [
+   2
+  ],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:60489#b2161c7d",
+    "note": "消费端 onBuyFormulaData 在 scripts3.js:7027-7042（index.js 只有常量行）：1==eRet 成功；2==eRet 弹 getText(1014)，其余静默。"
+   }
+  ]
+ },
+ "innBuyShop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   6
+  ],
+  "promptOnly": [
+   6
+  ],
+  "defaultCode": 6,
+  "codes": [
+   {
+    "code": 6,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:60163#2a770aa8",
+    "note": "消费端 onShopBuyItem 在 index.js:62577-62594：1==eRet 读 foodBag/cookBook；6==eRet 弹 getText(202201181)。"
+   }
+  ]
+ },
+ "buySchoolShop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:60055#f2f5f0a9",
+    "note": "消费端 onBuySchoolShop 在 index.js:113672-113680：只有 1==eRet 一个分支，4 静默。"
+   }
+  ]
+ },
+ "BuyMarketItem": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   4
+  ],
+  "promptOnly": [
+   4
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:59517#9af23748",
+    "note": "消费端 onPaySuccess（131233-131258）：4 → getText(6000575)；131234 在判 eRet 之前无条件读 userGold，登记后 narrowReject 把拒绝应答剥到只剩 eRet（fillShape 借 quicklogin 模板补的 userGold:20 不再外泄）。"
+   }
+  ]
+ },
+ "BuyMount": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   3
+  ],
+  "promptOnly": [
+   3
+  ],
+  "defaultCode": 3,
+  "codes": [
+   {
+    "code": 3,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:59727#8683a5c9",
+    "note": "消费端 32141-32173：3 → getText(1000)，其它 openChargeList；登记后拒绝应答被剥到只剩 eRet，i.type=undefined 时 1 != undefined 仍走购买分支，安全。"
+   }
+  ]
+ },
+ "buyEjectGift": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   2,
+   6
+  ],
+  "promptOnly": [
+   2,
+   6
+  ],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "giftNotFound"
+    ],
+    "tier": 1,
+    "ev": "index.js:60300#e2c6c5a1",
+    "note": "消费端 buyGiftActive 在 scripts3.js:60892-60910（index.js 只有常量行）：2 → getText(9142) 礼包不存在。"
+   },
+   {
+    "code": 6,
+    "role": "reject",
+    "reasons": [
+     "insufficient"
+    ],
+    "tier": 1,
+    "ev": "index.js:60300#e2c6c5a1",
+    "note": "60901: 6 → getText(8845) 弹充值选择框（元宝不足）。"
+   }
+  ]
+ },
+ "upgradeSkill": {
+  "success": [],
+  "handled": [],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:119844#9e3a9bc5",
+    "note": "书路径两处拒绝（R20 自定差异，bz-rpc-server.js:1375/1380）回 4；upgradeSkill 消费端在 index.js:119844 一带只读 returnPro，未见 eRet 专用分支 → 4 静默。存量缺口：2026-10-23 04:54 server 改动后漏登记，第 1 批商店施工时补登。"
+   }
+  ]
+ },
+ "passCardAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   4
+  ],
+  "promptOnly": [
+   4
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:55883#92d0bd7f",
+    "note": "侠客令领奖（User.passCardAward {passID}）：4 → getText(1093)。三个拒绝原因（阶不存在 / 已领取 award==4 / 活跃度不足）共用同一提示——客户端 index.js:55879-55883 只有 1 与 4 两个分支，没有更细的码可用。"
+   }
+  ]
+ },
+ "buyInvitationCard": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   4
+  ],
+  "promptOnly": [
+   4
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:55889#4b05e155",
+    "note": "侠客令升档（User.buyInvitationCard {pass_levelID}）：4 → getText(1093)。拒绝原因（档位越界 / 不能降级或重复买 / 元宝不足）统一用 4；客户端 :55889 另有 2==eRet → getText(535) 的旁支语义，不采用。"
+   }
+  ]
+ },
+ "ReceiveAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:55274#b60c6d71",
+    "note": "侠客令领奖（User.ReceiveAward {Growid}）：回调 receiveAwardCallback 只有 `if (1 == e.eRet)` 一个分支（index.js:55274），其余静默 → 用 4 不误导。"
+   }
+  ]
+ },
+ "ReceiveBigAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:55274#b60c6d71",
+    "note": "大侠令领奖（User.ReceiveBigAward {Growid}）：与 ReceiveAward 共用 receiveAwardCallback（index.js:55273），只有 1==eRet 分支 → 4 静默。"
+   }
+  ]
+ },
+ "buyBigGiftTime": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   4,
+   5
+  ],
+  "promptOnly": [
+   4,
+   5
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:55259#71187510",
+    "note": "大侠令解锁（User.buyBigGiftTime {roleId}）：4 → getText(7353)。用于\"已解锁/状态异常\"等非余额类拒绝。"
+   },
+   {
+    "code": 5,
+    "role": "reject",
+    "reasons": [
+     "insufficient"
+    ],
+    "tier": 1,
+    "ev": "index.js:55259#71187510",
+    "note": "元宝不足 → 5 → getText(8845) 弹充值选择框（客户端 onBuyBigGift 的 5 分支）。"
+   }
+  ]
+ },
+ "rgUseItem": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badItem"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属分支（静默或走通用 alert）→ tier 2 静默，避免弹错文案",
+    "ev": "index.js:60538#fa2d1f4a",
+    "note": "itemID 非法 → 2 走客户端 noop 分支（scripts3.js:73952）"
+   },
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "noStock"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属分支（静默或走通用 alert）→ tier 2 静默，避免弹错文案",
+    "ev": "index.js:60538#fa2d1f4a",
+    "note": "肉鸽背包无此道具 → 4 → getText(988)，客户端会读 item.Data2/Data3"
+   }
+  ]
+ },
+ "UseSnowBall": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 0,
+  "codes": [
+   {
+    "code": 0,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noBall"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属分支（静默或走通用 alert）→ tier 2 静默，避免弹错文案",
+    "ev": "index.js:122505#ba1b5260",
+    "note": "雪球不足 → 非 1 落 else → getText(1093)"
+   }
+  ]
+ },
+ "UseBatchSnowBall": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noBall"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属分支（静默或走通用 alert）→ tier 2 静默，避免弹错文案",
+    "ev": "index.js:122514#b38fbb56",
+    "note": "批量雪球不足 → 4 → getText(6126)「雪球不足」，且客户端总会 setBeastState(eRet)"
+   }
+  ]
+ },
+ "UseAllBall": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 0,
+  "codes": [
+   {
+    "code": 0,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noBall"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属分支（静默或走通用 alert）→ tier 2 静默，避免弹错文案",
+    "ev": "index.js:122543#0971c4a3",
+    "note": "摔炮时雪球不足 → 非 1 → getText(1093)"
+   }
+  ]
+ },
+ "getSnowAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noBox"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属分支（静默或走通用 alert）→ tier 2 静默，避免弹错文案",
+    "ev": "index.js:122529#d9c508fc",
+    "note": "无雪球盒子 → 4 → getText(1098)"
+   }
+  ]
+ },
+ "useItemAddition": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 5,
+  "codes": [
+   {
+    "code": 5,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noItem"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属分支（静默或走通用 alert）→ tier 2 静默，避免弹错文案",
+    "ev": "index.js:56234#731a955c",
+    "note": "对应道具不足 → 5 客户端无分支（静默），绝不\"不扣东西直接给加成\""
+   }
+  ]
+ },
+ "acceptCircleTask": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 6,
+  "codes": [
+   {
+    "code": 6,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badTask"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属提示分支（静默或走通用 alert）-> tier 2 静默，避免弹错文案",
+    "ev": "index.js:59662#ac20750f",
+    "note": "taskID 非法 -> 6 -> getText(1093)（客户端 6 分支）"
+   }
+  ]
+ },
+ "circleTaskAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notAccepted"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属提示分支（静默或走通用 alert）-> tier 2 静默，避免弹错文案",
+    "ev": "index.js:59780#9bd03e2b",
+    "note": "任务不在 accepted -> 4 -> getText(931)；只有 1==eRet 才走 SUCCESS_TASK_EVENT + addShowRewardUI1"
+   }
+  ]
+ },
+ "getCircleTaskAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notAccepted"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属提示分支（静默或走通用 alert）-> tier 2 静默，避免弹错文案",
+    "ev": "index.js:59663#ffd7aadd",
+    "note": "同上（另一入口）；该动作客户端分支最全 4=931 5=932 9=1093 10=4320 12=8156"
+   }
+  ]
+ },
+ "getRogueFinishTaskAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notAccepted"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属提示分支（静默或走通用 alert）-> tier 2 静默，避免弹错文案",
+    "ev": "index.js:60544#8d6dc8bf",
+    "note": "肉鸽任务不在 accepted -> 4 -> getText(931)"
+   }
+  ]
+ },
+ "quickFinishTask": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notAccepted",
+     "insufficient"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属提示分支（静默或走通用 alert）-> tier 2 静默，避免弹错文案",
+    "ev": "index.js:59777#94198742",
+    "note": "快速完成现在是**元宝购买**：任务不在 accepted 或元宝不足都回 2 -> openChargeList（客户端把 2 当充值入口）；1 == eRet 才是付费完成成功。"
+   }
+  ]
+ },
+ "delegateTask": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notAccepted"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属提示分支（只 cc.log）-> tier 2 静默，避免弹错文案",
+    "ev": "index.js:43513#f25dbb8d",
+    "note": "v2.6 堵口新增：taskID 非法 / 不是已知任务 / 一次性任务已领过 -> 4（客户端只 cc.log \"服务器获取锁定装备数据出错\"，不读 sTime）。"
+   }
+  ]
+ },
+ "rogueAcceptTask": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notAccepted"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端 4 分支只查 tasktime 表（index.js:133250-133252），不读 skillId/CDTime/serverTime -> 静默安全",
+    "ev": "index.js:133250#dabf6eec",
+    "note": "v2.6 堵口新增：taskID 非法 / 不是已知任务 / 一次性任务已领过 -> 4。⚠ 不可改成 6：客户端 6 分支(133253)读 o.skillId 交给 getItem(...).Name，缺席即抛。"
+   }
+  ]
+ },
+ "diceBattleResult": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 0,
+  "codes": [
+   {
+    "code": 0,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "0 不是 1，客户端 battleEventCallBack 的整段 1==eRet 分支（scripts3.js:51159 起）被跳过 -> 不读任何字段、不渲染，静默安全",
+    "ev": "index.js:59842#e1f92f52",
+    "note": "本工程未建模骰子/大富翁玩法，且该动作既不在 v2.6 shape-hints 也不在 BZ_SHAPES 形状表里。客户端 1==eRet 时会读 e.dice 交给 setChirstManData，我们造不出该结构 -> 故意回 0 让整段跳过，避免 TypeError。"
+   }
+  ]
+ },
+ "receiveAchieveReward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notDone"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属提示分支（整段 1==eRet 被跳过）-> tier 2 静默，避免弹错文案",
+    "ev": "index.js:60584#c8c55d7e",
+    "note": "领单条成就奖励。闸=s.achieve.pending（已达成待领）。v2.7.1 起服务端在 getAchieveData 里重算可判条件写 pending（收集/任务数/经验/技能等级四类），其余条件锁死。客户端只在 1==eRet 分支读 achieveIdArr/groupPoints（scripts3.js:2920-2943），4 分支整段跳过。"
+   }
+  ]
+ },
+ "receiveAchieveRateReward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notReached"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属提示分支（整段 1==eRet 被跳过）-> tier 2 静默，避免弹错文案",
+    "ev": "index.js:60585#aac50a72",
+    "note": "领成就积分档位奖励。闸=该组积分 ≥ achieve_rate.points 且未领过；积分来自已领成就，现恒 0 → 一律回 4。客户端只在 1==eRet 读 rateIds（scripts3.js:2946-2951）。"
+   }
+  ]
+ },
+ "receiveAchieveSuitReward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notReached"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属提示分支（整段 1==eRet 被跳过）-> tier 2 静默，避免弹错文案",
+    "ev": "index.js:60586#31272f4d",
+    "note": "领成就套装奖励。闸=achieve_suit.achieve 里要求的成就 id 全部已在 received；现恒空 → 一律回 4。客户端只在 1==eRet 读 srd（scripts3.js:2954-2964）。"
+   }
+  ]
+ },
+ "receiveAchievementReward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notModeled"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码没有专属提示分支（整段 1==eRet 被跳过）-> tier 2 静默，避免弹错文案",
+    "ev": "index.js:60414#f4a8eb66",
+    "note": "技巧成就奖励。达成条件属技巧/摸奖族，未建模 → 一律回 4，不发奖。客户端 1==eRet 读 achievementReward/rewardArray（scripts3.js:90027-90030）。"
+   }
+  ]
+ },
+ "GetRandomEventAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "dupClaim"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端回调（index.js:143814-143840）完全不判 eRet，只看有没有 rewardArray -> 4 静默结束，无任何文案分支可弹",
+    "ev": "index.js:143816#4a774bac",
+    "note": "v2.7.1 拍板 2：GetRandomEventAward 接 BZ_ADVENTURE 发奖（分支 1/4->awardwin、2->awardfalse、3->award、5->award2，未知分支不发）。防重复领：s.advDone[adventureID] 记账（上游拍板：一次冒险只结算一次），领过回 4 且不给 rewardArray。"
+   }
+  ]
+ },
+ "proposeNpc": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 11,
+    "role": "reject",
+    "reasons": [
+     "alreadyMarried"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:77123#879365fe"
+   },
+   {
+    "code": 12,
+    "role": "reject",
+    "reasons": [
+     "notInTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:77127#09d1c187"
+   },
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:77127#09d1c187"
+   }
+  ]
+ },
+ "marryNpc": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 3,
+    "role": "reject",
+    "reasons": [
+     "alreadyMarried"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:77254#5189bcd5"
+   },
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "notProposed"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:77254#5189bcd5"
+   },
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:77254#5189bcd5"
+   }
+  ]
+ },
+ "divorceNpc": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:77264#1a0b2110"
+   }
+  ]
+ },
+ "beginWedding": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:77273#759485be"
+   }
+  ]
+ },
+ "makeLove": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "dailyMax"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:77280#c7932084",
+    "note": "同床。未婚/choose 不在 make.json/每日 5 次上限（防刷经验）均回 2；成功经验进 s.exp（自定 50/次），makeID/happiness 显示型。"
+   }
+  ]
+ },
+ "birthChild": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:77353#b60c6d71",
+    "note": "出生。闸=fetationTime>0（makeLove 妊娠分支未建模，实际恒不满足→自然锁死但结构正确）；childObj 形状已由 scoutC 读点穷举推出（v2.7.1-accept2）。"
+   },
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "notPregnant"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:77353#b60c6d71"
+   }
+  ]
+ },
+ "chooseSex": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 3,
+  "codes": [
+   {
+    "code": 3,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:24692#e4717208"
+   }
+  ]
+ },
+ "adoptChild": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:24698#e3b01c91"
+   },
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "notMarried"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:24698#e3b01c91"
+   },
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "hasChild"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:24698#e3b01c91"
+   },
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "insufficient"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:24698#e3b01c91"
+   }
+  ]
+ },
+ "giveChildName": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:24625#ab47ffcd",
+    "note": "取名。childObj 形状已推出 -> 接线：必须有孩子、名字非空（1..12 字符）。"
+   },
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "noChild"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:24625#ab47ffcd"
+   },
+   {
+    "code": 99,
+    "role": "reject",
+    "reasons": [
+     "badName"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端 99 分支有专属文案 getText(480)（index.js:24625）",
+    "ev": "index.js:24625#ab47ffcd"
+   }
+  ]
+ },
+ "childWashProperty": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:24636#b900bf35"
+   }
+  ]
+ },
+ "resetChildFoster": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:24655#58d0d674"
+   }
+  ]
+ },
+ "addChildFoster": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:60043#6193b87a"
+   }
+  ]
+ },
+ "upgradeWifeLevel": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:145327#b60c6d71"
+   }
+  ]
+ },
+ "UserWifeProp": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:145334#b60c6d71"
+   }
+  ]
+ },
+ "ChooseGirl": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:51143#64604eaa"
+   }
+  ]
+ },
+ "Whoring": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:51146#c64a85c6"
+   }
+  ]
+ },
+ "getLikeEvent": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "noEvent"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:51160#dabf6eec"
+   }
+  ]
+ },
+ "optionLikeEvent": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对该码无专属文案分支或走通用提示 -> tier 2 静默/通用，宁可不提示也不弹错文案",
+    "ev": "index.js:51174#fecee0ff"
+   }
+  ]
+ },
+ "getGoodAndEvilTaskData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "善恶玩法未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；各回调非 1 分支静默或无 else",
+    "ev": "index.js:60434#f2bad8c6",
+    "note": "善恶玩法 11 动作全锁：未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData 16 字段 .toString() 直读（scripts3.js:35795-35861），缺键即 TypeError，故不给半截成功。"
+   }
+  ]
+ },
+ "refreshGoodAndEvilTaskData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "善恶玩法未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；各回调非 1 分支静默或无 else",
+    "ev": "index.js:60435#925e84d5",
+    "note": "善恶玩法 11 动作全锁：未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData 16 字段 .toString() 直读（scripts3.js:35795-35861），缺键即 TypeError，故不给半截成功。"
+   }
+  ]
+ },
+ "getGoodAndEvilNoteData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "善恶玩法未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；各回调非 1 分支静默或无 else",
+    "ev": "index.js:60436#58d6aa84",
+    "note": "善恶玩法 11 动作全锁：未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData 16 字段 .toString() 直读（scripts3.js:35795-35861），缺键即 TypeError，故不给半截成功。"
+   }
+  ]
+ },
+ "getGoodAndEvilNpcData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "善恶玩法未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；各回调非 1 分支静默或无 else",
+    "ev": "index.js:60439#0d072840",
+    "note": "善恶玩法 11 动作全锁：未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData 16 字段 .toString() 直读（scripts3.js:35795-35861），缺键即 TypeError，故不给半截成功。"
+   }
+  ]
+ },
+ "refreshGoodAndEvilNpcData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "善恶玩法未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；各回调非 1 分支静默或无 else",
+    "ev": "index.js:60440#69611213",
+    "note": "善恶玩法 11 动作全锁：未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData 16 字段 .toString() 直读（scripts3.js:35795-35861），缺键即 TypeError，故不给半截成功。"
+   }
+  ]
+ },
+ "getGoodAndEvilRankData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "善恶玩法未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；各回调非 1 分支静默或无 else",
+    "ev": "index.js:60446#668f7ae2",
+    "note": "善恶玩法 11 动作全锁：未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData 16 字段 .toString() 直读（scripts3.js:35795-35861），缺键即 TypeError，故不给半截成功。"
+   }
+  ]
+ },
+ "helpDoneTask": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "善恶玩法未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；各回调非 1 分支静默或无 else",
+    "ev": "index.js:60447#e7f235bd",
+    "note": "善恶玩法 11 动作全锁：未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData 16 字段 .toString() 直读（scripts3.js:35795-35861），缺键即 TypeError，故不给半截成功。"
+   }
+  ]
+ },
+ "getGeHelpInfo": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "善恶玩法未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；各回调非 1 分支静默或无 else",
+    "ev": "index.js:60448#58d7f35e",
+    "note": "善恶玩法 11 动作全锁：未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData 16 字段 .toString() 直读（scripts3.js:35795-35861），缺键即 TypeError，故不给半截成功。"
+   }
+  ]
+ },
+ "getGoodAndEvilData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "善恶玩法未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；各回调非 1 分支静默或无 else",
+    "ev": "index.js:60449#a5f9a060",
+    "note": "善恶玩法 11 动作全锁：未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData 16 字段 .toString() 直读（scripts3.js:35795-35861），缺键即 TypeError，故不给半截成功。"
+   }
+  ]
+ },
+ "getGoodAndEvilRetireList": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "善恶玩法未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；各回调非 1 分支静默或无 else",
+    "ev": "index.js:60450#1dc53693",
+    "note": "善恶玩法 11 动作全锁：未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData 16 字段 .toString() 直读（scripts3.js:35795-35861），缺键即 TypeError，故不给半截成功。"
+   }
+  ]
+ },
+ "getGoodAndEvilRetireData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "tierWhy": "善恶玩法未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；各回调非 1 分支静默或无 else",
+    "ev": "index.js:60451#e9b9ac50",
+    "note": "善恶玩法 11 动作全锁：未加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData 16 字段 .toString() 直读（scripts3.js:35795-35861），缺键即 TypeError，故不给半截成功。"
+   }
+  ]
+ },
+ "ChallengePVP": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [
+   3
+  ],
+  "defaultCode": 3,
+  "codes": [
+   {
+    "code": 3,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "tierWhy": "客户端对 3 有专属分支（index.js:101338-101341：Alert.show(getText(1399)) 之后 dispose）——原服就用这个码表示\"不可挑战\"，有提示不静默，故第 1 档",
+    "ev": "index.js:59505#1548bacc",
+    "note": "离线服没有真人对手（请求要 otherRoleID），不伪造 EnemyData。C08 九个动作里唯一有优雅退出的分支。"
+   }
+  ]
+ },
+ "knackLottery": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [
+   5
+  ],
+  "defaultCode": 5,
+  "codes": [
+   {
+    "code": 5,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 1,
+    "ev": "index.js:60412#9c53a48e",
+    "note": "券不足（单抽要 1 张 9191、十连要 10 张），或 BZ_KNACK_LOTTERY 表缺失",
+    "tierWhy": "有提示分支：`else 5 == e.eRet && Alert.show(getText(1093))`（scripts3.js:90096）→ 券不足时弹客户端自带文案，不静默"
+   }
+  ]
+ },
+ "changeSkillKnack": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:60307#9e087862",
+    "note": "口诀装不上：skillId 非法，或 knackIds 里没有一条在背包里",
+    "tierWhy": "回调非 1 无 else（scripts3.js:81079-81102）→ 静默，少发方向"
+   }
+  ]
+ },
+ "rgChangeSkillKnack": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:60539#0d5db96b",
+    "note": "肉鸽里装口诀失败：同 changeSkillKnack",
+    "tierWhy": "回调非 1 无 else（scripts3.js:73995-74002）→ 静默（注意上游原文拼写 SKNACK，别纠正）"
+   }
+  ]
+ },
+ "resolveEquip": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:59653#fb2fa694",
+    "note": "**缺产物表**（444 张 dump 无分解表；tbl_item.decomposition 只有档位 1/2/3、decompose 全 0）",
+    "tierWhy": "装备分解：缺产物表 → 锁。客户端回调把 rewardArray 弹成奖励框（index.js:64926 无守卫），给空奖励等于吞装备"
+   }
+  ]
+ },
+ "batchResolveEquip": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:59654#60a545e1",
+    "note": "**缺产物表**，同 resolveEquip",
+    "tierWhy": "批量分解：同上（index.js:64934 无守卫）"
+   }
+  ]
+ },
+ "resolveKnack": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:60308#41631285",
+    "note": "**缺口诀合成表**",
+    "tierWhy": "口诀合成/分解：缺\"几换几\"的表 → 锁（回调有 hasOwnProperty(\"rewardArray\") 守卫，不会崩）"
+   }
+  ]
+ },
+ "batchResolveKnack": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:60309#5a57e8e1",
+    "note": "**缺口诀合成表**",
+    "tierWhy": "批量口诀合成：同上（scripts3.js:81074 有守卫）"
+   }
+  ]
+ },
+ "obtainCrop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noCrop",
+     "notMature"
+    ],
+    "tier": 2,
+    "ev": "index.js:59847#778ed870",
+    "note": "收获被拒：地块没作物，或当前阶段没有产物（本批只有 4/5/6/7 可收）。⚠ 刻意不用 eRet 3：3 那一支是 `e.soilArr[o.sIdx].m.s = 0`（index.js:57714-57723 裸读并改写地块），未成熟回 3 会把界面画成荒地。",
+    "tierWhy": "回调只有 1 / 3 两支（index.js:57698-57725），没有 2 分支 → 2 静默，少发方向"
+   }
+  ]
+ },
+ "batchSeedCrop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable",
+     "badLand",
+     "occupied",
+     "noSeed",
+     "empty"
+    ],
+    "tier": 2,
+    "ev": "index.js:59848#95a8bb50",
+    "note": "播种被拒：地块号/种子不在表里、地块已有作物、背包种子不够、seedCrops 为空。整单拒绝不做半单（避免扣一半种子）。",
+    "tierWhy": "回调只有 1 分支、无 else（index.js:57654-57675）→ 静默"
+   }
+  ]
+ },
+ "changeSate": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [
+   -1
+  ],
+  "defaultCode": -1,
+  "codes": [
+   {
+    "code": -1,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badLand",
+     "friendHome"
+    ],
+    "tier": 1,
+    "ev": "index.js:59849#2700d295",
+    "note": "地块状态刷新被拒：地块号越界/无作物，或带 fid（好友家，第50批 enterOtherHome 未做）。⚠ 上游拼写 `changeSate`（少个 t），别纠正。",
+    "tierWhy": "-1 → Alert.show(getText(3320))（index.js:57696）——有提示不静默，故第 1 档"
+   }
+  ]
+ },
+ "expediteCrop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [
+   2
+  ],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noCrop",
+     "done"
+    ],
+    "tier": 1,
+    "ev": "index.js:59852#f0214478",
+    "note": "催熟被拒：地块无作物。客户端 2/3 同一句 getText(1455)。本批加速免费（道具 6069 只记不扣）。",
+    "tierWhy": "2/3 → Alert.show(getText(1455))（index.js:57845）——有提示"
+   }
+  ]
+ },
+ "cleanDeadCrop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noCrop",
+     "notDead"
+    ],
+    "tier": 2,
+    "ev": "index.js:59851#3399d43c",
+    "note": "清枯死被拒：地块无作物，或作物活着（本批无枯死模型：事件不刷、无枯萎计时 → 正常流程恒走这一支）。",
+    "tierWhy": "回调只有 1 分支、无 else（index.js:57811-57824）→ 静默"
+   }
+  ]
+ },
+ "dispossHomeEvent": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [
+   2
+  ],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noCrop",
+     "noEvent",
+     "friendHome"
+    ],
+    "tier": 1,
+    "ev": "index.js:59860#40224d48",
+    "note": "驱除家事件被拒：地块无作物、作物没有事件（本批不随机刷事件，m.eid 恒 0）、或带 fid（好友家）。⚠ 回调先看有没有 crop 再看 eRet（57980）→ 拒绝应答绝不能带 crop。",
+    "tierWhy": "2 → Alert.show(getText(3268))（index.js:58005）——有提示"
+   }
+  ]
+ },
+ "onKeyObtainCrop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [
+   2
+  ],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 1,
+    "ev": "index.js:60409#e5579113",
+    "note": "一键收获被拒：只在作物表 BZ_PLANT 缺失时回 2（正常路径恒 1 + 空 obtainLands，客户端自己弹 69193）。",
+    "tierWhy": "2 → Alert.show(getText(6000449))（index.js:57756）——有提示"
+   }
+  ]
+ },
+ "onKeyDispossHomeEvent": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "ev": "index.js:60410#baa5a0cd",
+    "note": "一键驱除被拒：只在作物表缺失时回 2（正常路径恒 1 + 空 cropMap，客户端弹 6000404）。",
+    "tierWhy": "回调只有 1 分支、无 else（index.js:57758-57801）→ 静默"
+   }
+  ]
+ },
+ "stealCrop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [
+   2
+  ],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "friendHome"
+    ],
+    "tier": 1,
+    "ev": "index.js:59861#902b885a",
+    "note": "偷好友菜：**档 A 锁**——好友家 soilArr 来自 `enterOtherHome`(`User.getFriendHomeList`，第50批，未实现)，没有它就没有可偷的菜可判定，故一律 2。等第29/50批落地后在此放开并补冷却。",
+    "tierWhy": "2 → 清地 + Alert.show(getText(3317))（index.js:58031-58041）——有提示"
+   }
+  ]
+ },
+ "homeSpeicalAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:59855#0aca536d",
+    "note": "家园特殊事件奖励：玩法未建模（第29批）。**必须回非 1**：SHAPED 兜底会回 {eRet:1,eid:0,rewardArray:{}} → 客户端 productHomeEvent(0,…) 拿 getItem(0,\"home_plant_adventure\")=null 后裸读 .describe → 真机 TypeError（index.js:95694）。",
+    "tierWhy": "回调里非 1 只 dispatch REMOVE_SEARCH_HOME_UI（index.js:57866）→ 静默"
+   }
+  ]
+ },
+ "getBackShop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "ev": "index.js:59854#5e8fd4e5",
+    "note": "家园种子商店货架：只在 BZ_PLANT.shop 缺失时回 2。正常路径恒 1 + shopArr 三元组数组（不给 shopArr 客户端弹 getText(3325)，57856）。",
+    "tierWhy": "回调只有 1 分支/无 else（index.js:57847-57857）→ 静默"
+   }
+  ]
+ },
+ "BuyHomeCrop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badItem",
+     "badNum",
+     "insufficient"
+    ],
+    "tier": 2,
+    "ev": "index.js:59853#a82bcb39",
+    "note": "买种子被拒：itemID 不在货架、itemNum 非法（要求 1..99）、银两不足。口径：平价（买价=item.Price）、不限购（用户 2026-10-27 拍板）。",
+    "tierWhy": "回调只认 1==eRet、无 else（index.js:57858-57864）→ 静默"
+   }
+  ]
+ },
+ "getAnniversaryPassData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:60587#19825b27",
+    "note": "面板开关被拒（annPass 档/表结构异常）。非 1 → removeItem + getText(1093) + ANN_OPEN false（else 兜底）。★AnniversaryMainUI 在 1 分支里 new（7831）→ 本键回不对整批不可达。",
+    "tierWhy": "else 兜底分支（scripts3.js:7837-7841 getText(1093)）——项目口径：else 兜底的提示不算专属分支（同 UseSnowBall code=0→else 910、FindFriendByID code=0→else 371 都评 tier 2）"
+   }
+  ]
+ },
+ "buyAnniversaryPass": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   4
+  ],
+  "promptOnly": [
+   4
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "alreadyVip",
+     "insufficient",
+     "noTable"
+    ],
+    "tier": 1,
+    "ev": "index.js:60588#9f27e387",
+    "note": "升 VIP 被拒：已是 VIP / 元宝不足 / 表缺失。4 → getText(8845)（scripts3.js:7848）。拍板②（2026-10-27）：300 元宝自定离线价，同侠客令先例。",
+    "tierWhy": "4 → getText(8845)（scripts3.js:7848）——有提示"
+   }
+  ]
+ },
+ "receiveAnniversaryPassAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badRow",
+     "claimed",
+     "livenessLow",
+     "noTable",
+     "notVip"
+    ],
+    "tier": 2,
+    "ev": "index.js:60589#b195ec02",
+    "note": "领奖被拒：行 id 不在 award 表 / 该档已领 / 活跃度未达 row.liveness。回调只有 1 分支、无 else（scripts3.js:7850-7857）→ 2 静默。拒绝应答剥到只剩 eRet（REJECT_ALLOW）。",
+    "tierWhy": "回调只有 1 分支、无 else → 静默"
+   }
+  ]
+ },
+ "getAnniversaryPassGift": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "ev": "index.js:60590#3b27c5d5",
+    "note": "礼包货架被拒：只在 BZ_C11 缺失时回 2（正常路径恒 1 + 4 行 11 元数组货架）。★本键不自开面板：dispatch(STORE_SHOW_UI,{type:11,data:giftDatas})（index.js:131051-131054）。",
+    "tierWhy": "回调只有 1 分支、无 else（index.js:131050-131056）→ 静默"
+   }
+  ]
+ },
+ "buyAnniversaryPassGift": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badGift",
+     "limit",
+     "insufficient",
+     "noTable"
+    ],
+    "tier": 2,
+    "ev": "index.js:60591#10aa2d11",
+    "note": "买礼包被拒：giftId 不在表 / 超限购（表 limit）/ 元宝不足。回调只有 1 分支、无 else（index.js:131062-131067）→ 静默。★rewardArray 裸读（131064）→ 拒绝绝不带。拍板③：元宝扣款、限购照表。",
+    "tierWhy": "回调只有 1 分支、无 else → 静默"
+   }
+  ]
+ },
+ "buyAnniversaryPassLiveness": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   3
+  ],
+  "promptOnly": [
+   3
+  ],
+  "defaultCode": 3,
+  "codes": [
+   {
+    "code": 3,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badNum",
+     "capReached",
+     "insufficient",
+     "noTable"
+    ],
+    "tier": 1,
+    "ev": "index.js:60592#fda20c30",
+    "note": "买活跃度被拒：num 非法 / 已到上限 565（客户端 scripts3.js:7763 同判定拒开弹窗）/ gold 不足。3 → getText(7353)（7863）。★上游\"可能已下线\"已推翻（入口 scripts3.js:18448）。拍板③：扣 gold、10/点（自定）。",
+    "tierWhy": "3 → getText(7353)（scripts3.js:7863）——有提示"
+   }
+  ]
+ },
+ "receiveAnniversaryPassTaskReward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badTask",
+     "claimed",
+     "notReached",
+     "noTable"
+    ],
+    "tier": 2,
+    "ev": "index.js:60595#66efde01",
+    "note": "任务领奖被拒：taskId 不在表 / 已领 / 进度未达（dv 本批不累计 → 正常流程恒 notReached，结构正确、玩法暂不产生，同 C10 cleanDeadCrop）。★线上名 receiveAnniversaryPassTaskReward（不叫 finishTask）。回调只有 1 分支、无 else（scripts3.js:7878-7888）→ 静默；★rewardArray 裸读无守卫（7886）→ 拒绝绝不带。",
+    "tierWhy": "回调只有 1 分支、无 else → 静默"
+   }
+  ]
+ },
+ "getHousekeeper": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:60393#3d840ef0",
+    "note": "管家面板开关被拒（housekeeper 档/表结构异常）。无 else（scripts3.js:23109-23119）→ 静默 + 面板不开。★附录键并入申报：delegateUI 在它 1 分支里 new（23111），不回则 C12 全批不可达（同 C10 getHomeList / C11 GET_DATA）。",
+    "tierWhy": "code ∉ handled → tier 2（R2a）"
+   }
+  ]
+ },
+ "buyHelper": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   4
+  ],
+  "promptOnly": [
+   4
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badId",
+     "insufficient",
+     "noTable"
+    ],
+    "tier": 1,
+    "ev": "index.js:60397#ecdb9410",
+    "note": "买管家被拒：id 不在表 / 元宝不足（helper.price 照表按元宝扣，拍板④）→ 4 → openChargeList（23167，充值界面语义，同 BuyMount/BuyFashion 先例）。已拥有 → 幂等成功不重复扣。",
+    "tierWhy": "4 有专属分支（openChargeList）→ tier 1"
+   }
+  ]
+ },
+ "setHelper": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   2
+  ],
+  "promptOnly": [
+   2
+  ],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notOwned",
+     "noTable"
+    ],
+    "tier": 1,
+    "ev": "index.js:60396#a7dba542",
+    "note": "设置管家被拒：id 不在表或未拥有（免费 1/2 人人可用，付费看 helperIdArr）。2 → getText(6000506)（23160）。",
+    "tierWhy": "2 有专属分支 → tier 1"
+   }
+  ]
+ },
+ "callHelperId": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notOwned",
+     "noTable"
+    ],
+    "tier": 2,
+    "ev": "index.js:60564#ed3d385e",
+    "note": "呼叫管家被拒：未拥有/表缺失。无 else（23235-23245）→ 静默。★线上名 callHelperId（不是 callHelperById）。housekeeper 字段有守卫（23237），读 .e 当 followId。",
+    "tierWhy": "code ∉ handled → tier 2（R2a）"
+   }
+  ]
+ },
+ "getHelperCallList": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "ev": "index.js:60563#c83dca06",
+    "note": "呼叫列表被拒：只在 BZ_C12 缺失时回 2。正常路径恒 1 + callData（8 管家映射，UI 自按 price<=0||checkBought 过滤，scripts3.js:20107）。",
+    "tierWhy": "code ∉ handled → tier 2（R2a）"
+   }
+  ]
+ },
+ "dispatchAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   3
+  ],
+  "promptOnly": [
+   3,
+   "else"
+  ],
+  "defaultCode": 3,
+  "codes": [
+   {
+    "code": 3,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notReady",
+     "noTable"
+    ],
+    "tier": 1,
+    "ev": "index.js:60395#3e706f3b",
+    "note": "领派遣奖被拒：无派遣 / dispatchEndTime 未到 → 3 → getText(1530)；其余码 → else getText(1145)。奖励 = 被派管家 helper.reward 照表（1/2 号为空 → rewardArray {}，客户端自己弹 6000366）。领完清派遣态防重。",
+    "tierWhy": "3 有专属分支（1530）→ tier 1；else(1145) 兜底"
+   }
+  ]
+ },
+ "setTemplateData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   2,
+   3
+  ],
+  "promptOnly": [
+   2,
+   3
+  ],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badAutoTime",
+     "noTable"
+    ],
+    "tier": 1,
+    "ev": "index.js:60399#a58bdc5b",
+    "note": "自动派遣模板被拒：autoTime 非法 → 2 → getText(6000332)。档 A 只存 template/autoTime/mapId，不执行自动派遣。",
+    "tierWhy": "2/3 有专属分支（23132）→ tier 1"
+   }
+  ]
+ },
+ "receiveNotice": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default"
+    ],
+    "tier": 2,
+    "ev": "index.js:60402#6fac99a5",
+    "note": "通知领取被拒。★非 1 → 客户端 t.dataDestroy()（23220）→ 档 A 恒 1（无通知内容 no-op，eventType:0 必带——23198/23257 裸读）。relations.md:35 归第 4 批顺手做，本批并入申报。",
+    "tierWhy": "code ∉ handled → tier 2（R2a）"
+   }
+  ]
+ },
+ "buyMonthlyFee": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   2
+  ],
+  "promptOnly": [
+   2
+  ],
+  "defaultCode": 4,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "alreadyActive",
+     "badType"
+    ],
+    "tier": 1,
+    "ev": "index.js:60398#763e85e4",
+    "note": "月卡已开通未到期 / type 非法（只认 1）→ 2 → getText(6000402)。",
+    "tierWhy": "2 有专属分支 → tier 1"
+   },
+   {
+    "code": 4,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "insufficient",
+     "noTable"
+    ],
+    "tier": 2,
+    "ev": "index.js:60398#763e85e4",
+    "note": "月卡购买被拒：元宝不足（拍板②自定 300 元宝/30 天）→ else getText(8845)。★线上名 User.buyMonthlyFee（完全不叫 buyButlerVip）。",
+    "tierWhy": "code ∉ handled（else 8845 兜底）→ tier 2（R2a）"
+   }
+  ]
+ },
+ "dispatch": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   2,
+   3,
+   5,
+   6,
+   7,
+   8
+  ],
+  "promptOnly": [
+   2,
+   3,
+   5,
+   6,
+   7,
+   8
+  ],
+  "defaultCode": 5,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "badMap"
+    ],
+    "tier": 1,
+    "ev": "index.js:60394#d3f00778",
+    "note": "mapId 不在管家场景白名单（helper.locate → 1147/1119/1120/1118）→ 2 → getText(6000371)。★真机实证（2026-10-27）：mapId=1008 派遣成功 → 客户端 createRoute3 查不到路线 → Cannot read property 0 of null 每帧崩（index.jsc:22681）→ 必须拒。",
+    "tierWhy": "2 有专属文案分支（23126）→ tier 1"
+   },
+   {
+    "code": 5,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "busy",
+     "noTable"
+    ],
+    "tier": 1,
+    "ev": "index.js:60394#d3f00778",
+    "note": "派遣被拒：派遣中（dispatchEndTime 未到）→ 5 → getText(6000372)。★线上名 User.dispatch（泛化名，别和 MessageCenter.dispatch 混淆）。★成功分支裸读 o.note.eco.yuanbao（23125）→ 免费派遣也必须回 note.eco.yuanbao。档 A：落档 30 分钟不结算产出；存量坏 mapId 派遣态允许覆盖重派（自愈通道）。",
+    "tierWhy": "2/3/5/6/7/8 全有专属文案分支（23126）→ tier 1"
+   }
+  ]
+ },
+ "getUFOCatcherData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "ev": "index.js:60251#f9a82ba6",
+    "note": "夹娃娃面板开关被拒（档/表结构异常）。25783 与 25797 是两个独立 if（非 else-if）→ 其余码静默；无 3 分支以外的提示。面板 = dollBundle/prefabs/dollUI（25791）。★入口 = 夹娃娃机 NPC（NpcToFuncType97，index.js:87583）。",
+    "tierWhy": "code ∉ handled → tier 2（R2a）"
+   }
+  ]
+ },
+ "rewardUFO": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   15
+  ],
+  "promptOnly": [
+   15
+  ],
+  "defaultCode": 15,
+  "codes": [
+   {
+    "code": 15,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badGear",
+     "badSign",
+     "noClaw",
+     "emptyPool",
+     "noTable"
+    ],
+    "tier": 1,
+    "ev": "index.js:60254#fc613b17",
+    "note": "抓取被拒：itemId 非爪（只认 8117/8119/8120）/ signCode 缺失 / 背包无该爪 / 池子为空。15 → getText(8060)。★任何非 1 → 客户端恒 dispatch CATCH_DOLL_EVENT null（25767）→ 拒绝安全。★拍板②服务端权威判中（忽略客户端 packages）；拍板③照扣爪子；池子抓空回 autoRefresh+新池。",
+    "tierWhy": "15 有专属文案分支（25766）→ tier 1"
+   }
+  ]
+ },
+ "useUFOrefresh": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   3,
+   6
+  ],
+  "promptOnly": [
+   3,
+   6
+  ],
+  "defaultCode": 6,
+  "codes": [
+   {
+    "code": 6,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTimes",
+     "noTable"
+    ],
+    "tier": 1,
+    "ev": "index.js:60253#5e215b6f",
+    "note": "刷新被拒：无可用次数（free+paid=0）→ 6 → getText(8060)。刷新 = 重生成池子 + signId+1（旧 signCode 失效）。★线上名 User.useUFOrefresh（refresh 的 r 小写）。",
+    "tierWhy": "6 有专属文案分支（25781）→ tier 1"
+   }
+  ]
+ },
+ "buyUFORefreshTimes": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1,
+   3,
+   5,
+   6,
+   7
+  ],
+  "promptOnly": [
+   3,
+   5,
+   6,
+   7
+  ],
+  "defaultCode": 7,
+  "codes": [
+   {
+    "code": 7,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "capReached",
+     "noTable"
+    ],
+    "tier": 1,
+    "ev": "index.js:60252#eb12b006",
+    "note": "买刷新被拒：累计限购 3 次已满（拍板⑥自定，对应客户端 getConstByID(325) 闸，DollUI:26202）→ 7 → getText(8060)。",
+    "tierWhy": "7 有专属文案分支（25809）→ tier 1"
+   },
+   {
+    "code": 5,
+    "role": "reject",
+    "reasons": [
+     "insufficient"
+    ],
+    "tier": 1,
+    "ev": "index.js:60252#eb12b006",
+    "note": "元宝不足（拍板⑥ 100 元宝/次）→ 5 → getText(3633)。",
+    "tierWhy": "5 有专属文案分支（25809-25811）→ tier 1"
+   }
+  ]
+ },
+ "lookDogLog": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对非 1 无专属分支（监听只有 1 == eRet 一侧，无 else 提示）→ tier 2 静默，少发方向",
+    "ev": "index.js:59862#2f792eaf",
+    "note": "狗日志被拒：面板开关级（BZ_C14 缺失才回 2）。正常 1 + log 空数组（监听 58047：1 == eRet && hasOwnProperty(\"log\") → dispatch HOME_LOG_EVENT；HomeLogUI 对 [] 安全）。"
+   }
+  ]
+ },
+ "FeedDog": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badItem",
+     "badNum",
+     "insufficient",
+     "full",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对非 1 无专属分支（监听只有 1 == eRet 一侧，无 else 提示）→ tier 2 静默，少发方向",
+    "ev": "index.js:59865#49211f7b",
+    "note": "喂狗被拒：propID ≠ 狗粮 6285 / propnum 非法 / 背包狗粮不足 / 已喂满 10000 / 表缺失。喂狗真扣狗粮（防刷：有成本无产出）。监听 58053：1 == eRet → progress→dogData.p、bigDog→dogData.id。"
+   }
+  ]
+ },
+ "DogBattleResult": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对非 1 无专属分支（监听只有 1 == eRet 一侧，无 else 提示）→ tier 2 静默，少发方向",
+    "ev": "index.js:59863#6f93ce74",
+    "note": "狗战结算桥接：仅 startDogFight().then 可达 → 当前不可达（好友家未实现 + stealCrop 档 A 锁）。监听 58050：1 == eRet && o.win → setDogCurState(0, endTime)。"
+   }
+  ]
+ },
+ "getReturnSevenDayData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对非 1 无专属分支（监听只有 1 == eRet 一侧，scripts3.js:63542-63590）→ tier 2 静默，少发方向",
+    "ev": "index.js:60240#ae00dc23",
+    "note": "七日数据/面板门被拒：BZ_C15 缺失才回 2（正常 1 + sevenDaysArr/triggerTime；eRet==1 才开 ReturnUI，scripts2:28970）"
+   }
+  ]
+ },
+ "getReturnTaskData": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对非 1 无专属分支（监听只有 1 == eRet 一侧，scripts3.js:63542-63590）→ tier 2 静默，少发方向",
+    "ev": "index.js:60241#d2086274",
+    "note": "回归任务数据被拒：BZ_C15 缺失才回 2（正常 1 + oldReturnData{tasks 11 个诚实 0 状态, liveness=0, livenessDatas=[]} + triggerTime）"
+   }
+  ]
+ },
+ "returnSevenDaysAwards": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "claimed",
+     "notReady",
+     "noRow",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对非 1 无专属分支（监听只有 1 == eRet 一侧，scripts3.js:63542-63590）→ tier 2 静默，少发方向",
+    "ev": "index.js:60242#6242ac3e",
+    "note": "七日奖励领取被拒：当日已领（每天一次）/ 未开面板 / 表缺行。防刷：唯一产出路径，每日上限 1、7 份封顶"
+   }
+  ]
+ },
+ "receiveReturnDailyTask": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notDone"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对非 1 无专属分支（监听只有 1 == eRet 一侧，scripts3.js:63542-63590）→ tier 2 静默，少发方向",
+    "ev": "index.js:60243#4557c0ae",
+    "note": "回归任务领取被拒：档 A 任务恒未完成（离线无埋点），不伪造进度"
+   }
+  ]
+ },
+ "receiveLivenessAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noLiveness"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对非 1 无专属分支（监听只有 1 == eRet 一侧，scripts3.js:63542-63590）→ tier 2 静默，少发方向",
+    "ev": "index.js:60244#21de6435",
+    "note": "活跃度奖领取被拒：档 A liveness 恒 0"
+   }
+  ]
+ },
+ "getReturnGift": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对非 1 无专属分支（监听只有 1 == eRet 一侧，scripts3.js:63542-63590）→ tier 2 静默，少发方向",
+    "ev": "index.js:60245#6f44dfe3",
+    "note": "礼包拉取被拒：BZ_C15 缺失才回 2（正常 1 + giftDatas 3 档纯展示 isBuy=0/isAward=0）"
+   }
+  ]
+ },
+ "refreshReturnGiftAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对非 1 无专属分支（监听只有 1 == eRet 一侧，scripts3.js:63542-63590）→ tier 2 静默，少发方向",
+    "ev": "index.js:60247#9f686703",
+    "note": "礼包刷新被拒：BZ_C15 缺失才回 2（正常 1 + giftAwards 空数组）"
+   }
+  ]
+ },
+ "receiveReturnGiftAward": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notBought"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端对非 1 无专属分支（监听只有 1 == eRet 一侧，scripts3.js:63542-63590）→ tier 2 静默，少发方向",
+    "ev": "index.js:60246#a45debe6",
+    "note": "礼包领取被拒：付费礼包（Return_store Price 25/68/…）离线无支付通道 → 防白拿恒拒 2"
+   }
+  ]
+ },
+ "addItem": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [
+   2
+  ],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "freeGrant"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端 2 分支只有 getText(448) 提示（index.js:64922），非专属成功分支 → tier 2",
+    "ev": "index.js:59577#98fedc5d",
+    "note": "直接给物品口被拒：★客户端有 send 点（InventoryModel.addItem → sendRequest(ADD_ITEM)，index.js:65353-65358）→ 上游提速方案核查判\"有 send 点改 eRet 拒绝并删白名单行\"（防白拿）。"
+   }
+  ]
+ },
+ "getSkillSkinShop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端非 1 无专属分支（商店/买/卸 静默；活动买 2→6003145 / 9→提示+重拉，82821）→ tier 2 取 2",
+    "ev": "index.js:60558#b8abbc8c",
+    "note": "商店货架被拒：BZ_C19 缺失才回 2（正常 1 + shopData.ds/price/freeTime → showShop 开 SkinShopUI，82913）"
+   }
+  ]
+ },
+ "refreshSkillSkinShop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "insufficient",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端非 1 无专属分支（商店/买/卸 静默；活动买 2→6003145 / 9→提示+重拉，82821）→ tier 2 取 2",
+    "ev": "index.js:60559#19d18910",
+    "note": "刷新被拒：元宝不足（自定 20 元宝/次）或表缺（防刷：刷新有成本）"
+   }
+  ]
+ },
+ "buySkillSkinShop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badId",
+     "bought",
+     "insufficient",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端非 1 无专属分支（商店/买/卸 静默；活动买 2→6003145 / 9→提示+重拉，82821）→ tier 2 取 2",
+    "ev": "index.js:60560#8a5feea6",
+    "note": "买道具被拒：非 type=1 行 / 已购（每行限购 1）/ 元宝不足 / 表缺（照表 price 真扣）"
+   }
+  ]
+ },
+ "getSkillSkinActiveShop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端非 1 无专属分支（商店/买/卸 静默；活动买 2→6003145 / 9→提示+重拉，82821）→ tier 2 取 2",
+    "ev": "index.js:60569#7cb05a7b",
+    "note": "活动商店被拒：BZ_C19 缺失才回 2（常开 30 天续期；shopDatas=type=2 行 id）"
+   }
+  ]
+ },
+ "buySkillSkinActiveShop": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "badIds",
+     "badId",
+     "badSkin",
+     "owned",
+     "insufficient",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端非 1 无专属分支（商店/买/卸 静默；活动买 2→6003145 / 9→提示+重拉，82821）→ tier 2 取 2",
+    "ev": "index.js:60570#530a0281",
+    "note": "买活动皮肤被拒：ids 空 / 非 type=2 行 / item 非 skillskin / 已拥有 / 元宝不足（照表 price 真扣）"
+   }
+  ]
+ },
+ "equipSkillSkin": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "notOwned",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端非 1 无专属分支（商店/买/卸 静默；活动买 2→6003145 / 9→提示+重拉，82821）→ tier 2 取 2",
+    "ev": "index.js:60561#a33bc6ef",
+    "note": "装皮肤被拒：皮肤未拥有（读存档 s.skinData，不信请求参数）"
+   }
+  ]
+ },
+ "removeSkillSkin": {
+  "success": [
+   1
+  ],
+  "handled": [
+   1
+  ],
+  "promptOnly": [],
+  "defaultCode": 2,
+  "codes": [
+   {
+    "code": 2,
+    "role": "reject",
+    "reasons": [
+     "default",
+     "noTable"
+    ],
+    "tier": 2,
+    "tierWhy": "客户端非 1 无专属分支（商店/买/卸 静默；活动买 2→6003145 / 9→提示+重拉，82821）→ tier 2 取 2",
+    "ev": "index.js:60562#0b73d0c6",
+    "note": "卸皮肤被拒：BZ_C19 缺失才回 2"
+   }
+  ]
+ }
+}

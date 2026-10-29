@@ -1,0 +1,40 @@
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:             "#distinct_id": "30253ab2-cc20-4e0b-bc42-2720aaa75e85",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:             "#event_name": "sdk_login",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:             "properties": {
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#lib_version": "3.0.1",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#carrier": "China Mobile GSM",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#os": "Android",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#device_id": "2782b45de3a4807d",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#screen_height": 1920,
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#bundle_id": "com.maple.madherogo",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#device_model": "V2309A-tapwindows",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#screen_width": 1080,
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#system_language": "zh",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#install_time": "2026-10-13 15:02:56.902",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#simulator": true,
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#lib": "MG",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#manufacturer": "vivo",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#os_version": "12",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#app_version": "4.0.2",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#fps": 60,
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "channel": "meple100221",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "open_id": "9900012358565",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#network_type": "WIFI",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#ram": "4.7\/5.8",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#disk": "116.2\/125.0",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#device_type": "Tablet",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:                 "#zone_offset": 8
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:             },
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:             "#uuid": "5f901cf6-5275-4bf5-9540-29dccf61a1dc"
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:         }
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:     ],
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:     "#app_id": "96c33b6e6e714ea28fe03e7e42941264",
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:     "#flush_time": 1792576826334
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle: }
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle: [ThinkingData] Debug: Send event, Response ={
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle:     "code": 0
+10-21 18:00:26.370  3453  3631 D ThinkingAnalytics.DataHandle: }
+10-21 18:00:26.371  3453  3631 I ThinkingAnalytics.DataHandle: Events flushed. [left = 0]
+10-21 18:05:53.289  3453  3453 I com.maple.madherogo: type=1400 audit(0.0:4212): avc: denied { read } for comm=474C546872656164203433 name="linker64" dev="sda6" ino=464 scontext=u:r:untrusted_app:s0:c42,c256,c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=file permissive=1 app=com.maple.madherogo
+10-21 18:05:53.289  3453  3453 I com.maple.madherogo: type=1400 audit(0.0:4213): avc: denied { open } for comm=474C546872656164203433 path="/apex/com.android.runtime/bin/linker64" dev="sda6" ino=464 scontext=u:r:untrusted_app:s0:c42,c256,c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=file permissive=1 app=com.maple.madherogo
+10-21 18:05:53.289  3453  3453 I com.maple.madherogo: type=1400 audit(0.0:4214): avc: denied { map } for comm=474C546872656164203433 path="/apex/com.android.runtime/bin/linker64" dev="sda6" ino=464 scontext=u:r:untrusted_app:s0:c42,c256,c512,c768 tcontext=u:object_r:unlabeled:s0 tclass=file permissive=1 app=com.maple.madherogo

@@ -1,0 +1,540 @@
+{
+  "generatedAt": "2026-10-22T11:23:24.609Z",
+  "search": {
+    "cycleLifeRetains": 4,
+    "cycleObj": 4,
+    "washAdditionalArr": 1,
+    "bloodArr": 7,
+    "fosterArr": 4,
+    "转生": 0,
+    "reincarnation": 3,
+    "rebirth": 14,
+    "cycleReborn": 0,
+    "cycleStart": 0
+  },
+  "hits": [
+    {
+      "word": "cycleLifeRetains",
+      "file": "tools/index.js",
+      "line": 70504,
+      "text": "T.SkillTable.init(e.skillMap, e.cycleLifeRetains);"
+    },
+    {
+      "word": "cycleLifeRetains",
+      "file": "tools/index.js",
+      "line": 119991,
+      "text": "o.SkillTable.cycleLifeRetains = [];"
+    },
+    {
+      "word": "cycleLifeRetains",
+      "file": "tools/index.js",
+      "line": 120055,
+      "text": "o && (this.cycleLifeRetains = o);"
+    },
+    {
+      "word": "cycleLifeRetains",
+      "file": "tools/scripts2.js",
+      "line": 55803,
+      "text": "for (var e = l.SkillTable.cycleLifeRetains, o = 0; o < e.length; o++) if (t.toString() == e[o].toString()) return !0;"
+    },
+    {
+      "word": "cycleObj",
+      "file": "tools/index.js",
+      "line": 77051,
+      "text": "e.hasOwnProperty(\"cycleObj\") && (this.cycleData = e.cycleObj);"
+    },
+    {
+      "word": "cycleObj",
+      "file": "tools/index.js",
+      "line": 106822,
+      "text": "if (t.hasOwnProperty(\"cycleObj\") && t.cycleObj.length) {"
+    },
+    {
+      "word": "cycleObj",
+      "file": "tools/index.js",
+      "line": 106823,
+      "text": "var x = u.getText(393).replace(/\\[48\\]/, t.cycleObj[1]);"
+    },
+    {
+      "word": "cycleObj",
+      "file": "tools/index.js",
+      "line": 106824,
+      "text": "x = x.replace(/\\[49\\]/, t.cycleObj[0]);"
+    },
+    {
+      "word": "washAdditionalArr",
+      "file": "tools/index.js",
+      "line": 60205,
+      "text": "WASH_ADDITION: \"User.washAdditionalArr\","
+    },
+    {
+      "word": "bloodArr",
+      "file": "tools/index.js",
+      "line": 144052,
+      "text": "e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);"
+    },
+    {
+      "word": "bloodArr",
+      "file": "tools/index.js",
+      "line": 144058,
+      "text": "h.UserModel.entity.strength.baseValue = i + e.bloodArr[0] + o[7][0];"
+    },
+    {
+      "word": "bloodArr",
+      "file": "tools/index.js",
+      "line": 144059,
+      "text": "h.UserModel.entity.shenfa.baseValue = r + e.bloodArr[1] + o[7][1];"
+    },
+    {
+      "word": "bloodArr",
+      "file": "tools/index.js",
+      "line": 144060,
+      "text": "h.UserModel.entity.gengu.baseValue = c + e.bloodArr[2] + o[7][2];"
+    },
+    {
+      "word": "bloodArr",
+      "file": "tools/index.js",
+      "line": 144061,
+      "text": "h.UserModel.entity.perception.baseValue = v + e.bloodArr[3] + o[7][3];"
+    },
+    {
+      "word": "bloodArr",
+      "file": "tools/index.js",
+      "line": 144109,
+      "text": "e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);"
+    },
+    {
+      "word": "bloodArr",
+      "file": "tools/scripts3.js",
+      "line": 12248,
+      "text": "e.hasOwnProperty(\"bloodArr\") && (b.MarryModel.cycleData[8] = e.bloodArr);"
+    },
+    {
+      "word": "fosterArr",
+      "file": "tools/index.js",
+      "line": 144095,
+      "text": "fosterArr: n"
+    },
+    {
+      "word": "fosterArr",
+      "file": "tools/index.js",
+      "line": 144110,
+      "text": "e.hasOwnProperty(\"fosterArr\") && (p.MarryModel.cycleData[7] = e.fosterArr);"
+    },
+    {
+      "word": "fosterArr",
+      "file": "tools/scripts3.js",
+      "line": 12234,
+      "text": "fosterArr: s"
+    },
+    {
+      "word": "fosterArr",
+      "file": "tools/scripts3.js",
+      "line": 12249,
+      "text": "e.hasOwnProperty(\"fosterArr\") && (b.MarryModel.cycleData[7] = e.fosterArr);"
+    },
+    {
+      "word": "reincarnation",
+      "file": "tools/index.js",
+      "line": 101926,
+      "text": "return t(\"../../scripts2/ui/reincarnationSys/ReincarnatMgr\");"
+    },
+    {
+      "word": "reincarnation",
+      "file": "tools/index.js",
+      "line": 101947,
+      "text": "return t(\"../../scripts2/ui/reincarnationSys/ReincarnatMgr\");"
+    },
+    {
+      "word": "reincarnation",
+      "file": "tools/index.js",
+      "line": 102003,
+      "text": "\"../../scripts2/ui/reincarnationSys/ReincarnatMgr\": void 0,"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/index.js",
+      "line": 11873,
+      "text": "r.rebirth = function() {"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/index.js",
+      "line": 13856,
+      "text": "e.prototype.rebirth = function() {"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/index.js",
+      "line": 13858,
+      "text": "this.fightScene && this.fightScene.rebirthPlayer1();"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/index.js",
+      "line": 16201,
+      "text": "o.rebirth();"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/index.js",
+      "line": 45541,
+      "text": "REBIRTH_STOP_MAP: \"rebirthStopMap\","
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/index.js",
+      "line": 49077,
+      "text": "e.prototype.rebirthPlayer1 = function() {};"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/index.js",
+      "line": 50441,
+      "text": "e.prototype.rebirthPlayer1 = function() {"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/index.js",
+      "line": 102057,
+      "text": "this.target.rebirth();"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/index.js",
+      "line": 110708,
+      "text": "e.getComponent(p.BattlePanelMediator).battleDisplay.rebirth();"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/scripts2.js",
+      "line": 32491,
+      "text": "o.prototype.rebirthCallBackEvent = function() {"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/scripts2.js",
+      "line": 66232,
+      "text": "e.rebirthP = null;"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/scripts2.js",
+      "line": 66276,
+      "text": "this.rebirthP.active = !0;"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/scripts2.js",
+      "line": 66279,
+      "text": "this.rebirthP.active = !1;"
+    },
+    {
+      "word": "rebirth",
+      "file": "tools/scripts2.js",
+      "line": 66289,
+      "text": "n([ m(cc.Node) ], e.prototype, \"rebirthP\", void 0);"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "MarryModel.setRoleMarryInfo: cycleObj 读点 → this.cycleData = e.cycleObj (77051-77060)",
+      "file": "tools/index.js",
+      "line": 77051,
+      "found": true,
+      "text": "77051: e.hasOwnProperty(\"cycleObj\") && (this.cycleData = e.cycleObj);\n77052: if (this.cycleData.length) {\n77053: var r = this.cycleData[1].length, a = this;\n77054: Promise.resolve().then(function() {\n77055: return t(\"./RoleOtherInfo\");\n77056: }).then(function(t) {\n77057: t.RoleOtherInfo.reBirthTime = a.cycleData[0];\n77058: r > 0 && (t.RoleOtherInfo.matherId = a.cycleData[1][r - 1]);\n77059: });\n77060: E.RoleOtherInfo.reBirthTime = this.cycleData[0];"
+    },
+    {
+      "name": "scripts2.js:2141-2146 声称 cycleObj 读点",
+      "file": "tools/scripts2.js",
+      "line": 2141,
+      "found": false,
+      "text": "2141: for (var e = 0; e < 4; e++) this.addtionNum += u.MarryModel.cycleData[4][e];\n2142: var o = u.MarryModel.cycleData[1].length - 2;\n2143: if (o > 0) {\n2144: if (Array.isArray(u.MarryModel.cycleData[1][o])) {\n2145: var i = u.MarryModel.cycleData[1][o][2];\n2146: u.MarryModel.cycleData[1][o][0] > this.wifeLvMax && (this.wifeState = !0);",
+      "note": "该区间无字面 cycleObj（scripts2.js 全文 cycleObj 命中 0）；此处为 MarryModel.cycleData 读"
+    },
+    {
+      "name": "scripts2.js:49785 声称 cycleObj 读点",
+      "file": "tools/scripts2.js",
+      "line": 49785,
+      "found": false,
+      "text": "49785: var w = m.MarryModel.cycleData[2], x = l.getText(393).replace(/\\[48\\]/, w[0]);\n49786: e = e + \"\\n\" + (x = x.replace(/\\[49\\]/, u.RoleOtherInfo.reBirthTime));\n49787: }",
+      "note": "该行无字面 cycleObj；实为 m.MarryModel.cycleData[2] 读"
+    },
+    {
+      "name": "scripts2.js:50946 声称 cycleObj 读点",
+      "file": "tools/scripts2.js",
+      "line": 50946,
+      "found": false,
+      "text": "50946: var i = p.MarryModel.cycleData[1].length - 2;\n50947: if (Array.isArray(p.MarryModel.cycleData[1][i])) {\n50948: var s = p.MarryModel.cycleData[1][i][0];\n50949: s > this.wifeLvMax && (this.wifeLvMax = s);\n50950: }\n50951: if (this.wifeLvMax > 0) {\n50952: var n = l.getExProperyData(this.wifeLvMax);",
+      "note": "该行无字面 cycleObj；实为 p.MarryModel.cycleData[1] 读"
+    },
+    {
+      "name": "scripts2.js:36535-36579 声称 cycleObj 读点",
+      "file": "tools/scripts2.js",
+      "line": 36535,
+      "found": false,
+      "text": "36535: E.MarryModel.cycleData[3].pTims++;\n36536: r = E.MarryModel.cycleData[3].pTims;\n36537: } else if (4436 == n.ID) {\n36538: E.MarryModel.cycleData[3].eTims++;\n36539: r = E.MarryModel.cycleData[3].eTims;\n36540: }",
+      "note": "该区间无字面 cycleObj；实为 E.MarryModel.cycleData[3].pTims/eTims 读改写（另见 36579）"
+    },
+    {
+      "name": "WashModel.init: WASH_ADDITION 应答消费端 (144049-144076)",
+      "file": "tools/index.js",
+      "line": 144049,
+      "found": true,
+      "text": "144049: n.MessageCenter.on(r.HttpConst.WASH_ADDITION, function(t, e) {\n144050: if (1 == e.eRet) {\n144051: var o = p.MarryModel.cycleData, i = l.RoleBaseInfo.armStrong, r = l.RoleBaseInfo.shenFa, c = l.RoleBaseInfo.bone, v = l.RoleBaseInfo.understanding;\n144052: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);\n144053: e.hasOwnProperty(\"maxWuxin\") && (p.MarryModel.maxWuxin = e.maxWuxin);\n144054: for (var _ in h.UserModel.entity.equipments) h.UserModel.entity.equipments[_] && (l.RoleBaseInfo.equipments[_] = h.UserModel.entity.equipments[_].id);\n144055: y.RoleOtherInfo.setAllHpAndMp2();\n144056: h.UserModel.setupEntity();\n144057: if (o.length >= 5) {\n144058: h.UserModel.entity.strength.baseValue = i + e.bloodArr[0] + o[7][0];\n144059: h.UserModel.entity.shenfa.baseValue = r + e.bloodArr[1] + o[7][1];\n144060: h.UserModel.entity.gengu.baseValue = c + e.bloodArr[2] + o[7][2];\n144061: h.UserModel.entity.perception.baseValue = v + e.bloodArr[3] + o[7][3];\n144062: }\n144063: u.JinmaiModel.parseMeridianInfo(u.JinmaiModel.acupoint2Lv);\n144064: h.UserModel.entity.hp.init();\n144065: h.UserModel.entity.mp.init();\n144066: h.UserModel.entity.hp.limit = l.RoleBaseInfo.hpLimit;\n144067: h.UserModel.entity.hp.remaining = l.RoleBaseInfo.hpRemaining;\n144068: h.UserModel.entity.mp.remaining = l.RoleBaseInfo.mpRemaining;\n144069: h.UserModel.entity.exp = l.RoleBaseInfo.exp;\n144070: n.MessageCenter.dispatch(a.EvName.CHANGE_ADDTION_SUCCESS, e);\n144071: } else 3 == e.eRet ? f.StoreModel.openChargeList() : 4 == e.eRet ? d.default.prefabs.load(\"marrySystem/ChildWashUI\", cc.Prefab, function(t, o) {\n144072: var i = cc.instantiate(o);\n144073: i.addComponent(\"SetWashUI\").setData(e.attrList);\n144074: g.PopUpMgr.addPopUp(i, m.LayerMgr.popUpLayer);\n144075: }) : 6 == e.eRet ? s.default.show(\"等级未达到要求无法洗髓\") : 7 == e.eRet && s.default.show(\"上一世无附加属性无法洗髓\");\n144076: });"
+    },
+    {
+      "name": "WashModel: bloodArr 写点 (144052)",
+      "file": "tools/index.js",
+      "line": 144052,
+      "found": true,
+      "text": "e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);"
+    },
+    {
+      "name": "WashModel.onWashMedicneBackCall: bloodArr/fosterArr 写点 (144109-144110)",
+      "file": "tools/index.js",
+      "line": 144109,
+      "found": true,
+      "text": "144109: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);\n144110: e.hasOwnProperty(\"fosterArr\") && (p.MarryModel.cycleData[7] = e.fosterArr);"
+    },
+    {
+      "name": "LoginModel.loadGame: cycleLifeRetains 消费 (70502-70556)",
+      "file": "tools/index.js",
+      "line": 70504,
+      "found": true,
+      "text": "T.SkillTable.init(e.skillMap, e.cycleLifeRetains);"
+    },
+    {
+      "name": "HttpConst.CYCLE_LIFE 常量定义",
+      "file": "tools/index.js",
+      "line": 59702,
+      "found": true,
+      "text": "CYCLE_LIFE: \"User.cycleLife\","
+    },
+    {
+      "name": "HttpConst.CYCLE_LIFE_END 常量定义",
+      "file": "tools/index.js",
+      "line": 59703,
+      "found": true,
+      "text": "CYCLE_LIFE_END: \"User.cycleLifeEnd\","
+    },
+    {
+      "name": "HttpConst.SPECIAL_CYCLE_LIFE 常量定义",
+      "file": "tools/index.js",
+      "line": 60185,
+      "found": true,
+      "text": "SPECIAL_CYCLE_LIFE: \"User.specialCycleLife\","
+    },
+    {
+      "name": "HttpConst.IS_CYCLE_LIFE 常量定义",
+      "file": "tools/index.js",
+      "line": 60571,
+      "found": true,
+      "text": "IS_CYCLE_LIFE: \"User.isCycleLife\","
+    },
+    {
+      "name": "HttpConst.STORY_EXPERIENCE 常量定义",
+      "file": "tools/index.js",
+      "line": 60572,
+      "found": true,
+      "text": "STORY_EXPERIENCE: \"User.storyExperience\","
+    },
+    {
+      "name": "HttpConst.WASH_ADDITION 常量定义 (= washAdditionalArr)",
+      "file": "tools/index.js",
+      "line": 60205,
+      "found": true,
+      "text": "WASH_ADDITION: \"User.washAdditionalArr\","
+    },
+    {
+      "name": "HttpConst.WASH_MEDICINE 常量定义",
+      "file": "tools/index.js",
+      "line": 59557,
+      "found": true,
+      "text": "WASH_MEDICINE: \"User.WashMedicine\","
+    },
+    {
+      "name": "SkillTable.cycleLifeRetains 声明 (= [])",
+      "file": "tools/index.js",
+      "line": 119991,
+      "found": true,
+      "text": "o.SkillTable.cycleLifeRetains = [];"
+    },
+    {
+      "name": "SkillTable.init: cycleLifeRetains 写点 (120055)",
+      "file": "tools/index.js",
+      "line": 120055,
+      "found": true,
+      "text": "o && (this.cycleLifeRetains = o);"
+    },
+    {
+      "name": "EvName.CYCLE_END 定义 (= cycleEnd)",
+      "file": "tools/index.js",
+      "line": 46131,
+      "found": true,
+      "text": "CYCLE_END: \"cycleEnd\","
+    },
+    {
+      "name": "入口: ConvstnBoard 对话选项 case \"jh50\" → RebirthModel.isCycleLife() (15020-15024)",
+      "file": "tools/scripts2.js",
+      "line": 15020,
+      "found": true,
+      "text": "15020: case \"jh50\":\n15021: if (k.RoleOtherInfo.isUntie) E.default.show(a.getText(6372)); else if (F.ChildrenModel.getChildAgeNum() >= 8) if (0 == M.MarryModel.childData.foster_point) {\n15022: this.closeConvstnBoard();\n15023: et.RebirthModel.isCycleLife();\n15024: } else E.default.show(a.getText(4571)); else E.default.show(a.getText(2116));\n15025: break;"
+    },
+    {
+      "name": "入口: scripts3 onClickGo（分支选择确认）→ reqEndCycle / reqChooseExperience (20329-20350)",
+      "file": "tools/scripts3.js",
+      "line": 20329,
+      "found": true,
+      "text": "20329: e.prototype.onClickGo = function() {\n20330: var t = this._unlockIds[this._curSelectIdx];\n20331: if (0 == this.type) {\n20332: var e = !1, o = function(o) {\n20333: for (var i in o) {\n20334: var s = c.getTask(i);\n20335: if (e = s.branchid == t) break;\n20336: }\n20337: };\n20338: o(f.RoleBaseInfo.requireTaskObj);\n20339: e || o(f.RoleBaseInfo.finishTaskObj);\n20340: e ? l.default.show(p.getText(6013477), [ {\n20341: name: p.getText(579),\n20342: flag: 1\n20343: }, {\n20344: name: p.getText(580),\n20345: flag: 0\n20346: } ], function(e) {\n20347: u.RebirthModel.reqEndCycle(void 0, t, e);\n20348: }) : u.RebirthModel.reqEndCycle(void 0, t);\n20349: } else u.RebirthModel.reqChooseExperience(t);\n20350: };"
+    }
+  ],
+  "sendPoints": [
+    {
+      "const": "HttpConst.CYCLE_LIFE = \"User.cycleLife\" (定义 index.js:59702)；发送点 RebirthModel.reqEndCycle 内 (101963)",
+      "file": "tools/index.js",
+      "line": 101963,
+      "params": "101964: isReserved: o,\n101965: branchId: e,\n101966: originId: t,\n101967: skillArr: this.skillAy,\n101968: skillID: this.skillBaseId,\n101969: attArr: [ i, n ]",
+      "body": "101954: e.prototype.reqEndCycle = function(t, e, o) {\n101955: void 0 === t && (t = 1);\n101956: void 0 === e && (e = 1);\n101957: void 0 === o && (o = 0);\n101958: this.birthID = t;\n101959: this.special && p.NetMgr.http.sendRequest(r.HttpConst.SPECIAL_CYCLE_LIFE, {\n101960: originId: t\n101961: });\n101962: var i = parseInt(c.UserModel.entity.hp.limit), n = parseInt(c.UserModel.entity.mp.limit);\n101963: p.NetMgr.http.sendRequest(r.HttpConst.CYCLE_LIFE, {\n101964: isReserved: o,\n101965: branchId: e,\n101966: originId: t,\n101967: skillArr: this.skillAy,\n101968: skillID: this.skillBaseId,\n101969: attArr: [ i, n ]\n101970: });\n101971: };"
+    },
+    {
+      "const": "HttpConst.SPECIAL_CYCLE_LIFE = \"User.specialCycleLife\" (定义 index.js:60185)；发送点 RebirthModel.reqEndCycle 内 (101959, 仅 this.special 为真时)",
+      "file": "tools/index.js",
+      "line": 101959,
+      "params": "101959: this.special && p.NetMgr.http.sendRequest(r.HttpConst.SPECIAL_CYCLE_LIFE, {\n101960: originId: t\n101961: });",
+      "body": "101954: e.prototype.reqEndCycle = function(t, e, o) {\n101955: void 0 === t && (t = 1);\n101956: void 0 === e && (e = 1);\n101957: void 0 === o && (o = 0);\n101958: this.birthID = t;\n101959: this.special && p.NetMgr.http.sendRequest(r.HttpConst.SPECIAL_CYCLE_LIFE, {\n101960: originId: t\n101961: });\n101962: var i = parseInt(c.UserModel.entity.hp.limit), n = parseInt(c.UserModel.entity.mp.limit);\n101963: p.NetMgr.http.sendRequest(r.HttpConst.CYCLE_LIFE, {\n101964: isReserved: o,\n101965: branchId: e,\n101966: originId: t,\n101967: skillArr: this.skillAy,\n101968: skillID: this.skillBaseId,\n101969: attArr: [ i, n ]\n101970: });\n101971: };"
+    },
+    {
+      "const": "HttpConst.IS_CYCLE_LIFE = \"User.isCycleLife\" (定义 index.js:60571)；发送点 RebirthModel.isCycleLife (101922)",
+      "file": "tools/index.js",
+      "line": 101922,
+      "params": "无参数（sendRequest 仅传常量）",
+      "body": "101921: e.prototype.isCycleLife = function() {\n101922: p.NetMgr.http.sendRequest(r.HttpConst.IS_CYCLE_LIFE);\n101923: };"
+    },
+    {
+      "const": "HttpConst.STORY_EXPERIENCE = \"User.storyExperience\" (定义 index.js:60572)；发送点 RebirthModel.reqChooseExperience (101973)",
+      "file": "tools/index.js",
+      "line": 101973,
+      "params": "101974: branchId: t\n101975: });",
+      "body": "101972: e.prototype.reqChooseExperience = function(t) {\n101973: p.NetMgr.http.sendRequest(r.HttpConst.STORY_EXPERIENCE, {\n101974: branchId: t\n101975: });\n101976: };"
+    },
+    {
+      "const": "HttpConst.WASH_ADDITION = \"User.washAdditionalArr\" (定义 index.js:60205)；发送点 WashModel.reqWishAddtion (144156)",
+      "file": "tools/index.js",
+      "line": 144156,
+      "params": "无参数 或 {\n    attrID: t\n  }（随 t 是否为 0 分两支）",
+      "body": "144154: t.prototype.reqWishAddtion = function(t) {\n144155: void 0 === t && (t = 0);\n144156: 0 == t ? c.NetMgr.http.sendRequest(r.HttpConst.WASH_ADDITION) : c.NetMgr.http.sendRequest(r.HttpConst.WASH_ADDITION, {\n144157: attrID: t\n144158: });\n144159: };"
+    },
+    {
+      "const": "HttpConst.WASH_MEDICINE = \"User.WashMedicine\" (定义 index.js:59557)；发送点 WashModel.requireWash (144097)，payload 含 fosterArr",
+      "file": "tools/index.js",
+      "line": 144097,
+      "params": "144088: var p = {\n144089: roleID: l.RoleBaseInfo.roleID,\n144090: armStrong: t[1] - 10,\n144091: shenFa: t[2] - 10,\n144092: bone: t[3] - 10,\n144093: understanding: t[4] - 10,\n144094: addArr: i,\n144095: fosterArr: n\n144096: };",
+      "body": "144085: t.prototype.requireWash = function(t, e, o) {\n144086: for (var i = [], n = [], a = 1; a < e.length; a++) i.push(e[a]);\n144087: for (var s = 1; s < o.length; s++) n.push(o[s]);\n144088: var p = {\n144089: roleID: l.RoleBaseInfo.roleID,\n144090: armStrong: t[1] - 10,\n144091: shenFa: t[2] - 10,\n144092: bone: t[3] - 10,\n144093: understanding: t[4] - 10,\n144094: addArr: i,\n144095: fosterArr: n\n144096: };\n144097: c.NetMgr.http.sendRequest(r.HttpConst.WASH_MEDICINE, p);\n144098: };"
+    },
+    {
+      "const": "HttpConst.WASH_MEDICINE = \"User.WashMedicine\"；第二发送点 scripts3 requireWash (12236)，payload 含 fosterArr",
+      "file": "tools/scripts3.js",
+      "line": 12236,
+      "params": "12227: var c = {\n12228: roleID: d.RoleBaseInfo.roleID,\n12229: armStrong: t[1] - 10,\n12230: shenFa: t[2] - 10,\n12231: bone: t[3] - 10,\n12232: understanding: t[4] - 10,\n12233: addArr: i,\n12234: fosterArr: s\n12235: };",
+      "body": "12224: t.prototype.requireWash = function(t, e, o) {\n12225: for (var i = [], s = [], n = 1; n < e.length; n++) i.push(e[n]);\n12226: for (var r = 1; r < o.length; r++) s.push(o[r]);\n12227: var c = {\n12228: roleID: d.RoleBaseInfo.roleID,\n12229: armStrong: t[1] - 10,\n12230: shenFa: t[2] - 10,\n12231: bone: t[3] - 10,\n12232: understanding: t[4] - 10,\n12233: addArr: i,\n12234: fosterArr: s\n12235: };\n12236: I.NetMgr.http.sendRequest(a.HttpConst.WASH_MEDICINE, c);\n12237: };"
+    }
+  ],
+  "consumers": [
+    {
+      "file": "tools/index.js",
+      "line": 101885,
+      "name": "RebirthModel.init 内联回调 —— HttpConst.CYCLE_LIFE (\"User.cycleLife\") 应答消费端 (101885-101913)",
+      "body": "101885: i.MessageCenter.on(r.HttpConst.CYCLE_LIFE, function(o, r) {\n101886: if (1 == r.eRet) {\n101887: var c = s.getItem(e.birthID, \"Origin\");\n101888: 1 == e.birthID ? u.default.prefabs.load(\"taskUI/StartActionUI_\" + v.MarryModel.childData.sex, cc.Prefab, function(e, o) {\n101889: Promise.resolve().then(function() {\n101890: return t(\"../../scripts2/ui/login/creatRoleUI/StartActionUI\");\n101891: }).then(function(t) {\n101892: var e = t.StartActionUI, n = cc.instantiate(o);\n101893: f.PopUpMgr.addPopUp(n, d.LayerMgr.popUpLayer);\n101894: n.getComponent(e).setData(0, function() {\n101895: i.MessageCenter.dispatch(l.EvName.HIDE_ROLE_EVENT, !0);\n101896: m.SaveDataMgr.killRoleClear();\n101897: y.loginModel.reqLoadGameServer();\n101898: }, v.MarryModel.getChildName());\n101899: });\n101900: }) : u.default.prefabs.load(\"comUI/PlayCartoonUI\", cc.Prefab, function(t, e) {\n101901: var o = cc.instantiate(e);\n101902: f.PopUpMgr.addPopUp(o, d.LayerMgr.popUpLayer);\n101903: o.addComponent(g.PlayCartoonUI).setData(c.start_ani, function() {\n101904: m.SaveDataMgr.killRoleClear();\n101905: y.loginModel.reqLoadGameServer();\n101906: });\n101907: });\n101908: i.MessageCenter.dispatch(l.EvName.CYCLE_END);\n101909: } else if (6 == r.eRet) {\n101910: i.MessageCenter.dispatch(l.EvName.HIDE_ROLE_EVENT, !0);\n101911: n.default.show(a.getText(\"6372\"));\n101912: } else 7 == r.eRet ? n.default.show(a.getText(\"6000320\")) : 9 == r.eRet && n.default.show(a.getText(\"6003686\"));\n101913: }, this);"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 101924,
+      "name": "RebirthModel.onIsCycleLife —— HttpConst.IS_CYCLE_LIFE (\"User.isCycleLife\") 应答消费端 (101924-101933)",
+      "body": "101924: e.prototype.onIsCycleLife = function(e, i) {\n101925: 1 == i.eRet ? o.RebirthModel.newBirthStoryState ? Promise.resolve().then(function() {\n101926: return t(\"../../scripts2/ui/reincarnationSys/ReincarnatMgr\");\n101927: }).then(function(t) {\n101928: t.ReincarnatMgr.checkStoryEnding();\n101929: }) : u.default.prefabs.load(\"marrySystem/rollUI\", cc.Prefab, function(t, e) {\n101930: var o = cc.instantiate(e);\n101931: f.PopUpMgr.addPopUp(o, d.LayerMgr.popUpLayer);\n101932: }) : 2 == i.eRet ? n.default.show(a.getText(\"6003686\")) : 3 == i.eRet && n.default.show(a.getText(6013312));\n101933: };"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 101914,
+      "name": "RebirthModel.init 内联回调 —— HttpConst.STORY_EXPERIENCE (\"User.storyExperience\") 应答消费端 (101914-101919)",
+      "body": "101914: i.MessageCenter.on(r.HttpConst.STORY_EXPERIENCE, function(t, e) {\n101915: if (1 == e.eRet) {\n101916: _.RoleBaseInfo.storyId = e.branchId;\n101917: i.MessageCenter.dispatch(l.EvName.CYCLE_END);\n101918: }\n101919: }, this);"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 144049,
+      "name": "WashModel.init 内联回调 —— HttpConst.WASH_ADDITION (\"User.washAdditionalArr\") 应答消费端，含 bloodArr 写点 (144049-144076)",
+      "body": "144049: n.MessageCenter.on(r.HttpConst.WASH_ADDITION, function(t, e) {\n144050: if (1 == e.eRet) {\n144051: var o = p.MarryModel.cycleData, i = l.RoleBaseInfo.armStrong, r = l.RoleBaseInfo.shenFa, c = l.RoleBaseInfo.bone, v = l.RoleBaseInfo.understanding;\n144052: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);\n144053: e.hasOwnProperty(\"maxWuxin\") && (p.MarryModel.maxWuxin = e.maxWuxin);\n144054: for (var _ in h.UserModel.entity.equipments) h.UserModel.entity.equipments[_] && (l.RoleBaseInfo.equipments[_] = h.UserModel.entity.equipments[_].id);\n144055: y.RoleOtherInfo.setAllHpAndMp2();\n144056: h.UserModel.setupEntity();\n144057: if (o.length >= 5) {\n144058: h.UserModel.entity.strength.baseValue = i + e.bloodArr[0] + o[7][0];\n144059: h.UserModel.entity.shenfa.baseValue = r + e.bloodArr[1] + o[7][1];\n144060: h.UserModel.entity.gengu.baseValue = c + e.bloodArr[2] + o[7][2];\n144061: h.UserModel.entity.perception.baseValue = v + e.bloodArr[3] + o[7][3];\n144062: }\n144063: u.JinmaiModel.parseMeridianInfo(u.JinmaiModel.acupoint2Lv);\n144064: h.UserModel.entity.hp.init();\n144065: h.UserModel.entity.mp.init();\n144066: h.UserModel.entity.hp.limit = l.RoleBaseInfo.hpLimit;\n144067: h.UserModel.entity.hp.remaining = l.RoleBaseInfo.hpRemaining;\n144068: h.UserModel.entity.mp.remaining = l.RoleBaseInfo.mpRemaining;\n144069: h.UserModel.entity.exp = l.RoleBaseInfo.exp;\n144070: n.MessageCenter.dispatch(a.EvName.CHANGE_ADDTION_SUCCESS, e);\n144071: } else 3 == e.eRet ? f.StoreModel.openChargeList() : 4 == e.eRet ? d.default.prefabs.load(\"marrySystem/ChildWashUI\", cc.Prefab, function(t, o) {\n144072: var i = cc.instantiate(o);\n144073: i.addComponent(\"SetWashUI\").setData(e.attrList);\n144074: g.PopUpMgr.addPopUp(i, m.LayerMgr.popUpLayer);\n144075: }) : 6 == e.eRet ? s.default.show(\"等级未达到要求无法洗髓\") : 7 == e.eRet && s.default.show(\"上一世无附加属性无法洗髓\");\n144076: });"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 144099,
+      "name": "WashModel.onWashMedicneBackCall —— HttpConst.WASH_MEDICINE 应答消费端，含 bloodArr/fosterArr 写点 (144099-144133)",
+      "body": "144099: t.prototype.onWashMedicneBackCall = function(t, e) {\n144100: if (1 == e.eRet) {\n144101: l.RoleBaseInfo.baseArmStrong = e.armStrong;\n144102: l.RoleBaseInfo.baseShenFa = e.shenFa;\n144103: l.RoleBaseInfo.baseBone = e.bone;\n144104: l.RoleBaseInfo.baseUnderstanding = e.understanding;\n144105: l.RoleBaseInfo.armStrong = e.armStrong;\n144106: l.RoleBaseInfo.shenFa = e.shenFa;\n144107: l.RoleBaseInfo.bone = e.bone;\n144108: l.RoleBaseInfo.understanding = e.understanding;\n144109: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);\n144110: e.hasOwnProperty(\"fosterArr\") && (p.MarryModel.cycleData[7] = e.fosterArr);\n144111: e.hasOwnProperty(\"maxWuxin\") && (p.MarryModel.maxWuxin = e.maxWuxin);\n144112: var o = p.MarryModel.cycleData;\n144113: for (var n in h.UserModel.entity.equipments) h.UserModel.entity.equipments[n] && (l.RoleBaseInfo.equipments[n] = h.UserModel.entity.equipments[n].id);\n144114: y.RoleOtherInfo.setAllHpAndMp2();\n144115: h.UserModel.setupEntity();\n144116: if (o.length >= 5) {\n144117: h.UserModel.entity.strength.baseValue = e.armStrong + o[7][0] + o[8][0];\n144118: h.UserModel.entity.shenfa.baseValue = e.shenFa + o[7][1] + o[8][1];\n144119: h.UserModel.entity.gengu.baseValue = e.bone + o[7][2] + o[8][2];\n144120: h.UserModel.entity.perception.baseValue = e.understanding + o[7][3] + o[8][3];\n144121: }\n144122: u.JinmaiModel.parseMeridianInfo(u.JinmaiModel.acupoint2Lv);\n144123: h.UserModel.entity.hp.init();\n144124: h.UserModel.entity.mp.init();\n144125: h.UserModel.entity.hp.limit = l.RoleBaseInfo.hpLimit;\n144126: h.UserModel.entity.hp.remaining = l.RoleBaseInfo.hpRemaining;\n144127: h.UserModel.entity.mp.remaining = l.RoleBaseInfo.mpRemaining;\n144128: h.UserModel.entity.exp = l.RoleBaseInfo.exp;\n144129: l.RoleBaseInfo.gold = e.curGold;\n144130: l.RoleBaseInfo.washTime = e.washTimes;\n144131: this.showUpgradeCartoon(0);\n144132: } else 2 == e.eRet ? f.StoreModel.openChargeList() : s.default.show(i.getText(\"910\"));\n144133: };"
+    },
+    {
+      "file": "tools/scripts3.js",
+      "line": 12238,
+      "name": "scripts3 onWashRes —— HttpConst.WASH_MEDICINE 应答消费端，含 bloodArr/fosterArr 写点 (12238-12271)",
+      "body": "12238: t.prototype.onWashRes = function(t, e) {\n12239: if (1 == e.eRet) {\n12240: d.RoleBaseInfo.baseArmStrong = e.armStrong;\n12241: d.RoleBaseInfo.baseShenFa = e.shenFa;\n12242: d.RoleBaseInfo.baseBone = e.bone;\n12243: d.RoleBaseInfo.baseUnderstanding = e.understanding;\n12244: d.RoleBaseInfo.armStrong = e.armStrong;\n12245: d.RoleBaseInfo.shenFa = e.shenFa;\n12246: d.RoleBaseInfo.bone = e.bone;\n12247: d.RoleBaseInfo.understanding = e.understanding;\n12248: e.hasOwnProperty(\"bloodArr\") && (b.MarryModel.cycleData[8] = e.bloodArr);\n12249: e.hasOwnProperty(\"fosterArr\") && (b.MarryModel.cycleData[7] = e.fosterArr);\n12250: e.hasOwnProperty(\"maxWuxin\") && (b.MarryModel.maxWuxin = e.maxWuxin);\n12251: var o = b.MarryModel.cycleData;\n12252: for (var i in u.UserModel.entity.equipments) u.UserModel.entity.equipments[i] && (d.RoleBaseInfo.equipments[i] = u.UserModel.entity.equipments[i].id);\n12253: C.RoleOtherInfo.setAllHpAndMp2();\n12254: u.UserModel.setupEntity();\n12255: if (o.length >= 5) {\n12256: u.UserModel.entity.strength.baseValue = e.armStrong + o[7][0] + o[8][0];\n12257: u.UserModel.entity.shenfa.baseValue = e.shenFa + o[7][1] + o[8][1];\n12258: u.UserModel.entity.gengu.baseValue = e.bone + o[7][2] + o[8][2];\n12259: u.UserModel.entity.perception.baseValue = e.understanding + o[7][3] + o[8][3];\n12260: }\n12261: N.JinmaiModel.parseMeridianInfo(N.JinmaiModel.acupoint2Lv);\n12262: u.UserModel.entity.hp.init();\n12263: u.UserModel.entity.mp.init();\n12264: u.UserModel.entity.hp.limit = d.RoleBaseInfo.hpLimit;\n12265: u.UserModel.entity.hp.remaining = d.RoleBaseInfo.hpRemaining;\n12266: u.UserModel.entity.mp.remaining = d.RoleBaseInfo.mpRemaining;\n12267: d.RoleBaseInfo.gold = e.curGold;\n12268: d.RoleBaseInfo.washTime = e.washTimes;\n12269: this.showUpgradeCartoon(0);\n12270: } else y.default.show(n.getText(\"910\"));\n12271: };"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 70502,
+      "name": "LoginModel.loadGame —— cycleLifeRetains 消费端 (70502-70556)",
+      "body": "70502: e.prototype.loadGame = function(e) {\n70503: e.hasOwnProperty(\"skillGrasp\") && T.SkillTable.skillknackmodel.initData(e.skillGrasp);\n70504: T.SkillTable.init(e.skillMap, e.cycleLifeRetains);\n70505: this.idleData = e.OnhookObj;\n70506: k.TimeMgr.sserverT = this.idleData.serverTime;\n70507: k.TimeMgr.serverDate = e.serverFormatTime;\n70508: k.TimeMgr.startTime = Date.now();\n70509: b.SaveDataMgr.updatePlayerData(e);\n70510: H.LoginMgr.setUserInfo(\"0\");\n70511: e.hasOwnProperty(\"retrievePartnerId\") && (j.PartnerModel.retrievePartnerId = e.retrievePartnerId);\n70512: e.hasOwnProperty(\"partnerData\") && j.PartnerModel.initPartners(e.partnerData);\n70513: e.hasOwnProperty(\"KillItemObj\") ? y.LocalStorageMgr.setItem(\"Legacy\" + I.RoleBaseInfo.roleID, e.KillItemObj) : y.LocalStorageMgr.removeItem(\"Legacy\" + I.RoleBaseInfo.roleID);\n70514: e.hasOwnProperty(\"formulaArr\") && (V.RecastModel.formulaArr = e.formulaArr);\n70515: e.hasOwnProperty(\"ejectGiftDatas\") && Promise.resolve().then(function() {\n70516: return t(\"../../scripts3/model3/PopGiftModel\");\n70517: }).then(function(t) {\n70518: t.PopGiftModel.setOpenGiftUI(e);\n70519: });\n70520: e.hasOwnProperty(\"accRechargedData\") && Q.ActiveModel.setOpenChargeUI(e);\n70521: e.hasOwnProperty(\"equipSqlitTime\") && Promise.resolve().then(function() {\n70522: return t(\"../../scripts3/model3/EquipSplitModel\");\n70523: }).then(function(t) {\n70524: t.EquipSplitModel.sqlitTime = e.equipSqlitTime;\n70525: });\n70526: e.hasOwnProperty(\"housekeeper\") && Promise.resolve().then(function() {\n70527: return t(\"../../scripts3/model3/DelegateModel\");\n70528: }).then(function(t) {\n70529: t.DelegateModel.loginSetButlerData(e.housekeeper);\n70530: });\n70531: e.hasOwnProperty(\"delItemObj\") && (this.delItemObj = e.delItemObj);\n70532: Promise.resolve().then(function() {\n70533: return t(\"../../scripts3/model3/LevelBonusModel\");\n70534: }).then(function(t) {\n70535: t.LevelBonusModel.bonusMap = e.hasOwnProperty(\"bonusMap\") ? e.bonusMap : null;\n70536: });\n70537: e.hasOwnProperty(\"skillGrasp\") && e.skillGrasp.hasOwnProperty(\"achievementReward\") && Promise.resolve().then(function() {\n70538: return t(\"../../scripts3/model3/TrickLotteryModel\");\n70539: }).then(function(t) {\n70540: t.TrickLotteryModel.receivedRewards = e.skillGrasp.achievementReward;\n70541: });\n70542: Promise.resolve().then(function() {\n70543: return t(\"../../scripts3/model3/AdvancedTaskModel\");\n70544: }).then(function(t) {\n70545: var o = t.AdvancedTaskModel;\n70546: e.hasOwnProperty(\"doneScetTask\") && o.setDutyWork(e.doneScetTask);\n70547: o.setDutyWorkId(e.hasOwnProperty(\"adScetTask\") ? e.adScetTask : void 0);\n70548: });\n70549: e.hasOwnProperty(\"isDoubleRecharge\") ? Q.ActiveModel.doubleEndTime = e.isDoubleRecharge : Q.ActiveModel.doubleEndTime = 0;\n70550: O.StealModel.inPrison = e.stealState;\n70551: O.StealModel.canSteal = e.stealFlag;\n70552: m.InventoryDB.setTransfer(e.OnhookObj);\n70553: z.TESDKHelper.onLogin(P.RoleOtherInfo.welfareCode);\n70554: this.setChatWebsoketIp();\n70555: cc.sys.isNative && \"mycard\" != r.platfStr || H.LoginMgr.reportLogin();\n70556: };"
+    },
+    {
+      "file": "tools/scripts3.js",
+      "line": 20329,
+      "name": "scripts3 onClickGo —— 分支选择后调用 RebirthModel.reqEndCycle / reqChooseExperience (20329-20350)",
+      "body": "20329: e.prototype.onClickGo = function() {\n20330: var t = this._unlockIds[this._curSelectIdx];\n20331: if (0 == this.type) {\n20332: var e = !1, o = function(o) {\n20333: for (var i in o) {\n20334: var s = c.getTask(i);\n20335: if (e = s.branchid == t) break;\n20336: }\n20337: };\n20338: o(f.RoleBaseInfo.requireTaskObj);\n20339: e || o(f.RoleBaseInfo.finishTaskObj);\n20340: e ? l.default.show(p.getText(6013477), [ {\n20341: name: p.getText(579),\n20342: flag: 1\n20343: }, {\n20344: name: p.getText(580),\n20345: flag: 0\n20346: } ], function(e) {\n20347: u.RebirthModel.reqEndCycle(void 0, t, e);\n20348: }) : u.RebirthModel.reqEndCycle(void 0, t);\n20349: } else u.RebirthModel.reqChooseExperience(t);\n20350: };"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 106769,
+      "name": "SetBaseInfo —— cycleObj 显示消费端 (106769-106828)",
+      "body": "106769: o.prototype.SetBaseInfo = function(t) {\n106770: var e;\n106771: e = R.WebSocketFactory.isCrossChat() ? t.ohterInfo.id == N.CrossServiceModel.oldUID : t.ohterInfo.id == M.RoleBaseInfo.roleID;\n106772: this.changeMountBtn.active = e;\n106773: this.bodyTypeBtn.active = this.changeMountBtn.active;\n106774: this.infoBtn.active = e && t.hasOwnProperty(\"isSetMasterShow\");\n106775: this.setMount();\n106776: this.setTitle();\n106777: var o = f.calAge(t.ohterInfo.age, t.ohterInfo.totalGameTime), i = \"\", n = \"\", r = parseInt(t.ohterInfo.youngTimes), a = \"\";\n106778: this.showPower && parseInt(t.ohterInfo.power) < 10 && (a = \"[\" + u.getText(3839 + parseInt(t.ohterInfo.power)) + \"]\");\n106779: var s = v.RoleOtherInfo.changeInputWordStr(t.ohterInfo.name), l = t.seniorSchool > 0 ? \"|\" + u.getSchool(t.seniorSchool) : \"\", p = this.getRealAgeNum(t, o, r);\n106780: this.readAgeValue = p;\n106781: if (r > 0 || this.checkRealAgeState(t, o, r)) {\n106782: var d = this.getCurRealAgeDes(p);\n106783: n = u.getText(6001311).replace(/\\[37\\]/g, u.getSchool(t.ohterInfo.school) + l).replace(/\\[38\\]/g, s + a);\n106784: i = u.getText(6001312).replace(/\\[39\\]/g, s).replace(/\\[53\\]/g, u.getText(d)).replace(/\\[54\\]/g, p.toString()).replace(/\\[41\\]/g, v.RoleOtherInfo.getSexNameStrFunc(t.ohterInfo.sex)) + \"\\n\";\n106785: } else if (cc.sys.platform == cc.sys.BYTEDANCE_GAME && o < 18) {\n106786: n = u.getText(6001311).replace(/\\[37\\]/g, u.getSchool(t.ohterInfo.school) + l).replace(/\\[38\\]/g, \"\" + s + a);\n106787: i = u.getText(6001314).replace(/\\[39\\]/g, s).replace(/\\[40\\]岁的/g, \"\").replace(/\\[41\\]/g, v.RoleOtherInfo.getSexNameStrFunc(t.ohterInfo.sex)) + \"\\n\";\n106788: } else {\n106789: n = u.getText(6001311).replace(/\\[37\\]/g, u.getSchool(t.ohterInfo.school) + l).replace(/\\[38\\]/g, \"\" + s + a);\n106790: i = u.getText(6001314).replace(/\\[39\\]/g, s).replace(/\\[40\\]/g, p.toString()).replace(/\\[41\\]/g, v.RoleOtherInfo.getSexNameStrFunc(t.ohterInfo.sex)) + \"\\n\";\n106791: }\n106792: this.desLabel_4.getComponent(cc.Label).string = n;\n106793: i += u.getText(481).replace(/\\[39\\]/, s) + \"\\n\";\n106794: var g = f.calAppearance(t.ohterInfo.baseGengu, t.ohterInfo.numDeaths, t.ohterInfo.appearBase), E = f.calBody(t.ohterInfo.numStuffed);\n106795: this.bodyValue = E;\n106796: this.faceValue = g;\n106797: var I = v.RoleOtherInfo.getFaceDesFunc(g, t.ohterInfo.sex, p);\n106798: i = i.replace(/\\[42\\]/, u.getText(I));\n106799: I = v.RoleOtherInfo.getBodyDesFunc(E, t.ohterInfo.sex);\n106800: i = i.replace(/\\[43\\]/, u.getText(I));\n106801: I = v.RoleOtherInfo.getBasefaceDesFunc(g + E, t.ohterInfo.sex, p);\n106802: i = i.replace(/\\[44\\]/, u.getText(I));\n106803: var b = t.ohterInfo.artLevel;\n106804: t.ohterInfo.id == M.RoleBaseInfo.roleID && (b = _.SkillTable.getMyRoleArtLv());\n106805: b <= 0 && (b = 1);\n106806: var T = h.getSkillLvData(b), C = _.SkillTable.getSkillLevel(S.UserModel.entity.attackSkillEquipped), A = h.getConstByID(\"1\") + h.getConstByID(\"47\") * Math.pow(C, h.getConstByID(\"48\")), k = (t.ohterInfo.exp - S.UserModel.entity.exp) / A;\n106807: k > 50 && (k = 50);\n106808: k < -50 && (k = -50);\n106809: for (var D = 61083, P = h.getTable(\"experience\"), O = 1; P[O]; ++O) {\n106810: var B = P[O];\n106811: if (k <= B.TopLimit) {\n106812: D = B.Description;\n106813: break;\n106814: }\n106815: }\n106816: i += u.getText(482).replace(/\\[45\\]/, u.getText(T.SkillEvaluate)).replace(/\\[1\\]/, u.getText(D));\n106817: var w = 0;\n106818: t.hasOwnProperty(\"equipments\") && t.equipments && (w = t.equipments.hasOwnProperty(c.WEAPON) ? t.equipments[c.WEAPON] : 0);\n106819: var L = 0;\n106820: w && (L = m.InventoryModel.parseEq(w, t.equips[w]).itemID);\n106821: var U = f.getChushouDes(L);\n106822: if (t.hasOwnProperty(\"cycleObj\") && t.cycleObj.length) {\n106823: var x = u.getText(393).replace(/\\[48\\]/, t.cycleObj[1]);\n106824: x = x.replace(/\\[49\\]/, t.cycleObj[0]);\n106825: i = i.replace(/\\[46\\]/, U) + \"\\n【\" + x + \"】\\n\";\n106826: } else i = i.replace(/\\[46\\]/, U) + \"\\n\";\n106827: t.ohterInfo.hasOwnProperty(\"masterName\") && !t.isSetMasterShow && (i += u.getText(8832).replace(/\\[1\\]/, t.ohterInfo.masterName));\n106828: this.desLabel_0.getComponent(cc.Label).string = i;"
+    }
+  ],
+  "bloodArrWrites": [
+    {
+      "file": "tools/index.js",
+      "line": 144052,
+      "text": "e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 144109,
+      "text": "e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);"
+    },
+    {
+      "file": "tools/scripts3.js",
+      "line": 12248,
+      "text": "e.hasOwnProperty(\"bloodArr\") && (b.MarryModel.cycleData[8] = e.bloodArr);"
+    }
+  ],
+  "fosterArrWrites": [
+    {
+      "file": "tools/index.js",
+      "line": 144110,
+      "text": "e.hasOwnProperty(\"fosterArr\") && (p.MarryModel.cycleData[7] = e.fosterArr);"
+    },
+    {
+      "file": "tools/scripts3.js",
+      "line": 12249,
+      "text": "e.hasOwnProperty(\"fosterArr\") && (b.MarryModel.cycleData[7] = e.fosterArr);"
+    }
+  ],
+  "cycleLifeRetainsReads": [
+    {
+      "file": "tools/index.js",
+      "line": 70504,
+      "text": "T.SkillTable.init(e.skillMap, e.cycleLifeRetains);"
+    },
+    {
+      "file": "tools/scripts2.js",
+      "line": 55803,
+      "text": "for (var e = l.SkillTable.cycleLifeRetains, o = 0; o < e.length; o++) if (t.toString() == e[o].toString()) return !0;"
+    }
+  ]
+}

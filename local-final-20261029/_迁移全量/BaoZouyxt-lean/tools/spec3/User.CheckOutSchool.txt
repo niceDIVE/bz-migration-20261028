@@ -1,0 +1,29 @@
+# User.CheckOutSchool   (HttpConst.CHECK_OUT_SCHOOL)
+
+## 注册点 77839: i.MessageCenter.on(r.HttpConst.CHECK_OUT_SCHOOL, this.onCheckOutSchool, this);
+
+## 请求点 78018: u.NetMgr.http.sendRequest(r.HttpConst.CHECK_OUT_SCHOOL, e);
+   78010: e.prototype.checkChuMasterState = function(t) {
+   78011: if (this.isFinishMasterTask(t)) u.NetMgr.http.sendRequest(r.HttpConst.LEVEAL_SCHOOL, {
+   78012: npcID: t
+   78013: }); else {
+   78014: var e = {
+   78015: roleID: a.RoleBaseInfo.roleID,
+   78016: npcID: t
+   78017: };
+
+## 处理函数 onCheckOutSchool (78021-78034)
+ 78021: e.prototype.onCheckOutSchool = function(t, e) {
+ 78022: var o = s.getItem(e.npcID, "master");
+ 78023: if (6 == e.eRet) {
+ 78024: var i = e.CDTime - e.serverTime, r = Math.floor(i / 864e5), c = Math.floor((i - 864e5 * r) / 36e5), p = Math.floor((i - 864e5 * r - 36e5 * c) / 6e4), h = s.getItem(e.skillId, "skill"), u = l.getText(6079).replace(/\[1\]/, l.getText(h.Name));
+ 78025: r > 0 && (u += r + l.getText(3784));
+ 78026: u += c + l.getText(3785);
+ 78027: u += p + l.getText(1414);
+ 78028: u = this.outSchoolCondition(o, u);
+ 78029: } else {
+ 78030: var f = a.RoleBaseInfo.finishTaskObj;
+ 78031: if (a.RoleBaseInfo.requireTaskObj.hasOwnProperty(o.graduatetask2) || f.hasOwnProperty(o.graduatetask2)) {
+ 78032: var d = 10 != o.Menpai && 11 != o.Menpai || 10 != a.RoleBaseInfo.goodEvilCamp && 11 != a.RoleBaseInfo.goodEvilCamp ? 1216 : 69225;
+ 78033: return n.default.show(l.getText(d));
+ 78034: }

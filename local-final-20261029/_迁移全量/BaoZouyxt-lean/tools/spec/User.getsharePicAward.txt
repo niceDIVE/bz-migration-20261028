@@ -1,0 +1,99 @@
+# User.getsharePicAward  (HttpConst.GETSHARE_PIC_AWARD)
+# 出现 2 处
+
+ 64992: c.default.show(n.getText(123) + e.backpro + n.getText(37));
+ 64993: }
+ 64994: }, this);
+ 64995: r.MessageCenter.on(a.HttpConst.IS_CAN_SHARE, function(t, e) {
+ 64996: 1 == e.eRet && r.MessageCenter.dispatch(s.EvName.SHARE_ITEM_REWRAD_EVENT, e);
+ 64997: }, this);
+ 64998: r.MessageCenter.on(a.HttpConst.GETSHARE_PIC_AWARD, function(t, e) {
+ 64999: 1 == e.eRet ? v.default.addShowRewardUI1(e.rewardArray, 0) : c.default.show(n.getText(1093));
+ 65000: }, this);
+ 65001: r.MessageCenter.on(a.HttpConst.ADD_SEX_KILL, function(t, e) {
+ 65002: if (1 == e.eRet) {
+ 65003: l.RoleBaseInfo.sexState = 2;
+ 65004: var o = {
+ 65005: str: n.getText("3804")
+ 65006: };
+ 65007: p.default.prefabs.load("comUI/KillDeadUI", cc.Prefab, function(t, e) {
+ 65008: var i = cc.instantiate(e);
+ 65009: h.PopUpMgr.addPopUp(i, u.LayerMgr.popUpLayer);
+ 65010: i.addComponent("KillDeadUI").setData(o);
+ 65011: });
+ 65012: r.MessageCenter.dispatch(s.EvName.CHANGE_PLAYER_EVENT);
+ 65013: }
+ 65014: }, this);
+ 65015: r.MessageCenter.on(a.HttpConst.PUT_ON_EQUIPMENT, function(t, e) {
+ 65016: if (1 == e.eRet) {
+ 65017: r.MessageCenter.dispatch(s.EvName.CHANGE_ROLE_INFO);
+ 65018: r.MessageCenter.dispatch(s.EvName.UPDATE_PLAYER_EVENT);
+ 65019: }
+ 65020: }, this);
+ 65021: r.MessageCenter.on(a.HttpConst.GET_EQUIP_LOCKS, function(t, o) {
+ 65022: 1 == o.eRet && (e.lockEquips = o.equipLocks);
+ 65023: });
+ 65024: r.MessageCenter.on(a.HttpConst.ADD_EQUIP_LOCK, function(t, o) {
+ 65025: if (1 == o.eRet) {
+ 65026: e.lockEquips = o.equipLocks;
+ 65027: r.MessageCenter.dispatch(s.EvName.REFRESH_LOCK_ARRAY, o.equipLocks);
+ 65028: }
+ 65029: }, this);
+ 65030: r.MessageCenter.on(a.HttpConst.DELETE_EQUIP_LOCK, function(t, o) {
+ 65031: if (1 == o.eRet) {
+ 65032: e.lockEquips = o.equipLocks;
+ 65033: r.MessageCenter.dispatch(s.EvName.REFRESH_LOCK_ARRAY, o.equipLocks);
+ 65034: }
+ 65035: }, this);
+ 65036: r.MessageCenter.on(a.HttpConst.GET_DROP_AWARD, function(t, e) {
+ 65037: 1 == e.eRet && r.MessageCenter.dispatch(s.EvName.RECEIVED_DROP_AWARD, e);
+ 65038: }, this);
+---
+ 65437: this.curItemId = t;
+ 65438: m.NetMgr.http.sendReqWithMask(a.HttpConst.IS_CAN_SHARE, {
+ 65439: propID: t
+ 65440: });
+ 65441: };
+ 65442: e.prototype.reqShareReward = function() {
+ 65443: m.NetMgr.http.sendReqWithMask(a.HttpConst.GETSHARE_PIC_AWARD, {
+ 65444: propID: A.AdModel.isItemShare
+ 65445: });
+ 65446: };
+ 65447: e.prototype.judgeObjectIsNull = function(t) {
+ 65448: var e = !0;
+ 65449: for (var o in t) {
+ 65450: e = !1;
+ 65451: break;
+ 65452: }
+ 65453: return e;
+ 65454: };
+ 65455: e.prototype.reqClientGm = function(t) {
+ 65456: var e = {
+ 65457: gmString: t
+ 65458: };
+ 65459: m.NetMgr.http.sendReqWithMask(a.HttpConst.CLIENTGMCOMMON, e);
+ 65460: };
+ 65461: e.prototype.reqResetNameItem = function(t) {
+ 65462: this.newName = t;
+ 65463: m.NetMgr.http.sendRequest(a.HttpConst.CHANGE_NAME, {
+ 65464: newName: t
+ 65465: });
+ 65466: };
+ 65467: e.prototype.reqSangong = function(t, e) {
+ 65468: m.NetMgr.http.sendRequest(a.HttpConst.SAN_GONG, {
+ 65469: skillID: e,
+ 65470: propID: t
+ 65471: });
+ 65472: };
+ 65473: e.prototype.reqGetDropAward = function(t) {
+ 65474: m.NetMgr.http.sendRequest(a.HttpConst.GET_DROP_AWARD, {
+ 65475: drops: t
+ 65476: });
+ 65477: };
+ 65478: e.prototype.updateEquipItem = function(t, e) {
+ 65479: if (this.equipmentDic.hasOwnProperty(e)) {
+ 65480: this.equipmentDic[e].itemID = t[1];
+ 65481: this.equipmentDic[e].attrs = t[2];
+ 65482: }
+ 65483: };
+---

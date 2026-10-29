@@ -1,0 +1,595 @@
+{
+  "task": "WO-2",
+  "items": [
+    {
+      "file": "A",
+      "line": 6960,
+      "text": "\"../../../scripts/gui/uicomponents/UIComponent\": void 0,"
+    },
+    {
+      "file": "A",
+      "line": 6961,
+      "text": "\"../../../scripts/mgrs/BundleMgr\": void 0,"
+    },
+    {
+      "file": "A",
+      "line": 6962,
+      "text": "\"../../../scripts/mgrs/LayerMgr\": void 0,"
+    },
+    {
+      "file": "A",
+      "line": 6963,
+      "text": "\"../../../scripts/mgrs/LoginMgr\": void 0,"
+    },
+    {
+      "file": "A",
+      "line": 6964,
+      "text": "\"../../../scripts/mgrs/SoundMgr\": void 0,"
+    },
+    {
+      "file": "A",
+      "line": 6965,
+      "text": "\"../../../scripts/mgrs/TimeMgr\": void 0,"
+    },
+    {
+      "file": "A",
+      "line": 6966,
+      "text": "\"../../../scripts/models/ActiveModel\": void 0,"
+    },
+    {
+      "file": "A",
+      "line": 6967,
+      "text": "\"../../../scripts/models/InventoryDB\": void 0,"
+    },
+    {
+      "file": "A",
+      "line": 6968,
+      "text": "\"../../../scripts/models/StoreModel\": void 0,"
+    },
+    {
+      "file": "A",
+      "line": 6969,
+      "text": "\"../../../scripts/models/vos/RoleBaseInfo\": void 0,"
+    },
+    {
+      "file": "A",
+      "line": 6970,
+      "text": "\"../../../scripts/utils/EvName\": void 0,"
+    },
+    {
+      "file": "A",
+      "line": 6971,
+      "text": "\"../../model3/AlchemyModel\": \"AlchemyModel\""
+    },
+    {
+      "file": "A",
+      "line": 6972,
+      "text": "} ],"
+    },
+    {
+      "file": "A",
+      "line": 6973,
+      "text": "AlchemyModel: [ function(t, e, o) {"
+    },
+    {
+      "file": "A",
+      "line": 6974,
+      "text": "\"use strict\";"
+    },
+    {
+      "file": "A",
+      "line": 6975,
+      "text": "cc._RF.push(e, \"eaeabpIA8pCMbI8kFaI430n\", \"AlchemyModel\");"
+    },
+    {
+      "file": "A",
+      "line": 6976,
+      "text": "Object.defineProperty(o, \"__esModule\", {"
+    },
+    {
+      "file": "A",
+      "line": 6977,
+      "text": "value: !0"
+    },
+    {
+      "file": "A",
+      "line": 6978,
+      "text": "});"
+    },
+    {
+      "file": "A",
+      "line": 6979,
+      "text": "o.AlchemyType = o.AlchemyModel = void 0;"
+    },
+    {
+      "file": "A",
+      "line": 6980,
+      "text": "var i, s = t(\"../../scripts/core/events/MessageCenter\"), n = t(\"../../scripts/core/ui/mgrs/PopUpMgr\"), r = t(\"../../scripts/gui/uicomponents/Alert\"), a = t(\"../../scripts/mgrs/BundleMgr\"), c = t(\"../../scripts/mgrs/LayerMgr\"), p = t(\"../../scripts/net/HttpConst\"), l = t(\"../../scripts/net/NetMgr\"), h = t(\"../../scripts/utils/EvName\"), d = t(\"../../scripts/gameconfigs/LangMgr\"), u = function() {"
+    },
+    {
+      "file": "A",
+      "line": 6981,
+      "text": "function t() {"
+    },
+    {
+      "file": "A",
+      "line": 6982,
+      "text": "this.timeNum = 0;"
+    },
+    {
+      "file": "A",
+      "line": 6983,
+      "text": "this.alchemyDataList = {};"
+    },
+    {
+      "file": "A",
+      "line": 6984,
+      "text": "this.gearConfigList = {};"
+    },
+    {
+      "file": "A",
+      "line": 6985,
+      "text": "this.configMap = {};"
+    },
+    {
+      "file": "A",
+      "line": 6986,
+      "text": "this.curType = 0;"
+    },
+    {
+      "file": "A",
+      "line": 6987,
+      "text": "this.alchemyPrice = 10;"
+    },
+    {
+      "file": "A",
+      "line": 6988,
+      "text": "this.openState = !1;"
+    },
+    {
+      "file": "A",
+      "line": 6989,
+      "text": "}"
+    },
+    {
+      "file": "A",
+      "line": 6990,
+      "text": "t.prototype.init = function() {"
+    },
+    {
+      "file": "A",
+      "line": 6991,
+      "text": "s.MessageCenter.on(p.HttpConst.GET_ALCHEMY_DATA, this.onGetAlchemyData, this);"
+    },
+    {
+      "file": "A",
+      "line": 6992,
+      "text": "s.MessageCenter.on(p.HttpConst.BUY_FORMULA_DATA, this.onBuyFormulaData, this);"
+    },
+    {
+      "file": "A",
+      "line": 6993,
+      "text": "s.MessageCenter.on(p.HttpConst.ALCHEMY_ALCHEMYFORMULA, this.onAlchemyFormula, this);"
+    },
+    {
+      "file": "A",
+      "line": 6994,
+      "text": "s.MessageCenter.on(p.HttpConst.ALCHEMY_REWARD, this.onAlchemyReward, this);"
+    },
+    {
+      "file": "A",
+      "line": 6995,
+      "text": "s.MessageCenter.on(p.HttpConst.UPGRAADE_ALCHEMY, this.onUpgradeAlchemy, this);"
+    },
+    {
+      "file": "A",
+      "line": 6996,
+      "text": "};"
+    },
+    {
+      "file": "A",
+      "line": 6997,
+      "text": "t.prototype.onUpgradeAlchemy = function(t, e) {"
+    },
+    {
+      "file": "A",
+      "line": 6998,
+      "text": "if (1 == e.eRet) {"
+    },
+    {
+      "file": "A",
+      "line": 6999,
+      "text": "var o = e.data, i = o.type;"
+    },
+    {
+      "file": "A",
+      "line": 7000,
+      "text": "this.alchemyDataList[i].id = o.id;"
+    },
+    {
+      "file": "A",
+      "line": 7001,
+      "text": "this.alchemyDataList[i].price = o.price;"
+    },
+    {
+      "file": "A",
+      "line": 7002,
+      "text": "s.MessageCenter.dispatch(h.EvName.START_GOING_GEAR);"
+    },
+    {
+      "file": "A",
+      "line": 7003,
+      "text": "}"
+    },
+    {
+      "file": "A",
+      "line": 7004,
+      "text": "};"
+    },
+    {
+      "file": "A",
+      "line": 7005,
+      "text": "t.prototype.onGetAlchemyData = function(t, e) {"
+    },
+    {
+      "file": "A",
+      "line": 7006,
+      "text": "this.alchemyDataList = {};"
+    },
+    {
+      "file": "A",
+      "line": 7007,
+      "text": "this.configMap = {};"
+    },
+    {
+      "file": "A",
+      "line": 7008,
+      "text": "if (1 == e.eRet) {"
+    },
+    {
+      "file": "A",
+      "line": 7009,
+      "text": "e.hasOwnProperty(\"activityData\") && (this.alchemyDataList[i.SevenDay] = e.activityData);"
+    },
+    {
+      "file": "A",
+      "line": 7010,
+      "text": "1 != e.data.state && (this.alchemyDataList[i.Common] = e.data);"
+    },
+    {
+      "file": "A",
+      "line": 7011,
+      "text": "this.gearConfigList = e.alchemyGearConfig;"
+    },
+    {
+      "file": "A",
+      "line": 7012,
+      "text": "for (var o in this.gearConfigList) {"
+    },
+    {
+      "file": "A",
+      "line": 7013,
+      "text": "var r = this.gearConfigList[o].type;"
+    },
+    {
+      "file": "A",
+      "line": 7014,
+      "text": "this.configMap.hasOwnProperty(r) || (this.configMap[r] = []);"
+    },
+    {
+      "file": "A",
+      "line": 7015,
+      "text": "this.configMap[r].push(o);"
+    },
+    {
+      "file": "A",
+      "line": 7016,
+      "text": "}"
+    },
+    {
+      "file": "A",
+      "line": 7017,
+      "text": "for (var o in this.configMap) this.configMap[o].sort(function(t, e) {"
+    },
+    {
+      "file": "A",
+      "line": 7018,
+      "text": "return t > e ? 1 : t < e ? -1 : 0;"
+    },
+    {
+      "file": "A",
+      "line": 7019,
+      "text": "});"
+    },
+    {
+      "file": "A",
+      "line": 7020,
+      "text": "this.openState ? a.default.prefabs.load(\"storeUI/AlchemyFurnace\", cc.Prefab, function(t, e) {"
+    },
+    {
+      "file": "A",
+      "line": 7021,
+      "text": "var o = cc.instantiate(e);"
+    },
+    {
+      "file": "A",
+      "line": 7022,
+      "text": "n.PopUpMgr.addPopUp(o, c.LayerMgr.popUpLayer);"
+    },
+    {
+      "file": "A",
+      "line": 7023,
+      "text": "o.addComponent(\"AlchemyFurnace\").setData();"
+    },
+    {
+      "file": "A",
+      "line": 7024,
+      "text": "}) : s.MessageCenter.dispatch(h.EvName.SHOW_ALCHEMY_UI);"
+    },
+    {
+      "file": "A",
+      "line": 7025,
+      "text": "}"
+    },
+    {
+      "file": "A",
+      "line": 7026,
+      "text": "};"
+    },
+    {
+      "file": "A",
+      "line": 7027,
+      "text": "t.prototype.onBuyFormulaData = function(t, e) {"
+    },
+    {
+      "file": "A",
+      "line": 7028,
+      "text": "if (1 == e.eRet) {"
+    },
+    {
+      "file": "A",
+      "line": 7029,
+      "text": "var o = e.data, i = o.type;"
+    },
+    {
+      "file": "A",
+      "line": 7030,
+      "text": "this.alchemyDataList[i].state = o.state;"
+    },
+    {
+      "file": "A",
+      "line": 7031,
+      "text": "this.alchemyDataList[i].id = o.id;"
+    },
+    {
+      "file": "A",
+      "line": 7032,
+      "text": "this.alchemyDataList[i].freeNum = o.freeNum;"
+    },
+    {
+      "file": "A",
+      "line": 7033,
+      "text": "this.alchemyDataList[i].id = o.id;"
+    },
+    {
+      "file": "A",
+      "line": 7034,
+      "text": "this.alchemyDataList[i].endTime = o.endTime;"
+    },
+    {
+      "file": "A",
+      "line": 7035,
+      "text": "this.alchemyDataList[i].curNum = 0;"
+    },
+    {
+      "file": "A",
+      "line": 7036,
+      "text": "this.alchemyDataList[i].gear = o.gear;"
+    },
+    {
+      "file": "A",
+      "line": 7037,
+      "text": "s.MessageCenter.dispatch(h.EvName.START_GOING_GEAR);"
+    },
+    {
+      "file": "A",
+      "line": 7038,
+      "text": "s.MessageCenter.dispatch(h.EvName.ALCHEMY_PLAY_ACTION_EVENT, {"
+    },
+    {
+      "file": "A",
+      "line": 7039,
+      "text": "state: \"burning\""
+    },
+    {
+      "file": "A",
+      "line": 7040,
+      "text": "});"
+    },
+    {
+      "file": "A",
+      "line": 7041,
+      "text": "} else 2 == e.eRet && r.default.show(d.getText(1014));"
+    },
+    {
+      "file": "A",
+      "line": 7042,
+      "text": "};"
+    },
+    {
+      "file": "A",
+      "line": 7043,
+      "text": "t.prototype.onAlchemyFormula = function(t, e) {"
+    },
+    {
+      "file": "A",
+      "line": 7044,
+      "text": "if (1 == e.eRet) {"
+    },
+    {
+      "file": "A",
+      "line": 7045,
+      "text": "var o = e.data, i = o.type;"
+    },
+    {
+      "file": "A",
+      "line": 7046,
+      "text": "this.alchemyDataList[i].state = o.state;"
+    },
+    {
+      "file": "A",
+      "line": 7047,
+      "text": "this.alchemyDataList[i].freeNum = o.freeNum;"
+    },
+    {
+      "file": "A",
+      "line": 7048,
+      "text": "this.alchemyDataList[i].curNum = o.curNum;"
+    },
+    {
+      "file": "A",
+      "line": 7049,
+      "text": "this.alchemyDataList[i].gear = o.gear;"
+    },
+    {
+      "file": "A",
+      "line": 7050,
+      "text": "this.alchemyDataList[i].mendNum = o.mendNum;"
+    },
+    {
+      "file": "A",
+      "line": 7051,
+      "text": "this.alchemyDataList[i].price = o.price;"
+    },
+    {
+      "file": "A",
+      "line": 7052,
+      "text": "s.MessageCenter.dispatch(h.EvName.START_GOING_GEAR);"
+    },
+    {
+      "file": "A",
+      "line": 7053,
+      "text": "s.MessageCenter.dispatch(h.EvName.ALCHEMY_PLAY_ACTION_EVENT, {"
+    },
+    {
+      "file": "A",
+      "line": 7054,
+      "text": "state: \"FireSeed\""
+    },
+    {
+      "file": "A",
+      "line": 7055,
+      "text": "});"
+    },
+    {
+      "file": "A",
+      "line": 7056,
+      "text": "}"
+    },
+    {
+      "file": "A",
+      "line": 7057,
+      "text": "};"
+    },
+    {
+      "file": "A",
+      "line": 7058,
+      "text": "t.prototype.onAlchemyReward = function(t, e) {"
+    },
+    {
+      "file": "A",
+      "line": 7059,
+      "text": "if (1 == e.eRet) {"
+    },
+    {
+      "file": "A",
+      "line": 7060,
+      "text": "var o = e.data, i = o.type;"
+    },
+    {
+      "file": "A",
+      "line": 6991,
+      "text": "s.MessageCenter.on(p.HttpConst.GET_ALCHEMY_DATA, this.onGetAlchemyData, this);"
+    },
+    {
+      "file": "A",
+      "line": 7070,
+      "text": "l.NetMgr.http.sendRequest(p.HttpConst.GET_ALCHEMY_DATA);"
+    },
+    {
+      "file": "A",
+      "line": 43794,
+      "text": "i.MessageCenter.on(n.HttpConst.GET_LEVEL_BONUS_DATA, this.onGetLevelBonusData, this);"
+    },
+    {
+      "file": "A",
+      "line": 43810,
+      "text": "r.NetMgr.http.sendRequest(n.HttpConst.GET_LEVEL_BONUS_DATA, {});"
+    },
+    {
+      "file": "B",
+      "line": 60391,
+      "text": "GET_LEVEL_BONUS_DATA: \"User.getLevelBonusData\","
+    },
+    {
+      "file": "B",
+      "line": 60488,
+      "text": "GET_ALCHEMY_DATA: \"User.getAlchemyData\","
+    },
+    {
+      "file": "A",
+      "line": 7009,
+      "text": "e.hasOwnProperty(\"activityData\") && (this.alchemyDataList[i.SevenDay] = e.activityData);"
+    },
+    {
+      "file": "A",
+      "line": 7011,
+      "text": "this.gearConfigList = e.alchemyGearConfig;"
+    }
+  ],
+  "commands": [
+    {
+      "cmd": "node tools\\grep_src.js \"GET_ALCHEMY_DATA\" --file tools\\scripts3.js --max 10",
+      "exit": 0,
+      "out": "6991: s.MessageCenter.on(p.HttpConst.GET_ALCHEMY_DATA, this.onGetAlchemyData, this);\n7070: l.NetMgr.http.sendRequest(p.HttpConst.GET_ALCHEMY_DATA);"
+    },
+    {
+      "cmd": "node tools\\grep_src.js \"GET_LEVEL_BONUS\" --file tools\\scripts3.js --max 10",
+      "exit": 0,
+      "out": "43794: i.MessageCenter.on(n.HttpConst.GET_LEVEL_BONUS_DATA, this.onGetLevelBonusData, this);\n43810: r.NetMgr.http.sendRequest(n.HttpConst.GET_LEVEL_BONUS_DATA, {});"
+    },
+    {
+      "cmd": "node tools\\grep_src.js \"getLevelBonusData\" --file tools\\scripts3.js --max 10",
+      "exit": 0,
+      "out": "(no match) getLevelBonusData"
+    },
+    {
+      "cmd": "node tools\\grep_src.js \"getLevelBonusData\" --file tools\\index.js --max 10",
+      "exit": 0,
+      "out": "60391: GET_LEVEL_BONUS_DATA: \"User.getLevelBonusData\","
+    },
+    {
+      "cmd": "node tools\\grep_src.js \"getLevelBonusData\" --file tools\\scripts2.js --max 10",
+      "exit": 0,
+      "out": "(no match) getLevelBonusData"
+    },
+    {
+      "cmd": "node tools\\grep_src.js \"GET_ALCHEMY_DATA\" --file tools\\index.js --max 10",
+      "exit": 0,
+      "out": "60488: GET_ALCHEMY_DATA: \"User.getAlchemyData\","
+    },
+    {
+      "cmd": "node tools\\grep_src.js \"activityData\" --file tools\\scripts3.js --max 20",
+      "exit": 0,
+      "out": "7009: e.hasOwnProperty(\"activityData\") && (this.alchemyDataList[i.SevenDay] = e.activityData);"
+    },
+    {
+      "cmd": "node tools\\grep_src.js \"alchemyGearConfig\" --file tools\\scripts3.js --max 20",
+      "exit": 0,
+      "out": "7011: this.gearConfigList = e.alchemyGearConfig;"
+    }
+  ],
+  "unverified": [
+    "三包均无命中：node tools\\grep_src.js \"getLevelBonusData\" --file tools\\scripts3.js --max 10; node tools\\grep_src.js \"getLevelBonusData\" --file tools\\scripts2.js --max 10 (注：仅在 index.js:60391 命中常量定义 GET_LEVEL_BONUS_DATA: \"User.getLevelBonusData\"，无任何函数调用消费代码)"
+  ]
+}

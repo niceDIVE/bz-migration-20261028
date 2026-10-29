@@ -1,0 +1,51 @@
+# User.upPartnerQueue  (HttpConst.UP_PARTNER_QUEQUE)
+# 出现 1 处
+
+ 94494: };
+ 94495: t.prototype.getPartnerState = function(t) {
+ 94496: for (var e = 0; e < this.curPartnerData.length; ++e) if (this.curPartnerData[e][0] == t) return this.curPartnerData[e][1];
+ 94497: return -1;
+ 94498: };
+ 94499: t.prototype.reqUpPartnerQueue = function(t) {
+ 94500: l.NetMgr.http.sendRequest(a.HttpConst.UP_PARTNER_QUEQUE, {
+ 94501: upPartners: t,
+ 94502: roleID: c.RoleBaseInfo.roleID
+ 94503: });
+ 94504: };
+ 94505: t.prototype.reqRetrievePartner = function() {
+ 94506: l.NetMgr.http.sendRequest(a.HttpConst.RETRIEVE_PARTNER, {
+ 94507: roleID: c.RoleBaseInfo.roleID
+ 94508: });
+ 94509: };
+ 94510: t.prototype.setPartnetsData = function(t) {
+ 94511: for (var e in t) {
+ 94512: var o = t[e];
+ 94513: if (!o.hasOwnProperty("dType")) {
+ 94514: o.dType = 0;
+ 94515: o.dData = {};
+ 94516: }
+ 94517: this.setSavePartnerWrokState(e, o);
+ 94518: this.partnetDatas[parseInt(e)] = o;
+ 94519: }
+ 94520: };
+ 94521: t.prototype.setSavePartnerWrokState = function(t, e) {
+ 94522: if (1 == e.dType) {
+ 94523: var o = e.dData;
+ 94524: this.mgPartenrData[o.id] = {
+ 94525: pId: Number(t)
+ 94526: };
+ 94527: } else 3 == e.dType ? d.HomePlantModel.friendPartnerId = Number(t) : 2 == e.dType && cc.log("练功伙伴");
+ 94528: };
+ 94529: t.prototype.addPartnerData = function(t) {
+ 94530: for (var e in t) {
+ 94531: this.partnetDatas[parseInt(e)] = t[e];
+ 94532: 1 == i.getItem(parseInt(e), "Friend").type && r.MessageCenter.dispatch(s.EvName.CHANGE_MARRY_WIFE, {
+ 94533: partnerID: e
+ 94534: });
+ 94535: }
+ 94536: m.LoginMgr.judgeLangEn() && r.MessageCenter.dispatch("partnerDataUpdate");
+ 94537: };
+ 94538: t.prototype.deletePartnerData = function(t) {
+ 94539: for (var e = 0; e < t.length; e++) delete this.partnetDatas[t[e]];
+ 94540: r.MessageCenter.dispatch("partnerDataUpdate");
+---

@@ -1,0 +1,99 @@
+# User.doubleTraining  (HttpConst.USER_DOUBLE_TRAINING)
+# 出现 2 处
+
+ 56226: }
+ 56227: e.prototype.init = function() {
+ 56228: i.MessageCenter.on(l.HttpConst.USER_ONHOOK_BREAK, this.onBreakReqReturn, this);
+ 56229: i.MessageCenter.on(l.HttpConst.CHECK_BREAK, this.onCheckBreak, this);
+ 56230: i.MessageCenter.on(l.HttpConst.GET_BREAK_FRIENDLIST, this.onGetBrList, this);
+ 56231: i.MessageCenter.on(l.HttpConst.REQ_DOUBLE_BR, this.onReqDouble, this);
+ 56232: i.MessageCenter.on(l.HttpConst.USER_DOUBLE_TRAINING, this.onDoubleTraining, this);
+ 56233: i.MessageCenter.on(l.HttpConst.END_DOUBLE_TRAINING, this.onEndDoubleTraining, this);
+ 56234: i.MessageCenter.on(l.HttpConst.USE_ITEM_ADDITION, this.addBreakRate, this);
+ 56235: i.MessageCenter.on(l.HttpConst.SET_ONHOOK_WOOK_STATE, this.onHookWoodStateCh, this);
+ 56236: };
+ 56237: e.prototype.reqInstantFinish = function() {
+ 56238: this.checkBreak(1);
+ 56239: };
+ 56240: e.prototype.requestBrFriendList = function() {
+ 56241: c.NetMgr.http.sendRequest(l.HttpConst.GET_BREAK_FRIENDLIST, {});
+ 56242: };
+ 56243: e.prototype.requestDouble = function(t) {
+ 56244: var e = {
+ 56245: friendID: t,
+ 56246: sponsorName: y.RoleBaseInfo.userName
+ 56247: };
+ 56248: c.NetMgr.http.sendRequest(l.HttpConst.REQ_DOUBLE_BR, e);
+ 56249: };
+ 56250: e.prototype.requestBreak = function(t, e, o) {
+ 56251: void 0 === o && (o = null);
+ 56252: void 0 === o && (o = !1);
+ 56253: this.id = t;
+ 56254: this.lv = e;
+ 56255: var i = D.playerInfo.entity, n = {
+ 56256: onHookOperate: o ? 2 : 1,
+ 56257: skillID: t,
+ 56258: skillLevel: e,
+ 56259: hg: i.hunger.remaining,
+ 56260: gTime: i.totalGameTime.gameTime,
+ 56261: hgtimes: i.numStuffed
+ 56262: };
+ 56263: c.NetMgr.http.sendRequest(l.HttpConst.USER_ONHOOK_BREAK, n);
+ 56264: };
+ 56265: e.prototype.checkBreak = function(t) {
+ 56266: void 0 === t && (t = null);
+ 56267: void 0 === t && (t = 0);
+ 56268: var e = D.playerInfo.entity, o = {
+ 56269: flag: t,
+ 56270: maxHP: e.hp.finalValue,
+ 56271: maxMP: e.mp.finalValue,
+ 56272: hglmt: e.hunger.limit,
+---
+ 56660: skillID: t,
+ 56661: hg: o.hunger.remaining,
+ 56662: gTime: o.totalGameTime.gameTime,
+ 56663: hgtimes: o.numStuffed,
+ 56664: mpLimit: o.mp.limit
+ 56665: };
+ 56666: c.NetMgr.http.sendRequest(l.HttpConst.USER_DOUBLE_TRAINING, i);
+ 56667: };
+ 56668: e.prototype.onDoubleTraining = function(e, o) {
+ 56669: this.id = o.skillID;
+ 56670: this.lv = o.skillLevel;
+ 56671: this.itemBreakAdditionNum = o.hasOwnProperty("itemAddition") ? o.itemAddition : 0;
+ 56672: if (1 == o.eRet) {
+ 56673: if (isNaN(Number(o.needTime))) {
+ 56674: s.default.show(JSON.stringify(o));
+ 56675: return;
+ 56676: }
+ 56677: this.totalTime = o.needTime + Math.floor(.001 * (o.serverTime - o.beginTime));
+ 56678: this.timeRemaining = o.needTime;
+ 56679: this.breakBonus = o.sucRate;
+ 56680: i.MessageCenter.dispatch(h.EvName.CLOSE_MAIN_MENU);
+ 56681: this.isDouble = !0;
+ 56682: var n = {
+ 56683: pathName: "comUI/ONHookUI",
+ 56684: scriptName: "BreakUI",
+ 56685: wife: !0
+ 56686: };
+ 56687: T.default.promiseLoad("comUI/ONhookBgUI", n, function(t) {
+ 56688: var e = cc.instantiate(t);
+ 56689: C.PopUpMgr.addPopUp(e, A.LayerMgr.popUpLayer);
+ 56690: var o = e.addComponent("BreakBgUI");
+ 56691: o.setData(n);
+ 56692: o.setLabelTitle(a.getText(263));
+ 56693: });
+ 56694: Promise.resolve().then(function() {
+ 56695: return t("../../scripts3/model3/PopGiftModel");
+ 56696: }).then(function(t) {
+ 56697: t.PopGiftModel.setHomeDataUI(o);
+ 56698: });
+ 56699: } else if (2 == o.eRet) i.MessageCenter.dispatch(h.EvName.CANCEL_BR_RET); else if (3 == o.eRet) ; else if (4 == o.eRet) {
+ 56700: this.totalTime = o.needTime + Math.floor(.001 * (o.serverTime - o.beginTime));
+ 56701: this.timeRemaining = o.needTime;
+ 56702: }
+ 56703: };
+ 56704: e.prototype.reqEndWifeBreak = function(t) {
+ 56705: var e = D.playerInfo.entity, o = {
+ 56706: flag: t,
+---

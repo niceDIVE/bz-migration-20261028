@@ -1,0 +1,742 @@
+================================================================================
+【取证报告】时间字段的客户端读点穷举（只取证，不改代码）
+【范围】tools/index.js、tools/scripts2.js、tools/scripts3.js
+【生成时间】2026-10-22T20:14:00.264Z
+================================================================================
+
+## 1. active 表的 endtime
+- 目标字段: endtime
+- 备注说明: grep "endtime" 全量取证（含 active 表读点与所有 endtime 引用点）
+- 命中总行数: 59
+- [CMP] 命中数: 17
+- [CMP] 行号列表: tools/index.js:22523, tools/index.js:55368, tools/index.js:99829, tools/index.js:99867, tools/index.js:99868, tools/index.js:99869, tools/index.js:99873, tools/index.js:99874, tools/index.js:99879, tools/index.js:134336, tools/scripts2.js:38887, tools/scripts2.js:51510, tools/scripts2.js:51511, tools/scripts2.js:79427, tools/scripts3.js:41688, tools/scripts3.js:41690, tools/scripts3.js:44214
+
+### 读点清单
+[1] tools/index.js:22523 [CMP]
+    原文: var n = a.getItem(o.curHour, "gametime"), r = a.getItem(this.scene.id, "map"), c = l.TimeMgr.getSTimestamp(), h = c >= n.begintime && c <= n.endtime ? "festival" : "weather";
+    [CMP标志] 行 22523 命中 "TimeMgr.getSTimestamp": var n = a.getItem(o.curHour, "gametime"), r = a.getItem(this.scene.id, "map"), c = l.TimeMgr.getSTimestamp(), h = c >= n.begintime && c <= n.endtime ? "festival" : "weather";
+    [CMP标志] 行 22523 命中 "getSTimestamp": var n = a.getItem(o.curHour, "gametime"), r = a.getItem(this.scene.id, "map"), c = l.TimeMgr.getSTimestamp(), h = c >= n.begintime && c <= n.endtime ? "festival" : "weather";
+[2] tools/index.js:55368 [CMP]
+    原文: if (1010 == e && 0 != h.RoleOtherInfo.giftendtime) return !1;
+    [CMP标志] 行 55364 命中 "TimeMgr.getSTimestamp": var i = u.TimeMgr.getSTimestamp(), r = 1e3 * n.getConstByID(132);
+    [CMP标志] 行 55364 命中 "getSTimestamp": var i = u.TimeMgr.getSTimestamp(), r = 1e3 * n.getConstByID(132);
+[3] tools/index.js:99511 [NO_CMP]
+    原文: e.endtime = 0;
+[4] tools/index.js:99829 [CMP]
+    原文: this.endtime = new Date().getTime();
+    [CMP标志] 行 99829 命中 "getTime()": this.endtime = new Date().getTime();
+    [CMP标志] 行 99829 命中 "new Date(": this.endtime = new Date().getTime();
+[5] tools/index.js:99867 [CMP]
+    原文: if (3 == this.state && this.endtime > 0) {
+    [CMP标志] 行 99868 命中 "getTime()": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "new Date(": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+[6] tools/index.js:99868 [CMP]
+    原文: if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "getTime()": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "new Date(": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+[7] tools/index.js:99869 [CMP]
+    原文: this.endtime = 0;
+    [CMP标志] 行 99868 命中 "getTime()": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "new Date(": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+[8] tools/index.js:99873 [CMP]
+    原文: } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "getTime()": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "new Date(": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99879 命中 "getTime()": 0 == this.state && (this.endtime = new Date().getTime());
+    [CMP标志] 行 99879 命中 "new Date(": 0 == this.state && (this.endtime = new Date().getTime());
+[9] tools/index.js:99874 [CMP]
+    原文: this.endtime = 0;
+    [CMP标志] 行 99868 命中 "getTime()": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "new Date(": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99879 命中 "getTime()": 0 == this.state && (this.endtime = new Date().getTime());
+    [CMP标志] 行 99879 命中 "new Date(": 0 == this.state && (this.endtime = new Date().getTime());
+[10] tools/index.js:99879 [CMP]
+    原文: 0 == this.state && (this.endtime = new Date().getTime());
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99879 命中 "getTime()": 0 == this.state && (this.endtime = new Date().getTime());
+    [CMP标志] 行 99879 命中 "new Date(": 0 == this.state && (this.endtime = new Date().getTime());
+[11] tools/index.js:107165 [NO_CMP]
+    原文: this.giftendtime = 0;
+[12] tools/index.js:107231 [NO_CMP]
+    原文: e.hasOwnProperty("giftendtime") ? this.giftendtime = e.giftendtime : this.giftendtime = 0;
+[13] tools/index.js:107529 [NO_CMP]
+    原文: this.giftendtime = 0;
+[14] tools/index.js:108098 [NO_CMP]
+    原文: this.giftendtime = 0;
+[15] tools/index.js:134336 [CMP]
+    原文: var i = k.TimeMgr.getSTimestamp(), r = parseInt(o.begintime), a = parseInt(o.endtime);
+    [CMP标志] 行 134336 命中 "TimeMgr.getSTimestamp": var i = k.TimeMgr.getSTimestamp(), r = parseInt(o.begintime), a = parseInt(o.endtime);
+    [CMP标志] 行 134336 命中 "getSTimestamp": var i = k.TimeMgr.getSTimestamp(), r = parseInt(o.begintime), a = parseInt(o.endtime);
+[16] tools/scripts2.js:8906 [NO_CMP]
+    原文: 5 == this.selectType && 0 == M.RoleOtherInfo.giftendtime && this.removeStoreDatasList(64);
+[17] tools/scripts2.js:29791 [NO_CMP]
+    原文: 0 == d.RoleOtherInfo.giftendtime && (this.GiftPackBtn.active = !1);
+[18] tools/scripts2.js:38638 [NO_CMP]
+    原文: e.activeendtime = 0;
+[19] tools/scripts2.js:38697 [NO_CMP]
+    原文: this.activeendtime = this.data.specialTime[1];
+[20] tools/scripts2.js:38887 [CMP]
+    原文: var t = m.TimeMgr.getSTimestamp(), e = .001 * Math.floor(this.activeendtime - t);
+    [CMP标志] 行 38887 命中 "TimeMgr.getSTimestamp": var t = m.TimeMgr.getSTimestamp(), e = .001 * Math.floor(this.activeendtime - t);
+    [CMP标志] 行 38887 命中 "getSTimestamp": var t = m.TimeMgr.getSTimestamp(), e = .001 * Math.floor(this.activeendtime - t);
+[21] tools/scripts2.js:47541 [NO_CMP]
+    原文: var e = {}, o = c.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData");
+[22] tools/scripts2.js:47585 [NO_CMP]
+    原文: var t = {}, e = c.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData");
+[23] tools/scripts2.js:47817 [NO_CMP]
+    原文: var t = [], e = {}, o = c.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData");
+[24] tools/scripts2.js:47827 [NO_CMP]
+    原文: var s = c.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData");
+[25] tools/scripts2.js:47850 [NO_CMP]
+    原文: var t = {}, e = c.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData");
+[26] tools/scripts2.js:47853 [NO_CMP]
+    原文: c.LocalStorageMgr.setItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData", JSON.stringify(t));
+[27] tools/scripts2.js:47951 [NO_CMP]
+    原文: 0 != h.RoleOtherInfo.giftendtime && g.StoreModel.openOptionalGiftUI(g.StoreModel.homeUI);
+[28] tools/scripts2.js:47961 [NO_CMP]
+    原文: var i = {}, s = JSON.parse(l.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + h.RoleOtherInfo.giftendtime + "localGiftData"));
+[29] tools/scripts2.js:47965 [NO_CMP]
+    原文: l.LocalStorageMgr.setItem(p.RoleBaseInfo.roleID + h.RoleOtherInfo.giftendtime + "localGiftData", JSON.stringify(i));
+[30] tools/scripts2.js:51486 [NO_CMP]
+    原文: e.endtime = 0;
+[31] tools/scripts2.js:51500 [NO_CMP]
+    原文: this.endtime = this.data.time;
+[32] tools/scripts2.js:51510 [CMP]
+    原文: if (this.endtime >= t) {
+    [CMP标志] 行 51509 命中 "TimeMgr.getSTimestamp": var t = c.TimeMgr.getSTimestamp();
+    [CMP标志] 行 51509 命中 "getSTimestamp": var t = c.TimeMgr.getSTimestamp();
+[33] tools/scripts2.js:51511 [CMP]
+    原文: var e = (this.endtime - t) / 1e3;
+    [CMP标志] 行 51509 命中 "TimeMgr.getSTimestamp": var t = c.TimeMgr.getSTimestamp();
+    [CMP标志] 行 51509 命中 "getSTimestamp": var t = c.TimeMgr.getSTimestamp();
+[34] tools/scripts2.js:55284 [NO_CMP]
+    原文: this.itemTime = this.itemObject[i].endtime;
+[35] tools/scripts2.js:67729 [NO_CMP]
+    原文: l && (this.endTimes[c] = l.endtime);
+[36] tools/scripts2.js:79427 [CMP]
+    原文: var y = g - 1800 * (m - p.RoleBaseInfo.roleID), I = r.getItem(f, "gametime"), b = 1e3 * g, C = b >= I.begintime && b <= I.endtime ? "festival" : "weather", M = 0;
+    [CMP标志] 行 79422 命中 "TimeMgr.getSTimestamp": var o = t[1], i = r.getItem(t[0], "map"), s = i.area, n = .001 * l.TimeMgr.getSTimestamp(), h = Math.floor(n / 1800);
+    [CMP标志] 行 79422 命中 "getSTimestamp": var o = t[1], i = r.getItem(t[0], "map"), s = i.area, n = .001 * l.TimeMgr.getSTimestamp(), h = Math.floor(n / 1800);
+[37] tools/scripts3.js:4537 [NO_CMP]
+    原文: this.endT = e.endtime;
+[38] tools/scripts3.js:4538 [NO_CMP]
+    原文: this.awardT = e.awardendtime;
+[39] tools/scripts3.js:7829 [NO_CMP]
+    原文: t.endT = o.endtime;
+[40] tools/scripts3.js:14203 [NO_CMP]
+    原文: this.exEndT = e.endtime;
+[41] tools/scripts3.js:14204 [NO_CMP]
+    原文: this.actEndT = e.endtime1;
+[42] tools/scripts3.js:27356 [NO_CMP]
+    原文: this.endTime = t.endtime;
+[43] tools/scripts3.js:40468 [NO_CMP]
+    原文: this.endtime = 0;
+[44] tools/scripts3.js:40469 [NO_CMP]
+    原文: this.endtime1 = 0;
+[45] tools/scripts3.js:40579 [NO_CMP]
+    原文: this.endtime = e.endtime;
+[46] tools/scripts3.js:40580 [NO_CMP]
+    原文: this.endtime1 = e.endtime1;
+[47] tools/scripts3.js:41688 [CMP]
+    原文: var t = Math.floor(Math.max(M.JigsawModel.endtime - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41688 命中 "TimeMgr.getSTimestamp": var t = Math.floor(Math.max(M.JigsawModel.endtime - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41688 命中 "getSTimestamp": var t = Math.floor(Math.max(M.JigsawModel.endtime - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41690 命中 "TimeMgr.getSTimestamp": var e = Math.floor(Math.max(M.JigsawModel.endtime1 - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41690 命中 "getSTimestamp": var e = Math.floor(Math.max(M.JigsawModel.endtime1 - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+[48] tools/scripts3.js:41690 [CMP]
+    原文: var e = Math.floor(Math.max(M.JigsawModel.endtime1 - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41688 命中 "TimeMgr.getSTimestamp": var t = Math.floor(Math.max(M.JigsawModel.endtime - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41688 命中 "getSTimestamp": var t = Math.floor(Math.max(M.JigsawModel.endtime - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41690 命中 "TimeMgr.getSTimestamp": var e = Math.floor(Math.max(M.JigsawModel.endtime1 - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41690 命中 "getSTimestamp": var e = Math.floor(Math.max(M.JigsawModel.endtime1 - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+[49] tools/scripts3.js:44214 [CMP]
+    原文: var t = Math.floor(Math.max(a.getItem(65, "active").endtime - h.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 44214 命中 "TimeMgr.getSTimestamp": var t = Math.floor(Math.max(a.getItem(65, "active").endtime - h.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 44214 命中 "getSTimestamp": var t = Math.floor(Math.max(a.getItem(65, "active").endtime - h.TimeMgr.getSTimestamp(), 0) / 1e3);
+[50] tools/scripts3.js:54372 [NO_CMP]
+    原文: var e = {}, o = c.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData");
+[51] tools/scripts3.js:54433 [NO_CMP]
+    原文: var t = {}, e = c.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData");
+[52] tools/scripts3.js:54677 [NO_CMP]
+    原文: var t = [], e = {}, o = c.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData");
+[53] tools/scripts3.js:54687 [NO_CMP]
+    原文: var s = c.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData");
+[54] tools/scripts3.js:54708 [NO_CMP]
+    原文: var t = {}, e = c.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData");
+[55] tools/scripts3.js:54711 [NO_CMP]
+    原文: c.LocalStorageMgr.setItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData", JSON.stringify(t));
+[56] tools/scripts3.js:54805 [NO_CMP]
+    原文: 0 != h.RoleOtherInfo.giftendtime && g.StoreModel.openOptionalGiftUI(g.StoreModel.homeUI);
+[57] tools/scripts3.js:54815 [NO_CMP]
+    原文: var i = {}, s = JSON.parse(p.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + h.RoleOtherInfo.giftendtime + "localGiftData"));
+[58] tools/scripts3.js:54819 [NO_CMP]
+    原文: p.LocalStorageMgr.setItem(l.RoleBaseInfo.roleID + h.RoleOtherInfo.giftendtime + "localGiftData", JSON.stringify(i));
+[59] tools/scripts3.js:88805 [NO_CMP]
+    原文: this.taskEndT = e.activeendtime;
+
+--------------------------------------------------------------------------------
+
+## 2. active 表的 begintime
+- 目标字段: begintime
+- 备注说明: grep "begintime" 全量取证（含 active 表读点与所有 begintime 引用点）
+- 命中总行数: 5
+- [CMP] 命中数: 3
+- [CMP] 行号列表: tools/index.js:22523, tools/index.js:134336, tools/scripts2.js:79427
+
+### 读点清单
+[1] tools/index.js:22523 [CMP]
+    原文: var n = a.getItem(o.curHour, "gametime"), r = a.getItem(this.scene.id, "map"), c = l.TimeMgr.getSTimestamp(), h = c >= n.begintime && c <= n.endtime ? "festival" : "weather";
+    [CMP标志] 行 22523 命中 "TimeMgr.getSTimestamp": var n = a.getItem(o.curHour, "gametime"), r = a.getItem(this.scene.id, "map"), c = l.TimeMgr.getSTimestamp(), h = c >= n.begintime && c <= n.endtime ? "festival" : "weather";
+    [CMP标志] 行 22523 命中 "getSTimestamp": var n = a.getItem(o.curHour, "gametime"), r = a.getItem(this.scene.id, "map"), c = l.TimeMgr.getSTimestamp(), h = c >= n.begintime && c <= n.endtime ? "festival" : "weather";
+[2] tools/index.js:134336 [CMP]
+    原文: var i = k.TimeMgr.getSTimestamp(), r = parseInt(o.begintime), a = parseInt(o.endtime);
+    [CMP标志] 行 134336 命中 "TimeMgr.getSTimestamp": var i = k.TimeMgr.getSTimestamp(), r = parseInt(o.begintime), a = parseInt(o.endtime);
+    [CMP标志] 行 134336 命中 "getSTimestamp": var i = k.TimeMgr.getSTimestamp(), r = parseInt(o.begintime), a = parseInt(o.endtime);
+[3] tools/scripts2.js:38637 [NO_CMP]
+    原文: e.activebegintime = 0;
+[4] tools/scripts2.js:38696 [NO_CMP]
+    原文: this.activebegintime = this.data.specialTime[0];
+[5] tools/scripts2.js:79427 [CMP]
+    原文: var y = g - 1800 * (m - p.RoleBaseInfo.roleID), I = r.getItem(f, "gametime"), b = 1e3 * g, C = b >= I.begintime && b <= I.endtime ? "festival" : "weather", M = 0;
+    [CMP标志] 行 79422 命中 "TimeMgr.getSTimestamp": var o = t[1], i = r.getItem(t[0], "map"), s = i.area, n = .001 * l.TimeMgr.getSTimestamp(), h = Math.floor(n / 1800);
+    [CMP标志] 行 79422 命中 "getSTimestamp": var o = t[1], i = r.getItem(t[0], "map"), s = i.area, n = .001 * l.TimeMgr.getSTimestamp(), h = Math.floor(n / 1800);
+
+--------------------------------------------------------------------------------
+
+## 3. exchange 表的 endtime
+- 目标字段: endtime
+- 备注说明: grep "endtime" 全量取证（注：exchange 表客户端未直接静态硬编码表名读点，取证 endtime 命中）
+- 命中总行数: 59
+- [CMP] 命中数: 17
+- [CMP] 行号列表: tools/index.js:22523, tools/index.js:55368, tools/index.js:99829, tools/index.js:99867, tools/index.js:99868, tools/index.js:99869, tools/index.js:99873, tools/index.js:99874, tools/index.js:99879, tools/index.js:134336, tools/scripts2.js:38887, tools/scripts2.js:51510, tools/scripts2.js:51511, tools/scripts2.js:79427, tools/scripts3.js:41688, tools/scripts3.js:41690, tools/scripts3.js:44214
+
+### 读点清单
+[1] tools/index.js:22523 [CMP]
+    原文: var n = a.getItem(o.curHour, "gametime"), r = a.getItem(this.scene.id, "map"), c = l.TimeMgr.getSTimestamp(), h = c >= n.begintime && c <= n.endtime ? "festival" : "weather";
+    [CMP标志] 行 22523 命中 "TimeMgr.getSTimestamp": var n = a.getItem(o.curHour, "gametime"), r = a.getItem(this.scene.id, "map"), c = l.TimeMgr.getSTimestamp(), h = c >= n.begintime && c <= n.endtime ? "festival" : "weather";
+    [CMP标志] 行 22523 命中 "getSTimestamp": var n = a.getItem(o.curHour, "gametime"), r = a.getItem(this.scene.id, "map"), c = l.TimeMgr.getSTimestamp(), h = c >= n.begintime && c <= n.endtime ? "festival" : "weather";
+[2] tools/index.js:55368 [CMP]
+    原文: if (1010 == e && 0 != h.RoleOtherInfo.giftendtime) return !1;
+    [CMP标志] 行 55364 命中 "TimeMgr.getSTimestamp": var i = u.TimeMgr.getSTimestamp(), r = 1e3 * n.getConstByID(132);
+    [CMP标志] 行 55364 命中 "getSTimestamp": var i = u.TimeMgr.getSTimestamp(), r = 1e3 * n.getConstByID(132);
+[3] tools/index.js:99511 [NO_CMP]
+    原文: e.endtime = 0;
+[4] tools/index.js:99829 [CMP]
+    原文: this.endtime = new Date().getTime();
+    [CMP标志] 行 99829 命中 "getTime()": this.endtime = new Date().getTime();
+    [CMP标志] 行 99829 命中 "new Date(": this.endtime = new Date().getTime();
+[5] tools/index.js:99867 [CMP]
+    原文: if (3 == this.state && this.endtime > 0) {
+    [CMP标志] 行 99868 命中 "getTime()": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "new Date(": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+[6] tools/index.js:99868 [CMP]
+    原文: if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "getTime()": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "new Date(": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+[7] tools/index.js:99869 [CMP]
+    原文: this.endtime = 0;
+    [CMP标志] 行 99868 命中 "getTime()": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "new Date(": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+[8] tools/index.js:99873 [CMP]
+    原文: } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "getTime()": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "new Date(": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99879 命中 "getTime()": 0 == this.state && (this.endtime = new Date().getTime());
+    [CMP标志] 行 99879 命中 "new Date(": 0 == this.state && (this.endtime = new Date().getTime());
+[9] tools/index.js:99874 [CMP]
+    原文: this.endtime = 0;
+    [CMP标志] 行 99868 命中 "getTime()": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99868 命中 "new Date(": if (new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99879 命中 "getTime()": 0 == this.state && (this.endtime = new Date().getTime());
+    [CMP标志] 行 99879 命中 "new Date(": 0 == this.state && (this.endtime = new Date().getTime());
+[10] tools/index.js:99879 [CMP]
+    原文: 0 == this.state && (this.endtime = new Date().getTime());
+    [CMP标志] 行 99873 命中 "getTime()": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99873 命中 "new Date(": } else if (this.btState.gameOver && this.endtime > 0 && new Date().getTime() - this.endtime >= 5e3) {
+    [CMP标志] 行 99879 命中 "getTime()": 0 == this.state && (this.endtime = new Date().getTime());
+    [CMP标志] 行 99879 命中 "new Date(": 0 == this.state && (this.endtime = new Date().getTime());
+[11] tools/index.js:107165 [NO_CMP]
+    原文: this.giftendtime = 0;
+[12] tools/index.js:107231 [NO_CMP]
+    原文: e.hasOwnProperty("giftendtime") ? this.giftendtime = e.giftendtime : this.giftendtime = 0;
+[13] tools/index.js:107529 [NO_CMP]
+    原文: this.giftendtime = 0;
+[14] tools/index.js:108098 [NO_CMP]
+    原文: this.giftendtime = 0;
+[15] tools/index.js:134336 [CMP]
+    原文: var i = k.TimeMgr.getSTimestamp(), r = parseInt(o.begintime), a = parseInt(o.endtime);
+    [CMP标志] 行 134336 命中 "TimeMgr.getSTimestamp": var i = k.TimeMgr.getSTimestamp(), r = parseInt(o.begintime), a = parseInt(o.endtime);
+    [CMP标志] 行 134336 命中 "getSTimestamp": var i = k.TimeMgr.getSTimestamp(), r = parseInt(o.begintime), a = parseInt(o.endtime);
+[16] tools/scripts2.js:8906 [NO_CMP]
+    原文: 5 == this.selectType && 0 == M.RoleOtherInfo.giftendtime && this.removeStoreDatasList(64);
+[17] tools/scripts2.js:29791 [NO_CMP]
+    原文: 0 == d.RoleOtherInfo.giftendtime && (this.GiftPackBtn.active = !1);
+[18] tools/scripts2.js:38638 [NO_CMP]
+    原文: e.activeendtime = 0;
+[19] tools/scripts2.js:38697 [NO_CMP]
+    原文: this.activeendtime = this.data.specialTime[1];
+[20] tools/scripts2.js:38887 [CMP]
+    原文: var t = m.TimeMgr.getSTimestamp(), e = .001 * Math.floor(this.activeendtime - t);
+    [CMP标志] 行 38887 命中 "TimeMgr.getSTimestamp": var t = m.TimeMgr.getSTimestamp(), e = .001 * Math.floor(this.activeendtime - t);
+    [CMP标志] 行 38887 命中 "getSTimestamp": var t = m.TimeMgr.getSTimestamp(), e = .001 * Math.floor(this.activeendtime - t);
+[21] tools/scripts2.js:47541 [NO_CMP]
+    原文: var e = {}, o = c.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData");
+[22] tools/scripts2.js:47585 [NO_CMP]
+    原文: var t = {}, e = c.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData");
+[23] tools/scripts2.js:47817 [NO_CMP]
+    原文: var t = [], e = {}, o = c.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData");
+[24] tools/scripts2.js:47827 [NO_CMP]
+    原文: var s = c.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData");
+[25] tools/scripts2.js:47850 [NO_CMP]
+    原文: var t = {}, e = c.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData");
+[26] tools/scripts2.js:47853 [NO_CMP]
+    原文: c.LocalStorageMgr.setItem(p.RoleBaseInfo.roleID + l.RoleOtherInfo.giftendtime + "localGiftData", JSON.stringify(t));
+[27] tools/scripts2.js:47951 [NO_CMP]
+    原文: 0 != h.RoleOtherInfo.giftendtime && g.StoreModel.openOptionalGiftUI(g.StoreModel.homeUI);
+[28] tools/scripts2.js:47961 [NO_CMP]
+    原文: var i = {}, s = JSON.parse(l.LocalStorageMgr.getItem(p.RoleBaseInfo.roleID + h.RoleOtherInfo.giftendtime + "localGiftData"));
+[29] tools/scripts2.js:47965 [NO_CMP]
+    原文: l.LocalStorageMgr.setItem(p.RoleBaseInfo.roleID + h.RoleOtherInfo.giftendtime + "localGiftData", JSON.stringify(i));
+[30] tools/scripts2.js:51486 [NO_CMP]
+    原文: e.endtime = 0;
+[31] tools/scripts2.js:51500 [NO_CMP]
+    原文: this.endtime = this.data.time;
+[32] tools/scripts2.js:51510 [CMP]
+    原文: if (this.endtime >= t) {
+    [CMP标志] 行 51509 命中 "TimeMgr.getSTimestamp": var t = c.TimeMgr.getSTimestamp();
+    [CMP标志] 行 51509 命中 "getSTimestamp": var t = c.TimeMgr.getSTimestamp();
+[33] tools/scripts2.js:51511 [CMP]
+    原文: var e = (this.endtime - t) / 1e3;
+    [CMP标志] 行 51509 命中 "TimeMgr.getSTimestamp": var t = c.TimeMgr.getSTimestamp();
+    [CMP标志] 行 51509 命中 "getSTimestamp": var t = c.TimeMgr.getSTimestamp();
+[34] tools/scripts2.js:55284 [NO_CMP]
+    原文: this.itemTime = this.itemObject[i].endtime;
+[35] tools/scripts2.js:67729 [NO_CMP]
+    原文: l && (this.endTimes[c] = l.endtime);
+[36] tools/scripts2.js:79427 [CMP]
+    原文: var y = g - 1800 * (m - p.RoleBaseInfo.roleID), I = r.getItem(f, "gametime"), b = 1e3 * g, C = b >= I.begintime && b <= I.endtime ? "festival" : "weather", M = 0;
+    [CMP标志] 行 79422 命中 "TimeMgr.getSTimestamp": var o = t[1], i = r.getItem(t[0], "map"), s = i.area, n = .001 * l.TimeMgr.getSTimestamp(), h = Math.floor(n / 1800);
+    [CMP标志] 行 79422 命中 "getSTimestamp": var o = t[1], i = r.getItem(t[0], "map"), s = i.area, n = .001 * l.TimeMgr.getSTimestamp(), h = Math.floor(n / 1800);
+[37] tools/scripts3.js:4537 [NO_CMP]
+    原文: this.endT = e.endtime;
+[38] tools/scripts3.js:4538 [NO_CMP]
+    原文: this.awardT = e.awardendtime;
+[39] tools/scripts3.js:7829 [NO_CMP]
+    原文: t.endT = o.endtime;
+[40] tools/scripts3.js:14203 [NO_CMP]
+    原文: this.exEndT = e.endtime;
+[41] tools/scripts3.js:14204 [NO_CMP]
+    原文: this.actEndT = e.endtime1;
+[42] tools/scripts3.js:27356 [NO_CMP]
+    原文: this.endTime = t.endtime;
+[43] tools/scripts3.js:40468 [NO_CMP]
+    原文: this.endtime = 0;
+[44] tools/scripts3.js:40469 [NO_CMP]
+    原文: this.endtime1 = 0;
+[45] tools/scripts3.js:40579 [NO_CMP]
+    原文: this.endtime = e.endtime;
+[46] tools/scripts3.js:40580 [NO_CMP]
+    原文: this.endtime1 = e.endtime1;
+[47] tools/scripts3.js:41688 [CMP]
+    原文: var t = Math.floor(Math.max(M.JigsawModel.endtime - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41688 命中 "TimeMgr.getSTimestamp": var t = Math.floor(Math.max(M.JigsawModel.endtime - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41688 命中 "getSTimestamp": var t = Math.floor(Math.max(M.JigsawModel.endtime - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41690 命中 "TimeMgr.getSTimestamp": var e = Math.floor(Math.max(M.JigsawModel.endtime1 - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41690 命中 "getSTimestamp": var e = Math.floor(Math.max(M.JigsawModel.endtime1 - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+[48] tools/scripts3.js:41690 [CMP]
+    原文: var e = Math.floor(Math.max(M.JigsawModel.endtime1 - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41688 命中 "TimeMgr.getSTimestamp": var t = Math.floor(Math.max(M.JigsawModel.endtime - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41688 命中 "getSTimestamp": var t = Math.floor(Math.max(M.JigsawModel.endtime - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41690 命中 "TimeMgr.getSTimestamp": var e = Math.floor(Math.max(M.JigsawModel.endtime1 - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 41690 命中 "getSTimestamp": var e = Math.floor(Math.max(M.JigsawModel.endtime1 - g.TimeMgr.getSTimestamp(), 0) / 1e3);
+[49] tools/scripts3.js:44214 [CMP]
+    原文: var t = Math.floor(Math.max(a.getItem(65, "active").endtime - h.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 44214 命中 "TimeMgr.getSTimestamp": var t = Math.floor(Math.max(a.getItem(65, "active").endtime - h.TimeMgr.getSTimestamp(), 0) / 1e3);
+    [CMP标志] 行 44214 命中 "getSTimestamp": var t = Math.floor(Math.max(a.getItem(65, "active").endtime - h.TimeMgr.getSTimestamp(), 0) / 1e3);
+[50] tools/scripts3.js:54372 [NO_CMP]
+    原文: var e = {}, o = c.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData");
+[51] tools/scripts3.js:54433 [NO_CMP]
+    原文: var t = {}, e = c.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData");
+[52] tools/scripts3.js:54677 [NO_CMP]
+    原文: var t = [], e = {}, o = c.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData");
+[53] tools/scripts3.js:54687 [NO_CMP]
+    原文: var s = c.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData");
+[54] tools/scripts3.js:54708 [NO_CMP]
+    原文: var t = {}, e = c.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData");
+[55] tools/scripts3.js:54711 [NO_CMP]
+    原文: c.LocalStorageMgr.setItem(l.RoleBaseInfo.roleID + p.RoleOtherInfo.giftendtime + "localGiftData", JSON.stringify(t));
+[56] tools/scripts3.js:54805 [NO_CMP]
+    原文: 0 != h.RoleOtherInfo.giftendtime && g.StoreModel.openOptionalGiftUI(g.StoreModel.homeUI);
+[57] tools/scripts3.js:54815 [NO_CMP]
+    原文: var i = {}, s = JSON.parse(p.LocalStorageMgr.getItem(l.RoleBaseInfo.roleID + h.RoleOtherInfo.giftendtime + "localGiftData"));
+[58] tools/scripts3.js:54819 [NO_CMP]
+    原文: p.LocalStorageMgr.setItem(l.RoleBaseInfo.roleID + h.RoleOtherInfo.giftendtime + "localGiftData", JSON.stringify(i));
+[59] tools/scripts3.js:88805 [NO_CMP]
+    原文: this.taskEndT = e.activeendtime;
+
+--------------------------------------------------------------------------------
+
+## 4. mall 表的 shopend
+- 目标字段: shopend
+- 备注说明: grep "shopend" 全量取证（静态代码中 0 处命中，未能确认 shopend 读点）
+- 命中总行数: 0
+- [CMP] 命中数: 0
+- [CMP] 行号列表: 未能确认（0 处）
+
+### 读点清单
+未能确认（0 处命中）
+
+--------------------------------------------------------------------------------
+
+## 5. create 应答的 serverTime
+- 目标字段: serverTime
+- 备注说明: grep "serverTime" 全量取证（含 RoleOtherInfo / TimeMgr 及各模块读点）
+- 命中总行数: 55
+- [CMP] 命中数: 55
+- [CMP] 行号列表: tools/index.js:24661, tools/index.js:51516, tools/index.js:51560, tools/index.js:51580, tools/index.js:51785, tools/index.js:51787, tools/index.js:56409, tools/index.js:56411, tools/index.js:56427, tools/index.js:56444, tools/index.js:56492, tools/index.js:56518, tools/index.js:56527, tools/index.js:56529, tools/index.js:56595, tools/index.js:56603, tools/index.js:56641, tools/index.js:56643, tools/index.js:56677, tools/index.js:56700, tools/index.js:56831, tools/index.js:56844, tools/index.js:70477, tools/index.js:70506, tools/index.js:70643, tools/index.js:77925, tools/index.js:78024, tools/index.js:86155, tools/index.js:86167, tools/index.js:86193, tools/index.js:86195, tools/index.js:86205, tools/index.js:107141, tools/index.js:107578, tools/index.js:107591, tools/index.js:111718, tools/index.js:119858, tools/index.js:119864, tools/index.js:121392, tools/index.js:121412, tools/index.js:130695, tools/index.js:130718, tools/index.js:130770, tools/index.js:131320, tools/index.js:133254, tools/index.js:133374, tools/index.js:138898, tools/scripts2.js:4467, tools/scripts2.js:39060, tools/scripts2.js:39113, tools/scripts2.js:44445, tools/scripts2.js:44451, tools/scripts2.js:44545, tools/scripts2.js:50064, tools/scripts3.js:58502
+
+### 读点清单
+[1] tools/index.js:24661 [CMP]
+    原文: h.TimeMgr.sserverT = e.serverTime;
+    [CMP标志] 行 24661 命中 "serverTime": h.TimeMgr.sserverT = e.serverTime;
+    [CMP标志] 行 24662 命中 "Date.now()": h.TimeMgr.startTime = Date.now();
+[2] tools/index.js:51516 [CMP]
+    原文: t.timeElapsed = .001 * (o.serverTime - o.beginTime);
+    [CMP标志] 行 51516 命中 "serverTime": t.timeElapsed = .001 * (o.serverTime - o.beginTime);
+[3] tools/index.js:51560 [CMP]
+    原文: this.timeElapsed = .001 * (o.serverTime - o.beginTime);
+    [CMP标志] 行 51559 命中 "TimeMgr.getSTimestamp": this.setLastWatchTs(v.TimeMgr.getSTimestamp());
+    [CMP标志] 行 51559 命中 "getSTimestamp": this.setLastWatchTs(v.TimeMgr.getSTimestamp());
+    [CMP标志] 行 51560 命中 "serverTime": this.timeElapsed = .001 * (o.serverTime - o.beginTime);
+[4] tools/index.js:51580 [CMP]
+    原文: var o = .001 * (e.serverTime - e.beginTime);
+    [CMP标志] 行 51580 命中 "serverTime": var o = .001 * (e.serverTime - e.beginTime);
+[5] tools/index.js:51785 [CMP]
+    原文: f.MuzhuangModel.serverTime = this.autoMuzhuangData.serverTime;
+    [CMP标志] 行 51785 命中 "serverTime": f.MuzhuangModel.serverTime = this.autoMuzhuangData.serverTime;
+    [CMP标志] 行 51787 命中 "serverTime": var e = Math.floor(t.Hp - 5e-4 * (this.autoMuzhuangData.serverTime - this.autoMuzhuangData.beginTime));
+[6] tools/index.js:51787 [CMP]
+    原文: var e = Math.floor(t.Hp - 5e-4 * (this.autoMuzhuangData.serverTime - this.autoMuzhuangData.beginTime));
+    [CMP标志] 行 51785 命中 "serverTime": f.MuzhuangModel.serverTime = this.autoMuzhuangData.serverTime;
+    [CMP标志] 行 51787 命中 "serverTime": var e = Math.floor(t.Hp - 5e-4 * (this.autoMuzhuangData.serverTime - this.autoMuzhuangData.beginTime));
+[7] tools/index.js:56409 [CMP]
+    原文: S.MuzhuangModel.serverTime = o.serverTime;
+    [CMP标志] 行 56409 命中 "serverTime": S.MuzhuangModel.serverTime = o.serverTime;
+    [CMP标志] 行 56411 命中 "serverTime": var P = Math.floor(R.Hp - 5e-4 * (o.serverTime - o.beginTime));
+[8] tools/index.js:56411 [CMP]
+    原文: var P = Math.floor(R.Hp - 5e-4 * (o.serverTime - o.beginTime));
+    [CMP标志] 行 56409 命中 "serverTime": S.MuzhuangModel.serverTime = o.serverTime;
+    [CMP标志] 行 56411 命中 "serverTime": var P = Math.floor(R.Hp - 5e-4 * (o.serverTime - o.beginTime));
+[9] tools/index.js:56427 [CMP]
+    原文: this.totalTime = o.needTime + Math.floor(.001 * (o.serverTime - o.beginTime));
+    [CMP标志] 行 56427 命中 "serverTime": this.totalTime = o.needTime + Math.floor(.001 * (o.serverTime - o.beginTime));
+[10] tools/index.js:56444 [CMP]
+    原文: this.totalTime = e.needTime + Math.floor(.001 * (e.serverTime - e.beginTime));
+    [CMP标志] 行 56444 命中 "serverTime": this.totalTime = e.needTime + Math.floor(.001 * (e.serverTime - e.beginTime));
+[11] tools/index.js:56492 [CMP]
+    原文: this.totalTime = t.needTime + Math.floor(.001 * (t.serverTime - t.beginTime));
+    [CMP标志] 行 56492 命中 "serverTime": this.totalTime = t.needTime + Math.floor(.001 * (t.serverTime - t.beginTime));
+[12] tools/index.js:56518 [CMP]
+    原文: u.FishingModel.timeElapsed = .001 * (t.serverTime - t.beginTime);
+    [CMP标志] 行 56518 命中 "serverTime": u.FishingModel.timeElapsed = .001 * (t.serverTime - t.beginTime);
+[13] tools/index.js:56527 [CMP]
+    原文: S.MuzhuangModel.serverTime = t.serverTime;
+    [CMP标志] 行 56527 命中 "serverTime": S.MuzhuangModel.serverTime = t.serverTime;
+    [CMP标志] 行 56529 命中 "serverTime": var n = Math.floor(i.Hp - 5e-4 * (t.serverTime - t.beginTime));
+[14] tools/index.js:56529 [CMP]
+    原文: var n = Math.floor(i.Hp - 5e-4 * (t.serverTime - t.beginTime));
+    [CMP标志] 行 56527 命中 "serverTime": S.MuzhuangModel.serverTime = t.serverTime;
+    [CMP标志] 行 56529 命中 "serverTime": var n = Math.floor(i.Hp - 5e-4 * (t.serverTime - t.beginTime));
+[15] tools/index.js:56595 [CMP]
+    原文: this.totalTime = e.needTime + Math.floor(.001 * (e.serverTime - e.beginTime));
+    [CMP标志] 行 56595 命中 "serverTime": this.totalTime = e.needTime + Math.floor(.001 * (e.serverTime - e.beginTime));
+[16] tools/index.js:56603 [CMP]
+    原文: this.totalTime = e.needTime + Math.floor(.001 * (e.serverTime - e.beginTime));
+    [CMP标志] 行 56603 命中 "serverTime": this.totalTime = e.needTime + Math.floor(.001 * (e.serverTime - e.beginTime));
+[17] tools/index.js:56641 [CMP]
+    原文: S.MuzhuangModel.serverTime = e.serverTime;
+    [CMP标志] 行 56641 命中 "serverTime": S.MuzhuangModel.serverTime = e.serverTime;
+    [CMP标志] 行 56643 命中 "serverTime": var c = Math.floor(l.Hp - 5e-4 * (e.serverTime - e.beginTime));
+[18] tools/index.js:56643 [CMP]
+    原文: var c = Math.floor(l.Hp - 5e-4 * (e.serverTime - e.beginTime));
+    [CMP标志] 行 56641 命中 "serverTime": S.MuzhuangModel.serverTime = e.serverTime;
+    [CMP标志] 行 56643 命中 "serverTime": var c = Math.floor(l.Hp - 5e-4 * (e.serverTime - e.beginTime));
+[19] tools/index.js:56677 [CMP]
+    原文: this.totalTime = o.needTime + Math.floor(.001 * (o.serverTime - o.beginTime));
+    [CMP标志] 行 56677 命中 "serverTime": this.totalTime = o.needTime + Math.floor(.001 * (o.serverTime - o.beginTime));
+[20] tools/index.js:56700 [CMP]
+    原文: this.totalTime = o.needTime + Math.floor(.001 * (o.serverTime - o.beginTime));
+    [CMP标志] 行 56700 命中 "serverTime": this.totalTime = o.needTime + Math.floor(.001 * (o.serverTime - o.beginTime));
+[21] tools/index.js:56831 [CMP]
+    原文: this.totalTime = e.needTime + Math.floor(.001 * (e.serverTime - e.beginTime));
+    [CMP标志] 行 56831 命中 "serverTime": this.totalTime = e.needTime + Math.floor(.001 * (e.serverTime - e.beginTime));
+[22] tools/index.js:56844 [CMP]
+    原文: this.totalTime = t.needTime + Math.floor(.001 * (t.serverTime - t.beginTime));
+    [CMP标志] 行 56844 命中 "serverTime": this.totalTime = t.needTime + Math.floor(.001 * (t.serverTime - t.beginTime));
+[23] tools/index.js:70477 [CMP]
+    原文: k.TimeMgr.sserverT = e.serverTime;
+    [CMP标志] 行 70477 命中 "serverTime": k.TimeMgr.sserverT = e.serverTime;
+    [CMP标志] 行 70479 命中 "Date.now()": k.TimeMgr.startTime = Date.now();
+[24] tools/index.js:70506 [CMP]
+    原文: k.TimeMgr.sserverT = this.idleData.serverTime;
+    [CMP标志] 行 70506 命中 "serverTime": k.TimeMgr.sserverT = this.idleData.serverTime;
+    [CMP标志] 行 70508 命中 "Date.now()": k.TimeMgr.startTime = Date.now();
+[25] tools/index.js:70643 [CMP]
+    原文: p.FishingModel.timeElapsed = .001 * (this.idleData.serverTime - this.idleData.beginTime);
+    [CMP标志] 行 70643 命中 "serverTime": p.FishingModel.timeElapsed = .001 * (this.idleData.serverTime - this.idleData.beginTime);
+[26] tools/index.js:77925 [CMP]
+    原文: var d = o.CDTime - o.serverTime, g = Math.floor(d / 864e5), _ = Math.floor((d - 864e5 * g) / 36e5), S = Math.floor((d - 864e5 * g - 36e5 * _) / 6e4), M = s.getItem(o.skillId, "skill"), E = l.getText(6079).replace(/\[1\]/, l.getText(M.Name))... (超 240 字截断)
+    [CMP标志] 行 77925 命中 "serverTime": var d = o.CDTime - o.serverTime, g = Math.floor(d / 864e5), _ = Math.floor((d - 864e5 * g) / 36e5), S = Math.floor((d - 864e5 * g - 36e5 * _) / 6e4), M = s.getItem(o.skillId, "skill"), E = l.getText(6079).replace(/\[1\]/, l.getText(M.Name))... (超 240 字截断)
+[27] tools/index.js:78024 [CMP]
+    原文: var i = e.CDTime - e.serverTime, r = Math.floor(i / 864e5), c = Math.floor((i - 864e5 * r) / 36e5), p = Math.floor((i - 864e5 * r - 36e5 * c) / 6e4), h = s.getItem(e.skillId, "skill"), u = l.getText(6079).replace(/\[1\]/, l.getText(h.Name))... (超 240 字截断)
+    [CMP标志] 行 78024 命中 "serverTime": var i = e.CDTime - e.serverTime, r = Math.floor(i / 864e5), c = Math.floor((i - 864e5 * r) / 36e5), p = Math.floor((i - 864e5 * r - 36e5 * c) / 6e4), h = s.getItem(e.skillId, "skill"), u = l.getText(6079).replace(/\[1\]/, l.getText(h.Name))... (超 240 字截断)
+[28] tools/index.js:86155 [CMP]
+    原文: this.serverTime = 0;
+    [CMP标志] 行 86155 命中 "serverTime": this.serverTime = 0;
+[29] tools/index.js:86167 [CMP]
+    原文: this.serverTime = 0;
+    [CMP标志] 行 86167 命中 "serverTime": this.serverTime = 0;
+[30] tools/index.js:86193 [CMP]
+    原文: this.serverTime = e.serverTime;
+    [CMP标志] 行 86193 命中 "serverTime": this.serverTime = e.serverTime;
+    [CMP标志] 行 86195 命中 "serverTime": this.setRemainingFatigue(Math.floor(o.Hp - 5e-4 * (e.serverTime - e.beginTime)));
+[31] tools/index.js:86195 [CMP]
+    原文: this.setRemainingFatigue(Math.floor(o.Hp - 5e-4 * (e.serverTime - e.beginTime)));
+    [CMP标志] 行 86193 命中 "serverTime": this.serverTime = e.serverTime;
+    [CMP标志] 行 86195 命中 "serverTime": this.setRemainingFatigue(Math.floor(o.Hp - 5e-4 * (e.serverTime - e.beginTime)));
+[32] tools/index.js:86205 [CMP]
+    原文: var o = .001 * (e.serverTime - e.beginTime);
+    [CMP标志] 行 86205 命中 "serverTime": var o = .001 * (e.serverTime - e.beginTime);
+[33] tools/index.js:107141 [CMP]
+    原文: this.serverTime = 0;
+    [CMP标志] 行 107141 命中 "serverTime": this.serverTime = 0;
+[34] tools/index.js:107578 [CMP]
+    原文: this.serverTime = t.getTime();
+    [CMP标志] 行 107574 命中 "TimeMgr.getSTimestamp": var t = new Date(p.TimeMgr.getSTimestamp());
+    [CMP标志] 行 107574 命中 "getSTimestamp": var t = new Date(p.TimeMgr.getSTimestamp());
+    [CMP标志] 行 107574 命中 "new Date(": var t = new Date(p.TimeMgr.getSTimestamp());
+    [CMP标志] 行 107578 命中 "serverTime": this.serverTime = t.getTime();
+    [CMP标志] 行 107578 命中 "getTime()": this.serverTime = t.getTime();
+[35] tools/index.js:107591 [CMP]
+    原文: if (this.serverTime < p.TimeMgr.getSTimestamp()) {
+    [CMP标志] 行 107591 命中 "TimeMgr.getSTimestamp": if (this.serverTime < p.TimeMgr.getSTimestamp()) {
+    [CMP标志] 行 107591 命中 "getSTimestamp": if (this.serverTime < p.TimeMgr.getSTimestamp()) {
+    [CMP标志] 行 107591 命中 "serverTime": if (this.serverTime < p.TimeMgr.getSTimestamp()) {
+[36] tools/index.js:111718 [CMP]
+    原文: d.RoleOtherInfo.serverTime = 0;
+    [CMP标志] 行 111718 命中 "serverTime": d.RoleOtherInfo.serverTime = 0;
+[37] tools/index.js:119858 [CMP]
+    原文: (y = o.changeCD + 864e5 * s - o.serverTime) < 0 && (y = 0);
+    [CMP标志] 行 119858 命中 "serverTime": (y = o.changeCD + 864e5 * s - o.serverTime) < 0 && (y = 0);
+    [CMP标志] 行 119864 命中 "serverTime": o.changeCD + 864e5 * s - o.serverTime), v = (l = Math.floor(y / 864e5), h = Math.floor((y - 864e5 * l) / 36e5),
+[38] tools/index.js:119864 [CMP]
+    原文: o.changeCD + 864e5 * s - o.serverTime), v = (l = Math.floor(y / 864e5), h = Math.floor((y - 864e5 * l) / 36e5),
+    [CMP标志] 行 119858 命中 "serverTime": (y = o.changeCD + 864e5 * s - o.serverTime) < 0 && (y = 0);
+    [CMP标志] 行 119864 命中 "serverTime": o.changeCD + 864e5 * s - o.serverTime), v = (l = Math.floor(y / 864e5), h = Math.floor((y - 864e5 * l) / 36e5),
+[39] tools/index.js:121392 [CMP]
+    原文: t.bt, t.serverTime, t.snt, t.cbt, t.cnt;
+    [CMP标志] 行 121392 命中 "serverTime": t.bt, t.serverTime, t.snt, t.cbt, t.cnt;
+[40] tools/index.js:121412 [CMP]
+    原文: t.bt, t.serverTime, t.snt, t.cbt, t.cnt;
+    [CMP标志] 行 121412 命中 "serverTime": t.bt, t.serverTime, t.snt, t.cbt, t.cnt;
+[41] tools/index.js:130695 [CMP]
+    原文: this.serverTime = 0;
+    [CMP标志] 行 130695 命中 "serverTime": this.serverTime = 0;
+[42] tools/index.js:130718 [CMP]
+    原文: this.serverTime = 0;
+    [CMP标志] 行 130718 命中 "serverTime": this.serverTime = 0;
+[43] tools/index.js:130770 [CMP]
+    原文: t.serverTime = o.serverTime;
+    [CMP标志] 行 130770 命中 "serverTime": t.serverTime = o.serverTime;
+[44] tools/index.js:131320 [CMP]
+    原文: this.serverTime = 0;
+    [CMP标志] 行 131320 命中 "serverTime": this.serverTime = 0;
+[45] tools/index.js:133254 [CMP]
+    原文: var u = i.getItem(o.skillId, "skill"), f = o.CDTime - o.serverTime, d = Math.floor(f / 864e5), g = Math.floor((f - 864e5 * d) / 36e5), m = Math.floor((f - 864e5 * d - 36e5 * g) / 6e4), y = n.getText(6079).replace(/\[1\]/, n.getText(u.Name))... (超 240 字截断)
+    [CMP标志] 行 133254 命中 "serverTime": var u = i.getItem(o.skillId, "skill"), f = o.CDTime - o.serverTime, d = Math.floor(f / 864e5), g = Math.floor((f - 864e5 * d) / 36e5), m = Math.floor((f - 864e5 * d - 36e5 * g) / 6e4), y = n.getText(6079).replace(/\[1\]/, n.getText(u.Name))... (超 240 字截断)
+[46] tools/index.js:133374 [CMP]
+    原文: var g = i.getItem(o.skillId, "skill"), m = o.CDTime - o.serverTime, y = Math.floor(m / 864e5), v = Math.floor((m - 864e5 * y) / 36e5), _ = Math.floor((m - 864e5 * y - 36e5 * v) / 6e4), S = n.getText(6079).replace(/\[1\]/, n.getText(g.Name))... (超 240 字截断)
+    [CMP标志] 行 133374 命中 "serverTime": var g = i.getItem(o.skillId, "skill"), m = o.CDTime - o.serverTime, y = Math.floor(m / 864e5), v = Math.floor((m - 864e5 * y) / 36e5), _ = Math.floor((m - 864e5 * y - 36e5 * v) / 6e4), S = n.getText(6079).replace(/\[1\]/, n.getText(g.Name))... (超 240 字截断)
+[47] tools/index.js:138898 [CMP]
+    原文: t.recoverStartTS = o.serverTime;
+    [CMP标志] 行 138898 命中 "serverTime": t.recoverStartTS = o.serverTime;
+[48] tools/scripts2.js:4467 [CMP]
+    原文: var c = h.SkillUpgradeModel.breakData, l = c.cnt + (c.serverTime - c.cbt) / 1e3, p = (l - t) / l, d = this.progressBar.width;
+    [CMP标志] 行 4467 命中 "serverTime": var c = h.SkillUpgradeModel.breakData, l = c.cnt + (c.serverTime - c.cbt) / 1e3, p = (l - t) / l, d = this.progressBar.width;
+[49] tools/scripts2.js:39060 [CMP]
+    原文: var o = c.getConstByID(239), i = e.changeFreeCD + 864e5 * o - e.serverTime;
+    [CMP标志] 行 39060 命中 "serverTime": var o = c.getConstByID(239), i = e.changeFreeCD + 864e5 * o - e.serverTime;
+[50] tools/scripts2.js:39113 [CMP]
+    原文: var o = c.getConstByID(239), i = Math.ceil((e.changeFreeCD + 864e5 * o - e.serverTime) / 864e5);
+    [CMP标志] 行 39113 命中 "serverTime": var o = c.getConstByID(239), i = Math.ceil((e.changeFreeCD + 864e5 * o - e.serverTime) / 864e5);
+[51] tools/scripts2.js:44445 [CMP]
+    原文: var t = l.MuzhuangModel.maxTime, e = .001 * (l.MuzhuangModel.serverTime - l.MuzhuangModel.beginTime) + this.totalTime;
+    [CMP标志] 行 44445 命中 "serverTime": var t = l.MuzhuangModel.maxTime, e = .001 * (l.MuzhuangModel.serverTime - l.MuzhuangModel.beginTime) + this.totalTime;
+    [CMP标志] 行 44451 命中 "serverTime": var t = p.SkillTable.getMyRoleArtLv(), e = r.getItem(t, "level").Potential, o = .001 * (l.MuzhuangModel.serverTime - l.MuzhuangModel.beginTime) + this.totalTime, i = l.MuzhuangModel.maxTime;
+[52] tools/scripts2.js:44451 [CMP]
+    原文: var t = p.SkillTable.getMyRoleArtLv(), e = r.getItem(t, "level").Potential, o = .001 * (l.MuzhuangModel.serverTime - l.MuzhuangModel.beginTime) + this.totalTime, i = l.MuzhuangModel.maxTime;
+    [CMP标志] 行 44445 命中 "serverTime": var t = l.MuzhuangModel.maxTime, e = .001 * (l.MuzhuangModel.serverTime - l.MuzhuangModel.beginTime) + this.totalTime;
+    [CMP标志] 行 44451 命中 "serverTime": var t = p.SkillTable.getMyRoleArtLv(), e = r.getItem(t, "level").Potential, o = .001 * (l.MuzhuangModel.serverTime - l.MuzhuangModel.beginTime) + this.totalTime, i = l.MuzhuangModel.maxTime;
+[53] tools/scripts2.js:44545 [CMP]
+    原文: .001 * (l.MuzhuangModel.serverTime - l.MuzhuangModel.beginTime) + this.totalTime - p > 2 ? this.requestEnd() : this.scheduleOnce(function() {
+    [CMP标志] 行 44545 命中 "serverTime": .001 * (l.MuzhuangModel.serverTime - l.MuzhuangModel.beginTime) + this.totalTime - p > 2 ? this.requestEnd() : this.scheduleOnce(function() {
+[54] tools/scripts2.js:50064 [CMP]
+    原文: var i = m.TimeMgr.getSTimestamp(), s = o.snt - (i - o.serverTime) / 1e3;
+    [CMP标志] 行 50064 命中 "TimeMgr.getSTimestamp": var i = m.TimeMgr.getSTimestamp(), s = o.snt - (i - o.serverTime) / 1e3;
+    [CMP标志] 行 50064 命中 "getSTimestamp": var i = m.TimeMgr.getSTimestamp(), s = o.snt - (i - o.serverTime) / 1e3;
+    [CMP标志] 行 50064 命中 "serverTime": var i = m.TimeMgr.getSTimestamp(), s = o.snt - (i - o.serverTime) / 1e3;
+[55] tools/scripts3.js:58502 [CMP]
+    原文: R.TimeMgr.sserverT = e.serverTime;
+    [CMP标志] 行 58502 命中 "serverTime": R.TimeMgr.sserverT = e.serverTime;
+    [CMP标志] 行 58503 命中 "Date.now()": R.TimeMgr.startTime = Date.now();
+
+--------------------------------------------------------------------------------
+
+## 6. create 应答的 serverOpenTime
+- 目标字段: serverOpenTime
+- 备注说明: grep "serverOpenTime" 全量取证（含 create 应答映射与时间门控判断）
+- 命中总行数: 4
+- [CMP] 命中数: 2
+- [CMP] 行号列表: tools/index.js:27401, tools/index.js:85179
+
+### 读点清单
+[1] tools/index.js:27401 [CMP]
+    原文: .001 * d.TimeMgr.getSTimestamp() <= g.RoleOtherInfo.serverOpenTime ? I.ColorVerModel.changeColorBeforeEnter(function() {
+    [CMP标志] 行 27401 命中 "TimeMgr.getSTimestamp": .001 * d.TimeMgr.getSTimestamp() <= g.RoleOtherInfo.serverOpenTime ? I.ColorVerModel.changeColorBeforeEnter(function() {
+    [CMP标志] 行 27401 命中 "getSTimestamp": .001 * d.TimeMgr.getSTimestamp() <= g.RoleOtherInfo.serverOpenTime ? I.ColorVerModel.changeColorBeforeEnter(function() {
+[2] tools/index.js:85179 [CMP]
+    原文: .001 * h.TimeMgr.getSTimestamp() <= P.RoleOtherInfo.serverOpenTime ? B.ColorVerModel.setPullInCopyState(0) : B.ColorVerModel.setPullInCopyState(1);
+    [CMP标志] 行 85179 命中 "TimeMgr.getSTimestamp": .001 * h.TimeMgr.getSTimestamp() <= P.RoleOtherInfo.serverOpenTime ? B.ColorVerModel.setPullInCopyState(0) : B.ColorVerModel.setPullInCopyState(1);
+    [CMP标志] 行 85179 命中 "getSTimestamp": .001 * h.TimeMgr.getSTimestamp() <= P.RoleOtherInfo.serverOpenTime ? B.ColorVerModel.setPullInCopyState(0) : B.ColorVerModel.setPullInCopyState(1);
+[3] tools/index.js:107167 [NO_CMP]
+    原文: this.serverOpenTime = 0;
+[4] tools/index.js:107246 [NO_CMP]
+    原文: e.hasOwnProperty("currentServerEndTime") && (this.serverOpenTime = e.currentServerEndTime);
+
+--------------------------------------------------------------------------------
+
+## 7. create 应答的 currentServerEndTime
+- 目标字段: currentServerEndTime
+- 备注说明: grep "currentServerEndTime" 全量取证（create 应答映射写入点）
+- 命中总行数: 1
+- [CMP] 命中数: 0
+- [CMP] 行号列表: 未能确认（0 处）
+
+### 读点清单
+[1] tools/index.js:107246 [NO_CMP]
+    原文: e.hasOwnProperty("currentServerEndTime") && (this.serverOpenTime = e.currentServerEndTime);
+
+--------------------------------------------------------------------------------
+
+## 8. activityResource
+- 目标字段: activityResource
+- 备注说明: grep "activityResource" 全量取证（create 应答映射写入点）
+- 命中总行数: 1
+- [CMP] 命中数: 0
+- [CMP] 行号列表: 未能确认（0 处）
+
+### 读点清单
+[1] tools/index.js:107263 [NO_CMP]
+    原文: this.activeResData = e.hasOwnProperty("activityResource") ? e.activityResource : {};
+
+--------------------------------------------------------------------------------
+
+## 9. housekeeper 的 curTime
+- 目标字段: curTime
+- 备注说明: grep "curTime" 全量取证（含 DelegateModel housekeeper 读点）
+- 命中总行数: 15
+- [CMP] 命中数: 4
+- [CMP] 行号列表: tools/scripts3.js:23301, tools/scripts3.js:23303, tools/scripts3.js:23304, tools/scripts3.js:24027
+
+### 读点清单
+[1] tools/index.js:88050 [NO_CMP]
+    原文: this.curTime = 0;
+[2] tools/scripts2.js:75600 [NO_CMP]
+    原文: t.curTimeNum = 0;
+[3] tools/scripts2.js:75689 [NO_CMP]
+    原文: this.curTimeNum = t;
+[4] tools/scripts2.js:75708 [NO_CMP]
+    原文: t.timeNum = this.limitTime, t.curNum = this.curTimeNum, t.num = this.boxData.data[0][1],
+[5] tools/scripts3.js:23088 [NO_CMP]
+    原文: this.curTime = 0;
+[6] tools/scripts3.js:23301 [CMP]
+    原文: t.curTime && (this.curTime = t.curTime);
+    [CMP标志] 行 23299 命中 "TimeMgr.getSTimestamp": var e = s.TimeMgr.getSTimestamp();
+    [CMP标志] 行 23299 命中 "getSTimestamp": var e = s.TimeMgr.getSTimestamp();
+[7] tools/scripts3.js:23303 [CMP]
+    原文: this.curTime += 36e5 * t.autoTime;
+    [CMP标志] 行 23299 命中 "TimeMgr.getSTimestamp": var e = s.TimeMgr.getSTimestamp();
+    [CMP标志] 行 23299 命中 "getSTimestamp": var e = s.TimeMgr.getSTimestamp();
+[8] tools/scripts3.js:23304 [CMP]
+    原文: this.dispatchAutoTime = this.curTime > c ? this.curTime : this.curTime + 864e5;
+    [CMP标志] 行 23299 命中 "TimeMgr.getSTimestamp": var e = s.TimeMgr.getSTimestamp();
+    [CMP标志] 行 23299 命中 "getSTimestamp": var e = s.TimeMgr.getSTimestamp();
+[9] tools/scripts3.js:23307 [NO_CMP]
+    原文: if (e >= this.curTime) {
+[10] tools/scripts3.js:23345 [NO_CMP]
+    原文: t.curTime && (this.curTime = t.curTime);
+[11] tools/scripts3.js:23348 [NO_CMP]
+    原文: this.curTime && (this.nextDayTime = this.curTime + 864e5);
+[12] tools/scripts3.js:23758 [NO_CMP]
+    原文: this.curTime = 0;
+[13] tools/scripts3.js:24027 [CMP]
+    原文: var o = y.DelegateModel.curTime, i = y.DelegateModel.dispatchTime;
+    [CMP标志] 行 24025 命中 "TimeMgr.getSTimestamp": var e = g.TimeMgr.getSTimestamp();
+    [CMP标志] 行 24025 命中 "getSTimestamp": var e = g.TimeMgr.getSTimestamp();
+[14] tools/scripts3.js:47658 [NO_CMP]
+    原文: this.curTime = 0;
+[15] tools/scripts3.js:99142 [NO_CMP]
+    原文: var p = u.DelegateModel.curTime;
+
+--------------------------------------------------------------------------------
+
+## 10. housekeeper 的 taskRtm
+- 目标字段: taskRtm
+- 备注说明: grep "taskRtm" 全量取证（housekeeper 数据结构读点）
+- 命中总行数: 1
+- [CMP] 命中数: 0
+- [CMP] 行号列表: 未能确认（0 处）
+
+### 读点清单
+[1] tools/scripts3.js:23591 [NO_CMP]
+    原文: taskRtm: 17604576e5,
+
+--------------------------------------------------------------------------------
+
+## 汇总表（字段 → 读点数 → [CMP] 数 → [CMP] 行号）
+
+| 字段 | 读点数 | [CMP] 数 | [CMP] 行号 |
+| :--- | :---: | :---: | :--- |
+| active 表的 endtime | 59 | 17 | tools/index.js:22523, tools/index.js:55368, tools/index.js:99829, tools/index.js:99867, tools/index.js:99868, tools/index.js:99869, tools/index.js:99873, tools/index.js:99874, tools/index.js:99879, tools/index.js:134336, tools/scripts2.js:38887, tools/scripts2.js:51510, tools/scripts2.js:51511, tools/scripts2.js:79427, tools/scripts3.js:41688, tools/scripts3.js:41690, tools/scripts3.js:44214 |
+| active 表的 begintime | 5 | 3 | tools/index.js:22523, tools/index.js:134336, tools/scripts2.js:79427 |
+| exchange 表的 endtime | 59 | 17 | tools/index.js:22523, tools/index.js:55368, tools/index.js:99829, tools/index.js:99867, tools/index.js:99868, tools/index.js:99869, tools/index.js:99873, tools/index.js:99874, tools/index.js:99879, tools/index.js:134336, tools/scripts2.js:38887, tools/scripts2.js:51510, tools/scripts2.js:51511, tools/scripts2.js:79427, tools/scripts3.js:41688, tools/scripts3.js:41690, tools/scripts3.js:44214 |
+| mall 表的 shopend | 0 | 0 | 无 |
+| create 应答的 serverTime | 55 | 55 | tools/index.js:24661, tools/index.js:51516, tools/index.js:51560, tools/index.js:51580, tools/index.js:51785, tools/index.js:51787, tools/index.js:56409, tools/index.js:56411, tools/index.js:56427, tools/index.js:56444, tools/index.js:56492, tools/index.js:56518, tools/index.js:56527, tools/index.js:56529, tools/index.js:56595, tools/index.js:56603, tools/index.js:56641, tools/index.js:56643, tools/index.js:56677, tools/index.js:56700, tools/index.js:56831, tools/index.js:56844, tools/index.js:70477, tools/index.js:70506, tools/index.js:70643, tools/index.js:77925, tools/index.js:78024, tools/index.js:86155, tools/index.js:86167, tools/index.js:86193, tools/index.js:86195, tools/index.js:86205, tools/index.js:107141, tools/index.js:107578, tools/index.js:107591, tools/index.js:111718, tools/index.js:119858, tools/index.js:119864, tools/index.js:121392, tools/index.js:121412, tools/index.js:130695, tools/index.js:130718, tools/index.js:130770, tools/index.js:131320, tools/index.js:133254, tools/index.js:133374, tools/index.js:138898, tools/scripts2.js:4467, tools/scripts2.js:39060, tools/scripts2.js:39113, tools/scripts2.js:44445, tools/scripts2.js:44451, tools/scripts2.js:44545, tools/scripts2.js:50064, tools/scripts3.js:58502 |
+| create 应答的 serverOpenTime | 4 | 2 | tools/index.js:27401, tools/index.js:85179 |
+| create 应答的 currentServerEndTime | 1 | 0 | 无 |
+| activityResource | 1 | 0 | 无 |
+| housekeeper 的 curTime | 15 | 4 | tools/scripts3.js:23301, tools/scripts3.js:23303, tools/scripts3.js:23304, tools/scripts3.js:24027 |
+| housekeeper 的 taskRtm | 1 | 0 | 无 |
+
+未验证

@@ -1,0 +1,86 @@
+{
+  "BUY_SHOP_ITEM": {
+    "sites": [
+      "forge/fixtures/client-src/demo-client.js:3"
+    ],
+    "params": {
+      "itemID": {
+        "samples": [
+          "this.itemId"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "n"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "shopType": {
+        "samples": [
+          "1"
+        ],
+        "sites": 1,
+        "type": "number",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buyShopItem"
+  },
+  "SELL_ITEM": {
+    "sites": [
+      "forge/fixtures/client-src/demo-client.js:4"
+    ],
+    "params": {
+      "itemID": {
+        "samples": [
+          "this.id"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "1"
+        ],
+        "sites": 1,
+        "type": "number",
+        "optional": false
+      },
+      "tip": {
+        "samples": [
+          "\"卖出}\""
+        ],
+        "sites": 1,
+        "type": "string",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.saleItem"
+  },
+  "UPGRADE_SKILL": {
+    "sites": [
+      "forge/fixtures/client-src/demo-client.js:5"
+    ],
+    "params": {
+      "skillID": {
+        "samples": [
+          "o.id"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": null
+  }
+}

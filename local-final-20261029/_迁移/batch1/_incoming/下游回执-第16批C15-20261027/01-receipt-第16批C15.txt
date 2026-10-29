@@ -1,0 +1,79 @@
+第 16 批 C15〔七日回归〕下游回执（档 A，2026-10-27）
+
+=====================================================================
+一、本批范围与档位（用户拍板 2026-10-27：档 A）
+=====================================================================
+按 relations.md:102-107（第16批 · C15，7 主键 + GET_RETURN_GIFT 同面板必做 + 4 顺手）处理：
+
+  做 6 个（回归系闭环）：
+    1. GET_RETURN_SEVEN_DAY_DATA   面板门 + 七日状态（sevenDaysArr / triggerTime；常开，14 天期）
+    2. RETURN_SEVEN_DAYS_AWARDS    领当日七日奖励（每天一次，7 份封顶 → 计时循环有每日上限）
+    3. GET_RETURN_TASK_DATA        任务面板（11 任务诚实 0 状态 + liveness 0）
+    4. RECEIVE_RETURN_DAILY_TASK   拒绝（档 A 任务恒未完成，不伪造进度）
+    5. RECEIVE_LIVENESS_AWARD      拒绝（liveness 恒 0）
+    6. GET_RETURN_GIFT             礼包 3 档纯展示（isBuy=0 按钮禁用）
+       REFRESH_RETURN_GIFT_AWARD   刷新回空数组
+     附：RECEIVE_RETURN_GIFT_AWARD 拒绝（付费礼包无支付通道，防白拿）
+  不做 4 个（挂 ISSUE-15）：
+    SEVEN_DAYS_AWARDS（sevendays 另一套七日签到）、GET_SPRING_SEVEN_DAY_DATA /
+    SPRING_SEVEN_DAYS_AWARDS / RECEIVE_SPRING_ACC_REWARD（新春窗口 2026-08 已过期）
+
+=====================================================================
+二、取证要点（可复核）
+=====================================================================
+- 12 个常量全部在 HttpConst 模块内有 RPC 定义（User. 前缀）：60240-60247 / 60035 / 60415-60417。
+  45812-45815 的 EvName 同名条目是本地事件名（如 ReturnPaySuccess），非 RPC —— 双用同名，别混淆。
+- 面板门：活动面板点 1018 → reqGetReturnSevenDayData → eRet==1 才切页开 ReturnUI（scripts2:28808/
+  28970-28977/29214）。GET_RETURN_GIFT 只刷新礼包页，不新开面板。
+- UI 字段契约：sevenDaysArr 状态数组（1 可领/2 已领，长度=已过天数封顶 7）；oldReturnData={tasks:11×
+  [id,?,state], liveness, livenessDatas}；giftDatas=[{ID,nameID,getGold,money,isBuy,isAward}]；giftAwards=[[id,"1"]]。
+- 表：Return_SevenDay 7 档 / Return_Daily 11 行 / Return_Award 5 档（20-100）/ Return_store 付费 3 档
+  （¥25/68/98）；constant360=14 天期。
+
+=====================================================================
+三、实现与门禁
+=====================================================================
+实现：gen_c15_tables.js → bz-c15.generated.js（14 天/7 档/11 任务/5 活跃度/3 礼包，cfg 驱动）；
+      8 handler + rt 助手 5 个；REJECT_CODES/ALLOW 各 8；todo_shapes +8；
+      build-handlers.js 与 check_shape_freeze.js sweep 两处都接。
+门禁：形状 364 动作 diff 0（65 项 diff / 8 条 planned 规则覆盖）
+      reject-codes OK 动作 128 / 条目 145 / 拒绝点 220（flow 1）
+      acceptance 55/55（c15-smoke 10 条收编）
+      c14 / c13 / c12 / c11 / c10 / r14 回归全绿
+      构建 ver=h45035127，selfCheck 1400，handlers.js 1,622,032 B
+
+=====================================================================
+四、真机全链（ver=h45035127，selfCheck 1400，pid 2563 热重载不变）
+=====================================================================
+探针 probe\c15-return-chain.js（进程内 harness，等同客户端真实 dispatch）：
+  getReturnSevenDayData   → eRet1 / sevenDaysArr=[1] / triggerTime=now
+  returnSevenDaysAwards   → eRet1 / sevenDaysArr=[2] / rewardArray={1:50, 8905:20}
+  getReturnTaskData       → eRet1 / 11 任务 / liveness=0
+  getReturnGift           → eRet1 / 3 档（ID/nameID/money=25,68,98/isBuy=0/isAward=0）
+  refreshReturnGiftAward  → eRet1 / giftAwards=[]
+  同日重复领              → eRet2（防刷）
+  存档核实：retAct={trigger,claimed:{1:1}}、gold +50、bag 8905=20。
+
+存档变动申报：领取回归第 1 天奖励（金条 50 + 8905×20）；无其它变动。
+
+=====================================================================
+五、自定口径（请追认或驳回）
+=====================================================================
+1. 回归活动常开（triggerTime=首次拉取时刻；14 天期；七日奖励每天一次、7 份封顶）。
+2. 任务/活跃度诚实空态：离线无任务埋点 → tasks 全 0 状态、liveness 0、5 档活跃度不可领（不伪造）。
+3. 礼包纯展示 + 领取恒拒：Return_store 为付费档（¥25/68/98），离线无支付通道 → 防白拿。
+4. 七日领取服务端权威（按 trigger 推算天数 + claimed 记账；重复/跨天都有校验）。
+
+=====================================================================
+六、待上游裁 / 挂账（ISSUE-15）
+=====================================================================
+- 4 个不做键（sevendays / 新春 3 键）等对应活动批次。
+- 任务真实完成条件（Return_Daily.type/limit 语义）待取证。
+- 面板可达性：ReturnUI 由活动面板 1018 打开，活动列表是否含 1018 待真机确认（回包链路已通）。
+
+=====================================================================
+七、解包自验（3 步）
+=====================================================================
+1. md5 core\bz-rpc-server.js 应 == manifest 中"部署版"行
+2. node test/c15-smoke.js        → 期望 "c15-smoke: 全部通过（10 条）"
+3. node test/c14-smoke.js / c13-smoke.js → 回归绿

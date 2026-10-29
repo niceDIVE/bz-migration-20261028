@@ -1,0 +1,61 @@
+回执 第6批 C04〔婚姻子女〕+ v2.7.1-accept 小改（2026-10-26）
+
+══ 部署指纹 ══
+  构建：ver=hb6cbc053（链 h5ae2ccb6→hb6cbc053）｜flow=ffaec47c3｜pid 不变（热重载）
+  selfCheck **1284** 全过（新增 20 条 handler 检查），implErr=null
+  patch\live\handlers.js      1,418,867 B  md5 82E0C521A3463971715885714560650B
+  core\bz-rpc-server.js       md5 D79CDE4EAC1BA0472DA1905DD3D103BF
+  core\bz-shops.generated.js  md5 257F30E050F98C148DB7ED07FBF9FA81（+BZ_PROPOSE 36 / BZ_MAKE 5）
+
+══ 一、v2.7.1-accept 小改结论（advDone）══
+  a 不会：单次冒险客户端只发一个分支——五条流（1/2/3/4/5）各自以一次 reqAdvReward 收尾，
+  应答到达即 end() 清 advCurId（index.js:143861）；分支 3 走镖牌结束流（29264→29269→88635），
+  与战斗流互斥。仍按指示做了两组记账防御隔离：胜负组 {1,2,4} / 领取组 {3,5} 各每天一次，互不干扰。
+  b 会：gsp_event 109 行固定表随机触发，同一事件必然再遇 → s.advDone 已改 {d:todayKey, w, c} 按天清空。
+  附带揪出一个真 bug：客户端 adventureID 恒为 0（WMapAdvModel.advCurId 三处赋值 143805/143812/143861
+  全是 0，从不赋真值），真正的键是 eventID = gsp_event 行 id（88453-88455）。已按 eventID 反查实现——
+  否则原接线在线上永远匹配不到任何行（少发方向，无白拿风险，但功能死）。真机已验。
+
+══ 二、C04 批次口径（21 动作：16 主 + 5 面板）══
+  表：propose.json（36 NPC）/ make.json（5 档）/ bridalline.json（9 路线）——**三表均无奖励列**
+  （scoutB 逐列核对）→ 本批发钱口 = 0。
+  状态机·实现（s.marryObj，TPL 抓包快照 24 键做骨架，LoadGame 回放）：
+    proposeNpc：合法 NPC → 入册（幂等）；已婚 → 11(1137)；不在表 → 12(1166)。
+    marryNpc：未提亲 → 4(1135)；已婚 → 3(1137)；成功写 marryNpc/marryTime。
+    divorceNpc：未婚 → 2(1139)；已婚清婚姻字段回初值（childObj 保留），回旧配偶 id。
+    beginWedding：未婚 → 2。makeLove：未婚/choose 非法 → 2；成功 eRet 1 + makeID（显示型）。
+  面板·实现：GetWhoreData → {eRet:1, girlData:{}}（同面板必做，面板能开零数据）；
+    getLikeEvent → eRet 4（客户端自有"无事件"流 dialog 1810121，不伪造 like_event）。
+  子系统·锁死 13：birthChild 2 / chooseSex 3 / adoptChild 2（原版付费，else 即 openChargeList）/
+    giveChildName 2 / childWashProperty 2 / resetChildFoster 4(专属文案) / addChildFoster 2(静默) /
+    upgradeWifeLevel 2 / UserWifeProp 2(不扣道具) / ChooseGirl 2 / Whoring 2 / optionLikeEvent 2。
+    依据：childObj / wifeUpdateData / 属性模型形状无证据（造形状=假数据=子 UI 崩点）；
+    领养/洗练/青楼原版是付费/消耗功能，价格无源 → 全部取各回调"条件不满足"或静默分支（少发方向）。
+  白拿闸：marryAward（宾客礼金）ack 但 rewardArray 空——礼金无服务端表，宾客照常入册，
+    一个子儿不发；真机实证 coinsDelta=0。
+
+══ 三、门禁 ══
+  acceptance **45/45 绿**（+c04-smoke 9 条），known-red 0，cap 0
+  check_shape_freeze：39 项形状差异走审批三件套（planned-changes 7 规则精确覆盖 + narrowing 21 条
+  escape:closed + widening 1 条 + attrList 证据补点），--freeze 入基线后 C1-C13 全过（动作 337）
+  check_reject_codes OK：动作 65 / 条目 73 / 拒绝点 98（+18 动作，ev 全 index.js 行号+sha8）
+  冒烟：c04-smoke 9/9、v271-smoke 15/15、achieve-data 6/6、c16 10/10、circle-task 15/15、
+        c03 11/11、c02 19/19、c05 16/16
+  热重载：pid 不变、selfCheck 1284 全过
+  独立验收：工人 13 条全量复跑全 0 退出码（acceptance-worker-report.md），主审抽样逐字一致。
+
+══ 四、真机验证（codec 全链路）══
+  propose(1007)→1；marry(1007)→1；重复结婚→3；LoadGame 回放 marryNpc=1007；
+  makeLove(choose=2)→1+makeID=2；marryAward→空奖励 coinsDelta=0；
+  锁死抽样 birthChild 2 / adoptChild 2 / Whoring 2；GetWhoreData girlData{}；getLikeEvent 4；
+  propose(9999)→11（已婚判定先于表校验，顺序正确）；divorce→1+旧配偶 id，真档已还原未婚态。
+
+══ 五、需要上游看的两处 ══
+  1. adoptChild（领养）：原版付费 → 按裁定应改扣元宝，但 **childObj 形状无证据**
+     （造形状 = 假数据 = 子 UI 崩点）。先锁 eRet 2（走客户端自带充值框）。要解锁请给一份
+     真实领养抓包（或允许深挖 MarryModel.childData 的全部读点）。
+  2. make.json 的数值效果列（hunger/full/feeling/experience/happiness）语义未证实，
+     makeLove 当前不做任何数值效果（makeID 仅显示）；要接效果请给口径。
+
+══ 六、升级报告条件 ══
+  存档写坏 / 能白拿钱道具：均未发生（marryAward 空奖励 + 锁死动作存档逐字节不动已入冒烟）。

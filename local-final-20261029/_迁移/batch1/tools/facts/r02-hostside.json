@@ -1,0 +1,268 @@
+{
+ "generatedAt": "2026-10-21T20:45:04.179Z",
+ "source": "tools/cfg/tbl_tasknew.json / tbl_item.json / tbl_drop.json + hotfix-patch/core/bz-tasks.generated.js",
+ "basis": "docs/sota/inbox/R02-reply.txt（H1=硬伤候选一、H2=Q4c、H3=反例2、H4=Q6b）",
+ "h1_bz_tasks_need_by_type": {
+  "total": 682,
+  "withNeed": 544,
+  "needButNotType2_12_13": 12,
+  "byType": {
+   "1": 12
+  },
+  "samples": [
+   {
+    "taskId": 110080,
+    "Type": "1",
+    "n": {
+     "4449": 1
+    },
+    "SpRequire": "4449,1",
+    "Fight": 0
+   },
+   {
+    "taskId": 110530,
+    "Type": "1",
+    "n": {
+     "6931": 1
+    },
+    "SpRequire": "6931,1",
+    "Fight": 0
+   },
+   {
+    "taskId": 111710,
+    "Type": "1",
+    "n": {
+     "4001": 1000
+    },
+    "SpRequire": "4001,1000",
+    "Fight": 0
+   },
+   {
+    "taskId": 112820,
+    "Type": "1",
+    "n": {
+     "4001": 5000
+    },
+    "SpRequire": "4001,5000",
+    "Fight": 0
+   },
+   {
+    "taskId": 208510,
+    "Type": "1",
+    "n": {
+     "4001": 25000,
+     "4443": 1
+    },
+    "SpRequire": "4001,25000|4443,1|0",
+    "Fight": 0
+   },
+   {
+    "taskId": 403270,
+    "Type": "1",
+    "n": {
+     "4001": 60000
+    },
+    "SpRequire": "4001,60000",
+    "Fight": 0
+   },
+   {
+    "taskId": 724400,
+    "Type": "1",
+    "n": {
+     "10728": 1
+    },
+    "SpRequire": "10728,1",
+    "Fight": 0
+   },
+   {
+    "taskId": 820220,
+    "Type": "1",
+    "n": {
+     "4001": 1800
+    },
+    "SpRequire": "4001,1800",
+    "Fight": 0
+   },
+   {
+    "taskId": 901390,
+    "Type": "1",
+    "n": {
+     "4001": 10000
+    },
+    "SpRequire": "4001,10000",
+    "Fight": 0
+   },
+   {
+    "taskId": 1100010,
+    "Type": "1",
+    "n": {
+     "7102": 1
+    },
+    "SpRequire": "7102,1",
+    "Fight": 0
+   },
+   {
+    "taskId": 1100020,
+    "Type": "1",
+    "n": {
+     "7103": 1
+    },
+    "SpRequire": "7103,1",
+    "Fight": 0
+   },
+   {
+    "taskId": 1100030,
+    "Type": "1",
+    "n": {
+     "7104": 1
+    },
+    "SpRequire": "7104,1",
+    "Fight": 0
+   }
+  ]
+ },
+ "h3_true_item_needs": {
+  "pairs": 700,
+  "equipPairs": 19,
+  "equipIds": [
+   1301,
+   1204,
+   1408,
+   2001,
+   1509,
+   2114,
+   1105,
+   1001,
+   2002,
+   1006
+  ],
+  "notInItemTable": 0
+ },
+ "h2_item_columns_vs_dropids": {
+  "top": [
+   {
+    "col": "WeaponType",
+    "n": 6525,
+    "hit": 6525,
+    "pct": 100
+   },
+   {
+    "col": "Limit",
+    "n": 6525,
+    "hit": 6525,
+    "pct": 100
+   },
+   {
+    "col": "remain",
+    "n": 6525,
+    "hit": 6525,
+    "pct": 100
+   },
+   {
+    "col": "canwash",
+    "n": 6525,
+    "hit": 6525,
+    "pct": 100
+   },
+   {
+    "col": "wq_place",
+    "n": 6525,
+    "hit": 6525,
+    "pct": 100
+   },
+   {
+    "col": "fuse",
+    "n": 6525,
+    "hit": 6525,
+    "pct": 100
+   },
+   {
+    "col": "quality",
+    "n": 6525,
+    "hit": 6525,
+    "pct": 100
+   },
+   {
+    "col": "save",
+    "n": 6525,
+    "hit": 6525,
+    "pct": 100
+   },
+   {
+    "col": "suicide",
+    "n": 6525,
+    "hit": 6525,
+    "pct": 100
+   },
+   {
+    "col": "Data4",
+    "n": 6525,
+    "hit": 6501,
+    "pct": 99.6
+   },
+   {
+    "col": "Property5",
+    "n": 6525,
+    "hit": 6490,
+    "pct": 99.5
+   },
+   {
+    "col": "Data5",
+    "n": 6525,
+    "hit": 6490,
+    "pct": 99.5
+   }
+  ],
+  "ctrlExpectedPct": 0.01,
+  "dropIdCount": 587,
+  "dropMax": 9310010
+ },
+ "h4_dead_task_event_columns": {
+  "dead": 2629,
+  "reach": 2211,
+  "byCol": [
+   {
+    "col": "Chain",
+    "deadPct": 0,
+    "ctrlPct": 0,
+    "deadHits": 0
+   },
+   {
+    "col": "ReceiveEvent",
+    "deadPct": 0,
+    "ctrlPct": 0,
+    "deadHits": 0
+   },
+   {
+    "col": "CompletionEvent",
+    "deadPct": 0,
+    "ctrlPct": 0,
+    "deadHits": 0
+   },
+   {
+    "col": "receive_action",
+    "deadPct": 0,
+    "ctrlPct": 0,
+    "deadHits": 0
+   },
+   {
+    "col": "finish_action",
+    "deadPct": 0,
+    "ctrlPct": 0,
+    "deadHits": 0
+   },
+   {
+    "col": "transfer",
+    "deadPct": 0,
+    "ctrlPct": 0,
+    "deadHits": 0
+   },
+   {
+    "col": "clear_task",
+    "deadPct": 0,
+    "ctrlPct": 0,
+    "deadHits": 1
+   }
+  ]
+ }
+}

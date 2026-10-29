@@ -1,0 +1,1 @@
+{"name":"battle_result","rows":3,"cols":["DamamePercent","Description","Evaluate","Man","Women"],"data":{"20":{"DamamePercent":20,"Description":10752,"Evaluate":10843,"Man":1,"Women":5},"50":{"DamamePercent":50,"Description":10753,"Evaluate":10844,"Man":2,"Women":6},"100":{"DamamePercent":100,"Description":10754,"Evaluate":10845,"Man":3,"Women":7}}}

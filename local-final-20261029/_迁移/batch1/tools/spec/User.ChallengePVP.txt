@@ -1,0 +1,81 @@
+# User.ChallengePVP  (HttpConst.USER_PVP)
+# 出现 2 处
+
+101320: var e = t.call(this) || this;
+101321: e.isFriendPk = 0;
+101322: e.isGoodEvilPk = !1;
+101323: e.actionArr = [];
+101324: e.pvpType = 2;
+101325: e.isFriendPk = 0;
+101326: r.MessageCenter.on(a.HttpConst.USER_PVP, function(t, o) {
+101327: if (1 === o.eRet) {
+101328: e.isGoodEvilPk && (o.AttckData.getargetType = 1);
+101329: h.parsePlayerData(o.EnemyData);
+101330: h.parsePlayerData(o.AttckData);
+101331: var i = h.createPlayerBattleEntity(o.AttckData), n = h.createPlayerBattleEntity(o.EnemyData);
+101332: n.hp.init();
+101333: n.mp.init();
+101334: n.initialHp = n.hp.remaining;
+101335: n.initialHpLimit = n.hp.limit;
+101336: n.auto = !0;
+101337: e.initBattleSystem(i, n, Date.now());
+101338: } else if (3 === o.eRet) {
+101339: m.default.show(g.getText(1399));
+101340: e.dispose();
+101341: } else e.dispose();
+101342: }, e);
+101343: return e;
+101344: }
+101345: e.prototype.startBattle = function(t) {
+101346: var e = y.playerInfo.entity;
+101347: t.hasOwnProperty("isGoodEvilPk") ? this.isGoodEvilPk = t.isGoodEvilPk : this.isGoodEvilPk = !1;
+101348: var o = {
+101349: otherRoleID: t.rid,
+101350: mp: e.mp.remaining,
+101351: gTime: e.totalGameTime.gameTime,
+101352: hgtimes: e.numStuffed
+101353: };
+101354: t.hasOwnProperty("flag") && (o.flag = t.flag);
+101355: s.NetMgr.http.sendRequest(a.HttpConst.USER_PVP, o);
+101356: t.hasOwnProperty("isFriendPk") && t.isFriendPk ? this.isFriendPk = t.isFriendPk : this.isFriendPk = 0;
+101357: };
+101358: e.prototype.getPanelScript = function() {
+101359: return "RankPanel";
+101360: };
+101361: e.prototype.listen4Action = function(t) {
+101362: if (this.bs) {
+101363: switch (t.t) {
+101364: case l.BtActionType.SKILL:
+101365: this.bs.castSkill(t.id, t.skillID, 0, t.useMp);
+101366: break;
+---
+101367: 
+101368: case l.BtActionType.ITEM:
+101369: return;
+101370: 
+101371: case l.BtActionType.BREATHE:
+101372: this.bs.breathe(t.id);
+101373: break;
+101374: 
+101375: case l.BtActionType.CONCEDE:
+101376: this.bs.concede(t.id);
+101377: break;
+101378: 
+101379: case l.BtActionType.SWITCH:
+101380: this.bs.switchPlayer(t.id, t.newId);
+101381: break;
+101382: 
+101383: default:
+101384: this.bs.escape(t.id);
+101385: }
+101386: this.actionArr.push(t);
+101387: this.btPanel.emit(c.EvName.PLAY_BATTLE_ITEM);
+101388: }
+101389: };
+101390: e.prototype.endBattle = function(t, e) {
+101391: var o = t.data[0], i = t.esc, n = y.playerInfo.entity, r = {
+101392: mplimit: n.mp.limit,
+101393: mp: t.mp,
+101394: hp: t.hp,
+101395: hplimit: t.hplmt,
+---

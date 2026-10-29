@@ -1,0 +1,51 @@
+# User.ChooseServer  (HttpConst.LOG_SVR_SELECTION)
+# 出现 1 处
+
+116795: exam: 0
+116796: };
+116797: c.LoginMgr.checkMiniGame() && "" !== c.LoginMgr.WXIosVer && (t.exam = 1);
+116798: a.NetMgr.selectHttp.sendRequest(n.HttpConst.REQ_SERVER_LIST, t);
+116799: };
+116800: t.prototype.reqLogSvSelection = function(t) {
+116801: a.NetMgr.selectHttp.sendRequest(n.HttpConst.LOG_SVR_SELECTION, {
+116802: SID: t,
+116803: account: s.RoleBaseInfo.userAccount,
+116804: channel: this.channel
+116805: }, function() {}, !1);
+116806: };
+116807: t.prototype.getListObj = function(t) {
+116808: var e = {
+116809: index: 0
+116810: };
+116811: this.svrCfg ? e.svrList = this.svrCfg[t] : e.svrList = [ this.url ];
+116812: return e;
+116813: };
+116814: t.prototype.autoSelect = function() {
+116815: if (this.recent && this.recent.length > 0) {
+116816: var t = this.recent[this.recent.length - 1];
+116817: if (this.svrDic[t]) return this.svrDic[t];
+116818: }
+116819: return this.list[0];
+116820: };
+116821: return t;
+116822: }();
+116823: o.sListModel = new u();
+116824: cc._RF.pop();
+116825: }, {
+116826: "../../splashscreen/TESDKHelper": void 0,
+116827: "../core/events/MessageCenter": "MessageCenter",
+116828: "../gui/uicomponents/Alert": "Alert",
+116829: "../mgrs/LoginMgr": "LoginMgr",
+116830: "../net/HttpConst": "HttpConst",
+116831: "../net/NetMgr": "NetMgr",
+116832: "../utils/EvName": "EvName",
+116833: "./TalkDataModel": "TalkDataModel",
+116834: "./vos/RoleBaseInfo": "RoleBaseInfo"
+116835: } ],
+116836: SetRandomNpcUI: [ function(t, e, o) {
+116837: "use strict";
+116838: cc._RF.push(e, "dc732ebKZVE8rckfYaxoQJW", "SetRandomNpcUI");
+116839: var i, n = this && this.__extends || (i = function(t, e) {
+116840: return (i = Object.setPrototypeOf || {
+116841: __proto__: []
+---

@@ -1,0 +1,24 @@
+# User.LookFishAward   (HttpConst.CHECK_FISHING_REWARDS)
+
+## 注册点 51427: r.MessageCenter.on(s.HttpConst.CHECK_FISHING_REWARDS, this.onCheckFishingRewards, this);
+
+## 请求点 51684: g.NetMgr.http.sendRequest(s.HttpConst.CHECK_FISHING_REWARDS, e);
+   51676: speed: e.hungerConsumingSpeed.finalValue
+   51677: };
+   51678: g.NetMgr.http.sendRequest(s.HttpConst.END_FISHING, o);
+   51679: };
+   51680: e.prototype.reqCheckRwds = function(t) {
+   51681: var e = {
+   51682: fishpondID: t
+   51683: };
+
+## 处理函数 onCheckFishingRewards (51545-51553)
+ 51545: e.prototype.onCheckFishingRewards = function(t, e) {
+ 51546: var o = e.awardArr, r = 0, s = "";
+ 51547: for (var l in o) {
+ 51548: var c = i.getItem(l, "item");
+ 51549: r % 2 == 0 && 0 != r && (s += "\n");
+ 51550: r % 2 != 0 && (s += "     ");
+ 51551: s += n.getText(c.Name) + "x" + o[l];
+ 51552: ++r;
+ 51553: }

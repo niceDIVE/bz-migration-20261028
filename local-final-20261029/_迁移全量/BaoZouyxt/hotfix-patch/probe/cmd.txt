@@ -1,0 +1,1 @@
+eval:try{var s=jsb.fileUtils.getStringFromFile('/data/data/com.maple.madherogo/files/probe.js');var r=eval(s);jsb.fileUtils.writeStringToFile(String(r),'/data/data/com.maple.madherogo/files/probe_res.txt')}catch(e){jsb.fileUtils.writeStringToFile('ERR '+e,'/data/data/com.maple.madherogo/files/probe_res.txt')}

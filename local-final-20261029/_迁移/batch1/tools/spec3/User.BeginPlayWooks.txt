@@ -1,0 +1,26 @@
+# User.BeginPlayWooks   (HttpConst.BEGIN_WOOD_TRAINING)
+
+## 注册点 86175: r.MessageCenter.on(a.HttpConst.BEGIN_WOOD_TRAINING, this.onReqWoodTr, this);
+
+## 请求点 86274: u.NetMgr.http.sendRequest(a.HttpConst.BEGIN_WOOD_TRAINING, e);
+   86266: };
+   86267: t.prototype.reqWoodTr = function() {
+   86268: var t = c.UserModel.entity, e = {
+   86269: artLevel: p.SkillTable.skillEvaluation(),
+   86270: hg: t.hunger.remaining,
+   86271: gTime: t.totalGameTime.gameTime,
+   86272: hgtimes: t.numStuffed
+   86273: };
+
+## 处理函数 onReqWoodTr (86188-86198)
+ 86188: t.prototype.onReqWoodTr = function(t, e) {
+ 86189: 0 != e.eRet && (this.isPracticing = !0);
+ 86190: r.MessageCenter.dispatch(s.EvName.ON_HOOK_BG_CLOSE);
+ 86191: var o = i.getItem(l.RoleBaseInfo.isvip ? 2 : 1, "wood");
+ 86192: this.beginTime = e.beginTime;
+ 86193: this.serverTime = e.serverTime;
+ 86194: e.hasOwnProperty("maxTime") && (this.maxTime = e.maxTime);
+ 86195: this.setRemainingFatigue(Math.floor(o.Hp - 5e-4 * (e.serverTime - e.beginTime)));
+ 86196: r.MessageCenter.dispatch(s.EvName.BEGIN_HITTING_WOOD, e.eRet);
+ 86197: S.LoginMgr.storeByScene(2, Number(e.beginTime) + 1e3 * Number(e.maxTime));
+ 86198: };

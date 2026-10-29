@@ -1,0 +1,99 @@
+# User.bringSpecialAward  (HttpConst.BRING_SPECIAL_AWARD)
+# 出现 2 处
+
+122989: }
+122990: t.rewardsStr.length > 0 && c.default.show(t.rewardsStr, null, null, l.getText(123));
+122991: }, this);
+122992: i.MessageCenter.on(n.HttpConst.ROLLDICE_EVENT, function(t, e) {
+122993: 1 != e.eRet && 2 != e.eRet && 3 != e.eRet || i.MessageCenter.dispatch(r.EvName.ROLL_DICE_EVENT, e);
+122994: }, this);
+122995: i.MessageCenter.on(n.HttpConst.BRING_SPECIAL_AWARD, function(t, e) {
+122996: 1 == e.eRet && (M.MadUtilsTS.isNullObj(e.rewardArray) && M.MadUtilsTS.isNullObj(e.equipObj) || p.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj));
+122997: }, this);
+122998: };
+122999: e.prototype.reqSpecialAdventure = function(t, e, o) {
+123000: void 0 === e && (e = null);
+123001: void 0 === o && (o = "");
+123002: var i = s.getAdventureTypeData(t), r = this.judAdventureState(i, t);
+123003: this.itemType = 0;
+123004: if (r.hasOwnProperty("type")) {
+123005: this.adventureId = r.ID;
+123006: this.callBackFunc = e;
+123007: this.rewardsStr = o;
+123008: h.NetMgr.http.sendRequest(n.HttpConst.CHECKSPECIAL, {
+123009: type: r.ID
+123010: });
+123011: }
+123012: };
+123013: e.prototype.judAdventureState = function(t, e) {
+123014: var o = {}, i = new Date(u.TimeMgr.getSTimestamp()).getHours(), n = S.GSceneMgr.getCurSceneID();
+123015: for (var r in t) {
+123016: var a = t[r], s = a.time;
+123017: if (0 == a.parameter || parseInt(a.parameter) > 0 && 4 != e && f.RumorModel.randEventArray.indexOf(parseInt(a.parameter)) >= 0 || parseInt(a.parameter) > 0 && 4 == e && f.RumorModel.getRandomEventID(d.DartModel.currentIdx) == parseInt(a.parameter) || parseInt(a.parameter) > 0 && 7 == e && n == Number(a.parameter)) {
+123018: if (!(s.length > 0)) {
+123019: o = a;
+123020: break;
+123021: }
+123022: var l = E.CalendarMgr.curHour;
+123023: if (1 == s[0] && i >= parseInt(s[1]) && i < parseInt(s[2])) {
+123024: o = a;
+123025: break;
+123026: }
+123027: if (2 == s[0] && (i >= parseInt(s[1]) || i < parseInt(s[2]))) {
+123028: o = a;
+123029: break;
+123030: }
+123031: if (3 == s[0] && l >= parseInt(s[1]) && l <= parseInt(s[2])) {
+123032: o = a;
+123033: break;
+123034: }
+123035: }
+---
+123037: return o;
+123038: };
+123039: e.prototype.reqRollDice = function(t) {
+123040: h.NetMgr.http.sendRequest(n.HttpConst.ROLLDICE_EVENT, t);
+123041: };
+123042: e.prototype.reqGetBringAward = function(t, e) {
+123043: h.NetMgr.http.sendRequest(n.HttpConst.BRING_SPECIAL_AWARD, {
+123044: flag: t,
+123045: type: e
+123046: });
+123047: };
+123048: e.prototype.startAdventure = function() {
+123049: this.adventureData = s.getAdventureAllData(this.adventureId);
+123050: if (this.adventureData.npc.length) {
+123051: var t = {
+123052: npcAy: this.adventureData.npc,
+123053: npcPox: this.adventureData.coordinate
+123054: };
+123055: i.MessageCenter.dispatch(r.EvName.ADD_RANDOM_NPC, t);
+123056: }
+123057: if ("0" == this.adventureData.pic) this.firstDialogStory(); else {
+123058: var e = this.adventureData.pic.split("|");
+123059: p.default.CartoonPlayerPic(e, this.firstDialogStory.bind(this));
+123060: }
+123061: };
+123062: e.prototype.firstDialogStory = function() {
+123063: p.default.addDialogEvent(this.adventureData.dialog, 0, this.selectOneEventFunc.bind(this), this.selectOneDialog.bind(this), this.selectTwoDialog.bind(this));
+123064: };
+123065: e.prototype.selectOneEventFunc = function() {
+123066: var e = this;
+123067: if (1 == this.adventureId || 9 == this.adventureId) Promise.resolve().then(function() {
+123068: return t("../models/ColorVerModel");
+123069: }).then(function(t) {
+123070: t.ColorVerModel.autoChangeColor(function() {
+123071: y.default.prefabs.load("duchang/duchang1", cc.Prefab, function(t, e) {
+123072: var o = cc.instantiate(e);
+123073: v.PopUpMgr.addPopUp(o, _.LayerMgr.popUpLayer);
+123074: o.addComponent("GambingUI").setDatas(1);
+123075: });
+123076: });
+123077: }); else if (1 == this.adventureData.action) this.onFightOver(!0); else if (2 == this.adventureData.action) {
+123078: var o = s.getItem(this.adventureData.npc[0], "npc"), i = {
+123079: npcSceneID: 1,
+123080: npcID: this.adventureData.npc[0],
+123081: npcData: o,
+123082: showbubble: !1
+123083: };
+---

@@ -1,0 +1,54 @@
+回执 v2.7.1（对应上游 00-先看这个 §四；三件拍板 + 算法 v2.7.1）
+
+══ 部署指纹 ══
+  构建：ver=h5ae2ccb6（前值 h9454ce1e；链 h9454ce1e→h5ae2ccb6）｜flow=ffaec47c3｜pid 2655 不变（热重载）
+  selfCheck 1264 全过，implErr=null
+  patch\live\handlers.js        1,398,677 B  md5 5510D737F2E46640DFCC773579764E4C  sha256 0A0E501C1AF3CD83EA8E599796C67365FF74355B099CDC0D4A4CA6C2CD59A491
+  core\bz-rpc-server.js         md5 19386D489FA5791B8DDF6E35E0FBC4E3
+  core\bz-shops.generated.js    md5 B109A50E49375964165600F726724BC2（新增 BZ_ADVENTURE 109 / BZ_ACHIEVE_COND 2113）
+
+══ 一、拍板 1 + 2：经验与 1..5 映射结论 ══
+  经验：找到了。客户端 LoadGame 读的就是 baseValueAy[18]（index.js:111775 RoleBaseInfo.exp = t.baseValueAy[18]），
+  eco 监听也认 exp 键 → 已按「找到了」分支落地：s.exp（缺省 0）+ 领奖累加 + LoadGame 投 [18]。
+  真机实证：circleTaskAward(9003) → eco.exp=200、存档 exp=200、LoadGame [18]=200。
+  1..5：活体探针定名——1=金条（→s.gold 既有）、2=善恶、3=筹码、4=幸福度、5=幻境之尘（后四者无钱包字段）。
+  按「对不上就只显示」落地；实测 adventure 四列只出现 2/3/4，全部只进奖励窗，不入账不塞背包。
+  GetRandomEventAward 已按 adventureID 选列接线（分支 1/4→awardwin、2→awardfalse、3→award、5→award2，
+  未知分支不发不记；分支 4 是客户端实证存在的快胜结算 index.js:88577，上游清单没有它，按「以客户端为准」并入胜利列，请知悉）。
+  重复领冒烟：首领 advDone 记账 → 第二次同 adventureID 回 eRet 4、零奖励；拒绝路径逐字节不动（v271-smoke 13/13，真机同证）。
+
+══ 二、拍板 3：成就可判类型与真实存档 pending ══
+  做了四类（≈1545/2113 行）：①收集/持有（type 3 全部 + 2/3，持有=背包∪已学武学∪口诀 knackBag）
+  ②已完成任务数（6/1,0 告示牌=s.taskDoneCount、6/2,0 环任务=s.circleTotal，计数器挂在五个发奖口）
+  ③经验（1/3，s.exp）④技能等级（1/5 读书识字类，s.skills，逻辑照抄客户端 scripts3.js:3093-3105）。
+  其余（等级/登录天数/建号天数/无量天机/排行榜/时装/房产/身材…）全部锁死，不虚报。
+  每次getAchieveData重算：达成写 pending、进度写 taskData（键约定照客户端 type_type1[_require]）。
+  真实存档：pending 算出 **26 条**，本地用同一档逐条复核——带实物奖励的 14 条（读书识字 419-450、环任务 472）全部真达成；
+  其余 12 条（3/1、3/3、3/4、3/5 族）reward 全为 0，零奖励面。3/4/3/5 的 id 空间未证实（可能跨表碰撞），已记 OPEN-ISSUES ISSUE-7，
+  因其奖励面为零、当前无实害。
+
+══ 三、算法 v2.7.1 ══
+  stdout：{"actions": 484, "unsafe": 440, "unsafeByCrash": 313, "unsafeByRetry": 200, "zeroIsWrong": 517, ...}
+  （kinds 与 v2.7 逐项相同；重叠 = 313+200−440 = 73，与 README 口径一致。）
+  --trace User.getBigGrowupData（原样关键行）：
+    调用方 index.js:55258 判空=否：this.reqBigGrowUpData();
+    调用方 scripts2.js:26756 判空=否：} else if (this.itemList[this.index].length > 0) …   ← v2.7 的误判已修（判非空不再计入）
+    调用方 scripts2.js:46175 判空=是：} else 1 == t && a.GrowthModel.reqBigGrowUpData();
+    发送点=['index.js:55239', 'index.js:55306'] 重发判定=['scripts2.js:46175→index.js:55306']   ← 46175 进重发判定 ✓
+  产物：_incoming\v2.7.1-20261026\{v271-stdout.json, v271-trace-gbgd.out.txt, v271-trace-gbgd.err.txt, work\bz-oracle}
+
+══ 四、门禁 ══
+  acceptance 44/44 绿（43 旧 + v271-smoke 13 条新增计入，known-red 0，cap 0）
+  check_shape_freeze diff 0｜check_reject_codes OK（动作 47 / 条目 51 / 拒绝点 77）
+  冒烟：v271-smoke 13/13、achieve-data 6/6、c16 10/10、circle-task 15/15、c03 11/11、c02 19/19、c05 全绿
+  热重载：pid 2655 不变、selfCheck 1264 全过
+  独立验收：第二工人按工单全量复跑（报告 acceptance-worker-report.md），主审抽样复核。
+
+══ 五、偏差申报（两处，均已按授权范围处理）══
+  1. 分支 4（快胜）→ awardwin：上游映射没列 4，客户端实证存在，按「以客户端为准」并入胜利列。
+  2. 负数量条目（award2=[4,-1] 类）跳过不发不扣：照发负数=扣玩家没有的东西，按「禁止模式」处理；
+     该类列在真机上表现为空奖励窗。
+
+══ 六、下一步 ══
+  第 6 批 C04 婚姻子女 16 已就位，按 relations.md 顺序开工。
+  升级报告的条件不变：存档写坏，或者能白拿钱/道具（两者均未发生）。

@@ -1,0 +1,72 @@
+回执 第14批 C13〔UFO 夹娃娃〕（2026-10-27）
+
+══ 部署指纹 ══
+  构建：ver=h3b555bcf｜flow=ffaec47c3｜pid 22577（全程热重载，pid 未变）
+  selfCheck 1371 全过，implErr=null
+  patch\live\handlers.js            1,600,285 B  md5 C3DAD3C66D95C9F99109DE8936E40AB5
+  core\bz-rpc-server.js               467,066 B  md5 774D44953D9A8FB60FAD10C08CD03DD3
+  core\bz-c13.generated.js（新表）        728 B  md5 F212042FBEE1725E03D4B5D11224C65E
+  形状基线 356 动作（+4），diff 0；拒绝码 动作 117 / 条目 134 / 拒绝点 202；acceptance 53/53
+  （core 已含第 13 批管家防刷合并：dispatchHelper/一次性奖励，见 01-receipt-batch13 §九）
+
+══ 一、交付：4 个 handler（7 名单中 4 活键；3 死键跳过——拍板①）══
+  线上名（tools/index.js 单源——★actions.json 无本批条目；★=反直觉未纠正）：
+    GET_UFO_CATCHER_DATA → User.getUFOCatcherData（60251，无载荷）——**面板开关**
+    REWARD_UFO           → User.rewardUFO（60254，{packages, itemId, signCode}）
+    USE_UFO_REFRESH      → ★User.useUFOrefresh（60253，无载荷；refresh 的 r 小写）
+    BUY_UFO_REFRESH_TIMES→ User.buyUFORefreshTimes（60252，{num:1} 恒 1）
+  ★死键 3 个（跳过申报）：GET_UFO_CATCHER_TASK / REWARD_UFO_CATCHER_TASK / BUY_UFO_GAME_COIN
+    ——req* 方法全 bundle 零调用点（W3 双 bundle grep），同 C10 SEED_CROP 先例。
+
+══ 二、契约 ══
+  ★全批回包字段都有 hasOwnProperty 守卫（崩点趋零，比 C11/C12 软）。
+  GET_UFO_CATCHER_DATA = 面板开关：dollBundle/prefabs/dollUI 在 1 分支 new（25791-25795），
+    DollUI.setData(o) 整包透传；25783 与 25797 是两个独立 if（非 else-if），其余码静默。
+  REWARD_UFO：★o.signId 在 eRet 判定前读（25756）；rewardArray/autoRefresh/rewardPool 全守卫；
+    ★任何非 1 → 客户端恒 dispatch CATCH_DOLL_EVENT null（25767）→ 拒绝安全；15 → getText(8060)。
+  USE_UFO_REFRESH：6 → 8060；3 → 活动过期。BUY_UFO_REFRESH_TIMES：7→8060 / 5、6→3633 / 3→活动过期。
+  入口 = 夹娃娃机 NPC：NpcToFuncType97（index.js:87583-87588）→ DollModel.getUFOCatcherData()。
+
+══ 三、★数据源（本批核心取证）══
+  444 张配置表文件名+内容双狩猎 = 0 个 ufo/catcher 表（W4）。真相：
+    rewardPool 由**服务端下发**，形状 = 对象 {难度id: 数量}，键 = package_difficulty 行 id（1-5）；
+    客户端 initItems（25824-25847）按 package_difficulty（location/quality/radi/suofang/speed）自己摆放。
+    ⇒ 服务端只发数量，摆位物理全在客户端。
+  防作弊：REWARD_UFO 载荷 signCode = md5(String(2*signId+37))（25865，CryptoMgr.md5）——
+    signId 服务端权威下发（GET/USE 回包），本批先验存在（拍板④），真校验留档 B。
+  爪子道具：8117/8118/8119/8120 = Effect 39、8143 = Effect 13（**只在 live dump item-effects，
+    静态 item.json 没有**——服务端 BZ_ITEMFX 已覆盖）。
+
+══ 四、自定口径申报（改任一个都要新拍板）══
+  1. 抓中概率 = 池子数量加权均匀随机（原版概率曲线未对证）。
+  2. 抓中难度 k → 发 8143 × package_difficulty[k].reward（30/30/60/150/300 照表）。
+  3. 抓取消耗对应爪子（gear 0/1/2 → 8117/8119/8120，照扣）；缺爪/池空 → 15。
+  4. 买刷新 100 元宝/次、累计限 3 次（无每日重置）；首开赠送三档爪子各 3 + 免费刷新 1。
+  5. 活动自定常开（active 37 窗口 2026-05-27→06-03 已过期；eRet 3 通道保留）。
+  6. callData 式状态语义沿用：无（本批无 callData）。
+
+══ 五、未做项（→ docs\OPEN-ISSUES.md ISSUE-13）══
+  1. 死键 3 个（拍板①跳过；未来激活需先取证任务链与游戏币经济）。
+  2. 档 B：signCode 真 md5 校验、客户端 packages 与池子一致性校验、coinDaily 任务链。
+  3. 爪子的商店/活动获取途径（现仅首开赠送）；NPC 97 可达性与 dollUI 视觉。
+
+══ 六、真机全链（probe_c13_flow.js，客户端模型方法驱动）══
+  getUFOCatcherData（**free=1 赠送、signId=2、items=7 上机**——rewardPool 契约生效）
+  → useUFOrefresh（**free 0、signId=3、池子重生成**）
+  → rewardUFO gear0（**抓中难度 2 → 8143×30、池余 6**——服务端权威）
+  → buyUFORefreshTimes（**refreshTimes=1/bought=1、-100 元宝**）。
+  存档变动均为正常玩法结果：消费 100 元宝；获得 8143×30 + 三档爪子各 3 + 免费刷新 1。
+
+══ 七、门禁 ══
+  gen_c13_tables exit 0（5 难度）｜形状 diff 0（356 动作）｜reject-codes OK 117/134/202｜
+  acceptance 53/53｜c13-smoke 9/9｜c12 14/14、c11 14/14、c10 18/18、r14 3/3（回归）｜
+  验收工人（gemini-3.8-flash-low）9 条命令独立复跑 **9/9**（facts\C9）。
+
+══ 八、坑（对面复用时注意）══
+  1. ★**模板新档 s.bag 可能缺位**——新档上发物品前必须确保 s.bag 存在（本批 dlEnsure 已带；
+     否则 grantRewardList→bagAdd 抛 `Cannot read properties of undefined (reading '8117')`）。
+  2. catchNoCode（无推导 catchCode）→ dispatch 回空应答 → 形状排放 `{}`（path 空串）——
+     见"每键只有 1 行空排放"先查异常日志。
+  3. 新动作必须登记 tools\todo_shapes.json；handler 引用生成表必过守卫；构建期双向比对会抓码漂移。
+  4. 通用新规（上游第 13 批验收裁定）：计时循环反复领的奖励必须有每日上限或每次成本；
+     表里有"已领"数组的一律一次性发。

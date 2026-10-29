@@ -1,0 +1,99 @@
+# User.getWxXyxOpenID  (HttpConst.GET_WX_XYX_OPENID)
+# 出现 2 处
+
+116685: this.type = null;
+116686: this.svrUrl = null;
+116687: this.tapVersion = "1.0.0";
+116688: }
+116689: t.prototype.init = function(t) {
+116690: var e = this;
+116691: i.MessageCenter.on(n.HttpConst.GET_WX_XYX_OPENID, function(t, o) {
+116692: if (1 == o.eRet) {
+116693: s.RoleBaseInfo.userAccount = o.openid;
+116694: c.LoginMgr.token = o.session_key;
+116695: var i = {
+116696: account: o.openid,
+116697: channel: e.channel,
+116698: exam: "" !== c.LoginMgr.WXIosVer ? 1 : 0
+116699: };
+116700: a.NetMgr.selectHttp.sendRequest(n.HttpConst.REQ_SERVER_LIST, i);
+116701: }
+116702: }, this);
+116703: i.MessageCenter.on(n.HttpConst.GET_DOU_YIN_OPENID, function(t, o) {
+116704: if (1 == o.eRet) {
+116705: s.RoleBaseInfo.userAccount = o.openid;
+116706: console.log("douyin openid:=====================", o.openid);
+116707: c.LoginMgr.setupAndStartEvevt();
+116708: c.LoginMgr.feedInit();
+116709: c.LoginMgr.storeByScene(1, c.LoginMgr.getDiffMillisTime(20));
+116710: c.LoginMgr.storeByScene(3, c.LoginMgr.getDiffMillisTime(0));
+116711: var i = {
+116712: account: o.openid,
+116713: channel: e.channel,
+116714: exam: "" !== c.LoginMgr.WXIosVer ? 1 : 0
+116715: };
+116716: a.NetMgr.selectHttp.sendRequest(n.HttpConst.REQ_SERVER_LIST, i);
+116717: }
+116718: }, this);
+116719: i.MessageCenter.on(n.HttpConst.REQ_SERVER_LIST, function(t, o) {
+116720: p.TESDKHelper.trackEvent(p.TEEnum.Login);
+116721: var n = [];
+116722: for (var a in o.serverObj) n.push(o.serverObj[a]);
+116723: n.sort(function(t, e) {
+116724: return t[4] < e[4] ? -1 : t[4] > e[4] ? 1 : 0;
+116725: });
+116726: e.svrDic = o.serverObj;
+116727: e.list = n;
+116728: e.recent = o.hasOwnProperty("historyArr") ? o.historyArr : null;
+116729: o.hasOwnProperty("taptapVersion") && (e.tapVersion = o.taptapVersion);
+116730: i.MessageCenter.dispatch(r.EvName.ON_GET_SERVER_LIST);
+116731: h.talkDataModel.postData(h.TalkDataEnum.newAccount);
+---
+116776: };
+116777: t.prototype.reqWeiXinWSvList = function() {
+116778: var t = {
+116779: anonymous_code: s.RoleBaseInfo.userAccount,
+116780: code: c.LoginMgr.token
+116781: };
+116782: a.NetMgr.selectHttp.sendRequest(n.HttpConst.GET_WX_XYX_OPENID, t);
+116783: };
+116784: t.prototype.reqDouYinSvList = function() {
+116785: var t = {
+116786: anonymous_code: s.RoleBaseInfo.userAccount,
+116787: code: c.LoginMgr.token
+116788: };
+116789: a.NetMgr.selectHttp.sendRequest(n.HttpConst.GET_DOU_YIN_OPENID, t);
+116790: };
+116791: t.prototype.reqSvList = function() {
+116792: var t = {
+116793: account: s.RoleBaseInfo.userAccount,
+116794: channel: this.channel,
+116795: exam: 0
+116796: };
+116797: c.LoginMgr.checkMiniGame() && "" !== c.LoginMgr.WXIosVer && (t.exam = 1);
+116798: a.NetMgr.selectHttp.sendRequest(n.HttpConst.REQ_SERVER_LIST, t);
+116799: };
+116800: t.prototype.reqLogSvSelection = function(t) {
+116801: a.NetMgr.selectHttp.sendRequest(n.HttpConst.LOG_SVR_SELECTION, {
+116802: SID: t,
+116803: account: s.RoleBaseInfo.userAccount,
+116804: channel: this.channel
+116805: }, function() {}, !1);
+116806: };
+116807: t.prototype.getListObj = function(t) {
+116808: var e = {
+116809: index: 0
+116810: };
+116811: this.svrCfg ? e.svrList = this.svrCfg[t] : e.svrList = [ this.url ];
+116812: return e;
+116813: };
+116814: t.prototype.autoSelect = function() {
+116815: if (this.recent && this.recent.length > 0) {
+116816: var t = this.recent[this.recent.length - 1];
+116817: if (this.svrDic[t]) return this.svrDic[t];
+116818: }
+116819: return this.list[0];
+116820: };
+116821: return t;
+116822: }();
+---

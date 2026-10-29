@@ -1,0 +1,2 @@
+status=200 https://bzgf.maple-game.com/800-server-166/quicklogin
+{"eRet":1,"roleID":16374,"rflag":1,"loginFlag":99,"userName":"","saveTime":0,"artLevel":1,"userGold":20,"curJetton":0,"washTimes":0,"userYuanbao":0,"account":"9900012358565"}

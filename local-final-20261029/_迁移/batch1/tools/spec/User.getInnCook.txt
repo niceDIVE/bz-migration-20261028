@@ -1,0 +1,99 @@
+# User.getInnCook  (HttpConst.GET_INN_COOK)
+# 出现 2 处
+
+ 62234: r.MessageCenter.on(c.HttpConst.PRODUCT_UNLOCK, this.onOpenCookLandEvent, this);
+ 62235: r.MessageCenter.on(c.HttpConst.PRODUCT_ACCELERATE, this.onAddProductEvent, this);
+ 62236: r.MessageCenter.on(c.HttpConst.COOK_RECEIVE, this.onInnKitchenDataChanged, this);
+ 62237: r.MessageCenter.on(c.HttpConst.COOK_ACCELERATE, this.onInnKitchenDataChanged, this);
+ 62238: r.MessageCenter.on(c.HttpConst.COOK_START, this.onInnKitchenDataChanged, this);
+ 62239: r.MessageCenter.on(c.HttpConst.COOK_UNLOCK, this.onInnKitchenDataChanged, this);
+ 62240: r.MessageCenter.on(c.HttpConst.GET_INN_COOK, this.onCookBookData, this);
+ 62241: r.MessageCenter.on(c.HttpConst.DISH_UNLOCK, this.onDishUnlock, this);
+ 62242: r.MessageCenter.on(c.HttpConst.GET_INN_BAG_DATA, this.onBagsDataEvent, this);
+ 62243: r.MessageCenter.on(c.HttpConst.CREATE_ORDER_BY_HOTVAL, this.onCreateOrder, this);
+ 62244: r.MessageCenter.on(c.HttpConst.COMPLETE_ORDER_BY_HOTVAL, this.onFinishOrder, this);
+ 62245: r.MessageCenter.on(c.HttpConst.GET_INN_RANK, this.onShowInnRank, this);
+ 62246: r.MessageCenter.on(c.HttpConst.GET_INN_SHOP, this.onShowInnShop, this);
+ 62247: r.MessageCenter.on(c.HttpConst.INN_BUY_SHOP, this.onShopBuyItem, this);
+ 62248: };
+ 62249: e.prototype.onDishUnlock = function(t, e) {
+ 62250: if (1 == e.eRet) {
+ 62251: for (var o = e.unlockDish, a = 0, l = 0; l < o.length; l++) this.unlockDishData.indexOf(o[l]) < 0 && (a = o[l]);
+ 62252: if (a > 0) {
+ 62253: var c = i.getItem(a, "dishconfig");
+ 62254: h.default.show(n.getText(7901).replace(/\[1\]/, n.getText(c.name)));
+ 62255: }
+ 62256: this.unlockDishData = e.unlockDish;
+ 62257: this.updateMainMenu();
+ 62258: r.MessageCenter.dispatch(s.EvName.INN_UPDATE_BOOK);
+ 62259: }
+ 62260: };
+ 62261: e.prototype.onCookBookData = function(t, e) {
+ 62262: if (1 == e.eRet) {
+ 62263: this.unlockDishData = e.unlockDish;
+ 62264: this.bookBag = e.cookBook;
+ 62265: r.MessageCenter.dispatch(s.EvName.ON_SELECT_COOK_MANAGE, {
+ 62266: tag1: 3,
+ 62267: data: e
+ 62268: });
+ 62269: }
+ 62270: };
+ 62271: e.prototype.onBagsDataEvent = function(t, e) {
+ 62272: 1 == e.eRet && r.MessageCenter.dispatch(s.EvName.ON_SELECT_COOK_MANAGE, {
+ 62273: tag1: 2,
+ 62274: data: e
+ 62275: });
+ 62276: };
+ 62277: e.prototype.onInnCookRewardEvent = function(t, e) {
+ 62278: if (1 == e.eRet) {
+ 62279: var o = e.foodBag;
+ 62280: for (var i in o) this.foodBag[i] = o[i];
+---
+ 62545: p.NetMgr.http.sendRequest(c.HttpConst.GET_INN_COOK_LIST, {});
+ 62546: };
+ 62547: e.prototype.reqGetInnBagDataList = function() {
+ 62548: p.NetMgr.http.sendRequest(c.HttpConst.GET_INN_BAG_DATA, {});
+ 62549: };
+ 62550: e.prototype.reqGetInnFoodBookData = function() {
+ 62551: p.NetMgr.http.sendRequest(c.HttpConst.GET_INN_COOK, {});
+ 62552: };
+ 62553: e.prototype.reqCreateOrder = function() {
+ 62554: if (!this.ordered) {
+ 62555: this.ordered = !0;
+ 62556: p.NetMgr.http.sendReqWithMask(c.HttpConst.CREATE_ORDER_BY_HOTVAL, {});
+ 62557: }
+ 62558: };
+ 62559: e.prototype.reqFinishOrder = function(t) {
+ 62560: v.SoundMgr.playEffect("sim_order");
+ 62561: p.NetMgr.http.sendReqWithMask(c.HttpConst.COMPLETE_ORDER_BY_HOTVAL, {
+ 62562: dishList: t
+ 62563: });
+ 62564: };
+ 62565: e.prototype.reqGetInnRank = function() {
+ 62566: p.NetMgr.http.sendReqWithMask(c.HttpConst.GET_INN_RANK, {});
+ 62567: };
+ 62568: e.prototype.reqGetInnShop = function() {
+ 62569: p.NetMgr.http.sendReqWithMask(c.HttpConst.GET_INN_SHOP, {});
+ 62570: };
+ 62571: e.prototype.reqInnShopBuy = function(t, e) {
+ 62572: p.NetMgr.http.sendReqWithMask(c.HttpConst.INN_BUY_SHOP, {
+ 62573: shopId: t,
+ 62574: shopCount: e
+ 62575: });
+ 62576: };
+ 62577: e.prototype.onShopBuyItem = function(t, e) {
+ 62578: if (1 == e.eRet) {
+ 62579: var o = "", a = e.foodBag;
+ 62580: for (var l in a) {
+ 62581: var c = i.getItem(l, "foodconfig"), p = 0;
+ 62582: this.foodBag.hasOwnProperty(l) && (p = this.foodBag[l]);
+ 62583: o += n.getText(c.name) + "x" + (a[l] - p) + "\r\n";
+ 62584: this.foodBag[l] = a[l];
+ 62585: }
+ 62586: for (var u = 0; u < e.cookBook.length; u++) if (this.bookBag.indexOf(e.cookBook[u]) < 0) {
+ 62587: var f = i.getItem(e.cookBook[u], "cookbookconfig");
+ 62588: o += n.getText(f.name) + "x1\r\n";
+ 62589: }
+ 62590: this.bookBag = e.cookBook;
+ 62591: h.default.show(o, null, null, n.getText(123));
+---

@@ -1,0 +1,23 @@
+# User.h5Pay   (HttpConst.H5_BUY_ITEM)
+
+## 请求点 69725: f.NetMgr.http.sendRequest(v.HttpConst.H5_BUY_ITEM, t);
+   69717: }
+   69718: };
+   69719: e.prototype.prePayAgain = function(t, e, o) {
+   69720: var i = globalThis;
+   69721: if (i.PlatformApi) {
+   69722: var n = i.PlatformApi;
+   69723: if (n.prePay) {
+   69724: var r = n.prePay(String(f.NetMgr.http.serverID), t, o, e, d.RoleOtherInfo.serverName, String(f.NetMgr.http.serverID) + "," + p.RoleBaseInfo.userAccount + "," + o, function(t) {
+
+## 请求点 69782: f.NetMgr.http.sendRequest(v.HttpConst.H5_BUY_ITEM, t);
+   69774: flag: 1,
+   69775: name: r.getText("580")
+   69776: } ], function(t) {
+   69777: 0 == t && R.GameSaveModel.reqGameSaveTime();
+   69778: }, "", !1);
+   69779: u.iosPay(f.NetMgr.http.serverID, e, i, o, p.RoleBaseInfo.roleID, String(f.NetMgr.http.serverID) + "," + p.RoleBaseInfo.userAccount + "," + i);
+   69780: } else if (u.prePay) {
+   69781: var g = u.prePay(String(f.NetMgr.http.serverID), e, i, o, d.RoleOtherInfo.serverName, String(f.NetMgr.http.serverID) + "," + p.RoleBaseInfo.userAccount + "," + i, function(t) {
+
+## 注册点 130747: l.MessageCenter.on(p.HttpConst.H5_BUY_ITEM, function(t, e) {

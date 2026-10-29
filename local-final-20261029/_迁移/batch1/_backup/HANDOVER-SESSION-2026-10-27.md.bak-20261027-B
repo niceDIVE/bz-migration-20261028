@@ -1,0 +1,163 @@
+# AGENT 交接：2026-10-27 会话（v2.7.1 三件拍板 + 第6批C04 + 第7批C06 + 第8批C07 + 练功计时）
+
+> **给下一个 Agent 的**，不是给用户的。读完这一篇就能接手，不需要读对话记录。
+> 项目根：`F:\BaoZouyxt` ｜ 补丁工程：`F:\BaoZouyxt\hotfix-patch` ｜ 上游包：`F:\BaoZouyxt\_incoming\`
+> ⚠ 同日 `HANDOVER-SESSION-2026-10-26.md` **已被本文取代**（原件备份 `_backup\HANDOVER-SESSION-2026-10-26.md.bak-20261027`）。
+
+---
+
+## 0. 三十秒接手
+
+- 游戏在 **MuMu 模拟器**，adb `127.0.0.1:16416`（**adb 有 root**），包名 `com.maple.madherogo`。pid 不详（本会话热重载从未掉过，若 MuMu 进程全没 → 冷启动流程见旧交接 §5.8，仍有效）。
+- 线上 **`impl=he29a670a`**，`flow=ffaec47c3`，selfCheck **1285** 全过，`implErr=null`。
+- 验收 **47/47 绿**，形状冻结 diff 0，`check_reject_codes` OK（**动作 76 / 条目 90 / 拒绝点 113**）。
+- 批次进度：**C01✅ C02✅ C05✅ C03✅ C16✅ C04✅ C06✅ C07✅** → 下一批 **C08（9 个，PVE 战斗族，relations.md:63）**。
+- 回执已交到第 8 批（`_incoming\下游回执-第8批C07-20261027.zip`，sha256 EB73CF93…）。**等上游回包后开 C08**。
+
+---
+
+## 1. 当前部署状态（可核，别凭记忆）
+
+| 项 | 值 |
+|---|---|
+| `impl` / `flow` | **he29a670a** / ffaec47c3（`.\run.ps1 cmd "ver"` 验；ready.json 是旧的别看） |
+| selfCheck | **1285** 全过（比上轮 +21：C04/C06/C07 新 handler 的检查） |
+| 验收 | **47/47**，known-red 0，cap 0 |
+| 冻结 | C1–C8、C10–C13 全过（C9b 未实现），**diff 0**（337 动作基线，C04 轮 39 项差异已审批入基线） |
+| `core\bz-rpc-server.js` | md5 `921DFDB801DB881C1791D8FE55DD6029` |
+| `patch\live\handlers.js` | 1,438,257 B，md5 `2AC6F2CB569A54B085668E780C3201F2` |
+| `core\bz-shops.generated.js` | md5 `257F30E050F98C148DB7ED07FBF9FA81`（+BZ_ADVENTURE 109/BZ_ACHIEVE_COND 2113/BZ_PROPOSE 36/BZ_MAKE 5） |
+| `core\bz-tasks.generated.js` | md5 `4486247F701441F09B84278CCDAB98D5`（未动） |
+| 存档 | 真档已被多轮验证动过（exp 450 / makeLoveDay / advDone / **孩子"小狗蛋"** / 元宝 50446），用户既有裁定「存档不重要，要正确的数据」 |
+
+---
+
+## 2. 本会话干了什么
+
+### A. v2.7.1 三件拍板（上游包 `_incoming\v2.7.1-20261026\`，已验收）
+- **经验 4002 入账**：`CURRENCY_SLOTS[4002]={f:'exp',k:'exp'}`（缺省 0）、LoadGame 投 `baseValueAy[18]`（客户端 index.js:111775 读它）。
+- **GetRandomEventAward 接线**：奖励源 `BZ_ADVENTURE`（adventure.json 109 行，四列是**单个扁平对 [id,数]**，负数=惩罚跳过）。⚠ **客户端 adventureID 恒为 0**（advCurId 从不赋真值）→ 真正的键是 **eventID = gsp_event 行 id**，按 eventID 反查。防重 = 两组记账（胜负组{1,2,4}/领取组{3,5}各每天一次）+ 按天清（todayKey）；未知分支不发不记。
+- **成就进度模型**：四类可判（收集/任务数/经验/技能等级，≈1545/2113 行），`recomputeAchievements` 在 getAchieveData 重算 → pending + taskData（键约定 `type_type1` 与 `type_type1_require`）；达成的自动过既有 pending 闸门。**EndMeditation 的 mpTrained 持久槽 = baseValueAy[32]**（本批练功计时复用它）。
+
+### B. 第 6 批 C04〔婚姻子女〕（已验收）
+- 状态机 5 动作实现（proposeNpc/marryNpc/divorceNpc/beginWedding/makeLove，写 `s.marryObj`，LoadGame 回放）；面板 2（GetWhoreData 空 girlData / getLikeEvent 走客户端 eRet 4 空态）；**锁死 10**（洗练/寄养/性别/妻子养成/道具/青楼消费等——形状无证据+价格无源）。
+- **领养已解锁**（v2.7.1-accept2 拍板：限时深挖成功）：childObj 9 键形状全有读点出处（scoutC + 主审亲验），**500 元宝先扣**，未婚/已有孩子/不足回 2；birthChild 接线（闸=fetationTime>0，实际自然锁死）；giveChildName 接线（空名→99）。
+- makeLove：经验 50/次进 s.exp（**make.json experience 列是风味文案 id，全表无数值源**——探针实取，数额自定已申报）+ 每日 5 次上限（s.makeLoveDay）；happiness 只显示；hunger/full 不接（客户端不读）。
+
+### C. 第 7 批 C06〔打坐练功〕（已验收）
+- 15 动作里 4 个前批已有，补 11 个薄 ack。**三个 END_* 回调无 eRet 判断**，字段按消费端给齐（EndMeditation 必带 note——138892 无守护直读）。vigor 恒 0。**本批发钱口 = 0**。
+
+### D. 练功按服务端计时（v2.7.1-accept3，限时 2 小时——按时完成）
+- Begin 成功记 `s.trainBegin`/`s.medBegin`={t:now, g:请求 gTime}；End 按真实流逝分钟结算，结算即清（一次 Begin 只结一次）；无 Begin 不结算。
+- 分流：**EndTraining 不结算**（客户端回调 120574-120601 逐行核对不读 note）；**EndMeditation 结算修为 1 点/分钟** 进 `baseValueAy[32]`，`note.attrch.mpTrained` 回新值；上限 = 内功等级×10（常量 33 MadNumber 解码 = 10），加成侧客户端自封。
+- 顺带修真 bug：结算日志无条件读 `s.baseValueAy[32]`，空档 TypeError → 应答丢 eRet（冻结 diff 暴露）。
+
+### E. 第 8 批 C07〔善恶〕（已验收）
+- 11 动作**全锁**（eRet 2 静默）：门槛 = 加入阵营（JOIN_GOOD_OR_EVIL 未实现）；GoodEvilInfoUI 对 goodAndEvilData **16 字段 .toString() 直读**缺键即崩；helpDoneTask 发贡献但善恶贡献无存档槽。
+- ⚠ 本批我犯过一个错：凭记忆编造 KEY 清单给 scoutE（10/11 无定义），返工后用 relations.md:61 真实成员。**教训：批次成员必须先读 relations.md 原文**。
+
+### F. 形状审批三件套（C04 批 39 项 + C06 批 4 项，全部入库）
+- 流程：`--diff` 看差异 → `tools\golden\planned-changes.json`（规则按 field 匹配，sigma 变化要逐项 allowSigma + index.js 行号证据）→ `approved-narrowing.json`（escape:"closed"，逐条逃逸结论）→ `approved-widening.json`（新发路径）→ `--freeze`。
+- ⚠ **--freeze 会归档并清空 planned-changes.json**——每批的差异要当批写当批冻。
+- 字段证据在 `tools\golden\evidence-sha1.json`（field → [{bundle,line,sha1_12}]，缺了要补，如 C04 补的 attrList）。
+
+---
+
+## 3. 用户裁定的新规矩（本会话新增，优先级高）
+
+1. **领养**：抓包永远拿不到（原服停服），允许深挖客户端推形状（已成功）；领养 500 元宝**先扣再写 childObj**。
+2. **makeLove**：经验进 s.exp、**每天限 5 次**防刷（experience 列是文案 id 无数值 → 50/次自定，已申报）。
+3. **练功计时**：服务端自己记时长；客户端确实读 note 才结算；无公式按 1 点/分钟；无 Begin 不结算。
+4. 常规工作（写码/流水线/热重载/打包）做完报结果即可；**破坏性操作协议**与**数据红线**不变。
+
+---
+
+## 4. 坑表（本会话新增，按踩坑概率排序）★ 最值钱
+
+1. **PowerShell 读改 UTF-8 无 BOM 文件 = 双编码写花**：`Get-Content -Raw` 按 ANSI 解、`[IO.File]::WriteAllText` 再写 UTF-8 → 中文全毁（回执文件踩两次，一次还把 `var out` 吞进注释里）。**规矩：读改 UTF-8 文本一律用 read/write/edit 工具，禁 Get-Content 中转**。PowerShell 的 `>` 重定向写 UTF-16 是老坑，依然有效。
+2. **形状冻结的 diff 根因排查**：handler 嵌套字面量（如 note={...}）会被 gen_shapes 误当应答形状——嵌套构造提成模块 helper；分类器判成 switch 的字段会从 payload 剔除（EndMeditation.hanyusuiTime 就是被剔的），但 **handler 显式给的值运行时照发**，注册表缺省只是 fillShape 行为。
+3. **--freeze 会清空 planned-changes.json**：每批差异当批写当批冻，跨批积累会被归档掉。
+4. **真机探针四连坑**：`impl.handle` 的 URL 必须含 `bzgf.maple-game.com`（否则黑洞静默）；返回 `{status,text,meta}`（无 ok）；payload 信封要解一层 `md['User.动作名']`；**probe eval 在 fireTimeout 异步执行，res 有一拍延迟**——probe 后 sleep 3s 再 cat，且探针必须全步 try/catch（崩了 res 就不更新）。
+5. **adventure.json 列是单个扁平对 [id,数]**，不是对列表（全表实证长度恒 2）——生成器已归一化，别改回去。
+6. **ensureLedger 预热坑再现**：新 smoke 的 fresh() 只 loadSave 不够，第一次锁动作的 ensureLedger 规范化会污染逐字节快照——预热加一发 getAchieveData（c04-smoke 同款）。
+7. **marryState 类"建槽 helper"不许在拒绝路径调用**——先窥视（直接读 s.marryObj），过了全部闸再建槽+persist，否则拒绝路径污染内存快照。
+8. **node -e 内嵌正则的引号地狱**：复杂 JS 一律写临时 .js 文件再 `cmd /c node` 执行。
+9. `useVigorUpGradeSkill` 的 skillID 是回声（客户端本地 getSkillLevel 查它自己报的 id），但 `BeginTraining` 的 skillID 是**必须校验已学**（客户端拿它查 skill 表，回声 0 会崩）——同类参数不同处置，看消费端。
+10. 旧坑沿用：`Get-Content` 行号不可信 / madNumber `_value[0]-offset` 逐行解 / GBK zip 按索引解 / `muliti` 等上游拼写别"纠正" / H 键 = 线上名去 `User.` 前缀（`UserWifeProp` 双写原样）。
+
+---
+
+## 5. 待办（按优先级）
+
+### 5.1 第 9 批 C08（9 个，relations.md:63，**等上游回包开工**）
+PVE_ACTION、ROGUE_PVE_ACTION、REQ_LANGHUAN_COMBAT、REQ_ROGUE_PVE_COMBAT、MPPVE_ACTION、ROGUE_MPPVE_ACTION、REQ_ROGUE_PVP_BATTLE、START_MPPVE_BATTLE、USER_PVP——战斗族，同面板另见第 4 批的 BATTLE_RESULT 族（已实现的对账口径可复用）。侦察工单模板照 scoutF（KEY 清单**必须先抄 relations.md:64 原文**）。
+
+### 5.2 挂账（上游已拍板或已知，不用再问）
+- **ISSUE-7**（docs\OPEN-ISSUES.md）：成就 3/4、3/5 的 id 空间未证实——奖励面为零，挂着。
+- 领养已解锁但**洗练/寄养/性别/妻子养成/道具/青楼消费仍锁死**（形状/价格无源）——上游没给口径前不动。
+- EndTraining 不结算是**有证据的拍板**（客户端不读 note）——别"补全"。
+- makeLove 的 50/次是自定口径（表无数值源）——上游回执已申报，等追认。
+
+### 5.3 工件清理
+- `tools\tmp_c04_wires.js`、`tmp_c04_rejects.js`、`tmp_c04_shape_approvals.js`、`tmp_c07_rejects.js`、`hotfix-patch\probe\ach-sample.json` 等一次性脚本——留档无害，下批可删。
+
+---
+
+## 6. 回滚
+
+| 对象 | 位置 |
+|---|---|
+| 本会话全部源文件改前原件 | `_backup\20261026-172536-pre-v271\`（core/、patch-live/、hotfix-tools/、test/） |
+| 算法工作区 | `_incoming\v2.7.1-20261026\work\bz-oracle`（独立目录，v2.7 原件未动） |
+| 形状基线 | `tools\golden\emission.json`（每批 --freeze 覆盖写；回滚 = 备份 golden + 重跑 gen_shapes/build） |
+| 旧交接原件 | `_backup\HANDOVER-SESSION-2026-10-26.md.bak-20261027` |
+| 存档 | 真档多轮验证动过（用户裁定不管）；设备端 `bz_offline_save.json` 无本会话前备份 |
+
+---
+
+## 7. 文件索引
+
+| 路径 | 内容 |
+|---|---|
+| `batch6-facts-20261026\` | **第 6-8 批全部取证**：scoutA-F（C04 契约/表全清/childData/C06 契约/C07 契约）、C1-C6 策略与执行记录、三份验收工人报告、回执正本 |
+| `v271-facts-20261026\` | v2.7.1 三件拍板取证（C1）+ 执行记录（C2）+ 回执正本 |
+| `_incoming\v2.7.1-20261026\` | 上游 v2.7.1 包 + work\bz-oracle（**算法 v2.7.1 工作区，out/relations.md 是批次成员权威**） |
+| `_incoming\batch6-accept-20261026\`、`batch7-accept-20261026\` | 上游验收包（领养/makeLove/练功计时拍板） |
+| `_incoming\下游回执-第{6,7,8}批*.zip` | 已发回执（解包验过 md5） |
+| `docs\v2.7.1-三件拍板大纲-20261026.md` + `docs\EXECUTION.md` | 长任务三文档（轮 1-16 完整记录） |
+| `hotfix-patch\test\c04/c06/c07-smoke.js` | 本会话新增冒烟（12/10/2 条） |
+| `hotfix-patch\probe\*-probe.js` | 真机/文本探针 9 个（lang/ach/verify/diag 系列） |
+| `docs\OPEN-ISSUES.md` | ISSUE-7（成就 3/4、3/5 id 空间）新增 |
+
+---
+
+## 8. 下次开工第一条命令
+
+```powershell
+Set-Location F:\BaoZouyxt\hotfix-patch
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+.\run.ps1 status                    # 看 pid；若 MuMu 进程全没 → 旧交接 §5.8 冷启动
+.\run.ps1 cmd "ver"                 # 期望 impl=he29a670a / scene=gamescene / implErr=null
+```
+
+### 流水线顺序（不可换，本会话实测有效）
+```powershell
+node tools\gen_shop_tables.js       # 动了表生成器才需要
+node tools\gen_shapes.js            # 加过新 handler 必须先跑（嵌套字面量会被误提——见坑表 2）
+cd hotfix-patch; node build-handlers.js
+cd ..; node tools\check_shape_freeze.js --diff   # 有差异 → 写 planned/narrowing/widening → --freeze
+node tools\acceptance.js
+node tools\check_reject_codes.js
+cd hotfix-patch; .\run.ps1 handlers
+.\run.ps1 cmd "ver"
+```
+
+### 已确认、但可能被后来者改错的事实
+1. `EndMeditation` 应答**必须带 note**（138892 无守护直读）——删了客户端 TypeError。
+2. `EndTraining` 不结算是**有证据的拍板**（回调 120574-120601 不读 note）——别"补全"。
+3. `GetRandomEventAward` 的键是 **eventID（gsp_event）**不是 adventureID（客户端恒发 0）——别"修"回去。
+4. makeLove 的 50/次、领养 500 元宝、木桩 50 元宝都是**自定口径**——上游回执已申报，改动需新拍板。
+5. adoptChild 的 childObj 9 键**每键都有读点出处**（buildChildObj 注释）——加键/删键前先回 scoutC 核对。
+6. 善恶 11 动作全锁的依据是"未加入阵营 + 16 字段直读崩点"——解锁前提是先实现 JOIN_GOOD_OR_EVIL。
+7. `childState` 三包 0 命中（客户端不读）——TPL 里有但它不是契约。
+8. `advDone` 结构是 `{rowKey: {d, w, c}}`（两组记账+按天清）——别改回单值。

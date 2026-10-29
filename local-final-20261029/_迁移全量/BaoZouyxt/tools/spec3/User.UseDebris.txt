@@ -1,0 +1,13 @@
+# User.UseDebris   (HttpConst.GET_TR_MAP_INFO)
+
+## 注册点 139314: n.MessageCenter.on(r.HttpConst.GET_TR_MAP_INFO, function(t, e) {
+
+## 请求点 139364: c.NetMgr.http.sendRequest(r.HttpConst.GET_TR_MAP_INFO, e);
+   139356: t.itemNeeded = o.needItem;
+   139357: t.getData = !0;
+   139358: }, this);
+   139359: };
+   139360: t.prototype.reqTreasureInfo = function(t) {
+   139361: var e = {
+   139362: groupID: t
+   139363: };

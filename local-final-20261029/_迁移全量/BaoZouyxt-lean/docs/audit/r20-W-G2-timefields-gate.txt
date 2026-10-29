@@ -1,0 +1,129 @@
+# 时间字段 GATE/DISPLAY 取证报告（纯证据，不下结论）
+# 目标字段：F-a, F-b, F-c, F-d, F-e
+# 搜索范围：tools/index.js, tools/scripts2.js, tools/scripts3.js
+
+================================================================================
+【F-a: active 表 id=27 的 endtime 与 begintime】
+--------------------------------------------------------------------------------
+1. 读点清单：
+   未能确认。
+   检索证据：
+   - 全局搜索 getItem 第二参数为 "active"：
+     tools/scripts2.js:67728: var c = this.data[t + s].activeId, l = a.getItem(c, "active"); （所在函数：e.prototype.start，组件 StoreMenuItem）
+     tools/scripts3.js:44214: var t = Math.floor(Math.max(a.getItem(65, "active").endtime - h.TimeMgr.getSTimestamp(), 0) / 1e3); （所在函数：e.prototype.update，组件 LotteryRebateUI）
+   - 全局搜索 getTable 第二参数/首参数为 "active"：无任何命中。
+   - 对 id=27 的特定读点：未检索到针对 active 表 id=27 访问 endtime 或 begintime 的代码行。
+
+2. 追踪链：
+   未能确认。
+
+3. 时间源比较行：
+   没有。
+
+4. 决定点：
+   未能确认。
+
+================================================================================
+【F-b: active 表 id=55 的 endtime】
+--------------------------------------------------------------------------------
+1. 读点清单：
+   未能确认。
+   检索证据：
+   - 全局搜索 getItem 第二参数为 "active"：
+     tools/scripts2.js:67728: var c = this.data[t + s].activeId, l = a.getItem(c, "active"); （所在函数：e.prototype.start，组件 StoreMenuItem）
+     tools/scripts3.js:44214: var t = Math.floor(Math.max(a.getItem(65, "active").endtime - h.TimeMgr.getSTimestamp(), 0) / 1e3); （所在函数：e.prototype.update，组件 LotteryRebateUI）
+   - 全局搜索 getTable 第二参数/首参数为 "active"：无任何命中。
+   - 对 id=55 的特定读点：未检索到针对 active 表 id=55 访问 endtime 的代码行。
+
+2. 追踪链：
+   未能确认。
+
+3. 时间源比较行：
+   没有。
+
+4. 决定点：
+   未能确认。
+
+================================================================================
+【F-c: exchange 表 id=2200..2212（共 13 行）的 endtime】
+--------------------------------------------------------------------------------
+1. 读点清单：
+   未能确认。
+   检索证据：
+   - 全局搜索 getItem 第二参数为 "exchange"：无任何命中。
+   - 全局搜索 getTable 参数为 "exchange"：无任何命中。
+   - 全局代码中对配置表名 "exchange" 字符串的调用：无任何命中。
+   - 对 id 2200..2212 访问 endtime 的代码行：无任何命中。
+
+2. 追踪链：
+   未能确认。
+
+3. 时间源比较行：
+   没有。
+
+4. 决定点：
+   未能确认。
+
+================================================================================
+【F-d: mall 表 id=39 的 shopend】
+--------------------------------------------------------------------------------
+1. 读点清单：
+   未能确认。
+   检索证据：
+   - 全局搜索 getItem 第二参数为 "mall"：
+     tools/index.js:131240: var o = n.getItem(this.buyItemId, "mall"); （所在函数：e.prototype.onPaySuccess，组件 StoreModel）
+     （在该调用附近 ±30 行内无 .shopend 访问，仅访问了 o.Type, o.Name, o.Data）
+   - 全局搜索 getTable 参数为 "mall"：无任何命中。
+   - 全局搜索属性名 shopend（tools/index.js, tools/scripts2.js, tools/scripts3.js）：无任何命中。
+   - 对 id=39 访问 shopend 的代码行：无任何命中。
+
+2. 追踪链：
+   未能确认。
+
+3. 时间源比较行：
+   没有。
+
+4. 决定点：
+   未能确认。
+
+================================================================================
+【F-e: create 应答的 currentServerEndTime】
+--------------------------------------------------------------------------------
+1. 读点清单：
+   读点数：1 处
+   tools/index.js:107246: e.hasOwnProperty("currentServerEndTime") && (this.serverOpenTime = e.currentServerEndTime);
+   所在函数：e.prototype.setRoleInfo （组件/类：RoleOtherInfo）
+
+2. 追踪链（第 2 层 / 第 3 层）：
+   - 第 2 层（赋值与变量存储）：
+     tools/index.js:107246: e.hasOwnProperty("currentServerEndTime") && (this.serverOpenTime = e.currentServerEndTime);
+     （赋值给 RoleOtherInfo 单例属性 serverOpenTime）
+     初始化行：
+     tools/index.js:107167: this.serverOpenTime = 0;
+   - 第 3 层（参与和时间源的比较或减法，共 2 处）：
+     比较点 1：
+     tools/index.js:27401: .001 * d.TimeMgr.getSTimestamp() <= g.RoleOtherInfo.serverOpenTime ? I.ColorVerModel.changeColorBeforeEnter(function() {
+     所在函数：e.prototype.openCopyEnter （类/组件：TeamModel）
+     比较点 2：
+     tools/index.js:85179: .001 * h.TimeMgr.getSTimestamp() <= P.RoleOtherInfo.serverOpenTime ? B.ColorVerModel.setPullInCopyState(0) : B.ColorVerModel.setPullInCopyState(1);
+     所在函数：e.prototype.setMultiPullState （类/组件：MultiPlayerModel）
+
+3. 时间源比较行：
+   有。
+   比较行 1：
+   tools/index.js:27401: .001 * d.TimeMgr.getSTimestamp() <= g.RoleOtherInfo.serverOpenTime ? I.ColorVerModel.changeColorBeforeEnter(function() {
+   比较行 2：
+   tools/index.js:85179: .001 * h.TimeMgr.getSTimestamp() <= P.RoleOtherInfo.serverOpenTime ? B.ColorVerModel.setPullInCopyState(0) : B.ColorVerModel.setPullInCopyState(1);
+
+4. 决定点：
+   决定点 1（在 openCopyEnter 内）：
+   tools/index.js:27401: .001 * d.TimeMgr.getSTimestamp() <= g.RoleOtherInfo.serverOpenTime ? I.ColorVerModel.changeColorBeforeEnter(function() {
+   tools/index.js:27404: }, 0) : I.ColorVerModel.changeColorBeforeEnter(function() {
+   tools/index.js:27407: }, 1);
+   决定点 2（在 setMultiPullState 内）：
+   tools/index.js:85179: .001 * h.TimeMgr.getSTimestamp() <= P.RoleOtherInfo.serverOpenTime ? B.ColorVerModel.setPullInCopyState(0) : B.ColorVerModel.setPullInCopyState(1);
+   tools/index.js:85180: o = !0;
+   tools/index.js:85181: break;
+
+================================================================================
+未验证

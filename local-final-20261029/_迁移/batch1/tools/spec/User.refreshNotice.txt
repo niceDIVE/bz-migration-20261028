@@ -1,0 +1,92 @@
+# User.refreshNotice  (HttpConst.REFRESHNOTICE)
+# 出现 2 处
+
+108228: e.prototype.reqSpecialEvents = function() {
+108229: l.NetMgr.http.sendRequest(s.HttpConst.SPECIAL_EVENTS, {});
+108230: };
+108231: e.prototype.init = function() {
+108232: var t = this;
+108233: r.MessageCenter.on(s.HttpConst.SPECIAL_EVENTS, this.onSpecialEvents, this);
+108234: r.MessageCenter.on(s.HttpConst.REFRESHNOTICE, function(e, o) {
+108235: t.onPrivateEvents(o);
+108236: 1 == o.eRet && parseInt(t.activeTypeID) > 0 ? a.default.show(i.getText("1114")) : 6 == o.eRet && a.default.show(i.getText("6000320"));
+108237: }, this);
+108238: r.MessageCenter.on(s.HttpConst.GETNOTICE_REWARD, function(e, o) {
+108239: if (1 == o.eRet) {
+108240: var s = "";
+108241: for (var l in o.rewardArray) {
+108242: var p = parseInt(l), h = n.getItem(p, "item");
+108243: s.length > 0 && (s += "\n");
+108244: s += i.getText(h.Name) + " x" + o.rewardArray[l];
+108245: }
+108246: if (o.liveness) {
+108247: s.length > 0 && (s += "\n");
+108248: s += i.getText(6010809) + "x" + o.liveness;
+108249: }
+108250: a.default.show(s, void 0, void 0, i.getText(123));
+108251: t.refreshDispatch();
+108252: }
+108253: r.MessageCenter.dispatch(c.EvName.FINISH_TREASURE_EVENT, t.currentRewardId);
+108254: }, this);
+108255: r.MessageCenter.on(s.HttpConst.GET_SPECIALEVTS, function(t, e) {
+108256: 1 == e.eRet && r.MessageCenter.dispatch(c.EvName.NOTICE_BOOK_EVENT, e);
+108257: }, this);
+108258: };
+108259: e.prototype.refreshDispatch = function() {
+108260: Promise.resolve().then(function() {
+108261: return t("../../scripts3/model3/DelegateModel");
+108262: }).then(function(t) {
+108263: -1 != t.DelegateModel.noticeIndex && (t.DelegateModel.noticeIndex = -1);
+108264: if (1 == t.DelegateModel.noticeArr.length) {
+108265: t.DelegateModel.noticeArr = [];
+108266: r.MessageCenter.dispatch(c.EvName.REFRESH_DISPATCH_NOTICE_BUTTON, !1);
+108267: }
+108268: });
+108269: };
+108270: e.prototype.reqActiveNotice = function(t) {
+108271: var e = {
+108272: type: t
+108273: };
+108274: l.NetMgr.http.sendRequest(s.HttpConst.REFRESHNOTICE, e);
+---
+108275: };
+108276: e.prototype.reqActiveGetReward = function(t) {
+108277: this.currentRewardId = t;
+108278: var e = {
+108279: typeID: t,
+108280: eventID: this.activeEventID
+108281: };
+108282: l.NetMgr.http.sendRequest(s.HttpConst.GETNOTICE_REWARD, e);
+108283: };
+108284: e.prototype.reqAdventureState = function() {
+108285: l.NetMgr.http.sendRequest(s.HttpConst.GET_SPECIALEVTS, {});
+108286: };
+108287: e.prototype.onPrivateEvents = function(t) {
+108288: this.resetCleanActiveEvent();
+108289: this.activeEventID = t.eventID;
+108290: this.activeCdTime = t.cdTime;
+108291: if (1 == t.eRet) {
+108292: this.activeTypeID = t.eventType;
+108293: this.curCount = t.count;
+108294: switch (this.activeTypeID) {
+108295: case 1:
+108296: this.hasSpecialEvent = !0;
+108297: this.selectedDesID = this.eventDes1[Math.floor(Math.random() * this.eventDes1.length)];
+108298: var e = this.locations[Math.floor(Math.random() * this.locations.length)];
+108299: this.evLoc = {
+108300: x: e[0],
+108301: y: e[1]
+108302: };
+108303: break;
+108304: 
+108305: case 3:
+108306: this.fightLevel = p.SkillTable.minSkillLevel();
+108307: t.hasOwnProperty("idArr") && (this.randEventArray = t.idArr);
+108308: h.DartModel.setOpenDart(t.eventID);
+108309: break;
+108310: 
+108311: case 5:
+108312: this.fightLevel = p.SkillTable.minSkillLevel();
+108313: u.ActiveModel.setKillActiveEvent(this.activeTypeID, t.eventID, t.beginTime);
+108314: break;
+---

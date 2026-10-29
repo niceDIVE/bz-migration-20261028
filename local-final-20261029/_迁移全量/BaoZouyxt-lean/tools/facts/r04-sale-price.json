@@ -1,0 +1,1894 @@
+{
+  "generatedAt": "2026-10-21T22:25:52.253Z",
+  "queries": [
+    {
+      "pattern": "saleItem",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:59574: SELL_ITEM: \"User.saleItem\","
+      ]
+    },
+    {
+      "pattern": "SALE_ITEM",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "saleArr",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:65223: saleArr: t",
+        "tools/index.js:65230: saleArr: t",
+        "tools/index.js:65245: saleArr: t",
+        "tools/index.js:65252: saleArr: t"
+      ]
+    },
+    {
+      "pattern": "saleitem",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "sale_item",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "salearr",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SALEITEM",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SALEARr",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SALEARRAY",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "出售",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:64736: cc.log(\"锁定装备不能出售\");"
+      ]
+    },
+    {
+      "pattern": "sellPrice",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SellPrice",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "getSellPrice",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "sellMoney",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "sellData",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "setCoins",
+      "file": "tools/index.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "baseValueAy[35]",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:74956: t.coins = e.baseValueAy[35];",
+        "tools/index.js:111792: v.RoleBaseInfo.coins = t.baseValueAy[35];"
+      ]
+    },
+    {
+      "pattern": "coins (assignment/definition)",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:11649: this.coins = t.mp;",
+        "tools/index.js:11650: this.coins < 0 && (this.coins = 0);",
+        "tools/index.js:11682: this.coins < 0 && (this.coins = 0);",
+        "tools/index.js:43281: this.coins = 0;",
+        "tools/index.js:64701: l.RoleBaseInfo.coins = e[o];",
+        "tools/index.js:74783: e.coins = t.coins;",
+        "tools/index.js:74956: t.coins = e.baseValueAy[35];",
+        "tools/index.js:105925: this.coins = 0;",
+        "tools/index.js:106275: this.coins = 0;",
+        "tools/index.js:111660: v.RoleBaseInfo.coins = 0;",
+        "tools/index.js:111792: v.RoleBaseInfo.coins = t.baseValueAy[35];"
+      ]
+    },
+    {
+      "pattern": "saleItem",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SALE_ITEM",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "saleArr",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:19157: saleArr: t",
+        "tools/scripts2.js:19462: saleArr: t",
+        "tools/scripts2.js:55659: saleArr: t",
+        "tools/scripts2.js:60006: saleArr: e",
+        "tools/scripts2.js:77451: saleArr: t",
+        "tools/scripts2.js:77956: saleArr: t"
+      ]
+    },
+    {
+      "pattern": "saleitem",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "sale_item",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "salearr",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SALEITEM",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SALEARr",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SALEARRAY",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "出售",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "sellPrice",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SellPrice",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "getSellPrice",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "sellMoney",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "sellData",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "setCoins",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "baseValueAy[35]",
+      "file": "tools/scripts2.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "coins (assignment/definition)",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:13733: e.coins = 0;",
+        "tools/scripts2.js:13804: this.coins = m.RoleBaseInfo.coins;",
+        "tools/scripts2.js:13818: this.coins = m.RoleBaseInfo.coins;"
+      ]
+    },
+    {
+      "pattern": "saleItem",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SALE_ITEM",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "saleArr",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:29072: saleArr: t"
+      ]
+    },
+    {
+      "pattern": "saleitem",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "sale_item",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "salearr",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SALEITEM",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SALEARr",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SALEARRAY",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "出售",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "sellPrice",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "SellPrice",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "getSellPrice",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "sellMoney",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "sellData",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:52284: e.sellDataArr = [];",
+        "tools/scripts3.js:52306: this.sellDataArr = this.checkGridSellData();",
+        "tools/scripts3.js:52307: this.sellView.getComponent(h.default).total(this.sellDataArr.length);",
+        "tools/scripts3.js:52320: this.sellDataArr = this.checkGridSellData();",
+        "tools/scripts3.js:52321: this.sellView.getComponent(h.default).total(this.sellDataArr.length);",
+        "tools/scripts3.js:52331: if (this.sellDataArr[e]) {",
+        "tools/scripts3.js:52333: t.getComponent(\"MonBagCellRender\").setData(this.sellDataArr[e]);"
+      ]
+    },
+    {
+      "pattern": "setCoins",
+      "file": "tools/scripts3.js",
+      "exit": 1,
+      "hits": []
+    },
+    {
+      "pattern": "baseValueAy[35]",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:74339: i.RogueRoleInfo.coins = t.baseValueAy[35];"
+      ]
+    },
+    {
+      "pattern": "coins (assignment/definition)",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:71037: coins: o,",
+        "tools/scripts3.js:72042: coins: 21500",
+        "tools/scripts3.js:72883: this.coins = 0;",
+        "tools/scripts3.js:73919: i.RogueRoleInfo.coins = c.coins;",
+        "tools/scripts3.js:74278: i.RogueRoleInfo.coins = 0;",
+        "tools/scripts3.js:74339: i.RogueRoleInfo.coins = t.baseValueAy[35];"
+      ]
+    }
+  ],
+  "hitContext": [
+    {
+      "hit": "tools/index.js:25059: e.prototype.getPriceValue = function() {",
+      "enclosingFunction": "tools/index.js:25058: e.prototype.onMaxClick = function() {};"
+    },
+    {
+      "hit": "tools/index.js:25062: e.prototype.setPriceValue = function(t) {",
+      "enclosingFunction": "tools/index.js:25059: e.prototype.getPriceValue = function() {"
+    },
+    {
+      "hit": "tools/index.js:26000: this._Price = new n(\"cfprice\");",
+      "enclosingFunction": "tools/index.js:25999: function t() {"
+    },
+    {
+      "hit": "tools/index.js:26001: this._BuyPrice = new n(\"cfbprice\");",
+      "enclosingFunction": "tools/index.js:25999: function t() {"
+    },
+    {
+      "hit": "tools/index.js:26018: key: \"Price\",",
+      "enclosingFunction": "tools/index.js:25999: function t() {"
+    },
+    {
+      "hit": "tools/index.js:26020: return this._Price.value;",
+      "enclosingFunction": "tools/index.js:25999: function t() {"
+    },
+    {
+      "hit": "tools/index.js:26023: this._Price.value = t;",
+      "enclosingFunction": "tools/index.js:25999: function t() {"
+    },
+    {
+      "hit": "tools/index.js:26026: key: \"BuyPrice\",",
+      "enclosingFunction": "tools/index.js:25999: function t() {"
+    },
+    {
+      "hit": "tools/index.js:26028: return this._BuyPrice.value;",
+      "enclosingFunction": "tools/index.js:25999: function t() {"
+    },
+    {
+      "hit": "tools/index.js:26031: this._BuyPrice.value = t;",
+      "enclosingFunction": "tools/index.js:25999: function t() {"
+    },
+    {
+      "hit": "tools/index.js:62114: this.showRewardPrice = 0;",
+      "enclosingFunction": "tools/index.js:62080: function e() {"
+    },
+    {
+      "hit": "tools/index.js:62682: this.showRewardPrice = 0;",
+      "enclosingFunction": "tools/index.js:62677: e.prototype.onGetInnData = function(t, e) {"
+    },
+    {
+      "hit": "tools/index.js:62685: if (e.hasOwnProperty(\"showRewardPrice\")) {",
+      "enclosingFunction": "tools/index.js:62677: e.prototype.onGetInnData = function(t, e) {"
+    },
+    {
+      "hit": "tools/index.js:62686: this.showRewardPrice = e.showRewardPrice;",
+      "enclosingFunction": "tools/index.js:62677: e.prototype.onGetInnData = function(t, e) {"
+    },
+    {
+      "hit": "tools/index.js:63370: var e = g.InnManageModel.showRewardPrice;",
+      "enclosingFunction": "tools/index.js:63359: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/index.js:65207: o += parseInt(g.Price) * h[2];",
+      "enclosingFunction": "tools/index.js:65190: e.prototype.sellItem = function(t) {"
+    },
+    {
+      "hit": "tools/index.js:107600: !o.isShowTip && i.hasOwnProperty(\"Price\") && parseInt(i.Price) > 0 ? c.default.show(n.getText(\"1562\"), [ {",
+      "enclosingFunction": "tools/index.js:107598: e.prototype.judgeIsShowTip = function(t, e) {"
+    },
+    {
+      "hit": "tools/index.js:131455: e.prototype.setPriceValue = function(t) {",
+      "enclosingFunction": "tools/index.js:131448: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/index.js:131458: e.prototype.getPriceValue = function() {",
+      "enclosingFunction": "tools/index.js:131455: e.prototype.setPriceValue = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:2280: this.cost = (t ? parseInt(t.Price) - parseInt(s.Price) : 0) + (e ? parseInt(e.Price) - parseInt(i.Price) : 0) + (o ? parseInt(o.Price) - parseInt(n.Price) : 0);",
+      "enclosingFunction": "tools/scripts2.js:2278: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5792: e.labelPrice = null;",
+      "enclosingFunction": "tools/scripts2.js:5787: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5811: this.labelPrice = this.getPathByNode(\"Bg/labelPrice\");",
+      "enclosingFunction": "tools/scripts2.js:5799: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5820: this.price = t.Price;",
+      "enclosingFunction": "tools/scripts2.js:5818: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5825: this.setTotalPrice();",
+      "enclosingFunction": "tools/scripts2.js:5818: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5827: this.labelPrice.getComponent(cc.Label).string = o;",
+      "enclosingFunction": "tools/scripts2.js:5818: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5830: e.prototype.setTotalPrice = function() {",
+      "enclosingFunction": "tools/scripts2.js:5818: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5836: this.setTotalPrice();",
+      "enclosingFunction": "tools/scripts2.js:5833: e.prototype.onAddClick = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:5841: this.setTotalPrice();",
+      "enclosingFunction": "tools/scripts2.js:5838: e.prototype.onClickMax = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5980: this.setPriceValue(e);",
+      "enclosingFunction": "tools/scripts2.js:5974: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5982: this.totalLabel.getComponent(cc.Label).string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:5974: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5990: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:5987: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:5993: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts2.js:5987: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:5995: var i = Math.floor(l.RoleBaseInfo.gold / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:5987: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:5999: this.totalLabel.getComponent(cc.Label).string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:5987: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6057: this.setPriceValue(e);",
+      "enclosingFunction": "tools/scripts2.js:6051: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6059: this.totalLabel.getComponent(cc.Label).string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:6051: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6067: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:6064: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6070: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts2.js:6064: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6072: var i = Math.floor(l.RoleBaseInfo.coins / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:6064: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6076: this.totalLabel.getComponent(cc.Label).string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:6064: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6136: this.setPriceValue(this.data.price);",
+      "enclosingFunction": "tools/scripts2.js:6131: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6138: this.totalLabel.getComponent(cc.Label).string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:6131: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6145: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:6142: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6148: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts2.js:6142: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6150: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:6142: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6154: this.totalLabel.getComponent(cc.Label).string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:6142: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6228: this.setPriceValue(this.data.price);",
+      "enclosingFunction": "tools/scripts2.js:6222: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6230: this.totalLabel.getComponent(cc.Label).string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:6222: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6237: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:6234: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6240: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts2.js:6234: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6242: var i = Math.floor(p.TowerModel.getNewGlodNum() / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:6234: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6246: this.totalLabel.getComponent(cc.Label).string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:6234: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6551: this.priceText.string = String(this.itemNum * this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:6528: e.prototype.changeNum = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6555: this.setPriceValue(parseInt(this.data.price));",
+      "enclosingFunction": "tools/scripts2.js:6553: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6556: this.max = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:6553: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6558: this.priceText.string = String(this.itemNum * this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:6553: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6563: var e = this.itemNum * this.getPriceValue();",
+      "enclosingFunction": "tools/scripts2.js:6560: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6631: this.setPriceValue(this.data.price);",
+      "enclosingFunction": "tools/scripts2.js:6628: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6633: this.totalLabel.getComponent(cc.Label).string = this.getPriceValue() * this.itemNum + \" \" + r.getText(\"506\");",
+      "enclosingFunction": "tools/scripts2.js:6628: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6648: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:6642: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6654: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts2.js:6642: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6656: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:6642: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6671: this.totalLabel.getComponent(cc.Label).string = this.getPriceValue() * this.itemNum + \" \" + r.getText(\"506\");",
+      "enclosingFunction": "tools/scripts2.js:6642: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6731: this.setPriceValue(this.data.price * Math.floor(1 + l.StoreModel.buyTimes / 10));",
+      "enclosingFunction": "tools/scripts2.js:6728: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6733: this.totalLabel.getComponent(cc.Label).string = (this.getPriceValue() * this.itemNum).toString() + \" \" + r.getText(\"506\");",
+      "enclosingFunction": "tools/scripts2.js:6728: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6748: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:6742: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6754: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts2.js:6742: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6756: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:6742: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6771: this.totalLabel.getComponent(cc.Label).string = this.getPriceValue() * this.itemNum + \" \" + r.getText(\"506\");",
+      "enclosingFunction": "tools/scripts2.js:6742: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6832: this.setPriceValue(this.data[2]);",
+      "enclosingFunction": "tools/scripts2.js:6830: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6837: this.total > this.getPriceValue() && this.max > 0 && (this.itemNum = 1);",
+      "enclosingFunction": "tools/scripts2.js:6830: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6841: this.totalLabel.getComponent(cc.Label).string = this.getPriceValue() * this.itemNum + \"/\" + this.total;",
+      "enclosingFunction": "tools/scripts2.js:6830: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6878: this.totalLabel.getComponent(cc.Label).string = this.itemNum * this.getPriceValue() + \"/\" + this.total;",
+      "enclosingFunction": "tools/scripts2.js:6858: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6881: this.itemNum * this.getPriceValue() > this.total ? 2 == this.data[1] ? f.StoreModel.openChargeList() : u.default.show(l.getText(202201181)) : d.InnManageModel.reqInnShopBuy(this.data[0], this.itemNum);",
+      "enclosingFunction": "tools/scripts2.js:6880: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6943: this.setPriceValue(e);",
+      "enclosingFunction": "tools/scripts2.js:6937: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6954: this.totalLabel.getComponent(cc.Label).string = \"\" + this.itemNum * this.getPriceValue();",
+      "enclosingFunction": "tools/scripts2.js:6945: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6987: this.totalLabel.getComponent(cc.Label).string = \"\" + this.itemNum * this.getPriceValue();",
+      "enclosingFunction": "tools/scripts2.js:6967: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:6991: var t = this, e = this.getPriceValue() * this.itemNum;",
+      "enclosingFunction": "tools/scripts2.js:6989: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:7059: this.setPriceValue(this.data.price);",
+      "enclosingFunction": "tools/scripts2.js:7057: o.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:7062: this.totalLabel.getComponent(cc.Label).string = (this.getPriceValue() * this.itemNum).toString() + \" \" + r.getText(\"506\");",
+      "enclosingFunction": "tools/scripts2.js:7057: o.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:7074: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:7068: o.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7080: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts2.js:7068: o.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7082: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:7068: o.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7091: this.totalLabel.getComponent(cc.Label).string = this.getPriceValue() * this.itemNum + \" \" + r.getText(\"506\");",
+      "enclosingFunction": "tools/scripts2.js:7068: o.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7162: this.setPriceValue(this.itemObj.price);",
+      "enclosingFunction": "tools/scripts2.js:7159: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7164: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:7159: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7171: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:7168: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7174: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts2.js:7168: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7176: var i = Math.floor(l.RoleBaseInfo.gold / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:7168: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7181: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:7168: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7243: this.setPriceValue(this.itemObj.price);",
+      "enclosingFunction": "tools/scripts2.js:7240: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7245: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:7240: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7252: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:7249: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7255: var i = this.getPriceValue() * (this.itemNum + 10), s = Math.ceil(h.RoleOtherInfo.chipMaxTimes - h.RoleOtherInfo.chipTimes);",
+      "enclosingFunction": "tools/scripts2.js:7249: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7257: var n = Math.floor(Math.ceil(l.RoleBaseInfo.chipNum) / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:7249: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7264: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:7249: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7327: this.setPriceValue(this.itemObj.price);",
+      "enclosingFunction": "tools/scripts2.js:7324: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7329: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:7324: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7336: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:7333: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7339: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts2.js:7333: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7342: var s = Math.floor(Math.ceil(l.RoleBaseInfo.chipNum) / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:7333: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7349: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:7333: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7414: this.setPriceValue(o);",
+      "enclosingFunction": "tools/scripts2.js:7409: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7416: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:7409: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7423: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:7420: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7427: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts2.js:7420: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7429: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:7420: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7433: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:7420: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7440: var o = this, i = this.getPriceValue() * this.itemNum;",
+      "enclosingFunction": "tools/scripts2.js:7436: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:7518: this.setPriceValue(o);",
+      "enclosingFunction": "tools/scripts2.js:7512: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7520: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:7512: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7527: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts2.js:7524: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7530: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts2.js:7524: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7532: var i = Math.floor(p.RoleBaseInfo.coins / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts2.js:7524: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7536: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:7524: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:17643: e.Price = null;",
+      "enclosingFunction": "tools/scripts2.js:17638: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:17652: this.Price = this.getPathByNode(\"Price\");",
+      "enclosingFunction": "tools/scripts2.js:17649: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:17663: this.Price.getComponent(cc.Label).string = this.itemInfo.price;",
+      "enclosingFunction": "tools/scripts2.js:17658: e.prototype.setData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:18446: e.dPrice = null;",
+      "enclosingFunction": "tools/scripts2.js:18442: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18464: this.dPrice = this.getPathByNode(\"label3\");",
+      "enclosingFunction": "tools/scripts2.js:18458: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18478: var t = this.title.getComponent(cc.Label), e = this.price.getComponent(cc.Label), o = this.dPrice.getComponent(cc.Label);",
+      "enclosingFunction": "tools/scripts2.js:18477: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18482: this.dPrice.active = !0;",
+      "enclosingFunction": "tools/scripts2.js:18477: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18490: if (0 == this.type) if (c.hasOwnProperty(this.data)) this.setPriceState(); else if (0 != i.replace && c.hasOwnProperty(i.replace)) {",
+      "enclosingFunction": "tools/scripts2.js:18477: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18499: this.dPrice.active = !1;",
+      "enclosingFunction": "tools/scripts2.js:18477: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18512: e.prototype.setPriceState = function() {",
+      "enclosingFunction": "tools/scripts2.js:18507: e.prototype.setData = function(t, e, o) {"
+    },
+    {
+      "hit": "tools/scripts2.js:18518: this.dPrice.active = !1;",
+      "enclosingFunction": "tools/scripts2.js:18517: e.prototype.setDisState = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18535: if (e.hasOwnProperty(this.data)) this.setPriceState(); else if (e.hasOwnProperty(t.replace)) {",
+      "enclosingFunction": "tools/scripts2.js:18532: e.prototype.updateStatus = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18536: this.dPrice.getComponent(cc.Label).string = t.price;",
+      "enclosingFunction": "tools/scripts2.js:18532: e.prototype.updateStatus = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18537: this.dPrice.active = !0;",
+      "enclosingFunction": "tools/scripts2.js:18532: e.prototype.updateStatus = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18588: e.lbSelPrice = null;",
+      "enclosingFunction": "tools/scripts2.js:18584: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18614: this.lbSelPrice = this.getPathByNode(\"frame1/shopgold/label5\").getComponent(cc.Label);",
+      "enclosingFunction": "tools/scripts2.js:18610: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18669: n.hasOwnProperty(s.replace) ? this.lbSelPrice.string = s.upgrade : this.lbSelPrice.string = s.price;",
+      "enclosingFunction": "tools/scripts2.js:18647: e.prototype.setMountSync = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18676: this.lbSelPrice.string = \"\";",
+      "enclosingFunction": "tools/scripts2.js:18674: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:18815: i.hasOwnProperty(o.replace) ? this.lbSelPrice.string = o.upgrade : this.lbSelPrice.string = o.price;",
+      "enclosingFunction": "tools/scripts2.js:18802: e.prototype.selectItemEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:18819: this.lbSelPrice.string = \"\";",
+      "enclosingFunction": "tools/scripts2.js:18802: e.prototype.selectItemEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:19054: i.price = s.Price;",
+      "enclosingFunction": "tools/scripts2.js:19045: o.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:19925: this.setLockPrice();",
+      "enclosingFunction": "tools/scripts2.js:19911: e.prototype.onSelectProperty = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:19955: this.setLockPrice();",
+      "enclosingFunction": "tools/scripts2.js:19928: e.prototype.showCurEquipAtt = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:19973: e.prototype.setLockPrice = function() {",
+      "enclosingFunction": "tools/scripts2.js:19957: e.prototype.setLuckData = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:19982: this.setWashPrice();",
+      "enclosingFunction": "tools/scripts2.js:19973: e.prototype.setLockPrice = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:19985: e.prototype.setWashPrice = function() {",
+      "enclosingFunction": "tools/scripts2.js:19973: e.prototype.setLockPrice = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:19986: var t = this.getWashPrice();",
+      "enclosingFunction": "tools/scripts2.js:19985: e.prototype.setWashPrice = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:19993: var t, e = this.getCurrentEquipObj(), o = this.getWashPrice();",
+      "enclosingFunction": "tools/scripts2.js:19991: e.prototype.setSumCostPay = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:20008: e.prototype.getWashPrice = function() {",
+      "enclosingFunction": "tools/scripts2.js:19991: e.prototype.setSumCostPay = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21324: e.addPrice = 0;",
+      "enclosingFunction": "tools/scripts2.js:21300: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21385: this.setGlodPrice();",
+      "enclosingFunction": "none (within 40 lines in tools/scripts2.js)"
+    },
+    {
+      "hit": "tools/scripts2.js:21520: this.addPrice = 0;",
+      "enclosingFunction": "tools/scripts2.js:21519: e.prototype.buyFashionCallBack = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:21573: 0 == this.addPrice ? u.MakeUpModel.reqBuyFashion(this.curSelectType, this.buyMode) : f.default.show(a.getText(\"991\").replace(/\\[1\\]/, this.addPrice.toString() + a.getText(506)), [ {",
+      "enclosingFunction": "tools/scripts2.js:21566: e.prototype.onClickKeep = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21582: } else if (1 == this.curSelectType) if (0 == this.addPrice) u.MakeUpModel.reqBuyFashion(this.curSelectType, this.buyMode); else {",
+      "enclosingFunction": "tools/scripts2.js:21566: e.prototype.onClickKeep = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21595: 0 == this.addPrice ? u.MakeUpModel.reqBuyFashion(this.curSelectType, this.buyMode) : f.default.show(a.getText(\"991\").replace(/\\[1\\]/, this.addPrice.toString() + a.getText(2103074)), [ {",
+      "enclosingFunction": "tools/scripts2.js:21566: e.prototype.onClickKeep = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21691: 0 == this.curSelectType ? this.setGlodPrice() : 1 == this.curSelectType ? this.setXianshiPrice() : 2 == this.curSelectType && this.setZhanlinPrice();",
+      "enclosingFunction": "none (within 40 lines in tools/scripts2.js)"
+    },
+    {
+      "hit": "tools/scripts2.js:21712: e.prototype.setGlodPrice = function() {",
+      "enclosingFunction": "tools/scripts2.js:21705: e.prototype.showPySwitchBtn = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21718: this.addPrice = e;",
+      "enclosingFunction": "tools/scripts2.js:21712: e.prototype.setGlodPrice = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21721: e.prototype.setXianshiPrice = function() {",
+      "enclosingFunction": "tools/scripts2.js:21712: e.prototype.setGlodPrice = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21755: this.addPrice = o + n;",
+      "enclosingFunction": "tools/scripts2.js:21721: e.prototype.setXianshiPrice = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21766: e.prototype.setZhanlinPrice = function() {",
+      "enclosingFunction": "none (within 40 lines in tools/scripts2.js)"
+    },
+    {
+      "hit": "tools/scripts2.js:21775: this.addPrice = e;",
+      "enclosingFunction": "tools/scripts2.js:21766: e.prototype.setZhanlinPrice = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21840: this.addPrice = 0;",
+      "enclosingFunction": "tools/scripts2.js:21828: e.prototype.onClickPage = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:21847: this.addPrice = 0;",
+      "enclosingFunction": "tools/scripts2.js:21828: e.prototype.onClickPage = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:21854: this.addPrice = 0;",
+      "enclosingFunction": "tools/scripts2.js:21828: e.prototype.onClickPage = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:22081: e.addPrice = 0;",
+      "enclosingFunction": "tools/scripts2.js:22061: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:22136: this.setPrice();",
+      "enclosingFunction": "none (within 40 lines in tools/scripts2.js)"
+    },
+    {
+      "hit": "tools/scripts2.js:22230: this.addPrice = 0;",
+      "enclosingFunction": "tools/scripts2.js:22229: e.prototype.buyFashionCallBack = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:22273: 0 == this.addPrice ? u.MakeUpModel.reqBuyFashion(0, this.buyMode) : f.default.show(a.getText(\"991\").replace(/\\[1\\]/, this.addPrice.toString()), [ {",
+      "enclosingFunction": "tools/scripts2.js:22267: e.prototype.onClickKeep = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:22386: this.setPrice();",
+      "enclosingFunction": "none (within 40 lines in tools/scripts2.js)"
+    },
+    {
+      "hit": "tools/scripts2.js:22407: e.prototype.setPrice = function() {",
+      "enclosingFunction": "tools/scripts2.js:22400: e.prototype.showPySwitchBtn = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:22417: this.addPrice = e;",
+      "enclosingFunction": "tools/scripts2.js:22407: e.prototype.setPrice = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:22862: this.getPriceArr();",
+      "enclosingFunction": "tools/scripts2.js:22843: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:22864: this.showPrice1Btn();",
+      "enclosingFunction": "tools/scripts2.js:22843: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:22865: this.showPrice2Btn();",
+      "enclosingFunction": "tools/scripts2.js:22843: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:22890: this.getPriceArr();",
+      "enclosingFunction": "tools/scripts2.js:22888: e.prototype.onUpdateChargeData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:22892: this.showPrice1Btn();",
+      "enclosingFunction": "tools/scripts2.js:22888: e.prototype.onUpdateChargeData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:22893: this.showPrice2Btn();",
+      "enclosingFunction": "tools/scripts2.js:22888: e.prototype.onUpdateChargeData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:22913: e.prototype.getPriceArr = function() {",
+      "enclosingFunction": "tools/scripts2.js:22904: e.prototype.showIconUI2 = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:22922: e.prototype.showPrice1Btn = function() {",
+      "enclosingFunction": "tools/scripts2.js:22918: e.prototype.checkOpenState = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:22941: e.prototype.showPrice2Btn = function() {",
+      "enclosingFunction": "tools/scripts2.js:22922: e.prototype.showPrice1Btn = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:23001: this.getPriceArr();",
+      "enclosingFunction": "tools/scripts2.js:22999: e.prototype.onAccReChargedReward = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:23003: this.showPrice1Btn();",
+      "enclosingFunction": "tools/scripts2.js:22999: e.prototype.onAccReChargedReward = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:23004: this.showPrice2Btn();",
+      "enclosingFunction": "tools/scripts2.js:22999: e.prototype.onAccReChargedReward = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:46027: e.buyPrice = null;",
+      "enclosingFunction": "tools/scripts2.js:46007: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:46038: this.buyPrice = this.getPathByNode(\"frame/updateNode/num\");",
+      "enclosingFunction": "tools/scripts2.js:46031: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:46126: this.priceNum = e.buyPrice;",
+      "enclosingFunction": "tools/scripts2.js:46125: e.prototype.onGetBigGroupDataEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:46142: this.priceNum = t.buyPrice;",
+      "enclosingFunction": "tools/scripts2.js:46140: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:46151: this.buyPrice.getComponent(cc.Label).string = this.priceNum.toString();",
+      "enclosingFunction": "tools/scripts2.js:46140: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:46443: price: s.BuyPrice",
+      "enclosingFunction": "tools/scripts2.js:46435: e.prototype.setItemList = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:46452: price: s.BuyPrice",
+      "enclosingFunction": "tools/scripts2.js:46435: e.prototype.setItemList = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54585: e.oriPriceLabel = null;",
+      "enclosingFunction": "tools/scripts2.js:54572: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54604: this.oriPriceLabel = this.getPathByNode(\"Layout/label10\").getComponent(cc.Label);",
+      "enclosingFunction": "tools/scripts2.js:54590: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54627: this.oriPriceLabel.node.active = t.hasOwnProperty(\"sale\") && 0 != t.sale;",
+      "enclosingFunction": "tools/scripts2.js:54618: e.prototype.dataChanged = function(t, e, o) {"
+    },
+    {
+      "hit": "tools/scripts2.js:54628: if (this.oriPriceLabel.node.active) {",
+      "enclosingFunction": "tools/scripts2.js:54618: e.prototype.dataChanged = function(t, e, o) {"
+    },
+    {
+      "hit": "tools/scripts2.js:54629: this.oriPriceLabel.string = t.price;",
+      "enclosingFunction": "tools/scripts2.js:54618: e.prototype.dataChanged = function(t, e, o) {"
+    },
+    {
+      "hit": "tools/scripts2.js:54766: e.singlePrice = 0;",
+      "enclosingFunction": "tools/scripts2.js:54761: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54767: e.totalPrice = 0;",
+      "enclosingFunction": "tools/scripts2.js:54761: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54771: e.labelPrice = null;",
+      "enclosingFunction": "tools/scripts2.js:54761: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54782: this.singlePrice = 0;",
+      "enclosingFunction": "tools/scripts2.js:54778: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54783: this.totalPrice = 0;",
+      "enclosingFunction": "tools/scripts2.js:54778: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54786: this.labelPrice = this.getPathByNode(\"Bg/HowMuch/labelPrice\").getComponent(cc.Label);",
+      "enclosingFunction": "tools/scripts2.js:54778: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54795: this.totalPrice = this.curNum * this.singlePrice;",
+      "enclosingFunction": "tools/scripts2.js:54793: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54796: this.labelPrice.string = this.totalPrice.toString();",
+      "enclosingFunction": "tools/scripts2.js:54793: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54807: this.singlePrice = t.price;",
+      "enclosingFunction": "tools/scripts2.js:54802: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:54813: this.totalPrice = this.curNum * this.singlePrice;",
+      "enclosingFunction": "tools/scripts2.js:54809: e.prototype.clickBtnMinus1CB = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54814: this.labelPrice.string = this.totalPrice.toString();",
+      "enclosingFunction": "tools/scripts2.js:54809: e.prototype.clickBtnMinus1CB = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54821: this.totalPrice = this.curNum * this.singlePrice;",
+      "enclosingFunction": "tools/scripts2.js:54817: e.prototype.clickBtnAdd1CB = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54822: this.labelPrice.string = this.totalPrice.toString();",
+      "enclosingFunction": "tools/scripts2.js:54817: e.prototype.clickBtnAdd1CB = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54828: this.totalPrice = this.curNum * this.singlePrice;",
+      "enclosingFunction": "tools/scripts2.js:54825: e.prototype.clickBtnMaxCB = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54829: this.labelPrice.string = this.totalPrice.toString();",
+      "enclosingFunction": "tools/scripts2.js:54825: e.prototype.clickBtnMaxCB = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:55601: if (s && 1 == s.Type && 0 < i.numbers && 0 < s.Price && !h.InventoryModel.checkEquipLocked(i.uID) && !d.EqUtils.isDemonedEquip(i)) {",
+      "enclosingFunction": "tools/scripts2.js:55593: e.prototype.clickCellTypeCB = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:55609: n.price = s.Price;",
+      "enclosingFunction": "tools/scripts2.js:55593: e.prototype.clickCellTypeCB = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:55625: if (a.indexOf(m.Effect.toString()) >= 0 && 2 == m.Type && 0 < m.Price) {",
+      "enclosingFunction": "tools/scripts2.js:55593: e.prototype.clickCellTypeCB = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:55630: f.price = m.Price;",
+      "enclosingFunction": "tools/scripts2.js:55593: e.prototype.clickCellTypeCB = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:58663: this.priceLabel = this.getPathByNode(\"Price\");",
+      "enclosingFunction": "tools/scripts2.js:58658: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:59720: if (1 == this.type) o = parseInt(a.getItem(e, \"creat_role\").Price); else if (t > 0) {",
+      "enclosingFunction": "tools/scripts2.js:59713: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:59728: o = parseInt(a.getItem(e, \"creat_role\").Price);",
+      "enclosingFunction": "tools/scripts2.js:59713: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:59736: var p = l.getComponent(cc.Toggle), u = a.getItem(this.appearArr[s], \"creat_role\"), g = l.getChildByName(\"label\").getComponent(cc.Label), f = l.getChildByName(\"money\").getComponent(cc.Label), v = parseInt(u.Price) - o;",
+      "enclosingFunction": "tools/scripts2.js:59713: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:59811: var o = this, i = a.getItem(this.appearArr[e], \"creat_role\"), s = parseInt(i.Price);",
+      "enclosingFunction": "tools/scripts2.js:59810: e.prototype.onSelectAppear = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:59814: s += parseInt(r.Price) - parseInt(h.Price) - parseInt(u.Price);",
+      "enclosingFunction": "tools/scripts2.js:59810: e.prototype.onSelectAppear = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:59817: s -= parseInt(u.Price);",
+      "enclosingFunction": "tools/scripts2.js:59810: e.prototype.onSelectAppear = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:61134: var i = parseInt(o.Price) - (t ? parseInt(t.Price) : 0);",
+      "enclosingFunction": "tools/scripts2.js:61127: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:61557: var t = u.ChangeBirthModel.nBirthIdId > 0 ? u.ChangeBirthModel.nBirthIdId : u.ChangeBirthModel.birthIdId, e = u.ChangeBirthModel.nAppearId > 0 ? u.ChangeBirthModel.nAppearId : u.ChangeBirthModel.appearId, o = a.getItem(t, \"creat_role\"), i = a.getItem(e, \"creat_role\"), s = a.getItem(u.ChangeBirthModel.appearId, \"creat_role\"), n = a.getItem(u.ChangeBirthModel.birthIdId, \"creat_role\"), r = parseInt(o.Price) + parseInt(i.Price) - parseInt(s.Price) - parseInt(n.Price), l = c.RoleBaseInfo.gold > r ? c.RoleBaseInfo.gold - r : 0;",
+      "enclosingFunction": "tools/scripts2.js:61556: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:69029: e.curPriceValue = null;",
+      "enclosingFunction": "tools/scripts2.js:69027: function e() {"
+    },
+    {
+      "hit": "tools/scripts2.js:69048: var i = this.calculateCurPrice(o), s = this.calculateDiscountValue(o);",
+      "enclosingFunction": "tools/scripts2.js:69043: e.prototype.reFreshUI = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:69059: var e = this.calculateCurPrice(this.selectIndex);",
+      "enclosingFunction": "tools/scripts2.js:69055: e.prototype.onEnterBtn = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:69060: this.curPriceValue = e;",
+      "enclosingFunction": "tools/scripts2.js:69055: e.prototype.onEnterBtn = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:69063: u.default.show(a.getText(\"1089\").replace(/\\[1\\]/, o.curPriceValue.toString()), [ {",
+      "enclosingFunction": "tools/scripts2.js:69055: e.prototype.onEnterBtn = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:69076: e.prototype.calculateCurPrice = function(t) {",
+      "enclosingFunction": "tools/scripts2.js:69055: e.prototype.onEnterBtn = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:75673: this.checkPriceShow();",
+      "enclosingFunction": "tools/scripts2.js:75641: o.prototype.showRerfresh = function(e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:75675: o.prototype.checkPriceShow = function() {",
+      "enclosingFunction": "tools/scripts2.js:75641: o.prototype.showRerfresh = function(e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:78474: this.setPriceValue(this.itemObj.price);",
+      "enclosingFunction": "tools/scripts2.js:78469: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:78476: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts2.js:78469: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:6493: e.selectPriceAy = [];",
+      "enclosingFunction": "tools/scripts3.js:6472: function e() {"
+    },
+    {
+      "hit": "tools/scripts3.js:6705: this.selectPriceAy[i].string = s.GetYuanbao.toString();",
+      "enclosingFunction": "tools/scripts3.js:6701: e.prototype.setGearConfigData = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:6782: this.selectPriceAy.push(i);",
+      "enclosingFunction": "tools/scripts3.js:6777: e.prototype.setConfigBaseNode = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:6987: this.alchemyPrice = 10;",
+      "enclosingFunction": "tools/scripts3.js:6981: function t() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18302: var e = l.AlchemyModel.alchemyPrice;",
+      "enclosingFunction": "tools/scripts3.js:18299: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:18304: this.setPriceValue(e);",
+      "enclosingFunction": "tools/scripts3.js:18299: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:18308: this.totalLabel.getComponent(cc.Label).string = this.itemNum * this.getPriceValue() + \" \" + r.getText(506);",
+      "enclosingFunction": "tools/scripts3.js:18306: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18330: this.totalLabel.getComponent(cc.Label).string = this.itemNum * this.getPriceValue() + \" \" + r.getText(506);",
+      "enclosingFunction": "tools/scripts3.js:18310: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:18392: this.setPriceValue(d.getConstByID(552));",
+      "enclosingFunction": "tools/scripts3.js:18378: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18393: var n = Math.floor(u.RoleBaseInfo.gold / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts3.js:18378: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18395: this.priceText.string = String(this.itemNum * this.getPriceValue());",
+      "enclosingFunction": "tools/scripts3.js:18378: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18418: if (this.itemNum < 0) this.itemNum = 0; else if (this.itemNum > this._max) this.itemNum = this._max; else if (this.itemNum * this.getPriceValue() > u.RoleBaseInfo.gold) {",
+      "enclosingFunction": "tools/scripts3.js:18401: e.prototype.changeNum = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:18426: this.priceText.string = String(this.itemNum * this.getPriceValue());",
+      "enclosingFunction": "tools/scripts3.js:18424: e.prototype.updateNumView = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18435: var e = this.itemNum * this.getPriceValue();",
+      "enclosingFunction": "tools/scripts3.js:18432: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18511: this.setPriceValue(e);",
+      "enclosingFunction": "tools/scripts3.js:18507: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18540: var e = p.RoleBaseInfo.getItemNum(this.costItemId), o = this.getPriceValue(), i = Math.max(Math.floor(e / o), 1);",
+      "enclosingFunction": "tools/scripts3.js:18539: e.prototype.updateNumShow = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:18547: var t = this, e = this.itemNum * this.getPriceValue();",
+      "enclosingFunction": "tools/scripts3.js:18546: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18622: this.setPriceValue(e);",
+      "enclosingFunction": "tools/scripts3.js:18618: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18652: var e = p.RoleBaseInfo.getItemNum(this.costItemId), o = this.getPriceValue(), i = Math.min(Math.max(1, Math.floor(e / o)), this.data[3] - this.data[4]);",
+      "enclosingFunction": "tools/scripts3.js:18651: e.prototype.updateNumShow = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:18659: if (this.itemNum * this.getPriceValue() > p.RoleBaseInfo.getItemNum(this.costItemId)) h.default.show(r.getText(1455)); else if (this.itemNum > 0) {",
+      "enclosingFunction": "tools/scripts3.js:18658: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18717: this.setPriceValue(i);",
+      "enclosingFunction": "tools/scripts3.js:18710: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18752: var e = this.getPriceValue(), o = Math.min(Math.max(1, Math.floor(p.RoleBaseInfo.gold / e)), this._max);",
+      "enclosingFunction": "tools/scripts3.js:18751: e.prototype.updateNumShow = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:18758: var t = this.itemNum * this.getPriceValue();",
+      "enclosingFunction": "tools/scripts3.js:18757: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:18843: this.setPriceValue(t.price);",
+      "enclosingFunction": "tools/scripts3.js:18840: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:18868: var e = this.getPriceValue(), o = Math.min(Math.max(1, Math.floor(p.RoleBaseInfo.gold / e)), this._max - this.buyCounts);",
+      "enclosingFunction": "tools/scripts3.js:18867: e.prototype.updateNumShow = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:18874: var t = this.itemNum * this.getPriceValue();",
+      "enclosingFunction": "tools/scripts3.js:18873: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:21604: var s = f.DemonModel.getCrystalPriceCf(o[i]);",
+      "enclosingFunction": "tools/scripts3.js:21602: e.prototype.getCost = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:21607: var n = f.DemonModel.getCrystalPriceCf(e[i]);",
+      "enclosingFunction": "tools/scripts3.js:21602: e.prototype.getCost = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:21610: n = f.DemonModel.getCrystalPriceCf(e[i]), s = f.DemonModel.getCrystalPriceCf(o[i]);",
+      "enclosingFunction": "tools/scripts3.js:21602: e.prototype.getCost = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:24632: t.prototype.getCrystalPriceCf = function(t) {",
+      "enclosingFunction": "tools/scripts3.js:24629: t.prototype.getCrystalGenerateId = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:28656: var s = v.DemonModel.getCrystalPriceCf(e[i]);",
+      "enclosingFunction": "tools/scripts3.js:28652: e.prototype.setCost = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:28737: var s = v.DemonModel.getCrystalPriceCf(e[i]);",
+      "enclosingFunction": "tools/scripts3.js:28733: e.prototype.onClickSure = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:34922: this.price.string = (this.num * this.myInfo.Price).toString() + a.getText(6000600);",
+      "enclosingFunction": "tools/scripts3.js:34920: e.prototype.refresh = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:34964: } else if (this.num * this.myInfo.Price > c.RoleBaseInfo.goodEvilContribution) d.default.show(a.getText(6000731)); else {",
+      "enclosingFunction": "tools/scripts3.js:34960: e.prototype.onClickBtnBuy = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:37613: this.costNum.string = t.Price;",
+      "enclosingFunction": "tools/scripts3.js:37597: e.prototype.refresh = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:47080: var r = a.DemonModel.getCrystalPriceCf(this.crystalId);",
+      "enclosingFunction": "tools/scripts3.js:47059: e.prototype.showItem = function(t, e, o, i) {"
+    },
+    {
+      "hit": "tools/scripts3.js:47487: var r = l.DemonModel.getCrystalPriceCf(s[1]);",
+      "enclosingFunction": "tools/scripts3.js:47476: e.prototype.onClickSelectAll = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:48145: this.setPriceValue(t.price);",
+      "enclosingFunction": "tools/scripts3.js:48141: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:48152: this.cost = this.itemNum * this.getPriceValue();",
+      "enclosingFunction": "tools/scripts3.js:48141: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:48158: e.prototype.setPriceValue = function(t) {",
+      "enclosingFunction": "tools/scripts3.js:48141: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:48161: e.prototype.getPriceValue = function() {",
+      "enclosingFunction": "tools/scripts3.js:48158: e.prototype.setPriceValue = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:48170: this.totalLabel.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts3.js:48164: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:49864: this.setPriceValue(this.itemObj.price);",
+      "enclosingFunction": "tools/scripts3.js:49861: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:49869: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts3.js:49861: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:49878: var o = this.getPriceValue() * (this.itemNum + 1);",
+      "enclosingFunction": "tools/scripts3.js:49875: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:49881: o = this.getPriceValue() * (this.itemNum + 10);",
+      "enclosingFunction": "tools/scripts3.js:49875: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:49883: var i = Math.floor(l.RoleBaseInfo.gold / this.getPriceValue());",
+      "enclosingFunction": "tools/scripts3.js:49875: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:49889: this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+      "enclosingFunction": "tools/scripts3.js:49875: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:54342: var t = cc.assetManager.getBundle(\"store\"), e = \"YuanbaoPrice\";",
+      "enclosingFunction": "tools/scripts3.js:54338: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:54343: \"en\" == C.lang && (e = \"YuanbaoPrice_en\");",
+      "enclosingFunction": "tools/scripts3.js:54338: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:64795: if (!this.data.checkCanBuy || this.data.checkCanBuy(this.num)) if (this.num * this.data.price > this.data.havePriceNum) c.default.show(this.data.notEnoughPriceTip); else {",
+      "enclosingFunction": "tools/scripts3.js:64794: e.prototype.onClickBtnBuy = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66751: price: this.getPrice(),",
+      "enclosingFunction": "tools/scripts3.js:66748: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66753: notEnoughPriceTip: c.getText(3589),",
+      "enclosingFunction": "tools/scripts3.js:66748: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66754: havePriceNum: g.RogueRoleInfo.coins,",
+      "enclosingFunction": "tools/scripts3.js:66748: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66773: e.prototype.getPrice = function() {",
+      "enclosingFunction": "tools/scripts3.js:66768: e.prototype.getDiscountStr = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66788: this.cost.string = this.getCostDes() + \":\" + this.getPrice().toString() + this.getDiscountStr();",
+      "enclosingFunction": "tools/scripts3.js:66784: e.prototype.refresh = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66866: e.prototype.getHavePriceNum = function() {",
+      "enclosingFunction": "tools/scripts3.js:66863: e.prototype.getHaveNum = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66867: return this.getHaveNum() * this.getPrice();",
+      "enclosingFunction": "tools/scripts3.js:66866: e.prototype.getHavePriceNum = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66884: price: this.getPrice(),",
+      "enclosingFunction": "tools/scripts3.js:66872: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66886: notEnoughPriceTip: c.getText(1455),",
+      "enclosingFunction": "tools/scripts3.js:66872: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66887: havePriceNum: this.getHavePriceNum(),",
+      "enclosingFunction": "tools/scripts3.js:66872: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66898: e.prototype.getPrice = function() {",
+      "enclosingFunction": "tools/scripts3.js:66872: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66913: this.cost.string = this.getCostDes() + \":\" + this.getPrice().toString();",
+      "enclosingFunction": "tools/scripts3.js:66907: e.prototype.refreshItem = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:66928: this.cost.string = this.getCostDes() + \":\" + this.getPrice().toString();",
+      "enclosingFunction": "tools/scripts3.js:66921: e.prototype.refreshTreasure = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:68364: price: this.getPrice(),",
+      "enclosingFunction": "tools/scripts3.js:68361: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:68366: notEnoughPriceTip: c.getText(9223),",
+      "enclosingFunction": "tools/scripts3.js:68361: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:68367: havePriceNum: p.RoleBaseInfo.gold,",
+      "enclosingFunction": "tools/scripts3.js:68361: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:68377: e.prototype.getPrice = function() {",
+      "enclosingFunction": "tools/scripts3.js:68361: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:68386: this.cost.string = this.getCostDes() + \":\" + this.getPrice().toString();",
+      "enclosingFunction": "tools/scripts3.js:68383: e.prototype.refresh = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:70850: this.refreshCZPrice = 0;",
+      "enclosingFunction": "tools/scripts3.js:70824: function t() {"
+    },
+    {
+      "hit": "tools/scripts3.js:71163: this.refreshCZPrice = e.refreshCZPrice;",
+      "enclosingFunction": "tools/scripts3.js:71160: t.prototype.onRefreshOutfitting = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts3.js:71411: this.refreshCZPrice = t.refreshCZPrice;",
+      "enclosingFunction": "tools/scripts3.js:71383: t.prototype.setEnterData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:72767: var t = 0 == u.RogueModel.refreshCZPrice;",
+      "enclosingFunction": "tools/scripts3.js:72764: e.prototype.refresh = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:72774: this.useGoldNode.active && (this.changeNum.string = u.RogueModel.refreshCZPrice.toString());",
+      "enclosingFunction": "tools/scripts3.js:72764: e.prototype.refresh = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:72786: u.RogueModel.refreshCZPrice > 0 && h.RoleBaseInfo.getItemNum(this.addItemId) <= 0 && h.RoleBaseInfo.gold < u.RogueModel.refreshCZPrice ? c.default.show(g.getText(9223)) : u.RogueModel.refreshOutfitting();",
+      "enclosingFunction": "tools/scripts3.js:72785: e.prototype.onClickChange = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:75339: e.prototype.getPriceDes = function() {",
+      "enclosingFunction": "tools/scripts3.js:75336: e.prototype.getRefreshStr = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:75349: priceDes: this.getPriceDes(),",
+      "enclosingFunction": "tools/scripts3.js:75343: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:75350: notEnoughPriceTip: c.getText(7863),",
+      "enclosingFunction": "tools/scripts3.js:75343: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:75351: havePriceNum: p.RoleBaseInfo.getItemNum(this.costId),",
+      "enclosingFunction": "tools/scripts3.js:75343: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:81950: notEnoughPriceTip: c.getText(9223),",
+      "enclosingFunction": "tools/scripts3.js:81945: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:81951: havePriceNum: p.RoleBaseInfo.gold,",
+      "enclosingFunction": "tools/scripts3.js:81945: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:83117: notEnoughPriceTip: c.getText(9223),",
+      "enclosingFunction": "tools/scripts3.js:83109: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:83118: havePriceNum: p.RoleBaseInfo.gold,",
+      "enclosingFunction": "tools/scripts3.js:83109: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:89712: this.costPrice = 0;",
+      "enclosingFunction": "tools/scripts3.js:89707: function t() {"
+    },
+    {
+      "hit": "tools/scripts3.js:89731: this.costPrice = o.costPrice;",
+      "enclosingFunction": "tools/scripts3.js:89725: t.prototype.onGetTrickExchangeData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts3.js:89747: this.costPrice = e.costPrice;",
+      "enclosingFunction": "tools/scripts3.js:89742: t.prototype.onRefreshTrickExchangeData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts3.js:89869: this.costNum.string = l.TrickExModel.costPrice.toString();",
+      "enclosingFunction": "tools/scripts3.js:89857: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:89902: this.costNum.string = l.TrickExModel.costPrice.toString();",
+      "enclosingFunction": "tools/scripts3.js:89901: e.prototype.onRefreshList = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:89937: t = (t = t.replace(/\\[1\\]/, l.TrickExModel.costPrice)).replace(/\\[2\\]/, l.TrickExModel.remainingNum);",
+      "enclosingFunction": "tools/scripts3.js:89934: e.prototype.onClickRefresh = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:89945: 0 == t && (p.RoleBaseInfo.gold < l.TrickExModel.costPrice ? g.default.show(h.getText(9223)) : l.TrickExModel.reqRefreshTrickExchange());",
+      "enclosingFunction": "tools/scripts3.js:89934: e.prototype.onClickRefresh = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:90404: !this.isHasFree() && this.getTicketNum() < g.TrickLotteryModel.lotteryData.onePrice[1] ? this.showChargeTip() : g.TrickLotteryModel.reqLottery(1, this.getSkill());",
+      "enclosingFunction": "tools/scripts3.js:90403: e.prototype.onClickGetOne = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:90407: this.getTicketNum() < g.TrickLotteryModel.lotteryData.tenPrice[1] ? this.showChargeTip() : g.TrickLotteryModel.reqLottery(2, this.getSkill());",
+      "enclosingFunction": "tools/scripts3.js:90406: e.prototype.onClickGetTen = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:90565: var e = g.TrickLotteryModel.lotteryData.onePrice[1];",
+      "enclosingFunction": "tools/scripts3.js:90558: e.prototype.showGetOne = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:90573: var t = g.TrickLotteryModel.lotteryData.tenPrice[1];",
+      "enclosingFunction": "tools/scripts3.js:90571: e.prototype.showGetTen = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:94212: d = p.Price + l.getText(1 == p.type ? 506 : 35);",
+      "enclosingFunction": "tools/scripts3.js:94194: e.prototype.loadItems = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:95903: var o = s.getItem(t, \"MatchGift\"), i = o.type, r = o.Price;",
+      "enclosingFunction": "tools/scripts3.js:95901: t.prototype.useWatchingItem = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts3.js:95914: var e = s.getItem(this.itemId, \"MatchGift\"), o = e.Price;",
+      "enclosingFunction": "tools/scripts3.js:95912: t.prototype.showSelfUseItem = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:97622: e.isPrice = !1;",
+      "enclosingFunction": "tools/scripts3.js:97604: function e() {"
+    },
+    {
+      "hit": "tools/scripts3.js:97662: this.checkIsPrice();",
+      "enclosingFunction": "tools/scripts3.js:97642: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:97681: this.checkIsPrice();",
+      "enclosingFunction": "tools/scripts3.js:97680: e.prototype.buyButlerData = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:97697: e.prototype.checkIsPrice = function() {",
+      "enclosingFunction": "tools/scripts3.js:97689: e.prototype.setHelpArr = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:97706: e.price && !o ? this.isPrice = !0 : this.isPrice = !1;",
+      "enclosingFunction": "tools/scripts3.js:97697: e.prototype.checkIsPrice = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:97707: this.confirmLabel.getComponent(cc.Label).string = p.getText(this.isPrice ? 118 : 6061);",
+      "enclosingFunction": "tools/scripts3.js:97697: e.prototype.checkIsPrice = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:97722: this.checkIsPrice();",
+      "enclosingFunction": "tools/scripts3.js:97710: e.prototype.onScrollowBtn = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:97754: this.checkIsPrice();",
+      "enclosingFunction": "tools/scripts3.js:97737: e.prototype.scrollEndedEvent = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:97761: if (this.isPrice) {",
+      "enclosingFunction": "tools/scripts3.js:97759: e.prototype.onConfirmBtn = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98078: e.monthPrice = null;",
+      "enclosingFunction": "tools/scripts3.js:98068: function e() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98079: e.yearPrice = null;",
+      "enclosingFunction": "tools/scripts3.js:98068: function e() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98087: this.monthPrice = this.getPathByNode(\"Bg/monthBtn/costNode/price\");",
+      "enclosingFunction": "tools/scripts3.js:98082: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98090: this.yearPrice = this.getPathByNode(\"Bg/yearBtn/costNode/price\");",
+      "enclosingFunction": "tools/scripts3.js:98082: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98097: this.monthPrice.getComponent(cc.Label).string = t;",
+      "enclosingFunction": "tools/scripts3.js:98094: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98098: this.yearPrice.getComponent(cc.Label).string = e;",
+      "enclosingFunction": "tools/scripts3.js:98094: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98168: e.onePrice = 0;",
+      "enclosingFunction": "tools/scripts3.js:98162: function e() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98194: this.onePrice = c.getItem(this.data[1], \"AutoDailyTask\").cost;",
+      "enclosingFunction": "tools/scripts3.js:98181: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98195: this.totalLabel.getComponent(cc.Label).string = (this.itemNum * this.onePrice).toString();",
+      "enclosingFunction": "tools/scripts3.js:98181: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98215: this.totalLabel.getComponent(cc.Label).string = (this.itemNum * this.onePrice).toString();",
+      "enclosingFunction": "tools/scripts3.js:98209: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:98222: this.totalLabel.getComponent(cc.Label).string = (this.itemNum * this.onePrice).toString();",
+      "enclosingFunction": "tools/scripts3.js:98209: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:98798: this.autoAssignTime = this.getPathByNode(\"UINode/autoAssign/totalPrice/num\");",
+      "enclosingFunction": "tools/scripts3.js:98788: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98799: this.autoAssignSubBtn = this.getPathByNode(\"UINode/autoAssign/totalPrice/subBtn\");",
+      "enclosingFunction": "tools/scripts3.js:98788: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:98801: this.autoAssignAddBtn = this.getPathByNode(\"UINode/autoAssign/totalPrice/addBtn\");",
+      "enclosingFunction": "tools/scripts3.js:98788: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:100266: this.showPriceBtn(this.timeLimitDes);",
+      "enclosingFunction": "tools/scripts3.js:100259: e.prototype.setToggleShowUI = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts3.js:100288: e.prototype.showPriceBtn = function(t) {",
+      "enclosingFunction": "tools/scripts3.js:100284: e.prototype.remainCurUI = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts3.js:100326: this.divisionPrice(t);",
+      "enclosingFunction": "tools/scripts3.js:100323: e.prototype.onLocateTabelItem = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:100328: e.prototype.divisionPrice = function(t) {",
+      "enclosingFunction": "tools/scripts3.js:100323: e.prototype.onLocateTabelItem = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:100331: this.showPriceUI(e);",
+      "enclosingFunction": "tools/scripts3.js:100328: e.prototype.divisionPrice = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:100335: this.showPriceUI(e);",
+      "enclosingFunction": "tools/scripts3.js:100328: e.prototype.divisionPrice = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:100339: this.showPriceUI(e);",
+      "enclosingFunction": "tools/scripts3.js:100328: e.prototype.divisionPrice = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:100342: e.prototype.showPriceUI = function(t) {",
+      "enclosingFunction": "tools/scripts3.js:100328: e.prototype.divisionPrice = function(t) {"
+    },
+    {
+      "hit": "tools/scripts3.js:100371: (this.data.giftMap[t].et - e) / 1e3 > 0 && this.checkPriceState(t);",
+      "enclosingFunction": "tools/scripts3.js:100368: e.prototype.checkState = function() {"
+    },
+    {
+      "hit": "tools/scripts3.js:100384: e.prototype.checkPriceState = function(t) {",
+      "enclosingFunction": "tools/scripts3.js:100368: e.prototype.checkState = function() {"
+    }
+  ],
+  "itemTablePriceColumns": [
+    "BuyPrice",
+    "Price"
+  ],
+  "itemSamples": [
+    {
+      "ID": 1001,
+      "columns": {
+        "BuyPrice": 300,
+        "Price": 100
+      }
+    },
+    {
+      "ID": 1002,
+      "columns": {
+        "BuyPrice": 3,
+        "Price": 1
+      }
+    },
+    {
+      "ID": 1003,
+      "columns": {
+        "BuyPrice": 1200,
+        "Price": 100
+      }
+    }
+  ],
+  "unverified": [
+    "Pattern [SALE_ITEM] in tools/index.js: 0 hits",
+    "Pattern [saleitem] in tools/index.js: 0 hits",
+    "Pattern [sale_item] in tools/index.js: 0 hits",
+    "Pattern [salearr] in tools/index.js: 0 hits",
+    "Pattern [SALEITEM] in tools/index.js: 0 hits",
+    "Pattern [SALEARr] in tools/index.js: 0 hits",
+    "Pattern [SALEARRAY] in tools/index.js: 0 hits",
+    "Pattern [sellPrice] in tools/index.js: 0 hits",
+    "Pattern [SellPrice] in tools/index.js: 0 hits",
+    "Pattern [getSellPrice] in tools/index.js: 0 hits",
+    "Pattern [sellMoney] in tools/index.js: 0 hits",
+    "Pattern [sellData] in tools/index.js: 0 hits",
+    "Pattern [setCoins] in tools/index.js: 0 hits",
+    "Pattern [saleItem] in tools/scripts2.js: 0 hits",
+    "Pattern [SALE_ITEM] in tools/scripts2.js: 0 hits",
+    "Pattern [saleitem] in tools/scripts2.js: 0 hits",
+    "Pattern [sale_item] in tools/scripts2.js: 0 hits",
+    "Pattern [salearr] in tools/scripts2.js: 0 hits",
+    "Pattern [SALEITEM] in tools/scripts2.js: 0 hits",
+    "Pattern [SALEARr] in tools/scripts2.js: 0 hits",
+    "Pattern [SALEARRAY] in tools/scripts2.js: 0 hits",
+    "Pattern [出售] in tools/scripts2.js: 0 hits",
+    "Pattern [sellPrice] in tools/scripts2.js: 0 hits",
+    "Pattern [SellPrice] in tools/scripts2.js: 0 hits",
+    "Pattern [getSellPrice] in tools/scripts2.js: 0 hits",
+    "Pattern [sellMoney] in tools/scripts2.js: 0 hits",
+    "Pattern [sellData] in tools/scripts2.js: 0 hits",
+    "Pattern [setCoins] in tools/scripts2.js: 0 hits",
+    "Pattern [baseValueAy[35]] in tools/scripts2.js: 0 hits",
+    "Pattern [saleItem] in tools/scripts3.js: 0 hits",
+    "Pattern [SALE_ITEM] in tools/scripts3.js: 0 hits",
+    "Pattern [saleitem] in tools/scripts3.js: 0 hits",
+    "Pattern [sale_item] in tools/scripts3.js: 0 hits",
+    "Pattern [salearr] in tools/scripts3.js: 0 hits",
+    "Pattern [SALEITEM] in tools/scripts3.js: 0 hits",
+    "Pattern [SALEARr] in tools/scripts3.js: 0 hits",
+    "Pattern [SALEARRAY] in tools/scripts3.js: 0 hits",
+    "Pattern [出售] in tools/scripts3.js: 0 hits",
+    "Pattern [sellPrice] in tools/scripts3.js: 0 hits",
+    "Pattern [SellPrice] in tools/scripts3.js: 0 hits",
+    "Pattern [getSellPrice] in tools/scripts3.js: 0 hits",
+    "Pattern [sellMoney] in tools/scripts3.js: 0 hits",
+    "Pattern [setCoins] in tools/scripts3.js: 0 hits"
+  ],
+  "out_of_scope": []
+}

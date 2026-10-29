@@ -1,0 +1,546 @@
+{
+  "items": [
+    {
+      "file": "F:\\BaoZouyxt\\HANDOVER.md",
+      "line": 931,
+      "text": "### 16.1 一句话现状"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\HANDOVER.md",
+      "line": 937,
+      "text": "### 16.2 impl 演进（每步都是热重载，pid 全程未变）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\HANDOVER.md",
+      "line": 955,
+      "text": "### 16.3 这一段修好的六件事（都带证据）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\HANDOVER.md",
+      "line": 975,
+      "text": "### 16.4 三处自我更正（**别再用旧数**）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\HANDOVER.md",
+      "line": 989,
+      "text": "### 16.5 这一段新增的数据资产"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\HANDOVER.md",
+      "line": 1001,
+      "text": "### 16.6 未修 / 待办（按优先级）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\HANDOVER.md",
+      "line": 1012,
+      "text": "### 16.7 回滚点（今天的备份，按时间序）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\HANDOVER.md",
+      "line": 1033,
+      "text": "### 16.8 下一个会话怎么开局"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\HANDOVER.md",
+      "line": 926,
+      "text": "## 16. 2026-10-22 第二段会话：R02/R03 回执 → L1/L2 地基（本段结束时 `impl=h0f20e751`）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\HANDOVER.md",
+      "line": 933,
+      "text": "冷启动 6 秒 ready、18 秒进 `gamescene`、自检 **1117** 全绿、9 套测试全绿；"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\HANDOVER.md",
+      "line": 989,
+      "text": "### 16.5 这一段新增的数据资产"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 1,
+      "text": "# 待修问题清单（2026-10-22 起）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 2,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 3,
+      "text": "> 用户裁定：\"先记住这个问题\"，暂不修。本文件只记录事实、证据与拟定修法，**不代表已修**。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 4,
+      "text": "> 每条都带可复核的文件:行号与日志时间戳。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 5,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 6,
+      "text": "---"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 7,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 8,
+      "text": "## ISSUE-1 点「活动」弹窗后，整屏输入被吃掉（假死）—— ✅ 已闭合（2026-10-22 06:04，impl=h0f20e751）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 9,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 10,
+      "text": "**现象**（2026-10-22 05:16:59 起）：点击主场景「活动」后，画面还在动（连拍两帧 md5 不同、右上倒计时在走），"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 11,
+      "text": "但点底部「任务」等任何 HUD 无反应；按 BACK 键能弹出「确定要离开游戏吗？」并点得动 → 输入没坏，"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 12,
+      "text": "是**场景上面盖了一层吃触摸的 modal**。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 13,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 14,
+      "text": "**根因链**（全部有源码行号）："
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 15,
+      "text": "1. 点「活动」→ `User.getAllActivity` → 我方回**形状表默认值**（没有 `activityList` 等真实数据）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 16,
+      "text": "2. `onGetAllActivity`（index.js:57446-57459）收尾**无条件**再发一个请求："
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 17,
+      "text": "   `RoleOtherInfo.activeObj[0] ? reqSevenDayActive() : reqEveryDayActive()`"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 18,
+      "text": "3. 于是发出 `User.getSevenTaskList`（index.js:59622 `REQ_SEVENTASK_EVENT`），我方**没实现** → 通用 ACK `{eRet:1}`"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 19,
+      "text": "4. `sevenTaskCallback`（index.js:57387-57405）第一句就是 `if (e.hasOwnProperty(\"taskObj\"))`；"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 20,
+      "text": "   我们的 ACK **没有 `taskObj`** → 两个分支都不进 → `HomeActiveUI` 既不打开也不关闭"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 21,
+      "text": "5. 那层 modal 留在 popUpLayer 最上面 → 整屏吃触摸 = 假死"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 22,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 23,
+      "text": "**现场日志**（`bz_log.jsonl`）："
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 24,
+      "text": "```"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 25,
+      "text": "1792617418233  dispatch User.getAllActivity      → SHAPED（回默认形状）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 26,
+      "text": "1792617418273  dispatch User.getSevenTaskList    → UNKNOWN"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 27,
+      "text": "1792617419446  [flow] 公告→destroy（组件无可调用关闭方法）   ← 同一时段的另一个隐患，见 ISSUE-3"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 28,
+      "text": "```"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 29,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 30,
+      "text": "**当时怎么解决的**：备份存档（`_backup\\2026-10-22-0519-pre-restart\\`，md5 `DEC9D1C6…`）→"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 31,
+      "text": "用户批准 → `.\\run.ps1 restart`（force-stop + 启动，4 秒 ready，18 秒进 gamescene，新 pid 8576）。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 32,
+      "text": "重启后任务面板能正常打开，已确认恢复。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 33,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 34,
+      "text": "**已修（最小闭合，2026-10-22）**：新增三个 handler —— getAllActivity 回 {activityList:[],activityShows:[],schoolActivityOpen:0,...}、getSevenTaskList 回 **{eRet:1, taskObj:{}}**（关键：以前没有 \taskObj，客户端 sevenTaskCallback 两个分支都不进）、getActivityCounts 回 {dataArr:{},SevenDaysArr:[]}。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 35,
+      "text": "端上验证：日志 dispatch getAllActivity → getSevenTaskList → getActivityCounts 全跑完、**0 条 err/异常**。面板能开能关，但**内容是空的**（活动清单在 \u0007ctive 表 88 行 + \u0007ctive_order 表，还没接）。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 36,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 37,
+      "text": "**后续（未做）**："
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 38,
+      "text": "- (a) `getSevenTaskList` 回最小可用数据（`{eRet:1, taskObj:{}}`），让回调走\"空\"分支闭合；"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 39,
+      "text": "- (b) `getEverydayActive` 回 `{eRet:1, dataArr:[], SevenDaysArr:[]}`，保证 `HomeActiveUI.setData(e)` 有东西可渲染；"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 40,
+      "text": "- (c) 更彻底：把 `getAllActivity` 的 `activityList` 用真实活动表填上（要先把活动配置表导出来）。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 41,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 42,
+      "text": "**风险**：修不好会从\"卡死\"变成\"打开一个空面板\"，可接受；但 (b) 里 `HomeActiveUI.setData(e)` 的字段需求还没查清。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 43,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 44,
+      "text": "---"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 45,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 46,
+      "text": "## ISSUE-2 穿装备从来没被记账（动作名是错的）—— ✅ 已修（2026-10-22 05:33，impl=ha60c18b1）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 47,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 48,
+      "text": "**事实**："
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 49,
+      "text": "```"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 50,
+      "text": "index.js:59592  PUT_ON_EQUIPMENT:     \"User.equipWeapon\"        ← 客户端穿装备真正发的动作"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 51,
+      "text": "index.js:59593  UNLOADING_EQUIP_EVENT:\"User.UnloadingEuipment\"  ← 卸装备（这个名字我们是对的）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 52,
+      "text": "```"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 53,
+      "text": "我方实现的是 `PutOnEquipment`（`core/bz-rpc-server.js`），**客户端永远不会发这个动作名**。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 54,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 55,
+      "text": "**后果**：玩家 05:16:58 装上 `itemID=2302`（槽 5），日志是 `UNKNOWN User.equipWeapon` → 没记账 →"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 56,
+      "text": "重启后 `playerEquip={}`、`equipments={}` → **那把武器被\"脱掉\"了**（存档本身没坏，只是这件装备的穿戴状态丢了）。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 57,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 58,
+      "text": "**拟定修法（未做）**：把 `PutOnEquipment` 的逻辑抽成内部函数，`equipWeapon` 与 `PutOnEquipment` 都指向它；"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 59,
+      "text": "自检加一条 `equip:clientAction`（断言 `equipWeapon` 能记账）。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 60,
+      "text": "**建议玩家先别反复穿脱**，修好之前穿了也不会记住。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 61,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 62,
+      "text": "---"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 63,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 64,
+      "text": "## ISSUE-3 flow 关不掉的弹窗是裸 `destroy()`"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 65,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 66,
+      "text": "`live/flow.js` 的 `stepNotice` 在组件没有 `onBack/onClose/...` 时直接 `node.destroy()`，"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 67,
+      "text": "没走 `PopUpMgr.removePopUp(node)` → 节点没了、管理器里那层还在（正是 ISSUE-1 的残留形态）。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 68,
+      "text": "重启前那次日志是 `公告→destroy`，重启后这次是 `公告→onBack()`（走了正常路径）。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 69,
+      "text": "**拟定修法（未做）**：兜底顺序改成 `PopUpMgr.removePopUp(node)` → 再退化为 `destroy()`。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 70,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 71,
+      "text": "---"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 72,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 73,
+      "text": "## 附：这次暴露的口径问题（写进交接时要用）"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 74,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 75,
+      "text": "- 交接文档 §4.8「装备穿脱契约」里的动作名 `PutOnEquipment` 是**手工调 handler 验证**出来的，"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 76,
+      "text": "  不是客户端真实流量 → 以后凡是\"契约\"，必须拿**客户端源码里的常量定义**核对，不能只靠进程内手打。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 77,
+      "text": "- 形状表里\"有形状\"不等于\"能撑起 UI\"：`getAllActivity` 有形状条目、回默认值不报错，"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 78,
+      "text": "  但 UI 需要真实数据才闭合 —— **UNKNOWN 与 SHAPED 都可能让弹窗卡住**，两者都要看消费端。"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\OPEN-ISSUES.md",
+      "line": 79,
+      "text": ""
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\core-test-server.js",
+      "line": 0,
+      "text": "core-test-server.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\core-test.js",
+      "line": 0,
+      "text": "core-test.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\drop-table.js",
+      "line": 0,
+      "text": "drop-table.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\l0-envelope.js",
+      "line": 0,
+      "text": "l0-envelope.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\l0-xhr.js",
+      "line": 0,
+      "text": "l0-xhr.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\overlay-projection.js",
+      "line": 0,
+      "text": "overlay-projection.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\push-grants.js",
+      "line": 0,
+      "text": "push-grants.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\sale-coins.js",
+      "line": 0,
+      "text": "sale-coins.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\save-migrate.js",
+      "line": 0,
+      "text": "save-migrate.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\selfcheck-model-push.js",
+      "line": 0,
+      "text": "selfcheck-model-push.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\selfcheck-nosave.js",
+      "line": 0,
+      "text": "selfcheck-nosave.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\test\\upgrade-skill-target.js",
+      "line": 0,
+      "text": "upgrade-skill-target.js"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\sota\\A03-save-versioning",
+      "line": 0,
+      "text": "A03-save-versioning"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\sota\\B01-A04",
+      "line": 0,
+      "text": "B01-A04"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\sota\\inbox",
+      "line": 0,
+      "text": "inbox"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\sota\\outbox",
+      "line": 0,
+      "text": "outbox"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\sota\\R02",
+      "line": 0,
+      "text": "R02"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\docs\\sota\\R03",
+      "line": 0,
+      "text": "R03"
+    }
+  ],
+  "commands": [],
+  "unverified": []
+}

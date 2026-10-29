@@ -1,0 +1,62 @@
+# User.getCRAInfo  (HttpConst.GET_CREATE_INFO)
+# 出现 2 处
+
+ 23080: } else if (2 == o.eRet || 3 == o.eRet) {
+ 23081: n.default.show(a.getText(7231));
+ 23082: i.MessageCenter.dispatch(u.EvName.RESET_ROLE);
+ 23083: }
+ 23084: t.destroy();
+ 23085: }, this);
+ 23086: i.MessageCenter.on(r.HttpConst.GET_CREATE_INFO, function(e, o) {
+ 23087: if (2 == o.eRet) i.MessageCenter.dispatch(u.EvName.RECEIVE_CREATE_INFO); else if (1 == o.eRet) {
+ 23088: o.hasOwnProperty("birthId") && (t.birthIdId = o.birthId);
+ 23089: o.hasOwnProperty("faceId") && (t.appearId = o.faceId);
+ 23090: o.hasOwnProperty("talnetId") && (t.talentId = o.talnetId);
+ 23091: i.MessageCenter.dispatch(u.EvName.RECEIVE_CREATE_INFO);
+ 23092: } else cc.log("-----创角获取活动数据失败-----");
+ 23093: }, this);
+ 23094: };
+ 23095: t.prototype.getCreateInfo = function() {
+ 23096: p.NetMgr.http.sendRequest(r.HttpConst.GET_CREATE_INFO, {
+ 23097: roleID: h.RoleBaseInfo.roleID
+ 23098: });
+ 23099: };
+ 23100: t.prototype.getCreateRoleAct = function() {
+ 23101: p.NetMgr.http.sendRequest(r.HttpConst.GET_CREATE_ROLE_ACT, {
+ 23102: roleID: h.RoleBaseInfo.roleID
+ 23103: });
+ 23104: };
+ 23105: t.prototype.resetRole = function() {
+ 23106: this.roleAttr = [ h.RoleBaseInfo.armStrong, h.RoleBaseInfo.shenFa, h.RoleBaseInfo.bone, h.RoleBaseInfo.understanding ];
+ 23107: switch (h.RoleBaseInfo.talentId) {
+ 23108: case 314:
+ 23109: this.roleAttr[0] -= 10;
+ 23110: break;
+ 23111: 
+ 23112: case 315:
+ 23113: this.roleAttr[1] -= 10;
+ 23114: break;
+ 23115: 
+ 23116: case 316:
+ 23117: this.roleAttr[2] -= 10;
+ 23118: break;
+ 23119: 
+ 23120: case 317:
+ 23121: this.roleAttr[3] -= 10;
+ 23122: }
+ 23123: 0 == this.nTalentId && (this.nTalentId = this.talentId);
+ 23124: 0 == this.nBirthIdId && (this.nBirthIdId = this.birthIdId);
+ 23125: 0 == this.nAppearId && (this.nAppearId = this.appearId);
+ 23126: var t = f.getItem(this.nTalentId, "creat_role"), e = this.roleAttr.slice();
+---
+ 23127: if (t) {
+ 23128: var o = t.Award;
+ 23129: 3 == o[0] && (e[o[1] - 1] += o[2]);
+ 23130: }
+ 23131: p.NetMgr.http.sendRequest(r.HttpConst.RESET_ROLE, {
+ 23132: roleID: h.RoleBaseInfo.roleID,
+ 23133: birthId: this.nBirthIdId,
+ 23134: faceId: this.nAppearId,
+ 23135: talenId: this.nTalentId,
+ 23136: roleAttr: e
+---

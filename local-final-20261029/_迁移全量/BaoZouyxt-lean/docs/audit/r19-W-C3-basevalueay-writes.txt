@@ -1,0 +1,56 @@
+# r19-W-C3-basevalueay-writes.txt
+# 审计范围:
+#   hotfix-patch\core\*.js
+#   hotfix-patch\live\*.js
+#   hotfix-patch\hook\*.js
+# (严格跳过 node_modules / test / probe / patch / decrypted)
+
+=== K1 字面下标赋值 ===
+条数: 3
+hotfix-patch\core\bz-rpc-server.js:1038:      if (s.name && base.baseValueAy) base.baseValueAy[1] = s.name;
+hotfix-patch\core\bz-rpc-server.js:1042:        base.baseValueAy[34] = (typeof s.potential === 'number') ? s.potential : 99999;
+hotfix-patch\core\bz-rpc-server.js:1043:        base.baseValueAy[35] = (typeof s.coins === 'number') ? s.coins : 99999;
+
+=== K2 整个数组赋值 ===
+条数: 6
+hotfix-patch\core\bz-rpc-server.js:935:    tpl.baseValueAy = ay;
+hotfix-patch\core\bz-rpc-server.js:939:    s.baseValueAy = ay;
+hotfix-patch\core\bz-rpc-server.js:1017:        r.baseValueAy = p.baseValueAy;
+hotfix-patch\core\bz-rpc-server.js:1022:      s.baseValueAy = normalizeBaseValueAy(r.baseValueAy);
+hotfix-patch\core\bz-rpc-server.js:1037:      if (s.baseValueAy) base.baseValueAy = normalizeBaseValueAy(clone(s.baseValueAy));
+hotfix-patch\core\bz-rpc-server.js:1424:        if (s.baseValueAy) inner.baseValueAy = s.baseValueAy;
+
+=== K3 只读取 ===
+条数: 6
+hotfix-patch\core\bz-rpc-server.js:930:    if (s.created && s.baseValueAy) return s;
+hotfix-patch\core\bz-rpc-server.js:932:    var ay = (tpl.baseValueAy || []).slice();
+hotfix-patch\core\bz-rpc-server.js:949:    var tpl = (TPL.create && TPL.create.baseValueAy) || [];
+hotfix-patch\core\bz-rpc-server.js:1016:      if (p.baseValueAy) {
+hotfix-patch\core\bz-rpc-server.js:1018:        s.name = String(p.baseValueAy[1] || '少侠');
+hotfix-patch\core\bz-rpc-server.js:1041:      if (base.baseValueAy) {
+
+=== K4 其它 ===
+条数: 4
+hotfix-patch\core\bz-rpc-server.js:575:   *  （scripts2.js:49715 / 49727），而 LoadGame 只在登录时把 baseValueAy[35] 投给它
+hotfix-patch\core\bz-rpc-server.js:946:  /** baseValueAy 必须补齐到 48 项：客户端会读 [44]=场景ID [45][46]=出生坐标 [47]=已退门派列表
+hotfix-patch\core\bz-rpc-server.js:948:  function normalizeBaseValueAy(ay) {
+hotfix-patch\core\bz-rpc-server.js:2238:        // 初值口径：与 LoadGame 的缺省一致（loadSave 的 s.coins / baseValueAy[35] 都用 99999），
+说明: 
+- 575, 946, 2238 行均为纯注释行，包含文本 baseValueAy。
+- 948 行是函数定义 normalizeBaseValueAy(ay) 的函数名，包含 baseValueAy 字样。
+
+=== 请求参数直接赋给 baseValueAy 或其元素审查 ===
+结论: 有
+行号与原文:
+hotfix-patch\core\bz-rpc-server.js:1017:        r.baseValueAy = p.baseValueAy;
+说明:
+在 Create 函数 (hotfix-patch\core\bz-rpc-server.js:1010) 中，形参为 p (Create 请求 payload)，第 1017 行直接执行了 `r.baseValueAy = p.baseValueAy;`，随后第 1022 行执行了 `s.baseValueAy = normalizeBaseValueAy(r.baseValueAy);`。
+另第 1018 行 `s.name = String(p.baseValueAy[1] || '少侠');` 读取了请求参数中数组的元素赋给 s.name，但未赋给 baseValueAy 的元素。
+
+=== 命令执行记录 ===
+命令: Get-ChildItem -Path hotfix-patch\core\*.js, hotfix-patch\live\*.js, hotfix-patch\hook\*.js | Select-String -Pattern "baseValueAy"
+退出码: 0
+关键输出: 匹配到 hotfix-patch\core\bz-rpc-server.js 中共 19 处（含注释与函数名）；live 与 hook 目录无匹配。
+
+未验证:
+未在动态运行时注入带自定义 baseValueAy 恶意的网络请求验证 normalizeBaseValueAy 的过滤边界行为。

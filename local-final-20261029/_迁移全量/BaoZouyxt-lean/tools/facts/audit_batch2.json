@@ -1,0 +1,24 @@
+{
+  "batch": 2,
+  "checked": 2,
+  "items": [
+    {
+      "action": "getInn",
+      "field": "showRewardPop",
+      "verdict": "SCALAR",
+      "evidenceLines": [
+        62688
+      ],
+      "evidenceText": "this.offlineHot = e.showRewardPop;"
+    },
+    {
+      "action": "getInn",
+      "field": "tableEndTime",
+      "verdict": "SCALAR",
+      "evidenceLines": [
+        62681
+      ],
+      "evidenceText": "this.openTime[1] = e.tableEndTime;"
+    }
+  ]
+}

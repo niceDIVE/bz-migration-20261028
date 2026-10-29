@@ -1,0 +1,25 @@
+﻿=== 任何表任何列里出现 6625/6810/7105/7106/7226/4567 的位置，共 24 处 ===
+[boss_reward] key=292 col=NormPotential hit=7105  val=7105
+[buff] key=4547 col=withbuff hit=4567  val=[4579,4559,4567,4573,4603,4614,4615,4616]
+[buff] key=4567 col=BuffID hit=4567  val=4567
+[item] key=4567 col=ID hit=4567  val=4567
+[item] key=6625 col=ID hit=6625  val=6625
+[item] key=6625 col=Data1 hit=6625  val=6625
+[item] key=6810 col=ID hit=6810  val=6810
+[item] key=6810 col=Data1 hit=4567  val=4567
+[level] key=290 col=zhenyuan hit=7226  val=7226
+[level] key=555 col=MP hit=6810  val=6810
+[level_sever] key=290 col=zhenyuan hit=7226  val=7226
+[level_sever] key=601 col=AdvMP hit=6810  val=6810
+[lh_event] key=29 col=reward hit=4567  val=4567
+[lh_temporary] key=4567 col=id hit=4567  val=4567
+[lh_temporary] key=6810 col=id hit=6810  val=6810
+[question] key=35 col=real hit=6625  val=[6625,6626,6627,6628]
+[question] key=72 col=real hit=6810  val=[6810,6811,6812,6813]
+[tasknew] key=404550 col=Reward hit=6810  val=6810
+[tasknew] key=721310 col=Reward hit=6625  val=6625
+[tasknew] key=1100010 col=Reward hit=7105  val=7105
+[tasknew] key=1100020 col=Reward hit=7106  val=7106
+[tasknew] key=1100030 col=Reward hit=7226  val=7226
+[title] key=4 col=titleid hit=7106  val=7106
+[title] key=6 col=titleid hit=7105  val=7105

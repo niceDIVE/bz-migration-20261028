@@ -1,0 +1,99 @@
+# User.findOhter  (HttpConst.FIND_OTHER_HOME)
+# 出现 2 处
+
+ 57942: r.MessageCenter.dispatch(c.EvName.UPDATE_PLANT_ALL_HOME_DATA, {
+ 57943: data: a,
+ 57944: dataNum: p
+ 57945: });
+ 57946: }
+ 57947: }, this);
+ 57948: r.MessageCenter.on(s.HttpConst.FIND_OTHER_HOME, function(t, o) {
+ 57949: 1 == o.eRet ? o.hasOwnProperty("findArr") && (o.findArr[0] == _.RoleBaseInfo.roleID ? a.default.show(n.getText(3253)) : e.openFriendHome(o.findArr[0], o.findArr[6], o.findArr[4])) : a.default.show(n.getText(3253));
+ 57950: }, this);
+ 57951: r.MessageCenter.on(s.HttpConst.ENTER_OTHER_HOME, function(t, o) {
+ 57952: if (1 == o.eRet) {
+ 57953: e.rewardData = {};
+ 57954: if (o.hasOwnProperty("soilArr")) {
+ 57955: e.typeId = 1;
+ 57956: e.soilArr = [];
+ 57957: e.cropControlState = 0;
+ 57958: o.hasOwnProperty("dog") && (e.dogData = o.dog);
+ 57959: if (o.hasOwnProperty("friendPartnerId")) {
+ 57960: e.friendPartnerId = Number(o.friendPartnerId);
+ 57961: 0 == e.friendPartnerId && (e.friendPartnerId = -1);
+ 57962: } else e.friendPartnerId = -1;
+ 57963: e.plantSeedData.plantExp = o.exp;
+ 57964: e.soilArr = o.soilArr;
+ 57965: e.isFriend = o.flag;
+ 57966: e.homeShop = 0;
+ 57967: if (e.isUpdateData) r.MessageCenter.dispatch(c.EvName.ALL_CROP_DATA_EVENT); else {
+ 57968: var i = e.curHomeScene;
+ 57969: r.MessageCenter.dispatch(c.EvName.UPTATE_PLANT_HOME_UI, {
+ 57970: farmId: i,
+ 57971: type: e.homeType,
+ 57972: homeState: 1
+ 57973: });
+ 57974: r.MessageCenter.dispatch(c.EvName.REMOVE_SEARCH_HOME_UI);
+ 57975: }
+ 57976: }
+ 57977: } else -1 == o.eRet && a.default.show(n.getText(3320));
+ 57978: }, this);
+ 57979: r.MessageCenter.on(s.HttpConst.DISPOSS_HOME_EVENT, function(t, o) {
+ 57980: if (o.hasOwnProperty("crop")) {
+ 57981: var i = {
+ 57982: m: {},
+ 57983: s: 1,
+ 57984: b: {}
+ 57985: };
+ 57986: o.crop.hasOwnProperty("m") && (i.m = o.crop.m);
+ 57987: o.crop.hasOwnProperty("b") && (i.b = o.crop.b);
+ 57988: e.soilArr[o.idx] = i;
+---
+ 58178: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_OBTAIN_CROP, e);
+ 58179: };
+ 58180: e.prototype.reqDispossAllEvent = function() {
+ 58181: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, {});
+ 58182: };
+ 58183: e.prototype.reqFindPlayerHome = function(t) {
+ 58184: t != _.RoleBaseInfo.userName ? v.NetMgr.http.sendRequest(s.HttpConst.FIND_OTHER_HOME, {
+ 58185: fName: t
+ 58186: }) : a.default.show(n.getText(4396));
+ 58187: };
+ 58188: e.prototype.openFriendHome = function(t, e, o) {
+ 58189: var i = 3;
+ 58190: 9 == o ? i = 2 : 15 == o && (i = 1);
+ 58191: this.homeType = i;
+ 58192: this.curHomeScene = e;
+ 58193: this.reqEnterFriendHome(t);
+ 58194: };
+ 58195: e.prototype.reqEnterFriendHome = function(t) {
+ 58196: this.isUpdateData = !1;
+ 58197: this.curFriendId = t;
+ 58198: t > 0 && v.NetMgr.http.sendRequest(s.HttpConst.ENTER_OTHER_HOME, {
+ 58199: fid: t
+ 58200: });
+ 58201: };
+ 58202: e.prototype.reqUpdateFriendHome = function(t) {
+ 58203: this.isUpdateData = !0;
+ 58204: this.curFriendId = t;
+ 58205: t > 0 && v.NetMgr.http.sendRequest(s.HttpConst.ENTER_OTHER_HOME, {
+ 58206: fid: t
+ 58207: });
+ 58208: };
+ 58209: e.prototype.reqDispossHomeEvent = function(t) {
+ 58210: var e = {
+ 58211: fid: 0,
+ 58212: idx: t
+ 58213: };
+ 58214: this.curFriendId > 0 ? e.fid = this.curFriendId : delete e.fid;
+ 58215: v.NetMgr.http.sendRequest(s.HttpConst.DISPOSS_HOME_EVENT, e);
+ 58216: };
+ 58217: e.prototype.reqStealCrop = function(t) {
+ 58218: v.NetMgr.http.sendRequest(s.HttpConst.STEAL_CROP_EVENT, {
+ 58219: fid: this.curFriendId,
+ 58220: idx: t
+ 58221: });
+ 58222: };
+ 58223: e.prototype.reqLookDogLog = function(t) {
+ 58224: v.NetMgr.http.sendRequest(s.HttpConst.LOOK_DOG_LOG, {
+---

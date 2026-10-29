@@ -1,0 +1,99 @@
+# User.addItem  (HttpConst.ADD_ITEM)
+# 出现 2 处
+
+ 64906: } else if (5 == a.eRet) c.default.show(n.getText(1333)); else if (6 == a.eRet) c.default.show(n.getText(1388)); else if (8 == a.eRet) c.default.show(n.getText(3430)); else if (10 == a.eRet) c.default.show(n.getText(3807)); else if (11 == a.eRet) c.default.show(n.getText(3807)); else if (13 == a.eRet) c.default.show(n.getText(5862)); else if (15 == a.eRet) {
+ 64907: var j = a.delItemObj;
+ 64908: j && c.default.showReward(j, 0, {}, {}, null, null, "6000572");
+ 64909: r.MessageCenter.dispatch(s.EvName.USE_NEW_ITEM_EVENT, a);
+ 64910: } else 16 == a.eRet && c.default.show(n.getText(6003628));
+ 64911: }, this);
+ 64912: r.MessageCenter.on(a.HttpConst.ADD_ITEM, function(t, o) {
+ 64913: if (1 == o.eRet) {
+ 64914: if (o.note.hasOwnProperty("ivch") && !e.judgeObjectIsNull(o.note.ivch)) {
+ 64915: var i = o.note.ivch;
+ 64916: v.default.addShowRewardUI1(i, 0);
+ 64917: } else if (o.note.hasOwnProperty("eqch") && !e.judgeObjectIsNull(o.note.eqch)) {
+ 64918: var r = o.note.eqch, a = {};
+ 64919: for (var s in r) a[s] = r[s][1];
+ 64920: v.default.addShowRewardUI1({}, 0, a);
+ 64921: }
+ 64922: } else 2 == o.eRet && c.default.show(n.getText(448));
+ 64923: }, this);
+ 64924: r.MessageCenter.on(a.HttpConst.EQUIP_RESOLVE, function(t, e) {
+ 64925: if (1 == e.eRet) {
+ 64926: v.default.addShowRewardUI1(e.rewardArray, 0);
+ 64927: r.MessageCenter.dispatch(s.EvName.DECOMPOSE_EQUIP_SUCCESS_EVENT, {
+ 64928: itemId: e.itemID
+ 64929: });
+ 64930: } else 6 == e.eRet ? cc.log("服务器获取锁定装备数据出错") : 7 == e.eRet && cc.log("锁定装备不能分解");
+ 64931: }, this);
+ 64932: r.MessageCenter.on(a.HttpConst.EQUIP_BATCH_RESOLVE, function(t, e) {
+ 64933: if (1 == e.eRet) {
+ 64934: v.default.addShowRewardUI1(e.rewardArray, 0);
+ 64935: r.MessageCenter.dispatch(s.EvName.BATCH_DECOMPOSE_SUCCESS_EVENT, e.itemIDs);
+ 64936: } else 6 == e.eRet ? cc.log("服务器获取锁定装备数据出错") : 7 == e.eRet && cc.log("锁定装备不能分解");
+ 64937: }, this);
+ 64938: r.MessageCenter.on(a.HttpConst.GET_USEITEM_AWARD, function(t, o) {
+ 64939: 1 == o.eRet && (1 == e.batchType ? p.default.prefabs.load("itemsUI/SelectItemReward", cc.Prefab, function(t, i) {
+ 64940: var n = cc.instantiate(i);
+ 64941: h.PopUpMgr.addPopUp(n, u.LayerMgr.popUpLayer, h.Modal.Translucent, !0);
+ 64942: n.addComponent("SelectItemReward").setData({
+ 64943: itemID: e.curItemId,
+ 64944: items: o.awardObj,
+ 64945: states: o.awardStates
+ 64946: });
+ 64947: }) : 2 == e.batchType && c.default.showBatchSelectDialog([ e.curItemId, o.awardObj, o.awardStates ]));
+ 64948: }, this);
+ 64949: r.MessageCenter.on(a.HttpConst.CHOOSE_USEITEM_AWARD, function(t, e) {
+ 64950: if (1 == e.eRet) {
+ 64951: e.chooseID;
+ 64952: v.default.addShowRewardUI1(e.cData);
+---
+ 65352: };
+ 65353: e.prototype.addItem = function(t, e) {
+ 65354: var o = {
+ 65355: itemID: t,
+ 65356: itemNum: e
+ 65357: };
+ 65358: m.NetMgr.http.sendRequest(a.HttpConst.ADD_ITEM, o);
+ 65359: };
+ 65360: e.prototype.reqPutOnEquipment = function(t, e, o) {
+ 65361: var i = k.playerInfo.entity, n = {
+ 65362: EquipmentType: t,
+ 65363: itemID: e,
+ 65364: hp: i.hp.remaining,
+ 65365: hplmt: i.hp.limit,
+ 65366: gTime: i.totalGameTime.gameTime,
+ 65367: mp: i.mp.remaining
+ 65368: };
+ 65369: l.RoleBaseInfo.putOnEquipment(t, e);
+ 65370: m.NetMgr.http.sendReqWithMask(a.HttpConst.PUT_ON_EQUIPMENT, n);
+ 65371: this.showLoadEquipTip(t, e, o);
+ 65372: };
+ 65373: e.prototype.freshEquipWeap = function(t, e) {
+ 65374: if (1 == t) if (0 == e) r.MessageCenter.dispatch(s.EvName.UPDATE_PLAYER_EVENT, {
+ 65375: type: t,
+ 65376: itemId: 0
+ 65377: }); else {
+ 65378: var o = this.equipmentDic, i = y.InhertEquipModel.allInhertEquips, n = b.TowerModel.getTowerEquips();
+ 65379: i.hasOwnProperty(e) ? r.MessageCenter.dispatch(s.EvName.UPDATE_PLAYER_EVENT, {
+ 65380: type: t,
+ 65381: itemId: i[e]
+ 65382: }) : o.hasOwnProperty(e) ? r.MessageCenter.dispatch(s.EvName.UPDATE_PLAYER_EVENT, {
+ 65383: type: t,
+ 65384: itemId: o[e].itemID
+ 65385: }) : n.hasOwnProperty(e) && r.MessageCenter.dispatch(s.EvName.UPDATE_PLAYER_EVENT, {
+ 65386: type: t,
+ 65387: itemId: n[e].itemID
+ 65388: });
+ 65389: }
+ 65390: };
+ 65391: e.prototype.showLoadEquipTip = function(t, e, o) {
+ 65392: if (1 == t) if (0 == e) c.default.show(n.getText(3642)); else {
+ 65393: var r = this.equipmentDic;
+ 65394: if (r.hasOwnProperty(e)) {
+ 65395: var a = i.getItem(r[e].itemID, "item"), s = n.getText({
+ 65396: 1: 397,
+ 65397: 2: 396,
+ 65398: 3: 398,
+---

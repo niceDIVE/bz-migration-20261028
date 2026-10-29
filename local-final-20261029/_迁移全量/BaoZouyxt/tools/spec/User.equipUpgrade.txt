@@ -1,0 +1,99 @@
+# User.equipUpgrade  (HttpConst.REQ_EQUIP_UPGRADE)
+# 出现 2 处
+
+142014: value: !0
+142015: });
+142016: o.UpgradeEquipModel = void 0;
+142017: var i = t("../gameconfigs/LangMgr"), n = t("../gameconfigs/CFMgr"), r = t("../core/events/MessageCenter"), a = t("../gui/uicomponents/Alert"), s = t("../net/HttpConst"), l = t("../utils/EvName"), c = t("./InhertEquipModel"), p = t("./InventoryModel"), h = t("./StoreModel"), u = t("./vos/RoleBaseInfo"), f = t("../net/NetMgr"), d = function() {
+142018: function t() {}
+142019: t.prototype.init = function() {
+142020: r.MessageCenter.on(s.HttpConst.REQ_EQUIP_UPGRADE, function(t, e) {
+142021: switch (e.eRet) {
+142022: case 1:
+142023: if (e.hasOwnProperty("playerEquip")) {
+142024: var o = Object.getOwnPropertyNames(e.playerEquip);
+142025: p.InventoryModel.updateEquipItem(e.playerEquip[o[0]], parseInt(o[0]));
+142026: e.hasOwnProperty("equipInherit") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));
+142027: }
+142028: r.MessageCenter.dispatch(l.EvName.UPGRADE_EQUIP_SUCCESS);
+142029: break;
+142030: 
+142031: case 2:
+142032: case 3:
+142033: case 4:
+142034: case 5:
+142035: case 6:
+142036: case 7:
+142037: case 8:
+142038: break;
+142039: 
+142040: case 9:
+142041: a.default.show(i.getText("4844"));
+142042: break;
+142043: 
+142044: case 10:
+142045: a.default.show(i.getText(535), [ {
+142046: flag: 0,
+142047: name: i.getText(10839)
+142048: }, {
+142049: flag: 1,
+142050: name: i.getText(10840)
+142051: } ], function(t) {
+142052: 0 == t && h.StoreModel.reqStoreList({
+142053: type: 2
+142054: });
+142055: }, "", !1);
+142056: }
+142057: }, this);
+142058: r.MessageCenter.on(s.HttpConst.EUIQP_SUITS_UPGRADE, function(t, e) {
+142059: switch (e.eRet) {
+142060: case 1:
+---
+142178: var o = {
+142179: roleID: u.RoleBaseInfo.roleID,
+142180: id: t,
+142181: attrTypes: e
+142182: };
+142183: cc.log("data", o);
+142184: f.NetMgr.http.sendRequest(s.HttpConst.REQ_EQUIP_UPGRADE, o);
+142185: };
+142186: t.prototype.requestEquipSuitsUpgrade = function(t) {
+142187: var e = {
+142188: roleID: u.RoleBaseInfo.roleID,
+142189: id: t
+142190: };
+142191: cc.log("data", e);
+142192: f.NetMgr.http.sendRequest(s.HttpConst.EUIQP_SUITS_UPGRADE, e);
+142193: };
+142194: return t;
+142195: }();
+142196: o.UpgradeEquipModel = new d();
+142197: cc._RF.pop();
+142198: }, {
+142199: "../core/events/MessageCenter": "MessageCenter",
+142200: "../gameconfigs/CFMgr": "CFMgr",
+142201: "../gameconfigs/LangMgr": "LangMgr",
+142202: "../gui/uicomponents/Alert": "Alert",
+142203: "../net/HttpConst": "HttpConst",
+142204: "../net/NetMgr": "NetMgr",
+142205: "../utils/EvName": "EvName",
+142206: "./InhertEquipModel": "InhertEquipModel",
+142207: "./InventoryModel": "InventoryModel",
+142208: "./StoreModel": "StoreModel",
+142209: "./vos/RoleBaseInfo": "RoleBaseInfo"
+142210: } ],
+142211: UseItemAction: [ function(t, e, o) {
+142212: "use strict";
+142213: cc._RF.push(e, "ac6ecKSL0tIBY8uUfhNfSu+", "UseItemAction");
+142214: var i, n = this && this.__extends || (i = function(t, e) {
+142215: return (i = Object.setPrototypeOf || {
+142216: __proto__: []
+142217: } instanceof Array && function(t, e) {
+142218: t.__proto__ = e;
+142219: } || function(t, e) {
+142220: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+142221: })(t, e);
+142222: }, function(t, e) {
+142223: i(t, e);
+142224: function o() {
+---

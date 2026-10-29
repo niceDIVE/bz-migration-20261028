@@ -1,0 +1,21 @@
+{
+ "archivedAt": "2026-10-25T14:32:14.558Z",
+ "rules": [
+  {
+   "id": "V26-C03-1",
+   "action": "lookSecretEvent",
+   "field": [
+    "secret"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "lookSecretEvent",
+     "secret"
+    ]
+   ],
+   "reason": "第 4 批 C03 新增 handler：原先该动作没有 handler，走通用 ACK 时 secret 拿到的是形状表默认值 0（num0）。落地 handler 后按客户端真实消费方式改成数组（arr0）。这不是漂移，是类型修正：可见消费点 scripts2.js:75376 是 for (var o = 0; o < t.data.secret.length; o++) e += t.data.secret[o]，把它当下标数组用；给 0 或空对象都会让 .length 变 undefined（不崩但类型不对）。zeroIsWrong=true 说明空数组语义上「没内容」，本工程没有秘密事件数据源，属已知留白。",
+   "ev": "scripts2.js:75376"
+  }
+ ]
+}

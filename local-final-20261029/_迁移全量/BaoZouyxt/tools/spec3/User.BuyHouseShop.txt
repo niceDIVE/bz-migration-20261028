@@ -1,0 +1,13 @@
+# User.BuyHouseShop   (HttpConst.BUY_HOUSE_DATA)
+
+## 注册点 58485: i.MessageCenter.on(r.HttpConst.BUY_HOUSE_DATA, function(e, o) {
+
+## 请求点 58530: h.NetMgr.http.sendRequest(r.HttpConst.BUY_HOUSE_DATA, o);
+   58522: });
+   58523: };
+   58524: t.prototype.reqBuyShopItem = function(t, e) {
+   58525: this.itemNum = e;
+   58526: var o = {
+   58527: itemID: t,
+   58528: itemNum: e
+   58529: };

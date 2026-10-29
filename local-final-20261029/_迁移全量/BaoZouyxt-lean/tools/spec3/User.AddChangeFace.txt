@@ -1,0 +1,13 @@
+# User.AddChangeFace   (HttpConst.ADD_CHANGE_FACE)
+
+## 注册点 75586: s.MessageCenter.on(l.HttpConst.ADD_CHANGE_FACE, function(t, e) {
+
+## 请求点 75780: m.NetMgr.http.sendReqWithMask(l.HttpConst.ADD_CHANGE_FACE, e);
+   75772: }
+   75773: });
+   75774: }
+   75775: };
+   75776: t.prototype.reqAddChangeFace = function(t) {
+   75777: var e = {
+   75778: type: t
+   75779: };

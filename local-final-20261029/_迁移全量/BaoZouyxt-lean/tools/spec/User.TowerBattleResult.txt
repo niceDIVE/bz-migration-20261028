@@ -1,0 +1,99 @@
+# User.TowerBattleResult  (HttpConst.SERVER_NPC_BATTLE_END)
+# 出现 2 处
+
+ 67692: n(e, t);
+ 67693: function e() {
+ 67694: return null !== t && t.apply(this, arguments) || this;
+ 67695: }
+ 67696: e.prototype.onLoad = function() {
+ 67697: var t = this;
+ 67698: a.MessageCenter.on(l.HttpConst.SERVER_NPC_BATTLE_END, function(e, o) {
+ 67699: var i = {
+ 67700: rewards: {}
+ 67701: };
+ 67702: if (1 == o.eRet) {
+ 67703: if (1 == o.win) {
+ 67704: a.MessageCenter.dispatch(c.EvName.SHOW_ADVENTURE_NPC_EVENT, 0);
+ 67705: o.hasOwnProperty("awardObj") && (i.rewards = o.awardObj);
+ 67706: o.hasOwnProperty("awardObj") && o.awardObj.hasOwnProperty("5") && (s.TowerModel.towerItemData.hasOwnProperty("5") ? s.TowerModel.towerItemData[5] += o.awardObj[5] : s.TowerModel.towerItemData[5] = o.awardObj[5]);
+ 67707: if (o.hasOwnProperty("rewardArray")) {
+ 67708: for (var n in o.rewardArray) i.rewards[n] = o.rewardArray[n];
+ 67709: s.TowerModel.updateTowerItem(o.rewardArray);
+ 67710: }
+ 67711: o.hasOwnProperty("gemId") && (i.materias = o.gemId);
+ 67712: s.TowerModel.setKillMonsterState();
+ 67713: }
+ 67714: o.hasOwnProperty("muscle") && (s.TowerModel.curStrengthNum = o.muscle);
+ 67715: if (o.hasOwnProperty("batch_sweep_data")) {
+ 67716: s.TowerModel.setNewSweepData(o.batch_sweep_data);
+ 67717: a.MessageCenter.dispatch(c.EvName.CHEAK_SWEEP_EVENT_EVENT, s.TowerModel.getSweepRewardDatas());
+ 67718: }
+ 67719: }
+ 67720: t.getComponent(p.BattleResultMediator).setRewards(i);
+ 67721: a.MessageCenter.dispatch(c.EvName.UPDATE_TOWER_ITEM_EVENT);
+ 67722: }, this);
+ 67723: };
+ 67724: e.prototype.onDestroy = function() {
+ 67725: a.MessageCenter.removeAll(this);
+ 67726: };
+ 67727: return r([ h ], e);
+ 67728: }(cc.Component);
+ 67729: o.LangHRwds = u;
+ 67730: cc._RF.pop();
+ 67731: }, {
+ 67732: "../../../../core/events/MessageCenter": "MessageCenter",
+ 67733: "../../../../models/TowerModel": "TowerModel",
+ 67734: "../../../../net/HttpConst": "HttpConst",
+ 67735: "../../../../utils/EvName": "EvName",
+ 67736: "../BattleResultMediator": "BattleResultMediator"
+ 67737: } ],
+ 67738: LangHSingleMgr: [ function(t, e, o) {
+---
+ 71455: gTime: a.totalGameTime.gameTime,
+ 71456: hg: a.hunger.remaining,
+ 71457: hgtimes: a.numStuffed,
+ 71458: win: o
+ 71459: };
+ 71460: t.TowerModel.sweepState && (s.lv = t.TowerModel.sweepLv);
+ 71461: n.NetMgr.http.sendRequest(i.HttpConst.SERVER_NPC_BATTLE_END, s);
+ 71462: });
+ 71463: };
+ 71464: return e;
+ 71465: }();
+ 71466: o.MPBattleModel = new a();
+ 71467: cc._RF.pop();
+ 71468: }, {
+ 71469: "../net/HttpConst": "HttpConst",
+ 71470: "../net/NetMgr": "NetMgr",
+ 71471: "./TowerModel": "TowerModel",
+ 71472: "./UserModel": "UserModel"
+ 71473: } ],
+ 71474: MPBattleUIBase: [ function(t, e, o) {
+ 71475: "use strict";
+ 71476: cc._RF.push(e, "6114f14HW1PW4nKiZL4Wl40", "MPBattleUIBase");
+ 71477: var i, n = this && this.__extends || (i = function(t, e) {
+ 71478: return (i = Object.setPrototypeOf || {
+ 71479: __proto__: []
+ 71480: } instanceof Array && function(t, e) {
+ 71481: t.__proto__ = e;
+ 71482: } || function(t, e) {
+ 71483: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+ 71484: })(t, e);
+ 71485: }, function(t, e) {
+ 71486: i(t, e);
+ 71487: function o() {
+ 71488: this.constructor = t;
+ 71489: }
+ 71490: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());
+ 71491: }), r = this && this.__decorate || function(t, e, o, i) {
+ 71492: var n, r = arguments.length, a = r < 3 ? e : null === i ? i = Object.getOwnPropertyDescriptor(e, o) : i;
+ 71493: if ("object" == typeof Reflect && "function" == typeof Reflect.decorate) a = Reflect.decorate(t, e, o, i); else for (var s = t.length - 1; s >= 0; s--) (n = t[s]) && (a = (r < 3 ? n(a) : r > 3 ? n(e, o, a) : n(e, o)) || a);
+ 71494: return r > 3 && a && Object.defineProperty(e, o, a), a;
+ 71495: }, a = this && this.__awaiter || function(t, e, o, i) {
+ 71496: return new (o || (o = Promise))(function(n, r) {
+ 71497: function a(t) {
+ 71498: try {
+ 71499: l(i.next(t));
+ 71500: } catch (t) {
+ 71501: r(t);
+---

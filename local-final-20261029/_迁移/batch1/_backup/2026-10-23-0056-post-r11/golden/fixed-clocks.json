@@ -1,0 +1,12 @@
+[
+ {
+  "value": "1792612412000",
+  "purpose": "主时钟（GEN_NOW）。生成器采集形状默认值、绝大多数回归、冻结断言、build-handlers 冒烟都用它。与面板/端上实测同日。",
+  "files": ["tools/gen_shapes.js", "tools/check_shape_freeze.js", "tools/check_exchange_currency.js", "hotfix-patch/build-handlers.js", "hotfix-patch/test/*.js"]
+ },
+ {
+  "value": "1792600000000",
+  "purpose": "旧档时间点。只给『存档迁移 / 自检不许写盘 / 技能升级目标等级 / 自检不许推活模型』这四套用：它们要构造『更早的存档时间』或与主时钟无关的隔离实例，换成主时钟会改变这些用例的前提。",
+  "files": ["hotfix-patch/test/save-migrate.js", "hotfix-patch/test/selfcheck-model-push.js", "hotfix-patch/test/selfcheck-nosave.js", "hotfix-patch/test/upgrade-skill-target.js"]
+ }
+]

@@ -1,0 +1,309 @@
+{
+ "archivedAt": "2026-10-26T20:06:20.208Z",
+ "rules": [
+  {
+   "id": "c10-batchSeedCrop",
+   "field": [
+    "eRet",
+    "crops",
+    "recentSeeds"
+   ],
+   "action": "batchSeedCrop",
+   "expect": 3,
+   "allowSigma": [
+    [
+     "batchSeedCrop",
+     "crops"
+    ],
+    [
+     "batchSeedCrop",
+     "recentSeeds"
+    ]
+   ],
+   "ev": "index.js:57654",
+   "why": "C10 播种：空请求走拒绝 eRet 2；旧的 SHAPED 兜底 crops:{} / recentSeeds:0 不再出现，成功路径由 handler 按真实地块生成 crops/recentSeeds"
+  },
+  {
+   "id": "c10-changeSate",
+   "field": [
+    "eRet",
+    "b",
+    "m",
+    "sIdx"
+   ],
+   "action": "changeSate",
+   "expect": 4,
+   "allowSigma": [
+    [
+     "changeSate",
+     "eRet"
+    ],
+    [
+     "changeSate",
+     "crop.b"
+    ],
+    [
+     "changeSate",
+     "crop.m"
+    ],
+    [
+     "changeSate",
+     "sIdx"
+    ]
+   ],
+   "ev": "index.js:57676",
+   "why": "C10 地块状态刷新：空请求无地块回 eRet -1（回调 -1 分支 = getText(3320)，57696）—— 签名 num+->num-；成功路径才带 crop.m/crop.b/sIdx"
+  },
+  {
+   "id": "c10-cleanDeadCrop",
+   "field": [
+    "eRet",
+    "sIdx"
+   ],
+   "action": "cleanDeadCrop",
+   "expect": 2,
+   "allowSigma": [
+    [
+     "cleanDeadCrop",
+     "sIdx"
+    ]
+   ],
+   "ev": "index.js:57811",
+   "why": "C10 清枯死：回调只有 1 分支、无 else（57811-57824）；本批无枯死模型 -> 恒 eRet 2，旧 SHAPED 的 sIdx:0 不再出现"
+  },
+  {
+   "id": "c10-dispossHomeEvent",
+   "field": [
+    "eRet",
+    "b",
+    "m",
+    "exp",
+    "flag",
+    "idx",
+    "rewardArray"
+   ],
+   "action": "dispossHomeEvent",
+   "expect": 7,
+   "allowSigma": [
+    [
+     "dispossHomeEvent",
+     "crop.b"
+    ],
+    [
+     "dispossHomeEvent",
+     "crop.m"
+    ],
+    [
+     "dispossHomeEvent",
+     "exp"
+    ],
+    [
+     "dispossHomeEvent",
+     "flag"
+    ],
+    [
+     "dispossHomeEvent",
+     "idx"
+    ],
+    [
+     "dispossHomeEvent",
+     "rewardArray"
+    ]
+   ],
+   "ev": "index.js:57979",
+   "why": "C10 驱除家事件：回调先看有没有 crop 再看 eRet（57980）-> 拒绝应答不带 crop/idx/exp/flag/rewardArray"
+  },
+  {
+   "id": "c10-expediteCrop",
+   "field": [
+    "eRet",
+    "b",
+    "m",
+    "sIdx"
+   ],
+   "action": "expediteCrop",
+   "expect": 4,
+   "allowSigma": [
+    [
+     "expediteCrop",
+     "crop.b"
+    ],
+    [
+     "expediteCrop",
+     "crop.m"
+    ],
+    [
+     "expediteCrop",
+     "sIdx"
+    ]
+   ],
+   "ev": "index.js:57825",
+   "why": "C10 催熟：空请求无作物回 eRet 2（getText(1455) 分支，57845）-> 成功路径才带 crop"
+  },
+  {
+   "id": "c10-getFriendHomeList",
+   "field": [
+    "soilArr"
+   ],
+   "action": "getFriendHomeList",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "getFriendHomeList",
+     "soilArr"
+    ]
+   ],
+   "ev": "index.js:57951",
+   "why": "gen_shapes 按真实回包语义重抽：soilArr 是数组不是对象（客户端 e.soilArr=i.soilArr 后按 .length/下标用，57596/57600）。该动作仍未实现（第50批），此处只是把形状表的错误默认值纠正为数组"
+  },
+  {
+   "id": "c10-getHomeList",
+   "field": [
+    "recentSeeds",
+    "soilArr",
+    "s",
+    "bShop"
+   ],
+   "action": "getHomeList",
+   "expect": 7,
+   "allowSigma": [
+    [
+     "getHomeList",
+     "recentSeeds"
+    ],
+    [
+     "getHomeList",
+     "soilArr"
+    ],
+    [
+     "getHomeList",
+     "soilArr[0].s"
+    ],
+    [
+     "getHomeList",
+     "soilArr[1].s"
+    ],
+    [
+     "getHomeList",
+     "soilArr[2].s"
+    ],
+    [
+     "getHomeList",
+     "soilArr[3].s"
+    ],
+    [
+     "getHomeList",
+     "bShop"
+    ]
+   ],
+   "ev": "index.js:57585",
+   "why": "C10 必做项：soilArr 改回数组（4 块预开垦地 s=1）、recentSeeds 由 0 改数组、bShop 按契约补 0（hasOwnProperty 守卫）"
+  },
+  {
+   "id": "c10-obtainCrop",
+   "field": [
+    "eRet",
+    "exp",
+    "rewardArray",
+    "sIdx"
+   ],
+   "action": "obtainCrop",
+   "expect": 4,
+   "allowSigma": [
+    [
+     "obtainCrop",
+     "exp"
+    ],
+    [
+     "obtainCrop",
+     "rewardArray"
+    ],
+    [
+     "obtainCrop",
+     "sIdx"
+    ]
+   ],
+   "ev": "index.js:57698",
+   "why": "C10 收获：空请求无地块回 eRet 2（刻意不用 3：3 那一支裸读并把 m.s 置 0，57714-57723）"
+  },
+  {
+   "id": "c10-stealCrop",
+   "field": [
+    "eRet",
+    "b",
+    "m",
+    "exp",
+    "idx",
+    "rewardArray"
+   ],
+   "action": "stealCrop",
+   "expect": 6,
+   "allowSigma": [
+    [
+     "stealCrop",
+     "crop.b"
+    ],
+    [
+     "stealCrop",
+     "crop.m"
+    ],
+    [
+     "stealCrop",
+     "exp"
+    ],
+    [
+     "stealCrop",
+     "idx"
+    ],
+    [
+     "stealCrop",
+     "rewardArray"
+    ]
+   ],
+   "ev": "index.js:58007",
+   "why": "C10 偷菜：档 A 锁好友家 -> 空请求也回 eRet 2（3317 文案）；成功路径才带 crop/idx/exp/rewardArray"
+  },
+  {
+   "id": "c10-onKeyDispossHomeEvent",
+   "field": [
+    "aExp"
+   ],
+   "action": "onKeyDispossHomeEvent",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "onKeyDispossHomeEvent",
+     "aExp"
+    ]
+   ],
+   "ev": "index.js:57758",
+   "why": "C10 一键驱除：cropMap 空对象时客户端弹 6000404；空请求下的真实应答（cropMap:{} + aExp）冻进基线"
+  },
+  {
+   "id": "c10-onKeyObtainCrop",
+   "field": [
+    "aExp",
+    "ivch",
+    "eqch"
+   ],
+   "action": "onKeyObtainCrop",
+   "expect": 3,
+   "allowSigma": [
+    [
+     "onKeyObtainCrop",
+     "aExp"
+    ],
+    [
+     "onKeyObtainCrop",
+     "note.ivch"
+    ],
+    [
+     "onKeyObtainCrop",
+     "note.eqch"
+    ]
+   ],
+   "ev": "index.js:57726",
+   "why": "C10 一键收获：obtainLands 为空 -> 客户端弹 69193；aExp/note.* 是本批新增字段（观察守卫要能解释差额）"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+# User.GetSchoolRankList   (HttpConst.GET_SCHOOL_RANK)
+
+## 注册点 113572: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_RANK, this.onGetSchoolRank, this);
+
+## 请求点 113979: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_RANK, e);
+   113971: id: t
+   113972: };
+   113973: s.NetMgr.http.sendRequest(a.HttpConst.LIKE, e, function() {}, !1, !1);
+   113974: };
+   113975: t.prototype.reqSchoolRank = function(t) {
+   113976: var e = {
+   113977: school: t
+   113978: };
+
+## 处理函数 onGetSchoolRank (113602-113604)
+113602: t.prototype.onGetSchoolRank = function(t, e) {
+113603: 1 == e.eRet && r.MessageCenter.dispatch(l.EvName.GOT_RANK_LIST, e);
+113604: };

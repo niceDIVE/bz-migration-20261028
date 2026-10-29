@@ -1,0 +1,56 @@
+# 动作注册表仪表盘
+
+生成：2026-10-23T18:52:12.654Z　M1 ed2a4eee　契约 c31bc204
+
+- HttpConst 条目：**1125**；其中客户端真会发请求的：**744**；扣除 OUT/CAPTURE 后在范围内：**699**
+- 已还原（DONE）占范围内：**0.0%**
+
+| 状态 | 数量 | 含义 |
+|---|---:|---|
+| DONE | 0 | 已实现且裁判全 PASS |
+| IMPL-FAIL | 0 | 已实现但裁判有 FAIL |
+| IMPL-UNJUDGED | 0 | 已实现、还没有用例 |
+| RULE | 0 | 有规则 DSL，可直接编译 |
+| GEN-READY | 358 | 契约闭合，可交给生成器 |
+| NEEDS-S2 | 318 | 契约未闭合，先跑展开器 |
+| NO-CONTRACT | 23 | 客户端会发但没有读点契约 |
+| CAPTURE | 0 | 依赖原服独有数据 |
+| OUT | 29 | 付费/项目边界外 |
+| ALT | 16 | 非 Mod.do 形态的发送（弹幕/排行榜等另一通道），多依赖其他玩家【推断】，不计入范围 |
+| PUSH | 192 | 服务端推送事件，不需要请求 handler |
+| DEAD | 189 | 客户端不发也不读 |
+
+## 待办 Top 30（按真实触发次数，其次按状态）
+
+| # | 动作 | 状态 | 触发 | 契约 |
+|---:|---|---|---:|---|
+| 1 | `User.saleItem` | GEN-READY | 2 | SELL_ITEM |
+| 2 | `User.useItem` | GEN-READY | 2 | USE_ITEM |
+| 3 | `User.upgradeSkill` | GEN-READY | 2 | UPGRADE_SKILL_LV |
+| 4 | `User.LoadGame` | GEN-READY | 1 | USER_LOADGAME |
+| 5 | `User.buyShopItem` | GEN-READY | 1 | BUY_SHOP_ITEM |
+| 6 | `User.BuyFashion` | GEN-READY | 1 | REQ_BUY_FASHION |
+| 7 | `User.ChallengePVP` | GEN-READY | 0 | USER_PVP |
+| 8 | `User.rankList` | GEN-READY | 0 | USER_RANKLIST |
+| 9 | `User.LookOther` | GEN-READY | 0 | USER_LOOKOTHER |
+| 10 | `User.getCRAInfo` | GEN-READY | 0 | GET_CREATE_INFO |
+| 11 | `User.getGMGiveItemList` | GEN-READY | 0 | GET_GMGIVE_ITEM_LIST |
+| 12 | `User.GetGMGiveItem` | GEN-READY | 0 | GET_GMGIVE_ITEM |
+| 13 | `User.BeginPlayWooks` | GEN-READY | 0 | BEGIN_WOOD_TRAINING |
+| 14 | `User.EndPlayWooks` | GEN-READY | 0 | END_WOOD_TRAINING |
+| 15 | `User.changePlayWooksState` | GEN-READY | 0 | PAUSE_WOOD_TRAINING |
+| 16 | `User.BeginFish` | GEN-READY | 0 | START_FISHING |
+| 17 | `User.BeginRollDice` | GEN-READY | 0 | BEGIN_ROLLDICE |
+| 18 | `User.EndFish` | GEN-READY | 0 | END_FISHING |
+| 19 | `User.LookFishAward` | GEN-READY | 0 | CHECK_FISHING_REWARDS |
+| 20 | `User.GetBigMapSpecialEvent` | GEN-READY | 0 | SPECIAL_EVENTS |
+| 21 | `User.enterWoldBossBattle` | GEN-READY | 0 | FIGHT_WORLD_BOSS |
+| 22 | `User.GetBossAward` | GEN-READY | 0 | GET_BOSS_REWARD |
+| 23 | `User.checkUploadAttackDamge` | GEN-READY | 0 | UPLOAD_WB_DMG |
+| 24 | `User.WashMedicine` | GEN-READY | 0 | WASH_MEDICINE |
+| 25 | `User.boosRankList` | GEN-READY | 0 | WB_DMG_RANKLIST |
+| 26 | `User.GetFashionList` | GEN-READY | 0 | GET_FASHION_LIST |
+| 27 | `User.cancelChatPk` | GEN-READY | 0 | CANCEL_CHAT_PK |
+| 28 | `User.addItem` | GEN-READY | 0 | ADD_ITEM |
+| 29 | `User.BeginTraining` | GEN-READY | 0 | BEGIN_LIANGONG |
+| 30 | `User.EndTraining` | GEN-READY | 0 | END_LIANGONG |

@@ -1,0 +1,43 @@
+# User.delegateTask   (HttpConst.DELEGATE_TASK)
+
+## 注册点 43506: i.MessageCenter.on(n.HttpConst.DELEGATE_TASK, function(e, o) {
+
+## 请求点 43567: 0 == e && f.NetMgr.http.sendRequest(n.HttpConst.DELEGATE_TASK, {
+   43559: i = (i = i.replace(/\[1\]/, p.getText(a.Name))).replace(/\[2\]/, "1");
+   43560: c.default.show(i, [ {
+   43561: flag: 0,
+   43562: name: p.getText("332")
+   43563: }, {
+   43564: flag: 1,
+   43565: name: p.getText("333")
+   43566: } ], function(e) {
+
+## 请求点 43583: 0 == e && f.NetMgr.http.sendRequest(n.HttpConst.DELEGATE_TASK, {
+   43575: i = (i = i.replace(/\[1\]/, p.getText(s.Name))).replace(/\[2\]/, t.param[2]);
+   43576: c.default.show(i, [ {
+   43577: flag: 0,
+   43578: name: p.getText("332")
+   43579: }, {
+   43580: flag: 1,
+   43581: name: p.getText("333")
+   43582: } ], function(e) {
+
+## 请求点 43595: 0 == e && f.NetMgr.http.sendRequest(n.HttpConst.DELEGATE_TASK, {
+   43587: } else c.default.show(p.getText(1608));
+   43588: } else 4 == t.type ? d.RoleBaseInfo.coins >= parseInt(t.param[1]) ? c.default.show(p.getText(1612).replace(/\[1\]/, t.param[1]), [ {
+   43589: flag: 0,
+   43590: name: p.getText("332")
+   43591: }, {
+   43592: flag: 1,
+   43593: name: p.getText("333")
+   43594: } ], function(e) {
+
+## 请求点 43598: }) : c.default.show(p.getText(1608)) : f.NetMgr.http.sendRequest(n.HttpConst.DELEGATE_TASK, {
+   43590: name: p.getText("332")
+   43591: }, {
+   43592: flag: 1,
+   43593: name: p.getText("333")
+   43594: } ], function(e) {
+   43595: 0 == e && f.NetMgr.http.sendRequest(n.HttpConst.DELEGATE_TASK, {
+   43596: taskID: t.id
+   43597: });

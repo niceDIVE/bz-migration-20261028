@@ -1,0 +1,275 @@
+{
+  "id": "sycnPlayerItemData.base",
+  "action": "User.sycnPlayerItemData",
+  "meta": {
+    "fullReload": true
+  },
+  "req": {
+    "mod": "User",
+    "do": "sycnPlayerItemData",
+    "p": {}
+  },
+  "resp": {
+    "eRet": 1,
+    "itemObj": {
+      "2001": 5,
+      "3001": 5,
+      "3101": 1
+    }
+  },
+  "saveBefore": {
+    "account": "9900012358565",
+    "roleID": 16374,
+    "name": "FZhou",
+    "created": true,
+    "saveVersion": 9,
+    "coins": 1000,
+    "gold": 50,
+    "yuanbao": 0,
+    "potential": 300,
+    "contribution": 0,
+    "chip": 0,
+    "bag": {
+      "2001": 5,
+      "3001": 5,
+      "3101": 1
+    },
+    "playerEquip": {
+      "90001": [
+        3,
+        1
+      ]
+    },
+    "equipments": {
+      "1": 90001
+    },
+    "skills": {
+      "1112": [
+        2,
+        10,
+        1
+      ]
+    },
+    "accepted": [],
+    "done": [
+      101080
+    ],
+    "rewarded": [
+      101080
+    ],
+    "baseValueAy": [
+      "9900012358565",
+      "FZhou",
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "titles": {},
+    "hunger": 50,
+    "hungerMax": 100
+  },
+  "saveAfter": {
+    "account": "9900012358565",
+    "roleID": 16374,
+    "name": "FZhou",
+    "created": true,
+    "saveVersion": 9,
+    "coins": 1000,
+    "gold": 50,
+    "yuanbao": 0,
+    "potential": 300,
+    "contribution": 0,
+    "chip": 0,
+    "bag": {
+      "2001": 5,
+      "3001": 5,
+      "3101": 1
+    },
+    "playerEquip": {
+      "90001": [
+        3,
+        1
+      ]
+    },
+    "equipments": {
+      "1": 90001
+    },
+    "skills": {
+      "1112": [
+        2,
+        10,
+        1
+      ]
+    },
+    "accepted": [],
+    "done": [
+      101080
+    ],
+    "rewarded": [
+      101080
+    ],
+    "baseValueAy": [
+      "9900012358565",
+      "FZhou",
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "titles": {},
+    "hunger": 50,
+    "hungerMax": 100
+  },
+  "envelope": {
+    "error": 0,
+    "p": "User.sycnPlayerItemData",
+    "User.sycnPlayerItemData": {
+      "eRet": 1,
+      "itemObj": {
+        "2001": 5,
+        "3001": 5,
+        "3101": 1
+      }
+    }
+  },
+  "transport": "game",
+  "rawTransport": {
+    "code": 200
+  },
+  "snapA": {
+    "bag": {
+      "2001": 5,
+      "3001": 5,
+      "3101": 1
+    },
+    "wallet": {
+      "coins": 1000,
+      "ptt": 300,
+      "gold": 50,
+      "yuanbao": 0,
+      "chips": 0
+    },
+    "skills": {
+      "1112": [
+        2,
+        10,
+        1
+      ]
+    },
+    "equips": {
+      "90001": [
+        3,
+        1
+      ]
+    }
+  },
+  "snapB": {
+    "bag": {
+      "2001": 5,
+      "3001": 5,
+      "3101": 1
+    },
+    "wallet": {
+      "coins": 1000,
+      "ptt": 300,
+      "gold": 50,
+      "yuanbao": 0,
+      "chips": 0
+    },
+    "skills": {
+      "1112": [
+        2,
+        10,
+        1
+      ]
+    },
+    "equips": {
+      "90001": [
+        3,
+        1
+      ]
+    }
+  },
+  "exceptions": [],
+  "toasts": [],
+  "probe": {
+    "mode": "wrap-on"
+  }
+}

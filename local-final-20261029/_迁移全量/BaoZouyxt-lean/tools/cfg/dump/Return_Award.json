@@ -1,0 +1,1 @@
+{"name":"Return_Award","rows":5,"cols":["id","liveness","award1"],"data":{"1":{"id":1,"liveness":20,"award1":"8905,10"},"2":{"id":2,"liveness":40,"award1":"8905,10|6658,20"},"3":{"id":3,"liveness":60,"award1":"8905,30|6658,25"},"4":{"id":4,"liveness":80,"award1":"8905,30|6658,30"},"5":{"id":5,"liveness":100,"award1":"8905,55|6658,50"}}}

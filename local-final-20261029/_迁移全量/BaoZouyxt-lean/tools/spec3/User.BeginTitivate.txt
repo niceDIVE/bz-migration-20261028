@@ -1,0 +1,13 @@
+# User.BeginTitivate   (HttpConst.REQ_BEGINTITIVATE)
+
+## 注册点 75529: s.MessageCenter.on(l.HttpConst.REQ_BEGINTITIVATE, function(e, o) {
+
+## 请求点 75683: t.length > 0 ? this.judgeCostItem(this.currentMakeUp) ? m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BEGINTITIVATE, {
+   75675: var t = [], e = this.currentMakeUp;
+   75676: for (var o in e) {
+   75677: var i = e[o], r = this.roleMakeUpItem[o];
+   75678: if (parseInt(o) < 5 && i != r) {
+   75679: t.push(i);
+   75680: parseInt(o);
+   75681: }
+   75682: }

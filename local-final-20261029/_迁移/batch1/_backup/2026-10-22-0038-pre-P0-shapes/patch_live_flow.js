@@ -1,0 +1,393 @@
+/* flow.js —— 流程层（可热更新）：自动选服 → 进游戏 → 通关卡对话 → 建档 → 主场景
+ *
+ * 契约：new Function('bz', src) 求值，必须 return { onTick(scene, bzApi) }
+ *   onTick 每 500ms 调用一次；返回字符串写进 JSONL 日志（kind=flow）。
+ *
+ * 依据（读客户端源码得到，非猜测）：
+ *   SvrSelectView.onEnterGame → checkLicense → loginModel.login() + reqLogSvSelection()
+ *   SvrSelectView.onStartCreateRole → bg.active=false（进入建角流程时隐藏登录面板）
+ *   StartDialogueUI.start → 打字机；nextPage()：第 1 次跳过打字，第 2 次 1s 后加载
+ *                          Login/CreateRoleUI 弹窗
+ *   ⇒ 所以"卡住"不是网络问题，是剧情对话在等点击。
+ *
+ * 纪律：动作有最小间隔与次数上限；只在确认状态后动手；找不到就报一次错不静默；
+ *       存在 <writable>/bz_noauto 文件时整体禁用。
+ */
+
+var ENTRY = [220, 'https://bzgf.maple-game.com', '800-server-166', '900-server-166', 1, '混服26区', 33];
+var GAP = 350;
+var S = {
+  scene: '', entered: false, serverSet: false, enterAt: 0,
+  lastActAt: 0, tries: {}, reported: {}, tapped: {}, done: {}, name: 'FZhou', doneScene: {},
+};
+
+function now() { return bz.now(); }
+function log(m) { try { bz.log('[flow] ' + m); } catch (e) {} }
+function say(key, msg) { if (S.reported[key]) return; S.reported[key] = 1; log('! ' + msg); }
+function gapOk() { var n = now(); if (n - S.lastActAt < GAP) return false; S.lastActAt = n; return true; }
+
+function compName(c) {
+  try { return c.__classname__ || (c.constructor && c.constructor.name) || ''; } catch (e) { return ''; }
+}
+function compOf(node, want) {
+  var cs = (node && node._components) || [];
+  for (var i = 0; i < cs.length; i++) if (compName(cs[i]) === want) return cs[i];
+  return null;
+}
+function collect(root, want, out, depth) {
+  if (!root || depth < 0) return out;
+  var c = compOf(root, want);
+  if (c) out.push(c);
+  var ch = root.children || [];
+  for (var i = 0; i < ch.length; i++) collect(ch[i], want, out, depth - 1);
+  return out;
+}
+
+function hideBlockers(scene) {
+  var pn = scene.getChildByName('persistentnode');
+  if (!pn) return;
+  for (var i = 0; i < pn.children.length; i++) {
+    var n = pn.children[i];
+    if (n.name === 'Alert' && n.active) { n.active = false; log('隐藏 Alert'); }
+  }
+}
+
+function enableLogin() {
+  try {
+    var LM = window.LoginMgr;
+    if (!LM) return 'no LoginMgr';
+    if (!LM.isLogin) {
+      LM.isLogin = true;
+      if (!LM.sdkUserId) LM.sdkUserId = '9900012358565';
+      if (!LM.token) LM.token = 'azVwcmM1N2dvUHNjN20vUHovaVpveXVNOFNzTnExdjN5UGN2TFR2Wjd4OGJ0MEliU0xYRjlXNlR0djk4';
+      log('补 LoginMgr 登录态');
+    }
+    return null;
+  } catch (e) { return 'LoginMgr 异常 ' + e; }
+}
+
+/* ---- 选区界面：只点一次"进入游戏" ---- */
+function stepSvrSelect(scene) {
+  var canvas = scene.getChildByName('Canvas');
+  var sv = canvas && compOf(canvas, 'SvrSelectView');
+  if (!sv) { say('no-sv', 'svrselect 找不到 SvrSelectView'); return null; }
+
+  hideBlockers(scene);
+  var e = enableLogin();
+  if (e) { say('lm', e); return null; }
+
+  // 热重载后接手：已在登录后流程（任一建角弹窗）就别再触发一次登录
+  if (!S.entered) {
+    var POP = ['StartDialogueUI', 'CreateRoleUI', 'BirthPlaceUI', 'SelectSexUI', 'ShowTalentUI'];
+    for (var pi = 0; pi < POP.length; pi++) {
+      if (collect(scene, POP[pi], [], 6).length) {
+        S.entered = true; S.serverSet = true;
+        log('检测到登录后流程已开始（' + POP[pi] + '），跳过 onEnterGame');
+        break;
+      }
+    }
+  }
+
+  installJsonSpy();
+  if (window.LoginMgr && window.LoginMgr.isLogin) window.__BZ_SPY__ = true;
+  if (!S.serverSet) {
+    if (!gapOk()) return null;
+    try { sv.setServer(ENTRY); S.serverSet = true; log('setServer 220 (混服26区)'); }
+    catch (er) { say('set-server', 'setServer 异常 ' + er); }
+    return 'setServer';
+  }
+  if (!S.entered) {
+    if (!gapOk()) return null;
+    try { sv.onEnterGame(); S.entered = true; S.enterAt = now(); log('onEnterGame（仅此一次）'); }
+    catch (er) { say('enter', 'onEnterGame 异常 ' + er); }
+    return 'onEnterGame';
+  }
+  if (!S.done.enterWarn && now() - S.enterAt > 12000) {
+    S.done.enterWarn = true;
+    log('! onEnterGame 后 12s 仍在选区（后续由对话/建角步骤接手）');
+  }
+  return null;
+}
+
+/* ---- 剧情对话：StartDialogueUI 在等点击 ---- */
+function stepDialogue(scene) {
+  var list = collect(scene, 'StartDialogueUI', [], 6);
+  var acted = null;
+  for (var i = 0; i < list.length; i++) {
+    var c = list[i];
+    var node = c.node;
+    if (!node || !node.activeInHierarchy) continue;
+    var key = (node.uuid || node.name) + ':' + (c.isPlayText ? 'p' : 'c');
+    if (S.tapped[key]) continue;
+    if (!gapOk()) return acted;
+    S.tapped[key] = 1;
+    try {
+      if (c.isPlayText) { c.nextPage(); acted = '对话：跳过打字'; }
+      else if (c.isComplete) { c.nextPage(); acted = '对话：推进到建角'; }
+      else acted = '对话：等待打字完成';
+    } catch (er) { say('dlg', 'nextPage 异常 ' + er); }
+  }
+  return acted;
+}
+
+/* ---- 出生地：BirthPlaceUI.onSelectEvent(id) ---- */
+function stepBirthPlace(scene) {
+  var list = collect(scene, 'BirthPlaceUI', [], 6).filter(function (c) {
+    return c.node && c.node.activeInHierarchy;
+  });
+  if (!list.length) return null;
+  dedupe(list, 'BirthPlaceUI');
+  var c = list[0], key = 'bp:' + (c.node.uuid || 'x');
+  if (S.tapped[key]) return null;
+  if (!gapOk()) return null;
+  S.tapped[key] = 1;
+  try { c.onSelectEvent(null, 1); return '选择出生地 #1'; }
+  catch (er) { say('bp-click', 'onSelectEvent 异常 ' + er); return null; }
+}
+
+/* ---- 通用：同名弹窗只留一份，避免叠加 ---- */
+function dedupe(list, label) {
+  if (list.length <= 1) return;
+  for (var i = 1; i < list.length; i++) list[i].node.active = false;
+  var k = 'dd:' + label;
+  if (!S.done[k]) { S.done[k] = 1; log('收拢重复的 ' + label + '（' + list.length + ' → 1）'); }
+}
+
+
+function stepCreateRole(scene) {
+  var list = collect(scene, 'CreateRoleUI', [], 6).filter(function (c) {
+    return c.node && c.node.activeInHierarchy;
+  });
+  if (!list.length) return null;
+
+  dedupe(list, 'CreateRoleUI');
+
+  var c = list[0];
+  var key = 'cr:' + (c.node.uuid || 'x');
+  if (S.tapped[key]) return null;
+  if (!gapOk()) return null;
+  S.tapped[key] = 1;
+  try {
+    if (typeof c.onEnterEvent === 'function') { c.onEnterEvent(); return '点击「开始转生」(onEnterEvent)'; }
+    var btn = compOf(c.node.getChildByName('New Button'), 'cc.Button');
+    if (btn && (btn.clickEvents || []).length) {
+      cc.Component.EventHandler.emitEvents(btn.clickEvents, { type: 'click' });
+      return '点击「开始转生」(clickEvents)';
+    }
+    say('cr-no-btn', 'CreateRoleUI 找不到可点按钮');
+  } catch (er) { say('cr-click', '开始转生异常 ' + er); }
+  return null;
+}
+
+/* ---- 性别：SelectSexUI.onSelectSex(id) → onNextBtn() ---- */
+function stepSelectSex(scene) {
+  var list = collect(scene, 'SelectSexUI', [], 6).filter(function (c) {
+    return c.node && c.node.activeInHierarchy;
+  });
+  if (!list.length) return null;
+  dedupe(list, 'SelectSexUI');
+  var c = list[0];
+  if (!(c.selectFlag > 0)) {
+    if (!gapOk()) return null;
+    try { c.onSelectSex(null, 1); return '选择性别 #1'; } catch (er) { say('sex', 'onSelectSex 异常 ' + er); }
+    return null;
+  }
+  var key = 'sexnext:' + (c.node.uuid || 'x');
+  if (S.tapped[key]) return null;
+  if (!gapOk()) return null;
+  S.tapped[key] = 1;
+  try { c.onNextBtn(); return '性别→下一步'; } catch (er) { say('sex-next', 'onNextBtn 异常 ' + er); }
+  return null;
+}
+
+/* ---- 外观：SelectAppearanceUI.onNextPage()（appearId>0 才放行） ---- */
+function stepAppearance(scene) {
+  var list = collect(scene, 'SelectAppearanceUI', [], 6).filter(function (c) {
+    return c.node && c.node.activeInHierarchy;
+  });
+  if (!list.length) return null;
+  dedupe(list, 'SelectAppearanceUI');
+  var c = list[0];
+  if (!(c.appearId > 0)) {
+    if (!gapOk()) return null;
+    try { c.onSelectAppear(c.former, 0); return '选择外观 #0'; } catch (er) { say('app', 'onSelectAppear 异常 ' + er); }
+    return null;
+  }
+  var key = 'appnext:' + (c.node.uuid || 'x');
+  if (S.tapped[key]) return null;
+  if (!gapOk()) return null;
+  S.tapped[key] = 1;
+  try { c.onNextPage(); return '外观→ShowTalentUI'; } catch (er) { say('app-next', 'onNextPage 异常 ' + er); }
+  return null;
+}
+/* ---- 建角后的剧情漫画：StartActionUI_N.onNextPage() ---- */
+function stepStartAction(scene) {
+  var pn = scene.getChildByName('persistentnode');
+  if (!pn) return null;
+  for (var i = 0; i < pn.children.length; i++) {
+    var n = pn.children[i];
+    if (!/^StartActionUI/.test(n.name) || !n.activeInHierarchy) continue;
+    var c = null, cs = n._components || [];
+    for (var j = 0; j < cs.length; j++) {
+      if (/^StartActionUI/.test(compName(cs[j]))) { c = cs[j]; break; }
+    }
+    if (!c || typeof c.onNextPage !== 'function') continue;
+    var k = 'sa:' + (n.uuid || n.name);
+    S.tries[k] = (S.tries[k] || 0) + 1;
+    if (S.tries[k] > 60) { say('sa-limit', 'StartAction 点了 60 次仍未结束'); return null; }
+    if (!gapOk()) return null;
+    try { c.onNextPage(); return '剧情推进 ' + n.name + ' #' + S.tries[k]; }
+    catch (er) { say('sa', 'onNextPage 异常 ' + er); return null; }
+  }
+  return null;
+}
+/* ---- JSON.parse 读取探针：直接记录客户端读了响应里的哪些字段（读规格，不猜） ---- */
+function installJsonSpy() {
+  if (window.__BZ_SPY_INSTALLED__) return;
+  window.__BZ_SPY_INSTALLED__ = 1;
+  var orig = JSON.parse;
+  var hits = [];
+  window.__BZ_SPY_LOG__ = hits;
+
+  function wrap(o, path, depth) {
+    if (!o || typeof o !== 'object' || depth > 3) return o;
+    try {
+      if (Object.prototype.toString.call(o) === '[object Array]') {
+        for (var i = 0; i < o.length; i++) o[i] = wrap(o[i], path + '[' + i + ']', depth + 1);
+        return o;
+      }
+      return new Proxy(o, {
+        get: function (t, prop) {
+          try {
+            if (typeof prop === 'string' && hits.length < 600 &&
+                prop !== 'toJSON' && prop !== 'constructor' && prop !== 'then' &&
+                prop !== 'hasOwnProperty' && prop !== '__proto__') {
+              hits.push(path + '.' + prop);
+            }
+          } catch (e) {}
+          var v = t[prop];
+          try { return (v && typeof v === 'object') ? wrap(v, path + '.' + prop, depth + 1) : v; } catch (e) { return v; }
+        }
+      });
+    } catch (e) { return o; }
+  }
+
+  JSON.parse = function (s, rev) {
+    var r = orig(s, rev);
+    if (!window.__BZ_SPY__ || typeof r !== 'object' || r === null) return r;
+    window.__BZ_SPY_N__ = (window.__BZ_SPY_N__ || 0) + 1;
+    if (window.__BZ_SPY_N__ > 40) return r;   // 只抓前 4 份响应
+    var tag = 'R' + window.__BZ_SPY_N__;
+    try { log('SPY 捕获响应 ' + tag); } catch (e) {}
+    return wrap(r, tag, 0);
+  };
+  window.__BZ_SPY_DUMP__ = function () {
+    try { log('SPY ' + hits.length + ' 次读取: ' + hits.join(' , ')); } catch (e) {}
+  };
+  try { log('JSON.parse 读取探针已挂'); } catch (e) {}
+}
+/* ---- 未知弹窗自发现：把类名与方法名写进日志，免去一轮 dump ---- */
+var KNOWN = { StartActionUI_1: 1, StartActionUI_2: 1, StartActionUI_3: 1, StartDialogueUI: 1, CreateRoleUI: 1, BirthPlaceUI: 1, SelectSexUI: 1, SelectAppearanceUI: 1, ShowTalentUI: 1, SmallNoticeUI: 1, Alert: 1, Overlay: 1 };
+function stepDiscover(scene) {
+  var pn = scene.getChildByName('persistentnode');
+  if (!pn) return null;
+  for (var i = 0; i < pn.children.length; i++) {
+    var n = pn.children[i];
+    if (!n.activeInHierarchy) continue;
+    var cs = n._components || [];
+    for (var j = 0; j < cs.length; j++) {
+      var nm = compName(cs[j]);
+      if (!nm || nm.indexOf('cc.') === 0 || KNOWN[nm]) continue;
+      if (S.reported['disc:' + nm]) continue;
+      S.reported['disc:' + nm] = 1;
+      var ms = [];
+      try {
+        var p = Object.getPrototypeOf(cs[j]);
+        Object.getOwnPropertyNames(p).forEach(function (k) {
+          if (k === 'constructor') return;
+          var v; try { v = p[k]; } catch (e) { return; }
+          if (typeof v === 'function') ms.push(k);
+        });
+      } catch (e) {}
+      log('发现未知弹窗 ' + nm + ' 方法=[' + ms.join(',') + ']');
+    }
+  }
+  return null;
+}
+/* ---- 天赋/命名界面：ShowTalentUI（enterClickBtn 触发建角） ---- */
+function stepTalent(scene) {
+  var list = collect(scene, 'ShowTalentUI', [], 6).filter(function (c) {
+    return c.node && c.node.activeInHierarchy;
+  });
+  if (!list.length) return null;
+  var c = list[0];
+
+  var ebs = collect(c.node, 'cc.EditBox', [], 8);
+  if (ebs.length && ebs[0].string !== S.name) {
+    if (!gapOk()) return null;
+    ebs[0].string = S.name;
+    try { ebs[0].node.emit('editing-did-ended', ebs[0]); } catch (e) {}
+    return '名字 ← ' + S.name;
+  }
+
+  // 属性点必须分配完（_attributeValue[0] 是剩余点，>0 时 enterClickBtn 会直接拒绝）
+  var av = c._attributeValue;
+  if (!(av instanceof Array) || av.length < 5 || av[0] !== 0) {
+    if (!gapOk()) return null;
+    c._attributeValue = [0, 40, 20, 10, 10];
+    return '属性点分配 40/20/10/10（剩余 0）';
+  }
+
+  var key = 'talent:' + (c.node.uuid || 'x');
+  if (S.tapped[key]) return null;
+  if (!gapOk()) return null;
+  S.tapped[key] = 1;
+  try {
+    if (typeof c.enterClickBtn === 'function') { c.enterClickBtn(); return '触发建角 (enterClickBtn)'; }
+    say('talent-api', 'ShowTalentUI 没有 enterClickBtn，需要读源码补按钮路径');
+  } catch (er) { say('talent-click', 'enterClickBtn 异常 ' + er); }
+  return null;
+}
+
+
+function onTick(scene) {
+  try {
+    if (!scene) return null;
+    if (S.scene !== scene.name) {
+      S.scene = scene.name; log('进入场景 ' + S.scene);
+    }
+    if (bz.exists(bz.dir + 'bz_noauto')) return null;
+
+    if (scene.name === 'gamescene') {
+      if (!S.done.game) { S.done.game = 1; log('已进入主场景 gamescene'); }
+      return null;
+    }
+
+    // 读取探针：抓到字段就读出来，避免再靠猜
+    try {
+      var hits = window.__BZ_SPY_LOG__;
+      if (hits && hits.length > (S.spySeen || 0)) {
+        var delta = hits.slice(S.spySeen || 0);
+        S.spySeen = hits.length;
+        log('SPY +' + delta.length + '(' + hits.length + '): ' + delta.join(','));
+      }
+    } catch (e) {}
+
+    var r = [], x;
+    if (scene.name === 'svrselect') { x = stepSvrSelect(scene); if (x) r.push(x); }
+    x = stepDialogue(scene); if (x) r.push(x);
+    x = stepCreateRole(scene); if (x) r.push(x);
+    x = stepBirthPlace(scene); if (x) r.push(x);
+    x = stepSelectSex(scene); if (x) r.push(x);
+    x = stepAppearance(scene); if (x) r.push(x);
+    x = stepStartAction(scene); if (x) r.push(x);
+    stepDiscover(scene);
+    x = stepTalent(scene); if (x) r.push(x);
+    return r.length ? r.join(' / ') : null;
+  } catch (e) {
+    say('tick', 'onTick 异常 ' + e);
+    return null;
+  }
+}
+
+return { onTick: onTick };

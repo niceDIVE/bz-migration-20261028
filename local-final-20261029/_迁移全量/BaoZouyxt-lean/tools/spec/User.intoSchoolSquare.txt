@@ -1,0 +1,83 @@
+# User.intoSchoolSquare  (HttpConst.INTO_SCHOOL_SQUARE)
+# 出现 2 处
+
+114407: this.playerPox = null;
+114408: this.isMasker = !1;
+114409: this.isGetter = !1;
+114410: this.pcgRandom = null;
+114411: }
+114412: t.prototype.init = function() {
+114413: r.MessageCenter.on(s.HttpConst.INTO_SCHOOL_SQUARE, this.onInfoSchoolSquare, this);
+114414: r.MessageCenter.on(s.HttpConst.QUIT_SCHOOL_SQUARE, this.onQuitSchoolSquare, this);
+114415: r.MessageCenter.on(s.HttpConst.INFO_COLLECTIVE_CULTIVATION, this.onIntoCollectiveCultivation, this);
+114416: r.MessageCenter.on(s.HttpConst.STC_UPDATE_MAP_ROLE_STATUS_NOTIFY, this.onUpdateMapRoleStatusNotify, this);
+114417: r.MessageCenter.on(s.HttpConst.STC_CLOSE_LIAN_GONG_NOTIFY, this.onCloseLianGongNotify, this);
+114418: r.MessageCenter.on(s.HttpConst.STC_OPEN_LIAN_GONG_NOTIFY, this.onOpenLianGongNotify, this);
+114419: r.MessageCenter.on(s.HttpConst.STC_SCHOOL_GIFT_BALL_START_NOTIFY, this.onSchoolGiftBallStartNotify, this);
+114420: r.MessageCenter.on(s.HttpConst.STC_SCHOOL_GIFT_BALL_END_NOTIFY, this.onSchoolGiftBallEndNotify, this);
+114421: r.MessageCenter.on(s.HttpConst.STC_GIFT_BALL_INFOO_NOTIFY, this.onGiftBallInfoNotify, this);
+114422: r.MessageCenter.on(s.HttpConst.STC_GIFT_BALL_OP_RESPONSE, this.onGiftBallOPResponse, this);
+114423: r.MessageCenter.on(s.HttpConst.STC_CAND_IDATE_SYN, this.onCandidateSyn, this);
+114424: };
+114425: t.prototype.reqEnterMapByMapID = function() {
+114426: this.reqEnterMap();
+114427: };
+114428: t.prototype.reqEnterMap = function() {
+114429: this.curMapId = this.schoolSquareMapID[this.intoSchool - 1];
+114430: var t = n.getItem(this.curMapId, "map").random_locate, e = {
+114431: mapId: this.curMapId,
+114432: mapPosX: t[0],
+114433: mapPosY: t[1]
+114434: };
+114435: c.Net.sendMsg(s.HttpConst.CTS_ENTER_MAP_BY_MAPID_REQ, e);
+114436: };
+114437: t.prototype.reqRoleSeatOp = function(t, e) {
+114438: c.Net.sendMsg(s.HttpConst.CTS_ROLE_SEAT_OP_REQ, {
+114439: SeatDown: t,
+114440: SeatID: e
+114441: });
+114442: };
+114443: t.prototype.reqIntoSchoolSquare = function(t) {
+114444: l.NetMgr.http.sendRequest(s.HttpConst.INTO_SCHOOL_SQUARE, {
+114445: schoolId: t
+114446: }, null, !0);
+114447: };
+114448: t.prototype.reqQuitSchoolSquare = function() {
+114449: var t = this;
+114450: if (!this.isGetter) {
+114451: var e = i.getText(7596);
+114452: p.default.show(e, [ {
+114453: flag: 0,
+---
+114454: name: i.getText("579")
+114455: }, {
+114456: flag: 1,
+114457: name: i.getText("580")
+114458: } ], function(e) {
+114459: 0 == e && t.quitSchoolSquare();
+114460: });
+114461: }
+114462: };
+114463: t.prototype.quitSchoolSquare = function(t) {
+114464: void 0 === t && (t = 0);
+114465: if (!this.isGetter) {
+114466: this.nextSceneId = t;
+114467: l.NetMgr.http.sendRequest(s.HttpConst.QUIT_SCHOOL_SQUARE, {}, null, !0);
+114468: }
+114469: };
+114470: t.prototype.reqIntoCollectiveCultivation = function() {
+114471: this.isGetter || l.NetMgr.http.sendRequest(s.HttpConst.INFO_COLLECTIVE_CULTIVATION, {}, null, !0);
+114472: };
+114473: t.prototype.reqGiftBallEventUpload = function(t) {
+114474: c.Net.sendMsg(s.HttpConst.CTS_GIFT_BALL_EVENT_UPlOAD, {
+114475: GiftBallInfo: t
+114476: });
+114477: };
+114478: t.prototype.reqRoleOutThrow = function(t) {
+114479: c.Net.sendMsg(s.HttpConst.CTS_ROLE_OUT_THROW, {
+114480: GiftBallInfo: t
+114481: });
+114482: };
+114483: t.prototype.reqCandidateAck = function() {
+114484: this.isMasker = !0;
+---

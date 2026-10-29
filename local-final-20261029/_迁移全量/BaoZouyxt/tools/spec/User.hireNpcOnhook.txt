@@ -1,0 +1,99 @@
+# User.hireNpcOnhook  (HttpConst.HIRE_NPC)
+# 出现 2 处
+
+ 51422: }
+ 51423: e.prototype.init = function() {
+ 51424: var t = this;
+ 51425: r.MessageCenter.on(s.HttpConst.START_FISHING, this.onStartFishing, this);
+ 51426: r.MessageCenter.on(s.HttpConst.END_FISHING, this.onEndFishing, this);
+ 51427: r.MessageCenter.on(s.HttpConst.CHECK_FISHING_REWARDS, this.onCheckFishingRewards, this);
+ 51428: r.MessageCenter.on(s.HttpConst.HIRE_NPC, function(t, e) {
+ 51429: if (1 == e.eRet) {
+ 51430: a.default.show(n.getText("1267"));
+ 51431: r.MessageCenter.dispatch(l.EvName.ON_HIRE_SUCCESS);
+ 51432: r.MessageCenter.dispatch(l.EvName.LIMIT_HIRE_SUCCESS, 1);
+ 51433: } else if (6 == e.eRet) {
+ 51434: var o, s = i.getItem(e.siteID, "fishpond");
+ 51435: switch (s.type) {
+ 51436: case 2:
+ 51437: o = 1300;
+ 51438: break;
+ 51439: 
+ 51440: case 3:
+ 51441: o = 1301;
+ 51442: break;
+ 51443: 
+ 51444: default:
+ 51445: o = 1299;
+ 51446: }
+ 51447: var c = n.getText(1298).replace(/\[2\]/, n.getText(o)).replace(/\[1\]/, n.getText(s.Name));
+ 51448: a.default.show(c);
+ 51449: }
+ 51450: }, this);
+ 51451: r.MessageCenter.on(s.HttpConst.CHECK_HIRE, function(e, o) {
+ 51452: var s = i.getItem(t.checkSiteID, "fishpond");
+ 51453: o.hasOwnProperty("maxTime") && (t.maxTime = o.maxTime);
+ 51454: if (1 == o.eRet) {
+ 51455: if (3 == s.type) t.openLimitHungUI(); else if (2 == s.type) {
+ 51456: var u = {
+ 51457: id: t.checkSiteID
+ 51458: };
+ 51459: c.default.prefabs.load("comUI/MiningBeginUI", cc.Prefab, function(t, e) {
+ 51460: var o = cc.instantiate(e);
+ 51461: p.PopUpMgr.addPopUp(o, h.LayerMgr.popUpLayer);
+ 51462: o.addComponent("MiningBeginUI").setData(u);
+ 51463: });
+ 51464: } else if (1 == s.type) {
+ 51465: var f = {
+ 51466: id: t.checkSiteID
+ 51467: };
+ 51468: c.default.prefabs.load("comUI/FishingBeginUI", cc.Prefab, function(t, e) {
+---
+ 51638: }
+ 51639: };
+ 51640: e.prototype.reqHireNpc = function(t) {
+ 51641: var e = {
+ 51642: siteID: t
+ 51643: };
+ 51644: g.NetMgr.http.sendRequest(s.HttpConst.HIRE_NPC, e);
+ 51645: };
+ 51646: e.prototype.reqCheckHire = function(t) {
+ 51647: this.checkSiteID = t;
+ 51648: var e = {
+ 51649: siteID: t
+ 51650: };
+ 51651: g.NetMgr.http.sendRequest(s.HttpConst.CHECK_HIRE, e);
+ 51652: };
+ 51653: e.prototype.reqFishing = function(t) {
+ 51654: this.pondID = t;
+ 51655: for (var e = i.getItem(t, "fishpond"), o = 0, n = 0; n < e.needitem.length; ++n) {
+ 51656: var r = e.needitem[n];
+ 51657: if (d.InventoryDB.getItemQuantity(r) > 0) {
+ 51658: o = m.InventoryModel.getEquipmentInfo(r) ? r : m.InventoryModel.getSpecEqArrByItemID(r)[0].id;
+ 51659: break;
+ 51660: }
+ 51661: }
+ 51662: var a = y.playerInfo.entity, l = {
+ 51663: fishpondID: t,
+ 51664: equipID: o,
+ 51665: hg: a.hunger.remaining,
+ 51666: gTime: a.totalGameTime.gameTime,
+ 51667: hgtimes: a.numStuffed
+ 51668: };
+ 51669: g.NetMgr.http.sendRequest(s.HttpConst.START_FISHING, l);
+ 51670: };
+ 51671: e.prototype.reqFinish = function(t) {
+ 51672: this.pondID = t;
+ 51673: var e = y.playerInfo.entity, o = {
+ 51674: fishpondID: t,
+ 51675: hglmt: e.hunger.limit,
+ 51676: speed: e.hungerConsumingSpeed.finalValue
+ 51677: };
+ 51678: g.NetMgr.http.sendRequest(s.HttpConst.END_FISHING, o);
+ 51679: };
+ 51680: e.prototype.reqCheckRwds = function(t) {
+ 51681: var e = {
+ 51682: fishpondID: t
+ 51683: };
+ 51684: g.NetMgr.http.sendRequest(s.HttpConst.CHECK_FISHING_REWARDS, e);
+---

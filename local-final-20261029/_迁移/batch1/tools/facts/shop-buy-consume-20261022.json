@@ -1,0 +1,568 @@
+{
+  "generatedAt": "2026-10-22T19:13:10.448Z",
+  "status": "COMPLETE",
+  "scope": {
+    "filesRead": [
+      "F:\\BaoZouyxt\\tools\\index.js",
+      "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "F:\\BaoZouyxt\\tools\\scripts3.js"
+    ],
+    "method": "node read-only line extraction + whole-file token scan (exit code 0)",
+    "tokenScanCounts": {
+      "BUY_GOOD_AND_EVIL_SHOP_ITEM": {
+        "index.js": 1,
+        "scripts2.js": 0,
+        "scripts3.js": 2
+      },
+      "RG_SHOP_BY_ITEM": {
+        "index.js": 1,
+        "scripts2.js": 0,
+        "scripts3.js": 2
+      },
+      "User.buyGoodAndEvilShopItem": {
+        "index.js": 1,
+        "scripts2.js": 0,
+        "scripts3.js": 0
+      },
+      "User.rgShopByItem": {
+        "index.js": 1,
+        "scripts2.js": 0,
+        "scripts3.js": 0
+      }
+    }
+  },
+  "goodEvilBuy": {
+    "registers": [
+      {
+        "file": "scripts3.js",
+        "line": 36359,
+        "text": "p.MessageCenter.on(c.HttpConst.BUY_GOOD_AND_EVIL_SHOP_ITEM, this.onBuy, this);",
+        "handlerName": "onBuy",
+        "enclosingInit": "t.prototype.init = function() { (line 36345)"
+      }
+    ],
+    "sends": [
+      {
+        "file": "scripts3.js",
+        "line": 36511,
+        "params": [
+          "id",
+          "itemNum"
+        ],
+        "text": "l.NetMgr.http.sendRequest(c.HttpConst.BUY_GOOD_AND_EVIL_SHOP_ITEM, {",
+        "body": [
+          {
+            "line": 36510,
+            "text": "t.prototype.buy = function(t, e) {"
+          },
+          {
+            "line": 36511,
+            "text": "l.NetMgr.http.sendRequest(c.HttpConst.BUY_GOOD_AND_EVIL_SHOP_ITEM, {"
+          },
+          {
+            "line": 36512,
+            "text": "id: t,"
+          },
+          {
+            "line": 36513,
+            "text": "itemNum: e"
+          },
+          {
+            "line": 36514,
+            "text": "});"
+          },
+          {
+            "line": 36515,
+            "text": "};"
+          }
+        ]
+      }
+    ],
+    "constants": [
+      {
+        "file": "index.js",
+        "line": 60445,
+        "text": "BUY_GOOD_AND_EVIL_SHOP_ITEM: \"User.buyGoodAndEvilShopItem\","
+      }
+    ],
+    "callback": {
+      "file": "scripts3.js",
+      "line": 36516,
+      "name": "onBuy",
+      "signature": "t.prototype.onBuy = function(t, e)",
+      "bodyLineCount": 8,
+      "body": [
+        {
+          "line": 36516,
+          "text": "t.prototype.onBuy = function(t, e) {",
+          "responseFieldsRead": []
+        },
+        {
+          "line": 36517,
+          "text": "if (1 == e.eRet) {",
+          "responseFieldsRead": [
+            "e.eRet"
+          ]
+        },
+        {
+          "line": 36518,
+          "text": "this.refreshShopData(e);",
+          "responseFieldsRead": [
+            "e.id",
+            "e.buyCount (via refreshShopData, line 36505-36506)"
+          ]
+        },
+        {
+          "line": 36519,
+          "text": "a.RoleBaseInfo.goodEvilContribution = e.contribution;",
+          "responseFieldsRead": [
+            "e.contribution"
+          ]
+        },
+        {
+          "line": 36520,
+          "text": "m.default.addShowRewardUI1(e.rewardArray);",
+          "responseFieldsRead": [
+            "e.rewardArray"
+          ]
+        },
+        {
+          "line": 36521,
+          "text": "p.MessageCenter.dispatch(u.EvName.GOOD_EVIL_REFRESH_SHOP, e.id);",
+          "responseFieldsRead": [
+            "e.id"
+          ]
+        },
+        {
+          "line": 36522,
+          "text": "}",
+          "responseFieldsRead": []
+        },
+        {
+          "line": 36523,
+          "text": "};",
+          "responseFieldsRead": []
+        }
+      ]
+    },
+    "callbackHelpers": [
+      {
+        "file": "scripts3.js",
+        "line": 36504,
+        "name": "refreshShopData",
+        "body": [
+          {
+            "line": 36504,
+            "text": "t.prototype.refreshShopData = function(t) {"
+          },
+          {
+            "line": 36505,
+            "text": "for (var e = 0; e < this.shopData.length; e++) if (this.shopData[e].id == t.id) {"
+          },
+          {
+            "line": 36506,
+            "text": "this.shopData[e].buyCount = t.buyCount;"
+          },
+          {
+            "line": 36507,
+            "text": "break;"
+          },
+          {
+            "line": 36508,
+            "text": "}"
+          },
+          {
+            "line": 36509,
+            "text": "};"
+          }
+        ]
+      }
+    ],
+    "fields": [
+      "e.eRet",
+      "e.contribution",
+      "e.rewardArray",
+      "e.id",
+      "e.buyCount"
+    ],
+    "fieldCount": 5,
+    "buyUI": {
+      "file": "scripts3.js",
+      "line": 34950,
+      "component": "GoodEvilBuyUI",
+      "componentDeclLine": 34862,
+      "componentExportLine": 34979,
+      "body": [
+        {
+          "line": 34950,
+          "text": "e.prototype.myInit = function() {"
+        },
+        {
+          "line": 34951,
+          "text": "var t = this.data, e = p.GoodEvilModel.shopData[t];"
+        },
+        {
+          "line": 34952,
+          "text": "this.myInfo = e;"
+        },
+        {
+          "line": 34953,
+          "text": "this.nameLabel.string = a.getText(e.Name);"
+        },
+        {
+          "line": 34954,
+          "text": "var o = e.Data[0];"
+        },
+        {
+          "line": 34955,
+          "text": "this.haveNum.string = a.getText(5871) + \": \" + c.RoleBaseInfo.getItemNum(o).toString();"
+        },
+        {
+          "line": 34956,
+          "text": "var i = l.getItem(o, \"item\");"
+        },
+        {
+          "line": 34957,
+          "text": "this.des.string = a.getText(e.Description) + h.InventoryModel.getCycleNotRemainDes(i);"
+        },
+        {
+          "line": 34958,
+          "text": "this.refresh();"
+        },
+        {
+          "line": 34959,
+          "text": "};"
+        },
+        {
+          "line": 34960,
+          "text": "e.prototype.onClickBtnBuy = function() {"
+        },
+        {
+          "line": 34961,
+          "text": "if (g.GoodEvilUtil.getMyPrestigeLv() < this.myInfo.rankopen) {"
+        },
+        {
+          "line": 34962,
+          "text": "d.default.show(a.getText(6000733));"
+        },
+        {
+          "line": 34963,
+          "text": "u.PopUpMgr.removePopUp(this.node);"
+        },
+        {
+          "line": 34964,
+          "text": "} else if (this.num * this.myInfo.Price > c.RoleBaseInfo.goodEvilContribution) d.default.show(a.getText(6000731)); else {"
+        },
+        {
+          "line": 34965,
+          "text": "p.GoodEvilModel.buy(this.myInfo.id, this.num);"
+        },
+        {
+          "line": 34966,
+          "text": "u.PopUpMgr.removePopUp(this.node);"
+        },
+        {
+          "line": 34967,
+          "text": "}"
+        },
+        {
+          "line": 34968,
+          "text": "};"
+        }
+      ],
+      "myInitLine": 34950,
+      "onClickBtnBuyLine": 34960,
+      "currencyFields": [
+        "RoleBaseInfo.goodEvilContribution"
+      ],
+      "currencyCompareLine": 34964,
+      "otherGateFields": [
+        "GoodEvilUtil.getMyPrestigeLv() < this.myInfo.rankopen (line 34961, 声望等级门槛, 非 RoleBaseInfo 字段)",
+        "this.myInfo.Price (line 34964)",
+        "this.myInfo.id (line 34965)",
+        "RoleBaseInfo.getItemNum(o) (line 34955, myInit 持有数量)"
+      ],
+      "buyChain": "34965 p.GoodEvilModel.buy(myInfo.id, num) -> 36510 t.prototype.buy -> 36511 sendRequest(BUY_GOOD_AND_EVIL_SHOP_ITEM, {id,itemNum}) -> 36359 register -> 36516 onBuy"
+    }
+  },
+  "rogueBuy": {
+    "registers": [
+      {
+        "file": "scripts3.js",
+        "line": 70902,
+        "text": "p.MessageCenter.on(l.HttpConst.RG_SHOP_BY_ITEM, this.onShopBuy, this);",
+        "handlerName": "onShopBuy",
+        "enclosingInit": "t.prototype.init = function() { (line 70892)"
+      }
+    ],
+    "sends": [
+      {
+        "file": "scripts3.js",
+        "line": 71193,
+        "params": [
+          "id",
+          "itemNum"
+        ],
+        "text": "h.NetMgr.http.sendRequest(l.HttpConst.RG_SHOP_BY_ITEM, {",
+        "body": [
+          {
+            "line": 71192,
+            "text": "t.prototype.shopBuy = function(t, e) {"
+          },
+          {
+            "line": 71193,
+            "text": "h.NetMgr.http.sendRequest(l.HttpConst.RG_SHOP_BY_ITEM, {"
+          },
+          {
+            "line": 71194,
+            "text": "id: t,"
+          },
+          {
+            "line": 71195,
+            "text": "itemNum: e"
+          },
+          {
+            "line": 71196,
+            "text": "});"
+          },
+          {
+            "line": 71197,
+            "text": "};"
+          }
+        ]
+      }
+    ],
+    "constants": [
+      {
+        "file": "index.js",
+        "line": 60516,
+        "text": "RG_SHOP_BY_ITEM: \"User.rgShopByItem\","
+      }
+    ],
+    "callback": {
+      "file": "scripts3.js",
+      "line": 71207,
+      "name": "onShopBuy",
+      "signature": "t.prototype.onShopBuy = function(t, e)",
+      "bodyLineCount": 13,
+      "body": [
+        {
+          "line": 71207,
+          "text": "t.prototype.onShopBuy = function(t, e) {",
+          "responseFieldsRead": []
+        },
+        {
+          "line": 71208,
+          "text": "if (1 == e.eRet) {",
+          "responseFieldsRead": [
+            "e.eRet"
+          ]
+        },
+        {
+          "line": 71209,
+          "text": "this.setShopData(e);",
+          "responseFieldsRead": [
+            "e.id",
+            "e.buyCount (via setShopData, line 71201-71202)"
+          ]
+        },
+        {
+          "line": 71210,
+          "text": "e.rewardArray && !cc.js.isEmptyObject(e.rewardArray) && y.default.addShowRewardUI1(e.rewardArray);",
+          "responseFieldsRead": [
+            "e.rewardArray"
+          ]
+        },
+        {
+          "line": 71211,
+          "text": "p.MessageCenter.dispatch(u.EvName.ROGUE_SHOP_BUY);",
+          "responseFieldsRead": []
+        },
+        {
+          "line": 71212,
+          "text": "if (e.titleID && e.titleID > 0) {",
+          "responseFieldsRead": [
+            "e.titleID"
+          ]
+        },
+        {
+          "line": 71213,
+          "text": "var o = e.titleID, i = e.expireTime, s = {};",
+          "responseFieldsRead": [
+            "e.titleID",
+            "e.expireTime"
+          ]
+        },
+        {
+          "line": 71214,
+          "text": "s[o] = i;",
+          "responseFieldsRead": []
+        },
+        {
+          "line": 71215,
+          "text": "L.AchieveModel.showTitleReward([ o ]);",
+          "responseFieldsRead": []
+        },
+        {
+          "line": 71216,
+          "text": "L.AchieveModel.setAchieveData(s);",
+          "responseFieldsRead": []
+        },
+        {
+          "line": 71217,
+          "text": "}",
+          "responseFieldsRead": []
+        },
+        {
+          "line": 71218,
+          "text": "}",
+          "responseFieldsRead": []
+        },
+        {
+          "line": 71219,
+          "text": "};",
+          "responseFieldsRead": []
+        }
+      ]
+    },
+    "callbackHelpers": [
+      {
+        "file": "scripts3.js",
+        "line": 71198,
+        "name": "setShopData",
+        "body": [
+          {
+            "line": 71198,
+            "text": "t.prototype.setShopData = function(t) {"
+          },
+          {
+            "line": 71199,
+            "text": "for (var e = 0; e < this.shopData.length; e++) {"
+          },
+          {
+            "line": 71200,
+            "text": "var o = this.shopData[e];"
+          },
+          {
+            "line": 71201,
+            "text": "if (o.id == t.id) {"
+          },
+          {
+            "line": 71202,
+            "text": "o.buyCount = t.buyCount;"
+          },
+          {
+            "line": 71203,
+            "text": "break;"
+          },
+          {
+            "line": 71204,
+            "text": "}"
+          },
+          {
+            "line": 71205,
+            "text": "}"
+          },
+          {
+            "line": 71206,
+            "text": "};"
+          }
+        ]
+      }
+    ],
+    "fields": [
+      "e.eRet",
+      "e.rewardArray",
+      "e.titleID",
+      "e.expireTime",
+      "e.id",
+      "e.buyCount"
+    ],
+    "fieldCount": 6,
+    "buyUI": {
+      "file": "scripts3.js",
+      "line": 64794,
+      "component": "RogueBuyUI",
+      "componentDeclLine": 64695,
+      "componentExportLine": 64811,
+      "body": [
+        {
+          "line": 64794,
+          "text": "e.prototype.onClickBtnBuy = function() {"
+        },
+        {
+          "line": 64795,
+          "text": "if (!this.data.checkCanBuy || this.data.checkCanBuy(this.num)) if (this.num * this.data.price > this.data.havePriceNum) c.default.show(this.data.notEnoughPriceTip); else {"
+        },
+        {
+          "line": 64796,
+          "text": "this.data.buyFunc && this.data.buyFunc(this.num);"
+        },
+        {
+          "line": 64797,
+          "text": "a.PopUpMgr.removePopUp(this.node);"
+        },
+        {
+          "line": 64798,
+          "text": "}"
+        }
+      ],
+      "onClickBtnBuyLine": 64794,
+      "currencyFields": [
+        "data.havePriceNum"
+      ],
+      "currencyCompareLine": 64795,
+      "priceField": "data.price",
+      "otherGateFields": [
+        "data.checkCanBuy (line 64795)",
+        "data.notEnoughPriceTip (line 64795)",
+        "data.buyFunc (line 64796)",
+        "data.limit (onClickBtnChange, line 64791)",
+        "data.isSell / haveItemNum / priceDes / name / des (onLoad, line 64757-64763, 64768)"
+      ],
+      "reputationFieldsInThisFunction": "无：onClickBtnBuy 内未比较任何声望字段（无 reputation 读取）",
+      "havePriceNumAssignmentSites": [
+        {
+          "line": 75351,
+          "text": "havePriceNum: p.RoleBaseInfo.getItemNum(this.costId),",
+          "path": "RogueShopItem.onClick -> RogueUtil.showBuy -> buyFunc -> RogueModel.shopBuy (RG_SHOP_BY_ITEM 本链路)"
+        },
+        {
+          "line": 66754,
+          "text": "havePriceNum: g.RogueRoleInfo.coins,",
+          "path": "另一商店格子(RogueRoleInfo.coins)，buyFunc -> RogueModel.storeBuy(ROGUE_BUY_STORE)"
+        },
+        {
+          "line": 66887,
+          "text": "havePriceNum: this.getHavePriceNum(),",
+          "path": "出售路径(isSell:!0)"
+        },
+        {
+          "line": 68367,
+          "text": "havePriceNum: p.RoleBaseInfo.gold,",
+          "path": "另一处(未在本任务链路内)"
+        },
+        {
+          "line": 81951,
+          "text": "havePriceNum: p.RoleBaseInfo.gold,",
+          "path": "另一处(未在本任务链路内)"
+        },
+        {
+          "line": 83118,
+          "text": "havePriceNum: p.RoleBaseInfo.gold,",
+          "path": "另一处(未在本任务链路内)"
+        }
+      ],
+      "buyChain": "75343 RogueShopItem.onClick -> 75347 RogueUtil.showBuy({havePriceNum: RoleBaseInfo.getItemNum(costId), buyFunc}) -> 64794 RogueBuyUI.onClickBtnBuy -> 64796 data.buyFunc(num) -> 75357 RogueModel.shopBuy(t.id,e) -> 71192 t.prototype.shopBuy -> 71193 sendRequest(RG_SHOP_BY_ITEM,{id,itemNum}) -> 70902 register -> 71207 onShopBuy"
+    }
+  },
+  "notes": [
+    "注册点全包搜：BUY_GOOD_AND_EVIL_SHOP_ITEM 仅 scripts3.js:36359 一处 MessageCenter.on；RG_SHOP_BY_ITEM 仅 scripts3.js:70902 一处。均无第二注册点、无字符串形式再注册。",
+    "未找到：BUY_GOOD_AND_EVIL_SHOP_ITEM in scripts2.js（count=0）",
+    "未找到：RG_SHOP_BY_ITEM in scripts2.js（count=0）",
+    "未找到：User.buyGoodAndEvilShopItem / User.rgShopByItem 在 scripts2.js、scripts3.js 中作为字面量出现（仅 index.js 常量表各一处）",
+    "两个回调体均短于 50 行，已整段原文抄录（8 行 / 13 行），无截断。",
+    "常量定义位于 index.js 的 HttpConst 表：60445 与 60516。",
+    "GoodEvil 另一处 GoodEvilShopUI 打开购买弹窗：scripts3.js:37591-37593（load GoodEvilBuyUI + setData）。"
+  ]
+}

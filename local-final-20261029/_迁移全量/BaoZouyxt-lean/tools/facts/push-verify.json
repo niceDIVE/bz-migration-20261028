@@ -1,0 +1,117 @@
+{
+  "generatedAt": "2026-06-11T00:00:00+08:00",
+  "runs": [
+    {
+      "cmd": "node test/l0-envelope.js",
+      "exit": 0,
+      "tail": [
+        "  ok   Create 后落盘",
+        "  ok   落盘内容可解析且含名字",
+        "  ok   state() 读回同一份",
+        "  ok   reset 清空（无 baseValueAy）",
+        "[L0-2] PASS 82 项"
+      ]
+    },
+    {
+      "cmd": "node test/l0-xhr.js",
+      "exit": 0,
+      "tail": [
+        "  ok   impl 缺失 → 日志可见",
+        "  ok   abort → readyState=4 / status=0",
+        "  ok   abort 事件触发",
+        "  ok   abort 后 send 不再改写响应",
+        "[L0-1] PASS 21 项"
+      ]
+    },
+    {
+      "cmd": "node test/save-migrate.js",
+      "exit": 0,
+      "tail": [
+        "    \"2026-10-22-0205-pre-selfcheck-isolation\",",
+        "    \"2026-10-22-0232-pre-skill-target\",",
+        "    \"2026-10-22-0250-pre-pgr-persist\"",
+        "  ]",
+        "}"
+      ]
+    },
+    {
+      "cmd": "node test/upgrade-skill-target.js",
+      "exit": 0,
+      "tail": [
+        "      1",
+        "    ]",
+        "  },",
+        "  \"finalPotential\": 97599",
+        "}"
+      ]
+    },
+    {
+      "cmd": "node test/selfcheck-nosave.js",
+      "exit": 0,
+      "tail": [
+        "    \"bytes\": 668,",
+        "    \"sha\": \"53bb1795f255\"",
+        "  },",
+        "  \"failedNames\": []",
+        "}"
+      ]
+    },
+    {
+      "cmd": "node test/selfcheck-model-push.js",
+      "exit": 0,
+      "tail": [
+        "  \"potPushes\": [],",
+        "  \"setSkillCalls\": [],",
+        "  \"setItemCalls\": [],",
+        "  \"addEqCalls\": []",
+        "}"
+      ]
+    },
+    {
+      "cmd": "node test/overlay-projection.js",
+      "exit": 0,
+      "tail": [
+        "  ok   T12 Repeat 任务不写 done",
+        "  ok   T13 出售按真实形状结算",
+        "  ok   T14 接任务推给活客户端",
+        "",
+        "[overlay] PASS  14/14"
+      ]
+    },
+    {
+      "cmd": "node test/drop-table.js",
+      "exit": 0,
+      "tail": [
+        "  ok   T6 概率掉落可复现（random=0 全中）",
+        "  ok   T7 概率失败也可复现（random=0.999 只拿必得）",
+        "  ok   T8 数据自洽（npc→drop→条目）",
+        "",
+        "[drop] PASS  8/8"
+      ]
+    },
+    {
+      "cmd": "node test/push-grants.js",
+      "exit": 0,
+      "tail": [
+        "  ok   T3 打怪掉落 → 装备走 addEq",
+        "  ok   T4 沙盒实例一次都不许推",
+        "  ok   T5 没有客户端模型时不崩",
+        "",
+        "[push] PASS  5/5"
+      ]
+    }
+  ],
+  "device": {
+    "saveMd5": "1080960c9c8a5ad38a3ccac53a6a9b21",
+    "logTail": [
+      "{\"t\":1792619713092,\"boot\":\"boot-2\",\"impl\":\"h38d6a2ea\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[flow] 进入场景 gamescene\"}",
+      "{\"t\":1792619713093,\"boot\":\"boot-2\",\"impl\":\"h38d6a2ea\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[flow] 已进入主场景 gamescene\"}"
+    ],
+    "implHitCount": 45,
+    "adbStatus": "ok"
+  },
+  "pass": false,
+  "unverified": [
+    "第10项实际 md5=1080960c9c8a5ad38a3ccac53a6a9b21，与判定基准 3618ecf583018d9523090620689533b9 不一致；仅记录实际值，未做进一步核查"
+  ]
+}

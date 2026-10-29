@@ -1,0 +1,85 @@
+{"t":1792605246852,"boot":"boot-2","impl":"(none)","flow":"(none)","kind":"info","msg":"XMLHttpRequest → 进程内环回（间接层 __BZ_HARNESS__.impl）"}
+{"t":1792605246854,"boot":"boot-2","impl":"(none)","flow":"(none)","kind":"info","msg":"bootstrap boot-2 文件系统就绪 /data/user/0/com.maple.madherogo/files/"}
+{"t":1792605246867,"boot":"boot-2","impl":"he7190a3a","flow":"(none)","kind":"info","msg":"策略层载入 he7190a3a"}
+{"t":1792605246961,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"info","msg":"流程层载入 fe3500480"}
+{"t":1792605246964,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"info","msg":"命令通道就绪 /data/user/0/com.maple.madherogo/files/bz_cmd.txt → /data/user/0/com.maple.madherogo/files/bz_res.txt"}
+{"t":1792605247488,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"scene","name":"SplashScene"}
+{"t":1792605247491,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] 进入场景 SplashScene"}
+{"t":1792605249575,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"scene","name":"gamelogo"}
+{"t":1792605249577,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] 进入场景 gamelogo"}
+{"t":1792605259280,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"xhr","msg":"xhr register 21ms 7B"}
+{"t":1792605259392,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[impl] dispatch User.GetServerList"}
+{"t":1792605259434,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"scene","name":"svrselect"}
+{"t":1792605259436,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] 进入场景 svrselect"}
+{"t":1792605259438,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] 补 LoginMgr 登录态"}
+{"t":1792605259439,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] JSON.parse 读取探针已挂"}
+{"t":1792605259440,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] setServer 220 (混服26区)"}
+{"t":1792605259444,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] 发现未知弹窗 NetLoading 方法=[update]"}
+{"t":1792605259445,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] 发现未知弹窗 TextSubsituter 方法=[onLoad,traverseNode]"}
+{"t":1792605259445,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"flow","msg":"setServer"}
+{"t":1792605259452,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R1"}
+{"t":1792605259476,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R2"}
+{"t":1792605259487,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R3"}
+{"t":1792605259497,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"xhr","msg":"xhr User.GetServerList 68ms 2638B"}
+{"t":1792605259507,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R4"}
+{"t":1792605259521,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R5"}
+{"t":1792605259523,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[impl] dispatch User.TellAction"}
+{"t":1792605259524,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R6"}
+{"t":1792605259540,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R7"}
+{"t":1792605259551,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R8"}
+{"t":1792605259553,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"xhr","msg":"xhr User.TellAction 24ms 334B"}
+{"t":1792605259581,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R9"}
+{"t":1792605259583,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"xhr","msg":"xhr notice 13ms 28B"}
+{"t":1792605259943,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY +121(121): R1.errorCode,R1.MsgData,R1.MsgData,R2.clientVersion,R2.msgProcessIng,R2.doubleLogin,R2.lock,R2.serverMaintain,R2.onhooking,R2.closeHome,R2.wallow,R2.activeRed,R2.p,R2.p,R2.User.GetServerList,R2.User.GetServerList.note,R2.User.GetServerList,R2.User.GetServerList.autoObj,R2.User.GetServerList,R2.serverObj,R2.serverObj,R2.serverObj.1,R2.serverObj,R2.serverObj.4,R2.serverObj,R2.serverObj.8,R2.serverObj,R2.serverObj.23,R2.serverObj,R2.serverObj.26,R2.serverObj,R2.serverObj.27,R2.serverObj,R2.serverObj.30,R2.serverObj,R2.serverObj.32,R2.serverObj,R2.serverObj.34,R2.serverObj,R2.serverObj.36,R2.serverObj,R2.serverObj.38,R2.serverObj,R2.serverObj.39,R2.serverObj,R2.serverObj.41,R2.serverObj,R2.serverObj.45,R2.serverObj,R2.serverObj.47,R2.serverObj,R2.serverObj.50,R2.serverObj,R2.serverObj.53,R2.serverObj,R2.serverObj.55,R2.serverObj,R2.serverObj.63,R2.serverObj,R2.serverObj.201,R2.serverObj,R2.serverObj.203,R2.serverObj,R2.serverObj.205,R2.serverObj,R2.serverObj.208,R2.serverObj,R2.serverObj.210,R2.serverObj,R2.serverObj.213,R2.serverObj,R2.serverObj.215,R2.serverObj,R2.serverObj.216,R2.serverObj,R2.serverObj.218,R2.serverObj,R2.serverObj.220,R2.serverObj,R2.historyArr,R2.taptapVersion,R2.titleArr,R4.madHeroFlag,R5.mod,R5.do,R5.mod,R5.do,R5.p,R6.red,R6.achieveRateId,R5.mod,R5.do,R7.errorCode,R7.MsgData,R7.MsgData,R8.clientVersion,R8.msgProcessIng,R8.doubleLogin,R8.lock,R8.serverMaintain,R8.onhooking,R8.closeHome,R8.wallow,R8.achievement,R8.achievement,R8.achievement.red,R8.achievement.nIds,R8.achievement.achieveRateId,R8.activeRed,R8.p,R8.p,R8.User.TellAction,R8.User.TellAction.note,R8.User.TellAction,R8.User.TellAction.autoObj,R8.User.TellAction,R8.User.TellAction.eRet,R8.User.TellAction,R8.titleArr,R9.statusCode,R9.data"}
+{"t":1792605259948,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R10"}
+{"t":1792605259969,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R11"}
+{"t":1792605259969,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[impl] dispatch User.quicklogin"}
+{"t":1792605259971,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R12"}
+{"t":1792605259971,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R13"}
+{"t":1792605259983,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R14"}
+{"t":1792605259989,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R15"}
+{"t":1792605259989,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[impl] dispatch User.ChooseServer"}
+{"t":1792605259993,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] onEnterGame（仅此一次）"}
+{"t":1792605259994,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"flow","msg":"onEnterGame"}
+{"t":1792605259997,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R16"}
+{"t":1792605260002,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R17"}
+{"t":1792605260003,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R18"}
+{"t":1792605260008,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R19"}
+{"t":1792605260010,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R20"}
+{"t":1792605260010,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R21"}
+{"t":1792605260011,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R22"}
+{"t":1792605260013,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"xhr","msg":"xhr User.quicklogin 36ms 569B"}
+{"t":1792605260013,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R23"}
+{"t":1792605260015,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R24"}
+{"t":1792605260016,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"xhr","msg":"xhr User.ChooseServer 26ms 238B"}
+{"t":1792605260019,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R25"}
+{"t":1792605260029,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R26"}
+{"t":1792605260030,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[impl] dispatch User.LoadGame"}
+{"t":1792605260032,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R27"}
+{"t":1792605260032,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R28"}
+{"t":1792605260035,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R29"}
+{"t":1792605260036,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R30"}
+{"t":1792605260037,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R31"}
+{"t":1792605260037,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[impl] LoadGame → 快照 FZhou 任务: 完成=12 进行中=0 物品=6 种"}
+{"t":1792605260038,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R32"}
+{"t":1792605260064,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R33"}
+{"t":1792605260070,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R34"}
+{"t":1792605260076,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R35"}
+{"t":1792605260080,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R36"}
+{"t":1792605260094,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R37"}
+{"t":1792605260099,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R38"}
+{"t":1792605260105,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R39"}
+{"t":1792605260106,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] SPY 捕获响应 R40"}
+{"t":1792605260136,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[impl] dispatch User.GetChatAddress"}
+{"t":1792605260146,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"xhr","msg":"xhr User.LoadGame 42ms 4505B"}
+{"t":1792605260172,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"xhr","msg":"xhr User.GetChatAddress 22ms 697B"}
+{"t":1792605260247,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[impl] dispatch User.TellAction"}
+{"t":1792605260370,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"xhr","msg":"xhr User.TellAction 124ms 345B"}
+{"t":1792605260461,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"scene","name":"gamescene"}
+{"t":1792605260462,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] 进入场景 gamescene"}
+{"t":1792605260462,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] 已进入主场景 gamescene"}
+{"t":1792605260465,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[flow] 公告→onBack()"}
+{"t":1792605260466,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"flow","msg":"notice:onBack"}
+{"t":1792605374983,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[impl] dispatch User.recordAttributes"}
+{"t":1792605374984,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"impl","msg":"[impl] UNKNOWN User.recordAttributes p={\"attrs\":[40,20,11,10,610,210,100,20,220,0,0,0,0,0,0,6,0,1,8,8,10,7,2],\"web\":false,\"clientVersion\":{\"android\":\"2.4.7\"},\"NeedUpdateVersion\":\"4.0.0\",\"userAccount\":\"9900012358565\",\"roleID\":16374,\"loginFlag\":1,\"inGameTime\":0,\"nonce\":\"1792605374"}
+{"t":1792605375018,"boot":"boot-2","impl":"he7190a3a","flow":"fe3500480","kind":"xhr","msg":"xhr User.recordAttributes 36ms 345B"}

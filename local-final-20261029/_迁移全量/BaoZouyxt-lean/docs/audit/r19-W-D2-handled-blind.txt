@@ -1,0 +1,134 @@
+# R19-W-D2 handled 抽取"看不到"的三类写法审计报告
+
+## 【第一步】derive_catch_codes.js 匹配与推导逻辑
+
+文件路径：F:\BaoZouyxt\tools\derive_catch_codes.js
+核心匹配与候选推导代码段（逐字摘录，第 19 行至第 34 行）：
+
+```javascript
+19: const POOL = [0, 3, 7, 9, 12, 14, 17, 19, 21];
+20: 
+21: function deriveCatchCodes(table) {
+22:   const out = {};
+23:   for (const act of Object.keys(table || {}).sort()) {
+24:     const entry = table[act] || {};
+25:     const forbidden = new Set([1]);
+26:     (entry.success || []).forEach((x) => { if (typeof x === 'number') forbidden.add(x); });
+27:     (entry.handled || []).forEach((x) => { if (typeof x === 'number') forbidden.add(x); });
+28:     (entry.codes || []).forEach((c) => forbidden.add(c.code));
+29:     const derived = POOL.find((x) => !forbidden.has(x));
+30:     if (derived === undefined) {
+31:       throw new Error('拒绝码表 ' + act + ' 推导不出 catchCode（码空间被占满，必须人工复核）');
+32:     }
+33:     out[act] = derived;
+34:   }
+```
+
+说明（行号 9-12、25-29）：
+- 注释说明设计意图（L9-10）："取一个该动作的客户端回调里根本没出现过的码，这样所有 `X == eRet` 比较都为假 → 客户端安静地什么都不做。"
+- 核心排除集合（L25-28）：
+  - 默认排除成功码 1：`const forbidden = new Set([1]);`（L25）
+  - 排除 success 字段中包含的数字：`(entry.success || []).forEach((x) => { if (typeof x === 'number') forbidden.add(x); });`（L26）
+  - 排除 handled 字段中包含的数字：`(entry.handled || []).forEach((x) => { if (typeof x === 'number') forbidden.add(x); });`（L27）
+  - 排除 codes 数组中已声明的 code：`(entry.codes || []).forEach((c) => forbidden.add(c.code));`（L28）
+- 候选匹配推导方式（L29）：`const derived = POOL.find((x) => !forbidden.has(x));`
+  从候选池 `[0, 3, 7, 9, 12, 14, 17, 19, 21]`（L19）遍历寻找第一个不在 forbidden 集合中的码。
+
+---
+
+## 【第二步】三类"看不到"的写法真实例子（共 9 例，每类 3 例）
+
+### (a) 用"假值判断" / 逻辑运算符吃 eRet（形如 if (!t.eRet)、eRet ?、|| 兜底、eRet &&）
+
+1. tools\index.js:113901
+```javascript
+113900: } else if (1 == e.eRet) {
+113901: } else 2 == e.eRet || (3 == e.eRet ? c.default.show(i.getText(7044)) : 4 == e.eRet || 5 == e.eRet || 6 == e.eRet || 7 == e.eRet || e.eRet);
+113902: };
+```
+
+2. tools\scripts2.js:56027
+```javascript
+56026: e.prototype.onGetSchoolMasterList = function(t, e) {
+56027: 1 == e.eRet ? this.listDatas = e.masterList : e.eRet;
+56028: this.initList(this.listDatas);
+```
+
+3. tools\scripts3.js:13284
+```javascript
+13283: i.MessageCenter.on(a.HttpConst.GET_AUTO_SAVE_DATA, function(t, e) {
+13284: e.eRet && c.default.prefabs.load("shopUI/AutoSaveAlertUI", cc.Prefab, function(t, o) {
+13285: var i = cc.instantiate(o);
+```
+
+---
+
+### (b) 用不等号/大小比较而不是 == 判 eRet（形如 0 != t.eRet、1 != t.eRet、!= 组合）
+
+1. tools\index.js:54232
+```javascript
+54231: e.prototype.onRollDiceEvent = function(t, e) {
+54232: 0 != e.eRet && (2 != e.eRet ? i.MessageCenter.dispatch(h.EvName.ROLL_DICE_EVENT, e) : a.default.show(r.getText("726")));
+54233: };
+```
+
+2. tools\scripts2.js:27163
+```javascript
+27162: } else 99 == e.eRet && d.default.show(r.getText("480"));
+27163: } else 2 != e.eRet && 3 != e.eRet || d.default.show(r.getText(2 == e.eRet ? "378" : "379"));
+27164: };
+```
+
+3. tools\scripts3.js:50852
+```javascript
+50851: e.prototype.onGetFishTotalData = function(t, e) {
+50852: if (1 != e.eRet) {
+50853: if (2 == e.eRet) {
+```
+
+---
+
+### (c) 末尾 else 兜底：函数里没有对该码显式判 eRet，最后一个 else 分支把"其它情况"当失败/成功处理
+
+1. tools\index.js:54377
+```javascript
+54376: g.default.addShowRewardUI1(e.awardData, 0);
+54377: } else {
+54378: var n = "540";
+54379: 3 == e.eRet ? n = "601" : 4 == e.eRet && (n = "600");
+54380: c.default.show(i.getText(n));
+54381: }
+```
+
+2. tools\scripts2.js:24517
+```javascript
+24516: 1 == t.type ? this.currentIndex = 0 : 2 == t.type ? this.currentIndex = 1 : 3 == t.type && (this.currentIndex = 2);
+24517: } else 1 == t.eRet && (this.currentIndex = 0);
+24518: var e = 0;
+```
+
+3. tools\scripts3.js:23178
+```javascript
+23177: });
+23178: } else {
+23179: t.dueTime = o.housekeeper.dueTime;
+23180: u.default.show(c.getText("6000449"));
+23181: }
+```
+
+---
+
+## 【第三步】`eRet` 在三个包里的行数统计
+
+- F:\BaoZouyxt\tools\index.js:
+  - 包含 `eRet` 子串行数：624 行
+  - 独立单词 `\beRet\b` 行数：618 行
+- F:\BaoZouyxt\tools\scripts2.js:
+  - 包含 `eRet` 子串行数：100 行
+  - 独立单词 `\beRet\b` 行数：97 行
+- F:\BaoZouyxt\tools\scripts3.js:
+  - 包含 `eRet` 子串行数：462 行
+  - 独立单词 `\beRet\b` 行数：457 行
+
+---
+未验证

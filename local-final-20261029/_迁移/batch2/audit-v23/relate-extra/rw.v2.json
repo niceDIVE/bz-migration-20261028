@@ -1,0 +1,251 @@
+{
+ "User.quicklogin": {
+  "reads": [
+   "createdAt",
+   "name",
+   "roleID"
+  ],
+  "writes": []
+ },
+ "User.Create": {
+  "reads": [
+   "roleID"
+  ],
+  "writes": [
+   "baseValueAy",
+   "coins",
+   "name",
+   "potential",
+   "school",
+   "skills"
+  ]
+ },
+ "User.LoadGame": {
+  "reads": [
+   "bag",
+   "baseValueAy",
+   "bloodArr",
+   "chip",
+   "coins",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "name",
+   "playerEquip",
+   "potential",
+   "roleID",
+   "roleSnapshot",
+   "skills",
+   "yuanbao"
+  ],
+  "writes": [
+   "titles"
+  ]
+ },
+ "User.acceptTask": {
+  "reads": [],
+  "writes": [
+   "accepted"
+  ]
+ },
+ "User.getFinishTaskAward": {
+  "reads": [],
+  "writes": [
+   "accepted",
+   "done",
+   "rewarded"
+  ]
+ },
+ "User.joinSchool": {
+  "reads": [],
+  "writes": [
+   "school"
+  ]
+ },
+ "User.upgradeSkill": {
+  "reads": [
+   "SkillTable"
+  ],
+  "writes": [
+   "bag",
+   "potential",
+   "skills"
+  ]
+ },
+ "User.BeginTraining": {
+  "reads": [
+   "skills"
+  ],
+  "writes": []
+ },
+ "User.ReqSelfBattleInfo": {
+  "reads": [
+   "baseValueAy"
+  ],
+  "writes": []
+ },
+ "User.getLevelBonusData": {
+  "reads": [
+   "achieve"
+  ],
+  "writes": []
+ },
+ "User.getAchieveData": {
+  "reads": [
+   "achieve"
+  ],
+  "writes": []
+ },
+ "User.BuyFashion": {
+  "reads": [],
+  "writes": [
+   "bag",
+   "equipments",
+   "gold",
+   "playerEquip"
+  ]
+ },
+ "User.OnCheckBreak": {
+  "reads": [
+   "gold"
+  ],
+  "writes": []
+ },
+ "User.washAdditionalArr": {
+  "reads": [],
+  "writes": [
+   "bloodArr"
+  ]
+ },
+ "User.ExChangeJetton": {
+  "reads": [
+   "chip",
+   "gold"
+  ],
+  "writes": []
+ },
+ "User.sycnPlayerItemData": {
+  "reads": [
+   "playerEquip"
+  ],
+  "writes": []
+ },
+ "User.useItem": {
+  "reads": [
+   "bag",
+   "hungerMax"
+  ],
+  "writes": [
+   "hunger",
+   "skills",
+   "titles"
+  ]
+ },
+ "User.saleItem": {
+  "reads": [
+   "BuyPrice",
+   "bag",
+   "equipments"
+  ],
+  "writes": [
+   "coins",
+   "playerEquip"
+  ]
+ },
+ "User.buyShopItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [
+   "coins"
+  ]
+ },
+ "User.buySpecialShopItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [
+   "gold"
+  ]
+ },
+ "User.GetSpecialShopData": {
+  "reads": [
+   "gold"
+  ],
+  "writes": []
+ },
+ "User.BuyAcitivityShop": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [
+   "gold"
+  ]
+ },
+ "User.exchangeItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": []
+ },
+ "User.buyGoodAndEvilShopItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [
+   "contribution"
+  ]
+ },
+ "User.rgShopByItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": []
+ },
+ "User.QuickBuyItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [
+   "coins"
+  ]
+ },
+ "User.UnloadingEuipment": {
+  "reads": [
+   "equipments"
+  ],
+  "writes": []
+ },
+ "User.bzSeedBag": {
+  "reads": [],
+  "writes": [
+   "bag",
+   "playerEquip"
+  ]
+ },
+ "User.bzBackfillRewards": {
+  "reads": [
+   "bag",
+   "done"
+  ],
+  "writes": [
+   "rewarded"
+  ]
+ },
+ "User.bzGrantCur": {
+  "reads": [
+   "coins",
+   "contribution",
+   "gold",
+   "yuanbao"
+  ],
+  "writes": []
+ }
+}

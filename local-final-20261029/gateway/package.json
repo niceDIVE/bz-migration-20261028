@@ -1,0 +1,14 @@
+{
+  "name": "offline-simulation-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local offline simulation testbed - 127.0.0.1 loopback only, zero egress",
+  "main": "src/gateway.js",
+  "scripts": {
+    "start": "node src/gateway.js",
+    "test": "node test/selftest.js"
+  },
+  "dependencies": {
+    "lz-string": "^1.5.0"
+  }
+}

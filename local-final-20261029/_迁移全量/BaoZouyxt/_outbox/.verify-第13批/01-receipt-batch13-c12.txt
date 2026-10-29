@@ -1,0 +1,93 @@
+﻿回执 第13批 C12〔管家/帮手〕（2026-10-27）
+
+══ 部署指纹 ══
+  构建：ver=he39800b9｜flow=ffaec47c3｜pid 22577（全程热重载，pid 未变）
+  selfCheck 1357 全过，implErr=null
+  patch\live\handlers.js            1,586,148 B  md5 77E6AE56A10B592DBD4B78E0C0933656
+  core\bz-rpc-server.js               453,934 B  md5 623CE6D5B1BFC574F6085018584F4629
+  core\bz-c12.generated.js（新表）      1,226 B  md5 F7DEFBA54C8BDD3DC157AD2B5C7A9C45
+  tools\gen_c12_tables.js（新生成器）   7,713 B  md5 见 02-manifest.txt
+  形状基线 352 动作（+10），diff 0；拒绝码 动作 113 / 条目 129 / 拒绝点 190；acceptance 52/52
+
+══ 一、交付：10 个 handler（7 名单 + 3 并入，档 A）══
+  名单 7 键（线上名双源核对，★=反直觉未纠正）：
+    BUY_BUTLER          → User.buyHelper（60397，{helperId}）
+    SET_BUTLER          → User.setHelper（60396，{helperId}）
+    BUTLER_DISPATCH     → ★User.dispatch（60394，{taskArr, mapId, tgIdMap?}）
+    DISPATCH_AWARD      → User.dispatchAward（60395，{}）
+    BUY_BUTLER_VIP      → ★User.buyMonthlyFee（60398，{type}）
+    GET_HELPER_CALL_LIST→ User.getHelperCallList（60563，{}）
+    CALL_HELPER_BY_ID   → ★User.callHelperId（60564，{helperId}）
+  ★并入 3 个（**已获你 2026-10-27 拍板**，均属 relations.md 440 行附录=未分批）：
+    GET_HOUSE_KEEPER → User.getHousekeeper（60393）—— **面板开关**：delegateUI 在它 1 分支里 new
+      （scripts3.js:23109-23115），不回则 C12 全批不可达（第三次同型：C10 getHomeList / C11 GET_DATA）。
+    SET_TEMPLATE_DATA → User.setTemplateData（60399）—— 面板"自动派遣"按钮（99146）。
+    RECEIVE_NOTICE → User.receiveNotice（60402）—— relations.md:35 归第 4 批"顺手做"，本批提前做并申报。
+  沉底（二级面板，点了走静默兜底）：GET_EVALUATE_DATA / PUSH_EVALUATE_DATA / RECEIVE_HELPER_REWARD。
+  ★与 C10 不同：delegateUI 开面板**不会自动发任何 HTTP**（99140/99146/99386 全按钮触发）→ 无必崩陷阱。
+
+══ 二、契约（裸读崩点）══
+  BUTLER_DISPATCH 成功分支裸读 **o.note.eco.yuanbao**（23125 三连）→ 免费派遣也必须回 note.eco.yuanbao。
+  DISPATCH_AWARD 裸读 o.housekeeper.noticeArr.length / noticeRtm（23137）；非 1：3→1530、其余一律→1145（else 兜底）。
+  SET_BUTLER 裸读 o.housekeeper.helperId（23156）；BUY_BUTLER 裸读 helperIdArr（23164）；
+  BUY_BUTLER_VIP 裸读 dueTime（23191）；GET_EVALUATE_DATA else 分支裸读 dueTime（23179）；
+  RECEIVE_NOTICE 裸读 o.eventType（23198/23257），且★非 1 → 客户端 dataDestroy()（23220）→ 本键尽量不拒。
+  housekeeper 22 字段形状：客户端自带 testFunc 夹具（scripts3.js:23578-23606）与 templates.json create 双源互证；
+  **时间戳全毫秒**（客户端 getSTimestamp() 同毫秒，98550 直接比较）。
+
+══ 三、★真机崩修复（本批最重要的一条）══
+  现象：dispatch 成功（客户端发的 mapId=1008）后，DelegateMgr.startDelegate → createRoute3
+    **每帧**抛 `Cannot read property '0' of null`（index.jsc:22681）——管家路线配置只存在于
+    helper.locate 列出的 4 个场景（1147/1119/1120/1118）。
+  修复：①生成器提炼 locateScenes 白名单 → dispatch 校验 mapId，不合法回 eRet 2（6000371）；
+    ②自愈通道：存量派遣态 mapId 不合法时允许覆盖重派（否则 award 的 30 分钟时间闸让崩无法解除）。
+  真机复验：dispatch:1008 → 正确拒 2；dispatch:1147 → 覆盖成功，崩溃循环停止（日志 5 秒无 err）。
+
+══ 四、自定口径申报（改任一个都要新拍板）══
+  1. 买管家价 = helper.price 照表、按**元宝**扣（0/0/500/1000/99999999×3/2000；5/6/7 号实为不可买占位）；
+     已拥有重复买 → 幂等成功不重复扣。
+  2. 月卡（BUY_BUTLER_VIP）= 300 元宝 / 30 天，只认 type=1；续购语义：到期后才能再买（未到期 → 2）。
+  3. 派遣时长 = 30 分钟（dispatchEndTime = now + 30min）；到点 DISPATCH_AWARD 可领。
+  4. callData 状态语义 = 自定（当前跟随 = 3，其余 = 1；原版语义未取证）。
+  5. 档 A：派遣落档不结算真实任务产出；DISPATCH_AWARD 奖励 = 被派管家 helper.reward 照表
+     （1/2 号为空 → rewardArray {}，客户端自己弹 6000366）。
+
+══ 五、未做项（→ docs\OPEN-ISSUES.md ISSUE-12）══
+  1. 评价 3 键 + RECEIVE_HELPER_REWARD（二级面板）。
+  2. 档 B：真实派遣任务系统（任务生成/tgd/taskNum/matureArr/createAutoDispatchTime）。
+  3. helper.task（1003001 等任务 id）与管家奖励链取证。
+  4. callData 状态原版语义、月卡 type 其它取值。
+  5. 管家按钮入口可达性与 UI 视觉。
+
+══ 六、真机全链（probe_c12_flow.js，客户端模型方法驱动）══
+  getHousekeeper（面板数据）→ buyHelper 3（**-500 元宝**）→ setHelper 3（helperId=3）→
+  callHelperId 3（**followId=3**）→ getHelperCallList → dispatch（mapId=1008 → 触发真机崩 → 修复 →
+  dispatch:1008 正确拒 2 → dispatch:1147 自愈覆盖，崩停）→ dispatchAward（未到 → 拒 3）→
+  buyMonthlyFee（**dueTime=now+30d，-300 元宝**）→ setTemplateData（落档）→ receiveNotice（no-op）。
+  存档变动均为正常玩法结果：消费 800 元宝；获得 3 号管家（拥有+跟随）、月卡 30 天、派遣进行中。
+
+══ 七、门禁 ══
+  gen_c12_tables exit 0（8 管家）｜形状 diff 0（352 动作）｜reject-codes OK 113/129/190｜
+  acceptance 52/52｜c12-smoke 13/13｜c11-smoke 13/13、c10-smoke 18/18、r14 3/3（回归）｜
+  验收工人（gemini-3.8-flash-low）9 条命令独立复跑 **9/9**（facts\C11）。
+
+══ 八、坑（对面复用时注意）══
+  1. ★dispatch 的 mapId 必须校验 locateScenes（真机每帧崩，见 §三）。
+  2. 新动作必须登记 tools\todo_shapes.json（C11 已踩）。
+  3. handler 引用生成表必过守卫（hkTable()；r14 直接 require core 无生成模块）。
+  4. grantRewardList 的 note 必须三元（C11 已踩）；BUTLER_DISPATCH 成功必带 note.eco.yuanbao（本批新证）。
+  5. else 兜底文案不算专属分支 → tier 2（R2a）；构建期双向比对会抓 core/JSON 码漂移（本批 buyMonthlyFee 被抓）。
+  6. planned 脚本漏 META → 规则没落盘 → 冻结被拒（C10 冻结前校验按设计工作了）。
+
+══ 九、增补（2026-10-27 上午）：第 12 批 C11 验收回执落地 + VIP 白领修复合并 ══
+  上游有条件通过 + 堵白领口：receiveAnniversaryPassAward 的 VIP 档原来只认请求 vip=1 不核对存档，
+  已按上游修法合并进本包 core（notVip → eRet 2，不写档；拒绝码 notVip:2 双向登记）：
+    core\bz-rpc-server.js  md5 623CE6D5… →（合并后）见下
+    test\c11-smoke.js      上游 14 用例版（新增 ⑤b 白领回归），打在合并版 core 上 14/14
+  四项自定口径全部追认（endtime 续期不清已领记录 / VIP 300 / 活跃 10 gold 上限 565 / 礼包元宝限购）。
+  ══ 本包部署指纹（合并后）══
+    构建：ver=h1cc3e18f｜flow=ffaec47c3｜selfCheck 1357 全过
+    patch\live\handlers.js  1,586,592 B  md5 见 02-manifest
+    core\bz-rpc-server.js   454,289 B  md5 见 02-manifest
+    形状基线 352 动作 diff 0；拒绝码 动作 113 / 条目 129 / 拒绝点 191（notVip +1）；acceptance 52/52
+    回归：c11-smoke 14/14、c12-smoke 13/13、c10-smoke 18/18、r14 3/3

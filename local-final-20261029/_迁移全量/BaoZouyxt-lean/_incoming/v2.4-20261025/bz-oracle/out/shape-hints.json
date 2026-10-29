@@ -1,0 +1,3166 @@
+{
+ "__meta": {
+  "actions": 150,
+  "kinds": {
+   "array|object|array|string": 69,
+   "array|array|string": 26,
+   "array|string": 12,
+   "container": 58,
+   "array|array|object|array|string|scalar": 1,
+   "scalar": 21,
+   "array|array|object|array|string": 5,
+   "array": 16,
+   "array|object|object|scalar": 4,
+   "array|object": 3,
+   "array|array|object": 2
+  },
+  "unsafe": 132,
+  "zeroIsWrong": 196,
+  "note": "正则启发式【推断】；consumedAt 是复核用的落点"
+ },
+ "actions": {
+  "AnswerInviteJoinTeamNotify": {
+   "key": "STC_ANSWERINVITEJOINTEAMNOTIFY",
+   "fields": {
+    "RoleName": {
+     "kind": "array|string",
+     "consumedAt": [
+      "scripts2.js:3267",
+      "scripts2.js:3267⚠",
+      "scripts3.js:10482",
+      "scripts3.js:10483⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "BattleEndAwardShow": {
+   "key": "STC_BATTLEAWARD_SHOW",
+   "fields": {
+    "SpoilShow": {
+     "kind": "array|string",
+     "consumedAt": [
+      "index.js:23990"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "ChatMessageRes": {
+   "key": "STC_CHAT_SEND_RES",
+   "fields": {
+    "sendTime": {
+     "kind": "array|object",
+     "consumedAt": [
+      "index.js:146301",
+      "index.js:146301⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "content": {
+     "kind": "array|string",
+     "consumedAt": [
+      "index.js:146049",
+      "index.js:146087⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "ChatPropertyChanged": {
+   "key": "CHAT_PROPERTY_CHANGE",
+   "fields": {
+    "TextProperty": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:145956",
+      "index.js:145977",
+      "index.js:146248",
+      "scripts2.js:10483"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "CollectionRoleAwardNotify": {
+   "key": "STC_COLLECT_ROLE_AWARD_NOTIFY",
+   "fields": {
+    "CollectionRollItemInfoList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:26218",
+      "index.js:26218⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "CollectionRollCloseNotify": {
+   "key": "STC_COLLECT_ROLL_CLOSE_NOTIFY",
+   "fields": {
+    "CollectionRollItemInfoList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:26218",
+      "index.js:26218⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "CollectionRollItemInfoListNotify": {
+   "key": "STC_COLLECT_ROLL_ITEAMIF",
+   "fields": {
+    "CollectionRollItemInfoList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:26218",
+      "index.js:26218⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "CollectionRollOpenNotify": {
+   "key": "STC_COLLECT_ROLL_OPEN_NOTIFY",
+   "fields": {
+    "CollectionRollItemInfoList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:26218",
+      "index.js:26218⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "EliminateInfo": {
+   "key": "STC_ELIMINATE_INFO",
+   "fields": {
+    "EliminatePKPair": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:85107"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "FiveLinesDiagramObstacleAppear": {
+   "key": "CTS_FIVE_LINES_DIAGRAM_OBSTACLE_APPEAR",
+   "fields": {
+    "tianJiLock": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:135999",
+      "index.js:135999⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "FiveLinesDiagramPathGenerate": {
+   "key": "CTS_FIVE_LINES_DIAGRAM_PATH_GENERATE",
+   "fields": {
+    "tianJiLock": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:135999",
+      "index.js:135999⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "InnerCompetitionWaitReadyNotify": {
+   "key": "STC_QTE_WAIT_READY_NOTIFY",
+   "fields": {
+    "InnerForceValuePair": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:99400",
+      "index.js:99400⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "InnerForceValueChangeNotify": {
+   "key": "STC_INNER_FORCE_VALUE_CHANGE_NOTIFY",
+   "fields": {
+    "InnerForceValueChangeList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:99406",
+      "index.js:99406⚠",
+      "index.js:99407",
+      "index.js:99407⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "InnerForceValuePair": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:99400",
+      "index.js:99400⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "ItemConsumeNotify": {
+   "key": "STC_ITEM_CONSUME_NOTIFY",
+   "fields": {
+    "ItemInfoList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:26528",
+      "index.js:26528⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "LeaveMapNotify": {
+   "key": "STC_LEAVE_MAP",
+   "fields": {
+    "sceneId": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts2.js:48682",
+      "scripts2.js:48682⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "MapRoleInfoNotify": {
+   "key": "STC_MAPROLENOTIFY",
+   "fields": {
+    "mapRoleInfo": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:85036",
+      "index.js:85036⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "MessageListNotify": {
+   "key": "STC_MESSAGE_LIST_NOTIFY",
+   "fields": {
+    "HorseRaceLampWrapperList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts3.js:47578",
+      "scripts3.js:47593⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "OpenChatChannelRes": {
+   "key": "STC_CHAT_CHANNEL_RES",
+   "fields": {
+    "TextProperty": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:145956",
+      "index.js:145977",
+      "index.js:146248",
+      "scripts2.js:10483"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "chatHistory": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:145959",
+      "index.js:145972"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "OpenFiveLinesDiagramRes": {
+   "key": "CTS_OPEN_FIVE_LINES_DIAGRAM_RES",
+   "fields": {
+    "tianJiLock": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:135999",
+      "index.js:135999⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "OpenMatchInterfaceRes": {
+   "key": "STC_OPEN_MATCH_INTERFACERES",
+   "fields": {
+    "canMatchTime": {
+     "kind": "array|string",
+     "consumedAt": [
+      "index.js:24043",
+      "index.js:24043⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "PrivateLeaveWorldNotify": {
+   "key": "STC_PRIVATE_CHAT_NOTIFY",
+   "fields": {
+    "SendContext": {
+     "kind": "array|string",
+     "consumedAt": [
+      "index.js:146087",
+      "index.js:146087⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "QTEActiveNotify": {
+   "key": "STC_QTE_ACTIVE_NOTIFY",
+   "fields": {
+    "InnerForceValueChangeList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:99406",
+      "index.js:99406⚠",
+      "index.js:99407",
+      "index.js:99407⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "QTEOverNotify": {
+   "key": "STC_QTE_OVER_NOTIFY",
+   "fields": {
+    "InnerForceValuePair": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:99400",
+      "index.js:99400⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "QTEResultNotify": {
+   "key": "STC_QTE_RESULT_NOTIFY",
+   "fields": {
+    "InnerForceValueChangeList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:99406",
+      "index.js:99406⚠",
+      "index.js:99407",
+      "index.js:99407⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "InnerForceValuePair": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:99400",
+      "index.js:99400⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "RoleAwardNotify": {
+   "key": "STC_ROLE_AWARD_NOTIFY",
+   "fields": {
+    "AwardItemList": {
+     "kind": "array|string",
+     "consumedAt": [
+      "index.js:26468"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "RollItemInfoUpdateNotify": {
+   "key": "STC_ROLL_ITEM_INFO_UPDATE_NOTIFY",
+   "fields": {
+    "RollItemInfo": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:26497",
+      "index.js:26498",
+      "index.js:26498⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "SceneTeamBriefRes": {
+   "key": "STC_SCENE_TEAM_BRIEF_RES",
+   "fields": {
+    "TeamBriefList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:26985",
+      "index.js:26986",
+      "index.js:26986⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "SoloNpcNotify": {
+   "key": "STC_SOLONPC_NOTIFY",
+   "fields": {
+    "stage": {
+     "kind": "array",
+     "consumedAt": [
+      "scripts3.js:46273",
+      "scripts3.js:46276",
+      "scripts3.js:46276⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "TeamCopyProgressUpdate": {
+   "key": "STC_TEAM_COPY_PROGRESS_UPDATE",
+   "fields": {
+    "killedNpc": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:26448",
+      "index.js:26448⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "TeamEliminateInfo": {
+   "key": "STC_WULIN_TEAM_ELIMINATE_INFO",
+   "fields": {
+    "TeamEliminatePKPair": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:85123",
+      "index.js:85123⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "UploadPathSegmentRes": {
+   "key": "CTS_UPLOAD_PATH_SEGMENT_RES",
+   "fields": {
+    "tianJiLock": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:135999",
+      "index.js:135999⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.BeginList": {
+   "key": "BEGIN_LIST",
+   "fields": {
+    "skill": {
+     "kind": "array|array|object|array|string|scalar",
+     "consumedAt": [
+      "index.js:127618",
+      "index.js:127619",
+      "index.js:127647",
+      "index.js:127648"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.BeginSaveNpc": {
+   "key": "BEGINSAVE_NPC",
+   "fields": {
+    "npcIDArr": {
+     "kind": "array|array|object|array|string",
+     "consumedAt": [
+      "index.js:90061",
+      "index.js:90061⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.BuyFashion": {
+   "key": "REQ_BUY_FASHION",
+   "fields": {
+    "titivateObj": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:107676",
+      "index.js:107676⚠",
+      "index.js:107814",
+      "index.js:107814⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.BuyHomeCrop": {
+   "key": "BUY_HOME_CROP",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:57860",
+      "index.js:57874⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.ChallengePVP": {
+   "key": "USER_PVP",
+   "fields": {
+    "AttckData": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:104152",
+      "index.js:104152⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.ChallengeRoguePVP": {
+   "key": "REQ_ROGUE_PVP_BATTLE",
+   "fields": {
+    "AttckData": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:104152",
+      "index.js:104152⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.CheckBattleResult": {
+   "key": "BATTLE_END_REWARD",
+   "fields": {
+    "gemId": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "scripts3.js:24429",
+      "scripts3.js:24429⚠",
+      "scripts3.js:24445"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.EndSaveNpc": {
+   "key": "END_SAVE_NPC",
+   "fields": {
+    "npcIDArr": {
+     "kind": "array|array|object|array|string",
+     "consumedAt": [
+      "index.js:90061",
+      "index.js:90061⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.EndTraining": {
+   "key": "END_LIANGONG",
+   "fields": {
+    "skillArr": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:120584",
+      "index.js:120584⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "skillid": {
+     "kind": "scalar",
+     "consumedAt": [
+      "index.js:19099",
+      "index.js:19099⚠",
+      "scripts3.js:80379",
+      "scripts3.js:80379⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.GetClimbingTowerData": {
+   "key": "ENTER_GET_CLIMBLING_EVENT",
+   "fields": {
+    "towerArray": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:137553",
+      "index.js:137553⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.GetHouseShopData": {
+   "key": "GET_HOUSE_SHOP_DATA",
+   "fields": {
+    "shopData": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:138270",
+      "index.js:138270⚠",
+      "index.js:138271",
+      "index.js:138271⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.GetMarketList": {
+   "key": "GET_MARKETLIST",
+   "fields": {
+    "market": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts2.js:8472",
+      "scripts2.js:8511⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.GetNoticeAward": {
+   "key": "GETNOTICE_REWARD",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:108241",
+      "index.js:108244⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "liveness": {
+     "kind": "array|object|object|scalar",
+     "consumedAt": [
+      "scripts3.js:63836",
+      "scripts3.js:63837⚠",
+      "scripts3.js:8113",
+      "scripts3.js:8122⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.GetRandomEventAward": {
+   "key": "REQ_WM_ADV_RWD",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:143816",
+      "index.js:143827⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "npcArr": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:143820",
+      "index.js:143831⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "liveness": {
+     "kind": "array|object|object|scalar",
+     "consumedAt": [
+      "scripts3.js:63836",
+      "scripts3.js:63837⚠",
+      "scripts3.js:8113",
+      "scripts3.js:8122⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.GetServerList": {
+   "key": "REQ_SERVER_LIST",
+   "fields": {
+    "serverObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:116722"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.GetTowerSpecialShop": {
+   "key": "TOWER_SPECIAL_SHOP",
+   "fields": {
+    "shopData": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:138270",
+      "index.js:138270⚠",
+      "index.js:138271",
+      "index.js:138271⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.GetWhoreData": {
+   "key": "WHORING_GIRL_EVENT",
+   "fields": {
+    "girlData": {
+     "kind": "array|object",
+     "consumedAt": [
+      "index.js:51115",
+      "index.js:51142⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.LeaveCopy": {
+   "key": "END_DUNGEON_ADVENTURE",
+   "fields": {
+    "liveness": {
+     "kind": "array|object|object|scalar",
+     "consumedAt": [
+      "scripts3.js:63836",
+      "scripts3.js:63837⚠",
+      "scripts3.js:8113",
+      "scripts3.js:8122⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.PopEquip": {
+   "key": "POP_EQUIP_STORAGE",
+   "fields": {
+    "ItemID": {
+     "kind": "scalar",
+     "consumedAt": [
+      "index.js:26779",
+      "index.js:26779⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.PushEquip": {
+   "key": "PUSH_EQUIP_STORAGE",
+   "fields": {
+    "ItemID": {
+     "kind": "scalar",
+     "consumedAt": [
+      "index.js:26779",
+      "index.js:26779⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.PutOnEquipment": {
+   "key": "WEAR_EQUIPMENT_ALL",
+   "fields": {
+    "equipments": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:92808"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.Storehouse": {
+   "key": "CLAIM_TR_REWARD",
+   "fields": {
+    "needItem": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:139319",
+      "index.js:139319⚠",
+      "index.js:139335",
+      "index.js:139335⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.TowerBattleResult": {
+   "key": "SERVER_NPC_BATTLE_END",
+   "fields": {
+    "awardObj": {
+     "kind": "array|array|object",
+     "consumedAt": [
+      "index.js:67705",
+      "index.js:67706⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:67707",
+      "index.js:67708"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    },
+    "gemId": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "scripts3.js:24429",
+      "scripts3.js:24429⚠",
+      "scripts3.js:24445"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.activateTowerEvent": {
+   "key": "ACTIVE_TOWER_EVENT",
+   "fields": {
+    "npcArr": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:143820",
+      "index.js:143831",
+      "index.js:143831⚠",
+      "index.js:143832"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.adoptChild": {
+   "key": "ADOPTCHILD",
+   "fields": {
+    "childName": {
+     "kind": "array|string",
+     "consumedAt": [
+      "index.js:24867",
+      "index.js:24867⚠",
+      "scripts2.js:66272",
+      "scripts2.js:66272⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.batchSeedCrop": {
+   "key": "BATCH_SEED_CROP",
+   "fields": {
+    "crops": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:57657",
+      "index.js:57658⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.beginCast": {
+   "key": "BEGINCAST",
+   "fields": {
+    "inherit": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:102107",
+      "index.js:102107⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.beginPVEBattle": {
+   "key": "PVE_ACTION",
+   "fields": {
+    "attArr": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:98854",
+      "index.js:98863⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.beginPlayGame": {
+   "key": "BEGIN_PLAY_GAME",
+   "fields": {
+    "childName": {
+     "kind": "array|string",
+     "consumedAt": [
+      "index.js:24867",
+      "index.js:24867⚠",
+      "scripts2.js:66272",
+      "scripts2.js:66272⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.beginRoguePVEBattle": {
+   "key": "ROGUE_PVE_ACTION",
+   "fields": {
+    "attArr": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:104194",
+      "index.js:104199⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.beginWedding": {
+   "key": "BEGIN_WEDDING",
+   "fields": {
+    "proposeNpc": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:77035",
+      "index.js:77036",
+      "index.js:77036⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "houseObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:77226",
+      "index.js:77226⚠",
+      "index.js:77609"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "happinessNum": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:58162",
+      "scripts3.js:58162⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    },
+    "leaveNpc": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:77043",
+      "index.js:77043⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "specialObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:56734",
+      "index.js:56736",
+      "index.js:56736⚠",
+      "index.js:56740"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "cycleObj": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:77051",
+      "index.js:77052",
+      "index.js:77053",
+      "index.js:77057⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.birthChild": {
+   "key": "BIRTHCHILD",
+   "fields": {
+    "proposeNpc": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:77035",
+      "index.js:77036",
+      "index.js:77036⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "houseObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:77226",
+      "index.js:77226⚠",
+      "index.js:77609"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "happinessNum": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:58162",
+      "scripts3.js:58162⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    },
+    "leaveNpc": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:77043",
+      "index.js:77043⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "specialObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:56734",
+      "index.js:56736",
+      "index.js:56736⚠",
+      "index.js:56740"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "cycleObj": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:77051",
+      "index.js:77052",
+      "index.js:77053",
+      "index.js:77057⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.buyAnniversaryPassLiveness": {
+   "key": "ANN_PASS_BUY_LIVENESS",
+   "fields": {
+    "td": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:7861"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.callDragon": {
+   "key": "CALL_DRAGON",
+   "fields": {
+    "ApplyInfoList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:27044",
+      "index.js:27046",
+      "index.js:27046⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "RoleSlot": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:27054",
+      "index.js:27089⚠",
+      "index.js:27282",
+      "index.js:27282⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "CollectionRollItemInfoList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:27059",
+      "index.js:27059⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.changeDelegateTask": {
+   "key": "CHANGE_DELEGATE_TASK",
+   "fields": {
+    "taskObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:43518",
+      "index.js:43519⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.chanllengeTower": {
+   "key": "TOWER_RANDOM_EVENT",
+   "fields": {
+    "npcArr": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:143820",
+      "index.js:143831",
+      "index.js:143831⚠",
+      "index.js:143832"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "equipments": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:137600",
+      "index.js:137601"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.checkLive": {
+   "key": "CHECK_LIVE",
+   "fields": {
+    "formulaArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:102149",
+      "index.js:102149⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "inherit": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:102092",
+      "index.js:102092⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.chooseSex": {
+   "key": "CHOOSE_SEX",
+   "fields": {
+    "childName": {
+     "kind": "array|string",
+     "consumedAt": [
+      "index.js:24867",
+      "index.js:24867⚠",
+      "scripts2.js:66272",
+      "scripts2.js:66272⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.chooseUsedItemAward": {
+   "key": "CHOOSE_USEITEM_AWARD",
+   "fields": {
+    "cData": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:64952",
+      "index.js:64956⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.circleTaskAward": {
+   "key": "CIRCLE_TASK_TASK",
+   "fields": {
+    "rewardObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:103616",
+      "index.js:103618⚠",
+      "index.js:103815",
+      "index.js:103816"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.collect": {
+   "key": "COLLECT",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:25210"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.completeOrderByHotVal": {
+   "key": "COMPLETE_ORDER_BY_HOTVAL",
+   "fields": {
+    "unlockDish": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:62251",
+      "index.js:62251⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.createOrderByHotVal": {
+   "key": "CREATE_ORDER_BY_HOTVAL",
+   "fields": {
+    "unlockDish": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:62251",
+      "index.js:62251⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.dispatchAward": {
+   "key": "DISPATCH_AWARD",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:23138",
+      "scripts3.js:23139",
+      "scripts3.js:23143⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.dispossHomeEvent": {
+   "key": "DISPOSS_HOME_EVENT",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:58002"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.endCast": {
+   "key": "END_CAST",
+   "fields": {
+    "inherit": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:102111",
+      "index.js:102111⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.endPlayGame": {
+   "key": "END_PLAY_GAME",
+   "fields": {
+    "childName": {
+     "kind": "array|string",
+     "consumedAt": [
+      "index.js:24867",
+      "index.js:24867⚠",
+      "scripts2.js:66272",
+      "scripts2.js:66272⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.enterMultiPVEBattle": {
+   "key": "INIT_MPPVE_BATTLE",
+   "fields": {
+    "linepID": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:110848"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    },
+    "battleData": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:102742",
+      "index.js:102742⚠",
+      "index.js:146454",
+      "index.js:146507"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.enterPVEBattle": {
+   "key": "REQ_LANGHUAN_COMBAT",
+   "fields": {
+    "attArr": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:98834",
+      "index.js:98863⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "AttckData": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:104152",
+      "index.js:104152⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "npcArr": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:143820",
+      "index.js:143831",
+      "index.js:143831⚠",
+      "index.js:143832"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.enterRoguePVEBattle": {
+   "key": "REQ_ROGUE_PVE_COMBAT",
+   "fields": {
+    "attArr": {
+     "kind": "array|array|object|array|string",
+     "consumedAt": [
+      "index.js:104183",
+      "index.js:104184",
+      "index.js:104185",
+      "index.js:104186"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "AttckData": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:104152",
+      "index.js:104152⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "npcArr": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:143820",
+      "index.js:143831",
+      "index.js:143831⚠",
+      "index.js:143832"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "exchangeNpcArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:104162",
+      "index.js:104162⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.equipInherit": {
+   "key": "EQUIP_INHERIT",
+   "fields": {
+    "equip": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:61486",
+      "index.js:61487⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.equipWash": {
+   "key": "EQUIP_WASH",
+   "fields": {
+    "addArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:35612",
+      "index.js:35612⚠",
+      "scripts2.js:12277"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.exileChild": {
+   "key": "EXILE_CHILD",
+   "fields": {
+    "proposeNpc": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:77035",
+      "index.js:77036",
+      "index.js:77036⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "houseObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:77226",
+      "index.js:77226⚠",
+      "index.js:77609"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "happinessNum": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:58162",
+      "scripts3.js:58162⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    },
+    "leaveNpc": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:77043",
+      "index.js:77043⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "specialObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:56734",
+      "index.js:56736",
+      "index.js:56736⚠",
+      "index.js:56740"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "cycleObj": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:77051",
+      "index.js:77052",
+      "index.js:77053",
+      "index.js:77057⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.findOHomes": {
+   "key": "OTHER_PLAYER_HOME",
+   "fields": {
+    "homeArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:57918",
+      "index.js:57919",
+      "index.js:57919⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "recommendHomeArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:57933",
+      "index.js:57934"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.findOhter": {
+   "key": "FIND_OTHER_HOME",
+   "fields": {
+    "findArr": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:57949",
+      "index.js:57949⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getAchieveData": {
+   "key": "GET_ACHIEVE_DATA",
+   "fields": {
+    "groupPoints": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:2901",
+      "scripts3.js:2932⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "rateIds": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:2947",
+      "scripts3.js:2947⚠",
+      "scripts3.js:3000",
+      "scripts3.js:3000⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "achieveIdArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts3.js:2903",
+      "scripts3.js:2921⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getBackShop": {
+   "key": "GET_BACK_SHOP",
+   "fields": {
+    "shopArr": {
+     "kind": "array|array|object|array|string",
+     "consumedAt": [
+      "index.js:145350",
+      "index.js:145350⚠",
+      "index.js:145351",
+      "index.js:145351⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getBigPayState": {
+   "key": "GET_BIGPAY_STATE_DATA",
+   "fields": {},
+   "retryOnEmpty": [
+    "index.js:55300"
+   ],
+   "safeDefault": false
+  },
+  "User.getCircleTaskList": {
+   "key": "GET_CIRCLE_TASK_LIST",
+   "fields": {
+    "taskArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts3.js:23412",
+      "scripts3.js:23412⚠",
+      "scripts3.js:23413",
+      "scripts3.js:23413⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getDragon": {
+   "key": "GET_DRAGON",
+   "fields": {
+    "ApplyInfoList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:27044",
+      "index.js:27046",
+      "index.js:27046⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "RoleSlot": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:27054",
+      "index.js:27089⚠",
+      "index.js:27282",
+      "index.js:27282⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "CollectionRollItemInfoList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:27059",
+      "index.js:27059⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getFasionShop": {
+   "key": "GET_FASHION_SHOP",
+   "fields": {
+    "shopArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:145349",
+      "index.js:145350",
+      "index.js:145350⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getFriendHomeList": {
+   "key": "ENTER_OTHER_HOME",
+   "fields": {
+    "soilArr": {
+     "kind": "array|object",
+     "consumedAt": [
+      "index.js:57954",
+      "index.js:57964",
+      "index.js:57988⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getGeHelpInfo": {
+   "key": "GET_GE_HELP_INFO",
+   "fields": {
+    "prestige": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:35349",
+      "scripts3.js:35349⚠",
+      "scripts3.js:35367",
+      "scripts3.js:35367⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    },
+    "contribution": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:35350",
+      "scripts3.js:35350⚠",
+      "scripts3.js:35368",
+      "scripts3.js:35368⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getGoodAndEvilData": {
+   "key": "GET_GOOD_AND_EVIL_DATA",
+   "fields": {
+    "prestige": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:35349",
+      "scripts3.js:35349⚠",
+      "scripts3.js:35367",
+      "scripts3.js:35367⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    },
+    "contribution": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:35350",
+      "scripts3.js:35350⚠",
+      "scripts3.js:35368",
+      "scripts3.js:35368⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getGoodAndEvilRetireData": {
+   "key": "GET_GOOD_AND_EVIL_RETIRE_DATA",
+   "fields": {
+    "prestige": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:35349",
+      "scripts3.js:35349⚠",
+      "scripts3.js:35367",
+      "scripts3.js:35367⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    },
+    "contribution": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:35350",
+      "scripts3.js:35350⚠",
+      "scripts3.js:35368",
+      "scripts3.js:35368⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getGoodAndEvilRetireList": {
+   "key": "GET_GOOD_AND_EVIL_RETIRE_LIST",
+   "fields": {
+    "prestige": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:35349",
+      "scripts3.js:35349⚠",
+      "scripts3.js:35367",
+      "scripts3.js:35367⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    },
+    "contribution": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:35350",
+      "scripts3.js:35350⚠",
+      "scripts3.js:35368",
+      "scripts3.js:35368⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getHomeList": {
+   "key": "GETHOME_LIST",
+   "fields": {
+    "soilArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:57643",
+      "index.js:57643⚠",
+      "index.js:57663",
+      "index.js:57663⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getInnRank": {
+   "key": "GET_INN_RANK",
+   "fields": {
+    "unlockDish": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:62251",
+      "index.js:62251⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getInnShop": {
+   "key": "GET_INN_SHOP",
+   "fields": {
+    "unlockDish": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:62251",
+      "index.js:62251⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getKnackLottery": {
+   "key": "GET_KNACK_LOTTERY",
+   "fields": {
+    "upSkillRateData": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:90010"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    },
+    "optionalDatas": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts3.js:90012"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.getKnackLotteryHistory": {
+   "key": "GET_KNACK_LOTTERY_HISTORY",
+   "fields": {
+    "upSkillRateData": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:90010"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    },
+    "optionalDatas": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts3.js:90012"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.getMultiPVESkill": {
+   "key": "GET_MP_ULTSKILLS",
+   "fields": {
+    "dataArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:110884"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.getPandaEvent": {
+   "key": "TOWER_GET_PANDA_EVENT",
+   "fields": {
+    "eventArr": {
+     "kind": "array|array|object",
+     "consumedAt": [
+      "index.js:137656",
+      "index.js:137657",
+      "index.js:137657⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getPayState": {
+   "key": "GET_PAY_STATE_DATA",
+   "fields": {},
+   "retryOnEmpty": [
+    "index.js:55300"
+   ],
+   "safeDefault": false
+  },
+  "User.getReturnGift": {
+   "key": "GET_RETURN_GIFT",
+   "fields": {
+    "giftDatas": {
+     "kind": "array",
+     "consumedAt": [
+      "scripts3.js:63544",
+      "scripts3.js:63545⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getSnowAward": {
+   "key": "GET_SNOW_REWARD",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:122532",
+      "index.js:122535⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getSpecialAward": {
+   "key": "GET_SPECIAL_AWARD",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:58462",
+      "index.js:58463",
+      "index.js:58465⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.getTeamSkill": {
+   "key": "GET_TEAM_ULTSKILLS",
+   "fields": {
+    "dataArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:54941"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.getUsedItemAward": {
+   "key": "GET_USEITEM_AWARD",
+   "fields": {
+    "awardObj": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:67705",
+      "index.js:67706",
+      "index.js:67706⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.helpDoneTask": {
+   "key": "HELP_DONE_TASK",
+   "fields": {
+    "prestige": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:35349",
+      "scripts3.js:35349⚠",
+      "scripts3.js:35367",
+      "scripts3.js:35367⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    },
+    "contribution": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:35350",
+      "scripts3.js:35350⚠",
+      "scripts3.js:35368",
+      "scripts3.js:35368⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.homeSpeicalAward": {
+   "key": "HOME_SPECIAL_AWARD",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:57867",
+      "index.js:57872",
+      "index.js:57874⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.innBuyShop": {
+   "key": "INN_BUY_SHOP",
+   "fields": {
+    "unlockDish": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:62251",
+      "index.js:62251⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.jionChatPkServer": {
+   "key": "JOIN_CHATPK_SERVER",
+   "fields": {
+    "newAcc": {
+     "kind": "scalar",
+     "consumedAt": [
+      "index.js:111136",
+      "index.js:111138",
+      "index.js:111138⚠",
+      "index.js:28164"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.jionWuLinPkServer": {
+   "key": "JOIN_WULIN_PK_SERVER",
+   "fields": {
+    "newAcc": {
+     "kind": "scalar",
+     "consumedAt": [
+      "index.js:111136",
+      "index.js:111138",
+      "index.js:111138⚠",
+      "index.js:28164"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.killNpc": {
+   "key": "KILL_NPC",
+   "fields": {
+    "npcIDArr": {
+     "kind": "array|array|object|array|string",
+     "consumedAt": [
+      "index.js:90061",
+      "index.js:90061⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.knackLottery": {
+   "key": "KNACK_LOTTERY",
+   "fields": {
+    "upSkillRateData": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:90010"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    },
+    "optionalDatas": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts3.js:90012"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.lookSecretEvent": {
+   "key": "LOOK_SECRET_PANDA_EVENT",
+   "fields": {
+    "secret": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts2.js:75376",
+      "scripts2.js:75376⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.makeLove": {
+   "key": "MAKE_LOVE",
+   "fields": {
+    "proposeNpc": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:77035",
+      "index.js:77036",
+      "index.js:77036⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "houseObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:77226",
+      "index.js:77226⚠",
+      "index.js:77609"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "happinessNum": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:58162",
+      "scripts3.js:58162⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    },
+    "leaveNpc": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:77043",
+      "index.js:77043⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "specialObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:56734",
+      "index.js:56736",
+      "index.js:56736⚠",
+      "index.js:56740"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "cycleObj": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:77051",
+      "index.js:77052",
+      "index.js:77053",
+      "index.js:77057⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.makeWishDragon": {
+   "key": "MAKE_WISH_DRAGON",
+   "fields": {
+    "ApplyInfoList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:27044",
+      "index.js:27046",
+      "index.js:27046⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "RoleSlot": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:27054",
+      "index.js:27089⚠",
+      "index.js:27282",
+      "index.js:27282⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "CollectionRollItemInfoList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:27059",
+      "index.js:27059⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.marryAward": {
+   "key": "MARRY_AWARD",
+   "fields": {
+    "proposeNpc": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:77035",
+      "index.js:77036",
+      "index.js:77036⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "houseObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:77226",
+      "index.js:77226⚠",
+      "index.js:77609"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "happinessNum": {
+     "kind": "scalar",
+     "consumedAt": [
+      "scripts3.js:58162",
+      "scripts3.js:58162⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": false
+    },
+    "leaveNpc": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:77043",
+      "index.js:77043⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "specialObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:56734",
+      "index.js:56736",
+      "index.js:56736⚠",
+      "index.js:56740"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "cycleObj": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "index.js:77051",
+      "index.js:77052",
+      "index.js:77053",
+      "index.js:77057⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.mulitiNpcBattleResult": {
+   "key": "REQ_MP_RESULT",
+   "fields": {
+    "gemId": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "scripts3.js:24429",
+      "scripts3.js:24429⚠",
+      "scripts3.js:24445"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.obtainCrop": {
+   "key": "OBTAINCROP",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:57712"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.onKeyDispossHomeEvent": {
+   "key": "ONE_KEY_DISPOSS_HOME_EVENT",
+   "fields": {
+    "cropMap": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:57760",
+      "index.js:57781⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:57798"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.onKeyObtainCrop": {
+   "key": "ONE_KEY_OBTAIN_CROP",
+   "fields": {
+    "obtainLands": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:57735",
+      "index.js:57739⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:57754"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.optionLikeEvent": {
+   "key": "INVITE_NPC_OPTION",
+   "fields": {
+    "npcId": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:51168",
+      "index.js:51180⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.receiveAchieveRateReward": {
+   "key": "RECEIVE_ACHIEVE_RATE_REWARD",
+   "fields": {
+    "rateIds": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:2947",
+      "scripts3.js:2947⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.receiveAchieveReward": {
+   "key": "RECEIVE_ACHIEVE_REWARD",
+   "fields": {
+    "achieveIdArr": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:2921",
+      "scripts3.js:2921⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "groupPoints": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:2930",
+      "scripts3.js:2932⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.receiveAchieveSuitReward": {
+   "key": "RECEIVE_ACHIEVE_SUIT_REWARD",
+   "fields": {
+    "srd": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:2955",
+      "scripts3.js:2959⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.receiveAchievementReward": {
+   "key": "RECEIVE_ACHIEVEMENT_REWARD",
+   "fields": {
+    "upSkillRateData": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:90010"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    },
+    "optionalDatas": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts3.js:90012"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.receiveAnniversaryPassTaskReward": {
+   "key": "ANN_PASS_FINISH_TASK",
+   "fields": {
+    "dt": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts3.js:7880",
+      "scripts3.js:7880⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.receiveReturnGiftAward": {
+   "key": "RECEIVE_RETURN_GIFT_AWARD",
+   "fields": {
+    "giftData": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts2.js:67216",
+      "scripts2.js:67216⚠",
+      "scripts2.js:67588",
+      "scripts2.js:67590"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.recommendOHomes": {
+   "key": "RECOMMEND_ONESELF_HOME",
+   "fields": {
+    "homeArr": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:57882",
+      "index.js:57884",
+      "index.js:57919⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "friendHome": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "index.js:57891"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.refreshReturnGiftAward": {
+   "key": "REFRESH_RETURN_GIFT_AWARD",
+   "fields": {
+    "giftAwards": {
+     "kind": "array",
+     "consumedAt": [
+      "scripts3.js:63551",
+      "scripts3.js:63555",
+      "scripts3.js:63555⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.resetChildFoster": {
+   "key": "RESET_CHILD_FOSTER",
+   "fields": {
+    "childName": {
+     "kind": "array|string",
+     "consumedAt": [
+      "index.js:24867",
+      "index.js:24867⚠",
+      "scripts2.js:66272",
+      "scripts2.js:66272⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.rgChangeSkillKnack": {
+   "key": "ROGUE_CHANGE_SKNACK",
+   "fields": {
+    "skillGraspData": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:73998"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.rgUseItem": {
+   "key": "ROGUE_USE_ITEM",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:73957",
+      "scripts3.js:73958",
+      "scripts3.js:73962⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.stealCrop": {
+   "key": "STEAL_CROP_EVENT",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:58029"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.sweepCopy": {
+   "key": "SWEEP_DUNGEON",
+   "fields": {
+    "liveness": {
+     "kind": "array|object|object|scalar",
+     "consumedAt": [
+      "scripts3.js:63836",
+      "scripts3.js:63837⚠",
+      "scripts3.js:8113",
+      "scripts3.js:8122⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.sycnPlayerItemData": {
+   "key": "SYCNPLAYERITEAMDATA",
+   "fields": {
+    "itemObj": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:24018"
+     ],
+     "crashOnMissing": false,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": true
+  },
+  "User.upFashionFaceState": {
+   "key": "SET_YP_EFFECT_STATE",
+   "fields": {
+    "titivateObj": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:107676",
+      "index.js:107676⚠",
+      "index.js:107814",
+      "index.js:107814⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.useItem": {
+   "key": "USE_ITEM",
+   "fields": {
+    "rewardArray": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:64764",
+      "index.js:64768",
+      "index.js:64772⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "gemId": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "scripts3.js:24429",
+      "scripts3.js:24429⚠",
+      "scripts3.js:24445"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "partners": {
+     "kind": "container",
+     "consumedAt": [
+      "scripts3.js:59564",
+      "scripts3.js:59571",
+      "scripts3.js:59571⚠",
+      "scripts3.js:59575"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "avatarInfo": {
+     "kind": "array|array|string",
+     "consumedAt": [
+      "scripts2.js:49810",
+      "scripts2.js:49866",
+      "scripts2.js:49866⚠",
+      "scripts2.js:49867"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    },
+    "rewardSkillSkin": {
+     "kind": "container",
+     "consumedAt": [
+      "index.js:64851",
+      "index.js:64853",
+      "index.js:64854⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "User.washAdditionalArr": {
+   "key": "WASH_ADDITION",
+   "fields": {
+    "bloodArr": {
+     "kind": "array",
+     "consumedAt": [
+      "index.js:144052",
+      "index.js:144058⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "achievement": {
+   "key": "ACHV_CHANGE",
+   "fields": {
+    "nIds": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts3.js:2887",
+      "scripts3.js:2888⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "see_wu_lin_assembly_match_time": {
+   "key": "REQ_WULIN_ASSEMBLY_MATCHTIME",
+   "fields": {
+    "WuLinMatchConfigList": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts3.js:95838",
+      "scripts3.js:95845⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "show_high_rank": {
+   "key": "RES_SUBTITLE_HIGHT",
+   "fields": {
+    "data": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts2.js:11908",
+      "scripts2.js:11922",
+      "scripts2.js:11922⚠",
+      "scripts2.js:11923"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "show_low_rank": {
+   "key": "RES_SUBTITLE_LOW",
+   "fields": {
+    "data": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts2.js:11908",
+      "scripts2.js:11922",
+      "scripts2.js:11922⚠",
+      "scripts2.js:11923"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "subtitle_add": {
+   "key": "RES_SUBTITLE_ADD",
+   "fields": {
+    "insert_content": {
+     "kind": "array|string",
+     "consumedAt": [
+      "index.js:146237",
+      "index.js:146237⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "subtitle_hot": {
+   "key": "RES_SUBTITLE_HOT",
+   "fields": {
+    "data": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts2.js:11922",
+      "scripts2.js:11922⚠",
+      "scripts2.js:11923",
+      "scripts2.js:11923⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  },
+  "subtitle_new": {
+   "key": "RES_SUBTITLE_NEW",
+   "fields": {
+    "data": {
+     "kind": "array|object|array|string",
+     "consumedAt": [
+      "scripts2.js:11922",
+      "scripts2.js:11922⚠",
+      "scripts2.js:11923",
+      "scripts2.js:11923⚠"
+     ],
+     "crashOnMissing": true,
+     "zeroIsWrong": true
+    }
+   },
+   "retryOnEmpty": [],
+   "safeDefault": false
+  }
+ }
+}

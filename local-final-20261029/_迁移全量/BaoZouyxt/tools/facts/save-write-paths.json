@@ -1,0 +1,251 @@
+{
+  "items": [
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 47,
+      "text": "    if (!hasOwn(s, 'playerEquip')) s.playerEquip = {}; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 48,
+      "text": "    if (!hasOwn(s, 'equipments')) s.equipments = {}; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 58,
+      "text": "    s.skills = sk; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 61,
+      "text": "    if (!hasOwn(s, 'rewarded')) s.rewarded = []; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 62,
+      "text": "    s.saveVersion = LATEST_SAVE; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 134,
+      "text": "    if (!_save.roleID) _save.roleID = 16374;             // 模板同款；客户端只作标识用 || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 135,
+      "text": "    if (!_save.accepted) _save.accepted = []; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 136,
+      "text": "    if (!_save.done) _save.done = []; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 137,
+      "text": "    if (!_save.skills) _save.skills = {}; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 194,
+      "text": "      s.bag = keep; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 196,
+      "text": "    if (!s.playerEquip || typeof s.playerEquip !== 'object') s.playerEquip = clone(c.PlayerEquip || {}); || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 197,
+      "text": "    if (!s.equipments || typeof s.equipments !== 'object') s.equipments = {}; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 209,
+      "text": "    if (cur === 0) delete s.bag[iid]; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 210,
+      "text": "    else s.bag[iid] = cur; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 235,
+      "text": "    if (!s.playerEquip) s.playerEquip = {}; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 238,
+      "text": "      s.playerEquip[iid] = [1, cur + cnt]; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 249,
+      "text": "    if (!s.playerEquip) s.playerEquip = {}; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 253,
+      "text": "      if (cur > 0) s.playerEquip[iid] = [1, cur]; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 254,
+      "text": "      else delete s.playerEquip[iid]; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 298,
+      "text": "    s.created = true; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 299,
+      "text": "    s.name = ay[1]; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 300,
+      "text": "    s.baseValueAy = ay; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 301,
+      "text": "    s.roleSnapshot = tpl; || handler=none"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 352,
+      "text": "        s.name = String(p.baseValueAy[1] || '少侠'); || handler=Create"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 354,
+      "text": "      if (p.userName) s.name = String(p.userName); || handler=Create"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 356,
+      "text": "      s.baseValueAy = normalizeBaseValueAy(r.baseValueAy); || handler=Create"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 357,
+      "text": "      if (typeof s.potential !== 'number') s.potential = 99999; || handler=Create"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 358,
+      "text": "      if (typeof s.coins !== 'number') s.coins = 99999; || handler=Create"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 359,
+      "text": "      if (!s.skills) s.skills = {}; || handler=Create"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 360,
+      "text": "      s.school = p.school || 0; || handler=Create"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 428,
+      "text": "      if (id && s.accepted.indexOf(id) < 0) s.accepted.push(id); || handler=acceptTask"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 450,
+      "text": "      if (id && s.done.indexOf(id) < 0) s.done.push(id); || handler=getFinishTaskAward"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 451,
+      "text": "      if (!s.rewarded) s.rewarded = []; || handler=getFinishTaskAward"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 471,
+      "text": "        s.rewarded.push(id); || handler=getFinishTaskAward"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 485,
+      "text": "      var s = loadSave(); s.school = p.school || s.school; persist(); || handler=joinSchool"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 534,
+      "text": "        s.skills[id] = [curLv, keptPgr, keptBrlv]; || handler=upgradeSkill"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 543,
+      "text": "      s.skills[id] = [lv, reqPgr, reqBrlv || 1]; || handler=upgradeSkill"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 544,
+      "text": "      s.potential = Math.max(0, pot - 100 * gained); || handler=upgradeSkill"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 872,
+      "text": "          if (!Array.isArray(s.playerEquip[uid])) s.playerEquip[uid] = [1, 1]; || handler=PutOnEquipment"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 873,
+      "text": "          s.equipments[slot] = uid; || handler=PutOnEquipment"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 875,
+      "text": "          delete s.equipments[slot]; || handler=PutOnEquipment"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 889,
+      "text": "        if ((parseInt(k, 10) || 0) < 8) { delete s.equipments[k]; cleared.push(k); } || handler=UnloadingEuipment"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 904,
+      "text": "        if (v > 0) { s.bag[k] = v; n++; } || handler=bzSeedBag"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 906,
+      "text": "      if (p.playerEquip && typeof p.playerEquip === 'object') s.playerEquip = clone(p.playerEquip); || handler=bzSeedBag"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 915,
+      "text": "      if (!s.rewarded) s.rewarded = []; || handler=bzBackfillRewards"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 922,
+      "text": "        if (!meta || !meta.r) { s.rewarded.push(id); continue; } || handler=bzBackfillRewards"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 931,
+      "text": "        s.rewarded.push(id); || handler=bzBackfillRewards"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 947,
+      "text": "        s[k] = sets[k]; || handler=bzPatch"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 954,
+      "text": "        for (var i = 0; i < arr.length; i++) { delete s[dk][arr[i]]; done.push('del ' + dk + '[' + arr[i] + ']'); } || handler=bzPatch"
+    }
+  ],
+  "commands": [],
+  "unverified": []
+}

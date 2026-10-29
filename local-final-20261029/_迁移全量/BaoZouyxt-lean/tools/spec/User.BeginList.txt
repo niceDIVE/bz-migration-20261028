@@ -1,0 +1,99 @@
+# User.BeginList  (HttpConst.BEGIN_LIST)
+# 出现 2 处
+
+120611: return t("../../scripts3/model3/PopGiftModel");
+120612: }).then(function(t) {
+120613: t.PopGiftModel.setHomeDataUI(o);
+120614: });
+120615: }
+120616: }, this);
+120617: s.MessageCenter.on(c.HttpConst.BEGIN_LIST, function(t, o) {
+120618: if (1 == o.eRet) {
+120619: e.skillQueue = o.skill;
+120620: cc.director.once(cc.Director.EVENT_AFTER_DRAW, function() {
+120621: var t = {
+120622: pathName: "skillsUI/OnhookQueueUI",
+120623: scriptName: "OnhookQueueUI"
+120624: };
+120625: g.default.promiseLoad("comUI/ONhookBgUI", t, function(e) {
+120626: var o = cc.instantiate(e);
+120627: m.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer);
+120628: var i = o.addComponent("OnhookQueueBgUI");
+120629: i.setData(t);
+120630: i.setLabelTitle(r.getText(3945));
+120631: });
+120632: });
+120633: }
+120634: }, this);
+120635: s.MessageCenter.on(c.HttpConst.IMPLANTATION, function(t, o) {
+120636: if (1 == o.eRet) {
+120637: e.skillQueue.push(e.selectId);
+120638: s.MessageCenter.dispatch(p.EvName.SELECT_QUEUE_SKILL);
+120639: } else 6 == o.eRet ? l.default.show(r.getText(4239)) : l.default.show(r.getText(3954));
+120640: }, this);
+120641: s.MessageCenter.on(c.HttpConst.REMOVE_MARTIAL, function(t, o) {
+120642: if (1 == o.eRet) {
+120643: var i = e.skillQueue;
+120644: i.indexOf(e.selectId) >= 0 && e.skillQueue.splice(i.indexOf(e.selectId), 1);
+120645: s.MessageCenter.dispatch(p.EvName.SELECT_QUEUE_SKILL);
+120646: }
+120647: }, this);
+120648: s.MessageCenter.on(c.HttpConst.ADD_BREAK_QUEUE, function(t, o) {
+120649: 1 == o.eRet && e.updateBreakQueueData(o.qr);
+120650: }, this);
+120651: s.MessageCenter.on(c.HttpConst.REMOVE_BREAK_QUEUE, function(t, o) {
+120652: 1 == o.eRet && e.updateBreakQueueData(o.qr);
+120653: });
+120654: s.MessageCenter.on(c.HttpConst.GOLD_BREAK_CUR_SKILL, function(t, o) {
+120655: if (1 == o.eRet) {
+120656: e.updateBreakQueueData(o.qr, !0);
+120657: var i = setTimeout(function() {
+---
+121072: var l = i.getItem(t, "skill"), c = i.getItem(s, "level"), p = f.SkillTable.getQualitySkillCoefficient(l, t);
+121073: a += Math.floor(c.SkillPotential * p);
+121074: }
+121075: return a - r;
+121076: };
+121077: e.prototype.reqSkillQueue = function() {
+121078: _.NetMgr.http.sendRequest(c.HttpConst.BEGIN_LIST, {});
+121079: };
+121080: e.prototype.startBreakQueue = function(t, e) {
+121081: this.breakType = e;
+121082: this.breaking = t;
+121083: g.default.prefabs.load("skillsUI/BreakQueueUI", cc.Prefab, function(t, e) {
+121084: var o = cc.instantiate(e);
+121085: m.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer);
+121086: o.addComponent("QueuePage");
+121087: });
+121088: };
+121089: e.prototype.reqBeginBreakQueue = function() {
+121090: var t = [], e = this.breakQueue, o = this.costArr;
+121091: if (e.length <= 0) l.default.show(r.getText(7397)); else {
+121092: for (var i = 0; i < e.length; i++) {
+121093: var n = {};
+121094: n.id = e[i];
+121095: n.lv = f.SkillTable.getSkillLevel(e[i]);
+121096: n.num = o[e[i]] > 0 ? o[e[i]] : 0;
+121097: t.push(n);
+121098: }
+121099: var a = k.UserModel.entity, s = {
+121100: skills: t,
+121101: type: this.breakType,
+121102: hg: a.hunger.remaining,
+121103: gTime: a.totalGameTime.gameTime,
+121104: hgtimes: a.numStuffed
+121105: };
+121106: _.NetMgr.http.sendReqWithMask(c.HttpConst.BEGIN_HOOK_BREAK_LIST, s);
+121107: }
+121108: };
+121109: e.prototype.locJoinQueue = function(t) {
+121110: var e = o.SkillUpgradeModel.breakQueue, n = i.getConstByID(287);
+121111: if (e.length >= n) l.default.show(r.getText(7391)); else {
+121112: for (var a = f.SkillTable.dic[t].brlv, c = o.SkillUpgradeModel.calBreakTime(a, this.breakType), h = 0; h < e.length; h++) {
+121113: a = f.SkillTable.dic[e[h]].brlv;
+121114: c += o.SkillUpgradeModel.calBreakTime(a, this.breakType);
+121115: }
+121116: this.breakQueue.push(t);
+121117: this.selectId = t;
+121118: s.MessageCenter.dispatch(p.EvName.ADD_BREAK_QUEUE, {
+---

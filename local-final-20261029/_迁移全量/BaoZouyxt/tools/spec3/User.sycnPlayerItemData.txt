@@ -1,0 +1,3 @@
+# User.sycnPlayerItemData   (HttpConst.SYCNPLAYERITEAMDATA)
+
+## 注册点 24014: a.MessageCenter.on(s.HttpConst.SYCNPLAYERITEAMDATA, function(t, e) {

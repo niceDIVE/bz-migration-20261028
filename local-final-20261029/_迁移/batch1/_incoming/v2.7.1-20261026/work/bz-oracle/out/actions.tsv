@@ -1,0 +1,701 @@
+KEY	do名	常量定义行	状态	批次	簇	可达性	面板	可能的数据表
+ACTIVITE_SHOP	User.BuyAcitivityShop	index.js:59619	IMPL-UNJUDGED	1	C01	可达		activityshop,diceshop,partnerfashionshop
+ADD_CHANGE_BLOOD	User.AddChangeBlood	index.js:59628	GEN-READY	1	C01·同面板	可达	UpgradeLayerUI,WashModel	change,blood,boss_blood
+ADD_CHANGE_FACE	User.AddChangeFace	index.js:59627	GEN-READY	1	C01·同面板	可达	MakeUpModel,SurgeryFaceUI	changeface,change,face
+ADD_ITEM	User.addItem	index.js:59577	IMPL-UNJUDGED	1	C01	可达		
+ADD_SEX_KILL	User.Addmaster	index.js:59664	GEN-READY	1	C01·同面板	可达	InventoryDB,PartnerScene,SceneEvent	
+ALCHEMY_ALCHEMYFORMULA	User.alchemyFormula	index.js:60490	GEN-READY	1	C01·同面板	可达	AlchemyModel	AlchemyGear,formula
+ALCHEMY_REWARD	User.alchemyReward	index.js:60491	GEN-READY	1	C01·同面板	可达	AlchemyModel	AlchemyGear
+BUY_FORMULA_DATA	User.buyFormula	index.js:60489	GEN-READY	1	C01	可达	AlchemyModel	formula
+BUY_GIFT_PERMANENT	User.buyGiftPermanent	index.js:60387	GEN-READY	1	C01·同面板	可能已下线	JigsawUI,StoreItem,StoreModel	gift_permanent,limitgift,servergift
+BUY_GOOD_AND_EVIL_SHOP_ITEM	User.buyGoodAndEvilShopItem	index.js:60445	IMPL-UNJUDGED	1	C01	可达		activityshop,dicegoods,diceshop
+BUY_MARKET_ITEM	User.BuyMarketItem	index.js:59517	NEEDS-S2	1	C01	可达	StoreModel	
+BUY_MOUNT	User.BuyMount	index.js:59727	GEN-READY	1	C01	可达	DriverModel,DriverShopCell,DriverShopUI,PartnerScene,RoleInfoUI,SceneEvent	mount
+BUY_SCHOOL_SHOP	User.buySchoolShop	index.js:60055	NEEDS-S2	1	C01	可达		sect_shop,school_growth,activityshop
+BUY_SHOP_ITEM	User.buyShopItem	index.js:59575	DONE	1	C01	可达	BombBeastUI,ChargeShopUI,FireGiftUI,HDShopBgUI,NormalShopUI,SaleShopItemListDialog,SaleShopUI	activityshop,diceshop,partnerfashionshop
+BUY_SPECIAL_GOODS	User.buySpecialShopItem	index.js:59607	IMPL-UNJUDGED	1	C01	可达	NormalShopUI,SpecialGoodsModel	activityshop,dicegoods,diceshop
+CANCEL_CHAT_PK	User.cancelChatPk	index.js:59568	GEN-READY	1	C01·同面板	可达	ChatVSFightModel	
+CHAT_PK_ACTIVITY	User.ChatPkActivity	index.js:60062	GEN-READY	1	C01·同面板	可达	ChatVSFightModel,ReadyPkUI	activityshop,fishpond,luckymeet
+COLLECT	User.collect	index.js:59711	GEN-READY	1	C01·同面板	可达	CollectItemModel,SceneEvent	collection,collectionmap,copycollection
+EXCHANGE_ITEM	User.exchangeItem	index.js:59698	IMPL-UNJUDGED	1	C01	可达	ExchangeBuyUI,ExchangeModel,ExchangeRender,HomeActiveToggle,JigsawUI	brew_exchange,exchange,firework_exchange
+FASHION_EFFECT	User.fashionEffect	index.js:60575	NEEDS-S2	1	C01	可达	FashionShopUI,MakeUpModel,MountPlayer,Player	DegreeEffect,fashionall,partnerfashion
+GETNOTICE_REWARD	User.GetNoticeAward	index.js:59637	GEN-READY	1	C01·同面板	可达	RumorModel,SceneEvent	Return_Award,Return_Daily,anniversary_pass_award
+GET_ALCHEMY_DATA	User.getAlchemyData	index.js:60488	IMPL-UNJUDGED	1	C01·同面板	可达	AlchemyModel	AlchemyGear
+GET_EXPLORE	User.explore	index.js:60118	GEN-READY	1	C01·同面板	可达	ExploreEventModel,SceneEvent	mapExplore
+GET_FASHION_LIST	User.GetFashionList	index.js:59562	IMPL-UNJUDGED	1	C01·同面板	可达	FashionShopUI,MakeUpModel	fashionall,partnerfashion,partnerfashionshop
+GET_GIFT_DATA	User.GetGiftData	index.js:60038	GEN-READY	1	C01·同面板	可达	ChargeShopUI,HomeMainUI,NewOptionalGiftUI,OptionalGiftUI,StoreModel	limitgift,servergift
+GET_GOOD_AND_EVIL_SHOP_DATA	User.getGoodAndEvilShopData	index.js:60444	IMPL-UNJUDGED	1	C01	可达		activityshop,dicegoods,diceshop
+GET_INN_RANK	User.getInnRank	index.js:60161	GEN-READY	1	C01	可达		RankAward,ge_rank_reward,rogue_rank
+GET_INN_SHOP	User.getInnShop	index.js:60162	GEN-READY	1	C01	可达		activityshop,diceshop,partnerfashionshop
+GET_ITEM_DATA	User.getItemData	index.js:59696	GEN-READY	1	C01·同面板	可达	ExchangeModel	diceexchange,exchange,hlexchange
+GET_MARKETLIST	User.GetMarketList	index.js:59728	GEN-READY	1	C01·同面板	可达	ChargeShopUI,StoreModel	fuben
+GET_MOUNTSLIST	User.GetMountsList	index.js:59726	GEN-READY	1	C01·同面板	可达	DriverModel	
+GET_NEW_GIFT_PERMANENT	User.getNewGiftPermanent	index.js:60386	NEEDS-S2	1	C01·同面板	可能已下线	StoreModel	gift_permanent,limitgift,servergift
+GET_PERMANENT_REWARD	User.getGiftPermanentAward	index.js:59718	NEEDS-S2	1	C01·同面板	可能已下线	StoreModel	gift_permanent,limitgift,servergift
+GET_SHOP_ALL_ACTIVE	User.GetShopAllActive	index.js:60047	GEN-READY	1	C01·同面板	可达	ChargeShopUI,HomeMainUI,NewOptionalGiftUI,OptionalGiftUI,StoreModel	activetime,activityshop,diceshop
+GET_SPGOODS_LIST	User.getShopItem	index.js:59606	IMPL-UNJUDGED	1	C01·同面板	可达	NormalShopUI,SpecialGoodsModel	activityshop,diceshop,partnerfashionshop
+INN_BUY_SHOP	User.innBuyShop	index.js:60163	GEN-READY	1	C01	可达		activityshop,diceshop,partnerfashionshop
+NEW_OPTIONALGIFT_DATA	User.getOptionalGiftData	index.js:60477	GEN-READY	1	C01·同面板	可达	ChargeShopUI,HomeMainUI,NewOptionalGiftUI,OptionalGiftUI,StoreModel	optional_gift,yuanbao_optional_gift,limitgift
+PUT_ON_EQUIPMENT	User.equipWeapon	index.js:59592	IMPL-UNJUDGED	1	C01	可达	ComBgUI,PropertyUI	arena_equip,equip_pay,equip_punch
+QUICK_BUY	User.QuickBuyItem	index.js:59555	IMPL-UNJUDGED	1	C01	可达	StoreModel	
+RECEIVE_CHAT_PK_POINTAWARD	User.receiveChatPkSportsPointAward	index.js:60063	GEN-READY	1	C01·同面板	可达	ChatVSFightModel	rogue_point,acupoint,checkpoint
+REFRESH_GIFT_AWARD	User.refreshGiftAward	index.js:59723	NEEDS-S2	1	C01·同面板	可达	StoreModel	limitgift,servergift
+REQ_BEGINTITIVATE	User.BeginTitivate	index.js:59611	GEN-READY	1	C01·同面板	可达	FashionShopUI,MakeUpModel	titivate
+REQ_BEGIN_CHANGEFACE	User.BeginChangeFace	index.js:59625	GEN-READY	1	C01·同面板	可达	MakeUpModel,SurgeryFaceUI	changeface,change,face
+REQ_BUY_FASHION	User.BuyFashion	index.js:59612	DONE	1	C01	可达	FashionShopNewUI,FashionShopUI,HDShopBgUI,MakeUpModel	fashionall,partnerfashion,partnerfashionshop
+REQ_BUY_GIFT	User.buyEjectGift	index.js:60300	NEEDS-S2	1	C01	可达	PopGiftModel	limitgift,servergift
+REQ_CHANGEBLOOD	User.ChangeBlood	index.js:59626	GEN-READY	1	C01·同面板	可达	UpgradeLayerUI,WashModel	change,blood,boss_blood
+REQ_LOOK_GIFT	User.lookEjectGift	index.js:60301	NEEDS-S2	1	C01·同面板	可达	PopGiftModel	limitgift,servergift
+REQ_POP_GIFT	User.getEjectGift	index.js:60299	NEEDS-S2	1	C01·同面板	可达	PopGiftModel	limitgift,servergift
+REQ_TRGGER_GIFT	User.checkTrggerEjectGift	index.js:60302	NEEDS-S2	1	C01·同面板	可达	PopGiftModel	checkpoint,limitgift,servergift
+RG_SHOP_BY_ITEM	User.rgShopByItem	index.js:60516	IMPL-UNJUDGED	1	C01	可达		activityshop,diceshop,partnerfashionshop
+SELL_ITEM	User.saleItem	index.js:59574	DONE	1	C01	可达	BombBeastUI,ChargeShopUI,FireGiftUI,HDShopBgUI,NormalShopUI,SaleShopItemListDialog,SaleShopUI	home_plant_sale,skillskin_shop_sale,time_limit_sale
+SET_PLAYER_WING_ID	User.setPlayerCardWingId	index.js:60576	GEN-READY	1	C01·同面板	可达	FashionShopNewUI,FashionShopUI,MakeUpModel	ai_player,player_title,player_title_trigger
+SET_YP_EFFECT_STATE	User.upFashionFaceState	index.js:60613	GEN-READY	1	C01	可达	MakeUpModel	DegreeEffect,face,fashionall
+SPECIAL_SHOP	User.GetSpecialShopData	index.js:59618	IMPL-UNJUDGED	1	C01	可达		activityshop,diceshop,partnerfashionshop
+SYCNPLAYERITEAMDATA	User.sycnPlayerItemData	index.js:59566	PUSH	1	C01	可达	ChatVSFightModel	
+UNLOADING_EQUIP_EVENT	User.UnloadingEuipment	index.js:59593	IMPL-UNJUDGED	1	C01	可达	OneUnloadModel	gsp_event,lh_event,like_event
+UPGRAADE_ALCHEMY	User.upgradeAlchemy	index.js:60493	GEN-READY	1	C01·同面板	可达	AlchemyModel	AlchemyGear
+WASH_ADDITION	User.washAdditionalArr	index.js:60205	IMPL-UNJUDGED	1	C01	可达	RandomWashingUI,WashModel	washprice
+WASH_MEDICINE	User.WashMedicine	index.js:59557	IMPL-UNJUDGED	1	C01·同面板	可达	ArenaTeamModel,UpgradeLayerUI,WashModel	washprice
+WEAR_EQUIPMENT_ALL	User.PutOnEquipment	index.js:59594	IMPL-UNJUDGED	1	C01	可达	OneUnloadModel	
+ACCOUNT_LOG_OFF	User.accountLogOff	index.js:60462	NEEDS-S2	2	C05	可达	SettingUI	
+BACKTOLOGIN	User.BackToLogin	index.js:59540	NEEDS-S2	2	C05	可达	LoginModel	
+BUY_NPC_FEEL	User.BuyNpcFeel	index.js:59639	NEEDS-S2	2	C05·同面板	可达	MasterModel	elite_npc,mapNpcTalk,npc
+CHECK_ON_HOOK	User.CheckOnHook	index.js:60313	GEN-READY	2	C05·同面板	可达	LoginModel	checkpoint
+CHECK_OUT_SCHOOL	User.CheckOutSchool	index.js:59669	IMPL-UNJUDGED	2	C05·同面板	可达	MasterModel	school_growth,checkpoint,schooluniform
+CLEAR_SXHOOL_CD	User.clearGeSchoolClothing	index.js:59587	IMPL-UNJUDGED	2	C05·同面板	可达	MasterModel	school_growth,schooluniform,sectmanual
+EXIT_SCHOOL	User.exitSchool	index.js:59586	IMPL-UNJUDGED	2	C05·同面板	可达	MasterModel	school_growth,schooluniform,sectmanual
+GET_SNOW_REWARD	User.getSnowAward	index.js:59633	GEN-READY	2	C05·同面板	可达	SnowManModel,SnowManScene	snowman,snowshow
+JOIN_SCHOOL	User.joinSchool	index.js:59585	IMPL-UNJUDGED	2	C05	可达	MasterModel	school_growth,schooluniform,sectmanual
+LEVEAL_SCHOOL	User.OutSchool	index.js:59668	IMPL-UNJUDGED	2	C05·同面板	可达	MasterModel	school_growth,schooluniform,sectmanual
+QUICK_LOGIN	User.quicklogin	index.js:59491	IMPL-UNJUDGED	2	C05	可达	LoginModel	
+QUIT_SCHOOL	User.quitSchool	index.js:60059	NEEDS-S2	2	C05	可达		school_growth,schooluniform,sectmanual
+RECORD_PHONE	User.recordPhone	index.js:60256	GEN-READY	2	C05·同面板	可达	LoginModel	
+REQ_PVE_BATTLE	User.ReqSelfBattleInfo	index.js:59610	IMPL-UNJUDGED	2	C05	可达	Local1v1Mgr	battle_result
+ROGUE_SYNC_WAIT_DATA	User.rgSycnWaitData	index.js:60548	GEN-READY	2	C05·同面板	可达	RogueRoleModel,RogueSelectInitUI	
+ROGUE_USE_ITEM	User.rgUseItem	index.js:60538	GEN-READY	2	C05	可达	ItemSystemUI,RogueItemUI,RogueRoleModel	
+SNOWACTIVE	User.enterSnow	index.js:59631	GEN-READY	2	C05·同面板	可达	SnowManModel,SnowManScene	snowman,snowshow,Friend_attribute
+SWAP_SKILL_PROGRESS	User.skillChange	index.js:60011	GEN-READY	2	C05·同面板	可达	IceBedUse,LvSwapPanel,SkillModel,SkillSystemUI	change,changeface,diceexchange
+UPGRADE_SKILL_LV	User.upgradeSkill	index.js:59581	DONE	2	C05	可达	ConsultUI,SkillModel	
+USER_CREATE	User.Create	index.js:59493	IMPL-UNJUDGED	2	C05	可达	LoginModel	
+USER_GETCHATADDRESS	User.GetChatAddress	index.js:59513	IMPL-UNJUDGED	2	C05·同面板	可达	LoginModel	
+USER_LOADGAME	User.LoadGame	index.js:59504	DONE	2	C05	可达	LoginModel	gametime
+USE_ALL_BALL	User.UseAllBall	index.js:59634	GEN-READY	2	C05	可达	SnowManModel,SnowManScene	square_ball,Friend_attribute,adaptation
+USE_BATCH_SNOW_BALL	User.UseBatchSnowBall	index.js:60110	GEN-READY	2	C05	可达	NewYearActiveUI,SnowManModel	snowman,square_ball,snowshow
+USE_ITEM	User.useItem	index.js:59576	DONE	2	C05	可达	ItemSystemUI,LanghuanMultipUseItemUI,MultipUseItemUI,PartnerScene,RogueItemUI,SceneEvent	Friend,npc,tasknew
+USE_ITEM_ADDITION	User.useItemAddition	index.js:60079	NEEDS-S2	2	C05	可达	HangUpModel	
+USE_SNOW_BALL	User.UseSnowBall	index.js:59632	GEN-READY	2	C05	可达	SnowManModel	snowman,square_ball,snowshow
+ACCEPTCIRCLETASK	User.acceptCircleTask	index.js:59662	NEEDS-S2	3	C02	可达	TaskModel	circle_task,circle_branch,circle_story
+ACCEPT_SCHOOL_TASK	User.acceptSchoolTask	index.js:60051	NEEDS-S2	3	C02	可达		school_growth,schooluniform,sectmanual
+CHANGE_DELEGATE_TASK	User.changeDelegateTask	index.js:59779	GEN-READY	3	C02	可达	EntrustModel,HangTaskUI	change,tasknew,changeface
+CIRCLE_TASK_TASK	User.circleTaskAward	index.js:59780	GEN-READY	3	C02	可达	EntrustModel,HangTaskUI	circle_task,circle_branch,circle_story
+DELEGATE_TASK	User.delegateTask	index.js:59778	GEN-READY	3	C02	可达	EntrustModel,HangTaskUI	tasknew,tasktime
+FINISH_TASK	User.getFinishTaskAward	index.js:59579	IMPL-UNJUDGED	3	C02	可达	TaskModel	tasknew,tasktime
+GETCIRCLETASK	User.getCircleTaskAward	index.js:59663	NEEDS-S2	3	C02	可达	TaskModel	circle_task,circle_branch,circle_story
+GET_CIRCLE_TASK_LIST	User.getCircleTaskList	index.js:59776	GEN-READY	3	C02	可达	EntrustModel	circle_task,tasknew,circle_branch
+GET_SCHOOL_TASK	User.getSchoolTask	index.js:60049	NEEDS-S2	3	C02	可达		school_growth,schooluniform,sectmanual
+GET_TASK	User.acceptTask	index.js:59578	IMPL-UNJUDGED	3	C02	可达	TaskModel	tasknew,tasktime
+HIDE_TASK	User.hideTask	index.js:59789	GEN-READY	3	C02	可达	TaskModel	tasknew,tasktime,illustartion
+ONE_KEY_COMPLETE_SCHOOL_TASK	User.onekeyCompleteSchoolTask	index.js:60057	NEEDS-S2	3	C02	可达		digcell_key,school_growth,schooluniform
+QUICK_FINISH_TASK	User.quickFinishTask	index.js:59777	GEN-READY	3	C02	可达	EntrustModel,HangTaskUI	tasknew,tasktime
+REFRESH_SCHOOL_TASK	User.refreshSchoolTask	index.js:60056	NEEDS-S2	3	C02	可达		school_growth,schooluniform,sectmanual
+ROGUE_ACCEPT_TASK	User.rogueAcceptTask	index.js:60543	GEN-READY	3	C02	可达	TaskModel	tasknew,tasktime,rogue_book
+ROGUE_FINISHTASK_REWARD	User.getRogueFinishTaskAward	index.js:60544	GEN-READY	3	C02	可达	TaskModel	tasknew,tasktime,rogue_book
+SCHOOL_TASK_AWARD	User.schoolTaskAward	index.js:60053	NEEDS-S2	3	C02	可达		school_growth,schooluniform,sectmanual
+SCHOOL_TASK_COMPLETE	User.schoolTaskComplete	index.js:60052	NEEDS-S2	3	C02	可达		school_growth,schooluniform,sectmanual
+SYCN_TASK	User.sycnTask	index.js:59640	IMPL-UNJUDGED	3	C02	可达	TaskModel	tasknew,tasktime
+ACTIVE_TOWER_EVENT	User.activateTowerEvent	index.js:59775	GEN-READY	4	C03	可达	TowerScene	home_plant_cropevent,random_config,gsp_event
+BATTLE_END_REWARD	User.CheckBattleResult	index.js:59589	IMPL-UNJUDGED	4	C03	可达	Local1v1Mgr,NormalRewards	battle_result,diceevent,fight_part
+BYTEDANCE_ENTER_AWARD	User.getEnterAward	index.js:60554	GEN-READY	4	C03·同面板	可达	BytedanceModel,EnterReward,HomeMainUI	
+CHANGEPLACE	User.ChangePlace	index.js:59641	GEN-READY	4	C03·同面板	可达	RankMainUI,RankModel	change,changeface,diceexchange
+CLOSE_NEW_SWEEP_EVENT	User.closeNewSweepTowerByLv	index.js:59774	GEN-READY	4	C03	可达	SweepUI	gsp_event,lh_event,like_event
+DICE_BATTLE_RESULT	User.diceBattleResult	index.js:59842	NEEDS-S2	4	C03	可达		battle_result,dice_blank,dice_scenery
+ENTER_GET_CLIMBLING_EVENT	User.GetClimbingTowerData	index.js:59758	GEN-READY	4	C03	可达		gsp_event,lh_event,like_event
+GET_NEW_SWEEP_EVENT	User.GetNewSweepTowerData	index.js:59773	GEN-READY	4	C03	可达		gsp_event,lh_event,like_event
+GOOD_AND_EVIL_BATTLE_RESULT	User.goodAndEvilBattleResult	index.js:60438	NEEDS-S2	4	C03	可达	RankMgr	battle_result,draw_result,questionResult
+LOOK_SECRET_PANDA_EVENT	User.lookSecretEvent	index.js:59769	GEN-READY	4	C03	可达		lh_panda,gsp_event,lh_event
+NEW_TOWER_SWEEP_EVENT	User.newSweepTower	index.js:59772	GEN-READY	4	C03	可达	SweepUI	gsp_event,lh_event,like_event
+RECEIVE_NOTICE	User.receiveNotice	index.js:60402	GEN-READY	4	C03·同面板	可达	HomeMainUI,SceneEvent	
+REQ_MP_RESULT	User.mulitiNpcBattleResult	index.js:60045	GEN-READY	4	C03	可达	NormalMpRwds	battle_result,npc,draw_result
+REQ_WM_ADV_RWD	User.GetRandomEventAward	index.js:59621	GEN-READY	4	C03	可达	WMapAdvModel	Return_Award,Return_Daily,anniversary_pass_award
+ROGUE_PVE_BATTLE_RESULT	User.roguePveBattleResult	index.js:60579	NEEDS-S2	4	C03	可达	RogueBattleMgr	battle_result,draw_result,questionResult
+ROGUE_PVP_BATTLE_END	User.NewRoguePVPBattleResult	index.js:60503	NEEDS-S2	4	C03	可达	RogueBattleMgr	battle_result,draw_result,questionResult
+SELECT_SECRET_PANDA_EVENT	User.chooseSecretEvent	index.js:59770	GEN-READY	4	C03	可达		lh_panda,gsp_event,lh_event
+SERVER_NPC_BATTLE_END	User.TowerBattleResult	index.js:59768	GEN-READY	4	C03	可达	HomeMainUI,LangHRwds,MPBattleModel,SweepUI,TowerScene	battle_result,server_review,diceevent
+SERVER_ROGUE_NPC_BATTLE_END	User.rogueBattleResult	index.js:60505	NEEDS-S2	4	C03	可达	RogueMpFightMgr	battle_result,server_review,draw_result
+TOWER_BUY_PROP	User.BuyTowerProp	index.js:59761	GEN-READY	4	C03·同面板	可达	HomeMainUI,MysticShopUI	ex_property,propose,RewardProbability
+TOWER_CHOOSE_PANDA_EVENT	User.choosePandaEvent	index.js:59765	GEN-READY	4	C03	可达	HomeMainUI,SweepUI,TowerScene	lh_panda,buff,gsp_event
+TOWER_GET_REWARD_BOX	User.getEventAward	index.js:59767	GEN-READY	4	C03·同面板	可达	HomeMainUI,TowerScene	koicarp_active_box,gsp_event,lh_event
+TOWER_LEAVE_EVENT	User.leaveTower	index.js:59766	GEN-READY	4	C03·同面板	可达	SweepUI	gsp_event,lh_event,like_event
+TOWER_RANDOM_EVENT	User.chanllengeTower	index.js:59763	GEN-READY	4	C03	可达		random_config,like_event,home_plant_cropevent
+USER_LOOKOTHER	User.LookOther	index.js:59508	IMPL-UNJUDGED	4	C03·同面板	可达	RankMainUI,RankModel	
+USER_PVP_OVER	User.NewPVPBattleResult	index.js:59506	NEEDS-S2	4	C03	可达	RankMainUI,RankMgr,RankModel,SceneEvent	battle_result,draw_result,questionResult
+GET_ACHIEVE_DATA	User.getAchieveData	index.js:60581	IMPL-UNJUDGED	5	C17	可达	ACGroupUI,AFrontUI,AchievementModel	achieve_rate,achieve_suit,achieve_list
+GET_ACHIEVE_MARK	User.getAchieveMark		NO-CONTRACT	5	C17	可达		achieve_mark,achieve_group,achieve_list
+RECEIVE_ACHIEVEMENT_REWARD	User.receiveAchievementReward	index.js:60414	GEN-READY	5	C17	可达	OptionalChooseWarn,OptionalTrickPoolUI,TrickLotteryModel,TrickLotteryUI	achieve_group,achieve_list,achieve_mark
+RECEIVE_ACHIEVE_RATE_REWARD	User.receiveAchieveRateReward	index.js:60585	GEN-READY	5	C17	可达	ACGroupUI,AFrontUI,AGGroupUI,AGroupUI,AchievementModel	achieve_rate,adventure_rate,gemgenerate
+RECEIVE_ACHIEVE_REWARD	User.receiveAchieveReward	index.js:60584	GEN-READY	5	C17	可达	ACGroupUI,AFrontUI,AGroupUI,AchievementModel	achieve_rate,achieve_suit,achieve_list
+RECEIVE_ACHIEVE_SUIT_REWARD	User.receiveAchieveSuitReward	index.js:60586	GEN-READY	5	C17	可达	ACGroupUI,AFrontUI,APGroupUI,AchievementModel	achieve_suit,rogue_suit,suit
+ADD_CHILD_FOSTER	User.addChildFoster	index.js:60043	NEEDS-S2	6	C04	可达	ChildPlayMenu	
+ADOPTCHILD	User.adoptChild	index.js:59687	GEN-READY	6	C04	可达	ChildrenModel	
+BEGIN_WEDDING	User.beginWedding	index.js:59651	GEN-READY	6	C04	可达		tasknew
+BIRTHCHILD	User.birthChild	index.js:59678	GEN-READY	6	C04	可达		tasknew
+CHILD_WASH_EVENT	User.childWashProperty	index.js:59680	NEEDS-S2	6	C04	可达	ChildrenModel	ex_property,gsp_event,lh_event
+CHOOSE_GIRL_EVENT	User.ChooseGirl	index.js:59613	GEN-READY	6	C04	可达	BrothelScene,FindGirlModel	activityshop,fishpond,luckymeet
+CHOOSE_SEX	User.chooseSex	index.js:59686	GEN-READY	6	C04·同面板	可达	ChildrenModel	
+DIVORCENPC	User.divorceNpc	index.js:59649	NEEDS-S2	6	C04	可达		elite_npc,mapNpcTalk,npc
+EXILE_CHILD	User.exileChild	index.js:59699	GEN-READY	6	C04	可达		tasknew
+GIVE_CHILD_NAME	User.giveChildName	index.js:59679	NEEDS-S2	6	C04	可达	ChildrenModel	
+INVITE_NPC_GETLIKE	User.getLikeEvent	index.js:60565	GEN-READY	6	C04·同面板	可达	FindGirlModel	like_event,home_plant_cropevent,gsp_event
+INVITE_NPC_OPTION	User.optionLikeEvent	index.js:60566	GEN-READY	6	C04·同面板	可达	FindGirlModel	like_event,npc,elite_npc
+MAKE_LOVE	User.makeLove	index.js:59652	GEN-READY	6	C04	可达		tasknew,make
+MARRY_AWARD	User.marryAward	index.js:59650	GEN-READY	6	C04	可达		tasknew
+MARRY_NPC_EVENT	User.marryNpc	index.js:59648	NEEDS-S2	6	C04	可达		gsp_event,lh_event,like_event
+PROPOSE_NPC	User.proposeNpc	index.js:59642	NEEDS-S2	6	C04	可达		propose,elite_npc,mapNpcTalk
+RESET_CHILD_FOSTER	User.resetChildFoster	index.js:60042	GEN-READY	6	C04	可达	ChildPlayMenu,ChildrenModel	
+UPGRADE_WIFE_LEVEL	User.upgradeWifeLevel	index.js:59799	GEN-READY	6	C04	可达	ShowWifeRoleUI,WifeUpdateModel	Friend_attribute,degree,entrust_level
+USE_WIFE_PROP	User.UserWifeProp	index.js:59800	GEN-READY	6	C04	可达	ShowWifeRoleUI,WifeUpdateModel	Friend_attribute,degree,entrust_level
+WHORING_EVENT	User.Whoring	index.js:59614	GEN-READY	6	C04·同面板	可达	FindGirlModel	gsp_event,lh_event,like_event
+WHORING_GIRL_EVENT	User.GetWhoreData	index.js:59615	GEN-READY	6	C04·同面板	可达	BrothelScene,FindGirlModel	gsp_event,lh_event,like_event
+BEGIN_LIANGONG	User.BeginTraining	index.js:59582	IMPL-UNJUDGED	7	C06	可达	LiangongUI,SchoolLiangongUI	training_lottery,training_reward,training_task
+BEGIN_RECOVER_MP	User.BeginRecoverMP	index.js:59608	GEN-READY	7	C06	可达	RoleControlUI,SkillHealUI,TrainingMpModel,UseBedUI	
+BEGIN_WOOD_TRAINING	User.BeginPlayWooks	index.js:59525	IMPL-UNJUDGED	7	C06	可达	MuzhuangModel	wood,training_lottery,training_reward
+END_DAZUO	User.EndMeditation	index.js:59588	GEN-READY	7	C06	可达	DazuoUI,TrainingMpModel	
+END_LIANGONG	User.EndTraining	index.js:59583	GEN-READY	7	C06	可达	FightBtn,LiangongUI,OnhookQueueUI,SchoolLiangongUI	illustartion,skill_Trick_Drop,skill_tree
+END_RECOVER_MP	User.EndRecoverMP	index.js:59609	GEN-READY	7	C06	可达	ComBgUI,PropertyUI,RoleControlUI,TrainingMpModel	
+END_WOOD_TRAINING	User.EndPlayWooks	index.js:59526	IMPL-UNJUDGED	7	C06	可达	MuzhuangModel	wood,training_lottery,training_reward
+GET_VIGOR	User.getVigor	index.js:59796	GEN-READY	7	C06	可达	TrainingMpModel	
+IMPLANTATION	User.Implantation	index.js:59812	GEN-READY	7	C06·同面板	可达	FightBtn,OnhookQueueUI	
+PAUSE_WOOD_TRAINING	User.changePlayWooksState	index.js:59527	GEN-READY	7	C06	可达	MuzhuangModel	change,wood,training_lottery
+REMOVE_MARTIAL	User.removeMartial	index.js:59813	GEN-READY	7	C06·同面板	可达	FightBtn,OnhookQueueUI	adventure_martial
+SET_ONHOOK_WOOK_STATE	User.setOnHookWookState	index.js:60612	NEEDS-S2	7	C06	可达	HangUpModel	
+START_DAZUO	User.BeginMeditation	index.js:59584	IMPL-UNJUDGED	7	C06	可达	DazuoUI,TrainingMpModel	illustartion,active,activetime
+VIGOR_DAZUO	User.useVigorMeditation	index.js:59797	GEN-READY	7	C06	可达	TrainingMpModel	
+VIGOR_UPGSKILL	User.useVigorUpGradeSkill	index.js:59798	GEN-READY	7	C06	可达		skill_Trick_Drop,skill_tree,skillskin
+GET_GE_HELP_INFO	User.getGeHelpInfo	index.js:60448	GEN-READY	8	C07	可达		helper,activityshop,adventure_all
+GET_GOOD_AND_EVIL_DATA	User.getGoodAndEvilData	index.js:60449	GEN-READY	8	C07	可达		activityshop,adventure_all,exchange
+GET_GOOD_AND_EVIL_NOTE_DATA	User.getGoodAndEvilNoteData	index.js:60436	NEEDS-S2	8	C07	可达		dicegoods
+GET_GOOD_AND_EVIL_NPC_DATA	User.getGoodAndEvilNpcData	index.js:60439	NEEDS-S2	8	C07	可达		dicegoods,elite_npc,mapNpcTalk
+GET_GOOD_AND_EVIL_RANK_DATA	User.getGoodAndEvilRankData	index.js:60446	NEEDS-S2	8	C07	可达		RankAward,ge_rank_reward,rogue_rank
+GET_GOOD_AND_EVIL_RETIRE_DATA	User.getGoodAndEvilRetireData	index.js:60451	GEN-READY	8	C07	可达		retireCareer,activityshop,adventure_all
+GET_GOOD_AND_EVIL_RETIRE_LIST	User.getGoodAndEvilRetireList	index.js:60450	GEN-READY	8	C07	可达		retireCareer,activityshop,adventure_all
+GET_GOOD_AND_EVIL_TASK_DATA	User.getGoodAndEvilTaskData	index.js:60434	NEEDS-S2	8	C07	可达		dicegoods,tasknew,tasktime
+HELP_DONE_TASK	User.helpDoneTask	index.js:60447	GEN-READY	8	C07	可达		tasktime,tasknew,helper
+REFRESH_GOOD_AND_EVIL_NPC_DATA	User.refreshGoodAndEvilNpcData	index.js:60440	NEEDS-S2	8	C07	可达		dicegoods,elite_npc,mapNpcTalk
+REFRESH_GOOD_AND_EVIL_TASK_DATA	User.refreshGoodAndEvilTaskData	index.js:60435	NEEDS-S2	8	C07	可达		dicegoods,tasknew,tasktime
+MPPVE_ACTION	User.beginMultiPVEBattle	index.js:59787	GEN-READY	9	C08	可达	SPMpBtMgr	battle_result,multiLG,FriendAction
+PVE_ACTION	User.beginPVEBattle	index.js:59784	GEN-READY	9	C08	可达	BtScPanelBase,PveSvr1v1Mgr,ReplayPanelMediator	FriendAction,StoryAction,battle_result
+REQ_LANGHUAN_COMBAT	User.enterPVEBattle	index.js:59783	GEN-READY	9	C08	可达	LangHMode,PveSvr1v1Mgr	battle_result,activityshop,equip_uppay
+REQ_ROGUE_PVE_COMBAT	User.enterRoguePVEBattle	index.js:60577	GEN-READY	9	C08	可达	RogueBattleMgr	rogue_hidden,npc,battle_result
+REQ_ROGUE_PVP_BATTLE	User.ChallengeRoguePVP	index.js:60502	GEN-READY	9	C08	可达	RogueBattleMgr	battle_result,challenge_reward
+ROGUE_MPPVE_ACTION	User.beginRogueMultiPVEBattle	index.js:60506	GEN-READY	9	C08	可达	RogueMpFightMgr	battle_result,multiLG,FriendAction
+ROGUE_PVE_ACTION	User.beginRoguePVEBattle	index.js:60578	GEN-READY	9	C08	可达	BtScPanelBase,ReplayPanelMediator,RogueBattleMgr	FriendAction,StoryAction,battle_result
+START_MPPVE_BATTLE	User.startMultiPVEBattle	index.js:59786	GEN-READY	9	C08	可达	SPMpBtMgr	battle_result,multiLG,illustartion
+USER_PVP	User.ChallengePVP	index.js:59505	GEN-READY	9	C08	可达	RankMgr	challenge_reward
+BATCH_RESOLVE_KNACK	User.batchResolveKnack	index.js:60309	NEEDS-S2	10	C09	可达	SkillKnackModel	
+CHANGE_SKILL_KNACK	User.changeSkillKnack	index.js:60307	NEEDS-S2	10	C09	可达	SkillKnackModel	change,changeface,diceexchange
+EQUIP_BATCH_RESOLVE	User.equipBatchResolve	index.js:59654	GEN-READY	10	C09	可达	EquipDecompose	arena_equip,equip_pay,equip_punch
+EQUIP_RESOLVE	User.equipResolve	index.js:59653	GEN-READY	10	C09·同面板	可达	EquipDecompose	arena_equip,equip_pay,equip_punch
+GET_KNACK_LOTTERY	User.getKnackLottery	index.js:60411	GEN-READY	10	C09	可达	OptionalChooseWarn,OptionalTrickPoolUI,TrickLotteryModel,TrickLotteryUI	lottery,lottery_active_reward,training_lottery
+GET_KNACK_LOTTERY_HISTORY	User.getKnackLotteryHistory	index.js:60413	GEN-READY	10	C09	可达	OptionalChooseWarn,OptionalTrickPoolUI,TrickLotteryModel,TrickLotteryUI	lottery,lottery_active_reward,training_lottery
+GET_SKILL_GRASP	User.getSkillGrasp	index.js:60304	NEEDS-S2	10	C09·同面板	可达	SkillKnackModel	
+KNACK_LOTTERY	User.knackLottery	index.js:60412	GEN-READY	10	C09	可达	OptionalChooseWarn,OptionalTrickPoolUI,TrickLotteryModel,TrickLotteryUI	lottery,lottery_active_reward,training_lottery
+RESOLVE_KNACK	User.resolveKnack	index.js:60308	NEEDS-S2	10	C09	可达	SkillKnackModel	
+ROGUE_CHANGE_SKNACK	User.rgChangeSkillKnack	index.js:60539	GEN-READY	10	C09	可达	AdjustGraspUI,AdjustPage_1,MartialAartsUI,RogueRoleModel,RogueSkillUI,SkillGraspUI,SkillTreeSkillItem	change,skillskin,changeface
+SKILL_GRASP	User.skillGrasp	index.js:60303	NEEDS-S2	10	C09·同面板	可达	SkillKnackModel	
+BATCH_SEED_CROP	User.batchSeedCrop	index.js:59848	GEN-READY	11	C10·同面板	可达	PlantLandUI,SowingUI	home_plant_crop,home_plant_cropevent
+CLEAN_DEAD_CROP	User.cleanDeadCrop	index.js:59851	GEN-READY	11	C10	可达		home_plant_crop,home_plant_cropevent
+CROP_CHANGE_STATE	User.changeSate	index.js:59849	GEN-READY	11	C10	可达		change,home_plant_crop,changeface
+DISPOSS_HOME_EVENT	User.dispossHomeEvent	index.js:59860	GEN-READY	11	C10	可达		home_plant_crop,home_plant_exp,home_plant_sale
+EXPEDITE_CROP	User.expediteCrop	index.js:59852	GEN-READY	11	C10	可达		home_plant_crop,home_plant_cropevent
+OBTAINCROP	User.obtainCrop	index.js:59847	GEN-READY	11	C10	可达		home_plant_crop,Friend_attribute,degree
+ONE_KEY_DISPOSS_HOME_EVENT	User.onKeyDispossHomeEvent	index.js:60410	GEN-READY	11	C10	可达	PlantLandUI	home_plant_crop,home_plant_exp,home_plant_sale
+ONE_KEY_OBTAIN_CROP	User.onKeyObtainCrop	index.js:60409	GEN-READY	11	C10	可达	PlantHomeUI,PlantLandUI	home_plant_crop,digcell_key,Friend_attribute
+STEAL_CROP_EVENT	User.stealCrop	index.js:59861	GEN-READY	11	C10	可达		home_plant_crop,steallevel,stealnpc
+ANN_PASS_BUY_GIFT	User.buyAnniversaryPassGift	index.js:60591	NEEDS-S2	12	C11	可达	StoreModel	anniversary_pass_gift,anniversary_pass_award,anniversary_pass_evnet
+ANN_PASS_BUY_LIVENESS	User.buyAnniversaryPassLiveness	index.js:60592	GEN-READY	12	C11	可能已下线	AnniversaryMainUI,AnniversaryModel	anniversary_pass_liveness,pass_liveness,anniversary_pass_award
+ANN_PASS_BUY_UP	User.buyAnniversaryPass	index.js:60588	GEN-READY	12	C11	可达	AnniversaryBuildingUI,AnniversaryMainUI,AnniversaryModel,AnniversaryUpgradeUI	anniversary_pass_award,anniversary_pass_evnet,anniversary_pass_gift
+ANN_PASS_FINISH_TASK	User.receiveAnniversaryPassTaskReward	index.js:60595	GEN-READY	12	C11	可达	AnniversaryMainUI,AnniversaryModel,AnniversaryTaskUI	anniversary_pass_task,anniversary_pass_award,anniversary_pass_evnet
+ANN_PASS_GET_DATA	User.getAnniversaryPassData	index.js:60587	GEN-READY	12	C11	可达	AnniversaryModel,HomeMainUI	anniversary_pass_liveness,pass_liveness,anniversary_pass_award
+ANN_PASS_GET_GIFT_DATA	User.getAnniversaryPassGift	index.js:60590	NEEDS-S2	12	C11	可达	StoreModel	anniversary_pass_gift,anniversary_pass_award,anniversary_pass_evnet
+ANN_PASS_RECEIVE_AWARD	User.receiveAnniversaryPassAward	index.js:60589	GEN-READY	12	C11	可达	AnniversaryBuildingUI,AnniversaryMainUI,AnniversaryModel	anniversary_pass_award,anniversary_pass_evnet,anniversary_pass_gift
+BUTLER_DISPATCH	User.dispatch	index.js:60394	GEN-READY	13	C12	可达	DelegateScene	
+BUY_BUTLER	User.buyHelper	index.js:60397	GEN-READY	13	C12	可达	butlerUI	helper,helperAct
+BUY_BUTLER_VIP	User.buyMonthlyFee	index.js:60398	GEN-READY	13	C12	可达		
+CALL_HELPER_BY_ID	User.callHelperId	index.js:60564	GEN-READY	13	C12	可达	ChooseFollowerUI,DelegateScene	helper,helperAct
+DISPATCH_AWARD	User.dispatchAward	index.js:60395	GEN-READY	13	C12	可达	HomeMainUI,delegateCompleteUI	
+GET_HELPER_CALL_LIST	User.getHelperCallList	index.js:60563	GEN-READY	13	C12	可达		helper,helperAct
+SET_BUTLER	User.setHelper	index.js:60396	GEN-READY	13	C12	可达	HomeMainUI,butlerUI	helper,helperAct
+BUY_UFO_GAME_COIN	User.buyUFOGameCoin	index.js:60255	GEN-READY	14	C13	可达	DollModel,DollUI	gametime
+BUY_UFO_REFRESH_TIMES	User.buyUFORefreshTimes	index.js:60252	GEN-READY	14	C13	可达	DollModel,DollUI	
+GET_UFO_CATCHER_DATA	User.getUFOCatcherData	index.js:60251	GEN-READY	14	C13	可达	DollModel	
+GET_UFO_CATCHER_TASK	User.getUFOCatcherTask	index.js:60249	GEN-READY	14	C13	可达	DollModel	tasknew,tasktime
+REWARD_UFO	User.rewardUFO	index.js:60254	GEN-READY	14	C13	可达	DollModel,DollUI	
+REWARD_UFO_CATCHER_TASK	User.rewardUFOCatcherTask	index.js:60250	GEN-READY	14	C13	可达	DollModel	tasknew,tasktime
+USE_UFO_REFRESH	User.useUFOrefresh	index.js:60253	GEN-READY	14	C13	可达	DollModel,DollUI	
+DOG_BATTLE_RESULT	User.DogBattleResult	index.js:59863	GEN-READY	15	C14	可达		battle_result,diceevent,fight_part
+ENTER_PVEDOG_FIGHT	User.enterDogPVEBattle		NO-CONTRACT	15	C14	可达		battle_result,fightarray
+ENTER_PVE_ROGUE_FIGHT	User.enterRogueMulitiNpcBattle		NO-CONTRACT	15	C14	可达		battle_result,fightarray,elite_npc
+FEED_DOG	User.FeedDog	index.js:59865	GEN-READY	15	C14	可达	DogFeedUI	
+LOOK_DOG_LOG	User.lookDogLog	index.js:59862	GEN-READY	15	C14	可达	HomeLogUI	
+REQ_DOG_PARTNER_END_BATTLE	User.CheckDogPartnerPVEBattleResult	index.js:60615	GEN-READY	15	C14	可达	DogFightSingMgr	battle_result,draw_result,questionResult
+REQ_DOG_PARTNER_PVE_BATTLE	User.ReqDogPartnerBattleInfo	index.js:60614	GEN-READY	15	C14	可达	DogFightSingMgr	battle_result,partnerexp,partnerfashion
+GET_RETURN_GIFT	User.getReturnGift	index.js:60245	GEN-READY	16	C15·同面板	可达	ReturnModel,ReturnUI	servergift,Return_Award,Return_Daily
+GET_RETURN_SEVEN_DAY_DATA	User.getReturnSevenDayData	index.js:60240	GEN-READY	16	C15	可达	HomeActiveToggle,ReturnModel	Return_SevenDay,Return_Award,Return_Daily
+GET_RETURN_TASK_DATA	User.getReturnTaskData	index.js:60241	GEN-READY	16	C15	可达	ReturnModel,ReturnUI	Return_Award,Return_Daily,Return_SevenDay
+GET_SPRING_SEVEN_DAY_DATA	User.getSpringSevenDayData	index.js:60415	NEEDS-S2	16	C15	可达	NewYear23	Return_SevenDay,sevenday,springfestival
+RECEIVE_LIVENESS_AWARD	User.receiveLivenessAward	index.js:60244	GEN-READY	16	C15·同面板	可达	ReturnModel,ReturnUI	anniversary_pass_liveness,pass_liveness
+RECEIVE_RETURN_DAILY_TASK	User.receiveReturnDailyTask	index.js:60243	GEN-READY	16	C15	可达	ReturnModel,ReturnUI	Return_Daily,AutoDailyTask,daily_active_tips
+RECEIVE_RETURN_GIFT_AWARD	User.receiveReturnGiftAward	index.js:60246	GEN-READY	16	C15·同面板	可达	ReturnModel,ReturnUI	servergift,Return_Award,Return_Daily
+RECEIVE_SPRING_ACC_REWARD	User.receiveSpringAccReward	index.js:60417	NEEDS-S2	16	C15·同面板	可达	NewYear23	acc_recharged,springfestival
+REFRESH_RETURN_GIFT_AWARD	User.refreshReturnGiftAward	index.js:60247	GEN-READY	16	C15·同面板	可达	ReturnModel	servergift,Return_Award,Return_Daily
+RETURN_SEVEN_DAYS_AWARDS	User.returnSevenDaysAwards	index.js:60242	GEN-READY	16	C15	可达	ReturnModel,ReturnUI	Return_SevenDay,Return_Award,Return_Daily
+SEVEN_DAYS_AWARDS	User.SevenDaysAwards	index.js:60035	NEEDS-S2	16	C15	可达	sevendays	Return_SevenDay,sevenday
+SPRING_SEVEN_DAYS_AWARDS	User.springSevenDaysAwards	index.js:60416	NEEDS-S2	16	C15	可达	NewYear23	Return_SevenDay,sevenday,springfestival
+BEGIN_DRAGON_ROLLDICE	User.beginDragonRollDice	index.js:60164	GEN-READY	17	C16	可达	GambingUI,GamblingIsland,GamblingModel	Dragon,DragonDialogue,DragonPrize
+BEGIN_ROLLDICE	User.BeginRollDice	index.js:59535	GEN-READY	17	C16	可达	GambingUI,GamblingIsland,GamblingModel	dice_blank,dice_scenery,dice_turntable
+BRING_SPECIAL_AWARD	User.bringSpecialAward	index.js:59706	GEN-READY	17	C16·同面板	可达	SpecialAdventureModel	specialaction
+CALL_DRAGON	User.callDragon	index.js:60168	GEN-READY	17	C16	可达	CopyTeamModel	Dragon,DragonDialogue,DragonPrize
+CHECKSPECIAL	User.checkSpecial	index.js:59704	GEN-READY	17	C16·同面板	可达	ConvstnBoard,MainMenuUI,SpecialAdventureModel,SpecialNpcUI,WarehouseBgUI	checkpoint,specialaction
+EXCHANFE_JETTON	User.ExChangeJetton	index.js:59548	IMPL-UNJUDGED	17	C16·同面板	可达	GambingUI,GamblingIsland,GamblingModel	change,changeface,diceexchange
+GET_DRAGON	User.getDragon	index.js:60167	GEN-READY	17	C16	可达	CopyTeamModel	Dragon,DragonDialogue,DragonPrize
+MAKE_WISH_DRAGON	User.makeWishDragon	index.js:60169	GEN-READY	17	C16	可达	CopyTeamModel	make,Dragon,DragonDialogue
+ROLLDICE_EVENT	User.rollDice	index.js:59705	GEN-READY	17	C16	可达	GambingUI,GamblingIsland,SpecialAdventureModel	diceevent,dice_blank,dice_scenery
+GET_BIG_GROWUP_DATA	User.getBigGrowupData	index.js:59817	NEEDS-S2	18	C18	可达	GrowthModel	
+GET_GROWUP_DATA	User.getGrowupData	index.js:59816	NEEDS-S2	18	C18	可达	GrowthModel	
+GET_RECEIVE_AWARD	User.ReceiveAward	index.js:59818	NEEDS-S2	18	C18	可达	GrowthModel	
+GET_RECEIVE_BIG_AWARD	User.ReceiveBigAward	index.js:59819	NEEDS-S2	18	C18	可达	GrowthModel	
+GFUI_BUY_BIG_GIFT	User.buyBigGiftTime	index.js:60389	GEN-READY	18	C18	可达	GrowthModel	limitgift,servergift
+GFUI_BUY_GIFT	User.buyGiftTime	index.js:60388	GEN-READY	18	C18	可达	GrowthModel	limitgift,servergift
+BUY_SKILL_SKIN_ACTIVE_SHOP	User.buySkillSkinActiveShop	index.js:60570	NEEDS-S2	19	C19	可达	SkinModel	skillskin_shop,skillskin_shop_sale,skillskin
+BUY_SKILL_SKIN_SHOP	User.buySkillSkinShop	index.js:60560	NEEDS-S2	19	C19	可达	SkinModel	skillskin_shop,skillskin_shop_sale,skillskin
+EQUIP_SKILL_SKIN	User.equipSkillSkin	index.js:60561	NEEDS-S2	19	C19·同面板	可达	SkinModel	skillskin,skillskin_shop,skillskin_shop_sale
+GET_SKILL_SKIN_ACTIVE_SHOP	User.getSkillSkinActiveShop	index.js:60569	NEEDS-S2	19	C19	可达	SkinModel	skillskin_shop,skillskin_shop_sale,skillskin
+GET_SKILL_SKIN_SHOP	User.getSkillSkinShop	index.js:60558	NEEDS-S2	19	C19	可达	SkinModel	skillskin_shop,skillskin_shop_sale,skillskin
+REFRESH_SKILL_SKIN_SHOP	User.refreshSkillSkinShop	index.js:60559	NEEDS-S2	19	C19	可达	SkinModel	skillskin_shop,skillskin_shop_sale,skillskin
+REMOVE_SKILL_SKIN	User.removeSkillSkin	index.js:60562	NEEDS-S2	19	C19·同面板	可达	SkinModel	skillskin,skillskin_shop,skillskin_shop_sale
+CHECK_FISHING_REWARDS	User.LookFishAward	index.js:59537	IMPL-UNJUDGED	20	C20	可达	FishingIngUI,FishingModel,MiningIngUI	checkpoint,fishpond,fishscore
+CHECK_HIRE	User.checkHireOnhook	index.js:59688	IMPL-UNJUDGED	20	C20	可达	FishingModel	active,gift_permanent,checkpoint
+END_FISHING	User.EndFish	index.js:59536	IMPL-UNJUDGED	20	C20	可达	FishingIngUI,FishingModel,MiningIngUI	fishpond,fishscore
+HIRE_NPC	User.hireNpcOnhook	index.js:59689	GEN-READY	20	C20	可达	FishingIngUI,FishingModel,MiningIngUI	elite_npc,mapNpcTalk,npc
+START_FISHING	User.BeginFish	index.js:59534	IMPL-UNJUDGED	20	C20	可达	FishingIngUI,FishingModel,MiningIngUI	fishpond,fishscore,illustartion
+STOP_BREAK_LIST	User.stopBreaklist	index.js:60123	GEN-READY	20	C20·同面板	可达	BreakEndUI,BrothelUI,FishingBeginUI,FishingEndUI,FishingIngUI,LiangongUI,MiningBeginUI,MiningEndUI,MiningIngUI,MuzhuangBeginUI,MuzhuangEndUI,MuzhuangIngUI,ONhookBgUI,ShowWifeRoleUI	
+BEGINE_MAKE_MEDICINE	User.beginMakeMedicine	index.js:59712	GEN-READY	21	C21	可达	ForgingSystemUI,RecastModel	make
+BEGIN_MAKE_QUIP	User.beginMake	index.js:59693	GEN-READY	21	C21	可达	ForgingSystemUI,RecastModel	make
+CHECK_LIVE	User.checkLive	index.js:59690	GEN-READY	21	C21·同面板	可达	MainMenuUI,RecastModel	checkpoint,anniversary_pass_liveness,pass_liveness
+END_MAKE_MEDICINE	User.endMakeMedicine	index.js:59713	GEN-READY	21	C21	可达	ForgingSystemUI,RecastModel	make
+END_MAKE_QUIP	User.endMake	index.js:59694	GEN-READY	21	C21	可达	ForgingSystemUI,RecastModel	make,arena_equip
+BUY_ACTIVITY_NUM	User.buyActivityNum	index.js:59815	GEN-READY	22	C22	可达	HalloweenModel	activityshop
+BUY_INVITATIONCARD	User.buyInvitationCard	index.js:59805	NEEDS-S2	22	C22·同面板	可达	HalloweenModel	invitation,dicecard,dicecardshow
+CAN_BUYACTIVITY_NUM	User.canBuyActivityNum	index.js:59814	GEN-READY	22	C22	可达	HalloweenModel	activityshop
+ENTER_NEXT_FLOOR	User.enterNextFloor	index.js:59807	GEN-READY	22	C22	可达	HalloweenModel	rogue_floorbuff
+GET_TREASURE_AWARD	User.treasureAward	index.js:59808	GEN-READY	22	C22	可达	HalloweenModel	treasure_map,beachtreasure_reward,beachtreasure_task
+GET_TREASURE_FLOOR	User.getTreasureFloor	index.js:59806	NEEDS-S2	22	C22·同面板	可达	HalloweenModel	treasure_map,rogue_floorbuff,beachtreasure_reward
+PASS_CARD_DATA	User.passCardData	index.js:59803	NEEDS-S2	22	C22·同面板	可达	HalloweenModel	dicecard,dicecardshow
+PASS_CARD_REWARD	User.passCardAward	index.js:59804	NEEDS-S2	22	C22·同面板	可达	HalloweenModel	dicecard,dicecardshow
+EXCHANGE_HLEX_CHANGEITEM	User.exchangeHlexchangeItem	index.js:60156	GEN-READY	23	C23	可能已下线	HalloweenShopModel	hlexchange,brew_exchange,exchange
+GET_CHANGE_SHOP	User.getChangeShop	index.js:59695	IMPL-UNJUDGED	23	C23	可达	ExchangeMainUI,ExchangeModel	change,shop_entrance,activityshop
+GET_HLEX_CHANGEITEMDATA	User.getHlexchangeItemData	index.js:60155	GEN-READY	23	C23	可能已下线	HalloweenShopModel	hlexchange
+GET_HLEX_CHANGESHOP	User.getHlexchangeShop	index.js:60154	GEN-READY	23	C23	可能已下线	HalloweenShopModel	hlexchange,shop_entrance,activityshop
+GET_FLIP_CARD	User.getFlipCard	index.js:60202	NEEDS-S2	24	C24·同面板	可达	HomeActiveToggle	dicecard,dicecardshow
+GET_MASTER_REWARD_LIST	User.getMasterRewardList	index.js:60229	NEEDS-S2	24	C24·同面板	可达	HomeActiveToggle	master,master_book
+GET_PUPIL_REWARD_LIST	User.getPupilRewardList	index.js:60227	NEEDS-S2	24	C24·同面板	可达	HomeActiveToggle	
+GET_SUPPORT_PREPARE_CAMP	User.getSchoolSupportPrePareCamp	index.js:60498	GEN-READY	24	C24	可达	WarmUpModel	prepare_task,prepare_reward_level,school_growth
+JOIN_PREPARE_CAMP	User.joinSchoolPrePareCamp	index.js:60464	GEN-READY	24	C24	可达	ConfirmSSUI,HomeActiveToggle,SelectSupportUI,WarmUpModel	prepare_task,prepare_reward_level,school_growth
+SUBMIT_JIGSAW_PREPARE_ITEM	User.submitJigsawPrePareItem	index.js:60602	NEEDS-S2	24	C24	可达	JigsawModel	prepare_reward_level,prepare_task,anniversary_jigsaw_award
+SUPPORT_PREPARE_CAMP	User.joinSchoolSupportPrePareCamp	index.js:60497	GEN-READY	24	C24	可达	ConfirmSSUI,HomeActiveToggle,SelectSupportUI,WarmUpModel	prepare_task,prepare_reward_level,school_growth
+BIND_RECUIT_CODE	User.bindingRecuitCode	index.js:60237	NEEDS-S2	25	C25	可达	Recruit,RecruitModel	
+CREATE_RECUIT_CODE	User.createRecuitCode	index.js:60236	NEEDS-S2	25	C25	可达	Recruit,RecruitModel	
+GET_RECUIT_MESSAGE	User.getRecuit	index.js:60235	NEEDS-S2	25	C25·同面板	可达	HomeActiveToggle,RecruitModel	
+RECEIVE_BIND_RECUITAWARD	User.receiveBindingRecuitAward	index.js:60239	GEN-READY	25	C25	可达	RecruitList,RecruitModel	
+RECEIVE_RECUIT_AWARD	User.receiveRecuitAward	index.js:60238	GEN-READY	25	C25·同面板	可达	RecruitModel,inviteeItem	
+CHECK_LARGE_EXTRA	User.checkLargeExtra	index.js:60036	NEEDS-S2	26	C26	可达	TurntableBase	checkpoint
+DICE_CHECKEXTRA_EVENT	User.diceCheckLargeExtra	index.js:59829	NEEDS-S2	26	C26	可达	MonolopTurntable	diceevent,dice_blank,dice_scenery
+GET_LARGE_EXTRA	User.getLargeExtra	index.js:60037	NEEDS-S2	26	C26	可达	BaozouTurntable,ChatTurntable	
+BUY_HOUSE_DATA	User.BuyHouseShop	index.js:59677	GEN-READY	27	C27·同面板	可能已下线	HouseAdventModel,HouseShopBgUI,HouseShopUI,SaleShopQiUI,WedHouseScene	house_shop,house,house_adventure
+CYCLE_LIFE	User.cycleLife	index.js:59702	IMPL-UNJUDGED	27	C27	可达	ChooseStoryUI,RebirthModel,WedHouseScene	moonstep_active_cycle
+GET_SPECIAL_AWARD	User.getSpecialAward	index.js:59675	GEN-READY	27	C27·同面板	可达	HouseAdventModel,WedHouseScene	specialaction
+IS_CYCLE_LIFE	User.isCycleLife	index.js:60571	IMPL-UNJUDGED	27	C27	可达	ChooseStoryUI,RebirthModel,WedHouseScene	moonstep_active_cycle
+SPECIAL_CYCLE_LIFE	User.specialCycleLife		IMPL-UNJUDGED	27	C27	可达		moonstep_active_cycle,specialaction
+STORY_EXPERIENCE	User.storyExperience	index.js:60572	IMPL-UNJUDGED	27	C27·同面板	可达	ChooseStoryUI,RebirthModel	StoryChapter,circle_story,experience
+BUY_DG_CHALLENGE	User.BuyChallengeCount	index.js:59604	GEN-READY	28	C28·同面板	可达	CheckBoxUI,InstDungeonModel	challenge_reward
+END_DUNGEON_ADVENTURE	User.LeaveCopy	index.js:59605	GEN-READY	28	C28	可达	InstDungeonModel	Return_Award,Return_Daily,anniversary_pass_award
+ENTER_DUNGEON	User.EneterCopy	index.js:59603	GEN-READY	28	C28	可达	InstDungeonModel	copybook,copycollection,copyconstant
+GET_DUNGEON_INFO	User.getCopyData	index.js:59602	GEN-READY	28	C28·同面板	可达	InstDungeonModel,InstEntrUI	copybook,copycollection,copyconstant
+SWEEP_DUNGEON	User.sweepCopy	index.js:59666	GEN-READY	28	C28	可达	InstDungeonModel	Return_Award,Return_Daily,anniversary_pass_award
+FIND_OTHER_HOME	User.findOhter	index.js:59858	GEN-READY	29	C29	可达		
+HOME_SPECIAL_AWARD	User.homeSpeicalAward	index.js:59855	GEN-READY	29	C29·同面板	可达	SearchHomeUI	specialaction
+OTHER_PLAYER_HOME	User.findOHomes	index.js:59857	GEN-READY	29	C29	可达	PlantHomeUI,SearchHomeUI	ai_player,player_title,player_title_trigger
+RECOMMEND_ONESELF_HOME	User.recommendOHomes	index.js:59856	GEN-READY	29	C29	可达	PlantHomeUI,SearchHomeUI	recommend,home_plant_cropevent
+GET_BACK_SHOP	User.getBackShop	index.js:59854	GEN-READY	30	C30	可达		diceshop,house_shop,lh_shop
+GET_FASHION_SHOP	User.getFasionShop	index.js:59801	GEN-READY	30	C30	可达	WifeUpdateModel	partnerfashionshop,shop_entrance,activityshop
+WEAR_FASHION	User.wearFasion	index.js:59802	GEN-READY	30	C30	可达	PartnerDetailUI,WedHouseScene,WifeCoatCellRender,WifeUpdateModel	fashionall,partnerfashion,partnerfashionshop
+GET_CREATE_INFO	User.getCRAInfo	index.js:59509	IMPL-UNJUDGED	31	C31	可达	ChangeBirthModel,CreateRoleUI	
+GET_CREATE_ROLE_ACT	User.getCreateRoleActivity	index.js:60114	GEN-READY	31	C31	可达	ChangeBirthModel	creat_role,Friend_act,helperAct
+RESET_ROLE	User.resetRole	index.js:60115	GEN-READY	31	C31	可达	BetterIdConfirmUI,ChangeBirthModel,ChangeIdUI	creat_role
+GET_FURNACE_DATA	User.getSpringRefiningData	index.js:60418	NEEDS-S2	32	C32	可达		springfestival
+PUT_REFINING_ITEM_FURNACE	User.putSpringRefiningItem	index.js:60420	NEEDS-S2	32	C32	可达		springfestival
+START_REFINING_FURNACE	User.startSpringRefiningData	index.js:60419	NEEDS-S2	32	C32	可达		illustartion,springfestival
+GET_SKILL_TRICK_EXCHANGE_DATA	User.getSkillTrickExchangeData	index.js:60406	NEEDS-S2	33	C33	可达	TrickExModel	skill_Trick,skill_Trick_Drop,skill_Trick_Lotterymachine
+REFRESH_SKILL_TRICK_EXCHANGE_DATA	User.refreshSkillTrickExchangeData	index.js:60407	NEEDS-S2	33	C33	可达	TrickExModel	skill_Trick,skill_Trick_Drop,skill_Trick_Lotterymachine
+SKILL_TRICK_EXCHANGE_INDEX	User.skillTrickExchangeIndex	index.js:60408	NEEDS-S2	33	C33	可达	TrickExModel	skill_Trick,skill_Trick_Drop,skill_Trick_Lotterymachine
+GET_DROP_AWARD	User.getDropAward	index.js:60268	GEN-READY	34	C34·同面板	可达	ArenaPage_1	drop,skill_Trick_Drop,droptye_random
+GET_WULIN_ARENA_DATA	User.getwulinArenaData	index.js:60266	GEN-READY	34	C34·同面板	可达	ArenaTeamInfoUI,ViewPage,WuLinAssemblyMgr	arena_equip,wulintreasure_reward,wulintreasure_task
+JOIN_CHATPK_SERVER	User.jionChatPkServer	index.js:59886	GEN-READY	34	C34	可达	ChatVSFightModel	server_review,Servernumber,servergift
+JOIN_WULIN_PK_SERVER	User.jionWuLinPkServer	index.js:60264	GEN-READY	34	C34	可达	ArenaPage_1,ArenaPage_2,HostChatBoard,TeamBtnList,ViewPage,WuLinAssemblyMgr	server_review,Servernumber,servergift
+UPLOAD_PLAYER_ARENA_DATA	User.uploadPlayerArenaData	index.js:60267	GEN-READY	34	C34·同面板	可达	AdjustBgUI,ViewPage,WuLinAssemblyMgr	arena_equip,ai_player,player_title
+WULIN_ASSEMBLY_APPLY_REQ	User.wuLinAssemblyApplyReq	index.js:60263	GEN-READY	34	C34	可达	WuLinAssemblyModel	wulintreasure_reward,wulintreasure_task
+ADD_BREAK_QUEUE	User.addBreakQueue	index.js:60127	GEN-READY	35	C35	可达		
+REMOVE_BREAK_QUEUE	User.removeBreakQueue	index.js:60126	GEN-READY	35	C35	可达		
+ADD_EQUIP_LOCK	User.addEquipLock	index.js:60133	GEN-READY	36	C36	可达	ItemSystemUI	arena_equip,Tianjilock,Tianjilockevent
+DELETE_EQUIP_LOCK	User.delEquipLock	index.js:60134	GEN-READY	36	C36	可达	ItemSystemUI	arena_equip,Tianjilock,Tianjilockevent
+ANN_PASS_CHOOS_ROGUE	User.chooseAnniversaryPassRg	index.js:60594	GEN-READY	37	C37	可达	AnniversaryModel	anniversary_pass_award,anniversary_pass_evnet,anniversary_pass_gift
+ANN_PASS_START_ROGUE	User.startAnniversaryPassRg	index.js:60593	GEN-READY	37	C37	可达	AnniversaryModel	anniversary_pass_award,anniversary_pass_evnet,anniversary_pass_gift
+BATCH_BREAK_BY_GOLD	User.onBatchBreakByGold	index.js:60129	GEN-READY	38	C38	可达		goldlottery
+BEGIN_HOOK_BREAK_LIST	User.beginHookBreakList	index.js:60121	GEN-READY	38	C38	可达		
+BEGINCAST	User.beginCast	index.js:59691	GEN-READY	39	C39	可达	ForgingSystemUI,RecastModel	castlejumpingfun_reward,castlejumpingfun_task
+END_CAST	User.endCast	index.js:59692	GEN-READY	39	C39	可达	ForgingSystemUI,RecastModel	castlejumpingfun_reward,castlejumpingfun_task
+BEGINSAVE_NPC	User.BeginSaveNpc	index.js:59598	IMPL-UNJUDGED	40	C40	可达	NpcDeadModel	elite_npc,npc,activityshop
+END_SAVE_NPC	User.EndSaveNpc	index.js:59599	IMPL-UNJUDGED	40	C40	可达	NpcDeadModel	elite_npc,npc,activityshop
+KILL_NPC	User.killNpc	index.js:59596	IMPL-UNJUDGED	40	C40·同面板	可达	NpcDeadModel	elite_npc,npc,activityshop
+BEGIN_PLAY_GAME	User.beginPlayGame	index.js:59681	IMPL-UNJUDGED	41	C41	可达	ChildrenModel	gametime
+END_PLAY_GAME	User.endPlayGame	index.js:59682	GEN-READY	41	C41	可达	ChildrenModel	gametime
+BUY_COPY_BOOK_GIFT	User.buyCopyBookGift	index.js:60556	NEEDS-S2	42	C42	可达	SwordsManModel	copybook,master_book,rogue_book
+GET_COPY_BOOK_DATA	User.getCopyBookData	index.js:60555	NEEDS-S2	42	C42·同面板	可达	SwordsManModel	copybook,master_book,rogue_book
+REWARD_BOOK_GIFT	User.receiveCopyBookGiftAward	index.js:60557	NEEDS-S2	42	C42	可达	SwordsManModel	copybook,master_book,rogue_book
+BUY_SPRING_GIFT_PERMANENT	User.buySpringGiftPermanent	index.js:60430	NEEDS-S2	43	C43	可能已下线	FireModel	gift_permanent,springsword_gift,limitgift
+GET_SPRING_CELEBRATE_DATA	User.getSpringCelebrateData	index.js:60422	NEEDS-S2	43	C43·同面板	可达	FireModel	springfestival
+GET_SPRING_CHALLENGE_DATA	User.getSpringChallengeData	index.js:60425	NEEDS-S2	43	C43·同面板	可达	FireModel	challenge_reward,springfestival
+GET_SPRING_GIFT_PERMANENT	User.getSpringGiftPermanent	index.js:60429	NEEDS-S2	43	C43	可能已下线	FireModel	gift_permanent,springsword_gift,limitgift
+LIGHT_SPRING_SPARK	User.lightSpringSpark	index.js:60424	NEEDS-S2	43	C43·同面板	可达	FireModel	springfestival
+PUT_SPRING_SPARK	User.putSpringSpark	index.js:60423	NEEDS-S2	43	C43·同面板	可达	FireModel	springfestival
+RECEIVE_SPRING_CHALLENGE	User.receiveSpringChallenge	index.js:60426	NEEDS-S2	43	C43·同面板	可达	FireModel	challenge_reward,springfestival
+CHOOSE_USEITEM_AWARD	User.chooseUsedItemAward	index.js:59656	GEN-READY	44	C44	可达	ItemSystemUI,RogueItemUI	
+GET_USEITEM_AWARD	User.getUsedItemAward	index.js:59655	GEN-READY	44	C44	可达		
+CREATE_POST	User.ReqReview	index.js:59549	NEEDS-S2	45	C45	可达		server_review
+GET_SCHOOL_POSTS	User.GetSchoolReview	index.js:59551	IMPL-UNJUDGED	45	C45	可达		school_growth,server_review,schooluniform
+DICE_BUY_PLACE_GOODS	User.diceBuyPlaceGoods	index.js:60261	NEEDS-S2	46	C46	可达		dicegoods,dice_blank,dice_scenery
+DICE_SELL_PLACE_GOODS	User.diceSellPlaceGoods	index.js:60262	NEEDS-S2	46	C46	可达		dicegoods,dice_blank,dice_scenery
+CHECK_BREAK	User.OnCheckBreak	index.js:59510	IMPL-UNJUDGED	47	C47·同面板	可达	HangUpModel	checkpoint
+END_DOUBLE_TRAINING	User.endDoubleTraining	index.js:59564	NEEDS-S2	47	C47	可达	HangUpModel	training_lottery,training_reward,training_task
+REQ_DOUBLE_BR	User.DoublePractice	index.js:59512	NEEDS-S2	47	C47·同面板	可达	HangUpModel	
+USER_DOUBLE_TRAINING	User.doubleTraining	index.js:59563	NEEDS-S2	47	C47	可达	HangUpModel	training_lottery,training_reward,training_task
+USER_ONHOOK_BREAK	User.OnHookBreak	index.js:59496	IMPL-UNJUDGED	47	C47·同面板	可达	HangUpModel	
+END_EAT_BY_TABLE	User.endEatByTable	index.js:60150	NEEDS-S2	48	C48	可达		tableconfig
+START_EAT_BY_TABLE	User.startEatByTable	index.js:60149	NEEDS-S2	48	C48	可达		illustartion,tableconfig
+END_ROGUE_EXPLORE	User.endRogueExplore	index.js:60509	NEEDS-S2	49	C49	可达		mapExplore
+START_ROGUE_EXPLORE	User.startRogueExplore	index.js:60508	NEEDS-S2	49	C49	可达		mapExplore,illustartion
+ENTER_OTHER_HOME	User.getFriendHomeList	index.js:59859	GEN-READY	50	C50	可达	LandUI,PlantHomeUI,SearchHomeUI	home_plant_crop,home_plant_exp,home_plant_sale
+GETHOME_LIST	User.getHomeList	index.js:59845	GEN-READY	50	C50	可达	LandUI,PlantHomeUI	home_plant_crop,home_plant_exp,home_plant_sale
+RECLAIM_LAND	User.reclaimLand	index.js:59850	GEN-READY	50	C50·同面板	可达	LandUI	
+EUIQP_SUITS_UPGRADE	User.EquipSuitsUpgrade	index.js:60201	GEN-READY	51	C51	可达	UpgradeEquipLayer,UpgradeEquipModel,UpgradePackageEquipLayer	arena_equip,equip_pay,equip_punch
+REQ_EQUIP_UPGRADE	User.equipUpgrade	index.js:60046	GEN-READY	51	C51	可达	UpgradeEquipLayer,UpgradeEquipModel,UpgradePackageEquipLayer	arena_equip,equip_pay,equip_punch
+EXCHANGE_SPRING_SHOP	User.exchangeSpringShop	index.js:60428	NEEDS-S2	52	C52	可达	FireModel	brew_exchange,exchange,firework_exchange
+GET_SPRING_EXCHANGE_SHOP	User.getSpringExchangeShop	index.js:60427	NEEDS-S2	52	C52	可达	FireModel	brew_exchange,exchange,firework_exchange
+GET_ADVANCED_TASKS_DATA	User.getAdvancedTasksData	index.js:60482	NEEDS-S2	53	C53·同面板	可达	AdvancedTaskModel	
+GET_ADVANCED_TASKS_TIP	User.getAdvancedTasksTip	index.js:60487	NEEDS-S2	53	C53	可达	AdvancedTaskModel	
+RECEIVE_ADVANCED_TASK	User.receiveAdvancedTask	index.js:60483	NEEDS-S2	53	C53·同面板	可达	AdvancedTaskModel	tasknew,tasktime
+RECEIVE_ADVANCED_TASK_REWARD	User.receiveAdvancedTaskReward	index.js:60484	NEEDS-S2	53	C53·同面板	可达	AdvancedTaskModel	tasknew,tasktime
+SET_ADVANCED_TASKS_TIP	User.setAdvancedTasksTip	index.js:60485	NEEDS-S2	53	C53	可达	AdvancedTaskModel	
+GET_ALL_ACTIVITY	User.getAllActivity	index.js:60248	IMPL-UNJUDGED	54	C54	可达	HomeActiveModel	activityshop
+GET_EVERYDAY_ACTIVE	User.getActivityCounts	index.js:59716	IMPL-UNJUDGED	54	C54	可达	HomeActiveModel	activetime,activityshop,active
+REQ_AWARD_RECHARDED	User.receiveAccRechargAward	index.js:60311	GEN-READY	54	C54·同面板	可达	HomeActiveModel	acc_recharged
+REQ_SEVENREWARD_EVENT	User.getSevenTaskAward	index.js:59623	NEEDS-S2	54	C54·同面板	可达	HomeActiveModel	Return_SevenDay,gsp_event,lh_event
+REQ_SEVENTASK_EVENT	User.getSevenTaskList	index.js:59622	IMPL-UNJUDGED	54	C54·同面板	可达	HomeActiveModel	Return_SevenDay,gsp_event,lh_event
+FINS_FRIENDID	User.FindFriendByID	index.js:59600	IMPL-UNJUDGED	55	C55·同面板	可达	SwornModel	
+GET_BREAK_FRIENDLIST	User.GetOnHookFriendLis	index.js:59511	NEEDS-S2	55	C55	可达	HangUpModel	
+SET_CHAT_RED_DATA	User.setChatRedData	index.js:60605	NEEDS-S2	55	C55·同面板	可达	SwornModel	
+SET_PLAYER_CARD_MOUTS_SYCN	User.setPlayerCardMoutsSycn	index.js:60604	NEEDS-S2	55	C55·同面板	可达	SwornModel	ai_player,player_title,player_title_trigger
+SET_PLAYER_CARD_TYPE	User.setPlayerCardType	index.js:60603	NEEDS-S2	55	C55·同面板	可达	SwornModel	ai_player,player_title,player_title_trigger
+USER_ANSWERFRIEND	User.AnswerFriend	index.js:59499	NEEDS-S2	55	C55·同面板	可达	SwornModel	
+USER_APPLAYFRIEND	User.ApplyFriend	index.js:59498	IMPL-UNJUDGED	55	C55·同面板	可达	SwornModel	
+USER_FIND_FRIEND	User.FindFriend	index.js:59500	IMPL-UNJUDGED	55	C55·同面板	可达	SwornModel	
+USER_FRIENDLIST	User.FriendList	index.js:59497	IMPL-UNJUDGED	55	C55	可达	SwornModel	
+USER_FRIENDREGISTER	User.FriendRegister	index.js:59501	NEEDS-S2	55	C55·同面板	可达	GuanGongUI1,SwornModel	
+USER_FRIEND_DELETE	User.FriendDelete	index.js:59502	IMPL-UNJUDGED	55	C55·同面板	可达	SwornModel	
+GET_CUSTOM_AI	User.getChatPkAiSet	index.js:60112	NEEDS-S2	56	C56	可达	CustomAIModel	
+SAVE_CUSTOM_AI	User.setChatPkAiSet	index.js:60111	NEEDS-S2	56	C56	可达	CustomAIModel	
+SET_CHAT_PK_OPTION	User.setChatPkOption	index.js:60113	NEEDS-S2	56	C56·同面板	可达	CustomAIModel	optional_gift,yuanbao_optional_gift
+GET_DOU_YIN_OPENID	User.getDouYinOpenID	index.js:60165	GEN-READY	57	C57	可达	ServerListModel	entrust_open
+GET_WX_XYX_OPENID	User.getWxXyxOpenID	index.js:60166	GEN-READY	57	C57	可达	ServerListModel	entrust_open
+REQ_SERVER_LIST	User.GetServerList	index.js:59629	IMPL-UNJUDGED	57	C57·同面板	可达	ServerListModel,SvrSelectView	server_review,Servernumber,servergift
+GET_GMGIVE_ITEM	User.GetGMGiveItem	index.js:59524	GEN-READY	58	C58	可达	NetworkModel,OnlineRewardUI	title
+GET_GMGIVE_ITEM_LIST	User.getGMGiveItemList	index.js:59523	GEN-READY	58	C58	可达	NetworkModel,OnlineRewardUI	title
+GET_GOLD_CONSUME_REWARD_DATA	User.getGoldConsumedRewardData	index.js:60404	NEEDS-S2	59	C59	可达	AddCostUI	goldlottery
+RECEIVE_GOLD_CONSUME_REWARD	User.receiveGoldConsumedReward	index.js:60405	NEEDS-S2	59	C59	可达	AddCostUI	goldlottery
+GET_HOUSE_SHOP_DATA	User.GetHouseShopData	index.js:59676	GEN-READY	60	C60	可能已下线	HouseAdventModel,WedHouseScene	house_shop,shop_entrance,house
+HOUSE_SPECIAL	User.houseSpecial	index.js:59674	GEN-READY	60	C60·同面板	可达	HouseAdventModel	house,house_adventure,house_shop
+TOWER_SPECIAL_SHOP	User.GetTowerSpecialShop	index.js:59760	GEN-READY	60	C60	可达		shop_entrance,activityshop,diceshop
+GET_JIGSAW_DATA	User.getjigsawData	index.js:60596	NEEDS-S2	61	C61	可达	JigsawModel	anniversary_jigsaw_award,anniversary_jigsaw_cell,anniversary_jigsaw_task
+GET_JIGSAW_TASK_DATA	User.getjigsawTaskData	index.js:60599	NEEDS-S2	61	C61	可达	JigsawModel	anniversary_jigsaw_task,anniversary_jigsaw_award,anniversary_jigsaw_cell
+RECEIVE_JIGSAW_AWARD	User.receiveJigsawAward	index.js:60600	NEEDS-S2	61	C61·同面板	可达	JigsawModel	anniversary_jigsaw_award,anniversary_jigsaw_cell,anniversary_jigsaw_task
+RECEIVE_JIGSAW_TASK_AWARD	User.receiveJigsawTaskAward	index.js:60601	NEEDS-S2	61	C61·同面板	可达	JigsawModel	anniversary_jigsaw_task,anniversary_jigsaw_award,anniversary_jigsaw_cell
+GET_CRL_ACTIVE_DATA	User.getCRLActivityData	index.js:59721	NEEDS-S2	62	C62·同面板	可达	AutumnModel	activetime,activityshop
+GET_MA_ACTIVITY	User.getMAActivity	index.js:60383	GEN-READY	62	C62	可达	AutumnModel	activityshop
+REWARD_MA_ACTIVITY	User.rewardMAActivity	index.js:60385	GEN-READY	62	C62	可达	AutumnFestivalUI,AutumnModel	activityshop
+SUBMIT_NUM_MA	User.submitNumMA	index.js:60384	GEN-READY	62	C62·同面板	可达	AutumnFestivalUI,AutumnModel	
+GET_MP_ULTSKILLS	User.getMultiPVESkill	index.js:59791	GEN-READY	63	C63	可达	MPBattleUIBase,RogueMPBattleUI,SPMpBtMgr	multiLG,skillskin,multiwood
+GET_TEAM_ULTSKILLS	User.getTeamSkill	index.js:59869	GEN-READY	63	C63	可达	GroupMPBtMgr,MPBattleUIBase,RogueMPBattleUI	skillskin,Friend_skill,fight_skill
+GET_ACTIVITY	User.getActivity	index.js:59707	GEN-READY	64	C64·同面板	可达	HolidayActiveMoel	activityshop
+GET_ACTIVITY_AWARD	User.getActivityAward	index.js:59708	GEN-READY	64	C64·同面板	可达	HolidayActiveMoel	activityshop
+GET_ACTIVITY_RANK	User.getActivityRank	index.js:59710	NEEDS-S2	64	C64·同面板	可达	HolidayActiveMoel,MeihuaRank	RankAward,ge_rank_reward,rogue_rank
+GET_PILE_GAME_DATA	User.getPileGameData	index.js:60607	GEN-READY	64	C64	可达	HolidayActiveMoel,SceneEvent	lh_pile,gametime
+PILE_GAME_AWARD	User.pileGameAward	index.js:60608	GEN-READY	64	C64	可达	HolidayActiveMoel,MeihuaPileUI,YoungMeihuaUI	lh_pile,gametime
+SMALL_GAME_AWARD	User.smallGameAward	index.js:59709	GEN-READY	64	C64·同面板	可达	HolidayActiveMoel,MeihuaPileUI,YoungMeihuaUI	gametime
+GET_OPEN_ACTIVE	User.getOpenActive	index.js:59880	GEN-READY	65	C65·同面板	可达	WishTreeModel	entrust_open,activetime
+GET_PRAY_SIGN_ACTIVR	User.getPraySignActive	index.js:59882	GEN-READY	65	C65	可达	WishTreeModel	active_signup,SignIn,activetime
+GET_PRAY_SIGN_AWARD	User.getPraySignAward	index.js:59883	GEN-READY	65	C65	可达	WishTreeModel	SignIn,active_signup,signvow
+GET_SIGN_AWARD	User.getSignAward	index.js:59881	GEN-READY	65	C65·同面板	可达	WishTreeModel	SignIn,active_signup,signvow
+GET_TEAM_FIGHTER_INFO	User.getTeamFighterInfo	index.js:59870	GEN-READY	66	C66	可达	GroupMPBtMgr,MPBattleUIBase,RogueMPBattleUI	
+REQ_MPPVE_FIGHTER_INFO	User.getFighterInfo	index.js:59794	GEN-READY	66	C66	可达	MPBattleUIBase,RogueMPBattleUI,SPMpBtMgr	
+GET_TREE_PLANTING	User.getTreePlanting	index.js:60314	NEEDS-S2	67	C67	可达	PlantTreeModel	planting_active,Friend_tree,skill_tree
+PLANT_TREE	User.plantTree	index.js:60315	NEEDS-S2	67	C67	可达	PlantTreeModel	Friend_tree,skill_tree,planting_active
+TENDING_TREES	User.tendingTrees	index.js:60316	NEEDS-S2	67	C67·同面板	可达	PlantTreeModel	
+TREES_RECEIVE_REWARD	User.treesReceiveReward	index.js:60317	NEEDS-S2	67	C67·同面板	可达	PlantTreeModel	
+GOLD_BREAK_ALL_SKILL	User.goldBreakAllSkill	index.js:60124	GEN-READY	68	C68	可达	BreakQueueUI,BreakUI	goldlottery
+GOLD_BREAK_CUR_SKILL	User.goldBreakCurrentSkill	index.js:60125	GEN-READY	68	C68	可达	BreakQueueUI,BreakUI	goldlottery
+REFRESH_HOOK_BREAK_LIST	User.getHookBreakList	index.js:60128	GEN-READY	68	C68·同面板	可达	BreakQueueUI,BreakUI	
+LANGH_MP_REVIVE	User.reviveMulti	index.js:59795	GEN-READY	69	C69	可达	LangHMpMgr,SPLangHPanel,TowerMPBattleUI	multiLG,multiwood
+LANGH_REVIVE	User.revive	index.js:59790	GEN-READY	69	C69	可达	BtScPanelBase,LangHSingleMgr,ReplayPanelMediator,SPLangHPanel,TowerMPBattleUI	
+MASTER_PASS_MERIT	User.masterPassMerit	index.js:60232	NEEDS-S2	70	C70	可达	SceneEvent3	master,master_book
+PUPIL_PASS_MASTER_MERIT_REWARD	User.pupilPassMeritReward	index.js:60233	NEEDS-S2	70	C70	可达	SceneEvent3	master,master_book
+POP_EQUIP_STORAGE	User.PopEquip	index.js:59673	GEN-READY	71	C71	可达	IceBedModel,WarehouseUI	arena_equip,equip_pay,equip_punch
+PUSH_EQUIP_STORAGE	User.PushEquip	index.js:59672	GEN-READY	71	C71	可达	IceBedModel,WarehouseUI	push,arena_equip,equip_pay
+UPGRADE_BED	User.upgradeBed	index.js:59670	GEN-READY	71	C71·同面板	可达	IceBedModel,SceneEvent	bed
+UPGRADE_STORAGE	User.upgradeStorage	index.js:59671	GEN-READY	71	C71·同面板	可达	IceBedModel,SceneEvent	
+RANDOM_LIGHT_CELL	User.randomLightCell	index.js:60597	NEEDS-S2	72	C72	可达	JigsawModel	anniversary_jigsaw_cell,lh_randommap,randombox
+SPECIFY_LIGHT_CELL	User.specifyLightCell	index.js:60598	NEEDS-S2	72	C72	可达	JigsawModel	anniversary_jigsaw_cell
+CHANGE_NAME	User.ChangeName	index.js:59657	GEN-READY	73	C73·同面板	可达	PlayerTitle,PropertyUI,ResetNewName	change,changeface,diceexchange
+EQUIP_TITLE	User.equipTitle	index.js:59714	GEN-READY	73	C73·同面板	可达	AchieveModel,AchieveUI,PlayerTitle,PropertyUI	player_title,player_title_trigger,title
+RESET_ACUPOINT	User.restVein	index.js:59701	GEN-READY	73	C73	可达	ComBgUI,JinMaiUI,JinmaiModel,PropertyUI	acupoint
+ROGUE_EQUIP_WEAPON	User.rgEquipWeapon	index.js:60536	GEN-READY	73	C73·同面板	可达	ComBgUI,PropertyUI,RogueRoleModel	arena_equip,equip_pay,equip_punch
+UPGRADE_ACUPOINT	User.upgradeVein	index.js:59700	GEN-READY	73	C73	可达	ComBgUI,JinMaiUI,JinmaiModel,PropertyUI	acupoint
+ROGUE_BUY_STORE	User.rogueBuyStore	index.js:60511	NEEDS-S2	74	C74	可达		rogue_store,Return_store,active_store
+ROGUE_SELL_STORE	User.rogueSellStore	index.js:60525	NEEDS-S2	74	C74	可达		rogue_store,Return_store,active_store
+SET_PLAYER_ITEMSORT	User.setPlayerItemSort	index.js:60610	NEEDS-S2	75	C75	可达	ItemSystemUI	ai_player,player_title,player_title_trigger
+SET_PLAYER_SKILLSORT	User.setPlayerSkillSort	index.js:60611	NEEDS-S2	75	C75	可达	MartialAartsUI	ai_player,player_title,player_title_trigger
+FIGHT_WORLD_BOSS	User.enterWoldBossBattle	index.js:59553	IMPL-UNJUDGED	76	C76·同面板	可达	BattleMgr,BossFightMgr,WBossUIMediator,WorldBossModel	worldboss,battle_result,boss_blood
+GET_BOSS_REWARD	User.GetBossAward	index.js:59554	GEN-READY	76	C76·同面板	可达	WorldBossModel	worldboss,boss_blood,boss_reward
+UPLOAD_WB_DMG	User.checkUploadAttackDamge	index.js:59556	IMPL-UNJUDGED	76	C76·同面板	可达	BossFightMgr,WBossUIMediator,WorldBossModel	checkpoint
+USER_RANKLIST	User.rankList	index.js:59507	IMPL-UNJUDGED	76	C76	可达	RankMainUI,RankModel	RankAward,ge_rank_reward,rogue_rank
+WB_DMG_RANKLIST	User.boosRankList	index.js:59558	GEN-READY	76	C76	可达	BossFightMgr,WBossUIMediator,WorldBossModel	RankAward,ge_rank_reward,rogue_rank
+ADD_SUBTITLEREQ	User.AddSubtitleReq	index.js:59567	NEEDS-S2		孤立	可达	WorldChatModel	
+AFFILIATION_SCHOOL	User.affiliationSchool	index.js:60058	NEEDS-S2		孤立	可达		school_growth,schooluniform,sectmanual
+ANSWER_QUESTION	User.anserQuestion	index.js:60075	GEN-READY		孤立	可达	AnswerPageUI,ExaminationModel	question,questionResult
+ANSWER_RESULT	User.answerResult	index.js:60077	GEN-READY		孤立	可达	AnswerPageUI,ExaminationModel	battle_result,draw_result,questionResult
+ANSWER_REWARD	User.answerReward	index.js:60078	GEN-READY		孤立	可达	ExaminationModel	
+APPLY_MASTER	User.applyMaster	index.js:60213	NEEDS-S2		孤立	可达	ShowRoleInfoUI	master,master_book
+APPLY_PUPIL	User.applyPupil	index.js:60214	NEEDS-S2		孤立	可达	ShowRoleInfoUI	
+APPLY_REMOVE	User.applyRemove	index.js:60220	NEEDS-S2		孤立	可达	SwornUI	
+BACK_TO_SELF_SERVER	User.backToSelfServer	index.js:60034	GEN-READY		孤立	可达	SServerFightModel	server_review,Servernumber,servergift
+BEGIN_LIST	User.BeginList	index.js:59811	GEN-READY		孤立	可达		Friend_skill,ai_player,fight_skill
+BIND_HUAWEI_ACCOUNT	User.bindingHuaWeiAccount	index.js:60461	NEEDS-S2		孤立	可达	AccountTransferUI	
+BUILD_HOMEFRARM	User.buildHomeFarm	index.js:59843	GEN-READY		孤立	可达		dicebuilding,builder,builder_way
+BUY_AWARDS_COUNT	User.buyAwardsCount	index.js:60520	NEEDS-S2		孤立	可达		
+BUY_DICE_SHOP_EVENT	User.buyDiceShop	index.js:59831	NEEDS-S2		孤立	可达		diceevent,diceshop,dice_blank
+BUY_HOME_CROP	User.BuyHomeCrop	index.js:59853	GEN-READY		孤立	可达	HomeShopUI	home_plant_crop,home_plant_cropevent,Marquee
+BUY_HOUSE_EVENT	User.marryHouse	index.js:59647	NEEDS-S2		孤立	可达		gsp_event,lh_event,like_event
+BUY_TARGET_TASK_NUM	User.buyTargetTaskNum	index.js:60442	NEEDS-S2		孤立	可达		ge_target,target,tasknew
+BUY_TICKET	User.buyTicket	index.js:60496	GEN-READY		孤立	可达		
+CANCEL_APPLY	User.cancelApply	index.js:60216	NEEDS-S2		孤立	可达	SchoolApprentice	
+CANCLE_WULIN_PK	User.cancelWulinPk		NO-CONTRACT		孤立	可达		wulintreasure_reward,wulintreasure_task
+CELL_ARRIVE	User.cellArrive	index.js:59827	NEEDS-S2		孤立	可达		anniversary_jigsaw_cell
+CHANGE_POWER	User.changePower	index.js:59876	GEN-READY		孤立	可达	MultiPlayerModel	change,fight_power,fishscore
+CHANGE_PROPERTY	User.changeProperty	index.js:59685	GEN-READY		孤立	可达	EquipWashModel,EquipWashUI	change,ex_property,changeface
+CHANGE_SERVER	User.changeServer	index.js:59866	NEEDS-S2		孤立	可达	CrossServiceModel	change,server_review,Servernumber
+CHANGE_TO_TEAMSERVER	User.changeToTeamServer	index.js:60033	GEN-READY		孤立	可达	SServerFightModel	change,server_review,Servernumber
+CHANGE_WORLD_SERVER	User.changeWorldServer	index.js:60609	NEEDS-S2		孤立	可达	CrossServiceModel	change,server_review,Servernumber
+CHECK_EQUIP_TO_TEAM	User.checkEquipToTeam	index.js:59868	NEEDS-S2		孤立	可达	CrossServiceModel	checkpoint,arena_equip,equip_pay
+CHECK_TARGET_TASK	User.checkTargetTask	index.js:60443	NEEDS-S2		孤立	可达		ge_target,target,checkpoint
+CHOOSE_DICE_BOXITEM	User.chooseDiceBoxItem	index.js:59826	NEEDS-S2		孤立	可达		koicarp_active_box,dice_blank,dice_scenery
+CHOOSE_FIX_DAN	User.ChooseFixDan	index.js:59810	GEN-READY		孤立	可达	UpMedicinalUI	
+CHOOSE_STATE	User.chooseState	index.js:59867	GEN-READY		孤立	可达	DartModel	
+CLAIM_TR_REWARD	User.Storehouse	index.js:59617	GEN-READY		孤立	可达	Npc,PlayerBubble,TreasureModel	fishpond
+CLIENTGMCOMMON	User.ClientGMCommand		NO-CONTRACT		孤立	可达		
+CLOSE_CELL_EVENT	User.closeCellEvent	index.js:59828	NEEDS-S2		孤立	可达		anniversary_jigsaw_cell,gsp_event,lh_event
+CONFIRM_APPLY	User.confirmApply	index.js:60217	NEEDS-S2		孤立	可达	SchoolApprentice	
+CONFIRM_REMOVE	User.confirmRemove	index.js:60222	NEEDS-S2		孤立	可达	SwornUI	
+COOK_ACCELERATE	User.cookAccelerate	index.js:60145	NEEDS-S2		孤立	可达		cookbookconfig,cookconfig
+COOK_RECEIVE	User.cookReceive	index.js:60144	NEEDS-S2		孤立	可达		cookbookconfig,cookconfig
+COOK_START	User.cookStart	index.js:60143	NEEDS-S2		孤立	可达		cookbookconfig,cookconfig,illustartion
+COOK_UNLOCK	User.cookUnlock	index.js:60142	NEEDS-S2		孤立	可达		cookbookconfig,cookconfig
+CRL_GET_REWARD	User.CRLActivityAward	index.js:59719	NEEDS-S2		孤立	可达		activityshop
+DISH_UNLOCK	User.dishUnlock	index.js:60141	NEEDS-S2		孤立	可达		dishconfig
+DO_STEAL	User.chooseSteal	index.js:59873	NEEDS-S2		孤立	可达	StealModel,StealPanel	steallevel,stealnpc
+END_PRISON	User.OutPrison	index.js:59874	NEEDS-S2		孤立	可达	ConvstnBoard,StealModel	
+EQUIP_INHERIT	User.equipInherit	index.js:59809	GEN-READY		孤立	可达	EquipInhert,InhertEquipModel	arena_equip,Friend_attribute,item
+EQUIP_INHERIT_SPLIT	User.equipInheritSplit	index.js:60318	NEEDS-S2		孤立	可达	EquipSplitModel	arena_equip,equip_pay,equip_punch
+EQUIP_SKILL	User.equipSkill		NO-CONTRACT		孤立	可达		arena_equip,equip_pay,equip_punch
+EQUIP_WASH	User.equipWash	index.js:59684	GEN-READY		孤立	可达	EquipWashModel,EquipWashUI	washprice,arena_equip,equip_pay
+EXCHANGE_GIFTCOIN_EVENT	User.exchangeGiftCoin	index.js:59835	NEEDS-S2		孤立	可达		brew_exchange,exchange,firework_exchange
+EXCHANGE_ITEM_EVENT	User.diceExchangeItem	index.js:59833	NEEDS-S2		孤立	可达		diceevent,diceexchange,brew_exchange
+FLING_DICE	User.flingDice	index.js:59825	NEEDS-S2		孤立	可达		dice_blank,dice_scenery,dice_turntable
+FLIP_CARD_CELL	User.flipCardCell	index.js:60203	NEEDS-S2		孤立	可达	chuochuoLuck	anniversary_jigsaw_cell,dicecard,dicecardshow
+GAME_LOG	User.ClientLog		NO-CONTRACT		孤立	可达		gametime
+GETSHARE_PIC_AWARD	User.getsharePicAward	index.js:59659	GEN-READY		孤立	可达		sharePic,share_pic
+GET_ALL_SERVER_COUNT	User.getAllServerCount	index.js:60031	GEN-READY		孤立	可达	SServerFightModel	server_review,Servernumber,servergift
+GET_ALL_SERVER_LIST	User.getAllServerList	index.js:60032	GEN-READY		孤立	可达	SServerFightModel,SelectCopyFightChannel	server_review,Servernumber,servergift
+GET_APPLY_INFO	User.getApplyInfo	index.js:60215	GEN-READY		孤立	可达		
+GET_APPLY_LIST	User.getApplyList	index.js:60208	NEEDS-S2		孤立	可达	SchoolApprentice	
+GET_BANK_LIST	User.getBankList	index.js:60072	GEN-READY		孤立	可达	ExaminationModel	
+GET_CAST_COLLECT	User.GetCastElite		NO-CONTRACT		孤立	可达		elite_npc,rogue_elite,collection
+GET_CHAT_PK_AWARD	User.getChatPkAward	index.js:60060	NEEDS-S2		孤立	可达	ChatVSRewardUI	
+GET_DICE_ACTIVE	User.getDice	index.js:59824	NEEDS-S2		孤立	可达		dice_blank,dice_scenery,dice_turntable
+GET_DICE_SHOP_EVENT	User.getDiceShops	index.js:59830	NEEDS-S2		孤立	可达		diceevent,diceshop,dice_blank
+GET_EQUIP_LOCKS	User.getEquipLock	index.js:60135	GEN-READY		孤立	可达		arena_equip,Tianjilock,Tianjilockevent
+GET_EVALUATE_DATA	User.getEvaluateData	index.js:60400	GEN-READY		孤立	可达		evaluate
+GET_EXCHANGE_ALL_EVENT	User.getDiceExchangeShops	index.js:59832	NEEDS-S2		孤立	可达		diceevent,diceexchange,brew_exchange
+GET_EXCHANGE_ITEM_EVENT	User.getExchangeItemData	index.js:59834	NEEDS-S2		孤立	可达		brew_exchange,exchange,firework_exchange
+GET_GARDEN_SHOP	User.getGardenShop		NO-CONTRACT		孤立	可达		activityshop,diceshop,partnerfashionshop
+GET_HOUSE_KEEPER	User.getHousekeeper	index.js:60393	GEN-READY		孤立	可达		house,house_adventure,house_shop
+GET_INN	User.getInn	index.js:60136	NEEDS-S2		孤立	可达		
+GET_INN_BAG_DATA	User.getInnBag	index.js:60157	NEEDS-S2		孤立	可达		
+GET_INN_COOK	User.getInnCook	index.js:60158	NEEDS-S2		孤立	可达		cookbookconfig,cookconfig
+GET_INN_COOK_LIST	User.getInnCookList	index.js:60153	NEEDS-S2		孤立	可达		cookbookconfig,cookconfig
+GET_LEVEL_BONUS_DATA	User.getLevelBonusData	index.js:60391	IMPL-UNJUDGED		孤立	可达	LevelBonusModel	Levelup_bonus_en
+GET_LOTTERY_ACTIVE_REWARD_DATA	User.getLotteryActiveRewardData	index.js:60479	NEEDS-S2		孤立	可达	LotteryRebateModel	lottery_active_reward,lottery,training_lottery
+GET_MASTER_PUPIL_LIST	User.getMasterPupilList	index.js:60218	NEEDS-S2		孤立	可达	SchoolApprentice,SwornUI	master,master_book
+GET_NATIONAL_DAY_COPY	User.getNationalDayCopy	index.js:60499	GEN-READY		孤立	可达		Return_SevenDay,copybook,copycollection
+GET_NEW_AD_REWARD	User.LookNewAdvertisement	index.js:60432	NEEDS-S2		孤立	可达	AdModel,ShareAdReward	
+GET_NEW_NUMADS_AVAILABLE	User.GetNewAdvertisementNum	index.js:60431	NEEDS-S2		孤立	可达	AdModel,ShareAdReward	
+GET_PACKET_DETAIL_INFO	User.getPacketDetailInfo	index.js:60458	NEEDS-S2		孤立	可达	RedPacketModel	entrust_detailed,home_plant_details
+GET_PACKET_HISTORY	User.getPacketHistory	index.js:60457	NEEDS-S2		孤立	可达	RedPacketModel	
+GET_PACKET_INFO	User.getPacketInfo	index.js:60455	NEEDS-S2		孤立	可达	RedPacketModel	
+GET_PACKET_RANK_DATA	User.getPacketRankData	index.js:60459	NEEDS-S2		孤立	可达	RedPacketModel	RankAward,ge_rank_reward,rogue_rank
+GET_PACKET_REWARD_DATA	User.getPacketRewardData	index.js:60453	NEEDS-S2		孤立	可达	RedPacketModel	
+GET_PAPER_LIST	User.getPaperList	index.js:60073	GEN-READY		孤立	可达	ChoosePaperUI,ExaminationModel	paper
+GET_QUESTION_LIST	User.getQuestionList	index.js:60074	GEN-READY		孤立	可达	AnswerResultUI,ChoosePaperUI,ExaminationModel,HomeActiveUI,StartExamUI	question,questionResult
+GET_REFINING_RESOURCE	User.getSpringRefiningResource	index.js:60421	NEEDS-S2		孤立	可达		springfestival
+GET_REMOVE_RED_DOT	User.getRemoveRedDot	index.js:60234	NEEDS-S2		孤立	可达	NetWorkBtnList	
+GET_ROGUE_DATA	User.getRogueData	index.js:60507	NEEDS-S2		孤立	可达		
+GET_ROGUE_EXCHANGE_GOODS	User.getRogueExchangeGoods	index.js:60526	NEEDS-S2		孤立	可达		brew_exchange,exchange,firework_exchange
+GET_SCHOOL_APPOINT	User.getSchoolAppoint	index.js:60083	NEEDS-S2		孤立	可达		school_growth,schooluniform,sectmanual
+GET_SCHOOL_FIRSTTRY	User.getSchoolFirstTry	index.js:60080	NEEDS-S2		孤立	可达		school_growth,schooluniform,sectmanual
+GET_SCHOOL_MASTER	User.getSchoolMaster	index.js:60211	GEN-READY		孤立	可达		school_growth,master,master_book
+GET_SCHOOL_MASTER_LIST	User.getSchoolMasterList	index.js:60206	NEEDS-S2		孤立	可达	SchoolApprentice	school_growth,master,master_book
+GET_SCHOOL_PUPIL	User.getSchoolPupil	index.js:60212	GEN-READY		孤立	可达		school_growth,schooluniform,sectmanual
+GET_SCHOOL_PUPIL_LIST	User.getSchoolPupilList	index.js:60207	NEEDS-S2		孤立	可达	SchoolApprentice	school_growth,schooluniform,sectmanual
+GET_SCHOOL_RANK	User.GetSchoolRankList	index.js:59552	IMPL-UNJUDGED		孤立	可达		school_growth,RankAward,ge_rank_reward
+GET_SCHOOL_ROLE_INFO	User.getSchoolRoleInfo	index.js:60219	GEN-READY		孤立	可达		creat_role,school_growth,schooluniform
+GET_SCHOOL_SHOP	User.getSchoolShop	index.js:60050	NEEDS-S2		孤立	可达		sect_shop,school_growth,activityshop
+GET_SCRATH_LOTTO	User.getScratchLotto	index.js:60494	GEN-READY		孤立	可达		
+GET_SKILL_CHANGE	User.getSkillChange	index.js:60012	NEEDS-S2		孤立	可达	LvSwapPanel	change,changeface,diceexchange
+GET_SPECIALEVTS	User.getSpecialevts	index.js:59887	GEN-READY		孤立	可达	RumorModel,RumorPanel	
+GET_STEAL_NPC_INFO	User.getNpcSteal	index.js:59871	NEEDS-S2		孤立	可达	StealModel	steallevel,stealnpc,elite_npc
+GET_TR_MAP_INFO	User.UseDebris	index.js:59616	NEEDS-S2		孤立	可达	TreasureMap,TreasureModel	element_map,map,mapExplore
+GET_WASH_EQUIP	User.getWashEquip	index.js:59683	GEN-READY		孤立	可达	EquipWashModel,EquipWashUI	arena_equip,washprice,equip_pay
+GOLD_SHOP_REFRESHH_EVENT	User.goldShopRefresh	index.js:59839	NEEDS-S2		孤立	可达		gsp_event,lh_event,like_event
+HIRE_BAG_WEIGHT	User.hireBagWeight	index.js:60257	NEEDS-S2		孤立	可达		
+IGNORE_REMOVE	User.ignoreRemove	index.js:60221	NEEDS-S2		孤立	可达	SwornUI	
+INFO_COLLECTIVE_CULTIVATION	User.intoCollectiveCultivation	index.js:60132	NEEDS-S2		孤立	可达	SchoolSquareModel	
+INTO_SCHOOL_ARENA	User.intoSchoolArena	index.js:60081	NEEDS-S2		孤立	可达		arena_equip,school_growth,schooluniform
+INTO_SCHOOL_SQUARE	User.intoSchoolSquare	index.js:60130	NEEDS-S2		孤立	可达	SchoolSquareModel	school_growth,square_ball,schooluniform
+IS_CAN_SHARE	User.isCanShare	index.js:59658	GEN-READY		孤立	可达	ComicsStoryUI,RecruitShare,SignShowLuckyUI,StoryItemUI	sharePic,share_pic
+JOIN_GOOD_OR_EVIL	User.joinGoodOrEvil	index.js:60433	NEEDS-S2		孤立	可达		dicegoods
+KILL_SELF	User.KillSelf	index.js:59514	NEEDS-S2		孤立	可达	GameSaveModel	
+LAST_TIME_ROGUE_EXPLORE	User.lastTimeRogueExplore	index.js:60510	NEEDS-S2		孤立	可达		mapExplore
+LEVEAL_TWONTTASK	User.addSpecailTask		NO-CONTRACT		孤立	可达		tasknew,tasktime
+LIKE	User.ReqGiveSupport		NO-CONTRACT		孤立	可达		like_event
+LOG_SVR_SELECTION	User.ChooseServer		IMPL-UNJUDGED		孤立	可达		server_review,Servernumber,servergift
+MASTER_OUT_SCHOOL_REWARD	User.masterOutSchoolReward		NO-CONTRACT		孤立	可达		school_growth,master,master_book
+MASTER_REWARD	User.masterReward	index.js:60230	NEEDS-S2		孤立	可达	GrowthRewardMasterUI	master,master_book
+MILL_BUILD_EVENT	User.millBuild	index.js:59837	NEEDS-S2		孤立	可达		gsp_event,lh_event,like_event
+MILL_EARNINGS_OBTAIN_EVENT	User.millEarningsObtain	index.js:59838	NEEDS-S2		孤立	可达		gsp_event,lh_event,like_event
+MILL_UPGRADE_EVENT	User.millUpgrade	index.js:59836	NEEDS-S2		孤立	可达		gsp_event,lh_event,like_event
+MOVE_HOME_FRAM	User.removalHomeFarm	index.js:59844	GEN-READY		孤立	可达		
+NEW_OPTIONAL_BUY_GIFT	User.buyOptionalGift	index.js:60478	NEEDS-S2		孤立	可达	NewOptionalGiftCell,NewOptionalGiftUI	optional_gift,yuanbao_optional_gift,limitgift
+NPC_REVIVE	User.npcRevive		NO-CONTRACT		孤立	可达		elite_npc,mapNpcTalk,npc
+OPEN_BOX_REWARD	User.OpenBox	index.js:59515	NEEDS-S2		孤立	可达	GameSaveModel	entrust_open,koicarp_active_box
+OPEN_CHAT_PACKET_RED	User.openChatPacketRed		NO-CONTRACT		孤立	可达		entrust_open
+OPEN_NOVICE	User.OpenNovice	index.js:59885	IMPL-UNJUDGED		孤立	可达	GuideMgr	entrust_open
+OPEN_RANDOM_BOX	User.openRandomBox	index.js:60481	NEEDS-S2		孤立	可达	MapBoxModel	entrust_open,koicarp_active_box,lh_randommap
+OPEN_TIGER	User.OpenTiger	index.js:59878	GEN-READY		孤立	可达	SlotMachModel	entrust_open,tiger
+PUPIL_REWARD	User.pupilReward	index.js:60228	NEEDS-S2		孤立	可达	GrowthRewardPupilUI	
+PUSH_EVALUATE_DATA	User.pushEvaluateData	index.js:60401	GEN-READY		孤立	可达		evaluate,push
+QUEUE_CHECK_BREAK	User.onQueueCheckBreak	index.js:60122	GEN-READY		孤立	可达		checkpoint
+QUIT_SCHOOL_SQUARE	User.quitSchoolSquare	index.js:60131	NEEDS-S2		孤立	可达	SchoolSquareModel	school_growth,square_ball,schooluniform
+RECEIVENPC_EVENT	User.receiveNpc	index.js:59645	NEEDS-S2		孤立	可达		gsp_event,lh_event,like_event
+RECEIVE_BONUS_AWARD	User.receiveBonusAward	index.js:60392	NEEDS-S2		孤立	可达	LevelBonusModel	Levelup_bonus_en
+RECEIVE_CHAT_PK_AWARD	User.receiveChatPkAward	index.js:60061	NEEDS-S2		孤立	可达	ChatVSRewardUI	
+RECEIVE_GIFT	User.ReceiveGift	index.js:60040	NEEDS-S2		孤立	可达	OptionalGiftCell,OptionalGiftUI	limitgift,servergift
+RECEIVE_HELPER_REWARD	User.receiveHelperReward	index.js:60403	GEN-READY		孤立	可达		helper,helperAct
+RECEIVE_LOTTERY_ACTIVE_REWARD	User.receiveLotteryActiveReward	index.js:60480	NEEDS-S2		孤立	可达	LotteryRebateModel	lottery_active_reward,lottery,training_lottery
+RECEIVE_NPC_TARGET_TASK	User.receiveNPCTargetTask	index.js:60441	NEEDS-S2		孤立	可达		ge_target,target,tasknew
+RECEIVE_PACKET	User.receivePacket	index.js:60456	NEEDS-S2		孤立	可达	RedPacketModel	
+RECEIVE_PACKET_REWARD_REWARD	User.receivePacketRewardReward	index.js:60454	NEEDS-S2		孤立	可达	RedPacketModel	
+RECEIVE_TARGET_TASK	User.receiveTargetTask	index.js:60437	NEEDS-S2		孤立	可达		ge_target,target,tasknew
+RECOVER_YOUNG	User.recoverYoung	index.js:59667	GEN-READY		孤立	可达		fightarray
+REDEEM_TABLE	User.redeemTable	index.js:60151	NEEDS-S2		孤立	可达		tableconfig
+REFRESHNOTICE	User.refreshNotice	index.js:59636	GEN-READY		孤立	可达	RumorModel	
+REFRESH_FLIP_CARD	User.refreshFlipCard	index.js:60204	NEEDS-S2		孤立	可达	chuochuoLuck	dicecard,dicecardshow
+REGISTER_MASTER	User.registerMaster	index.js:60210	NEEDS-S2		孤立	可达	SchoolApprentice	master,master_book
+REGISTER_PUPIL	User.registerPupil	index.js:60209	NEEDS-S2		孤立	可达	SchoolApprentice	
+RENT_EVENT	User.rentGroup	index.js:59643	NEEDS-S2		孤立	可达		achieve_group,trick_group,gsp_event
+REQ_INSERT_COINS	User.checkTiger	index.js:59877	GEN-READY		孤立	可达	SlotMachModel,TigerMachine	tiger,checkpoint
+REQ_MPFIGHT	User.enterMulitiNpcBattle		NO-CONTRACT		孤立	可达		battle_result,elite_npc,mapNpcTalk
+REQ_STRETCH	User.stealGoods	index.js:59872	NEEDS-S2		孤立	可达	StealModel,StealPanel	dicegoods,steallevel,stealnpc
+RESET_ANSWER	User.resetAnswer	index.js:60076	GEN-READY		孤立	可达	AnswerResultUI,ChoosePaperUI,ExaminationModel,HomeActiveUI,StartExamUI	
+RETRIEVE_PARTNER	User.retrievePartner		NO-CONTRACT		孤立	可达		partnerexp,partnerfashion,partnerfashionshop
+RG_EQUIP_UPGRADE	User.rgEquipUpgrade	index.js:60517	NEEDS-S2		孤立	可达		arena_equip,equip_pay,equip_punch
+RG_GET_SHOP_DATA	User.rgGetShopData	index.js:60515	IMPL-UNJUDGED		孤立	可达		activityshop,diceshop,partnerfashionshop
+ROBOT_MOVE_ACTION	User.robotMoveAction	index.js:60259	NEEDS-S2		孤立	可达		robot,FriendAction,StoryAction
+ROGUE_BUY_GOLD_STORE	User.rogueBuyGoldStore	index.js:60522	NEEDS-S2		孤立	可达		rogue_store,Return_store,active_store
+ROGUE_ENTER_FLOOR	User.rogueEnterFloor	index.js:60532	NEEDS-S2		孤立	可达		rogue_floorbuff
+ROGUE_EQUIP_SKILL	User.rgEquipSkill		NO-CONTRACT		孤立	可达		arena_equip,equip_pay,equip_punch
+ROGUE_EVENT_OPTION	User.rogueEventOption	index.js:60513	NEEDS-S2		孤立	可达		gsp_event,lh_event,like_event
+ROGUE_EXCHANGE_GOODS	User.rogueExchangeGoods	index.js:60527	NEEDS-S2		孤立	可达		brew_exchange,exchange,firework_exchange
+ROGUE_FIND_OTHER_ID	User.rogueFindFriendByID	index.js:60549	NEEDS-S2		孤立	可达		
+ROGUE_FLOOR_BUFF	User.rogueFloorBuff	index.js:60574	NEEDS-S2		孤立	可达		rogue_floorbuff,rogue_buff,buff
+ROGUE_GATHER_ITEMS	User.rogueGatherItems	index.js:60524	NEEDS-S2		孤立	可达		rogue_gather
+ROGUE_GET_HONOR	User.rgGetHonorData	index.js:60545	NEEDS-S2		孤立	可达		
+ROGUE_GET_HONOR_RED	User.rgGetHonorRed	index.js:60551	NEEDS-S2		孤立	可达		
+ROGUE_GET_RANK_REWARD	User.rgHonorRankReward	index.js:60552	NEEDS-S2		孤立	可达		rogue_rank,RankAward,ge_rank_reward
+ROGUE_GET_TALENT_DATA	User.rgGetTalentData	index.js:60540	NEEDS-S2		孤立	可达		rogue_talent,talent
+ROGUE_GOLD_STORE_REFRESH	User.rogueGoldStoreRefresh	index.js:60523	NEEDS-S2		孤立	可达		rogue_store,Return_store,active_store
+ROGUE_HONOR_RANK	User.rgHonorRankData	index.js:60547	NEEDS-S2		孤立	可达		rogue_rank,RankAward,ge_rank_reward
+ROGUE_HONOR_WEEK_REWARD	User.rgHonorWeekReward	index.js:60550	NEEDS-S2		孤立	可达		
+ROGUE_INIT_OPTION	User.rogueInitDataOption	index.js:60531	NEEDS-S2		孤立	可达		fight_initial,optional_gift,yuanbao_optional_gift
+ROGUE_LEAVE_HIDE_FLOOR	User.rogueLeaveHideFloor	index.js:60530	NEEDS-S2		孤立	可达		rogue_floorbuff
+ROGUE_LOOK_OTHER	User.rgLookOther	index.js:60529	NEEDS-S2		孤立	可达		
+ROGUE_OUTFITTING	User.rogueOutfitting	index.js:60514	NEEDS-S2		孤立	可达		
+ROGUE_RECEIVE_HONOR	User.rgHonorLvReward	index.js:60546	NEEDS-S2		孤立	可达		
+ROGUE_REFRESH_VALUABLES	User.rogueRefreshValuables	index.js:60519	NEEDS-S2		孤立	可达		
+ROGUE_SEASON_TOP_DATA	User.rgSeasonTop3Data	index.js:60553	NEEDS-S2		孤立	可达		
+ROGUE_START_TURN_REFRESH	User.rogueStartTurnRefresh	index.js:60534	NEEDS-S2		孤立	可达		illustartion
+ROGUE_STORE_REFRESH	User.rogueStoreRefresh	index.js:60521	NEEDS-S2		孤立	可达		rogue_store,Return_store,active_store
+ROGUE_STORE_TRUNK_END	User.rogueStoreTrunkEnd	index.js:60512	NEEDS-S2		孤立	可达		Rogue_trunk,rogue_store,Return_store
+ROGUE_TALENT_RESET	User.rgTalentResetting	index.js:60542	NEEDS-S2		孤立	可达		rogue_talent,talent
+ROGUE_TALENT_UPLV	User.rgTalentUpLv	index.js:60541	NEEDS-S2		孤立	可达		rogue_talent,talent
+ROGUE_TIANJIESHI_SELL_STORE	User.rogueTianjieshiSellStore	index.js:60528	NEEDS-S2		孤立	可达		rogue_store,Return_store,active_store
+SAN_GONG	User.ChooseSanGongDan	index.js:59864	GEN-READY		孤立	可达		
+SAVE_GAMETIME	User.GetRoldSaveTime	index.js:59531	IMPL-UNJUDGED		孤立	可能已下线	GameSaveModel	gametime
+SAVR_VILLAGE	User.GetvillainAward	index.js:59620	NEEDS-S2		孤立	可达		
+SCHOOL_APPOINT	User.schoolAppoint	index.js:60085	NEEDS-S2		孤立	可达		school_growth,schooluniform,sectmanual
+SCHOOL_FIRST_HONOR	User.shcoolFirstHonor	index.js:59792	GEN-READY		孤立	可达	ChiefDiscipleModel	school_growth,player_title,schooluniform
+SCHOOL_RECEIVE_WAGES	User.schoolReceiveWages	index.js:60054	NEEDS-S2		孤立	可达		school_growth,schooluniform,sectmanual
+SCHOOL_SECTLEADER	User.schoolSectLeader	index.js:60082	NEEDS-S2		孤立	可达		school_growth,schooluniform,sectmanual
+SCHOOL_TAKE_OFFICE_APPLY	User.schoolTakeOfficeApply	index.js:60084	NEEDS-S2		孤立	可达		school_growth,schooluniform,screenmistake
+SCORTRESULT	User.scortResult	index.js:59635	GEN-READY		孤立	可达	NewAdventureModel	battle_result,draw_result,questionResult
+SCRAPING_LOTTERY	User.scrapingLottery	index.js:60495	GEN-READY		孤立	可达		lottery,lottery_active_reward,training_lottery
+SEND_RED_PACKET	User.sendRedPacket	index.js:60452	NEEDS-S2		孤立	可达	RedPacketModel	
+SERVER_CHECK_LOGIN	User.LoginReq	index.js:59715	GEN-READY		孤立	可达	WebSocketModel	server_review,Servernumber,checkpoint
+SET_TEMPLATE_DATA	User.setTemplateData	index.js:60399	GEN-READY		孤立	可达		
+SPECIAL_EVENTS	User.GetBigMapSpecialEvent	index.js:59541	GEN-READY		孤立	可达	RumorModel	gsp_event,lh_event,like_event
+TABLE_RECEIVE	User.tableReceive	index.js:60148	NEEDS-S2		孤立	可达		tableconfig
+TABLE_UNLOCK	User.tableUnlock	index.js:60147	NEEDS-S2		孤立	可达		tableconfig
+TALK_DATA_ACTION	User.TellAction		IMPL-UNJUDGED		孤立	可达		mapNpcTalk,sim_talk,FriendAction
+TEMPORARILY_ROGUE	User.temporarilyRogue	index.js:60518	NEEDS-S2		孤立	可达		
+TIP_OFF_USER	User.Impeach	index.js:59729	GEN-READY		孤立	可达	WorldChatModel	
+TOWER_GET_PANDA_EVENT	User.getPandaEvent	index.js:59764	GEN-READY		孤立	可达		lh_panda,home_plant_cropevent,gsp_event
+TOWER_RANK_LIST	User.towerRank	index.js:59759	GEN-READY		孤立	可达		RankAward,ge_rank_reward,rogue_rank
+TRIGGER_CANDY	User.triggerCandy	index.js:60258	NEEDS-S2		孤立	可达		house_trigger,player_title_trigger
+TRIGGER_EVENT	User.triggerEvent	index.js:59840	NEEDS-S2		孤立	可达		house_trigger,player_title_trigger,gsp_event
+UPLOAD_HEAL	User.playerCure		NO-CONTRACT		孤立	可达		ai_player,player_title,player_title_trigger
+UP_PARTNER_QUEQUE	User.upPartnerQueue		NO-CONTRACT		孤立	可达		partnerexp,partnerfashion,partnerfashionshop
+UP_PUSH_SWITCH	User.upPushSwitch	index.js:60390	NEEDS-S2		孤立	可达	MPushModel	push,adswitch
+USE_CARD	User.useCard	index.js:59841	NEEDS-S2		孤立	可达		dicecard,dicecardshow
+USE_TREASURE	User.useTreasure	index.js:60573	NEEDS-S2		孤立	可达		treasure_map,beachtreasure_reward,beachtreasure_task
+WEEDIND_EVENT	User.weddingFeast	index.js:59644	NEEDS-S2		孤立	可达		gsp_event,lh_event,like_event
+WIN_PRISON	User.WinPrison		NO-CONTRACT		孤立	可达		fight_win
+WRITE_BOOK_EVENT	User.closedBook	index.js:59646	IMPL-UNJUDGED		孤立	可达		master_book,rogue_book,gsp_event

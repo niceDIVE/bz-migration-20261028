@@ -1,0 +1,2 @@
+POST https://bzgf.maple-game.com/800-server-166/CheckName
+{"mod":"User","do":"CheckName","p":{"userName":"114545","_attributeValue":[0,40,20,10,10],"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792572967758sr38loc3"}}

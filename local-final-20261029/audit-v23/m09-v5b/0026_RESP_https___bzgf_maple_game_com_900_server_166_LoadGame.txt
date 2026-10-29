@@ -1,0 +1,5 @@
+status=200 https://bzgf.maple-game.com/900-server-166/LoadGame
+{
+  "code": 200,
+  "MsgData": "2e8d870e160052dddf76c433e150bc690a416cc671c7858191195ea55abb4986467d976f0adf2c82dffb8209a70a92b6855b89c470da690193f464c90afee549"
+}

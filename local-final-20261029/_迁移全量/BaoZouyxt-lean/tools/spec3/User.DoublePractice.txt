@@ -1,0 +1,21 @@
+# User.DoublePractice   (HttpConst.REQ_DOUBLE_BR)
+
+## 注册点 56231: i.MessageCenter.on(l.HttpConst.REQ_DOUBLE_BR, this.onReqDouble, this);
+
+## 请求点 56248: c.NetMgr.http.sendRequest(l.HttpConst.REQ_DOUBLE_BR, e);
+   56240: e.prototype.requestBrFriendList = function() {
+   56241: c.NetMgr.http.sendRequest(l.HttpConst.GET_BREAK_FRIENDLIST, {});
+   56242: };
+   56243: e.prototype.requestDouble = function(t) {
+   56244: var e = {
+   56245: friendID: t,
+   56246: sponsorName: y.RoleBaseInfo.userName
+   56247: };
+
+## 处理函数 onReqDouble (56438-56443)
+ 56438: e.prototype.onReqDouble = function(t, e) {
+ 56439: if (1 == e.eRet || 4 == e.eRet) {
+ 56440: if (isNaN(Number(e.needTime))) {
+ 56441: s.default.show(JSON.stringify(e));
+ 56442: return;
+ 56443: }

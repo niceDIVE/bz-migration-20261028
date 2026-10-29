@@ -1,0 +1,37 @@
+[定义] tools\index.js:59860 | DISPOSS_HOME_EVENT: "User.dispossHomeEvent",
+[定义] tools\index.js:59848 | BATCH_SEED_CROP: "User.batchSeedCrop",
+[定义] tools\index.js:59850 | RECLAIM_LAND: "User.reclaimLand",
+[定义] tools\index.js:59853 | BUY_HOME_CROP: "User.BuyHomeCrop",
+[定义] tools\index.js:59854 | GET_BACK_SHOP: "User.getBackShop",
+[定义] tools\index.js:59855 | HOME_SPECIAL_AWARD: "User.homeSpeicalAward",
+
+[上下文] tools\index.js L58195-L58216
+L58195| e.prototype.reqEnterFriendHome = function(t) {
+L58196| this.isUpdateData = !1;
+L58197| this.curFriendId = t;
+L58198| t > 0 && v.NetMgr.http.sendRequest(s.HttpConst.ENTER_OTHER_HOME, {
+L58199| fid: t
+L58200| });
+L58201| };
+L58202| e.prototype.reqUpdateFriendHome = function(t) {
+L58203| this.isUpdateData = !0;
+L58204| this.curFriendId = t;
+L58205| t > 0 && v.NetMgr.http.sendRequest(s.HttpConst.ENTER_OTHER_HOME, {
+L58206| fid: t
+L58207| });
+L58208| };
+L58209| e.prototype.reqDispossHomeEvent = function(t) {
+L58210| var e = {
+L58211| fid: 0,
+L58212| idx: t
+L58213| };
+L58214| this.curFriendId > 0 ? e.fid = this.curFriendId : delete e.fid;
+L58215| v.NetMgr.http.sendRequest(s.HttpConst.DISPOSS_HOME_EVENT, e);
+L58216| };
+[数据源] tools\index.js:57527 | this.plantSeedData = {};
+[数据源] tools\index.js:57529 | this.soilArr = [];
+[数据源] tools\index.js:57546 | this.recentSs = [];
+[数据源] tools\index.js:57552 | this.plantSeedData = {
+[数据源] tools\index.js:57557 | this.soilArr = [];
+[数据源] tools\index.js:58376 | this.plantSeedData = {
+[数据源] tools\index.js:58381 | this.soilArr = [];

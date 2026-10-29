@@ -1,0 +1,13 @@
+# User.upgradeBed   (HttpConst.UPGRADE_BED)
+
+## 注册点 61033: i.MessageCenter.on(n.HttpConst.UPGRADE_BED, function(t, e) {
+
+## 请求点 61072: u.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_BED, {});
+   61064: var n = r.MarryModel.storageEquip;
+   61065: n.hasOwnProperty(o.ItemID) && (n[o.ItemID].num == o.ItemNum ? delete n[o.ItemID] : n[o.ItemID].num = n[o.ItemID].num - o.ItemNum);
+   61066: i.MessageCenter.dispatch(c.EvName.CONTROLE_EQUIP_EVENT, o);
+   61067: } else 3 == o.eRet && a.default.show(s.getText(1221));
+   61068: t.popingItem = 0;
+   61069: }, this);
+   61070: };
+   61071: t.prototype.sendUpgradeBed = function() {

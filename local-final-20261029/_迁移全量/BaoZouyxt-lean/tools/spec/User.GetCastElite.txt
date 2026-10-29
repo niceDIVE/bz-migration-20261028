@@ -1,0 +1,51 @@
+# User.GetCastElite  (HttpConst.GET_CAST_COLLECT)
+# 出现 1 处
+
+ 25263: for (var o = 0; o < t.length; o++) this.collectData[t[o][2]] = t[o];
+ 25264: };
+ 25265: t.prototype.getCollectDataMap = function() {
+ 25266: return this.collectData;
+ 25267: };
+ 25268: t.prototype.reqCopyCollectItem = function() {
+ 25269: f.NetMgr.http.sendRequest(a.HttpConst.GET_CAST_COLLECT, {
+ 25270: copy: m.CopyFightModel.copyType
+ 25271: }, null, !1);
+ 25272: };
+ 25273: return t;
+ 25274: }();
+ 25275: o.CollectItemModel = new v();
+ 25276: cc._RF.pop();
+ 25277: }, {
+ 25278: "../core/events/MessageCenter": "MessageCenter",
+ 25279: "../gameconfigs/CFMgr": "CFMgr",
+ 25280: "../gameconfigs/LangMgr": "LangMgr",
+ 25281: "../gui/uicomponents/Alert": "Alert",
+ 25282: "../mgrs/BattleMgr": "BattleMgr",
+ 25283: "../mgrs/GSceneMgr": "GSceneMgr",
+ 25284: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+ 25285: "../mgrs/TimeMgr": "TimeMgr",
+ 25286: "../net/HttpConst": "HttpConst",
+ 25287: "../net/NetMgr": "NetMgr",
+ 25288: "../utils/EvName": "EvName",
+ 25289: "../utils/MadUtilsTS": "MadUtilsTS",
+ 25290: "./CopyFightModel": "CopyFightModel",
+ 25291: "./InventoryModel": "InventoryModel",
+ 25292: "./RumorModel": "RumorModel"
+ 25293: } ],
+ 25294: CollectNpc: [ function(t, e, o) {
+ 25295: "use strict";
+ 25296: cc._RF.push(e, "d3f78MRXFBHqqPGpYF/xlGW", "CollectNpc");
+ 25297: var i, n = this && this.__extends || (i = function(t, e) {
+ 25298: return (i = Object.setPrototypeOf || {
+ 25299: __proto__: []
+ 25300: } instanceof Array && function(t, e) {
+ 25301: t.__proto__ = e;
+ 25302: } || function(t, e) {
+ 25303: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+ 25304: })(t, e);
+ 25305: }, function(t, e) {
+ 25306: i(t, e);
+ 25307: function o() {
+ 25308: this.constructor = t;
+ 25309: }
+---

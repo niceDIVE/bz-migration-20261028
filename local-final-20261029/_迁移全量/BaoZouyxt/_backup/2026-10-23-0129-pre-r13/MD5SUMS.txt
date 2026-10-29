@@ -1,0 +1,7 @@
+﻿B627B5769A8DA9A0E158D26500E96C61  hotfix-patch\core\bz-rpc-server.js
+5E2433FE5B4A664E39C7D7E159F6DD05  hotfix-patch\core\bz-handler-impl.js
+BAC3DF9A1D52E1F3BA8E823205812E59  hotfix-patch\core\bz-shapes.generated.js
+BD8B66D2DD1CCF330E3BE4969B8DCF77  hotfix-patch\build-handlers.js
+CEB01CAE3ACDB7949E7958315AA1E224  hotfix-patch\patch\live\handlers.js
+59F02DC3EE2BEB9AE12E241C2EF5B2DF  tools\golden\required-checks.json
+58E0494C51D30EB3494F7C9198986BB9  tools\golden\known-missing-handlers.json

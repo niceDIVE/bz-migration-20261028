@@ -1,0 +1,99 @@
+# User.BeginSaveNpc  (HttpConst.BEGINSAVE_NPC)
+# 出现 2 处
+
+ 90049: this.killType = 1;
+ 90050: this.hearTag = 1;
+ 90051: this.isHungDog = !1;
+ 90052: }
+ 90053: t.prototype.init = function() {
+ 90054: r.MessageCenter.on(a.HttpConst.KILL_NPC, this.callBackKilNpc, this);
+ 90055: r.MessageCenter.on(a.HttpConst.BEGINSAVE_NPC, this.callBackBeginNpc, this);
+ 90056: r.MessageCenter.on(a.HttpConst.END_SAVE_NPC, this.callBackEndNpc, this);
+ 90057: };
+ 90058: t.prototype.callBackKilNpc = function(t, e) {
+ 90059: if (1 == e.eRet) {
+ 90060: if (1 == this.killType) {
+ 90061: var r = i.getItem(e.npcIDArr[0], "npc"), a = {
+ 90062: str: n.getText(2 == r.Camp ? "841" : "840").replace(/1/, n.getText(r.NpcName)),
+ 90063: clearValue: 1
+ 90064: };
+ 90065: u.default.prefabs.load("comUI/KillDeadUI", cc.Prefab, function(t, e) {
+ 90066: var o = cc.instantiate(e);
+ 90067: f.PopUpMgr.addPopUp(o, d.LayerMgr.popUpLayer);
+ 90068: o.addComponent("KillDeadUI").setData(a);
+ 90069: });
+ 90070: for (var s = 0; s < e.npcIDArr.length; s++) {
+ 90071: var l = i.getItem(e.npcIDArr[s], "npc"), p = i.getConstByID(51);
+ 90072: 2 == l.Camp && 3 != l.menpai || o.NpcDeadModel.intimacyChangeFun(e.npcIDArr[s], l.group, -p);
+ 90073: }
+ 90074: }
+ 90075: this.setCurrentNpcLikeNess(e.npcIDArr, e.endTime);
+ 90076: } else {
+ 90077: c.TimeMgr.sserverT = e.sTime;
+ 90078: var h = i.getItem(e.npcIDArr[0], "npc"), m = n.getText("843").replace(/\[1\]/, n.getText(h.NpcName));
+ 90079: g.default.show(m);
+ 90080: }
+ 90081: };
+ 90082: t.prototype.callBackBeginNpc = function(t, e) {
+ 90083: if (1 == e.eRet || 2 == e.eRet) {
+ 90084: var o = {
+ 90085: pathName: "skillsUI/HealingNpcUI",
+ 90086: scriptName: "HealingNpcUI",
+ 90087: id: e.npcID,
+ 90088: beginTime: e.beginTime,
+ 90089: endTime: e.endTime
+ 90090: };
+ 90091: u.default.promiseLoad("comUI/ONhookBgUI", o, function(t) {
+ 90092: var e = cc.instantiate(t);
+ 90093: f.PopUpMgr.addPopUp(e, d.LayerMgr.popUpLayer);
+ 90094: var i = e.addComponent("DazuoBgUI");
+ 90095: i.setData(o);
+---
+ 90238: npcID: t,
+ 90239: mpLimit: Math.floor(h.UserModel.entity.mp.limit),
+ 90240: gTime: h.UserModel.entity.totalGameTime.gameTime,
+ 90241: hg: h.UserModel.entity.hunger.remaining,
+ 90242: hgtimes: h.UserModel.entity.numStuffed
+ 90243: };
+ 90244: p.NetMgr.http.sendRequest(a.HttpConst.BEGINSAVE_NPC, e);
+ 90245: };
+ 90246: t.prototype.reqEndHealNpc = function(t) {
+ 90247: var e = {
+ 90248: speed: h.UserModel.entity.hungerConsumingSpeed.finalValue,
+ 90249: hglmt: Math.floor(h.UserModel.entity.hunger.finalValue),
+ 90250: flag: t
+ 90251: };
+ 90252: this.hearTag = t;
+ 90253: p.NetMgr.http.sendRequest(a.HttpConst.END_SAVE_NPC, e);
+ 90254: };
+ 90255: t.prototype.dogHealUI = function(t, e, o) {
+ 90256: var i = this, r = c.TimeMgr.getSTimestamp();
+ 90257: if (e > 0 && r < e) {
+ 90258: this.currentNpcId = t;
+ 90259: var a = n.getText("3169").replace(/\[1\]/, o);
+ 90260: u.default.prefabs.load("checkNpc/DeadNpc", cc.Prefab, function(t, o) {
+ 90261: var r = cc.instantiate(o);
+ 90262: f.PopUpMgr.addPopUp(r, d.LayerMgr.popUpLayer, 1, !0);
+ 90263: var s = {
+ 90264: str: a,
+ 90265: str1: n.getText("845"),
+ 90266: str2: n.getText("846"),
+ 90267: str3: "",
+ 90268: callBack: i.openHealEvent.bind(i),
+ 90269: time: e
+ 90270: };
+ 90271: r.addComponent("FightToKillUI").setData(s);
+ 90272: });
+ 90273: }
+ 90274: };
+ 90275: t.prototype.partnerHealUI = function(t, e, o) {
+ 90276: var r = this, a = c.TimeMgr.getSTimestamp();
+ 90277: if (e > 0 && a < e) {
+ 90278: this.currentNpcId = t;
+ 90279: var s = i.getItem(v.HomePlantModel.friendPartnerId, "Friend"), l = n.getText(6018118).replace(/\[1\]/, o).replace(/\[2\]/g, n.getText(s.name));
+ 90280: u.default.prefabs.load("checkNpc/DeadNpc", cc.Prefab, function(t, o) {
+ 90281: var i = cc.instantiate(o);
+ 90282: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer, 1, !0);
+ 90283: var a = {
+ 90284: str: l,
+---

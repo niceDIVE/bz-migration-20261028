@@ -1,0 +1,11 @@
+# User.ChooseServer   (HttpConst.LOG_SVR_SELECTION)
+
+## 请求点 116801: a.NetMgr.selectHttp.sendRequest(n.HttpConst.LOG_SVR_SELECTION, {
+   116793: account: s.RoleBaseInfo.userAccount,
+   116794: channel: this.channel,
+   116795: exam: 0
+   116796: };
+   116797: c.LoginMgr.checkMiniGame() && "" !== c.LoginMgr.WXIosVer && (t.exam = 1);
+   116798: a.NetMgr.selectHttp.sendRequest(n.HttpConst.REQ_SERVER_LIST, t);
+   116799: };
+   116800: t.prototype.reqLogSvSelection = function(t) {

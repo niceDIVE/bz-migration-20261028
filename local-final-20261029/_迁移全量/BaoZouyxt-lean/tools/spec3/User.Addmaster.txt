@@ -1,0 +1,13 @@
+# User.Addmaster   (HttpConst.ADD_SEX_KILL)
+
+## 请求点 64607: 0 == r ? s.default.show(n.getText(1455)) : y.NetMgr.http.sendRequest(v.HttpConst.ADD_SEX_KILL, {
+   64599: });
+   64600: };
+   64601: e.prototype.reqSexKill = function() {
+   64602: Promise.resolve().then(function() {
+   64603: return t("./InventoryModel");
+   64604: }).then(function(t) {
+   64605: var e = t.InventoryModel, o = e.getSpecEqArrByItemID(6529), i = e.getSpecEqArrByItemID(1415), r = 0;
+   64606: a.RoleBaseInfo.getItemNotEquipNum(6529) > 0 ? r = 6529 : a.RoleBaseInfo.getItemNotEquipNum(1415) > 0 ? r = 1415 : o && o.length ? r = o[0].id : i && i.length && (r = i[0].id);
+
+## 注册点 65001: r.MessageCenter.on(a.HttpConst.ADD_SEX_KILL, function(t, e) {

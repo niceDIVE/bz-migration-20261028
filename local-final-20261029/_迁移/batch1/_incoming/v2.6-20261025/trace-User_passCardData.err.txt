@@ -1,0 +1,11 @@
+[trace] User.passCardData 补抽: 展开 index.js:55867..55878，数据形参 e
+[trace] User.passCardData 契约字段=[] 补抽=True → ['eRet', 'goldArr', 'passCard']
+[trace] User.passCardData.passCard @ index.js:55869 exprs=['\\.passCard\\b', '\\[\\s*["\\\']passCard["\\\']\\s*\\]'] this=[] kinds=[]
+[trace] User.passCardData.passCard @ index.js:55870 exprs=['\\.passCard\\b', '\\[\\s*["\\\']passCard["\\\']\\s*\\]'] this=[] kinds=[]
+[trace] User.passCardData.passCard @ index.js:55871 exprs=['\\.passCard\\b', '\\[\\s*["\\\']passCard["\\\']\\s*\\]'] this=[] kinds=[]
+[trace] User.passCardData.passCard 全局 4 处 kinds=[]
+[trace] User.passCardData.goldArr @ index.js:55872 exprs=['\\.goldArr\\b', '\\[\\s*["\\\']goldArr["\\\']\\s*\\]', '\\bgoldAy\\b'] this=['goldAy'] kinds=[]
+[trace] User.passCardData.goldArr 全局 1 处 kinds=[]
+[trace] User.passCardData 发送 index.js:55965 所在函数 reqGetInviteData@55964 调用方=['scripts2.js:8690']
+[trace] User.passCardData   调用方 scripts2.js:8690 判空=否：f.HalloweenModel.reqGetInviteData();
+[trace] User.passCardData 发送点=['index.js:55858', 'index.js:55965'] 重发判定=[]

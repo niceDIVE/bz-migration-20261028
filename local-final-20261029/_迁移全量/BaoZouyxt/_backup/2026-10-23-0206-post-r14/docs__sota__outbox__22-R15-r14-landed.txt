@@ -1,0 +1,151 @@
+【指令】
+你是一位资深客户端逆向与静态分析方向的架构顾问。这是第 22 批材料（上一批 21 号：R13 处置 + 4 问；你的回执是 R14）。
+本批是**对 R14 的逐条处置 + 一处根因纠偏 + 4 个新问题**。
+回答规则（沿用）：
+1. 结论要么带条件说明，要么带可执行形式；不接受"建议考虑"。
+2. 凡是你推断的、材料里没有明说的，一律标注【推断】；材料没有的直说"材料未提供"。
+3. 必须给一段"反例"。
+4. 严格按末尾编号格式输出。
+5. 约束不变：不能改客户端（只能进程内替换网络层 / 单文件存档）、不能加数据库、**仓库仍然不是 git**。
+
+────────────────────────────────────────────────────────
+【一、部署与基线】
+
+`impl=h0736ad26 / flow=ffaec47c3`，`pid 29928`（热重载，**未重启**），`implErr=null / flowErr=null`。
+`selfCheck`：`failed=[]`、`checkedCount=1242`（比上批 1234 多的 8 条 = 本批新增的 `shape:<动作>:rejectKeys`）、
+`missingRequired=[]`。
+验收（新写的总跑器 `tools/acceptance.js`）：**项=33 绿=32 已知红=1**，退出码 0。
+唯一红项已被"文件+断言行+消息哈希"三元组钉死：`hotfix-patch/test/core-test-server.js:65#773498a9`
+（就是你反例 4 要的粒度；登记表在 `tools/golden/known-red.json`，`--update` **拒绝实现**，只许人工改）。
+形状冻结：C1–C8/C10–C13 全绿、**diff 20 处且被 7 条清单规则精确覆盖**（见 §2.1）。
+设备端实测（命令通道直接打进程内 impl，不写存档）：
+```
+ver → h0736ad26
+BeginTraining {skillID:1112, isCollective:0} → {"eRet":1,"beginTime":1792692348238,"skillID":1112,"hanyusuiTime":0,"isCollective":0}
+BeginTraining {skillID:999999, isCollective:0} → {"eRet":4}                    ← 只有 eRet
+buyShopItem   {itemID:999999, itemNum:1}      → {"eRet":4}                    ← note 被收窄掉
+washAdditionalArr {}                          → {"eRet":4,"attrList":"41,0|42,0|44,0|43,0"}   ← flow 码保住了 reads
+```
+
+────────────────────────────────────────────────────────
+【二、R14 逐条处置】
+
+| # | R14 条目 | 处置 |
+|---|---|---|
+| 1 | §1-1 拒绝应答要收窄到 `{eRet}` + 逐项白名单 | **已做**：`dispatch` 里新增 `narrowReject()`（`bz-rpc-server.js:124` 起），只对**登记过的 16 个动作**生效；白名单 `REJECT_ALLOW` 里 `washAdditionalArr` 保留 `attrList`、`useItem` 保留 `itemID`。自检新增 8 条 `shape:<动作>:rejectKeys`（拒绝应答里多一个键就红）。 |
+| 2 | §1-3 选码按"动作 × 原因"，不要按动作 | **已做**：表改成 per-action `codes[]`；`useItem` 两条 —— `recipeLearned`→5（`tier:1`）、`effectUnmodeled`→3（`tier:2`，客户端 64755-64910 的 if 链里 3 无分支）。运行时副本 `REJECT_CODES` 与 JSON **双向**比对（构建期断言，漂移即构建失败）。 |
+| 3 | §1-6 catch 吞异常是"最严重的事实" | **已做**：`catch` 现在做三件事 —— ① `_catchCount++` ② `_save = null`（丢掉内存缓存，下一次 `loadSave()` 从盘上重读）③ 回**该动作登记的拒绝码**（未登记则 4）+ `⚠ REJECT <动作> reason=handlerThrew`。回归里有一条**注入式用例**：替换 handler 为"先加 999999 金币再抛异常"，断言 catch 计数 +1、应答 eRet≠1、存档字节不变、内存 coins 回滚。 |
+| 4 | §2 Q1 先产可获得性表再问用户 | **已做**：`tools/gen_obtainable.js` → `tools/facts/obtainable.json`，三条硬要求自检全过（存档 md5 前后一致 / 运行路径 0 命中 / 产物只落 `tools/facts/`）。N=**248**（域内 522，其中 2 个是货币 id 1 与 4001 → 真要问的是 246 个）。**用户已裁定：先不改行为**（见 §2.4）。 |
+| 5 | §3 Q2 ver 拆成内容哈希 + built | **已做，但修在你没点到的根因上**（见 §3.A） |
+| 6 | §4 Q3 覆盖要分三层 | **R5b+ 已做、R5c 已做、R5 仍未实现**（见 §2.6） |
+| 7 | §5 Q4 flow 码留在同一份文件、加 F1–F3 | **已做**：flow 条目带 `reads`、无 `tier`；F1/F2/F3 都实现了，且 F2 是**真跑 handler**（不是静态推断）。 |
+
+§2.1（收窄的代价，必须报账）：一收窄，冻结基线立刻出现 **20 处「发→不发」**。
+逐字段进了 `approved-narrowing.json`（21 条，`escape:"closed"`，每条带客户端回调行号），
+另写了 7 条 `planned-changes.json` 规则（每条 `expect` 精确等于该动作的字段数：2/1/4/7/1/3/2）。
+绕过它是不行的 —— C3b 与 C7/C8 都会红，这是设计如此。
+
+§2.4（用户裁定原文与我的执行）："回退成『照扣但无效果』，下轮先导出 item.Effect 再按家族实现"。
+所以 `REJECT_UNMODELED_ITEMS` 常量**设为 false**，行为回到"照扣、无效果"，但**不再是无痕**：
+每一次都写 `⚠ REJECT useItem reason=effectUnmodeledConsumed` 并计入 `meta.rejectStats` ——
+这就是你 §3 要的"cap 为 0 的消耗事件表"。切成 true 即走 `eRet:3` 拒绝且不扣（表里已登记），一行可回退。
+
+§2.6（三层覆盖的现状）：
+```
+R5b+  已实现且会咬人：扫 87 个 handler，用花括号配对切体，`eRet:` 非字面量 / `.eRet =` 赋值必须登记 dynamic；
+      实测 拒绝点 31 处 / 16 个动作，与表内 16 条同名集合（零未登记，动态码 0 处）。
+R5c   已实现：87 handler × {空请求, 字段类型全错请求} = 174 次沙箱调用 +
+      2 个定点用例（catch 回滚、未建模留痕）。断言：catchCount 不涨 / eRet ∈ {1}∪登记码 / 拒绝不写档。
+R5    仍未实现（每次运行都打印"R5 未实现…"，不冒充通过）。卡在"业务哈希"的定义上 → Q2。
+```
+
+────────────────────────────────────────────────────────
+【三、两处我反过来纠你的事实（都可复核）】
+
+**A. `ver` 不稳定的根因不是"META 剥离不够"，是形状生成器用了真实时钟。**
+你 §3 的方案是"剥离 4 类元数据行 + 正好 4 行的断言"。我照这个方向查下去，发现真正让 `ver` 每次都变的是
+`tools/gen_shapes.js:590` 的 `generatedAt: new Date().toISOString()` —— 它被写进产物两处：
+文件头 `生成于 <ISO>` 与 `BZ_SHAPES.__meta.gen`。而 `ver` 是对整个产物算 sha1，所以**每跑一次
+`check_shape_freeze`（它会调 gen_shapes）ver 就变一次**：实测 `hfa9ba714`→`h7910b953`，字节数同为 863597，
+逐行只有 4 对时间戳差异。
+⇒ 我改的是源头：`generatedAt` 改成 `new Date(GEN_NOW).toISOString()`（GEN_NOW 是既有的固定时钟常量），
+并在 `build-handlers.js` 里加了一条断言：**产物里出现的所有 ISO 时间戳必须恰好等于 GEN_NOW 的那一个**。
+这样比"剥离 + 数行数"更硬：它直接禁止新的时间戳进产物，而不是事后擦掉。
+实测：连续两次 `node build-handlers.js` 得到同一个 `ver`（`h0736ad26`），`built=` 仍然是每次不同的独立字段。
+**没有**做"正好 4 行剥离"（不需要了），**也还没做**"freeze 把产物生成到临时目录再比较" —— 后者现在的实际风险是 0
+（重写出来的字节与原文件完全相同），我把它降级成"技术债，不紧急"，见 §5.2。
+
+**B. R5c 的第一版立刻抓出 4 个"未登记的非 1 码"，其中两个不是拒绝码。**
+`GetServerList / Create / CheckName / GetChatAddress / quicklogin` 的应答**没有 eRet**（登录前 / 建角载荷）；
+`getCRAInfo` 回 `eRet:2`、`ExChangeJetton` 回 `eRet:4`，这两个都不是 handler 的拒绝码 ——
+前者是 `templates.json` 里**抓包真值**直接 clone 出来的，后者是 `dispatch` 的 `PAY_ACTION_RE` 统一拦截。
+⇒ 我没有把它们塞进 `reject-codes.json`（那会把"抓包真值"和"我们的决策"混成一张表），
+而是在 `test\r14-catch-smoke.js` 里建了**两张带理由的登记表** `NO_ERET_ACTIONS` / `TEMPLATE_CODES` + `PAY_RE`，
+新增即红。→ 这引出一个口径问题，见 Q3。
+
+────────────────────────────────────────────────────────
+【四、本批新增/变更的清单】
+
+1. `core/bz-rpc-server.js`：`_catchCount` + `catchCount()`；`REJECT_CODES`（含 `default` 键）；
+   `REJECT_ALLOW`；`rejectCodeOf()`；`narrowReject()`；`REJECT_UNMODELED_ITEMS`（现 false）+ 留痕；
+   `meta.rejectStats` 落盘；`_internal` 暴露 `catchCount / rejectCodes / rejectAllow / rejectStats`。
+2. `core/bz-handler-impl.js`：`REQUIRED_CHECKS` 内联表（上一批）+ 本批新增 `shape:<动作>:rejectKeys`；
+   `selfCheck` 返回 `missingRequired`；`rejectCodes` 透出给构建期。
+3. `build-handlers.js`：`required-checks` 缺失不再静默跳过；内联表逐字比对；`missingRequired` 必须空；
+   产物时间戳断言（只许 GEN_NOW）；拒绝码表**双向**比对（动作集合、defaultCode 推导规则、每个 reason 的码）。
+4. `tools/gen_shapes.js`：`generatedAt` 改用 GEN_NOW。
+5. `tools/facts/reject-codes.json`：per-action `codes[]`，16 动作 / 17 条目（reject 16 + flow 1），
+   每条带 `ev`（行号 + 该行 sha1 前 8 位，17 条全部实测复核过）。
+6. `tools/check_reject_codes.js`：R1 / R2（三态）/ R3 / R4 / F1 / F2 / F3 / R5b+（含 dynamic 检测）。
+   实测 11 类失败路径都能红（断言不是空壳）。
+7. `test/r13-reject-codes.js`（7 条）+ `test/r14-catch-smoke.js`（3 条，含注入式 catch 用例）。
+8. `tools/acceptance.js` + `tools/golden/known-red.json`（反例 4 的落地；K1/K2/K3 三条判据）。
+9. `tools/gen_obtainable.js` + `tools/facts/obtainable.json`（N=248 / 域 522 / 8 条 unresolved 披露）。
+10. `tools/golden/approved-narrowing.json`（21 条）+ `planned-changes.json`（7 条规则）。
+
+────────────────────────────────────────────────────────
+【五、没做的 / 已知技术债（如实交代）】
+
+1. **R5（动作×原因夹具 + 磁盘/业务双哈希）没实现**。障碍是"业务哈希"的定义（Q2）。
+2. **`check_shape_freeze.js` 仍会把产物写回正式路径**（`gen_shapes` 被它调用）。现在重写出来字节相同，
+   风险为 0，但"检查脚本改产物"这件事本身没修。降级为技术债。
+3. **`R5c` 的请求夹具是"字段类型全错"的通用毒饵**（`POISON` 对象），不是每动作的精确 schema；
+   它的价值是"不抛异常"，不是"业务正确"。87 个 handler 的**精确请求 schema** 我还没有。
+4. **端上点屏仍未验**："门派练功界面 → 个人练功"这条 UI 路径只验到协议层。
+5. `obtainable.json` 的 `Grant*` 是**整 handler 高估**（`grant~<表名>`），域外还有 2251 个 id 没进表。
+
+────────────────────────────────────────────────────────
+【六、我要你回答的 4 件事】
+
+Q1（`item.Effect` 从哪拿、怎么判"客户端真会发 useItem"）
+  用户已裁定下一轮"先导出 item.Effect、按效果家族实现"。我的困难是**数据源**：
+  `tools/cfg/dump/item.json` 是截断导出（6525 行只留 3000），而 `bz-tasks.generated.js` 里的 `BZ_ITEMTYPE`
+  只有 Type 没有 Effect。请给**从三包定位 item 表**的可执行路径（哪个文件、哪个模块、字段名是不是叫 `Effect`），
+  以及判"客户端会不会为这个物品发 USE_ITEM"的判据（是 `Effect ∈ 18 个已知码`，还是先过 `ITEMFUN/ITEMMODEL` 的分发再决定）。
+  如果你判断"必须先在 live 进程里 dump 整张 item 表"，请给一个不写档、不打屏的 dump 形态。
+
+Q2（R5 的"业务哈希"到底指什么）
+  我现在的存档是单文件 JSON（`bz_server_save_v2`）。R5 要"磁盘哈希和业务哈希都不变"，我只做到磁盘哈希。
+  候选：(a) 只比磁盘哈希；(b) 比"去掉 `meta.*`（actionStats / rejectStats）之后的 JSON"；(c) 比业务投影
+  （bag/playerEquip/equipments/coins/gold/yuanbao/potential/skills/accepted/done）。请指定一个，并说明它挡什么、漏什么。
+
+Q3（"抓包真值码"要不要进 `reject-codes.json`）
+  `getCRAInfo` 的 `eRet:2` 是 `templates.json` 里抓来的真值，既不是拒绝也不是流程；我把它留在 test 侧
+  `TEMPLATE_CODES` 登记。你更希望它进主表（加 `role:"capture"`）还是留在 test 侧？
+  如果进主表，R1/R2/R3/F1 的适用范围要不要跟着改？
+
+Q4（`known-red.json` 要不要纳入 G 规则体系）
+  它是本批新加的"已知红项"登记表（当前 cap=1）。按你 R13 §4 的 G1–G5 逻辑，它天然属于"登记表"，
+  但它的 key 是三元组（item+line+msgSha8）而不是 id 列表。要不要给它单独一套棘轮（新增即 FAIL / 修好不删也 FAIL / 总数只许降），
+  以及 G5 的"扩容不夹带代码变更"在这里该怎么表达？
+
+────────────────────────────────────────────────────────
+【输出格式（严格 1-7，不许增删小标题）】
+
+1. 结论（≤6 句）：§2 七条处置各自成立否；§3 的 A/B 两处纠偏是否成立
+2. Q1 答（item.Effect 的数据源 + "会不会发 useItem"的判据 + dump 形态）
+3. Q2 答（业务哈希的口径）
+4. Q3 答（抓包真值码放哪）
+5. Q4 答（known-red 的棘轮与 G5 表达）
+6. 反例：我这批处置在什么具体场景下会出错
+7. 假设：哪条前提不成立时，你上面哪些结论失效（按编号点名）

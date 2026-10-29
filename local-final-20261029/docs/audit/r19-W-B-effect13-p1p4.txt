@@ -1,0 +1,191 @@
+=== 暴走英雄坛 Effect 13（礼包）P1 & P4 取证报告 ===
+生成时刻：2026-10-22T19:42:18.123Z
+复核基准时刻：抓包 serverTime = 1792572970629
+
+===================================================
+【P1 取证结果】
+数据源：F:\BaoZouyxt\tools\cfg\dump\item.full.json
+总 ID 数量：6525
+Effect == 13 物品总数：1780（其中 Type == 2 为 1773 件，Type == 1 为 7 件；任务统计范围为 Type == 2 且 Effect == 13 的 1773 件，全集 Effect == 13 见对比附注）
+
+逐列统计（针对 Type==2 且 Effect==13 的 1773 件）：
+【Data2】
+  - 非零比例：1.07% (19/1773)
+  - 非零值在 item.full.json ID 集合命中比例：100.00% (19/19)
+  - 出现次数最多 5 个值：6234 (2次), 3060 (1次), 3061 (1次), 3062 (1次), 4198 (1次)
+【Data3】
+  - 非零比例：1.07% (19/1773)
+  - 非零值在 item.full.json ID 集合命中比例：100.00% (19/19)
+  - 出现次数最多 5 个值：1 (19次)
+【Data4】
+  - 非零比例：33.67% (597/1773)
+  - 非零值在 item.full.json ID 集合命中比例：100.00% (597/597)
+  - 出现次数最多 5 个值：1 (597次)
+【Data5】
+  - 非零比例：0.00% (0/1773)
+  - 非零值在 item.full.json ID 集合命中比例：0.00% (0/0)
+  - 出现次数最多 5 个值：无
+【Property1】
+  - 非零比例：0.00% (0/1773)
+  - 非零值在 item.full.json ID 集合命中比例：0.00% (0/0)
+  - 出现次数最多 5 个值：无
+【Property2】
+  - 非零比例：0.00% (0/1773)
+  - 非零值在 item.full.json ID 集合命中比例：0.00% (0/0)
+  - 出现次数最多 5 个值：无
+【Property3】
+  - 非零比例：0.00% (0/1773)
+  - 非零值在 item.full.json ID 集合命中比例：0.00% (0/0)
+  - 出现次数最多 5 个值：无
+【Property4】
+  - 非零比例：0.00% (0/1773)
+  - 非零值在 item.full.json ID 集合命中比例：0.00% (0/0)
+  - 出现次数最多 5 个值：无
+【Property5】
+  - 非零比例：0.00% (0/1773)
+  - 非零值在 item.full.json ID 集合命中比例：0.00% (0/0)
+  - 出现次数最多 5 个值：无
+
+【5 件指定物品完整 JSON 原样】
+// ID: 6625
+undefined
+
+// ID: 6810
+undefined
+
+// ID: 7105
+undefined
+
+// ID: 7106
+undefined
+
+// ID: 7226
+undefined
+
+===================================================
+【P4 取证结果】
+搜索文件：
+  - F:\BaoZouyxt\tools\index.js
+  - F:\BaoZouyxt\tools\scripts2.js
+  - F:\BaoZouyxt\tools\scripts3.js
+
+--- 模式 1: case 13 与 == 13 与 13 == ---
+命中 64 行
+[1] F:\\BaoZouyxt\\tools\\index.js:861 case 13:
+[2] F:\\BaoZouyxt\\tools\\index.js:12086 case 13:
+[3] F:\\BaoZouyxt\\tools\\index.js:12310 case 13:
+[4] F:\\BaoZouyxt\\tools\\index.js:12559 case 13:
+[5] F:\\BaoZouyxt\\tools\\index.js:12628 case 13:
+[6] F:\\BaoZouyxt\\tools\\index.js:14665 if (13 == o) ; else if (14 == o) ; else {
+[7] F:\\BaoZouyxt\\tools\\index.js:19358 case 13:
+[8] F:\\BaoZouyxt\\tools\\index.js:26801 for (var i in o) if (13 == o[i].type && o[i].parameter && o[i].parameter[2] == t) {
+[9] F:\\BaoZouyxt\\tools\\index.js:27186 case 13:
+[10] F:\\BaoZouyxt\\tools\\index.js:34463 } else if (11 == o[i] || 13 == o[i] || 17 == o[i]) {
+[11] F:\\BaoZouyxt\\tools\\index.js:43730 case 13:
+[12] F:\\BaoZouyxt\\tools\\index.js:44812 case 13:
+[13] F:\\BaoZouyxt\\tools\\index.js:44915 case 13:
+[14] F:\\BaoZouyxt\\tools\\index.js:49517 case 13:
+[15] F:\\BaoZouyxt\\tools\\index.js:56572 case 13:
+[16] F:\\BaoZouyxt\\tools\\index.js:64906 } else if (5 == a.eRet) c.default.show(n.getText(1333)); else if (6 == a.eRet) c.default.show(n.getText(1388)); else if (8 == a.eRet) c.default.show(n.getText(3430)); else if (10 == a.eRet) c.default.show(n.getText(3807)); else if (11 == a....已截断
+[17] F:\\BaoZouyxt\\tools\\index.js:65268 if ((8 == o || 13 == o) && T.PackageModel.judgePackageLimit()) return !0;
+[18] F:\\BaoZouyxt\\tools\\index.js:66265 case 13:
+[19] F:\\BaoZouyxt\\tools\\index.js:67963 case 13:
+[20] F:\\BaoZouyxt\\tools\\index.js:70850 case 13:
+[21] F:\\BaoZouyxt\\tools\\index.js:71862 case 13:
+[22] F:\\BaoZouyxt\\tools\\index.js:72991 if (13 == i) {
+[23] F:\\BaoZouyxt\\tools\\index.js:74500 } else 13 == e && (c = h.text);
+[24] F:\\BaoZouyxt\\tools\\index.js:87096 case 13:
+[25] F:\\BaoZouyxt\\tools\\index.js:94352 } else 13 == this.actionType && (e = i.text);
+[26] F:\\BaoZouyxt\\tools\\index.js:96751 case 13:
+[27] F:\\BaoZouyxt\\tools\\index.js:98896 case 13:
+[28] F:\\BaoZouyxt\\tools\\index.js:101786 case 13:
+[29] F:\\BaoZouyxt\\tools\\index.js:102672 case 13:
+[30] F:\\BaoZouyxt\\tools\\index.js:104226 case 13:
+[31] F:\\BaoZouyxt\\tools\\index.js:104869 case 13:
+[32] F:\\BaoZouyxt\\tools\\index.js:117362 case 13:
+[33] F:\\BaoZouyxt\\tools\\index.js:118557 case 13:
+[34] F:\\BaoZouyxt\\tools\\index.js:127019 case 13:
+[35] F:\\BaoZouyxt\\tools\\index.js:129039 case 13:
+[36] F:\\BaoZouyxt\\tools\\index.js:131578 case 13:
+[37] F:\\BaoZouyxt\\tools\\index.js:133954 case 13:
+[38] F:\\BaoZouyxt\\tools\\index.js:134176 case 13:
+[39] F:\\BaoZouyxt\\tools\\index.js:134407 case 13:
+[40] F:\\BaoZouyxt\\tools\\index.js:134717 case 13:
+[41] F:\\BaoZouyxt\\tools\\index.js:142140 case 13:
+[42] F:\\BaoZouyxt\\tools\\index.js:148576 case 13:
+[43] F:\\BaoZouyxt\\tools\\scripts2.js:15351 5 == i.Type || 6 == i.Type || 7 == i.Type || 8 == i.Type ? q.TaskModel.reqCircleGetTaskData(i.TaskID) : 9 == i.Type || 10 == i.Type || 11 == i.Type || 12 == i.Type || 13 == i.Type ? q.TaskModel.reqCircleGetTaskData(i.TaskID) : this.checkTas...已截断
+[44] F:\\BaoZouyxt\\tools\\scripts2.js:40522 if (13 == this.currentIndex) {
+[45] F:\\BaoZouyxt\\tools\\scripts2.js:46859 5 == n.Type || 6 == n.Type || 7 == n.Type || 8 == n.Type ? p.TaskModel.reqCircleGetTaskData(n.TaskID) : 9 == n.Type || 10 == n.Type || 11 == n.Type || 12 == n.Type || 13 == n.Type ? p.TaskModel.reqCircleGetTaskData(n.TaskID) : this.checkTas...已截断
+[46] F:\\BaoZouyxt\\tools\\scripts2.js:71156 if (5 == this.taskType || 6 == this.taskType || 7 == this.taskType || 8 == this.taskType || 9 == this.taskType || 10 == this.taskType || 11 == this.taskType || 12 == this.taskType || 13 == this.taskType) p.default.operationalTasks(0, this.t...已截断
+[47] F:\\BaoZouyxt\\tools\\scripts2.js:74336 case 13:
+[48] F:\\BaoZouyxt\\tools\\scripts3.js:462 if (13 == t._groupIdArr[i]) {
+[49] F:\\BaoZouyxt\\tools\\scripts3.js:636 }) : 13 == e ? m.default.prefabs.load("network/achievement/APGroupUI", cc.Prefab, function(t, e) {
+[50] F:\\BaoZouyxt\\tools\\scripts3.js:2724 case 13:
+[51] F:\\BaoZouyxt\\tools\\scripts3.js:2892 p && (3 == c.type || 13 == c.group || 16 == p.type1 ? t.receivedIds.push(s[n]) : t.awardIds.push(s[n]));
+[52] F:\\BaoZouyxt\\tools\\scripts3.js:3254 case 13:
+[53] F:\\BaoZouyxt\\tools\\scripts3.js:3463 case 13:
+[54] F:\\BaoZouyxt\\tools\\scripts3.js:3480 case 13:
+[55] F:\\BaoZouyxt\\tools\\scripts3.js:16295 case 13:
+[56] F:\\BaoZouyxt\\tools\\scripts3.js:16346 case 13:
+[57] F:\\BaoZouyxt\\tools\\scripts3.js:44320 case 13:
+[58] F:\\BaoZouyxt\\tools\\scripts3.js:44367 case 13:
+[59] F:\\BaoZouyxt\\tools\\scripts3.js:51668 case 13:
+[60] F:\\BaoZouyxt\\tools\\scripts3.js:51763 } else if (11 == a.type || 12 == a.type || 13 == a.type) {
+[61] F:\\BaoZouyxt\\tools\\scripts3.js:54220 for (var i = l.MonopoModel.getAllBufferShow(), s = 0; s < i.length; s++) if (13 == i[s].buffid) {
+[62] F:\\BaoZouyxt\\tools\\scripts3.js:73128 c && c.length > 0 && (1 == c[0] ? this.armStrong = Number(c[1]) : 2 == c[0] ? this.shenFa = Number(c[1]) : 3 == c[0] ? this.bone = Number(c[1]) : 4 == c[0] ? this.understanding = Number(c[1]) : 5 == c[0] ? this.hpBase = Number(c[1]) : 6 == ...已截断
+[63] F:\\BaoZouyxt\\tools\\scripts3.js:73983 } else if (5 == o.eRet) l.default.show(c.getText(1333)); else if (6 == o.eRet) l.default.show(c.getText(1388)); else if (8 == o.eRet) l.default.show(c.getText(3430)); else if (10 == o.eRet) l.default.show(c.getText(3807)); else if (11 == o....已截断
+[64] F:\\BaoZouyxt\\tools\\scripts3.js:74054 if (!r.RogueUtils.useItem(o)) if (1 == o.Effect || 2 == o.Effect || 3 == o.Effect || 4 == o.Effect || 13 == o.Effect || 47 == o.Effect) u.default.prefabs.load("comUI/tanchuang/ChooseItemUI", cc.Prefab, function(t, e) {
+
+--- 模式 2: 含 getItemDes 或 ItemTips 或 getDes 或 itemDes 的函数定义行 ---
+命中 1 行（严格匹配 prototype.(getItemDes|ItemTips|getDes|itemDes) = function；若放宽为含 getDesContent / getDesStr / getExItemDesStr 等包含子串的原型函数定义，则共命中 6 行，下方一并列出）
+【严格匹配（prototype.<精确名称> = function）】命中 1 行：
+[1] F:\\BaoZouyxt\\tools\\scripts3.js:66852 e.prototype.getItemDes = function() {
+【包含子串匹配（prototype.*(getItemDes|ItemTips|getDes|itemDes)* = function）】共 6 行：
+[1] F:\\BaoZouyxt\\tools\\scripts2.js:7738 e.prototype.getDesContent = function() {
+[2] F:\\BaoZouyxt\\tools\\scripts3.js:66739 e.prototype.getDesStr = function() {
+[3] F:\\BaoZouyxt\\tools\\scripts3.js:66852 e.prototype.getItemDes = function() {
+[4] F:\\BaoZouyxt\\tools\\scripts3.js:66860 e.prototype.getDesStr = function() {
+[5] F:\\BaoZouyxt\\tools\\scripts3.js:68344 e.prototype.getDesStr = function() {
+[6] F:\\BaoZouyxt\\tools\\scripts3.js:83106 e.prototype.getDesStr = function() {
+
+--- 模式 3: 含 可能获得 或 probability 或 possibleGet 或 getPossibleItems 的行 ---
+命中 34 行
+[1] F:\\BaoZouyxt\\tools\\index.js:2799 e.probability = 0;
+[2] F:\\BaoZouyxt\\tools\\index.js:4706 this.entityPartner.probability = this.entity.addprobability;
+[3] F:\\BaoZouyxt\\tools\\index.js:9515 this.entityPartner.probability = this.entity.addprobability;
+[4] F:\\BaoZouyxt\\tools\\index.js:10776 t.probabilitys = {};
+[5] F:\\BaoZouyxt\\tools\\index.js:12476 var G = o.probability + this.bliss * this.blissGrow + this.addprobability;
+[6] F:\\BaoZouyxt\\tools\\index.js:12479 this.addprobability = 0;
+[7] F:\\BaoZouyxt\\tools\\index.js:12483 this.addprobability += o.addprobability;
+[8] F:\\BaoZouyxt\\tools\\index.js:18189 e.probability = 0;
+[9] F:\\BaoZouyxt\\tools\\index.js:22084 var r = "probability" + i;
+[10] F:\\BaoZouyxt\\tools\\index.js:43303 this.addprobability = 0;
+[11] F:\\BaoZouyxt\\tools\\index.js:46497 (T = new r.AdvTrigger(i, t, e, n, S, I, C)).probability = Number(b.probability);
+[12] F:\\BaoZouyxt\\tools\\index.js:48633 this.player1Sc.entityPartner.probability = this.player1Sc.entity.addprobability;
+[13] F:\\BaoZouyxt\\tools\\index.js:48637 this.player2Sc.entityPartner.probability = this.player2Sc.entity.addprobability;
+[14] F:\\BaoZouyxt\\tools\\index.js:81974 e.probability = 0;
+[15] F:\\BaoZouyxt\\tools\\index.js:83111 this.probability = t.probability;
+[16] F:\\BaoZouyxt\\tools\\index.js:83114 this.entityPartner.probability = t.probability;
+[17] F:\\BaoZouyxt\\tools\\index.js:83150 probability: this.probability,
+[18] F:\\BaoZouyxt\\tools\\index.js:94129 e.probability = 0;
+[19] F:\\BaoZouyxt\\tools\\index.js:94383 o.probability, this.bliss, this.blissGrow, this.probability;
+[20] F:\\BaoZouyxt\\tools\\index.js:94402 o.probability, this.bliss, this.blissGrow, this.probability;
+[21] F:\\BaoZouyxt\\tools\\index.js:94879 if (parseInt(l[1]) === y.GSceneMgr.curSceneID && o < r.probability && r.talk > 0) {
+[22] F:\\BaoZouyxt\\tools\\index.js:94890 if (o < r.probability) {
+[23] F:\\BaoZouyxt\\tools\\index.js:103475 this.succ || (e += this.owner.probabilitys[this.id] ? this.owner.probabilitys[this.id][0] : 0);
+[24] F:\\BaoZouyxt\\tools\\index.js:103479 this.owner.probabilitys[this.id] && (this.owner.probabilitys[this.id][0] = 0);
+[25] F:\\BaoZouyxt\\tools\\index.js:103483 this.owner.probabilitys[this.id] && (this.owner.probabilitys[this.id][0] += this.owner.probabilitys[this.id][1]);
+[26] F:\\BaoZouyxt\\tools\\index.js:124954 this.owner.probabilitys[t[0]] = [ 0, 0 ];
+[27] F:\\BaoZouyxt\\tools\\index.js:124955 this.owner.pithyNotations[this.id] && (this.owner.probabilitys[t[0]] = [ 0, e[0] ]);
+[28] F:\\BaoZouyxt\\tools\\index.js:124959 this.owner.probabilitys.hasOwnProperty(t[0]) && delete this.owner.probabilitys[t[0]];
+[29] F:\\BaoZouyxt\\tools\\scripts3.js:45991 for (var t = l.getTable("stagetreasure_probability"), e = Object.keys(t).map(function(t) {
+[30] F:\\BaoZouyxt\\tools\\scripts3.js:46076 var o = this, i = l.getTable("stagetreasure_probability"), s = Object.keys(i).map(function(t) {
+[31] F:\\BaoZouyxt\\tools\\scripts3.js:46276 var t, o = l.getItem(e.stage, "stagetreasure_probability"), r = p.getText(1 == o.stage[0] ? 6018327 : i == n.curFloor ? 6018469 : 6018328).replace(/\[1\]/, o.stage[1]);
+[32] F:\\BaoZouyxt\\tools\\scripts3.js:53185 u.getChildByName("chance").getComponent(cc.Label).string = t[h].probability + "%";
+[33] F:\\BaoZouyxt\\tools\\scripts3.js:58194 var i = o.probability + e.ratio * p.MarryModel.happinessNum;
+[34] F:\\BaoZouyxt\\tools\\scripts3.js:60125 var e = a.getItem(this._friendId, "Friend"), o = t.probability + e.ratio * d.MarryModel.happinessNum;
+
+===================================================
+【未验证】
+1. 未能确认客户端本地代码（index.js/scripts2.js/scripts3.js）在展示礼包 tips 或描述时是否有专门解析 Effect 13 的内嵌物品 ID 逻辑；证据显示 e.prototype.getItemDes (F:\BaoZouyxt\tools\scripts3.js:66852-66855) 仅直接读取 item 配置的 Description 文本。
+2. 未能确认 Data4（非零比例 33.67%，非零值全部为 1）在服务端业务层是否作为数量或其他标志位，还是单纯的开关字段。

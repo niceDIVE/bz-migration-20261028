@@ -1,0 +1,104 @@
+# User.accountLogOff  (HttpConst.ACCOUNT_LOG_OFF)
+# 出现 3 处
+
+117194: };
+117195: o.prototype.update = function() {
+117196: this._stopped || this.changeSlider();
+117197: };
+117198: o.prototype.addEventListeners = function() {
+117199: E.MessageCenter.on(I.EvName.EMAIL_STATE_EVENT, this.onUpdateEmailEvent, this);
+117200: E.MessageCenter.on(w.HttpConst.ACCOUNT_LOG_OFF, this.onLogOffEvt, this);
+117201: };
+117202: o.prototype.removeEventListeners = function() {
+117203: E.MessageCenter.off(I.EvName.EMAIL_STATE_EVENT, this.onUpdateEmailEvent, this);
+117204: E.MessageCenter.off(w.HttpConst.ACCOUNT_LOG_OFF, this.onLogOffEvt, this);
+117205: };
+117206: o.prototype.onLogOffEvt = function(t, e) {
+117207: if (1 == e.eRet) {
+117208: E.MessageCenter.cleanup();
+117209: cc.game.restart();
+117210: M.SoundMgr.stopMusic();
+117211: M.SoundMgr.stopEffects();
+117212: }
+117213: };
+117214: o.prototype.onClickServerBtn = function() {
+117215: P.LoginMgr.judgeLangEn() && cc.sys.os === cc.sys.OS_ANDROID && 8 == h.platformID && 8008 == h.platfStr && P.LoginMgr.checkPlv("3.1.0") ? cc.sys.openURL(P.LoginMgr.getCustomerUrl()) : P.LoginMgr.openCustomerSystem(!0);
+117216: };
+117217: o.prototype.onClickBtn = function(e, o) {
+117218: var i = this, n = e.target.getComponent(cc.Button);
+117219: n.interactable = !1;
+117220: var r = parseInt(o), a = "";
+117221: switch (r) {
+117222: case 0:
+117223: a = "SetRandomNpcUI";
+117224: break;
+117225: 
+117226: case 1:
+117227: var s = (l.default.actionMode + 1) % 3;
+117228: l.default.actionMode = s;
+117229: l.default.save();
+117230: l.default.actionMode;
+117231: this.actionBtnLabel.string = u.getText(1158) + u.getText([ 8054, 8055, 8056 ][s]);
+117232: break;
+117233: 
+117234: case 2:
+117235: a = "OnlineRewardUI";
+117236: S.RoleOtherInfo.emailState = 0;
+117237: E.MessageCenter.dispatch(I.EvName.REFRESH_EMAIL_STATE_EVENT, {});
+117238: break;
+117239: 
+117240: case 3:
+---
+117241: f.default.show(S.RoleOtherInfo.welfareCode, [ {
+117242: flag: 0,
+117243: name: u.getText(6001714)
+117244: } ], function(t) {
+---
+117384: name: u.getText(333),
+117385: flag: 1
+117386: } ], function(t) {
+117387: if (0 == t) {
+117388: var e = u.getText(6001034);
+117389: f.default.showPrompt(e, function() {
+117390: B.NetMgr.http.sendReqWithMask(w.HttpConst.ACCOUNT_LOG_OFF, {});
+117391: }, 5);
+117392: }
+117393: });
+117394: }
+117395: break;
+117396: 
+117397: case 16:
+117398: 0 == S.RoleOtherInfo.autoFightState ? S.RoleOtherInfo.autoFightState = 1 : S.RoleOtherInfo.autoFightState = 0;
+117399: this.autoFightLabel.string = 0 == S.RoleOtherInfo.autoFightState ? u.getText(6015728) : u.getText(6015729);
+117400: Promise.resolve().then(function() {
+117401: return t("../../../../scripts3/model3/AutoFightNpcModel");
+117402: }).then(function(t) {
+117403: t.AutoFightNpcModel.reqSetState(S.RoleOtherInfo.autoFightState);
+117404: });
+117405: break;
+117406: 
+117407: default:
+117408: cc.log("SettingUI page dosen't have this button");
+117409: }
+117410: a.length < 1 ? n.interactable = !0 : c.default.prefabs.load("network/settingUI/" + a, cc.Prefab, function(t, e) {
+117411: var o = cc.instantiate(e);
+117412: n.interactable = !0;
+117413: p.PopUpMgr.addPopUp(o, k.LayerMgr.popUpLayer, 1, "IllustrationUI" != a);
+117414: });
+117415: };
+117416: o.prototype.onCtrlVolume = function() {};
+117417: o.prototype.onUpdateEmailEvent = function() {
+117418: this.emailTip.active = S.RoleOtherInfo.emailState > 0;
+117419: };
+117420: o.prototype.clearPlayerLoadcationData = function() {
+117421: T.CrossServiceModel.isEnterCrossServer() || f.default.show(u.getText("4477"), [ {
+117422: flag: 0,
+117423: name: u.getText("332")
+117424: }, {
+117425: flag: 1,
+117426: name: u.getText("333")
+117427: } ], function(t) {
+117428: if (0 == t) {
+117429: _.LocalStorageMgr.removeItem(g.RoleBaseInfo.roleID + "$#&A");
+117430: _.LocalStorageMgr.removeItem(g.RoleBaseInfo.roleID + "$#&T");
+---

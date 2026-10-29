@@ -1,0 +1,62 @@
+# User.EndPlayWooks   (HttpConst.END_WOOD_TRAINING)
+
+## 注册点 86176: r.MessageCenter.on(a.HttpConst.END_WOOD_TRAINING, this.onEndWoodTr, this);
+
+## 请求点 86284: u.NetMgr.http.sendRequest(a.HttpConst.END_WOOD_TRAINING, e);
+   86276: t.prototype.reqEndWoodTr = function() {
+   86277: var t = c.UserModel.entity, e = {
+   86278: artLevel: p.SkillTable.skillEvaluation(),
+   86279: maxHP: t.hp.finalValue,
+   86280: maxMP: t.mp.finalValue,
+   86281: hglmt: t.hunger.limit,
+   86282: speed: t.hungerConsumingSpeed.finalValue
+   86283: };
+
+## 处理函数 onEndWoodTr (86199-86245)
+ 86199: t.prototype.onEndWoodTr = function(t, e) {
+ 86200: r.MessageCenter.dispatch(s.EvName.ON_HOOK_BG_CLOSE);
+ 86201: if (this.isPracticing) {
+ 86202: if (1 == e.eRet) {
+ 86203: this.isPracticing = !1;
+ 86204: i.getItem(l.RoleBaseInfo.isvip ? 2 : 1, "wood").Hp;
+ 86205: var o = .001 * (e.serverTime - e.beginTime);
+ 86206: this.timeElapsed = Math.min(this.maxTime, o);
+ 86207: c.UserModel.entity.totalGameTime.gameTime = e.gTime;
+ 86208: c.UserModel.entity.hunger.remaining = e.hg;
+ 86209: c.UserModel.entity.numStuffed = e.hgtimes;
+ 86210: this.potGot = e.potential;
+ 86211: this.expGot = e.exp;
+ 86212: c.UserModel.entity.exp += this.expGot;
+ 86213: l.RoleBaseInfo.potentials += this.potGot;
+ 86214: e.hasOwnProperty("expExtra") ? this.expExtra = e.expExtra : this.expExtra = 0;
+ 86215: e.hasOwnProperty("potentialExtra") ? this.potentialExtra = e.potentialExtra : this.potentialExtra = 0;
+ 86216: this.suprises = [];
+ 86217: for (var n = e.specialAny, a = 0; a < n.length; ++a) {
+ 86218: switch (n[a].type) {
+ 86219: case 1:
+ 86220: p.SkillTable.setSkill(n[a].number[0], p.SkillTable.getSkillLevel(n[a].number[0]) + n[a].number[1]);
+ 86221: break;
+ 86222: 
+ 86223: case 2:
+ 86224: l.RoleBaseInfo.potentials += n[a].number;
+ 86225: break;
+ 86226: 
+ 86227: case 3:
+ 86228: h.InventoryDB.addItem(1, n[a].number);
+ 86229: break;
+ 86230: 
+ 86231: case 4:
+ 86232: l.RoleBaseInfo.coins += n[a].number;
+ 86233: break;
+ 86234: 
+ 86235: case 5:
+ 86236: c.UserModel.entity.hp.baseValue += n[a].number;
+ 86237: break;
+ 86238: 
+ 86239: case 6:
+ 86240: c.UserModel.entity.mp.baseValue += n[a].number;
+ 86241: break;
+ 86242: 
+ 86243: case 7:
+ 86244: c.UserModel.entity.exp += n[a].number;
+ 86245: }

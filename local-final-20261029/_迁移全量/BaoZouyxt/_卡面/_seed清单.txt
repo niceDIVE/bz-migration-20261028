@@ -1,0 +1,99 @@
+# Anzu 卡面 seed 清单 (skill 5.5)
+轮次 v1 | 入口 txt2img(qingwei) | 832x1216 | 40步 cfg4.5 euler/normal | --anima-x 未写(=all 5 LoRA)
+编号  seed     文件                              结论
+A-01  771001   v1\Anzu_v1_s771001.png           待用户裁定
+A-02  771002   v1\Anzu_v1_s771002.png           待用户裁定
+提示词: anzu_v1_prompt.txt / 负面: anzu_v1_negative.txt
+定版后立即复制为 Anzu_定版_<编号>_seed<seed>.png 并入账
+# ---- v2 轮 (随机seed, 不固定) ----
+轮次 v2 | 改动: 卷度封顶(curly_hair/ringlets负面)+轻脸红(light_blush)+清澈眼+补第二只手(hand_to_own_mouth)
+编号  seed        文件                              结论
+A-03  131657150   v2\Anzu_v2_s131657150.png         头发修好; 但变成托下巴pose, 袖不盖手
+A-04  465644511   v2\Anzu_v2_s465644511.png         背景出现浮空问号符号 -> 违反空白背景标准
+
+# ---- v3 轮 (随机seed, 不固定) ----
+轮次 v3 | 改动: 撤hand_to_own_mouth(治托下巴)+封浮空符号/汗滴+去moist+封blush_stickers/full-face_blush+袖盖手改自然语言
+编号  seed        文件                              结论
+A-05  498518621   v3\Anzu_v3_s498518621.png         三标准全过, 背景干净, 推荐
+A-06  191093201   v3\Anzu_v3_s191093201.png         三标准全过, 脸红最淡, 推荐
+参与v3的负面词: anzu_v3_negative.txt (470字符, 全部库内验证)
+[2026-10-06 21:52:36] 用户暂定: dsh_miao_00918_ -> v2轮 seed=131657150 已复制为 Anzu_暂定_A-03_seed131657150.png (暂定,非最终定版)
+
+# ---- 二号 神崎诗织 Shiori v1 轮 (随机seed) ----
+轮次 shiori_v1 | 入口 txt2img(qingwei) | 832x1216 | 40步 cfg4.5 | --anima-x 未写(=all 5 LoRA)
+提示词: shiori_v1_prompt.txt / 负面: shiori_v1_negative.txt
+编号  seed        文件                                        结论
+S-01  553953396   shiori_v1\Shiori_v1_s553953396.png          三标准过; 钥匙未入画
+S-02  1051752219  shiori_v1\Shiori_v1_s1051752219.png         三标准过; 钥匙入画✓ 脸红略重
+遗留: 两版姿势都落在"双臂交叉抱账本"(即刻板抱胸) —— 自然语言与负面词crossed_arms互相打架, NL获胜
+# ---- 二号 神崎诗织 Shiori v2 轮 (随机seed, 外观按性格调整) ----
+轮次 shiori_v2 | 改动: 垂目+挑眉+得意(高岭之花)、直视观众、工牌挂绳、不对称姿势(一手垂侧拎账本+一手撩发)、负面加hugging_object
+编号  seed        文件                                        结论
+S-03  1872957598  shiori_v2\Shiori_v2_s1872957598.png         三标准过; 双臂交叉已消除; 撩发+工牌+钥匙全在; 账本被裁左下角
+S-04  1552924455  shiori_v2\Shiori_v2_s1552924455.png         三标准过; 工牌带照片; 钥匙挂在马甲上; 账本同样裁角
+参与v2的负面词: shiori_v2_negative.txt
+推荐: S-03 / S-04 优于 v1 两版(性格贴合度与姿势刻板问题均改善)
+# ---- 二号 神崎诗织 外观重做 三方向 (随机seed, 各1张) ----
+轮次 shiori_redo | 触发: 用户判定v2外观设计不好, 要求重做
+改动: 瞳色 yellow_eyes -> orange_eyes+NL deep warm amber (yellow_eyes入负面); 战术马甲 -> 朴素马甲/帆布围裙; 撤工牌; 撤"refined jawline"类成熟骨相措辞; 恢复蓬松双马尾
+共同负面: shiori_redo_negative.txt
+编号  方向   seed        文件                                          结论
+S-A   A     647597249   shiori_redo\Shiori_重做A_s647597249.png        最干净; 琥珀瞳✓ 蓬松双马尾✓ 无战术件✓ 账本完整入画✓ 钥匙✓; 推荐
+S-B   B     1159088572  shiori_redo\Shiori_重做B_s1159088572.png       围裙+围裙环挂钥匙+笔✓; 但落到"一手叉腰"刻板pose(未封hand_on_own_hip单数词)
+S-C   C     1308880800  shiori_redo\Shiori_重做C_s1308880800.png       脸红+硬撅嘴+回头, 傲娇反差最佳; 但背景出现2个浮空矩形杂物 + 右手多出V字手势
+遗留教训: 负面只封了 hands_on_own_hips(30549) 复数, 漏了 hand_on_own_hip(152715) 单数 -> 下一轮补
+[2026-10-06 22:10:47] 用户暂定诗织: dsh_miao_00928_ -> 重做方向C seed=1308880800 已复制为 Shiori_暂定_S-C_seed1308880800.png (暂定)
+
+# ---- 三号 浅野凛 Rin v1 轮 (随机seed / 2张) ----
+轮次 rin_v1 | 入口 txt2img(qingwei) | 832x1216 | 40步 cfg4.5 | --anima-x 未写(=all 5 LoRA)
+提示词: rin_v1_prompt.txt / 负面: rin_v1_negative.txt
+编号  seed        文件                          结论
+R-01  573293315   rin_v1\Rin_v1_s573293315.png  三标准过; 但取景偏宽(露到卫衣下摆+大腿, 接近七分身)
+R-02  1461195370  rin_v1\Rin_v1_s1461195370.png 三标准过; 取景更贴中近景; 耳机带青光细节
+遗留: "隔着平板顶边探头"的姿势意图未落实(两版都把平板举在脸侧/胸前, 未遮挡脸部); 不对称结构保持住了(无抱胸)
+遗留: 棒棒糖只出细棍无糖球 —— 与原始设定"small pastel lollipop stick"字面一致, 但有被误读成烟的风险
+# ---- 三号 浅野凛 Rin v2 轮 (随机seed / 2张 / 外观调整) ----
+轮次 rin_v2 | 改动: 低头看屏幕不看观众(looking_down)+屏幕/耳机辉光+糖球实体化(swirl_lollipop)+锁死中近景(负面加thighs/bare_legs/pleated_skirt)+去浓妆感
+编号  seed        文件                          结论
+R-03  1010712707  rin_v2\Rin_v2_s1010712707.png 三标准过; 粉色糖球✓; 取景锁死✓; 双手都扶在平板上
+R-04  185385681   rin_v2\Rin_v2_s185385681.png  三标准过; 薄荷色糖球✓; 耳机青光很重(未来感强但偏亮); 一手扶屏一手垂袖
+参与v2的负面词: rin_v2_negative.txt
+推荐: R-04(姿势分离更干净) / R-03(光更克制)
+协议偏差记录: 本轮运行期未按30秒间隔采样内存(等待作业返回期间漏采) -> memory-safety-protocol 第6条未执行, 已向用户报告
+[2026-10-06 22:22:13] 用户暂定凛: dsh_miao_00932_ -> rin_v2 seed=185385681 已复制为 Rin_暂定_R-04_seed185385681.png (暂定)
+
+# ---- 白石杏 4套剧情差分 (Sprite Variations) ----
+基准图: Anzu_暂定_A-03_seed131657150.png
+机制: 先跑Gate实测 img2img垫图d0.6 vs txt2img同seed -> txt2img同seed胜(DNA发型/肤质保住 + 差分达成度更高)
+      垫图0.6的问题: 源码dsh_gen.py:392 只挂2个LoRA, skin/detail/gloss三档丢失 -> 发型波浪掉了、肤质发平
+全批 seed=131657150 (与基准图同seed, 保DNA) | 5 LoRA全挂
+编号     文件                                    验证结论
+anzu_01_fear     anzu_diff\anzu_01_fear.png      泪/宽瞳/颤嘴✓ 双手攥领口✓ 未遮肩 背景残留虚线抖动线
+anzu_02_serving  anzu_diff\anzu_02_serving.png   双手捧碗✓ 脸红✓ 袖子未卷起 无热气 背景干净
+anzu_03_spoiled  anzu_diff\anzu_03_spoiled.png   闭眼笑✓ 歪头✓ 扯深色衣角✓ 背景干净 (四张中最干净)
+anzu_04_intimate anzu_diff\anzu_04_intimate.png  深脸红/半眯/张唇/幸福泪✓ 解扣+锁骨乳沟✓ 背景干净
+                                                 但胸部比基准图明显丰满(DNA漂移) 且面部仍偏幼
+Gate对照图: anzu_diff\anzu_01_GateA_img2img_d60.png / anzu_01_GateB_txt2img_s131657150.png
+[2026-10-06 22:45:13] 定版: 差分03 吃饱撒娇 -> Anzu_定版_D03_spoiled_seed131657150.png (用户同意建议直接定版)
+
+# ---- 差分修正轮 (5张, seed=131657150) ----
+编号              文件                                    结论
+01A  anzu_01_fear_v2a.png      tears+wide-eyed+scared  -> 背景干净✓ 恐惧强度足✓ 【01修正胜出】
+01B  anzu_01_fear_v2b.png      仅tears无情绪标签         -> 背景干净✓ 但恐惧过淡, 表情变忧郁 ✗
+02A  anzu_02_serving_v2a.png   (sleeves_rolled_up:1.35)+(steam:1.3)+bare_arms -> 卷袖半成; 碗是空的; 无热气
+02B  anzu_02_serving_v2b.png   同上去掉oversized_clothes+(sleeves_rolled_up:1.4) -> 卷袖成立✓ 碗有汤✓ 无热气 【02修正胜出】
+04v2 anzu_04_intimate_v2.png   加(mature_female:1.15)+NL成人骨相 -> 面部明确成人化✓ 但与基准图DNA产生偏移
+
+## 归因结论(重要, 值得写进skill)
+1. 抖动虚线来源 = crying(76183) / crying_with_eyes_open(35821) 这两个标签
+   证据: 同seed下移除这两个词后, 01A与01B的背景虚线全部消失; 保留tears不影响
+   替代方案: 恐惧情绪改用 	ears + wide-eyed(31816) + scared(14607) 表达, 无副作用
+2. steam(54368) 三次尝试(02/02A/02B)全部未渲染, 加权到1.35仍无效 -> 该词在本底模上不生效, 需换机制
+3. oversized_clothes(12506) 并非卷袖的阻碍: 02B删掉它之后衬衫依旧是 oversized 观感, 卷袖反而成立
+   真正起作用的是权重 (sleeves_rolled_up:1.4) + are_arms(138327) 入场
+# ---- 用户指定并定版 (4套差分全部落定) ----
+[2026-10-06 22:54:37]
+D01 受惊       dsh_miao_00938_ -> anzu_01_fear_v2a.png    -> Anzu_定版_D01_fear_seed131657150.png
+D02 怯生生家政  dsh_miao_00941_ -> anzu_02_serving_v2b.png -> Anzu_定版_D02_serving_seed131657150.png
+D03 吃饱撒娇    dsh_miao_00936_ -> anzu_03_spoiled.png     -> Anzu_定版_D03_spoiled_seed131657150.png (前一轮已定)
+D04 初夜       dsh_miao_00942_ -> anzu_04_intimate_v2.png -> Anzu_定版_D04_intimate_seed131657150.png

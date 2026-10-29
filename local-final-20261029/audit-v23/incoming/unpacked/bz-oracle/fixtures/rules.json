@@ -1,0 +1,33 @@
+{
+  "_说明": "演示用守恒式。真实规则请按 442 表的列含义写（S7）。可用：p 请求参数 / resp 应答 / T 表 / before after 存档 / d(k) 钱包差 / dbag(id) 背包差",
+  "actions": {
+    "User.buyShopItem": [
+      {
+        "name": "买入扣 BuyPrice×num 铜币",
+        "assert": "d('coins') === -T.item[p.itemID].BuyPrice * p.num"
+      },
+      {
+        "name": "买入加 num 个物品",
+        "assert": "dbag(p.itemID) === p.num"
+      }
+    ],
+    "User.saleItem": [
+      {
+        "name": "已穿戴装备不可卖：裸 errorCode:1、存档不动（真服实测）",
+        "when": "p.uid !== undefined && Object.values(before.equipments || {}).map(String).includes(String(p.uid))",
+        "assert": "JSON.stringify(Object.keys(resp)) === '[\"errorCode\"]' && resp.errorCode === 1 && JSON.stringify(before) === JSON.stringify(after)",
+        "source": "R22 §三.2 / D2-抓包与M09取证报告（2026-10-24）"
+      },
+      {
+        "name": "卖出得 Price×num 铜币（物品）",
+        "when": "p.itemID !== undefined",
+        "assert": "d('coins') === T.item[p.itemID].Price * p.num"
+      },
+      {
+        "name": "卖出减 num 个物品",
+        "when": "p.itemID !== undefined",
+        "assert": "dbag(p.itemID) === -p.num"
+      }
+    ]
+  }
+}

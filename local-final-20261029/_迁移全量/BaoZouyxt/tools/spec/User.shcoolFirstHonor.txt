@@ -1,0 +1,103 @@
+# User.shcoolFirstHonor  (HttpConst.SCHOOL_FIRST_HONOR)
+# 出现 3 处
+
+ 24440: this.firstRoleData = {};
+ 24441: this.allSchoolHonor = {};
+ 24442: this.battleCallBack = null;
+ 24443: }
+ 24444: t.prototype.init = function() {
+ 24445: var t = this;
+ 24446: n.MessageCenter.on(r.HttpConst.SCHOOL_FIRST_HONOR, function(e, o) {
+ 24447: if (1 == o.eRet) {
+ 24448: var i = {
+ 24449: school: t.schoolId,
+ 24450: id: o.id
+ 24451: };
+ 24452: if (o.id != a.RoleBaseInfo.roleID) {
+ 24453: if (o.hasOwnProperty("school") && o.school == t.schoolId) {
+ 24454: t.firstRoleData = i;
+ 24455: t.saveChiefDiscipleData(t.schoolId, o.id);
+ 24456: l.SwornModel.reqSchoolFirstRole(o.id);
+ 24457: }
+ 24458: } else o.hasOwnProperty("id") && l.SwornModel.reqSchoolFirstRole(o.id);
+ 24459: }
+ 24460: }, this);
+ 24461: };
+ 24462: t.prototype.reqChiefNpc = function(t) {
+ 24463: var e = i.getChiefDiscipleData(t);
+ 24464: if (e) {
+ 24465: this.schoolId = e.id;
+ 24466: this.read();
+ 24467: c.SchoolModel.reqSchoolSectLeader(this.schoolId);
+ 24468: } else this.destroy();
+ 24469: };
+ 24470: t.prototype.startNpcFight = function(t) {
+ 24471: var e = i.getItem(t, "npc");
+ 24472: if (e && e.menpai > 0) {
+ 24473: var o = i.getChiefSchoolData(e.menpai);
+ 24474: if (o && o.leader == t && this.allSchoolHonor.hasOwnProperty(e.menpai) && 0 == this.allSchoolHonor[e.menpai].s && this.firstRoleData.hasOwnProperty("id") && this.firstRoleData.id != a.RoleBaseInfo.roleID) {
+ 24475: this.dialogStory(o);
+ 24476: return !1;
+ 24477: }
+ 24478: }
+ 24479: return !0;
+ 24480: };
+ 24481: t.prototype.dialogStory = function(t) {
+ 24482: var e = this, o = this;
+ 24483: p.default.addSpecialDialog1(t.dialog, 0, function() {
+ 24484: o.firstRoleData.hasOwnProperty("id") && h.BattleMgr.startRankFight({
+ 24485: isFriendPk: !0,
+ 24486: rid: e.firstRoleData.id
+---
+113782: if (e.hasOwnProperty("school") && e.school == this.chidfDiscipleSchoolId) {
+113783: d.ChiefDiscipleModel.firstRoleData = o;
+113784: d.ChiefDiscipleModel.saveChiefDiscipleData(this.chidfDiscipleSchoolId, e.id);
+113785: g.SwornModel.reqSchoolFirstRole(e.id);
+113786: }
+113787: } else e.hasOwnProperty("id") && g.SwornModel.reqSchoolFirstRole(e.id);
+113788: } else s.NetMgr.http.sendRequest(a.HttpConst.SCHOOL_FIRST_HONOR, {
+113789: school: this.chidfDiscipleSchoolId
+113790: }, null, !1);
+113791: } else s.NetMgr.http.sendRequest(a.HttpConst.SCHOOL_FIRST_HONOR, {
+113792: school: this.chidfDiscipleSchoolId
+113793: }, null, !1);
+113794: };
+113795: t.prototype.onGetSchoolAppoint = function(t, e) {
+113796: if (1 == e.eRet) {
+113797: if (1 == e.type) {
+113798: this.weirenAppointData = [];
+113799: for (var o = 0; o < e.appointList.length; o++) {
+113800: (a = {
+113801: role_id: 272121,
+113802: userName: "喵呜呜",
+113803: artLevel: 512,
+113804: popularity: 9999999,
+113805: appointLevel: 5
+113806: }).role_id = e.appointList[o][0];
+113807: a.userName = e.appointList[o][1];
+113808: a.artLevel = e.appointList[o][2];
+113809: a.popularity = e.appointList[o][3];
+113810: a.appointLevel = e.appointList[o][4];
+113811: this.weirenAppointData.push(a);
+113812: }
+113813: e.appointList = this.weirenAppointData;
+113814: } else if (2 == e.type) {
+113815: var n = [];
+113816: for (o = 0; o < e.appointList.length; o++) {
+113817: (a = {
+113818: role_id: 272121,
+113819: userName: "喵呜呜",
+113820: artLevel: 512,
+113821: popularity: 9999999,
+113822: appointLevel: 5
+113823: }).role_id = e.appointList[o][0];
+113824: a.userName = e.appointList[o][1];
+113825: a.artLevel = e.appointList[o][2];
+113826: a.popularity = e.appointList[o][3];
+113827: a.appointLevel = e.appointList[o][4];
+113828: n.push(a);
+---
+113829: }
+113830: e.appointList = n;
+113831: r.MessageCenter.dispatch(l.EvName.REFRESH_SCHOOL_APPOINT_DATA, e);
+---

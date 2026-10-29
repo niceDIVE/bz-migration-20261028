@@ -1,0 +1,98 @@
+# User.upgradeVein  (HttpConst.UPGRADE_ACUPOINT)
+# 出现 2 处
+
+ 66498: }).then(function(t) {
+ 66499: var o = t.Meridian;
+ 66500: e.meridianDic[1] = new o(1);
+ 66501: e.meridianDic[2] = new o(2);
+ 66502: e.meridianDic[3] = new o(3);
+ 66503: e.meridianDic[4] = new o(4);
+ 66504: r.MessageCenter.on(a.HttpConst.UPGRADE_ACUPOINT, function(t, o) {
+ 66505: var a = s.UserModel.entity;
+ 66506: if (1 == o.eRet) {
+ 66507: 4001 == o.veinID && 1 == o.lv && u.default.prefabs.load("comUI/PromptUI", cc.Prefab, function(t, e) {
+ 66508: var o = cc.instantiate(e);
+ 66509: f.PopUpMgr.addPopUp(o, d.LayerMgr.topLayer);
+ 66510: var i = o.addComponent("PromptUI");
+ 66511: i.setData(n.getText(1397), !1, null, function() {});
+ 66512: i.setEnterBtn();
+ 66513: });
+ 66514: e.acupoint2Lv[o.veinID] = o.lv;
+ 66515: a.updateAcpt(o.veinID, o.lv);
+ 66516: var l = i.getItem(o.veinID, "acupoint"), h = e.meridianDic[l.meridians];
+ 66517: h.isclosed || h.addAcptID(o.veinID);
+ 66518: c.RoleBaseInfo.zhenyuan = o.psych;
+ 66519: r.MessageCenter.dispatch(p.EvName.UPDATE_ACPT_INFO);
+ 66520: r.MessageCenter.dispatch(p.EvName.CHANGE_ROLE_INFO);
+ 66521: }
+ 66522: }, e);
+ 66523: r.MessageCenter.on(a.HttpConst.RESET_ACUPOINT, function(t, o) {
+ 66524: var a = s.UserModel.entity;
+ 66525: if (1 == o.eRet) {
+ 66526: e.meridianDic[1].reset();
+ 66527: e.meridianDic[2].reset();
+ 66528: e.meridianDic[3].reset();
+ 66529: for (var h in e.acupoint2Lv) if (4 != i.getItem(h, "acupoint").meridians) {
+ 66530: delete e.acupoint2Lv[h];
+ 66531: a.removeAcupoint(h);
+ 66532: }
+ 66533: c.RoleBaseInfo.zhenyuan = o.psych;
+ 66534: r.MessageCenter.dispatch(p.EvName.UPDATE_ACPT_INFO, !0);
+ 66535: r.MessageCenter.dispatch(p.EvName.CHANGE_ROLE_INFO);
+ 66536: } else 2 == o.eRet && l.default.show(n.getText(1330));
+ 66537: }, e);
+ 66538: });
+ 66539: };
+ 66540: e.prototype.hasAcupoint = function(t) {
+ 66541: return this.getAcptLv(t) > 0;
+ 66542: };
+ 66543: e.prototype.getMeridianModel = function(t) {
+ 66544: return this.meridianDic[t];
+---
+ 66545: };
+ 66546: e.prototype.reqUpgrdAcupoint = function(t) {
+ 66547: var e = {
+ 66548: veinID: t
+ 66549: };
+ 66550: h.NetMgr.http.sendRequest(a.HttpConst.UPGRADE_ACUPOINT, e);
+ 66551: };
+ 66552: e.prototype.resetAcupoint = function() {
+ 66553: h.NetMgr.http.sendRequest(a.HttpConst.RESET_ACUPOINT);
+ 66554: };
+ 66555: e.prototype.getAcptLv = function(t) {
+ 66556: return this.acupoint2Lv.hasOwnProperty(t) ? this.acupoint2Lv[t] : 0;
+ 66557: };
+ 66558: e.prototype.getAcpObj = function() {
+ 66559: var t = [];
+ 66560: for (var e in this.acupoint2Lv) {
+ 66561: var o = {
+ 66562: acupoint: e,
+ 66563: level: this.acupoint2Lv[e]
+ 66564: };
+ 66565: t.push(o);
+ 66566: }
+ 66567: t.length <= 0 && t.push({
+ 66568: acupoint: 1,
+ 66569: level: 0
+ 66570: });
+ 66571: return t;
+ 66572: };
+ 66573: e.prototype.parseMeridianInfo = function(t) {
+ 66574: this.acupoint2Lv = t;
+ 66575: for (var e in this.meridianDic) this.meridianDic[e].acupoint2Lv = t;
+ 66576: var o = i.getTable("meridians");
+ 66577: for (var e in o) for (var n = o[e].id, r = o[e], a = this.meridianDic[n], l = 1; l <= a.numLayers; ++l) {
+ 66578: for (var c = r["acupoint" + l], p = !0, h = 0; h < c.length; ++h) if (this.acupoint2Lv.hasOwnProperty(c[h]) && this.acupoint2Lv[c[h]] > 0) {
+ 66579: a.addAcptID(c[h]);
+ 66580: p = !1;
+ 66581: break;
+ 66582: }
+ 66583: if (p) break;
+ 66584: }
+ 66585: var u = s.UserModel.entity;
+ 66586: for (var e in t) u.updateAcpt(e, t[e]);
+ 66587: };
+ 66588: e.prototype.destroy = function() {
+ 66589: for (var t in this.meridianDic) this.meridianDic[t].reset();
+ 66590: this.acupoint2Lv = {};
+---

@@ -1,0 +1,99 @@
+# User.skillChange  (HttpConst.SWAP_SKILL_PROGRESS)
+# 出现 2 处
+
+119840: }
+119841: }, this);
+119842: i.MessageCenter.on(n.HttpConst.UPGRADE_SKILL_LV, function(t, e) {
+119843: i.MessageCenter.dispatch(a.EvName.SYNC_UPGRADE_RES, e.eRet);
+119844: e.hasOwnProperty("returnPro") && u.default.show(p.getText("6003371").replace(/\[1\]/, e.returnPro));
+119845: }, this);
+119846: i.MessageCenter.on(n.HttpConst.SWAP_SKILL_PROGRESS, function(e, o) {
+119847: if (1 == o.eRet) {
+119848: i.MessageCenter.dispatch(a.EvName.ON_SWAP_SKILLS, o);
+119849: i.MessageCenter.dispatch(a.EvName.SHOW_SKILL_CHILD_UI, {
+119850: viewName: "MartialAartsUI",
+119851: scriptName: "MartialAartsUI"
+119852: });
+119853: } else if (4 == o.eRet) {
+119854: var n = c.getConstByID("176"), r = c.getItem(n, "item");
+119855: u.default.show(p.getText(4420).replace(/\[1\]/, p.getText(r.Name)));
+119856: } else if (14 == o.eRet) {
+119857: var s = c.getConstByID([ 252, 240, 253 ][t.skillType]);
+119858: (y = o.changeCD + 864e5 * s - o.serverTime) < 0 && (y = 0);
+119859: var l = Math.floor(y / 864e5), h = Math.floor((y - 864e5 * l) / 36e5), f = Math.floor((y - 864e5 * l - 36e5 * h) / 6e4), d = Math.floor((y - 864e5 * l - 36e5 * h - 6e4 * f) / 1e3);
+119860: u.default.show(p.getText([ 6155, 6154, 6156 ][t.skillType]).replace(/\[1\]/, l).replace(/\[2\]/, h).replace(/\[3\]/, f).replace(/\[4\]/, d));
+119861: i.MessageCenter.dispatch(a.EvName.REFRESH_SWAP_CD, o.changeCD);
+119862: } else if (16 == o.eRet) u.default.show(p.getText(3582)); else if (17 == o.eRet || 18 == o.eRet) {
+119863: var g = 17 == o.eRet ? t.skillA : t.skillB, m = c.getItem(g, "skill"), y = (s = m.newCD, 
+119864: o.changeCD + 864e5 * s - o.serverTime), v = (l = Math.floor(y / 864e5), h = Math.floor((y - 864e5 * l) / 36e5), 
+119865: f = Math.floor((y - 864e5 * l - 36e5 * h) / 6e4), p.getText(6152).replace(/\[1\]/, p.getText(m.Name)));
+119866: l > 0 && (v += l + p.getText(3784));
+119867: v += h + p.getText(3785);
+119868: v += f + p.getText(1414);
+119869: u.default.show(v);
+119870: }
+119871: }, this);
+119872: };
+119873: t.prototype.reqChangeSkillLv = function(t, e, o, i, a, s) {
+119874: var l = {
+119875: skillID: t,
+119876: skillArr: [ e, Math.floor(o), i ],
+119877: NPCID: a,
+119878: flag: s
+119879: };
+119880: r.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_SKILL_LV, l);
+119881: };
+119882: t.prototype.reqUploadHeal = function() {
+119883: var t = l.UserModel.entity, e = {
+119884: attArr: [ t.hp.remaining, t.hp.limit, t.hp.finalValue, t.mp.remaining, t.mp.limit ]
+119885: };
+119886: r.NetMgr.http.sendRequest(n.HttpConst.UPLOAD_HEAL, e, null, !1, !1);
+---
+119899: var i = {
+119900: roleID: h.RoleBaseInfo.roleID,
+119901: skillA: t,
+119902: skillB: e,
+119903: skillType: o
+119904: };
+119905: r.NetMgr.http.sendRequest(n.HttpConst.SWAP_SKILL_PROGRESS, i);
+119906: };
+119907: t.prototype.destroy = function() {};
+119908: return t;
+119909: }();
+119910: o.SkillModel = new f();
+119911: cc._RF.pop();
+119912: }, {
+119913: "../core/events/MessageCenter": "MessageCenter",
+119914: "../gameconfigs/CFMgr": "CFMgr",
+119915: "../gameconfigs/LangMgr": "LangMgr",
+119916: "../gui/uicomponents/Alert": "Alert",
+119917: "../net/HttpConst": "HttpConst",
+119918: "../net/NetMgr": "NetMgr",
+119919: "../utils/EvName": "EvName",
+119920: "./SkillTable": "SkillTable",
+119921: "./UserModel": "UserModel",
+119922: "./vos/RoleBaseInfo": "RoleBaseInfo"
+119923: } ],
+119924: SkillPlayerBase: [ function(t, e, o) {
+119925: "use strict";
+119926: cc._RF.push(e, "3806f6MDipHfIQj7OLDQfiY", "SkillPlayerBase");
+119927: var i, n = this && this.__extends || (i = function(t, e) {
+119928: return (i = Object.setPrototypeOf || {
+119929: __proto__: []
+119930: } instanceof Array && function(t, e) {
+119931: t.__proto__ = e;
+119932: } || function(t, e) {
+119933: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+119934: })(t, e);
+119935: }, function(t, e) {
+119936: i(t, e);
+119937: function o() {
+119938: this.constructor = t;
+119939: }
+119940: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());
+119941: });
+119942: Object.defineProperty(o, "__esModule", {
+119943: value: !0
+119944: });
+119945: o.SkillPlayerBase = void 0;
+---

@@ -1,0 +1,46 @@
+0 verbose cli F:\nodejs\node.exe F:\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.6.2
+2 info using node@v24.12.0
+3 silly config load:file:F:\nodejs\node_modules\npm\npmrc
+4 silly config load:file:F:\BaoZouyxt\hotfix-patch\.npmrc
+5 silly config load:file:C:\Users\WANG\.npmrc
+6 silly config load:file:C:\Users\WANG\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install aes-js js-md5 lz-string
+8 verbose argv "install" "aes-js" "js-md5" "lz-string" "--no-audit" "--no-fund" "--cache" "F:\\BaoZouyxt\\gateway\\.npm-cache"
+9 verbose logfile logs-max:10 dir:F:\BaoZouyxt\gateway\.npm-cache\_logs\2026-10-21T07_15_51_575Z-
+10 verbose logfile F:\BaoZouyxt\gateway\.npm-cache\_logs\2026-10-21T07_15_51_575Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 silly idealTree buildDeps
+14 silly fetch manifest aes-js@*
+15 silly packumentCache full:https://registry.npmjs.org/aes-js cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/aes-js 2559ms (cache miss)
+17 silly packumentCache full:https://registry.npmjs.org/aes-js set size:undefined disposed:false
+18 silly fetch manifest js-md5@*
+19 silly packumentCache full:https://registry.npmjs.org/js-md5 cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/js-md5 386ms (cache miss)
+21 silly packumentCache full:https://registry.npmjs.org/js-md5 set size:undefined disposed:false
+22 silly fetch manifest lz-string@*
+23 silly packumentCache full:https://registry.npmjs.org/lz-string cache-miss
+24 http fetch GET 200 https://registry.npmjs.org/lz-string 355ms (cache revalidated)
+25 silly packumentCache full:https://registry.npmjs.org/lz-string set size:16381 disposed:false
+26 silly placeDep ROOT aes-js@3.1.2 OK for:  want: *
+27 silly placeDep ROOT js-md5@0.9.2 OK for:  want: *
+28 silly placeDep ROOT lz-string@1.5.0 OK for:  want: *
+29 silly reify moves {}
+30 http cache js-md5@https://registry.npmjs.org/js-md5/-/js-md5-0.9.2.tgz 0ms (cache hit)
+31 http cache lz-string@https://registry.npmjs.org/lz-string/-/lz-string-1.5.0.tgz 0ms (cache hit)
+32 http cache aes-js@https://registry.npmjs.org/aes-js/-/aes-js-3.1.2.tgz 0ms (cache hit)
+33 silly tarball no local data for js-md5@https://registry.npmjs.org/js-md5/-/js-md5-0.9.2.tgz. Extracting by manifest.
+34 silly tarball no local data for aes-js@https://registry.npmjs.org/aes-js/-/aes-js-3.1.2.tgz. Extracting by manifest.
+35 http fetch GET 200 https://registry.npmjs.org/js-md5/-/js-md5-0.9.2.tgz 551ms (cache miss)
+36 http fetch GET 200 https://registry.npmjs.org/aes-js/-/aes-js-3.1.2.tgz 1419ms (cache miss)
+37 silly ADD node_modules/lz-string
+38 silly ADD node_modules/js-md5
+39 silly ADD node_modules/aes-js
+40 verbose cwd F:\BaoZouyxt\hotfix-patch
+41 verbose os Windows_NT 10.0.22631
+42 verbose node v24.12.0
+43 verbose npm  v11.6.2
+44 verbose exit 0
+45 info ok

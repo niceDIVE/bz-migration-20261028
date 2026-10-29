@@ -1,0 +1,2 @@
+{"ts":"2026-10-23T18:52:13.078Z","action":"User.saleItem","status":"GEN-READY","hits":2,"outcome":"PASS-RETRY","attempts":2,"ms":220,"genMs":151,"judgeMs":54,"fails":[]}
+{"ts":"2026-10-23T18:52:13.287Z","action":"User.buyShopItem","status":"GEN-READY","hits":1,"outcome":"PASS-RETRY","attempts":2,"ms":207,"genMs":152,"judgeMs":47,"fails":[]}

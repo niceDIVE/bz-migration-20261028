@@ -1,0 +1,256 @@
+================================================================================
+Effect 族覆盖度与可获得性审计报告 (r20-W-H2)
+================================================================================
+数据源:
+  1. F:\BaoZouyxt\tools\cfg\dump\item.full.json (总计 6525 行, Type==2 物品共 5539 件)
+  2. F:\BaoZouyxt\tools\facts\obtainable.json (顶层键: ledger, items, unmodeledButObtainable, stats, unresolved)
+  3. F:\BaoZouyxt\tools\facts\effect-branches.json (共 76 个 Effect 族分支)
+
+obtainable.json 结构与指标说明:
+  - 顶层键: [ledger, items, unmodeledButObtainable, stats, unresolved]
+  - items 结构: 包含 2387 个物品 ID 键，每个值为来源渠道标签字符串数组 (如 ["ledger:playerEquip", "drop:npc1026", "task:xxx", "grant:xxx"])。
+  - 指标选取: 本次统计采用 obtainable.json 的 items 键集合 (存在渠道标签即代表游戏中经由掉落/任务/商城/初始装备可获得)。同时辅助列出 Price>0 与 Limit>0 件数作为参考。
+
+--------------------------------------------------------------------------------
+【第一步】按 Effect 分组统计 Type==2 物品数（76 个族全量降序排列）
+--------------------------------------------------------------------------------
+Effect 族      | Type==2 件数    | 实现状态
+---------------------------------------------
+Effect 13    |         1773    | 未实现
+Effect 38    |          560    | 未实现
+Effect 39    |          455    | 未实现
+Effect 28    |          367    | 已实现
+Effect 37    |          354    | 未实现
+Effect 20    |          275    | 未实现
+Effect 36    |          264    | 未实现
+Effect 57    |          233    | 未实现
+Effect 05    |          228    | 已实现
+Effect 18    |          220    | 未实现
+Effect 24    |          106    | 未实现
+Effect 00    |           81    | 未实现
+Effect 01    |           66    | 已实现
+Effect 09    |           64    | 未实现
+Effect 11    |           60    | 已实现
+Effect 17    |           49    | 未实现
+Effect 03    |           46    | 已实现
+Effect 02    |           41    | 已实现
+Effect 77    |           25    | 未实现
+Effect 67    |           23    | 未实现
+Effect 25    |           22    | 未实现
+Effect 78    |           19    | 未实现
+Effect 26    |           17    | 未实现
+Effect 22    |           15    | 未实现
+Effect 33    |           13    | 未实现
+Effect 49    |           11    | 未实现
+Effect 48    |           10    | 未实现
+Effect 08    |            9    | 未实现
+Effect 32    |            9    | 未实现
+Effect 46    |            9    | 未实现
+Effect 16    |            8    | 未实现
+Effect 76    |            8    | 未实现
+Effect 15    |            7    | 已知不可达
+Effect 75    |            7    | 未实现
+Effect 45    |            6    | 未实现
+Effect 52    |            6    | 未实现
+Effect 81    |            6    | 未实现
+Effect 19    |            5    | 未实现
+Effect 61    |            5    | 未实现
+Effect 06    |            4    | 未实现
+Effect 14    |            4    | 未实现
+Effect 23    |            4    | 未实现
+Effect 41    |            4    | 未实现
+Effect 44    |            4    | 未实现
+Effect 29    |            3    | 未实现
+Effect 70    |            3    | 未实现
+Effect 21    |            2    | 未实现
+Effect 30    |            2    | 未实现
+Effect 34    |            2    | 未实现
+Effect 62    |            2    | 未实现
+Effect 72    |            2    | 未实现
+Effect 79    |            2    | 未实现
+Effect 04    |            1    | 未实现
+Effect 27    |            1    | 未实现
+Effect 35    |            1    | 未实现
+Effect 40    |            1    | 未实现
+Effect 42    |            1    | 未实现
+Effect 47    |            1    | 未实现
+Effect 50    |            1    | 未实现
+Effect 51    |            1    | 未实现
+Effect 53    |            1    | 未实现
+Effect 58    |            1    | 未实现
+Effect 59    |            1    | 未实现
+Effect 64    |            1    | 未实现
+Effect 68    |            1    | 未实现
+Effect 69    |            1    | 未实现
+Effect 71    |            1    | 未实现
+Effect 73    |            1    | 未实现
+Effect 80    |            1    | 未实现
+Effect 82    |            1    | 未实现
+Effect 83    |            1    | 未实现
+Effect 07    |            0    | 未实现
+Effect 10    |            0    | 未实现
+Effect 12    |            0    | 未实现
+Effect 60    |            0    | 未实现
+Effect 74    |            0    | 未实现
+
+--------------------------------------------------------------------------------
+【第二步】族状态划分汇总
+--------------------------------------------------------------------------------
+已实现 (6 个): Effect 1, 2, 3, 5, 11, 28
+已知不可达 (1 个): Effect 15
+未实现 (69 个): 其余 69 个 Effect 族
+
+--------------------------------------------------------------------------------
+【第三步】未实现族的物品可获件数（指标: obtainable.json items 命中数）
+--------------------------------------------------------------------------------
+Effect 00: Type==2 共 81 件, 可获件数 15 件 (Price>0: 57 件, Limit>0: 81 件)
+Effect 04: Type==2 共 1 件, 可获件数 1 件 (Price>0: 1 件, Limit>0: 1 件)
+Effect 06: Type==2 共 4 件, 可获件数 4 件 (Price>0: 4 件, Limit>0: 4 件)
+Effect 07: Type==2 共 0 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 08: Type==2 共 9 件, 可获件数 1 件 (Price>0: 0 件, Limit>0: 9 件)
+Effect 09: Type==2 共 64 件, 可获件数 51 件 (Price>0: 55 件, Limit>0: 61 件)
+Effect 10: Type==2 共 0 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 12: Type==2 共 0 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 13: Type==2 共 1773 件, 可获件数 306 件 (Price>0: 255 件, Limit>0: 1732 件)
+Effect 14: Type==2 共 4 件, 可获件数 3 件 (Price>0: 4 件, Limit>0: 4 件)
+Effect 16: Type==2 共 8 件, 可获件数 7 件 (Price>0: 8 件, Limit>0: 8 件)
+Effect 17: Type==2 共 49 件, 可获件数 43 件 (Price>0: 43 件, Limit>0: 49 件)
+Effect 18: Type==2 共 220 件, 可获件数 56 件 (Price>0: 17 件, Limit>0: 207 件)
+Effect 19: Type==2 共 5 件, 可获件数 1 件 (Price>0: 5 件, Limit>0: 0 件)
+Effect 20: Type==2 共 275 件, 可获件数 178 件 (Price>0: 268 件, Limit>0: 273 件)
+Effect 21: Type==2 共 2 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 22: Type==2 共 15 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 15 件)
+Effect 23: Type==2 共 4 件, 可获件数 1 件 (Price>0: 4 件, Limit>0: 3 件)
+Effect 24: Type==2 共 106 件, 可获件数 13 件 (Price>0: 102 件, Limit>0: 99 件)
+Effect 25: Type==2 共 22 件, 可获件数 3 件 (Price>0: 22 件, Limit>0: 22 件)
+Effect 26: Type==2 共 17 件, 可获件数 6 件 (Price>0: 5 件, Limit>0: 17 件)
+Effect 27: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 29: Type==2 共 3 件, 可获件数 1 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 30: Type==2 共 2 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 2 件)
+Effect 32: Type==2 共 9 件, 可获件数 2 件 (Price>0: 0 件, Limit>0: 9 件)
+Effect 33: Type==2 共 13 件, 可获件数 2 件 (Price>0: 13 件, Limit>0: 13 件)
+Effect 34: Type==2 共 2 件, 可获件数 1 件 (Price>0: 0 件, Limit>0: 2 件)
+Effect 35: Type==2 共 1 件, 可获件数 0 件 (Price>0: 1 件, Limit>0: 1 件)
+Effect 36: Type==2 共 264 件, 可获件数 150 件 (Price>0: 96 件, Limit>0: 172 件)
+Effect 37: Type==2 共 354 件, 可获件数 196 件 (Price>0: 351 件, Limit>0: 351 件)
+Effect 38: Type==2 共 560 件, 可获件数 182 件 (Price>0: 126 件, Limit>0: 292 件)
+Effect 39: Type==2 共 455 件, 可获件数 246 件 (Price>0: 141 件, Limit>0: 450 件)
+Effect 40: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 1 件)
+Effect 41: Type==2 共 4 件, 可获件数 2 件 (Price>0: 3 件, Limit>0: 4 件)
+Effect 42: Type==2 共 1 件, 可获件数 0 件 (Price>0: 1 件, Limit>0: 1 件)
+Effect 44: Type==2 共 4 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 4 件)
+Effect 45: Type==2 共 6 件, 可获件数 6 件 (Price>0: 6 件, Limit>0: 6 件)
+Effect 46: Type==2 共 9 件, 可获件数 0 件 (Price>0: 9 件, Limit>0: 9 件)
+Effect 47: Type==2 共 1 件, 可获件数 1 件 (Price>0: 1 件, Limit>0: 1 件)
+Effect 48: Type==2 共 10 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 10 件)
+Effect 49: Type==2 共 11 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 11 件)
+Effect 50: Type==2 共 1 件, 可获件数 1 件 (Price>0: 0 件, Limit>0: 1 件)
+Effect 51: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 1 件)
+Effect 52: Type==2 共 6 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 6 件)
+Effect 53: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 1 件)
+Effect 57: Type==2 共 233 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 58: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 1 件)
+Effect 59: Type==2 共 1 件, 可获件数 1 件 (Price>0: 0 件, Limit>0: 1 件)
+Effect 60: Type==2 共 0 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 61: Type==2 共 5 件, 可获件数 1 件 (Price>0: 1 件, Limit>0: 5 件)
+Effect 62: Type==2 共 2 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 2 件)
+Effect 64: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 67: Type==2 共 23 件, 可获件数 8 件 (Price>0: 0 件, Limit>0: 23 件)
+Effect 68: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 1 件)
+Effect 69: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 1 件)
+Effect 70: Type==2 共 3 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 3 件)
+Effect 71: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 72: Type==2 共 2 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 2 件)
+Effect 73: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 1 件)
+Effect 74: Type==2 共 0 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 75: Type==2 共 7 件, 可获件数 6 件 (Price>0: 0 件, Limit>0: 1 件)
+Effect 76: Type==2 共 8 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 8 件)
+Effect 77: Type==2 共 25 件, 可获件数 2 件 (Price>0: 0 件, Limit>0: 25 件)
+Effect 78: Type==2 共 19 件, 可获件数 2 件 (Price>0: 0 件, Limit>0: 19 件)
+Effect 79: Type==2 共 2 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 2 件)
+Effect 80: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 0 件)
+Effect 81: Type==2 共 6 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 6 件)
+Effect 82: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 1 件)
+Effect 83: Type==2 共 1 件, 可获件数 0 件 (Price>0: 0 件, Limit>0: 1 件)
+
+--------------------------------------------------------------------------------
+【第四步】汇总表（按 未实现且可获件数 降序排列，76 族全量）
+--------------------------------------------------------------------------------
+Effect 族  | Type==2 件数  |   状态   | 可获件数(obtainable) | Price>0 件数 | Limit>0 件数
+------------------------------------------------------------------------------------------
+Effect 13  |         1773  |  未实现  |                  306 |          255 |         1732
+Effect 39  |          455  |  未实现  |                  246 |          141 |          450
+Effect 37  |          354  |  未实现  |                  196 |          351 |          351
+Effect 38  |          560  |  未实现  |                  182 |          126 |          292
+Effect 20  |          275  |  未实现  |                  178 |          268 |          273
+Effect 36  |          264  |  未实现  |                  150 |           96 |          172
+Effect 18  |          220  |  未实现  |                   56 |           17 |          207
+Effect 09  |           64  |  未实现  |                   51 |           55 |           61
+Effect 17  |           49  |  未实现  |                   43 |           43 |           49
+Effect 00  |           81  |  未实现  |                   15 |           57 |           81
+Effect 24  |          106  |  未实现  |                   13 |          102 |           99
+Effect 67  |           23  |  未实现  |                    8 |            0 |           23
+Effect 16  |            8  |  未实现  |                    7 |            8 |            8
+Effect 26  |           17  |  未实现  |                    6 |            5 |           17
+Effect 75  |            7  |  未实现  |                    6 |            0 |            1
+Effect 45  |            6  |  未实现  |                    6 |            6 |            6
+Effect 06  |            4  |  未实现  |                    4 |            4 |            4
+Effect 25  |           22  |  未实现  |                    3 |           22 |           22
+Effect 14  |            4  |  未实现  |                    3 |            4 |            4
+Effect 77  |           25  |  未实现  |                    2 |            0 |           25
+Effect 78  |           19  |  未实现  |                    2 |            0 |           19
+Effect 33  |           13  |  未实现  |                    2 |           13 |           13
+Effect 32  |            9  |  未实现  |                    2 |            0 |            9
+Effect 41  |            4  |  未实现  |                    2 |            3 |            4
+Effect 08  |            9  |  未实现  |                    1 |            0 |            9
+Effect 19  |            5  |  未实现  |                    1 |            5 |            0
+Effect 61  |            5  |  未实现  |                    1 |            1 |            5
+Effect 23  |            4  |  未实现  |                    1 |            4 |            3
+Effect 29  |            3  |  未实现  |                    1 |            0 |            0
+Effect 34  |            2  |  未实现  |                    1 |            0 |            2
+Effect 04  |            1  |  未实现  |                    1 |            1 |            1
+Effect 47  |            1  |  未实现  |                    1 |            1 |            1
+Effect 50  |            1  |  未实现  |                    1 |            0 |            1
+Effect 59  |            1  |  未实现  |                    1 |            0 |            1
+Effect 57  |          233  |  未实现  |                    0 |            0 |            0
+Effect 22  |           15  |  未实现  |                    0 |            0 |           15
+Effect 49  |           11  |  未实现  |                    0 |            0 |           11
+Effect 48  |           10  |  未实现  |                    0 |            0 |           10
+Effect 46  |            9  |  未实现  |                    0 |            9 |            9
+Effect 76  |            8  |  未实现  |                    0 |            0 |            8
+Effect 52  |            6  |  未实现  |                    0 |            0 |            6
+Effect 81  |            6  |  未实现  |                    0 |            0 |            6
+Effect 44  |            4  |  未实现  |                    0 |            0 |            4
+Effect 70  |            3  |  未实现  |                    0 |            0 |            3
+Effect 21  |            2  |  未实现  |                    0 |            0 |            0
+Effect 30  |            2  |  未实现  |                    0 |            0 |            2
+Effect 62  |            2  |  未实现  |                    0 |            0 |            2
+Effect 72  |            2  |  未实现  |                    0 |            0 |            2
+Effect 79  |            2  |  未实现  |                    0 |            0 |            2
+Effect 27  |            1  |  未实现  |                    0 |            0 |            0
+Effect 35  |            1  |  未实现  |                    0 |            1 |            1
+Effect 40  |            1  |  未实现  |                    0 |            0 |            1
+Effect 42  |            1  |  未实现  |                    0 |            1 |            1
+Effect 51  |            1  |  未实现  |                    0 |            0 |            1
+Effect 53  |            1  |  未实现  |                    0 |            0 |            1
+Effect 58  |            1  |  未实现  |                    0 |            0 |            1
+Effect 64  |            1  |  未实现  |                    0 |            0 |            0
+Effect 68  |            1  |  未实现  |                    0 |            0 |            1
+Effect 69  |            1  |  未实现  |                    0 |            0 |            1
+Effect 71  |            1  |  未实现  |                    0 |            0 |            0
+Effect 73  |            1  |  未实现  |                    0 |            0 |            1
+Effect 80  |            1  |  未实现  |                    0 |            0 |            0
+Effect 82  |            1  |  未实现  |                    0 |            0 |            1
+Effect 83  |            1  |  未实现  |                    0 |            0 |            1
+Effect 07  |            0  |  未实现  |                    0 |            0 |            0
+Effect 10  |            0  |  未实现  |                    0 |            0 |            0
+Effect 12  |            0  |  未实现  |                    0 |            0 |            0
+Effect 60  |            0  |  未实现  |                    0 |            0 |            0
+Effect 74  |            0  |  未实现  |                    0 |            0 |            0
+Effect 05  |          228  |  已实现  |                   85 |           52 |          221
+Effect 28  |          367  |  已实现  |                   29 |            1 |          349
+Effect 15  |            7  |  已知不可达  |                    6 |            7 |            7
+Effect 01  |           66  |  已实现  |                    0 |           64 |           66
+Effect 11  |           60  |  已实现  |                    0 |            0 |           60
+Effect 03  |           46  |  已实现  |                    0 |           45 |           46
+Effect 02  |           41  |  已实现  |                    0 |           38 |           41

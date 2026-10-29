@@ -1,0 +1,18 @@
+# User.ReqReview   (HttpConst.CREATE_POST)
+
+## 注册点 113574: r.MessageCenter.on(a.HttpConst.CREATE_POST, this.onCreatePost, this);
+
+## 请求点 113967: s.NetMgr.http.sendRequest(a.HttpConst.CREATE_POST, i);
+   113959: };
+   113960: t.prototype.reqCreatPost = function(t, e, o) {
+   113961: var i = {
+   113962: school: t,
+   113963: userName: e,
+   113964: userContent: o
+   113965: };
+   113966: this.lastContent = o;
+
+## 处理函数 onCreatePost (113599-113601)
+113599: t.prototype.onCreatePost = function(t, e) {
+113600: 1 == e.eRet ? r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id) : 2 == e.eRet ? c.default.show(i.getText(858)) : 99 == e.eRet && c.default.show(i.getText("480"));
+113601: };

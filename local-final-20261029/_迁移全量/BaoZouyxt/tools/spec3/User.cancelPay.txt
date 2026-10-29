@@ -1,0 +1,25 @@
+# User.cancelPay   (HttpConst.CANCEL_PAY)
+
+## 注册点 130735: l.MessageCenter.on(p.HttpConst.CANCEL_PAY, this.onCancelPay, this);
+
+## 请求点 130902: g.NetMgr.http.sendRequest(p.HttpConst.CANCEL_PAY, e);
+   130894: } ], function(t) {
+   130895: 0 == t && o.reqStoreList();
+   130896: }, "", !1);
+   130897: };
+   130898: e.prototype.notifyCancelPay = function(t) {
+   130899: var e = {
+   130900: tradeID: t
+   130901: };
+
+## 处理函数 onCancelPay (130904-130913)
+130904: e.prototype.onCancelPay = function() {};
+130905: e.prototype.reqProduct = function(t) {
+130906: cc.log(t);
+130907: if (!A.CrossServiceModel.isEnterCrossServer(!1) && !o.StoreModel.sucessRewardOrderObj.includes(t)) if ("mycard" == r.platfStr) try {
+130908: this.reqMyCardProduct(t);
+130909: } catch (t) {} else {
+130910: var e = {
+130911: tradeID: t,
+130912: platId: r.platformID
+130913: };

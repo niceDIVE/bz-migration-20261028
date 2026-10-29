@@ -1,0 +1,13 @@
+# User.buyShopItem   (HttpConst.BUY_SHOP_ITEM)
+
+## 注册点 64743: r.MessageCenter.on(a.HttpConst.BUY_SHOP_ITEM, function(t, o) {
+
+## 请求点 65262: m.NetMgr.http.sendRequest(a.HttpConst.BUY_SHOP_ITEM, o);
+   65254: m.NetMgr.http.sendRequest(a.HttpConst.SELL_ITEM, S);
+   65255: }
+   65256: };
+   65257: e.prototype.buyItem = function(t, e) {
+   65258: var o = {
+   65259: itemID: t,
+   65260: itemNum: e
+   65261: };

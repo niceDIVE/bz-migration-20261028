@@ -1,0 +1,21 @@
+# User.receiveNpc   (HttpConst.RECEIVENPC_EVENT)
+
+## 注册点 77023: i.MessageCenter.on(n.HttpConst.RECEIVENPC_EVENT, this.callBackReceiveNpcEvent, this);
+
+## 请求点 77416: _.NetMgr.http.sendRequest(n.HttpConst.RECEIVENPC_EVENT, {
+   77408: });
+   77409: };
+   77410: e.prototype.reqWedding = function(t) {
+   77411: _.NetMgr.http.sendRequest(n.HttpConst.WEEDIND_EVENT, {
+   77412: type: t
+   77413: });
+   77414: };
+   77415: e.prototype.reqWelcomeTeam = function(t) {
+
+## 处理函数 callBackReceiveNpcEvent (77230-77235)
+ 77230: e.prototype.callBackReceiveNpcEvent = function(t, e) {
+ 77231: if (1 == e.eRet) {
+ 77232: this.receiveNpc = e.npcID;
+ 77233: y.TeamModel.setTeamState(e.npcID);
+ 77234: } else 3 == e.eRet ? p.default.show(r.getText("1137")) : 4 == e.eRet ? p.default.show(r.getText("1135")) : p.default.show(r.getText("1136"));
+ 77235: };

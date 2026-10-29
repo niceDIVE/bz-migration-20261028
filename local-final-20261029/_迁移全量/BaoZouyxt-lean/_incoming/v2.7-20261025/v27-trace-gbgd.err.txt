@@ -1,0 +1,9 @@
+[trace] User.getBigGrowupData 补抽: 展开 index.js:55267..55272，数据形参 e
+[trace] User.getBigGrowupData 契约字段=[] 补抽=True → ['paystata']
+[trace] User.getBigGrowupData.paystata @ index.js:55269 exprs=['\\.paystata\\b', '\\[\\s*["\\\']paystata["\\\']\\s*\\]'] this=[] kinds=[]
+[trace] User.getBigGrowupData.paystata 全局 2 处 kinds=[]
+[trace] User.getBigGrowupData 发送 index.js:55306 所在函数 reqBigGrowUpData@55305 调用方=['index.js:55258', 'scripts2.js:26756', 'scripts2.js:46175']
+[trace] User.getBigGrowupData   调用方 index.js:55258 判空=否：this.reqBigGrowUpData();
+[trace] User.getBigGrowupData   调用方 scripts2.js:26756 判空=是：} else if (this.itemList[this.index].length > 0) for (e = 0; e < this.itemList[this.index].length; e
+[trace] User.getBigGrowupData   调用方 scripts2.js:46175 判空=是：} else 1 == t && a.GrowthModel.reqBigGrowUpData();
+[trace] User.getBigGrowupData 发送点=['index.js:55239', 'index.js:55306'] 重发判定=['scripts2.js:26756→index.js:55306']

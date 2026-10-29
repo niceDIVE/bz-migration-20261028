@@ -1,0 +1,37 @@
+# User.FriendList   (HttpConst.USER_FRIENDLIST)
+
+## 注册点 132051: i.MessageCenter.on(n.HttpConst.USER_FRIENDLIST, this.onSuccessFriendList, this);
+
+## 请求点 132098: a.NetMgr.http.sendRequest(n.HttpConst.USER_FRIENDLIST, e, function() {}.bind(this), !0, !1, !0);
+   132090: }
+   132091: };
+   132092: t.prototype.reqFriendList = function(t) {
+   132093: this.sameScene = 0;
+   132094: var e = {
+   132095: roleID: r.RoleBaseInfo.roleID,
+   132096: friendType: t
+   132097: };
+
+## 请求点 132106: a.NetMgr.http.sendRequest(n.HttpConst.USER_FRIENDLIST, e, function() {}.bind(this));
+   132098: a.NetMgr.http.sendRequest(n.HttpConst.USER_FRIENDLIST, e, function() {}.bind(this), !0, !1, !0);
+   132099: };
+   132100: t.prototype.reqRegistrationList = function(t) {
+   132101: this.sameScene = 1;
+   132102: var e = {
+   132103: roleID: r.RoleBaseInfo.roleID,
+   132104: friendType: t
+   132105: };
+
+## 处理函数 onSuccessFriendList (132208-132219)
+132208: t.prototype.onSuccessFriendList = function(t, e) {
+132209: if (1 == e.eRet) {
+132210: this.friendChatRedUIds = e.uIds;
+132211: var o = {};
+132212: if (e.hasOwnProperty("friendList")) for (var n in e.friendList) o[e.friendList[n].friendId] = !0;
+132213: e.hasOwnProperty("isApplyFriend") && i.MessageCenter.dispatch(c.EvName.SWORN_IS_APPLY);
+132214: u.WorldChatModel.readFriendChatData(o);
+132215: if (0 == this.sameScene) {
+132216: i.MessageCenter.dispatch(c.EvName.GET_CHAT_FRIEND_LIST, e);
+132217: i.MessageCenter.dispatch(c.EvName.MULTIP_NEAR_PLAYER_EVENT, e);
+132218: } else i.MessageCenter.dispatch(c.EvName.GET_REQ_FRIEND_LIST, e);
+132219: }

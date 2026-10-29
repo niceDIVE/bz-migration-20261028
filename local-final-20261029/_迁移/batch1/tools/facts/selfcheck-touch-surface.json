@@ -1,0 +1,192 @@
+{
+  "task": "WO-1",
+  "items": [
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-handler-impl.js",
+      "line": 29,
+      "text": "    writeSave: store ? store.write : diskWrite,"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 48,
+      "text": "    try { env.writeSave(SAVE_KEY, JSON.stringify(_save)); } catch (e) { env.log('存档写入失败: ' + e); }"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 896,
+      "text": "    try { env.writeSave(SAVE_KEY, '{}'); } catch (e) {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 367,
+      "text": "     *     （用户报的\"潜能回到 99999\"）。所以主动把权威值推进客户端模型（window.__require 进程内可达）。 */"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 385,
+      "text": "        var R = (typeof window !== 'undefined') ? window.__require : null;"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 257,
+      "text": "      // 金条（货币 id 1）：面板 GoldLabel 绑的是 RoleBaseInfo.gold（scripts2.js:49725），"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 258,
+      "text": "      // 唯一正规来源是 InventoryDB.setGold(curGold)（index.jsc:111905 → 64300 里 `RoleBaseInfo.gold = t`），"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 366,
+      "text": "     *     既不改客户端技能等级、也不改 RoleBaseInfo.potentials → 面板潜能永远停在 LoadGame 的旧值"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 387,
+      "text": "          var B = R('RoleBaseInfo'); B = B && (B.RoleBaseInfo || B);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 389,
+      "text": "          var ST = R('SkillTable'); ST = ST && (ST.SkillTable || ST);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-handler-impl.js",
+      "line": 22,
+      "text": "function makeServer(store) {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-handler-impl.js",
+      "line": 40,
+      "text": "server = makeServer(null);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-handler-impl.js",
+      "line": 87,
+      "text": "  var iso = makeServer(memMake());"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-handler-impl.js",
+      "line": 118,
+      "text": "  var ts = makeServer(memMake());"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-handler-impl.js",
+      "line": 137,
+      "text": "  var isrv = makeServer(memMake());"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-handler-impl.js",
+      "line": 149,
+      "text": "  var rw = makeServer(memMake());"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-handler-impl.js",
+      "line": 162,
+      "text": "  var es = makeServer(memMake());"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-handler-impl.js",
+      "line": 173,
+      "text": "  var gs = makeServer(memMake());"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-handler-impl.js",
+      "line": 216,
+      "text": "  server = makeServer(null);"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 47,
+      "text": "  function persist() {"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 171,
+      "text": "    persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 230,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 310,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 343,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 354,
+      "text": "      var s = loadSave(); s.school = p.school || s.school; persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 382,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 636,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 654,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 664,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 674,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 685,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 704,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 717,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 733,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 760,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 782,
+      "text": "      persist();"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\hotfix-patch\\core\\bz-rpc-server.js",
+      "line": 897,
+      "text": "    var s = loadSave(); persist();"
+    }
+  ],
+  "commands": [],
+  "unverified": []
+}

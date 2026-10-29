@@ -1,0 +1,106 @@
+回执 第11批 C10〔农作物〕（2026-10-27）
+
+══ 部署指纹 ══
+  构建：ver=h90b31552｜flow=ffaec47c3｜pid 22577（全程热重载，pid 未变）
+  selfCheck 1300 全过，implErr=null
+  patch\live\handlers.js            1,541,794 B  md5 91CE72391F6F6B020EF421A21DFE2936
+  core\bz-rpc-server.js               416,106 B  md5 7FDDAEE8A563FE68C4A414395C78418F
+  core\bz-c10.generated.js（新表）     16,423 B  md5 54340732AAB7BF7FD4FB63EE4E7B5E23
+  core\bz-shapes.generated.js          27,037 B  md5 D24988B9655CED4AAA18DE113E415A59（含 C10 形状）
+  tools\gen_c10_tables.js（新生成器）   7,882 B  md5 A6EA5532901621343922DFAFFC192476
+
+══ 一、交付：12 个 handler（8 主 + 1 顺手 + 3 同面板必做/崩点）══
+  按 relations.md:77-82 的 8 个 + `BATCH_SEED_CROP`（同面板顺手做）：
+    obtainCrop / batchSeedCrop / changeSate（**上游线上名是 `User.changeSate`，少个 t，未纠正**）
+    expediteCrop / cleanDeadCrop / dispossHomeEvent / onKeyObtainCrop / onKeyDispossHomeEvent
+    stealCrop —— **档 A 锁**（好友家数据来自 `enterOtherHome`=`User.getFriendHomeList`，属第50批，未做）→ eRet 2
+  ★ 并入 1 个第50批动作（**已获你 2026-10-27 拍板**）：
+    getHomeList（`User.getHomeList`）—— 不是可选项：**`PlantHomeUI` 这个面板就是它回调里 new 出来的**
+    （index.js:57615 `prefabs.load("cultivationUI/PlantHomeUI")`），不回 `soilArr` 面板根本打不开、
+    8 个动作全部不可达。同 C09 的 `GET_SKILL_GRASP` 口径，回执申报。
+  ★ 并入 2 个不在批次名单、但不补就会崩的：
+    homeSpeicalAward（`User.homeSpeicalAward`，第29批）：`getHomeList` 开完面板立刻 `reqHomeSpecialEvent()`
+      （index.js:57614/57629），SHAPED 兜底回 `{eRet:1,eid:0,rewardArray:{}}` → 客户端
+      `productHomeEvent(0,…)` 拿 `getItem(0,"home_plant_adventure")`=null 再裸读 `.describe`
+      → **TypeError（index.js:95694）**。改成 eRet 2（回调只 dispatch REMOVE_SEARCH_HOME_UI）。**真机实证。**
+    getBackShop / BuyHomeCrop（`User.getBackShop` / **`User.BuyHomeCrop`，大写 B**）：
+      种子获取途径。**已获你 2026-10-27 拍板"补家园种子商店"**。
+
+══ 二、契约（4 处裸读崩点，缺一个就 TypeError）══
+  这些字段客户端**没有 hasOwnProperty 守卫**，缺了当场抛，不是显示问题：
+    · `crop`（changeSate / expediteCrop / dispossHomeEvent / stealCrop）
+    · `crops`（batchSeedCrop）· `cropMap`（onKeyDispossHomeEvent）
+    · `obtainLands`（onKeyObtainCrop）· `recentSeeds`（batchSeedCrop 裸赋值）
+  请求载荷（全部有发送点行号）：obtainCrop `{sIdx}`｜changeSate `{sIdx[,fid]}`｜expediteCrop `{sIdx,num}`
+    ｜cleanDeadCrop `{sIdx}`｜dispossHomeEvent `{idx[,fid]}`｜onKeyObtainCrop `{matureArr}`
+    ｜onKeyDispossHomeEvent `{}`｜batchSeedCrop `{seedCrops:{地块号:种子id}}`｜stealCrop `{fid,idx}`
+    ｜BuyHomeCrop `{itemID,itemNum}`｜getBackShop / getHomeList `{}`
+  eRet 语义（照回调挑，不照抄别批）：obtainCrop **刻意不用 3** —— 3 那一支是
+    `e.soilArr[o.sIdx].m.s = 0`（index.js:57714-57723，裸读并把地改写成荒），未成熟用它会毁地，故用 2（该回调无 2 分支=静默）。
+
+══ 三、作物实例对象 `m`（本批的「AttckData」，从客户端反推）══
+  成员：`id`(=home_plant_crop 键=种子 item id) / `s`(阶段 0..7) / `t`(播种时刻) / `pt`(偏移) /
+        `c`(加速次数) / `eid`(事件 id，本批恒 0) / `et`(事件时刻) / `at`(刷新间隔) / `b`(伴生标记)
+  阶段：0 空地；1 seedtime 2 seedling 3 grow 4 mature 5 ten 6 fifty 7 hundred
+  时长与进度：**全在客户端算**（PlantSystemMgr:95572-95598）；服务端只要把 `m.id/m.s/m.t/m.c` 摆对。
+  ⚠ **申报（口径，非实证）**：服务端阶段判定按 `1-effect`（表 effect=0.1）**刻意提前 10%**。
+    原因：客户端在 `curHomeScene ∈ crop.speed` 时把时长 ×(1-effect)，而服务端拿不到当前场景；
+    若按原始时长算就比客户端慢 → 客户端进度条到 100% 发 changeSate 却等不到推进，
+    而 `isRefresh` 已置真、本次进面板不会再发（scripts2.js:37712-37718）→ **作物永久卡 100%**。
+    这是安全侧偏置，要精确对齐得把"当前家园场景 id"传进服务端。
+
+══ 四、计费/产物口径（都有你的拍板，且都写在代码注释里）══
+  计时：真实时长 + **加速免费**（`expediteCrop` 不扣道具；表里加速道具 6069、每次 +86400 秒=24 小时）。
+  收获：按状态取产物 —— 4→`matureitem×maturenum`、5→`tenitem`、6→`fiftyitem`、7→`hundreditem`（表怎么写就怎么发）。
+  事件：**本批不随机刷**（`m.eid` 恒 0）→ disposs 两件做成"有事件就清、没事件 eRet 2"；`cleanDeadCrop` 无枯死模型 → 恒 2。
+  商店（你拍板"平价 + 不限购"）：货架 = 35 行种子（53 种里只有 35 个在 `tbl_item` 有行），
+    单价取 `item.Price`（100 或 1000，**表里没有购买价列**：`shop.json` 只有 19 行 ID→Item 映射、不含种子；
+    种子 `BuyPrice` 全 0）→ **平价买卖，属自定口径，申报**。不发 `limit`（不限购）。
+    入口前置：`HomePlantModel.homeShop > 0`（scripts2.js:48589）→ 所以 `getHomeList` 回 `bShop: 1`（正数，开关字段语义）。
+  种植经验：收获给 `aExp = home_plant_crop.exp`（表值，如 80000），累计进 `s.plant.exp`，
+    应答 `exp`=累计值 → 客户端写 `plantSeedData.plantExp`。**语义为自定，申报**。
+
+══ 五、真机闭环（走客户端自己的模型方法，非裸打接口；日志实证）══
+  1. `buildHomeTip()` → `User.getHomeList` → 日志「地块 4 块」，模型 `plantHomeUI=yes | soilArr=4` ⇒ **面板打开**
+  2. `reqGetSaleShop()` → `getBackShop → 货架 35 行（种子，平价，不限购）`
+  3. `reqBuyHomeCrop(4777,2)` → `BuyHomeCrop item=4777 ×2 花 200 银两（余 20832159，背包 2）` ⇒ **扣钱+入包**
+  4. `reqMultiPlanting(4777,1)` → `batchSeedCrop 种下 1 块：0←4777 扣种子 {"4777":1}`，模型 `0:crop=4777/s1/c0`
+  5. `reqAccelarteCrop(0)×6` → `expediteCrop 阶段 4→5（免费加速）`，模型 `0:crop=4777/s5/c6`，背包不动
+  6. `reqCropGainReward(0)` → `C10 收获 item=4808 +1`、`种植经验 80000（+80000）`，模型 `plantExp=80000`、地块清空
+  ⇒ **买→种→催熟→收 全链真机通**，全程无 TypeError。
+  ⚠ 探针直调 `reqBuyHomeCrop` 会多一条 `setItemNum of null`（scripts2.js:31504）——那是**探针没走 UI 选中态**
+    （`currentSelectItem` 未初始化），不是服务端问题；真人点界面不会走到这条。
+
+══ 六、门禁 ══
+  acceptance **50/50 绿**（新增 c10-smoke 18 条），known-red 0，cap 0
+  check_shape_freeze：**diff 0**，C1–C8、C10–C13 全过（C9b 未实现）
+  check_reject_codes OK：动作 **96** / 条目 **110** / 拒绝点 **149**（+10 动作登记，其中 BuyHomeCrop 大写 B）
+  冒烟：c10 18/18、c09 11/11、c08 12/12（其余沿用上批，acceptance 全量跑过）
+  生成器幂等：`node tools\gen_c10_tables.js` 连跑两次 md5 相同（54340732…）
+
+══ 七、形状审批（本批分四轮，都有逐条证据）══
+  第一轮 42 项（getHomeList 的 soilArr 由 `{}` 改数组、4 块地、各作物动作空请求走拒绝路径）
+  第二轮 4 项（homeSpeicalAward eRet 1→2 且收掉 eid/rewardArray；getHomeList 去掉 bShop）
+  第三轮 106 项（getBackShop 货架 35×3 三元组 + bShop 回 1）
+  第四轮 3 项（BuyHomeCrop 改名后 eRet/limit/rewardArray）
+  每轮：`--diff` → 写 planned-changes（含 expect 与 bundle:line 证据）+ approved-widening/narrowing → `--freeze` → 复跑校验 diff 0。
+  ⚠ **申报一处工具缺口**：`approved-widening` 累计 114 条 / `approved-narrowing` 30 条（历史批次不清，属留档）。
+
+══ 八、未做 / 待追认 ══
+  1. **好友家整条线未做**：`enterOtherHome`(`User.getFriendHomeList`) / `findOHomes` / `findOhter` 属第29/50批
+     → `stealCrop` 与"带 fid 的 changeSate/dispossHomeEvent"一律 eRet 2。
+  2. **家园背景 `Assert 1606`** 未解决（`PlantHomeBgUI` 异步加载 `cultivationUI/homeBG_<sceneId>` 后
+     `content.addChild(null)`）。开面板必现，**不影响 8 个动作**（面板与地块渲染正常）。
+     已排除"场景 id 取值"这一层：探针置 homeFarmId=1147/1008/1118 面板都能开、soilArr 都是 4，1147 仍 Assert。
+     疑似 `PlantHomeUI.setData({farmId, type:MarryModel.marryHouseMap[farmId]})` 里 `type` 为 undefined
+     → 背景预制体路径取不到（**未证实**）。若要修，需要先定 `homeID`（LoadGame→RoleOtherInfo.homeFarmId，
+     index.js:107240）与 `marryHouseMap` 的合法取值。
+  3. **`m.b` 伴生 / `home_plant_follow` / `home_plant_sale`（出售）/ `home_plant_adventure`（家事件奖励）/
+     `planting_active`（种树活动）** 均未做。
+  4. **待追认**：① 平价买卖（买价=卖价=item.Price）② 加速免费（不扣道具 6069）③ 种植经验口径
+     ④ 阶段判定提前 10% ⑤ `getHomeList`/`homeSpeicalAward`/`getBackShop`/`BuyHomeCrop` 四个**跨批次动作**提前做。
+
+══ 九、自验步骤（3 步）══
+  1. 解包后 cp core\* 覆盖到你本地 core，`node build-handlers.js` 应得 ver=h90b31552（selfCheck 1300）
+  2. `node test\c10-smoke.js` → 18/18
+  3. `node tools\check_shape_freeze.js`（需 tools\golden 是本包同批）→ diff 0

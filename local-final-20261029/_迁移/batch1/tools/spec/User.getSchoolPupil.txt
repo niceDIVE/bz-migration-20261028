@@ -1,0 +1,99 @@
+# User.getSchoolPupil  (HttpConst.GET_SCHOOL_PUPIL)
+# 出现 2 处
+
+113589: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_APPOINT, this.onGetSchoolAppoint, this);
+113590: r.MessageCenter.on(a.HttpConst.SCHOOL_TAKE_OFFICE_APPLY, this.onSchoolTakeOfficeApply, this);
+113591: r.MessageCenter.on(a.HttpConst.SCHOOL_APPOINT, this.onSchoolAppoint, this);
+113592: r.MessageCenter.on(a.HttpConst.STC_OPEN_SCHOOL_MAINPAGE_RES, this.onOpenSchoolMainPageRes, this);
+113593: r.MessageCenter.on(a.HttpConst.STC_SCHOOL_STATUS_NOTIFY, this.onSchoolStatusNotify, this);
+113594: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_MASTER, this.onLookRoleInfo, this);
+113595: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_PUPIL, this.onLookRoleInfo, this);
+113596: r.MessageCenter.on(a.HttpConst.GET_APPLY_INFO, this.onLookRoleInfo, this);
+113597: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_ROLE_INFO, this.onLookRoleInfo, this);
+113598: };
+113599: t.prototype.onCreatePost = function(t, e) {
+113600: 1 == e.eRet ? r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id) : 2 == e.eRet ? c.default.show(i.getText(858)) : 99 == e.eRet && c.default.show(i.getText("480"));
+113601: };
+113602: t.prototype.onGetSchoolRank = function(t, e) {
+113603: 1 == e.eRet && r.MessageCenter.dispatch(l.EvName.GOT_RANK_LIST, e);
+113604: };
+113605: t.prototype.onGetSchoolPost = function(t, e) {
+113606: if (1 == e.eRet) if (1 == e.type) r.MessageCenter.dispatch(l.EvName.ON_GET_MOSTLIKED, e.reviewList); else {
+113607: ++this.newPostPage;
+113608: this.theresmore = this.newPostPage < e.maxPage;
+113609: r.MessageCenter.dispatch(l.EvName.ON_GET_PAGE, e.reviewList);
+113610: }
+113611: };
+113612: t.prototype.onGetSchoolTask = function(t, e) {
+113613: this.schoolTaskData = e;
+113614: e.hasOwnProperty("schoolTask") && e.schoolTask.hasOwnProperty(this.othenSchool) && e.schoolTask[this.othenSchool].hasOwnProperty("dateFinishTimes") && (this.dateFinishTimes = e.schoolTask[this.othenSchool].dateFinishTimes);
+113615: this.weekQuickCompleteTaskTimes = e.weekQuickCompleteTaskTimes;
+113616: this.affiliationSchool = e.affiliationSchool;
+113617: this.beforeSchool = parseInt(e.xyTodaySchoolId);
+113618: M.TimeMgr.sserverT = e.currentServerTime;
+113619: M.TimeMgr.startTime = Date.now();
+113620: r.MessageCenter.dispatch(l.EvName.SHOW_CONVSTN_BOARD_HONOR, e);
+113621: };
+113622: t.prototype.onGetSchoolShop = function(t, e) {
+113623: 1 == e.eRet && E.default.prefabs.load("menpai/MenpaiShopUI", cc.Prefab, function(t, o) {
+113624: var i = cc.instantiate(o);
+113625: _.PopUpMgr.addPopUp(i, S.LayerMgr.popUpLayer, 0, !0);
+113626: i.addComponent("SchoolShopUI").setData(e);
+113627: });
+113628: };
+113629: t.prototype.onAcceptSchoolTask = function(t, e) {
+113630: if (1 == e.eRet) {
+113631: this.dateFinishTimes = e.dateFinishTimes;
+113632: this.schoolTaskData.schoolTask[this.othenSchool].dateFinishTimes = e.dateFinishTimes;
+113633: for (var o in e.acceptSchoolTask) if (o == this.othenSchool + "_" + this.taskTag) {
+113634: var i = e.acceptSchoolTask[o];
+113635: this.schoolTaskData.schoolTask[this.othenSchool].taskList[this.taskTag] = i;
+---
+114115: s.NetMgr.http.sendRequest(a.HttpConst.REGISTER_MASTER, t);
+114116: };
+114117: t.prototype.reqGetSchoolMaster = function(t) {
+114118: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_MASTER, t);
+114119: };
+114120: t.prototype.reqGetSchoolPupil = function(t) {
+114121: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_PUPIL, t);
+114122: };
+114123: t.prototype.reqApplyMaster = function(t) {
+114124: s.NetMgr.http.sendRequest(a.HttpConst.APPLY_MASTER, t);
+114125: };
+114126: t.prototype.reqApplyPupil = function(t) {
+114127: s.NetMgr.http.sendRequest(a.HttpConst.APPLY_PUPIL, t);
+114128: };
+114129: t.prototype.reqGetApplyInfo = function(t) {
+114130: s.NetMgr.http.sendRequest(a.HttpConst.GET_APPLY_INFO, t);
+114131: };
+114132: t.prototype.reqCancelApply = function(t) {
+114133: s.NetMgr.http.sendRequest(a.HttpConst.CANCEL_APPLY, t);
+114134: };
+114135: t.prototype.reqConfirmApply = function(t) {
+114136: s.NetMgr.http.sendRequest(a.HttpConst.CONFIRM_APPLY, t);
+114137: };
+114138: t.prototype.reqGetMasterPupilList = function(t) {
+114139: void 0 === t && (t = 2);
+114140: s.NetMgr.http.sendRequest(a.HttpConst.GET_MASTER_PUPIL_LIST, {
+114141: typeId: t
+114142: });
+114143: };
+114144: t.prototype.reqGetSchoolRoleInfo = function(t) {
+114145: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_ROLE_INFO, t);
+114146: };
+114147: t.prototype.reqApplyRemove = function(t) {
+114148: s.NetMgr.http.sendRequest(a.HttpConst.APPLY_REMOVE, t);
+114149: };
+114150: t.prototype.reqIgnoreRemove = function(t) {
+114151: s.NetMgr.http.sendRequest(a.HttpConst.IGNORE_REMOVE, t);
+114152: };
+114153: t.prototype.reqConfirmRemove = function(t) {
+114154: s.NetMgr.http.sendRequest(a.HttpConst.CONFIRM_REMOVE, t);
+114155: };
+114156: t.prototype.reqGetPupilRewardList = function() {
+114157: s.NetMgr.http.sendRequest(a.HttpConst.GET_PUPIL_REWARD_LIST, {});
+114158: };
+114159: t.prototype.reqPupilReward = function(t) {
+114160: s.NetMgr.http.sendRequest(a.HttpConst.PUPIL_REWARD, t);
+114161: };
+---

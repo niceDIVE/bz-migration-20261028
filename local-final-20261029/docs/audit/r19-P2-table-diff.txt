@@ -1,0 +1,16 @@
+﻿client 表数 = 454  dump 表数 = 443  dicCount = 454
+--- 客户端有、我们没 dump（12 张）---
+  Attribute_conversion:0
+  age_attr:0
+  back:0
+  colorLoad:0
+  luckywash:0
+  notifications:0
+  recharge:0
+  recharge_apple:0
+  recharge_applepaid:0
+  recharge_qq:0
+  recharge_shenhe:0
+  themeactivitie:0
+--- 我们 dump 了、客户端没有同名（1 张）---
+  _index

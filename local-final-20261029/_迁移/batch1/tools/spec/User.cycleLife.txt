@@ -1,0 +1,99 @@
+# User.cycleLife  (HttpConst.CYCLE_LIFE)
+# 出现 2 处
+
+101879: e.prototype.init = function() {
+101880: var e = this;
+101881: this.skillAy = [];
+101882: this.skillBaseId = 1;
+101883: this.birthID = 0;
+101884: i.MessageCenter.on(r.HttpConst.IS_CYCLE_LIFE, this.onIsCycleLife, this);
+101885: i.MessageCenter.on(r.HttpConst.CYCLE_LIFE, function(o, r) {
+101886: if (1 == r.eRet) {
+101887: var c = s.getItem(e.birthID, "Origin");
+101888: 1 == e.birthID ? u.default.prefabs.load("taskUI/StartActionUI_" + v.MarryModel.childData.sex, cc.Prefab, function(e, o) {
+101889: Promise.resolve().then(function() {
+101890: return t("../../scripts2/ui/login/creatRoleUI/StartActionUI");
+101891: }).then(function(t) {
+101892: var e = t.StartActionUI, n = cc.instantiate(o);
+101893: f.PopUpMgr.addPopUp(n, d.LayerMgr.popUpLayer);
+101894: n.getComponent(e).setData(0, function() {
+101895: i.MessageCenter.dispatch(l.EvName.HIDE_ROLE_EVENT, !0);
+101896: m.SaveDataMgr.killRoleClear();
+101897: y.loginModel.reqLoadGameServer();
+101898: }, v.MarryModel.getChildName());
+101899: });
+101900: }) : u.default.prefabs.load("comUI/PlayCartoonUI", cc.Prefab, function(t, e) {
+101901: var o = cc.instantiate(e);
+101902: f.PopUpMgr.addPopUp(o, d.LayerMgr.popUpLayer);
+101903: o.addComponent(g.PlayCartoonUI).setData(c.start_ani, function() {
+101904: m.SaveDataMgr.killRoleClear();
+101905: y.loginModel.reqLoadGameServer();
+101906: });
+101907: });
+101908: i.MessageCenter.dispatch(l.EvName.CYCLE_END);
+101909: } else if (6 == r.eRet) {
+101910: i.MessageCenter.dispatch(l.EvName.HIDE_ROLE_EVENT, !0);
+101911: n.default.show(a.getText("6372"));
+101912: } else 7 == r.eRet ? n.default.show(a.getText("6000320")) : 9 == r.eRet && n.default.show(a.getText("6003686"));
+101913: }, this);
+101914: i.MessageCenter.on(r.HttpConst.STORY_EXPERIENCE, function(t, e) {
+101915: if (1 == e.eRet) {
+101916: _.RoleBaseInfo.storyId = e.branchId;
+101917: i.MessageCenter.dispatch(l.EvName.CYCLE_END);
+101918: }
+101919: }, this);
+101920: };
+101921: e.prototype.isCycleLife = function() {
+101922: p.NetMgr.http.sendRequest(r.HttpConst.IS_CYCLE_LIFE);
+101923: };
+101924: e.prototype.onIsCycleLife = function(e, i) {
+101925: 1 == i.eRet ? o.RebirthModel.newBirthStoryState ? Promise.resolve().then(function() {
+---
+101957: void 0 === o && (o = 0);
+101958: this.birthID = t;
+101959: this.special && p.NetMgr.http.sendRequest(r.HttpConst.SPECIAL_CYCLE_LIFE, {
+101960: originId: t
+101961: });
+101962: var i = parseInt(c.UserModel.entity.hp.limit), n = parseInt(c.UserModel.entity.mp.limit);
+101963: p.NetMgr.http.sendRequest(r.HttpConst.CYCLE_LIFE, {
+101964: isReserved: o,
+101965: branchId: e,
+101966: originId: t,
+101967: skillArr: this.skillAy,
+101968: skillID: this.skillBaseId,
+101969: attArr: [ i, n ]
+101970: });
+101971: };
+101972: e.prototype.reqChooseExperience = function(t) {
+101973: p.NetMgr.http.sendRequest(r.HttpConst.STORY_EXPERIENCE, {
+101974: branchId: t
+101975: });
+101976: };
+101977: e.prototype.calutePowerLevelNum = function(t) {
+101978: var e = h.SkillTable.getSkillLevel(t), o = h.SkillTable.getSkillLevel(h.SkillTable.getBaseSkillID(t)), i = parseInt(o + c.UserModel.entity.perception.baseValue / 10 + h.SkillTable.dic[9].lv / 100);
+101979: return Math.min(e, i);
+101980: };
+101981: e.prototype.calutePowerState = function(t) {
+101982: var e = h.SkillTable.getSkillLevel(t), o = h.SkillTable.getSkillLevel(h.SkillTable.getBaseSkillID(t));
+101983: return e > parseInt(o + c.UserModel.entity.perception.baseValue / 10 + h.SkillTable.dic[9].lv / 100);
+101984: };
+101985: e.prototype.judgePowerValue = function(t) {
+101986: return this.calutePowerState(t);
+101987: };
+101988: e.prototype.calculatePowerValue = function(t, e) {
+101989: var o = s.getItem(t, "skill"), i = h.SkillTable.getSkillLevel(h.SkillTable.getBaseSkillID(t)) + Math.floor(c.UserModel.entity.perception.finalValue / 10) + Math.floor(h.SkillTable.dic[9].lv / 100), n = Math.min(e, i), r = s.getItem(n, "level"), a = h.SkillTable.getQualitySkillCoefficient(o, t);
+101990: return parseInt(r.zhenyuan) * a;
+101991: };
+101992: e.prototype.destroy = function() {
+101993: this.birthID = 0;
+101994: this.skillAy = [];
+101995: this.skillBaseId = 1;
+101996: };
+101997: return e;
+101998: }();
+101999: o.RebirthModel = new S();
+102000: cc._RF.pop();
+102001: }, {
+102002: "../../scripts2/ui/login/creatRoleUI/StartActionUI": void 0,
+102003: "../../scripts2/ui/reincarnationSys/ReincarnatMgr": void 0,
+---

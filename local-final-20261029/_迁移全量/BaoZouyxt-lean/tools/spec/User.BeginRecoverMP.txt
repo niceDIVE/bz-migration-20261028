@@ -1,0 +1,74 @@
+# User.BeginRecoverMP  (HttpConst.BEGIN_RECOVER_MP)
+# 出现 2 处
+
+138890: h.RoleOtherInfo.gengudanTime = o.genguTime;
+138891: p.NonBattleBuffModel.setBufferTotalTime(o.hanyusuiTime);
+138892: o.note.hasOwnProperty("attrch") && o.note.attrch.hasOwnProperty("mpTrained") && (d.RoleBaseInfo.mpTrained = o.note.attrch.mpTrained);
+138893: c.FishingModel.setAutoStartHung(o);
+138894: r.MessageCenter.dispatch(l.EvName.END_NG_TRAINING);
+138895: }, this);
+138896: r.MessageCenter.on(s.HttpConst.BEGIN_RECOVER_MP, function(e, o) {
+138897: if (1 == o.eRet) {
+138898: t.recoverStartTS = o.serverTime;
+138899: p.NonBattleBuffModel.tbbByID.hasOwnProperty(1043) && (t.hyTime = p.NonBattleBuffModel.tbbByID[1043].duration);
+138900: r.MessageCenter.dispatch(l.EvName.ON_MP_RECOVER_STARTED, 0);
+138901: }
+138902: }, this);
+138903: r.MessageCenter.on(s.HttpConst.END_RECOVER_MP, function(t, e) {
+138904: h.RoleOtherInfo.gengudanTime = e.genguTime;
+138905: p.NonBattleBuffModel.setBufferTotalTime(e.hanyusuiTime);
+138906: r.MessageCenter.dispatch(l.EvName.CHANGE_ROLE_INFO);
+138907: r.MessageCenter.dispatch(l.EvName.CLOSE_ROLE_HANG_EVENT);
+138908: }, this);
+138909: r.MessageCenter.on(s.HttpConst.GET_VIGOR, function(t, e) {
+138910: r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);
+138911: }, this);
+138912: r.MessageCenter.on(s.HttpConst.VIGOR_DAZUO, function(t, e) {
+138913: r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);
+138914: a.default.show(n.getText(3259).replace(/\[1\]/, m.playerInfo.entity.mp.limit));
+138915: }, this);
+138916: };
+138917: t.prototype.startRecoverMp = function() {
+138918: u.NetMgr.http.sendRequest(s.HttpConst.BEGIN_RECOVER_MP, {});
+138919: };
+138920: t.prototype.endRecoverMp = function() {
+138921: var t = m.playerInfo.entity, e = {
+138922: curMp: t.mp.remaining,
+138923: mplmt: t.mp.limit,
+138924: bTime: this.recoverStartTS,
+138925: flag: f.IceBedModel.getIceBed()
+138926: };
+138927: u.NetMgr.http.sendRequest(s.HttpConst.END_RECOVER_MP, e);
+138928: };
+138929: t.prototype.start = function() {
+138930: var t = m.playerInfo.entity, e = {
+138931: curMp: t.mp.remaining,
+138932: maxMp: t.mp.limit - t.addEqMp,
+138933: hg: t.hunger.remaining,
+138934: gTime: t.totalGameTime.gameTime,
+138935: hgtimes: t.numStuffed,
+138936: flag: f.IceBedModel.getIceBed()
+---
+138937: };
+138938: u.NetMgr.http.sendRequest(s.HttpConst.START_DAZUO, e);
+138939: };
+138940: t.prototype.reqGetVigors = function() {
+138941: u.NetMgr.http.sendRequest(s.HttpConst.GET_VIGOR, {});
+138942: };
+138943: t.prototype.reqConvVigor2Mp = function() {
+138944: var t = {};
+138945: y.SkillUtils.getMaxNGBonus(t);
+138946: var e = m.playerInfo.entity, o = {
+138947: skillID: t.skillID,
+138948: maxMp: e.mp.limit,
+138949: speed: e.hungerConsumingSpeed.finalValue,
+138950: flag: f.IceBedModel.getIceBed()
+138951: };
+138952: u.NetMgr.http.sendRequest(s.HttpConst.VIGOR_DAZUO, o);
+138953: };
+138954: t.prototype.end = function() {
+138955: var t = {};
+138956: y.SkillUtils.getMaxNGBonus(t);
+138957: var e = m.playerInfo.entity, o = {
+138958: skillID: t.skillID,
+---

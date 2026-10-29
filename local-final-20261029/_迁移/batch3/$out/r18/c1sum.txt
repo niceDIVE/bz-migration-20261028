@@ -1,0 +1,72 @@
+2: # 审计报告：r19-W-C1 抓包猎 - 原版服务端 upgradeSkill 应答与模式检索取证
+14: ### 模式 1 (upgradeSkill)
+15: 命中行数：12 行
+17: - F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+18: 原文：POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+19: - F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+20: 原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"
+21: - F:\BaoZouyxt\hotfix-patch\decrypted\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+22: 原文：status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+23: - F:\BaoZouyxt\hotfix-patch\decrypted\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+24: 原文：{"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1262":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[102]}}
+25: - F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+26: 原文：POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+27: - F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+28: 原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"
+29: - F:\BaoZouyxt\hotfix-patch\decrypted\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+30: 原文：status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+31: - F:\BaoZouyxt\hotfix-patch\decrypted\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+32: 原文：{"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1112":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[117]}}
+33: - F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+34: 原文：POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+35: - F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+36: 原文：status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+37: - F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+38: 原文：POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+39: - F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+40: 原文：status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+43: 命中行数：2 行
+45: - F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+46: 原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"
+47: - F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+48: 原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"
+51: 命中行数：8 行
+59: - F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+60: 原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"
+61: - F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+62: 原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"
+71: 命中行数：3 行
+75: - F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+76: 原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"
+77: - F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+78: 原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"
+81: 命中行数：1 行
+87: 命中行数：1 行
+93: 命中行数：8 行（含精确大写 NPCID 2行，其余 6 行为小驼峰 npcID 或 dropNpcID 等字段）
+100: - F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+101: 原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"
+102: - F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+103: 原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"
+111: ## 三、必须回答的三个问题（Qa / Qb / Qc）
+113: ### Qa. 有没有任何一条 upgradeSkill 的应答（文件名以 RESP 开头且含 upgradeSkill）？
+117: 1. F:\BaoZouyxt\hotfix-patch\decrypted\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt
+118: status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+119: {"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1262":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[102]}}
+121: 2. F:\BaoZouyxt\hotfix-patch\decrypted\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt
+122: status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+123: {"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1112":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[117]}}
+125: 3. F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt
+126: status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+132: 4. F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt
+133: status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+139: ### Qb. templates.json 里有没有 upgradeSkill 的应答模板？
+140: 答：没有。
+141: 证据：F:\BaoZouyxt\hotfix-patch\core\templates.json:1 全文为单行 JSON，包含的顶级键仅为 quicklogin, create, getChatAddress, reqSelfBattleInfo, checkBattleResult, getFinishTaskAward, getCRAInfo, getServerList，不存在 upgradeSkill。
+143: ### Qc. decrypted 目录里升级相关的 REQ 各带什么字段？把文件名 + 完整内容贴出来
+149: 1. F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt
+150: POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+151: {"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"log
+153: 2. F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt
+154: POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+155: {"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"log
+166: 关键输出：Has upgradeSkill: false

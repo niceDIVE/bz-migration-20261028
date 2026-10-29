@@ -1,0 +1,229 @@
+【指令】
+你是一位资深客户端逆向与静态分析方向的架构顾问。这是第 21 批材料（上一批 20 号：R12 处置回报 + 3 问；你的回执是 R13）。
+本批是**对 R13 的逐条处置 + 三处对 R13 的订正（带逐字证据）+ 两张新表/闸门 + 4 个新问题**。
+回答规则（沿用）：
+1. 结论要么带条件说明，要么带可执行形式；不接受"建议考虑"。
+2. 凡是你推断的、材料里没有明说的，一律标注【推断】；材料没有的直说"材料未提供"。
+3. 必须给一段"反例"。
+4. 严格按末尾编号格式输出。
+5. 约束不变：不能改客户端（只能进程内替换网络层 / 单文件存档）、不能加数据库、**仓库仍然不是 git**。
+
+────────────────────────────────────────────────────────
+【一、部署与基线】
+
+`impl=h7910b953 / flow=ffaec47c3`，`pid 29928`（热重载，**未重启**），`implErr=null / flowErr=null`。
+`selfCheck`：`failed=[]`、`checkedCount=1234`、**`missingRequired=[]`**（live 现在也回这三个，见 §3.D）。
+自动化验收 **33 条**（29 套 `test\*.js` + 兑换验收器 + 形状冻结 + 构建 + 本批新增的 reject-codes 断言器）：
+**32 绿 1 红**，唯一红项是 `test\core-test-server.js`——**改前就红**的遗留项（HANDOVER §7-14：
+断言 `note.skch["1262"]` 期望 `[1,0,0]`、实际 `undefined`；改前跑 5 次、改后跑 3 次，行号与断言体逐字相同）。
+形状冻结 C1–C8 / C10–C13 全绿、diff 0 处；唯一数字变化是 C13 固定时钟计数 28→29 处，
+新增的那 1 处来自本批新回归 `test\r13-reject-codes.js` 的 `const NOW = 1792612412000`（同一取值、已登记）。
+设备端实测（命令通道直接打进程内 impl，**不写存档**）：
+```
+ver → h7910b953
+BeginTraining {skillID:1112, isCollective:0} → {"eRet":1,"beginTime":1792690648625,"skillID":1112,"hanyusuiTime":0,"isCollective":0}
+BeginTraining {skillID:1112, isCollective:1} → {…,"isCollective":1}
+BeginTraining {skillID:1112}                  → {…}（**没有** isCollective 键）
+BeginTraining {skillID:999999,isCollective:0} → {"eRet":4,"beginTime":0,"skillID":0}
+```
+⚠ 顺手发现一个**观测性缺陷**，直接影响你 Q2 的判据：`ver` **不是内容稳定的**。
+同一天里 `ver` 从 `hfa9ba714` → `h7910b953`，两版产物字节数完全相同（863597），逐行比对只有 4 对差异、
+**全是元数据**：`built=<ISO 时间>`、`IMPL_VERSION`、`生成于 <ISO 时间>`、`BZ_SHAPES.__meta.gen`。
+根因是 `tools/check_shape_freeze.js` 会调用 `gen_shapes.js` 重写形状包并写入 `gen` 时间戳，而 `ver` 把形状包也算进去了。
+⇒ 拿 `impl` 版本号当"这一次有没有夹带代码变更"的判据，在无 git 环境下**会被时间戳骗成"有变更"**。见 Q2。
+⚠ 未做：**端上点屏**验"门派练功界面 → 个人练功"。这条要人在 UI 里点，我这批只验到协议层。
+
+
+────────────────────────────────────────────────────────
+【二、R13 七条逐条处置】
+
+| # | R13 条目 | 处置 | 证据 |
+|---|---|---|---|
+| 1 | §1-1 `isCollective` 规则反了，0 也要原样回声 | **已改，你对、我 R12 的规则错了** | `...isCollective 有就回声（含 0）`，见下 §2.1 |
+| 2 | §1-2 `skillID` 键形前提 | **前提实测成立**（A2 关闭） | 设备存档 `skills` 键是字符串数字 |
+| 3 | §1-3 `useItem` 效果先汇总再一次应用 | **已改** | 见 §2.3 |
+| 4 | §1-4 D1 live 侧看不见"缺哪条" | **已补**（但你的前提订正，见 §3.D） | `missingRequired` + `cc.director.getScene()` |
+| 5 | §1-5 D2（C9a 只是下界） | **未动**，已写进 B1 开工检查清单 | 同意你的条件 |
+| 6 | §2 `reject-codes.json` + R1–R5 断言 | **已建表 + 已实现 R1/R2/R3/R4/R5b；R5 未实现** | 见 §4.1 / §4.2 |
+| 7 | §5 静默拒绝必须可观测 | **已改**（日志 + 计数落盘 + 回归断言） | 见 §2.7 |
+
+§2.1（`isCollective`）你给的规则我照做了，同时补一条你材料里没有的事实，它把规则再收紧一格：
+`tools\index.js:120751-120759`
+```
+120751: e.prototype.start = function(t, e) {
+120752: void 0 === e && (e = 0);
+120753: var o = T.playerInfo.entity, i = {
+120754: skillID: t,
+120755: hg: o.hunger.remaining,
+120756: gTime: o.totalGameTime.gameTime,
+120757: hgtimes: o.numStuffed,
+120758: flag: v.IceBedModel.getIceBed(),
+120759: isCollective: e
+```
+⇒ 请求**永远带这个字段**（默认 0），值域只有 0/1（`115158`、`120597`、`120892` 三处赋值）。
+所以"有就回声、没有就不发"在这条协议上**等价于"永远回声"**；我 R12 那条"为真才发"实际是"永远不发 0"。
+另外 `:120523` 的 `e.isSchoolLiang` 是客户端模型值（`scripts2.js:38080` 置 1、`58053` 置 2），确认你的 A1 成立。
+
+§2.2（`skillID` 键形）实测（设备 `state` 探针）：
+```
+skills 是 [object Object]，键 = ["1","7","8","1112","1262","1263"]，值 = [40,0,1] 这种三元数组
+```
+⇒ `s.skills[String(sid)]` 与存档键形一致，反例 3 在当前存档上不成立（但**不是不存在**：见 Q4）。
+
+§2.3（`useItem` 原子化）现在的形态：
+```
+效果阶段：只算 note.*，并把副作用攒进 pendingSkill / pendingHunger
+末尾一段：if (pendingSkill) s.skills[pendingSkill] = [1,0,1];
+         if (pendingHunger !== null) s.hunger = pendingHunger;
+         bagAdd(...); note.ivch[...]; persist();
+```
+你这句判断是对的，我补一个机制证据：`loadSave()` 有内存缓存（`bz-rpc-server.js:216` `if (_save) return _save;`），
+所以"分支里直接写 s"在异常时不是"忘了落盘"而是"内存已改、盘上没改、应答又被 dispatch:2605 的 catch 换成成功 ACK"——
+三方不一致，而且下一次任何业务动作的 persist 都会把这个半写的值写实。
+
+§2.7（可观测）每次拒绝写 `⚠ REJECT <动作> reason=<原因> <细节>`，并累加进内存表，
+随 `persist()` 落到 `save.meta.rejectStats`（与 `meta.actionStats` 同位置、同口径）。沙箱实例不计数（自检不污染真档）。
+
+────────────────────────────────────────────────────────
+【三、四处对 R13 的订正（都能逐字复核）】
+
+**A. `BeginTraining` 的回调不止 1/2 两个码——还有 3，且 3 是提示分支。**
+我上一批材料里写"客户端只认 1/2"是错的（那句话只对**成功集**成立）。原文：
+```
+120516: if (1 == n.eRet || 2 == n.eRet) {
+…
+120569: } else if (3 == n.eRet) {
+120570: var h = i.getItem(n.skillID, "skill");
+120571: l.default.show(r.getText(423).replace(/\[68\]/, r.getText(h.Name)));
+```
+`423` 的正文我现场从 live 读了（`__require('LangMgr').getText(423)`）：
+`[68]已经达到瓶颈了,需要闭关突破,方可继续修炼提升`
+⇒ 语义是"练满/需突破"，**不是**"未学会"。加上 `120570` 先 `getItem(n.skillID,"skill")` 再取 `.Name`，
+skillID 不在 item 表里时 `h` 为 null → `TypeError`。所以**选码结论不变（仍取 4）**，但理由从"没有 3"改成
+"3 的文本对不上 + 有崩的路径"。你 §2 的 R2 规则（第 1 档优先）在这条上不适用，请你判 A 是否成立。
+
+**B. `useItem` 的 4 不能当拒绝码——你 §2 的"取 4 或 5"里，4 有两个致命点。**
+```
+64895: } else if (2 == a.eRet) ; else if (4 == a.eRet) {
+64901: if (e.curItemId > 0) {
+64902: var U = i.getItem(e.curItemId, "item"), x = n.getText("988").replace(/\[1\]/, U.Data3), H = i.getItem(U.Data2, "item");
+64903: x = x.replace(/\[2\]/, n.getText(H.Name));
+64904: c.default.show(x);
+```
+① `988` 的正文是 `开启该道具需消耗[1]个[2]`（live 实读）——玩家会被误导成"缺材料"，正是你反例 5 的形态；
+② `U.Data2` 为 0/无效时 `getItem` 得 null → `H.Name` 抛 TypeError（F1 同一族）。
+`5` 的正文 `1333 = 你已经学会此配方了` 是**常量文本**，无解引用。⇒ 我把 useItem 的 `chosen` 定为 5（不是 4）。
+其余码的正文我也全读了：`1388 今天已领悟过,身体不堪重负`、`3430 少侠你根骨清奇…已无需使用根骨丹`、
+`3807 需要男性断情后才可使用`、`5862 你已经获得了该坐骑`、`6003628 你已拥有此特效`。
+
+**C. `washAdditionalArr` 的 4 根本不是拒绝码，是"弹选择框"的正常流程。**
+```
+144071: } else 3 == e.eRet ? f.StoreModel.openChargeList() : 4 == e.eRet ? d.default.prefabs.load("marrySystem/ChildWashUI", cc.Prefab, function(t, o) {
+…
+144075: }) : 6 == e.eRet ? s.default.show("等级未达到要求无法洗髓") : 7 == e.eRet && s.default.show("上一世无附加属性无法洗髓");
+```
+我们的 4 + `attrList`（4 段 `"41,x|42,y|44,z|43,w"`）就是走这条"选洗哪条"。若按 §2 的选码规则把它改成 6，
+会把选择界面换成一条错误提示 —— 正好是你的反例 1 的同型错。所以表里给它单开一档 `role:"flow"`、`tier:0`，不参与 R1/R2/R3。
+
+**D. D1 的前提不成立：live 进程里 harness **存在**，`clock:liveIsReal` 并**没有**被跳过。**
+设备实测（`run.ps1 cmd`）：
+```
+get:…JSON.stringify({harness:!!H,impl:!!(H&&H.impl),winHarnessImpl:…})  →  {"harness":true,"impl":true,"winHarnessImpl":true}
+selfcheck:  →  {"ok":true,"passed":1234,"failed":[],"checkedCount":1234,…}
+```
+即 live 的 `checkedCount` 与构建期同数（1234），那条断言确实跑了。你的补法我仍然做了，因为真问题不是"被跳过"，
+而是"live 只回计数、看不见缺哪条"——现在 live 也回 `missingRequired:[…]`（差集在 impl 内算，只回缺的那几个 id）。
+场景判据也照你说的改成优先读 `cc.director.getScene().name`（实测 `gamescene`，`cc` 是引擎注入的全局变量，
+三包内 `window.cc` / `var cc=` 均 0 命中），harness 只作退路。
+
+────────────────────────────────────────────────────────
+【四、本批新增的东西】
+
+§4.1 `tools\facts\reject-codes.json`：**16 条** = 15 个真的会回拒绝码的动作 + 1 个 `role:"flow"`（washAdditionalArr）。
+每条带 `success / handled / promptOnly / chosen / tier / ev / note`，`ev` 形如 `index.js:64906#<sha8>`。
+
+§4.2 `tools\check_reject_codes.js`（退出码 0 = 全绿；本批实测 `REJECT-CODES OK 表=16 条 拒绝点=33 处`）：
+- **R1** chosen ∉ success；
+- **R2 三态**（这是被你 §2 的一句话逼出来的第三档，见 §4.2b）：
+  (a) promptOnly 为空 → 走 R3；
+  (b) promptOnly 非空且 tier=1 → chosen 必须在 promptOnly 里（`"else"` 兜底分支按 "chosen ∉ handled" 处理）；
+  (c) promptOnly 非空且 tier=2 → **必须写 `tierWhy` 非空字符串**，否则红。
+  实测输出 `第 2 档带理由 = 2 条（BeginTraining、QuickBuyItem）`；
+- **R3** promptOnly 为空 → tier 必须 2 且 chosen ∉ handled（`genericIntercepts` 取空集，依据见下）；
+- **R4** `ev` 的行号 + 该行原文 sha1 前 8 位必须与表一致（16/16 一致；客户端包一变就红）；
+- **R5b 反向覆盖**：按**花括号配对**切出每个 handler 体（按相邻行切片会把下一个 handler 的 JSDoc 和 `handleRequest` 正文算进来，
+  多出 3 条假失败），体内 `eRet: <n>` 字面量（整行 `//` 注释跳过）`n !== 1` 的算拒绝点，
+  每个出现拒绝点的 handler 名必须在表里。实测 `拒绝点 33 处 / 涉及 16 个动作 / 表内 16 条`，集合同名、零未登记；
+- **R5（行为断言：固定非法请求夹具 + 磁盘/业务双哈希）本轮未实现**，脚本每次都打印 `R5 未实现（下一批…）`，不冒充通过。
+
+§4.2b 为什么 R2 需要第三态："有提示分支"和"该提示分支可用"是两件事。
+`BeginTraining` 的 3、`QuickBuyItem` 的 3 都是**真实存在的提示分支**，但一个是"已达瓶颈"文案、一个要解引用 `getItem(skillID)`，
+按你的第 1 档规则反而会误导或崩。若把 promptOnly 直接清空（最省事的写法），表就从"记录事实"退化成"记录我的决定"，
+下一个人再也看不出这条被否掉过。所以保留 promptOnly=[3]，另加 `tierWhy` 记录否决理由，CI 强制它非空。
+
+`genericIntercepts` 取空集的依据（你 A4 问过）：公共发送路径只判 `errorCode`、只解 `MsgData`，判完直接 dispatch，
+全程不读 eRet —— `index.js:59204` `if (a.errorCode && 1 == a.errorCode) {`、`:59332` / `:59335` 两处 dispatch；
+另一条 `wulinPost` 同理（`:23681-23682`）。所以 4/5 不会被通用层拦。
+
+§4.3 构建闸门三条加强（`build-handlers.js`）：
+① `required-checks.json` **缺失不再静默跳过**（原来 `existsSync` 为假就整段不跑 = 闸门不存在）；
+② impl 内联的 `REQUIRED_CHECKS` 与该 JSON **逐字比对**（live 侧要拿它算差集，两份不许漂移）；
+③ `selfCheck.missingRequired` 必须为空数组。
+
+§4.4 回归 `test\r13-reject-codes.js` 7 条：T1 `isCollective:0` 原样回声（原故障重现）；T2 回声 1；
+T3 请求没有该字段就不许发（防 fillShape 补默认值）；T4 拒绝码落在成功集外 + 不许带请求时刻的 beginTime + 必须留 REJECT 日志；
+T5 `useItem` 原子性**静态断言**（效果阶段不许出现 `s.skills[…]=` / `s.hunger =` / `persist()`）；
+T6 `shapes.__switch.BeginTraining.isCollective` 仍是 `switch`（保证白名单的前提没变）；
+T7 `washAdditionalArr` 的 4 必须保持是 4（防后人照选码规则改坏）。
+
+§4.5 开关零值白名单 `SWITCH_ZERO_OK = { BeginTraining: { isCollective: 'index.js:120523' } }`：
+`noteBadSwitches` 的通用规则是"开关字段值不许为 0"，而 `isCollective:0` 是合法语义值，
+不豁免就会每次个人练功刷一条假的"不合法开关值"。白名单带证据行号，受棘轮（只许减不许增）。
+
+────────────────────────────────────────────────────────
+【五、我**没有**做的两件（如实交代）】
+
+1. **§3 的 `obtainable.json` 没做**。理由：它要在 `Ledger ∪ Drop* ∪ Task ∪ Shelf ∪ Grant*` 上做**不动点**，
+   而 `Grant*` 面（礼包套礼包）要先能静态判定 handler 的产出集合——这正是你 §3 说的"无法静态判定就整体高估"那一档。
+   更关键的是：这张表的**用途**是给 `useItem` 的未建模物品做"(b′) 拒绝且不扣"，
+   而那条改动会**缩小玩家当前可用物品范围**（`item` 表 522 条里只有 21 条被 ITEMEAT/ITEMFUN/ITEMSCH 覆盖），
+   按用户裁定属于"需要用户点头"的一档，我不在这批里自行扩大范围。→ 变成 Q1。
+2. **§4 的 `registry-history.jsonl` + G1–G5 没做**。这批只落了"表本身的棘轮"（reject-codes 的 R5b）。
+   没落地的直接原因是 G5 的通过条件在你的方案里写的是"本次 impl 哈希与上一行相同"——
+   而我这边的 `impl` 版本号**不是内容稳定的**（见 §一：同一天 `hfa9ba714`→`h7910b953`，字节数相同、
+   差异只有 4 行时间戳元数据），所以 G5 会把"纯时间戳变化"判成"夹带了代码变更"，永远判不过。→ 变成 Q2。
+
+────────────────────────────────────────────────────────
+【六、我要你回答的 4 件事】
+
+Q1（顺序）：`obtainable.json` 与 `useItem` 未建模拒绝，谁先？
+  我的倾向是"先只读统计、不动行为"——但它动的是"玩家能用的物品范围"，按用户裁定要用户点头。
+  请判：**只读统计（产出一张清单、不改任何行为）是否需要用户裁定**？如果不需要，我下一批就直接产表；
+  如果需要，我给的裁定问法该怎么写才不越界（一句话模板即可）。
+
+Q2（G5 的判据）：无 git 时，"这一次扩容不夹带代码变更"怎么表达才可判？
+  候选：(a) 用 `core/bz-rpc-server.js` + `core/bz-handler-impl.js` 两个文件的 md5 代替 impl 版本号；
+  (b) 用 `registry-history.jsonl` 上一行的 `impl` 字段 + 「本次构建产物的 sha1」；
+  (c) 干脆取消这条，只保留"cap 变大必须进 approved-widening"。
+  追加事实（§一 那段）：产物里 `built=` / `gen=` 两个 ISO 时间戳每次构建都变，`ver` 把它们算进去了，
+  所以"哈希相同"这个判据在现形态下恒为假。是不是应该把 `ver` 拆成 `ver(内容)` 与 `built(时间)` 两个字段？
+  请给一个**今天就能写进 CI** 的判据，并说明它挡住什么、挡不住什么。
+
+Q3（R5 的覆盖边界）：行为断言要不要覆盖全部 87 个 handler？
+  现实是 72 个 handler 只有成功码（表里 15 个有拒绝码）。我倾向 R5 只覆盖表内 15 个，
+  其余 57 个由 R5b（反向覆盖）保证"一旦新增拒绝码就红"。请判这个边界够不够。
+
+Q4（`role:"flow"` 这一档）：我把"流程码/选择框码"单独标成 `role:"flow"` 并从 R1/R2/R3 豁免。
+  你接受这个第三档，还是要求把这类码挪出 `reject-codes.json`（另建 `flow-codes.json`）？
+  如果另建，`R5b`（拒绝点必须登记）要不要跨两份文件查？
+
+────────────────────────────────────────────────────────
+【输出格式（严格 1-7，不许增删小标题）】
+
+1. 结论（≤6 句）：§2 那七条处置各自对不对；§3 的四处订正（A/B/C/D）是否成立
+2. Q1 答（obtainable 与 useItem 的先后 + 只读统计要不要裁定）
+3. Q2 答（无 git 时的 G5 判据）
+4. Q3 答（R5 的覆盖边界）
+5. Q4 答（`role:"flow"` 第三档）
+6. 反例：我这批处置在什么具体场景下会出错
+7. 假设：哪条前提不成立时，你上面哪些结论失效（按编号点名）

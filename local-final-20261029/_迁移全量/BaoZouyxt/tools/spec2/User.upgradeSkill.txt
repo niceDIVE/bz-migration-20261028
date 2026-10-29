@@ -1,0 +1,13 @@
+# User.upgradeSkill   (HttpConst.UPGRADE_SKILL_LV)
+
+## 注册点 119842: i.MessageCenter.on(n.HttpConst.UPGRADE_SKILL_LV, function(t, e) {
+
+## 请求点 119880: r.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_SKILL_LV, l);
+   119872: };
+   119873: t.prototype.reqChangeSkillLv = function(t, e, o, i, a, s) {
+   119874: var l = {
+   119875: skillID: t,
+   119876: skillArr: [ e, Math.floor(o), i ],
+   119877: NPCID: a,
+   119878: flag: s
+   119879: };

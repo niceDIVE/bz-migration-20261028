@@ -1,0 +1,13 @@
+# User.hireNpcOnhook   (HttpConst.HIRE_NPC)
+
+## 注册点 51428: r.MessageCenter.on(s.HttpConst.HIRE_NPC, function(t, e) {
+
+## 请求点 51644: g.NetMgr.http.sendRequest(s.HttpConst.HIRE_NPC, e);
+   51636: }
+   51637: }
+   51638: }
+   51639: };
+   51640: e.prototype.reqHireNpc = function(t) {
+   51641: var e = {
+   51642: siteID: t
+   51643: };

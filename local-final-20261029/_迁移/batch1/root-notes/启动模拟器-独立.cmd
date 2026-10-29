@@ -1,0 +1,5 @@
+@echo off
+rem 独立拉起 MuMu（-v 1 实例：暴走英雄坛游戏软件V1.0）
+rem 目的：让模拟器挂在系统服务(WMI)下、脱离任何 shell/DSH 的进程树 —— DSH 关闭时不会再被一起收走。
+rem 用法：双击即可；已启动时是幂等的。
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$m='D:\taptap\Support\android_emulator\engine\nx_main\MuMuManager.exe'; $q=([char]34)+$m+([char]34); $r=([wmiclass]'Win32_Process').Create($q+' control -v 1 launch'); if($r.ReturnValue -ne 0){Write-Host ('启动失败 ReturnValue=' + $r.ReturnValue)} else {Write-Host '已独立拉起 MuMu 实例 1（脱离 shell 进程树）'}"

@@ -1,0 +1,268 @@
+{
+  "useItem": {
+    "success": [1],
+    "handled": [1, 2, 4, 5, 6, 8, 10, 11, 13, 15, 16],
+    "promptOnly": [4, 5, 6, 8, 10, 11, 13, 16],
+    "defaultCode": 5,
+    "codes": [
+      {
+        "code": 5,
+        "role": "reject",
+        "reasons": ["default", "recipeLearned"],
+        "tier": 1,
+        "ev": "index.js:64906#f4b68de2",
+        "note": "1333=你已经学会此配方了（常量文本，无解引用）"
+      },
+      {
+        "code": 3,
+        "role": "reject",
+        "reasons": ["effectUnmodeled"],
+        "tier": 2,
+        "ev": "index.js:64895#74d98906",
+        "tierWhy": "客户端 if 链 64755-64910 里 3 没有分支（链止于 16，无 else 兜底）→ 静默；4 会弹 988『开启该道具需消耗[1]个[2]』并解引用 item.Data2，5 会弹『你已经学会此配方了』，都不贴切（R14 反例 3）",
+        "note": "未建模效果=不扣、静默、留 REJECT 日志；开关在 rpc 的 REJECT_UNMODELED_ITEMS"
+      }
+    ]
+  },
+  "BeginTraining": {
+    "success": [1, 2],
+    "handled": [1, 2, 3],
+    "promptOnly": [3],
+    "defaultCode": 4,
+    "codes": [
+      {
+        "code": 4,
+        "role": "reject",
+        "reasons": ["default", "notLearned"],
+        "tier": 2,
+        "ev": "index.js:120516#6ca3ca8c",
+        "tierWhy": "3 有提示但 423 的正文是『[68]已经达到瓶颈了,需要闭关突破,方可继续修炼提升』（与『未学会』不符），且 index.js:120570 先 getItem(n.skillID,\"skill\") 再取 .Name，id 不在 item 表会 TypeError",
+        "note": ""
+      }
+    ]
+  },
+  "BuyFashion": {
+    "success": [1],
+    "handled": [1, 2, 3, 4, 7],
+    "promptOnly": [2, 4, 7],
+    "defaultCode": 4,
+    "codes": [
+      {
+        "code": 4,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 1,
+        "ev": "index.js:75578#3c88f4d7",
+        "note": "3=openChargeList 开充值界面，不算提示分支"
+      }
+    ]
+  },
+  "buyShopItem": {
+    "success": [1],
+    "handled": [1, 4],
+    "promptOnly": [4],
+    "defaultCode": 4,
+    "codes": [
+      {
+        "code": 4,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 1,
+        "ev": "index.js:64752#738fbfa5",
+        "note": ""
+      }
+    ]
+  },
+  "buySpecialShopItem": {
+    "success": [1],
+    "handled": [],
+    "promptOnly": [],
+    "defaultCode": 4,
+    "codes": [
+      {
+        "code": 4,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 2,
+        "ev": "index.js:123376#388728c3",
+        "note": "回调体只有一行 dispatch(REFRESH_SP_SHOP)，无 eRet 分支"
+      }
+    ]
+  },
+  "BuyAcitivityShop": {
+    "success": [1],
+    "handled": [1, 4, 5, 6, 7, 9],
+    "promptOnly": [4, 5, 6, 7, 9],
+    "defaultCode": 4,
+    "codes": [
+      {
+        "code": 4,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 1,
+        "ev": "index.js:1493#f8114de0",
+        "note": ""
+      }
+    ]
+  },
+  "exchangeItem": {
+    "success": [1],
+    "handled": [1],
+    "promptOnly": [],
+    "defaultCode": 4,
+    "codes": [
+      {
+        "code": 4,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 2,
+        "ev": "index.js:47091#b60c6d71",
+        "note": "只判 1，其余码静默"
+      }
+    ]
+  },
+  "buyGoodAndEvilShopItem": {
+    "success": [],
+    "handled": [],
+    "promptOnly": [],
+    "defaultCode": 4,
+    "codes": [
+      {
+        "code": 4,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 2,
+        "ev": "index.js:60445#cdeb4da5",
+        "note": "全包只有常量行，无 MessageCenter.on 注册 → 消费端未取证"
+      }
+    ]
+  },
+  "rgShopByItem": {
+    "success": [],
+    "handled": [],
+    "promptOnly": [],
+    "defaultCode": 4,
+    "codes": [
+      {
+        "code": 4,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 2,
+        "ev": "index.js:60516#f2e0db61",
+        "note": "同上"
+      }
+    ]
+  },
+  "QuickBuyItem": {
+    "success": [1],
+    "handled": [1, 3],
+    "promptOnly": [3],
+    "defaultCode": 4,
+    "codes": [
+      {
+        "code": 4,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 2,
+        "ev": "index.js:130888#ccca76f3",
+        "tierWhy": "3 的提示 getText(535) 属『快速购买界面/材料不足』语义，对拒绝不适用；4 静默不误导",
+        "note": ""
+      }
+    ]
+  },
+  "washAdditionalArr": {
+    "success": [1],
+    "handled": [1, 3, 4, 6, 7],
+    "promptOnly": [],
+    "defaultCode": 4,
+    "codes": [
+      {
+        "code": 4,
+        "role": "flow",
+        "reads": ["attrList"],
+        "ev": "index.js:144071#39e4454a",
+        "note": "4 不是拒绝：load(\"marrySystem/ChildWashUI\") 弹『选洗哪条』界面，我们回 4 + attrList（4 段字符串）"
+      }
+    ]
+  },
+  "isCycleLife": {
+    "success": [1],
+    "handled": [1, 2, 3],
+    "promptOnly": [2, 3],
+    "defaultCode": 2,
+    "codes": [
+      {
+        "code": 2,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 1,
+        "ev": "index.js:101932#786b9ac6",
+        "note": ""
+      }
+    ]
+  },
+  "cycleLife": {
+    "success": [1],
+    "handled": [1, 6, 7, 9],
+    "promptOnly": [7, 9],
+    "defaultCode": 9,
+    "codes": [
+      {
+        "code": 9,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 1,
+        "ev": "index.js:101912#39aacac2",
+        "note": ""
+      }
+    ]
+  },
+  "specialCycleLife": {
+    "success": [],
+    "handled": [],
+    "promptOnly": [],
+    "defaultCode": 9,
+    "codes": [
+      {
+        "code": 9,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 2,
+        "ev": "index.js:60185#ac46ff95",
+        "note": "无注册行，消费端未取证"
+      }
+    ]
+  },
+  "WashMedicine": {
+    "success": [1],
+    "handled": [1, 2, "else"],
+    "promptOnly": ["else"],
+    "defaultCode": 0,
+    "codes": [
+      {
+        "code": 0,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 1,
+        "ev": "index.js:144132#08aa3179",
+        "note": "0 落到 else show(getText(\"910\")) → 有提示"
+      }
+    ]
+  },
+  "FindFriendByID": {
+    "success": [1],
+    "handled": [1, "else"],
+    "promptOnly": ["else"],
+    "defaultCode": 0,
+    "codes": [
+      {
+        "code": 0,
+        "role": "reject",
+        "reasons": ["default"],
+        "tier": 1,
+        "ev": "index.js:132264#5666525b",
+        "note": "0 落到 else show(getText(\"371\")) → 有提示"
+      }
+    ]
+  }
+}

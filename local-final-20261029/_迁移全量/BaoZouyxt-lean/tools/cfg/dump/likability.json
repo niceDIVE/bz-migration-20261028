@@ -1,0 +1,1 @@
+{"name":"likability","rows":5,"cols":["ID","Description","Likability"],"data":{"1":{"ID":1,"Description":778,"Likability":[-200,-100]},"2":{"ID":2,"Description":779,"Likability":[-100,-30]},"3":{"ID":3,"Description":780,"Likability":[-30,30]},"4":{"ID":4,"Description":781,"Likability":[30,100]},"5":{"ID":5,"Description":782,"Likability":[100,200]}}}

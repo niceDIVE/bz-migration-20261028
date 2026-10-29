@@ -1,0 +1,51 @@
+# User.LookAdvertisement  (HttpConst.GET_AD_REWARD)
+# 出现 1 处
+
+  2403: this.openTapTap = !1;
+  2404: }
+  2405: t.prototype.init = function() {
+  2406: var t = this;
+  2407: i.MessageCenter.on(n.HttpConst.GET_NUMADS_AVAILABLE, this.onGetNumAds.bind(this), this);
+  2408: i.MessageCenter.on(n.HttpConst.GET_NEW_NUMADS_AVAILABLE, this.onGetNumAds.bind(this), this);
+  2409: i.MessageCenter.on(n.HttpConst.GET_AD_REWARD, this.onGetAdReward.bind(this), this);
+  2410: i.MessageCenter.on(n.HttpConst.GET_NEW_AD_REWARD, this.onGetAdReward.bind(this), this);
+  2411: i.MessageCenter.on("ADShowBegin", function() {
+  2412: i.MessageCenter.dispatch(r.EvName.BEGIN_PLAYING_AD);
+  2413: });
+  2414: i.MessageCenter.on("ADShowFailed", function() {});
+  2415: i.MessageCenter.on("ADShowComplete", function() {});
+  2416: i.MessageCenter.on("ADUserClickAd", function() {});
+  2417: i.MessageCenter.on("ADAdClosed", function() {});
+  2418: i.MessageCenter.on("ADQualify4Reward", function() {
+  2419: var e = 0;
+  2420: 1e3 == t.adContext && (e = p.RumorModel.eventID);
+  2421: t.reqAdReward(t.adContext, e);
+  2422: });
+  2423: i.MessageCenter.on("ADUnqualify4Reward", function() {});
+  2424: i.MessageCenter.on("WxShareReward", function() {
+  2425: 0 == t.isItemShare ? t.reqAdReward(1002, 0) : h.InventoryModel.reqShareReward();
+  2426: });
+  2427: };
+  2428: t.prototype.ADShowBegin = function() {};
+  2429: t.prototype.ADShowFailed = function() {};
+  2430: t.prototype.ADShowComplete = function() {};
+  2431: t.prototype.ADUserClickAd = function() {};
+  2432: t.prototype.ADAdClosed = function() {};
+  2433: t.prototype.ADQualify4Reward = function() {
+  2434: var t = 0;
+  2435: 1e3 == this.adContext && (t = p.RumorModel.eventID);
+  2436: this.reqAdReward(this.adContext, t);
+  2437: };
+  2438: t.prototype.ADUnqualify4Reward = function() {};
+  2439: t.prototype.WxShareReward = function() {
+  2440: if (0 == this.isItemShare) {
+  2441: this.reqAdReward(1002, 0);
+  2442: console.log("adtest>>>>>>>>>>>>>>>>1>>>>>>>>WxShareReward");
+  2443: } else {
+  2444: h.InventoryModel.reqShareReward();
+  2445: console.log("adtest>>>>>>>>>>>>>>>>2>>>>>>>>WxShareReward");
+  2446: }
+  2447: };
+  2448: t.prototype.onGetNumAds = function(t, e) {
+  2449: i.MessageCenter.dispatch(r.EvName.REQ_ADINFO_RET, e);
+---

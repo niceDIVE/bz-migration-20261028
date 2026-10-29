@@ -1,0 +1,1 @@
+{"inScope": 700, "edges": 901, "clusters": 76, "lone": 370, "pairs": 21, "rwActions": 32}

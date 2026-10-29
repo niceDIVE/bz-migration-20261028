@@ -1,0 +1,99 @@
+# User.getPaperList  (HttpConst.GET_PAPER_LIST)
+# 出现 2 处
+
+ 46890: 1 == o.eRet && (t.isActive ? cc.log("进入活动答题") : a.default.prefabs.load("Question/NormalTest", cc.Prefab, function(t, e) {
+ 46891: var i = cc.instantiate(e);
+ 46892: i.getComponent("StartExamUI").setData(o.bankList);
+ 46893: n.PopUpMgr.addPopUp(i, s.LayerMgr.popUpLayer);
+ 46894: }));
+ 46895: }, this);
+ 46896: i.MessageCenter.on(l.HttpConst.GET_PAPER_LIST, function(e, o) {
+ 46897: if (1 == o.eRet) {
+ 46898: t.bankId = o.bankId;
+ 46899: i.MessageCenter.dispatch(c.EvName.LOAD_PAPER_LIST, o);
+ 46900: } else 2 == o.eRet && r.default.show(p.getText(6402));
+ 46901: }, this);
+ 46902: i.MessageCenter.on(l.HttpConst.GET_QUESTION_LIST, function(e, o) {
+ 46903: if (1 == o.eRet) {
+ 46904: t.paperId = o.paperId;
+ 46905: i.MessageCenter.dispatch(c.EvName.START_EXAMINATION);
+ 46906: o.currentAnswerNum >= o.questionMaxNum ? t.answerResult() : a.default.prefabs.load("Question/Paper", cc.Prefab, function(e, i) {
+ 46907: var r = cc.instantiate(i);
+ 46908: r.getComponent("AnswerPageUI").setData(o, t.isActive);
+ 46909: n.PopUpMgr.addPopUp(r, s.LayerMgr.popUpLayer);
+ 46910: });
+ 46911: } else 2 == o.eRet ? r.default.show(p.getText(6403)) : 3 == o.eRet || 4 == o.eRet ? r.default.show(p.getText(6404)) : 6 == o.eRet && r.default.show(p.getText(7012));
+ 46912: }, this);
+ 46913: i.MessageCenter.on(l.HttpConst.ANSWER_QUESTION, function(t, e) {
+ 46914: 1 == e.eRet ? i.MessageCenter.dispatch(c.EvName.UPDATE_ANSWER_PAGE, e) : 2 == e.eRet && r.default.show(p.getText(1093));
+ 46915: }, this);
+ 46916: i.MessageCenter.on(l.HttpConst.ANSWER_RESULT, function(e, o) {
+ 46917: if (1 == o.eRet) {
+ 46918: a.default.prefabs.load("Question/Result", cc.Prefab, function(e, i) {
+ 46919: var r = cc.instantiate(i);
+ 46920: r.getComponent("AnswerResultUI").setData(o, t.isActive, t.reviewStatus);
+ 46921: n.PopUpMgr.addPopUp(r, s.LayerMgr.popUpLayer);
+ 46922: });
+ 46923: i.MessageCenter.dispatch(c.EvName.UPDATE_ANSWER_PAGE, {
+ 46924: close: !0
+ 46925: });
+ 46926: } else 2 == o.eRet && r.default.show(p.getText(1093));
+ 46927: }, this);
+ 46928: i.MessageCenter.on(l.HttpConst.RESET_ANSWER, function(e, o) {
+ 46929: if (1 == o.eRet) {
+ 46930: i.MessageCenter.dispatch(c.EvName.START_EXAMINATION);
+ 46931: o.rightNum = 0;
+ 46932: o.paperId = t.paperId;
+ 46933: a.default.prefabs.load("Question/Paper", cc.Prefab, function(e, i) {
+ 46934: var r = cc.instantiate(i);
+ 46935: r.getComponent("AnswerPageUI").setData(o, t.isActive);
+ 46936: n.PopUpMgr.addPopUp(r, s.LayerMgr.popUpLayer);
+---
+ 46951: u.NetMgr.http.sendRequest(l.HttpConst.GET_BANK_LIST, {
+ 46952: roleID: h.RoleBaseInfo.roleID
+ 46953: });
+ 46954: };
+ 46955: t.prototype.getPaperList = function(t) {
+ 46956: 6 == t && (this.isActive = !0);
+ 46957: u.NetMgr.http.sendRequest(l.HttpConst.GET_PAPER_LIST, {
+ 46958: roleID: h.RoleBaseInfo.roleID,
+ 46959: bankId: t
+ 46960: });
+ 46961: };
+ 46962: t.prototype.getQuestionList = function(t, e) {
+ 46963: this.reviewStatus = e;
+ 46964: 0 == t && (t = this.paperId);
+ 46965: var o = {
+ 46966: roleID: h.RoleBaseInfo.roleID,
+ 46967: bankId: this.bankId,
+ 46968: paperId: t
+ 46969: };
+ 46970: u.NetMgr.http.sendRequest(l.HttpConst.GET_QUESTION_LIST, o);
+ 46971: };
+ 46972: t.prototype.answerQuestion = function(t, e) {
+ 46973: if (t != this.curQuestionId) {
+ 46974: this.curQuestionId = t;
+ 46975: var o = {
+ 46976: roleID: h.RoleBaseInfo.roleID,
+ 46977: questionId: t,
+ 46978: answer: e
+ 46979: };
+ 46980: u.NetMgr.http.sendRequest(l.HttpConst.ANSWER_QUESTION, o);
+ 46981: }
+ 46982: };
+ 46983: t.prototype.answerResult = function() {
+ 46984: var t = {
+ 46985: roleID: h.RoleBaseInfo.roleID,
+ 46986: bankId: this.bankId,
+ 46987: paperId: this.paperId
+ 46988: };
+ 46989: u.NetMgr.http.sendRequest(l.HttpConst.ANSWER_RESULT, t);
+ 46990: };
+ 46991: t.prototype.resetAnswer = function() {
+ 46992: this.curQuestionId = -1;
+ 46993: var t = {
+ 46994: roleID: h.RoleBaseInfo.roleID,
+ 46995: bankId: this.bankId,
+ 46996: paperId: this.paperId
+ 46997: };
+---

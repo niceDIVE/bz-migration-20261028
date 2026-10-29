@@ -1,0 +1,156 @@
+# 取证审计报告：P3 键值搜索与 upgradeSkill 抓包猎
+审计生成时间：2026-10-23
+输出路径：F:\BaoZouyxt\docs\audit\r19-W-C-p3-capture.txt
+
+================================================================================
+一、P3 范围与取证结果（以 7105/7106/7226 为键的数据）
+================================================================================
+【扫描范围】
+- F:\BaoZouyxt\client-analysis\**
+- F:\BaoZouyxt\$out\**
+- F:\BaoZouyxt\hotfix-patch\decrypted\**
+跳过格式：*.png *.jpg *.jpeg *.dex *.so
+
+【ZIP/PK 解压处理】
+- F:\BaoZouyxt\client-analysis\bundles\706353064（PK文件，重命名为 zip 后通过 Expand-Archive 解压至 $env:TEMP\p3_audit_364446797\bundle_706353064）
+- F:\BaoZouyxt\$out\r04docx\r04.zip（PK文件，通过 Expand-Archive 解压至 $env:TEMP\p3_audit_364446797\r04_zip）
+解压后所有生成物均位于 $env:TEMP，未解压至仓库内部；取证后已清理 TEMP 临时解压目录。
+
+【搜索模式定义】
+对 7105、7106、7226 分别执行四种模式：
+1. 双引号包裹："<num>"
+2. 单引号包裹：'<num>'
+3. 冒号紧跟：<num>:
+4. 等号紧跟：=<num>
+
+【命中统计与明细】
+- 7105：命中 0 条
+- 7106：命中 0 条
+- 7226：命中 0 条
+
+【实际扫过的文件数（按扩展名分组）】
+实际扫描文件总数：388（工作区直接文本文件 83 个 + 解压至 TEMP 临时目录的文件 305 个）
+分组统计如下：
+- .xml: 304
+- .txt: 54
+- .js: 6
+- .rels: 6
+- .json: 3
+- .db: 3
+- .md: 2
+- (no ext): 2
+- .rsa: 1
+- .sf: 1
+- .mf: 1
+- .czl: 1
+- .jsc: 1
+- .properties: 1
+- .pro: 1
+- .arsc: 1
+
+（注：在 F:\BaoZouyxt\$out\r18\gift_scan.js 与 F:\BaoZouyxt\$out\r18\gift_scan2.js 中存在数字 7105/7106/7226 的原始纯数字引用，如作为数组元素 [6625, 6810, 7105, 7106, 7226] 或注释，但均未命中四类键值语法模式，命中条数为 0。）
+
+================================================================================
+二、抓包猎范围与取证结果
+================================================================================
+【扫描范围】
+- F:\BaoZouyxt\hotfix-patch\decrypted\*.txt（共 54 个文件）
+- F:\BaoZouyxt\hotfix-patch\captures\**（共 54 个文件）
+- F:\BaoZouyxt\hotfix-patch\core\templates.json（1 个文件）
+总计扫描文件数：109
+
+【各模式命中行数与逐条记录】
+
+1. flag 带引号的写法（模式：["']flag["']）
+命中行数：3 行
+- F:\BaoZouyxt\hotfix-patch\decrypted\0009_REQ_https___bzgf_maple_game_com_800_server_166_quicklogin.json.txt:2
+  原文整行（截断300字符）：
+  {"mod":"User","do":"quicklogin","p":{"account":"9900012358565","pwd":"123456","checkObj":{"app":"tfy-xf","sdk":"meple100221","uin":"9900012358565","sess":"YTh3MFZHdjVCTVV2NjFwcVR4WVNJNG9lazBQNzNSRy8wNFRjYmxLdkdwYm9KR3cveWY1cjBrV2hFdzZBanVoT1NYanVYYzJKeDZua2hXTDRmenozWWJ3PQ==","newPack":1},"channel":
+- F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文整行（截断300字符）：
+  {"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573065628v5ckw23q"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文整行（截断300字符）：
+  {"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573070377k2px6ik5"}}
+
+2. NPCID
+命中行数：2 行
+- F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文整行（截断300字符）：
+  {"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573065628v5ckw23q"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文整行（截断300字符）：
+  {"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573070377k2px6ik5"}}
+
+3. upgradeSkill
+命中行数：12 行
+- F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+  原文整行（截断300字符）：
+  POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文整行（截断300字符）：
+  {"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573065628v5ckw23q"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+  原文整行（截断300字符）：
+  status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\decrypted\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文整行（截断300字符）：
+  {"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1262":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[102]}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+  原文整行（截断300字符）：
+  POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文整行（截断300字符）：
+  {"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573070377k2px6ik5"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+  原文整行（截断300字符）：
+  status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\decrypted\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文整行（截断300字符）：
+  {"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1112":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[117]}}
+- F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+  原文整行（截断300字符）：
+  POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+  原文整行（截断300字符）：
+  status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+  原文整行（截断300字符）：
+  POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+  原文整行（截断300字符）：
+  status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+
+4. skillArr
+命中行数：2 行
+- F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文整行（截断300字符）：
+  {"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573065628v5ckw23q"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文整行（截断300字符）：
+  {"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573070377k2px6ik5"}}
+
+5. titleObj
+命中行数：2 行
+- F:\BaoZouyxt\hotfix-patch\decrypted\0018_RESP_https___bzgf_maple_game_com_900_server_166_Create.json.txt:2
+  原文整行（截断300字符）：
+  {"eRet":1,"roleID":16374,"serverTime":1792572970629,"activityResource":{"67":[null,1793177770630]},"hlexchangeActive":1,"shopActive":1,"enterRewardState":0,"reputationLevelId":0,"progressActive":"0.000","NumActive":0,"bonusMap":{"1":[0,70],"2":[0,99],"3":[0,120],"4":[0,140],"5":[0,160],"6":[0,190],"
+- F:\BaoZouyxt\hotfix-patch\core\templates.json:1
+  原文整行（截断300字符）：
+  {"quicklogin":{"eRet":1,"roleID":16374,"rflag":1,"loginFlag":99,"userName":"","saveTime":0,"artLevel":1,"userGold":20,"curJetton":0,"washTimes":0,"userYuanbao":0,"account":"9900012358565"},"create":{"eRet":1,"roleID":16374,"serverTime":1792572970629,"activityResource":{"67":[null,1793177770630]},"hl
+
+【upgradeSkill 应答抓包确认】
+存在原版服务端对 upgradeSkill 的应答抓包：
+1. 原始密文应答文件：
+   - F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+   - F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+2. 解密明文应答文件：
+   - F:\BaoZouyxt\hotfix-patch\decrypted\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+     内容：{"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1262":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[102]}}
+   - F:\BaoZouyxt\hotfix-patch\decrypted\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+     内容：{"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1112":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[117]}}
+
+================================================================================
+三、未验证
+================================================================================
+未能确认除解密目录外 hotfix-patch\captures\ 下其它未解密二进制/密文字段在解密后是否还含有尚未解析出的 upgradeSkill 交互包。

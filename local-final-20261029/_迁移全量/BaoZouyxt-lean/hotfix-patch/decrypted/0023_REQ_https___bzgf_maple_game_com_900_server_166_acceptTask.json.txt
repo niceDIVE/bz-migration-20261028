@@ -1,0 +1,2 @@
+POST https://bzgf.maple-game.com/900-server-166/acceptTask
+{"mod":"User","do":"acceptTask","p":{"taskID":101080,"delOrder":[],"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792572973312bm6um52j"}}

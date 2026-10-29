@@ -1,0 +1,13 @@
+# User.EndMeditation   (HttpConst.END_DAZUO)
+
+## 注册点 138888: r.MessageCenter.on(s.HttpConst.END_DAZUO, function(e, o) {
+
+## 请求点 138962: u.NetMgr.http.sendRequest(s.HttpConst.END_DAZUO, o);
+   138954: t.prototype.end = function() {
+   138955: var t = {};
+   138956: y.SkillUtils.getMaxNGBonus(t);
+   138957: var e = m.playerInfo.entity, o = {
+   138958: skillID: t.skillID,
+   138959: hglmt: e.hunger.limit,
+   138960: speed: e.hungerConsumingSpeed.finalValue
+   138961: };

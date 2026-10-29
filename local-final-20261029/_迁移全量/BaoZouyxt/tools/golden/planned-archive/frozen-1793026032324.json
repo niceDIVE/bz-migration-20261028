@@ -1,0 +1,41 @@
+{
+ "archivedAt": "2026-10-26T14:47:12.324Z",
+ "rules": [
+  {
+   "id": "c06-servertime",
+   "field": [
+    "serverTime"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "BeginRecoverMP",
+     "serverTime"
+    ]
+   ],
+   "ev": "index.js:138898"
+  },
+  {
+   "id": "c06-hytime",
+   "field": [
+    "hanyusuiTime"
+   ],
+   "expect": 3,
+   "allowSigma": [
+    [
+     "EndMeditation",
+     "hanyusuiTime"
+    ],
+    [
+     "EndRecoverMP",
+     "hanyusuiTime"
+    ],
+    [
+     "EndTraining",
+     "hanyusuiTime"
+    ]
+   ],
+   "ev": "index.js:138891"
+  }
+ ]
+}

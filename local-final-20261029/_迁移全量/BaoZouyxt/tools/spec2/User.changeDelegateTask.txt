@@ -1,0 +1,13 @@
+# User.changeDelegateTask   (HttpConst.CHANGE_DELEGATE_TASK)
+
+## 注册点 43515: i.MessageCenter.on(n.HttpConst.CHANGE_DELEGATE_TASK, function(e, o) {
+
+## 请求点 43603: f.NetMgr.http.sendRequest(n.HttpConst.CHANGE_DELEGATE_TASK, {
+   43595: 0 == e && f.NetMgr.http.sendRequest(n.HttpConst.DELEGATE_TASK, {
+   43596: taskID: t.id
+   43597: });
+   43598: }) : c.default.show(p.getText(1608)) : f.NetMgr.http.sendRequest(n.HttpConst.DELEGATE_TASK, {
+   43599: taskID: t.id
+   43600: });
+   43601: };
+   43602: t.prototype.reqChangeDelegateTask = function(t, e) {

@@ -1,0 +1,23 @@
+# User.saleItem   (HttpConst.SELL_ITEM)
+
+## 注册点 64726: r.MessageCenter.on(a.HttpConst.SELL_ITEM, function(t, o) {
+
+## 请求点 65247: m.NetMgr.http.sendRequest(a.HttpConst.SELL_ITEM, o);
+   65239: }, {
+   65240: flag: 1,
+   65241: name: n.getText("333")
+   65242: } ], function(e) {
+   65243: if (0 == e) {
+   65244: var o = {
+   65245: saleArr: t
+   65246: };
+
+## 请求点 65254: m.NetMgr.http.sendRequest(a.HttpConst.SELL_ITEM, S);
+   65246: };
+   65247: m.NetMgr.http.sendRequest(a.HttpConst.SELL_ITEM, o);
+   65248: }
+   65249: }.bind(this));
+   65250: } else {
+   65251: var S = {
+   65252: saleArr: t
+   65253: };

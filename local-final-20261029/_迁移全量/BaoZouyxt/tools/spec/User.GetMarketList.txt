@@ -1,0 +1,107 @@
+# User.GetMarketList  (HttpConst.GET_MARKETLIST)
+# 出现 3 处
+
+130754: e.hasOwnProperty("endMonthCardTime") && (v.RoleBaseInfo.endMonthCardTime = e.endMonthCardTime);
+130755: l.MessageCenter.dispatch(h.EvName.GET_PRODUCT);
+130756: l.MessageCenter.dispatch(h.EvName.BUY_MARKET_ITEM_EVENT);
+130757: }, this);
+130758: l.MessageCenter.on(h.EvName.IOS_PAY_FAILED, function() {}, this);
+130759: l.MessageCenter.on("IOS_ReceiveResponse", function() {}, this);
+130760: l.MessageCenter.on(p.HttpConst.GET_MARKETLIST, function(e, o) {
+130761: if (1 == o.eRet) {
+130762: var i = 0;
+130763: null != t.objData && t.objData.hasOwnProperty("back") && (i = t.objData.back);
+130764: t.objData = null;
+130765: l.MessageCenter.dispatch(h.EvName.STORE_SHOW_UI, {
+130766: type: 1,
+130767: market: o.market,
+130768: back: i
+130769: });
+130770: t.serverTime = o.serverTime;
+130771: t.nextRefreshTime = o.nextRefreshTime;
+130772: o.hasOwnProperty("buyTimes") ? t.buyTimes = o.buyTimes : t.buyTimes = y.RoleOtherInfo.buyTimes;
+130773: }
+130774: }, this);
+130775: l.MessageCenter.on(p.HttpConst.GET_SHOP_ALL_ACTIVE, this.onGetShopAllActive, this);
+130776: l.MessageCenter.on(p.HttpConst.GET_GIFT_DATA, function(e, o) {
+130777: if (0 == o.eRet) {
+130778: c.default.show(i.getText("1093"));
+130779: l.MessageCenter.dispatch(h.EvName.CLOSE_GIFT_PACK);
+130780: } else if (1 == o.eRet) if (1 == t.homeUI) if (0 == t.optionalState) {
+130781: t.optionalState = !0;
+130782: u.default.prefabs.load("storeUI/OptionalGiftUI", cc.Prefab, function(t, e) {
+130783: var i = cc.instantiate(e);
+130784: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer);
+130785: var n = i.getComponent("OptionalGiftUI");
+130786: n.setData(o);
+130787: n.setBackBtn();
+130788: });
+130789: } else l.MessageCenter.dispatch(h.EvName.UPDATE_GIFT_DATA, o); else l.MessageCenter.dispatch(h.EvName.GET_GIFT_DATA, o); else if (2 == o.eRet) {
+130790: c.default.show(i.getText("1093"));
+130791: l.MessageCenter.dispatch(h.EvName.CLOSE_GIFT_PACK);
+130792: } else {
+130793: c.default.show(i.getText("1093"));
+130794: l.MessageCenter.dispatch(h.EvName.CLOSE_GIFT_PACK);
+130795: }
+130796: }, this);
+130797: l.MessageCenter.on(p.HttpConst.BUY_GIFT_PERMANENT, function(t, e) {
+130798: if (1 == e.eRet) {
+130799: T.default.addShowRewardUI1(e.rewardArray, 0, {});
+130800: l.MessageCenter.dispatch(h.EvName.REFRESH_GIFT_DATA, e);
+---
+130963: };
+130964: e.prototype.reqMarketList = function(t) {
+130965: this.objData = {
+130966: back: 1
+130967: };
+130968: null != t && (this.objData = t);
+130969: g.NetMgr.http.sendRequest(p.HttpConst.GET_MARKETLIST, {}, null, !0);
+130970: };
+130971: e.prototype.reqGoodEvilList = function(t) {
+130972: this.objData = {
+130973: back: 0
+130974: };
+130975: null != t && (this.objData = t);
+130976: g.NetMgr.http.sendRequest(p.HttpConst.GET_MARKETLIST, {}, null, !0);
+130977: };
+130978: e.prototype.reqStoreList = function(t) {
+130979: var e = this;
+130980: void 0 === t && (t = null);
+130981: if (E.LoginMgr.isMiniIos(1)) c.default.show("此功能未开放"); else if (!A.CrossServiceModel.isEnterCrossServer()) {
+130982: null == t ? t = {
+130983: back: 1
+130984: } : t.hasOwnProperty("back") || (t.back = 1);
+130985: null == this.chargeShopUI ? u.default.loadFrom(u.default.prefabs, "storeUI/ChargeShopUI", cc.Prefab).then(function(o) {
+130986: var i = cc.instantiate(o);
+130987: i.getComponent("ChargeShopUI").setData(t);
+130988: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer);
+130989: e.chargeShopUI = i;
+130990: }) : 1 == t.type ? this.reqMarketList({
+130991: type: 1,
+130992: back: t.back
+130993: }) : 8 == t.type ? this.reqYuanBaoList({
+130994: type: t.type,
+130995: back: t.back
+130996: }) : this.reqOnStoreList(t);
+130997: }
+130998: };
+130999: e.prototype.reqOnStoreList = function(t) {
+131000: void 0 === t && (t = null);
+131001: this.objData = {
+131002: back: 1
+131003: };
+131004: null != t && (this.objData = {
+131005: back: t.back
+131006: });
+131007: r.mode == r.M_WEB || (cc.sys.os == cc.sys.OS_IOS && 1 == r.specialEdition ? g.NetMgr.http.sendRequest(p.HttpConst.GET_IOSPAY_SHOW_DATA, {
+131008: roleID: v.RoleBaseInfo.roleID
+131009: }) : g.NetMgr.http.sendRequest(p.HttpConst.GET_PAY_SHOW_DATA, {
+---
+131010: roleID: v.RoleBaseInfo.roleID
+131011: }));
+131012: };
+131013: e.prototype.reqYuanBaoList = function(t) {
+131014: void 0 === t && (t = null);
+131015: this.objData = {
+131016: back: 1
+---

@@ -1,0 +1,51 @@
+# User.applyPupil  (HttpConst.APPLY_PUPIL)
+# 出现 1 处
+
+114121: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_PUPIL, t);
+114122: };
+114123: t.prototype.reqApplyMaster = function(t) {
+114124: s.NetMgr.http.sendRequest(a.HttpConst.APPLY_MASTER, t);
+114125: };
+114126: t.prototype.reqApplyPupil = function(t) {
+114127: s.NetMgr.http.sendRequest(a.HttpConst.APPLY_PUPIL, t);
+114128: };
+114129: t.prototype.reqGetApplyInfo = function(t) {
+114130: s.NetMgr.http.sendRequest(a.HttpConst.GET_APPLY_INFO, t);
+114131: };
+114132: t.prototype.reqCancelApply = function(t) {
+114133: s.NetMgr.http.sendRequest(a.HttpConst.CANCEL_APPLY, t);
+114134: };
+114135: t.prototype.reqConfirmApply = function(t) {
+114136: s.NetMgr.http.sendRequest(a.HttpConst.CONFIRM_APPLY, t);
+114137: };
+114138: t.prototype.reqGetMasterPupilList = function(t) {
+114139: void 0 === t && (t = 2);
+114140: s.NetMgr.http.sendRequest(a.HttpConst.GET_MASTER_PUPIL_LIST, {
+114141: typeId: t
+114142: });
+114143: };
+114144: t.prototype.reqGetSchoolRoleInfo = function(t) {
+114145: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_ROLE_INFO, t);
+114146: };
+114147: t.prototype.reqApplyRemove = function(t) {
+114148: s.NetMgr.http.sendRequest(a.HttpConst.APPLY_REMOVE, t);
+114149: };
+114150: t.prototype.reqIgnoreRemove = function(t) {
+114151: s.NetMgr.http.sendRequest(a.HttpConst.IGNORE_REMOVE, t);
+114152: };
+114153: t.prototype.reqConfirmRemove = function(t) {
+114154: s.NetMgr.http.sendRequest(a.HttpConst.CONFIRM_REMOVE, t);
+114155: };
+114156: t.prototype.reqGetPupilRewardList = function() {
+114157: s.NetMgr.http.sendRequest(a.HttpConst.GET_PUPIL_REWARD_LIST, {});
+114158: };
+114159: t.prototype.reqPupilReward = function(t) {
+114160: s.NetMgr.http.sendRequest(a.HttpConst.PUPIL_REWARD, t);
+114161: };
+114162: t.prototype.reqGetMasterRewardList = function() {
+114163: s.NetMgr.http.sendRequest(a.HttpConst.GET_MASTER_REWARD_LIST, {});
+114164: };
+114165: t.prototype.reqMasterReward = function(t) {
+114166: s.NetMgr.http.sendRequest(a.HttpConst.MASTER_REWARD, t);
+114167: };
+---

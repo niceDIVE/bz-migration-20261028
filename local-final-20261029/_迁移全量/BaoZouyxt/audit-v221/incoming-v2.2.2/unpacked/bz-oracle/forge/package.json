@@ -1,0 +1,8 @@
+{
+  "name": "bz-forge",
+  "version": "2.1.0",
+  "private": true,
+  "description": "提效工具箱：AST 展开器 / 模型测试 / HAR 转用例等",
+  "dependencies": { "acorn": "^8.15.0", "acorn-walk": "^8.3.4", "fast-check": "^4.10.2" },
+  "devDependencies": { "terser": "^5.36.0" }
+}

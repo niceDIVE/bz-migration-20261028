@@ -1,0 +1,13 @@
+# User.equipBatchResolve   (HttpConst.EQUIP_BATCH_RESOLVE)
+
+## 注册点 64932: r.MessageCenter.on(a.HttpConst.EQUIP_BATCH_RESOLVE, function(t, e) {
+
+## 请求点 65417: m.NetMgr.http.sendRequest(a.HttpConst.EQUIP_BATCH_RESOLVE, {
+   65409: };
+   65410: e.prototype.reqResolveEquip = function(t) {
+   65411: this.curItemId = t;
+   65412: m.NetMgr.http.sendRequest(a.HttpConst.EQUIP_RESOLVE, {
+   65413: itemID: t
+   65414: });
+   65415: };
+   65416: e.prototype.reqBatchResolveEquip = function(t) {

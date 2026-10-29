@@ -1,0 +1,1 @@
+{"name":"dodge_item","rows":3,"cols":["id","type","score","ratio","max","exit","blink"],"data":{"1":{"id":1,"type":1,"score":20,"ratio":30,"max":50,"exit":4,"blink":2},"2":{"id":2,"type":2,"score":50,"ratio":40,"max":50,"exit":4,"blink":2},"3":{"id":3,"type":3,"score":100,"ratio":30,"max":30,"exit":4,"blink":2}}}

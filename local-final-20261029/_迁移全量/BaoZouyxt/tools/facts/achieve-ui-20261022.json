@@ -1,0 +1,1960 @@
+{
+  "generatedAt": "2026-10-22T12:43:15.939Z",
+  "afrontUI": {
+    "classLine": 402,
+    "classFooterLine": 654,
+    "methodCount": 16,
+    "methods": [
+      {
+        "name": "constructor",
+        "line": 404
+      },
+      {
+        "name": "onLoad",
+        "line": 415
+      },
+      {
+        "name": "start",
+        "line": 428
+      },
+      {
+        "name": "addEventListeners",
+        "line": 432
+      },
+      {
+        "name": "removeEventListeners",
+        "line": 435
+      },
+      {
+        "name": "onTipChange",
+        "line": 438
+      },
+      {
+        "name": "updateTips",
+        "line": 442
+      },
+      {
+        "name": "updatePrg",
+        "line": 508
+      },
+      {
+        "name": "showBigList",
+        "line": 558
+      },
+      {
+        "name": "showFirstList",
+        "line": 577
+      },
+      {
+        "name": "initGroupNode",
+        "line": 611
+      },
+      {
+        "name": "initPerson",
+        "line": 612
+      },
+      {
+        "name": "onClickFirstItem",
+        "line": 618
+      },
+      {
+        "name": "onClickItem",
+        "line": 626
+      },
+      {
+        "name": "onClickBack",
+        "line": 646
+      },
+      {
+        "name": "onDestroy",
+        "line": 649
+      }
+    ],
+    "renderBodies": [
+      {
+        "name": "onLoad",
+        "line": 415,
+        "body": [
+          {
+            "line": 415,
+            "text": "e.prototype.onLoad = function() {"
+          },
+          {
+            "line": 416,
+            "text": "t.prototype.onLoad.call(this);"
+          },
+          {
+            "line": 417,
+            "text": "_.GSceneMgr.hideScene();"
+          },
+          {
+            "line": 418,
+            "text": "this.content = this.getPathByNode(\"UINode/scrollview/view/content\");"
+          },
+          {
+            "line": 419,
+            "text": "this.itemTemplate = this.getPathByNode(\"box/item\");"
+          },
+          {
+            "line": 420,
+            "text": "this.title = this.getPathByNode(\"UINode/title\").getComponent(cc.Label);"
+          },
+          {
+            "line": 421,
+            "text": "var e = this.getPathByNode(\"UINode/back\");"
+          },
+          {
+            "line": 422,
+            "text": "this.addButtonListen(e, this, this.onClickBack);"
+          },
+          {
+            "line": 423,
+            "text": "this.getPathByNode(\"box\").active = !1;"
+          },
+          {
+            "line": 424,
+            "text": "this.initPerson();"
+          },
+          {
+            "line": 425,
+            "text": "var o = this.getPathByNode(\"bg\"), i = this.getPathByNode(\"UINode\"), s = cc.sys.getSafeAreaRect(), n = o.getComponent(cc.Sprite).spriteFrame.getOriginalSize(), r = s.width > n.width ? n.width : s.width, a = s.height > n.height ? n.height : s.height;"
+          },
+          {
+            "line": 426,
+            "text": "i.setContentSize(r, a);"
+          },
+          {
+            "line": 427,
+            "text": "};"
+          }
+        ]
+      },
+      {
+        "name": "start",
+        "line": 428,
+        "body": [
+          {
+            "line": 428,
+            "text": "e.prototype.start = function() {"
+          },
+          {
+            "line": 429,
+            "text": "this.showBigList();"
+          },
+          {
+            "line": 430,
+            "text": "this.updateTips();"
+          },
+          {
+            "line": 431,
+            "text": "};"
+          }
+        ]
+      },
+      {
+        "name": "updateTips",
+        "line": 442,
+        "body": [
+          {
+            "line": 442,
+            "text": "e.prototype.updateTips = function() {"
+          },
+          {
+            "line": 443,
+            "text": "var t = this, e = h.AchievementModel.awardIds;"
+          },
+          {
+            "line": 444,
+            "text": "if (this._gId > 0) {"
+          },
+          {
+            "line": 445,
+            "text": "var o = h.AchievementModel.getGroupIdArray(1);"
+          },
+          {
+            "line": 446,
+            "text": "this._nodes.forEach(function(t, i) {"
+          },
+          {
+            "line": 447,
+            "text": "var s = !0, n = d.getTable(\"achieve_list\");"
+          },
+          {
+            "line": 448,
+            "text": "for (var r in n) {"
+          },
+          {
+            "line": 449,
+            "text": "var a = n[r].group;"
+          },
+          {
+            "line": 450,
+            "text": "if (o[i] == a) {"
+          },
+          {
+            "line": 451,
+            "text": "var c = parseInt(r);"
+          },
+          {
+            "line": 452,
+            "text": "if (e.includes(c)) {"
+          },
+          {
+            "line": 453,
+            "text": "s = !1;"
+          },
+          {
+            "line": 454,
+            "text": "break;"
+          },
+          {
+            "line": 455,
+            "text": "}"
+          },
+          {
+            "line": 456,
+            "text": "}"
+          },
+          {
+            "line": 457,
+            "text": "}"
+          },
+          {
+            "line": 458,
+            "text": "t.getChildByName(\"tip\").active = !s;"
+          },
+          {
+            "line": 459,
+            "text": "});"
+          },
+          {
+            "line": 460,
+            "text": "} else this._nodes.forEach(function(o, i) {"
+          },
+          {
+            "line": 461,
+            "text": "var s = !0;"
+          },
+          {
+            "line": 462,
+            "text": "if (13 == t._groupIdArr[i]) {"
+          },
+          {
+            "line": 463,
+            "text": "var n = h.AchievementModel.suitIds, r = h.AchievementModel.getGroupIdArray(t._groupIdArr[i]), a = d.getTable(\"achieve_suit\");"
+          },
+          {
+            "line": 464,
+            "text": "for (var c in a) {"
+          },
+          {
+            "line": 465,
+            "text": "var p = a[c];"
+          },
+          {
+            "line": 466,
+            "text": "if (r.includes(p.group)) {"
+          },
+          {
+            "line": 467,
+            "text": "for (var l = p.reward.split(\"&\"), u = n[c], g = 0, m = 0; m < p.achieve.length; m++) h.AchievementModel.checkAchieved(p.achieve[m]) && g++;"
+          },
+          {
+            "line": 468,
+            "text": "for (m = 0; m < l.length; m++) {"
+          },
+          {
+            "line": 469,
+            "text": "var f = parseInt(l[m].split(\"|\")[0]);"
+          },
+          {
+            "line": 470,
+            "text": "if (g >= f && (!u || !u.includes(f))) {"
+          },
+          {
+            "line": 471,
+            "text": "s = !1;"
+          },
+          {
+            "line": 472,
+            "text": "break;"
+          },
+          {
+            "line": 473,
+            "text": "}"
+          },
+          {
+            "line": 474,
+            "text": "}"
+          },
+          {
+            "line": 475,
+            "text": "if (!s) break;"
+          },
+          {
+            "line": 476,
+            "text": "}"
+          },
+          {
+            "line": 477,
+            "text": "}"
+          },
+          {
+            "line": 478,
+            "text": "} else {"
+          },
+          {
+            "line": 479,
+            "text": "var y = d.getTable(\"achieve_list\");"
+          },
+          {
+            "line": 480,
+            "text": "u = 16 == t._groupIdArr[i] ? [ 16 ] : h.AchievementModel.getGroupIdArray(t._groupIdArr[i]);"
+          },
+          {
+            "line": 481,
+            "text": "for (var c in y) {"
+          },
+          {
+            "line": 482,
+            "text": "var v = y[c].group;"
+          },
+          {
+            "line": 483,
+            "text": "if (u.includes(v)) {"
+          },
+          {
+            "line": 484,
+            "text": "var _ = parseInt(c);"
+          },
+          {
+            "line": 485,
+            "text": "if (e.includes(_)) {"
+          },
+          {
+            "line": 486,
+            "text": "s = !1;"
+          },
+          {
+            "line": 487,
+            "text": "break;"
+          },
+          {
+            "line": 488,
+            "text": "}"
+          },
+          {
+            "line": 489,
+            "text": "}"
+          },
+          {
+            "line": 490,
+            "text": "}"
+          },
+          {
+            "line": 491,
+            "text": "if (s) {"
+          },
+          {
+            "line": 492,
+            "text": "var M = h.AchievementModel.rateIds, C = d.getTable(\"achieve_rate\");"
+          },
+          {
+            "line": 493,
+            "text": "for (var c in C) {"
+          },
+          {
+            "line": 494,
+            "text": "v = C[c].group;"
+          },
+          {
+            "line": 495,
+            "text": "if (u.includes(v) && \"0\" != C[c].item && !(h.AchievementModel.getPoints(v) < C[c].points)) {"
+          },
+          {
+            "line": 496,
+            "text": "_ = parseInt(c);"
+          },
+          {
+            "line": 497,
+            "text": "if (!M.includes(_)) {"
+          },
+          {
+            "line": 498,
+            "text": "s = !1;"
+          },
+          {
+            "line": 499,
+            "text": "break;"
+          },
+          {
+            "line": 500,
+            "text": "}"
+          },
+          {
+            "line": 501,
+            "text": "}"
+          },
+          {
+            "line": 502,
+            "text": "}"
+          },
+          {
+            "line": 503,
+            "text": "}"
+          },
+          {
+            "line": 504,
+            "text": "}"
+          },
+          {
+            "line": 505,
+            "text": "o.getChildByName(\"tip\").active = !s;"
+          },
+          {
+            "line": 506,
+            "text": "});"
+          },
+          {
+            "line": 507,
+            "text": "};"
+          }
+        ]
+      },
+      {
+        "name": "updatePrg",
+        "line": 508,
+        "body": [
+          {
+            "line": 508,
+            "text": "e.prototype.updatePrg = function() {"
+          },
+          {
+            "line": 509,
+            "text": "var t = {}, e = h.AchievementModel.receivedIds, o = d.getTable(\"achieve_list\");"
+          },
+          {
+            "line": 510,
+            "text": "if (this._gId > 0) for (var i in o) {"
+          },
+          {
+            "line": 511,
+            "text": "var s = o[i].group;"
+          },
+          {
+            "line": 512,
+            "text": "if (this._groupIdArr.includes(s)) {"
+          },
+          {
+            "line": 513,
+            "text": "if (!(f = t[s])) {"
+          },
+          {
+            "line": 514,
+            "text": "f = {"
+          },
+          {
+            "line": 515,
+            "text": "cur: 0,"
+          },
+          {
+            "line": 516,
+            "text": "max: 0"
+          },
+          {
+            "line": 517,
+            "text": "};"
+          },
+          {
+            "line": 518,
+            "text": "t[s] = f;"
+          },
+          {
+            "line": 519,
+            "text": "}"
+          },
+          {
+            "line": 520,
+            "text": "f.max++;"
+          },
+          {
+            "line": 521,
+            "text": "e.includes(parseInt(i)) && f.cur++;"
+          },
+          {
+            "line": 522,
+            "text": "}"
+          },
+          {
+            "line": 523,
+            "text": "} else {"
+          },
+          {
+            "line": 524,
+            "text": "for (var i in o) {"
+          },
+          {
+            "line": 525,
+            "text": "s = o[i].group;"
+          },
+          {
+            "line": 526,
+            "text": "var n = d.getItem(s, \"achieve_group\").type1;"
+          },
+          {
+            "line": 527,
+            "text": "if (!(n <= 0)) {"
+          },
+          {
+            "line": 528,
+            "text": "if (!(f = t[n])) {"
+          },
+          {
+            "line": 529,
+            "text": "f = {"
+          },
+          {
+            "line": 530,
+            "text": "cur: 0,"
+          },
+          {
+            "line": 531,
+            "text": "max: 0"
+          },
+          {
+            "line": 532,
+            "text": "};"
+          },
+          {
+            "line": 533,
+            "text": "t[n] = f;"
+          },
+          {
+            "line": 534,
+            "text": "}"
+          },
+          {
+            "line": 535,
+            "text": "f.max++;"
+          },
+          {
+            "line": 536,
+            "text": "e.includes(parseInt(i)) && f.cur++;"
+          },
+          {
+            "line": 537,
+            "text": "}"
+          },
+          {
+            "line": 538,
+            "text": "}"
+          },
+          {
+            "line": 539,
+            "text": "var r = {"
+          },
+          {
+            "line": 540,
+            "text": "cur: 0,"
+          },
+          {
+            "line": 541,
+            "text": "max: 0"
+          },
+          {
+            "line": 542,
+            "text": "}, a = [];"
+          },
+          {
+            "line": 543,
+            "text": "t[13] = r;"
+          },
+          {
+            "line": 544,
+            "text": "var c = d.getTable(\"achieve_suit\");"
+          },
+          {
+            "line": 545,
+            "text": "for (var i in c) for (var p = c[i].achieve, l = 0; l < p.length; l++) if (!a.includes(p[l])) {"
+          },
+          {
+            "line": 546,
+            "text": "a.push(p[l]);"
+          },
+          {
+            "line": 547,
+            "text": "h.AchievementModel.checkAchieved(p[l]) && r.cur++;"
+          },
+          {
+            "line": 548,
+            "text": "r.max++;"
+          },
+          {
+            "line": 549,
+            "text": "}"
+          },
+          {
+            "line": 550,
+            "text": "}"
+          },
+          {
+            "line": 551,
+            "text": "for (l = 0; l < this._groupIdArr.length; l++) {"
+          },
+          {
+            "line": 552,
+            "text": "s = this._groupIdArr[l];"
+          },
+          {
+            "line": 553,
+            "text": "var g = this._nodes[l], m = u.getText(6380), f = t[s];"
+          },
+          {
+            "line": 554,
+            "text": "m += Math.floor(f.cur / f.max * 100) + \"%\";"
+          },
+          {
+            "line": 555,
+            "text": "g.getChildByName(\"prg\").getComponent(cc.Label).string = m;"
+          },
+          {
+            "line": 556,
+            "text": "}"
+          },
+          {
+            "line": 557,
+            "text": "};"
+          }
+        ]
+      },
+      {
+        "name": "showBigList",
+        "line": 558,
+        "body": [
+          {
+            "line": 558,
+            "text": "e.prototype.showBigList = function() {"
+          },
+          {
+            "line": 559,
+            "text": "this._gId = 0;"
+          },
+          {
+            "line": 560,
+            "text": "this.title.string = u.getText(6004175);"
+          },
+          {
+            "line": 561,
+            "text": "this._nodes.length = 0;"
+          },
+          {
+            "line": 562,
+            "text": "this.content.destroyAllChildren();"
+          },
+          {
+            "line": 563,
+            "text": "h.AchievementModel.getGroupIdArray(0, this._groupIdArr);"
+          },
+          {
+            "line": 564,
+            "text": "for (var t = 0; t < this._groupIdArr.length; t++) {"
+          },
+          {
+            "line": 565,
+            "text": "var e = this._groupIdArr[t], o = cc.instantiate(this.itemTemplate);"
+          },
+          {
+            "line": 566,
+            "text": "this.content.addChild(o);"
+          },
+          {
+            "line": 567,
+            "text": "this._nodes.push(o);"
+          },
+          {
+            "line": 568,
+            "text": "var i = d.getItem(e, \"achieve_group\");"
+          },
+          {
+            "line": 569,
+            "text": "this.setSpriteFrameName(o, \"ui/achievements/achievements\" + (\"en\" == g.lang ? \"_en\" : \"\"), \"group_\" + e);"
+          },
+          {
+            "line": 570,
+            "text": "o.getChildByName(\"title\").getComponent(cc.Label).string = u.getText(i.title);"
+          },
+          {
+            "line": 571,
+            "text": "this.addButtonListen(o, this, this.onClickItem, e);"
+          },
+          {
+            "line": 572,
+            "text": "}"
+          },
+          {
+            "line": 573,
+            "text": "this.updatePrg();"
+          },
+          {
+            "line": 574,
+            "text": "this.content.getComponent(cc.Layout).updateLayout();"
+          },
+          {
+            "line": 575,
+            "text": "this.content.height < this.content.parent.height && (this.content.y = this.content.height / 2 - this.content.parent.height / 2);"
+          },
+          {
+            "line": 576,
+            "text": "};"
+          }
+        ]
+      },
+      {
+        "name": "showFirstList",
+        "line": 577,
+        "body": [
+          {
+            "line": 577,
+            "text": "e.prototype.showFirstList = function() {"
+          },
+          {
+            "line": 578,
+            "text": "this._gId = 1;"
+          },
+          {
+            "line": 579,
+            "text": "var t = d.getTable(\"achieve_list\"), e = new Map();"
+          },
+          {
+            "line": 580,
+            "text": "h.AchievementModel.getGroupIdArray(1, this._groupIdArr);"
+          },
+          {
+            "line": 581,
+            "text": "var o = h.AchievementModel.receivedIds;"
+          },
+          {
+            "line": 582,
+            "text": "for (var i in t) {"
+          },
+          {
+            "line": 583,
+            "text": "var s = t[i].group;"
+          },
+          {
+            "line": 584,
+            "text": "if (this._groupIdArr.includes(s)) {"
+          },
+          {
+            "line": 585,
+            "text": "if (!(r = e.get(s))) {"
+          },
+          {
+            "line": 586,
+            "text": "r = {"
+          },
+          {
+            "line": 587,
+            "text": "cur: 0,"
+          },
+          {
+            "line": 588,
+            "text": "max: 0"
+          },
+          {
+            "line": 589,
+            "text": "};"
+          },
+          {
+            "line": 590,
+            "text": "e.set(s, r);"
+          },
+          {
+            "line": 591,
+            "text": "}"
+          },
+          {
+            "line": 592,
+            "text": "r.max++;"
+          },
+          {
+            "line": 593,
+            "text": "o.includes(parseInt(i)) && r.cur++;"
+          },
+          {
+            "line": 594,
+            "text": "}"
+          },
+          {
+            "line": 595,
+            "text": "}"
+          },
+          {
+            "line": 596,
+            "text": "this.title.string = u.getText(d.getItem(1, \"achieve_group\").title);"
+          },
+          {
+            "line": 597,
+            "text": "this._nodes.length = 0;"
+          },
+          {
+            "line": 598,
+            "text": "this.content.destroyAllChildren();"
+          },
+          {
+            "line": 599,
+            "text": "for (var n = 0; n < this._groupIdArr.length; n++) {"
+          },
+          {
+            "line": 600,
+            "text": "s = this._groupIdArr[n];"
+          },
+          {
+            "line": 601,
+            "text": "var r = e.get(s), a = cc.instantiate(this.itemTemplate);"
+          },
+          {
+            "line": 602,
+            "text": "this.content.addChild(a);"
+          },
+          {
+            "line": 603,
+            "text": "this._nodes.push(a);"
+          },
+          {
+            "line": 604,
+            "text": "var c = d.getItem(s, \"achieve_group\");"
+          },
+          {
+            "line": 605,
+            "text": "this.setSpriteFrameName(a, \"ui/achievements/achievements\" + (\"en\" == g.lang ? \"_en\" : \"\"), \"group_\" + s);"
+          },
+          {
+            "line": 606,
+            "text": "a.getChildByName(\"title\").getComponent(cc.Label).string = u.getText(c.title);"
+          },
+          {
+            "line": 607,
+            "text": "a.getChildByName(\"prg\").getComponent(cc.Label).string = u.getText(6380) + Math.floor(r.cur / r.max * 100) + \"%\";"
+          },
+          {
+            "line": 608,
+            "text": "this.addButtonListen(a, this, this.onClickFirstItem, s);"
+          },
+          {
+            "line": 609,
+            "text": "}"
+          },
+          {
+            "line": 610,
+            "text": "};"
+          }
+        ]
+      }
+    ],
+    "constructorFieldInit": [
+      {
+        "line": 406,
+        "text": "e.content = null;"
+      },
+      {
+        "line": 407,
+        "text": "e.itemTemplate = null;"
+      },
+      {
+        "line": 408,
+        "text": "e.title = null;"
+      },
+      {
+        "line": 409,
+        "text": "e._nodes = [];"
+      },
+      {
+        "line": 410,
+        "text": "e._gId = 0;"
+      },
+      {
+        "line": 411,
+        "text": "e._groupIdArr = [];"
+      },
+      {
+        "line": 412,
+        "text": "e.prefabName = \"network/achievement/AFrontUI\";"
+      },
+      {
+        "line": 413,
+        "text": "return e;"
+      }
+    ]
+  },
+  "dataSources": [
+    {
+      "file": "scripts3.js",
+      "line": 563,
+      "text": "h.AchievementModel.getGroupIdArray(0, this._groupIdArr);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 565,
+      "text": "var e = this._groupIdArr[t], o = cc.instantiate(this.itemTemplate);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 566,
+      "text": "this.content.addChild(o);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 568,
+      "text": "var i = d.getItem(e, \"achieve_group\");"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 569,
+      "text": "this.setSpriteFrameName(o, \"ui/achievements/achievements\" + (\"en\" == g.lang ? \"_en\" : \"\"), \"group_\" + e);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 570,
+      "text": "o.getChildByName(\"title\").getComponent(cc.Label).string = u.getText(i.title);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3030,
+      "text": "t.prototype.getGroupIdArray = function(t, e) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3032,
+      "text": "var o = a.getTable(\"achieve_group\");"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3033,
+      "text": "void 0 === e ? e = [] : e.length = 0;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3034,
+      "text": "for (var i in o) this.checkGroupOpen(i) && o[i].type1 == t && e.push(parseInt(i));"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3035,
+      "text": "e.sort(function(t, e) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3036,
+      "text": "var i = o[t].order, s = o[e].order;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3041,
+      "text": "t.prototype.getPoints = function(t) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3042,
+      "text": "return this.gPoints && this.gPoints.hasOwnProperty(t) ? this.gPoints[t] : 0;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3044,
+      "text": "t.prototype.checkGroupOpen = function(t) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3045,
+      "text": "return this.gPoints.hasOwnProperty(t);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2901,
+      "text": "o.groupPoints && !cc.js.isEmptyObject(o.groupPoints) && (t.gPoints = o.groupPoints);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2902,
+      "text": "o.rateIds && (t.rateIds = o.rateIds);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2903,
+      "text": "o.achieveIdArr && (t.awardIds = o.achieveIdArr);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2904,
+      "text": "o.rd && (t.receivedIds = o.rd);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2905,
+      "text": "t.tObj = o.taskData;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2906,
+      "text": "o.srd && (t.suitIds = o.srd);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2907,
+      "text": "var s = new Set(t.awardIds);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2908,
+      "text": "t.awardIds = Array.from(s);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 443,
+      "text": "var t = this, e = h.AchievementModel.awardIds;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 445,
+      "text": "var o = h.AchievementModel.getGroupIdArray(1);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 447,
+      "text": "var s = !0, n = d.getTable(\"achieve_list\");"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 463,
+      "text": "var n = h.AchievementModel.suitIds, r = h.AchievementModel.getGroupIdArray(t._groupIdArr[i]), a = d.getTable(\"achieve_suit\");"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 467,
+      "text": "for (var l = p.reward.split(\"&\"), u = n[c], g = 0, m = 0; m < p.achieve.length; m++) h.AchievementModel.checkAchieved(p.achieve[m]) && g++;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 479,
+      "text": "var y = d.getTable(\"achieve_list\");"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 492,
+      "text": "var M = h.AchievementModel.rateIds, C = d.getTable(\"achieve_rate\");"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 495,
+      "text": "if (u.includes(v) && \"0\" != C[c].item && !(h.AchievementModel.getPoints(v) < C[c].points)) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 509,
+      "text": "var t = {}, e = h.AchievementModel.receivedIds, o = d.getTable(\"achieve_list\");"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 526,
+      "text": "var n = d.getItem(s, \"achieve_group\").type1;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 527,
+      "text": "if (!(n <= 0)) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 544,
+      "text": "var c = d.getTable(\"achieve_suit\");"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 545,
+      "text": "for (var i in c) for (var p = c[i].achieve, l = 0; l < p.length; l++) if (!a.includes(p[l])) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 579,
+      "text": "var t = d.getTable(\"achieve_list\"), e = new Map();"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 581,
+      "text": "var o = h.AchievementModel.receivedIds;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 593,
+      "text": "o.includes(parseInt(i)) && r.cur++;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 596,
+      "text": "this.title.string = u.getText(d.getItem(1, \"achieve_group\").title);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 604,
+      "text": "var c = d.getItem(s, \"achieve_group\");"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 613,
+      "text": "var t = a.RoleOtherInfo.getRoleCoatBaseData(), e = this.getPathByNode(\"UINode/p\"), o = c.UserModel.getPlayerAvatar();"
+    },
+    {
+      "file": "index.js",
+      "line": 21901,
+      "text": "getItem: function(t, e) {"
+    },
+    {
+      "file": "index.js",
+      "line": 21902,
+      "text": "var o = this.getTable(e);"
+    },
+    {
+      "file": "index.js",
+      "line": 21904,
+      "text": "l.show(e + \"---\\x3eID\" + t, 6);"
+    }
+  ],
+  "emptyCauses": [
+    {
+      "file": "scripts3.js",
+      "line": 2900,
+      "text": "if (1 == o.eRet) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2901,
+      "text": "o.groupPoints && !cc.js.isEmptyObject(o.groupPoints) && (t.gPoints = o.groupPoints);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3045,
+      "text": "return this.gPoints.hasOwnProperty(t);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3034,
+      "text": "for (var i in o) this.checkGroupOpen(i) && o[i].type1 == t && e.push(parseInt(i));"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 3033,
+      "text": "void 0 === e ? e = [] : e.length = 0;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 563,
+      "text": "h.AchievementModel.getGroupIdArray(0, this._groupIdArr);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 564,
+      "text": "for (var t = 0; t < this._groupIdArr.length; t++) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 574,
+      "text": "this.content.getComponent(cc.Layout).updateLayout();"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 575,
+      "text": "this.content.height < this.content.parent.height && (this.content.y = this.content.height / 2 - this.content.parent.height / 2);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2912,
+      "text": "p.default.prefabs.load(\"network/achievement/AFrontUI\", cc.Prefab, function(t, e) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2913,
+      "text": "var i = cc.instantiate(e), s = i.addComponent(\"AFrontUI\");"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2914,
+      "text": "l.PopUpMgr.addPopUp(i);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2915,
+      "text": "s.setData(o);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2939,
+      "text": "t.gPoints = o.groupPoints;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 553,
+      "text": "var g = this._nodes[l], m = u.getText(6380), f = t[s];"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 554,
+      "text": "m += Math.floor(f.cur / f.max * 100) + \"%\";"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 423,
+      "text": "this.getPathByNode(\"box\").active = !1;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 424,
+      "text": "this.initPerson();"
+    },
+    {
+      "file": "index.js",
+      "line": 21904,
+      "text": "l.show(e + \"---\\x3eID\" + t, 6);"
+    },
+    {
+      "file": "index.js",
+      "line": 139706,
+      "text": "e.prototype.setData = function(t) {"
+    },
+    {
+      "file": "index.js",
+      "line": 139708,
+      "text": "this.data = t;"
+    }
+  ],
+  "achievementModel": {
+    "moduleLine": 2862,
+    "classLine": 2869,
+    "instanceLine": 3322,
+    "methods": [
+      {
+        "name": "constructor",
+        "line": 2870,
+        "body": [
+          {
+            "line": 2870,
+            "text": "function t() {"
+          },
+          {
+            "line": 2871,
+            "text": "this.gPoints = {};"
+          },
+          {
+            "line": 2872,
+            "text": "this.suitIds = {};"
+          },
+          {
+            "line": 2873,
+            "text": "this.rateIds = [];"
+          },
+          {
+            "line": 2874,
+            "text": "this.receivedIds = [];"
+          },
+          {
+            "line": 2875,
+            "text": "this.awardIds = [];"
+          },
+          {
+            "line": 2876,
+            "text": "this.rTips = {};"
+          },
+          {
+            "line": 2877,
+            "text": "this.tObj = {};"
+          },
+          {
+            "line": 2878,
+            "text": "this._tipArr = [];"
+          },
+          {
+            "line": 2879,
+            "text": "this._loading = !1;"
+          },
+          {
+            "line": 2880,
+            "text": "this._tipNode = null;"
+          },
+          {
+            "line": 2881,
+            "text": "}"
+          }
+        ]
+      },
+      {
+        "name": "init",
+        "line": 2882,
+        "body": [
+          {
+            "line": 2882,
+            "text": "t.prototype.init = function() {"
+          },
+          {
+            "line": 2883,
+            "text": "var t = this;"
+          },
+          {
+            "line": 2884,
+            "text": "i.MessageCenter.on(s.HttpConst.ACHV_CHANGE, function(e, o) {"
+          },
+          {
+            "line": 2885,
+            "text": "d.RoleOtherInfo.achieveState = o.red ? 1 : 0;"
+          },
+          {
+            "line": 2886,
+            "text": "i.MessageCenter.dispatch(r.EvName.ACHV_SHOW_RED);"
+          },
+          {
+            "line": 2887,
+            "text": "if (o.nIds) {"
+          },
+          {
+            "line": 2888,
+            "text": "for (var s = o.nIds, n = 0; n < s.length; n++) {"
+          },
+          {
+            "line": 2889,
+            "text": "var c = a.getItem(s[n], \"achieve_list\");"
+          },
+          {
+            "line": 2890,
+            "text": "if (c) {"
+          },
+          {
+            "line": 2891,
+            "text": "var p = a.getItem(c.group, \"achieve_group\");"
+          },
+          {
+            "line": 2892,
+            "text": "p && (3 == c.type || 13 == c.group || 16 == p.type1 ? t.receivedIds.push(s[n]) : t.awardIds.push(s[n]));"
+          },
+          {
+            "line": 2893,
+            "text": "}"
+          },
+          {
+            "line": 2894,
+            "text": "}"
+          },
+          {
+            "line": 2895,
+            "text": "t.showAchieveTip(s);"
+          },
+          {
+            "line": 2896,
+            "text": "}"
+          },
+          {
+            "line": 2897,
+            "text": "o.achieveRateId && (d.RoleOtherInfo.achiRId = o.achieveRateId);"
+          },
+          {
+            "line": 2898,
+            "text": "}, this);"
+          },
+          {
+            "line": 2899,
+            "text": "i.MessageCenter.on(s.HttpConst.GET_ACHIEVE_DATA, function(e, o) {"
+          },
+          {
+            "line": 2900,
+            "text": "if (1 == o.eRet) {"
+          },
+          {
+            "line": 2901,
+            "text": "o.groupPoints && !cc.js.isEmptyObject(o.groupPoints) && (t.gPoints = o.groupPoints);"
+          },
+          {
+            "line": 2902,
+            "text": "o.rateIds && (t.rateIds = o.rateIds);"
+          },
+          {
+            "line": 2903,
+            "text": "o.achieveIdArr && (t.awardIds = o.achieveIdArr);"
+          },
+          {
+            "line": 2904,
+            "text": "o.rd && (t.receivedIds = o.rd);"
+          },
+          {
+            "line": 2905,
+            "text": "t.tObj = o.taskData;"
+          },
+          {
+            "line": 2906,
+            "text": "o.srd && (t.suitIds = o.srd);"
+          },
+          {
+            "line": 2907,
+            "text": "var s = new Set(t.awardIds);"
+          },
+          {
+            "line": 2908,
+            "text": "t.awardIds = Array.from(s);"
+          },
+          {
+            "line": 2909,
+            "text": "i.MessageCenter.dispatch(r.EvName.ACHV_GET_DATA, o);"
+          },
+          {
+            "line": 2910,
+            "text": "t.updateAchieveRateTips();"
+          },
+          {
+            "line": 2911,
+            "text": "i.MessageCenter.dispatch(r.EvName.ACHV_TIP_UPDATE);"
+          },
+          {
+            "line": 2912,
+            "text": "p.default.prefabs.load(\"network/achievement/AFrontUI\", cc.Prefab, function(t, e) {"
+          },
+          {
+            "line": 2913,
+            "text": "var i = cc.instantiate(e), s = i.addComponent(\"AFrontUI\");"
+          },
+          {
+            "line": 2914,
+            "text": "l.PopUpMgr.addPopUp(i);"
+          },
+          {
+            "line": 2915,
+            "text": "s.setData(o);"
+          },
+          {
+            "line": 2916,
+            "text": "});"
+          },
+          {
+            "line": 2917,
+            "text": "}"
+          },
+          {
+            "line": 2918,
+            "text": "}, this);"
+          }
+        ]
+      },
+      {
+        "name": "getGroupIdArray",
+        "line": 3030,
+        "body": [
+          {
+            "line": 3030,
+            "text": "t.prototype.getGroupIdArray = function(t, e) {"
+          },
+          {
+            "line": 3031,
+            "text": "void 0 === t && (t = 0);"
+          },
+          {
+            "line": 3032,
+            "text": "var o = a.getTable(\"achieve_group\");"
+          },
+          {
+            "line": 3033,
+            "text": "void 0 === e ? e = [] : e.length = 0;"
+          },
+          {
+            "line": 3034,
+            "text": "for (var i in o) this.checkGroupOpen(i) && o[i].type1 == t && e.push(parseInt(i));"
+          },
+          {
+            "line": 3035,
+            "text": "e.sort(function(t, e) {"
+          },
+          {
+            "line": 3036,
+            "text": "var i = o[t].order, s = o[e].order;"
+          },
+          {
+            "line": 3037,
+            "text": "return i < s ? -1 : i > s ? 1 : 0;"
+          },
+          {
+            "line": 3038,
+            "text": "});"
+          },
+          {
+            "line": 3039,
+            "text": "return e;"
+          },
+          {
+            "line": 3040,
+            "text": "};"
+          }
+        ]
+      },
+      {
+        "name": "getPoints",
+        "line": 3041,
+        "body": [
+          {
+            "line": 3041,
+            "text": "t.prototype.getPoints = function(t) {"
+          },
+          {
+            "line": 3042,
+            "text": "return this.gPoints && this.gPoints.hasOwnProperty(t) ? this.gPoints[t] : 0;"
+          },
+          {
+            "line": 3043,
+            "text": "};"
+          }
+        ]
+      },
+      {
+        "name": "checkGroupOpen",
+        "line": 3044,
+        "body": [
+          {
+            "line": 3044,
+            "text": "t.prototype.checkGroupOpen = function(t) {"
+          },
+          {
+            "line": 3045,
+            "text": "return this.gPoints.hasOwnProperty(t);"
+          },
+          {
+            "line": 3046,
+            "text": "};"
+          }
+        ]
+      },
+      {
+        "name": "destroy",
+        "line": 3311,
+        "body": [
+          {
+            "line": 3311,
+            "text": "t.prototype.destroy = function() {"
+          },
+          {
+            "line": 3312,
+            "text": "this.gPoints = {};"
+          },
+          {
+            "line": 3313,
+            "text": "this.suitIds = {};"
+          },
+          {
+            "line": 3314,
+            "text": "this.rateIds.length = 0;"
+          },
+          {
+            "line": 3315,
+            "text": "this.receivedIds.length = 0;"
+          },
+          {
+            "line": 3316,
+            "text": "this.awardIds.length = 0;"
+          },
+          {
+            "line": 3317,
+            "text": "this.rTips = {};"
+          },
+          {
+            "line": 3318,
+            "text": "this.tObj = {};"
+          },
+          {
+            "line": 3319,
+            "text": "};"
+          }
+        ]
+      }
+    ],
+    "allMethods": [
+      {
+        "name": "init",
+        "line": 2882
+      },
+      {
+        "name": "testGet",
+        "line": 2967
+      },
+      {
+        "name": "testFunc",
+        "line": 2968
+      },
+      {
+        "name": "reqGetAchieveData",
+        "line": 2998
+      },
+      {
+        "name": "reqGetAchieveTag",
+        "line": 3007
+      },
+      {
+        "name": "reqReceiveAchieveReward",
+        "line": 3012
+      },
+      {
+        "name": "reqReceiveAchieveRateReward",
+        "line": 3018
+      },
+      {
+        "name": "reqReceiveAchieveSuitReward",
+        "line": 3023
+      },
+      {
+        "name": "getGroupIdArray",
+        "line": 3030
+      },
+      {
+        "name": "getPoints",
+        "line": 3041
+      },
+      {
+        "name": "checkGroupOpen",
+        "line": 3044
+      },
+      {
+        "name": "getAchievementPrg",
+        "line": 3047
+      },
+      {
+        "name": "getAcheivementPrg1",
+        "line": 3052
+      },
+      {
+        "name": "getAchieveRateTips",
+        "line": 3198
+      },
+      {
+        "name": "updateAchieveRateTips",
+        "line": 3202
+      },
+      {
+        "name": "getTipId",
+        "line": 3216
+      },
+      {
+        "name": "getPrg",
+        "line": 3219
+      },
+      {
+        "name": "showAchieveTip",
+        "line": 3269
+      },
+      {
+        "name": "showReward",
+        "line": 3292
+      },
+      {
+        "name": "tipsEnd",
+        "line": 3301
+      },
+      {
+        "name": "checkAchieved",
+        "line": 3305
+      },
+      {
+        "name": "getAchievedIds",
+        "line": 3308
+      },
+      {
+        "name": "destroy",
+        "line": 3311
+      }
+    ]
+  },
+  "envelopeAchievementHits": [
+    {
+      "file": "index.js",
+      "line": 60580,
+      "text": "ACHV_CHANGE: \"achievement\","
+    },
+    {
+      "file": "index.js",
+      "line": 59308,
+      "text": "g.hasOwnProperty(\"achievement\") && g.achievement && f.MessageCenter.dispatch(\"achievement\", g.achievement);"
+    },
+    {
+      "file": "index.js",
+      "line": 59333,
+      "text": "} else {"
+    },
+    {
+      "file": "index.js",
+      "line": 59334,
+      "text": "null == g.protocol ? g.protocol = i : i = g.protocol;"
+    },
+    {
+      "file": "index.js",
+      "line": 59335,
+      "text": "f.MessageCenter.dispatch(i, g);"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2884,
+      "text": "i.MessageCenter.on(s.HttpConst.ACHV_CHANGE, function(e, o) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2885,
+      "text": "d.RoleOtherInfo.achieveState = o.red ? 1 : 0;"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2887,
+      "text": "if (o.nIds) {"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2892,
+      "text": "p && (3 == c.type || 13 == c.group || 16 == p.type1 ? t.receivedIds.push(s[n]) : t.awardIds.push(s[n]));"
+    },
+    {
+      "file": "scripts3.js",
+      "line": 2897,
+      "text": "o.achieveRateId && (d.RoleOtherInfo.achiRId = o.achieveRateId);"
+    },
+    {
+      "file": "index.js",
+      "line": 59504,
+      "text": "USER_LOADGAME: \"User.LoadGame\","
+    },
+    {
+      "file": "index.js",
+      "line": 70346,
+      "text": "v.MessageCenter.on(d.HttpConst.USER_LOADGAME, function(e, o) {"
+    },
+    {
+      "file": "index.js",
+      "line": 70347,
+      "text": "t.loadGame(o);"
+    },
+    {
+      "file": "index.js",
+      "line": 70502,
+      "text": "e.prototype.loadGame = function(e) {"
+    },
+    {
+      "file": "index.js",
+      "line": 46093,
+      "text": "ACHV_GET_DATA: \"achievementGetData\","
+    },
+    {
+      "file": "index.js",
+      "line": 46099,
+      "text": "ACHV_RATE_TIP: \"achievementGroupTip\","
+    },
+    {
+      "file": "index.js",
+      "line": 106877,
+      "text": "t.hasOwnProperty(\"achieveData\") && this.checkAchievement(t.achieveData.achieveRateId);"
+    },
+    {
+      "file": "index.js",
+      "line": 70537,
+      "text": "e.hasOwnProperty(\"skillGrasp\") && e.skillGrasp.hasOwnProperty(\"achievementReward\") && Promise.resolve().then(function() {"
+    },
+    {
+      "file": "index.js",
+      "line": 70540,
+      "text": "t.TrickLotteryModel.receivedRewards = e.skillGrasp.achievementReward;"
+    },
+    {
+      "file": "index.js",
+      "line": 45973,
+      "text": "GET_TRICK_ACHIEVEMENT_REWARD: \"getTrickAchievementReward\","
+    },
+    {
+      "file": "scripts3.js",
+      "line": 90029,
+      "text": "for (var o in e.achievementReward) this.receivedRewards[o] = e.achievementReward[o];"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 30988,
+      "text": "i.MessageCenter.dispatch(l.EvName.GET_FIRE_CHALLENGE_DATA);"
+    },
+    {
+      "file": "scripts2.js",
+      "line": 30993,
+      "text": "id: t"
+    }
+  ],
+  "extra": {
+    "achieve_group": {
+      "rows": 19,
+      "cols": [
+        "id",
+        "type",
+        "type1",
+        "title",
+        "order",
+        "time",
+        "opentime"
+      ]
+    },
+    "achieve_list": {
+      "rows": 2113,
+      "cols": [
+        "id",
+        "type",
+        "type1",
+        "require",
+        "pre-require",
+        "times",
+        "group",
+        "title",
+        "des",
+        "reward",
+        "point",
+        "order",
+        "mark",
+        "time",
+        "opentime"
+      ]
+    },
+    "achieve_groupRows": [
+      {
+        "id": 1,
+        "type1": 0,
+        "order": 2,
+        "title": 6010768,
+        "achieveListRows": 0
+      },
+      {
+        "id": 2,
+        "type1": 0,
+        "order": 1,
+        "title": 6010769,
+        "achieveListRows": 0
+      },
+      {
+        "id": 3,
+        "type1": 1,
+        "order": 1,
+        "title": 6010770,
+        "achieveListRows": 126
+      },
+      {
+        "id": 4,
+        "type1": 1,
+        "order": 3,
+        "title": 6010771,
+        "achieveListRows": 130
+      },
+      {
+        "id": 5,
+        "type1": 1,
+        "order": 2,
+        "title": 6010772,
+        "achieveListRows": 39
+      },
+      {
+        "id": 6,
+        "type1": 1,
+        "order": 4,
+        "title": 6010773,
+        "achieveListRows": 106
+      },
+      {
+        "id": 7,
+        "type1": 1,
+        "order": 5,
+        "title": 6010774,
+        "achieveListRows": 64
+      },
+      {
+        "id": 8,
+        "type1": 1,
+        "order": 6,
+        "title": 6010775,
+        "achieveListRows": 7
+      },
+      {
+        "id": 9,
+        "type1": 2,
+        "order": 2,
+        "title": 6010776,
+        "achieveListRows": 38
+      },
+      {
+        "id": 10,
+        "type1": 2,
+        "order": 3,
+        "title": 6010777,
+        "achieveListRows": 117
+      },
+      {
+        "id": 11,
+        "type1": 2,
+        "order": 4,
+        "title": 6010778,
+        "achieveListRows": 257
+      },
+      {
+        "id": 12,
+        "type1": 2,
+        "order": 1,
+        "title": 6011405,
+        "achieveListRows": 9
+      },
+      {
+        "id": 13,
+        "type1": 0,
+        "order": 3,
+        "title": 6011651,
+        "achieveListRows": 1182
+      },
+      {
+        "id": 14,
+        "type1": 13,
+        "order": 2,
+        "title": 6001909,
+        "achieveListRows": 0
+      },
+      {
+        "id": 15,
+        "type1": 13,
+        "order": 1,
+        "title": 6000197,
+        "achieveListRows": 0
+      },
+      {
+        "id": 16,
+        "type1": 0,
+        "order": 4,
+        "title": 6015567,
+        "achieveListRows": 0
+      },
+      {
+        "id": 17,
+        "type1": 16,
+        "order": 1,
+        "title": 6015568,
+        "achieveListRows": 20
+      },
+      {
+        "id": 20,
+        "type1": 13,
+        "order": 3,
+        "title": 6015762,
+        "achieveListRows": 0
+      },
+      {
+        "id": 21,
+        "type1": 1,
+        "order": 7,
+        "title": 6018268,
+        "achieveListRows": 18
+      }
+    ],
+    "listItemSource": "条目来自配置表 achieve_group（getGroupIdArray(0) 只取 type1==0 的组，id={1,2,13,16}，按 order 升序 => [2,1,13,16]），但每个组必须先通过 checkGroupOpen（gPoints.hasOwnProperty(组id)）才会进入数组；条目文字=achieve_group.title、图集=group_<id>；百分比来自 achieve_list(group/order) 与 receivedIds。应答只提供 gPoints/awardIds/receivedIds/suitIds/rateIds/tObj，不提供条目列表。"
+  },
+  "notFound": [
+    "AchievementModel 的 gPoints/awardIds/receivedIds/tObj 的 getter 定义：未找到（模块 2862-3325 内只有 2865 行 defineProperty(\"__esModule\")；四者是 2870-2881 构造器里的普通字段，只在 init 的应答处理器里被整体赋值）",
+    "AFrontUI.setData：未找到（AFrontUI 402-654 无 setData 方法；2915 行 s.setData(o) 落到基类 UIComponent.setData，index.js:139706-139709 只有 this.data = t）",
+    "AFrontUI 直接读取 RoleOtherInfo 成就字段：未找到（仅 613 行用 RoleOtherInfo.getRoleCoatBaseData() 取头像外观）",
+    "AFrontUI 依赖 tab 切换/任务 key 才出列表：未找到（唯一列表构建入口是 start()->showBigList()）"
+  ],
+  "notes": "只读取行/抄原文产物，不含判断与建议；text 均为源码原行（1-based 行号）。achievementModel.methods 按工单要求给 init/构造 与四个字段相关访问器；完整方法清单在 achievementModel.allMethods。"
+}

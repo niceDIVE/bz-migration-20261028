@@ -1,0 +1,5 @@
+# User.GetAdvertisementNum   (HttpConst.GET_NUMADS_AVAILABLE)
+
+## 注册点 2407: i.MessageCenter.on(n.HttpConst.GET_NUMADS_AVAILABLE, this.onGetNumAds.bind(this), this);
+
+## 处理函数 bind —— 未找到定义

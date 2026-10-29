@@ -1,0 +1,63 @@
+{
+ "archivedAt": "2026-10-24T18:26:57.131Z",
+ "rules": [
+  {
+   "id": "B2-GETMARKETLIST-market-rows",
+   "action": "GetMarketList",
+   "field": [
+    "market"
+   ],
+   "expect": 1,
+   "ev": "scripts2.js:8508",
+   "allowSigma": [
+    [
+     "GetMarketList",
+     "market"
+    ]
+   ],
+   "why": "第 2 批补 handler（原走 SHAPED 兜底）。形状表把 market 记成 number:0，这是「经事件派发/转手一层后失明」的同类误判——bz-rpc-server.js 的 noteBadSwitches 注释里记着 getChangeShop.shopObj 栽在同一个坑。客户端 scripts2.js:8507-8524（openBuyGoldEvent，type==1）把 market 当行集合遍历 for(var l in a)、按位置取 u[0]=ID u[1]=Type u[2]=Name u[3]=Description u[4]=Data u[5]=price u[6]=num u[7]=limitType u[8]=buyCount u[10]=icon，所以真类型是「数组的数组」。gen_shapes 探针拿到 39 行转置数组后把数组归一化为 []（形状层只记类型、不记内容），故本项 v1=[]。运行时 handler 发真实 39 行，与 getInnShop（全 8 行）、GetShopAllActive（全 11 行键）同一口径。"
+  },
+  {
+   "id": "B2-PASSCARDDATA-eret-2",
+   "action": "passCardData",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "ev": "index.js:55874",
+   "why": "第 2 批补 handler。离线无通行证赛季配置，固定回 2（客户端「活动未开启」分支，index.js:55874-55877：passCardAction=0 + dispatch UPDATE_PASSCARD_DATA_EVENT，而该事件全工程无监听者，只有 45457 定义 + 55876 这一处 dispatch）→ 不开面板、不弹提示、零副作用。sigma 未变（num+→num+），故不需 allowSigma。原兜底回 eRet:1 但缺 passObj/etime，PassCardUI.start 取 this.data.passObj=undefined → showInviteActionUI 得空表却 doLoad=true（scripts2.js:48343-48349 无空表守卫）→ update 每帧 setData(undefined) → loadItems 读 this.data[1] TypeError（scripts2.js:35088），实测 2 秒 110 次。"
+  },
+  {
+   "id": "B2-PASSCARDDATA-goldarr-dropped",
+   "action": "passCardData",
+   "field": [
+    "goldArr"
+   ],
+   "expect": 1,
+   "ev": "index.js:55872",
+   "allowSigma": [
+    [
+     "passCardData",
+     "goldArr"
+    ]
+   ],
+   "why": "随 eRet 改 2 之后，goldArr 不再发出（收窄）。这是拒绝分支的副产品而非刻意少发：客户端只在 1==eRet 分支里读 e.goldArr（index.js:55872），2==eRet 分支（55874-55877）一条都不读 → 不存在「字段被用到但缺席」的逃逸路径。窄化审批见 approved-narrowing.json 的 passCardData|goldArr（escape:closed）。"
+  },
+  {
+   "id": "B2-PASSCARDDATA-passcard-dropped",
+   "action": "passCardData",
+   "field": [
+    "passCard"
+   ],
+   "expect": 1,
+   "ev": "index.js:55871",
+   "allowSigma": [
+    [
+     "passCardData",
+     "passCard"
+    ]
+   ],
+   "why": "同理收窄：客户端只在 1==eRet 分支读 e.passCard.p/n/award（index.js:55869-55871），2==eRet 分支不读。窄化审批见 approved-narrowing.json 的 passCardData|passCard（escape:closed）。"
+  }
+ ]
+}

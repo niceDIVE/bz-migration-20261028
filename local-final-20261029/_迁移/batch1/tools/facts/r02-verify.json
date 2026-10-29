@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-10-22T04:54:33+08:00",
+  "runs": [
+    {
+      "cmd": "node test/l0-envelope.js",
+      "exit": 0,
+      "tail": [
+        "  ok   Create 后落盘",
+        "  ok   落盘内容可解析且含名字",
+        "  ok   state() 读回同一份",
+        "  ok   reset 清空（无 baseValueAy）",
+        "[L0-2] PASS 82 项"
+      ]
+    },
+    {
+      "cmd": "node test/l0-xhr.js",
+      "exit": 0,
+      "tail": [
+        "  ok   impl 缺失 → 日志可见",
+        "  ok   abort → readyState=4 / status=0",
+        "  ok   abort 事件触发",
+        "  ok   abort 后 send 不再改写响应",
+        "[L0-1] PASS 21 项"
+      ]
+    },
+    {
+      "cmd": "node test/save-migrate.js",
+      "exit": 0,
+      "tail": [
+        "    \"2026-10-22-0205-pre-selfcheck-isolation\",",
+        "    \"2026-10-22-0232-pre-skill-target\",",
+        "    \"2026-10-22-0250-pre-pgr-persist\"",
+        "  ]",
+        "}"
+      ]
+    },
+    {
+      "cmd": "node test/upgrade-skill-target.js",
+      "exit": 0,
+      "tail": [
+        "      1",
+        "    ]",
+        "  },",
+        "  \"finalPotential\": 97599",
+        "}"
+      ]
+    },
+    {
+      "cmd": "node test/selfcheck-nosave.js",
+      "exit": 0,
+      "tail": [
+        "    \"bytes\": 668,",
+        "    \"sha\": \"53bb1795f255\"",
+        "  },",
+        "  \"failedNames\": []",
+        "}"
+      ]
+    },
+    {
+      "cmd": "node test/selfcheck-model-push.js",
+      "exit": 0,
+      "tail": [
+        "  \"failed\": 0,",
+        "  \"selfCheckTouchedLiveModel\": false,",
+        "  \"potPushes\": [],",
+        "  \"setSkillCalls\": []",
+        "}"
+      ]
+    },
+    {
+      "cmd": "node test/overlay-projection.js",
+      "exit": 0,
+      "tail": [
+        "  ok   T11 Type3 不产生叠加",
+        "  ok   T12 Repeat 任务不写 done",
+        "  ok   T13 出售按真实形状结算",
+        "",
+        "[overlay] PASS  13/13"
+      ]
+    }
+  ],
+  "device": {
+    "saveMd5": "96c21eda8bb95775191b90b65449bcea",
+    "logTail": [
+      "{\"t\":1792616007288,\"boot\":\"boot-2\",\"impl\":\"hc356c004\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[impl] dispatch User.neverSeenAction\"}",
+      "{\"t\":1792616007290,\"boot\":\"boot-2\",\"impl\":\"hc356c004\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[impl] UNKNOWN User.neverSeenAction p={}\"}",
+      "{\"t\":1792616007313,\"boot\":\"boot-2\",\"impl\":\"hc356c004\",\"flow\":\"fe3500480\",\"kind\":\"reload\",\"ok\":true,\"ms\":237}",
+      "{\"t\":1792616007319,\"boot\":\"boot-2\",\"impl\":\"hc356c004\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[flow] 进入场景 gamescene\"}",
+      "{\"t\":1792616007320,\"boot\":\"boot-2\",\"impl\":\"hc356c004\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[flow] 已进入主场景 gamescene\"}"
+    ],
+    "reloadCount": 8,
+    "adbStatus": "ok"
+  },
+  "pass": true,
+  "unverified": [
+    "命令10 原样形式 (grep -c 'kind\":\"reload') 在 PowerShell→adb 传递中双引号被剥离，实测返回 0 且 exit=1；未改命令原文，另用等价式 grep -c $'kind\\042:\\042reload' 实测 8 且 exit=0",
+    "reloadCount=8 经 grep -o kind[^,]* 直方图交叉确认（kind\":\"reload\" 出现 8 次，共 400 行日志）",
+    "命令10 的 exit 码为 1（grep 无匹配语义），未计入 7 条本地命令的 pass 判定"
+  ]
+}

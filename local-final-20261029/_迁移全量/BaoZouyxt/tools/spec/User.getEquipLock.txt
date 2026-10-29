@@ -1,0 +1,72 @@
+# User.getEquipLock  (HttpConst.GET_EQUIP_LOCKS)
+# 出现 2 处
+
+ 65015: r.MessageCenter.on(a.HttpConst.PUT_ON_EQUIPMENT, function(t, e) {
+ 65016: if (1 == e.eRet) {
+ 65017: r.MessageCenter.dispatch(s.EvName.CHANGE_ROLE_INFO);
+ 65018: r.MessageCenter.dispatch(s.EvName.UPDATE_PLAYER_EVENT);
+ 65019: }
+ 65020: }, this);
+ 65021: r.MessageCenter.on(a.HttpConst.GET_EQUIP_LOCKS, function(t, o) {
+ 65022: 1 == o.eRet && (e.lockEquips = o.equipLocks);
+ 65023: });
+ 65024: r.MessageCenter.on(a.HttpConst.ADD_EQUIP_LOCK, function(t, o) {
+ 65025: if (1 == o.eRet) {
+ 65026: e.lockEquips = o.equipLocks;
+ 65027: r.MessageCenter.dispatch(s.EvName.REFRESH_LOCK_ARRAY, o.equipLocks);
+ 65028: }
+ 65029: }, this);
+ 65030: r.MessageCenter.on(a.HttpConst.DELETE_EQUIP_LOCK, function(t, o) {
+ 65031: if (1 == o.eRet) {
+ 65032: e.lockEquips = o.equipLocks;
+ 65033: r.MessageCenter.dispatch(s.EvName.REFRESH_LOCK_ARRAY, o.equipLocks);
+ 65034: }
+ 65035: }, this);
+ 65036: r.MessageCenter.on(a.HttpConst.GET_DROP_AWARD, function(t, e) {
+ 65037: 1 == e.eRet && r.MessageCenter.dispatch(s.EvName.RECEIVED_DROP_AWARD, e);
+ 65038: }, this);
+ 65039: };
+ 65040: e.prototype.reqGetEquipLocks = function() {
+ 65041: m.NetMgr.http.sendReqWithMask(a.HttpConst.GET_EQUIP_LOCKS, {});
+ 65042: };
+ 65043: e.prototype.reqAddEquipLock = function(t) {
+ 65044: var e = o.InventoryModel.getEquipmentInfo(t);
+ 65045: m.NetMgr.http.sendReqWithMask(a.HttpConst.ADD_EQUIP_LOCK, {
+ 65046: itemID: e.id
+ 65047: });
+ 65048: };
+ 65049: e.prototype.reqDeleteEquipLock = function(t) {
+ 65050: var e = o.InventoryModel.getEquipmentInfo(t);
+ 65051: m.NetMgr.http.sendReqWithMask(a.HttpConst.DELETE_EQUIP_LOCK, {
+ 65052: itemID: e.id
+ 65053: });
+ 65054: };
+ 65055: e.prototype.reqSetPlayerItemSort = function(t, e) {
+ 65056: void 0 === e && (e = 0);
+ 65057: m.NetMgr.http.sendReqWithMask(a.HttpConst.SET_PLAYER_ITEMSORT, {
+ 65058: itemId: t,
+ 65059: type: e
+ 65060: });
+ 65061: };
+---
+ 65062: e.prototype.reqSetPlayerSkillSort = function(t, e) {
+ 65063: void 0 === e && (e = 0);
+ 65064: m.NetMgr.http.sendReqWithMask(a.HttpConst.SET_PLAYER_SKILLSORT, {
+ 65065: skillId: t,
+ 65066: type: e
+ 65067: });
+ 65068: };
+ 65069: e.prototype.checkEquipLocked = function(t) {
+ 65070: return this.lockEquips.indexOf(parseInt(t)) >= 0;
+ 65071: };
+ 65072: e.prototype.setLockEquips = function(t) {
+ 65073: this.lockEquips = t;
+ 65074: };
+ 65075: e.prototype.parseEqData = function(t) {
+ 65076: for (var e in t) {
+ 65077: var o = t[e], i = this.parseEq(parseInt(e), o);
+ 65078: this.addEq(i);
+ 65079: }
+ 65080: };
+ 65081: e.prototype.updateEq = function(t, e) {
+---

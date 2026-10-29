@@ -1,0 +1,15 @@
+10-21 19:54:01.595  2531  2616 D jswrapper: JS: [BZ-OFFLINE] JsBridge shim 已挂（捕获模式）
+10-21 19:54:01.598  2531  2616 D jswrapper: JS: [BZ-OFFLINE] 哨兵: 全局函数哨兵已挂（400ms 轮询）
+10-21 19:54:01.598  2531  2616 D jswrapper: JS: [BZ-OFFLINE] hook v1-probe 安装完成 (PROBE_MODE=false)
+10-21 19:54:02.133  2531  2616 D jswrapper: JS: [BZ-OFFLINE] 哨兵: 新全局对象 window.fsUtils {方法: initJsbDownloader,getUserDataPath,checkFsValid,deleteFile,downloadFile,saveFile,copyFile,writeFile,writeFileSync,readFile,readDir,readText,readArrayBuffer,readJson,readJsonSync,makeDirSync,rmdirSync,exists,loadSubpackage}
+10-21 19:54:02.134  2531  2616 D jswrapper: JS: [BZ-OFFLINE] 哨兵: 新全局函数 window.ThinkingAnalyticsAPI
+10-21 19:54:02.134  2531  2616 D jswrapper: JS: [BZ-OFFLINE] 哨兵: 新全局函数 window.ThinkingAnalyticsAPIForJS
+10-21 19:54:02.134  2531  2616 D jswrapper: JS: [BZ-OFFLINE] 哨兵: 新全局函数 window.TDAnalytics
+10-21 19:54:02.134  2531  2616 D jswrapper: JS: [BZ-OFFLINE] 哨兵: 新全局函数 window.__require
+10-21 19:54:02.134  2531  2616 D jswrapper: JS: [BZ-OFFLINE] 哨兵: 新全局函数 window.requestAnimFrame
+10-21 19:54:02.134  2531  2616 D jswrapper: JS: [BZ-OFFLINE] 哨兵: 新全局函数 window.cancelAnimFrame
+10-21 19:54:02.544  2531  2616 D jswrapper: JS: [BZ-OFFLINE] 哨兵: 新全局函数 window.__autoTrackCallback
+10-21 19:54:04.198  2531  2616 D jswrapper: JS: [BZ-OFFLINE] 哨兵: 新全局对象 window.protobuf {方法: Writer,BufferWriter,Reader,BufferReader,configure,load,loadSync,encoder,decoder,verifier,ReflectionObject,Namespace,Root,Enum,Type,Field,OneOf,MapField,Service,Method,Message,tokenize,parse,common}
+10-21 19:59:53.012  2531  2616 D jswrapper: JS: [BZ-OFFLINE] loopback: 渠道注册 → success
+10-21 19:59:53.131  2531  2616 D jswrapper: JS: [BZ-OFFLINE] dispatch User.GetServerList
+10-21 19:59:53.132  2531  2616 D jswrapper: JS: [BZ-OFFLINE] loopback RPC User.GetServerList → 2647B

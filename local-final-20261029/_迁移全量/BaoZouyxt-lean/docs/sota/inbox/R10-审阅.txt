@@ -1,0 +1,156 @@
+R10 审阅：M1 落地之后的结算与棘轮
+2026-10-22
+Table of Contents
+TOC \o "1-2" \h \z \u
+1. 结论
+sserverT=0 那条反例作废，以下内容同步改写。 作废的是 R09 §1 第 4 条、§6 反例 1 和 A1 的后半句。M1 里的 K 值回到 2，两个 Begin 动作不再有先后之分。R09 §1 第 3 条（C11 的”0”对被减数字段是错的）仍然成立，而且你实测的 1.7e12 ms 证明问题比原先估计的更严重。
+“时长 0 不能算能用”这个判断可能下错了。 从名字看，hyTime 和 hanyusuiTime 很可能是”寒玉髓”这个 buff 的剩余时间【推断】：它被 NonBattleBuffModel.setBufferCostStartTime 消费，scripts2.js:47303 里读的是 buff 1043 的 duration。如果是这样，它就不是打坐或练功的时长，对一个没有使用寒玉髓的玩家来说，0 就是正确的值。
+判别方法：在配置里找 buff 1043 对应的物品（Effect 或 Data1 指向 1043 的那一行），再看客户端在使用这个物品之后会不会发请求、写哪个字段。
+只有当玩家确实有寒玉髓 buff 正在生效时，0 才是错的。
+live 环境里的 env.now() 必须断言等于真实时钟。 否则 D2 的固定时钟只要有一处泄漏进 live，M1 就会退回到”构建时刻常量”的状态。断言：当 ctx.live === true 时，Math.abs(env.now() - Date.now()) < 1000；当 ctx.live 不为真时，env.now() === GEN_NOW。
+F3 登记的两个动作很可能是正在发生的缺陷，不能只用棘轮锁住了事。 beginPlayGame 和 checkHireOnhook 现在 beginTime 被压成了 0。如果客户端对它们也做减法，它们此刻就是”一进去就已完成”。判别方法和 M1 完全一样：读回调，看有没有减法。如果有，两个最小 handler（只返回 env.now()）的成本与 M1 相同，K=2，应该排在 Q2 和 Q3 之前。
+C9 被”表名是变量”卡住，是因为把两种用途绑在了一起。 用于拦截（某个字段属于 K 就不许被中性化），只需要一个保守的超集：凡是出现在 getItem( 第一个参数位置的字段，不论表名是不是字面量，一律算进 K。这个集合不需要知道是哪张表，误收的只会让拦截更严，不会放过。只有用于校验值是否合法时，才需要知道确切的表。
+所以 C9 应该拆成两条：C9a 是拦截，现在就能做；C9b 是值校验，只对字面量表名做，表名是变量的标为”未定”。
+C9a 一旦落地，204 项里涉及 K 的批次就从”不动”变成”可以安全地排除在外”。
+其余处置没有错位。 allowSigma 改成逐项列出、零匹配一律 FAIL、approved-widening 带证据，这三项都和 R09 的判据一致。
+2. Q1 答
+(a) 安全的充要条件（四条同时成立）
+收益公式有来源：每秒收益（或者每一跳的收益）能从客户端代码或配置表里逐字取到。例如客户端界面上显示的”每分钟 +X”背后有计算代码，或者某张表里有对应的收益列。
+时长有上界：elapsed = min(env.now() - beginTime, cap)，其中 cap 必须来自同一个请求或配置表，例如由 hglmt 和 speed 推出”饱食度耗尽前的最长时长”。但 speed 的时间单位材料未提供，所以这个推导本身还要先取证。
+只消费一次：End 成功后把账本里的 beginTime 清掉；没有 beginTime 时收到 End，或者重复收到 End，一律回拒绝码，并且不发奖。
+时间单调：env.now() < beginTime 时（设备改了时钟）一律拒绝。
+必然造成”刷时长”或”奖励放大”的情形：
+第 2 条不成立：在 Begin 之后杀掉进程，几天后再回来点结束，elapsed 就是几天。
+第 3 条不成立：重复发 End，奖励就重复发。
+第 4 条不成立：设备时钟往后调，elapsed 就会被放大。
+每秒收益未知时，(a) 根本不能做。 公式缺失时，任何一个系数都是发明出来的；而且一旦有人照着它刷出了奖励，账本就不可逆了。
+在第 1 条成立之前，beginTime 也不要落盘：落一个暂时用不上的字段，等于平白增加一次存档结构的变化。
+(b) 不算”假装修好”需要的断言
+编号
+断言
+
+N1
+读 End 回调（index.js:138888、120574），列出它处理的 eRet 值。handler 回的 eRet 必须落在其中一个会关闭 UI、并清理状态的分支里（CYCLE_LIFE 那次的教训）
+
+N2
+End 前后，存档业务部分的哈希相等，推送计数增量为 0，账本里的背包和钱包都不变
+
+N3
+应答里所有奖励类字段都按读取形态给出空值（数组形态给 []），并且同一份应答里不许出现非零的奖励数量
+
+N4
+如果 End 回调会读应答里的 hg：hg 必须等于只读活模型得到的当前饱食度（回声，表示不消耗），而且不能超过请求里的 hglmt；如果读不到活模型，就不发 hg，而且要先确认回调对 hg 有防护
+
+N5
+真机只读探针：End 回调执行之后，客户端模型里的 startTimestamp（或者回调写入的其他字段）处于回调定义的结束状态
+
+N6
+每次 End 都打一条日志：⚠ <动作> 结算未实现：本次时长 <秒> 秒（按内存里的 beginTime 算；重启后为未知），未发奖
+
+N7
+把这两个 End 登记进 known-unimplemented-settlement.json，用和 F3 一样的双向棘轮：新增未登记的条目会 FAIL；实现了结算却没删登记，也会 FAIL
+
+N6 和 N7 这两条，就是”能开始、不能领奖”和”假装修好”之间的分界线。
+3. Q2 答
+归一化与判据
+以线上传输的路由串为准，不比较抓包的 key。 key 只是抓包工具起的名字，路由才是客户端实际发出的字符串。
+// routeOf[action]：从发请求的调用点和 HttpConst 常量表解析得到，例如 routeOf.CheckBattleResult = &#39;User.CheckBattleResult&#39;
+function captureRoutes(entry) {              // 一个抓包条目里能找到的所有路由串
+  var out = [];
+  Object.keys(entry).forEach(function (k) { if (/^[A-Z][A-Za-z]*\.[A-Za-z_]+$/.test(k)) out.push(k); });
+  if (entry.route) out.push(entry.route);
+  return out;
+}
+function isOwnCapture(action, path, capKey, templates, currentDefault) {
+  var entry = templates[capKey], r = routeOf[action];
+  if (!entry || !r) return &#39;undetermined&#39;;
+  var routes = captureRoutes(entry);
+  if (routes.indexOf(r) < 0) return &#39;cross-action&#39;;            // 必须是完整路由串、区分大小写的严格相等
+  var v = getPath(entry[r], path);
+  if (v === undefined) return &#39;cross-action&#39;;                  // 自己的抓包里根本没有这条路径
+  return deepEqual(v, currentDefault) ? &#39;mislabel&#39; : &#39;own-but-different&#39;;
+}
+三个问题的规则：
+大小写：不做任何大小写归一化。完整路由串是同一份线上字符串，本来就应该严格相等。动作名本身就是大小写混用的（useItem、CheckBattleResult），一旦把大小写折叠掉，就可能让两个不同的动作撞在一起。
+附带断言：动作名按小写折叠之后不能有重复；如果有，列出来，这些动作永远不能用”忽略大小写”的方式比较。
+User. 前缀：保留模块前缀。只比最后一段，会把 User.X 和其他模块里同名的 X 混为一谈。
+同一个动作有多个抓包 key：先收集所有路由等于 routeOf[action] 的条目，只要当前默认值和其中任何一个条目在这条路径上的值深度相等，就判为 mislabel。如果路径存在，但值都不相等，判为 own-but-different：它属于本动作，但取自另一个抓包时刻，所以不归入 B0，而是交给 B1 到 B4 按属性处理。
+“归一化后相等”是否足以判为误标：不够。 还必须满足”这条路径在自己的抓包里存在，而且值相等”。
+你举的例子，BuyHomeCrop.rewardArray 来自 User.CheckBattleResult，按这个判据结果是 cross-action。它是真正的跨动作继承，不是误标。
+只有当一个路由串会被两个动作共用时（routeOf 不是单射），这个判据才可能把跨动作继承误判成误标。断言：routeOf 是单射，有冲突就逐条列出，冲突动作上的判定一律改为 undetermined。
+4. Q3 答
+(a) 分桶与初值
+按处置路径分桶，不按 src 前缀分桶。 棘轮存在的目的，是让每一桶对应一种清理动作，这样每清掉一批，就能看出是哪一桶在下降。
+桶
+判定（用 R09 §3 的属性）
+
+B0
+用真实 handler 跑，发出结果不变；或者 Q2 判为 mislabel
+
+B1
+σ 不变，非 K，非 S
+
+B2
+σ 改变，读取形态是惰性可缺，非 K，非 S
+
+B3
+σ 改变，读取形态是契约，非 K，非 S
+
+B4
+S（账本状态镜像）
+
+B5
+K（用 C9a 的超集判定）
+
+BT
+被减数时间字段（交给 C11b 和 handler 处理）
+
+BU
+属性无法判定（例如没有读取形态的记录）
+
+初值不手填。 由 tools/borrowed_buckets.js 对当前的 204 项逐项计算，直接写进 ceiling 文件，并断言各桶之和等于 204。在 C9a 落地之前，K 无法判定，这部分全部归入 BU。
+ceiling 文件里存的是条目集合，而不只是计数：
+{"total":204,"buckets":{"B0":[["BuyMarketItem","userGold"],...],"BU":[...]},"shapesDigest":"<md5>"}
+(b) “只许降”怎么落地才不会被一次大改绕过
+编号
+断言
+
+T1
+实测的继承条目集合 ⊆ ceiling 文件里所有桶的并集。比较的是集合，不是计数：修掉一项、又新增另一项的”调包”会被拦下
+
+T2
+与上一次提交里的 ceiling 文件相比（用 git show <merge-base>:tools/golden/borrowed-ceiling.json 读出旧版本），新的总集合必须是旧总集合的子集
+
+T3
+如果某一桶的集合比旧版本多了条目，多出的每一项必须在同一次提交里，从别的桶里移除，并在 reclassify.json 里写明原因（例如”C9a 落地，从 BU 移到 B1”）。总集合不变
+
+T4
+ceiling 的任何扩大，也就是新增了旧集合里没有的条目，都必须在 approved-widening.json 里有对应行，每一行带 bundle:line 证据，用 C3 的证据校验器检查。并且这次修改只能单独成为一个提交，提交里不许夹带其他改动，这样扩大在提交历史里一眼可见
+
+T5
+如果没有 git，就改用 ceiling-history.jsonl，每一行记录 {total, digest, prevSha}。CI 校验这条哈希链，并要求最后一行的条目集合是前一行的子集。这样能防误改，但防不住有意重写整条历史；单人维护的项目里，这个威胁可以接受
+
+(c) 要不要”ceiling 必须等于实测”
+要，但分两种模式。
+校验模式：允许实测集合严格小于 ceiling 集合，这样一个修掉了一部分继承的提交可以先通过。
+冻结模式：要求两者完全相等，ceiling 由脚本按实测集合重写。
+原因：如果在冻结时允许实测比 ceiling 少，ceiling 里就会留下空位。之后再有同样数量的新继承混进来，T1 会把它们当作空位里的旧条目接受下来。条目集合加上冻结时完全相等，才能把空位封死。
+5. 对 F3 的判断
+设计是对的。 双向棘轮（新增会 FAIL，补上了不删登记也会 FAIL）可以防止登记表变成永久豁免，用的是和 T1 相同的集合思路。还有三处要补：
+“补上”要按产出来判定，不能看 handler 存不存在。 断言：在沙盒里用固定时钟跑一遍，handler 产出的 beginTime === env.now()。否则，一个只返回 {eRet:1} 的 handler 也能让这条登记被删掉。
+登记项要写明它是不是正在发生的缺陷。 每一行加上 consumerEvidence（被减数所在的 bundle:line）和 live:true/false。live:true 的条目直接计入第 1 节第 4 条的 K，不能把它当作已经接受的现状。
+C11b 的检出依据要写清楚。 如果它靠的是字段名，就会漏掉不叫 beginTime 的被减数时间字段。R09 §5 的”名字命中 ∪ 静态证据”要同样用在 C11b 上；只靠名字命中、没有证据的条目，只报告，不登记。
+6. 反例
+测试时钟泄漏进 live：热重载的时候，env 没有重新绑定，live 进程里的 env.now() 还在返回 GEN_NOW，M1 的 beginTime 变成 2026-10-21 12:53:32 PDT。打坐和练功会再次”一进去就已完成”，而 32 条验收全部是绿的，因为它们都在固定时钟下运行。第 1 节第 3 条的断言就是用来抓这个问题的。
+hyTime=0 吞掉寒玉髓 buff：如果玩家用了寒玉髓之后再去打坐，应答里的 hyTime: 0 会经过 setBufferCostStartTime(0, now)，把剩余的 buff 时长清零。这时 0 就不是中性值了。复现：先用寒玉髓（buff 1043 对应的物品），再打坐，观察 buff 图标。
+N4 的回声在重启之后失效：重启之后，活模型里的饱食度由客户端按属性重新计算，回声得到的是重算后的值。这和 R06 Q3 的结论一致，不算新问题；但 N4 的断言在重启前后会得到不同的基准值，测试必须固定在同一次进程之内运行。
+routeOf 解析不全：某个动作的发请求调用点用的是计算出来的常量（R07 Q3 里那种无法归属的形态），routeOf 里就没有它。isOwnCapture 会返回 undetermined，这些项会留在 BU 里，B0 清理的覆盖面就比预期的小。这样做是安全的，但也是 B0 实际收益可能偏小的原因。
+路径标识变化造成假的扩大：如果生成器改变了路径的写法（例如数组元素从 list.0.id 改写成 list[].id），同一个继承条目的标识就变了，T1 和 T2 会把它当成”移除旧项、新增新项”而报 FAIL。所以 ceiling 文件里要记录 shapesDigest，路径写法变化时，先跑一个只做标识映射的迁移脚本。
+7. 假设
+A1：hyTime 和 hanyusuiTime 是寒玉髓 buff 的剩余时间【推断】。不成立时（它就是打坐或练功的时长），第 1 节第 2 条作废，你”不能算能用”的判断成立，反例 2 也一并作废。
+A2：End 回调至少有一个会关闭 UI 的 eRet 分支。不成立时（比如只认 1，而 1 又会触发领奖界面），N1 无法满足，(b) 就要改成”End 回 1，同时给出所有奖励字段的空值”，并且必须先确认客户端在拿到空奖励时不会崩溃。
+A3：live 环境里 env.now() 取的是 Date.now()。不成立时，第 1 节第 3 条从”防患”升级为”现在就有的缺陷”，M1 实际上没有生效。
+A4：仓库有 git 历史，CI 能读到 merge-base。不成立时，T2 和 T4 改用 T5 的哈希链方案。
+A5：每个抓包条目里都存着完整的路由串（例如 User.CheckBattleResult）。不成立时，Q2 的判据只能退回到 key 的匹配，所有结果都判为 undetermined，B0 只剩下”handler 自己产出”那一类。
+A6：routeOf 能从 HttpConst 常量表和发请求的调用点解析出来，而且是单射。不成立时，Q2 里冲突的动作全部判为 undetermined。
+A7：beginPlayGame 和 checkHireOnhook 的回调对 beginTime 做了减法。不成立时，第 1 节第 4 条降级，两条登记只是普通的豁免，可以按原计划用棘轮锁住，不需要优先处理。

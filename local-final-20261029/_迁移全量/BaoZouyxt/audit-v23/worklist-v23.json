@@ -1,0 +1,2792 @@
+{
+ "eRetOnly": [],
+ "withFields": [
+  {
+   "a": "User.ChallengePVP",
+   "fields": [
+    "eRet",
+    "AttckData",
+    "EnemyData"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getGMGiveItemList",
+   "fields": [
+    "eRet",
+    "titleID",
+    "expireTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetGMGiveItem",
+   "fields": [
+    "eRet",
+    "titleID",
+    "expireTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.changePlayWooksState",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.BeginRollDice",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetBigMapSpecialEvent",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetBossAward",
+   "fields": [
+    "eRet",
+    "firstName",
+    "killName",
+    "rewardArray",
+    "killObj"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.boosRankList",
+   "fields": [
+    "num"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.cancelChatPk",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.EndTraining",
+   "fields": [
+    "genguTime",
+    "hanyusuiTime",
+    "isSchoolAward",
+    "isCollective",
+    "skillArr",
+    "skillid"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.EndMeditation",
+   "fields": [
+    "genguTime",
+    "hanyusuiTime",
+    "note"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getCopyData",
+   "fields": [
+    "copyArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.EneterCopy",
+   "fields": [
+    "eRet",
+    "copyID",
+    "state"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.BuyChallengeCount",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.LeaveCopy",
+   "fields": [
+    "rewardArray",
+    "liveness"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.BeginRecoverMP",
+   "fields": [
+    "eRet",
+    "serverTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.EndRecoverMP",
+   "fields": [
+    "genguTime",
+    "hanyusuiTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.BeginTitivate",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.ChooseGirl",
+   "fields": [
+    "eRet",
+    "npcID",
+    "eTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.Whoring",
+   "fields": [
+    "eRet",
+    "makeID"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetWhoreData",
+   "fields": [
+    "eRet",
+    "girlData"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.Storehouse",
+   "fields": [
+    "eRet",
+    "needItem",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetRandomEventAward",
+   "fields": [
+    "rewardArray",
+    "npcArr",
+    "liveness"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.BeginChangeFace",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.ChangeBlood",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.AddChangeFace",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.AddChangeBlood",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.enterSnow",
+   "fields": [
+    "eRet",
+    "hp",
+    "boxnum",
+    "sTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.UseSnowBall",
+   "fields": [
+    "eRet",
+    "hp"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getSnowAward",
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.UseAllBall",
+   "fields": [
+    "eRet",
+    "hp",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.scortResult",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.refreshNotice",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetNoticeAward",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "liveness"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.ChangePlace",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.marryAward",
+   "fields": [
+    "maxWuxin",
+    "proposeNpc",
+    "rentGroup",
+    "weddType",
+    "houseObj",
+    "receiveNpc",
+    "marryNpc",
+    "happinessNum"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.beginWedding",
+   "fields": [
+    "maxWuxin",
+    "proposeNpc",
+    "rentGroup",
+    "weddType",
+    "houseObj",
+    "receiveNpc",
+    "marryNpc",
+    "happinessNum"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.makeLove",
+   "fields": [
+    "maxWuxin",
+    "proposeNpc",
+    "rentGroup",
+    "weddType",
+    "houseObj",
+    "receiveNpc",
+    "marryNpc",
+    "happinessNum"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.equipResolve",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "itemID"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.equipBatchResolve",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "itemIDs"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getUsedItemAward",
+   "fields": [
+    "eRet",
+    "awardObj",
+    "awardStates"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.chooseUsedItemAward",
+   "fields": [
+    "eRet",
+    "chooseID",
+    "cData",
+    "delItemObj"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.ChangeName",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.isCanShare",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getsharePicAward",
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.Addmaster",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.sweepCopy",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "liveness",
+    "copyID",
+    "state"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.recoverYoung",
+   "fields": [
+    "eRet",
+    "itemNum"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.upgradeBed",
+   "fields": [
+    "eRet",
+    "bedLevel"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.upgradeStorage",
+   "fields": [
+    "eRet",
+    "level"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.PushEquip",
+   "fields": [
+    "eRet",
+    "ItemID",
+    "storageItem",
+    "ItemNum"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.PopEquip",
+   "fields": [
+    "eRet",
+    "ItemID",
+    "ItemNum"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.houseSpecial",
+   "fields": [
+    "eRet",
+    "type",
+    "eventID"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getSpecialAward",
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetHouseShopData",
+   "fields": [
+    "shopData"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.BuyHouseShop",
+   "fields": [
+    "eRet",
+    "itemID"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.birthChild",
+   "fields": [
+    "maxWuxin",
+    "proposeNpc",
+    "rentGroup",
+    "weddType",
+    "houseObj",
+    "receiveNpc",
+    "marryNpc",
+    "happinessNum"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.endPlayGame",
+   "fields": [
+    "eRet",
+    "childName"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getWashEquip",
+   "fields": [
+    "equipObj",
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.equipWash",
+   "fields": [
+    "eRet",
+    "itemID",
+    "newAtt",
+    "addArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.changeProperty",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.chooseSex",
+   "fields": [
+    "eRet",
+    "childName"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.adoptChild",
+   "fields": [
+    "eRet",
+    "childName"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.hireNpcOnhook",
+   "fields": [
+    "eRet",
+    "siteID"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.checkLive",
+   "fields": [
+    "formulaArr",
+    "inherit"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.beginCast",
+   "fields": [
+    "eRet",
+    "sTime",
+    "type",
+    "inherit"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.endCast",
+   "fields": [
+    "eRet",
+    "inherit",
+    "equipObj",
+    "type"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.beginMake",
+   "fields": [
+    "eRet",
+    "sTime",
+    "type"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.endMake",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "equipObj",
+    "type"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getItemData",
+   "fields": [
+    "eRet",
+    "limittype",
+    "limit"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.exileChild",
+   "fields": [
+    "maxWuxin",
+    "proposeNpc",
+    "rentGroup",
+    "weddType",
+    "houseObj",
+    "receiveNpc",
+    "marryNpc",
+    "happinessNum"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.upgradeVein",
+   "fields": [
+    "eRet",
+    "veinID",
+    "lv",
+    "psych"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.restVein",
+   "fields": [
+    "eRet",
+    "psych"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.checkSpecial",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.rollDice",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.bringSpecialAward",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "equipObj"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getActivity",
+   "fields": [
+    "eRet",
+    "type"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getActivityAward",
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.smallGameAward",
+   "fields": [
+    "eRet",
+    "type",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.collect",
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.beginMakeMedicine",
+   "fields": [
+    "eRet",
+    "sTime",
+    "type"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.endMakeMedicine",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "equipObj",
+    "type"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.equipTitle",
+   "fields": [
+    "eRet",
+    "flag",
+    "id"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.LoginReq",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetMountsList",
+   "fields": [
+    "eRet",
+    "MountsArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.BuyMount",
+   "fields": [
+    "type",
+    "eRet",
+    "sync"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetMarketList",
+   "fields": [
+    "eRet",
+    "market",
+    "serverTime",
+    "nextRefreshTime",
+    "buyTimes"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.Impeach",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetClimbingTowerData",
+   "fields": [
+    "eRet",
+    "towerArray",
+    "chickenLegNum"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.towerRank",
+   "fields": [
+    "rankArr",
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetTowerSpecialShop",
+   "fields": [
+    "shopData",
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.BuyTowerProp",
+   "fields": [
+    "eRet",
+    "itemID",
+    "hjzcNum"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.chanllengeTower",
+   "fields": [
+    "eRet",
+    "npcArr",
+    "eventID",
+    "muscle",
+    "attrType",
+    "equipments",
+    "mapID",
+    "eggNpc"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getPandaEvent",
+   "fields": [
+    "eventArr",
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.choosePandaEvent",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "buffID",
+    "batch_sweep_data"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.leaveTower",
+   "fields": [
+    "eRet",
+    "PlayerEquip",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getEventAward",
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.TowerBattleResult",
+   "fields": [
+    "eRet",
+    "win",
+    "awardObj",
+    "rewardArray",
+    "gemId",
+    "muscle",
+    "batch_sweep_data"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.lookSecretEvent",
+   "fields": [
+    "eRet",
+    "secret"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.chooseSecretEvent",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "batch_sweep_data"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.newSweepTower",
+   "fields": [
+    "eRet",
+    "batch_sweep_data",
+    "adCode"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetNewSweepTowerData",
+   "fields": [
+    "eRet",
+    "adCode",
+    "batch_sweep_data"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.closeNewSweepTowerByLv",
+   "fields": [
+    "eRet",
+    "batch_sweep_data"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.activateTowerEvent",
+   "fields": [
+    "eRet",
+    "npcArr",
+    "eventID",
+    "muscle",
+    "attrType",
+    "eggNpc",
+    "chickenLegNum",
+    "canActivateStatus"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getCircleTaskList",
+   "fields": [
+    "eRet",
+    "cNum",
+    "taskArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.quickFinishTask",
+   "fields": [
+    "eRet",
+    "caidan"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.delegateTask",
+   "fields": [
+    "eRet",
+    "sTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.changeDelegateTask",
+   "fields": [
+    "eRet",
+    "taskObj",
+    "num"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.circleTaskAward",
+   "fields": [
+    "eRet",
+    "rewardObj"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.enterPVEBattle",
+   "fields": [
+    "eRet",
+    "attArr",
+    "gold",
+    "AttckData",
+    "npcArr",
+    "npcID",
+    "randSeed"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.beginPVEBattle",
+   "fields": [
+    "eRet",
+    "attArr",
+    "paramID2",
+    "action",
+    "paramID",
+    "paramID1"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.startMultiPVEBattle",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.beginMultiPVEBattle",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.hideTask",
+   "fields": [
+    "eRet",
+    "skillId",
+    "CDTime",
+    "serverTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.revive",
+   "fields": [
+    "eRet",
+    "roleID",
+    "battleID"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getMultiPVESkill",
+   "fields": [
+    "eRet",
+    "dataArr",
+    "atkSkillID"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.shcoolFirstHonor",
+   "fields": [
+    "eRet",
+    "id",
+    "school"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getFighterInfo",
+   "fields": [
+    "eRet",
+    "info",
+    "battleID"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.reviveMulti",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getVigor",
+   "fields": [
+    "vigor"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.useVigorMeditation",
+   "fields": [
+    "vigor"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.useVigorUpGradeSkill",
+   "fields": [
+    "vigor",
+    "skillID"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.upgradeWifeLevel",
+   "fields": [
+    "eRet",
+    "lv",
+    "exp"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.UserWifeProp",
+   "fields": [
+    "eRet",
+    "lv",
+    "exp"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getFasionShop",
+   "fields": [
+    "shopArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.wearFasion",
+   "fields": [
+    "fasionid"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.enterNextFloor",
+   "fields": [
+    "eRet",
+    "passCard",
+    "goldArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.treasureAward",
+   "fields": [
+    "eRet",
+    "passCard",
+    "goldArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.equipInherit",
+   "fields": [
+    "eRet",
+    "equip",
+    "rewardArray",
+    "equipObj"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.ChooseFixDan",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.BeginList",
+   "fields": [
+    "eRet",
+    "skill"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.Implantation",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.removeMartial",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.canBuyActivityNum",
+   "fields": [
+    "eRet",
+    "passCard",
+    "goldArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyActivityNum",
+   "fields": [
+    "eRet",
+    "passCard",
+    "goldArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buildHomeFarm",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.removalHomeFarm",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getHomeList",
+   "fields": [
+    "eRet",
+    "recentSeeds",
+    "soilArr",
+    "exp",
+    "dog",
+    "bShop",
+    "friendPartnerAward"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.obtainCrop",
+   "fields": [
+    "eRet",
+    "sIdx",
+    "exp",
+    "aExp",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.batchSeedCrop",
+   "fields": [
+    "eRet",
+    "crops",
+    "recentSeeds"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.changeSate",
+   "fields": [
+    "eRet",
+    "crop",
+    "sIdx"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.reclaimLand",
+   "fields": [
+    "eRet",
+    "sIdx"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.cleanDeadCrop",
+   "fields": [
+    "eRet",
+    "sIdx"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.expediteCrop",
+   "fields": [
+    "eRet",
+    "crop",
+    "sIdx"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.BuyHomeCrop",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "limit"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getBackShop",
+   "fields": [
+    "shopArr",
+    "eRet",
+    "limit"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.homeSpeicalAward",
+   "fields": [
+    "eid",
+    "rewardArray",
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.recommendOHomes",
+   "fields": [
+    "eRet",
+    "homeGeMap",
+    "homeArr",
+    "friendHome"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.findOHomes",
+   "fields": [
+    "eRet",
+    "homeGeMap",
+    "homeArr",
+    "recommendHomeArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.findOhter",
+   "fields": [
+    "findArr",
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getFriendHomeList",
+   "fields": [
+    "eRet",
+    "soilArr",
+    "dog",
+    "friendPartnerId",
+    "exp",
+    "flag"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.dispossHomeEvent",
+   "fields": [
+    "crop",
+    "idx",
+    "exp",
+    "aExp",
+    "rewardArray",
+    "flag",
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.stealCrop",
+   "fields": [
+    "eRet",
+    "crop",
+    "idx",
+    "exp",
+    "aExp",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.lookDogLog",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.DogBattleResult",
+   "fields": [
+    "eRet",
+    "win",
+    "endTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.ChooseSanGongDan",
+   "fields": [
+    "eRet",
+    "backpro"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.FeedDog",
+   "fields": [
+    "eRet",
+    "progress",
+    "bigDog"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.chooseState",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getTeamSkill",
+   "fields": [
+    "eRet",
+    "dataArr",
+    "atkSkillID"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getTeamFighterInfo",
+   "fields": [
+    "eRet",
+    "info",
+    "battleID"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.changePower",
+   "fields": [
+    "eRet",
+    "power"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.checkTiger",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.OpenTiger",
+   "fields": [
+    "num"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getOpenActive",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getSignAward",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "equipObj"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getPraySignActive",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getPraySignAward",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.jionChatPkServer",
+   "fields": [
+    "eRet",
+    "signData",
+    "newAcc",
+    "agreeOfflineMatch"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getSpecialevts",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.skillChange",
+   "fields": [
+    "eRet",
+    "changeCD",
+    "serverTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getAllServerCount",
+   "fields": [
+    "eRet",
+    "sArr",
+    "serverArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getAllServerList",
+   "fields": [
+    "eRet",
+    "serverArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.changeToTeamServer",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.backToSelfServer",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetGiftData",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.resetChildFoster",
+   "fields": [
+    "eRet",
+    "childName"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.mulitiNpcBattleResult",
+   "fields": [
+    "rewardArray",
+    "equipObj",
+    "gemId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.equipUpgrade",
+   "fields": [
+    "eRet",
+    "playerEquip",
+    "equipInherit"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.GetShopAllActive",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.ChatPkActivity",
+   "fields": [
+    "eRet",
+    "option",
+    "NpcId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveChatPkSportsPointAward",
+   "fields": [
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getBankList",
+   "fields": [
+    "eRet",
+    "bankList"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getPaperList",
+   "fields": [
+    "eRet",
+    "bankId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getQuestionList",
+   "fields": [
+    "eRet",
+    "paperId",
+    "currentAnswerNum",
+    "questionMaxNum"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.anserQuestion",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.resetAnswer",
+   "fields": [
+    "eRet",
+    "rightNum",
+    "paperId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.answerResult",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.answerReward",
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.UseBatchSnowBall",
+   "fields": [
+    "eRet",
+    "hp"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getCreateRoleActivity",
+   "fields": [
+    "eRet",
+    "birthId",
+    "faceId",
+    "talnetId",
+    "createTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.resetRole",
+   "fields": [
+    "eRet",
+    "birthId",
+    "faceId",
+    "talnetId",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.explore",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "eventType",
+    "eventValue",
+    "eventId",
+    "fixedEvents"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.beginHookBreakList",
+   "fields": [
+    "eRet",
+    "qr",
+    "setLabelTitle"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.onQueueCheckBreak",
+   "fields": [
+    "eRet",
+    "gTime",
+    "hg",
+    "hgtimes"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.stopBreaklist",
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.goldBreakAllSkill",
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.goldBreakCurrentSkill",
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.removeBreakQueue",
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.addBreakQueue",
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getHookBreakList",
+   "fields": [
+    "eRet",
+    "qr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.onBatchBreakByGold",
+   "fields": [
+    "eRet",
+    "setLabelTitle"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.addEquipLock",
+   "fields": [
+    "eRet",
+    "equipLocks"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.delEquipLock",
+   "fields": [
+    "eRet",
+    "equipLocks"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getEquipLock",
+   "fields": [
+    "eRet",
+    "equipLocks"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getHlexchangeShop",
+   "fields": [
+    "shopObj",
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getHlexchangeItemData",
+   "fields": [
+    "shopObj",
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.exchangeHlexchangeItem",
+   "fields": [
+    "shopObj",
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getInnRank",
+   "fields": [
+    "eRet",
+    "unlockDish"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getInnShop",
+   "fields": [
+    "eRet",
+    "unlockDish"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.innBuyShop",
+   "fields": [
+    "eRet",
+    "unlockDish"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.beginDragonRollDice",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getDouYinOpenID",
+   "fields": [
+    "eRet",
+    "openid"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getWxXyxOpenID",
+   "fields": [
+    "eRet",
+    "openid",
+    "session_key"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getDragon",
+   "fields": [
+    "TeamBrief",
+    "TeamMemberList",
+    "ApplyInfoList",
+    "TeamTianJiLockData",
+    "FiveLinesDiagramData",
+    "RoleSlot",
+    "OpenedGear",
+    "KilledNpc"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.callDragon",
+   "fields": [
+    "TeamBrief",
+    "TeamMemberList",
+    "ApplyInfoList",
+    "TeamTianJiLockData",
+    "FiveLinesDiagramData",
+    "RoleSlot",
+    "OpenedGear",
+    "KilledNpc"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.makeWishDragon",
+   "fields": [
+    "TeamBrief",
+    "TeamMemberList",
+    "ApplyInfoList",
+    "TeamTianJiLockData",
+    "FiveLinesDiagramData",
+    "RoleSlot",
+    "OpenedGear",
+    "KilledNpc"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.EquipSuitsUpgrade",
+   "fields": [
+    "eRet",
+    "playerEquip",
+    "equipInherit"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getSchoolMaster",
+   "fields": [
+    "eRet",
+    "id"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getSchoolPupil",
+   "fields": [
+    "eRet",
+    "id"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getApplyInfo",
+   "fields": [
+    "eRet",
+    "id"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getSchoolRoleInfo",
+   "fields": [
+    "eRet",
+    "id"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveRecuitAward",
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveBindingRecuitAward",
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getReturnSevenDayData",
+   "fields": [
+    "eRet",
+    "sevenDaysArr",
+    "triggerTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getReturnTaskData",
+   "fields": [
+    "eRet",
+    "oldReturnData",
+    "triggerTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.returnSevenDaysAwards",
+   "fields": [
+    "eRet",
+    "sevenDaysArr",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveReturnDailyTask",
+   "fields": [
+    "eRet",
+    "oldReturnData",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveLivenessAward",
+   "fields": [
+    "eRet",
+    "oldReturnData",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getReturnGift",
+   "fields": [
+    "eRet",
+    "giftDatas"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveReturnGiftAward",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "giftData"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.refreshReturnGiftAward",
+   "fields": [
+    "eRet",
+    "giftAwards"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getUFOCatcherTask",
+   "fields": [
+    "eRet",
+    "rewardLimitDaily",
+    "coinDailyList",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.rewardUFOCatcherTask",
+   "fields": [
+    "eRet",
+    "rewardLimitDaily",
+    "coinDailyList",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getUFOCatcherData",
+   "fields": [
+    "eRet",
+    "rewardPool",
+    "refreshTimes",
+    "freeRefreshTimes",
+    "buyRefreshTimes",
+    "buyCoinCount",
+    "signId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyUFORefreshTimes",
+   "fields": [
+    "eRet",
+    "refreshTimes",
+    "freeRefreshTimes",
+    "buyRefreshTimes"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.useUFOrefresh",
+   "fields": [
+    "eRet",
+    "rewardPool",
+    "refreshTimes",
+    "freeRefreshTimes",
+    "buyRefreshTimes",
+    "signId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.rewardUFO",
+   "fields": [
+    "signId",
+    "eRet",
+    "rewardArray",
+    "autoRefresh",
+    "rewardPool"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyUFOGameCoin",
+   "fields": [
+    "eRet",
+    "buyCoinCount",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.recordPhone",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.wuLinAssemblyApplyReq",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.jionWuLinPkServer",
+   "fields": [
+    "eRet",
+    "signData",
+    "newAcc"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getwulinArenaData",
+   "fields": [
+    "eRet",
+    "playerArenaData"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.uploadPlayerArenaData",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getDropAward",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveAccRechargAward",
+   "fields": [
+    "taskObj"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.CheckOnHook",
+   "fields": [
+    "eRet",
+    "OnhookObj"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getMAActivity",
+   "fields": [
+    "eRet",
+    "rts",
+    "sn",
+    "nt"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.submitNumMA",
+   "fields": [
+    "rts",
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.rewardMAActivity",
+   "fields": [
+    "rts",
+    "eRet",
+    "sn",
+    "nt",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyGiftPermanent",
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyGiftTime",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyBigGiftTime",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getHousekeeper",
+   "fields": [
+    "eRet",
+    "housekeeper"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.dispatch",
+   "fields": [
+    "eRet",
+    "housekeeper",
+    "note"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.dispatchAward",
+   "fields": [
+    "eRet",
+    "housekeeper",
+    "rewardArray",
+    "addEvil"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.setHelper",
+   "fields": [
+    "eRet",
+    "housekeeper"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyHelper",
+   "fields": [
+    "eRet",
+    "housekeeper"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyMonthlyFee",
+   "fields": [
+    "eRet",
+    "housekeeper"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.setTemplateData",
+   "fields": [
+    "eRet",
+    "housekeeper"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getEvaluateData",
+   "fields": [
+    "eRet",
+    "housekeeper"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.pushEvaluateData",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveNotice",
+   "fields": [
+    "eRet",
+    "eventType",
+    "housekeeper"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveHelperReward",
+   "fields": [
+    "eRet",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.onKeyObtainCrop",
+   "fields": [
+    "eRet",
+    "matureArr",
+    "obtainLands",
+    "exp",
+    "aExp",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.onKeyDispossHomeEvent",
+   "fields": [
+    "eRet",
+    "cropMap",
+    "exp",
+    "aExp",
+    "rewardArray",
+    "flag"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getKnackLottery",
+   "fields": [
+    "eRet",
+    "upSkillRateData",
+    "optionalDatas"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.knackLottery",
+   "fields": [
+    "eRet",
+    "upSkillRateData",
+    "optionalDatas"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getKnackLotteryHistory",
+   "fields": [
+    "eRet",
+    "upSkillRateData",
+    "optionalDatas"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveAchievementReward",
+   "fields": [
+    "eRet",
+    "upSkillRateData",
+    "optionalDatas"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.helpDoneTask",
+   "fields": [
+    "type",
+    "prestige",
+    "contribution",
+    "targetInfo",
+    "mapId",
+    "endTime",
+    "targetNpcInfo",
+    "npcMapId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getGeHelpInfo",
+   "fields": [
+    "type",
+    "prestige",
+    "contribution",
+    "targetInfo",
+    "mapId",
+    "endTime",
+    "targetNpcInfo",
+    "npcMapId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getGoodAndEvilData",
+   "fields": [
+    "type",
+    "prestige",
+    "contribution",
+    "targetInfo",
+    "mapId",
+    "endTime",
+    "targetNpcInfo",
+    "npcMapId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getGoodAndEvilRetireList",
+   "fields": [
+    "type",
+    "prestige",
+    "contribution",
+    "targetInfo",
+    "mapId",
+    "endTime",
+    "targetNpcInfo",
+    "npcMapId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getGoodAndEvilRetireData",
+   "fields": [
+    "type",
+    "prestige",
+    "contribution",
+    "targetInfo",
+    "mapId",
+    "endTime",
+    "targetNpcInfo",
+    "npcMapId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.joinSchoolPrePareCamp",
+   "fields": [
+    "eRet",
+    "schoolCamp"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getOptionalGiftData",
+   "fields": [
+    "eRet",
+    "type"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyFormula",
+   "fields": [
+    "eRet",
+    "data"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.alchemyFormula",
+   "fields": [
+    "eRet",
+    "data"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.alchemyReward",
+   "fields": [
+    "eRet",
+    "data"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.upgradeAlchemy",
+   "fields": [
+    "eRet",
+    "data"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getScratchLotto",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.scrapingLottery",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyTicket",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.joinSchoolSupportPrePareCamp",
+   "fields": [
+    "eRet",
+    "schoolCamp"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getSchoolSupportPrePareCamp",
+   "fields": [
+    "eRet",
+    "supportCamp"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getNationalDayCopy",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.ChallengeRoguePVP",
+   "fields": [
+    "eRet",
+    "EnemyData",
+    "AttckData"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.beginRogueMultiPVEBattle",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.rgEquipWeapon",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.rgUseItem",
+   "fields": [
+    "eRet",
+    "note",
+    "rewardArray",
+    "getKnackIds",
+    "equipObj",
+    "mpnum",
+    "dogid",
+    "delItemObj"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.rgChangeSkillKnack",
+   "fields": [
+    "eRet",
+    "knackBag",
+    "skillGraspData"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.rogueAcceptTask",
+   "fields": [
+    "eRet",
+    "skillId",
+    "CDTime",
+    "serverTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getRogueFinishTaskAward",
+   "fields": [
+    "eRet",
+    "skillId",
+    "CDTime",
+    "serverTime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.rgSycnWaitData",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getEnterAward",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "equipObj"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getHelperCallList",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.callHelperId",
+   "fields": [
+    "eRet",
+    "housekeeper"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getLikeEvent",
+   "fields": [
+    "eRet",
+    "eventId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.optionLikeEvent",
+   "fields": [
+    "eRet",
+    "npcId",
+    "feel",
+    "delTaskIds"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.setPlayerCardWingId",
+   "fields": [
+    "eRet",
+    "wId"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.enterRoguePVEBattle",
+   "fields": [
+    "eRet",
+    "attArr",
+    "AttckData",
+    "npcArr",
+    "npcID",
+    "randSeed",
+    "exchangeNpcArr"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.beginRoguePVEBattle",
+   "fields": [
+    "eRet",
+    "attArr",
+    "paramID2",
+    "action",
+    "paramID",
+    "paramID1"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveAchieveReward",
+   "fields": [
+    "eRet",
+    "achieveIdArr",
+    "groupPoints",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveAchieveRateReward",
+   "fields": [
+    "eRet",
+    "rateIds",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveAchieveSuitReward",
+   "fields": [
+    "eRet",
+    "srd",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getAnniversaryPassData",
+   "fields": [
+    "eRet",
+    "anniversaryPassData",
+    "endtime"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyAnniversaryPass",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveAnniversaryPassAward",
+   "fields": [
+    "eRet",
+    "vip",
+    "id",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.buyAnniversaryPassLiveness",
+   "fields": [
+    "eRet",
+    "n",
+    "td"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.startAnniversaryPassRg",
+   "fields": [
+    "eRet",
+    "rgData"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.chooseAnniversaryPassRg",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.receiveAnniversaryPassTaskReward",
+   "fields": [
+    "eRet",
+    "dt",
+    "rewardArray"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.getPileGameData",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.pileGameAward",
+   "fields": [
+    "eRet",
+    "rewardArray",
+    "isDouble"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.upFashionFaceState",
+   "fields": [
+    "eRet",
+    "titivateObj"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.ReqDogPartnerBattleInfo",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  },
+  {
+   "a": "User.CheckDogPartnerPVEBattleResult",
+   "fields": [
+    "eRet"
+   ],
+   "required": []
+  }
+ ],
+ "noC": []
+}

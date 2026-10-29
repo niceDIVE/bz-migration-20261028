@@ -1,0 +1,11 @@
+# User.addSpecailTask   (HttpConst.LEVEAL_TWONTTASK)
+
+## 请求点 133697: p.NetMgr.http.sendRequest(s.HttpConst.LEVEAL_TWONTTASK, {
+   133689: e.prototype.finishTaskAddLikeness = function(t) {
+   133690: var e = i.getItem(t, "tasknew").likability;
+   133691: if ("0" != e) for (var o = e.split("|"), n = 0; n < o.length; n++) {
+   133692: var r = o[n].split(",");
+   133693: r.length > 1 && (0 == parseInt(r[0]) ? E.default.setNcpIntimacy(r[1], parseInt(r[2])) : E.default.setSchoolIntimacy(r[0], parseInt(r[2]), -1));
+   133694: }
+   133695: };
+   133696: e.prototype.addSpeciTask = function() {

@@ -1,0 +1,25 @@
+# User.closedBook   (HttpConst.WRITE_BOOK_EVENT)
+
+## 注册点 77025: i.MessageCenter.on(n.HttpConst.WRITE_BOOK_EVENT, this.callBackWriteBookEvent, this);
+
+## 请求点 77428: _.NetMgr.http.sendRequest(n.HttpConst.WRITE_BOOK_EVENT, {});
+   77420: e.prototype.reqMarryNpc = function(t, e) {
+   77421: this.marryFlag = e;
+   77422: _.NetMgr.http.sendRequest(n.HttpConst.MARRY_NPC_EVENT, {
+   77423: npcID: t,
+   77424: flag: e
+   77425: });
+   77426: };
+   77427: e.prototype.reqWriteBook = function() {
+
+## 处理函数 callBackWriteBookEvent (77256-77265)
+ 77256: e.prototype.callBackWriteBookEvent = function() {};
+ 77257: e.prototype.callBackDivorceNpc = function(t, e) {
+ 77258: if (1 == e.eRet) {
+ 77259: this.wifeUpdateData = {};
+ 77260: this.npcMarryState = 0;
+ 77261: this.divorceNpcMap[e.npcID] = !0;
+ 77262: i.MessageCenter.dispatch(u.EvName.DELETE_WIFE_EVENT);
+ 77263: e.hasOwnProperty("deletePartners") && T.PartnerModel.deletePartnerData(e.deletePartners);
+ 77264: } else 2 == e.eRet ? p.default.show(r.getText("1139")) : p.default.show(r.getText("1140"));
+ 77265: };

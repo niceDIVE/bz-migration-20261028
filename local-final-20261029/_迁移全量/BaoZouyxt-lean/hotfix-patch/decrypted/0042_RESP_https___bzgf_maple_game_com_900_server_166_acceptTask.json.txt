@@ -1,0 +1,2 @@
+status=200 https://bzgf.maple-game.com/900-server-166/acceptTask
+{"error":0,"p":"User.acceptTask","User.acceptTask":{"eRet":1,"note":{},"taskID":100060},"achievement":{"red":true,"achieveRateId":0}}

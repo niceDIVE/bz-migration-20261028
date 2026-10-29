@@ -1,0 +1,31 @@
+转发说明（给转发人看的 30 秒版）
+====================================================================
+这是什么：第 14 批 C13〔UFO 夹娃娃〕的下游回执包（实现 + 取证 + 测试一次性给全，
+core 里已含第 13 批管家防刷合并版）。
+
+只要转 1 个文件：下游回执-第14批C13-20261027.zip
+
+包里有什么（条目数与体积见 02-manifest.txt）
+--------------------------------------------------------------------
+  00-转发说明.txt / 01-receipt-batch14-c13.txt / 02-manifest.txt
+  bz-rpc-server.js                 ← 与 core\ 里那份同 md5
+  core\                            ← 完整 core（含本批新表 bz-c13.generated.js）
+  facts\C1–C10                     ← 取证与策略 / 执行记录 / 侦察四份 / 主审探针 / 工单 / 工人验收 / OPEN-ISSUES
+  test\                            ← 全量测试（含本批新增 c13-smoke.js，9 条）
+  tools\gen_c09..c13_tables.js     ← 五批生成器
+
+对面自验三步
+--------------------------------------------------------------------
+  1) cp core\* 覆盖本地 core → node build-handlers.js
+     期望 ver=h3b555bcf、selfCheck 1371、CATCH CODES 117 个动作
+  2) node test\c13-smoke.js → 期望 9/9（c12 14/14、c11 14/14、c10 18/18 回归）
+  3) node tools\check_shape_freeze.js → 期望 diff 0（基线 356 动作）
+
+一句话摘要
+--------------------------------------------------------------------
+夹娃娃 7 键里 3 个是死键（全 bundle 零调用点，拍板跳过），4 个活键全做（档 A）：
+getUFOCatcherData（面板开关，夹娃娃机 NPC NpcFuncType97 入口）/ rewardUFO（抓取，
+服务端权威判中 + 照扣爪子 8117/8119/8120 + 池空自动刷新）/ useUFOrefresh /
+buyUFORefreshTimes。奖池由服务端下发（rewardPool={难度id:数量}，客户端
+package_difficulty 表只管摆位物理）。抓中发 8143×package_difficulty.reward（30/30/60/150/300）。
+活动自定常开（active 37 圣诞抓娃娃窗口已过期）。自定口径见回执 §四。

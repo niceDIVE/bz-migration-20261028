@@ -1,0 +1,51 @@
+# User.dailyPayActivityAward  (HttpConst.DAILY_PAY_ACTIVITY_AWARD)
+# 出现 1 处
+
+  1841: roleID: S.RoleBaseInfo.roleID,
+  1842: id: t
+  1843: };
+  1844: E.PackageModel.judgePackageLimit() || g.NetMgr.http.sendReqWithMask(a.HttpConst.REQ_AWARD_RECHARDED, e);
+  1845: };
+  1846: e.prototype.reqDailyPayActivityAward = function() {
+  1847: g.NetMgr.http.sendRequest(a.HttpConst.DAILY_PAY_ACTIVITY_AWARD, {});
+  1848: };
+  1849: e.prototype.setOpenChargeUI = function(t) {
+  1850: if (0 == t.accRechargedData.isEnd) {
+  1851: this.rechargedIsEnd = 0;
+  1852: 1 == t.accRechargedData.isMainShow && (this.openChargeUI = !0);
+  1853: 1 == t.accRechargedData.isRedDot && (this.openRedDot = !0);
+  1854: } else this.rechargedIsEnd = 1;
+  1855: };
+  1856: e.prototype.reqAddCostData = function() {
+  1857: g.NetMgr.http.sendRequest(a.HttpConst.GET_GOLD_CONSUME_REWARD_DATA, {});
+  1858: };
+  1859: e.prototype.reqAddCostReward = function(t) {
+  1860: g.NetMgr.http.sendRequest(a.HttpConst.RECEIVE_GOLD_CONSUME_REWARD, {
+  1861: id: t
+  1862: });
+  1863: };
+  1864: e.prototype.reqGetSpringData = function() {
+  1865: g.NetMgr.http.sendRequest(a.HttpConst.GET_SPRING_SEVEN_DAY_DATA, {});
+  1866: };
+  1867: e.prototype.reqSevenDaysAwards = function(t) {
+  1868: g.NetMgr.http.sendRequest(a.HttpConst.SPRING_SEVEN_DAYS_AWARDS, {
+  1869: index: t
+  1870: });
+  1871: };
+  1872: e.prototype.reqSpringAccReward = function() {
+  1873: g.NetMgr.http.sendRequest(a.HttpConst.RECEIVE_SPRING_ACC_REWARD, {});
+  1874: };
+  1875: e.prototype.showOldBeggarNpc = function(t) {
+  1876: var e = this.getRandomBeggarInfo();
+  1877: if (null != t.id && null != e && e.hasOwnProperty("map") && e.map == t.id) {
+  1878: var o = y.NpcFactory.createSceneObj({
+  1879: id: 10163
+  1880: });
+  1881: o.setPosition(cc.v3(e.coordinate[0], e.coordinate[1]));
+  1882: t.add2Scene(o);
+  1883: t.oldMan = o;
+  1884: }
+  1885: };
+  1886: e.prototype.deleteOldManNpc = function(t) {
+  1887: if (null != t.oldMan) {
+---

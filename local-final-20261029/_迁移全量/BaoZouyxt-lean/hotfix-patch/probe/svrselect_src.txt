@@ -1,0 +1,318 @@
+### SvrSelectView ###
+
+=== onLoad ===
+function() {
+t.prototype.onLoad.call(this);
+cc.game.on(cc.game.EVENT_HIDE, function() {
+b.SoundMgr.pauseMusic();
+});
+cc.game.on(cc.game.EVENT_SHOW, function() {
+b.SoundMgr.resumeMusic();
+});
+this.getPathByNode("languageTransfer");
+if (_.LoginMgr.judgeLangEn()) {
+var e = this.getPathByNode("bground");
+a.lang == a.L_EN ? this.setSpriteFrame(e, "ui/login/login_en") : this.setSpriteFrame(e, "ui/login/login");
+var o = cc.sys.localStorage.getItem("license");
+this.togBtn.isChecked = o && 1 == parseInt(o);
+if (_.LoginMgr.checkMiniGame()) {
+this.getPathByNode("bg/Sprite").active = !1;
+cc.sys.localStorage.setItem("license", 1);
+}
+this.serverBtn = this.getPathByNode("bg/serverBtn");
+this.addButtonListen(this.serverBtn, this, this.onClickServerBtn);
+if (cc.sys.platform == cc.sys.BYTEDANCE_GAME) {
+this.serverBtn.active = !1;
+N.ByteDanceModel.createContactButton();
+}
+var i = this.getPathByNode("bg/Sprite/LabelPrivacy");
+this.addButtonListen(i, this, this.onPrivacy);
+var s = this.getPathByNode("bg/Sprite/LabelLicense");
+this.addButtonListen(s, this, this.onLicense);
+} else {
+if ("zh" != a.lang && "tw" != a.lang) {
+this.label1.active = !1;
+cc.sys.localStorage.setItem("license", 1);
+this.togBtn.node.active = !1;
+this.labBtn2.node.active = !1;
+this.labBtn3.node.active = !1;
+} else {
+o = cc.sys.localStorage.getItem("license");
+this.togBtn.isChecked = o && 1 == parseInt(o);
+}
+if (cc.sys.platform != cc.sys.VIVO_GAME && _.LoginMgr.checkMiniGame()) {
+this.getPathByNode("bg/Sprite").active = !1;
+cc.sys.localStorage.setItem("license", 1);
+}
+this.serverBtn = this.getPathByNode("bg/serverBtn");
+this.addButtonListen(this.serverBtn, this, this.onClickServerBtn);
+if (cc.sys.platform == cc.sys.BYTEDANCE_GAME) {
+this.serverBtn.active = !1;
+N.ByteDanceModel.createContactButton();
+}
+("1750" == a.platfStr || 0 == a.platformID && cc.sys.isNative && "zh" == a.lang || cc.sys.os == cc.sys.OS_IOS && "zh" == a.lang) && this.setSpriteFrame(this.getPathByNode("Age"), "ui/login/ageTip_dy1");
+"zh" != a.lang || _.LoginMgr.checkMiniGame() || a.platfStr == T.HUAREN || this.prolLabel && (this.prolLabel.active = !0);
+if (this.judgeMiniGame() && 0 == g.loginModel.isLoginEnter) {
+this.getPathByNode("bg/button").active = !1;
+this.getPathByNode("bg/button1").active = !1;
+this.getPathByNode("bg/Sprite").active = !1;
+this.serverBtn.active = !1;
+}
+}
+}
+
+=== addEventListeners ===
+function() {
+c.MessageCenter.on(l.EvName.ON_GET_SERVER_LIST, this.onGetSvrList, this);
+c.MessageCenter.on(l.EvName.ON_SERVER_SELECT, this.onSelectSvr, this);
+c.MessageCenter.on(l.EvName.START_CREATE_ROLE, this.onStartCreateRole, this);
+}
+
+=== removeEventListeners ===
+function() {
+c.MessageCenter.off(l.EvName.ON_GET_SERVER_LIST, this.onGetSvrList, this);
+c.MessageCenter.off(l.EvName.ON_SERVER_SELECT, this.onSelectSvr, this);
+c.MessageCenter.off(l.EvName.START_CREATE_ROLE, this.onStartCreateRole, this);
+}
+
+=== onClickServerBtn ===
+function() {
+_.LoginMgr.judgeLangEn() ? M.default.show(r.getText("798")) : _.LoginMgr.openCustomerSystem();
+}
+
+=== onEnable ===
+function() {
+b.SoundMgr.playBgMusic("login");
+}
+
+=== onStartCreateRole ===
+function() {
+this.bg.active = !1;
+}
+
+=== showStart ===
+function() {
+this.bg.active = !0;
+}
+
+=== onSelectSvr ===
+function(t, e) {
+this.setServer(e);
+}
+
+=== onGetSvrList ===
+function() {
+var t = p.sListModel.autoSelect();
+this.setServer(t);
+if (!this.judgeMiniGame()) {
+var e = this;
+_.LoginMgr.isMiniIos(2) || d.default.loadFrom(d.default.prefabs, "notice/SmallNoticeUI", cc.Prefab).then(function(t) {
+var o = cc.instantiate(t);
+u.PopUpMgr.addPopUp(o, C.LayerMgr.topLayer, 1, !0);
+_.LoginMgr.judgeLangEn() || e.showUpdateApk();
+});
+}
+}
+
+=== showUpdateApk ===
+function() {
+var t = p.sListModel.tapVersion;
+"zh" == a.lang && 0 == a.platformID && cc.sys.isNative && cc.sys.os == cc.sys.OS_ANDROID && "meple100221" == a.platfStr && _.LoginMgr.checkPlv("3.1.1") && this.checkPlv(t) && M.default.show("亲爱的玩家，游戏已有最新版本，快来更新体验吧！", [ {
+flag: 0,
+name: "取消"
+}, {
+flag: 1,
+name: "更新"
+} ], function(t) {
+1 == t && _.LoginMgr.openTapUpdateApk();
+}, "", !1);
+}
+
+=== setServer ===
+function(t) {
+this.serverID = t[0];
+f.SServerFightModel.curSeverID = t[0];
+var e = {
+index: 0
+};
+e.svrList = [ t[1] ];
+p.sListModel.svrCfg && (e.svrList = p.sListModel.svrCfg[this.serverID]);
+h.NetMgr.http.setUrlAndPort(e, t[3], t[0]);
+h.NetMgr.loginHttp.setUrlAndPort(e, t[2], t[0]);
+S.RoleBaseInfo.serverId = t[0];
+S.RoleBaseInfo.serverName = t[5];
+this.selectedSvrBtnLabel.string = t[5];
+v.RoleOtherInfo.serverName = t[5];
+I.CrossServiceModel.saveServerUrl(t);
+p.sListModel.svrUrl = e;
+_.LoginMgr.checkMiniGame() && console.log("服务器名称：" + t[5]);
+0 == g.loginModel.isLoginEnter && this.checkMinGameEnter();
+}
+
+=== checkMinGameEnter ===
+function() {
+if (this.judgeMiniGame()) {
+B.GSceneMgr.clearPlayer();
+B.GSceneMgr.destroy();
+cc.sys.platform == cc.sys.BYTEDANCE_GAME ? N.ByteDanceModel.login(this.checkMinLicense.bind(this)) : cc.sys.platform == cc.sys.WECHAT_GAME ? L.WeiXinQQModel.login(this.checkMinLicense.bind(this)) : this.checkMinLicense();
+}
+}
+
+=== checkMinLicense ===
+function() {
+g.loginModel.login(_.LoginMgr.getLoginParam());
+this.serverID && p.sListModel.reqLogSvSelection(this.serverID);
+}
+
+=== checkPlv ===
+function(t) {
+for (var e = t.split("."), o = a.pkgVersion.split("."), i = 0; i < o.length; i++) {
+var s = parseInt(o[i]), n = parseInt(e[i]);
+if (s < n) return !0;
+if (s > n) return !1;
+}
+return !1;
+}
+
+=== start ===
+function() {
+if (this.judgeMiniGame() && 1 == g.loginModel.isLoginEnter) p.sListModel.reqSvList(); else {
+cc.sys.platform == cc.sys.BYTEDANCE_GAME ? p.sListModel.reqDouYinSvList() : cc.sys.platform == cc.sys.WECHAT_GAME ? L.WeiXinQQModel.isWeiXinSdk() && p.sListModel.reqWeiXinWSvList() : p.sListModel.reqSvList();
+this.serverID = 0;
+}
+}
+
+=== onEnterGame ===
+function() {
+B.GSceneMgr.clearPlayer();
+B.GSceneMgr.destroy();
+cc.sys.platform == cc.sys.BYTEDANCE_GAME ? N.ByteDanceModel.login(this.checkLicense.bind(this)) : cc.sys.platform == cc.sys.WECHAT_GAME ? L.WeiXinQQModel.login(this.checkLicense.bind(this)) : this.checkLicense();
+}
+
+=== checkLicense ===
+function() {
+var t = this, e = cc.sys.localStorage.getItem("license");
+if (e && 1 == parseInt(e)) {
+if (0 == this.serverID) {
+M.default.show(r.getText(1084));
+return;
+}
+if (this.isClickState) {
+this.isClickState = !1;
+g.loginModel.login(_.LoginMgr.getLoginParam());
+this.serverID && p.sListModel.reqLogSvSelection(this.serverID);
+this.delay(1).then(function() {
+t.isClickState = !0;
+});
+}
+} else M.default.show(r.getText(7235));
+}
+
+=== onToggle ===
+function() {
+var t = cc.sys.localStorage.getItem("license");
+cc.sys.localStorage.setItem("license", t && 1 == parseInt(t) ? 0 : 1);
+}
+
+=== onPrivacy ===
+function() {
+_.LoginMgr.checkMiniGame() ? d.default.prefabs.load("Login/SpecialAgreementUI", cc.Prefab, function(t, e) {
+var o = cc.instantiate(e);
+o.addComponent("SpecialAgreementUI").setShowData(r.getText(7233), r.getText(8823));
+u.PopUpMgr.addPopUp(o, C.LayerMgr.topLayer);
+}) : y.NoticeModel.reqNewUserInfoData("privacy", r.getText(7233));
+}
+
+=== onLicense ===
+function() {
+_.LoginMgr.checkMiniGame() ? d.default.prefabs.load("Login/SpecialAgreementUI", cc.Prefab, function(t, e) {
+var o = cc.instantiate(e);
+o.addComponent("SpecialAgreementUI").setShowData(r.getText(7234), r.getText(8824));
+u.PopUpMgr.addPopUp(o, C.LayerMgr.topLayer);
+}) : y.NoticeModel.reqNewUserInfoData("user", r.getText(7234));
+}
+
+=== onAgeLimit ===
+function() {
+_.LoginMgr.judgeLangEn() ? M.default.show(r.getText(8101)) : "1750" == a.platfStr || 0 == a.platformID && cc.sys.isNative && "zh" == a.lang || cc.sys.os == cc.sys.OS_IOS && "zh" == a.lang ? M.default.show(r.getText("8101_dy1")) : M.default.show(r.getText(8101));
+}
+
+=== onSelectSvrClick ===
+function() {
+d.default.prefabs.load("SvrListView", cc.Prefab, function(t, e) {
+var o = cc.instantiate(e);
+u.PopUpMgr.addPopUp(o, C.LayerMgr.topLayer, 1);
+});
+}
+
+=== onNoticeClick ===
+function() {
+if (!_.LoginMgr.isMiniIos(2)) {
+C.LayerMgr.bulletTitleLayer = C.LayerMgr.topLayer;
+y.NoticeModel.showLoginUI();
+}
+}
+
+=== onClickLang ===
+function() {
+d.default.prefabs.load("language/languagelist", cc.Prefab, function(t, e) {
+var o = cc.instantiate(e);
+o.addComponent("LanguageUI");
+u.PopUpMgr.addPopUp(o, C.LayerMgr.topLayer, 1, !0);
+});
+}
+
+=== onPrlLicense ===
+function() {
+cc.sys.openURL("https://beian.miit.gov.cn");
+}
+
+=== onDestroy ===
+function() {
+t.prototype.onDestroy.call(this);
+N.ByteDanceModel.deleteContactButton();
+}
+
+=== judgeMiniGame ===
+function() {
+return !(!_.LoginMgr.checkMiniGame() || this.openSvrListState);
+}
+
+### instance fields ###
+_super = null
+_name = ""
+_objFlags = 124928
+__scriptAsset = false
+_enabled = true
+_id = "Comp.2388"
+viewMap = {}
+lbMap = {}
+data = null
+prefabName = null
+paths = {"Node.1254":{"_name":"ageTip_dy1","_objFlags":0,"_native":"","loaded":true,"_nativeUrl":"","_ref":1,"_callbackTable":{},"_rect":{"x":330,"y":898,"width":80,"height":105},"uv":[0.33367037411526795,0.9153924566768603,0.33367037411526795,0.9969418960244648,0.4398382204246714,0.9153924566768603,0.43983
+isOnClick = true
+lastToggle = null
+prefabMap = null
+_tHandler = null
+_delayTween = null
+_closeEvents = []
+serverID = 220
+ageTip = null
+isClickState = true
+openSvrListState = false
+name = "Canvas<SvrSelectView>"
+uuid = "Comp.2388"
+enabled = true
+enabledInHierarchy = true
+_isOnLoadCalled = 16384
+update = null
+lateUpdate = null
+__preload = null
+onFocusInEditor = null
+onLostFocusInEditor = null
+resetInEditor = null
+_getLocalBounds = null
+onRestore = null
+__scriptUuid = ""
+isValid = true
+_deserialize = null

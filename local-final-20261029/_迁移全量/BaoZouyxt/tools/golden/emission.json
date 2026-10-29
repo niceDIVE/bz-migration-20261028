@@ -1,0 +1,2339 @@
+{
+ "frozenAt": "2026-10-27T12:07:52.102Z",
+ "impl": null,
+ "actions": {
+  "BeginFish": {
+   "eRet": 1,
+   "beginTime": 1792612412000,
+   "serverTime": 1792612412000,
+   "advertisementNum": 0,
+   "maxTime": 0,
+   "fishpondID": 0
+  },
+  "BeginList": {
+   "eRet": 1,
+   "skill": "[]"
+  },
+  "BeginMeditation": {
+   "eRet": 1,
+   "beginTime": 1792612412000,
+   "hyTime": 0
+  },
+  "BeginPlayWooks": {
+   "eRet": 1,
+   "beginTime": 1792612412000,
+   "serverTime": 1792612412000,
+   "maxTime": 0
+  },
+  "BeginRecoverMP": {
+   "eRet": 1,
+   "serverTime": 1792612412000
+  },
+  "BeginRollDice": {
+   "eRet": 1
+  },
+  "BeginSaveNpc": {
+   "eRet": 1,
+   "npcID": 0,
+   "beginTime": 1792612412000,
+   "endTime": 1792612412000
+  },
+  "BeginTraining": {
+   "eRet": 4
+  },
+  "BuyFashion": {
+   "eRet": 4
+  },
+  "BuyHomeCrop": {
+   "eRet": 2
+  },
+  "BuyHouseShop": {
+   "eRet": 1,
+   "itemID": 0
+  },
+  "BuyMarketItem": {
+   "eRet": 4
+  },
+  "BuyMount": {
+   "eRet": 3
+  },
+  "BuyNpcFeel": {
+   "eRet": 1
+  },
+  "BuyTowerProp": {
+   "eRet": 1,
+   "itemID": 0
+  },
+  "ChallengePVP": {
+   "eRet": 3
+  },
+  "ChallengeRoguePVP": {
+   "eRet": 1,
+   "AttckData.floorBuff": "{}",
+   "EnemyData": "{}"
+  },
+  "ChatPkActivity": {
+   "eRet": 1,
+   "NpcId": 0,
+   "option": 0
+  },
+  "CheckBattleResult": {
+   "eRet": 1,
+   "note.eco": "{}",
+   "note.attrch.hunger": 60,
+   "note.attrch.curmp": 200,
+   "note.attrch.curhp": 519,
+   "note.attrch.hplmt": 600,
+   "note.ivch": "{}",
+   "note.eqch.2302[0]": 1,
+   "note.eqch.2302[1][0]": 1,
+   "note.eqch.2302[1][1]": 1,
+   "win": "false",
+   "rewardArray": "{}",
+   "equipObj": "{}",
+   "gemId": "[]"
+  },
+  "CheckOnHook": {
+   "eRet": 1,
+   "OnhookObj": "{}"
+  },
+  "CheckOutSchool": {
+   "eRet": 1,
+   "npcID": 0,
+   "serverTime": 1792612412000,
+   "CDTime": 1792612412000,
+   "skillId": 0
+  },
+  "ChooseGirl": {
+   "eRet": 2
+  },
+  "ChooseSanGongDan": {
+   "eRet": 1,
+   "backpro": 0
+  },
+  "DogBattleResult": {
+   "eRet": 1,
+   "endTime": 0,
+   "win": "false"
+  },
+  "DoublePractice": {
+   "eRet": 1,
+   "needTime": 0
+  },
+  "EndFish": {
+   "eRet": 1,
+   "beginTime": 1792612352000,
+   "serverTime": 1792612412000,
+   "gTime": 60,
+   "hg": 100,
+   "hgtimes": 0,
+   "awardArr": "{}",
+   "extraArr": "[]"
+  },
+  "EndMeditation": {
+   "eRet": 1,
+   "genguTime": 0,
+   "hanyusuiTime": 0,
+   "note.attrch": "{}",
+   "note.eco": "{}",
+   "note.skch": "{}",
+   "note.ivch": "{}",
+   "note.eqch": "{}"
+  },
+  "EndPlayWooks": {
+   "eRet": 1,
+   "beginTime": 1792612352000,
+   "serverTime": 1792612412000,
+   "gTime": 60,
+   "hg": 100,
+   "hgtimes": 0,
+   "exp": 0,
+   "expExtra": 0,
+   "potential": 0,
+   "potentialExtra": 0,
+   "specialAny": 0
+  },
+  "EndRecoverMP": {
+   "eRet": 1,
+   "genguTime": 0,
+   "hanyusuiTime": 0
+  },
+  "EndSaveNpc": {
+   "eRet": 1,
+   "endTime": 1792612412000,
+   "sex": 0
+  },
+  "EndTraining": {
+   "eRet": 1,
+   "genguTime": 0,
+   "hanyusuiTime": 0,
+   "isSchoolAward": 0,
+   "skillArr": "[]",
+   "skillid": 0
+  },
+  "EneterCopy": {
+   "eRet": 1,
+   "copyID": 0,
+   "state": 0
+  },
+  "EquipSuitsUpgrade": {
+   "eRet": 1,
+   "playerEquip": "{}"
+  },
+  "ExChangeJetton": {
+   "eRet": 4,
+   "curGold": 99999,
+   "curJetton": 0
+  },
+  "FeedDog": {
+   "eRet": 2
+  },
+  "FriendList": {
+   "eRet": 1,
+   "uIds": "[]",
+   "friendList": "{}"
+  },
+  "GetBossAward": {
+   "eRet": 1,
+   "firstName": 0,
+   "killName": 0,
+   "killObj": "{}",
+   "rewardArray": "{}"
+  },
+  "GetClimbingTowerData": {
+   "eRet": 1,
+   "towerArray": "[]"
+  },
+  "GetFashionList": {
+   "eRet": 1,
+   "type": 0,
+   "FashionArr[0][0]": 2601,
+   "FashionArr[0][1]": 0,
+   "FashionArr[1][0]": 2602,
+   "FashionArr[1][1]": 0,
+   "FashionArr[2][0]": 2603,
+   "FashionArr[2][1]": 0,
+   "FashionArr[3][0]": 2604,
+   "FashionArr[3][1]": 0,
+   "FashionArr[4][0]": 2605,
+   "FashionArr[4][1]": 0,
+   "FashionArr[5][0]": 2606,
+   "FashionArr[5][1]": 0,
+   "FashionArr[6][0]": 2607,
+   "FashionArr[6][1]": 0,
+   "FashionArr[7][0]": 2609,
+   "FashionArr[7][1]": 0,
+   "FashionArr[8][0]": 2701,
+   "FashionArr[8][1]": 0,
+   "FashionArr[9][0]": 2702,
+   "FashionArr[9][1]": 0,
+   "FashionArr[10][0]": 2703,
+   "FashionArr[10][1]": 0,
+   "FashionArr[11][0]": 2704,
+   "FashionArr[11][1]": 0,
+   "FashionArr[12][0]": 2705,
+   "FashionArr[12][1]": 0,
+   "FashionArr[13][0]": 2706,
+   "FashionArr[13][1]": 0,
+   "FashionArr[14][0]": 2707,
+   "FashionArr[14][1]": 0,
+   "FashionArr[15][0]": 2709,
+   "FashionArr[15][1]": 0,
+   "FashionTimeMap": "{}"
+  },
+  "GetGMGiveItem": {
+   "eRet": 1,
+   "expireTime": 0,
+   "titleID": 0
+  },
+  "GetHouseShopData": {
+   "eRet": 1,
+   "shopData": "{}"
+  },
+  "GetMarketList": {
+   "eRet": 1,
+   "market": "[]",
+   "buyTimes": 0,
+   "nextRefreshTime": 0,
+   "serverTime": 0
+  },
+  "GetMountsList": {
+   "eRet": 1,
+   "MountsArr": "[]"
+  },
+  "GetNewSweepTowerData": {
+   "eRet": 1,
+   "batch_sweep_data": "{}"
+  },
+  "GetNoticeAward": {
+   "eRet": 1,
+   "liveness": 0,
+   "rewardArray": "{}"
+  },
+  "GetOnHookFriendLis": {
+   "eRet": 1,
+   "friendList": "{}"
+  },
+  "GetPayAward": {
+   "eRet": 4,
+   "curGold": 99999,
+   "curYuanbao": 0,
+   "orderId": 0
+  },
+  "GetPayShowData": {
+   "eRet": 4,
+   "ShopArray": "{}"
+  },
+  "GetRandomEventAward": {
+   "eRet": 1,
+   "liveness": 0,
+   "npcArr": "[]",
+   "rewardArray": "{}"
+  },
+  "GetSchoolReview": {
+   "eRet": 1,
+   "type": 0,
+   "reviewList": "[]",
+   "maxPage": 0
+  },
+  "GetShopAllActive": {
+   "eRet": 1,
+   "shopActiveList": "[]",
+   "activeEndTime": 0
+  },
+  "GetTowerSpecialShop": {
+   "eRet": 1,
+   "shopData": "{}"
+  },
+  "GetWhoreData": {
+   "eRet": 1,
+   "girlData": "{}"
+  },
+  "IphonePay": {
+   "eRet": 4,
+   "curGold": 99999,
+   "curYuanbao": 0,
+   "orderId": 0
+  },
+  "LeaveCopy": {
+   "eRet": 1,
+   "liveness": 0,
+   "rewardArray": "{}"
+  },
+  "LookFishAward": {
+   "eRet": 1,
+   "awardArr": "{}"
+  },
+  "NewPVPBattleResult": {
+   "eRet": 1,
+   "CDTime": 0
+  },
+  "OnCheckBreak": {
+   "eRet": 1,
+   "finish": 1,
+   "gTime": 0,
+   "hg": 100,
+   "hgtimes": 0,
+   "roleGold": 20,
+   "itemAddition": 0,
+   "skillID": 0,
+   "skillLevel": 0,
+   "usedTime": 0
+  },
+  "OnHookBreak": {
+   "eRet": 1,
+   "operate": 1,
+   "skillID": 0,
+   "skillLevel": 0,
+   "needTime": 0,
+   "serverTime": 1792612412000,
+   "beginTime": 1792612412000,
+   "Sponsor": "",
+   "friendName": "",
+   "friendSex": 0,
+   "Addition": 0,
+   "itemAddition": 0
+  },
+  "OpenTiger": {
+   "eRet": 1,
+   "num": 0
+  },
+  "OutSchool": {
+   "eRet": 1,
+   "npcID": 0,
+   "npcIDArr": "[]",
+   "oldSchool": 0,
+   "clearBoxs": "[]",
+   "textArr": "[]",
+   "rewardArray": "null",
+   "serverTime": 1792612412000,
+   "CDTime": 1792612412000,
+   "skillId": 0,
+   "addComponent": 0
+  },
+  "PaymentCallBack": {
+   "eRet": 4,
+   "curGold": 99999,
+   "curYuanbao": 0,
+   "orderId": 0
+  },
+  "PopEquip": {
+   "eRet": 1,
+   "ItemID": 0,
+   "ItemNum": ""
+  },
+  "PushEquip": {
+   "eRet": 1,
+   "ItemID": 0,
+   "ItemNum": "",
+   "storageItem": 0
+  },
+  "PutOnEquipment": {
+   "eRet": 1,
+   "equipments": "{}",
+   "PlayerEquip": "{}"
+  },
+  "QuickBuyItem": {
+   "eRet": 4
+  },
+  "ReqReview": {
+   "eRet": 1,
+   "id": 0
+  },
+  "Storehouse": {
+   "eRet": 1,
+   "needItem": "[]",
+   "rewardArray": "{}"
+  },
+  "TowerBattleResult": {
+   "eRet": 1,
+   "awardObj": "[]",
+   "batch_sweep_data": "{}",
+   "gemId": "[]",
+   "rewardArray": "{}",
+   "win": "true"
+  },
+  "UseAllBall": {
+   "eRet": 0
+  },
+  "UseBatchSnowBall": {
+   "eRet": 4
+  },
+  "UseSnowBall": {
+   "eRet": 0
+  },
+  "UserWifeProp": {
+   "eRet": 2
+  },
+  "WashMedicine": {
+   "eRet": 0
+  },
+  "Whoring": {
+   "eRet": 2
+  },
+  "acceptCircleTask": {
+   "eRet": 6
+  },
+  "acceptSchoolTask": {
+   "eRet": 1,
+   "acceptSchoolTask": "{}",
+   "dateFinishTimes": 0
+  },
+  "acceptTask": {
+   "eRet": 1,
+   "note": "{}",
+   "taskID": "undefined"
+  },
+  "accountLogOff": {
+   "eRet": 1
+  },
+  "activateTowerEvent": {
+   "eRet": 1,
+   "eventID": "{}",
+   "npcArr": "[]"
+  },
+  "addBreakQueue": {
+   "eRet": 1,
+   "qr": "{}"
+  },
+  "addEquipLock": {
+   "eRet": 1,
+   "equipLocks": 0
+  },
+  "addItem": {
+   "eRet": 2
+  },
+  "adoptChild": {
+   "eRet": 2
+  },
+  "affiliationSchool": {
+   "eRet": 1,
+   "affiliationSchool": 0,
+   "upRoleSchoolLevel": "{}"
+  },
+  "answerReward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "applyRemove": {
+   "eRet": 1
+  },
+  "batchSeedCrop": {
+   "eRet": 2
+  },
+  "beginCast": {
+   "eRet": 1,
+   "inherit": "null",
+   "type": -1
+  },
+  "beginHookBreakList": {
+   "eRet": 1,
+   "qr": "{}"
+  },
+  "beginMake": {
+   "eRet": 1,
+   "type": -1
+  },
+  "beginMakeMedicine": {
+   "eRet": 1,
+   "type": -1
+  },
+  "beginPVEBattle": {
+   "eRet": 1,
+   "action": 0,
+   "attArr": "[]",
+   "paramID": 0,
+   "paramID1": 0,
+   "paramID2": 0
+  },
+  "beginPlayGame": {
+   "eRet": 1,
+   "beginTime": 1792612412000,
+   "choose": 0,
+   "progress": "{}",
+   "serverTime": 0
+  },
+  "beginRoguePVEBattle": {
+   "eRet": 1,
+   "action": 0,
+   "attArr": "[]",
+   "paramID": 0,
+   "paramID1": 0,
+   "paramID2": 0
+  },
+  "beginWedding": {
+   "eRet": 2
+  },
+  "birthChild": {
+   "eRet": 2
+  },
+  "bringSpecialAward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "buyActivityNum": {
+   "eRet": 1,
+   "activeNum": 0,
+   "rewardArray": "{}"
+  },
+  "buyAnniversaryPass": {
+   "eRet": 4
+  },
+  "buyAnniversaryPassGift": {
+   "eRet": 2
+  },
+  "buyAnniversaryPassLiveness": {
+   "eRet": 3
+  },
+  "buyGiftPermanent": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "buyHelper": {
+   "eRet": 4
+  },
+  "buyInvitationCard": {
+   "eRet": 4
+  },
+  "buyMonthlyFee": {
+   "eRet": 2
+  },
+  "buySchoolShop": {
+   "eRet": 4
+  },
+  "buyShopItem": {
+   "eRet": 4
+  },
+  "buySkillSkinActiveShop": {
+   "eRet": 2
+  },
+  "buySkillSkinShop": {
+   "eRet": 2
+  },
+  "buyUFORefreshTimes": {
+   "eRet": 5
+  },
+  "callDragon": {
+   "eRet": 1
+  },
+  "callHelperId": {
+   "eRet": 2
+  },
+  "canBuyActivityNum": {
+   "eRet": 1,
+   "gold": 99999
+  },
+  "cancelPay": {
+   "eRet": 4,
+   "StoreModel": "{}"
+  },
+  "changeDelegateTask": {
+   "eRet": 1,
+   "num": 0,
+   "taskObj": "{}"
+  },
+  "changePlayWooksState": {
+   "eRet": 1
+  },
+  "changePower": {
+   "eRet": 1
+  },
+  "changeSate": {
+   "eRet": -1
+  },
+  "changeServer": {
+   "eRet": 1,
+   "newAcc": "",
+   "newID": 0
+  },
+  "changeWorldServer": {
+   "eRet": 1,
+   "hookData": "{}",
+   "sendurl": ""
+  },
+  "chanllengeTower": {
+   "eRet": 1,
+   "equipments": "{}",
+   "eventID": "{}",
+   "mapID": 0,
+   "npcArr": "[]"
+  },
+  "checkEquipToTeam": {
+   "eRet": 1
+  },
+  "checkHireOnhook": {
+   "eRet": 1,
+   "beginTime": 1792612412000,
+   "maxTime": 0,
+   "serverTime": 0,
+   "siteID": 0
+  },
+  "checkLive": {
+   "eRet": 1,
+   "formulaArr": "[]",
+   "inherit": "null"
+  },
+  "checkUploadAttackDamge": {
+   "eRet": 1,
+   "killBoss": 0,
+   "killBossName": "",
+   "bossMaxHP": 0,
+   "bossCurHP": 0,
+   "CDTime": 0,
+   "maxPotentialLimit": 0,
+   "setAllHpAndMp": "{}"
+  },
+  "childWashProperty": {
+   "eRet": 2
+  },
+  "choosePandaEvent": {
+   "eRet": 1,
+   "batch_sweep_data": "{}",
+   "rewardArray": "{}"
+  },
+  "chooseSecretEvent": {
+   "eRet": 1,
+   "batch_sweep_data": "{}",
+   "rewardArray": "{}"
+  },
+  "chooseSex": {
+   "eRet": 3
+  },
+  "chooseUsedItemAward": {
+   "eRet": 1,
+   "cData": "{}",
+   "chooseID": 0,
+   "delItemObj": "{}"
+  },
+  "circleTaskAward": {
+   "eRet": 4
+  },
+  "cleanDeadCrop": {
+   "eRet": 2
+  },
+  "closeNewSweepTowerByLv": {
+   "eRet": 1,
+   "batch_sweep_data": "{}"
+  },
+  "closedBook": {
+   "eRet": 1,
+   "npcID": 0,
+   "deletePartners": "[]"
+  },
+  "collect": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "completeOrderByHotVal": {
+   "eRet": 4,
+   "cookBook": "[]",
+   "dishBag": "{}",
+   "hotVal": 0,
+   "mhv": 0,
+   "showRewardCookBook": 0
+  },
+  "confirmRemove": {
+   "eRet": 1
+  },
+  "cookAccelerate": {
+   "eRet": 1,
+   "cookData": "{}",
+   "foodBag": "{}"
+  },
+  "cookReceive": {
+   "eRet": 1,
+   "cookData": "{}",
+   "foodBag": "{}"
+  },
+  "cookStart": {
+   "eRet": 1,
+   "cookData": "{}",
+   "foodBag": "{}"
+  },
+  "cookUnlock": {
+   "eRet": 1,
+   "cookData": "{}",
+   "foodBag": "{}"
+  },
+  "createOrderByHotVal": {
+   "eRet": 4,
+   "orderId": 0
+  },
+  "delEquipLock": {
+   "eRet": 1,
+   "equipLocks": 0
+  },
+  "delegateTask": {
+   "eRet": 4
+  },
+  "dishUnlock": {
+   "eRet": 1,
+   "unlockDish": "[]"
+  },
+  "dispatch": {
+   "eRet": 2
+  },
+  "dispatchAward": {
+   "eRet": 3
+  },
+  "dispossHomeEvent": {
+   "eRet": 2
+  },
+  "divorceNpc": {
+   "eRet": 2
+  },
+  "doubleTraining": {
+   "eRet": 1,
+   "needTime": 0,
+   "skillID": 0,
+   "skillLevel": 0
+  },
+  "endCast": {
+   "eRet": 1,
+   "inherit": "null",
+   "type": -1
+  },
+  "endDoubleTraining": {
+   "eRet": 1,
+   "flag": 0
+  },
+  "endEatByTable": {
+   "eRet": 1,
+   "tableList": "[]"
+  },
+  "endMake": {
+   "eRet": 1,
+   "rewardArray": "{}",
+   "type": -1
+  },
+  "endMakeMedicine": {
+   "eRet": 1,
+   "rewardArray": "{}",
+   "type": -1
+  },
+  "endPlayGame": {
+   "eRet": 1,
+   "flag": 0,
+   "progree": 0
+  },
+  "enterMultiPVEBattle": {
+   "eRet": 1,
+   "battleData": "{}",
+   "gold": 99999,
+   "linepID": "[]",
+   "npcID": 310003
+  },
+  "enterNextFloor": {
+   "eRet": 1,
+   "boxArr": "[]",
+   "boxNum": 0,
+   "floor": 0,
+   "isStatus": 0
+  },
+  "enterPVEBattle": {
+   "eRet": 1,
+   "AttckData.baseValueAy[0]": "9900012358565",
+   "AttckData.baseValueAy[1]": "114545",
+   "AttckData.baseValueAy[2]": 0,
+   "AttckData.baseValueAy[3]": 0,
+   "AttckData.baseValueAy[4]": 282,
+   "AttckData.baseValueAy[5]": 301,
+   "AttckData.baseValueAy[6]": 318,
+   "AttckData.baseValueAy[7]": 40,
+   "AttckData.baseValueAy[8]": 20,
+   "AttckData.baseValueAy[9]": 10,
+   "AttckData.baseValueAy[10]": 10,
+   "AttckData.baseValueAy[11]": 100,
+   "AttckData.baseValueAy[12]": 100,
+   "AttckData.baseValueAy[13]": 80,
+   "AttckData.baseValueAy[14]": 0,
+   "AttckData.baseValueAy[15]": 20,
+   "AttckData.baseValueAy[16]": 0,
+   "AttckData.baseValueAy[17]": 0,
+   "AttckData.baseValueAy[18]": 0,
+   "AttckData.baseValueAy[19]": 50,
+   "AttckData.baseValueAy[20]": 13,
+   "AttckData.baseValueAy[21]": 0,
+   "AttckData.baseValueAy[22]": 0,
+   "AttckData.baseValueAy[23]": 0,
+   "AttckData.baseValueAy[24]": 100,
+   "AttckData.baseValueAy[25]": 100,
+   "AttckData.baseValueAy[26]": 0,
+   "AttckData.baseValueAy[27]": 600,
+   "AttckData.baseValueAy[28]": 600,
+   "AttckData.baseValueAy[29]": 200,
+   "AttckData.baseValueAy[30]": 0,
+   "AttckData.baseValueAy[31]": 100,
+   "AttckData.baseValueAy[32]": 0,
+   "AttckData.baseValueAy[33]": 1,
+   "AttckData.baseValueAy[34]": 0,
+   "AttckData.baseValueAy[35]": 0,
+   "AttckData.baseValueAy[36]": 0,
+   "AttckData.baseValueAy[37]": 40,
+   "AttckData.baseValueAy[38]": 20,
+   "AttckData.baseValueAy[39]": 10,
+   "AttckData.baseValueAy[40]": 10,
+   "AttckData.baseValueAy[41]": 0,
+   "AttckData.baseValueAy[42]": 0,
+   "AttckData.baseValueAy[43]": 0,
+   "AttckData.baseValueAy[44]": 1004,
+   "AttckData.baseValueAy[45]": 0,
+   "AttckData.baseValueAy[46]": 0,
+   "AttckData.baseValueAy[47]": "[]",
+   "AttckData.skillMap.1[0]": 1,
+   "AttckData.skillMap.1[1]": 0,
+   "AttckData.skillMap.1[2]": 1,
+   "AttckData.skillMap.2[0]": 1,
+   "AttckData.skillMap.2[1]": 0,
+   "AttckData.skillMap.2[2]": 1,
+   "AttckData.skillMap.3[0]": 1,
+   "AttckData.skillMap.3[1]": 0,
+   "AttckData.skillMap.3[2]": 1,
+   "AttckData.skillMap.4[0]": 1,
+   "AttckData.skillMap.4[1]": 0,
+   "AttckData.skillMap.4[2]": 1,
+   "AttckData.skillMap.5[0]": 1,
+   "AttckData.skillMap.5[1]": 0,
+   "AttckData.skillMap.5[2]": 1,
+   "AttckData.skillMap.6[0]": 1,
+   "AttckData.skillMap.6[1]": 0,
+   "AttckData.skillMap.6[2]": 1,
+   "AttckData.skillMap.7[0]": 1,
+   "AttckData.skillMap.7[1]": 0,
+   "AttckData.skillMap.7[2]": 1,
+   "AttckData.skillMap.8[0]": 1,
+   "AttckData.skillMap.8[1]": 0,
+   "AttckData.skillMap.8[2]": 1,
+   "AttckData.skillMap.9[0]": 1,
+   "AttckData.skillMap.9[1]": 0,
+   "AttckData.skillMap.9[2]": 1,
+   "AttckData.skillMap.1112[0]": 1,
+   "AttckData.skillMap.1112[1]": 0,
+   "AttckData.skillMap.1112[2]": 0,
+   "AttckData.skillMap.1262[0]": 1,
+   "AttckData.skillMap.1262[1]": 0,
+   "AttckData.skillMap.1262[2]": 0,
+   "AttckData.WeapToSkill.1": "null",
+   "AttckData.WeapToSkill.2": 7,
+   "AttckData.WeapToSkill.3": 8,
+   "AttckData.WeapToSkill.4": 1,
+   "AttckData.WeapToSkill.5": 2,
+   "AttckData.WeapToSkill.6": 3,
+   "AttckData.WeapToSkill.7": 4,
+   "AttckData.WeapToSkill.8": 5,
+   "AttckData.WeapToSkill.9": 6,
+   "AttckData.equipments": "{}",
+   "AttckData.equips": "{}",
+   "AttckData.roleID": 16374,
+   "AttckData.addAtt[0]": 0,
+   "AttckData.addAtt[1]": 0,
+   "AttckData.addAtt[2]": 0,
+   "AttckData.addAtt[3]": 0,
+   "AttckData.youngTimes": 0,
+   "AttckData.veinObj[0]": 0,
+   "AttckData.veinObj[1]": "{}",
+   "AttckData.equipTitle": 0,
+   "AttckData.inherit": "null",
+   "AttckData.itemSkill": "[]",
+   "AttckData.buffs": "[]",
+   "AttckData.weapToSkinData": "{}",
+   "AttckData.fashionEffect": 0,
+   "AttckData.wId": 0,
+   "AttckData.gemData": "{}",
+   "AttckData.partnerSkillMap": "{}",
+   "AttckData.happinessNum": 0,
+   "AttckData.roleRound": 0,
+   "AttckData.sceneType": 2,
+   "attArr": "[]",
+   "gold": 0,
+   "npcArr[0]": 20,
+   "npcArr[1]": 50,
+   "npcArr[2]": 20,
+   "npcArr[3]": 20,
+   "npcArr[4]": 11,
+   "npcArr[5]": 81,
+   "npcArr[6]": -80,
+   "npcArr[7]": 0,
+   "npcArr[8]": 300,
+   "npcArr[9]": 0,
+   "npcArr[10]": -1,
+   "npcArr[11]": 0,
+   "npcArr[12]": 0,
+   "npcArr[13]": "[]",
+   "npcArr[14][0]": 1,
+   "npcArr[14][1]": 1,
+   "npcArr[15][0]": 7,
+   "npcArr[15][1]": 1,
+   "npcArr[16][0]": 8,
+   "npcArr[16][1]": 1,
+   "npcArr[17]": 1,
+   "npcArr[18]": -40,
+   "npcArr[19]": "[]",
+   "npcArr[20]": 0,
+   "npcArr[21]": 0,
+   "npcArr[22]": 0,
+   "npcArr[23][0]": 0,
+   "npcArr[23][1]": 0,
+   "npcArr[24]": 0,
+   "npcArr[25]": 0,
+   "npcID": 310003,
+   "randSeed": 1611049568
+  },
+  "enterRoguePVEBattle": {
+   "eRet": 1,
+   "AttckData.baseValueAy[0]": "9900012358565",
+   "AttckData.baseValueAy[1]": "114545",
+   "AttckData.baseValueAy[2]": 0,
+   "AttckData.baseValueAy[3]": 0,
+   "AttckData.baseValueAy[4]": 282,
+   "AttckData.baseValueAy[5]": 301,
+   "AttckData.baseValueAy[6]": 318,
+   "AttckData.baseValueAy[7]": 40,
+   "AttckData.baseValueAy[8]": 20,
+   "AttckData.baseValueAy[9]": 10,
+   "AttckData.baseValueAy[10]": 10,
+   "AttckData.baseValueAy[11]": 100,
+   "AttckData.baseValueAy[12]": 100,
+   "AttckData.baseValueAy[13]": 80,
+   "AttckData.baseValueAy[14]": 0,
+   "AttckData.baseValueAy[15]": 20,
+   "AttckData.baseValueAy[16]": 0,
+   "AttckData.baseValueAy[17]": 0,
+   "AttckData.baseValueAy[18]": 0,
+   "AttckData.baseValueAy[19]": 50,
+   "AttckData.baseValueAy[20]": 13,
+   "AttckData.baseValueAy[21]": 0,
+   "AttckData.baseValueAy[22]": 0,
+   "AttckData.baseValueAy[23]": 0,
+   "AttckData.baseValueAy[24]": 100,
+   "AttckData.baseValueAy[25]": 100,
+   "AttckData.baseValueAy[26]": 0,
+   "AttckData.baseValueAy[27]": 600,
+   "AttckData.baseValueAy[28]": 600,
+   "AttckData.baseValueAy[29]": 200,
+   "AttckData.baseValueAy[30]": 0,
+   "AttckData.baseValueAy[31]": 100,
+   "AttckData.baseValueAy[32]": 0,
+   "AttckData.baseValueAy[33]": 1,
+   "AttckData.baseValueAy[34]": 0,
+   "AttckData.baseValueAy[35]": 0,
+   "AttckData.baseValueAy[36]": 0,
+   "AttckData.baseValueAy[37]": 40,
+   "AttckData.baseValueAy[38]": 20,
+   "AttckData.baseValueAy[39]": 10,
+   "AttckData.baseValueAy[40]": 10,
+   "AttckData.baseValueAy[41]": 0,
+   "AttckData.baseValueAy[42]": 0,
+   "AttckData.baseValueAy[43]": 0,
+   "AttckData.baseValueAy[44]": 1004,
+   "AttckData.baseValueAy[45]": 0,
+   "AttckData.baseValueAy[46]": 0,
+   "AttckData.baseValueAy[47]": "[]",
+   "AttckData.skillMap.1[0]": 1,
+   "AttckData.skillMap.1[1]": 0,
+   "AttckData.skillMap.1[2]": 1,
+   "AttckData.skillMap.2[0]": 1,
+   "AttckData.skillMap.2[1]": 0,
+   "AttckData.skillMap.2[2]": 1,
+   "AttckData.skillMap.3[0]": 1,
+   "AttckData.skillMap.3[1]": 0,
+   "AttckData.skillMap.3[2]": 1,
+   "AttckData.skillMap.4[0]": 1,
+   "AttckData.skillMap.4[1]": 0,
+   "AttckData.skillMap.4[2]": 1,
+   "AttckData.skillMap.5[0]": 1,
+   "AttckData.skillMap.5[1]": 0,
+   "AttckData.skillMap.5[2]": 1,
+   "AttckData.skillMap.6[0]": 1,
+   "AttckData.skillMap.6[1]": 0,
+   "AttckData.skillMap.6[2]": 1,
+   "AttckData.skillMap.7[0]": 1,
+   "AttckData.skillMap.7[1]": 0,
+   "AttckData.skillMap.7[2]": 1,
+   "AttckData.skillMap.8[0]": 1,
+   "AttckData.skillMap.8[1]": 0,
+   "AttckData.skillMap.8[2]": 1,
+   "AttckData.skillMap.9[0]": 1,
+   "AttckData.skillMap.9[1]": 0,
+   "AttckData.skillMap.9[2]": 1,
+   "AttckData.skillMap.1112[0]": 1,
+   "AttckData.skillMap.1112[1]": 0,
+   "AttckData.skillMap.1112[2]": 0,
+   "AttckData.skillMap.1262[0]": 1,
+   "AttckData.skillMap.1262[1]": 0,
+   "AttckData.skillMap.1262[2]": 0,
+   "AttckData.WeapToSkill.1": "null",
+   "AttckData.WeapToSkill.2": 7,
+   "AttckData.WeapToSkill.3": 8,
+   "AttckData.WeapToSkill.4": 1,
+   "AttckData.WeapToSkill.5": 2,
+   "AttckData.WeapToSkill.6": 3,
+   "AttckData.WeapToSkill.7": 4,
+   "AttckData.WeapToSkill.8": 5,
+   "AttckData.WeapToSkill.9": 6,
+   "AttckData.equipments": "{}",
+   "AttckData.equips": "{}",
+   "AttckData.roleID": 16374,
+   "AttckData.addAtt[0]": 0,
+   "AttckData.addAtt[1]": 0,
+   "AttckData.addAtt[2]": 0,
+   "AttckData.addAtt[3]": 0,
+   "AttckData.youngTimes": 0,
+   "AttckData.veinObj[0]": 0,
+   "AttckData.veinObj[1]": "{}",
+   "AttckData.equipTitle": 0,
+   "AttckData.inherit": "null",
+   "AttckData.itemSkill": "[]",
+   "AttckData.buffs": "[]",
+   "AttckData.weapToSkinData": "{}",
+   "AttckData.fashionEffect": 0,
+   "AttckData.wId": 0,
+   "AttckData.gemData": "{}",
+   "AttckData.partnerSkillMap": "{}",
+   "AttckData.happinessNum": 0,
+   "AttckData.roleRound": 0,
+   "AttckData.sceneType": 2,
+   "attArr": "[]",
+   "exchangeNpcArr": "[]",
+   "npcArr[0]": 20,
+   "npcArr[1]": 50,
+   "npcArr[2]": 20,
+   "npcArr[3]": 20,
+   "npcArr[4]": 11,
+   "npcArr[5]": 81,
+   "npcArr[6]": -80,
+   "npcArr[7]": 0,
+   "npcArr[8]": 300,
+   "npcArr[9]": 0,
+   "npcArr[10]": -1,
+   "npcArr[11]": 0,
+   "npcArr[12]": 0,
+   "npcArr[13]": "[]",
+   "npcArr[14][0]": 1,
+   "npcArr[14][1]": 1,
+   "npcArr[15][0]": 7,
+   "npcArr[15][1]": 1,
+   "npcArr[16][0]": 8,
+   "npcArr[16][1]": 1,
+   "npcArr[17]": 1,
+   "npcArr[18]": -40,
+   "npcArr[19]": "[]",
+   "npcArr[20]": 0,
+   "npcArr[21]": 0,
+   "npcArr[22]": 0,
+   "npcArr[23][0]": 0,
+   "npcArr[23][1]": 0,
+   "npcArr[24]": 0,
+   "npcArr[25]": 0,
+   "npcID": 310003,
+   "randSeed": 1611049568
+  },
+  "enterSnow": {
+   "eRet": 1,
+   "boxnum": 0,
+   "hp": 1000,
+   "sTime": 1792612412000
+  },
+  "enterWoldBossBattle": {
+   "eRet": 1,
+   "flag": 0,
+   "bossCurHP": 0,
+   "bossMaxHP": 0,
+   "curAttackNum": 0,
+   "randSeed": 0,
+   "buyNum": 0,
+   "buffNum": 0,
+   "AttckData": "[]"
+  },
+  "equipBatchResolve": {
+   "eRet": 1,
+   "itemIDs": "[]",
+   "rewardArray": "{}"
+  },
+  "equipInherit": {
+   "eRet": 1,
+   "equip": 0,
+   "rewardArray": "{}"
+  },
+  "equipResolve": {
+   "eRet": 1,
+   "itemID": 0,
+   "rewardArray": "{}"
+  },
+  "equipSkillSkin": {
+   "eRet": 2
+  },
+  "equipTitle": {
+   "eRet": 1,
+   "flag": 0,
+   "id": 0
+  },
+  "equipUpgrade": {
+   "eRet": 1,
+   "playerEquip": "{}"
+  },
+  "equipWash": {
+   "eRet": 1,
+   "addArr": "[]",
+   "itemID": 0,
+   "newAtt": 0
+  },
+  "exchangeHlexchangeItem": {
+   "eRet": 1,
+   "itemID": 0,
+   "itemNum": 0
+  },
+  "exchangeItem": {
+   "eRet": 4
+  },
+  "exileChild": {
+   "eRet": 1
+  },
+  "exitSchool": {
+   "eRet": 1,
+   "npcIDArr": "[]"
+  },
+  "expediteCrop": {
+   "eRet": 2
+  },
+  "explore": {
+   "eRet": 1,
+   "eventId": 0,
+   "eventType": 0,
+   "eventValue": 0,
+   "rewardArray": "{}"
+  },
+  "fashionEffect": {
+   "eRet": 1,
+   "fashionEffect": 0
+  },
+  "findOHomes": {
+   "eRet": 1,
+   "homeArr": "[]",
+   "homeGeMap": "{}",
+   "recommendHomeArr": "[]"
+  },
+  "findOhter": {
+   "eRet": 1
+  },
+  "getActivity": {
+   "eRet": 1,
+   "type": -1
+  },
+  "getActivityAward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "getAllActivity": {
+   "eRet": 1,
+   "activityList": "[]",
+   "activityShows[0]": 0,
+   "activityShows[1]": 0,
+   "schoolActivityOpen": 0,
+   "schoolArenaOpen": 0,
+   "supportCamp": 0,
+   "transGiftShow": 0
+  },
+  "getAllServerCount": {
+   "eRet": 1,
+   "sArr": "[]",
+   "serverArr": "[]"
+  },
+  "getAllServerList": {
+   "eRet": 1,
+   "serverArr": "[]"
+  },
+  "getAnniversaryPassData": {
+   "eRet": 1,
+   "anniversaryPassData.n": 0,
+   "anniversaryPassData.vip": 0,
+   "anniversaryPassData.rd": "[]",
+   "anniversaryPassData.vrd": "[]",
+   "anniversaryPassData.dt": "[]",
+   "anniversaryPassData.td": "{}",
+   "anniversaryPassData.dv": "{}",
+   "endtime": 1795204412000
+  },
+  "getAnniversaryPassGift": {
+   "eRet": 1,
+   "giftDatas.1[0]": 1,
+   "giftDatas.1[1]": 6007159,
+   "giftDatas.1[2]": 0,
+   "giftDatas.1[3]": 6007163,
+   "giftDatas.1[4]": 1,
+   "giftDatas.1[5]": "1,60|9864,500|6658,20",
+   "giftDatas.1[6]": "an_gift1",
+   "giftDatas.1[7]": 60,
+   "giftDatas.1[8]": 0,
+   "giftDatas.1[9]": 0,
+   "giftDatas.1[10]": 0,
+   "giftDatas.2[0]": 2,
+   "giftDatas.2[1]": 6007160,
+   "giftDatas.2[2]": 0,
+   "giftDatas.2[3]": 6007164,
+   "giftDatas.2[4]": 2,
+   "giftDatas.2[5]": "1,300|9864,3500|6089,10",
+   "giftDatas.2[6]": "an_gift2",
+   "giftDatas.2[7]": 300,
+   "giftDatas.2[8]": 0,
+   "giftDatas.2[9]": 0,
+   "giftDatas.2[10]": 0,
+   "giftDatas.3[0]": 3,
+   "giftDatas.3[1]": 6007161,
+   "giftDatas.3[2]": 0,
+   "giftDatas.3[3]": 6007164,
+   "giftDatas.3[4]": 2,
+   "giftDatas.3[5]": "1,680|9864,8000|4584,60",
+   "giftDatas.3[6]": "an_gift3",
+   "giftDatas.3[7]": 680,
+   "giftDatas.3[8]": 0,
+   "giftDatas.3[9]": 0,
+   "giftDatas.3[10]": 0,
+   "giftDatas.4[0]": 4,
+   "giftDatas.4[1]": 6007162,
+   "giftDatas.4[2]": 0,
+   "giftDatas.4[3]": 6007164,
+   "giftDatas.4[4]": 2,
+   "giftDatas.4[5]": "1,980|9864,8000|9191,10",
+   "giftDatas.4[6]": "an_gift4",
+   "giftDatas.4[7]": 980,
+   "giftDatas.4[8]": 0,
+   "giftDatas.4[9]": 0,
+   "giftDatas.4[10]": 0
+  },
+  "getApplyInfo": {
+   "eRet": 1,
+   "roleInfo": "{}"
+  },
+  "getBackShop": {
+   "eRet": 1,
+   "limit": 0,
+   "shopArr[0][0]": 4777,
+   "shopArr[0][1]": 1,
+   "shopArr[0][2]": 100,
+   "shopArr[1][0]": 4778,
+   "shopArr[1][1]": 1,
+   "shopArr[1][2]": 100,
+   "shopArr[2][0]": 4779,
+   "shopArr[2][1]": 1,
+   "shopArr[2][2]": 100,
+   "shopArr[3][0]": 4780,
+   "shopArr[3][1]": 1,
+   "shopArr[3][2]": 100,
+   "shopArr[4][0]": 4781,
+   "shopArr[4][1]": 1,
+   "shopArr[4][2]": 100,
+   "shopArr[5][0]": 4782,
+   "shopArr[5][1]": 1,
+   "shopArr[5][2]": 100,
+   "shopArr[6][0]": 4783,
+   "shopArr[6][1]": 1,
+   "shopArr[6][2]": 100,
+   "shopArr[7][0]": 4784,
+   "shopArr[7][1]": 1,
+   "shopArr[7][2]": 100,
+   "shopArr[8][0]": 4785,
+   "shopArr[8][1]": 1,
+   "shopArr[8][2]": 100,
+   "shopArr[9][0]": 4786,
+   "shopArr[9][1]": 1,
+   "shopArr[9][2]": 100,
+   "shopArr[10][0]": 4787,
+   "shopArr[10][1]": 1,
+   "shopArr[10][2]": 100,
+   "shopArr[11][0]": 4788,
+   "shopArr[11][1]": 1,
+   "shopArr[11][2]": 100,
+   "shopArr[12][0]": 4789,
+   "shopArr[12][1]": 1,
+   "shopArr[12][2]": 100,
+   "shopArr[13][0]": 4790,
+   "shopArr[13][1]": 1,
+   "shopArr[13][2]": 100,
+   "shopArr[14][0]": 4791,
+   "shopArr[14][1]": 1,
+   "shopArr[14][2]": 100,
+   "shopArr[15][0]": 4792,
+   "shopArr[15][1]": 1,
+   "shopArr[15][2]": 100,
+   "shopArr[16][0]": 4793,
+   "shopArr[16][1]": 1,
+   "shopArr[16][2]": 100,
+   "shopArr[17][0]": 4794,
+   "shopArr[17][1]": 1,
+   "shopArr[17][2]": 100,
+   "shopArr[18][0]": 4795,
+   "shopArr[18][1]": 1,
+   "shopArr[18][2]": 100,
+   "shopArr[19][0]": 4796,
+   "shopArr[19][1]": 1,
+   "shopArr[19][2]": 100,
+   "shopArr[20][0]": 4797,
+   "shopArr[20][1]": 1,
+   "shopArr[20][2]": 100,
+   "shopArr[21][0]": 4798,
+   "shopArr[21][1]": 1,
+   "shopArr[21][2]": 100,
+   "shopArr[22][0]": 4799,
+   "shopArr[22][1]": 1,
+   "shopArr[22][2]": 100,
+   "shopArr[23][0]": 4800,
+   "shopArr[23][1]": 1,
+   "shopArr[23][2]": 100,
+   "shopArr[24][0]": 4801,
+   "shopArr[24][1]": 1,
+   "shopArr[24][2]": 100,
+   "shopArr[25][0]": 4802,
+   "shopArr[25][1]": 1,
+   "shopArr[25][2]": 100,
+   "shopArr[26][0]": 4803,
+   "shopArr[26][1]": 1,
+   "shopArr[26][2]": 100,
+   "shopArr[27][0]": 4804,
+   "shopArr[27][1]": 1,
+   "shopArr[27][2]": 100,
+   "shopArr[28][0]": 4805,
+   "shopArr[28][1]": 1,
+   "shopArr[28][2]": 100,
+   "shopArr[29][0]": 4806,
+   "shopArr[29][1]": 1,
+   "shopArr[29][2]": 100,
+   "shopArr[30][0]": 4807,
+   "shopArr[30][1]": 1,
+   "shopArr[30][2]": 100,
+   "shopArr[31][0]": 6266,
+   "shopArr[31][1]": 1,
+   "shopArr[31][2]": 1000,
+   "shopArr[32][0]": 6286,
+   "shopArr[32][1]": 1,
+   "shopArr[32][2]": 100,
+   "shopArr[33][0]": 6384,
+   "shopArr[33][1]": 1,
+   "shopArr[33][2]": 100,
+   "shopArr[34][0]": 6757,
+   "shopArr[34][1]": 1,
+   "shopArr[34][2]": 100
+  },
+  "getBankList": {
+   "eRet": 1,
+   "bankList": "[]"
+  },
+  "getCRAInfo": {
+   "eRet": 2
+  },
+  "getChangeShop": {
+   "eRet": 1,
+   "shopObj": "[]"
+  },
+  "getChatPkAiSet": {
+   "eRet": 1,
+   "option": 0
+  },
+  "getCircleTaskAward": {
+   "eRet": 4
+  },
+  "getCircleTaskList": {
+   "eRet": 1,
+   "cNum": 0,
+   "taskArr": "[]"
+  },
+  "getCopyData": {
+   "eRet": 1,
+   "copyArr": "[]"
+  },
+  "getCreateRoleActivity": {
+   "eRet": 1,
+   "createTime": 0
+  },
+  "getDouYinOpenID": {
+   "eRet": 1,
+   "openid": 0
+  },
+  "getDragon": {
+   "eRet": 1,
+   "currentDragonId": 0
+  },
+  "getEnterAward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "getEquipLock": {
+   "eRet": 1,
+   "equipLocks": 0
+  },
+  "getEventAward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "getFasionShop": {
+   "eRet": 1,
+   "shopArr": "[]"
+  },
+  "getFighterInfo": {
+   "eRet": 1,
+   "battleID": "",
+   "info": "[]"
+  },
+  "getFinishTaskAward": {
+   "eRet": 1,
+   "note.eco": "{}",
+   "note.attrch": "{}",
+   "note.ivch": "{}",
+   "note.eqch": "{}",
+   "rewardArray": "{}",
+   "taskID": "undefined",
+   "choose": 0,
+   "clearBoxs": "[]",
+   "contribution": 0
+  },
+  "getFriendHomeList": {
+   "eRet": 1,
+   "dog": 0,
+   "exp": 0,
+   "flag": 0,
+   "soilArr": "[]"
+  },
+  "getGiftPermanentAward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "getHelperCallList": {
+   "eRet": 1,
+   "callData.1": 1,
+   "callData.2": 1,
+   "callData.3": 1,
+   "callData.4": 1,
+   "callData.5": 1,
+   "callData.6": 1,
+   "callData.7": 1,
+   "callData.8": 1
+  },
+  "getHlexchangeItemData": {
+   "eRet": 1,
+   "limit": 0
+  },
+  "getHlexchangeShop": {
+   "eRet": 1
+  },
+  "getHomeList": {
+   "eRet": 1,
+   "dog.id": 11193,
+   "dog.s": 0,
+   "dog.t": 0,
+   "dog.p": 0,
+   "dog.n": 0,
+   "exp": 0,
+   "recentSeeds": "[]",
+   "soilArr[0].s": 1,
+   "soilArr[1].s": 1,
+   "soilArr[2].s": 1,
+   "soilArr[3].s": 1,
+   "bShop": 1
+  },
+  "getHookBreakList": {
+   "eRet": 1,
+   "qr": "{}"
+  },
+  "getHousekeeper": {
+   "eRet": 1,
+   "housekeeper.helperId": 1,
+   "housekeeper.dueTime": "null",
+   "housekeeper.task": "{}",
+   "housekeeper.taskArr": "[]",
+   "housekeeper.noticeArr": "[]",
+   "housekeeper.noticeIndex": -1,
+   "housekeeper.template": "null",
+   "housekeeper.dispatchTime": "null",
+   "housekeeper.dispatchEndTime": "null",
+   "housekeeper.autoTime": -1,
+   "housekeeper.evaluateType": 1,
+   "housekeeper.type": -1,
+   "housekeeper.taskRtm": 1792612412000,
+   "housekeeper.noticeRtm": "null",
+   "housekeeper.taskNum": "{}",
+   "housekeeper.mapId": 0,
+   "housekeeper.templateInitTime": 0,
+   "housekeeper.templateTask": "{}",
+   "housekeeper.matureArr": "[]",
+   "housekeeper.helperIdArr": "[]",
+   "housekeeper.helperRewardArr": "[]",
+   "housekeeper.e": 0,
+   "housekeeper.tgd": "{}",
+   "housekeeper.curTime": 1792612412000,
+   "housekeeper.canNoticeNum": 13
+  },
+  "getInn": {
+   "eRet": 1,
+   "costDishMap": "{}",
+   "showRewardPop": 0,
+   "showRewardPrice": 0,
+   "tableEndTime": 0,
+   "tableStartTime": 0
+  },
+  "getInnBag": {
+   "eRet": 1
+  },
+  "getInnCook": {
+   "eRet": 1,
+   "cookBook": "[]",
+   "unlockDish": "[]"
+  },
+  "getInnCookList": {
+   "eRet": 1,
+   "cookList": "[]"
+  },
+  "getInnProductList": {
+   "eRet": 1,
+   "productList": "{}"
+  },
+  "getInnRank": {
+   "eRet": 1,
+   "innRankList": "[]"
+  },
+  "getInnShop": {
+   "eRet": 1,
+   "innSimShopDatas": "[]"
+  },
+  "getItemData": {
+   "eRet": 1,
+   "limit": 0
+  },
+  "getLikeEvent": {
+   "eRet": 4
+  },
+  "getMasterPupilList": {
+   "eRet": 1,
+   "removeApplyList": "[]",
+   "roleList": "{}"
+  },
+  "getMultiPVESkill": {
+   "eRet": 1,
+   "dataArr": "[]"
+  },
+  "getNewGiftPermanent": {
+   "eRet": 1,
+   "giftDatas": "[]"
+  },
+  "getOptionalGiftData": {
+   "eRet": 1,
+   "type": -1
+  },
+  "getPandaEvent": {
+   "eRet": 1,
+   "eventArr": "[]"
+  },
+  "getPaperList": {
+   "eRet": 1,
+   "bankId": 0
+  },
+  "getPayAuth": {
+   "eRet": 4,
+   "AuthCode": 0
+  },
+  "getQuestionList": {
+   "eRet": 1,
+   "currentAnswerNum": 0,
+   "questionMaxNum": 0
+  },
+  "getRemoveRedDot": {
+   "eRet": 1
+  },
+  "getReturnGift": {
+   "eRet": 1,
+   "giftDatas[0].ID": 1,
+   "giftDatas[0].nameID": 8817,
+   "giftDatas[0].getGold": 0,
+   "giftDatas[0].money": 25,
+   "giftDatas[0].isBuy": 0,
+   "giftDatas[0].isAward": 0,
+   "giftDatas[1].ID": 2,
+   "giftDatas[1].nameID": 8818,
+   "giftDatas[1].getGold": 0,
+   "giftDatas[1].money": 68,
+   "giftDatas[1].isBuy": 0,
+   "giftDatas[1].isAward": 0,
+   "giftDatas[2].ID": 3,
+   "giftDatas[2].nameID": 8819,
+   "giftDatas[2].getGold": 0,
+   "giftDatas[2].money": 98,
+   "giftDatas[2].isBuy": 0,
+   "giftDatas[2].isAward": 0
+  },
+  "getReturnSevenDayData": {
+   "eRet": 1,
+   "sevenDaysArr[0]": 1,
+   "triggerTime": 1792612412000
+  },
+  "getReturnTaskData": {
+   "eRet": 1,
+   "oldReturnData.tasks[0][0]": 1,
+   "oldReturnData.tasks[0][1]": 0,
+   "oldReturnData.tasks[0][2]": 0,
+   "oldReturnData.tasks[1][0]": 2,
+   "oldReturnData.tasks[1][1]": 0,
+   "oldReturnData.tasks[1][2]": 0,
+   "oldReturnData.tasks[2][0]": 3,
+   "oldReturnData.tasks[2][1]": 0,
+   "oldReturnData.tasks[2][2]": 0,
+   "oldReturnData.tasks[3][0]": 4,
+   "oldReturnData.tasks[3][1]": 0,
+   "oldReturnData.tasks[3][2]": 0,
+   "oldReturnData.tasks[4][0]": 5,
+   "oldReturnData.tasks[4][1]": 0,
+   "oldReturnData.tasks[4][2]": 0,
+   "oldReturnData.tasks[5][0]": 6,
+   "oldReturnData.tasks[5][1]": 0,
+   "oldReturnData.tasks[5][2]": 0,
+   "oldReturnData.tasks[6][0]": 7,
+   "oldReturnData.tasks[6][1]": 0,
+   "oldReturnData.tasks[6][2]": 0,
+   "oldReturnData.tasks[7][0]": 8,
+   "oldReturnData.tasks[7][1]": 0,
+   "oldReturnData.tasks[7][2]": 0,
+   "oldReturnData.tasks[8][0]": 9,
+   "oldReturnData.tasks[8][1]": 0,
+   "oldReturnData.tasks[8][2]": 0,
+   "oldReturnData.tasks[9][0]": 10,
+   "oldReturnData.tasks[9][1]": 0,
+   "oldReturnData.tasks[9][2]": 0,
+   "oldReturnData.tasks[10][0]": 11,
+   "oldReturnData.tasks[10][1]": 0,
+   "oldReturnData.tasks[10][2]": 0,
+   "oldReturnData.liveness": 0,
+   "oldReturnData.livenessDatas": "[]",
+   "triggerTime": 1792612412000
+  },
+  "getRogueFinishTaskAward": {
+   "eRet": 4
+  },
+  "getSchoolAppoint": {
+   "eRet": 1,
+   "appointList": "{}",
+   "type": -1
+  },
+  "getSchoolFirstTry": {
+   "eRet": 1,
+   "npcList": "[]"
+  },
+  "getSchoolMaster": {
+   "eRet": 1,
+   "roleInfo": "{}"
+  },
+  "getSchoolPupil": {
+   "eRet": 1,
+   "roleInfo": "{}"
+  },
+  "getSchoolRoleInfo": {
+   "eRet": 1,
+   "roleInfo": "{}"
+  },
+  "getSchoolShop": {
+   "eRet": 1
+  },
+  "getSchoolTask": {
+   "eRet": 1,
+   "affiliationSchool": 0,
+   "currentServerTime": 1792612412000,
+   "schoolTask": "[]",
+   "weekQuickCompleteTaskTimes": 0,
+   "xyTodaySchoolId": 0
+  },
+  "getSkillSkinActiveShop": {
+   "eRet": 1,
+   "endTime": 1795204412000,
+   "shopDatas[0]": 23,
+   "shopDatas[1]": 24,
+   "shopDatas[2]": 25,
+   "shopDatas[3]": 26,
+   "shopDatas[4]": 27,
+   "shopDatas[5]": 28,
+   "shopDatas[6]": 29,
+   "shopDatas[7]": 30,
+   "shopDatas[8]": 31,
+   "shopDatas[9]": 32,
+   "shopDatas[10]": 33,
+   "shopDatas[11]": 34,
+   "shopDatas[12]": 35,
+   "isSelect": 0
+  },
+  "getSkillSkinShop": {
+   "eRet": 1,
+   "shopData.ds.1": 0,
+   "shopData.ds.2": 0,
+   "shopData.ds.3": 0,
+   "shopData.ds.4": 0,
+   "shopData.ds.5": 0,
+   "shopData.ds.6": 0,
+   "shopData.ds.7": 0,
+   "shopData.ds.8": 0,
+   "shopData.ds.9": 0,
+   "shopData.ds.10": 0,
+   "shopData.ds.11": 0,
+   "shopData.ds.12": 0,
+   "shopData.ds.13": 0,
+   "shopData.ds.14": 0,
+   "shopData.ds.15": 0,
+   "shopData.ds.16": 0,
+   "shopData.ds.17": 0,
+   "shopData.ds.18": 0,
+   "shopData.ds.19": 0,
+   "shopData.ds.20": 0,
+   "shopData.ds.21": 0,
+   "shopData.ds.22": 0,
+   "shopData.price": 20,
+   "shopData.freeTime": 0
+  },
+  "getSnowAward": {
+   "eRet": 4
+  },
+  "getSpecialAward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "getTeamFighterInfo": {
+   "eRet": 1,
+   "battleID": "",
+   "info": "[]"
+  },
+  "getTeamSkill": {
+   "eRet": 1,
+   "dataArr": "[]"
+  },
+  "getTreasureFloor": {
+   "eRet": 1,
+   "floor": 0
+  },
+  "getUFOCatcherData": {
+   "eRet": 1,
+   "rewardPool.1": 2,
+   "rewardPool.2": 2,
+   "rewardPool.3": 1,
+   "rewardPool.4": 1,
+   "rewardPool.5": 1,
+   "refreshTimes": 0,
+   "freeRefreshTimes": 1,
+   "buyRefreshTimes": 0,
+   "buyCoinCount": 0,
+   "signId": 2,
+   "note.ivch.8117": 3,
+   "note.ivch.8119": 3,
+   "note.ivch.8120": 3,
+   "note.eqch": "{}",
+   "note.eco": "{}"
+  },
+  "getUsedItemAward": {
+   "eRet": 1,
+   "awardObj": "[]",
+   "awardStates": 0
+  },
+  "getVigor": {
+   "eRet": 1,
+   "vigor": 0
+  },
+  "getWashEquip": {
+   "eRet": 1
+  },
+  "getWxXyxOpenID": {
+   "eRet": 1,
+   "openid": 0,
+   "session_key": 0
+  },
+  "getsharePicAward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "giveChildName": {
+   "eRet": 2
+  },
+  "goldBreakAllSkill": {
+   "eRet": 1,
+   "qr": "{}"
+  },
+  "goldBreakCurrentSkill": {
+   "eRet": 1,
+   "qr": "{}"
+  },
+  "h5Pay": {
+   "eRet": 4,
+   "endMonthCardTime": 0,
+   "gold": 99999
+  },
+  "hideTask": {
+   "eRet": 1
+  },
+  "hireNpcOnhook": {
+   "eRet": 1,
+   "siteID": 0
+  },
+  "homeSpeicalAward": {
+   "eRet": 2
+  },
+  "houseSpecial": {
+   "eRet": 1,
+   "eventID": "{}",
+   "type": -1
+  },
+  "ignoreRemove": {
+   "eRet": 1
+  },
+  "innBuyShop": {
+   "eRet": 6
+  },
+  "intoCollectiveCultivation": {
+   "eRet": 1,
+   "rewardArray": "{}",
+   "surplusTime": 0
+  },
+  "intoSchoolArena": {
+   "eRet": 1,
+   "signData": "{}"
+  },
+  "intoSchoolSquare": {
+   "eRet": 1,
+   "intoSchool": 0,
+   "isSchoolAward": 0
+  },
+  "isCycleLife": {
+   "eRet": 2
+  },
+  "jionChatPkServer": {
+   "eRet": 1,
+   "agreeOfflineMatch": 0,
+   "newAcc": "",
+   "signData.roleUniqueId": "{}"
+  },
+  "joinSchool": {
+   "eRet": 1,
+   "note.attrch": "{}",
+   "note.skch": "{}",
+   "npcID": "undefined",
+   "cdTimeDays": 0,
+   "clearBoxs": "[]"
+  },
+  "killNpc": {
+   "eRet": 1,
+   "npcIDArr": "[]",
+   "dropArr": "[]",
+   "extraArr": "[]",
+   "exp": 0
+  },
+  "leaveTower": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "lookDogLog": {
+   "eRet": 1,
+   "log": "[]"
+  },
+  "lookSecretEvent": {
+   "eRet": 1,
+   "secret": "[]"
+  },
+  "makeLove": {
+   "eRet": 2
+  },
+  "makeWishDragon": {
+   "eRet": 1
+  },
+  "marryAward": {
+   "eRet": 1,
+   "guestID": 0,
+   "rewardArray": "{}",
+   "equipObj": "{}"
+  },
+  "marryHouse": {
+   "eRet": 1,
+   "houseID": 0,
+   "type": -1
+  },
+  "marryNpc": {
+   "eRet": 4
+  },
+  "mulitiNpcBattleResult": {
+   "eRet": 1,
+   "gemId": "[]",
+   "rewardArray": "{}",
+   "equipObj": "{}"
+  },
+  "newSweepTower": {
+   "eRet": 1,
+   "batch_sweep_data.awardObj": "{}",
+   "batch_sweep_data.beginLv": "{}",
+   "batch_sweep_data.canSweep": "{}",
+   "batch_sweep_data.clv": "{}",
+   "batch_sweep_data.items": "{}"
+  },
+  "obtainCrop": {
+   "eRet": 2
+  },
+  "onKeyDispossHomeEvent": {
+   "eRet": 1,
+   "cropMap": "{}",
+   "exp": 0,
+   "flag": 0,
+   "rewardArray": "{}",
+   "aExp": 0
+  },
+  "onKeyObtainCrop": {
+   "eRet": 1,
+   "exp": 0,
+   "matureArr": "[]",
+   "obtainLands": "[]",
+   "rewardArray": "{}",
+   "aExp": 0,
+   "note.ivch": "{}",
+   "note.eqch": "{}"
+  },
+  "onQueueCheckBreak": {
+   "eRet": 1,
+   "gTime": 0,
+   "hg": 100,
+   "hgtimes": 0
+  },
+  "onekeyCompleteSchoolTask": {
+   "eRet": 1,
+   "rewardArray": "{}",
+   "schoolTask": "[]",
+   "weekQuickCompleteTaskTimes": 1,
+   "equipObj": "{}"
+  },
+  "optionLikeEvent": {
+   "eRet": 2
+  },
+  "passCardAward": {
+   "eRet": 4
+  },
+  "passCardData": {
+   "eRet": 1,
+   "passCard.p": 1,
+   "passCard.n": 0,
+   "passCard.award": "{}",
+   "goldArr": "[]",
+   "etime": 0,
+   "passObj": "{}"
+  },
+  "pileGameAward": {
+   "eRet": 1,
+   "isDouble": "false",
+   "rewardArray": "{}"
+  },
+  "productAccelerate": {
+   "eRet": 1
+  },
+  "productReceive": {
+   "eRet": 1,
+   "foodBag": "{}"
+  },
+  "productStart": {
+   "eRet": 1
+  },
+  "productUnlock": {
+   "eRet": 1
+  },
+  "proposeNpc": {
+   "eRet": 12
+  },
+  "quickFinishTask": {
+   "eRet": 2
+  },
+  "quitSchool": {
+   "eRet": 1,
+   "npcList": "[]",
+   "openSchoolFirstTryBgUI": 0
+  },
+  "quitSchoolSquare": {
+   "eRet": 1
+  },
+  "rankList": {
+   "eRet": 1,
+   "CDTime": 0
+  },
+  "receiveAccRechargAward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "receiveAnniversaryPassAward": {
+   "eRet": 2
+  },
+  "receiveAnniversaryPassTaskReward": {
+   "eRet": 2
+  },
+  "receiveBindingRecuitAward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "receiveChatPkSportsPointAward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "receiveLivenessAward": {
+   "eRet": 2
+  },
+  "receiveNotice": {
+   "eRet": 1,
+   "housekeeper.helperId": 1,
+   "housekeeper.dueTime": "null",
+   "housekeeper.task": "{}",
+   "housekeeper.taskArr": "[]",
+   "housekeeper.noticeArr": "[]",
+   "housekeeper.noticeIndex": -1,
+   "housekeeper.template": "null",
+   "housekeeper.dispatchTime": "null",
+   "housekeeper.dispatchEndTime": "null",
+   "housekeeper.autoTime": -1,
+   "housekeeper.evaluateType": 1,
+   "housekeeper.type": -1,
+   "housekeeper.taskRtm": 1792612412000,
+   "housekeeper.noticeRtm": 1792612412000,
+   "housekeeper.taskNum": "{}",
+   "housekeeper.mapId": 0,
+   "housekeeper.templateInitTime": 0,
+   "housekeeper.templateTask": "{}",
+   "housekeeper.matureArr": "[]",
+   "housekeeper.helperIdArr": "[]",
+   "housekeeper.helperRewardArr": "[]",
+   "housekeeper.e": 0,
+   "housekeeper.tgd": "{}",
+   "housekeeper.curTime": 1792612412000,
+   "housekeeper.canNoticeNum": 13,
+   "eventType": 0
+  },
+  "receiveNpc": {
+   "eRet": 1,
+   "npcID": 310003
+  },
+  "receiveRecuitAward": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "receiveReturnDailyTask": {
+   "eRet": 2
+  },
+  "receiveReturnGiftAward": {
+   "eRet": 2
+  },
+  "reclaimLand": {
+   "eRet": 1,
+   "sIdx": 0
+  },
+  "recommendOHomes": {
+   "eRet": 1,
+   "friendHome": "[]",
+   "homeArr": "[]",
+   "homeGeMap": "{}"
+  },
+  "recoverYoung": {
+   "eRet": 1,
+   "itemNum": 0
+  },
+  "redeemTable": {
+   "eRet": 1,
+   "hotVal": 0,
+   "mhv": 0
+  },
+  "refreshGiftAward": {
+   "eRet": 1,
+   "giftAwards": "[]"
+  },
+  "refreshReturnGiftAward": {
+   "eRet": 1,
+   "giftAwards": "[]"
+  },
+  "refreshSkillSkinShop": {
+   "eRet": 2
+  },
+  "removeBreakQueue": {
+   "eRet": 1,
+   "qr": "{}"
+  },
+  "removeSkillSkin": {
+   "eRet": 1,
+   "skillSkinWeap.0": 0
+  },
+  "rentGroup": {
+   "eRet": 1,
+   "type": -1
+  },
+  "resetAnswer": {
+   "eRet": 1,
+   "rightNum": 0
+  },
+  "resetChildFoster": {
+   "eRet": 4
+  },
+  "resetRole": {
+   "eRet": 1,
+   "rewardArray": "{}"
+  },
+  "restVein": {
+   "eRet": 1,
+   "psych": 0
+  },
+  "returnSevenDaysAwards": {
+   "eRet": 2
+  },
+  "revive": {
+   "eRet": 1,
+   "battleID": "",
+   "roleID": 16374
+  },
+  "rewardUFO": {
+   "eRet": 15
+  },
+  "rogueAcceptTask": {
+   "eRet": 4
+  },
+  "saleItem": {
+   "eRet": 1,
+   "note.ivch": "{}",
+   "note.eqch": "{}",
+   "note.eco.coins": "undefined"
+  },
+  "schoolAppoint": {
+   "eRet": 1,
+   "appointDatas": "[]"
+  },
+  "schoolReceiveWages": {
+   "eRet": 1,
+   "isReceiveWages": "false",
+   "upSchoolTaskCP": "{}"
+  },
+  "schoolSectLeader": {
+   "eRet": 1,
+   "id": 0,
+   "school": 0
+  },
+  "schoolTakeOfficeApply": {
+   "eRet": 1
+  },
+  "schoolTaskComplete": {
+   "eRet": 1,
+   "rewardArray": "{}",
+   "schoolTask": "[]",
+   "equipObj": "{}"
+  },
+  "seedCrop": {
+   "eRet": 1,
+   "crop.m": "{}",
+   "sIdx": 0
+  },
+  "setChatPkOption": {
+   "eRet": 1,
+   "option": 0
+  },
+  "setChatRedData": {
+   "eRet": 1,
+   "uIds": "[]"
+  },
+  "setHelper": {
+   "eRet": 2
+  },
+  "setOnHookWookState": {
+   "eRet": 1
+  },
+  "setPlayerCardMoutsSycn": {
+   "eRet": 1,
+   "e": 0,
+   "sycn": 0
+  },
+  "setPlayerCardType": {
+   "eRet": 1
+  },
+  "setPlayerCardWingId": {
+   "eRet": 1,
+   "wId": 0
+  },
+  "setTemplateData": {
+   "eRet": 2
+  },
+  "shcoolFirstHonor": {
+   "eRet": 1,
+   "id": 0,
+   "school": 0
+  },
+  "skillChange": {
+   "eRet": 1,
+   "changeCD": 0,
+   "serverTime": 0
+  },
+  "smallGameAward": {
+   "eRet": 1,
+   "rewardArray": "{}",
+   "type": -1
+  },
+  "startEatByTable": {
+   "eRet": 1,
+   "gn": 0,
+   "tableData": "{}"
+  },
+  "stealCrop": {
+   "eRet": 2
+  },
+  "stopBreaklist": {
+   "eRet": 1,
+   "qr.f": "{}"
+  },
+  "storyExperience": {
+   "eRet": 1,
+   "branchId": 0
+  },
+  "sweepCopy": {
+   "eRet": 1,
+   "copyID": 0,
+   "liveness": 0,
+   "rewardArray": "{}",
+   "state": 0
+  },
+  "sycnPlayerItemData": {
+   "eRet": 1,
+   "itemObj": "{}",
+   "PlayerEquip": "{}"
+  },
+  "sycnTask": {
+   "eRet": 1,
+   "PlayerFinishTaskObj": "{}",
+   "acceptTaskMap": "{}",
+   "acceptTaskOrder": "[]",
+   "PlayerTaskLog": "[]",
+   "taskLog": "[]"
+  },
+  "tableReceive": {
+   "eRet": 1,
+   "tableData": "{}"
+  },
+  "tableUnlock": {
+   "eRet": 1,
+   "tableData": "{}"
+  },
+  "towerRank": {
+   "eRet": 1,
+   "rankArr": "[]"
+  },
+  "treasureAward": {
+   "eRet": 1,
+   "boxNum": 0,
+   "isStatus": 0
+  },
+  "upFashionFaceState": {
+   "eRet": 1,
+   "titivateObj": "[]"
+  },
+  "upgradeBed": {
+   "eRet": 1,
+   "bedLevel": 0
+  },
+  "upgradeSkill": {
+   "eRet": 1,
+   "note.eco.ptt": 99999,
+   "note.skch": "{}",
+   "potential": 99999
+  },
+  "upgradeStorage": {
+   "eRet": 1,
+   "level": 0
+  },
+  "upgradeVein": {
+   "eRet": 1,
+   "lv": 0,
+   "psych": 0,
+   "veinID": 0
+  },
+  "upgradeWifeLevel": {
+   "eRet": 2
+  },
+  "useItem": {
+   "eRet": 1,
+   "itemID": "undefined",
+   "note.skch": "{}",
+   "note.ivch": "{}",
+   "note.eqch": "{}"
+  },
+  "useItemAddition": {
+   "eRet": 5
+  },
+  "useUFOrefresh": {
+   "eRet": 6
+  },
+  "useVigorMeditation": {
+   "eRet": 1,
+   "vigor": 0
+  },
+  "useVigorUpGradeSkill": {
+   "eRet": 1,
+   "vigor": 0,
+   "skillID": 0
+  },
+  "washAdditionalArr": {
+   "eRet": 4,
+   "attrList": "41,0|42,0|44,0|43,0"
+  },
+  "wearFasion": {
+   "eRet": 1,
+   "fasionid": 0
+  },
+  "weddingFeast": {
+   "eRet": 1,
+   "type": -1
+  }
+ }
+}

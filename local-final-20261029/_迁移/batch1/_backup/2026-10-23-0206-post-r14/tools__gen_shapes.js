@@ -1,0 +1,667 @@
+'use strict';
+/**
+ * gen_shapes.js —— 生成"每个动作该回哪些字段"的形状表
+ *
+ * 输入（全部只读）：
+ *   tools/action_facts_all.json       812 动作：具名回调消费的响应字段 + 行号
+ *   tools/action_facts_listener.json  249 动作：匿名监听器消费的响应字段 + 行号（extract_listeners.js 产出）
+ *   tools/todo_shapes.json            120 个"上一轮已确认要补"的动作（保留，作为下限）
+ *   tools/index.js                    客户端明文源码（行号 → 实际用法）
+ *   hotfix-patch/core/templates.json        抓包真值模板
+ *   hotfix-patch/core/bz-rpc-server.js      已实现 handler（跑一遍拿真实响应形状）
+ *
+ * 输出（只新建/覆盖自己生成的文件）：
+ *   tools/shapes.json                            逐字段证据 + 置信度（嵌套路径用 "a.b" 表示）
+ *   hotfix-patch/core/bz-shapes.generated.js     给 build-handlers 拼接的 JS 表（嵌套对象）
+ *   tools/shapes_report.md                       人可读清单
+ *
+ * 置信度（高 → 低）：
+ *   capture   抓包真值模板里的同名字段
+ *   handler   已实现 handler 真实返回里的同名字段
+ *   manual    主审逐条看源码后的人工判定（每条带行号）
+ *   listener  匿名监听器里读到的字段（extract_listeners.js，带行号）
+ *   init-N    客户端自己写的初值 `= [] / {} / 0`，N 处一致
+ *   usage-N   源码里 N 处用法同类型
+ *   name      只有命名启发
+ *   fallback  无证据，标量 0 兜底
+ *
+ * 用法： node tools/gen_shapes.js           生成
+ *        node tools/gen_shapes.js --stat    只打统计
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = path.resolve(__dirname, '..');
+const P = {
+  facts: path.join(ROOT, 'tools', 'action_facts_all.json'),
+  listener: path.join(ROOT, 'tools', 'action_facts_listener.json'),
+  todo: path.join(ROOT, 'tools', 'todo_shapes.json'),
+  index: path.join(ROOT, 'tools', 'index.js'),
+  tpl: path.join(ROOT, 'hotfix-patch', 'core', 'templates.json'),
+  rpc: path.join(ROOT, 'hotfix-patch', 'core', 'bz-rpc-server.js'),
+  outShapes: path.join(ROOT, 'tools', 'shapes.json'),
+  outJs: path.join(ROOT, 'hotfix-patch', 'core', 'bz-shapes.generated.js'),
+  outMd: path.join(ROOT, 'tools', 'shapes_report.md'),
+};
+
+const facts = JSON.parse(fs.readFileSync(P.facts, 'utf8'));
+
+/* ── 输入摘要校验（SOTA R08 §1 的补强）────────────────────────────────
+ * 光靠"BZ_MUTATE 非空就不写产物"拦不住一种情况：CI 的 shell 里残留了 BZ_MUTATE，
+ * 分类器一声不响什么都不写，生成器照旧读上一轮的 field-classes.json → 形状表悄悄走旧结论。
+ * 所以这里比对"分类产物里记的三包 md5"与"当前三包 md5"，对不上直接中止。 */
+const BUNDLE_NAMES = ['index.js', 'scripts2.js', 'scripts3.js'];
+const curDigest = (function () {
+  const c = require('crypto');
+  const h = c.createHash('md5');
+  for (const n of BUNDLE_NAMES) {
+    h.update(n + ':' + c.createHash('md5').update(fs.readFileSync(path.join(__dirname, n))).digest('hex') + ';');
+  }
+  return h.digest('hex');
+})();
+// 注意：P.facts 是 action_facts_all.json（具名回调线）；分类器产物是另一个文件，单独读。
+const fcForDigest = JSON.parse(fs.readFileSync(path.join(__dirname, 'facts', 'field-classes.json'), 'utf8'));
+if (!fcForDigest.inputDigest) {
+  console.error('形状生成中止：facts/field-classes.json 缺 inputDigest（旧版分类器产物）→ 先跑 node tools/classify_fields.js');
+  process.exit(1);
+}
+if (fcForDigest.inputDigest !== curDigest) {
+  console.error('形状生成中止：分类产物与当前三包不一致（分类 ' + fcForDigest.inputDigest + ' / 现在 ' + curDigest
+    + '）→ 先跑 node tools/classify_fields.js 再生成');
+  process.exit(1);
+}
+const listeners = fs.readFileSync(P.listener, 'utf8') ? JSON.parse(fs.readFileSync(P.listener, 'utf8')) : { actions: {} };
+const todo = JSON.parse(fs.readFileSync(P.todo, 'utf8'));
+const tpl = JSON.parse(fs.readFileSync(P.tpl, 'utf8'));
+const src = fs.readFileSync(P.index, 'utf8').split(/\r?\n/);
+
+const errv = [];
+function jsonType(v) {
+  if (Array.isArray(v)) return 'array';
+  if (v === null) return 'null';
+  if (v === undefined) return 'undefined';
+  return typeof v;
+}
+
+/* ============================================================
+ * 证据源 A：抓包真值模板
+ * ============================================================ */
+const captureVals = Object.create(null);
+function walkTemplate(obj, trail) {
+  if (!obj || typeof obj !== 'object') return;
+  for (const k of Object.keys(obj)) {
+    if (k === 'achievement' || k === 'error' || k === 'p' || k === 'resultCode') continue;
+    const v = obj[k];
+    if (v === undefined) continue;
+    const t = jsonType(v);
+    (captureVals[k] = captureVals[k] || []).push({ value: v, type: t, evid: 'templates.json:' + trail + '.' + k });
+    if (t === 'object') walkTemplate(v, trail + '.' + k);
+  }
+}
+for (const name of Object.keys(tpl)) {
+  const t = tpl[name];
+  walkTemplate((t && t['User.' + name]) || t, name);
+}
+
+/* ============================================================
+ * 证据源 B：已实现 handler 的真实返回
+ *
+ * ⚠ 时钟必须**固定**（2026-10-23 改，SOTA R07 §5 的 C4）：
+ *   这里原来传 `() => Date.now()`，于是每个 handler 返回的时间戳（beginTime / CDTime / …）
+ *   会被当成"形状默认值"冻进产物 → 同一天跑两次产出不同字节，C4 永远红；
+ *   更糟的是默认值按**字段名全局汇总**，所以连没有 handler 的动作（如 BeginMeditation /
+ *   BeginTraining）也会从别的 handler 那里继承一个构建时刻当默认值。
+ *   固定成常量后产物可复现；这些字段的默认值退化成无害占位（真请求时 handler 自己算时间）。
+ * ============================================================ */
+const GEN_NOW = 1792612412000;   // 与 test 里各环境的固定 now 同值，便于对账
+const { createBzServer } = require(P.rpc);
+const probe = createBzServer({
+  now: () => GEN_NOW, log: () => {}, templates: tpl, codec: null,
+  readSave: () => null, writeSave: () => {},
+});
+const implemented = Object.keys(probe._internal.handlers);
+const handlerVals = Object.create(null);
+for (const name of implemented) {
+  let r;
+  try { r = probe.dispatch('User', name, {}); } catch (e) { errv.push('handler ' + name + ': ' + e); continue; }
+  const inner = r && r['User.' + name];
+  if (!inner || typeof inner !== 'object') continue;
+  for (const k of Object.keys(inner)) {
+    if (inner[k] === undefined) continue;
+    (handlerVals[k] = handlerVals[k] || []).push({ value: inner[k], type: jsonType(inner[k]), evid: 'bz-rpc-server.js#' + name });
+  }
+}
+
+/* ============================================================
+ * 目标动作集合 = 老表待办 ∪ 监听器表（**含已实现动作**）
+ *   形状是"契约"，不是"实现"：手写 handler 也必须有形状条目，
+ *   由 dispatch 的 fillShape 补齐缺字段（只补缺不覆盖），自检再逐条验。
+ *   唯一例外：扁平结构的账号层动作（quicklogin/Create/CheckName/GetChatAddress…），
+ *   它们没有 "User.<动作>" 这一层，且本来就不读字段。
+ * ============================================================ */
+const FLAT_ACTIONS = new Set(['quicklogin', 'login', 'register', 'Create', 'CheckName', 'GetChatAddress', 'GetServerList']);
+const implSet = new Set(implemented);
+const target = Object.create(null);
+
+function ensureAction(a) {
+  return target[a] || (target[a] = { fields: Object.create(null), sources: [] });
+}
+
+for (const key of Object.keys(facts)) {
+  const a = key.replace(/^User\./, '');
+  if (FLAT_ACTIONS.has(a)) continue;
+  const e = facts[key];
+  if (!e) continue;
+  if (!(e.response_fields || []).filter(f => f !== 'eRet').length) continue;
+  const t = ensureAction(a);
+  t.sources.push('facts');
+  t.impl = implSet.has(a);
+  t.constName = e.const || t.constName;
+  t.consumers = (e.handlers || []).concat(t.consumers || []);
+  for (const f of e.response_fields || []) {
+    if (f === 'eRet') continue;
+    t.fields[f] = t.fields[f] || { from: [] };
+    t.fields[f].from.push('facts');
+  }
+}
+
+for (const a of Object.keys(listeners.actions || {})) {
+  if (FLAT_ACTIONS.has(a)) continue;
+  const le = listeners.actions[a];
+  const fields = (le.fields || []).filter(f => f !== 'eRet');
+  if (!fields.length) continue;
+  const t = ensureAction(a);
+  t.sources.push('listener');
+  if (implSet.has(a)) t.impl = true;
+  t.constName = t.constName || le.constName;
+  t.listenersAt = le.onLine;
+  for (const f of fields) {
+    t.fields[f] = t.fields[f] || { from: [] };
+    t.fields[f].from.push('listener');
+    if (le.hints && le.hints[f]) t.fields[f].hint = le.hints[f];
+    if (le.fieldLines && le.fieldLines[f]) t.fields[f].line = le.fieldLines[f];
+    if (le.evidence && le.evidence[f]) t.fields[f].evid = le.evidence[f];
+  }
+}
+
+/* todo 清单里"只读 eRet"的动作也要有条目（客户端确实只看成功标志） */
+for (const key of todo) {
+  const a = key.replace(/^User\./, '');
+  if (FLAT_ACTIONS.has(a) || target[a]) continue;
+  const t = ensureAction(a);
+  t.sources.push('todo-eRetOnly');
+  const e = facts['User.' + a] || facts[a];
+  t.constName = (e && e.const) || t.constName;
+  t.impl = implSet.has(a);
+}
+
+/* ============================================================
+ * 证据源 C/D：全源用法 + 客户端初值
+ * ============================================================ */
+const leafSet = new Set();
+for (const a of Object.keys(target)) {
+  for (const p of Object.keys(target[a].fields)) {
+    const leaf = p.split('.').pop();
+    leafSet.add(leaf);
+    leafSet.add(p);
+  }
+}
+
+const ARRAY_AFTER = /^\s*\.\s*(length|push|forEach|map|filter|join|sort|splice|concat|some|every|reduce|find|pop|shift|unshift)\b/;
+const ARRAY_INDEX = /^\s*\[\s*\d/;
+const STR_AFTER = /^\s*\.\s*(split|trim|toLowerCase|toUpperCase|replace|charAt|substring|substr)\b/;
+const OBJ_METHOD = /^\s*\.\s*(hasOwnProperty|propertyIsEnumerable)\b/;
+const OBJ_INDEX = /^\s*\[/;
+const SUB_PROP = /^\s*\.\s*[A-Za-z_$][\w$]*\s*(?![(\w])/;
+const METHOD_CALL = /^\s*\.\s*[A-Za-z_$][\w$]*\s*\(/;
+const NUM_BEFORE = /(parseInt|parseFloat|Number)\s*\(\s*[A-Za-z_$][\w$]*\s*\.\s*$/;
+const NUM_CMP_AFTER = /^\s*(===?|!==?)\s*-?\d/;
+const NUM_CMP_BEFORE = /\d\s*(===?|!==?)\s*[A-Za-z_$][\w$]*\s*\.\s*$/;
+const FORIN_BEFORE = /for\s*\(\s*(?:var\s+)?[A-Za-z_$][\w$]*\s+in\s+[A-Za-z_$][\w$]*\s*\.\s*$/;
+const STR_CMP_AFTER = /^\s*(===?|!==?)\s*["']/;
+
+function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+function classifyLine(line, name) {
+  const re = new RegExp('\\.' + escapeRe(name) + '\\b', 'g');
+  const hits = Object.create(null);
+  let m;
+  while ((m = re.exec(line)) !== null) {
+    const start = m.index + m[0].length;
+    const after = line.slice(start, start + 48);
+    const before = line.slice(Math.max(0, m.index - 40), m.index);
+    let t = null;
+    if (ARRAY_AFTER.test(after) || ARRAY_INDEX.test(after)) t = 'array';
+    else if (STR_AFTER.test(after) || STR_CMP_AFTER.test(after)) t = 'string';
+    else if (OBJ_METHOD.test(after) || OBJ_INDEX.test(after) || FORIN_BEFORE.test(before)) t = 'object';
+    else if (NUM_BEFORE.test(before) || NUM_CMP_AFTER.test(after) || NUM_CMP_BEFORE.test(before)) t = 'number';
+    else if (SUB_PROP.test(after)) t = 'object';
+    else if (METHOD_CALL.test(after)) t = null;
+    if (t) hits[t] = (hits[t] || 0) + 1;
+  }
+  const keys = Object.keys(hits);
+  if (!keys.length) return null;
+  return keys.sort((x, y) => hits[y] - hits[x])[0];
+}
+
+const globalHits = Object.create(null);
+const ACCESS_RE = /\.([A-Za-z_$][\w$]*)/g;
+for (let i = 0; i < src.length; i++) {
+  const line = src[i];
+  if (line.indexOf('.') < 0) continue;
+  ACCESS_RE.lastIndex = 0;
+  let m;
+  while ((m = ACCESS_RE.exec(line)) !== null) {
+    const f = m[1];
+    if (!leafSet.has(f)) continue;
+    const arr = globalHits[f] || (globalHits[f] = []);
+    if (arr.length >= 10) continue;
+    if (arr[arr.length - 1] !== i + 1) arr.push(i + 1);
+  }
+}
+
+const usageVotes = Object.create(null);
+for (const f of Object.keys(globalHits)) {
+  for (const ln of globalHits[f]) {
+    const t = classifyLine(src[ln - 1] || '', f);
+    if (!t) continue;
+    const bucket = usageVotes[f] || (usageVotes[f] = Object.create(null));
+    (bucket[t] = bucket[t] || []).push({ line: ln });
+  }
+}
+
+const INIT_RE = /\.([A-Za-z_$][\w$]*)\s*=\s*(\{\}|\[\]|"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|!0|!1|-?\d+(?:\.\d+)?|new\s+[A-Za-z_$][\w$.]*)/g;
+const initVals = Object.create(null);
+function initTypeOf(lit) {
+  if (lit === '{}') return 'object';
+  if (lit === '[]') return 'array';
+  if (lit === '!0' || lit === '!1') return 'boolean';
+  if (lit[0] === '"' || lit[0] === "'") return 'string';
+  if (/^-?\d/.test(lit)) return 'number';
+  if (/^new\s/.test(lit)) return 'object';
+  return null;
+}
+for (let i = 0; i < src.length; i++) {
+  const line = src[i];
+  if (line.indexOf('=') < 0) continue;
+  INIT_RE.lastIndex = 0;
+  let m;
+  while ((m = INIT_RE.exec(line)) !== null) {
+    const f = m[1];
+    if (!leafSet.has(f)) continue;
+    const t = initTypeOf(m[2]);
+    if (!t) continue;
+    const arr = initVals[f] || (initVals[f] = []);
+    if (arr.length < 6) arr.push({ type: t, line: i + 1 });
+  }
+}
+
+/* ============================================================
+ * 人工判定表（主审逐条看过源码；每条必带行号）
+ * ============================================================ */
+const MANUAL = {
+  // 2026-10-22 修正：下面 4 条的 evid 原来指错了行（行里根本不含该字段名），已换成真实的读取行。
+  // 教训：manual 也要过 tools/audit_shapes_evidence.js，否则"人工判定"会变成"人工幻觉"。
+  activityShows: { type: 'array', evid: ['index.js:57455  e.hasOwnProperty("activityShows") && (this.activeShowList = e.activityShows);'] },
+  childName: { type: 'string', evid: ['index.js:24867  childData.childName.length（人名，字符串）'] },
+  giftAwards: { type: 'array', evid: ['index.js:131097  dispatch(REFRESH_GIFT_STATE, e.giftAwards)'] },
+  giftDatas: { type: 'array', evid: ['index.js:131054  data: e.giftDatas'] },
+  innSimShopDatas: { type: 'array', evid: ['index.js:62598  setData(e.innSimShopDatas)'] },
+  newAcc: { type: 'string', evid: ['scripts3.js:95797  ... o.hasOwnProperty("newAcc") && (s = o.newAcc);'] },
+  sendurl: { type: 'string', evid: ['index.js:28126  o.oldUrlAll = e.sendurl（URL）'] },
+  unlockDish: { type: 'array', evid: ['index.js:62251  for (var o = e.unlockDish, ...; o.length; ...) o[l]'] },
+  FashionTimeMap: { type: 'object', evid: ['index.js:75623  1 == e.type && this.setFashionTime(e.FashionTimeMap);'] },
+};
+
+/* ============================================================
+ * 命名启发 + 已知复合体
+ * ============================================================ */
+const NAME_ARRAY = /(List|Arr|Ary|Ids|IDs|Strs)$/;
+const NAME_OBJECT = /(Obj|Map|Data|Info|Table|Dict|Config|Bag|note|Note|skch|ivch|eqch|attrch|eco)$/;
+function nameHeuristic(f) {
+  if (NAME_ARRAY.test(f)) return 'array';
+  if (NAME_OBJECT.test(f)) return 'object';
+  return null;
+}
+const KNOWN_OBJECT = {
+  note: { eco: {}, attrch: {}, skch: {}, ivch: {}, eqch: {} },
+  rewardArray: {},
+  equipObj: {},
+  itemObj: {},
+};
+
+function emptyFor(type, leaf) {
+  if (type === 'array') return [];
+  if (type === 'object') return KNOWN_OBJECT[leaf] !== undefined ? JSON.parse(JSON.stringify(KNOWN_OBJECT[leaf])) : {};
+  if (type === 'string') return '';
+  if (type === 'boolean') return false;
+  return 0;
+}
+
+/** 时间类字段名（SOTA R08 的 C11）：作为**形状默认值**时不许是正数时间戳。
+ *  为什么：客户端真拿它做减法 ——
+ *    `scripts2.js:47303`  `i = (e - (TimeMgr.getSTimestamp() - o)) / 1e3`（o = startTimestamp）
+ *    `scripts2.js:58268`  `L = .001 * (TimeMgr.getSTimestamp() - B)`
+ *  一个"构建时刻"常量会让 (now - 默认值) 天然很大 → 剩余时间 ≤ 0 → 一开始就"已完成"。
+ *  所以时间类默认值一律 0（= 交给 handler 在请求时给真值）。 */
+function isTimeField(name) {
+  // ⚠ 别写成 /^cd/i：会把 `cData` 也当成 CDTime（2026-10-23 实际踩到，C7 的 sigma 检查当场抓到 obj0→num0）
+  return /[Tt]ime$/.test(name) || /^[Tt]ime/.test(name) || /^cdtime\d*$/i.test(name) || name === 'gen';
+}
+
+function resolveLeafRaw(field, spec, action) {
+  const leaf = field.split('.').pop();
+  if (captureVals[leaf] && captureVals[leaf].length) {
+    const list = captureVals[leaf];
+    // 优先用**本动作自己**的抓包真值（templates.json 是按动作存的）；否则记成 borrowed
+    const own = action ? list.filter(v => String(v.evid).indexOf('templates.json:' + action + '.') === 0) : [];
+    const useList = own.length ? own : list;
+    const cnt = Object.create(null);
+    for (const v of useList) cnt[v.type] = (cnt[v.type] || 0) + 1;
+    const type = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a])[0];
+    const hit = useList.find(v => v.type === type);
+    let value = type === 'array' ? [] : type === 'object' ? emptyFor('object', leaf) : (hit ? hit.value : emptyFor(type, leaf));
+    return {
+      type, value, conf: 'capture', src: own.length ? 'capture:' + action : 'borrowed-capture:' + ((list[0] && list[0].evid) || '?'),
+      evid: useList.slice(0, 2).map(v => v.evid),
+    };
+  }
+  if (handlerVals[leaf] && handlerVals[leaf].length) {
+    const list = handlerVals[leaf];
+    const own = action ? list.filter(v => String(v.evid) === 'bz-rpc-server.js#' + action) : [];
+    const useList = own.length ? own : list;
+    const type = jsonType(useList[0].value);
+    const value = type === 'array' ? [] : type === 'object' ? emptyFor('object', leaf) : useList[0].value;
+    return {
+      type, value, conf: 'handler', src: own.length ? 'handler:' + action : 'borrowed-handler:' + String(useList[0].evid).replace('bz-rpc-server.js#', ''),
+      evid: useList.slice(0, 2).map(v => v.evid),
+    };
+  }
+  if (MANUAL[leaf]) return { type: MANUAL[leaf].type, value: emptyFor(MANUAL[leaf].type, leaf), conf: 'manual', src: 'manual', evid: MANUAL[leaf].evid };
+  if (spec && spec.hint === 'array') return { type: 'array', value: [], conf: 'listener', src: 'neutral', evid: ['index.js:' + spec.line + '  ' + (spec.evid || '')] };
+  if (spec && spec.hint === 'object') return { type: 'object', value: emptyFor('object', leaf), conf: 'listener', src: 'neutral', evid: ['index.js:' + spec.line + '  ' + (spec.evid || '')] };
+  const uv = usageVotes[leaf];
+  if (uv) {
+    const ranked = Object.keys(uv).sort((a, b) => uv[b].length - uv[a].length);
+    const type = ranked[0];
+    return { type, value: emptyFor(type, leaf), conf: 'usage-' + uv[type].length, src: 'neutral', evid: uv[type].slice(0, 2).map(x => 'index.js:' + x.line) };
+  }
+  const iv = initVals[leaf];
+  if (iv && iv.length) {
+    const cnt = Object.create(null);
+    for (const x of iv) cnt[x.type] = (cnt[x.type] || 0) + 1;
+    const type = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a])[0];
+    return { type, value: emptyFor(type, leaf), conf: 'init-' + cnt[type], src: 'neutral', evid: iv.filter(x => x.type === type).slice(0, 2).map(x => 'index.js:' + x.line) };
+  }
+  const hv = nameHeuristic(leaf);
+  if (hv) return { type: hv, value: emptyFor(hv, leaf), conf: 'name', src: 'neutral', evid: ['命名启发 ' + leaf] };
+  if (spec && spec.line) return { type: 'number', value: 0, conf: 'listener-1', src: 'neutral', evid: ['index.js:' + spec.line + '  ' + (spec.evid || '')] };
+  return { type: 'number', value: 0, conf: 'fallback', src: 'neutral', evid: [] };
+}
+
+/** 对外入口：先按常规解析，再按 C11 把**时间类字段**压成 0（详见 isTimeField 的注释）。 */
+function resolveLeaf(field, spec, action) {
+  const r = resolveLeafRaw(field, spec, action);
+  const leaf = field.split('.').pop();
+  if (isTimeField(leaf)) {
+    return Object.assign({}, r, { value: 0, conf: r.conf + '+time0', src: 'neutral:time0' });
+  }
+  return r;
+}
+
+/* ============================================================
+ * 组装（嵌套路径 → 嵌套对象）
+ * ============================================================ */
+function setPath(root, dotted, value) {
+  const parts = dotted.split('.');
+  let cur = root;
+  for (let i = 0; i < parts.length - 1; i++) {
+    const k = parts[i];
+    if (typeof cur[k] !== 'object' || cur[k] === null || Array.isArray(cur[k])) cur[k] = {};
+    cur = cur[k];
+  }
+  const leaf = parts[parts.length - 1];
+  if (cur[leaf] === undefined) cur[leaf] = value;
+}
+
+const out = Object.create(null);
+const stat = { actions: 0, fields: 0, byConf: Object.create(null), byType: Object.create(null), bySource: Object.create(null) };
+
+for (const action of Object.keys(target).sort()) {
+  const t = target[action];
+  const specs = Object.create(null);
+  const payload = { eRet: 1 };
+  specs.eRet = { type: 'number', value: 1, conf: 'capture', src: 'neutral', evid: ['所有真实响应均以 eRet:1 表示成功'] };
+
+  // 先把父路径标成对象（note.attrch 存在 → note 是对象）
+  for (const p of Object.keys(t.fields)) {
+    const parts = p.split('.');
+    for (let i = 1; i < parts.length; i++) {
+      const parent = parts.slice(0, i).join('.');
+      if (!t.fields[parent]) t.fields[parent] = { from: ['implied'] };
+    }
+  }
+
+  for (const p of Object.keys(t.fields).sort()) {
+    if (p === 'eRet') continue;
+    const spec = t.fields[p];
+    let r;
+    if (p.indexOf('.') >= 0) {
+      // 父级一定是对象
+      r = { type: 'object', value: {}, conf: 'listener', evid: ['由子字段 ' + p + ' 推出'] };
+      if (!Object.keys(t.fields).some(x => x.indexOf(p + '.') === 0)) {
+        const leafName = p.split('.').pop();
+        const sub = resolveLeaf(p, spec, action);
+        r = { type: 'object', value: emptyFor('object', leafName), conf: sub.conf, src: sub.src, evid: sub.evid };
+      }
+    } else {
+      r = resolveLeaf(p, spec, action);
+    }
+    specs[p] = r;
+    setPath(payload, p, r.value);
+    stat.fields++;
+    stat.byConf[r.conf] = (stat.byConf[r.conf] || 0) + 1;
+    stat.byType[r.type] = (stat.byType[r.type] || 0) + 1;
+    if (!stat.bySrc) stat.bySrc = Object.create(null);
+    stat.bySrc[r.src] = (stat.bySrc[r.src] || 0) + 1;
+  }
+
+  stat.actions++;
+  for (const s of t.sources) stat.bySource[s] = (stat.bySource[s] || 0) + 1;
+
+  out[action] = {
+    constName: t.constName || '',
+    consumers: (t.consumers || []).filter(Boolean),
+    sources: t.sources,
+    impl: !!t.impl,
+    fields: specs,
+    payload,
+  };
+}
+
+/* ---------- 分支选择器剔除（坑 47 / 2026-10-22 §18.3 事故） ----------
+ * 客户端用 `hasOwnProperty("x")` 当"该不该走这条分支"的开关时，应答里哪怕带 0/[]/{} 也会点亮幽灵分支。
+ * 实例（端上实测崩溃）：useItem 应答带 formulaID:0 → 客户端 `getItem(0,"formula")` 得 null
+ *   → `n.getText(y.name)` 抛 TypeError @ index.js:64796（2026-10-22 17:40 日志）；
+ *   同款还有 dogid:0 / housekeeper:{helperId:{}}（都走 getItem 后取 .name）；
+ *   taskID:101080 更危险：客户端会当成"用物品推进了真任务"（index.js:64785）。
+ * → 这批字段缺省一律不发；哪个效果真实现了，由 handler 在应答里显式塞。
+ * 注意：剔除必须发生在"证据合并之后、落盘之前"，否则 fillShape 会把它补回来（这就是 §18.3 修复失效的机理）。 */
+const SHAPE_OMIT = {
+  useItem: [
+    'formulaID', 'mountID', 'titleID', 'bloodEndTime', 'dogid', 'hanyusuiTime',
+    'genGuDan', 'stealFlag', 'endMonthCardTime', 'avatarInfo', 'itemRealgarMap',
+    'rewardSkillSkin', 'housekeeper', 'wId', 'wArr', 'weaponSkinId', 'emoId',
+    'taskID', 'rewardArray', 'getKnackIds', 'partners', 'mpnum', 'gemId',
+  ],
+};
+const branchOmitted = {};
+for (const act of Object.keys(SHAPE_OMIT)) {
+  if (!out[act]) continue;
+  const dropped = [];
+  for (const f of SHAPE_OMIT[act]) {
+    if (!Object.prototype.hasOwnProperty.call(out[act].payload, f)) continue;
+    delete out[act].payload[f];
+    const spec = out[act].fields[f];
+    if (spec) {
+      delete out[act].fields[f];
+      if (stat.byConf[spec.conf] > 0) stat.byConf[spec.conf]--;
+      if (stat.byType[spec.type] > 0) stat.byType[spec.type]--;
+      stat.fields--;
+    }
+    dropped.push(f);
+  }
+  if (dropped.length) branchOmitted[act] = dropped;
+}
+
+/* ---------- R05 Q1：开关字段一律不填默认值（从源头剔） ----------
+ * 审阅原文：「开关字段默认不填：fillShape 只补"契约"类字段。开关字段只有在 handler 显式给出值时才出现在应答里。」
+ * 分类来自 tools/classify_fields.js（自带 6 条已知故障的验收，判错就不许接入）。
+ * 这条规则取代了 SHAPE_OMIT 这种"一处一处手工列"的做法——SHAPE_OMIT 仍保留（它覆盖的是
+ * 分类器判成契约、但我们确认"缺省绝不能发"的特例，比如 taskID 这种"发了就会推进真任务"的）。
+ * 例外：PROMOTED（开关升格）里的字段保留默认值——它们的 else 分支会让 UI 卡死。 */
+let fieldClasses = null;
+try {
+  fieldClasses = require('./facts/field-classes.js').BZ_FIELD_CLASSES;
+} catch (e) {
+  console.warn('⚠ 没有 tools/facts/field-classes.js（先跑 node tools/classify_fields.js），跳过开关剔除');
+}
+const switchDropped = {};
+if (fieldClasses && fieldClasses.switchMap) {
+  const promotedSet = new Set((fieldClasses.promoted || []).map((p) => p.action + '.' + p.field));
+  /** 只剔**标量叶子**：嵌套对象要往里递归，不能把父对象整块删掉
+   *  （2026-10-22 真踩：changeSate 的 `crop` 被判成开关，整块删掉后 `crop.b`/`crop.m` 全没了，
+   *   check_shapes 报 6 条 absent）。 */
+  function dropSwitchLeaves(obj, names) {
+    const dropped = [];
+    for (const k of Object.keys(obj)) {
+      const v = obj[k];
+      const isPlainObj = v && typeof v === 'object' && !Array.isArray(v);
+      if (names[k]) {
+        // 开关字段：默认值一律不发。唯一例外是"非空对象"——那种本身是别的字段的父容器
+        // （2026-10-22 真踩：changeSate 的 crop 既是开关又是 crop.b/crop.m 的父路径，整块删会让子字段全没了）
+        if (isPlainObj && Object.keys(v).length > 0) { dropped.push(...dropSwitchLeaves(v, names).map((x) => k + '.' + x)); continue; }
+        delete obj[k];
+        dropped.push(k);
+        continue;
+      }
+      if (Array.isArray(v)) {                       // 数组元素里的对象也要剔（AttckData 就是 [ {...} ]）
+        for (const el of v) {
+          if (el && typeof el === 'object') dropped.push(...dropSwitchLeaves(el, names).map((x) => k + '[].' + x));
+        }
+        continue;
+      }
+      if (isPlainObj) dropped.push(...dropSwitchLeaves(v, names).map((x) => k + '.' + x));
+    }
+    return dropped;
+  }
+  for (const act of Object.keys(fieldClasses.switchMap)) {
+    if (!out[act]) continue;
+    const names = {};
+    for (const f of Object.keys(fieldClasses.switchMap[act])) {
+      if (promotedSet.has(act + '.' + f)) continue;          // 升格：必须发
+      // R06 #5：只有"存在开关(switch)"才从形状里剔；"键集合契约(keyset)"必须留着
+      //（客户端按 key 遍历它，空对象是合法默认值；删了会让 `hasOwnProperty` 分支整段跳过）
+      if (fieldClasses.switchMap[act][f] !== 'switch') continue;
+      names[f] = 1;
+    }
+    if (!Object.keys(names).length) continue;
+    const dropped = dropSwitchLeaves(out[act].payload, names);
+    if (dropped.length) switchDropped[act] = dropped;
+  }
+  // 字段统计跟着实际剔除重算（fields 里仍保留证据，只是 payload 不再填它）
+  stat.fields = Object.keys(out).reduce((n, a) => n + Object.keys(out[a].fields).length, 0);
+}
+
+/* ---------- 待复核清单 ---------- */
+const needAudit = [];
+for (const action of Object.keys(out)) {
+  for (const f of Object.keys(out[action].fields)) {
+    const c = out[action].fields[f].conf;
+    if (c === 'fallback' || c === 'name' || /^usage-1$/.test(c) || /^init-1$/.test(c) || c === 'listener-1') {
+      needAudit.push({ action, field: f, conf: c, type: out[action].fields[f].type, evid: out[action].fields[f].evid });
+    }
+  }
+}
+
+/* ---------- 落盘 ---------- */
+// ⚠ generatedAt 必须用**固定时钟**（SOTA R14 §3 / Q2）：原来用 `new Date().toISOString()`，
+//   会把构建时刻写进 `BZ_SHAPES.__meta.gen` 与文件头"生成于"两行 → 而 `ver` 是对整个产物算 sha1，
+//   于是**每跑一次 check_shape_freeze（它会调本脚本）ver 就变一次**，实测同一天 hfa9ba714→h7910b953
+//   （字节数相同、逐行只差 4 行时间戳）。判"这次有没有改代码/有没有夹带扩容"会因此永远为假。
+//   改成从 GEN_NOW 派生后，本脚本的产物是**逐字节确定**的（C4 也要求这个）。
+const result = {
+  generatedAt: new Date(GEN_NOW).toISOString(),
+  sources: {
+    facts: 'tools/action_facts_all.json (812 具名回调)',
+    listeners: 'tools/action_facts_listener.json (' + Object.keys(listeners.actions || {}).length + ' 匿名监听器)',
+    todo: 'tools/todo_shapes.json (120)',
+    capture: 'hotfix-patch/core/templates.json',
+    handlers: 'hotfix-patch/core/bz-rpc-server.js (' + implemented.length + ' 已实现)',
+    clientSource: 'tools/index.js',
+  },
+  stat,
+  needAuditCount: needAudit.length,
+  needAudit,
+  branchOmitted,
+  switchOmitted: switchDropped,
+  actions: out,
+  shapes: out,   // 兼容旧字段名（check_shapes 早先用 shapes）
+  errors: errv,
+};
+
+if (process.argv.includes('--stat')) {
+  console.log(JSON.stringify({ stat, needAuditCount: needAudit.length, implemented: implemented.length }, null, 1));
+  process.exit(0);
+}
+
+fs.writeFileSync(P.outShapes, JSON.stringify(result, null, 1), 'utf8');
+
+/* --- JS 表 --- */
+const js = [];
+js.push('/* bz-shapes.generated.js —— 由 tools/gen_shapes.js 自动生成，勿手改');
+js.push(' * 覆盖 ' + stat.actions + ' 个动作 / ' + stat.fields + ' 个字段位；生成于 ' + result.generatedAt);
+js.push(' * 数据源：具名回调表 + 匿名监听器表 + 抓包真值 + 真实 handler + 客户端初值与用法');
+js.push(' * 例外：useItem 的 hasOwnProperty 分支开关字段一律不发（见 tools/gen_shapes.js 的 SHAPE_OMIT / §18.3 事故）');
+js.push(' * 规则：eRet 恒 1；其余字段按"客户端真的会读它"的类型给空值。目的只到"不崩、不乱跳分支"。 */');
+js.push('var BZ_SHAPES = {');
+for (const a of Object.keys(out)) {
+  js.push('  ' + JSON.stringify(a) + ': ' + JSON.stringify(out[a].payload) + ',');
+}
+js.push('};');
+js.push('BZ_SHAPES.__meta = { total: ' + stat.actions + ', fields: ' + stat.fields + ', gen: ' + JSON.stringify(result.generatedAt) + ' };');
+js.push('BZ_SHAPES.__impl = ' + JSON.stringify(Object.keys(out).filter(a => out[a].impl)) + ';');
+if (fieldClasses && fieldClasses.switchMap) {
+  js.push('/* R05 Q1：开关类字段（客户端用 hasOwnProperty / in 当开关）——自检禁止它们由 fillShape 补出来 */');
+  js.push('BZ_SHAPES.__switch = ' + JSON.stringify(fieldClasses.switchMap) + ';');
+  js.push('BZ_SHAPES.__promoted = ' + JSON.stringify(fieldClasses.promoted || []) + ';');
+}
+js.push('');
+fs.writeFileSync(P.outJs, js.join('\n'), 'utf8');
+
+/* --- 人可读清单 --- */
+const md = [];
+md.push('# 形状表清单（tools/gen_shapes.js 自动生成，勿手改）');
+md.push('');
+md.push('- 生成时间：' + result.generatedAt);
+md.push('- 动作 **' + stat.actions + '**，字段位 **' + stat.fields + '**，已实现跳过 ' + implemented.length);
+md.push('- 来源：' + Object.keys(stat.bySource).map(k => k + '=' + stat.bySource[k]).join('、'));
+md.push('- 置信度：' + Object.keys(stat.byConf).sort().map(k => k + '=' + stat.byConf[k]).join('、'));
+md.push('- 类型：' + Object.keys(stat.byType).map(k => k + '=' + stat.byType[k]).join('、'));
+md.push('- 待复核：**' + needAudit.length + '** 条');
+md.push('');
+md.push('| 动作 | 来源 | 应答形状 |');
+md.push('|---|---|---|');
+for (const a of Object.keys(out)) {
+  md.push('| ' + a + ' | ' + out[a].sources.join('+') + ' | `' + JSON.stringify(out[a].payload) + '` |');
+}
+md.push('');
+fs.writeFileSync(P.outMd, md.join('\n'), 'utf8');
+
+console.log(JSON.stringify({
+  ok: true, actions: stat.actions, fields: stat.fields,
+  bySource: stat.bySource, byConf: stat.byConf, byType: stat.byType,
+  needAudit: needAudit.length,
+  wrote: [P.outShapes, P.outJs, P.outMd].map(p => path.relative(ROOT, p)),
+}, null, 1));

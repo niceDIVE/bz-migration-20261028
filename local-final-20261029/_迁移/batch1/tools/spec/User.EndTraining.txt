@@ -1,0 +1,99 @@
+# User.EndTraining  (HttpConst.END_LIANGONG)
+# 出现 2 处
+
+120568: } else s.MessageCenter.dispatch(p.EvName.START_SKILL_TRAINING);
+120569: } else if (3 == n.eRet) {
+120570: var h = i.getItem(n.skillID, "skill");
+120571: l.default.show(r.getText(423).replace(/\[68\]/, r.getText(h.Name)));
+120572: }
+120573: }, this);
+120574: s.MessageCenter.on(c.HttpConst.END_LIANGONG, function(t, o) {
+120575: e.isLiangType = 0;
+120576: e.skill2Upgrade = 0;
+120577: e.lgObj = {};
+120578: u.RoleOtherInfo.gengudanTime = o.genguTime;
+120579: d.NonBattleBuffModel.setBufferTotalTime(o.hanyusuiTime);
+120580: h.FishingModel.setAutoStartHung(o);
+120581: o.hasOwnProperty("isSchoolAward") && (B.SchoolSquareModel.isSchoolAward = o.isSchoolAward);
+120582: o.hasOwnProperty("isCollective") && (B.SchoolSquareModel.isCollective = o.isCollective);
+120583: if (0 != e.endTipStr.length) {
+120584: if (o.hasOwnProperty("skillArr") && o.skillArr.length) {
+120585: cc.log("=========修炼队列开启下一个练功==========");
+120586: e.skillQueue = o.skillArr;
+120587: e.start(o.skillArr[0], B.SchoolSquareModel.isCollective);
+120588: } else {
+120589: e.skillQueue = [];
+120590: if (o.hasOwnProperty("skillid")) {
+120591: cc.log("=======关闭练功=2========");
+120592: s.MessageCenter.dispatch(p.EvName.END_SKILL_TRAINING_CLOSR, o.skillid);
+120593: }
+120594: }
+120595: s.MessageCenter.dispatch(p.EvName.SELECT_QUEUE_SKILL);
+120596: } else {
+120597: B.SchoolSquareModel.isCollective = 0;
+120598: cc.log("=======关闭练功=1========");
+120599: s.MessageCenter.dispatch(p.EvName.END_SKILL_TRAINING, !0);
+120600: }
+120601: }, this);
+120602: s.MessageCenter.on(c.HttpConst.VIGOR_UPGSKILL, function(t, e) {
+120603: s.MessageCenter.dispatch(p.EvName.REFRESH_VIGORS, e.vigor);
+120604: l.default.show(r.getText(3259).replace(/\[1\]/, f.SkillTable.getSkillLevel(e.skillID)));
+120605: }, this);
+120606: s.MessageCenter.on(c.HttpConst.CHOOSE_FIX_DAN, function(e, o) {
+120607: s.MessageCenter.dispatch(p.EvName.USE_NEW_ITEM_EVENT, o);
+120608: if (1 == o.eRet) {
+120609: s.MessageCenter.dispatch(p.EvName.SKILL_ITEM_USE_EVENT, {});
+120610: Promise.resolve().then(function() {
+120611: return t("../../scripts3/model3/PopGiftModel");
+120612: }).then(function(t) {
+120613: t.PopGiftModel.setHomeDataUI(o);
+120614: });
+---
+120769: };
+120770: _.NetMgr.http.sendRequest(c.HttpConst.VIGOR_UPGSKILL, e);
+120771: };
+120772: e.prototype.end = function(t) {
+120773: var e = T.playerInfo.entity;
+120774: b.CrossServiceModel.needLocalUrlAndPort(function() {
+120775: _.NetMgr.http.sendRequest(c.HttpConst.END_LIANGONG, {
+120776: hglmt: e.hunger.limit,
+120777: speed: e.hungerConsumingSpeed.finalValue,
+120778: auto: t
+120779: });
+120780: });
+120781: };
+120782: e.prototype.getSkillTopLevel = function(t) {
+120783: return Math.floor(f.SkillTable.getSkillLevel(f.SkillTable.getBaseSkillID(t)) + T.playerInfo.entity.perception.getRawValue() / i.getConstByID("34"));
+120784: };
+120785: e.prototype.getLGCost = function(t, e, o) {
+120786: o > 200 && (o = 200);
+120787: var i = this.getTrainingCoe(o);
+120788: return Math.floor(t * e * i);
+120789: };
+120790: e.prototype.getTrainingCoe = function(t) {
+120791: t > 200 && (t = 200);
+120792: var e = 1 - (t + 10 * T.playerInfo.entity.skillUpgCostRd.finalValue) / i.getConstByID("16");
+120793: e < .1 && (e = .1);
+120794: return e;
+120795: };
+120796: e.prototype.getUpgrdSpeed = function(t, e, o) {
+120797: void 0 === t && (t = !0);
+120798: void 0 === e && (e = !0);
+120799: void 0 === o && (o = !0);
+120800: void 0 === t && (t = !0);
+120801: void 0 === e && (e = !0);
+120802: void 0 === o && (o = !0);
+120803: var n = 0;
+120804: t && S.RoleBaseInfo.isvip && (n = i.getConstByID("200"));
+120805: var r = d.NonBattleBuffModel.getStatus(1043);
+120806: !o && r && d.NonBattleBuffModel.removeStatus(r);
+120807: var a = 1 + .01 * (d.NonBattleBuffModel.speedBonus + v.IceBedModel.getIceBedSp() + n);
+120808: !o && r && d.NonBattleBuffModel.addStatus(r);
+120809: var s = this.getGengu(!e);
+120810: return i.getConstByID("12") * (1 + s / i.getConstByID("13")) * a;
+120811: };
+120812: e.prototype.getGengu = function(t) {
+120813: void 0 === t && (t = !1);
+120814: t || (t = !1);
+120815: var e = 0, o = M.MarryModel.cycleData, i = f.SkillTable.getSkillLevel(8);
+---

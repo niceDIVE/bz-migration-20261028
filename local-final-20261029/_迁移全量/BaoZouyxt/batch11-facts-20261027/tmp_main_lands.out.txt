@@ -1,0 +1,66 @@
+L58296| var p = c.eid;
+L58297| 1 == i.getItem(p, "home_plant_cropevent").type ? this.reqDispossHomeEvent(t) : c.s > 0 && c.hasOwnProperty("b") && c.b && this.reqStealCrop(t);
+L58298| } else c.s > 0 && c.hasOwnProperty("b") && c.b && this.reqStealCrop(t);
+L58299| }
+L58300| };
+L58301| e.prototype.addSpeed = function(t, e) {
+L58302| var o = this;
+L58303| if (0 == y.PlantSystemMgr.getCurStateNeedTime(e.id, e.s, e)) a.default.show(n.getText(3249)); else {
+L58304| var r = i.getItem(31, "home_plant_details").num, s = i.getItem(2, "home_plant_details").num, l = i.getItem(r, "item"), c = n.getText(3247).replace(/\[1\]/, n.getText(l.Name));
+L58305| c = c.replace(/\[2\]/, s / 3600);
+L58306| a.default.show(c, [ {
+L58307| flag: 0,
+L58308| name: n.getText("332")
+L58309| }, {
+L58310| flag: 1,
+L58311| name: n.getText("333")
+L58312| } ], function(e) {
+L58313| 0 == e && o.reqAccelarteCrop(t);
+L58314| });
+L58315| }
+L58316| };
+L58317| e.prototype.openDogStateUI = function() {
+L58318| var t = this;
+L58319| this.typeId > 0 || (this.getDogCurState() ? null == this.homeLogUI && f.default.prefabs.load("cultivationUI/HomeLogUI", cc.Prefab, function(e, o) {
+L58320| var i = cc.instantiate(o);
+L58321| d.PopUpMgr.addPopUp(i, g.LayerMgr.popUpLayer);
+L58322| t.homeLogUI = i;
+L58323| }) : S.NpcDeadModel.dogHealUI(this.dogData.id, this.dogData.t, this.dogData.n));
+L58324| };
+L58325| e.prototype.showSearchHomeUI = function(t) {
+L58326| void 0 === t && (t = 0);
+L58327| 0 != t && 1 != t || f.default.prefabs.load("cultivationUI/SearchHomeUI", cc.Prefab, function(e, o) {
+L58328| var i = cc.instantiate(o);
+L58329| d.PopUpMgr.addPopUp(i, g.LayerMgr.popUpLayer);
+L58330| i.getComponent("SearchHomeUI").setData(t);
+L58331| });
+L58332| };
+L58333| e.prototype.getHomeLands = function() {
+L58334| var t = 4;
+L58335| this.soilArr.length > 0 && (t = this.soilArr.length);
+L58336| return t;
+L58337| };
+L58338| e.prototype.getCanUseLand = function() {
+L58339| for (var t = 0, e = 0; e < this.soilArr.length; e++) 1 == this.soilArr[e].s && t++;
+L58340| return t;
+L58341| };
+L58342| e.prototype.getEmptyLand = function() {
+L58343| for (var t = 0, e = 0; e < this.soilArr.length; e++) 1 != this.soilArr[e].s || this.soilArr[e].hasOwnProperty("m") || t++;
+L58344| return t;
+L58345| };
+L58346| e.prototype.buildHomeTip = function() {
+L58347| this.isUpdateData = !1;
+L58348| this.reqOpenHomeEvent();
+L58349| };
+L58350| e.prototype.exitOwnHome = function() {
+L58351| this.typeId > 0 ? this.showSearchHomeUI(this.searchType) : r.MessageCenter.dispatch(c.EvName.REMOVE_PLANT_HOME_UI);
+L58352| };
+L58353| e.prototype.setCropControlState = function(t) {
+L58354| this.cropControlState = t;
+L58355| };
+L58356| e.prototype.setDogCurState = function(t, e) {
+L58357| this.dogData.s = t;
+L58358| this.dogData.t = e;
+L58359| r.MessageCenter.dispatch(c.EvName.HOME_RANDOM_EVENT, {});
+L58360| };
+=== LandUI 命中 0

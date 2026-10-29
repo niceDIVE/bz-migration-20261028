@@ -1,0 +1,270 @@
+{
+  "generatedAt": "2026-10-21T21:24:48.733Z",
+  "step1_action_const": [
+    {
+      "file": "tools/index.js",
+      "line": 59578,
+      "text": "GET_TASK: \"User.acceptTask\","
+    },
+    {
+      "file": "tools/index.js",
+      "line": 112031,
+      "text": "t.hasOwnProperty(\"acceptTaskOrder\") ? v.RoleBaseInfo.taskOrder = t.acceptTaskOrder : v.RoleBaseInfo.taskOrder.length = 0;"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 112046,
+      "text": "if (t.hasOwnProperty(\"acceptTaskArray\")) for (var p = t.acceptTaskArray, h = 0; h < p.length; h++) {"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 133521,
+      "text": "if (e.hasOwnProperty(\"acceptTaskMap\")) {"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 133523,
+      "text": "var n = e.acceptTaskMap;"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 133542,
+      "text": "e.hasOwnProperty(\"acceptTaskOrder\") && e.acceptTaskOrder && (c.RoleBaseInfo.taskOrder = e.acceptTaskOrder);"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 60543,
+      "text": "ROGUE_ACCEPT_TASK: \"User.rogueAcceptTask\","
+    }
+  ],
+  "step2_send_hits": [
+    {
+      "file": "tools/index.js",
+      "line": 59578,
+      "text": "GET_TASK: \"User.acceptTask\",",
+      "func": "o.HttpConst 对象字面量(59490-60616)，非函数"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 60437,
+      "text": "RECEIVE_TARGET_TASK: \"User.receiveTargetTask\",",
+      "func": "o.HttpConst 对象字面量(59490-60616)，非函数"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 60441,
+      "text": "RECEIVE_NPC_TARGET_TASK: \"User.receiveNPCTargetTask\",",
+      "func": "o.HttpConst 对象字面量(59490-60616)，非函数"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 60442,
+      "text": "BUY_TARGET_TASK_NUM: \"User.buyTargetTaskNum\",",
+      "func": "o.HttpConst 对象字面量(59490-60616)，非函数"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 60443,
+      "text": "CHECK_TARGET_TASK: \"User.checkTargetTask\",",
+      "func": "o.HttpConst 对象字面量(59490-60616)，非函数"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 133215,
+      "text": "r.MessageCenter.on(s.HttpConst.GET_TASK, this.getTaskCallBack, this);",
+      "func": "e.prototype.init (定义于 133204)"
+    },
+    {
+      "file": "tools/index.js",
+      "line": 133616,
+      "text": "3 == t.taskObj.TaskType && f.GSceneMgr.mode == f.GSceneMgr.modeMap.rogue ? p.NetMgr.http.sendReqWithMask(s.HttpConst.ROGUE_ACCEPT_TASK, n) : p.NetMgr.http.sendReqWithMask(s.HttpConst.GET_TASK, n);",
+      "func": "e.prototype.reqGetTask (定义于 133607)"
+    }
+  ],
+  "step3_send_functions": [
+    {
+      "func": "e.prototype.reqGetTask",
+      "file": "tools/index.js",
+      "startLine": 133586,
+      "endLine": 133646,
+      "body": [
+        "133586: this.finishTaskObj.hasOwnProperty(\"taskObj\") && this.clearHideTask(this.finishTaskObj.taskObj.TaskID);",
+        "133587: } else 4 == e.eRet ? a.default.show(n.getText(\"931\")) : 5 == e.eRet ? a.default.show(n.getText(\"932\")) : 2 == e.eRet ? p.NetMgr.http.sendRequest(s.HttpConst.SYCN_TASK, {",
+        "133588: roleID: c.RoleBaseInfo.roleID",
+        "133589: }, null, !1) : 8 == e.eRet ? a.default.show(n.getText({",
+        "133590: 1000010: 1539,",
+        "133591: 1000020: 1540,",
+        "133592: 1000030: 1541",
+        "133593: }[e.taskID])) : 9 == e.eRet ? a.default.show(n.getText(1093)) : 10 == e.eRet ? a.default.show(n.getText(4320)) : 11 == e.eRet ? cc.log(\"获取锁定装备数据出错\") : 12 == e.eRet && a.default.show(n.getText(8156));",
+        "133594: };",
+        "133595: e.prototype.hideTaskCallBack = function(t, e) {",
+        "133596: if (1 == e.eRet) if (1 == this.hideType) {",
+        "133597: h.RoleOtherInfo.hTaskArr[this.taskAy[0]] = 1;",
+        "133598: r.MessageCenter.dispatch(l.EvName.HIDE_TASK_EVENT, this.taskAy[0]);",
+        "133599: } else this.clearHideTask(this.taskAy[0]);",
+        "133600: };",
+        "133601: e.prototype.clearHideTask = function(t) {",
+        "133602: if (h.RoleOtherInfo.hTaskArr.hasOwnProperty(t)) {",
+        "133603: delete h.RoleOtherInfo.hTaskArr[t];",
+        "133604: r.MessageCenter.dispatch(l.EvName.SHOW_TASK_EVENT, t);",
+        "133605: }",
+        "133606: };",
+        "133607: e.prototype.reqGetTask = function(t, e, o) {",
+        "133608: this.isOrBubble = e;",
+        "133609: this.npcId = o;",
+        "133610: this.npcTaskInfo = t;",
+        "133611: var i = this.checkOrderDelete(parseInt(t.taskObj.TaskID)), n = {",
+        "133612: taskID: t.taskObj.TaskID,",
+        "133613: delOrder: i",
+        "133614: };",
+        "133615: cc.log(\"请求接取任务ID == \" + t.taskObj.TaskID);",
+        "133616: 3 == t.taskObj.TaskType && f.GSceneMgr.mode == f.GSceneMgr.modeMap.rogue ? p.NetMgr.http.sendReqWithMask(s.HttpConst.ROGUE_ACCEPT_TASK, n) : p.NetMgr.http.sendReqWithMask(s.HttpConst.GET_TASK, n);",
+        "133617: };",
+        "133618: e.prototype.clearOrder = function() {",
+        "133619: for (var t = this.checkOrderDelete(), e = c.RoleBaseInfo.taskOrder, o = 0; o < t.length; o++) {",
+        "133620: var i = e.indexOf(t[o]);",
+        "133621: i >= 0 && e.splice(i, 1);",
+        "133622: }",
+        "133623: };",
+        "133624: e.prototype.checkOrderDelete = function(t) {",
+        "133625: void 0 === t && (t = 0);",
+        "133626: for (var e = c.RoleBaseInfo.taskOrder, o = [], n = 0; n < e.length; n++) {",
+        "133627: var r = e[n];",
+        "133628: if (c.RoleBaseInfo.finishTaskObj.hasOwnProperty(r)) {",
+        "133629: var a = i.getTask(r);",
+        "133630: if (a && a.Completetips) {",
+        "133631: var s = a.Completetips.split(\"|\");",
+        "133632: 0 != parseInt(s[0]) && this.checkCompleteTip(s[1], parseInt(s[2]), t) || o.push(r);",
+        "133633: }",
+        "133634: }",
+        "133635: }",
+        "133636: return o;",
+        "133637: };",
+        "133638: e.prototype.reqFinishTaskMsg = function(t, e) {",
+        "133639: f.GSceneMgr.mode != f.GSceneMgr.modeMap.rogue && _.PackageModel.judgeTaskPackageLimit();",
+        "133640: var o = S.UserModel.entity, n = t.taskObj, r = n.TaskID;",
+        "133641: this.taskSelectId = e;",
+        "133642: this.finishTaskObj = t;",
+        "133643: if (5 != n.Type && 6 != n.Type && 7 != n.Type && 8 != n.Type && 9 != n.Type && 10 != n.Type && 11 != n.Type && 12 != n.Type && 13 != n.Type) {",
+        "133644: var a = 1;",
+        "133645: 5 == n.Type || 6 == n.Type || 7 == n.Type || 8 == n.Type ? a = 2 : 1 == n.Repeat && (a = 3);",
+        "133646: var s = {"
+      ]
+    }
+  ],
+  "step4_call_sites": [
+    {
+      "func": "reqGetTask",
+      "file": "tools/index.js",
+      "line": 133139,
+      "text": "1 == this.taskStateId ? p.TaskModel.reqFinishTaskMsg(this.currentTaskObj, 0) : 2 == this.taskStateId && p.TaskModel.reqGetTask(this.currentTaskObj, 1, this.data.NpcID);",
+      "callerFunc": "e.prototype.taskClickEvent"
+    },
+    {
+      "func": "reqGetTask",
+      "file": "tools/index.js",
+      "line": 135226,
+      "text": "if (0 == this.taskAcitonData.length) 0 == this.taskState ? N.TaskModel.reqGetTask(this.taskInfo, 0, this.selectIdx) : N.TaskModel.reqFinishTaskMsg(this.taskInfo, this.selectIdx); else {",
+      "callerFunc": "t.startAfterFinishDialTT"
+    },
+    {
+      "func": "reqGetTask",
+      "file": "tools/index.js",
+      "line": 133607,
+      "text": "e.prototype.reqGetTask = function(t, e, o) {",
+      "callerFunc": "n/a（函数定义行）"
+    },
+    {
+      "func": "reqGetTask",
+      "file": "tools/scripts2.js",
+      "line": 70683,
+      "text": "0 == this.taskType && 1 == t[0] ? c.TaskModel.showTaskDialogUI(this.taskObj) : 0 == this.taskType && 2 == t[0] ? c.TaskModel.reqGetTask(this.taskObj, 0, this.selectId) : 1 == this.taskType && 1 == e[0] ? c.TaskModel.showTaskDialogUI(this.taskObj) : 1 == this.taskType && 2 == e[0] && c.TaskModel.reqFinishTaskMsg(this.taskObj, this.selectId);",
+      "callerFunc": "e.prototype.closeTaskCartoon"
+    },
+    {
+      "func": "reqGetTask",
+      "file": "tools/scripts2.js",
+      "line": 71160,
+      "text": "u.TaskModel.reqGetTask(this.taskObject, 0, this.npcId);",
+      "callerFunc": "e.prototype.closeTaskShowUI"
+    },
+    {
+      "func": "reqGetTask",
+      "file": "tools/scripts3.js",
+      "line": 16477,
+      "text": "l.NewYearBombModel.reqGetTaskData();",
+      "callerFunc": "e.prototype.start"
+    },
+    {
+      "func": "reqGetTask",
+      "file": "tools/scripts3.js",
+      "line": 16531,
+      "text": "l.NewYearBombModel.reqGetTaskData();",
+      "callerFunc": "e.prototype.onStoreBack"
+    },
+    {
+      "func": "reqGetTask",
+      "file": "tools/scripts3.js",
+      "line": 53411,
+      "text": "this.parent && this.parent.reqGetTaskAwards(t);",
+      "callerFunc": "e.prototype.onClickReceive"
+    },
+    {
+      "func": "reqGetTask",
+      "file": "tools/scripts3.js",
+      "line": 53934,
+      "text": "e.prototype.reqGetTaskAwards = function(t) {",
+      "callerFunc": "n/a（函数定义行）"
+    },
+    {
+      "func": "reqGetTask",
+      "file": "tools/scripts3.js",
+      "line": 55531,
+      "text": "t.prototype.reqGetTaskData = function() {",
+      "callerFunc": "n/a（函数定义行）"
+    }
+  ],
+  "step5_entry_hints": [
+    {
+      "callerFunc": "e.prototype.taskClickEvent",
+      "file": "tools/index.js",
+      "line": 133139,
+      "keyword": "none",
+      "text": "none"
+    },
+    {
+      "callerFunc": "t.startAfterFinishDialTT",
+      "file": "tools/index.js",
+      "line": 135226,
+      "keyword": "none",
+      "text": "none"
+    },
+    {
+      "callerFunc": "e.prototype.closeTaskCartoon",
+      "file": "tools/scripts2.js",
+      "line": 70683,
+      "keyword": "none",
+      "text": "none"
+    },
+    {
+      "callerFunc": "e.prototype.closeTaskShowUI",
+      "file": "tools/scripts2.js",
+      "line": 71157,
+      "keyword": "receive_action",
+      "text": "var e = this.taskObject.taskObj.receive_action;"
+    }
+  ],
+  "unverified": [
+    "step1 中 60543 条目（ROGUE_ACCEPT_TASK: User.rogueAcceptTask）来自补充检索 ACCEPT_TASK；大小写敏感的 acceptTask 检索不命中该行。",
+    "step3 的 startLine/endLine 为发送行 133616 前后各 30 行窗口(133586-133646)；reqGetTask 函数体实际为 133607-133617。",
+    "step4 的 func 字段记被反查的发送函数名 reqGetTask；callerFunc 记命中行最近的包含函数（仅向上找 xxx.prototype.yyy=function / function yyy / yyy:function / t.yyy=function，未做作用域校验）。",
+    "scripts3.js 16477/16531/55531 命中 reqGetTaskData，53934/53411 命中 reqGetTaskAwards；均为 reqGetTask 子串命中，不是对 reqGetTask 的调用，未逐一核实其语义。",
+    "scripts2.js 与 scripts3.js 对 acceptTask / GET_TASK / ACCEPT_TASK 均无命中（grep_src 输出 no match）。",
+    "step2 命中 60437/60441/60442/60443 是 RECEIVE_TARGET_TASK / RECEIVE_NPC_TARGET_TASK / BUY_TARGET_TASK_NUM / CHECK_TARGET_TASK 常量名里的 GET_TASK 子串，非独立引用。",
+    "scripts3.js 另有接取类但不同动作串的发送点：RECEIVE_NPC_TARGET_TASK(36587)、CHECK_TARGET_TASK(36544)、BUY_TARGET_TASK_NUM(36564)、RECEIVE_TARGET_TASK(36666)；不属 HttpConst.GET_TASK 路径，本清单未展开。",
+    "call 点是否穷尽：仅用字面 reqGetTask 检索三包，未排除别名引用、字符串动态派发或绕过 TaskModel.reqGetTask 直接发 GET_TASK 的写法。",
+    "text 字段为源行 trim 后原文（与 grep_src.js 输出一致）；行号为 1-based。",
+    "ROGUE_ACCEPT_TASK 的监听注册在 tools/index.js:133222（getRogueTaskCallBack），与 GET_TASK 监听(133215)并列；常量定义在 60543。",
+    "MessageCenter 监听注册(133215/133222)与发送点的因果顺序未判断（仅抄录）。"
+  ]
+}

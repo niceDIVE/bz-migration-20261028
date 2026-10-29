@@ -1,0 +1,99 @@
+# User.AnswerFriend  (HttpConst.USER_ANSWERFRIEND)
+# 出现 2 处
+
+132050: t.prototype.init = function() {
+132051: i.MessageCenter.on(n.HttpConst.USER_FRIENDLIST, this.onSuccessFriendList, this);
+132052: i.MessageCenter.on(n.HttpConst.USER_FRIEND_DELETE, this.onSuccessFriendDelete, this);
+132053: i.MessageCenter.on(n.HttpConst.USER_FIND_FRIEND, this.onSuccessFriendFind, this);
+132054: i.MessageCenter.on(n.HttpConst.USER_APPLAYFRIEND, this.onSuccessApplayFriend, this);
+132055: i.MessageCenter.on(n.HttpConst.USER_FRIENDREGISTER, this.onSuccessRegistener, this);
+132056: i.MessageCenter.on(n.HttpConst.USER_ANSWERFRIEND, this.answerSuccessCallBack, this);
+132057: i.MessageCenter.on(n.HttpConst.FINS_FRIENDID, this.findFriendIdCallBack, this);
+132058: i.MessageCenter.on(n.HttpConst.SET_PLAYER_CARD_TYPE, this.setPlayerCardTypeCallBack, this);
+132059: i.MessageCenter.on(n.HttpConst.SET_PLAYER_CARD_MOUTS_SYCN, this.setMoutsSyncCallBack, this);
+132060: i.MessageCenter.on(n.HttpConst.SET_CHAT_RED_DATA, this.onSetChatRedData, this);
+132061: };
+132062: t.prototype.setChatRedData = function(t, e) {
+132063: a.NetMgr.http.sendRequest(n.HttpConst.SET_CHAT_RED_DATA, {
+132064: toId: t,
+132065: type: e
+132066: }, void 0, !1, !1, !1);
+132067: };
+132068: t.prototype.onSetChatRedData = function(t, e) {
+132069: if (1 == e.eRet) {
+132070: this.friendChatRedUIds = e.uIds;
+132071: g.RoleOtherInfo.isFriendChatRed = this.friendChatRedUIds.length > 0;
+132072: i.MessageCenter.dispatch(c.EvName.SET_FRIEND_CHAT_RED);
+132073: }
+132074: };
+132075: t.prototype.setPlayerCardType = function(t) {
+132076: a.NetMgr.http.sendRequest(n.HttpConst.SET_PLAYER_CARD_TYPE, {
+132077: type: t
+132078: });
+132079: };
+132080: t.prototype.setPlayerCardMoutsSync = function() {
+132081: a.NetMgr.http.sendRequest(n.HttpConst.SET_PLAYER_CARD_MOUTS_SYCN, {
+132082: sycn: 1
+132083: });
+132084: };
+132085: t.prototype.setMoutsSyncCallBack = function(t, e) {
+132086: if (1 == e.eRet) {
+132087: g.RoleOtherInfo.isSyncMount = 1 == e.sycn;
+132088: g.RoleOtherInfo.showMountObj.e = e.e;
+132089: i.MessageCenter.dispatch(c.EvName.SET_ROLE_INFO_MOUNT_SYNC);
+132090: }
+132091: };
+132092: t.prototype.reqFriendList = function(t) {
+132093: this.sameScene = 0;
+132094: var e = {
+132095: roleID: r.RoleBaseInfo.roleID,
+132096: friendType: t
+---
+132200: t.prototype.reqAnswerFriend = function(t, e) {
+132201: var o = {
+132202: roleID: r.RoleBaseInfo.roleID,
+132203: fID: t,
+132204: answer: e
+132205: };
+132206: a.NetMgr.http.sendRequest(n.HttpConst.USER_ANSWERFRIEND, o, function() {}.bind(this), !0, !1, !0);
+132207: };
+132208: t.prototype.onSuccessFriendList = function(t, e) {
+132209: if (1 == e.eRet) {
+132210: this.friendChatRedUIds = e.uIds;
+132211: var o = {};
+132212: if (e.hasOwnProperty("friendList")) for (var n in e.friendList) o[e.friendList[n].friendId] = !0;
+132213: e.hasOwnProperty("isApplyFriend") && i.MessageCenter.dispatch(c.EvName.SWORN_IS_APPLY);
+132214: u.WorldChatModel.readFriendChatData(o);
+132215: if (0 == this.sameScene) {
+132216: i.MessageCenter.dispatch(c.EvName.GET_CHAT_FRIEND_LIST, e);
+132217: i.MessageCenter.dispatch(c.EvName.MULTIP_NEAR_PLAYER_EVENT, e);
+132218: } else i.MessageCenter.dispatch(c.EvName.GET_REQ_FRIEND_LIST, e);
+132219: }
+132220: };
+132221: t.prototype.onSuccessFriendDelete = function(t, e) {
+132222: 1 == e.eRet && i.MessageCenter.dispatch(c.EvName.USER_FRIEND_DELETE, e);
+132223: };
+132224: t.prototype.onSuccessFriendFind = function(t, e) {
+132225: 1 == e.eRet ? i.MessageCenter.dispatch(c.EvName.USER_FIND_FRIEND, e) : s.default.show(l.getText("371"));
+132226: };
+132227: t.prototype.findFriendIdCallBack = function(t, e) {
+132228: if (1 == e.eRet) switch (this.checkType) {
+132229: case 0:
+132230: i.MessageCenter.dispatch(c.EvName.FINS_FRIENDID, e);
+132231: break;
+132232: 
+132233: case 1:
+132234: p.ChiefDiscipleModel.chiefDiscpleRole = e;
+132235: i.MessageCenter.dispatch(c.EvName.ADD_FIRST_SCHOOL_NPC, e);
+132236: break;
+132237: 
+132238: case 2:
+132239: i.MessageCenter.dispatch(c.EvName.FINDS_FRIEND_INFO, e);
+132240: break;
+132241: 
+132242: case 3:
+132243: i.MessageCenter.dispatch(c.EvName.FINS_FRIENDID, e);
+132244: break;
+132245: 
+132246: case 5:
+---

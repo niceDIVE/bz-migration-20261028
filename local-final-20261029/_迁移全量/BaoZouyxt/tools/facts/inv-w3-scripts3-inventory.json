@@ -1,0 +1,145 @@
+{
+  "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+  "segments": [
+    {
+      "range": "1-1",
+      "lines": [
+        {
+          "n": 1,
+          "text": "window.__require = function t(e, o, i) {"
+        }
+      ]
+    }
+  ],
+  "grep_hits": [
+    {
+      "n": 72909,
+      "text": "this._itemObj = {};"
+    },
+    {
+      "n": 73246,
+      "text": "this._itemObj.hasOwnProperty(t) || (this._itemObj[t] = new u.IvItem(t, 0, i.quality));"
+    },
+    {
+      "n": 73247,
+      "text": "this._itemObj[t].itemId = t;"
+    },
+    {
+      "n": 73248,
+      "text": "this._itemObj[t].numbers += e;"
+    },
+    {
+      "n": 73252,
+      "text": "this.type2Items[i.Type][t] = this._itemObj[t].numbers;"
+    },
+    {
+      "n": 73270,
+      "text": "if (this._itemObj.hasOwnProperty(t)) {"
+    },
+    {
+      "n": 73272,
+      "text": "this._itemObj[t].numbers -= e;"
+    },
+    {
+      "n": 73273,
+      "text": "this.type2Items[i.Type][t] = this._itemObj[t].numbers;"
+    },
+    {
+      "n": 73274,
+      "text": "if (this._itemObj[t].numbers <= 0) {"
+    },
+    {
+      "n": 73275,
+      "text": "delete this._itemObj[t];"
+    },
+    {
+      "n": 73293,
+      "text": "if (this._itemObj.hasOwnProperty(t)) return this._itemObj[t].numbers;"
+    },
+    {
+      "n": 73301,
+      "text": "return this._itemObj;"
+    },
+    {
+      "n": 73304,
+      "text": "this._itemObj = {};"
+    },
+    {
+      "n": 73472,
+      "text": "for (var e in this._itemObj) {"
+    },
+    {
+      "n": 73473,
+      "text": "var o = this._itemObj[e], i = s.getItem(o.itemId, \"item\");"
+    },
+    {
+      "n": 72910,
+      "text": "this.type2Items = {};"
+    },
+    {
+      "n": 73251,
+      "text": "this.type2Items.hasOwnProperty(i.Type) || (this.type2Items[i.Type] = {});"
+    },
+    {
+      "n": 73252,
+      "text": "this.type2Items[i.Type][t] = this._itemObj[t].numbers;"
+    },
+    {
+      "n": 73273,
+      "text": "this.type2Items[i.Type][t] = this._itemObj[t].numbers;"
+    },
+    {
+      "n": 73276,
+      "text": "delete this.type2Items[i.Type][t];"
+    },
+    {
+      "n": 73305,
+      "text": "this.type2Items = {};"
+    },
+    {
+      "n": 74117,
+      "text": "i.RogueRoleInfo.type2Items.hasOwnProperty(s.Type) && delete i.RogueRoleInfo.type2Items[s.Type][t];"
+    },
+    {
+      "n": 74122,
+      "text": "i.RogueRoleInfo.type2Items.hasOwnProperty(s.Type) || (i.RogueRoleInfo.type2Items[s.Type] = {});"
+    },
+    {
+      "n": 74123,
+      "text": "i.RogueRoleInfo.type2Items[s.Type][t] = o[t].numbers;"
+    },
+    {
+      "n": 74404,
+      "text": "}, o = [], s = i.RogueRoleInfo.type2Items[2];"
+    },
+    {
+      "n": 74469,
+      "text": "for (var e = [], o = i.RogueRoleInfo.type2Items[2], s = this.getCurQuickUseItems(), n = 0; n < s.length; n++) {"
+    },
+    {
+      "n": 48615,
+      "text": "for (var o in e) l.RoleBaseInfo.setItem(o, e[o]);"
+    },
+    {
+      "n": 4651,
+      "text": "var t = h.RoleBaseInfo.getStorableItemObj()[this.data];"
+    },
+    {
+      "n": 33614,
+      "text": "for (var t = p.RoleBaseInfo.getStorableItemObj(), e = 0; e < this.refiningList.length; e++) {"
+    },
+    {
+      "n": 47432,
+      "text": "var i = f.RoleBaseInfo.getStorableItemObj();"
+    },
+    {
+      "n": 69530,
+      "text": "var t = m.RogueRoleInfo.getStorableItemObj();"
+    },
+    {
+      "n": 73470,
+      "text": "t.prototype.getStorableItemObj = function() {"
+    }
+  ],
+  "errors": ""
+}

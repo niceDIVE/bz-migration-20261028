@@ -1,0 +1,61 @@
+# User.ReqSelfBattleInfo  (HttpConst.REQ_PVE_BATTLE)
+# 出现 2 处
+
+ 69151: o.Local1v1Mgr = void 0;
+ 69152: var r = t("../../core/events/MessageCenter"), a = t("../../net/HttpConst"), s = t("../../net/NetMgr"), l = t("../../gui/battle/resultscripts/rewardscripts/NormalRewards"), c = t("./Local1v1Base"), p = t("../../models/vos/PlayerInfo"), h = function(t) {
+ 69153: n(e, t);
+ 69154: function e(e) {
+ 69155: var o = t.call(this, e) || this;
+ 69156: o.isRmd = !1;
+ 69157: r.MessageCenter.on(a.HttpConst.REQ_PVE_BATTLE, function(t, e) {
+ 69158: 1 === e.eRet && o.prepareForBattle(e);
+ 69159: }, o);
+ 69160: return o;
+ 69161: }
+ 69162: e.prototype.startBattle = function(t, e) {
+ 69163: void 0 === e && (e = !1);
+ 69164: var o = p.playerInfo.entity;
+ 69165: this.isRmd = e;
+ 69166: s.NetMgr.http.sendRequest(a.HttpConst.REQ_PVE_BATTLE, {
+ 69167: npcID: t,
+ 69168: isRmd: e,
+ 69169: mp: o.mp.remaining,
+ 69170: gTime: o.totalGameTime.gameTime,
+ 69171: hgtimes: o.numStuffed
+ 69172: });
+ 69173: };
+ 69174: e.prototype.endBattle = function(t, e) {
+ 69175: e && e.addComponent(l.NormalRewards);
+ 69176: var o = [ Math.floor(1e5 * Math.random()), Math.floor(1e5 * Math.random()) ], i = t.npcID, n = t.data[0], r = t.esc, c = p.playerInfo.entity, h = {
+ 69177: npcID: i,
+ 69178: mplimit: c.mp.limit,
+ 69179: mp: t.mp,
+ 69180: hp: t.hp,
+ 69181: hplimit: t.hplmt,
+ 69182: loss: 0 == n && 0 == r,
+ 69183: hg: c.hungerConsumingSpeed.finalValue,
+ 69184: hgtimes: c.numStuffed,
+ 69185: gTime: c.totalGameTime.gameTime,
+ 69186: hpmax: c.hp.finalValue,
+ 69187: win: n,
+ 69188: actionArr: this.actionArr,
+ 69189: seed: t.seed,
+ 69190: aDmgReceived: t.data[4],
+ 69191: bDmgReceived: t.data[5],
+ 69192: itemSkill: this.itemSkills,
+ 69193: forwards: o
+ 69194: };
+ 69195: this.isRmd ? o.push(Math.floor(1e5 * Math.random())) : Math.random() < .5 && o.shift();
+ 69196: s.NetMgr.http.sendRequest(a.HttpConst.BATTLE_END_REWARD, h);
+ 69197: };
+---
+ 69198: return e;
+ 69199: }(c.Local1v1Base);
+ 69200: o.Local1v1Mgr = h;
+ 69201: cc._RF.pop();
+ 69202: }, {
+ 69203: "../../core/events/MessageCenter": "MessageCenter",
+ 69204: "../../gui/battle/resultscripts/rewardscripts/NormalRewards": "NormalRewards",
+ 69205: "../../models/vos/PlayerInfo": "PlayerInfo",
+ 69206: "../../net/HttpConst": "HttpConst",
+---

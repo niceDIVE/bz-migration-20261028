@@ -1,0 +1,99 @@
+# User.GetFashionList  (HttpConst.GET_FASHION_LIST)
+# 出现 2 处
+
+ 75522: this.currentMakeUp = {};
+ 75523: this.currentFashion = {};
+ 75524: this.tempData = {};
+ 75525: }
+ 75526: t.prototype.init = function() {
+ 75527: var t = this;
+ 75528: s.MessageCenter.on(l.HttpConst.GET_FASHION_LIST, this.onGetFashionList, this);
+ 75529: s.MessageCenter.on(l.HttpConst.REQ_BEGINTITIVATE, function(e, o) {
+ 75530: if (1 == o.eRet) {
+ 75531: t.read(t.currentMakeUp);
+ 75532: s.MessageCenter.dispatch(u.EvName.MAKE_UP_FASHION_SUCCESS, t.currentMakeUp);
+ 75533: c.default.show(n.getText("967"));
+ 75534: } else c.default.show(n.getText("968"));
+ 75535: t.currentMakeUp = {};
+ 75536: }, this);
+ 75537: s.MessageCenter.on(u.EvName.GET_FASHION_DATA_EVENT, function(t, e) {
+ 75538: var o = new Promise(function(t) {
+ 75539: y.default.prefabs.load("shopUI/FashionShopUI", cc.Prefab, function(e, o) {
+ 75540: t(o);
+ 75541: });
+ 75542: }), n = new Promise(function(t) {
+ 75543: y.default.prefabs.load("comUI/ShopBgUI", cc.Prefab, function(e, o) {
+ 75544: t(o);
+ 75545: });
+ 75546: });
+ 75547: Promise.all([ o, n ]).then(function(t) {
+ 75548: var o = i(t, 2), n = (o[0], o[1]), r = cc.instantiate(n);
+ 75549: v.PopUpMgr.addPopUp(r, _.LayerMgr.popUpLayer);
+ 75550: r.addComponent("FashionShopMainUI").showFashionShop(e);
+ 75551: });
+ 75552: });
+ 75553: s.MessageCenter.on(l.HttpConst.REQ_BUY_FASHION, function(e, o) {
+ 75554: if (1 == o.eRet) {
+ 75555: o.hasOwnProperty("titivateObj") && t.read(o.titivateObj);
+ 75556: for (var i in t.tempData) {
+ 75557: p.UserModel.entity.putOffEquipment(i);
+ 75558: if (t.tempData[i][0] > 0) {
+ 75559: var r = h.InventoryModel.getEquipmentInfo(t.tempData[i][0]), l = {
+ 75560: id: r.id,
+ 75561: type: r.type,
+ 75562: itemID: r.itemID,
+ 75563: attrs: r.attrs,
+ 75564: numAttr: r.numAttr,
+ 75565: crystalIds: r.crystalIds
+ 75566: };
+ 75567: r.itemID;
+ 75568: d.RoleBaseInfo.equipments[i] = r.id;
+---
+ 75753: type: t
+ 75754: };
+ 75755: m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BEGIN_CHANGEFACE, e);
+ 75756: };
+ 75757: t.prototype.reqGetFashionList = function(t) {
+ 75758: void 0 === t && (t = 0);
+ 75759: m.NetMgr.http.sendReqWithMask(l.HttpConst.GET_FASHION_LIST, {
+ 75760: type: t
+ 75761: });
+ 75762: };
+ 75763: t.prototype.unLoadCoatAndFa = function() {
+ 75764: var t = p.UserModel.entity.getEquipment(8);
+ 75765: if (t && (2634 == t.id || 2635 == t.id)) {
+ 75766: this.tempData = {
+ 75767: 8: 0
+ 75768: };
+ 75769: m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BUY_FASHION, {
+ 75770: itemObj: {
+ 75771: 8: 0
+ 75772: }
+ 75773: });
+ 75774: }
+ 75775: };
+ 75776: t.prototype.reqAddChangeFace = function(t) {
+ 75777: var e = {
+ 75778: type: t
+ 75779: };
+ 75780: m.NetMgr.http.sendReqWithMask(l.HttpConst.ADD_CHANGE_FACE, e);
+ 75781: };
+ 75782: t.prototype.reqFashionEffect = function(t) {
+ 75783: var e = {
+ 75784: id: t
+ 75785: };
+ 75786: m.NetMgr.http.sendRequest(l.HttpConst.FASHION_EFFECT, e);
+ 75787: };
+ 75788: t.prototype.reqSetWingId = function(t) {
+ 75789: var e = {
+ 75790: wId: t
+ 75791: };
+ 75792: m.NetMgr.http.sendRequest(l.HttpConst.SET_PLAYER_WING_ID, e);
+ 75793: };
+ 75794: t.prototype.reqSetYpEffect = function(t) {
+ 75795: m.NetMgr.http.sendRequest(l.HttpConst.SET_YP_EFFECT_STATE, {
+ 75796: state: t
+ 75797: });
+ 75798: };
+ 75799: t.prototype.getNewFashionID = function(t) {
+---

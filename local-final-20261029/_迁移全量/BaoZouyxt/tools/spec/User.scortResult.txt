@@ -1,0 +1,99 @@
+# User.scortResult  (HttpConst.SCORTRESULT)
+# 出现 2 处
+
+ 88440: this.isDeadMonster = !1;
+ 88441: this.fightNpc = 0;
+ 88442: this.fightNpcData = {};
+ 88443: }
+ 88444: e.prototype.init = function() {
+ 88445: var t = this;
+ 88446: r.MessageCenter.on(a.HttpConst.SCORTRESULT, function(e, o) {
+ 88447: 1 == o.eRet && (1 == t.adventureType ? s.SpecialAdventureModel.reqSpecialAdventure(4, null) : 2 == t.adventureType && s.SpecialAdventureModel.reqSpecialAdventure(5, null));
+ 88448: }, this);
+ 88449: };
+ 88450: e.prototype.onEnterAdventure = function(t, e) {
+ 88451: var o = this;
+ 88452: this.isDeadMonster = !1;
+ 88453: this.eventID = e;
+ 88454: this.adventureType = t;
+ 88455: var n = i.getItem(e, "gsp_event");
+ 88456: this.adventureMap = n;
+ 88457: l.DartModel.masterMap = {};
+ 88458: n && n.picture.length > 0 ? u.default.CartoonPlayerPic(n.picture, function() {
+ 88459: o.changeToScene(n, t);
+ 88460: }) : this.changeToScene(n, t);
+ 88461: };
+ 88462: e.prototype.changeToScene = function(t, e) {
+ 88463: var o = this;
+ 88464: if (null != t) {
+ 88465: switch (e) {
+ 88466: case 1:
+ 88467: var r = l.DartModel.getDartCardPathPox();
+ 88468: this.poxX = r.x;
+ 88469: this.poxY = r.y;
+ 88470: break;
+ 88471: 
+ 88472: case 2:
+ 88473: this.poxX = c.UserModel.playerPos.x;
+ 88474: this.poxY = c.UserModel.playerPos.y;
+ 88475: }
+ 88476: for (var a = Math.floor(Math.random() * t.maps.length), s = t.maps[a], h = {
+ 88477: str: n.getText("2080"),
+ 88478: callBack: function() {
+ 88479: o.changeEnterMap(s);
+ 88480: }
+ 88481: }, f = p.GSceneMgr.getCurSceneID(), d = i.getItem(s, "map"), g = "", m = 0; m < d.inmap.length; m++) if (f == d.inmap[m]) {
+ 88482: g = n.getText(d.describe[m]);
+ 88483: break;
+ 88484: }
+ 88485: if (g.length > 0) {
+ 88486: h.str = g;
+---
+ 88632: }
+ 88633: };
+ 88634: e.prototype.reqAwards = function(t) {
+ 88635: 1 == this.adventureType ? y.RumorModel.reqActiveGetReward(t) : 2 == this.adventureType && m.WMapAdvModel.reqAdvReward(m.WMapAdvModel.advCurId, 3);
+ 88636: };
+ 88637: e.prototype.reqSpecialEvent = function() {
+ 88638: v.NetMgr.http.sendRequest(a.HttpConst.SCORTRESULT, {
+ 88639: win: 1
+ 88640: });
+ 88641: };
+ 88642: e.prototype.showBattleResultFunc = function(t) {
+ 88643: var e = this, o = this.adventureMap, i = 0;
+ 88644: if (t) {
+ 88645: i = o.dialog1[0];
+ 88646: for (var n = [], r = 0; r < o.replace1.length; r++) n.push(o.replace1[r]);
+ 88647: u.default.addDialogEvent(i, 0, function() {
+ 88648: e.successDialogUI(e.adventureMap);
+ 88649: }, null, null, null, n);
+ 88650: } else if (2 == this.adventureType) {
+ 88651: i = o.dialog1[1];
+ 88652: for (var a = [], s = 0; s < o.replace2.length; s++) a.push(o.replace2[s]);
+ 88653: u.default.addDialogEvent(i, 0, function() {
+ 88654: e.failDialogUI(o);
+ 88655: }, null, null, null, a);
+ 88656: }
+ 88657: };
+ 88658: e.prototype.successDialogUI = function(t) {
+ 88659: var e = this;
+ 88660: if (t.expression1.length > 0) {
+ 88661: var o = {
+ 88662: str: n.getText(t.expression1[0]),
+ 88663: callBack: function() {
+ 88664: e.successFuncCallBack();
+ 88665: }
+ 88666: };
+ 88667: f.default.prefabs.load("comUI/KillDeadUI", cc.Prefab, function(t, e) {
+ 88668: var i = cc.instantiate(e);
+ 88669: d.PopUpMgr.addPopUp(i, g.LayerMgr.popUpLayer);
+ 88670: i.addComponent("KillDeadUI").setData(o);
+ 88671: });
+ 88672: } else this.successFuncCallBack();
+ 88673: };
+ 88674: e.prototype.successFuncCallBack = function() {
+ 88675: var t = this;
+ 88676: cc.director.once(cc.Director.EVENT_AFTER_DRAW, function() {
+ 88677: t.isDeadMonster = !0;
+ 88678: 2 == t.adventureType && m.WMapAdvModel.reqAdvReward(m.WMapAdvModel.advCurId, 1);
+---

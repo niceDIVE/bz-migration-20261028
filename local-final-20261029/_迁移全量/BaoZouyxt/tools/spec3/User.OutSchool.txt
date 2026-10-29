@@ -1,0 +1,57 @@
+# User.OutSchool   (HttpConst.LEVEAL_SCHOOL)
+
+## 注册点 77838: i.MessageCenter.on(r.HttpConst.LEVEAL_SCHOOL, this.levealSchoolCallBack, this);
+
+## 请求点 78011: if (this.isFinishMasterTask(t)) u.NetMgr.http.sendRequest(r.HttpConst.LEVEAL_SCHOOL, {
+   78003: }
+   78004: }
+   78005: return i;
+   78006: };
+   78007: e.prototype.judgeChuMasterBtn = function(t) {
+   78008: return 1 == s.getItem(t, "master").graduate;
+   78009: };
+   78010: e.prototype.checkChuMasterState = function(t) {
+
+## 处理函数 levealSchoolCallBack (77893-77934)
+ 77893: e.prototype.levealSchoolCallBack = function(e, o) {
+ 77894: if (1 == o.eRet) {
+ 77895: o.hasOwnProperty("clearBoxs") && Promise.resolve().then(function() {
+ 77896: return t("../../scripts3/model3/MapBoxModel");
+ 77897: }).then(function(t) {
+ 77898: t.MapBoxModel.removeBox(o.clearBoxs);
+ 77899: });
+ 77900: var i = o.npcID, r = s.getItem(i, "master");
+ 77901: c.default.addDialogEvent(r.dialog, i, function() {
+ 77902: r.picture.length ? m.default.prefabs.load("taskUI/OutSchoolPic_" + a.RoleBaseInfo.sexId.toString(), cc.Prefab, function(t, e) {
+ 77903: var o = cc.instantiate(e);
+ 77904: o.addComponent("OutSchoolPic").setPicFun(r.picture[0]);
+ 77905: y.PopUpMgr.addPopUp(o, v.LayerMgr.popUpLayer);
+ 77906: }) : o.hasOwnProperty("isSeniorSchool") && o.hasOwnProperty("textArr") && m.default.prefabs.load("goodEvil/goodEvilCareer/GoodEvilCareerUI", cc.Prefab, function(t, e) {
+ 77907: var i = cc.instantiate(e);
+ 77908: i.getComponent("GoodEvilCareerUI").setMyData(!0, o.textArr, o.hasOwnProperty("rewardArray") ? o.rewardArray : null);
+ 77909: y.PopUpMgr.addPopUp(i);
+ 77910: });
+ 77911: }.bind(this));
+ 77912: o.hasOwnProperty("oldSchool") && p.RoleOtherInfo.outSchoolAy.push(o.oldSchool);
+ 77913: if (o.hasOwnProperty("npcIDArr") && o.npcIDArr.length) for (var h = a.RoleBaseInfo.masters, u = 0; u < h.length; u++) for (var f = 0; f < o.npcIDArr.length; f++) h[u] == o.npcIDArr[f] && h.splice(u, 1);
+ 77914: o.hasOwnProperty("isSeniorSchool") && Promise.resolve().then(function() {
+ 77915: return t("../../scripts3/mgrs3/GoodEvilMgr");
+ 77916: }).then(function(t) {
+ 77917: a.RoleBaseInfo.goodEvilCamp = 0;
+ 77918: a.RoleBaseInfo.goodEvilPrestige = 0;
+ 77919: a.RoleBaseInfo.goodEvilContribution = 0;
+ 77920: t.GoodEvilMgr.clearTask();
+ 77921: });
+ 77922: this.checkTaskIsClear(r);
+ 77923: } else if (6 == o.eRet) {
+ 77924: r = s.getItem(o.npcID, "master");
+ 77925: var d = o.CDTime - o.serverTime, g = Math.floor(d / 864e5), _ = Math.floor((d - 864e5 * g) / 36e5), S = Math.floor((d - 864e5 * g - 36e5 * _) / 6e4), M = s.getItem(o.skillId, "skill"), E = l.getText(6079).replace(/\[1\]/, l.getText(M.Name));
+ 77926: g > 0 && (E += g + l.getText(3784));
+ 77927: E += _ + l.getText(3785);
+ 77928: E += S + l.getText(1414);
+ 77929: this.outSchoolCondition(r, E);
+ 77930: } else if (5 == o.eRet) {
+ 77931: var I = s.getItem(o.npcID, "master");
+ 77932: this.outSchoolCondition(I);
+ 77933: } else 7 == o.eRet && n.default.show(l.getText("6372"));
+ 77934: };

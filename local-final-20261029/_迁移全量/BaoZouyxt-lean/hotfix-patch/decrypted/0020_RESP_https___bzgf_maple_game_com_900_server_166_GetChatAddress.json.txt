@@ -1,0 +1,2 @@
+status=200 https://bzgf.maple-game.com/900-server-166/GetChatAddress
+{"eRet":1,"hanyusuiTime":0,"ChatServerIP":"","domain":"","ChatServerPort":"mad-4001-166","Luck":41,"AnnouncementIP":"bzgf.maple-game.com","AnnouncementDomain":"bzgf.maple-game.com","AnnouncementServerPort":"mad-4001-110","achievement":{"red":true,"achieveRateId":0,"nIds":[354]}}

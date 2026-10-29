@@ -1,0 +1,126 @@
+回执 第9批 C08〔PVE 战斗族〕（2026-10-27）
+
+══ 部署指纹 ══
+  构建：ver=h744ad0f4（链 he29a670a→h64f199bd→h5462764c→h744ad0f4，中段为两次口径修正）｜flow=ffaec47c3｜pid 2655 不变
+  selfCheck 1286 全过，implErr=null
+  patch\live\handlers.js      1,453,214 B  md5 E6529667819BB743284490D9FC8D312B
+  core\bz-rpc-server.js       364,631 B    md5 39750A3C33FDEF7A86004350638E43A4
+
+══ 一、这一批的真实形态（与批次预告不同，先报判定）══
+  C08 不是"9 个薄 ack"，是三套战斗架构：
+    a) 服务端权威 1v1（PveSvr1v1Mgr / RogueBattleMgr）：enter* 开局 + *_ACTION 动作中继；
+    b) 真人 PVP（RankMgr）：请求要 otherRoleID，离线服没有对手；
+    c) 多人回放（SPMpBtMgr / RogueMpFightMgr）：应答是整场战斗数据，客户端 playWithData 照着演。
+  ⚠ 交接单原计划"照 C07 全锁 eRet 2"在本批**不成立**：9 个里 8 个回调**无 else 分支**，
+    eRet≠1 不是优雅退出而是卡战斗界面；唯一有优雅退出的是 USER_PVP（eRet 3 → Alert(getText 1399) + dispose，
+    index.js:101338-101341）。所以"少发"在本批会变成"卡死"，不能照搬 C07 口径。
+  用户拍板（2026-10-27）：档 A —— 单人 PVE 4 个做满 + PVP 优雅拒 + 其余 4 个保留未实现；attArr 回空。
+
+══ 二、做满的 4 个（全部真机探针验过）══
+  1) REQ_LANGHUAN_COMBAT → User.enterPVEBattle（琅嬛 1v1 开局）
+     请求 {lv?,npcID,mp,gTime,hgtimes}（index.js:67548/67554）；回调 98832-98851。
+     应答：eRet 1 + AttckData（**本档**）+ npcArr（BZ_NPCARR，3658 只可战斗 npc）+ npcID 回声
+           + attArr [] + gold 0 + randSeed（每场不同）。
+  2) PVE_ACTION → User.beginPVEBattle（战斗动作）
+     请求 {action,paramID,paramID1,paramID2}（98943）；回调 98852-98904，先按 attArr 定 serverHp，
+     再 switch(o.action) 决定播什么（1 武学/2 用药/3 调息/6 换人/13 空/0 逃跑，98878-98901）。
+     应答 = 原样回声这 4 个字段 + attArr []。⚠ action 必须回声 0 也照发（0 是"逃跑"）。
+  3) REQ_ROGUE_PVE_COMBAT → User.enterRoguePVEBattle（肉鸽 1v1 开局）
+     请求 {npcID,hp,hplimit,mp}（104252 + 104248-104250）；应答同上 + rogueHp/rogueHpLimit/rogueMp
+     （把客户端报的跨层血投进 AttckData，createPlayerBattleEntity 用它们覆盖 hp/mp，74898-74900）+ exchangeNpcArr []。
+  4) ROGUE_PVE_ACTION → User.beginRoguePVEBattle：同 2 的口径（104208-104238）。
+
+  AttckData 的来源（这是本批最关键的一条，别被后来的"重建"改掉）：
+    抓包原件 templates.json → reqSelfBattleInfo['User.ReqSelfBattleInfo'] 的内层，键表正好等于
+    MadUtils.parsePlayerData（74919-74971，摊 baseValueAy[0..50] 并 delete 掉）＋
+    createPlayerBattleEntity（74766-74914，裸读 equipments/equips/skillMap/WeapToSkill/gemData/equipTitle）
+    要的那套契约。去皮 eRet/npcArr/npcID 后只换三样：baseValueAy 换本档、roleID 换本档、
+    skillMap 用抓包原件叠本档 s.skills（本档升过的等级优先）。
+
+══ 三、拒绝的 1 个 ══
+  USER_PVP → User.ChallengePVP：eRet 3（应答收窄到只有 eRet）。
+  依据：离线服没有真人对手（请求要 otherRoleID），伪造 EnemyData 就是替玩家造一个对手——不做。
+  eRet 3 是客户端自己的"不可挑战"分支，文案 1399 是客户端自带字符串，我们不造文案。
+  ⚠ 该文案离线读不到原文（没有 lang 表 dump），这一条登记为未验证。
+
+══ 四、保留未实现的 4 个（**请拍板是否接受"进得去就卡"**）══
+  REQ_ROGUE_PVP_BATTLE（ChallengeRoguePVP）＝ 要真人对手；
+  MPPVE_ACTION / ROGUE_MPPVE_ACTION / START_MPPVE_BATTLE ＝ 要服务端多人回放引擎。
+  这 4 个的 eRet≠1 分支全空（104102 / 110871 / 110877 / 105259），所以没做 = 玩家若走到会卡界面。
+  现状保留 SHAPED/UNKNOWN 兜底（即回形状默认值 eRet 1，不是拒绝），已在 docs\OPEN-ISSUES.md ISSUE-8 登记，
+  等入口批次（INIT_MPPVE_BATTLE / 肉鸽 PVP 入口）一起处置。
+  **如果上游要求"宁可拒绝也不要发假成功"，请明确说一句，我改成 eRet 2 并接受卡界面。**
+
+══ 五、顺带堵掉的一个真崩点 ══
+  generateNpcData（index.js:8093-8137）是裸读：t[14]→o.jineng，8118 立刻 u.getItem(o.jineng[0],"skill")。
+  ⇒ npcArr 是空数组必抛 TypeError。而原来落 SHAPED 兜底时正是 npcArr:"[]"（只是没人走到琅嬛/肉鸽而已）。
+  现在：请求的 npcID 不在 npc_stats 里（或为 0）→ 退回兜底怪 310003（真实存在、26 项），并大声记日志。
+  真机探针 #6 验过这条路径。
+
+══ 六、attArr 回空的依据（不是猜的）══
+  客户端所有 attArr 读点都在 `o.attArr && o.attArr.length > 0` 守卫里（98855 / 104183 / 104195）；
+  空数组 ⇒ 两侧 serverHp=0 / serverHpLimt=1；而 serverHp 只是"服务端保命血"
+  （实体本地血打完时把它拉回来，11668-11673；另参与胜负判定 104532-104533）。
+  ⇒ 空数组 = 不保命、不覆盖本地血量，战斗由客户端本地模拟自然打完，不崩不卡。**没有服务端防作弊**，
+    离线单人无意义；要服务端持血就得另立"伤害模型"工程，请明确再排。
+
+══ 七、门禁 ══
+  acceptance **48/48 绿**（+c08-smoke 11 条），known-red 0，cap 0
+  check_shape_freeze：差异 309 项（236 add / 7 del / 6 value，**0 chg**）→ 71 条 planned 规则 → --freeze 入基线 → diff 0，C1–C8、C10–C13 全过
+  check_reject_codes OK：动作 **77** / 条目 **91** / 拒绝点 **113**（+ChallengePVP 一个动作）
+  冒烟：c08 11/11、c07 2/2、c06 10/10、c04 12/12、v271 15/15、c16 10/10、c03 11/11、c02 19/19、c05 16/16 …
+  热重载：pid 2655 不变，selfCheck 1286 全过
+  真机探针 6 发全通 + **存档零写入**（探针前后 bz_offline_save.json md5 完全相同 e4d18ab8…）
+  独立验收：工人按工单复跑三条命令（c08-smoke 两次 11/11、check_shape 两次 diff 0、check_reject 两次 OK 77/91），
+    A–G 七项逐条给行号核对全部成立。工人另提一条事实：`check_shape_freeze.js` 跑完会重写
+    shapes.json / bz-shapes.generated.js / lookup-keys.json / shapes_report.md——主审随后做了幂等复核：
+    连跑两次，**shapes.json / bz-shapes.generated.js / shapes_report.md 逐字节相同**，只有 lookup-keys.json
+    的 generatedAt 时间戳变（内容 count/fields 不变）→ 不影响任何闸门，也算把"跑一次就动文件"这件事查清楚了。
+
+══ 八、附带的一条登记（按你这次的要求做的）══
+  docs\OPEN-ISSUES.md 新增 **ISSUE-8「整套玩法被锁」清单**：
+   8-1 善恶（11 动作）｜8-2 洗练·寄养·性别（4）｜8-3 妻子养成（2）｜8-4 青楼（3），
+   每条写清锁因与解锁前置；8-1 照你口述写了三条必做（s.geSide / goodAndEvilData 16 键真实初值 / s.geScore 按表发、不白给）。
+   规则也写进去了：哪批碰到入口就一起解锁，全部批次跑完统一过一遍。
+
+══ 九、等你回话的 4 问（本批已按"默认"交付，你回话我再改）══
+  ⚠ 回话方式：一句话就够，例如「Q1 选②、Q2 选①、Q3 不排、Q4 以 drop-table 为准」。
+  ⚠ 下面每条都写了**默认处置**——你不回话，本批就按默认走，不会自己动。
+
+  Q1【那 4 个"保留未实现"的动作怎么处置】——最需要你一句话
+    对象：REQ_ROGUE_PVP_BATTLE（要真人对手）、MPPVE_ACTION / ROGUE_MPPVE_ACTION / START_MPPVE_BATTLE（要多人回放引擎）。
+    现状：**回形状默认 eRet 1**（不是拒绝）。后果：玩家若真走到这几个入口，会卡在战斗界面（回调 eRet≠1 分支是空的）。
+    ① 维持现状 —— 等入口批次（INIT_MPPVE_BATTLE / 肉鸽 PVP 入口）一起做，本批不动。【默认】
+    ② 改成 eRet 2 拒绝 —— 口径统一成"宁可拒绝也不发假成功"，但**仍然卡界面**（没有 else 分支可退），
+       只是日志能看出是"我们拒的"而不是"形状默认值"。
+    我的建议：①。理由：②并不能改善玩家体验，只把"卡"从假的 eRet 1 换成假的 eRet 2，反而多一个承诺过的码。
+
+  Q2【AttckData 的战斗数值按哪套装备算】
+    现状：equips / equipments / gemData / titivate* 用**抓包快照值**（原账号那套装备），
+    所以战斗里穿的不是你身上那套（伤害/防御按快照算）。要换成"身上的装备"需要 `parseEq` 的实例格式口径。
+    ① 维持快照（战斗数值与裸装不一致，但结构完整、不崩）。【默认】
+    ② 你给 parseEq 口径（或给一份真实 AttckData 抓包样本）→ 我把 s.equipments / s.playerEquip 转进去。
+    影响面：只影响战斗数值，不影响存档、不影响任何发奖口。
+
+  Q3【要不要做"服务端持血"（attArr 逐招回填）】
+    现状：attArr 一律回空 ⇒ 血由客户端本地模拟，服务端只回声动作、不保命、不防作弊。
+    ① 不排（离线单人无意义，且要另立"伤害模型"工程）。【默认】
+    ② 排一个"服务端战斗模拟"专项（工作量大，得单独立项，不在任何批次里）。
+
+  Q4【范围外的一处矛盾，谁对】
+    handlers.js:6698-6700 的 `drop:dedup` 自检断言「两次 CheckBattleResult 后 playerEquip 完全相同」，
+    与 handler 注释（2727-2731）「不再做 5 秒去重」、以及 test\drop-table.js:64「两次赢就发两次」**互相矛盾**。
+    目前 47→48 项验收全绿，说明这条断言现在没有实际拦截到东西（不是红项），但口径是错的。
+    ① 以 drop-table 为准（两次赢发两次，把那条自检断言改掉）。【默认：本批不动，留着记账】
+    ② 以 dedup 为准（恢复 5 秒去重，改 drop-table）。
+
+══ 十、两条"告知"，不用回话 ══
+  G1. USER_PVP 的拒绝码 3 对应客户端文案 1399，原文**离线读不到**（没有 lang 表 dump）；
+      能确认的只是"3 这个码在客户端有专属分支（Alert + dispose）"，文案是客户端自带的，我们不造文案。
+  G2. 琅嬛 / 肉鸽的**入口前置条件没查**（LangHMode.startBattle 唯一调用点 index.js:138298），
+      所以"本档存档能不能真走到这两个开局"**未验**；我验的是协议层（真机 6 发探针全通、存档零写入）。
+      要验可达性得把存档练到门槛，属于端上实测，等你说做不做。
+
+  升级报告的条件不变：存档写坏，或者能白拿钱/道具（均未发生；本批 5 个动作零发奖口、零写档）。
+  进度：C01✅ C02✅ C05✅ C03✅ C16✅ C04✅ C06✅ C07✅ C08✅(档A) → 下一批 C09（8 个，技巧摸奖，relations.md:68）。
+

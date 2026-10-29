@@ -1,0 +1,99 @@
+# User.OutSchool  (HttpConst.LEVEAL_SCHOOL)
+# 出现 2 处
+
+ 77832: 101440: 1
+ 77833: };
+ 77834: this.deleteTask = [];
+ 77835: i.MessageCenter.on(r.HttpConst.JOIN_SCHOOL, this.joinSchoolCallBack, this);
+ 77836: i.MessageCenter.on(r.HttpConst.EXIT_SCHOOL, this.exitSchoolCallBack, this);
+ 77837: i.MessageCenter.on(r.HttpConst.BUY_NPC_FEEL, this.buyFellCallBack, this);
+ 77838: i.MessageCenter.on(r.HttpConst.LEVEAL_SCHOOL, this.levealSchoolCallBack, this);
+ 77839: i.MessageCenter.on(r.HttpConst.CHECK_OUT_SCHOOL, this.onCheckOutSchool, this);
+ 77840: i.MessageCenter.on(r.HttpConst.CLEAR_SXHOOL_CD, this.onClearCDSchool, this);
+ 77841: Promise.resolve().then(function() {
+ 77842: return t("../../scripts3/gamescenes3/maputils3/GoodEvilUtil");
+ 77843: }).then(function(t) {
+ 77844: e.goodEvilUtil = t.GoodEvilUtil;
+ 77845: });
+ 77846: };
+ 77847: e.prototype.onClearCDSchool = function(t, e) {
+ 77848: 1 == e.eRet ? n.default.show(l.getText(6001029), [ {
+ 77849: name: l.getText("6001032"),
+ 77850: flag: 0
+ 77851: } ]) : 5 == e.eRet && n.default.show(l.getText(9223));
+ 77852: };
+ 77853: e.prototype.joinSchoolCallBack = function(e, o) {
+ 77854: if (1 == o.eRet) {
+ 77855: o.hasOwnProperty("clearBoxs") && Promise.resolve().then(function() {
+ 77856: return t("../../scripts3/model3/MapBoxModel");
+ 77857: }).then(function(t) {
+ 77858: t.MapBoxModel.removeBox(o.clearBoxs);
+ 77859: });
+ 77860: a.RoleBaseInfo.masters.indexOf(this.npcId) < 0 && a.RoleBaseInfo.masters.push(this.npcId);
+ 77861: i.MessageCenter.dispatch(g.EvName.CHANGE_CV_STATE, 4);
+ 77862: this.deleteErrorTask();
+ 77863: i.MessageCenter.dispatch(g.EvName.UPDATE_PLAYER_EVENT);
+ 77864: var p = s.getItem(this.npcId, "master");
+ 77865: if (parseInt(p.dialogsuccess) > 0) {
+ 77866: var h = this;
+ 77867: c.default.addDialogEvent(p.dialogsuccess, this.npcId, function() {
+ 77868: h.deleteTask.length && n.default.show(l.getText("946"));
+ 77869: }.bind(this));
+ 77870: } else this.deleteTask.length && n.default.show(l.getText("946"));
+ 77871: this.checkTaskIsClear(p, 1);
+ 77872: } else if (5 == o.eRet) {
+ 77873: var f = o.cdTimeDays, d = {
+ 77874: 10: l.getText(6001027),
+ 77875: 11: l.getText(6001028)
+ 77876: };
+ 77877: m.default.prefabs.load("comUI/MasterAlertUI", cc.Prefab, function(t, e) {
+ 77878: var i = cc.instantiate(e);
+---
+ 78005: return i;
+ 78006: };
+ 78007: e.prototype.judgeChuMasterBtn = function(t) {
+ 78008: return 1 == s.getItem(t, "master").graduate;
+ 78009: };
+ 78010: e.prototype.checkChuMasterState = function(t) {
+ 78011: if (this.isFinishMasterTask(t)) u.NetMgr.http.sendRequest(r.HttpConst.LEVEAL_SCHOOL, {
+ 78012: npcID: t
+ 78013: }); else {
+ 78014: var e = {
+ 78015: roleID: a.RoleBaseInfo.roleID,
+ 78016: npcID: t
+ 78017: };
+ 78018: u.NetMgr.http.sendRequest(r.HttpConst.CHECK_OUT_SCHOOL, e);
+ 78019: }
+ 78020: };
+ 78021: e.prototype.onCheckOutSchool = function(t, e) {
+ 78022: var o = s.getItem(e.npcID, "master");
+ 78023: if (6 == e.eRet) {
+ 78024: var i = e.CDTime - e.serverTime, r = Math.floor(i / 864e5), c = Math.floor((i - 864e5 * r) / 36e5), p = Math.floor((i - 864e5 * r - 36e5 * c) / 6e4), h = s.getItem(e.skillId, "skill"), u = l.getText(6079).replace(/\[1\]/, l.getText(h.Name));
+ 78025: r > 0 && (u += r + l.getText(3784));
+ 78026: u += c + l.getText(3785);
+ 78027: u += p + l.getText(1414);
+ 78028: u = this.outSchoolCondition(o, u);
+ 78029: } else {
+ 78030: var f = a.RoleBaseInfo.finishTaskObj;
+ 78031: if (a.RoleBaseInfo.requireTaskObj.hasOwnProperty(o.graduatetask2) || f.hasOwnProperty(o.graduatetask2)) {
+ 78032: var d = 10 != o.Menpai && 11 != o.Menpai || 10 != a.RoleBaseInfo.goodEvilCamp && 11 != a.RoleBaseInfo.goodEvilCamp ? 1216 : 69225;
+ 78033: return n.default.show(l.getText(d));
+ 78034: }
+ 78035: if (this.checkOutSchool(o.graduatecondition) && this.checkOutSchool(o.graduatecondition1) && this.checkOutSchool(o.graduatecondition2)) {
+ 78036: var g = {
+ 78037: npcState: 0,
+ 78038: reqTaskObj: {},
+ 78039: taskObj: {}
+ 78040: }, _ = s.getTask(o.graduatetask2);
+ 78041: g.npcState = 2;
+ 78042: g.taskObj = _;
+ 78043: 0 == _["Pre-Picture"].length || 2 == _["Pre-Picture"][0] ? m.default.loadFrom(m.default.prefabs, "taskUI/TaskFrameWork", cc.Prefab).then(function(t) {
+ 78044: var e = cc.instantiate(t);
+ 78045: y.PopUpMgr.addPopUp(e, v.LayerMgr.popUpLayer);
+ 78046: e.addComponent("TaskFrameWork").setDatas(g);
+ 78047: }) : 1 == _["Pre-Picture"][0] && m.default.prefabs.load("comUI/PlayCartoonUI", cc.Prefab, function(t, e) {
+ 78048: var o = cc.instantiate(e);
+ 78049: y.PopUpMgr.addPopUp(o, v.LayerMgr.popUpLayer);
+ 78050: o.addComponent("TaskCartoonUI").setShowDatas(g, 0);
+ 78051: });
+---

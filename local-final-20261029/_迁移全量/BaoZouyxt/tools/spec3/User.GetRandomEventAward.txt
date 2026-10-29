@@ -1,0 +1,13 @@
+# User.GetRandomEventAward   (HttpConst.REQ_WM_ADV_RWD)
+
+## 注册点 143814: i.MessageCenter.on(n.HttpConst.REQ_WM_ADV_RWD, function(o, i) {
+
+## 请求点 143871: p.NetMgr.http.sendRequest(n.HttpConst.REQ_WM_ADV_RWD, o);
+   143863: e.prototype.reqAdvReward = function(t, e) {
+   143864: i.MessageCenter.dispatch(l.EvName.REMOVE_ADV_NPC, this.advNpcs);
+   143865: var o = {
+   143866: adventureID: t,
+   143867: award: e,
+   143868: eventID: c.RumorModel.eventID
+   143869: };
+   143870: u.NewAdventureModel.isDeadMonster = !0;

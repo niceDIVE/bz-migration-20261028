@@ -1,0 +1,51 @@
+# User.ClientGMCommand  (HttpConst.CLIENTGMCOMMON)
+# 出现 1 处
+
+ 65453: return e;
+ 65454: };
+ 65455: e.prototype.reqClientGm = function(t) {
+ 65456: var e = {
+ 65457: gmString: t
+ 65458: };
+ 65459: m.NetMgr.http.sendReqWithMask(a.HttpConst.CLIENTGMCOMMON, e);
+ 65460: };
+ 65461: e.prototype.reqResetNameItem = function(t) {
+ 65462: this.newName = t;
+ 65463: m.NetMgr.http.sendRequest(a.HttpConst.CHANGE_NAME, {
+ 65464: newName: t
+ 65465: });
+ 65466: };
+ 65467: e.prototype.reqSangong = function(t, e) {
+ 65468: m.NetMgr.http.sendRequest(a.HttpConst.SAN_GONG, {
+ 65469: skillID: e,
+ 65470: propID: t
+ 65471: });
+ 65472: };
+ 65473: e.prototype.reqGetDropAward = function(t) {
+ 65474: m.NetMgr.http.sendRequest(a.HttpConst.GET_DROP_AWARD, {
+ 65475: drops: t
+ 65476: });
+ 65477: };
+ 65478: e.prototype.updateEquipItem = function(t, e) {
+ 65479: if (this.equipmentDic.hasOwnProperty(e)) {
+ 65480: this.equipmentDic[e].itemID = t[1];
+ 65481: this.equipmentDic[e].attrs = t[2];
+ 65482: }
+ 65483: };
+ 65484: e.prototype.killRewardEq = function(t, e) {
+ 65485: var o = this.parseEq(t, e);
+ 65486: this.killDeleteEq(t);
+ 65487: this.addEq(o);
+ 65488: };
+ 65489: e.prototype.killDeleteEq = function(t) {
+ 65490: if (this.equipmentDic.hasOwnProperty(t)) {
+ 65491: var e = this.equipmentDic[t];
+ 65492: if (this.equipByItemID.hasOwnProperty(e.itemID)) {
+ 65493: var o = this.equipByItemID[e.itemID], i = o.indexOf(e);
+ 65494: i >= 0 && o.splice(i, 1);
+ 65495: }
+ 65496: delete this.equipmentDic[t];
+ 65497: }
+ 65498: };
+ 65499: e.prototype.itemUsePopLayer = function(e) {
+---

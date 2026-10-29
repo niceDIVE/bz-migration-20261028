@@ -1,0 +1,40 @@
+{
+  "verdict": "FAIL",
+  "cases": 2,
+  "byVia": {
+    "error": 2
+  },
+  "judge": {
+    "cases": 2,
+    "pass": 0,
+    "fail": 2,
+    "crossFail": 0,
+    "byCode": {
+      "FAIL L1.NO_RESP": 2,
+      "FAIL L5.RULE": 2
+    }
+  },
+  "regressions": 0,
+  "regress": [],
+  "perCase": [
+    {
+      "id": "saleItem.equip90001@replay",
+      "action": "User.saleItem",
+      "verdict": "FAIL",
+      "fails": [
+        "L1.NO_RESP 应答体不是对象"
+      ]
+    },
+    {
+      "id": "saleItem.2001x2@replay",
+      "action": "User.saleItem",
+      "verdict": "FAIL",
+      "fails": [
+        "L1.NO_RESP 应答体不是对象",
+        "L5.RULE 守恒式不成立：卖出得 Price×num 铜币（物品）（d('coins') === T.item[p.itemID].Price * p.num）",
+        "L5.RULE 守恒式不成立：卖出减 num 个物品（dbag(p.itemID) === -p.num）"
+      ]
+    }
+  ],
+  "totalMs": 0
+}

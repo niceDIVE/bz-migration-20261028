@@ -1,0 +1,1432 @@
+{
+ "User.ApplyFriend": [
+  {
+   "action": "User.ApplyFriend",
+   "field": "eRet",
+   "usage": "Number(e.eRet) - 1",
+   "line": "132270: var o = [ 4846, 378, 371, 373, 379, 372, 737, 736 ], i = Number(e.eRet) - 1;"
+  },
+  {
+   "action": "User.ApplyFriend",
+   "field": "eRet",
+   "usage": "e.eRet - 1",
+   "line": "132271: !isNaN(i) && i >= 0 && i < o.length && s.default.show(l.getText(o[e.eRet - 1]));"
+  }
+ ],
+ "User.BuyNpcFeel": [
+  {
+   "action": "User.BuyNpcFeel",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "77936: 1 == e.eRet ? h.default.setNcpIntimacy(this.npcId, 10) : 2 == e.eRet && n.default.show(l.getText(1100));"
+  },
+  {
+   "action": "User.BuyNpcFeel",
+   "field": "eRet",
+   "usage": "2 == e.eRet",
+   "line": "77936: 1 == e.eRet ? h.default.setNcpIntimacy(this.npcId, 10) : 2 == e.eRet && n.default.show(l.getText(1100));"
+  }
+ ],
+ "User.ExChangeJetton": [
+  {
+   "action": "User.ExChangeJetton",
+   "field": "curGold",
+   "usage": "p.InventoryDB.setGold(e.curGold)",
+   "line": "54263: e.hasOwnProperty(\"curGold\") && p.InventoryDB.setGold(e.curGold);"
+  },
+  {
+   "action": "User.ExChangeJetton",
+   "field": "curJetton",
+   "usage": "p.InventoryDB.setChips(e.curJetton)",
+   "line": "54264: e.hasOwnProperty(\"curJetton\") && p.InventoryDB.setChips(e.curJetton);"
+  },
+  {
+   "action": "User.ExChangeJetton",
+   "field": "chipTimes",
+   "usage": "n.RoleOtherInfo.chipTimes = e.chipTimes",
+   "line": "54265: e.hasOwnProperty(\"chipTimes\") && (n.RoleOtherInfo.chipTimes = e.chipTimes);"
+  },
+  {
+   "action": "User.ExChangeJetton",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "54266: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.ExChangeJetton",
+   "field": "getPotency",
+   "usage": "c.RoleBaseInfo.potentials += e.getPotency",
+   "line": "54267: e.hasOwnProperty(\"getPotency\") && (c.RoleBaseInfo.potentials += e.getPotency);"
+  },
+  {
+   "action": "User.ExChangeJetton",
+   "field": "getCoins",
+   "usage": "c.RoleBaseInfo.coins += e.getCoins",
+   "line": "54268: e.hasOwnProperty(\"getCoins\") && (c.RoleBaseInfo.coins += e.getCoins);"
+  },
+  {
+   "action": "User.ExChangeJetton",
+   "field": "eRet",
+   "usage": "2 == e.eRet",
+   "line": "54269: } else 2 == e.eRet ? u.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(r.getText(\"762\"));"
+  },
+  {
+   "action": "User.ExChangeJetton",
+   "field": "eRet",
+   "usage": "3 == e.eRet",
+   "line": "54269: } else 2 == e.eRet ? u.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(r.getText(\"762\"));"
+  }
+ ],
+ "User.GetFashionList": [
+  {
+   "action": "User.GetFashionList",
+   "field": "type",
+   "usage": "1 == e.type",
+   "line": "75623: 1 == e.type && this.setFashionTime(e.FashionTimeMap);"
+  },
+  {
+   "action": "User.GetFashionList",
+   "field": "FashionTimeMap",
+   "usage": "this.setFashionTime(e.FashionTimeMap)",
+   "line": "75623: 1 == e.type && this.setFashionTime(e.FashionTimeMap);"
+  },
+  {
+   "action": "User.GetFashionList",
+   "field": "showFashionNewShop",
+   "usage": "a.addComponent(\"FashionShopMainUI\").showFashionNewShop(e)",
+   "line": "75638: a.addComponent(\"FashionShopMainUI\").showFashionNewShop(e);"
+  }
+ ],
+ "User.LookOther": [
+  {
+   "action": "User.LookOther",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "101523: 1 == e.eRet && h.default.prefabs.load(\"comUI/RoleInfoUI\", cc.Prefab, function(t, i) {"
+  }
+ ],
+ "User.WashMedicine": [
+  {
+   "action": "User.WashMedicine",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "144100: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "armStrong",
+   "usage": "l.RoleBaseInfo.baseArmStrong = e.armStrong",
+   "line": "144101: l.RoleBaseInfo.baseArmStrong = e.armStrong;"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "shenFa",
+   "usage": "l.RoleBaseInfo.baseShenFa = e.shenFa",
+   "line": "144102: l.RoleBaseInfo.baseShenFa = e.shenFa;"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "bone",
+   "usage": "l.RoleBaseInfo.baseBone = e.bone",
+   "line": "144103: l.RoleBaseInfo.baseBone = e.bone;"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "understanding",
+   "usage": "l.RoleBaseInfo.baseUnderstanding = e.understanding",
+   "line": "144104: l.RoleBaseInfo.baseUnderstanding = e.understanding;"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "armStrong",
+   "usage": "l.RoleBaseInfo.armStrong = e.armStrong",
+   "line": "144105: l.RoleBaseInfo.armStrong = e.armStrong;"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "shenFa",
+   "usage": "l.RoleBaseInfo.shenFa = e.shenFa",
+   "line": "144106: l.RoleBaseInfo.shenFa = e.shenFa;"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "bone",
+   "usage": "l.RoleBaseInfo.bone = e.bone",
+   "line": "144107: l.RoleBaseInfo.bone = e.bone;"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "understanding",
+   "usage": "l.RoleBaseInfo.understanding = e.understanding",
+   "line": "144108: l.RoleBaseInfo.understanding = e.understanding;"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "bloodArr",
+   "usage": "p.MarryModel.cycleData[8] = e.bloodArr",
+   "line": "144109: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "fosterArr",
+   "usage": "p.MarryModel.cycleData[7] = e.fosterArr",
+   "line": "144110: e.hasOwnProperty(\"fosterArr\") && (p.MarryModel.cycleData[7] = e.fosterArr);"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "maxWuxin",
+   "usage": "p.MarryModel.maxWuxin = e.maxWuxin",
+   "line": "144111: e.hasOwnProperty(\"maxWuxin\") && (p.MarryModel.maxWuxin = e.maxWuxin);"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "armStrong",
+   "usage": "h.UserModel.entity.strength.baseValue = e.armStrong + o[7][0] + o[8][0]",
+   "line": "144117: h.UserModel.entity.strength.baseValue = e.armStrong + o[7][0] + o[8][0];"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "shenFa",
+   "usage": "h.UserModel.entity.shenfa.baseValue = e.shenFa + o[7][1] + o[8][1]",
+   "line": "144118: h.UserModel.entity.shenfa.baseValue = e.shenFa + o[7][1] + o[8][1];"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "bone",
+   "usage": "h.UserModel.entity.gengu.baseValue = e.bone + o[7][2] + o[8][2]",
+   "line": "144119: h.UserModel.entity.gengu.baseValue = e.bone + o[7][2] + o[8][2];"
+  },
+  {
+   "action": "User.WashMedicine",
+   "field": "understanding",
+   "usage": "h.UserModel.entity.perception.baseValue = e.understanding + o[7][3] + o[8][3]",
+   "line": "144120: h.UserModel.entity.perception.baseValue = e.understanding + o[7][3] + o[8][3];"
+  }
+ ],
+ "User.checkUploadAttackDamge": [
+  {
+   "action": "User.checkUploadAttackDamge",
+   "field": "eRet",
+   "usage": "2 == o.eRet",
+   "line": "145543: if (2 == o.eRet) {"
+  },
+  {
+   "action": "User.checkUploadAttackDamge",
+   "field": "eRet",
+   "usage": "3 == o.eRet",
+   "line": "145546: } else if (3 == o.eRet) {"
+  },
+  {
+   "action": "User.checkUploadAttackDamge",
+   "field": "killBoss",
+   "usage": "h.RoleBaseInfo.roleID == o.killBoss",
+   "line": "145547: if (h.RoleBaseInfo.roleID == o.killBoss) if (this.win) c.default.show(r.getText(882)); else {"
+  },
+  {
+   "action": "User.checkUploadAttackDamge",
+   "field": "killBossName",
+   "usage": "replace(/\\[2\\]/, o.killBossName)",
+   "line": "145551: var a = n.getItem(this.bossID, \"npc\"), s = r.getText(864).replace(/\\[1\\]/, r.getText(a.NpcName)).replace(/\\[2\\]/, o.killBossName);"
+  },
+  {
+   "action": "User.checkUploadAttackDamge",
+   "field": "eRet",
+   "usage": "1 == o.eRet",
+   "line": "145554: } else if (1 == o.eRet) {"
+  },
+  {
+   "action": "User.checkUploadAttackDamge",
+   "field": "bossMaxHP",
+   "usage": "this.bossHpMax = o.bossMaxHP",
+   "line": "145555: this.bossHpMax = o.bossMaxHP;"
+  },
+  {
+   "action": "User.checkUploadAttackDamge",
+   "field": "bossCurHP",
+   "usage": "this.bossHp = o.bossCurHP",
+   "line": "145556: this.bossHp = o.bossCurHP;"
+  },
+  {
+   "action": "User.checkUploadAttackDamge",
+   "field": "CDTime",
+   "usage": "u.TimeMgr.getSTimestamp() + o.CDTime",
+   "line": "145557: this.nxtAvailableTs = u.TimeMgr.getSTimestamp() + o.CDTime;"
+  },
+  {
+   "action": "User.checkUploadAttackDamge",
+   "field": "maxPotentialLimit",
+   "usage": "o.hasOwnProperty(\"maxPotentialLimit\") && o.maxPotentialLimit",
+   "line": "145561: o.hasOwnProperty(\"maxPotentialLimit\") && o.maxPotentialLimit && c.default.show(r.getText(6016943));"
+  },
+  {
+   "action": "User.checkUploadAttackDamge",
+   "field": "setAllHpAndMp",
+   "usage": "t.RoleOtherInfo.setAllHpAndMp(o)",
+   "line": "145565: t.RoleOtherInfo.setAllHpAndMp(o);"
+  }
+ ],
+ "User.endDoubleTraining": [
+  {
+   "action": "User.endDoubleTraining",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "56713: if (1 == e.eRet || 0 == e.eRet) {"
+  },
+  {
+   "action": "User.endDoubleTraining",
+   "field": "eRet",
+   "usage": "0 == e.eRet",
+   "line": "56713: if (1 == e.eRet || 0 == e.eRet) {"
+  },
+  {
+   "action": "User.endDoubleTraining",
+   "field": "setAutoStartHung",
+   "usage": "u.FishingModel.setAutoStartHung(e)",
+   "line": "56714: u.FishingModel.setAutoStartHung(e);"
+  },
+  {
+   "action": "User.endDoubleTraining",
+   "field": "flag",
+   "usage": "0 == e.flag",
+   "line": "56715: if (0 == e.flag) {"
+  }
+ ],
+ "User.makeLove": [
+  {
+   "action": "User.makeLove",
+   "field": "eRet",
+   "usage": "s = e.eRet",
+   "line": "77279: var o = this, i = a.getItem(1299, \"npc\"), n = 0, s = e.eRet;"
+  },
+  {
+   "action": "User.makeLove",
+   "field": "fetationTime",
+   "usage": "this.fetationTime = e.fetationTime",
+   "line": "77285: this.fetationTime = e.fetationTime;"
+  }
+ ],
+ "User.rankList": [
+  {
+   "action": "User.rankList",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "101516: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.rankList",
+   "field": "CDTime",
+   "usage": "this.cdTime = e.CDTime",
+   "line": "101517: this.cdTime = e.CDTime;"
+  }
+ ],
+ "User.BeginFish": [
+  {
+   "action": "User.BeginFish",
+   "field": "eRet",
+   "usage": "1 == o.eRet",
+   "line": "51558: if (1 == o.eRet || 2 == o.eRet) {"
+  },
+  {
+   "action": "User.BeginFish",
+   "field": "eRet",
+   "usage": "2 == o.eRet",
+   "line": "51558: if (1 == o.eRet || 2 == o.eRet) {"
+  },
+  {
+   "action": "User.BeginFish",
+   "field": "serverTime",
+   "usage": "o.serverTime - o.beginTime",
+   "line": "51560: this.timeElapsed = .001 * (o.serverTime - o.beginTime);"
+  },
+  {
+   "action": "User.BeginFish",
+   "field": "beginTime",
+   "usage": "o.serverTime - o.beginTime",
+   "line": "51560: this.timeElapsed = .001 * (o.serverTime - o.beginTime);"
+  },
+  {
+   "action": "User.BeginFish",
+   "field": "advertisementNum",
+   "usage": "this.numAdChances = o.advertisementNum",
+   "line": "51561: this.numAdChances = o.advertisementNum;"
+  },
+  {
+   "action": "User.BeginFish",
+   "field": "maxTime",
+   "usage": "this.maxTime = o.maxTime",
+   "line": "51562: o.hasOwnProperty(\"maxTime\") && (this.maxTime = o.maxTime);"
+  }
+ ],
+ "User.CheckOutSchool": [
+  {
+   "action": "User.CheckOutSchool",
+   "field": "npcID",
+   "usage": "s.getItem(e.npcID, \"master\")",
+   "line": "78022: var o = s.getItem(e.npcID, \"master\");"
+  },
+  {
+   "action": "User.CheckOutSchool",
+   "field": "eRet",
+   "usage": "6 == e.eRet",
+   "line": "78023: if (6 == e.eRet) {"
+  },
+  {
+   "action": "User.CheckOutSchool",
+   "field": "CDTime",
+   "usage": "e.CDTime - e.serverTime",
+   "line": "78024: var i = e.CDTime - e.serverTime, r = Math.floor(i / 864e5), c = Math.floor((i - 864e5 * r) / 36e5), p = Math.floor((i - 864e5 * r - 36e5 * c) / 6e4), h = s.getItem(e.skillId, \"skill\"), u = l.getText(6079).replace(/\\[1\\]/, l.getText(h.Name));"
+  },
+  {
+   "action": "User.CheckOutSchool",
+   "field": "serverTime",
+   "usage": "e.CDTime - e.serverTime",
+   "line": "78024: var i = e.CDTime - e.serverTime, r = Math.floor(i / 864e5), c = Math.floor((i - 864e5 * r) / 36e5), p = Math.floor((i - 864e5 * r - 36e5 * c) / 6e4), h = s.getItem(e.skillId, \"skill\"), u = l.getText(6079).replace(/\\[1\\]/, l.getText(h.Name));"
+  },
+  {
+   "action": "User.CheckOutSchool",
+   "field": "skillId",
+   "usage": "s.getItem(e.skillId, \"skill\")",
+   "line": "78024: var i = e.CDTime - e.serverTime, r = Math.floor(i / 864e5), c = Math.floor((i - 864e5 * r) / 36e5), p = Math.floor((i - 864e5 * r - 36e5 * c) / 6e4), h = s.getItem(e.skillId, \"skill\"), u = l.getText(6079).replace(/\\[1\\]/, l.getText(h.Name));"
+  }
+ ],
+ "User.FindFriend": [
+  {
+   "action": "User.FindFriend",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "132225: 1 == e.eRet ? i.MessageCenter.dispatch(c.EvName.USER_FIND_FRIEND, e) : s.default.show(l.getText(\"371\"));"
+  }
+ ],
+ "User.GetOnHookFriendLis": [
+  {
+   "action": "User.GetOnHookFriendLis",
+   "field": "friendList",
+   "usage": "i.MessageCenter.dispatch(h.EvName.GET_FRIEND_LIST, e.friendList)",
+   "line": "56457: i.MessageCenter.dispatch(h.EvName.GET_FRIEND_LIST, e.friendList);"
+  }
+ ],
+ "User.NewPVPBattleResult": [
+  {
+   "action": "User.NewPVPBattleResult",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "101530: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.NewPVPBattleResult",
+   "field": "CDTime",
+   "usage": "this.cdTime = e.CDTime",
+   "line": "101531: e.hasOwnProperty(\"CDTime\") && (this.cdTime = e.CDTime);"
+  },
+  {
+   "action": "User.NewPVPBattleResult",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "112891: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.NewPVPBattleResult",
+   "field": "CDTime",
+   "usage": "A.RankModel.cdTime = e.CDTime",
+   "line": "112892: e.hasOwnProperty(\"CDTime\") && (A.RankModel.cdTime = e.CDTime);"
+  }
+ ],
+ "User.acceptCircleTask": [
+  {
+   "action": "User.acceptCircleTask",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "133546: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.acceptCircleTask",
+   "field": "taskID",
+   "usage": "i.getItem(e.taskID, \"tasknew\")",
+   "line": "133551: }, r = c.RoleBaseInfo.finishTaskObj, s = c.RoleBaseInfo.requireTaskObj, l = i.getItem(e.taskID, \"tasknew\");"
+  },
+  {
+   "action": "User.acceptCircleTask",
+   "field": "taskID",
+   "usage": "s.hasOwnProperty(e.taskID)",
+   "line": "133552: if (!s.hasOwnProperty(e.taskID) && !r.hasOwnProperty(e.taskID) && b.default.judgeTaskCondition(l[\"Pre-Require\"]) && b.default.judgeBranchId(l.branchid) && b.default.checkTaskTime(e.taskID)) {"
+  },
+  {
+   "action": "User.acceptCircleTask",
+   "field": "taskID",
+   "usage": "r.hasOwnProperty(e.taskID)",
+   "line": "133552: if (!s.hasOwnProperty(e.taskID) && !r.hasOwnProperty(e.taskID) && b.default.judgeTaskCondition(l[\"Pre-Require\"]) && b.default.judgeBranchId(l.branchid) && b.default.checkTaskTime(e.taskID)) {"
+  },
+  {
+   "action": "User.acceptCircleTask",
+   "field": "taskID",
+   "usage": "b.default.checkTaskTime(e.taskID)",
+   "line": "133552: if (!s.hasOwnProperty(e.taskID) && !r.hasOwnProperty(e.taskID) && b.default.judgeTaskCondition(l[\"Pre-Require\"]) && b.default.judgeBranchId(l.branchid) && b.default.checkTaskTime(e.taskID)) {"
+  }
+ ],
+ "User.clearGeSchoolClothing": [
+  {
+   "action": "User.clearGeSchoolClothing",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "77848: 1 == e.eRet ? n.default.show(l.getText(6001029), [ {"
+  },
+  {
+   "action": "User.clearGeSchoolClothing",
+   "field": "eRet",
+   "usage": "5 == e.eRet",
+   "line": "77851: } ]) : 5 == e.eRet && n.default.show(l.getText(9223));"
+  }
+ ],
+ "User.enterWoldBossBattle": [
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "flag",
+   "usage": "this.doubled = e.flag",
+   "line": "145593: this.doubled = e.flag;"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "bossCurHP",
+   "usage": "this.bossHp = e.bossCurHP",
+   "line": "145594: this.bossHp = e.bossCurHP;"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "bossMaxHP",
+   "usage": "this.bossHpMax = e.bossMaxHP",
+   "line": "145595: this.bossHpMax = e.bossMaxHP;"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "curAttackNum",
+   "usage": "this.numAtkAvail = e.curAttackNum",
+   "line": "145596: this.numAtkAvail = e.curAttackNum;"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "randSeed",
+   "usage": "d.BattleModel.seed = e.randSeed",
+   "line": "145597: d.BattleModel.seed = e.randSeed;"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "buyNum",
+   "usage": "this.buyNum = e.buyNum",
+   "line": "145598: this.buyNum = e.buyNum;"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "buffNum",
+   "usage": "this.setAtkBonus(e.buffNum)",
+   "line": "145599: this.setAtkBonus(e.buffNum);"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "eRet",
+   "usage": "2 == e.eRet",
+   "line": "145600: 2 == e.eRet ? c.default.show(r.getText(880)) : 3 == e.eRet && c.default.show(r.getText(878));"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "eRet",
+   "usage": "3 == e.eRet",
+   "line": "145600: 2 == e.eRet ? c.default.show(r.getText(880)) : 3 == e.eRet && c.default.show(r.getText(878));"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "eRet",
+   "usage": "2 == e.eRet",
+   "line": "145601: if (2 == e.eRet || 3 == e.eRet) this.end(); else if (5 == e.eRet) ; else if (this.numAtkAvail > 0) {"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "eRet",
+   "usage": "3 == e.eRet",
+   "line": "145601: if (2 == e.eRet || 3 == e.eRet) this.end(); else if (5 == e.eRet) ; else if (this.numAtkAvail > 0) {"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "eRet",
+   "usage": "5 == e.eRet",
+   "line": "145601: if (2 == e.eRet || 3 == e.eRet) this.end(); else if (5 == e.eRet) ; else if (this.numAtkAvail > 0) {"
+  },
+  {
+   "action": "User.enterWoldBossBattle",
+   "field": "AttckData",
+   "usage": "this.bossID != e.AttckData.npcID",
+   "line": "145602: if (this.bossID != e.AttckData.npcID) {"
+  }
+ ],
+ "User.marryAward": [
+  {
+   "action": "User.marryAward",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "77267: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.marryAward",
+   "field": "guestID",
+   "usage": "this.guestNpcAy.push(e.guestID)",
+   "line": "77268: this.guestNpcAy.push(e.guestID);"
+  },
+  {
+   "action": "User.marryAward",
+   "field": "rewardArray",
+   "usage": "f.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj)",
+   "line": "77269: f.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj);"
+  },
+  {
+   "action": "User.marryAward",
+   "field": "equipObj",
+   "usage": "f.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj)",
+   "line": "77269: f.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj);"
+  }
+ ],
+ "User.receiveNpc": [
+  {
+   "action": "User.receiveNpc",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "77231: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.receiveNpc",
+   "field": "npcID",
+   "usage": "this.receiveNpc = e.npcID",
+   "line": "77232: this.receiveNpc = e.npcID;"
+  },
+  {
+   "action": "User.receiveNpc",
+   "field": "npcID",
+   "usage": "y.TeamModel.setTeamState(e.npcID)",
+   "line": "77233: y.TeamModel.setTeamState(e.npcID);"
+  },
+  {
+   "action": "User.receiveNpc",
+   "field": "eRet",
+   "usage": "3 == e.eRet",
+   "line": "77234: } else 3 == e.eRet ? p.default.show(r.getText(\"1137\")) : 4 == e.eRet ? p.default.show(r.getText(\"1135\")) : p.default.show(r.getText(\"1136\"));"
+  },
+  {
+   "action": "User.receiveNpc",
+   "field": "eRet",
+   "usage": "4 == e.eRet",
+   "line": "77234: } else 3 == e.eRet ? p.default.show(r.getText(\"1137\")) : 4 == e.eRet ? p.default.show(r.getText(\"1135\")) : p.default.show(r.getText(\"1136\"));"
+  }
+ ],
+ "User.BeginPlayWooks": [
+  {
+   "action": "User.BeginPlayWooks",
+   "field": "eRet",
+   "usage": "0 != e.eRet",
+   "line": "86189: 0 != e.eRet && (this.isPracticing = !0);"
+  },
+  {
+   "action": "User.BeginPlayWooks",
+   "field": "beginTime",
+   "usage": "this.beginTime = e.beginTime",
+   "line": "86192: this.beginTime = e.beginTime;"
+  },
+  {
+   "action": "User.BeginPlayWooks",
+   "field": "serverTime",
+   "usage": "this.serverTime = e.serverTime",
+   "line": "86193: this.serverTime = e.serverTime;"
+  },
+  {
+   "action": "User.BeginPlayWooks",
+   "field": "maxTime",
+   "usage": "this.maxTime = e.maxTime",
+   "line": "86194: e.hasOwnProperty(\"maxTime\") && (this.maxTime = e.maxTime);"
+  },
+  {
+   "action": "User.BeginPlayWooks",
+   "field": "serverTime",
+   "usage": "e.serverTime - e.beginTime",
+   "line": "86195: this.setRemainingFatigue(Math.floor(o.Hp - 5e-4 * (e.serverTime - e.beginTime)));"
+  },
+  {
+   "action": "User.BeginPlayWooks",
+   "field": "beginTime",
+   "usage": "e.serverTime - e.beginTime",
+   "line": "86195: this.setRemainingFatigue(Math.floor(o.Hp - 5e-4 * (e.serverTime - e.beginTime)));"
+  },
+  {
+   "action": "User.BeginPlayWooks",
+   "field": "eRet",
+   "usage": "r.MessageCenter.dispatch(s.EvName.BEGIN_HITTING_WOOD, e.eRet)",
+   "line": "86196: r.MessageCenter.dispatch(s.EvName.BEGIN_HITTING_WOOD, e.eRet);"
+  },
+  {
+   "action": "User.BeginPlayWooks",
+   "field": "beginTime",
+   "usage": "Number(e.beginTime)",
+   "line": "86197: S.LoginMgr.storeByScene(2, Number(e.beginTime) + 1e3 * Number(e.maxTime));"
+  },
+  {
+   "action": "User.BeginPlayWooks",
+   "field": "maxTime",
+   "usage": "Number(e.maxTime)",
+   "line": "86197: S.LoginMgr.storeByScene(2, Number(e.beginTime) + 1e3 * Number(e.maxTime));"
+  }
+ ],
+ "User.DoublePractice": [
+  {
+   "action": "User.DoublePractice",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "56439: if (1 == e.eRet || 4 == e.eRet) {"
+  },
+  {
+   "action": "User.DoublePractice",
+   "field": "eRet",
+   "usage": "4 == e.eRet",
+   "line": "56439: if (1 == e.eRet || 4 == e.eRet) {"
+  },
+  {
+   "action": "User.DoublePractice",
+   "field": "needTime",
+   "usage": "Number(e.needTime)",
+   "line": "56440: if (isNaN(Number(e.needTime))) {"
+  }
+ ],
+ "User.FindFriendByID": [
+  {
+   "action": "User.FindFriendByID",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "132228: if (1 == e.eRet) switch (this.checkType) {"
+  }
+ ],
+ "User.GetSchoolRankList": [
+  {
+   "action": "User.GetSchoolRankList",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "113603: 1 == e.eRet && r.MessageCenter.dispatch(l.EvName.GOT_RANK_LIST, e);"
+  }
+ ],
+ "User.OutSchool": [
+  {
+   "action": "User.OutSchool",
+   "field": "eRet",
+   "usage": "1 == o.eRet",
+   "line": "77894: if (1 == o.eRet) {"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "clearBoxs",
+   "usage": "t.MapBoxModel.removeBox(o.clearBoxs)",
+   "line": "77898: t.MapBoxModel.removeBox(o.clearBoxs);"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "npcID",
+   "usage": "i = o.npcID",
+   "line": "77900: var i = o.npcID, r = s.getItem(i, \"master\");"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "textArr",
+   "usage": "i.getComponent(\"GoodEvilCareerUI\").setMyData(!0, o.textArr, o.hasOwnProperty(\"rewardArray\") ? o.rewardArray : null)",
+   "line": "77908: i.getComponent(\"GoodEvilCareerUI\").setMyData(!0, o.textArr, o.hasOwnProperty(\"rewardArray\") ? o.rewardArray : null);"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "rewardArray",
+   "usage": "o.hasOwnProperty(\"rewardArray\") ? o.rewardArray : null",
+   "line": "77908: i.getComponent(\"GoodEvilCareerUI\").setMyData(!0, o.textArr, o.hasOwnProperty(\"rewardArray\") ? o.rewardArray : null);"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "oldSchool",
+   "usage": "p.RoleOtherInfo.outSchoolAy.push(o.oldSchool)",
+   "line": "77912: o.hasOwnProperty(\"oldSchool\") && p.RoleOtherInfo.outSchoolAy.push(o.oldSchool);"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "npcIDArr",
+   "usage": "o.npcIDArr.length",
+   "line": "77913: if (o.hasOwnProperty(\"npcIDArr\") && o.npcIDArr.length) for (var h = a.RoleBaseInfo.masters, u = 0; u < h.length; u++) for (var f = 0; f < o.npcIDArr.length; f++) h[u] == o.npcIDArr[f] && h.splice(u, 1);"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "npcIDArr",
+   "usage": "f < o.npcIDArr.length",
+   "line": "77913: if (o.hasOwnProperty(\"npcIDArr\") && o.npcIDArr.length) for (var h = a.RoleBaseInfo.masters, u = 0; u < h.length; u++) for (var f = 0; f < o.npcIDArr.length; f++) h[u] == o.npcIDArr[f] && h.splice(u, 1);"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "npcIDArr",
+   "usage": "h[u] == o.npcIDArr[f]",
+   "line": "77913: if (o.hasOwnProperty(\"npcIDArr\") && o.npcIDArr.length) for (var h = a.RoleBaseInfo.masters, u = 0; u < h.length; u++) for (var f = 0; f < o.npcIDArr.length; f++) h[u] == o.npcIDArr[f] && h.splice(u, 1);"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "eRet",
+   "usage": "6 == o.eRet",
+   "line": "77923: } else if (6 == o.eRet) {"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "npcID",
+   "usage": "s.getItem(o.npcID, \"master\")",
+   "line": "77924: r = s.getItem(o.npcID, \"master\");"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "CDTime",
+   "usage": "o.CDTime - o.serverTime",
+   "line": "77925: var d = o.CDTime - o.serverTime, g = Math.floor(d / 864e5), _ = Math.floor((d - 864e5 * g) / 36e5), S = Math.floor((d - 864e5 * g - 36e5 * _) / 6e4), M = s.getItem(o.skillId, \"skill\"), E = l.getText(6079).replace(/\\[1\\]/, l.getText(M.Name));"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "serverTime",
+   "usage": "o.CDTime - o.serverTime",
+   "line": "77925: var d = o.CDTime - o.serverTime, g = Math.floor(d / 864e5), _ = Math.floor((d - 864e5 * g) / 36e5), S = Math.floor((d - 864e5 * g - 36e5 * _) / 6e4), M = s.getItem(o.skillId, \"skill\"), E = l.getText(6079).replace(/\\[1\\]/, l.getText(M.Name));"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "skillId",
+   "usage": "s.getItem(o.skillId, \"skill\")",
+   "line": "77925: var d = o.CDTime - o.serverTime, g = Math.floor(d / 864e5), _ = Math.floor((d - 864e5 * g) / 36e5), S = Math.floor((d - 864e5 * g - 36e5 * _) / 6e4), M = s.getItem(o.skillId, \"skill\"), E = l.getText(6079).replace(/\\[1\\]/, l.getText(M.Name));"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "eRet",
+   "usage": "5 == o.eRet",
+   "line": "77930: } else if (5 == o.eRet) {"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "npcID",
+   "usage": "s.getItem(o.npcID, \"master\")",
+   "line": "77931: var I = s.getItem(o.npcID, \"master\");"
+  },
+  {
+   "action": "User.OutSchool",
+   "field": "eRet",
+   "usage": "7 == o.eRet",
+   "line": "77933: } else 7 == o.eRet && n.default.show(l.getText(\"6372\"));"
+  }
+ ],
+ "User.beginWedding": [
+  {
+   "action": "User.beginWedding",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "77273: 1 == e.eRet && (this.weddingType = 0);"
+  }
+ ],
+ "User.exitSchool": [
+  {
+   "action": "User.exitSchool",
+   "field": "npcIDArr",
+   "usage": "e.npcIDArr.length",
+   "line": "77889: if (e.hasOwnProperty(\"npcIDArr\") && e.npcIDArr.length) for (var o = a.RoleBaseInfo.masters, i = 0; i < o.length; i++) for (var r = 0; r < e.npcIDArr.length; r++) o[i] == e.npcIDArr[r] && o.splice(i, 1);"
+  },
+  {
+   "action": "User.exitSchool",
+   "field": "npcIDArr",
+   "usage": "r < e.npcIDArr.length",
+   "line": "77889: if (e.hasOwnProperty(\"npcIDArr\") && e.npcIDArr.length) for (var o = a.RoleBaseInfo.masters, i = 0; i < o.length; i++) for (var r = 0; r < e.npcIDArr.length; r++) o[i] == e.npcIDArr[r] && o.splice(i, 1);"
+  },
+  {
+   "action": "User.exitSchool",
+   "field": "npcIDArr",
+   "usage": "o[i] == e.npcIDArr[r]",
+   "line": "77889: if (e.hasOwnProperty(\"npcIDArr\") && e.npcIDArr.length) for (var o = a.RoleBaseInfo.masters, i = 0; i < o.length; i++) for (var r = 0; r < e.npcIDArr.length; r++) o[i] == e.npcIDArr[r] && o.splice(i, 1);"
+  }
+ ],
+ "User.marryHouse": [
+  {
+   "action": "User.marryHouse",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "77223: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.marryHouse",
+   "field": "houseID",
+   "usage": "a.getBuildHouseObj(e.houseID)",
+   "line": "77224: var o = a.getBuildHouseObj(e.houseID);"
+  },
+  {
+   "action": "User.marryHouse",
+   "field": "type",
+   "usage": "this.houseMap[o.mapid_real] = e.type",
+   "line": "77225: this.houseMap[o.mapid_real] = e.type;"
+  },
+  {
+   "action": "User.marryHouse",
+   "field": "houseID",
+   "usage": "this.marryHouseMap[e.houseID] = e.type",
+   "line": "77226: this.marryHouseMap[e.houseID] = e.type;"
+  },
+  {
+   "action": "User.marryHouse",
+   "field": "type",
+   "usage": "this.marryHouseMap[e.houseID] = e.type",
+   "line": "77226: this.marryHouseMap[e.houseID] = e.type;"
+  },
+  {
+   "action": "User.marryHouse",
+   "field": "eRet",
+   "usage": "4 == e.eRet",
+   "line": "77228: } else 4 == e.eRet ? p.default.show(r.getText(\"3203\")) : p.default.show(r.getText(\"jh59\"));"
+  }
+ ],
+ "User.rentGroup": [
+  {
+   "action": "User.rentGroup",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "77130: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.rentGroup",
+   "field": "type",
+   "usage": "this.rentProState = e.type",
+   "line": "77131: this.rentProState = e.type;"
+  }
+ ],
+ "User.BeginRollDice": [
+  {
+   "action": "User.BeginRollDice",
+   "field": "eRet",
+   "usage": "0 != e.eRet",
+   "line": "17: if (0 != e.eRet) if (2 != e.eRet) if (3 != e.eRet) {"
+  },
+  {
+   "action": "User.BeginRollDice",
+   "field": "eRet",
+   "usage": "2 != e.eRet",
+   "line": "17: if (0 != e.eRet) if (2 != e.eRet) if (3 != e.eRet) {"
+  },
+  {
+   "action": "User.BeginRollDice",
+   "field": "eRet",
+   "usage": "3 != e.eRet",
+   "line": "17: if (0 != e.eRet) if (2 != e.eRet) if (3 != e.eRet) {"
+  }
+ ],
+ "User.EndFish": [
+  {
+   "action": "User.EndFish",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "17: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.EndFish",
+   "field": "serverTime",
+   "usage": "e.serverTime - e.beginTime",
+   "line": "20: var o = .001 * (e.serverTime - e.beginTime);"
+  },
+  {
+   "action": "User.EndFish",
+   "field": "beginTime",
+   "usage": "e.serverTime - e.beginTime",
+   "line": "20: var o = .001 * (e.serverTime - e.beginTime);"
+  },
+  {
+   "action": "User.EndFish",
+   "field": "gTime",
+   "usage": "a.totalGameTime.gameTime = e.gTime",
+   "line": "23: a.totalGameTime.gameTime = e.gTime;"
+  },
+  {
+   "action": "User.EndFish",
+   "field": "hg",
+   "usage": "a.hunger.remaining = e.hg",
+   "line": "24: a.hunger.remaining = e.hg;"
+  },
+  {
+   "action": "User.EndFish",
+   "field": "hgtimes",
+   "usage": "a.numStuffed = e.hgtimes",
+   "line": "25: a.numStuffed = e.hgtimes;"
+  },
+  {
+   "action": "User.EndFish",
+   "field": "awardArr",
+   "usage": "for (var s in e.awardArr)",
+   "line": "26: for (var s in e.awardArr) d.InventoryDB.addItem(parseInt(s), e.awardArr[s]);"
+  },
+  {
+   "action": "User.EndFish",
+   "field": "awardArr",
+   "usage": "e.awardArr[s]",
+   "line": "26: for (var s in e.awardArr) d.InventoryDB.addItem(parseInt(s), e.awardArr[s]);"
+  },
+  {
+   "action": "User.EndFish",
+   "field": "extraArr",
+   "usage": "e.extraArr.length",
+   "line": "27: for (var u = [], f = 0; f < e.extraArr.length; f++) {"
+  },
+  {
+   "action": "User.EndFish",
+   "field": "extraArr",
+   "usage": "var g = e.extraArr[f]",
+   "line": "28: var g = e.extraArr[f];"
+  }
+ ],
+ "User.FriendDelete": [
+  {
+   "action": "User.FriendDelete",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "17: 1 == e.eRet && i.MessageCenter.dispatch(c.EvName.USER_FRIEND_DELETE, e);"
+  }
+ ],
+ "User.GetSchoolReview": [
+  {
+   "action": "User.GetSchoolReview",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "17: if (1 == e.eRet) if (1 == e.type) r.MessageCenter.dispatch(l.EvName.ON_GET_MOSTLIKED, e.reviewList); else {"
+  },
+  {
+   "action": "User.GetSchoolReview",
+   "field": "type",
+   "usage": "1 == e.type",
+   "line": "17: if (1 == e.eRet) if (1 == e.type) r.MessageCenter.dispatch(l.EvName.ON_GET_MOSTLIKED, e.reviewList); else {"
+  },
+  {
+   "action": "User.GetSchoolReview",
+   "field": "reviewList",
+   "usage": "r.MessageCenter.dispatch(l.EvName.ON_GET_MOSTLIKED, e.reviewList)",
+   "line": "17: if (1 == e.eRet) if (1 == e.type) r.MessageCenter.dispatch(l.EvName.ON_GET_MOSTLIKED, e.reviewList); else {"
+  },
+  {
+   "action": "User.GetSchoolReview",
+   "field": "maxPage",
+   "usage": "this.newPostPage < e.maxPage",
+   "line": "19: this.theresmore = this.newPostPage < e.maxPage;"
+  },
+  {
+   "action": "User.GetSchoolReview",
+   "field": "reviewList",
+   "usage": "r.MessageCenter.dispatch(l.EvName.ON_GET_PAGE, e.reviewList)",
+   "line": "20: r.MessageCenter.dispatch(l.EvName.ON_GET_PAGE, e.reviewList);"
+  }
+ ],
+ "User.QuickBuyItem": [
+  {
+   "action": "User.QuickBuyItem",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "18: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.QuickBuyItem",
+   "field": "userGold",
+   "usage": "m.InventoryDB.setGold(e.userGold)",
+   "line": "19: m.InventoryDB.setGold(e.userGold);"
+  },
+  {
+   "action": "User.QuickBuyItem",
+   "field": "itemID",
+   "usage": "h.EvName.QUICK_BUY_COMPLETE + e.itemID",
+   "line": "20: l.MessageCenter.dispatch(h.EvName.QUICK_BUY_COMPLETE + e.itemID, {"
+  },
+  {
+   "action": "User.QuickBuyItem",
+   "field": "itemNum",
+   "usage": "num: e.itemNum",
+   "line": "21: num: e.itemNum"
+  },
+  {
+   "action": "User.QuickBuyItem",
+   "field": "eRet",
+   "usage": "3 == e.eRet",
+   "line": "23: } else 3 == e.eRet || c.default.show(i.getText(535), [ {"
+  }
+ ],
+ "User.birthChild": [
+  {
+   "action": "User.birthChild",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "17: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.birthChild",
+   "field": "childObj",
+   "usage": "this.childData = e.childObj",
+   "line": "19: this.childData = e.childObj;"
+  }
+ ],
+ "User.divorceNpc": [
+  {
+   "action": "User.divorceNpc",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "17: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.divorceNpc",
+   "field": "npcID",
+   "usage": "this.divorceNpcMap[e.npcID] = !0",
+   "line": "20: this.divorceNpcMap[e.npcID] = !0;"
+  },
+  {
+   "action": "User.divorceNpc",
+   "field": "deletePartners",
+   "usage": "T.PartnerModel.deletePartnerData(e.deletePartners)",
+   "line": "22: e.hasOwnProperty(\"deletePartners\") && T.PartnerModel.deletePartnerData(e.deletePartners);"
+  },
+  {
+   "action": "User.divorceNpc",
+   "field": "eRet",
+   "usage": "2 == e.eRet",
+   "line": "23: } else 2 == e.eRet ? p.default.show(r.getText(\"1139\")) : p.default.show(r.getText(\"1140\"));"
+  }
+ ],
+ "User.getCircleTaskAward": [
+  {
+   "action": "User.getCircleTaskAward",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "17: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.getCircleTaskAward",
+   "field": "rewardArray",
+   "usage": "A.MadUtilsTS.isNullObj(e.rewardArray)",
+   "line": "20: if (A.MadUtilsTS.isNullObj(e.rewardArray) && A.MadUtilsTS.isNullObj(e.equipObj)) C.GuideMgr.enterFirstGuide(this.finishTaskObj.taskObj.TaskID, 1); else {"
+  },
+  {
+   "action": "User.getCircleTaskAward",
+   "field": "equipObj",
+   "usage": "A.MadUtilsTS.isNullObj(e.equipObj)",
+   "line": "20: if (A.MadUtilsTS.isNullObj(e.rewardArray) && A.MadUtilsTS.isNullObj(e.equipObj)) C.GuideMgr.enterFirstGuide(this.finishTaskObj.taskObj.TaskID, 1); else {"
+  },
+  {
+   "action": "User.getCircleTaskAward",
+   "field": "rewardArray",
+   "usage": "h = e.rewardArray",
+   "line": "23: var l = \"\", h = e.rewardArray;"
+  }
+ ],
+ "User.marryNpc": [
+  {
+   "action": "User.marryNpc",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "17: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.marryNpc",
+   "field": "npcID",
+   "usage": "this.npcMarryState = e.npcID",
+   "line": "22: this.npcMarryState = e.npcID;"
+  },
+  {
+   "action": "User.marryNpc",
+   "field": "npcID",
+   "usage": "a.getItem(e.npcID, \"npc\")",
+   "line": "23: var o = a.getItem(e.npcID, \"npc\"), n = parseInt(o.jineng[1]);"
+  }
+ ],
+ "User.sycnTask": [
+  {
+   "action": "User.sycnTask",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "47: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.sycnTask",
+   "field": "PlayerFinishTaskObj",
+   "usage": "e.PlayerFinishTaskObj",
+   "line": "49: if (e.hasOwnProperty(\"PlayerFinishTaskObj\") && e.PlayerFinishTaskObj) {"
+  },
+  {
+   "action": "User.sycnTask",
+   "field": "PlayerFinishTaskObj",
+   "usage": "c.RoleBaseInfo.finishTaskObj = e.PlayerFinishTaskObj",
+   "line": "50: c.RoleBaseInfo.finishTaskObj = e.PlayerFinishTaskObj;"
+  }
+ ],
+ "User.BuyMarketItem": [
+  {
+   "action": "User.BuyMarketItem",
+   "field": "userGold",
+   "usage": "v.RoleBaseInfo.gold = e.userGold",
+   "line": "131234: e.hasOwnProperty(\"userGold\") && (v.RoleBaseInfo.gold = e.userGold);"
+  },
+  {
+   "action": "User.BuyMarketItem",
+   "field": "buyTimes",
+   "usage": "this.buyTimes = e.buyTimes",
+   "line": "131236: this.buyTimes = e.buyTimes;"
+  },
+  {
+   "action": "User.BuyMarketItem",
+   "field": "buyTimes",
+   "usage": "y.RoleOtherInfo.buyTimes = e.buyTimes",
+   "line": "131237: y.RoleOtherInfo.buyTimes = e.buyTimes;"
+  }
+ ],
+ "User.EndPlayWooks": [
+  {
+   "action": "User.EndPlayWooks",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "86202: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.EndPlayWooks",
+   "field": "serverTime",
+   "usage": ".001 * (e.serverTime - e.beginTime)",
+   "line": "86205: var o = .001 * (e.serverTime - e.beginTime);"
+  },
+  {
+   "action": "User.EndPlayWooks",
+   "field": "beginTime",
+   "usage": "e.serverTime - e.beginTime",
+   "line": "86205: var o = .001 * (e.serverTime - e.beginTime);"
+  },
+  {
+   "action": "User.EndPlayWooks",
+   "field": "gTime",
+   "usage": "c.UserModel.entity.totalGameTime.gameTime = e.gTime",
+   "line": "86207: c.UserModel.entity.totalGameTime.gameTime = e.gTime;"
+  },
+  {
+   "action": "User.EndPlayWooks",
+   "field": "hg",
+   "usage": "c.UserModel.entity.hunger.remaining = e.hg",
+   "line": "86208: c.UserModel.entity.hunger.remaining = e.hg;"
+  },
+  {
+   "action": "User.EndPlayWooks",
+   "field": "hgtimes",
+   "usage": "c.UserModel.entity.numStuffed = e.hgtimes",
+   "line": "86209: c.UserModel.entity.numStuffed = e.hgtimes;"
+  },
+  {
+   "action": "User.EndPlayWooks",
+   "field": "potential",
+   "usage": "this.potGot = e.potential",
+   "line": "86210: this.potGot = e.potential;"
+  },
+  {
+   "action": "User.EndPlayWooks",
+   "field": "exp",
+   "usage": "this.expGot = e.exp",
+   "line": "86211: this.expGot = e.exp;"
+  },
+  {
+   "action": "User.EndPlayWooks",
+   "field": "expExtra",
+   "usage": "this.expExtra = e.expExtra",
+   "line": "86214: e.hasOwnProperty(\"expExtra\") ? this.expExtra = e.expExtra : this.expExtra = 0;"
+  },
+  {
+   "action": "User.EndPlayWooks",
+   "field": "potentialExtra",
+   "usage": "this.potentialExtra = e.potentialExtra",
+   "line": "86215: e.hasOwnProperty(\"potentialExtra\") ? this.potentialExtra = e.potentialExtra : this.potentialExtra = 0;"
+  },
+  {
+   "action": "User.EndPlayWooks",
+   "field": "specialAny",
+   "usage": "var n = e.specialAny",
+   "line": "86217: for (var n = e.specialAny, a = 0; a < n.length; ++a) {"
+  }
+ ],
+ "User.FriendList": [
+  {
+   "action": "User.FriendList",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "132209: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.FriendList",
+   "field": "uIds",
+   "usage": "this.friendChatRedUIds = e.uIds",
+   "line": "132210: this.friendChatRedUIds = e.uIds;"
+  },
+  {
+   "action": "User.FriendList",
+   "field": "friendList",
+   "usage": "for (var n in e.friendList)",
+   "line": "132212: if (e.hasOwnProperty(\"friendList\")) for (var n in e.friendList) o[e.friendList[n].friendId] = !0;"
+  },
+  {
+   "action": "User.FriendList",
+   "field": "friendList",
+   "usage": "o[e.friendList[n].friendId] = !0",
+   "line": "132212: if (e.hasOwnProperty(\"friendList\")) for (var n in e.friendList) o[e.friendList[n].friendId] = !0;"
+  },
+  {
+   "action": "User.FriendList",
+   "field": "GET_CHAT_FRIEND_LIST",
+   "usage": "i.MessageCenter.dispatch(c.EvName.GET_CHAT_FRIEND_LIST, e)",
+   "line": "132216: i.MessageCenter.dispatch(c.EvName.GET_CHAT_FRIEND_LIST, e);"
+  },
+  {
+   "action": "User.FriendList",
+   "field": "MULTIP_NEAR_PLAYER_EVENT",
+   "usage": "i.MessageCenter.dispatch(c.EvName.MULTIP_NEAR_PLAYER_EVENT, e)",
+   "line": "132217: i.MessageCenter.dispatch(c.EvName.MULTIP_NEAR_PLAYER_EVENT, e);"
+  },
+  {
+   "action": "User.FriendList",
+   "field": "GET_REQ_FRIEND_LIST",
+   "usage": "i.MessageCenter.dispatch(c.EvName.GET_REQ_FRIEND_LIST, e)",
+   "line": "132218: } else i.MessageCenter.dispatch(c.EvName.GET_REQ_FRIEND_LIST, e);"
+  }
+ ],
+ "User.LookFishAward": [
+  {
+   "action": "User.LookFishAward",
+   "field": "awardArr",
+   "usage": "var o = e.awardArr",
+   "line": "51546: var o = e.awardArr, r = 0, s = \"\";"
+  }
+ ],
+ "User.ReqReview": [
+  {
+   "action": "User.ReqReview",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "113600: 1 == e.eRet ? r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id) : 2 == e.eRet ? c.default.show(i.getText(858)) : 99 == e.eRet && c.default.show(i.getText(\"480\"));"
+  },
+  {
+   "action": "User.ReqReview",
+   "field": "id",
+   "usage": "r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id)",
+   "line": "113600: 1 == e.eRet ? r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id) : 2 == e.eRet ? c.default.show(i.getText(858)) : 99 == e.eRet && c.default.show(i.getText(\"480\"));"
+  },
+  {
+   "action": "User.ReqReview",
+   "field": "eRet",
+   "usage": "2 == e.eRet",
+   "line": "113600: 1 == e.eRet ? r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id) : 2 == e.eRet ? c.default.show(i.getText(858)) : 99 == e.eRet && c.default.show(i.getText(\"480\"));"
+  },
+  {
+   "action": "User.ReqReview",
+   "field": "eRet",
+   "usage": "99 == e.eRet",
+   "line": "113600: 1 == e.eRet ? r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id) : 2 == e.eRet ? c.default.show(i.getText(858)) : 99 == e.eRet && c.default.show(i.getText(\"480\"));"
+  }
+ ],
+ "User.changePlayWooksState": [
+  {
+   "action": "User.changePlayWooksState",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "86182: if (this.isPracticing && 1 == e.eRet) {"
+  }
+ ],
+ "User.doubleTraining": [
+  {
+   "action": "User.doubleTraining",
+   "field": "skillID",
+   "usage": "this.id = o.skillID",
+   "line": "56669: this.id = o.skillID;"
+  },
+  {
+   "action": "User.doubleTraining",
+   "field": "skillLevel",
+   "usage": "this.lv = o.skillLevel",
+   "line": "56670: this.lv = o.skillLevel;"
+  },
+  {
+   "action": "User.doubleTraining",
+   "field": "itemAddition",
+   "usage": "this.itemBreakAdditionNum = o.hasOwnProperty(\"itemAddition\") ? o.itemAddition : 0",
+   "line": "56671: this.itemBreakAdditionNum = o.hasOwnProperty(\"itemAddition\") ? o.itemAddition : 0;"
+  },
+  {
+   "action": "User.doubleTraining",
+   "field": "eRet",
+   "usage": "1 == o.eRet",
+   "line": "56672: if (1 == o.eRet) {"
+  },
+  {
+   "action": "User.doubleTraining",
+   "field": "needTime",
+   "usage": "Number(o.needTime)",
+   "line": "56673: if (isNaN(Number(o.needTime))) {"
+  }
+ ],
+ "User.giveChildName": [
+  {
+   "action": "User.giveChildName",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "24622: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.giveChildName",
+   "field": "childName",
+   "usage": "c.MarryModel.childData.childName = e.childName",
+   "line": "24623: c.MarryModel.childData.childName = e.childName;"
+  },
+  {
+   "action": "User.giveChildName",
+   "field": "eRet",
+   "usage": "99 == e.eRet",
+   "line": "24625: } else 99 == e.eRet ? a.default.show(i.getText(\"480\")) : a.default.show(i.getText(427));"
+  }
+ ],
+ "User.proposeNpc": [
+  {
+   "action": "User.proposeNpc",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "77124: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.proposeNpc",
+   "field": "npcID",
+   "usage": "this.proposeNpcInfo[e.npcID] = !0",
+   "line": "77125: this.proposeNpcInfo[e.npcID] = !0;"
+  },
+  {
+   "action": "User.proposeNpc",
+   "field": "eRet",
+   "usage": "2 == e.eRet",
+   "line": "77127: } else 2 == e.eRet ? p.default.show(r.getText(\"1133\")) : 10 == e.eRet ? p.default.show(r.getText(\"1141\")) : 11 == e.eRet ? p.default.show(r.getText(\"1137\")) : 12 == e.eRet ? p.default.show(r.getText(\"1166\")) : p.default.show(r.getText(\"1132\"));"
+  },
+  {
+   "action": "User.proposeNpc",
+   "field": "eRet",
+   "usage": "10 == e.eRet",
+   "line": "77127: } else 2 == e.eRet ? p.default.show(r.getText(\"1133\")) : 10 == e.eRet ? p.default.show(r.getText(\"1141\")) : 11 == e.eRet ? p.default.show(r.getText(\"1137\")) : 12 == e.eRet ? p.default.show(r.getText(\"1166\")) : p.default.show(r.getText(\"1132\"));"
+  },
+  {
+   "action": "User.proposeNpc",
+   "field": "eRet",
+   "usage": "11 == e.eRet",
+   "line": "77127: } else 2 == e.eRet ? p.default.show(r.getText(\"1133\")) : 10 == e.eRet ? p.default.show(r.getText(\"1141\")) : 11 == e.eRet ? p.default.show(r.getText(\"1137\")) : 12 == e.eRet ? p.default.show(r.getText(\"1166\")) : p.default.show(r.getText(\"1132\"));"
+  },
+  {
+   "action": "User.proposeNpc",
+   "field": "eRet",
+   "usage": "12 == e.eRet",
+   "line": "77127: } else 2 == e.eRet ? p.default.show(r.getText(\"1133\")) : 10 == e.eRet ? p.default.show(r.getText(\"1141\")) : 11 == e.eRet ? p.default.show(r.getText(\"1137\")) : 12 == e.eRet ? p.default.show(r.getText(\"1166\")) : p.default.show(r.getText(\"1132\"));"
+  }
+ ],
+ "User.weddingFeast": [
+  {
+   "action": "User.weddingFeast",
+   "field": "eRet",
+   "usage": "1 == e.eRet",
+   "line": "77136: if (1 == e.eRet) {"
+  },
+  {
+   "action": "User.weddingFeast",
+   "field": "type",
+   "usage": "this.weddingType = e.type",
+   "line": "77137: this.weddingType = e.type;"
+  }
+ ]
+}

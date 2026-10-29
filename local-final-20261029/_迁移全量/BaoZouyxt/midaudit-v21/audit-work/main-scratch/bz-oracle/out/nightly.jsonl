@@ -1,0 +1,2 @@
+{"ts":"2026-10-23T06:52:51.890Z","action":"User.saleItem","status":"GEN-READY","hits":2,"outcome":"PASS-RETRY","attempts":2,"ms":140,"genMs":53,"judgeMs":78,"fails":[]}
+{"ts":"2026-10-23T08:44:08.882Z","action":"User.saleItem","status":"GEN-READY","hits":2,"outcome":"HUMAN","attempts":3,"ms":4,"genMs":3,"judgeMs":0,"fails":["生成器失败：spawnSync C:\\windows\\system32\\cmd.exe EPERM"]}

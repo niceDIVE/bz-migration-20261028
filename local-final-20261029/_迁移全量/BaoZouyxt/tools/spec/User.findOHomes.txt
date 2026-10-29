@@ -1,0 +1,99 @@
+# User.findOHomes  (HttpConst.OTHER_PLAYER_HOME)
+# 出现 2 处
+
+ 57907: r.MessageCenter.dispatch(c.EvName.UPDATE_PLANT_ALL_HOME_DATA, {
+ 57908: data: n,
+ 57909: dataNum: l
+ 57910: });
+ 57911: }
+ 57912: }, this);
+ 57913: r.MessageCenter.on(s.HttpConst.OTHER_PLAYER_HOME, function(t, o) {
+ 57914: if (1 == o.eRet) {
+ 57915: o.hasOwnProperty("homeGeMap") && (e.homeGeMap = o.homeGeMap);
+ 57916: e.searchType = 1;
+ 57917: var i = [];
+ 57918: if (o.hasOwnProperty("homeArr")) {
+ 57919: for (var n = 0; n < o.homeArr.length; n++) parseInt(o.homeArr[n][6]) > 0 && i.push(o.homeArr[n]);
+ 57920: i.sort(function(t, e) {
+ 57921: return e[5] - e[5];
+ 57922: });
+ 57923: }
+ 57924: r.MessageCenter.dispatch(c.EvName.RECOMMEND_LIST_EVENT, i);
+ 57925: var a = [], s = [];
+ 57926: if (o.hasOwnProperty("homeArr")) for (var l = 0; l < o.homeArr.length; l++) if (o.homeArr[l][5] > 0) {
+ 57927: a.push(o.homeArr[l]);
+ 57928: a.sort(function(t, e) {
+ 57929: return e[5] - t[5];
+ 57930: });
+ 57931: }
+ 57932: var p = a.length;
+ 57933: if (o.hasOwnProperty("recommendHomeArr")) {
+ 57934: for (var h = 0; h < o.recommendHomeArr.length; h++) if (o.recommendHomeArr[h][5] > 0) {
+ 57935: s.push(o.recommendHomeArr[h]);
+ 57936: s.sort(function(t, e) {
+ 57937: return e[5] - t[5];
+ 57938: });
+ 57939: }
+ 57940: for (var u = 0; u < s.length; u++) a.push(s[u]);
+ 57941: }
+ 57942: r.MessageCenter.dispatch(c.EvName.UPDATE_PLANT_ALL_HOME_DATA, {
+ 57943: data: a,
+ 57944: dataNum: p
+ 57945: });
+ 57946: }
+ 57947: }, this);
+ 57948: r.MessageCenter.on(s.HttpConst.FIND_OTHER_HOME, function(t, o) {
+ 57949: 1 == o.eRet ? o.hasOwnProperty("findArr") && (o.findArr[0] == _.RoleBaseInfo.roleID ? a.default.show(n.getText(3253)) : e.openFriendHome(o.findArr[0], o.findArr[6], o.findArr[4])) : a.default.show(n.getText(3253));
+ 57950: }, this);
+ 57951: r.MessageCenter.on(s.HttpConst.ENTER_OTHER_HOME, function(t, o) {
+ 57952: if (1 == o.eRet) {
+ 57953: e.rewardData = {};
+---
+ 58166: e.prototype.reqRecommenList = function() {
+ 58167: this.homeGeMap = {};
+ 58168: v.NetMgr.http.sendRequest(s.HttpConst.RECOMMEND_ONESELF_HOME, {});
+ 58169: };
+ 58170: e.prototype.reqHomeFriendList = function() {
+ 58171: this.homeGeMap = {};
+ 58172: v.NetMgr.http.sendRequest(s.HttpConst.OTHER_PLAYER_HOME, {});
+ 58173: };
+ 58174: e.prototype.reqObtainAllCrop = function(t) {
+ 58175: var e = {
+ 58176: matureArr: t
+ 58177: };
+ 58178: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_OBTAIN_CROP, e);
+ 58179: };
+ 58180: e.prototype.reqDispossAllEvent = function() {
+ 58181: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, {});
+ 58182: };
+ 58183: e.prototype.reqFindPlayerHome = function(t) {
+ 58184: t != _.RoleBaseInfo.userName ? v.NetMgr.http.sendRequest(s.HttpConst.FIND_OTHER_HOME, {
+ 58185: fName: t
+ 58186: }) : a.default.show(n.getText(4396));
+ 58187: };
+ 58188: e.prototype.openFriendHome = function(t, e, o) {
+ 58189: var i = 3;
+ 58190: 9 == o ? i = 2 : 15 == o && (i = 1);
+ 58191: this.homeType = i;
+ 58192: this.curHomeScene = e;
+ 58193: this.reqEnterFriendHome(t);
+ 58194: };
+ 58195: e.prototype.reqEnterFriendHome = function(t) {
+ 58196: this.isUpdateData = !1;
+ 58197: this.curFriendId = t;
+ 58198: t > 0 && v.NetMgr.http.sendRequest(s.HttpConst.ENTER_OTHER_HOME, {
+ 58199: fid: t
+ 58200: });
+ 58201: };
+ 58202: e.prototype.reqUpdateFriendHome = function(t) {
+ 58203: this.isUpdateData = !0;
+ 58204: this.curFriendId = t;
+ 58205: t > 0 && v.NetMgr.http.sendRequest(s.HttpConst.ENTER_OTHER_HOME, {
+ 58206: fid: t
+ 58207: });
+ 58208: };
+ 58209: e.prototype.reqDispossHomeEvent = function(t) {
+ 58210: var e = {
+ 58211: fid: 0,
+ 58212: idx: t
+---

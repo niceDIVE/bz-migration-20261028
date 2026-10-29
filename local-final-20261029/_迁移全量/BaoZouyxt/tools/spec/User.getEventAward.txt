@@ -1,0 +1,99 @@
+# User.getEventAward  (HttpConst.TOWER_GET_REWARD_BOX)
+# 出现 2 处
+
+137712: m.InventoryModel.cleanLHTempSigns();
+137713: t.exitTower();
+137714: o.hasOwnProperty("rewardArray") && _.default.addShowRewardUI1(o.rewardArray, 0, {});
+137715: l.MessageCenter.dispatch(S.EvName.CLOSE_SWEEP_UI_EVENT);
+137716: }
+137717: }, this);
+137718: l.MessageCenter.on(c.HttpConst.TOWER_GET_REWARD_BOX, function(e, o) {
+137719: if (1 == o.eRet) {
+137720: l.MessageCenter.dispatch(S.EvName.TOWER_DELETE_NPC_EVENT, 0);
+137721: l.MessageCenter.dispatch(S.EvName.UPDATE_TOWER_ITEM_EVENT);
+137722: if (0 == t.challeageState && !A.MadUtilsTS.isNullObj(o.rewardArray)) {
+137723: t.updateTowerItem(o.rewardArray);
+137724: _.default.addShowRewardUI1(o.rewardArray, 0, {});
+137725: }
+137726: }
+137727: }, this);
+137728: l.MessageCenter.on(c.HttpConst.LOOK_SECRET_PANDA_EVENT, function(e, o) {
+137729: if (1 == o.eRet) {
+137730: var i = r.getItem(t.pandaNpcId, "lh_pavilion");
+137731: i.secret = o.secret;
+137732: if (t.towerTreasureUI) return;
+137733: h.default.prefabs.load("towerUI/TowerTreasureUI", cc.Prefab, function(e, o) {
+137734: var n = cc.instantiate(o);
+137735: u.PopUpMgr.addPopUp(n, f.LayerMgr.popUpLayer, 1, !0);
+137736: n.addComponent("TowerTreasureUI").setData(i);
+137737: t.towerTreasureUI = n;
+137738: });
+137739: } else y.default.show(a.getText(1623));
+137740: t.setNewSweepData(o);
+137741: }, this);
+137742: l.MessageCenter.on(c.HttpConst.SELECT_SECRET_PANDA_EVENT, function(e, o) {
+137743: if (1 == o.eRet) {
+137744: if (!A.MadUtilsTS.isNullObj(o.rewardArray)) {
+137745: t.updateTowerItem(o.rewardArray);
+137746: _.default.addShowRewardUI1(o.rewardArray, 0, {});
+137747: }
+137748: } else 3 == o.eRet ? y.default.show(a.getText(1621)) : y.default.show(a.getText(1623));
+137749: o.hasOwnProperty("batch_sweep_data") && t.setNewSweepData(o.batch_sweep_data);
+137750: }, this);
+137751: l.MessageCenter.on(c.HttpConst.GET_NEW_SWEEP_EVENT, function(e, o) {
+137752: if (1 == o.eRet) {
+137753: t.shopData = {};
+137754: t.shopBookShop = [];
+137755: t.pandaDatas = [];
+137756: t.qiyuDatas = [];
+137757: t.colorEggData = [];
+137758: t.sweepState = !0;
+---
+137933: type: t
+137934: });
+137935: });
+137936: };
+137937: e.prototype.reqForceLeaveTower = function() {};
+137938: e.prototype.reqOpenBoxAward = function(t) {
+137939: g.NetMgr.http.sendRequest(c.HttpConst.TOWER_GET_REWARD_BOX, {
+137940: eventID: t
+137941: });
+137942: };
+137943: e.prototype.reqTowerRankList = function() {
+137944: g.NetMgr.http.sendRequest(c.HttpConst.TOWER_RANK_LIST, {});
+137945: };
+137946: e.prototype.reqGetShopList = function(t, e) {
+137947: g.NetMgr.http.sendRequest(c.HttpConst.TOWER_SPECIAL_SHOP, {
+137948: npcID: t,
+137949: lv: e
+137950: });
+137951: };
+137952: e.prototype.reqBuyTowerItem = function(t, e) {
+137953: this.sum = e;
+137954: this.sweepState ? g.NetMgr.http.sendRequest(c.HttpConst.TOWER_BUY_PROP, {
+137955: itemID: t,
+137956: itemNum: e,
+137957: lv: this.sweepLv
+137958: }) : g.NetMgr.http.sendRequest(c.HttpConst.TOWER_BUY_PROP, {
+137959: itemID: t,
+137960: itemNum: e
+137961: });
+137962: };
+137963: e.prototype.reqGetPandaEvent = function(t) {
+137964: void 0 === t && (t = 0);
+137965: void 0 === t && (t = 0);
+137966: 0 == t ? g.NetMgr.http.sendRequest(c.HttpConst.TOWER_GET_PANDA_EVENT, {}) : g.NetMgr.http.sendRequest(c.HttpConst.TOWER_GET_PANDA_EVENT, {
+137967: lv: t
+137968: });
+137969: };
+137970: e.prototype.reqSelectPandaEvent = function(t, e) {
+137971: this.pandaEventId = e;
+137972: this.sweepState ? g.NetMgr.http.sendRequest(c.HttpConst.TOWER_CHOOSE_PANDA_EVENT, {
+137973: idx: t,
+137974: lv: this.sweepLv
+137975: }) : g.NetMgr.http.sendRequest(c.HttpConst.TOWER_CHOOSE_PANDA_EVENT, {
+137976: idx: t
+137977: });
+137978: };
+137979: e.prototype.reqLookPandaNpc = function(t) {
+---

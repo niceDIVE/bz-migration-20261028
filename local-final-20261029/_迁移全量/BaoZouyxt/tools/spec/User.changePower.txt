@@ -1,0 +1,99 @@
+# User.changePower  (HttpConst.CHANGE_POWER)
+# 出现 2 处
+
+ 85094: }, this);
+ 85095: a.MessageCenter.on(s.HttpConst.STC_MAPJAMSTATUS_RES, function(t, e) {
+ 85096: 0 == e.ret && a.MessageCenter.dispatch(c.EvName.STC_SUCCESS_ENTER_MAP, e);
+ 85097: }, this);
+ 85098: a.MessageCenter.on(s.HttpConst.STC_ENTER_MAPNOTIFY, this.setEnterToScene, this);
+ 85099: a.MessageCenter.on(s.HttpConst.STC_CHAT_BATTLE_RES, this.setPowerValueCallBack, this);
+ 85100: a.MessageCenter.on(s.HttpConst.CHANGE_POWER, function(t, o) {
+ 85101: if (1 == o.eRet) {
+ 85102: e.fightValue = o.power;
+ 85103: p.default.show(n.getText(3876));
+ 85104: } else 2 == o.eRet ? p.default.show(n.getText(3879)) : p.default.show(n.getText(3877));
+ 85105: }, this);
+ 85106: a.MessageCenter.on(s.HttpConst.STC_ELIMINATE_INFO, function(t, o) {
+ 85107: if (o.EliminatePKPair && o.EliminatePKPair.length > 0) {
+ 85108: if (o.EliminatePKPair.length > 0) {
+ 85109: var i = o.EliminatePKPair[0];
+ 85110: e.curFightID = i.BattleId;
+ 85111: var n = i.SceneRoleInfoA.roleID, r = i.SceneRoleInfoB.roleID;
+ 85112: e.addTempRole2Scene(i.SceneRoleInfoA, 1);
+ 85113: e.addTempRole2Scene(i.SceneRoleInfoB, 2);
+ 85114: e.fightingPair = [ n, r ];
+ 85115: a.MessageCenter.dispatch(c.EvName.SHOW_WULIN_FIGHTING_PAIR);
+ 85116: }
+ 85117: } else if (e.fightingPair.length > 0) {
+ 85118: a.MessageCenter.dispatch(c.EvName.CLEAN_WULIN_TEMP_ROLE);
+ 85119: e.fightingPair = [];
+ 85120: }
+ 85121: }, this);
+ 85122: a.MessageCenter.on(s.HttpConst.STC_WULIN_TEAM_ELIMINATE_INFO, function(t, o) {
+ 85123: if (o.hasOwnProperty("TeamEliminatePKPair") && o.TeamEliminatePKPair.length > 0) {
+ 85124: var i = o.TeamEliminatePKPair[0];
+ 85125: e.curFightID = i.BattleId;
+ 85126: var n = i.TeamEliminateA, r = i.TeamEliminateB;
+ 85127: e.fightingPair = [];
+ 85128: for (var s = n.TeamMembers, l = r.TeamMembers, p = 0; p < s.length; p++) {
+ 85129: var h = s[p];
+ 85130: e.addTempRole2Scene(h, 1 + 2 * p);
+ 85131: e.fightingPair.push(h.roleID);
+ 85132: h = l[p];
+ 85133: e.addTempRole2Scene(h, 2 + 2 * p);
+ 85134: e.fightingPair.push(h.roleID);
+ 85135: }
+ 85136: a.MessageCenter.dispatch(c.EvName.SHOW_WULIN_FIGHTING_PAIR);
+ 85137: } else if (e.fightingPair.length > 0) {
+ 85138: a.MessageCenter.dispatch(c.EvName.CLEAN_WULIN_TEMP_ROLE);
+ 85139: e.fightingPair = [];
+ 85140: }
+---
+ 85529: if (this.fightValue != t) {
+ 85530: this.tempPower = t;
+ 85531: u.Net.sendMsg(s.HttpConst.CTS_CHAT_BATTLE_TOKEN_REQ, {});
+ 85532: }
+ 85533: };
+ 85534: e.prototype.reqSetPowerNum = function(t, e, o) {
+ 85535: l.NetMgr.http.sendRequest(s.HttpConst.CHANGE_POWER, {
+ 85536: power: this.tempPower,
+ 85537: token: t,
+ 85538: type: e,
+ 85539: sign: o
+ 85540: });
+ 85541: };
+ 85542: e.prototype.getCopyMap = function(t) {
+ 85543: var e = i.getTable("dynamicmap"), o = [];
+ 85544: for (var n in e) 3 == e[n].MapType && o.push(e[n]);
+ 85545: for (var r = !1, a = 0; a < o.length; a++) if (parseInt(o[a].id) == t) {
+ 85546: r = !0;
+ 85547: break;
+ 85548: }
+ 85549: return r;
+ 85550: };
+ 85551: e.prototype.getCurCopyOritionXY = function() {
+ 85552: var t = {
+ 85553: x: 520,
+ 85554: y: 40
+ 85555: };
+ 85556: if (v.WebSocketFactory.socketMgr) {
+ 85557: var e = v.WebSocketFactory.socketMgr.getName();
+ 85558: if ("team" == e || "crossSTeam" == e) {
+ 85559: var o = i.getCopyConstData(y.CopyFightModel.copyType);
+ 85560: t.x = o.point[0];
+ 85561: t.y = o.point[1];
+ 85562: }
+ 85563: }
+ 85564: return t;
+ 85565: };
+ 85566: e.prototype.getRandomName = function(t) {
+ 85567: var e = "";
+ 85568: if (this.existOthers()) {
+ 85569: var o = [];
+ 85570: for (var i in this.mapOfRoleData) o.push(parseInt(i));
+ 85571: t > 0 && o.push(f.RoleBaseInfo.roleID);
+ 85572: var n = o.indexOf(t > 0 ? t : f.RoleBaseInfo.roleID);
+ 85573: n >= 0 && o.splice(n, 1);
+ 85574: if (o.length <= 0) return "";
+ 85575: var r = o[Math.floor(Math.random() * o.length)];
+---

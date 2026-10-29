@@ -1,0 +1,99 @@
+# User.beginRogueMultiPVEBattle  (HttpConst.ROGUE_MPPVE_ACTION)
+# 出现 2 处
+
+105252: });
+105253: o.RogueMpFightMgr = void 0;
+105254: var s = t("../../gui/mpbattle/RogueMPBattleUI"), l = t("./../../battlesystem/EquipmentType"), c = t("../../gameconfigs/CFMgr"), p = t("../../net/HttpConst"), h = t("../../net/NetMgr"), u = t("../SoundMgr"), f = t("./SPMpBtMgr"), d = t("../../core/events/MessageCenter"), g = t("../../models/vos/RoleBaseInfo"), m = t("../../utils/EvName"), y = t("../BundleMgr"), v = t("../../utils/MadUtilsTS"), _ = t("../UIMgr"), S = t("../../core/resmgr/ResMgr"), M = t("../../core/ui/mgrs/PopUpMgr"), E = t("../LayerMgr"), I = t("../../gui/mpbattle/MPUIMediator"), b = function(e) {
+105255: n(o, e);
+105256: function o() {
+105257: var t = e.call(this) || this;
+105258: d.MessageCenter.on(p.HttpConst.ROGUE_MPPVE_ACTION, function(e, o) {
+105259: 1 == o.eRet && t.playWithData(o);
+105260: }, t);
+105261: return t;
+105262: }
+105263: o.prototype.initBattlePanel = function(e, o) {
+105264: return r(this, void 0, void 0, function() {
+105265: var i, n, r = this;
+105266: return a(this, function(a) {
+105267: switch (a.label) {
+105268: case 0:
+105269: i = this;
+105270: return [ 4, y.default.loadBundle("colorRes") ];
+105271: 
+105272: case 1:
+105273: i.cBundle = a.sent();
+105274: n = this;
+105275: return [ 4, y.default.loadBundle("coloravatars") ];
+105276: 
+105277: case 2:
+105278: n.avatars = a.sent();
+105279: Promise.resolve().then(function() {
+105280: return t("../BattleMgr");
+105281: }).then(function(t) {
+105282: t.BattleMgr.inBattle = !0;
+105283: });
+105284: return [ 2, new Promise(function(i) {
+105285: var n = {
+105286: "roleSpine/common/1001_acc_atlas": cc.TextAsset,
+105287: "roleSpine/common/1001_acc": cc.Texture2D,
+105288: "roleSpine/common/1101_acc_atlas": cc.TextAsset,
+105289: "roleSpine/common/1101_acc": cc.Texture2D,
+105290: "roleSpine/common/1201_acc_atlas": cc.TextAsset,
+105291: "roleSpine/common/1201_acc": cc.Texture2D,
+105292: "roleSpine/common/1211_acc_atlas": cc.TextAsset,
+105293: "roleSpine/common/1211_acc": cc.Texture2D,
+105294: "roleSpine/common/1301_acc_atlas": cc.TextAsset,
+105295: "roleSpine/common/1301_acc": cc.Texture2D,
+105296: "roleSpine/common/1401_acc_atlas": cc.TextAsset,
+105297: "roleSpine/common/1401_acc": cc.Texture2D
+105298: }, a = {
+---
+105555: });
+105556: };
+105557: o.prototype.startBattle = function(t) {
+105558: h.NetMgr.http.sendRequest(p.HttpConst.ENTER_PVE_ROGUE_FIGHT, t);
+105559: };
+105560: o.prototype.listen4Action = function(t) {
+105561: h.NetMgr.http.sendRequest(p.HttpConst.ROGUE_MPPVE_ACTION, {
+105562: action: t.action,
+105563: battleID: t.param2,
+105564: paramID: t.param1
+105565: });
+105566: };
+105567: o.prototype.playWithData = function(e) {
+105568: var o;
+105569: this.state.actingPlayerID = e.hasOwnProperty("target") ? e.target[0] : 0;
+105570: this.state.actingPlayerID == g.RoleBaseInfo.roleID.toString() && d.MessageCenter.dispatch(m.EvName.ON_MPPVE_TARGET_CHANGE, e.target[1]);
+105571: this.state.gameOver = e.gameOver;
+105572: if (this.state.gameOver) {
+105573: this.state.winID = e.winID;
+105574: e.endInfo && (this.state.endInfo = e.endInfo);
+105575: if (e.hasOwnProperty("roleArr")) for (var i = e.roleArr, n = 0; n < i.length; ++n) {
+105576: var r = i[n];
+105577: g.RoleBaseInfo.roleID == parseInt(r[0]) && Promise.resolve().then(function() {
+105578: return t("../../../scripts3/model3/RogueModel");
+105579: }).then(function(t) {
+105580: var e = t.RogueModel.entity;
+105581: e.hp.limit = r[3];
+105582: e.hp.remaining = r[1];
+105583: e.mp.remaining = r[2];
+105584: });
+105585: }
+105586: }
+105587: e.arr && (null === (o = this.btUI) || void 0 === o || o.emit(m.EvName.PLAY_WITH_MPBATTLEINFO, e.arr));
+105588: };
+105589: o.prototype.getPanelScript = function() {
+105590: return s.RogueMPBattleUI;
+105591: };
+105592: o.prototype.onComplete = function(t) {
+105593: this.dispose();
+105594: u.SoundMgr.resumeLastMusic();
+105595: this.endBattle(t.data);
+105596: };
+105597: o.prototype.endBattle = function(t) {
+105598: var e = {
+105599: npcID: t.npcID,
+105600: win: t.data[0]
+105601: };
+---

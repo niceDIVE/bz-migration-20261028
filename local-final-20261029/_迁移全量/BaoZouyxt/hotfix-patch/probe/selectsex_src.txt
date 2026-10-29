@@ -1,0 +1,79 @@
+### SelectSexUI ###
+
+=== start ===
+function() {
+this.btnLabel.node.color = cc.color(150, 150, 150, 255);
+p.talkDataModel.reqTalkData(p.TalkDataEnum.Choice_Sex);
+}
+
+=== onSelectSex ===
+function(t, e) {
+var o = parseInt(e);
+h.RoleBaseInfo.sexId = o;
+h.RoleBaseInfo.sexState = o;
+this.selectFlag = 1;
+this.man.node.active = 1 == o;
+this.manSelected.node.active = 0 == o;
+this.woman.node.active = 0 == o;
+this.womanSelected.node.active = 1 == o;
+this.btnLabel.node.color = cc.color(0, 0, 0, 255);
+}
+
+=== onBackEvent ===
+function() {
+r.PopUpMgr.removePopUp(this.node);
+a.default.prefabs.load("Login/BirthPlaceUI", cc.Prefab, function(t, e) {
+var o = cc.instantiate(e);
+r.PopUpMgr.addPopUp(o, c.LayerMgr.topLayer, 0);
+});
+}
+
+=== onNextBtn ===
+function() {
+if (this.selectFlag > 0) {
+l.ChangeBirthModel.checkPreAppearId(h.RoleBaseInfo.sexId);
+r.PopUpMgr.removePopUp(this.node);
+a.default.prefabs.load("Login/SelectAppearanceUI", cc.Prefab, function(t, e) {
+var o = cc.instantiate(e);
+r.PopUpMgr.addPopUp(o, c.LayerMgr.topLayer, 0);
+});
+}
+}
+
+### instance fields ###
+_super = null
+_name = ""
+_objFlags = 124928
+__scriptAsset = false
+_enabled = true
+_id = "Comp.2809"
+__eventTargets = []
+viewMap = {}
+lbMap = {}
+data = null
+prefabName = "Login/SelectSexUI"
+paths = {}
+isOnClick = true
+lastToggle = null
+prefabMap = null
+_tHandler = null
+_delayTween = null
+_closeEvents = []
+selectFlag = -1
+name = "SelectSexUI<SelectSexUI>"
+uuid = "Comp.2809"
+enabled = true
+enabledInHierarchy = true
+_isOnLoadCalled = 16384
+update = null
+lateUpdate = null
+__preload = null
+onEnable = null
+onFocusInEditor = null
+onLostFocusInEditor = null
+resetInEditor = null
+_getLocalBounds = null
+onRestore = null
+__scriptUuid = ""
+isValid = true
+_deserialize = null

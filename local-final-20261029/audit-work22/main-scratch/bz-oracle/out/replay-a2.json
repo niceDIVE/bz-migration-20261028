@@ -1,0 +1,30 @@
+{
+  "verdict": "PASS",
+  "cases": 1,
+  "byVia": {
+    "generated": 1
+  },
+  "rejected": [],
+  "l0": "not-run",
+  "l2": "not-run",
+  "judge": {
+    "cases": 1,
+    "pass": 1,
+    "fail": 0,
+    "crossFail": 0,
+    "noSaveCases": 0,
+    "noProbeCases": 1,
+    "byCode": {}
+  },
+  "regressions": 0,
+  "regress": [],
+  "perCase": [
+    {
+      "id": "saleItem.2001x2@replay",
+      "action": "User.saleItem",
+      "verdict": "PASS",
+      "fails": []
+    }
+  ],
+  "totalMs": 0.52
+}

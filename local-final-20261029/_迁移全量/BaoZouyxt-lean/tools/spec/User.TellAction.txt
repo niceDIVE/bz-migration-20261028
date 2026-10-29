@@ -1,0 +1,99 @@
+# User.TellAction  (HttpConst.TALK_DATA_ACTION)
+# 出现 2 处
+
+132898: t[t.skipComic = 45] = "skipComic";
+132899: t[t.intoGame = 46] = "intoGame";
+132900: })(r = o.TalkDataEnum || (o.TalkDataEnum = {}));
+132901: var u = function() {
+132902: function t() {}
+132903: t.prototype.reqTalkData = function(t) {
+132904: t == r.Getinto_Game ? s.NetMgr.http.sendRequest(a.HttpConst.TALK_DATA_ACTION, {
+132905: type: t
+132906: }, null, !1) : p.TESDKHelper.trackEvent(p.TEEnum.Guide, {
+132907: guide_id: 0,
+132908: click_id: t
+132909: });
+132910: };
+132911: t.prototype.reqTaskTalkData = function(t) {
+132912: var e = {
+132913: 100010: r.Mysterious_Man,
+132914: 100060: r.zhenjianFight,
+132915: 100070: r.HitZhenjian,
+132916: 100080: r.HitZhenjian,
+132917: 100090: r.panTalk,
+132918: 100130: r.hitLiuMang,
+132919: 100180: r.mrytalk1,
+132920: 100190: r.mrytalk1,
+132921: 100220: r.mrytalk2,
+132922: 100210: r.Tracker,
+132923: 100230: r.shenHouTalk,
+132924: 100250: r.crazyMan,
+132925: 100240: r.hitGuanBin,
+132926: 100280: r.fightMotian,
+132927: 100330: r.seachFignt,
+132928: 100340: r.findBigTree,
+132929: 100350: r.mrytalk3,
+132930: 101020: r.towermrytalk,
+132931: 101040: r.Lin_MartialArts,
+132932: 107800: r.Out_Village,
+132933: 100930: r.Young_Hero,
+132934: 102730: r.Young_Hero
+132935: };
+132936: if (e.hasOwnProperty(t)) {
+132937: cc.log("向服务器发送埋点" + e[t]);
+132938: var o = e[t];
+132939: cc.sys.platform == cc.sys.WECHAT_GAME && o == r.Mysterious_Man && h.SESDKHelper.reportRegister();
+132940: p.TESDKHelper.trackEvent(p.TEEnum.Guide, {
+132941: guide_id: t,
+132942: click_id: o
+132943: });
+132944: }
+---
+132956: channel: c.sListModel.channel
+132957: };
+132958: return t != r.newAccount ? [ 3, 2 ] : [ 4, p.TESDKHelper.talkSet(e) ];
+132959: 
+132960: case 1:
+132961: o.sent();
+132962: s.NetMgr.selectHttp.sendRequest(a.HttpConst.TALK_DATA_ACTION, e, null, !1, !1, !1);
+132963: o.label = 2;
+132964: 
+132965: case 2:
+132966: t != r.Getinto_Game && t != r.newAccount && p.TESDKHelper.trackEvent(p.TEEnum.Guide, {
+132967: guide_id: 0,
+132968: click_id: t
+132969: });
+132970: return [ 2 ];
+132971: }
+132972: });
+132973: });
+132974: };
+132975: return t;
+132976: }();
+132977: o.talkDataModel = new u();
+132978: cc._RF.pop();
+132979: }, {
+132980: "../../splashscreen/SESDKHelper": void 0,
+132981: "../../splashscreen/TESDKHelper": void 0,
+132982: "../net/HttpConst": "HttpConst",
+132983: "../net/NetMgr": "NetMgr",
+132984: "./ServerListModel": "ServerListModel",
+132985: "./vos/RoleBaseInfo": "RoleBaseInfo"
+132986: } ],
+132987: TargetEquipDmgEf: [ function(t, e) {
+132988: "use strict";
+132989: cc._RF.push(e, "f1c01yz0/VIiIkcYAh/kk+q", "TargetEquipDmgEf");
+132990: function o(t, e) {
+132991: t.prototype = Object.create(e.prototype);
+132992: t.prototype.constructor = t;
+132993: i(t, e);
+132994: }
+132995: function i(t, e) {
+132996: return (i = Object.setPrototypeOf || function(t, e) {
+132997: t.__proto__ = e;
+132998: return t;
+132999: })(t, e);
+133000: }
+133001: var n = t("./SEBase"), r = t("../attributesystem/EquipSkillDmgBonus"), a = function(t) {
+133002: o(e, t);
+---

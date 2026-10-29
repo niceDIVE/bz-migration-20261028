@@ -1,0 +1,2 @@
+status=200 https://bzgf.maple-game.com/900-server-166/CheckBattleResult
+{"error":0,"p":"User.CheckBattleResult","User.CheckBattleResult":{"eRet":1,"note":{"eco":{},"attrch":{"hunger":60,"curmp":200,"curhp":519,"hplmt":600},"ivch":{},"eqch":{"2302":[1,[1,1]]}},"win":true,"rewardArray":{},"equipObj":{"2302":[1,1]}},"achievement":{"red":true,"achieveRateId":0}}

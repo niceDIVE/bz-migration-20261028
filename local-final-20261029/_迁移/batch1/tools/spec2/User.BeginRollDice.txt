@@ -1,0 +1,22 @@
+# User.BeginRollDice   (HttpConst.BEGIN_ROLLDICE)
+
+## 注册点 54229: i.MessageCenter.on(s.HttpConst.BEGIN_ROLLDICE, this.onCallBackRollDice, this);
+
+## 请求点 54250: l.NetMgr.http.sendRequest(s.HttpConst.BEGIN_ROLLDICE, i);
+   54242: t.prototype.reqBeginDice = function(t, e, o) {
+   54243: var i = {
+   54244: numType: t,
+   54245: number: e,
+   54246: buyType: o
+   54247: };
+   54248: this.numType = t;
+   54249: this.numbers = e;
+
+## 处理函数 onCallBackRollDice (54255-54261)
+ 54255: t.prototype.onCallBackRollDice = function(t, e) {
+ 54256: if (0 != e.eRet) if (2 != e.eRet) if (3 != e.eRet) {
+ 54257: var o = c.RoleBaseInfo.chipNum - this.numbers;
+ 54258: p.InventoryDB.setChips(o);
+ 54259: i.MessageCenter.dispatch(h.EvName.BEGIN_ROLLDICE_EVENT, e);
+ 54260: } else a.default.show(r.getText("1000")); else a.default.show(r.getText("726"));
+ 54261: };

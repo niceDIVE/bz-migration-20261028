@@ -1,0 +1,29 @@
+算法 v2.3：对上一轮 6 条意见的回应
+
+先说一句：上一轮你们手上没有 extract_panel.py，说明收尾包没送到。那份包已经作废，以这个包为准。
+
+一、怎么跑（在 bz-oracle 目录下；包里自带 registry、contracts、rw.final，解压就能跑）
+  python forge/analysis/extract_panel.py index.js scripts2.js scripts3.js > out/panel.json
+  python forge/analysis/extract_shape.py index.js scripts2.js scripts3.js
+  python forge/analysis/table_link.py --dump tools/cfg/dump --server bz-rpc-server.js
+  python forge/analysis/relate.py --rw out/rw.final.json --min-edge 0.9 --panel out/panel.json --tables out/table-links.json
+依赖只有 networkx。
+
+二、6 条意见怎么处理的
+1 面板：认面板改走三条路：回调注册点、所有引用 HttpConst.KEY 的地方，以及回调 dispatch 的事件被谁监听（GET_MARKETLIST → STORE_SHOW_UI → 商店面板）。拉数据的动作单列为「同面板必做」。
+2 字段形状：新增 extract_shape.py，沿 dispatch → 监听 → 处理函数一路追到字段最终怎么用。被 for..in、下标、.length 使用的字段，标为「不能用 0 兜底」。
+3 能否兜底：同一个工具。缺了字段会崩的、数据空了会重发请求的，标为「不能安全兜底」。
+4 配置表：新增 table_link.py，给每个动作猜候选表，再列出服务端看起来还没读过的表。
+5 可达性：relate 给动作标上 可达 / 客户端不发 / 可能已下线。存疑的列在各批末尾，可以放到最后做。
+6 do 名：新增 out/actions.tsv，KEY、do 名、常量定义行三列并排。核对以 do 名为准。
+另外，分错的簇：新增家族 侠客令、周年通行证、周年肉鸽、善恶、轮回。C67 里的 GFUI 已经和 getGrowupData、领奖动作合成一簇，ANN_PASS 里的肉鸽入口也已拆出。
+
+三、数字
+第 1、2 批的成员已冻结，不会因为改家族被打乱，第 3 批 C02 的 19 个也没变。边数 901 → 940，孤立 370 → 362，簇数仍是 76。
+以上数字只是没加 --panel 时的结果。加上 --panel 后，GET_MARKETLIST、GET_MOUNTSLIST 应该出现在 C01 的「同面板必做」里。
+
+四、跑完交回（不用写说明）
+• extract_panel 的 stderr 最后三行
+• GET_MARKETLIST、GET_MOUNTSLIST 有没有出现在 C01 的「同面板必做」里
+• shape-hints.md 里 market 和 passObj 两行有没有被认出来；这两处你们已经踩过，正好拿来验证
+• 误报或漏报最明显的 3 处，各写一句话

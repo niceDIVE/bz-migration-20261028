@@ -1,0 +1,32 @@
+# User.BeginFish   (HttpConst.START_FISHING)
+
+## 注册点 51425: r.MessageCenter.on(s.HttpConst.START_FISHING, this.onStartFishing, this);
+
+## 请求点 51669: g.NetMgr.http.sendRequest(s.HttpConst.START_FISHING, l);
+   51661: }
+   51662: var a = y.playerInfo.entity, l = {
+   51663: fishpondID: t,
+   51664: equipID: o,
+   51665: hg: a.hunger.remaining,
+   51666: gTime: a.totalGameTime.gameTime,
+   51667: hgtimes: a.numStuffed
+   51668: };
+
+## 处理函数 onStartFishing (51557-51573)
+ 51557: e.prototype.onStartFishing = function(e, o) {
+ 51558: if (1 == o.eRet || 2 == o.eRet) {
+ 51559: this.setLastWatchTs(v.TimeMgr.getSTimestamp());
+ 51560: this.timeElapsed = .001 * (o.serverTime - o.beginTime);
+ 51561: this.numAdChances = o.advertisementNum;
+ 51562: o.hasOwnProperty("maxTime") && (this.maxTime = o.maxTime);
+ 51563: if (3 == i.getItem(this.pondID, "fishpond").type) r.MessageCenter.dispatch(l.EvName.START_BUILD_HUNG_EVENT, !1); else {
+ 51564: r.MessageCenter.dispatch(l.EvName.ON_HOOK_BG_CLOSE);
+ 51565: r.MessageCenter.dispatch(l.EvName.REQ_FISHING_RET, {
+ 51566: npcId: this.pondID
+ 51567: });
+ 51568: Promise.resolve().then(function() {
+ 51569: return t("../../scripts3/model3/PopGiftModel");
+ 51570: }).then(function(t) {
+ 51571: t.PopGiftModel.setHomeDataUI(o);
+ 51572: });
+ 51573: }

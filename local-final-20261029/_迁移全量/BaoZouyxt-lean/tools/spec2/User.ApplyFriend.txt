@@ -1,0 +1,19 @@
+# User.ApplyFriend   (HttpConst.USER_APPLAYFRIEND)
+
+## 注册点 132054: i.MessageCenter.on(n.HttpConst.USER_APPLAYFRIEND, this.onSuccessApplayFriend, this);
+
+## 请求点 132186: a.NetMgr.http.sendRequest(n.HttpConst.USER_APPLAYFRIEND, e, function() {}.bind(this));
+   132178: a.NetMgr.http.sendRequest(n.HttpConst.FINS_FRIENDID, e, function() {}.bind(this), !1);
+   132179: };
+   132180: t.prototype.reqApplyFriend = function(t) {
+   132181: if (!h.CrossServiceModel.isEnterCrossServer()) {
+   132182: var e = {
+   132183: roleID: r.RoleBaseInfo.roleID,
+   132184: fName: t
+   132185: };
+
+## 处理函数 onSuccessApplayFriend (132269-132272)
+132269: t.prototype.onSuccessApplayFriend = function(t, e) {
+132270: var o = [ 4846, 378, 371, 373, 379, 372, 737, 736 ], i = Number(e.eRet) - 1;
+132271: !isNaN(i) && i >= 0 && i < o.length && s.default.show(l.getText(o[e.eRet - 1]));
+132272: };

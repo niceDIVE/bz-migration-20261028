@@ -1,0 +1,51 @@
+# User.NewRoguePVPBattleResult  (HttpConst.ROGUE_PVP_BATTLE_END)
+# 出现 1 处
+
+104537: npcID: i,
+104538: win: n,
+104539: pass: u,
+104540: actionArr: o.actionArr
+104541: };
+104542: d.NetMgr.http.sendRequest(l.HttpConst.ROGUE_PVE_BATTLE_RESULT, h);
+104543: } else d.NetMgr.http.sendRequest(l.HttpConst.ROGUE_PVP_BATTLE_END, h);
+104544: });
+104545: };
+104546: return o;
+104547: }(v.B1v1Base);
+104548: o.RogueBattleMgr = A;
+104549: cc._RF.pop();
+104550: }, {
+104551: "../../../scripts3/model3/RogueModel": void 0,
+104552: "../../../scripts3/model3/RogueRoleModel": void 0,
+104553: "../../battlesystem/BattleSystem": "BattleSystem",
+104554: "../../battlesystem/BattleSystemRogue": "BattleSystemRogue",
+104555: "../../battlesystem/NpcBattleEntity": "NpcBattleEntity",
+104556: "../../core/events/MessageCenter": "MessageCenter",
+104557: "../../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+104558: "../../gameconfigs/CFMgr": "CFMgr",
+104559: "../../models/vos/RoleBaseInfo": "RoleBaseInfo",
+104560: "../../net/HttpConst": "HttpConst",
+104561: "../../net/NetMgr": "NetMgr",
+104562: "../../utils/BattleTypes": "BattleTypes",
+104563: "../../utils/BtActionType": "BtActionType",
+104564: "../../utils/EvName": "EvName",
+104565: "../../utils/MadUtils": "MadUtils",
+104566: "../../utils/MadUtilsTS": "MadUtilsTS",
+104567: "../BattleMgr": "BattleMgr",
+104568: "../BundleMgr": "BundleMgr",
+104569: "../LayerMgr": "LayerMgr",
+104570: "../TimeMgr": "TimeMgr",
+104571: "../UIMgr": "UIMgr",
+104572: "./B1v1Base": "B1v1Base"
+104573: } ],
+104574: RogueMPBattleUI: [ function(t, e, o) {
+104575: "use strict";
+104576: cc._RF.push(e, "b3f6468AhROPZW8n3mnu0BJ", "RogueMPBattleUI");
+104577: var i, n = this && this.__extends || (i = function(t, e) {
+104578: return (i = Object.setPrototypeOf || {
+104579: __proto__: []
+104580: } instanceof Array && function(t, e) {
+104581: t.__proto__ = e;
+104582: } || function(t, e) {
+104583: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+---

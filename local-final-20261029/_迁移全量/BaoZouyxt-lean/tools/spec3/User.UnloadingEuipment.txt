@@ -1,0 +1,13 @@
+# User.UnloadingEuipment   (HttpConst.UNLOADING_EQUIP_EVENT)
+
+## 注册点 92800: a.MessageCenter.on(s.HttpConst.UNLOADING_EQUIP_EVENT, function(t, e) {
+
+## 请求点 92847: u.NetMgr.http.sendRequest(s.HttpConst.UNLOADING_EQUIP_EVENT, a);
+   92839: }
+   92840: var n = JSON.stringify(t);
+   92841: cc.sys.localStorage.setItem(h.RoleBaseInfo.roleID + "unLoadEquip", n);
+   92842: var r = p.UserModel.entity, a = {
+   92843: hp: r.hp.remaining,
+   92844: hplmt: r.hp.limit,
+   92845: mp: r.mp.remaining
+   92846: };

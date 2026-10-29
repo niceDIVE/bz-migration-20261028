@@ -1,0 +1,51 @@
+# User.enterMulitiNpcBattle  (HttpConst.REQ_MPFIGHT)
+# 出现 1 处
+
+ 89282: }
+ 89283: e.prototype.processEnd = function(t, e) {
+ 89284: null == e || e.addComponent(r.NormalMpRwds);
+ 89285: };
+ 89286: e.prototype.startBattle = function(t) {
+ 89287: this.flagFightSt = !0;
+ 89288: s.NetMgr.http.sendRequest(a.HttpConst.REQ_MPFIGHT, {
+ 89289: npcID: t
+ 89290: });
+ 89291: };
+ 89292: return e;
+ 89293: }(t("./SPMpBtMgr").SPMpBtMgr);
+ 89294: o.NormalMPBattleMgr = l;
+ 89295: cc._RF.pop();
+ 89296: }, {
+ 89297: "../../gui/battle/resultscripts/rewardscripts/NormalMpRwds": "NormalMpRwds",
+ 89298: "../../net/HttpConst": "HttpConst",
+ 89299: "../../net/NetMgr": "NetMgr",
+ 89300: "./SPMpBtMgr": "SPMpBtMgr"
+ 89301: } ],
+ 89302: NormalMpRwds: [ function(t, e, o) {
+ 89303: "use strict";
+ 89304: cc._RF.push(e, "94cc4omIchPiroT/HlP1DAS", "NormalMpRwds");
+ 89305: var i, n = this && this.__extends || (i = function(t, e) {
+ 89306: return (i = Object.setPrototypeOf || {
+ 89307: __proto__: []
+ 89308: } instanceof Array && function(t, e) {
+ 89309: t.__proto__ = e;
+ 89310: } || function(t, e) {
+ 89311: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+ 89312: })(t, e);
+ 89313: }, function(t, e) {
+ 89314: i(t, e);
+ 89315: function o() {
+ 89316: this.constructor = t;
+ 89317: }
+ 89318: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());
+ 89319: }), r = this && this.__decorate || function(t, e, o, i) {
+ 89320: var n, r = arguments.length, a = r < 3 ? e : null === i ? i = Object.getOwnPropertyDescriptor(e, o) : i;
+ 89321: if ("object" == typeof Reflect && "function" == typeof Reflect.decorate) a = Reflect.decorate(t, e, o, i); else for (var s = t.length - 1; s >= 0; s--) (n = t[s]) && (a = (r < 3 ? n(a) : r > 3 ? n(e, o, a) : n(e, o)) || a);
+ 89322: return r > 3 && a && Object.defineProperty(e, o, a), a;
+ 89323: };
+ 89324: Object.defineProperty(o, "__esModule", {
+ 89325: value: !0
+ 89326: });
+ 89327: o.NormalMpRwds = void 0;
+ 89328: var a = t("../../../../core/events/MessageCenter"), s = t("../../../../models/vos/PlayerInfo"), l = t("../../../../net/HttpConst"), c = t("../../../../net/NetMgr"), p = t("../BattleResultMediator"), h = cc._decorator.ccclass, u = function(e) {
+---

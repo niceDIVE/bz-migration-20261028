@@ -1,0 +1,23 @@
+# User.LookOther   (HttpConst.USER_LOOKOTHER)
+
+## 注册点 101489: n.MessageCenter.on(r.HttpConst.USER_LOOKOTHER, this.onSuccessLook, this);
+
+## 请求点 101505: l.NetMgr.http.sendRequest(r.HttpConst.USER_LOOKOTHER, {
+   101497: };
+   101498: t.prototype.reqRankList = function() {
+   101499: l.NetMgr.http.sendRequest(r.HttpConst.USER_RANKLIST, {
+   101500: roleID: c.RoleBaseInfo.roleID
+   101501: }, null);
+   101502: };
+   101503: t.prototype.reqRankLook = function(t, e) {
+   101504: this.checkType = e;
+
+## 处理函数 onSuccessLook (101521-101528)
+101521: t.prototype.onSuccessLook = function(t, e) {
+101522: var o = this;
+101523: 1 == e.eRet && h.default.prefabs.load("comUI/RoleInfoUI", cc.Prefab, function(t, i) {
+101524: var n = cc.instantiate(i);
+101525: u.PopUpMgr.addPopUp(n, p.LayerMgr.popUpLayer, 1, !0);
+101526: n.addComponent("RankRoleInfo").showRoleInfo(e, o.checkType, o.cdTime);
+101527: });
+101528: };

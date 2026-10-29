@@ -1,0 +1,13 @@
+# User.Whoring   (HttpConst.WHORING_EVENT)
+
+## 注册点 51145: i.MessageCenter.on(n.HttpConst.WHORING_EVENT, function(e, o) {
+
+## 请求点 51255: g.NetMgr.http.sendRequest(n.HttpConst.WHORING_EVENT, o);
+   51247: };
+   51248: t.prototype.reqWhoringMsg = function(t, e) {
+   51249: var o = {
+   51250: npcID: t,
+   51251: flag: e,
+   51252: hglmt: m.UserModel.entity.hunger.limit
+   51253: };
+   51254: this.npcId = t;

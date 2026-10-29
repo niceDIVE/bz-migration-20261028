@@ -1,0 +1,99 @@
+# User.getTeamFighterInfo  (HttpConst.GET_TEAM_FIGHTER_INFO)
+# 出现 2 处
+
+ 54947: null === (i = e.btUI) || void 0 === i || i.emit(h.EvName.ON_GET_MP_ULTSKILLS, r);
+ 54948: }
+ 54949: o.hasOwnProperty("atkSkillID") && (n.atkSkillID = o.atkSkillID);
+ 54950: }
+ 54951: }
+ 54952: }, e);
+ 54953: r.MessageCenter.on(a.HttpConst.GET_TEAM_FIGHTER_INFO, function(t, o) {
+ 54954: var i;
+ 54955: 1 == o.eRet && o.info && (null === (i = e.btUI) || void 0 === i || i.emit(h.EvName.SHOW_MP_PLAYER_INFO, {
+ 54956: id: o.battleID,
+ 54957: info: o.info
+ 54958: }));
+ 54959: }, e);
+ 54960: r.MessageCenter.on(a.HttpConst.STC_QTE_ACTIVE_NOTIFY, e.onQTEActiveNotify, e);
+ 54961: r.MessageCenter.on(a.HttpConst.STC_INNER_FORCE_VALUE_CHANGE_NOTIFY, e.onInnerForceValueChangeNotify, e);
+ 54962: r.MessageCenter.on(a.HttpConst.STC_QTE_RESULT_NOTIFY, e.onQTEResultNotify, e);
+ 54963: return e;
+ 54964: }
+ 54965: e.prototype.onInnerForceValueChangeNotify = function(t, e) {
+ 54966: e.hasOwnProperty("InnerForceValueChangeList");
+ 54967: };
+ 54968: e.prototype.onQTEResultNotify = function(t, e) {
+ 54969: e.hasOwnProperty("Turn") && (this.round = e.Turn);
+ 54970: };
+ 54971: e.prototype.onQTEActiveNotify = function(t, e) {
+ 54972: e.hasOwnProperty("Turn") && (this.round = e.Turn);
+ 54973: };
+ 54974: e.prototype.QTEInitStart = function() {
+ 54975: var t = cc.instantiate(u.default.prefabs.get("mpbattleui/QteBattle")), e = t.getComponent(S.default);
+ 54976: e.btState = this.state;
+ 54977: var o = this.btUI.getComponent(p.RTMPBattleUI), i = o.getActorDic(), n = {};
+ 54978: for (var r in i) {
+ 54979: var a = i[r].node, s = a.parent.convertToWorldSpaceAR(a.position);
+ 54980: n[r] = s;
+ 54981: a.removeFromParent(!1);
+ 54982: }
+ 54983: var l = this.btUI.getComponent(I.MPUIMediator).bg;
+ 54984: l.removeFromParent(!1);
+ 54985: e.setBg(l);
+ 54986: e.data = o.data;
+ 54987: this.removeBattlePanel();
+ 54988: e.setData(o.getActorDic(), n, this.qteInitData.qteTarget, this.qteInitData.nine_sun_role_id_list, this.qteInitData.north_underworld_role_id_list, this.qteInitData.inner_force_value_pair);
+ 54989: t.on(h.EvName.GAME_COMPLETE, this.onComplete, this);
+ 54990: t.on(h.EvName.BATTLE_ACTION, this.listen4Action, this);
+ 54991: f.PopUpMgr.addPopUp(t, d.LayerMgr.popUpLayer);
+ 54992: this.qtePanel = t;
+ 54993: };
+---
+ 55003: param: t.param1,
+ 55004: param2: t.param2,
+ 55005: turn: this.round
+ 55006: });
+ 55007: };
+ 55008: e.prototype.getPlayerInfo = function(t) {
+ 55009: l.NetMgr.http.sendRequest(a.HttpConst.GET_TEAM_FIGHTER_INFO, {
+ 55010: battleID: t,
+ 55011: roomID: this.roomID
+ 55012: });
+ 55013: };
+ 55014: e.prototype.ultClick = function(t) {
+ 55015: l.NetMgr.http.sendRequest(a.HttpConst.GET_TEAM_ULTSKILLS, {
+ 55016: roomID: this.roomID,
+ 55017: battleID: t
+ 55018: });
+ 55019: };
+ 55020: e.prototype.getPanelScript = function() {
+ 55021: return p.RTMPBattleUI;
+ 55022: };
+ 55023: e.prototype.initBattle = function(t, e) {
+ 55024: var o = this;
+ 55025: void 0 === e && (e = null);
+ 55026: this.roomID = t.roomID;
+ 55027: this.round = t.r ? t.r : 0;
+ 55028: this.state.mainNpc = Number(t.npcID);
+ 55029: this.state.NpcId = Number(t.npcID);
+ 55030: m.CopyFightModel.initHurtData();
+ 55031: this.initBattlePanel(t.formationId, t).then(function() {
+ 55032: var i, n = null === (i = o.btUI) || void 0 === i ? void 0 : i.getComponent(p.RTMPBattleUI);
+ 55033: t.r && n.setRound(t.r);
+ 55034: if (t.itemCds) {
+ 55035: var r = t.itemCds;
+ 55036: for (var a in r) {
+ 55037: var s = r[a];
+ 55038: n.itemID2R[Number(a)] = {
+ 55039: r: o.round,
+ 55040: cd: s
+ 55041: };
+ 55042: }
+ 55043: }
+ 55044: t.commonNItemLimitDic && (n.commonNItemLimitDic = t.commonNItemLimitDic);
+ 55045: t.battleData && o.playWithData(t.battleData);
+ 55046: for (var l = 0; l < o.cache.length; ++l) o.playWithData(o.cache[l]);
+ 55047: var c = o.btUI.getComponent(I.MPUIMediator);
+ 55048: c.setRoomId(o.roomID);
+ 55049: var h = null;
+---

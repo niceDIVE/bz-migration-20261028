@@ -1,0 +1,51 @@
+# User.getGardenShop  (HttpConst.GET_GARDEN_SHOP)
+# 出现 1 处
+
+ 47113: itemID: t,
+ 47114: itemNum: e,
+ 47115: npcid: this.exchangeId
+ 47116: });
+ 47117: };
+ 47118: t.prototype.reqGardenExchange = function() {
+ 47119: u.NetMgr.http.sendRequest(n.HttpConst.GET_GARDEN_SHOP, {});
+ 47120: };
+ 47121: return t;
+ 47122: }();
+ 47123: o.ExchangeModel = new f();
+ 47124: cc._RF.pop();
+ 47125: }, {
+ 47126: "../core/events/MessageCenter": "MessageCenter",
+ 47127: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 47128: "../gameconfigs/CFMgr": "CFMgr",
+ 47129: "../gameconfigs/LangMgr": "LangMgr",
+ 47130: "../gui/uicomponents/Alert": "Alert",
+ 47131: "../mgrs/BundleMgr": "BundleMgr",
+ 47132: "../mgrs/LayerMgr": "LayerMgr",
+ 47133: "../net/HttpConst": "HttpConst",
+ 47134: "../net/NetMgr": "NetMgr",
+ 47135: "../utils/EvName": "EvName"
+ 47136: } ],
+ 47137: ExpContestSkill: [ function(t, e) {
+ 47138: "use strict";
+ 47139: cc._RF.push(e, "94d98XB6UxCuKXeIe48LlxU", "ExpContestSkill");
+ 47140: function o(t, e) {
+ 47141: t.prototype = Object.create(e.prototype);
+ 47142: t.prototype.constructor = t;
+ 47143: i(t, e);
+ 47144: }
+ 47145: function i(t, e) {
+ 47146: return (i = Object.setPrototypeOf || function(t, e) {
+ 47147: t.__proto__ = e;
+ 47148: return t;
+ 47149: })(t, e);
+ 47150: }
+ 47151: var n = t("./ReckoningSkill"), r = (t("../ConfigMgr"), function(t) {
+ 47152: o(e, t);
+ 47153: function e() {
+ 47154: return t.apply(this, arguments) || this;
+ 47155: }
+ 47156: return e;
+ 47157: }(n));
+ 47158: e.exports = r;
+ 47159: cc._RF.pop();
+---

@@ -1,0 +1,705 @@
+{
+  "generatedAt": "2026-10-22T11:09:44.881Z",
+  "scope": [
+    "tools/index.js",
+    "tools/scripts2.js",
+    "tools/scripts3.js"
+  ],
+  "mechanic": "read-only line extraction; body = verbatim source lines; sends[].src = verbatim sendRequest call lines",
+  "notFound": [],
+  "flows": {
+    "saleShopQi": {
+      "component": "BuyItemUI6",
+      "file": "tools/scripts2.js",
+      "line": 7436,
+      "prefab": "comUI/tanchuang/ChooseItemUI",
+      "moduleLine": 7369,
+      "classLine": 7395,
+      "exportLine": 7460,
+      "hook": "onBuyClick",
+      "body": [
+        "e.prototype.onBuyClick = function() {",
+        "if (this.itemNum <= 0) l.PopUpMgr.removePopUp(this.node); else {",
+        "var t = r.getItem(this.itemObj.itemId, \"item\"), e = a.getText(4643).replace(/\\[1\\]/, this.itemNum).replace(/\\[2\\]/, a.getText(t.Name));",
+        "e += \"\\n\" + a.getText(4645) + p.RoleBaseInfo.getItemNum(this.itemObj.itemId);",
+        "var o = this, i = this.getPriceValue() * this.itemNum;",
+        "if (p.RoleBaseInfo.gold < i || 0 == p.RoleBaseInfo.gold) {",
+        "d.default.show(a.getText(\"9223\"));",
+        "l.PopUpMgr.removePopUp(this.node);",
+        "} else d.default.show(e, [ {",
+        "flag: 0,",
+        "name: a.getText(\"332\")",
+        "}, {",
+        "flag: 1,",
+        "name: a.getText(\"333\")",
+        "} ], function(t) {",
+        "if (0 == t) {",
+        "h.ActiveModel.reqBuyActiveItem(o.itemObj.itemId, o.itemNum, o.itemObj.isserver);",
+        "l.PopUpMgr.removePopUp(o.node);",
+        "}",
+        "});",
+        "}",
+        "};"
+      ],
+      "setData": {
+        "line": 7409,
+        "endLine": 7419,
+        "body": [
+          "e.prototype.setData = function(t) {",
+          "this.itemObj = t;",
+          "var e = r.getItem(this.itemObj.itemId, \"item\"), o = this.itemObj.price;",
+          "this.itemObj.hasOwnProperty(\"sale\") && parseInt(this.itemObj.sale) > 0 && (o = this.itemObj.sale);",
+          "p.RoleBaseInfo.gold < o && (this.itemNum = 0);",
+          "this.setPriceValue(o);",
+          "this.itemName.string = a.getText(e.Name);",
+          "this.priceText.string = (this.getPriceValue() * this.itemNum).toString();",
+          "this.saleBtn.string = a.getText(118);",
+          "this.numText.string = this.itemNum.toString();",
+          "};"
+        ],
+        "file": "tools/scripts2.js"
+      },
+      "buttonBind": {
+        "component": "ChooseItemUI (base class)",
+        "file": "tools/index.js",
+        "line": 24960,
+        "src": [
+          "this.btn = this.getPathByNode(\"Bg/Button\");",
+          "this.btn.active = !1;",
+          "this.addButtonListen(this.btn, this, this.onBuyClick, 0);"
+        ]
+      },
+      "sends": [],
+      "sendsInComponent": false,
+      "callSite": {
+        "line": 7452,
+        "src": [
+          "h.ActiveModel.reqBuyActiveItem(o.itemObj.itemId, o.itemNum, o.itemObj.isserver);"
+        ]
+      },
+      "toolFns": [
+        {
+          "name": "ActiveModel.reqBuyActiveItem",
+          "file": "tools/index.js",
+          "line": 1628,
+          "endLine": 1636,
+          "body": [
+            "e.prototype.reqBuyActiveItem = function(t, e, o) {",
+            "this.sum = e;",
+            "this.curItemIsServer = o;",
+            "var i = {",
+            "itemID: t,",
+            "itemNum: e",
+            "};",
+            "g.NetMgr.http.sendRequest(a.HttpConst.ACTIVITE_SHOP, i);",
+            "};"
+          ],
+          "sends": [
+            {
+              "call": "sendRequest",
+              "const": "a.HttpConst.ACTIVITE_SHOP",
+              "file": "tools/index.js",
+              "line": 1635,
+              "params": [
+                "itemID",
+                "itemNum"
+              ],
+              "src": [
+                "var i = {",
+                "itemID: t,",
+                "itemNum: e",
+                "};",
+                "g.NetMgr.http.sendRequest(a.HttpConst.ACTIVITE_SHOP, i);"
+              ],
+              "paramSrc": [
+                {
+                  "field": "itemID",
+                  "line": 1632,
+                  "src": "itemID: t,"
+                },
+                {
+                  "field": "itemNum",
+                  "line": 1633,
+                  "src": "itemNum: e"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "loaderChain": [
+        {
+          "what": "addBuyItemUI -> addComponent(\"BuyItemUI\"+shopType).setData(t)",
+          "file": "tools/index.js",
+          "line": 131618,
+          "src": "r.addComponent(\"BuyItemUI\" + e).setData(t);"
+        },
+        {
+          "what": "SaleShopQiMain.showSaleShopUI -> SaleShopQiUI.setShowData(t, 6, e)",
+          "file": "tools/scripts2.js",
+          "line": 55072,
+          "src": "s.addComponent(\"SaleShopQiUI\").setShowData(t, 6, e);"
+        },
+        {
+          "what": "SaleShopQiUI.shopType = 6",
+          "file": "tools/scripts2.js",
+          "line": 55159,
+          "src": "e.shopType = 6;"
+        },
+        {
+          "what": "SaleShopQiUI.onSelectCallBack -> addBuyItemUI(itemList[o], shopType)",
+          "file": "tools/scripts2.js",
+          "line": 55294,
+          "src": [
+            "e.prototype.onSelectCallBack = function(t, e) {",
+            "var o = e;",
+            "this.desItem.getComponent(cc.Label).string = c.EqUtils.getEqDes(this.itemList[o]);",
+            "if (1 == this.itemList[o].isserver) if (this.itemList[o].limit > 0) {",
+            "this.itemList[o].curNum = this.itemList[o].limit;",
+            "l.default.addBuyItemUI(this.itemList[o], this.shopType);",
+            "} else p.default.show(h.getText(\"998\")); else if (0 == this.itemList[o].limit || this.itemList[o].limit - this.getCollectItemNum(this.itemList[o].ID)) {",
+            "this.itemList[o].curNum = this.itemList[o].limit - this.getCollectItemNum(this.itemList[o].ID);",
+            "l.default.addBuyItemUI(this.itemList[o], this.shopType);",
+            "} else p.default.show(h.getText(\"998\"));"
+          ]
+        }
+      ]
+    },
+    "goodEvilBuy": {
+      "component": "GoodEvilBuyUI",
+      "file": "tools/scripts3.js",
+      "line": 34960,
+      "prefab": "goodEvil/goodEvilShop/GoodEvilBuyUI",
+      "moduleLine": 34862,
+      "classLine": 34888,
+      "exportLine": 34979,
+      "hook": "onClickBtnBuy",
+      "body": [
+        "e.prototype.onClickBtnBuy = function() {",
+        "if (g.GoodEvilUtil.getMyPrestigeLv() < this.myInfo.rankopen) {",
+        "d.default.show(a.getText(6000733));",
+        "u.PopUpMgr.removePopUp(this.node);",
+        "} else if (this.num * this.myInfo.Price > c.RoleBaseInfo.goodEvilContribution) d.default.show(a.getText(6000731)); else {",
+        "p.GoodEvilModel.buy(this.myInfo.id, this.num);",
+        "u.PopUpMgr.removePopUp(this.node);",
+        "}",
+        "};"
+      ],
+      "setData": {
+        "name": "setData",
+        "file": "tools/index.js",
+        "line": 139706,
+        "inheritedFrom": "UIComponent",
+        "body": [
+          "e.prototype.setData = function(t) {",
+          "for (var e = [], o = 1; o < arguments.length; o++) e[o - 1] = arguments[o];",
+          "this.data = t;",
+          "};"
+        ],
+        "note": "GoodEvilBuyUI declares no own setData; inherits UIComponent.setData which stores this.data, later read by myInit"
+      },
+      "dataHook": {
+        "name": "myInit",
+        "line": 34950,
+        "endLine": 34959,
+        "body": [
+          "e.prototype.myInit = function() {",
+          "var t = this.data, e = p.GoodEvilModel.shopData[t];",
+          "this.myInfo = e;",
+          "this.nameLabel.string = a.getText(e.Name);",
+          "var o = e.Data[0];",
+          "this.haveNum.string = a.getText(5871) + \": \" + c.RoleBaseInfo.getItemNum(o).toString();",
+          "var i = l.getItem(o, \"item\");",
+          "this.des.string = a.getText(e.Description) + h.InventoryModel.getCycleNotRemainDes(i);",
+          "this.refresh();",
+          "};"
+        ],
+        "note": "no setData; class reads this.data (UIComponent) in onLoad/myInit"
+      },
+      "buttonBind": {
+        "component": "GoodEvilBuyUI",
+        "file": "tools/scripts3.js",
+        "line": 34917,
+        "src": "this.addButtonListen(this.btnBuy, this, this.onClickBtnBuy);"
+      },
+      "sends": [],
+      "sendsInComponent": false,
+      "callSite": {
+        "line": 34965,
+        "src": "p.GoodEvilModel.buy(this.myInfo.id, this.num);"
+      },
+      "toolFns": [
+        {
+          "name": "GoodEvilModel.buy",
+          "file": "tools/scripts3.js",
+          "line": 36510,
+          "endLine": 36515,
+          "body": [
+            "t.prototype.buy = function(t, e) {",
+            "l.NetMgr.http.sendRequest(c.HttpConst.BUY_GOOD_AND_EVIL_SHOP_ITEM, {",
+            "id: t,",
+            "itemNum: e",
+            "});",
+            "};"
+          ],
+          "sends": [
+            {
+              "call": "sendRequest",
+              "const": "c.HttpConst.BUY_GOOD_AND_EVIL_SHOP_ITEM",
+              "file": "tools/scripts3.js",
+              "line": 36511,
+              "params": [
+                "id",
+                "itemNum"
+              ],
+              "src": [
+                "l.NetMgr.http.sendRequest(c.HttpConst.BUY_GOOD_AND_EVIL_SHOP_ITEM, {",
+                "id: t,",
+                "itemNum: e",
+                "});"
+              ],
+              "paramSrc": [
+                {
+                  "field": "id",
+                  "line": 36512,
+                  "src": "id: t,"
+                },
+                {
+                  "field": "itemNum",
+                  "line": 36513,
+                  "src": "itemNum: e"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "loaderChain": [
+        {
+          "what": "GoodEvilShopItem.onClick -> prefabs.load(GoodEvilBuyUI) -> getComponent(\"GoodEvilBuyUI\").setData(t.data)",
+          "file": "tools/scripts3.js",
+          "line": 37589,
+          "src": [
+            "e.prototype.onClick = function() {",
+            "var t = this, e = c.GoodEvilModel.shopData[this.data];",
+            "e.rankNum > 0 && e.buyCount >= e.rankNum ? l.default.show(a.getText(6000732)) : h.default.prefabs.load(\"goodEvil/goodEvilShop/GoodEvilBuyUI\", cc.Prefab, function(e, o) {",
+            "var i = cc.instantiate(o);",
+            "i.getComponent(\"GoodEvilBuyUI\").setData(t.data);",
+            "d.PopUpMgr.addPopUp(i, u.LayerMgr.popUpLayer, d.Modal.Translucent, !0);",
+            "});",
+            "};"
+          ]
+        }
+      ]
+    },
+    "rogueShop": {
+      "component": "RogueShopItem",
+      "file": "tools/scripts3.js",
+      "line": 75343,
+      "moduleLine": 75241,
+      "classLine": 75267,
+      "exportLine": 75369,
+      "hook": "onClick",
+      "body": [
+        "e.prototype.onClick = function() {",
+        "var t = l.RogueModel.shopData[this.data];",
+        "if (!this.rankMaskNode.active && !this.limitMaskNode.active) if (t.buyCount >= t.num) g.default.show(c.getText(6003610)); else if (0 != t.rank && (l.RogueModel.lastSeasonRank <= 0 || l.RogueModel.lastSeasonRank > t.rank)) g.default.show(c.getText(6002735)); else {",
+        "var e = a.getItem(t.item, \"item\");",
+        "h.RogueUtil.showBuy({",
+        "price: t.cost,",
+        "priceDes: this.getPriceDes(),",
+        "notEnoughPriceTip: c.getText(7863),",
+        "havePriceNum: p.RoleBaseInfo.getItemNum(this.costId),",
+        "haveItemNum: p.RoleBaseInfo.getItemNum(t.item),",
+        "limit: t.num - t.buyCount,",
+        "name: c.getText(e.Name),",
+        "des: c.getText(e.Description),",
+        "buyFunc: function(e) {",
+        "l.RogueModel.shopBuy(t.id, e);",
+        "}",
+        "});",
+        "}",
+        "};"
+      ],
+      "setData": {
+        "name": "setData",
+        "file": "tools/index.js",
+        "line": 139706,
+        "inheritedFrom": "UIComponent",
+        "body": [
+          "e.prototype.setData = function(t) {",
+          "for (var e = [], o = 1; o < arguments.length; o++) e[o - 1] = arguments[o];",
+          "this.data = t;",
+          "};"
+        ],
+        "note": "RogueShopItem declares no own setData; inherits UIComponent.setData which stores this.data"
+      },
+      "sends": [],
+      "sendsInComponent": false,
+      "callSite": {
+        "line": 75357,
+        "src": "l.RogueModel.shopBuy(t.id, e);"
+      },
+      "toolFns": [
+        {
+          "name": "RogueUtil.showBuy",
+          "file": "tools/scripts3.js",
+          "line": 76918,
+          "endLine": 76920,
+          "body": [
+            "t.prototype.showBuy = function(t) {",
+            "this.show(\"rogue/shop/RogueBuyUI\", !0, \"RogueBuyUI\", t);",
+            "};"
+          ],
+          "sends": []
+        },
+        {
+          "name": "RogueBuyUI.onClickBtnBuy",
+          "file": "tools/scripts3.js",
+          "line": 64794,
+          "endLine": 64799,
+          "body": [
+            "e.prototype.onClickBtnBuy = function() {",
+            "if (!this.data.checkCanBuy || this.data.checkCanBuy(this.num)) if (this.num * this.data.price > this.data.havePriceNum) c.default.show(this.data.notEnoughPriceTip); else {",
+            "this.data.buyFunc && this.data.buyFunc(this.num);",
+            "a.PopUpMgr.removePopUp(this.node);",
+            "}",
+            "};"
+          ],
+          "sends": []
+        },
+        {
+          "name": "RogueModel.shopBuy",
+          "file": "tools/scripts3.js",
+          "line": 71192,
+          "endLine": 71197,
+          "body": [
+            "t.prototype.shopBuy = function(t, e) {",
+            "h.NetMgr.http.sendRequest(l.HttpConst.RG_SHOP_BY_ITEM, {",
+            "id: t,",
+            "itemNum: e",
+            "});",
+            "};"
+          ],
+          "sends": [
+            {
+              "call": "sendRequest",
+              "const": "l.HttpConst.RG_SHOP_BY_ITEM",
+              "file": "tools/scripts3.js",
+              "line": 71193,
+              "params": [
+                "id",
+                "itemNum"
+              ],
+              "src": [
+                "h.NetMgr.http.sendRequest(l.HttpConst.RG_SHOP_BY_ITEM, {",
+                "id: t,",
+                "itemNum: e",
+                "});"
+              ],
+              "paramSrc": [
+                {
+                  "field": "id",
+                  "line": 71194,
+                  "src": "id: t,"
+                },
+                {
+                  "field": "itemNum",
+                  "line": 71195,
+                  "src": "itemNum: e"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "rogueShopUI": {
+        "file": "tools/scripts3.js",
+        "moduleLine": 75384,
+        "classLine": 75410,
+        "prefab": "rogue/shop/RogueShopUI",
+        "onBuy": {
+          "line": 75466,
+          "src": [
+            "e.prototype.onBuy = function() {",
+            "this.setNum();",
+            "};"
+          ]
+        }
+      },
+      "loaderChain": [
+        {
+          "what": "RogueUtil.showBuy -> this.show(\"rogue/shop/RogueBuyUI\", !0, \"RogueBuyUI\", t)",
+          "file": "tools/scripts3.js",
+          "line": 76919,
+          "src": "this.show(\"rogue/shop/RogueBuyUI\", !0, \"RogueBuyUI\", t);"
+        }
+      ],
+      "dataMount": {
+        "file": "tools/scripts3.js",
+        "line": 69703,
+        "src": "o.getComponent(\"RogueShopItem\").setData(e);"
+      }
+    },
+    "exchangeBuy": {
+      "component": "ExchangeBuyUI",
+      "file": "tools/scripts2.js",
+      "line": 20469,
+      "prefab": "comUI/tanchuang/SelectItem",
+      "moduleLine": 20290,
+      "classLine": 20337,
+      "exportLine": 20526,
+      "hook": "onBuyCallBack",
+      "body": [
+        "o.prototype.onBuyCallBack = function() {",
+        "if (this.judgeCostItem()) m.default.show(p.getText(\"1455\")); else if (this.isCostEquipLocked()) m.default.show(p.getText(6000166)); else if (this.curNum > 0 && (-1 == this.limitNum || this.limitNum >= this.curNum)) {",
+        "var t = this, e = l.getItem(this.objectItem[2], \"item\"), o = this.objectItem[3] > 1 ? \"x\" + this.objectItem[3] : \"\", i = p.getText(4644).replace(/\\[1\\]/, this.curNum).replace(/\\[2\\]/, p.getText(e.Name) + o);",
+        "0 == this.curtype && (i += \"\\n\" + p.getText(4645) + d.RoleBaseInfo.getItemNum(this.objectItem[2]));",
+        "m.default.show(i, [ {",
+        "flag: 0,",
+        "name: p.getText(\"332\")",
+        "}, {",
+        "flag: 1,",
+        "name: p.getText(\"333\")",
+        "} ], function(e) {",
+        "0 == e && t.startBuyReqCallBack();",
+        "});",
+        "}",
+        "};"
+      ],
+      "setData": {
+        "line": 20406,
+        "endLine": 20421,
+        "name": "setDatas",
+        "body": [
+          "o.prototype.setDatas = function(t, e, o, i) {",
+          "void 0 === i && (i = 0);",
+          "this.curtype = o;",
+          "this.limitType = t[1];",
+          "this.objectItem = t;",
+          "this.limitNum = e;",
+          "this.curRealType = i;",
+          "this.limitNum >= 0 && (this.curNum = Math.min(this.curNum, this.limitNum));",
+          "this.itemsArray = t[4].split(\"|\");",
+          "var s = l.getItem(this.objectItem[2], \"item\"), n = \"\";",
+          "t[3] > 1 && (n = \"x\" + t[3]);",
+          "this.nameTxt.getComponent(cc.Label).string = p.getText(s.Name) + n;",
+          "this.itemDesText.getComponent(cc.Label).string = p.getText(s.Description) + v.InventoryModel.getCycleNotRemainDes(s);",
+          "this.amountTxt.getComponent(cc.Label).string = p.getText(\"3266\") + \":\" + d.RoleBaseInfo.getItemNum(this.objectItem[2]);",
+          "this.showBaseData();",
+          "};"
+        ],
+        "file": "tools/scripts2.js"
+      },
+      "buttonBind": {
+        "component": "ExchangeBuyUI",
+        "file": "tools/scripts2.js",
+        "line": 20389,
+        "src": "this.addButtonListen(this.BG1_button_b_1, this, this.onBuyCallBack);"
+      },
+      "sends": [],
+      "sendsInComponent": false,
+      "callSite": {
+        "line": 20480,
+        "src": "0 == e && t.startBuyReqCallBack();"
+      },
+      "dispatchFn": {
+        "name": "startBuyReqCallBack",
+        "line": 20484,
+        "endLine": 20499,
+        "body": [
+          "o.prototype.startBuyReqCallBack = function() {",
+          "var e = this;",
+          "0 == this.curtype ? Promise.resolve().then(function() {",
+          "return t(\"../../../scripts/models/ExchangeModel\");",
+          "}).then(function(t) {",
+          "t.ExchangeModel.reqExchangeBuy(e.objectItem[0], e.curNum);",
+          "}) : 2 == this.curtype ? Promise.resolve().then(function() {",
+          "return t(\"../../../scripts3/model3/MonopoModel\");",
+          "}).then(function(t) {",
+          "t.MonopoModel.reqExchangeItem(e.objectItem[0], e.curNum);",
+          "}) : Promise.resolve().then(function() {",
+          "return t(\"../../../scripts/models/HalloweenShopModel\");",
+          "}).then(function(t) {",
+          "t.HalloweenShopModel.reqExchangeItem(e.objectItem[0], e.curNum);",
+          "});",
+          "};"
+        ]
+      },
+      "toolFns": [
+        {
+          "name": "ExchangeModel.reqExchangeBuy (curtype==0, used by SelectItem/ExchangeBuyUI loader)",
+          "file": "tools/index.js",
+          "line": 47111,
+          "endLine": 47117,
+          "body": [
+            "t.prototype.reqExchangeBuy = function(t, e) {",
+            "u.NetMgr.http.sendRequest(n.HttpConst.EXCHANGE_ITEM, {",
+            "itemID: t,",
+            "itemNum: e,",
+            "npcid: this.exchangeId",
+            "});",
+            "};"
+          ],
+          "sends": [
+            {
+              "call": "sendRequest",
+              "const": "n.HttpConst.EXCHANGE_ITEM",
+              "file": "tools/index.js",
+              "line": 47112,
+              "params": [
+                "itemID",
+                "itemNum",
+                "npcid"
+              ],
+              "src": [
+                "u.NetMgr.http.sendRequest(n.HttpConst.EXCHANGE_ITEM, {",
+                "itemID: t,",
+                "itemNum: e,",
+                "npcid: this.exchangeId",
+                "});"
+              ],
+              "paramSrc": [
+                {
+                  "field": "itemID",
+                  "line": 47113,
+                  "src": "itemID: t,"
+                },
+                {
+                  "field": "itemNum",
+                  "line": 47114,
+                  "src": "itemNum: e,"
+                },
+                {
+                  "field": "npcid",
+                  "line": 47115,
+                  "src": "npcid: this.exchangeId"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MonopoModel.reqExchangeItem (curtype==2 branch)",
+          "file": "tools/scripts3.js",
+          "line": 51336,
+          "endLine": 51341,
+          "body": [
+            "e.prototype.reqExchangeItem = function(t, e) {",
+            "l.NetMgr.http.sendRequest(s.HttpConst.EXCHANGE_ITEM_EVENT, {",
+            "itemId: t,",
+            "itemNum: e",
+            "});",
+            "};"
+          ],
+          "sends": [
+            {
+              "call": "sendRequest",
+              "const": "s.HttpConst.EXCHANGE_ITEM_EVENT",
+              "file": "tools/scripts3.js",
+              "line": 51337,
+              "params": [
+                "itemId",
+                "itemNum"
+              ],
+              "src": [
+                "l.NetMgr.http.sendRequest(s.HttpConst.EXCHANGE_ITEM_EVENT, {",
+                "itemId: t,",
+                "itemNum: e",
+                "});"
+              ],
+              "paramSrc": [
+                {
+                  "field": "itemId",
+                  "line": 51338,
+                  "src": "itemId: t,"
+                },
+                {
+                  "field": "itemNum",
+                  "line": 51339,
+                  "src": "itemNum: e"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HalloweenShopModel.reqExchangeItem (other curtype branch)",
+          "file": "tools/index.js",
+          "line": 56136,
+          "endLine": 56143,
+          "body": [
+            "t.prototype.reqExchangeItem = function(t, e) {",
+            "this.curItemId = t;",
+            "l.NetMgr.http.sendReqWithMask(a.HttpConst.EXCHANGE_HLEX_CHANGEITEM, {",
+            "npcid: this.npcID,",
+            "itemID: t,",
+            "itemNum: e",
+            "});",
+            "};"
+          ],
+          "sends": [
+            {
+              "call": "sendReqWithMask",
+              "const": "a.HttpConst.EXCHANGE_HLEX_CHANGEITEM",
+              "file": "tools/index.js",
+              "line": 56138,
+              "params": [
+                "npcid",
+                "itemID",
+                "itemNum"
+              ],
+              "src": [
+                "l.NetMgr.http.sendReqWithMask(a.HttpConst.EXCHANGE_HLEX_CHANGEITEM, {",
+                "npcid: this.npcID,",
+                "itemID: t,",
+                "itemNum: e",
+                "});"
+              ],
+              "paramSrc": [
+                {
+                  "field": "npcid",
+                  "line": 56139,
+                  "src": "npcid: this.npcID,"
+                },
+                {
+                  "field": "itemID",
+                  "line": 56140,
+                  "src": "itemID: t,"
+                },
+                {
+                  "field": "itemNum",
+                  "line": 56141,
+                  "src": "itemNum: e"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "loaderChain": [
+        {
+          "what": "ExchangeModel.init -> GET_ITEM_DATA handler -> prefabs.load(comUI/tanchuang/SelectItem) -> addComponent(\"ExchangeBuyUI\").setDatas(curItemObj, o.limit, 0, i)",
+          "file": "tools/index.js",
+          "line": 47086,
+          "src": [
+            "a.default.prefabs.load(\"comUI/tanchuang/SelectItem\", cc.Prefab, function(e, n) {",
+            "var r = cc.instantiate(n);",
+            "s.PopUpMgr.addPopUp(r, l.LayerMgr.popUpLayer, 1, !0);",
+            "r.addComponent(\"ExchangeBuyUI\").setDatas(t.curItemObj, o.limit, 0, i);"
+          ]
+        },
+        {
+          "what": "other ExchangeBuyUI mount (setDatas(...,1))",
+          "file": "tools/index.js",
+          "line": 56109,
+          "src": "r.addComponent(\"ExchangeBuyUI\").setDatas(o.curItemObj, e.limit, 1);"
+        }
+      ]
+    }
+  },
+  "notes": [
+    "saleShopQi: component confirmed = BuyItemUI6 via index.js:131618 addComponent(\"BuyItemUI\" + e) with e==6 from SaleShopQiUI.shopType (scripts2.js:55159).",
+    "ComExchangeBuyUI exists separately (scripts3.js:20499, addComponent at 20870 and 85710) and is NOT the requested ExchangeBuyUI; not expanded (out of scope)."
+  ]
+}

@@ -1,0 +1,51 @@
+# User.specialCycleLife  (HttpConst.SPECIAL_CYCLE_LIFE)
+# 出现 1 处
+
+101953: };
+101954: e.prototype.reqEndCycle = function(t, e, o) {
+101955: void 0 === t && (t = 1);
+101956: void 0 === e && (e = 1);
+101957: void 0 === o && (o = 0);
+101958: this.birthID = t;
+101959: this.special && p.NetMgr.http.sendRequest(r.HttpConst.SPECIAL_CYCLE_LIFE, {
+101960: originId: t
+101961: });
+101962: var i = parseInt(c.UserModel.entity.hp.limit), n = parseInt(c.UserModel.entity.mp.limit);
+101963: p.NetMgr.http.sendRequest(r.HttpConst.CYCLE_LIFE, {
+101964: isReserved: o,
+101965: branchId: e,
+101966: originId: t,
+101967: skillArr: this.skillAy,
+101968: skillID: this.skillBaseId,
+101969: attArr: [ i, n ]
+101970: });
+101971: };
+101972: e.prototype.reqChooseExperience = function(t) {
+101973: p.NetMgr.http.sendRequest(r.HttpConst.STORY_EXPERIENCE, {
+101974: branchId: t
+101975: });
+101976: };
+101977: e.prototype.calutePowerLevelNum = function(t) {
+101978: var e = h.SkillTable.getSkillLevel(t), o = h.SkillTable.getSkillLevel(h.SkillTable.getBaseSkillID(t)), i = parseInt(o + c.UserModel.entity.perception.baseValue / 10 + h.SkillTable.dic[9].lv / 100);
+101979: return Math.min(e, i);
+101980: };
+101981: e.prototype.calutePowerState = function(t) {
+101982: var e = h.SkillTable.getSkillLevel(t), o = h.SkillTable.getSkillLevel(h.SkillTable.getBaseSkillID(t));
+101983: return e > parseInt(o + c.UserModel.entity.perception.baseValue / 10 + h.SkillTable.dic[9].lv / 100);
+101984: };
+101985: e.prototype.judgePowerValue = function(t) {
+101986: return this.calutePowerState(t);
+101987: };
+101988: e.prototype.calculatePowerValue = function(t, e) {
+101989: var o = s.getItem(t, "skill"), i = h.SkillTable.getSkillLevel(h.SkillTable.getBaseSkillID(t)) + Math.floor(c.UserModel.entity.perception.finalValue / 10) + Math.floor(h.SkillTable.dic[9].lv / 100), n = Math.min(e, i), r = s.getItem(n, "level"), a = h.SkillTable.getQualitySkillCoefficient(o, t);
+101990: return parseInt(r.zhenyuan) * a;
+101991: };
+101992: e.prototype.destroy = function() {
+101993: this.birthID = 0;
+101994: this.skillAy = [];
+101995: this.skillBaseId = 1;
+101996: };
+101997: return e;
+101998: }();
+101999: o.RebirthModel = new S();
+---

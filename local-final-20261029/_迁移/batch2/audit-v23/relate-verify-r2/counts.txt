@@ -1,0 +1,59 @@
+== md5 表 ==
+A rw.json	659793600f7e3cb0cdbeb8cfe420c449	F:\BaoZouyxt\audit-v23\incoming\unpacked\bz-oracle\rw.json
+B rw.json	659793600f7e3cb0cdbeb8cfe420c449	F:\BaoZouyxt\audit-v23\relate-result-r2-20261024\rw.json
+A out\relations.md	eee0ed150d7a47cba06a66bceed7098d	F:\BaoZouyxt\audit-v23\incoming\unpacked\bz-oracle\out\relations.md
+B relations.md	eee0ed150d7a47cba06a66bceed7098d	F:\BaoZouyxt\audit-v23\relate-result-r2-20261024\relations.md
+B relations.默认配置-对照.md	c9d4f60fae90f76eae01b84a09e9d117	F:\BaoZouyxt\audit-v23\relate-result-r2-20261024\relations.默认配置-对照.md
+B relations.fam2.0-对照.md	9571e93552adac5eb88451eb4780bd07	F:\BaoZouyxt\audit-v23\relate-result-r2-20261024\relations.fam2.0-对照.md
+A out\relations.json	9d0722602796583b07589dbf717d92dd	F:\BaoZouyxt\audit-v23\incoming\unpacked\bz-oracle\out\relations.json
+B relations.json	9d0722602796583b07589dbf717d92dd	F:\BaoZouyxt\audit-v23\relate-result-r2-20261024\relations.json
+A config\relate-families.json	da7db9e23418177986c22b07cca4b62b	F:\BaoZouyxt\audit-v23\incoming\unpacked\bz-oracle\config\relate-families.json
+B relate-families.json	da7db9e23418177986c22b07cca4b62b	F:\BaoZouyxt\audit-v23\relate-result-r2-20261024\relate-families.json
+复跑 rerun_rw.json	9f5bbb6835cb498f874a8201f29711b4	F:\BaoZouyxt\audit-v23\relate-verify-r2\rerun_rw.json
+
+== V2 计数三对照 ==
+relations.md 行数: 238
+relations.md 第3行原文: '范围内 699 个动作｜边 879｜簇 76｜孤立 370｜成对 21｜有存档读写的动作 31'
+第3行解析: inScope=699 edges=879 clusters=76 lone=370 pairs=21 rwActions=31
+relations.json __meta: {"inScope": 699, "edges": 879, "clusters": 76, "lone": 370, "pairs": 21, "rwActions": 31}
+md 中 '## 第' 行数: 76
+clusters 数组长度: 76
+lone 数组长度: 370
+各簇成员数: {"C01": 26, "C05": 15, "C02": 19, "C03": 19, "C16": 6, "C04": 16, "C06": 13, "C07": 9, "C08": 9, "C09": 8, "C10": 8, "C11": 7, "C12": 7, "C13": 7, "C14": 7, "C15": 6, "C17": 5, "C18": 5, "C19": 5, "C20": 4, "C21": 4, "C22": 4, "C23": 4, "C24": 3, "C25": 3, "C26": 3, "C27": 3, "C28": 3, "C29": 3, "C30": 3, "C31": 3, "C32": 3, "C33": 3, "C34": 2, "C35": 2, "C36": 2, "C37": 2, "C38": 2, "C39": 2, "C40": 2, "C41": 2, "C42": 2, "C43": 2, "C44": 2, "C45": 2, "C46": 2, "C47": 2, "C48": 2, "C49": 2, "C50": 2, "C51": 2, "C52": 2, "C53": 2, "C54": 2, "C55": 2, "C56": 2, "C57": 2, "C58": 2, "C59": 2, "C60": 2, "C61": 2, "C62": 2, "C63": 2, "C64": 2, "C65": 2, "C66": 2, "C67": 2, "C68": 2, "C69": 2, "C70": 2, "C71": 2, "C72": 2, "C73": 2, "C74": 2, "C75": 2, "C76": 2}
+簇 size 字段总和: 329; order 长度总和: 329
+簇成员总数 + lone = 699 (对照 699)
+pairs 数组长度: 21
+簇成员+lone 并集大小: 699
+registry rows 总数: 1125
+registry status 分布: {"ALT": 16, "DEAD": 189, "DONE": 6, "GEN-READY": 317, "IMPL-UNJUDGED": 74, "NEEDS-S2": 282, "NO-CONTRACT": 20, "OUT": 29, "PUSH": 192}
+status∈SCOPE 的 key 集合大小: 699
+并集 - registrySCOPE 集合: 0 个: []
+registrySCOPE 集合 - 并集: 0 个: []
+拼接列表元素总数: 699, 去重后: 699 (差 0 = 重复元素数)
+
+== V3 relate-families.json ==
+config\relate-families.json: 合法 JSON = True
+familyWeight = 3.0
+families 条目数 = 12
+families 键序: ['核心账本', '任务主线', '商店交易', '道具使用', '打坐练功', '婚姻子女', '穴位', '成就', '技巧摸奖', '斗狗', '龙', '战斗结算']
+family[核心账本] match='^(QUICK_LOGIN|USER_LOADGAME|USER_CREATE|BACKTOLOGIN|ACCOUNT_LOG_OFF)$' 命中去重KEY=5 簇分布={"C05": 5} lone=0 范围外=0
+family[任务主线] match='^(?!ROGUE_)(GET_TASK|FINISH_TASK|QUICK_FINISH_TASK|SYCN_TASK|HIDE_TASK|DELEGATE_TASK|CHANGE_DELEGATE_TASK|ACCEPTCIRCLETASK|GETCIRCLETASK|GET_CIRCLE_TASK_LIST|CIRCLE_TASK_TASK)$|SCHOOL_TASK' 命中去重KEY=17 簇分布={"C02": 17} lone=0 范围外=0
+family[商店交易] match='^(SELL_ITEM|BUY_SHOP_ITEM|BUY_MARKET_ITEM|QUICK_BUY|BUY_SPECIAL_GOODS|BUY_SCHOOL_SHOP|INN_BUY_SHOP|REQ_BUY_FASHION|BUY_MOUNT|BUY_FORMULA_DATA|REQ_BUY_GIFT|BUY_GOOD_AND_EVIL_SHOP_ITEM)$' 命中去重KEY=12 簇分布={"C01": 12} lone=0 范围外=0
+family[道具使用] match='^(USE_ITEM|ROGUE_USE_ITEM|USE_ITEM_ADDITION|USE_SNOW_BALL|USE_BATCH_SNOW_BALL|USE_ALL_BALL)$' 命中去重KEY=6 簇分布={"C05": 6} lone=0 范围外=0
+family[打坐练功] match='DAZUO|LIANGONG|RECOVER_MP|WOOD_TRAINING' 命中去重KEY=10 簇分布={"C06": 10} lone=0 范围外=0
+family[婚姻子女] match='WIFE|MARRY|WEDD|CHILD|DIVORCE|CHOOSE_GIRL|PROPOSE|MAKE_LOVE' 命中去重KEY=16 簇分布={"C04": 16} lone=0 范围外=0
+family[穴位] match='ACUPOINT' 命中去重KEY=2 簇分布={"C73": 2} lone=0 范围外=0
+family[成就] match='ACHIEV' 命中去重KEY=7 簇分布={"C16": 6} lone=0 范围外=1
+family[技巧摸奖] match='KNACK' 命中去重KEY=9 簇分布={"C09": 7} lone=0 范围外=2
+family[斗狗] match='DOG' 命中去重KEY=6 簇分布={"C13": 6} lone=0 范围外=0
+family[龙] match='DRAGON' 命中去重KEY=4 簇分布={"C15": 4} lone=0 范围外=0
+family[战斗结算] match='BATTLE_END|BATTLE_RESULT|NPC_BATTLE_END' 命中去重KEY=10 簇分布={"C03": 7, "C13": 1} lone=0 范围外=2
+簇分布跨多簇的 family: {"战斗结算": {"C03": 7, "C13": 1}}
+B relate-families.json md5 = A config relate-families.json md5: True
+
+== V5 A 位 rw.json via 统计 ==
+动作总数: 36
+via 含 'table:' 的动作数: 36
+via 为/含 'literal' 的动作数: 10
+via 组合分布: {"table:H": 26, "literal + table:H": 10}
+rw.json 顶层键数与动作名(前40): ['User.BeginTraining', 'User.BuyAcitivityShop', 'User.BuyFashion', 'User.CheckBattleResult', 'User.Create', 'User.EndFish', 'User.ExChangeJetton', 'User.GetSpecialShopData', 'User.LoadGame', 'User.OnCheckBreak', 'User.PutOnEquipment', 'User.QuickBuyItem', 'User.ReqSelfBattleInfo', 'User.UnloadingEuipment', 'User.acceptTask', 'User.addItem', 'User.buyGoodAndEvilShopItem', 'User.buyShopItem', 'User.buySpecialShopItem', 'User.bzBackfillRewards', 'User.bzGrantCur', 'User.bzPatch', 'User.bzSeedBag', 'User.equipWeapon', 'User.exchangeItem', 'User.getAchieveData', 'User.getFinishTaskAward', 'User.joinSchool', 'User.quicklogin', 'User.rgShopByItem', 'User.saleItem', 'User.sycnPlayerItemData', 'User.sycnTask', 'User.upgradeSkill', 'User.useItem', 'User.washAdditionalArr']

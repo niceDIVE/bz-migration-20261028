@@ -1,0 +1,99 @@
+# User.beginPVEBattle  (HttpConst.PVE_ACTION)
+# 出现 2 处
+
+ 98846: var s = l.createPlayerBattleEntity(o.AttckData), h = t.generateNpcData(o.npcArr, o.npcID), u = new p();
+ 98847: l.initRivalEntity(u, h);
+ 98848: o.npcID != s.battleID ? u.battleID = o.npcID : u.battleID = o.npcID + 1;
+ 98849: t.initBattleSystem(s, u, o.randSeed);
+ 98850: }
+ 98851: }, t);
+ 98852: r.MessageCenter.on(a.HttpConst.PVE_ACTION, function(e, o) {
+ 98853: if (1 === o.eRet) {
+ 98854: t.syncData = o.attArr;
+ 98855: if (o.attArr && o.attArr.length > 0) {
+ 98856: if (t.bs.entityA.battleID == o.attArr[8]) {
+ 98857: t.bs.entityA.serverHp = o.attArr[0];
+ 98858: t.bs.entityA.serverHpLimt = o.attArr[1];
+ 98859: } else {
+ 98860: t.bs.entityA.serverHp = 0;
+ 98861: t.bs.entityA.serverHpLimt = 1;
+ 98862: }
+ 98863: if (t.bs.entityB.battleID == o.attArr[9]) {
+ 98864: t.bs.entityB.serverHp = o.attArr[3];
+ 98865: t.bs.entityB.serverHpLimt = o.attArr[4];
+ 98866: } else {
+ 98867: t.bs.entityB.serverHp = 0;
+ 98868: t.bs.entityB.serverHpLimt = 1;
+ 98869: }
+ 98870: } else {
+ 98871: t.bs.entityA.serverHp = 0;
+ 98872: t.bs.entityA.serverHpLimt = 1;
+ 98873: t.bs.entityB.serverHp = 0;
+ 98874: t.bs.entityB.serverHpLimt = 1;
+ 98875: }
+ 98876: var i = f.RoleBaseInfo.roleID;
+ 98877: o.paramID2 && "" != o.paramID2 && (i = o.paramID2);
+ 98878: switch (o.action) {
+ 98879: case 1:
+ 98880: t.bs.castSkill(i, o.paramID, 0, o.paramID1);
+ 98881: break;
+ 98882: 
+ 98883: case 2:
+ 98884: t.bs.usePotion(i, o.paramID);
+ 98885: t.reduceItem(o.paramID);
+ 98886: break;
+ 98887: 
+ 98888: case 3:
+ 98889: t.bs.breathe(i);
+ 98890: break;
+ 98891: 
+ 98892: case 6:
+---
+ 98937: 
+ 98938: default:
+ 98939: this.sendAction(0);
+ 98940: }
+ 98941: };
+ 98942: o.prototype.sendAction = function(t, e, o) {
+ 98943: g.NetMgr.http.sendRequest(a.HttpConst.PVE_ACTION, {
+ 98944: action: t,
+ 98945: paramID: e,
+ 98946: paramID1: o,
+ 98947: paramID2: this.bs.entityA.battleID
+ 98948: }, null, !0, !1, !1);
+ 98949: };
+ 98950: o.prototype.getPanelScript = function() {
+ 98951: return "PveSvrBtPanel";
+ 98952: };
+ 98953: o.prototype.getFightSceneID = function() {
+ 98954: var t = c.getItem(this.bs.entityB.npcID, "npc");
+ 98955: return "" != t.FightScene ? t.FightScene : e.prototype.getFightSceneID.call(this);
+ 98956: };
+ 98957: return o;
+ 98958: }(s.B1v1Base);
+ 98959: o.PveSvr1v1Mgr = m;
+ 98960: cc._RF.pop();
+ 98961: }, {
+ 98962: "../../battlesystem/NpcBattleEntity": "NpcBattleEntity",
+ 98963: "../../core/events/MessageCenter": "MessageCenter",
+ 98964: "../../gameconfigs/CFMgr": "CFMgr",
+ 98965: "../../models/InventoryDB": "InventoryDB",
+ 98966: "../../models/TowerModel": "TowerModel",
+ 98967: "../../models/vos/RoleBaseInfo": "RoleBaseInfo",
+ 98968: "../../net/HttpConst": "HttpConst",
+ 98969: "../../net/NetMgr": "NetMgr",
+ 98970: "../../utils/BtActionType": "BtActionType",
+ 98971: "../../utils/EvName": "EvName",
+ 98972: "../../utils/MadUtils": "MadUtils",
+ 98973: "./B1v1Base": "B1v1Base"
+ 98974: } ],
+ 98975: PveSvrBtPanel: [ function(t, e, o) {
+ 98976: "use strict";
+ 98977: cc._RF.push(e, "fe3a3VM8qlCy5rR+VVL+k4Q", "PveSvrBtPanel");
+ 98978: var i, n = this && this.__extends || (i = function(t, e) {
+ 98979: return (i = Object.setPrototypeOf || {
+ 98980: __proto__: []
+ 98981: } instanceof Array && function(t, e) {
+ 98982: t.__proto__ = e;
+ 98983: } || function(t, e) {
+---

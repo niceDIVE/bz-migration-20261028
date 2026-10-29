@@ -1,0 +1,35 @@
+转发说明（给转发人看的 30 秒版）
+====================================================================
+这是什么：第 13 批 C12〔管家/帮手〕的下游回执包（实现 + 取证 + 测试一次性给全）。
+
+只要转 1 个文件：下游回执-第13批C12-20261027.zip
+（不需要单独转 bz-rpc-server.js，包里有）
+
+包里有什么（条目数与体积见 02-manifest.txt）
+--------------------------------------------------------------------
+  00-转发说明.txt                  ← 你正在看的这个
+  01-receipt-batch13-c12.txt       ← 回执正本（交付内容 + 口径申报 + 真机崩修复 + 未做项）
+  02-manifest.txt                  ← 逐文件 md5 + 怎么验
+  bz-rpc-server.js                 ← 业务层单文件（与 core\ 里那份同 md5）
+  core\                            ← 完整 core（含本批新表 bz-c12.generated.js）
+  facts\C1–C13                     ← 取证与策略 / 执行记录 / 侦察四份 / 主审探针 / 工单 / 工人验收 / OPEN-ISSUES
+  test\                            ← 全量测试（含本批新增 c12-smoke.js，13 条）
+  tools\gen_c12_tables.js          ← 本批新生成器
+  tools\gen_c09/c10/c11_tables.js  ← 前三批生成器
+
+对面自验三步（都能独立跑，不依赖我们的环境）
+--------------------------------------------------------------------
+  1) cp core\* 覆盖本地 core → node build-handlers.js
+     期望 ver=he39800b9、selfCheck 1357、CATCH CODES 113 个动作
+  2) node test\c12-smoke.js → 期望 13/13
+     node test\c11-smoke.js → 13/13、node test\c10-smoke.js → 18/18（回归）
+  3) node tools\check_shape_freeze.js → 期望 diff 0（基线 352 动作）
+
+一句话摘要
+--------------------------------------------------------------------
+管家 7 键 + 3 个面板键（getHousekeeper 面板开关 / setTemplateData 自动派遣模板 /
+receiveNotice 通知）共 10 个动作全做（档 A：派遣落档不结算任务产出）。
+★真机抓到并修复一个每帧崩：dispatch 的 mapId 不在管家场景白名单（helper.locate →
+1147/1119/1120/1118）时客户端 createRoute3 查不到路线 → Cannot read property '0' of null
+每帧崩（index.jsc:22681）——服务端已加 mapId 校验（不合法回 2）+ 坏派遣态自愈覆盖通道。
+自定口径见回执 §四（买管家照表元宝价、月卡 300 元宝/30 天、派遣 30 分钟、callData 状态语义）。

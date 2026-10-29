@@ -1,0 +1,16 @@
+{
+  "batch": 1,
+  "checked": 1,
+  "items": [
+    {
+      "action": "GetFashionList",
+      "field": "FashionTimeMap",
+      "verdict": "SCALAR",
+      "evidenceLines": [
+        75623
+      ],
+      "evidenceText": "1 == e.type && this.setFashionTime(e.FashionTimeMap);",
+      "note": "作为参数传入setFashionTime(t)，75608行for(var e in t)遍历t，但在直接属性访问判据下只有参数传递"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+F:\BaoZouyxt\hotfix-patch\core\bz-rpc-server.js	5953037bae2cd0b7a4462d44fd8413e9	1792702479.7830532
+F:\BaoZouyxt\hotfix-patch\core\bz-handler-impl.js	75372dcc40f593aff2db099573aac5d0	1792691800.779096
+F:\BaoZouyxt\hotfix-patch\live\flow.js	290a6905f88a005e83a26e8a5c140fb1	1792668177.0168645
+F:\BaoZouyxt\audit-v23\incoming\unpacked\bz-oracle\forge\analysis\extract_rw.py	2fd34b3bc0929767f1cf4255bb9788dc	1792801358.0
+键集相同: True
+[User.bzGrantCur]
+  run1 reads=['coins', 'done', 'hungerMax', 'potential', 'rewarded', 'skills'] writes=['bag', 'bloodArr', 'contribution', 'equipments', 'fosterArr', 'gold', 'playerEquip', 'yuanbao']
+  run2 reads=['coins', 'done', 'hungerMax', 'potential'] writes=['bag', 'bloodArr', 'contribution', 'equipments', 'fosterArr', 'gold', 'playerEquip', 'rewarded', 'saveVersion', 'skills', 'yuanbao']
+[User.getFinishTaskAward]
+  run1 reads=['hungerMax'] writes=['accepted', 'bag', 'bloodArr', 'contribution', 'done', 'equipments', 'fosterArr', 'gold', 'playerEquip', 'rewarded', 'saveVersion', 'skills', 'yuanbao']
+  run2 reads=['hungerMax', 'skills'] writes=['accepted', 'bag', 'bloodArr', 'contribution', 'done', 'equipments', 'fosterArr', 'gold', 'playerEquip', 'rewarded', 'yuanbao']
+[User.saleItem]
+  run1 reads=['done', 'hungerMax', 'potential', 'rewarded', 'skills'] writes=['bag', 'bloodArr', 'coins', 'contribution', 'equipments', 'fosterArr', 'gold', 'playerEquip', 'yuanbao']
+  run2 reads=['done', 'hungerMax', 'potential'] writes=['bag', 'bloodArr', 'coins', 'contribution', 'equipments', 'fosterArr', 'gold', 'playerEquip', 'rewarded', 'saveVersion', 'skills', 'yuanbao']
+值不同键数: 3

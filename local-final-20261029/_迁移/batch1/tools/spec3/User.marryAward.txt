@@ -1,0 +1,21 @@
+# User.marryAward   (HttpConst.MARRY_AWARD)
+
+## 注册点 77027: i.MessageCenter.on(n.HttpConst.MARRY_AWARD, this.callBackMarryAward, this);
+
+## 请求点 77440: _.NetMgr.http.sendRequest(n.HttpConst.MARRY_AWARD, {
+   77432: houseID: t,
+   77433: type: e
+   77434: });
+   77435: };
+   77436: e.prototype.reqDivorceNpc = function() {
+   77437: _.NetMgr.http.sendRequest(n.HttpConst.DIVORCENPC, {});
+   77438: };
+   77439: e.prototype.reqMarryAward = function(t) {
+
+## 处理函数 callBackMarryAward (77266-77271)
+ 77266: e.prototype.callBackMarryAward = function(t, e) {
+ 77267: if (1 == e.eRet) {
+ 77268: this.guestNpcAy.push(e.guestID);
+ 77269: f.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj);
+ 77270: } else p.default.show(r.getText("1145"));
+ 77271: };

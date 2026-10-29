@@ -1,0 +1,295 @@
+{
+ "archivedAt": "2026-10-24T10:43:10.095Z",
+ "rules": [
+  {
+   "id": "reject-narrow-BeginTraining-20261023",
+   "kind": "handler-fixes",
+   "action": "BeginTraining",
+   "field": [
+    "beginTime",
+    "skillID"
+   ],
+   "expect": 2,
+   "ev": "index.js:120516",
+   "why": "SOTA R14 §1 第 1 条 + 反例 1：拒绝应答只允许 {eRet} ∪ 该动作白名单（dispatch 的 narrowReject，bz-rpc-server.js:124）。空请求 {} 命中 BeginTraining 的拒绝分支（skillID 不在账本），fillShape 补出来的 beginTime:0 / skillID:0 不再出现在应答里。客户端回调 index.js:120516 只判 1/2（3 走 index.js:120569 的提示，且 index.js:120570 先 getItem(skillID,\"skill\")），4 的分支里不读这两个字段 → 无逃逸路径。收窄理由：那个 skillID:0 一旦配上码 3，客户端就会 getItem(0) 得 null 再读 .Name 崩。",
+   "allowSigma": [
+    [
+     "BeginTraining",
+     "beginTime"
+    ],
+    [
+     "BeginTraining",
+     "skillID"
+    ]
+   ]
+  },
+  {
+   "id": "reject-narrow-BuyFashion-20261023",
+   "kind": "handler-fixes",
+   "action": "BuyFashion",
+   "field": [
+    "titivateObj"
+   ],
+   "expect": 1,
+   "ev": "index.js:75578",
+   "why": "同上（narrowReject）。BuyFashion 在 {} 下回 4（跨页/无价），客户端 :75578 对 4 只 show(getText(\"1161\"))，不读 titivateObj。",
+   "allowSigma": [
+    [
+     "BuyFashion",
+     "titivateObj"
+    ]
+   ]
+  },
+  {
+   "id": "reject-narrow-QuickBuyItem-20261023",
+   "kind": "handler-fixes",
+   "action": "QuickBuyItem",
+   "field": [
+    "note",
+    "itemID",
+    "itemNum",
+    "userGold"
+   ],
+   "expect": 4,
+   "ev": "index.js:130888",
+   "why": "同上（narrowReject）。QuickBuyItem 在 {} 下回 4，客户端 :130888 的 `3 == e.eRet || show(...)` 只处理 3，4 无分支 → 字段全不读。",
+   "allowSigma": [
+    [
+     "QuickBuyItem",
+     "note"
+    ],
+    [
+     "QuickBuyItem",
+     "itemID"
+    ],
+    [
+     "QuickBuyItem",
+     "itemNum"
+    ],
+    [
+     "QuickBuyItem",
+     "userGold"
+    ]
+   ]
+  },
+  {
+   "id": "reject-narrow-WashMedicine-20261023",
+   "kind": "handler-fixes",
+   "action": "WashMedicine",
+   "field": [
+    "armStrong",
+    "shenFa",
+    "bone",
+    "understanding",
+    "bloodArr",
+    "maxWuxin",
+    "fosterArr"
+   ],
+   "expect": 7,
+   "ev": "index.js:144132",
+   "why": "同上（narrowReject）。WashMedicine 刻意回 eRet:0（不落 1/2，否则客户端会整体替换四项基础属性），客户端 :144132 落到 `else show(getText(\"910\"))`，不读这些字段。",
+   "allowSigma": [
+    [
+     "WashMedicine",
+     "armStrong"
+    ],
+    [
+     "WashMedicine",
+     "shenFa"
+    ],
+    [
+     "WashMedicine",
+     "bone"
+    ],
+    [
+     "WashMedicine",
+     "understanding"
+    ],
+    [
+     "WashMedicine",
+     "bloodArr"
+    ],
+    [
+     "WashMedicine",
+     "maxWuxin"
+    ],
+    [
+     "WashMedicine",
+     "fosterArr"
+    ]
+   ]
+  },
+  {
+   "id": "reject-narrow-buyShopItem-20261023",
+   "kind": "handler-fixes",
+   "action": "buyShopItem",
+   "field": [
+    "note"
+   ],
+   "expect": 1,
+   "ev": "index.js:64752",
+   "why": "同上（narrowReject）。buyShopItem 回 4 时客户端 :64752 只 show(getText(\"1184\"))，不读 note。",
+   "allowSigma": [
+    [
+     "buyShopItem",
+     "note"
+    ]
+   ]
+  },
+  {
+   "id": "reject-narrow-exchangeItem-20261023",
+   "kind": "handler-fixes",
+   "action": "exchangeItem",
+   "field": [
+    "note",
+    "itemID",
+    "itemNum"
+   ],
+   "expect": 3,
+   "ev": "index.js:47091",
+   "why": "同上（narrowReject）。exchangeItem 回 4 时客户端 :47091 只判 1（成功分支里才 show 物品名与数量），4 无分支。",
+   "allowSigma": [
+    [
+     "exchangeItem",
+     "note"
+    ],
+    [
+     "exchangeItem",
+     "itemID"
+    ],
+    [
+     "exchangeItem",
+     "itemNum"
+    ]
+   ]
+  },
+  {
+   "id": "reject-narrow-washAdditionalArr-20261023",
+   "kind": "handler-fixes",
+   "action": "washAdditionalArr",
+   "field": [
+    "bloodArr",
+    "maxWuxin"
+   ],
+   "expect": 2,
+   "ev": "index.js:144071",
+   "why": "同上（narrowReject）。washAdditionalArr 的 4 是 flow（弹\"选洗哪条\"），客户端 :144071 只 load ChildWashUI 并读 attrList（已进白名单，仍照发），不读 bloodArr/maxWuxin。",
+   "allowSigma": [
+    [
+     "washAdditionalArr",
+     "bloodArr"
+    ],
+    [
+     "washAdditionalArr",
+     "maxWuxin"
+    ]
+   ]
+  },
+  {
+   "id": "fix-narrow-upgradeSkill-returnPro-20261023",
+   "kind": "handler-fixes",
+   "action": "upgradeSkill",
+   "field": [
+    "returnPro"
+   ],
+   "expect": 1,
+   "ev": "index.js:119844",
+   "why": "SOTA R20 Q4 判为「纠错」：形状表 __switch.upgradeSkill={\"returnPro\":\"switch\"} ⇒ 契约是「缺席或真值」，发 0 属非法值（自检每次报 upgradeSkill.returnPro=0）；客户端读点 index.js:119844 是 `e.hasOwnProperty(\"returnPro\") && Alert.show(getText(\"6003371\").replace(/[1]/, e.returnPro))` —— 一读就弹窗，我们每次升级都误弹「返还潜能 0」；原版抓包 decrypted\\0036/0039_RESP_*upgradeSkill 的应答里没有这个字段。收窄 = 更贴抓包且去掉误弹窗；将来实现返还潜能的真实语义时，按「有值才发、绝不发 0」加回。",
+   "allowSigma": [
+    [
+     "upgradeSkill",
+     "returnPro"
+    ]
+   ]
+  },
+  {
+   "id": "shop1-BuyMarketItem-20261024",
+   "kind": "new-handler",
+   "action": "BuyMarketItem",
+   "field": [
+    "eRet",
+    "note"
+   ],
+   "expect": 2,
+   "ev": "index.js:131256",
+   "why": "第 1 批商店交易新写 BuyMarketItem（证据 shop-batch1/recon/侦察.md A6）。空参 dispatch 命中『找不到商品/金条不足』拒绝分支回 eRet:4：客户端 131256 对 4 弹 getText(6000575)；注意 131234 在判 eRet 之前就无条件读 userGold，所以拒绝应答已显式带真值 userGold（堵住 fillShape 借 quicklogin 模板补 20 的坑）。note 是家法账本回执（buyShopItem 同款），成功路径回 eco 金条新余额，拒绝路径为空对象。",
+   "allowSigma": [
+    [
+     "BuyMarketItem",
+     "note"
+    ]
+   ]
+  },
+  {
+   "id": "shop1-BuyMount-20261024",
+   "kind": "new-handler",
+   "action": "BuyMount",
+   "field": [
+    "eRet",
+    "note"
+   ],
+   "expect": 2,
+   "ev": "index.js:32162",
+   "why": "新写 BuyMount（侦察 A7）：空参 dispatch 命中『无效请求/铜钱不足』拒绝分支回 eRet:3（客户端 32162 对 3 弹 getText(1000)，其它值开充值列表）。note 扣铜钱后回 eco 新余额（buyShopItem 同款）。",
+   "allowSigma": [
+    [
+     "BuyMount",
+     "note"
+    ]
+   ]
+  },
+  {
+   "id": "shop1-buySchoolShop-20261024",
+   "kind": "new-handler",
+   "action": "buySchoolShop",
+   "field": [
+    "eRet",
+    "note"
+   ],
+   "expect": 2,
+   "ev": "index.js:113673",
+   "why": "新写 buySchoolShop（侦察 A5）：空参 dispatch 命中『找不到货/门派贡献不足』拒绝分支回 eRet:4（客户端 113672-113680 只有 1==eRet 一个分支，4 静默）。note 家法回执（buyGoodAndEvilShopItem 同款）。",
+   "allowSigma": [
+    [
+     "buySchoolShop",
+     "note"
+    ]
+   ]
+  },
+  {
+   "id": "shop1-innBuyShop-20261024",
+   "kind": "new-handler",
+   "action": "innBuyShop",
+   "field": [
+    "eRet",
+    "note"
+   ],
+   "expect": 2,
+   "ev": "index.js:62593",
+   "why": "新写 innBuyShop（侦察 A4）：空参 dispatch 命中『找不到货架/铜钱不足』拒绝分支回 eRet:6（客户端 62593 对 6 弹 getText(202201181)）。note 扣铜钱后回 eco 新余额。",
+   "allowSigma": [
+    [
+     "innBuyShop",
+     "note"
+    ]
+   ]
+  },
+  {
+   "id": "shop1-fashionEffect-20261024",
+   "kind": "new-handler",
+   "action": "fashionEffect",
+   "field": [
+    "fashionEffect"
+   ],
+   "expect": 1,
+   "ev": "index.js:81481",
+   "why": "新写 fashionEffect（侦察 A10）：应答字段 e.fashionEffect 控制客户端 fashion.active（81481: active = 0 != 值；0=关是合法业务值，调用点 scripts2.js:22481 传 0 表示关闭）。形状表把该字段标成 switch 属误报（同 getChangeShop.shopObj 的情形），空参 dispatch 回 0 被自检 switchValueScan 计数但不判死。",
+   "allowSigma": [
+    [
+     "fashionEffect",
+     "fashionEffect"
+    ]
+   ]
+  }
+ ]
+}

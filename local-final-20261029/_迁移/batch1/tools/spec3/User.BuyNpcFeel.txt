@@ -1,0 +1,18 @@
+# User.BuyNpcFeel   (HttpConst.BUY_NPC_FEEL)
+
+## 注册点 77837: i.MessageCenter.on(r.HttpConst.BUY_NPC_FEEL, this.buyFellCallBack, this);
+
+## 请求点 77984: u.NetMgr.http.sendRequest(r.HttpConst.BUY_NPC_FEEL, {
+   77976: i.taskArr = e.getHeroTask(0);
+   77977: e.deleteTask = e.getHeroTask(0);
+   77978: u.NetMgr.http.sendRequest(r.HttpConst.EXIT_SCHOOL, i);
+   77979: }
+   77980: });
+   77981: };
+   77982: e.prototype.addNpcIntimacy = function(t) {
+   77983: this.npcId = t;
+
+## 处理函数 buyFellCallBack (77935-77937)
+ 77935: e.prototype.buyFellCallBack = function(t, e) {
+ 77936: 1 == e.eRet ? h.default.setNcpIntimacy(this.npcId, 10) : 2 == e.eRet && n.default.show(l.getText(1100));
+ 77937: };

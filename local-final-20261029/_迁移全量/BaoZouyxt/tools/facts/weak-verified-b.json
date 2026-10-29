@@ -1,0 +1,1660 @@
+{
+  "range": [
+    128,
+    255
+  ],
+  "fields": [
+    {
+      "action": "getBackShop",
+      "field": "shopArr",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57853,
+          "text": "n.addComponent(\"HomeShopBgUI\").setData(o.shopArr);"
+        }
+      ]
+    },
+    {
+      "action": "getBankList",
+      "field": "bankList",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 46892,
+          "text": "i.getComponent(\"StartExamUI\").setData(o.bankList);"
+        }
+      ]
+    },
+    {
+      "action": "getCRAInfo",
+      "field": "birthId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 23055,
+          "text": "t.birthIdId = o.birthId < 283 ? parseInt(o.birthId) + 4 : parseInt(o.birthId);"
+        }
+      ]
+    },
+    {
+      "action": "getCRAInfo",
+      "field": "faceId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 23056,
+          "text": "t.appearId = o.faceId < 302 ? parseInt(o.faceId) + 10 : parseInt(o.faceId);"
+        }
+      ]
+    },
+    {
+      "action": "getCRAInfo",
+      "field": "talnetId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 23061,
+          "text": "t.talentId = o.talnetId;"
+        }
+      ]
+    },
+    {
+      "action": "getChangeShop",
+      "field": "shopObj",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 47077,
+          "text": "1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EXCHANGE_SHOP_DATA, e.shopObj);"
+        }
+      ]
+    },
+    {
+      "action": "getCircleTaskList",
+      "field": "cNum",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 43489,
+          "text": "t.entrustNum = o.cNum;"
+        }
+      ]
+    },
+    {
+      "action": "getCopyData",
+      "field": "copyArr",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64072,
+          "text": "var o = e.copyArr;"
+        }
+      ]
+    },
+    {
+      "action": "getCreateRoleActivity",
+      "field": "birthId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 23055,
+          "text": "t.birthIdId = o.birthId < 283 ? parseInt(o.birthId) + 4 : parseInt(o.birthId);"
+        }
+      ]
+    },
+    {
+      "action": "getCreateRoleActivity",
+      "field": "createTime",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 23064,
+          "text": "i.getComponent(\"ChangeIdUI\").setData(o.createTime);"
+        }
+      ]
+    },
+    {
+      "action": "getCreateRoleActivity",
+      "field": "faceId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 23056,
+          "text": "t.appearId = o.faceId < 302 ? parseInt(o.faceId) + 10 : parseInt(o.faceId);"
+        }
+      ]
+    },
+    {
+      "action": "getCreateRoleActivity",
+      "field": "talnetId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 23061,
+          "text": "t.talentId = o.talnetId;"
+        }
+      ]
+    },
+    {
+      "action": "getDouYinOpenID",
+      "field": "openid",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 116693,
+          "text": "s.RoleBaseInfo.userAccount = o.openid;"
+        }
+      ]
+    },
+    {
+      "action": "getDragon",
+      "field": "currentDragonId",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 27429,
+          "text": "1 == e.eRet && 0 != e.currentDragonId && (o = e);"
+        }
+      ]
+    },
+    {
+      "action": "getEquipLock",
+      "field": "equipLocks",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 65022,
+          "text": "1 == o.eRet && (e.lockEquips = o.equipLocks);"
+        }
+      ]
+    },
+    {
+      "action": "getFinishTaskAward",
+      "field": "contribution",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 113645,
+          "text": "this.schoolTaskData.schoolContribution[this.othenSchool][0] = e.schoolTask[this.othenSchool].contribution;"
+        }
+      ]
+    },
+    {
+      "action": "getFinishTaskAward",
+      "field": "triggerBoxs",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 133343,
+          "text": "t.MapBoxModel.addBox(o.triggerBoxs);"
+        }
+      ]
+    },
+    {
+      "action": "getFriendHomeList",
+      "field": "dog",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+          "line": 18200,
+          "text": "e.dog = null;"
+        }
+      ]
+    },
+    {
+      "action": "getHlexchangeShop",
+      "field": "shopObj",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 47077,
+          "text": "1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EXCHANGE_SHOP_DATA, e.shopObj);"
+        }
+      ]
+    },
+    {
+      "action": "getHomeList",
+      "field": "bShop",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57597,
+          "text": "i.hasOwnProperty(\"bShop\") && (e.homeShop = i.bShop);"
+        }
+      ]
+    },
+    {
+      "action": "getHomeList",
+      "field": "dog",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+          "line": 18200,
+          "text": "e.dog = null;"
+        }
+      ]
+    },
+    {
+      "action": "getHomeList",
+      "field": "friendPartnerAward",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57633,
+          "text": "i.hasOwnProperty(\"friendPartnerAward\") && (e.rewardData = i.friendPartnerAward);"
+        }
+      ]
+    },
+    {
+      "action": "getHomeList",
+      "field": "recentSeeds",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57592,
+          "text": "i.recentSeeds ? e.recentSs = i.recentSeeds : e.recentSs.length = 0;"
+        }
+      ]
+    },
+    {
+      "action": "getHookBreakList",
+      "field": "qr",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 56580,
+          "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+        }
+      ]
+    },
+    {
+      "action": "getInn",
+      "field": "costDishMap",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 62687,
+          "text": "this.costItems = e.costDishMap;"
+        }
+      ]
+    },
+    {
+      "action": "getInn",
+      "field": "showRewardPop",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 62688,
+          "text": "this.offlineHot = e.showRewardPop;"
+        }
+      ]
+    },
+    {
+      "action": "getInn",
+      "field": "tableEndTime",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 62681,
+          "text": "this.openTime[1] = e.tableEndTime;"
+        }
+      ]
+    },
+    {
+      "action": "getInn",
+      "field": "tableStartTime",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 62680,
+          "text": "this.openTime[0] = e.tableStartTime;"
+        }
+      ]
+    },
+    {
+      "action": "getInnCook",
+      "field": "cookBook",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 62264,
+          "text": "this.bookBag = e.cookBook;"
+        }
+      ]
+    },
+    {
+      "action": "getInnCookList",
+      "field": "cookList",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 62709,
+          "text": "this.cookData = this.innData.cookList;"
+        }
+      ]
+    },
+    {
+      "action": "getInnRank",
+      "field": "innRankList",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 62605,
+          "text": "i.addComponent(\"HotRank\").setData(e.innRankList);"
+        }
+      ]
+    },
+    {
+      "action": "getItemData",
+      "field": "limittype",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 47082,
+          "text": "o.hasOwnProperty(\"limittype\") && (i = o.limittype);"
+        }
+      ]
+    },
+    {
+      "action": "getLikeEvent",
+      "field": "eventId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 47189,
+          "text": "0 == i.eventType ? e.resultData.resultMsg = \"7105\" : t.getResultMsg(i.eventType, i.eventValue, i.eventId);"
+        }
+      ]
+    },
+    {
+      "action": "getMasterPupilList",
+      "field": "passMeritRewardState",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 132518,
+          "text": "e.hasOwnProperty(\"passMeritRewardState\") && (n = e.passMeritRewardState);"
+        }
+      ]
+    },
+    {
+      "action": "getMasterPupilList",
+      "field": "removeApplyList",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 132348,
+          "text": "e.removeApplyList = null;"
+        }
+      ]
+    },
+    {
+      "action": "getMasterPupilList",
+      "field": "roleList",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 132520,
+          "text": "for (var s in e.roleList) {"
+        }
+      ]
+    },
+    {
+      "action": "getMultiPVESkill",
+      "field": "dataArr.pop",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 54942,
+          "text": "n.attackMpCost = o.dataArr.pop();"
+        }
+      ]
+    },
+    {
+      "action": "getPandaEvent",
+      "field": "eventArr",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 137657,
+          "text": "var i = r.getItem(o.eventArr[0], \"lh_panda\"), n = r.getItem(o.eventArr[1], \"lh_panda\"), s = r.getItem(o.eventArr[2], \"lh_panda\");"
+        }
+      ]
+    },
+    {
+      "action": "getPayAuth",
+      "field": "AuthCode",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 130839,
+          "text": "jsb.reflection.callStaticMethod(\"com/maple/madherogo/AppActivity\", \"platformPay\", \"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljav"
+        }
+      ]
+    },
+    {
+      "action": "getQuestionList",
+      "field": "currentAnswerNum",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 46906,
+          "text": "o.currentAnswerNum >= o.questionMaxNum ? t.answerResult() : a.default.prefabs.load(\"Question/Paper\", cc.Prefab, function(e, i) {"
+        }
+      ]
+    },
+    {
+      "action": "getQuestionList",
+      "field": "questionMaxNum",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 46906,
+          "text": "o.currentAnswerNum >= o.questionMaxNum ? t.answerResult() : a.default.prefabs.load(\"Question/Paper\", cc.Prefab, function(e, i) {"
+        }
+      ]
+    },
+    {
+      "action": "getSchoolMaster",
+      "field": "masterInfo",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 113941,
+          "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+        }
+      ]
+    },
+    {
+      "action": "getSchoolMaster",
+      "field": "pupilInfo",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 113941,
+          "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+        }
+      ]
+    },
+    {
+      "action": "getSchoolPupil",
+      "field": "masterInfo",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 113941,
+          "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+        }
+      ]
+    },
+    {
+      "action": "getSchoolPupil",
+      "field": "pupilInfo",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 113941,
+          "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+        }
+      ]
+    },
+    {
+      "action": "getSchoolRoleInfo",
+      "field": "masterInfo",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 113941,
+          "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+        }
+      ]
+    },
+    {
+      "action": "getSchoolRoleInfo",
+      "field": "pupilInfo",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 113941,
+          "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+        }
+      ]
+    },
+    {
+      "action": "getSchoolTask",
+      "field": "currentServerTime",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 113618,
+          "text": "M.TimeMgr.sserverT = e.currentServerTime;"
+        }
+      ]
+    },
+    {
+      "action": "getSchoolTask",
+      "field": "xyTodaySchoolId",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 113617,
+          "text": "this.beforeSchool = parseInt(e.xyTodaySchoolId);"
+        }
+      ]
+    },
+    {
+      "action": "getTeamSkill",
+      "field": "dataArr.pop",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 54942,
+          "text": "n.attackMpCost = o.dataArr.pop();"
+        }
+      ]
+    },
+    {
+      "action": "getTreasureFloor",
+      "field": "floor",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 1726,
+          "text": "t.HP = (o.hp.finalValue - o.hp.getLv1Conversion()) * Math.floor(12 - 2 * e) * .1;"
+        }
+      ]
+    },
+    {
+      "action": "getUsedItemAward",
+      "field": "awardObj",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64944,
+          "text": "items: o.awardObj,"
+        }
+      ]
+    },
+    {
+      "action": "getUsedItemAward",
+      "field": "awardStates",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64945,
+          "text": "states: o.awardStates"
+        }
+      ]
+    },
+    {
+      "action": "getVigor",
+      "field": "vigor",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 120603,
+          "text": "s.MessageCenter.dispatch(p.EvName.REFRESH_VIGORS, e.vigor);"
+        }
+      ]
+    },
+    {
+      "action": "getWxXyxOpenID",
+      "field": "openid",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 116693,
+          "text": "s.RoleBaseInfo.userAccount = o.openid;"
+        }
+      ]
+    },
+    {
+      "action": "getWxXyxOpenID",
+      "field": "session_key",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 116694,
+          "text": "c.LoginMgr.token = o.session_key;"
+        }
+      ]
+    },
+    {
+      "action": "goldBreakAllSkill",
+      "field": "qr",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 56580,
+          "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+        }
+      ]
+    },
+    {
+      "action": "goldBreakCurrentSkill",
+      "field": "qr",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 56580,
+          "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+        }
+      ]
+    },
+    {
+      "action": "hireNpcOnhook",
+      "field": "siteID",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 51434,
+          "text": "var o, s = i.getItem(e.siteID, \"fishpond\");"
+        }
+      ]
+    },
+    {
+      "action": "homeSpeicalAward",
+      "field": "eid",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57876,
+          "text": "y.PlantSystemMgr.productHomeEvent(e.eid, o);"
+        }
+      ]
+    },
+    {
+      "action": "intoSchoolSquare",
+      "field": "schoolTitle",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 111833,
+          "text": "e.hasOwnProperty(\"schoolTitle\") && (d.RoleOtherInfo.hastitleLevel = e.schoolTitle);"
+        }
+      ]
+    },
+    {
+      "action": "jionChatPkServer",
+      "field": "agreeOfflineMatch",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 23967,
+          "text": "t.officeMatch = o.agreeOfflineMatch;"
+        }
+      ]
+    },
+    {
+      "action": "joinSchool",
+      "field": "cdTimeDays",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 77873,
+          "text": "var f = o.cdTimeDays, d = {"
+        }
+      ]
+    },
+    {
+      "action": "lookDogLog",
+      "field": "log",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 403,
+          "text": "console.log(\"========武器外观=======武器外观id \" + this.entity.weaponskinId + \" 战斗武器外观模型id \" + o.weaponFightSkin);"
+        }
+      ]
+    },
+    {
+      "action": "lookSecretEvent",
+      "field": "secret",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 137731,
+          "text": "i.secret = o.secret;"
+        }
+      ]
+    },
+    {
+      "action": "marryAward",
+      "field": "guestID",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 77268,
+          "text": "this.guestNpcAy.push(e.guestID);"
+        }
+      ]
+    },
+    {
+      "action": "marryHouse",
+      "field": "houseID",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 77224,
+          "text": "var o = a.getBuildHouseObj(e.houseID);"
+        }
+      ]
+    },
+    {
+      "action": "mulitiNpcBattleResult",
+      "field": "gemId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64768,
+          "text": "v.default.addShowRewardUI1(a.rewardArray, 0, a.equipObj, {}, null, a.getKnackIds, a.gemId);"
+        }
+      ]
+    },
+    {
+      "action": "newSweepTower",
+      "field": "batch_sweep_data.awardObj",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 137778,
+          "text": "var i = o.batch_sweep_data.awardObj;"
+        }
+      ]
+    },
+    {
+      "action": "newSweepTower",
+      "field": "batch_sweep_data.beginLv",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 137781,
+          "text": "t.beginFloor = o.batch_sweep_data.beginLv;"
+        }
+      ]
+    },
+    {
+      "action": "newSweepTower",
+      "field": "batch_sweep_data.canSweep",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 137782,
+          "text": "t.isCanSweep = o.batch_sweep_data.canSweep;"
+        }
+      ]
+    },
+    {
+      "action": "newSweepTower",
+      "field": "batch_sweep_data.clv",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 137777,
+          "text": "t.curFloorNum = o.batch_sweep_data.clv;"
+        }
+      ]
+    },
+    {
+      "action": "obtainCrop",
+      "field": "aExp",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57711,
+          "text": "o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);"
+        }
+      ]
+    },
+    {
+      "action": "obtainCrop",
+      "field": "sIdx",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57638,
+          "text": "var i = o.sIdx, n = {"
+        }
+      ]
+    },
+    {
+      "action": "onBatchBreakByGold",
+      "field": "setData",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 1450,
+          "text": "i.addComponent(\"FurnaceUI\").setData(e);"
+        }
+      ]
+    },
+    {
+      "action": "onBatchBreakByGold",
+      "field": "setLabelTitle",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 24673,
+          "text": "n.setLabelTitle(i.getText(263));"
+        }
+      ]
+    },
+    {
+      "action": "onKeyDispossHomeEvent",
+      "field": "aExp",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57711,
+          "text": "o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);"
+        }
+      ]
+    },
+    {
+      "action": "onKeyDispossHomeEvent",
+      "field": "cropMap",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57760,
+          "text": "var i = !1, s = [], l = o.cropMap;"
+        }
+      ]
+    },
+    {
+      "action": "onKeyObtainCrop",
+      "field": "aExp",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57711,
+          "text": "o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);"
+        }
+      ]
+    },
+    {
+      "action": "optionLikeEvent",
+      "field": "delTaskIds",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 51170,
+          "text": "o.hasOwnProperty(\"delTaskIds\") && S.TaskModel.clearRogueTaskData(o.delTaskIds);"
+        }
+      ]
+    },
+    {
+      "action": "optionLikeEvent",
+      "field": "feel",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 51168,
+          "text": "var n = o.npcId, r = o.feel;"
+        }
+      ]
+    },
+    {
+      "action": "passCardData",
+      "field": "goldArr",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 55872,
+          "text": "this.goldAy = e.goldArr;"
+        }
+      ]
+    },
+    {
+      "action": "quickFinishTask",
+      "field": "caidan",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 43501,
+          "text": "caidan: o.caidan"
+        }
+      ]
+    },
+    {
+      "action": "quitSchool",
+      "field": "openSchoolFirstTryBgUI",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 113728,
+          "text": "0 == t && o.openSchoolFirstTryBgUI(e);"
+        }
+      ]
+    },
+    {
+      "action": "reclaimLand",
+      "field": "sIdx",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57638,
+          "text": "var i = o.sIdx, n = {"
+        }
+      ]
+    },
+    {
+      "action": "redeemTable",
+      "field": "hotVal",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 62376,
+          "text": "this.hotVal = e.hotVal;"
+        }
+      ]
+    },
+    {
+      "action": "redeemTable",
+      "field": "mhv",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 62378,
+          "text": "this.maxHot = e.mhv;"
+        }
+      ]
+    },
+    {
+      "action": "removeBreakQueue",
+      "field": "qr",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 56580,
+          "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+        }
+      ]
+    },
+    {
+      "action": "resetChildFoster",
+      "field": "foster_point",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 24640,
+          "text": "e.hasOwnProperty(\"foster_point\") && (c.MarryModel.childData.foster_point = e.foster_point);"
+        }
+      ]
+    },
+    {
+      "action": "resetChildFoster",
+      "field": "playArr",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 24641,
+          "text": "e.hasOwnProperty(\"playArr\") && (c.MarryModel.childData.playArr = e.playArr);"
+        }
+      ]
+    },
+    {
+      "action": "resetRole",
+      "field": "birthId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 23055,
+          "text": "t.birthIdId = o.birthId < 283 ? parseInt(o.birthId) + 4 : parseInt(o.birthId);"
+        }
+      ]
+    },
+    {
+      "action": "resetRole",
+      "field": "faceId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 23056,
+          "text": "t.appearId = o.faceId < 302 ? parseInt(o.faceId) + 10 : parseInt(o.faceId);"
+        }
+      ]
+    },
+    {
+      "action": "resetRole",
+      "field": "talnetId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 23061,
+          "text": "t.talentId = o.talnetId;"
+        }
+      ]
+    },
+    {
+      "action": "restVein",
+      "field": "psych",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 66518,
+          "text": "c.RoleBaseInfo.zhenyuan = o.psych;"
+        }
+      ]
+    },
+    {
+      "action": "schoolAppoint",
+      "field": "appointDatas",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 113862,
+          "text": "for (var o = 0; o < e.appointDatas.length; o++) {"
+        }
+      ]
+    },
+    {
+      "action": "seedCrop",
+      "field": "sIdx",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57638,
+          "text": "var i = o.sIdx, n = {"
+        }
+      ]
+    },
+    {
+      "action": "setPlayerCardMoutsSycn",
+      "field": "sycn",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 132087,
+          "text": "g.RoleOtherInfo.isSyncMount = 1 == e.sycn;"
+        }
+      ]
+    },
+    {
+      "action": "skillChange",
+      "field": "changeCD",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 119858,
+          "text": "(y = o.changeCD + 864e5 * s - o.serverTime) < 0 && (y = 0);"
+        }
+      ]
+    },
+    {
+      "action": "startEatByTable",
+      "field": "gn",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 62612,
+          "text": "this.guestNum = e.gn;"
+        }
+      ]
+    },
+    {
+      "action": "stealCrop",
+      "field": "aExp",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57711,
+          "text": "o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);"
+        }
+      ]
+    },
+    {
+      "action": "stealCrop",
+      "field": "crop.b",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 57684,
+          "text": "o.crop.hasOwnProperty(\"b\") && (i.b = o.crop.b);"
+        }
+      ]
+    },
+    {
+      "action": "stopBreaklist",
+      "field": "addComponent",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 1429,
+          "text": "n.addComponent(\"ConvstnBoard\").setNpcData(e, o.tempData);"
+        }
+      ]
+    },
+    {
+      "action": "stopBreaklist",
+      "field": "qr",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 56580,
+          "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+        }
+      ]
+    },
+    {
+      "action": "storyExperience",
+      "field": "branchId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 101916,
+          "text": "_.RoleBaseInfo.storyId = e.branchId;"
+        }
+      ]
+    },
+    {
+      "action": "sweepCopy",
+      "field": "copyID",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64077,
+          "text": "t.dungeonID = o.copyID;"
+        }
+      ]
+    },
+    {
+      "action": "sweepCopy",
+      "field": "liveness",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64095,
+          "text": "t.showRewards(o.rewardArray, o.liveness);"
+        }
+      ]
+    },
+    {
+      "action": "towerRank",
+      "field": "rankArr",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 137586,
+          "text": "i.addComponent(\"TowerRank\").setData(e.rankArr);"
+        }
+      ]
+    },
+    {
+      "action": "treasureAward",
+      "field": "isStatus",
+      "conf": "fallback",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 55909,
+          "text": "this.enterToScene(e.boxNum, e.isStatus);"
+        }
+      ]
+    },
+    {
+      "action": "upgradeVein",
+      "field": "addComponent",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 1429,
+          "text": "n.addComponent(\"ConvstnBoard\").setNpcData(e, o.tempData);"
+        }
+      ]
+    },
+    {
+      "action": "upgradeVein",
+      "field": "psych",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 66518,
+          "text": "c.RoleBaseInfo.zhenyuan = o.psych;"
+        }
+      ]
+    },
+    {
+      "action": "upgradeVein",
+      "field": "veinID",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 66507,
+          "text": "4001 == o.veinID && 1 == o.lv && u.default.prefabs.load(\"comUI/PromptUI\", cc.Prefab, function(t, e) {"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "bloodEndTime",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64815,
+          "text": "t.RoleOtherInfo.setBloodEndTime(a.bloodEndTime);"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "dogid",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64817,
+          "text": "var T = i.getItem(a.dogid, \"npc\");"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "formulaID",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64794,
+          "text": "var y = i.getItem(a.formulaID, \"formula\");"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "gemId",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64768,
+          "text": "v.default.addShowRewardUI1(a.rewardArray, 0, a.equipObj, {}, null, a.getKnackIds, a.gemId);"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "genGuDan",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64825,
+          "text": "t.RoleOtherInfo.gengudanTime = a.genGuDan;"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "getKnackIds",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64768,
+          "text": "v.default.addShowRewardUI1(a.rewardArray, 0, a.equipObj, {}, null, a.getKnackIds, a.gemId);"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "itemRealgarMap",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64850,
+          "text": "t.RoleOtherInfo.wineData = a.itemRealgarMap;"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "mpnum",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64783,
+          "text": "c.default.show(n.getText(\"4671\").replace(/\\[1\\]/, a.mpnum));"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "note.skch",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64758,
+          "text": "var h = a.note.skch, u = 0;"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "partners",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64777,
+          "text": "a.hasOwnProperty(\"partners\") && N.PartnerModel.updatePartners(a.partners);"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "rewardSkillSkin",
+      "conf": "usage-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64853,
+          "text": "for (var D in a.rewardSkillSkin) {"
+        }
+      ]
+    },
+    {
+      "action": "useItem",
+      "field": "stealFlag",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 64827,
+          "text": "E.StealModel.canSteal = a.stealFlag;"
+        }
+      ]
+    },
+    {
+      "action": "useVigorMeditation",
+      "field": "vigor",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 120603,
+          "text": "s.MessageCenter.dispatch(p.EvName.REFRESH_VIGORS, e.vigor);"
+        }
+      ]
+    },
+    {
+      "action": "useVigorUpGradeSkill",
+      "field": "vigor",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 120603,
+          "text": "s.MessageCenter.dispatch(p.EvName.REFRESH_VIGORS, e.vigor);"
+        }
+      ]
+    },
+    {
+      "action": "washAdditionalArr",
+      "field": "attrList",
+      "conf": "name",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 24634,
+          "text": "i.addComponent(\"SetChildWashUI\").setData(e.attrList);"
+        }
+      ]
+    },
+    {
+      "action": "wearFasion",
+      "field": "fasionid",
+      "conf": "listener-1",
+      "status": "verified",
+      "hits": [
+        {
+          "file": "F:\\BaoZouyxt\\tools\\index.js",
+          "line": 145366,
+          "text": "c.MarryModel.wifeUpdateData.eid = o.fasionid;"
+        }
+      ]
+    }
+  ],
+  "unverified": []
+}

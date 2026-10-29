@@ -1,0 +1,99 @@
+# User.equipResolve  (HttpConst.EQUIP_RESOLVE)
+# 出现 2 处
+
+ 64918: var r = o.note.eqch, a = {};
+ 64919: for (var s in r) a[s] = r[s][1];
+ 64920: v.default.addShowRewardUI1({}, 0, a);
+ 64921: }
+ 64922: } else 2 == o.eRet && c.default.show(n.getText(448));
+ 64923: }, this);
+ 64924: r.MessageCenter.on(a.HttpConst.EQUIP_RESOLVE, function(t, e) {
+ 64925: if (1 == e.eRet) {
+ 64926: v.default.addShowRewardUI1(e.rewardArray, 0);
+ 64927: r.MessageCenter.dispatch(s.EvName.DECOMPOSE_EQUIP_SUCCESS_EVENT, {
+ 64928: itemId: e.itemID
+ 64929: });
+ 64930: } else 6 == e.eRet ? cc.log("服务器获取锁定装备数据出错") : 7 == e.eRet && cc.log("锁定装备不能分解");
+ 64931: }, this);
+ 64932: r.MessageCenter.on(a.HttpConst.EQUIP_BATCH_RESOLVE, function(t, e) {
+ 64933: if (1 == e.eRet) {
+ 64934: v.default.addShowRewardUI1(e.rewardArray, 0);
+ 64935: r.MessageCenter.dispatch(s.EvName.BATCH_DECOMPOSE_SUCCESS_EVENT, e.itemIDs);
+ 64936: } else 6 == e.eRet ? cc.log("服务器获取锁定装备数据出错") : 7 == e.eRet && cc.log("锁定装备不能分解");
+ 64937: }, this);
+ 64938: r.MessageCenter.on(a.HttpConst.GET_USEITEM_AWARD, function(t, o) {
+ 64939: 1 == o.eRet && (1 == e.batchType ? p.default.prefabs.load("itemsUI/SelectItemReward", cc.Prefab, function(t, i) {
+ 64940: var n = cc.instantiate(i);
+ 64941: h.PopUpMgr.addPopUp(n, u.LayerMgr.popUpLayer, h.Modal.Translucent, !0);
+ 64942: n.addComponent("SelectItemReward").setData({
+ 64943: itemID: e.curItemId,
+ 64944: items: o.awardObj,
+ 64945: states: o.awardStates
+ 64946: });
+ 64947: }) : 2 == e.batchType && c.default.showBatchSelectDialog([ e.curItemId, o.awardObj, o.awardStates ]));
+ 64948: }, this);
+ 64949: r.MessageCenter.on(a.HttpConst.CHOOSE_USEITEM_AWARD, function(t, e) {
+ 64950: if (1 == e.eRet) {
+ 64951: e.chooseID;
+ 64952: v.default.addShowRewardUI1(e.cData);
+ 64953: var o = [];
+ 64954: for (var i in e.cData) o.push({
+ 64955: itemId: parseInt(i),
+ 64956: numbers: e.cData[i]
+ 64957: });
+ 64958: r.MessageCenter.dispatch(s.EvName.REWARD_ITEM, o);
+ 64959: r.MessageCenter.dispatch(s.EvName.USE_NEW_ITEM_EVENT, e);
+ 64960: } else if (15 == e.eRet) {
+ 64961: var n = e.delItemObj;
+ 64962: if (n && !cc.js.isEmptyObject(n)) {
+ 64963: n && c.default.showReward(n, 0, {}, {}, null, null, "6000572");
+ 64964: r.MessageCenter.dispatch(s.EvName.USE_NEW_ITEM_EVENT, e);
+---
+ 65406: }
+ 65407: }
+ 65408: }
+ 65409: };
+ 65410: e.prototype.reqResolveEquip = function(t) {
+ 65411: this.curItemId = t;
+ 65412: m.NetMgr.http.sendRequest(a.HttpConst.EQUIP_RESOLVE, {
+ 65413: itemID: t
+ 65414: });
+ 65415: };
+ 65416: e.prototype.reqBatchResolveEquip = function(t) {
+ 65417: m.NetMgr.http.sendRequest(a.HttpConst.EQUIP_BATCH_RESOLVE, {
+ 65418: itemIDs: t
+ 65419: });
+ 65420: };
+ 65421: e.prototype.reqGetItemBox = function(t, e) {
+ 65422: void 0 === e && (e = 0);
+ 65423: this.curItemId = t;
+ 65424: this.boxType = e;
+ 65425: m.NetMgr.http.sendRequest(a.HttpConst.GET_USEITEM_AWARD, {
+ 65426: itemID: t
+ 65427: });
+ 65428: };
+ 65429: e.prototype.reqChooseItemAward = function(t, e) {
+ 65430: this.curItemId = t;
+ 65431: m.NetMgr.http.sendRequest(a.HttpConst.CHOOSE_USEITEM_AWARD, {
+ 65432: itemID: t,
+ 65433: cData: e
+ 65434: });
+ 65435: };
+ 65436: e.prototype.reqCanShareItem = function(t) {
+ 65437: this.curItemId = t;
+ 65438: m.NetMgr.http.sendReqWithMask(a.HttpConst.IS_CAN_SHARE, {
+ 65439: propID: t
+ 65440: });
+ 65441: };
+ 65442: e.prototype.reqShareReward = function() {
+ 65443: m.NetMgr.http.sendReqWithMask(a.HttpConst.GETSHARE_PIC_AWARD, {
+ 65444: propID: A.AdModel.isItemShare
+ 65445: });
+ 65446: };
+ 65447: e.prototype.judgeObjectIsNull = function(t) {
+ 65448: var e = !0;
+ 65449: for (var o in t) {
+ 65450: e = !1;
+ 65451: break;
+ 65452: }
+---

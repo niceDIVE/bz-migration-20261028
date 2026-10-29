@@ -1,0 +1,99 @@
+# User.CheckBattleResult  (HttpConst.BATTLE_END_REWARD)
+# 出现 2 处
+
+ 69190: aDmgReceived: t.data[4],
+ 69191: bDmgReceived: t.data[5],
+ 69192: itemSkill: this.itemSkills,
+ 69193: forwards: o
+ 69194: };
+ 69195: this.isRmd ? o.push(Math.floor(1e5 * Math.random())) : Math.random() < .5 && o.shift();
+ 69196: s.NetMgr.http.sendRequest(a.HttpConst.BATTLE_END_REWARD, h);
+ 69197: };
+ 69198: return e;
+ 69199: }(c.Local1v1Base);
+ 69200: o.Local1v1Mgr = h;
+ 69201: cc._RF.pop();
+ 69202: }, {
+ 69203: "../../core/events/MessageCenter": "MessageCenter",
+ 69204: "../../gui/battle/resultscripts/rewardscripts/NormalRewards": "NormalRewards",
+ 69205: "../../models/vos/PlayerInfo": "PlayerInfo",
+ 69206: "../../net/HttpConst": "HttpConst",
+ 69207: "../../net/NetMgr": "NetMgr",
+ 69208: "./Local1v1Base": "Local1v1Base"
+ 69209: } ],
+ 69210: LocalStorageMgr: [ function(t, e, o) {
+ 69211: "use strict";
+ 69212: cc._RF.push(e, "0995aCAdgFBlKvn1xVOFpe5", "LocalStorageMgr");
+ 69213: Object.defineProperty(o, "__esModule", {
+ 69214: value: !0
+ 69215: });
+ 69216: o.LocalStorageMgr = void 0;
+ 69217: var i = t("../models/vos/RoleBaseInfo"), n = function() {
+ 69218: function t() {}
+ 69219: t.prototype.getUserData = function() {
+ 69220: var t = i.RoleBaseInfo.userAccount;
+ 69221: if (!t && "" === t) return null;
+ 69222: var e = cc.sys.localStorage.getItem(t);
+ 69223: return e && "" != e ? JSON.parse(e) : null;
+ 69224: };
+ 69225: t.prototype.setUserData = function(t) {
+ 69226: var e = i.RoleBaseInfo.userAccount;
+ 69227: if (e) try {
+ 69228: cc.sys.localStorage.setItem(e.toString(), JSON.stringify(t));
+ 69229: } catch (t) {}
+ 69230: };
+ 69231: t.prototype.setItem = function(t, e) {
+ 69232: var o = this.getUserData();
+ 69233: o || (o = {});
+ 69234: o[t] = e;
+ 69235: this.setUserData(o);
+ 69236: };
+---
+ 89547: n(e, t);
+ 89548: function e() {
+ 89549: return null !== t && t.apply(this, arguments) || this;
+ 89550: }
+ 89551: e.prototype.onLoad = function() {
+ 89552: var t = this;
+ 89553: a.MessageCenter.on(s.HttpConst.BATTLE_END_REWARD, function(e, o) {
+ 89554: var i = {}, n = t.getComponent(l.BattleResultMediator);
+ 89555: n.win = o.win;
+ 89556: o.hasOwnProperty("rewardArray") && (i.rewards = o.rewardArray);
+ 89557: o.hasOwnProperty("equipObj") && (i.equips = o.equipObj);
+ 89558: o.hasOwnProperty("gemId") && (i.materias = o.gemId);
+ 89559: i.rewards || i.equips || (n.noRwdNode.active = !0);
+ 89560: n.setRewards(i);
+ 89561: }, this);
+ 89562: };
+ 89563: e.prototype.onDestroy = function() {
+ 89564: a.MessageCenter.removeAll(this);
+ 89565: };
+ 89566: return r([ c ], e);
+ 89567: }(cc.Component);
+ 89568: o.NormalRewards = p;
+ 89569: cc._RF.pop();
+ 89570: }, {
+ 89571: "../../../../core/events/MessageCenter": "MessageCenter",
+ 89572: "../../../../net/HttpConst": "HttpConst",
+ 89573: "../BattleResultMediator": "BattleResultMediator"
+ 89574: } ],
+ 89575: NoticeModel: [ function(t, e, o) {
+ 89576: "use strict";
+ 89577: cc._RF.push(e, "bd528mYUbZOW4T19ByZKJBM", "NoticeModel");
+ 89578: var i = this && this.__awaiter || function(t, e, o, i) {
+ 89579: return new (o || (o = Promise))(function(n, r) {
+ 89580: function a(t) {
+ 89581: try {
+ 89582: l(i.next(t));
+ 89583: } catch (t) {
+ 89584: r(t);
+ 89585: }
+ 89586: }
+ 89587: function s(t) {
+ 89588: try {
+ 89589: l(i.throw(t));
+ 89590: } catch (t) {
+ 89591: r(t);
+ 89592: }
+ 89593: }
+---

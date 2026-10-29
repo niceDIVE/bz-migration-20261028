@@ -1,0 +1,99 @@
+# User.getActivity  (HttpConst.GET_ACTIVITY)
+# 出现 2 处
+
+ 57216: this.curActiveID = 0;
+ 57217: this.youngPileNpcid = 0;
+ 57218: }
+ 57219: t.prototype.init = function() {
+ 57220: var t = this;
+ 57221: this.curActiveID = 0;
+ 57222: n.MessageCenter.on(a.HttpConst.GET_ACTIVITY, function(e, o) {
+ 57223: 1 == o.eRet ? t.openActiveUI(o) : 3 == o.eRet ? t.reqActiveReward(o.type) : 4 == o.eRet ? r.default.show(i.getText(1098)) : r.default.show(i.getText(1093));
+ 57224: }, this);
+ 57225: n.MessageCenter.on(a.HttpConst.GET_ACTIVITY_AWARD, function(t, e) {
+ 57226: 1 == e.eRet ? p.default.addShowRewardUI1(e.rewardArray, 0, {}) : 4 == e.eRet ? r.default.show(i.getText(1098)) : r.default.show(i.getText(1145));
+ 57227: }, this);
+ 57228: n.MessageCenter.on(a.HttpConst.SMALL_GAME_AWARD, function(t, e) {
+ 57229: switch (e.eRet) {
+ 57230: case 1:
+ 57231: if (4 == e.type) n.MessageCenter.dispatch(s.EvName.WISH_TREE_SUCCESS_EVENT, e); else if (!h.ActiveModel.isNullMap(e.rewardArray)) {
+ 57232: p.default.addShowRewardUI1(e.rewardArray, 0, {});
+ 57233: n.MessageCenter.dispatch(s.EvName.ACTIVE_GAME_REWARD);
+ 57234: }
+ 57235: break;
+ 57236: 
+ 57237: case 2:
+ 57238: r.default.show(i.getText(1094));
+ 57239: }
+ 57240: }, this);
+ 57241: n.MessageCenter.on(a.HttpConst.GET_PILE_GAME_DATA, function(e, o) {
+ 57242: switch (o.eRet) {
+ 57243: case 1:
+ 57244: u.default.prefabs.load([ "activeUI/YoungMeihuaUI", "meihuaPile/MeihuaPileBase" ], cc.Prefab, function(t, e) {
+ 57245: var i = cc.instantiate(e[0]);
+ 57246: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer, 1, !0);
+ 57247: i.addComponent("YoungMeihuaUI").setData(o);
+ 57248: });
+ 57249: break;
+ 57250: 
+ 57251: case 2:
+ 57252: r.default.show(i.getText(1093));
+ 57253: break;
+ 57254: 
+ 57255: case 3:
+ 57256: r.default.show(i.getText(6013127));
+ 57257: n.MessageCenter.dispatch(s.EvName.HIDE_NPC_EVENT, [ t.youngPileNpcid ]);
+ 57258: break;
+ 57259: 
+ 57260: default:
+ 57261: cc.log("很致命的错误啊，问后端😈");
+ 57262: }
+---
+ 57290: }
+ 57291: });
+ 57292: };
+ 57293: t.prototype.reqAllActiveState = function(t) {
+ 57294: if (this.curActiveID != t) {
+ 57295: this.curActiveID = t;
+ 57296: c.NetMgr.http.sendRequest(a.HttpConst.GET_ACTIVITY, {
+ 57297: type: t
+ 57298: });
+ 57299: }
+ 57300: };
+ 57301: t.prototype.reqActiveReward = function(t) {
+ 57302: c.NetMgr.http.sendRequest(a.HttpConst.GET_ACTIVITY_AWARD, {
+ 57303: type: t
+ 57304: });
+ 57305: };
+ 57306: t.prototype.reqPileData = function(t) {
+ 57307: this.youngPileNpcid = t;
+ 57308: c.NetMgr.http.sendRequest(a.HttpConst.GET_PILE_GAME_DATA, {});
+ 57309: };
+ 57310: t.prototype.reqPileAward = function(t) {
+ 57311: c.NetMgr.http.sendRequest(a.HttpConst.PILE_GAME_AWARD, {
+ 57312: score: t
+ 57313: });
+ 57314: };
+ 57315: t.prototype.reqRankList = function(t) {
+ 57316: var e = {
+ 57317: roleID: l.RoleBaseInfo.roleID,
+ 57318: type: t
+ 57319: };
+ 57320: cc.log("data", e);
+ 57321: c.NetMgr.http.sendRequest(a.HttpConst.GET_ACTIVITY_RANK, e);
+ 57322: };
+ 57323: t.prototype.reqSmallReward = function(t, e) {
+ 57324: var o = {
+ 57325: roleID: l.RoleBaseInfo.roleID,
+ 57326: type: 1,
+ 57327: score: e
+ 57328: };
+ 57329: cc.log("data", o);
+ 57330: c.NetMgr.http.sendRequest(a.HttpConst.SMALL_GAME_AWARD, o);
+ 57331: };
+ 57332: t.prototype.openActiveUI = function(t) {
+ 57333: switch (t.type) {
+ 57334: case 1:
+ 57335: u.default.prefabs.load("meihuaPile/MeihuaPileUI", cc.Prefab, function(e, o) {
+ 57336: var i = cc.instantiate(o);
+---

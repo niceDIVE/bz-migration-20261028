@@ -1,0 +1,11787 @@
+{
+ "__meta": {
+  "inScope": 699,
+  "edges": 879,
+  "clusters": 76,
+  "lone": 372,
+  "pairs": 21,
+  "rwActions": 31,
+  "families": {
+   "任务主线": 17,
+   "婚姻子女": 16,
+   "技巧摸奖": 7,
+   "战斗结算": 7,
+   "龙": 4,
+   "打坐练功": 10,
+   "商店交易": 12,
+   "斗狗": 6,
+   "成就": 6,
+   "穴位": 2,
+   "道具使用": 6
+  },
+  "weights": {
+   "rw": 4.0,
+   "family": 2.0,
+   "pair": 3.0,
+   "field": 1.0,
+   "fk": 1.5,
+   "token": 0.6,
+   "link": 0.5
+  },
+  "version": "relate v2",
+  "note": "只用于归型和排序，不是闸门；拿不准的关联标为「可能相关」【推断】"
+ },
+ "clusters": [
+  {
+   "id": "C01",
+   "size": 35,
+   "label": [
+    "family:商店交易",
+    "rw:fosterArr",
+    "rw:yuanbao",
+    "rw:bloodArr"
+   ],
+   "confidence": "强",
+   "family": "商店交易",
+   "status": {
+    "IMPL-UNJUDGED": 18,
+    "GEN-READY": 6,
+    "NEEDS-S2": 5,
+    "DONE": 6
+   },
+   "order": [
+    "BUY_SHOP_ITEM",
+    "QUICK_BUY",
+    "SELL_ITEM",
+    "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "BUY_SPECIAL_GOODS",
+    "REQ_BUY_FASHION",
+    "USER_LOADGAME",
+    "SPECIAL_SHOP",
+    "EXCHANGE_ITEM",
+    "ACTIVITE_SHOP",
+    "RG_SHOP_BY_ITEM",
+    "ADD_ITEM",
+    "UNLOADING_EQUIP_EVENT",
+    "WASH_ADDITION",
+    "PUT_ON_EQUIPMENT",
+    "WEAR_EQUIPMENT_ALL",
+    "USE_ITEM",
+    "USER_CREATE",
+    "JOIN_SCHOOL",
+    "UPGRADE_SKILL_LV",
+    "REQ_PVE_BATTLE",
+    "QUICK_LOGIN",
+    "GET_ACHIEVE_DATA",
+    "BUY_FORMULA_DATA",
+    "GET_INN_SHOP",
+    "GET_INN_RANK",
+    "GET_GOOD_AND_EVIL_SHOP_DATA",
+    "INN_BUY_SHOP",
+    "BUY_SCHOOL_SHOP",
+    "BUY_MARKET_ITEM",
+    "BUY_MOUNT",
+    "REQ_BUY_GIFT",
+    "QUIT_SCHOOL",
+    "SET_YP_EFFECT_STATE",
+    "FASHION_EFFECT"
+   ],
+   "external": 120.06,
+   "batch": 1
+  },
+  {
+   "id": "C02",
+   "size": 19,
+   "label": [
+    "family:任务主线",
+    "token:TASK",
+    "rw:accepted",
+    "token:SCHOOL"
+   ],
+   "confidence": "强",
+   "family": "任务主线",
+   "status": {
+    "NEEDS-S2": 8,
+    "GEN-READY": 8,
+    "IMPL-UNJUDGED": 3
+   },
+   "order": [
+    "FINISH_TASK",
+    "GET_TASK",
+    "GET_CIRCLE_TASK_LIST",
+    "GET_SCHOOL_TASK",
+    "HIDE_TASK",
+    "SYCN_TASK",
+    "ONE_KEY_COMPLETE_SCHOOL_TASK",
+    "SCHOOL_TASK_COMPLETE",
+    "ACCEPTCIRCLETASK",
+    "CIRCLE_TASK_TASK",
+    "GETCIRCLETASK",
+    "ACCEPT_SCHOOL_TASK",
+    "REFRESH_SCHOOL_TASK",
+    "SCHOOL_TASK_AWARD",
+    "CHANGE_DELEGATE_TASK",
+    "DELEGATE_TASK",
+    "QUICK_FINISH_TASK",
+    "ROGUE_ACCEPT_TASK",
+    "ROGUE_FINISHTASK_REWARD"
+   ],
+   "external": 61.76,
+   "batch": 2
+  },
+  {
+   "id": "C03",
+   "size": 19,
+   "label": [
+    "family:战斗结算",
+    "token:RESULT",
+    "field:batch_sweep_data",
+    "token:BATTLE"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": "战斗结算",
+   "status": {
+    "GEN-READY": 12,
+    "IMPL-UNJUDGED": 1,
+    "NEEDS-S2": 6
+   },
+   "order": [
+    "BATTLE_END_REWARD",
+    "GET_NEW_SWEEP_EVENT",
+    "ENTER_GET_CLIMBLING_EVENT",
+    "LOOK_SECRET_PANDA_EVENT",
+    "SERVER_NPC_BATTLE_END",
+    "ROGUE_PVP_BATTLE_END",
+    "DICE_BATTLE_RESULT",
+    "GOOD_AND_EVIL_BATTLE_RESULT",
+    "ROGUE_PVE_BATTLE_RESULT",
+    "SERVER_ROGUE_NPC_BATTLE_END",
+    "TOWER_RANDOM_EVENT",
+    "ACTIVE_TOWER_EVENT",
+    "NEW_TOWER_SWEEP_EVENT",
+    "TOWER_CHOOSE_PANDA_EVENT",
+    "CLOSE_NEW_SWEEP_EVENT",
+    "REQ_MP_RESULT",
+    "SELECT_SECRET_PANDA_EVENT",
+    "REQ_WM_ADV_RWD",
+    "USER_PVP_OVER"
+   ],
+   "external": 27.42,
+   "batch": 3
+  },
+  {
+   "id": "C17",
+   "size": 5,
+   "label": [
+    "family:成就",
+    "token:ACHIEVE"
+   ],
+   "confidence": "强",
+   "family": "成就",
+   "status": {
+    "NO-CONTRACT": 1,
+    "GEN-READY": 4
+   },
+   "order": [
+    "GET_ACHIEVE_MARK",
+    "RECEIVE_ACHIEVEMENT_REWARD",
+    "RECEIVE_ACHIEVE_RATE_REWARD",
+    "RECEIVE_ACHIEVE_REWARD",
+    "RECEIVE_ACHIEVE_SUIT_REWARD"
+   ],
+   "external": 15.58,
+   "batch": 4
+  },
+  {
+   "id": "C19",
+   "size": 5,
+   "label": [
+    "family:道具使用",
+    "token:BALL",
+    "token:SNOW"
+   ],
+   "confidence": "强",
+   "family": "道具使用",
+   "status": {
+    "GEN-READY": 4,
+    "NEEDS-S2": 1
+   },
+   "order": [
+    "USE_BATCH_SNOW_BALL",
+    "USE_SNOW_BALL",
+    "USE_ALL_BALL",
+    "ROGUE_USE_ITEM",
+    "USE_ITEM_ADDITION"
+   ],
+   "external": 15.29,
+   "batch": 5
+  },
+  {
+   "id": "C04",
+   "size": 16,
+   "label": [
+    "family:婚姻子女",
+    "token:CHILD",
+    "field:bodyState",
+    "field:childObj"
+   ],
+   "confidence": "强",
+   "family": "婚姻子女",
+   "status": {
+    "NEEDS-S2": 6,
+    "GEN-READY": 10
+   },
+   "order": [
+    "BIRTHCHILD",
+    "EXILE_CHILD",
+    "BEGIN_WEDDING",
+    "MAKE_LOVE",
+    "MARRY_AWARD",
+    "RESET_CHILD_FOSTER",
+    "ADOPTCHILD",
+    "ADD_CHILD_FOSTER",
+    "DIVORCENPC",
+    "MARRY_NPC_EVENT",
+    "CHILD_WASH_EVENT",
+    "GIVE_CHILD_NAME",
+    "UPGRADE_WIFE_LEVEL",
+    "USE_WIFE_PROP",
+    "CHOOSE_GIRL_EVENT",
+    "PROPOSE_NPC"
+   ],
+   "external": 0,
+   "batch": 6
+  },
+  {
+   "id": "C05",
+   "size": 13,
+   "label": [
+    "family:打坐练功",
+    "pair:BEGIN/END",
+    "field:hanyusuiTime",
+    "token:TRAIN"
+   ],
+   "confidence": "强",
+   "family": "打坐练功",
+   "status": {
+    "IMPL-UNJUDGED": 4,
+    "GEN-READY": 8,
+    "NEEDS-S2": 1
+   },
+   "order": [
+    "BEGIN_LIANGONG",
+    "GET_VIGOR",
+    "END_LIANGONG",
+    "END_DAZUO",
+    "BEGIN_WOOD_TRAINING",
+    "END_WOOD_TRAINING",
+    "END_RECOVER_MP",
+    "START_DAZUO",
+    "PAUSE_WOOD_TRAINING",
+    "VIGOR_DAZUO",
+    "BEGIN_RECOVER_MP",
+    "VIGOR_UPGSKILL",
+    "SET_ONHOOK_WOOK_STATE"
+   ],
+   "external": 0,
+   "batch": 7
+  },
+  {
+   "id": "C06",
+   "size": 9,
+   "label": [
+    "token:ANNIVERSARY",
+    "token:ANN",
+    "token:PASS",
+    "token:GIFT"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2,
+    "GEN-READY": 7
+   },
+   "order": [
+    "ANN_PASS_GET_GIFT_DATA",
+    "ANN_PASS_GET_DATA",
+    "ANN_PASS_BUY_GIFT",
+    "ANN_PASS_BUY_LIVENESS",
+    "ANN_PASS_BUY_UP",
+    "ANN_PASS_CHOOS_ROGUE",
+    "ANN_PASS_FINISH_TASK",
+    "ANN_PASS_RECEIVE_AWARD",
+    "ANN_PASS_START_ROGUE"
+   ],
+   "external": 0,
+   "batch": 8
+  },
+  {
+   "id": "C07",
+   "size": 9,
+   "label": [
+    "field:attArr",
+    "token:PVE",
+    "token:BATTLE",
+    "field:AttckData"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 9
+   },
+   "order": [
+    "PVE_ACTION",
+    "ROGUE_PVE_ACTION",
+    "REQ_LANGHUAN_COMBAT",
+    "REQ_ROGUE_PVE_COMBAT",
+    "MPPVE_ACTION",
+    "ROGUE_MPPVE_ACTION",
+    "REQ_ROGUE_PVP_BATTLE",
+    "START_MPPVE_BATTLE",
+    "USER_PVP"
+   ],
+   "external": 0,
+   "batch": 9
+  },
+  {
+   "id": "C08",
+   "size": 8,
+   "label": [
+    "family:技巧摸奖",
+    "token:KNACK",
+    "field:upSkillRateData",
+    "field:optionalDatas"
+   ],
+   "confidence": "强",
+   "family": "技巧摸奖",
+   "status": {
+    "NEEDS-S2": 3,
+    "GEN-READY": 5
+   },
+   "order": [
+    "GET_KNACK_LOTTERY",
+    "GET_KNACK_LOTTERY_HISTORY",
+    "KNACK_LOTTERY",
+    "BATCH_RESOLVE_KNACK",
+    "CHANGE_SKILL_KNACK",
+    "ROGUE_CHANGE_SKNACK",
+    "RESOLVE_KNACK",
+    "EQUIP_BATCH_RESOLVE"
+   ],
+   "external": 0,
+   "batch": 10
+  },
+  {
+   "id": "C09",
+   "size": 8,
+   "label": [
+    "token:CROP",
+    "field:sIdx",
+    "field:aExp",
+    "field:crop"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 8
+   },
+   "order": [
+    "OBTAINCROP",
+    "STEAL_CROP_EVENT",
+    "CROP_CHANGE_STATE",
+    "EXPEDITE_CROP",
+    "CLEAN_DEAD_CROP",
+    "DISPOSS_HOME_EVENT",
+    "ONE_KEY_OBTAIN_CROP",
+    "ONE_KEY_DISPOSS_HOME_EVENT"
+   ],
+   "external": 0,
+   "batch": 11
+  },
+  {
+   "id": "C10",
+   "size": 7,
+   "label": [
+    "field:housekeeper",
+    "token:BUTLER",
+    "token:HELPER",
+    "token:DISPATCH"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 7
+   },
+   "order": [
+    "GET_HELPER_CALL_LIST",
+    "BUY_BUTLER",
+    "SET_BUTLER",
+    "BUTLER_DISPATCH",
+    "BUY_BUTLER_VIP",
+    "CALL_HELPER_BY_ID",
+    "DISPATCH_AWARD"
+   ],
+   "external": 0,
+   "batch": 12
+  },
+  {
+   "id": "C11",
+   "size": 7,
+   "label": [
+    "token:UFO",
+    "field:freeRefreshTimes",
+    "field:buyRefreshTimes",
+    "field:refreshTimes"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 7
+   },
+   "order": [
+    "GET_UFO_CATCHER_DATA",
+    "GET_UFO_CATCHER_TASK",
+    "USE_UFO_REFRESH",
+    "BUY_UFO_REFRESH_TIMES",
+    "REWARD_UFO",
+    "REWARD_UFO_CATCHER_TASK",
+    "BUY_UFO_GAME_COIN"
+   ],
+   "external": 0,
+   "batch": 13
+  },
+  {
+   "id": "C12",
+   "size": 7,
+   "label": [
+    "family:斗狗",
+    "token:DOG",
+    "token:BATTLE",
+    "token:PVE"
+   ],
+   "confidence": "强",
+   "family": "斗狗",
+   "status": {
+    "GEN-READY": 5,
+    "NO-CONTRACT": 2
+   },
+   "order": [
+    "LOOK_DOG_LOG",
+    "ENTER_PVEDOG_FIGHT",
+    "REQ_DOG_PARTNER_END_BATTLE",
+    "REQ_DOG_PARTNER_PVE_BATTLE",
+    "DOG_BATTLE_RESULT",
+    "FEED_DOG",
+    "ENTER_PVE_ROGUE_FIGHT"
+   ],
+   "external": 0,
+   "batch": 14
+  },
+  {
+   "id": "C13",
+   "size": 7,
+   "label": [
+    "token:SEVEN",
+    "token:DAYS",
+    "token:AWARD",
+    "token:RETURN"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "GEN-READY": 4,
+    "NEEDS-S2": 3
+   },
+   "order": [
+    "GET_RETURN_SEVEN_DAY_DATA",
+    "GET_RETURN_TASK_DATA",
+    "GET_SPRING_SEVEN_DAY_DATA",
+    "RETURN_SEVEN_DAYS_AWARDS",
+    "SEVEN_DAYS_AWARDS",
+    "SPRING_SEVEN_DAYS_AWARDS",
+    "RECEIVE_RETURN_DAILY_TASK"
+   ],
+   "external": 0,
+   "batch": 15
+  },
+  {
+   "id": "C14",
+   "size": 6,
+   "label": [
+    "family:龙",
+    "token:DRAGON",
+    "field:TeamBrief",
+    "field:TeamTianJiLockData"
+   ],
+   "confidence": "中",
+   "family": "龙",
+   "status": {
+    "GEN-READY": 6
+   },
+   "order": [
+    "GET_DRAGON",
+    "CALL_DRAGON",
+    "MAKE_WISH_DRAGON",
+    "BEGIN_DRAGON_ROLLDICE",
+    "BEGIN_ROLLDICE",
+    "ROLLDICE_EVENT"
+   ],
+   "external": 0,
+   "batch": 16
+  },
+  {
+   "id": "C15",
+   "size": 5,
+   "label": [
+    "token:SKIN",
+    "token:SKILL",
+    "token:SHOP",
+    "token:ACTIVE"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 5
+   },
+   "order": [
+    "GET_SKILL_SKIN_ACTIVE_SHOP",
+    "GET_SKILL_SKIN_SHOP",
+    "BUY_SKILL_SKIN_ACTIVE_SHOP",
+    "BUY_SKILL_SKIN_SHOP",
+    "REFRESH_SKILL_SKIN_SHOP"
+   ],
+   "external": 0,
+   "batch": 17
+  },
+  {
+   "id": "C16",
+   "size": 5,
+   "label": [
+    "fk:fishpond",
+    "field:siteID",
+    "pair:BEGIN/END",
+    "token:FISH"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "IMPL-UNJUDGED": 4,
+    "GEN-READY": 1
+   },
+   "order": [
+    "END_FISHING",
+    "CHECK_FISHING_REWARDS",
+    "CHECK_HIRE",
+    "START_FISHING",
+    "HIRE_NPC"
+   ],
+   "external": 0,
+   "batch": 18
+  },
+  {
+   "id": "C18",
+   "size": 5,
+   "label": [
+    "field:mapId",
+    "field:prestige",
+    "field:targetInfo",
+    "field:targetNpcInfo"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 5
+   },
+   "order": [
+    "GET_GOOD_AND_EVIL_RETIRE_DATA",
+    "GET_GOOD_AND_EVIL_RETIRE_LIST",
+    "GET_GOOD_AND_EVIL_DATA",
+    "GET_GE_HELP_INFO",
+    "HELP_DONE_TASK"
+   ],
+   "external": 0,
+   "batch": 19
+  },
+  {
+   "id": "C20",
+   "size": 4,
+   "label": [
+    "pair:BEGIN/END",
+    "token:MAKE",
+    "field:equipObj",
+    "token:QUIP"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "GEN-READY": 4
+   },
+   "order": [
+    "END_MAKE_QUIP",
+    "END_MAKE_MEDICINE",
+    "BEGIN_MAKE_QUIP",
+    "BEGINE_MAKE_MEDICINE"
+   ],
+   "external": 0,
+   "batch": 20
+  },
+  {
+   "id": "C21",
+   "size": 4,
+   "label": [
+    "field:passCard",
+    "field:goldArr",
+    "token:ACTIVITY"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 4
+   },
+   "order": [
+    "GET_TREASURE_AWARD",
+    "BUY_ACTIVITY_NUM",
+    "CAN_BUYACTIVITY_NUM",
+    "ENTER_NEXT_FLOOR"
+   ],
+   "external": 0,
+   "batch": 21
+  },
+  {
+   "id": "C22",
+   "size": 4,
+   "label": [
+    "field:shopObj",
+    "token:HLEXCHANGE",
+    "token:HLEX",
+    "token:SHOP"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 3,
+    "IMPL-UNJUDGED": 1
+   },
+   "order": [
+    "GET_HLEX_CHANGESHOP",
+    "GET_HLEX_CHANGEITEMDATA",
+    "GET_CHANGE_SHOP",
+    "EXCHANGE_HLEX_CHANGEITEM"
+   ],
+   "external": 0,
+   "batch": 22
+  },
+  {
+   "id": "C23",
+   "size": 4,
+   "label": [
+    "token:PARE",
+    "token:PRE",
+    "token:PREPARE",
+    "token:CAMP"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "GEN-READY": 3,
+    "NEEDS-S2": 1
+   },
+   "order": [
+    "GET_SUPPORT_PREPARE_CAMP",
+    "SUPPORT_PREPARE_CAMP",
+    "JOIN_PREPARE_CAMP",
+    "SUBMIT_JIGSAW_PREPARE_ITEM"
+   ],
+   "external": 0,
+   "batch": 23
+  },
+  {
+   "id": "C24",
+   "size": 3,
+   "label": [
+    "token:RECUIT",
+    "token:CODE",
+    "token:BIND"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2,
+    "GEN-READY": 1
+   },
+   "order": [
+    "BIND_RECUIT_CODE",
+    "CREATE_RECUIT_CODE",
+    "RECEIVE_BIND_RECUITAWARD"
+   ],
+   "external": 0,
+   "batch": 24
+  },
+  {
+   "id": "C25",
+   "size": 3,
+   "label": [
+    "token:EXTRA",
+    "token:LARGE"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 3
+   },
+   "order": [
+    "CHECK_LARGE_EXTRA",
+    "GET_LARGE_EXTRA",
+    "DICE_CHECKEXTRA_EVENT"
+   ],
+   "external": 0,
+   "batch": 25
+  },
+  {
+   "id": "C26",
+   "size": 3,
+   "label": [
+    "token:CYCLE",
+    "token:LIFE"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "IMPL-UNJUDGED": 3
+   },
+   "order": [
+    "CYCLE_LIFE",
+    "IS_CYCLE_LIFE",
+    "SPECIAL_CYCLE_LIFE"
+   ],
+   "external": 0,
+   "batch": 26
+  },
+  {
+   "id": "C27",
+   "size": 3,
+   "label": [
+    "token:DUNGEON",
+    "field:copyID",
+    "token:COPY",
+    "field:liveness"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 3
+   },
+   "order": [
+    "SWEEP_DUNGEON",
+    "ENTER_DUNGEON",
+    "END_DUNGEON_ADVENTURE"
+   ],
+   "external": 0,
+   "batch": 27
+  },
+  {
+   "id": "C28",
+   "size": 3,
+   "label": [
+    "field:homeGeMap",
+    "field:homeArr",
+    "token:HOME",
+    "token:FIND"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 3
+   },
+   "order": [
+    "OTHER_PLAYER_HOME",
+    "RECOMMEND_ONESELF_HOME",
+    "FIND_OTHER_HOME"
+   ],
+   "external": 0,
+   "batch": 28
+  },
+  {
+   "id": "C29",
+   "size": 3,
+   "label": [
+    "field:shopArr",
+    "token:FASION",
+    "token:FASHION",
+    "token:SHOP"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 3
+   },
+   "order": [
+    "GET_FASHION_SHOP",
+    "GET_BACK_SHOP",
+    "WEAR_FASHION"
+   ],
+   "external": 0,
+   "batch": 29
+  },
+  {
+   "id": "C30",
+   "size": 3,
+   "label": [
+    "field:talnetId",
+    "field:birthId",
+    "field:faceId",
+    "token:ROLE"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "IMPL-UNJUDGED": 1,
+    "GEN-READY": 2
+   },
+   "order": [
+    "GET_CREATE_ROLE_ACT",
+    "GET_CREATE_INFO",
+    "RESET_ROLE"
+   ],
+   "external": 0,
+   "batch": 30
+  },
+  {
+   "id": "C31",
+   "size": 3,
+   "label": [
+    "token:FURNACE",
+    "token:REFIN",
+    "token:SPRING"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 3
+   },
+   "order": [
+    "GET_FURNACE_DATA",
+    "PUT_REFINING_ITEM_FURNACE",
+    "START_REFINING_FURNACE"
+   ],
+   "external": 0,
+   "batch": 31
+  },
+  {
+   "id": "C32",
+   "size": 3,
+   "label": [
+    "token:TRICK",
+    "token:EXCHANGE",
+    "token:SKILL"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 3
+   },
+   "order": [
+    "GET_SKILL_TRICK_EXCHANGE_DATA",
+    "REFRESH_SKILL_TRICK_EXCHANGE_DATA",
+    "SKILL_TRICK_EXCHANGE_INDEX"
+   ],
+   "external": 0,
+   "batch": 32
+  },
+  {
+   "id": "C33",
+   "size": 3,
+   "label": [
+    "field:signData",
+    "field:newAcc",
+    "token:JION",
+    "token:LIN"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 3
+   },
+   "order": [
+    "JOIN_WULIN_PK_SERVER",
+    "JOIN_CHATPK_SERVER",
+    "WULIN_ASSEMBLY_APPLY_REQ"
+   ],
+   "external": 0,
+   "batch": 33
+  },
+  {
+   "id": "C34",
+   "size": 2,
+   "label": [
+    "pair:ADD/REMOVE",
+    "token:QUEUE",
+    "token:BREAK"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "ADD_BREAK_QUEUE",
+    "REMOVE_BREAK_QUEUE"
+   ],
+   "external": 0,
+   "batch": 34
+  },
+  {
+   "id": "C35",
+   "size": 2,
+   "label": [
+    "pair:ADD/DEL",
+    "field:equipLocks"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "ADD_EQUIP_LOCK",
+    "DELETE_EQUIP_LOCK"
+   ],
+   "external": 0,
+   "batch": 35
+  },
+  {
+   "id": "C36",
+   "size": 2,
+   "label": [
+    "field:setLabelTitle",
+    "token:BREAK"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "BEGIN_HOOK_BREAK_LIST",
+    "BATCH_BREAK_BY_GOLD"
+   ],
+   "external": 0,
+   "batch": 36
+  },
+  {
+   "id": "C37",
+   "size": 2,
+   "label": [
+    "pair:BEGIN/END",
+    "field:inherit",
+    "token:CAST"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "BEGINCAST",
+    "END_CAST"
+   ],
+   "external": 0,
+   "batch": 37
+  },
+  {
+   "id": "C38",
+   "size": 2,
+   "label": [
+    "pair:BEGIN/END",
+    "field:npcIDArr"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "IMPL-UNJUDGED": 2
+   },
+   "order": [
+    "BEGINSAVE_NPC",
+    "END_SAVE_NPC"
+   ],
+   "external": 0,
+   "batch": 38
+  },
+  {
+   "id": "C39",
+   "size": 2,
+   "label": [
+    "pair:BEGIN/END",
+    "field:childName",
+    "token:PLAY",
+    "token:GAME"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "IMPL-UNJUDGED": 1,
+    "GEN-READY": 1
+   },
+   "order": [
+    "BEGIN_PLAY_GAME",
+    "END_PLAY_GAME"
+   ],
+   "external": 0,
+   "batch": 39
+  },
+  {
+   "id": "C40",
+   "size": 2,
+   "label": [
+    "token:BOOK",
+    "token:COPY",
+    "token:GIFT"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "BUY_COPY_BOOK_GIFT",
+    "REWARD_BOOK_GIFT"
+   ],
+   "external": 0,
+   "batch": 40
+  },
+  {
+   "id": "C41",
+   "size": 2,
+   "label": [
+    "token:PERMANENT",
+    "token:SPRING",
+    "token:GIFT"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "GET_SPRING_GIFT_PERMANENT",
+    "BUY_SPRING_GIFT_PERMANENT"
+   ],
+   "external": 0,
+   "batch": 41
+  },
+  {
+   "id": "C42",
+   "size": 2,
+   "label": [
+    "token:USED",
+    "token:USEITEM"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GET_USEITEM_AWARD",
+    "CHOOSE_USEITEM_AWARD"
+   ],
+   "external": 0,
+   "batch": 42
+  },
+  {
+   "id": "C43",
+   "size": 2,
+   "label": [
+    "token:REVIEW",
+    "token:POST"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 1,
+    "IMPL-UNJUDGED": 1
+   },
+   "order": [
+    "GET_SCHOOL_POSTS",
+    "CREATE_POST"
+   ],
+   "external": 0,
+   "batch": 43
+  },
+  {
+   "id": "C44",
+   "size": 2,
+   "label": [
+    "pair:BUY/SELL",
+    "token:PLACE",
+    "token:DICE",
+    "token:GOOD"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "DICE_BUY_PLACE_GOODS",
+    "DICE_SELL_PLACE_GOODS"
+   ],
+   "external": 0,
+   "batch": 44
+  },
+  {
+   "id": "C45",
+   "size": 2,
+   "label": [
+    "token:DOUBLE",
+    "token:TRAIN"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "END_DOUBLE_TRAINING",
+    "USER_DOUBLE_TRAINING"
+   ],
+   "external": 0,
+   "batch": 45
+  },
+  {
+   "id": "C46",
+   "size": 2,
+   "label": [
+    "pair:START/END",
+    "token:EAT",
+    "token:TABLE"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "END_EAT_BY_TABLE",
+    "START_EAT_BY_TABLE"
+   ],
+   "external": 0,
+   "batch": 46
+  },
+  {
+   "id": "C47",
+   "size": 2,
+   "label": [
+    "pair:START/END",
+    "token:EXPLORE"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "END_ROGUE_EXPLORE",
+    "START_ROGUE_EXPLORE"
+   ],
+   "external": 0,
+   "batch": 47
+  },
+  {
+   "id": "C48",
+   "size": 2,
+   "label": [
+    "field:dog",
+    "field:soilArr",
+    "token:HOME"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GETHOME_LIST",
+    "ENTER_OTHER_HOME"
+   ],
+   "external": 0,
+   "batch": 48
+  },
+  {
+   "id": "C49",
+   "size": 2,
+   "label": [
+    "field:equipInherit",
+    "field:playerEquip"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "EUIQP_SUITS_UPGRADE",
+    "REQ_EQUIP_UPGRADE"
+   ],
+   "external": 0,
+   "batch": 49
+  },
+  {
+   "id": "C50",
+   "size": 2,
+   "label": [
+    "token:EXCHANGE",
+    "token:SPRING",
+    "token:SHOP"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "GET_SPRING_EXCHANGE_SHOP",
+    "EXCHANGE_SPRING_SHOP"
+   ],
+   "external": 0,
+   "batch": 50
+  },
+  {
+   "id": "C51",
+   "size": 2,
+   "label": [
+    "pair:GET/SET",
+    "token:TIP",
+    "token:ADVANCED",
+    "token:TASK"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "GET_ADVANCED_TASKS_TIP",
+    "SET_ADVANCED_TASKS_TIP"
+   ],
+   "external": 0,
+   "batch": 51
+  },
+  {
+   "id": "C52",
+   "size": 2,
+   "label": [
+    "field:taskObj",
+    "token:ACTIVITY"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "IMPL-UNJUDGED": 2
+   },
+   "order": [
+    "GET_ALL_ACTIVITY",
+    "GET_EVERYDAY_ACTIVE"
+   ],
+   "external": 0,
+   "batch": 52
+  },
+  {
+   "id": "C53",
+   "size": 2,
+   "label": [
+    "token:FRIENDLIST",
+    "token:FRIEND"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 1,
+    "IMPL-UNJUDGED": 1
+   },
+   "order": [
+    "GET_BREAK_FRIENDLIST",
+    "USER_FRIENDLIST"
+   ],
+   "external": 0,
+   "batch": 53
+  },
+  {
+   "id": "C54",
+   "size": 2,
+   "label": [
+    "pair:GET/SET",
+    "token:CUSTOM",
+    "token:CHAT"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "GET_CUSTOM_AI",
+    "SAVE_CUSTOM_AI"
+   ],
+   "external": 0,
+   "batch": 54
+  },
+  {
+   "id": "C55",
+   "size": 2,
+   "label": [
+    "field:openid",
+    "token:OPENID"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GET_DOU_YIN_OPENID",
+    "GET_WX_XYX_OPENID"
+   ],
+   "external": 0,
+   "batch": 55
+  },
+  {
+   "id": "C56",
+   "size": 2,
+   "label": [
+    "field:expireTime",
+    "field:titleID",
+    "token:GMGIVE",
+    "token:GIVE"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GET_GMGIVE_ITEM",
+    "GET_GMGIVE_ITEM_LIST"
+   ],
+   "external": 0,
+   "batch": 56
+  },
+  {
+   "id": "C57",
+   "size": 2,
+   "label": [
+    "token:CONSUME",
+    "token:CONSUMED",
+    "token:GOLD"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "GET_GOLD_CONSUME_REWARD_DATA",
+    "RECEIVE_GOLD_CONSUME_REWARD"
+   ],
+   "external": 0,
+   "batch": 57
+  },
+  {
+   "id": "C58",
+   "size": 2,
+   "label": [
+    "token:EVIL",
+    "token:GOOD",
+    "token:TASK"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "GET_GOOD_AND_EVIL_TASK_DATA",
+    "REFRESH_GOOD_AND_EVIL_TASK_DATA"
+   ],
+   "external": 0,
+   "batch": 58
+  },
+  {
+   "id": "C59",
+   "size": 2,
+   "label": [
+    "field:shopData",
+    "token:SHOP"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GET_HOUSE_SHOP_DATA",
+    "TOWER_SPECIAL_SHOP"
+   ],
+   "external": 0,
+   "batch": 59
+  },
+  {
+   "id": "C60",
+   "size": 2,
+   "label": [
+    "token:GETJIGSAW",
+    "token:JIGSAW"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "GET_JIGSAW_DATA",
+    "GET_JIGSAW_TASK_DATA"
+   ],
+   "external": 0,
+   "batch": 60
+  },
+  {
+   "id": "C61",
+   "size": 2,
+   "label": [
+    "field:rts",
+    "token:ACTIVITY"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GET_MA_ACTIVITY",
+    "REWARD_MA_ACTIVITY"
+   ],
+   "external": 0,
+   "batch": 61
+  },
+  {
+   "id": "C62",
+   "size": 2,
+   "label": [
+    "field:atkSkillID",
+    "field:dataArr",
+    "token:ULTSKILL",
+    "token:SKILL"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GET_MP_ULTSKILLS",
+    "GET_TEAM_ULTSKILLS"
+   ],
+   "external": 0,
+   "batch": 62
+  },
+  {
+   "id": "C63",
+   "size": 2,
+   "label": [
+    "token:PILE",
+    "token:GAME"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GET_PILE_GAME_DATA",
+    "PILE_GAME_AWARD"
+   ],
+   "external": 0,
+   "batch": 63
+  },
+  {
+   "id": "C64",
+   "size": 2,
+   "label": [
+    "token:PRAY",
+    "token:SIGN"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GET_PRAY_SIGN_ACTIVR",
+    "GET_PRAY_SIGN_AWARD"
+   ],
+   "external": 0,
+   "batch": 64
+  },
+  {
+   "id": "C65",
+   "size": 2,
+   "label": [
+    "field:battleID",
+    "token:FIGHTER"
+   ],
+   "confidence": "中",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GET_TEAM_FIGHTER_INFO",
+    "REQ_MPPVE_FIGHTER_INFO"
+   ],
+   "external": 0,
+   "batch": 65
+  },
+  {
+   "id": "C66",
+   "size": 2,
+   "label": [
+    "token:PLANT",
+    "token:TREE"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "GET_TREE_PLANTING",
+    "PLANT_TREE"
+   ],
+   "external": 0,
+   "batch": 66
+  },
+  {
+   "id": "C67",
+   "size": 2,
+   "label": [
+    "token:GFUI",
+    "token:TIME",
+    "token:GIFT"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GFUI_BUY_BIG_GIFT",
+    "GFUI_BUY_GIFT"
+   ],
+   "external": 0,
+   "batch": 67
+  },
+  {
+   "id": "C68",
+   "size": 2,
+   "label": [
+    "token:GOLD",
+    "token:BREAK",
+    "token:SKILL"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "GOLD_BREAK_ALL_SKILL",
+    "GOLD_BREAK_CUR_SKILL"
+   ],
+   "external": 0,
+   "batch": 68
+  },
+  {
+   "id": "C69",
+   "size": 2,
+   "label": [
+    "token:LANGH",
+    "token:REVIVE"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "LANGH_MP_REVIVE",
+    "LANGH_REVIVE"
+   ],
+   "external": 0,
+   "batch": 69
+  },
+  {
+   "id": "C70",
+   "size": 2,
+   "label": [
+    "token:MERIT",
+    "token:MASTER",
+    "token:PASS"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "MASTER_PASS_MERIT",
+    "PUPIL_PASS_MASTER_MERIT_REWARD"
+   ],
+   "external": 0,
+   "batch": 70
+  },
+  {
+   "id": "C71",
+   "size": 2,
+   "label": [
+    "pair:PUSH/POP",
+    "field:ItemNum",
+    "field:ItemID",
+    "token:STORAGE"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "POP_EQUIP_STORAGE",
+    "PUSH_EQUIP_STORAGE"
+   ],
+   "external": 0,
+   "batch": 71
+  },
+  {
+   "id": "C72",
+   "size": 2,
+   "label": [
+    "token:LIGHT",
+    "token:CELL"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "RANDOM_LIGHT_CELL",
+    "SPECIFY_LIGHT_CELL"
+   ],
+   "external": 0,
+   "batch": 72
+  },
+  {
+   "id": "C73",
+   "size": 2,
+   "label": [
+    "family:穴位",
+    "field:psych",
+    "token:VEIN",
+    "token:ACUPOINT"
+   ],
+   "confidence": "强",
+   "family": "穴位",
+   "status": {
+    "GEN-READY": 2
+   },
+   "order": [
+    "RESET_ACUPOINT",
+    "UPGRADE_ACUPOINT"
+   ],
+   "external": 0,
+   "batch": 73
+  },
+  {
+   "id": "C74",
+   "size": 2,
+   "label": [
+    "pair:BUY/SELL",
+    "token:STORE"
+   ],
+   "confidence": "强",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "ROGUE_BUY_STORE",
+    "ROGUE_SELL_STORE"
+   ],
+   "external": 0,
+   "batch": 74
+  },
+  {
+   "id": "C75",
+   "size": 2,
+   "label": [
+    "token:SORT",
+    "token:PLAYER"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "NEEDS-S2": 2
+   },
+   "order": [
+    "SET_PLAYER_ITEMSORT",
+    "SET_PLAYER_SKILLSORT"
+   ],
+   "external": 0,
+   "batch": 75
+  },
+  {
+   "id": "C76",
+   "size": 2,
+   "label": [
+    "token:RANKLIST",
+    "token:RANK"
+   ],
+   "confidence": "弱（主要靠名字相似）",
+   "family": null,
+   "status": {
+    "IMPL-UNJUDGED": 1,
+    "GEN-READY": 1
+   },
+   "order": [
+    "USER_RANKLIST",
+    "WB_DMG_RANKLIST"
+   ],
+   "external": 0,
+   "batch": 76
+  }
+ ],
+ "lone": [
+  "ACCOUNT_LOG_OFF",
+  "ADD_CHANGE_BLOOD",
+  "ADD_CHANGE_FACE",
+  "ADD_SEX_KILL",
+  "ADD_SUBTITLEREQ",
+  "AFFILIATION_SCHOOL",
+  "ALCHEMY_ALCHEMYFORMULA",
+  "ALCHEMY_REWARD",
+  "ANSWER_QUESTION",
+  "ANSWER_RESULT",
+  "ANSWER_REWARD",
+  "APPLY_MASTER",
+  "APPLY_PUPIL",
+  "APPLY_REMOVE",
+  "BACKTOLOGIN",
+  "BACK_TO_SELF_SERVER",
+  "BATCH_SEED_CROP",
+  "BEGIN_LIST",
+  "BIND_HUAWEI_ACCOUNT",
+  "BRING_SPECIAL_AWARD",
+  "BUILD_HOMEFRARM",
+  "BUY_AWARDS_COUNT",
+  "BUY_DG_CHALLENGE",
+  "BUY_DICE_SHOP_EVENT",
+  "BUY_GIFT_PERMANENT",
+  "BUY_HOME_CROP",
+  "BUY_HOUSE_DATA",
+  "BUY_HOUSE_EVENT",
+  "BUY_INVITATIONCARD",
+  "BUY_NPC_FEEL",
+  "BUY_TARGET_TASK_NUM",
+  "BUY_TICKET",
+  "BYTEDANCE_ENTER_AWARD",
+  "CANCEL_APPLY",
+  "CANCEL_CHAT_PK",
+  "CANCLE_WULIN_PK",
+  "CELL_ARRIVE",
+  "CHANGEPLACE",
+  "CHANGE_NAME",
+  "CHANGE_POWER",
+  "CHANGE_PROPERTY",
+  "CHANGE_SERVER",
+  "CHANGE_TO_TEAMSERVER",
+  "CHANGE_WORLD_SERVER",
+  "CHAT_PK_ACTIVITY",
+  "CHECKSPECIAL",
+  "CHECK_BREAK",
+  "CHECK_EQUIP_TO_TEAM",
+  "CHECK_LIVE",
+  "CHECK_ON_HOOK",
+  "CHECK_OUT_SCHOOL",
+  "CHECK_TARGET_TASK",
+  "CHOOSE_DICE_BOXITEM",
+  "CHOOSE_FIX_DAN",
+  "CHOOSE_SEX",
+  "CHOOSE_STATE",
+  "CLAIM_TR_REWARD",
+  "CLEAR_SXHOOL_CD",
+  "CLIENTGMCOMMON",
+  "CLOSE_CELL_EVENT",
+  "COLLECT",
+  "CONFIRM_APPLY",
+  "CONFIRM_REMOVE",
+  "COOK_ACCELERATE",
+  "COOK_RECEIVE",
+  "COOK_START",
+  "COOK_UNLOCK",
+  "CRL_GET_REWARD",
+  "DISH_UNLOCK",
+  "DO_STEAL",
+  "END_PRISON",
+  "EQUIP_INHERIT",
+  "EQUIP_INHERIT_SPLIT",
+  "EQUIP_RESOLVE",
+  "EQUIP_SKILL",
+  "EQUIP_SKILL_SKIN",
+  "EQUIP_TITLE",
+  "EQUIP_WASH",
+  "EXCHANFE_JETTON",
+  "EXCHANGE_GIFTCOIN_EVENT",
+  "EXCHANGE_ITEM_EVENT",
+  "EXIT_SCHOOL",
+  "FIGHT_WORLD_BOSS",
+  "FINS_FRIENDID",
+  "FLING_DICE",
+  "FLIP_CARD_CELL",
+  "GAME_LOG",
+  "GETNOTICE_REWARD",
+  "GETSHARE_PIC_AWARD",
+  "GET_ACTIVITY",
+  "GET_ACTIVITY_AWARD",
+  "GET_ACTIVITY_RANK",
+  "GET_ADVANCED_TASKS_DATA",
+  "GET_ALCHEMY_DATA",
+  "GET_ALL_SERVER_COUNT",
+  "GET_ALL_SERVER_LIST",
+  "GET_APPLY_INFO",
+  "GET_APPLY_LIST",
+  "GET_BANK_LIST",
+  "GET_BIG_GROWUP_DATA",
+  "GET_BOSS_REWARD",
+  "GET_CAST_COLLECT",
+  "GET_CHAT_PK_AWARD",
+  "GET_COPY_BOOK_DATA",
+  "GET_CRL_ACTIVE_DATA",
+  "GET_DICE_ACTIVE",
+  "GET_DICE_SHOP_EVENT",
+  "GET_DROP_AWARD",
+  "GET_DUNGEON_INFO",
+  "GET_EQUIP_LOCKS",
+  "GET_EVALUATE_DATA",
+  "GET_EXCHANGE_ALL_EVENT",
+  "GET_EXCHANGE_ITEM_EVENT",
+  "GET_EXPLORE",
+  "GET_FASHION_LIST",
+  "GET_FLIP_CARD",
+  "GET_GARDEN_SHOP",
+  "GET_GIFT_DATA",
+  "GET_GOOD_AND_EVIL_NOTE_DATA",
+  "GET_GOOD_AND_EVIL_NPC_DATA",
+  "GET_GOOD_AND_EVIL_RANK_DATA",
+  "GET_GROWUP_DATA",
+  "GET_HOUSE_KEEPER",
+  "GET_INN",
+  "GET_INN_BAG_DATA",
+  "GET_INN_COOK",
+  "GET_INN_COOK_LIST",
+  "GET_ITEM_DATA",
+  "GET_LEVEL_BONUS_DATA",
+  "GET_LOTTERY_ACTIVE_REWARD_DATA",
+  "GET_MARKETLIST",
+  "GET_MASTER_PUPIL_LIST",
+  "GET_MASTER_REWARD_LIST",
+  "GET_MOUNTSLIST",
+  "GET_NATIONAL_DAY_COPY",
+  "GET_NEW_AD_REWARD",
+  "GET_NEW_GIFT_PERMANENT",
+  "GET_NEW_NUMADS_AVAILABLE",
+  "GET_OPEN_ACTIVE",
+  "GET_PACKET_DETAIL_INFO",
+  "GET_PACKET_HISTORY",
+  "GET_PACKET_INFO",
+  "GET_PACKET_RANK_DATA",
+  "GET_PACKET_REWARD_DATA",
+  "GET_PAPER_LIST",
+  "GET_PERMANENT_REWARD",
+  "GET_PUPIL_REWARD_LIST",
+  "GET_QUESTION_LIST",
+  "GET_RECEIVE_AWARD",
+  "GET_RECEIVE_BIG_AWARD",
+  "GET_RECUIT_MESSAGE",
+  "GET_REFINING_RESOURCE",
+  "GET_REMOVE_RED_DOT",
+  "GET_RETURN_GIFT",
+  "GET_ROGUE_DATA",
+  "GET_ROGUE_EXCHANGE_GOODS",
+  "GET_SCHOOL_APPOINT",
+  "GET_SCHOOL_FIRSTTRY",
+  "GET_SCHOOL_MASTER",
+  "GET_SCHOOL_MASTER_LIST",
+  "GET_SCHOOL_PUPIL",
+  "GET_SCHOOL_PUPIL_LIST",
+  "GET_SCHOOL_RANK",
+  "GET_SCHOOL_ROLE_INFO",
+  "GET_SCHOOL_SHOP",
+  "GET_SCRATH_LOTTO",
+  "GET_SHOP_ALL_ACTIVE",
+  "GET_SIGN_AWARD",
+  "GET_SKILL_CHANGE",
+  "GET_SKILL_GRASP",
+  "GET_SNOW_REWARD",
+  "GET_SPECIALEVTS",
+  "GET_SPECIAL_AWARD",
+  "GET_SPGOODS_LIST",
+  "GET_SPRING_CELEBRATE_DATA",
+  "GET_SPRING_CHALLENGE_DATA",
+  "GET_STEAL_NPC_INFO",
+  "GET_TREASURE_FLOOR",
+  "GET_TR_MAP_INFO",
+  "GET_WASH_EQUIP",
+  "GET_WULIN_ARENA_DATA",
+  "GOLD_SHOP_REFRESHH_EVENT",
+  "HIRE_BAG_WEIGHT",
+  "HOME_SPECIAL_AWARD",
+  "HOUSE_SPECIAL",
+  "IGNORE_REMOVE",
+  "IMPLANTATION",
+  "INFO_COLLECTIVE_CULTIVATION",
+  "INTO_SCHOOL_ARENA",
+  "INTO_SCHOOL_SQUARE",
+  "INVITE_NPC_GETLIKE",
+  "INVITE_NPC_OPTION",
+  "IS_CAN_SHARE",
+  "JOIN_GOOD_OR_EVIL",
+  "KILL_NPC",
+  "KILL_SELF",
+  "LAST_TIME_ROGUE_EXPLORE",
+  "LEVEAL_SCHOOL",
+  "LEVEAL_TWONTTASK",
+  "LIGHT_SPRING_SPARK",
+  "LIKE",
+  "LOG_SVR_SELECTION",
+  "MASTER_OUT_SCHOOL_REWARD",
+  "MASTER_REWARD",
+  "MILL_BUILD_EVENT",
+  "MILL_EARNINGS_OBTAIN_EVENT",
+  "MILL_UPGRADE_EVENT",
+  "MOVE_HOME_FRAM",
+  "NEW_OPTIONALGIFT_DATA",
+  "NEW_OPTIONAL_BUY_GIFT",
+  "NPC_REVIVE",
+  "OPEN_BOX_REWARD",
+  "OPEN_CHAT_PACKET_RED",
+  "OPEN_NOVICE",
+  "OPEN_RANDOM_BOX",
+  "OPEN_TIGER",
+  "PASS_CARD_DATA",
+  "PASS_CARD_REWARD",
+  "PUPIL_REWARD",
+  "PUSH_EVALUATE_DATA",
+  "PUT_SPRING_SPARK",
+  "QUEUE_CHECK_BREAK",
+  "QUIT_SCHOOL_SQUARE",
+  "RECEIVENPC_EVENT",
+  "RECEIVE_ADVANCED_TASK",
+  "RECEIVE_ADVANCED_TASK_REWARD",
+  "RECEIVE_BONUS_AWARD",
+  "RECEIVE_CHAT_PK_AWARD",
+  "RECEIVE_CHAT_PK_POINTAWARD",
+  "RECEIVE_GIFT",
+  "RECEIVE_HELPER_REWARD",
+  "RECEIVE_JIGSAW_AWARD",
+  "RECEIVE_JIGSAW_TASK_AWARD",
+  "RECEIVE_LIVENESS_AWARD",
+  "RECEIVE_LOTTERY_ACTIVE_REWARD",
+  "RECEIVE_NOTICE",
+  "RECEIVE_NPC_TARGET_TASK",
+  "RECEIVE_PACKET",
+  "RECEIVE_PACKET_REWARD_REWARD",
+  "RECEIVE_RECUIT_AWARD",
+  "RECEIVE_RETURN_GIFT_AWARD",
+  "RECEIVE_SPRING_ACC_REWARD",
+  "RECEIVE_SPRING_CHALLENGE",
+  "RECEIVE_TARGET_TASK",
+  "RECLAIM_LAND",
+  "RECORD_PHONE",
+  "RECOVER_YOUNG",
+  "REDEEM_TABLE",
+  "REFRESHNOTICE",
+  "REFRESH_FLIP_CARD",
+  "REFRESH_GIFT_AWARD",
+  "REFRESH_GOOD_AND_EVIL_NPC_DATA",
+  "REFRESH_HOOK_BREAK_LIST",
+  "REFRESH_RETURN_GIFT_AWARD",
+  "REGISTER_MASTER",
+  "REGISTER_PUPIL",
+  "REMOVE_MARTIAL",
+  "REMOVE_SKILL_SKIN",
+  "RENT_EVENT",
+  "REQ_AWARD_RECHARDED",
+  "REQ_BEGINTITIVATE",
+  "REQ_BEGIN_CHANGEFACE",
+  "REQ_CHANGEBLOOD",
+  "REQ_DOUBLE_BR",
+  "REQ_INSERT_COINS",
+  "REQ_LOOK_GIFT",
+  "REQ_MPFIGHT",
+  "REQ_POP_GIFT",
+  "REQ_SERVER_LIST",
+  "REQ_SEVENREWARD_EVENT",
+  "REQ_SEVENTASK_EVENT",
+  "REQ_STRETCH",
+  "REQ_TRGGER_GIFT",
+  "RESET_ANSWER",
+  "RETRIEVE_PARTNER",
+  "RG_EQUIP_UPGRADE",
+  "RG_GET_SHOP_DATA",
+  "ROBOT_MOVE_ACTION",
+  "ROGUE_BUY_GOLD_STORE",
+  "ROGUE_ENTER_FLOOR",
+  "ROGUE_EQUIP_SKILL",
+  "ROGUE_EQUIP_WEAPON",
+  "ROGUE_EVENT_OPTION",
+  "ROGUE_EXCHANGE_GOODS",
+  "ROGUE_FIND_OTHER_ID",
+  "ROGUE_FLOOR_BUFF",
+  "ROGUE_GATHER_ITEMS",
+  "ROGUE_GET_HONOR",
+  "ROGUE_GET_HONOR_RED",
+  "ROGUE_GET_RANK_REWARD",
+  "ROGUE_GET_TALENT_DATA",
+  "ROGUE_GOLD_STORE_REFRESH",
+  "ROGUE_HONOR_RANK",
+  "ROGUE_HONOR_WEEK_REWARD",
+  "ROGUE_INIT_OPTION",
+  "ROGUE_LEAVE_HIDE_FLOOR",
+  "ROGUE_LOOK_OTHER",
+  "ROGUE_OUTFITTING",
+  "ROGUE_RECEIVE_HONOR",
+  "ROGUE_REFRESH_VALUABLES",
+  "ROGUE_SEASON_TOP_DATA",
+  "ROGUE_START_TURN_REFRESH",
+  "ROGUE_STORE_REFRESH",
+  "ROGUE_STORE_TRUNK_END",
+  "ROGUE_SYNC_WAIT_DATA",
+  "ROGUE_TALENT_RESET",
+  "ROGUE_TALENT_UPLV",
+  "ROGUE_TIANJIESHI_SELL_STORE",
+  "SAN_GONG",
+  "SAVE_GAMETIME",
+  "SAVR_VILLAGE",
+  "SCHOOL_APPOINT",
+  "SCHOOL_FIRST_HONOR",
+  "SCHOOL_RECEIVE_WAGES",
+  "SCHOOL_SECTLEADER",
+  "SCHOOL_TAKE_OFFICE_APPLY",
+  "SCORTRESULT",
+  "SCRAPING_LOTTERY",
+  "SEND_RED_PACKET",
+  "SERVER_CHECK_LOGIN",
+  "SET_CHAT_PK_OPTION",
+  "SET_CHAT_RED_DATA",
+  "SET_PLAYER_CARD_MOUTS_SYCN",
+  "SET_PLAYER_CARD_TYPE",
+  "SET_PLAYER_WING_ID",
+  "SET_TEMPLATE_DATA",
+  "SKILL_GRASP",
+  "SMALL_GAME_AWARD",
+  "SNOWACTIVE",
+  "SPECIAL_EVENTS",
+  "STOP_BREAK_LIST",
+  "STORY_EXPERIENCE",
+  "SUBMIT_NUM_MA",
+  "SWAP_SKILL_PROGRESS",
+  "TABLE_RECEIVE",
+  "TABLE_UNLOCK",
+  "TALK_DATA_ACTION",
+  "TEMPORARILY_ROGUE",
+  "TENDING_TREES",
+  "TIP_OFF_USER",
+  "TOWER_BUY_PROP",
+  "TOWER_GET_PANDA_EVENT",
+  "TOWER_GET_REWARD_BOX",
+  "TOWER_LEAVE_EVENT",
+  "TOWER_RANK_LIST",
+  "TREES_RECEIVE_REWARD",
+  "TRIGGER_CANDY",
+  "TRIGGER_EVENT",
+  "UPGRAADE_ALCHEMY",
+  "UPGRADE_BED",
+  "UPGRADE_STORAGE",
+  "UPLOAD_HEAL",
+  "UPLOAD_PLAYER_ARENA_DATA",
+  "UPLOAD_WB_DMG",
+  "UP_PARTNER_QUEQUE",
+  "UP_PUSH_SWITCH",
+  "USER_ANSWERFRIEND",
+  "USER_APPLAYFRIEND",
+  "USER_FIND_FRIEND",
+  "USER_FRIENDREGISTER",
+  "USER_FRIEND_DELETE",
+  "USER_GETCHATADDRESS",
+  "USER_LOOKOTHER",
+  "USER_ONHOOK_BREAK",
+  "USE_CARD",
+  "USE_TREASURE",
+  "WASH_MEDICINE",
+  "WEEDIND_EVENT",
+  "WHORING_EVENT",
+  "WHORING_GIRL_EVENT",
+  "WIN_PRISON",
+  "WRITE_BOOK_EVENT"
+ ],
+ "pairs": [
+  [
+   "ADD_BREAK_QUEUE",
+   "REMOVE_BREAK_QUEUE"
+  ],
+  [
+   "ADD_EQUIP_LOCK",
+   "DELETE_EQUIP_LOCK"
+  ],
+  [
+   "BEGINCAST",
+   "END_CAST"
+  ],
+  [
+   "BEGINE_MAKE_MEDICINE",
+   "END_MAKE_MEDICINE"
+  ],
+  [
+   "BEGINSAVE_NPC",
+   "END_SAVE_NPC"
+  ],
+  [
+   "BEGIN_LIANGONG",
+   "END_LIANGONG"
+  ],
+  [
+   "BEGIN_MAKE_QUIP",
+   "END_MAKE_QUIP"
+  ],
+  [
+   "BEGIN_PLAY_GAME",
+   "END_PLAY_GAME"
+  ],
+  [
+   "BEGIN_RECOVER_MP",
+   "END_RECOVER_MP"
+  ],
+  [
+   "BEGIN_WOOD_TRAINING",
+   "END_WOOD_TRAINING"
+  ],
+  [
+   "DICE_BUY_PLACE_GOODS",
+   "DICE_SELL_PLACE_GOODS"
+  ],
+  [
+   "DIVORCENPC",
+   "MARRY_NPC_EVENT"
+  ],
+  [
+   "END_DAZUO",
+   "START_DAZUO"
+  ],
+  [
+   "END_EAT_BY_TABLE",
+   "START_EAT_BY_TABLE"
+  ],
+  [
+   "END_FISHING",
+   "START_FISHING"
+  ],
+  [
+   "END_ROGUE_EXPLORE",
+   "START_ROGUE_EXPLORE"
+  ],
+  [
+   "GET_ADVANCED_TASKS_TIP",
+   "SET_ADVANCED_TASKS_TIP"
+  ],
+  [
+   "GET_CUSTOM_AI",
+   "SAVE_CUSTOM_AI"
+  ],
+  [
+   "JOIN_SCHOOL",
+   "QUIT_SCHOOL"
+  ],
+  [
+   "POP_EQUIP_STORAGE",
+   "PUSH_EQUIP_STORAGE"
+  ],
+  [
+   "ROGUE_BUY_STORE",
+   "ROGUE_SELL_STORE"
+  ]
+ ],
+ "deps": [
+  "C27（END_DUNGEON_ADVENTURE）在 C01（GET_ACHIEVE_DATA）之后：完成副本会推进成就（第 1 轮意见 #10）",
+  "C27（END_DUNGEON_ADVENTURE）在 C02（GET_TASK）之后：完成副本会推进每日任务进度（第 1 轮意见 #10）"
+ ],
+ "notes": {
+  "END_DAZUO": "已知做不了结算：请求里不带时长，先按「只回成功、不结算」写",
+  "END_LIANGONG": "已知做不了结算：请求里不带时长，先按「只回成功、不结算」写"
+ },
+ "neighbors": {
+  "ACCEPTCIRCLETASK": [
+   {
+    "to": "CIRCLE_TASK_TASK",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GETCIRCLETASK",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GET_CIRCLE_TASK_LIST",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CHANGE_DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "ACCEPT_SCHOOL_TASK": [
+   {
+    "to": "GET_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ONE_KEY_COMPLETE_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "REFRESH_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "SCHOOL_TASK_AWARD",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "SCHOOL_TASK_COMPLETE",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "ACTIVE_TOWER_EVENT": [
+   {
+    "to": "TOWER_RANDOM_EVENT",
+    "w": 6.96,
+    "why": [
+     "field:attrType",
+     "field:eggNpc",
+     "field:eventIds"
+    ]
+   },
+   {
+    "to": "ENTER_GET_CLIMBLING_EVENT",
+    "w": 1.16,
+    "why": [
+     "field:chickenLegNum",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 1.16,
+    "why": [
+     "field:muscle",
+     "token:TOWER"
+    ]
+   }
+  ],
+  "ACTIVITE_SHOP": [
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "RG_SHOP_BY_ITEM",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "SPECIAL_SHOP",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "FINISH_TASK",
+    "w": 2.86,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "ADD_BREAK_QUEUE": [
+   {
+    "to": "REMOVE_BREAK_QUEUE",
+    "w": 3.83,
+    "why": [
+     "pair:ADD/REMOVE",
+     "token:QUEUE",
+     "token:BREAK"
+    ]
+   }
+  ],
+  "ADD_CHILD_FOSTER": [
+   {
+    "to": "RESET_CHILD_FOSTER",
+    "w": 2.93,
+    "why": [
+     "family:婚姻子女",
+     "token:FOSTER",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "CHILD_WASH_EVENT",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "EXILE_CHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "GIVE_CHILD_NAME",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   }
+  ],
+  "ADD_EQUIP_LOCK": [
+   {
+    "to": "DELETE_EQUIP_LOCK",
+    "w": 3.81,
+    "why": [
+     "pair:ADD/DEL",
+     "field:equipLocks"
+    ]
+   }
+  ],
+  "ADD_ITEM": [
+   {
+    "to": "FINISH_TASK",
+    "w": 2.86,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "REQ_BUY_FASHION",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "EXCHANGE_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "USE_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "ADOPTCHILD": [
+   {
+    "to": "RESET_CHILD_FOSTER",
+    "w": 3.16,
+    "why": [
+     "family:婚姻子女",
+     "field:childName",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "CHILD_WASH_EVENT",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "EXILE_CHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "GIVE_CHILD_NAME",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   }
+  ],
+  "ANN_PASS_BUY_GIFT": [
+   {
+    "to": "ANN_PASS_GET_GIFT_DATA",
+    "w": 1.46,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_LIVENESS",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_UP",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_CHOOS_ROGUE",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_FINISH_TASK",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   }
+  ],
+  "ANN_PASS_BUY_LIVENESS": [
+   {
+    "to": "ANN_PASS_BUY_GIFT",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_UP",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_CHOOS_ROGUE",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_FINISH_TASK",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_GIFT_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   }
+  ],
+  "ANN_PASS_BUY_UP": [
+   {
+    "to": "ANN_PASS_BUY_GIFT",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_LIVENESS",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_CHOOS_ROGUE",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_FINISH_TASK",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_GIFT_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   }
+  ],
+  "ANN_PASS_CHOOS_ROGUE": [
+   {
+    "to": "ANN_PASS_BUY_GIFT",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_LIVENESS",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_UP",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_FINISH_TASK",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_GIFT_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   }
+  ],
+  "ANN_PASS_FINISH_TASK": [
+   {
+    "to": "ANN_PASS_BUY_GIFT",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_LIVENESS",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_UP",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_CHOOS_ROGUE",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_GIFT_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   }
+  ],
+  "ANN_PASS_GET_DATA": [
+   {
+    "to": "ANN_PASS_BUY_GIFT",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_LIVENESS",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_UP",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_CHOOS_ROGUE",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_FINISH_TASK",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_GIFT_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   }
+  ],
+  "ANN_PASS_GET_GIFT_DATA": [
+   {
+    "to": "ANN_PASS_BUY_GIFT",
+    "w": 1.46,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_LIVENESS",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_UP",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_CHOOS_ROGUE",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_FINISH_TASK",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   }
+  ],
+  "ANN_PASS_RECEIVE_AWARD": [
+   {
+    "to": "ANN_PASS_BUY_GIFT",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_LIVENESS",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_UP",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_CHOOS_ROGUE",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_FINISH_TASK",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   }
+  ],
+  "ANN_PASS_START_ROGUE": [
+   {
+    "to": "ANN_PASS_BUY_GIFT",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_LIVENESS",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_BUY_UP",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_CHOOS_ROGUE",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_FINISH_TASK",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   },
+   {
+    "to": "ANN_PASS_GET_DATA",
+    "w": 1.15,
+    "why": [
+     "token:ANNIVERSARY",
+     "token:ANN",
+     "token:PASS"
+    ]
+   }
+  ],
+  "BATCH_BREAK_BY_GOLD": [
+   {
+    "to": "BEGIN_HOOK_BREAK_LIST",
+    "w": 1.23,
+    "why": [
+     "field:setLabelTitle",
+     "token:BREAK"
+    ]
+   }
+  ],
+  "BATCH_RESOLVE_KNACK": [
+   {
+    "to": "RESOLVE_KNACK",
+    "w": 2.88,
+    "why": [
+     "family:技巧摸奖",
+     "token:RESOLVE",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "CHANGE_SKILL_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "GET_KNACK_LOTTERY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "GET_KNACK_LOTTERY_HISTORY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "KNACK_LOTTERY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "ROGUE_CHANGE_SKNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   }
+  ],
+  "BATTLE_END_REWARD": [
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 4.24,
+    "why": [
+     "family:战斗结算",
+     "field:win",
+     "field:gemId"
+    ]
+   },
+   {
+    "to": "DICE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "GOOD_AND_EVIL_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVP_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "SERVER_ROGUE_NPC_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "BEGINCAST": [
+   {
+    "to": "END_CAST",
+    "w": 4.29,
+    "why": [
+     "pair:BEGIN/END",
+     "field:inherit",
+     "token:CAST"
+    ]
+   }
+  ],
+  "BEGINE_MAKE_MEDICINE": [
+   {
+    "to": "END_MAKE_MEDICINE",
+    "w": 3.91,
+    "why": [
+     "pair:BEGIN/END",
+     "token:MEDICINE",
+     "token:MAKE"
+    ]
+   }
+  ],
+  "BEGINSAVE_NPC": [
+   {
+    "to": "END_SAVE_NPC",
+    "w": 3.81,
+    "why": [
+     "pair:BEGIN/END",
+     "field:npcIDArr"
+    ]
+   }
+  ],
+  "BEGIN_DRAGON_ROLLDICE": [
+   {
+    "to": "CALL_DRAGON",
+    "w": 2.46,
+    "why": [
+     "family:龙",
+     "token:DRAGON"
+    ]
+   },
+   {
+    "to": "GET_DRAGON",
+    "w": 2.46,
+    "why": [
+     "family:龙",
+     "token:DRAGON"
+    ]
+   },
+   {
+    "to": "MAKE_WISH_DRAGON",
+    "w": 2.46,
+    "why": [
+     "family:龙",
+     "token:DRAGON"
+    ]
+   },
+   {
+    "to": "BEGIN_ROLLDICE",
+    "w": 1.33,
+    "why": [
+     "token:ROLLDICE",
+     "token:ROLL",
+     "token:DICE"
+    ]
+   },
+   {
+    "to": "ROLLDICE_EVENT",
+    "w": 1.33,
+    "why": [
+     "token:ROLLDICE",
+     "token:ROLL",
+     "token:DICE"
+    ]
+   }
+  ],
+  "BEGIN_HOOK_BREAK_LIST": [
+   {
+    "to": "BATCH_BREAK_BY_GOLD",
+    "w": 1.23,
+    "why": [
+     "field:setLabelTitle",
+     "token:BREAK"
+    ]
+   }
+  ],
+  "BEGIN_LIANGONG": [
+   {
+    "to": "END_LIANGONG",
+    "w": 7.53,
+    "why": [
+     "pair:BEGIN/END",
+     "family:打坐练功",
+     "field:isCollective"
+    ]
+   },
+   {
+    "to": "START_DAZUO",
+    "w": 2.81,
+    "why": [
+     "family:打坐练功",
+     "field:beginTime"
+    ]
+   },
+   {
+    "to": "END_DAZUO",
+    "w": 2.74,
+    "why": [
+     "family:打坐练功",
+     "field:hanyusuiTime"
+    ]
+   },
+   {
+    "to": "END_RECOVER_MP",
+    "w": 2.74,
+    "why": [
+     "family:打坐练功",
+     "field:hanyusuiTime"
+    ]
+   },
+   {
+    "to": "BEGIN_WOOD_TRAINING",
+    "w": 2.42,
+    "why": [
+     "family:打坐练功",
+     "token:TRAIN"
+    ]
+   },
+   {
+    "to": "END_WOOD_TRAINING",
+    "w": 2.42,
+    "why": [
+     "family:打坐练功",
+     "token:TRAIN"
+    ]
+   }
+  ],
+  "BEGIN_MAKE_QUIP": [
+   {
+    "to": "END_MAKE_QUIP",
+    "w": 3.94,
+    "why": [
+     "pair:BEGIN/END",
+     "token:QUIP",
+     "token:MAKE"
+    ]
+   }
+  ],
+  "BEGIN_PLAY_GAME": [
+   {
+    "to": "END_PLAY_GAME",
+    "w": 4.59,
+    "why": [
+     "pair:BEGIN/END",
+     "field:childName",
+     "token:PLAY"
+    ]
+   }
+  ],
+  "BEGIN_RECOVER_MP": [
+   {
+    "to": "END_RECOVER_MP",
+    "w": 5.49,
+    "why": [
+     "pair:BEGIN/END",
+     "family:打坐练功",
+     "token:RECOVER"
+    ]
+   },
+   {
+    "to": "BEGIN_LIANGONG",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "BEGIN_WOOD_TRAINING",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "END_DAZUO",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "END_LIANGONG",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "END_WOOD_TRAINING",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   }
+  ],
+  "BEGIN_ROLLDICE": [
+   {
+    "to": "BEGIN_DRAGON_ROLLDICE",
+    "w": 1.33,
+    "why": [
+     "token:ROLLDICE",
+     "token:ROLL",
+     "token:DICE"
+    ]
+   },
+   {
+    "to": "ROLLDICE_EVENT",
+    "w": 1.33,
+    "why": [
+     "token:ROLLDICE",
+     "token:ROLL",
+     "token:DICE"
+    ]
+   }
+  ],
+  "BEGIN_WEDDING": [
+   {
+    "to": "BIRTHCHILD",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "EXILE_CHILD",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "MAKE_LOVE",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "MARRY_AWARD",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   }
+  ],
+  "BEGIN_WOOD_TRAINING": [
+   {
+    "to": "END_WOOD_TRAINING",
+    "w": 6.81,
+    "why": [
+     "pair:BEGIN/END",
+     "family:打坐练功",
+     "token:WOOD"
+    ]
+   },
+   {
+    "to": "PAUSE_WOOD_TRAINING",
+    "w": 3.81,
+    "why": [
+     "family:打坐练功",
+     "token:WOOD",
+     "token:WOOK"
+    ]
+   },
+   {
+    "to": "BEGIN_LIANGONG",
+    "w": 2.42,
+    "why": [
+     "family:打坐练功",
+     "token:TRAIN"
+    ]
+   },
+   {
+    "to": "END_LIANGONG",
+    "w": 2.42,
+    "why": [
+     "family:打坐练功",
+     "token:TRAIN"
+    ]
+   },
+   {
+    "to": "BEGIN_RECOVER_MP",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "END_DAZUO",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   }
+  ],
+  "BIND_RECUIT_CODE": [
+   {
+    "to": "CREATE_RECUIT_CODE",
+    "w": 0.96,
+    "why": [
+     "token:CODE",
+     "token:RECUIT"
+    ]
+   },
+   {
+    "to": "RECEIVE_BIND_RECUITAWARD",
+    "w": 0.93,
+    "why": [
+     "token:BIND",
+     "token:RECUIT"
+    ]
+   }
+  ],
+  "BIRTHCHILD": [
+   {
+    "to": "EXILE_CHILD",
+    "w": 15.68,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "BEGIN_WEDDING",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "MAKE_LOVE",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "MARRY_AWARD",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   }
+  ],
+  "BUTLER_DISPATCH": [
+   {
+    "to": "DISPATCH_AWARD",
+    "w": 1.14,
+    "why": [
+     "field:housekeeper",
+     "token:DISPATCH"
+    ]
+   },
+   {
+    "to": "BUY_BUTLER",
+    "w": 1.09,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER"
+    ]
+   },
+   {
+    "to": "BUY_BUTLER_VIP",
+    "w": 1.09,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER"
+    ]
+   },
+   {
+    "to": "SET_BUTLER",
+    "w": 1.09,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER"
+    ]
+   }
+  ],
+  "BUY_ACTIVITY_NUM": [
+   {
+    "to": "CAN_BUYACTIVITY_NUM",
+    "w": 1.9,
+    "why": [
+     "field:passCard",
+     "field:goldArr",
+     "token:ACTIVITY"
+    ]
+   },
+   {
+    "to": "ENTER_NEXT_FLOOR",
+    "w": 1.54,
+    "why": [
+     "field:passCard",
+     "field:goldArr"
+    ]
+   },
+   {
+    "to": "GET_TREASURE_AWARD",
+    "w": 1.54,
+    "why": [
+     "field:passCard",
+     "field:goldArr"
+    ]
+   }
+  ],
+  "BUY_BUTLER": [
+   {
+    "to": "SET_BUTLER",
+    "w": 1.53,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER",
+     "token:HELPER"
+    ]
+   },
+   {
+    "to": "BUTLER_DISPATCH",
+    "w": 1.09,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER"
+    ]
+   },
+   {
+    "to": "BUY_BUTLER_VIP",
+    "w": 1.09,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER"
+    ]
+   },
+   {
+    "to": "CALL_HELPER_BY_ID",
+    "w": 1.07,
+    "why": [
+     "field:housekeeper",
+     "token:HELPER"
+    ]
+   }
+  ],
+  "BUY_BUTLER_VIP": [
+   {
+    "to": "BUTLER_DISPATCH",
+    "w": 1.09,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER"
+    ]
+   },
+   {
+    "to": "BUY_BUTLER",
+    "w": 1.09,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER"
+    ]
+   },
+   {
+    "to": "SET_BUTLER",
+    "w": 1.09,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER"
+    ]
+   }
+  ],
+  "BUY_COPY_BOOK_GIFT": [
+   {
+    "to": "REWARD_BOOK_GIFT",
+    "w": 1.17,
+    "why": [
+     "token:BOOK",
+     "token:COPY",
+     "token:GIFT"
+    ]
+   }
+  ],
+  "BUY_FORMULA_DATA": [
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_MARKET_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_MOUNT",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_SCHOOL_SHOP",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   }
+  ],
+  "BUY_GOOD_AND_EVIL_SHOP_ITEM": [
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 5.41,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 5.08,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "REQ_BUY_FASHION",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "SELL_ITEM",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "QUICK_BUY",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "BUY_MARKET_ITEM": [
+   {
+    "to": "BUY_FORMULA_DATA",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_MOUNT",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_SCHOOL_SHOP",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   }
+  ],
+  "BUY_MOUNT": [
+   {
+    "to": "BUY_FORMULA_DATA",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_MARKET_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_SCHOOL_SHOP",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   }
+  ],
+  "BUY_SCHOOL_SHOP": [
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.28,
+    "why": [
+     "family:商店交易",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 2.28,
+    "why": [
+     "family:商店交易",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 2.28,
+    "why": [
+     "family:商店交易",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "INN_BUY_SHOP",
+    "w": 2.28,
+    "why": [
+     "family:商店交易",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "BUY_FORMULA_DATA",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_MARKET_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   }
+  ],
+  "BUY_SHOP_ITEM": [
+   {
+    "to": "SELL_ITEM",
+    "w": 6.83,
+    "why": [
+     "rw:coins",
+     "family:商店交易",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "QUICK_BUY",
+    "w": 6.83,
+    "why": [
+     "rw:coins",
+     "family:商店交易",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 5.08,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 5.08,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "REQ_BUY_FASHION",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "USER_LOADGAME",
+    "w": 4.02,
+    "why": [
+     "rw:coins",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   }
+  ],
+  "BUY_SKILL_SKIN_ACTIVE_SHOP": [
+   {
+    "to": "GET_SKILL_SKIN_ACTIVE_SHOP",
+    "w": 1.37,
+    "why": [
+     "token:SKIN",
+     "token:ACTIVE",
+     "token:SKILL"
+    ]
+   },
+   {
+    "to": "BUY_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "GET_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "REFRESH_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "BUY_SKILL_SKIN_SHOP": [
+   {
+    "to": "BUY_SKILL_SKIN_ACTIVE_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "GET_SKILL_SKIN_ACTIVE_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "GET_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "REFRESH_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "BUY_SPECIAL_GOODS": [
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 5.41,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 5.08,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "REQ_BUY_FASHION",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "SELL_ITEM",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "QUICK_BUY",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "SPECIAL_SHOP",
+    "w": 3.46,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "BUY_SPRING_GIFT_PERMANENT": [
+   {
+    "to": "GET_SPRING_GIFT_PERMANENT",
+    "w": 1.09,
+    "why": [
+     "token:PERMANENT",
+     "token:SPRING",
+     "token:GIFT"
+    ]
+   }
+  ],
+  "BUY_UFO_GAME_COIN": [
+   {
+    "to": "GET_UFO_CATCHER_DATA",
+    "w": 1.28,
+    "why": [
+     "field:buyCoinCount",
+     "token:UFO"
+    ]
+   }
+  ],
+  "BUY_UFO_REFRESH_TIMES": [
+   {
+    "to": "GET_UFO_CATCHER_DATA",
+    "w": 2.84,
+    "why": [
+     "field:freeRefreshTimes",
+     "field:buyRefreshTimes",
+     "field:refreshTimes"
+    ]
+   },
+   {
+    "to": "USE_UFO_REFRESH",
+    "w": 2.84,
+    "why": [
+     "field:freeRefreshTimes",
+     "field:buyRefreshTimes",
+     "field:refreshTimes"
+    ]
+   }
+  ],
+  "CALL_DRAGON": [
+   {
+    "to": "GET_DRAGON",
+    "w": 14.59,
+    "why": [
+     "family:龙",
+     "field:TeamBrief",
+     "field:TeamTianJiLockData"
+    ]
+   },
+   {
+    "to": "MAKE_WISH_DRAGON",
+    "w": 14.59,
+    "why": [
+     "family:龙",
+     "field:TeamBrief",
+     "field:TeamTianJiLockData"
+    ]
+   },
+   {
+    "to": "BEGIN_DRAGON_ROLLDICE",
+    "w": 2.46,
+    "why": [
+     "family:龙",
+     "token:DRAGON"
+    ]
+   }
+  ],
+  "CALL_HELPER_BY_ID": [
+   {
+    "to": "BUY_BUTLER",
+    "w": 1.07,
+    "why": [
+     "field:housekeeper",
+     "token:HELPER"
+    ]
+   },
+   {
+    "to": "SET_BUTLER",
+    "w": 1.07,
+    "why": [
+     "field:housekeeper",
+     "token:HELPER"
+    ]
+   },
+   {
+    "to": "GET_HELPER_CALL_LIST",
+    "w": 0.93,
+    "why": [
+     "token:CALL",
+     "token:HELPER"
+    ]
+   }
+  ],
+  "CAN_BUYACTIVITY_NUM": [
+   {
+    "to": "BUY_ACTIVITY_NUM",
+    "w": 1.9,
+    "why": [
+     "field:passCard",
+     "field:goldArr",
+     "token:ACTIVITY"
+    ]
+   },
+   {
+    "to": "ENTER_NEXT_FLOOR",
+    "w": 1.54,
+    "why": [
+     "field:passCard",
+     "field:goldArr"
+    ]
+   },
+   {
+    "to": "GET_TREASURE_AWARD",
+    "w": 1.54,
+    "why": [
+     "field:passCard",
+     "field:goldArr"
+    ]
+   }
+  ],
+  "CHANGE_DELEGATE_TASK": [
+   {
+    "to": "DELEGATE_TASK",
+    "w": 2.77,
+    "why": [
+     "family:任务主线",
+     "token:DELEGATE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CIRCLE_TASK_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "FINISH_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GETCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "CHANGE_SKILL_KNACK": [
+   {
+    "to": "ROGUE_CHANGE_SKNACK",
+    "w": 3.04,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK",
+     "token:CHANGE"
+    ]
+   },
+   {
+    "to": "BATCH_RESOLVE_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "GET_KNACK_LOTTERY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "GET_KNACK_LOTTERY_HISTORY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "KNACK_LOTTERY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "RESOLVE_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   }
+  ],
+  "CHECK_FISHING_REWARDS": [
+   {
+    "to": "END_FISHING",
+    "w": 2.33,
+    "why": [
+     "fk:fishpond",
+     "field:siteID",
+     "token:FISH"
+    ]
+   },
+   {
+    "to": "START_FISHING",
+    "w": 2.33,
+    "why": [
+     "fk:fishpond",
+     "field:siteID",
+     "token:FISH"
+    ]
+   },
+   {
+    "to": "CHECK_HIRE",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   },
+   {
+    "to": "HIRE_NPC",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   }
+  ],
+  "CHECK_HIRE": [
+   {
+    "to": "HIRE_NPC",
+    "w": 2.8,
+    "why": [
+     "fk:fishpond",
+     "field:siteID",
+     "token:HIRE"
+    ]
+   },
+   {
+    "to": "CHECK_FISHING_REWARDS",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   },
+   {
+    "to": "END_FISHING",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   },
+   {
+    "to": "START_FISHING",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   }
+  ],
+  "CHECK_LARGE_EXTRA": [
+   {
+    "to": "DICE_CHECKEXTRA_EVENT",
+    "w": 0.97,
+    "why": [
+     "token:EXTRA",
+     "token:LARGE"
+    ]
+   },
+   {
+    "to": "GET_LARGE_EXTRA",
+    "w": 0.97,
+    "why": [
+     "token:EXTRA",
+     "token:LARGE"
+    ]
+   }
+  ],
+  "CHILD_WASH_EVENT": [
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "EXILE_CHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "GIVE_CHILD_NAME",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "RESET_CHILD_FOSTER",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   }
+  ],
+  "CHOOSE_GIRL_EVENT": [
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BEGIN_WEDDING",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "CHILD_WASH_EVENT",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "DIVORCENPC",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   }
+  ],
+  "CHOOSE_USEITEM_AWARD": [
+   {
+    "to": "GET_USEITEM_AWARD",
+    "w": 1.03,
+    "why": [
+     "token:USED",
+     "token:USEITEM"
+    ]
+   }
+  ],
+  "CIRCLE_TASK_TASK": [
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GETCIRCLETASK",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GET_CIRCLE_TASK_LIST",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CHANGE_DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "CLEAN_DEAD_CROP": [
+   {
+    "to": "CROP_CHANGE_STATE",
+    "w": 1.14,
+    "why": [
+     "field:sIdx",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "EXPEDITE_CROP",
+    "w": 1.14,
+    "why": [
+     "field:sIdx",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "OBTAINCROP",
+    "w": 1.14,
+    "why": [
+     "field:sIdx",
+     "token:CROP"
+    ]
+   }
+  ],
+  "CLOSE_NEW_SWEEP_EVENT": [
+   {
+    "to": "GET_NEW_SWEEP_EVENT",
+    "w": 1.53,
+    "why": [
+     "field:batch_sweep_data",
+     "token:SWEEP",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "NEW_TOWER_SWEEP_EVENT",
+    "w": 1.53,
+    "why": [
+     "field:batch_sweep_data",
+     "token:SWEEP",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 1.07,
+    "why": [
+     "field:batch_sweep_data",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "TOWER_CHOOSE_PANDA_EVENT",
+    "w": 1.07,
+    "why": [
+     "field:batch_sweep_data",
+     "token:TOWER"
+    ]
+   }
+  ],
+  "CREATE_POST": [
+   {
+    "to": "GET_SCHOOL_POSTS",
+    "w": 1.03,
+    "why": [
+     "token:REVIEW",
+     "token:POST"
+    ]
+   }
+  ],
+  "CREATE_RECUIT_CODE": [
+   {
+    "to": "BIND_RECUIT_CODE",
+    "w": 0.96,
+    "why": [
+     "token:CODE",
+     "token:RECUIT"
+    ]
+   }
+  ],
+  "CROP_CHANGE_STATE": [
+   {
+    "to": "EXPEDITE_CROP",
+    "w": 1.91,
+    "why": [
+     "field:crop",
+     "field:sIdx",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "STEAL_CROP_EVENT",
+    "w": 1.17,
+    "why": [
+     "field:crop",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "CLEAN_DEAD_CROP",
+    "w": 1.14,
+    "why": [
+     "field:sIdx",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "OBTAINCROP",
+    "w": 1.14,
+    "why": [
+     "field:sIdx",
+     "token:CROP"
+    ]
+   }
+  ],
+  "CYCLE_LIFE": [
+   {
+    "to": "IS_CYCLE_LIFE",
+    "w": 0.97,
+    "why": [
+     "token:CYCLE",
+     "token:LIFE"
+    ]
+   },
+   {
+    "to": "SPECIAL_CYCLE_LIFE",
+    "w": 0.97,
+    "why": [
+     "token:CYCLE",
+     "token:LIFE"
+    ]
+   }
+  ],
+  "DELEGATE_TASK": [
+   {
+    "to": "CHANGE_DELEGATE_TASK",
+    "w": 2.77,
+    "why": [
+     "family:任务主线",
+     "token:DELEGATE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CIRCLE_TASK_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "FINISH_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GETCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "DELETE_EQUIP_LOCK": [
+   {
+    "to": "ADD_EQUIP_LOCK",
+    "w": 3.81,
+    "why": [
+     "pair:ADD/DEL",
+     "field:equipLocks"
+    ]
+   }
+  ],
+  "DICE_BATTLE_RESULT": [
+   {
+    "to": "BATTLE_END_REWARD",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "GOOD_AND_EVIL_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVP_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "SERVER_ROGUE_NPC_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "DICE_BUY_PLACE_GOODS": [
+   {
+    "to": "DICE_SELL_PLACE_GOODS",
+    "w": 4.17,
+    "why": [
+     "pair:BUY/SELL",
+     "token:PLACE",
+     "token:DICE"
+    ]
+   }
+  ],
+  "DICE_CHECKEXTRA_EVENT": [
+   {
+    "to": "CHECK_LARGE_EXTRA",
+    "w": 0.97,
+    "why": [
+     "token:EXTRA",
+     "token:LARGE"
+    ]
+   },
+   {
+    "to": "GET_LARGE_EXTRA",
+    "w": 0.97,
+    "why": [
+     "token:EXTRA",
+     "token:LARGE"
+    ]
+   }
+  ],
+  "DICE_SELL_PLACE_GOODS": [
+   {
+    "to": "DICE_BUY_PLACE_GOODS",
+    "w": 4.17,
+    "why": [
+     "pair:BUY/SELL",
+     "token:PLACE",
+     "token:DICE"
+    ]
+   }
+  ],
+  "DISPATCH_AWARD": [
+   {
+    "to": "BUTLER_DISPATCH",
+    "w": 1.14,
+    "why": [
+     "field:housekeeper",
+     "token:DISPATCH"
+    ]
+   }
+  ],
+  "DISPOSS_HOME_EVENT": [
+   {
+    "to": "ONE_KEY_DISPOSS_HOME_EVENT",
+    "w": 1.63,
+    "why": [
+     "field:aExp",
+     "token:DISPOSS",
+     "token:HOME"
+    ]
+   },
+   {
+    "to": "STEAL_CROP_EVENT",
+    "w": 1.51,
+    "why": [
+     "field:crop",
+     "field:aExp"
+    ]
+   }
+  ],
+  "DIVORCENPC": [
+   {
+    "to": "MARRY_NPC_EVENT",
+    "w": 5.0,
+    "why": [
+     "pair:MARRY/DIVORCE",
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BEGIN_WEDDING",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "CHILD_WASH_EVENT",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   }
+  ],
+  "DOG_BATTLE_RESULT": [
+   {
+    "to": "REQ_DOG_PARTNER_END_BATTLE",
+    "w": 3.09,
+    "why": [
+     "family:斗狗",
+     "token:DOG",
+     "token:RESULT"
+    ]
+   },
+   {
+    "to": "ENTER_PVEDOG_FIGHT",
+    "w": 2.73,
+    "why": [
+     "family:斗狗",
+     "token:DOG",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "REQ_DOG_PARTNER_PVE_BATTLE",
+    "w": 2.73,
+    "why": [
+     "family:斗狗",
+     "token:DOG",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "FEED_DOG",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "LOOK_DOG_LOG",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   }
+  ],
+  "END_CAST": [
+   {
+    "to": "BEGINCAST",
+    "w": 4.29,
+    "why": [
+     "pair:BEGIN/END",
+     "field:inherit",
+     "token:CAST"
+    ]
+   }
+  ],
+  "END_DAZUO": [
+   {
+    "to": "START_DAZUO",
+    "w": 5.97,
+    "why": [
+     "pair:BEGIN/END",
+     "family:打坐练功",
+     "token:MEDITATION"
+    ]
+   },
+   {
+    "to": "END_LIANGONG",
+    "w": 3.55,
+    "why": [
+     "family:打坐练功",
+     "field:genguTime",
+     "field:hanyusuiTime"
+    ]
+   },
+   {
+    "to": "END_RECOVER_MP",
+    "w": 3.55,
+    "why": [
+     "family:打坐练功",
+     "field:genguTime",
+     "field:hanyusuiTime"
+    ]
+   },
+   {
+    "to": "VIGOR_DAZUO",
+    "w": 2.97,
+    "why": [
+     "family:打坐练功",
+     "token:MEDITATION",
+     "token:DAZUO"
+    ]
+   },
+   {
+    "to": "BEGIN_LIANGONG",
+    "w": 2.74,
+    "why": [
+     "family:打坐练功",
+     "field:hanyusuiTime"
+    ]
+   },
+   {
+    "to": "BEGIN_RECOVER_MP",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   }
+  ],
+  "END_DOUBLE_TRAINING": [
+   {
+    "to": "USER_DOUBLE_TRAINING",
+    "w": 0.9,
+    "why": [
+     "token:DOUBLE",
+     "token:TRAIN"
+    ]
+   }
+  ],
+  "END_DUNGEON_ADVENTURE": [
+   {
+    "to": "SWEEP_DUNGEON",
+    "w": 1.64,
+    "why": [
+     "field:liveness",
+     "token:DUNGEON",
+     "token:COPY"
+    ]
+   }
+  ],
+  "END_EAT_BY_TABLE": [
+   {
+    "to": "START_EAT_BY_TABLE",
+    "w": 3.96,
+    "why": [
+     "pair:START/END",
+     "token:EAT",
+     "token:TABLE"
+    ]
+   }
+  ],
+  "END_FISHING": [
+   {
+    "to": "START_FISHING",
+    "w": 5.33,
+    "why": [
+     "pair:BEGIN/END",
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   },
+   {
+    "to": "CHECK_FISHING_REWARDS",
+    "w": 2.33,
+    "why": [
+     "fk:fishpond",
+     "field:siteID",
+     "token:FISH"
+    ]
+   },
+   {
+    "to": "CHECK_HIRE",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   },
+   {
+    "to": "HIRE_NPC",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   }
+  ],
+  "END_LIANGONG": [
+   {
+    "to": "BEGIN_LIANGONG",
+    "w": 7.53,
+    "why": [
+     "pair:BEGIN/END",
+     "family:打坐练功",
+     "field:isCollective"
+    ]
+   },
+   {
+    "to": "END_DAZUO",
+    "w": 3.55,
+    "why": [
+     "family:打坐练功",
+     "field:genguTime",
+     "field:hanyusuiTime"
+    ]
+   },
+   {
+    "to": "END_RECOVER_MP",
+    "w": 3.55,
+    "why": [
+     "family:打坐练功",
+     "field:genguTime",
+     "field:hanyusuiTime"
+    ]
+   },
+   {
+    "to": "BEGIN_WOOD_TRAINING",
+    "w": 2.42,
+    "why": [
+     "family:打坐练功",
+     "token:TRAIN"
+    ]
+   },
+   {
+    "to": "END_WOOD_TRAINING",
+    "w": 2.42,
+    "why": [
+     "family:打坐练功",
+     "token:TRAIN"
+    ]
+   },
+   {
+    "to": "PAUSE_WOOD_TRAINING",
+    "w": 2.42,
+    "why": [
+     "family:打坐练功",
+     "token:TRAIN"
+    ]
+   }
+  ],
+  "END_MAKE_MEDICINE": [
+   {
+    "to": "BEGINE_MAKE_MEDICINE",
+    "w": 3.91,
+    "why": [
+     "pair:BEGIN/END",
+     "token:MEDICINE",
+     "token:MAKE"
+    ]
+   },
+   {
+    "to": "END_MAKE_QUIP",
+    "w": 1.04,
+    "why": [
+     "field:equipObj",
+     "token:MAKE"
+    ]
+   }
+  ],
+  "END_MAKE_QUIP": [
+   {
+    "to": "BEGIN_MAKE_QUIP",
+    "w": 3.94,
+    "why": [
+     "pair:BEGIN/END",
+     "token:QUIP",
+     "token:MAKE"
+    ]
+   },
+   {
+    "to": "END_MAKE_MEDICINE",
+    "w": 1.04,
+    "why": [
+     "field:equipObj",
+     "token:MAKE"
+    ]
+   }
+  ],
+  "END_PLAY_GAME": [
+   {
+    "to": "BEGIN_PLAY_GAME",
+    "w": 4.59,
+    "why": [
+     "pair:BEGIN/END",
+     "field:childName",
+     "token:PLAY"
+    ]
+   }
+  ],
+  "END_RECOVER_MP": [
+   {
+    "to": "BEGIN_RECOVER_MP",
+    "w": 5.49,
+    "why": [
+     "pair:BEGIN/END",
+     "family:打坐练功",
+     "token:RECOVER"
+    ]
+   },
+   {
+    "to": "END_DAZUO",
+    "w": 3.55,
+    "why": [
+     "family:打坐练功",
+     "field:genguTime",
+     "field:hanyusuiTime"
+    ]
+   },
+   {
+    "to": "END_LIANGONG",
+    "w": 3.55,
+    "why": [
+     "family:打坐练功",
+     "field:genguTime",
+     "field:hanyusuiTime"
+    ]
+   },
+   {
+    "to": "BEGIN_LIANGONG",
+    "w": 2.74,
+    "why": [
+     "family:打坐练功",
+     "field:hanyusuiTime"
+    ]
+   },
+   {
+    "to": "BEGIN_WOOD_TRAINING",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "END_WOOD_TRAINING",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   }
+  ],
+  "END_ROGUE_EXPLORE": [
+   {
+    "to": "START_ROGUE_EXPLORE",
+    "w": 3.46,
+    "why": [
+     "pair:START/END",
+     "token:EXPLORE"
+    ]
+   }
+  ],
+  "END_SAVE_NPC": [
+   {
+    "to": "BEGINSAVE_NPC",
+    "w": 3.81,
+    "why": [
+     "pair:BEGIN/END",
+     "field:npcIDArr"
+    ]
+   }
+  ],
+  "END_WOOD_TRAINING": [
+   {
+    "to": "BEGIN_WOOD_TRAINING",
+    "w": 6.81,
+    "why": [
+     "pair:BEGIN/END",
+     "family:打坐练功",
+     "token:WOOD"
+    ]
+   },
+   {
+    "to": "PAUSE_WOOD_TRAINING",
+    "w": 3.81,
+    "why": [
+     "family:打坐练功",
+     "token:WOOD",
+     "token:WOOK"
+    ]
+   },
+   {
+    "to": "BEGIN_LIANGONG",
+    "w": 2.42,
+    "why": [
+     "family:打坐练功",
+     "token:TRAIN"
+    ]
+   },
+   {
+    "to": "END_LIANGONG",
+    "w": 2.42,
+    "why": [
+     "family:打坐练功",
+     "token:TRAIN"
+    ]
+   },
+   {
+    "to": "BEGIN_RECOVER_MP",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "END_DAZUO",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   }
+  ],
+  "ENTER_DUNGEON": [
+   {
+    "to": "SWEEP_DUNGEON",
+    "w": 1.73,
+    "why": [
+     "field:copyID",
+     "token:DUNGEON",
+     "token:COPY"
+    ]
+   }
+  ],
+  "ENTER_GET_CLIMBLING_EVENT": [
+   {
+    "to": "ACTIVE_TOWER_EVENT",
+    "w": 1.16,
+    "why": [
+     "field:chickenLegNum",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "TOWER_RANDOM_EVENT",
+    "w": 1.16,
+    "why": [
+     "field:chickenLegNum",
+     "token:TOWER"
+    ]
+   }
+  ],
+  "ENTER_NEXT_FLOOR": [
+   {
+    "to": "BUY_ACTIVITY_NUM",
+    "w": 1.54,
+    "why": [
+     "field:passCard",
+     "field:goldArr"
+    ]
+   },
+   {
+    "to": "CAN_BUYACTIVITY_NUM",
+    "w": 1.54,
+    "why": [
+     "field:passCard",
+     "field:goldArr"
+    ]
+   },
+   {
+    "to": "GET_TREASURE_AWARD",
+    "w": 1.54,
+    "why": [
+     "field:passCard",
+     "field:goldArr"
+    ]
+   }
+  ],
+  "ENTER_OTHER_HOME": [
+   {
+    "to": "GETHOME_LIST",
+    "w": 2.1,
+    "why": [
+     "field:dog",
+     "field:soilArr",
+     "token:HOME"
+    ]
+   }
+  ],
+  "ENTER_PVEDOG_FIGHT": [
+   {
+    "to": "REQ_DOG_PARTNER_END_BATTLE",
+    "w": 3.09,
+    "why": [
+     "family:斗狗",
+     "token:DOG",
+     "token:PVE"
+    ]
+   },
+   {
+    "to": "REQ_DOG_PARTNER_PVE_BATTLE",
+    "w": 3.09,
+    "why": [
+     "family:斗狗",
+     "token:DOG",
+     "token:PVE"
+    ]
+   },
+   {
+    "to": "DOG_BATTLE_RESULT",
+    "w": 2.73,
+    "why": [
+     "family:斗狗",
+     "token:DOG",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "FEED_DOG",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "LOOK_DOG_LOG",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "ENTER_PVE_ROGUE_FIGHT",
+    "w": 1.14,
+    "why": [
+     "token:FIGHT",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "ENTER_PVE_ROGUE_FIGHT": [
+   {
+    "to": "ENTER_PVEDOG_FIGHT",
+    "w": 1.14,
+    "why": [
+     "token:FIGHT",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "EQUIP_BATCH_RESOLVE": [
+   {
+    "to": "BATCH_RESOLVE_KNACK",
+    "w": 0.91,
+    "why": [
+     "token:RESOLVE",
+     "token:BATCH"
+    ]
+   }
+  ],
+  "EUIQP_SUITS_UPGRADE": [
+   {
+    "to": "REQ_EQUIP_UPGRADE",
+    "w": 1.72,
+    "why": [
+     "field:equipInherit",
+     "field:playerEquip"
+    ]
+   }
+  ],
+  "EXCHANGE_HLEX_CHANGEITEM": [
+   {
+    "to": "GET_HLEX_CHANGEITEMDATA",
+    "w": 1.74,
+    "why": [
+     "field:shopObj",
+     "token:HLEXCHANGE",
+     "token:HLEX"
+    ]
+   },
+   {
+    "to": "GET_HLEX_CHANGESHOP",
+    "w": 1.74,
+    "why": [
+     "field:shopObj",
+     "token:HLEXCHANGE",
+     "token:HLEX"
+    ]
+   }
+  ],
+  "EXCHANGE_ITEM": [
+   {
+    "to": "USE_ITEM",
+    "w": 4.29,
+    "why": [
+     "rw:hungerMax",
+     "field:itemID",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "FINISH_TASK",
+    "w": 2.86,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "REQ_BUY_FASHION",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "GET_TASK",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "EXCHANGE_SPRING_SHOP": [
+   {
+    "to": "GET_SPRING_EXCHANGE_SHOP",
+    "w": 0.98,
+    "why": [
+     "token:EXCHANGE",
+     "token:SPRING",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "EXILE_CHILD": [
+   {
+    "to": "BIRTHCHILD",
+    "w": 15.68,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "BEGIN_WEDDING",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "MAKE_LOVE",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "MARRY_AWARD",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   }
+  ],
+  "EXPEDITE_CROP": [
+   {
+    "to": "CROP_CHANGE_STATE",
+    "w": 1.91,
+    "why": [
+     "field:crop",
+     "field:sIdx",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "STEAL_CROP_EVENT",
+    "w": 1.17,
+    "why": [
+     "field:crop",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "CLEAN_DEAD_CROP",
+    "w": 1.14,
+    "why": [
+     "field:sIdx",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "OBTAINCROP",
+    "w": 1.14,
+    "why": [
+     "field:sIdx",
+     "token:CROP"
+    ]
+   }
+  ],
+  "FASHION_EFFECT": [
+   {
+    "to": "SET_YP_EFFECT_STATE",
+    "w": 0.94,
+    "why": [
+     "token:EFFECT",
+     "token:FASHION"
+    ]
+   }
+  ],
+  "FEED_DOG": [
+   {
+    "to": "DOG_BATTLE_RESULT",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "ENTER_PVEDOG_FIGHT",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "LOOK_DOG_LOG",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "REQ_DOG_PARTNER_END_BATTLE",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "REQ_DOG_PARTNER_PVE_BATTLE",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   }
+  ],
+  "FIND_OTHER_HOME": [
+   {
+    "to": "OTHER_PLAYER_HOME",
+    "w": 1.25,
+    "why": [
+     "token:FIND",
+     "token:OTHER",
+     "token:HOME"
+    ]
+   }
+  ],
+  "FINISH_TASK": [
+   {
+    "to": "GET_TASK",
+    "w": 7.15,
+    "why": [
+     "rw:accepted",
+     "family:任务主线",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "USER_LOADGAME",
+    "w": 4.08,
+    "why": [
+     "rw:accepted",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "SYCN_TASK",
+    "w": 3.53,
+    "why": [
+     "family:任务主线",
+     "rw:accepted",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 2.86,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "EXCHANGE_ITEM",
+    "w": 2.86,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "RG_SHOP_BY_ITEM",
+    "w": 2.86,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "GETCIRCLETASK": [
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CIRCLE_TASK_TASK",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GET_CIRCLE_TASK_LIST",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CHANGE_DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "GETHOME_LIST": [
+   {
+    "to": "ENTER_OTHER_HOME",
+    "w": 2.1,
+    "why": [
+     "field:dog",
+     "field:soilArr",
+     "token:HOME"
+    ]
+   }
+  ],
+  "GET_ACHIEVE_DATA": [
+   {
+    "to": "RECEIVE_ACHIEVE_REWARD",
+    "w": 4.15,
+    "why": [
+     "family:成就",
+     "field:groupPoints",
+     "field:achieveIdArr"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_RATE_REWARD",
+    "w": 3.29,
+    "why": [
+     "family:成就",
+     "field:rateIds",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_SUIT_REWARD",
+    "w": 3.29,
+    "why": [
+     "family:成就",
+     "field:srd",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "EXCHANGE_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "ADD_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "GET_ACHIEVE_MARK": [
+   {
+    "to": "GET_ACHIEVE_DATA",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVEMENT_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_RATE_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_SUIT_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   }
+  ],
+  "GET_ADVANCED_TASKS_TIP": [
+   {
+    "to": "SET_ADVANCED_TASKS_TIP",
+    "w": 4.19,
+    "why": [
+     "pair:GET/SET",
+     "token:TIP",
+     "token:ADVANCED"
+    ]
+   }
+  ],
+  "GET_ALL_ACTIVITY": [
+   {
+    "to": "GET_EVERYDAY_ACTIVE",
+    "w": 1.13,
+    "why": [
+     "field:taskObj",
+     "token:ACTIVITY"
+    ]
+   }
+  ],
+  "GET_BACK_SHOP": [
+   {
+    "to": "GET_FASHION_SHOP",
+    "w": 1.14,
+    "why": [
+     "field:shopArr",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "GET_BREAK_FRIENDLIST": [
+   {
+    "to": "USER_FRIENDLIST",
+    "w": 0.9,
+    "why": [
+     "token:FRIENDLIST",
+     "token:FRIEND"
+    ]
+   }
+  ],
+  "GET_CHANGE_SHOP": [
+   {
+    "to": "GET_HLEX_CHANGESHOP",
+    "w": 1.05,
+    "why": [
+     "field:shopObj",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "GET_CIRCLE_TASK_LIST": [
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CIRCLE_TASK_TASK",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GETCIRCLETASK",
+    "w": 2.72,
+    "why": [
+     "family:任务主线",
+     "token:CIRCLE",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CHANGE_DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "GET_CREATE_INFO": [
+   {
+    "to": "GET_CREATE_ROLE_ACT",
+    "w": 2.87,
+    "why": [
+     "field:talnetId",
+     "field:birthId",
+     "field:faceId"
+    ]
+   },
+   {
+    "to": "RESET_ROLE",
+    "w": 2.43,
+    "why": [
+     "field:talnetId",
+     "field:birthId",
+     "field:faceId"
+    ]
+   }
+  ],
+  "GET_CREATE_ROLE_ACT": [
+   {
+    "to": "RESET_ROLE",
+    "w": 2.91,
+    "why": [
+     "field:talnetId",
+     "field:birthId",
+     "field:faceId"
+    ]
+   },
+   {
+    "to": "GET_CREATE_INFO",
+    "w": 2.87,
+    "why": [
+     "field:talnetId",
+     "field:birthId",
+     "field:faceId"
+    ]
+   }
+  ],
+  "GET_CUSTOM_AI": [
+   {
+    "to": "SAVE_CUSTOM_AI",
+    "w": 3.88,
+    "why": [
+     "pair:GET/SET",
+     "token:CUSTOM",
+     "token:CHAT"
+    ]
+   }
+  ],
+  "GET_DOU_YIN_OPENID": [
+   {
+    "to": "GET_WX_XYX_OPENID",
+    "w": 1.38,
+    "why": [
+     "field:openid",
+     "token:OPENID"
+    ]
+   }
+  ],
+  "GET_DRAGON": [
+   {
+    "to": "CALL_DRAGON",
+    "w": 14.59,
+    "why": [
+     "family:龙",
+     "field:TeamBrief",
+     "field:TeamTianJiLockData"
+    ]
+   },
+   {
+    "to": "MAKE_WISH_DRAGON",
+    "w": 14.59,
+    "why": [
+     "family:龙",
+     "field:TeamBrief",
+     "field:TeamTianJiLockData"
+    ]
+   },
+   {
+    "to": "BEGIN_DRAGON_ROLLDICE",
+    "w": 2.46,
+    "why": [
+     "family:龙",
+     "token:DRAGON"
+    ]
+   }
+  ],
+  "GET_EVERYDAY_ACTIVE": [
+   {
+    "to": "GET_ALL_ACTIVITY",
+    "w": 1.13,
+    "why": [
+     "field:taskObj",
+     "token:ACTIVITY"
+    ]
+   }
+  ],
+  "GET_FASHION_SHOP": [
+   {
+    "to": "GET_BACK_SHOP",
+    "w": 1.14,
+    "why": [
+     "field:shopArr",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "WEAR_FASHION",
+    "w": 0.94,
+    "why": [
+     "token:FASION",
+     "token:FASHION"
+    ]
+   }
+  ],
+  "GET_FURNACE_DATA": [
+   {
+    "to": "PUT_REFINING_ITEM_FURNACE",
+    "w": 1.29,
+    "why": [
+     "token:FURNACE",
+     "token:REFIN",
+     "token:SPRING"
+    ]
+   },
+   {
+    "to": "START_REFINING_FURNACE",
+    "w": 1.29,
+    "why": [
+     "token:FURNACE",
+     "token:REFIN",
+     "token:SPRING"
+    ]
+   }
+  ],
+  "GET_GE_HELP_INFO": [
+   {
+    "to": "HELP_DONE_TASK",
+    "w": 4.95,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GOOD_AND_EVIL_DATA",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GOOD_AND_EVIL_RETIRE_DATA",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GOOD_AND_EVIL_RETIRE_LIST",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   }
+  ],
+  "GET_GMGIVE_ITEM": [
+   {
+    "to": "GET_GMGIVE_ITEM_LIST",
+    "w": 2.65,
+    "why": [
+     "field:expireTime",
+     "field:titleID",
+     "token:GMGIVE"
+    ]
+   }
+  ],
+  "GET_GMGIVE_ITEM_LIST": [
+   {
+    "to": "GET_GMGIVE_ITEM",
+    "w": 2.65,
+    "why": [
+     "field:expireTime",
+     "field:titleID",
+     "token:GMGIVE"
+    ]
+   }
+  ],
+  "GET_GOLD_CONSUME_REWARD_DATA": [
+   {
+    "to": "RECEIVE_GOLD_CONSUME_REWARD",
+    "w": 1.44,
+    "why": [
+     "token:CONSUME",
+     "token:CONSUMED",
+     "token:GOLD"
+    ]
+   }
+  ],
+  "GET_GOOD_AND_EVIL_DATA": [
+   {
+    "to": "GET_GOOD_AND_EVIL_RETIRE_DATA",
+    "w": 5.13,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GOOD_AND_EVIL_RETIRE_LIST",
+    "w": 5.13,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GE_HELP_INFO",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "HELP_DONE_TASK",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   }
+  ],
+  "GET_GOOD_AND_EVIL_RETIRE_DATA": [
+   {
+    "to": "GET_GOOD_AND_EVIL_RETIRE_LIST",
+    "w": 5.64,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GOOD_AND_EVIL_DATA",
+    "w": 5.13,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GE_HELP_INFO",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "HELP_DONE_TASK",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   }
+  ],
+  "GET_GOOD_AND_EVIL_RETIRE_LIST": [
+   {
+    "to": "GET_GOOD_AND_EVIL_RETIRE_DATA",
+    "w": 5.64,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GOOD_AND_EVIL_DATA",
+    "w": 5.13,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GE_HELP_INFO",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "HELP_DONE_TASK",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   }
+  ],
+  "GET_GOOD_AND_EVIL_SHOP_DATA": [
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 0.97,
+    "why": [
+     "token:EVIL",
+     "token:GOOD",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "GET_GOOD_AND_EVIL_TASK_DATA": [
+   {
+    "to": "REFRESH_GOOD_AND_EVIL_TASK_DATA",
+    "w": 0.95,
+    "why": [
+     "token:EVIL",
+     "token:GOOD",
+     "token:TASK"
+    ]
+   }
+  ],
+  "GET_HELPER_CALL_LIST": [
+   {
+    "to": "CALL_HELPER_BY_ID",
+    "w": 0.93,
+    "why": [
+     "token:CALL",
+     "token:HELPER"
+    ]
+   }
+  ],
+  "GET_HLEX_CHANGEITEMDATA": [
+   {
+    "to": "EXCHANGE_HLEX_CHANGEITEM",
+    "w": 1.74,
+    "why": [
+     "field:shopObj",
+     "token:HLEXCHANGE",
+     "token:HLEX"
+    ]
+   },
+   {
+    "to": "GET_HLEX_CHANGESHOP",
+    "w": 1.74,
+    "why": [
+     "field:shopObj",
+     "token:HLEXCHANGE",
+     "token:HLEX"
+    ]
+   }
+  ],
+  "GET_HLEX_CHANGESHOP": [
+   {
+    "to": "EXCHANGE_HLEX_CHANGEITEM",
+    "w": 1.74,
+    "why": [
+     "field:shopObj",
+     "token:HLEXCHANGE",
+     "token:HLEX"
+    ]
+   },
+   {
+    "to": "GET_HLEX_CHANGEITEMDATA",
+    "w": 1.74,
+    "why": [
+     "field:shopObj",
+     "token:HLEXCHANGE",
+     "token:HLEX"
+    ]
+   },
+   {
+    "to": "GET_CHANGE_SHOP",
+    "w": 1.05,
+    "why": [
+     "field:shopObj",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "GET_HOUSE_SHOP_DATA": [
+   {
+    "to": "TOWER_SPECIAL_SHOP",
+    "w": 1.14,
+    "why": [
+     "field:shopData",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "GET_INN_RANK": [
+   {
+    "to": "GET_INN_SHOP",
+    "w": 1.22,
+    "why": [
+     "field:unlockDish",
+     "token:INN"
+    ]
+   },
+   {
+    "to": "INN_BUY_SHOP",
+    "w": 1.22,
+    "why": [
+     "field:unlockDish",
+     "token:INN"
+    ]
+   }
+  ],
+  "GET_INN_SHOP": [
+   {
+    "to": "INN_BUY_SHOP",
+    "w": 1.5,
+    "why": [
+     "field:unlockDish",
+     "token:INN",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "GET_INN_RANK",
+    "w": 1.22,
+    "why": [
+     "field:unlockDish",
+     "token:INN"
+    ]
+   }
+  ],
+  "GET_JIGSAW_DATA": [
+   {
+    "to": "GET_JIGSAW_TASK_DATA",
+    "w": 0.96,
+    "why": [
+     "token:GETJIGSAW",
+     "token:JIGSAW"
+    ]
+   }
+  ],
+  "GET_JIGSAW_TASK_DATA": [
+   {
+    "to": "GET_JIGSAW_DATA",
+    "w": 0.96,
+    "why": [
+     "token:GETJIGSAW",
+     "token:JIGSAW"
+    ]
+   }
+  ],
+  "GET_KNACK_LOTTERY": [
+   {
+    "to": "GET_KNACK_LOTTERY_HISTORY",
+    "w": 4.38,
+    "why": [
+     "family:技巧摸奖",
+     "field:upSkillRateData",
+     "field:optionalDatas"
+    ]
+   },
+   {
+    "to": "KNACK_LOTTERY",
+    "w": 4.38,
+    "why": [
+     "family:技巧摸奖",
+     "field:upSkillRateData",
+     "field:optionalDatas"
+    ]
+   },
+   {
+    "to": "BATCH_RESOLVE_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "CHANGE_SKILL_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "RESOLVE_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "ROGUE_CHANGE_SKNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   }
+  ],
+  "GET_KNACK_LOTTERY_HISTORY": [
+   {
+    "to": "GET_KNACK_LOTTERY",
+    "w": 4.38,
+    "why": [
+     "family:技巧摸奖",
+     "field:upSkillRateData",
+     "field:optionalDatas"
+    ]
+   },
+   {
+    "to": "KNACK_LOTTERY",
+    "w": 4.38,
+    "why": [
+     "family:技巧摸奖",
+     "field:upSkillRateData",
+     "field:optionalDatas"
+    ]
+   },
+   {
+    "to": "BATCH_RESOLVE_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "CHANGE_SKILL_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "RESOLVE_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "ROGUE_CHANGE_SKNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   }
+  ],
+  "GET_LARGE_EXTRA": [
+   {
+    "to": "CHECK_LARGE_EXTRA",
+    "w": 0.97,
+    "why": [
+     "token:EXTRA",
+     "token:LARGE"
+    ]
+   },
+   {
+    "to": "DICE_CHECKEXTRA_EVENT",
+    "w": 0.97,
+    "why": [
+     "token:EXTRA",
+     "token:LARGE"
+    ]
+   }
+  ],
+  "GET_MA_ACTIVITY": [
+   {
+    "to": "REWARD_MA_ACTIVITY",
+    "w": 1.17,
+    "why": [
+     "field:rts",
+     "token:ACTIVITY"
+    ]
+   }
+  ],
+  "GET_MP_ULTSKILLS": [
+   {
+    "to": "GET_TEAM_ULTSKILLS",
+    "w": 2.54,
+    "why": [
+     "field:atkSkillID",
+     "field:dataArr",
+     "token:ULTSKILL"
+    ]
+   }
+  ],
+  "GET_NEW_SWEEP_EVENT": [
+   {
+    "to": "NEW_TOWER_SWEEP_EVENT",
+    "w": 2.39,
+    "why": [
+     "field:adCode",
+     "field:batch_sweep_data",
+     "token:SWEEP"
+    ]
+   },
+   {
+    "to": "CLOSE_NEW_SWEEP_EVENT",
+    "w": 1.53,
+    "why": [
+     "field:batch_sweep_data",
+     "token:SWEEP",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 1.07,
+    "why": [
+     "field:batch_sweep_data",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "TOWER_CHOOSE_PANDA_EVENT",
+    "w": 1.07,
+    "why": [
+     "field:batch_sweep_data",
+     "token:TOWER"
+    ]
+   }
+  ],
+  "GET_PILE_GAME_DATA": [
+   {
+    "to": "PILE_GAME_AWARD",
+    "w": 0.92,
+    "why": [
+     "token:PILE",
+     "token:GAME"
+    ]
+   }
+  ],
+  "GET_PRAY_SIGN_ACTIVR": [
+   {
+    "to": "GET_PRAY_SIGN_AWARD",
+    "w": 1.0,
+    "why": [
+     "token:PRAY",
+     "token:SIGN"
+    ]
+   }
+  ],
+  "GET_PRAY_SIGN_AWARD": [
+   {
+    "to": "GET_PRAY_SIGN_ACTIVR",
+    "w": 1.0,
+    "why": [
+     "token:PRAY",
+     "token:SIGN"
+    ]
+   }
+  ],
+  "GET_RETURN_SEVEN_DAY_DATA": [
+   {
+    "to": "RETURN_SEVEN_DAYS_AWARDS",
+    "w": 1.69,
+    "why": [
+     "field:sevenDaysArr",
+     "token:RETURN",
+     "token:SEVEN"
+    ]
+   },
+   {
+    "to": "GET_RETURN_TASK_DATA",
+    "w": 1.28,
+    "why": [
+     "field:triggerTime",
+     "token:RETURN"
+    ]
+   },
+   {
+    "to": "GET_SPRING_SEVEN_DAY_DATA",
+    "w": 0.9,
+    "why": [
+     "token:DAY",
+     "token:SEVEN"
+    ]
+   }
+  ],
+  "GET_RETURN_TASK_DATA": [
+   {
+    "to": "RECEIVE_RETURN_DAILY_TASK",
+    "w": 1.48,
+    "why": [
+     "field:oldReturnData",
+     "token:RETURN",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GET_RETURN_SEVEN_DAY_DATA",
+    "w": 1.28,
+    "why": [
+     "field:triggerTime",
+     "token:RETURN"
+    ]
+   }
+  ],
+  "GET_SCHOOL_POSTS": [
+   {
+    "to": "CREATE_POST",
+    "w": 1.03,
+    "why": [
+     "token:REVIEW",
+     "token:POST"
+    ]
+   }
+  ],
+  "GET_SCHOOL_TASK": [
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ONE_KEY_COMPLETE_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "REFRESH_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "SCHOOL_TASK_AWARD",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "SCHOOL_TASK_COMPLETE",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "GET_SKILL_SKIN_ACTIVE_SHOP": [
+   {
+    "to": "BUY_SKILL_SKIN_ACTIVE_SHOP",
+    "w": 1.37,
+    "why": [
+     "token:SKIN",
+     "token:ACTIVE",
+     "token:SKILL"
+    ]
+   },
+   {
+    "to": "BUY_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "GET_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "REFRESH_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "GET_SKILL_SKIN_SHOP": [
+   {
+    "to": "BUY_SKILL_SKIN_ACTIVE_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "BUY_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "GET_SKILL_SKIN_ACTIVE_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "REFRESH_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "GET_SKILL_TRICK_EXCHANGE_DATA": [
+   {
+    "to": "REFRESH_SKILL_TRICK_EXCHANGE_DATA",
+    "w": 1.15,
+    "why": [
+     "token:TRICK",
+     "token:EXCHANGE",
+     "token:SKILL"
+    ]
+   },
+   {
+    "to": "SKILL_TRICK_EXCHANGE_INDEX",
+    "w": 1.15,
+    "why": [
+     "token:TRICK",
+     "token:EXCHANGE",
+     "token:SKILL"
+    ]
+   }
+  ],
+  "GET_SPRING_EXCHANGE_SHOP": [
+   {
+    "to": "EXCHANGE_SPRING_SHOP",
+    "w": 0.98,
+    "why": [
+     "token:EXCHANGE",
+     "token:SPRING",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "GET_SPRING_GIFT_PERMANENT": [
+   {
+    "to": "BUY_SPRING_GIFT_PERMANENT",
+    "w": 1.09,
+    "why": [
+     "token:PERMANENT",
+     "token:SPRING",
+     "token:GIFT"
+    ]
+   }
+  ],
+  "GET_SPRING_SEVEN_DAY_DATA": [
+   {
+    "to": "GET_RETURN_SEVEN_DAY_DATA",
+    "w": 0.9,
+    "why": [
+     "token:DAY",
+     "token:SEVEN"
+    ]
+   }
+  ],
+  "GET_SUPPORT_PREPARE_CAMP": [
+   {
+    "to": "SUPPORT_PREPARE_CAMP",
+    "w": 2.63,
+    "why": [
+     "token:CAMP",
+     "token:SUPPORT",
+     "token:PARE"
+    ]
+   },
+   {
+    "to": "JOIN_PREPARE_CAMP",
+    "w": 2.14,
+    "why": [
+     "token:CAMP",
+     "token:PARE",
+     "token:PRE"
+    ]
+   },
+   {
+    "to": "SUBMIT_JIGSAW_PREPARE_ITEM",
+    "w": 1.39,
+    "why": [
+     "token:PARE",
+     "token:PRE",
+     "token:PREPARE"
+    ]
+   }
+  ],
+  "GET_TASK": [
+   {
+    "to": "FINISH_TASK",
+    "w": 7.15,
+    "why": [
+     "rw:accepted",
+     "family:任务主线",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "USER_LOADGAME",
+    "w": 4.02,
+    "why": [
+     "rw:accepted",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "SYCN_TASK",
+    "w": 3.48,
+    "why": [
+     "family:任务主线",
+     "rw:accepted",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "EXCHANGE_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "RG_SHOP_BY_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "GET_TEAM_FIGHTER_INFO": [
+   {
+    "to": "REQ_MPPVE_FIGHTER_INFO",
+    "w": 1.32,
+    "why": [
+     "field:battleID",
+     "token:FIGHTER"
+    ]
+   }
+  ],
+  "GET_TEAM_ULTSKILLS": [
+   {
+    "to": "GET_MP_ULTSKILLS",
+    "w": 2.54,
+    "why": [
+     "field:atkSkillID",
+     "field:dataArr",
+     "token:ULTSKILL"
+    ]
+   }
+  ],
+  "GET_TREASURE_AWARD": [
+   {
+    "to": "BUY_ACTIVITY_NUM",
+    "w": 1.54,
+    "why": [
+     "field:passCard",
+     "field:goldArr"
+    ]
+   },
+   {
+    "to": "CAN_BUYACTIVITY_NUM",
+    "w": 1.54,
+    "why": [
+     "field:passCard",
+     "field:goldArr"
+    ]
+   },
+   {
+    "to": "ENTER_NEXT_FLOOR",
+    "w": 1.54,
+    "why": [
+     "field:passCard",
+     "field:goldArr"
+    ]
+   }
+  ],
+  "GET_TREE_PLANTING": [
+   {
+    "to": "PLANT_TREE",
+    "w": 0.98,
+    "why": [
+     "token:PLANT",
+     "token:TREE"
+    ]
+   }
+  ],
+  "GET_UFO_CATCHER_DATA": [
+   {
+    "to": "USE_UFO_REFRESH",
+    "w": 4.46,
+    "why": [
+     "field:freeRefreshTimes",
+     "field:buyRefreshTimes",
+     "field:refreshTimes"
+    ]
+   },
+   {
+    "to": "BUY_UFO_REFRESH_TIMES",
+    "w": 2.84,
+    "why": [
+     "field:freeRefreshTimes",
+     "field:buyRefreshTimes",
+     "field:refreshTimes"
+    ]
+   },
+   {
+    "to": "REWARD_UFO",
+    "w": 2.03,
+    "why": [
+     "field:rewardPool",
+     "field:signId",
+     "token:UFO"
+    ]
+   },
+   {
+    "to": "BUY_UFO_GAME_COIN",
+    "w": 1.28,
+    "why": [
+     "field:buyCoinCount",
+     "token:UFO"
+    ]
+   },
+   {
+    "to": "GET_UFO_CATCHER_TASK",
+    "w": 0.9,
+    "why": [
+     "token:CATCHER",
+     "token:UFO"
+    ]
+   },
+   {
+    "to": "REWARD_UFO_CATCHER_TASK",
+    "w": 0.9,
+    "why": [
+     "token:CATCHER",
+     "token:UFO"
+    ]
+   }
+  ],
+  "GET_UFO_CATCHER_TASK": [
+   {
+    "to": "REWARD_UFO_CATCHER_TASK",
+    "w": 2.88,
+    "why": [
+     "field:coinDailyList",
+     "field:rewardLimitDaily",
+     "token:CATCHER"
+    ]
+   },
+   {
+    "to": "GET_UFO_CATCHER_DATA",
+    "w": 0.9,
+    "why": [
+     "token:CATCHER",
+     "token:UFO"
+    ]
+   }
+  ],
+  "GET_USEITEM_AWARD": [
+   {
+    "to": "CHOOSE_USEITEM_AWARD",
+    "w": 1.03,
+    "why": [
+     "token:USED",
+     "token:USEITEM"
+    ]
+   }
+  ],
+  "GET_VIGOR": [
+   {
+    "to": "VIGOR_DAZUO",
+    "w": 1.29,
+    "why": [
+     "field:vigor",
+     "token:VIGOR"
+    ]
+   },
+   {
+    "to": "VIGOR_UPGSKILL",
+    "w": 1.29,
+    "why": [
+     "field:vigor",
+     "token:VIGOR"
+    ]
+   }
+  ],
+  "GET_WX_XYX_OPENID": [
+   {
+    "to": "GET_DOU_YIN_OPENID",
+    "w": 1.38,
+    "why": [
+     "field:openid",
+     "token:OPENID"
+    ]
+   }
+  ],
+  "GFUI_BUY_BIG_GIFT": [
+   {
+    "to": "GFUI_BUY_GIFT",
+    "w": 1.29,
+    "why": [
+     "token:GFUI",
+     "token:TIME",
+     "token:GIFT"
+    ]
+   }
+  ],
+  "GFUI_BUY_GIFT": [
+   {
+    "to": "GFUI_BUY_BIG_GIFT",
+    "w": 1.29,
+    "why": [
+     "token:GFUI",
+     "token:TIME",
+     "token:GIFT"
+    ]
+   }
+  ],
+  "GIVE_CHILD_NAME": [
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "CHILD_WASH_EVENT",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "EXILE_CHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "RESET_CHILD_FOSTER",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   }
+  ],
+  "GOLD_BREAK_ALL_SKILL": [
+   {
+    "to": "GOLD_BREAK_CUR_SKILL",
+    "w": 1.08,
+    "why": [
+     "token:GOLD",
+     "token:BREAK",
+     "token:SKILL"
+    ]
+   }
+  ],
+  "GOLD_BREAK_CUR_SKILL": [
+   {
+    "to": "GOLD_BREAK_ALL_SKILL",
+    "w": 1.08,
+    "why": [
+     "token:GOLD",
+     "token:BREAK",
+     "token:SKILL"
+    ]
+   }
+  ],
+  "GOOD_AND_EVIL_BATTLE_RESULT": [
+   {
+    "to": "BATTLE_END_REWARD",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "DICE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVP_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "SERVER_ROGUE_NPC_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "HELP_DONE_TASK": [
+   {
+    "to": "GET_GE_HELP_INFO",
+    "w": 4.95,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GOOD_AND_EVIL_DATA",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GOOD_AND_EVIL_RETIRE_DATA",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   },
+   {
+    "to": "GET_GOOD_AND_EVIL_RETIRE_LIST",
+    "w": 4.44,
+    "why": [
+     "field:mapId",
+     "field:prestige",
+     "field:targetInfo"
+    ]
+   }
+  ],
+  "HIDE_TASK": [
+   {
+    "to": "ROGUE_ACCEPT_TASK",
+    "w": 3.09,
+    "why": [
+     "fk:skill",
+     "field:CDTime",
+     "field:skillId"
+    ]
+   },
+   {
+    "to": "ROGUE_FINISHTASK_REWARD",
+    "w": 3.09,
+    "why": [
+     "fk:skill",
+     "field:CDTime",
+     "field:skillId"
+    ]
+   },
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CHANGE_DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CIRCLE_TASK_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "HIRE_NPC": [
+   {
+    "to": "CHECK_HIRE",
+    "w": 2.8,
+    "why": [
+     "fk:fishpond",
+     "field:siteID",
+     "token:HIRE"
+    ]
+   },
+   {
+    "to": "CHECK_FISHING_REWARDS",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   },
+   {
+    "to": "END_FISHING",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   },
+   {
+    "to": "START_FISHING",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   }
+  ],
+  "INN_BUY_SHOP": [
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.28,
+    "why": [
+     "family:商店交易",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "BUY_SCHOOL_SHOP",
+    "w": 2.28,
+    "why": [
+     "family:商店交易",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 2.28,
+    "why": [
+     "family:商店交易",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 2.28,
+    "why": [
+     "family:商店交易",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "BUY_FORMULA_DATA",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_MARKET_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   }
+  ],
+  "IS_CYCLE_LIFE": [
+   {
+    "to": "CYCLE_LIFE",
+    "w": 0.97,
+    "why": [
+     "token:CYCLE",
+     "token:LIFE"
+    ]
+   },
+   {
+    "to": "SPECIAL_CYCLE_LIFE",
+    "w": 0.97,
+    "why": [
+     "token:CYCLE",
+     "token:LIFE"
+    ]
+   }
+  ],
+  "JOIN_CHATPK_SERVER": [
+   {
+    "to": "JOIN_WULIN_PK_SERVER",
+    "w": 2.24,
+    "why": [
+     "field:signData",
+     "field:newAcc",
+     "token:JION"
+    ]
+   }
+  ],
+  "JOIN_PREPARE_CAMP": [
+   {
+    "to": "SUPPORT_PREPARE_CAMP",
+    "w": 3.0,
+    "why": [
+     "field:schoolCamp",
+     "token:CAMP",
+     "token:PARE"
+    ]
+   },
+   {
+    "to": "GET_SUPPORT_PREPARE_CAMP",
+    "w": 2.14,
+    "why": [
+     "token:CAMP",
+     "token:PARE",
+     "token:PRE"
+    ]
+   },
+   {
+    "to": "SUBMIT_JIGSAW_PREPARE_ITEM",
+    "w": 1.39,
+    "why": [
+     "token:PARE",
+     "token:PRE",
+     "token:PREPARE"
+    ]
+   }
+  ],
+  "JOIN_SCHOOL": [
+   {
+    "to": "USER_CREATE",
+    "w": 3.5,
+    "why": [
+     "rw:school",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   },
+   {
+    "to": "QUIT_SCHOOL",
+    "w": 3.27,
+    "why": [
+     "pair:JOIN/QUIT",
+     "token:SCHOOL"
+    ]
+   }
+  ],
+  "JOIN_WULIN_PK_SERVER": [
+   {
+    "to": "JOIN_CHATPK_SERVER",
+    "w": 2.24,
+    "why": [
+     "field:signData",
+     "field:newAcc",
+     "token:JION"
+    ]
+   },
+   {
+    "to": "WULIN_ASSEMBLY_APPLY_REQ",
+    "w": 0.98,
+    "why": [
+     "token:LIN",
+     "token:WULIN"
+    ]
+   }
+  ],
+  "KNACK_LOTTERY": [
+   {
+    "to": "GET_KNACK_LOTTERY",
+    "w": 4.38,
+    "why": [
+     "family:技巧摸奖",
+     "field:upSkillRateData",
+     "field:optionalDatas"
+    ]
+   },
+   {
+    "to": "GET_KNACK_LOTTERY_HISTORY",
+    "w": 4.38,
+    "why": [
+     "family:技巧摸奖",
+     "field:upSkillRateData",
+     "field:optionalDatas"
+    ]
+   },
+   {
+    "to": "BATCH_RESOLVE_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "CHANGE_SKILL_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "RESOLVE_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "ROGUE_CHANGE_SKNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   }
+  ],
+  "LANGH_MP_REVIVE": [
+   {
+    "to": "LANGH_REVIVE",
+    "w": 1.0,
+    "why": [
+     "token:LANGH",
+     "token:REVIVE"
+    ]
+   }
+  ],
+  "LANGH_REVIVE": [
+   {
+    "to": "LANGH_MP_REVIVE",
+    "w": 1.0,
+    "why": [
+     "token:LANGH",
+     "token:REVIVE"
+    ]
+   }
+  ],
+  "LOOK_DOG_LOG": [
+   {
+    "to": "DOG_BATTLE_RESULT",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "ENTER_PVEDOG_FIGHT",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "FEED_DOG",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "REQ_DOG_PARTNER_END_BATTLE",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "REQ_DOG_PARTNER_PVE_BATTLE",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   }
+  ],
+  "LOOK_SECRET_PANDA_EVENT": [
+   {
+    "to": "SELECT_SECRET_PANDA_EVENT",
+    "w": 0.98,
+    "why": [
+     "token:SECRET",
+     "token:PANDA"
+    ]
+   }
+  ],
+  "MAKE_LOVE": [
+   {
+    "to": "BEGIN_WEDDING",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "EXILE_CHILD",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "MARRY_AWARD",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   }
+  ],
+  "MAKE_WISH_DRAGON": [
+   {
+    "to": "CALL_DRAGON",
+    "w": 14.59,
+    "why": [
+     "family:龙",
+     "field:TeamBrief",
+     "field:TeamTianJiLockData"
+    ]
+   },
+   {
+    "to": "GET_DRAGON",
+    "w": 14.59,
+    "why": [
+     "family:龙",
+     "field:TeamBrief",
+     "field:TeamTianJiLockData"
+    ]
+   },
+   {
+    "to": "BEGIN_DRAGON_ROLLDICE",
+    "w": 2.46,
+    "why": [
+     "family:龙",
+     "token:DRAGON"
+    ]
+   }
+  ],
+  "MARRY_AWARD": [
+   {
+    "to": "BEGIN_WEDDING",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "EXILE_CHILD",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "MAKE_LOVE",
+    "w": 15.26,
+    "why": [
+     "family:婚姻子女",
+     "field:bodyState",
+     "field:childObj"
+    ]
+   },
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   }
+  ],
+  "MARRY_NPC_EVENT": [
+   {
+    "to": "DIVORCENPC",
+    "w": 5.0,
+    "why": [
+     "pair:MARRY/DIVORCE",
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BEGIN_WEDDING",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "CHILD_WASH_EVENT",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   }
+  ],
+  "MASTER_PASS_MERIT": [
+   {
+    "to": "PUPIL_PASS_MASTER_MERIT_REWARD",
+    "w": 1.26,
+    "why": [
+     "token:MERIT",
+     "token:MASTER",
+     "token:PASS"
+    ]
+   }
+  ],
+  "MPPVE_ACTION": [
+   {
+    "to": "ROGUE_MPPVE_ACTION",
+    "w": 1.99,
+    "why": [
+     "token:MPPVE",
+     "token:MULTI",
+     "token:ACTION"
+    ]
+   },
+   {
+    "to": "START_MPPVE_BATTLE",
+    "w": 1.56,
+    "why": [
+     "token:MPPVE",
+     "token:MULTI",
+     "token:PVE"
+    ]
+   },
+   {
+    "to": "PVE_ACTION",
+    "w": 1.09,
+    "why": [
+     "token:ACTION",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVE_ACTION",
+    "w": 1.09,
+    "why": [
+     "token:ACTION",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "NEW_TOWER_SWEEP_EVENT": [
+   {
+    "to": "GET_NEW_SWEEP_EVENT",
+    "w": 2.39,
+    "why": [
+     "field:adCode",
+     "field:batch_sweep_data",
+     "token:SWEEP"
+    ]
+   },
+   {
+    "to": "CLOSE_NEW_SWEEP_EVENT",
+    "w": 1.53,
+    "why": [
+     "field:batch_sweep_data",
+     "token:SWEEP",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 1.07,
+    "why": [
+     "field:batch_sweep_data",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "TOWER_CHOOSE_PANDA_EVENT",
+    "w": 1.07,
+    "why": [
+     "field:batch_sweep_data",
+     "token:TOWER"
+    ]
+   }
+  ],
+  "OBTAINCROP": [
+   {
+    "to": "ONE_KEY_OBTAIN_CROP",
+    "w": 1.63,
+    "why": [
+     "field:aExp",
+     "token:OBTAIN",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "CLEAN_DEAD_CROP",
+    "w": 1.14,
+    "why": [
+     "field:sIdx",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "CROP_CHANGE_STATE",
+    "w": 1.14,
+    "why": [
+     "field:sIdx",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "EXPEDITE_CROP",
+    "w": 1.14,
+    "why": [
+     "field:sIdx",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "STEAL_CROP_EVENT",
+    "w": 1.14,
+    "why": [
+     "field:aExp",
+     "token:CROP"
+    ]
+   }
+  ],
+  "ONE_KEY_COMPLETE_SCHOOL_TASK": [
+   {
+    "to": "SCHOOL_TASK_COMPLETE",
+    "w": 3.05,
+    "why": [
+     "family:任务主线",
+     "token:COMPLETE",
+     "token:SCHOOL"
+    ]
+   },
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GET_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "REFRESH_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "SCHOOL_TASK_AWARD",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "ONE_KEY_DISPOSS_HOME_EVENT": [
+   {
+    "to": "DISPOSS_HOME_EVENT",
+    "w": 1.63,
+    "why": [
+     "field:aExp",
+     "token:DISPOSS",
+     "token:HOME"
+    ]
+   }
+  ],
+  "ONE_KEY_OBTAIN_CROP": [
+   {
+    "to": "OBTAINCROP",
+    "w": 1.63,
+    "why": [
+     "field:aExp",
+     "token:OBTAIN",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "STEAL_CROP_EVENT",
+    "w": 1.14,
+    "why": [
+     "field:aExp",
+     "token:CROP"
+    ]
+   }
+  ],
+  "OTHER_PLAYER_HOME": [
+   {
+    "to": "RECOMMEND_ONESELF_HOME",
+    "w": 2.1,
+    "why": [
+     "field:homeGeMap",
+     "field:homeArr",
+     "token:HOME"
+    ]
+   },
+   {
+    "to": "FIND_OTHER_HOME",
+    "w": 1.25,
+    "why": [
+     "token:FIND",
+     "token:OTHER",
+     "token:HOME"
+    ]
+   }
+  ],
+  "PAUSE_WOOD_TRAINING": [
+   {
+    "to": "BEGIN_WOOD_TRAINING",
+    "w": 3.81,
+    "why": [
+     "family:打坐练功",
+     "token:WOOD",
+     "token:WOOK"
+    ]
+   },
+   {
+    "to": "END_WOOD_TRAINING",
+    "w": 3.81,
+    "why": [
+     "family:打坐练功",
+     "token:WOOD",
+     "token:WOOK"
+    ]
+   },
+   {
+    "to": "BEGIN_LIANGONG",
+    "w": 2.42,
+    "why": [
+     "family:打坐练功",
+     "token:TRAIN"
+    ]
+   },
+   {
+    "to": "END_LIANGONG",
+    "w": 2.42,
+    "why": [
+     "family:打坐练功",
+     "token:TRAIN"
+    ]
+   },
+   {
+    "to": "BEGIN_RECOVER_MP",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "END_DAZUO",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   }
+  ],
+  "PILE_GAME_AWARD": [
+   {
+    "to": "GET_PILE_GAME_DATA",
+    "w": 0.92,
+    "why": [
+     "token:PILE",
+     "token:GAME"
+    ]
+   }
+  ],
+  "PLANT_TREE": [
+   {
+    "to": "GET_TREE_PLANTING",
+    "w": 0.98,
+    "why": [
+     "token:PLANT",
+     "token:TREE"
+    ]
+   }
+  ],
+  "POP_EQUIP_STORAGE": [
+   {
+    "to": "PUSH_EQUIP_STORAGE",
+    "w": 5.21,
+    "why": [
+     "pair:PUSH/POP",
+     "field:ItemNum",
+     "field:ItemID"
+    ]
+   }
+  ],
+  "PROPOSE_NPC": [
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BEGIN_WEDDING",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "CHILD_WASH_EVENT",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "CHOOSE_GIRL_EVENT",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   }
+  ],
+  "PUPIL_PASS_MASTER_MERIT_REWARD": [
+   {
+    "to": "MASTER_PASS_MERIT",
+    "w": 1.26,
+    "why": [
+     "token:MERIT",
+     "token:MASTER",
+     "token:PASS"
+    ]
+   }
+  ],
+  "PUSH_EQUIP_STORAGE": [
+   {
+    "to": "POP_EQUIP_STORAGE",
+    "w": 5.21,
+    "why": [
+     "pair:PUSH/POP",
+     "field:ItemNum",
+     "field:ItemID"
+    ]
+   }
+  ],
+  "PUT_ON_EQUIPMENT": [
+   {
+    "to": "WEAR_EQUIPMENT_ALL",
+    "w": 2.87,
+    "why": [
+     "token:EQUIP",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 2.36,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.36,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "EXCHANGE_ITEM",
+    "w": 2.36,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BATTLE_END_REWARD",
+    "w": 2.36,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "GET_TASK",
+    "w": 2.36,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "PUT_REFINING_ITEM_FURNACE": [
+   {
+    "to": "GET_FURNACE_DATA",
+    "w": 1.29,
+    "why": [
+     "token:FURNACE",
+     "token:REFIN",
+     "token:SPRING"
+    ]
+   },
+   {
+    "to": "START_REFINING_FURNACE",
+    "w": 1.29,
+    "why": [
+     "token:FURNACE",
+     "token:REFIN",
+     "token:SPRING"
+    ]
+   }
+  ],
+  "PVE_ACTION": [
+   {
+    "to": "ROGUE_PVE_ACTION",
+    "w": 5.3,
+    "why": [
+     "field:paramID",
+     "field:paramID1",
+     "field:action"
+    ]
+   },
+   {
+    "to": "REQ_LANGHUAN_COMBAT",
+    "w": 1.43,
+    "why": [
+     "field:attArr",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "REQ_ROGUE_PVE_COMBAT",
+    "w": 1.43,
+    "why": [
+     "field:attArr",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "MPPVE_ACTION",
+    "w": 1.09,
+    "why": [
+     "token:ACTION",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_MPPVE_ACTION",
+    "w": 1.09,
+    "why": [
+     "token:ACTION",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "QUICK_BUY": [
+   {
+    "to": "SELL_ITEM",
+    "w": 6.83,
+    "why": [
+     "rw:coins",
+     "family:商店交易",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 6.83,
+    "why": [
+     "rw:coins",
+     "family:商店交易",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "REQ_BUY_FASHION",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "USER_LOADGAME",
+    "w": 4.02,
+    "why": [
+     "rw:coins",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   }
+  ],
+  "QUICK_FINISH_TASK": [
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CHANGE_DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CIRCLE_TASK_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "FINISH_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "QUICK_LOGIN": [
+   {
+    "to": "USER_CREATE",
+    "w": 2.09,
+    "why": [
+     "rw:name",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   }
+  ],
+  "QUIT_SCHOOL": [
+   {
+    "to": "JOIN_SCHOOL",
+    "w": 3.27,
+    "why": [
+     "pair:JOIN/QUIT",
+     "token:SCHOOL"
+    ]
+   }
+  ],
+  "RANDOM_LIGHT_CELL": [
+   {
+    "to": "SPECIFY_LIGHT_CELL",
+    "w": 0.93,
+    "why": [
+     "token:LIGHT",
+     "token:CELL"
+    ]
+   }
+  ],
+  "RECEIVE_ACHIEVEMENT_REWARD": [
+   {
+    "to": "GET_ACHIEVE_DATA",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "GET_ACHIEVE_MARK",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_RATE_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_SUIT_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   }
+  ],
+  "RECEIVE_ACHIEVE_RATE_REWARD": [
+   {
+    "to": "GET_ACHIEVE_DATA",
+    "w": 3.29,
+    "why": [
+     "family:成就",
+     "field:rateIds",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "GET_ACHIEVE_MARK",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVEMENT_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_SUIT_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   }
+  ],
+  "RECEIVE_ACHIEVE_REWARD": [
+   {
+    "to": "GET_ACHIEVE_DATA",
+    "w": 4.15,
+    "why": [
+     "family:成就",
+     "field:groupPoints",
+     "field:achieveIdArr"
+    ]
+   },
+   {
+    "to": "GET_ACHIEVE_MARK",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVEMENT_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_RATE_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_SUIT_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   }
+  ],
+  "RECEIVE_ACHIEVE_SUIT_REWARD": [
+   {
+    "to": "GET_ACHIEVE_DATA",
+    "w": 3.29,
+    "why": [
+     "family:成就",
+     "field:srd",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "GET_ACHIEVE_MARK",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVEMENT_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_RATE_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   },
+   {
+    "to": "RECEIVE_ACHIEVE_REWARD",
+    "w": 2.43,
+    "why": [
+     "family:成就",
+     "token:ACHIEVE"
+    ]
+   }
+  ],
+  "RECEIVE_BIND_RECUITAWARD": [
+   {
+    "to": "BIND_RECUIT_CODE",
+    "w": 0.93,
+    "why": [
+     "token:BIND",
+     "token:RECUIT"
+    ]
+   }
+  ],
+  "RECEIVE_GOLD_CONSUME_REWARD": [
+   {
+    "to": "GET_GOLD_CONSUME_REWARD_DATA",
+    "w": 1.44,
+    "why": [
+     "token:CONSUME",
+     "token:CONSUMED",
+     "token:GOLD"
+    ]
+   }
+  ],
+  "RECEIVE_RETURN_DAILY_TASK": [
+   {
+    "to": "GET_RETURN_TASK_DATA",
+    "w": 1.48,
+    "why": [
+     "field:oldReturnData",
+     "token:RETURN",
+     "token:TASK"
+    ]
+   }
+  ],
+  "RECOMMEND_ONESELF_HOME": [
+   {
+    "to": "OTHER_PLAYER_HOME",
+    "w": 2.1,
+    "why": [
+     "field:homeGeMap",
+     "field:homeArr",
+     "token:HOME"
+    ]
+   }
+  ],
+  "REFRESH_GOOD_AND_EVIL_TASK_DATA": [
+   {
+    "to": "GET_GOOD_AND_EVIL_TASK_DATA",
+    "w": 0.95,
+    "why": [
+     "token:EVIL",
+     "token:GOOD",
+     "token:TASK"
+    ]
+   }
+  ],
+  "REFRESH_SCHOOL_TASK": [
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GET_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ONE_KEY_COMPLETE_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "SCHOOL_TASK_AWARD",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "SCHOOL_TASK_COMPLETE",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "REFRESH_SKILL_SKIN_SHOP": [
+   {
+    "to": "BUY_SKILL_SKIN_ACTIVE_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "BUY_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "GET_SKILL_SKIN_ACTIVE_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   },
+   {
+    "to": "GET_SKILL_SKIN_SHOP",
+    "w": 1.0,
+    "why": [
+     "token:SKIN",
+     "token:SKILL",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "REFRESH_SKILL_TRICK_EXCHANGE_DATA": [
+   {
+    "to": "GET_SKILL_TRICK_EXCHANGE_DATA",
+    "w": 1.15,
+    "why": [
+     "token:TRICK",
+     "token:EXCHANGE",
+     "token:SKILL"
+    ]
+   },
+   {
+    "to": "SKILL_TRICK_EXCHANGE_INDEX",
+    "w": 1.15,
+    "why": [
+     "token:TRICK",
+     "token:EXCHANGE",
+     "token:SKILL"
+    ]
+   }
+  ],
+  "REMOVE_BREAK_QUEUE": [
+   {
+    "to": "ADD_BREAK_QUEUE",
+    "w": 3.83,
+    "why": [
+     "pair:ADD/REMOVE",
+     "token:QUEUE",
+     "token:BREAK"
+    ]
+   }
+  ],
+  "REQ_BUY_FASHION": [
+   {
+    "to": "SELL_ITEM",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "QUICK_BUY",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "REQ_BUY_GIFT": [
+   {
+    "to": "BUY_FORMULA_DATA",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_MARKET_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_MOUNT",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_SCHOOL_SHOP",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:商店交易"
+    ]
+   }
+  ],
+  "REQ_DOG_PARTNER_END_BATTLE": [
+   {
+    "to": "REQ_DOG_PARTNER_PVE_BATTLE",
+    "w": 3.55,
+    "why": [
+     "family:斗狗",
+     "token:PARTNER",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "DOG_BATTLE_RESULT",
+    "w": 3.09,
+    "why": [
+     "family:斗狗",
+     "token:DOG",
+     "token:RESULT"
+    ]
+   },
+   {
+    "to": "ENTER_PVEDOG_FIGHT",
+    "w": 3.09,
+    "why": [
+     "family:斗狗",
+     "token:DOG",
+     "token:PVE"
+    ]
+   },
+   {
+    "to": "FEED_DOG",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "LOOK_DOG_LOG",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   }
+  ],
+  "REQ_DOG_PARTNER_PVE_BATTLE": [
+   {
+    "to": "REQ_DOG_PARTNER_END_BATTLE",
+    "w": 3.55,
+    "why": [
+     "family:斗狗",
+     "token:PARTNER",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "ENTER_PVEDOG_FIGHT",
+    "w": 3.09,
+    "why": [
+     "family:斗狗",
+     "token:DOG",
+     "token:PVE"
+    ]
+   },
+   {
+    "to": "DOG_BATTLE_RESULT",
+    "w": 2.73,
+    "why": [
+     "family:斗狗",
+     "token:DOG",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "FEED_DOG",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   },
+   {
+    "to": "LOOK_DOG_LOG",
+    "w": 2.43,
+    "why": [
+     "family:斗狗",
+     "token:DOG"
+    ]
+   }
+  ],
+  "REQ_EQUIP_UPGRADE": [
+   {
+    "to": "EUIQP_SUITS_UPGRADE",
+    "w": 1.72,
+    "why": [
+     "field:equipInherit",
+     "field:playerEquip"
+    ]
+   }
+  ],
+  "REQ_LANGHUAN_COMBAT": [
+   {
+    "to": "REQ_ROGUE_PVE_COMBAT",
+    "w": 5.12,
+    "why": [
+     "field:randSeed",
+     "field:npcID",
+     "field:attArr"
+    ]
+   },
+   {
+    "to": "PVE_ACTION",
+    "w": 1.43,
+    "why": [
+     "field:attArr",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVE_ACTION",
+    "w": 1.43,
+    "why": [
+     "field:attArr",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "REQ_ROGUE_PVP_BATTLE",
+    "w": 1.07,
+    "why": [
+     "field:AttckData",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "REQ_MPPVE_FIGHTER_INFO": [
+   {
+    "to": "GET_TEAM_FIGHTER_INFO",
+    "w": 1.32,
+    "why": [
+     "field:battleID",
+     "token:FIGHTER"
+    ]
+   }
+  ],
+  "REQ_MP_RESULT": [
+   {
+    "to": "BATTLE_END_REWARD",
+    "w": 2.05,
+    "why": [
+     "field:gemId",
+     "field:equipObj",
+     "token:RESULT"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 1.44,
+    "why": [
+     "field:gemId",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "USE_ITEM",
+    "w": 1.38,
+    "why": [
+     "field:gemId",
+     "field:equipObj"
+    ]
+   }
+  ],
+  "REQ_PVE_BATTLE": [
+   {
+    "to": "USER_CREATE",
+    "w": 2.09,
+    "why": [
+     "rw:baseValueAy",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   },
+   {
+    "to": "USE_ITEM",
+    "w": 1.36,
+    "why": [
+     "rw:hungerMax",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   }
+  ],
+  "REQ_ROGUE_PVE_COMBAT": [
+   {
+    "to": "REQ_LANGHUAN_COMBAT",
+    "w": 5.12,
+    "why": [
+     "field:randSeed",
+     "field:npcID",
+     "field:attArr"
+    ]
+   },
+   {
+    "to": "PVE_ACTION",
+    "w": 1.43,
+    "why": [
+     "field:attArr",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVE_ACTION",
+    "w": 1.43,
+    "why": [
+     "field:attArr",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "REQ_ROGUE_PVP_BATTLE",
+    "w": 1.07,
+    "why": [
+     "field:AttckData",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "REQ_ROGUE_PVP_BATTLE": [
+   {
+    "to": "USER_PVP",
+    "w": 2.54,
+    "why": [
+     "field:EnemyData",
+     "field:AttckData",
+     "token:PVP"
+    ]
+   },
+   {
+    "to": "REQ_LANGHUAN_COMBAT",
+    "w": 1.07,
+    "why": [
+     "field:AttckData",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "REQ_ROGUE_PVE_COMBAT",
+    "w": 1.07,
+    "why": [
+     "field:AttckData",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "REQ_WM_ADV_RWD": [
+   {
+    "to": "TOWER_RANDOM_EVENT",
+    "w": 1.2,
+    "why": [
+     "field:npcArr",
+     "token:RANDOM"
+    ]
+   }
+  ],
+  "RESET_ACUPOINT": [
+   {
+    "to": "UPGRADE_ACUPOINT",
+    "w": 3.89,
+    "why": [
+     "family:穴位",
+     "field:psych",
+     "token:VEIN"
+    ]
+   }
+  ],
+  "RESET_CHILD_FOSTER": [
+   {
+    "to": "ADOPTCHILD",
+    "w": 3.16,
+    "why": [
+     "family:婚姻子女",
+     "field:childName",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.93,
+    "why": [
+     "family:婚姻子女",
+     "token:FOSTER",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "CHILD_WASH_EVENT",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "EXILE_CHILD",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   },
+   {
+    "to": "GIVE_CHILD_NAME",
+    "w": 2.42,
+    "why": [
+     "family:婚姻子女",
+     "token:CHILD"
+    ]
+   }
+  ],
+  "RESET_ROLE": [
+   {
+    "to": "GET_CREATE_ROLE_ACT",
+    "w": 2.91,
+    "why": [
+     "field:talnetId",
+     "field:birthId",
+     "field:faceId"
+    ]
+   },
+   {
+    "to": "GET_CREATE_INFO",
+    "w": 2.43,
+    "why": [
+     "field:talnetId",
+     "field:birthId",
+     "field:faceId"
+    ]
+   }
+  ],
+  "RESOLVE_KNACK": [
+   {
+    "to": "BATCH_RESOLVE_KNACK",
+    "w": 2.88,
+    "why": [
+     "family:技巧摸奖",
+     "token:RESOLVE",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "CHANGE_SKILL_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "GET_KNACK_LOTTERY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "GET_KNACK_LOTTERY_HISTORY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "KNACK_LOTTERY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "ROGUE_CHANGE_SKNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   }
+  ],
+  "RETURN_SEVEN_DAYS_AWARDS": [
+   {
+    "to": "GET_RETURN_SEVEN_DAY_DATA",
+    "w": 1.69,
+    "why": [
+     "field:sevenDaysArr",
+     "token:RETURN",
+     "token:SEVEN"
+    ]
+   },
+   {
+    "to": "SEVEN_DAYS_AWARDS",
+    "w": 1.36,
+    "why": [
+     "token:DAYS",
+     "token:AWARD",
+     "token:SEVEN"
+    ]
+   },
+   {
+    "to": "SPRING_SEVEN_DAYS_AWARDS",
+    "w": 1.36,
+    "why": [
+     "token:DAYS",
+     "token:AWARD",
+     "token:SEVEN"
+    ]
+   }
+  ],
+  "REWARD_BOOK_GIFT": [
+   {
+    "to": "BUY_COPY_BOOK_GIFT",
+    "w": 1.17,
+    "why": [
+     "token:BOOK",
+     "token:COPY",
+     "token:GIFT"
+    ]
+   }
+  ],
+  "REWARD_MA_ACTIVITY": [
+   {
+    "to": "GET_MA_ACTIVITY",
+    "w": 1.17,
+    "why": [
+     "field:rts",
+     "token:ACTIVITY"
+    ]
+   }
+  ],
+  "REWARD_UFO": [
+   {
+    "to": "GET_UFO_CATCHER_DATA",
+    "w": 2.03,
+    "why": [
+     "field:rewardPool",
+     "field:signId",
+     "token:UFO"
+    ]
+   },
+   {
+    "to": "USE_UFO_REFRESH",
+    "w": 2.03,
+    "why": [
+     "field:rewardPool",
+     "field:signId",
+     "token:UFO"
+    ]
+   }
+  ],
+  "REWARD_UFO_CATCHER_TASK": [
+   {
+    "to": "GET_UFO_CATCHER_TASK",
+    "w": 2.88,
+    "why": [
+     "field:coinDailyList",
+     "field:rewardLimitDaily",
+     "token:CATCHER"
+    ]
+   },
+   {
+    "to": "GET_UFO_CATCHER_DATA",
+    "w": 0.9,
+    "why": [
+     "token:CATCHER",
+     "token:UFO"
+    ]
+   }
+  ],
+  "RG_SHOP_BY_ITEM": [
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "SPECIAL_SHOP",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "FINISH_TASK",
+    "w": 2.86,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "ROGUE_ACCEPT_TASK": [
+   {
+    "to": "HIDE_TASK",
+    "w": 3.09,
+    "why": [
+     "fk:skill",
+     "field:CDTime",
+     "field:skillId"
+    ]
+   },
+   {
+    "to": "ROGUE_FINISHTASK_REWARD",
+    "w": 3.09,
+    "why": [
+     "fk:skill",
+     "field:CDTime",
+     "field:skillId"
+    ]
+   }
+  ],
+  "ROGUE_BUY_STORE": [
+   {
+    "to": "ROGUE_SELL_STORE",
+    "w": 3.42,
+    "why": [
+     "pair:BUY/SELL",
+     "token:STORE"
+    ]
+   }
+  ],
+  "ROGUE_CHANGE_SKNACK": [
+   {
+    "to": "CHANGE_SKILL_KNACK",
+    "w": 3.04,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK",
+     "token:CHANGE"
+    ]
+   },
+   {
+    "to": "BATCH_RESOLVE_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "GET_KNACK_LOTTERY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "GET_KNACK_LOTTERY_HISTORY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "KNACK_LOTTERY",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   },
+   {
+    "to": "RESOLVE_KNACK",
+    "w": 2.42,
+    "why": [
+     "family:技巧摸奖",
+     "token:KNACK"
+    ]
+   }
+  ],
+  "ROGUE_FINISHTASK_REWARD": [
+   {
+    "to": "HIDE_TASK",
+    "w": 3.09,
+    "why": [
+     "fk:skill",
+     "field:CDTime",
+     "field:skillId"
+    ]
+   },
+   {
+    "to": "ROGUE_ACCEPT_TASK",
+    "w": 3.09,
+    "why": [
+     "fk:skill",
+     "field:CDTime",
+     "field:skillId"
+    ]
+   }
+  ],
+  "ROGUE_MPPVE_ACTION": [
+   {
+    "to": "MPPVE_ACTION",
+    "w": 1.99,
+    "why": [
+     "token:MPPVE",
+     "token:MULTI",
+     "token:ACTION"
+    ]
+   },
+   {
+    "to": "START_MPPVE_BATTLE",
+    "w": 1.56,
+    "why": [
+     "token:MPPVE",
+     "token:MULTI",
+     "token:PVE"
+    ]
+   },
+   {
+    "to": "PVE_ACTION",
+    "w": 1.09,
+    "why": [
+     "token:ACTION",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVE_ACTION",
+    "w": 1.09,
+    "why": [
+     "token:ACTION",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "ROGUE_PVE_ACTION": [
+   {
+    "to": "PVE_ACTION",
+    "w": 5.3,
+    "why": [
+     "field:paramID",
+     "field:paramID1",
+     "field:action"
+    ]
+   },
+   {
+    "to": "REQ_LANGHUAN_COMBAT",
+    "w": 1.43,
+    "why": [
+     "field:attArr",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "REQ_ROGUE_PVE_COMBAT",
+    "w": 1.43,
+    "why": [
+     "field:attArr",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "MPPVE_ACTION",
+    "w": 1.09,
+    "why": [
+     "token:ACTION",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_MPPVE_ACTION",
+    "w": 1.09,
+    "why": [
+     "token:ACTION",
+     "token:PVE",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "ROGUE_PVE_BATTLE_RESULT": [
+   {
+    "to": "BATTLE_END_REWARD",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "DICE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "GOOD_AND_EVIL_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVP_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "SERVER_ROGUE_NPC_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "ROGUE_PVP_BATTLE_END": [
+   {
+    "to": "BATTLE_END_REWARD",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "DICE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "GOOD_AND_EVIL_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "SERVER_ROGUE_NPC_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "ROGUE_SELL_STORE": [
+   {
+    "to": "ROGUE_BUY_STORE",
+    "w": 3.42,
+    "why": [
+     "pair:BUY/SELL",
+     "token:STORE"
+    ]
+   }
+  ],
+  "ROGUE_USE_ITEM": [
+   {
+    "to": "USE_ITEM",
+    "w": 7.29,
+    "why": [
+     "family:道具使用",
+     "fk:npc",
+     "field:getKnackIds"
+    ]
+   },
+   {
+    "to": "USE_ALL_BALL",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_BATCH_SNOW_BALL",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_ITEM_ADDITION",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_SNOW_BALL",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   }
+  ],
+  "ROLLDICE_EVENT": [
+   {
+    "to": "BEGIN_DRAGON_ROLLDICE",
+    "w": 1.33,
+    "why": [
+     "token:ROLLDICE",
+     "token:ROLL",
+     "token:DICE"
+    ]
+   },
+   {
+    "to": "BEGIN_ROLLDICE",
+    "w": 1.33,
+    "why": [
+     "token:ROLLDICE",
+     "token:ROLL",
+     "token:DICE"
+    ]
+   }
+  ],
+  "SAVE_CUSTOM_AI": [
+   {
+    "to": "GET_CUSTOM_AI",
+    "w": 3.88,
+    "why": [
+     "pair:GET/SET",
+     "token:CUSTOM",
+     "token:CHAT"
+    ]
+   }
+  ],
+  "SCHOOL_TASK_AWARD": [
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GET_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ONE_KEY_COMPLETE_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "REFRESH_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "SCHOOL_TASK_COMPLETE",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "SCHOOL_TASK_COMPLETE": [
+   {
+    "to": "ONE_KEY_COMPLETE_SCHOOL_TASK",
+    "w": 3.05,
+    "why": [
+     "family:任务主线",
+     "token:COMPLETE",
+     "token:SCHOOL"
+    ]
+   },
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GET_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "REFRESH_SCHOOL_TASK",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "SCHOOL_TASK_AWARD",
+    "w": 2.53,
+    "why": [
+     "family:任务主线",
+     "token:SCHOOL",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "SELECT_SECRET_PANDA_EVENT": [
+   {
+    "to": "TOWER_CHOOSE_PANDA_EVENT",
+    "w": 1.18,
+    "why": [
+     "field:batch_sweep_data",
+     "token:PANDA"
+    ]
+   },
+   {
+    "to": "LOOK_SECRET_PANDA_EVENT",
+    "w": 0.98,
+    "why": [
+     "token:SECRET",
+     "token:PANDA"
+    ]
+   }
+  ],
+  "SELL_ITEM": [
+   {
+    "to": "QUICK_BUY",
+    "w": 6.83,
+    "why": [
+     "rw:coins",
+     "family:商店交易",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 6.83,
+    "why": [
+     "rw:coins",
+     "family:商店交易",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "REQ_BUY_FASHION",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 4.8,
+    "why": [
+     "family:商店交易",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "USER_LOADGAME",
+    "w": 4.02,
+    "why": [
+     "rw:coins",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   }
+  ],
+  "SERVER_NPC_BATTLE_END": [
+   {
+    "to": "BATTLE_END_REWARD",
+    "w": 4.24,
+    "why": [
+     "family:战斗结算",
+     "field:win",
+     "field:gemId"
+    ]
+   },
+   {
+    "to": "DICE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "GOOD_AND_EVIL_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVP_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "SERVER_ROGUE_NPC_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "SERVER_ROGUE_NPC_BATTLE_END": [
+   {
+    "to": "BATTLE_END_REWARD",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "DICE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "GOOD_AND_EVIL_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVE_BATTLE_RESULT",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "ROGUE_PVP_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 2.67,
+    "why": [
+     "family:战斗结算",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "SET_ADVANCED_TASKS_TIP": [
+   {
+    "to": "GET_ADVANCED_TASKS_TIP",
+    "w": 4.19,
+    "why": [
+     "pair:GET/SET",
+     "token:TIP",
+     "token:ADVANCED"
+    ]
+   }
+  ],
+  "SET_BUTLER": [
+   {
+    "to": "BUY_BUTLER",
+    "w": 1.53,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER",
+     "token:HELPER"
+    ]
+   },
+   {
+    "to": "BUTLER_DISPATCH",
+    "w": 1.09,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER"
+    ]
+   },
+   {
+    "to": "BUY_BUTLER_VIP",
+    "w": 1.09,
+    "why": [
+     "field:housekeeper",
+     "token:BUTLER"
+    ]
+   },
+   {
+    "to": "CALL_HELPER_BY_ID",
+    "w": 1.07,
+    "why": [
+     "field:housekeeper",
+     "token:HELPER"
+    ]
+   }
+  ],
+  "SET_ONHOOK_WOOK_STATE": [
+   {
+    "to": "PAUSE_WOOD_TRAINING",
+    "w": 0.91,
+    "why": [
+     "token:WOOK",
+     "token:STATE"
+    ]
+   }
+  ],
+  "SET_PLAYER_ITEMSORT": [
+   {
+    "to": "SET_PLAYER_SKILLSORT",
+    "w": 0.92,
+    "why": [
+     "token:SORT",
+     "token:PLAYER"
+    ]
+   }
+  ],
+  "SET_PLAYER_SKILLSORT": [
+   {
+    "to": "SET_PLAYER_ITEMSORT",
+    "w": 0.92,
+    "why": [
+     "token:SORT",
+     "token:PLAYER"
+    ]
+   }
+  ],
+  "SET_YP_EFFECT_STATE": [
+   {
+    "to": "REQ_BUY_FASHION",
+    "w": 1.29,
+    "why": [
+     "field:titivateObj",
+     "token:FASHION"
+    ]
+   },
+   {
+    "to": "FASHION_EFFECT",
+    "w": 0.94,
+    "why": [
+     "token:EFFECT",
+     "token:FASHION"
+    ]
+   }
+  ],
+  "SEVEN_DAYS_AWARDS": [
+   {
+    "to": "RETURN_SEVEN_DAYS_AWARDS",
+    "w": 1.36,
+    "why": [
+     "token:DAYS",
+     "token:AWARD",
+     "token:SEVEN"
+    ]
+   },
+   {
+    "to": "SPRING_SEVEN_DAYS_AWARDS",
+    "w": 1.36,
+    "why": [
+     "token:DAYS",
+     "token:AWARD",
+     "token:SEVEN"
+    ]
+   }
+  ],
+  "SKILL_TRICK_EXCHANGE_INDEX": [
+   {
+    "to": "GET_SKILL_TRICK_EXCHANGE_DATA",
+    "w": 1.15,
+    "why": [
+     "token:TRICK",
+     "token:EXCHANGE",
+     "token:SKILL"
+    ]
+   },
+   {
+    "to": "REFRESH_SKILL_TRICK_EXCHANGE_DATA",
+    "w": 1.15,
+    "why": [
+     "token:TRICK",
+     "token:EXCHANGE",
+     "token:SKILL"
+    ]
+   }
+  ],
+  "SPECIAL_CYCLE_LIFE": [
+   {
+    "to": "CYCLE_LIFE",
+    "w": 0.97,
+    "why": [
+     "token:CYCLE",
+     "token:LIFE"
+    ]
+   },
+   {
+    "to": "IS_CYCLE_LIFE",
+    "w": 0.97,
+    "why": [
+     "token:CYCLE",
+     "token:LIFE"
+    ]
+   }
+  ],
+  "SPECIAL_SHOP": [
+   {
+    "to": "BUY_SPECIAL_GOODS",
+    "w": 3.46,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "RG_SHOP_BY_ITEM",
+    "w": 3.08,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "FINISH_TASK",
+    "w": 2.86,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "SPECIFY_LIGHT_CELL": [
+   {
+    "to": "RANDOM_LIGHT_CELL",
+    "w": 0.93,
+    "why": [
+     "token:LIGHT",
+     "token:CELL"
+    ]
+   }
+  ],
+  "SPRING_SEVEN_DAYS_AWARDS": [
+   {
+    "to": "RETURN_SEVEN_DAYS_AWARDS",
+    "w": 1.36,
+    "why": [
+     "token:DAYS",
+     "token:AWARD",
+     "token:SEVEN"
+    ]
+   },
+   {
+    "to": "SEVEN_DAYS_AWARDS",
+    "w": 1.36,
+    "why": [
+     "token:DAYS",
+     "token:AWARD",
+     "token:SEVEN"
+    ]
+   }
+  ],
+  "START_DAZUO": [
+   {
+    "to": "END_DAZUO",
+    "w": 5.97,
+    "why": [
+     "pair:BEGIN/END",
+     "family:打坐练功",
+     "token:MEDITATION"
+    ]
+   },
+   {
+    "to": "VIGOR_DAZUO",
+    "w": 2.97,
+    "why": [
+     "family:打坐练功",
+     "token:MEDITATION",
+     "token:DAZUO"
+    ]
+   },
+   {
+    "to": "BEGIN_LIANGONG",
+    "w": 2.81,
+    "why": [
+     "family:打坐练功",
+     "field:beginTime"
+    ]
+   },
+   {
+    "to": "BEGIN_RECOVER_MP",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "BEGIN_WOOD_TRAINING",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "END_LIANGONG",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   }
+  ],
+  "START_EAT_BY_TABLE": [
+   {
+    "to": "END_EAT_BY_TABLE",
+    "w": 3.96,
+    "why": [
+     "pair:START/END",
+     "token:EAT",
+     "token:TABLE"
+    ]
+   }
+  ],
+  "START_FISHING": [
+   {
+    "to": "END_FISHING",
+    "w": 5.33,
+    "why": [
+     "pair:BEGIN/END",
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   },
+   {
+    "to": "CHECK_FISHING_REWARDS",
+    "w": 2.33,
+    "why": [
+     "fk:fishpond",
+     "field:siteID",
+     "token:FISH"
+    ]
+   },
+   {
+    "to": "CHECK_HIRE",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   },
+   {
+    "to": "HIRE_NPC",
+    "w": 1.85,
+    "why": [
+     "fk:fishpond",
+     "field:siteID"
+    ]
+   }
+  ],
+  "START_MPPVE_BATTLE": [
+   {
+    "to": "MPPVE_ACTION",
+    "w": 1.56,
+    "why": [
+     "token:MPPVE",
+     "token:MULTI",
+     "token:PVE"
+    ]
+   },
+   {
+    "to": "ROGUE_MPPVE_ACTION",
+    "w": 1.56,
+    "why": [
+     "token:MPPVE",
+     "token:MULTI",
+     "token:PVE"
+    ]
+   }
+  ],
+  "START_REFINING_FURNACE": [
+   {
+    "to": "GET_FURNACE_DATA",
+    "w": 1.29,
+    "why": [
+     "token:FURNACE",
+     "token:REFIN",
+     "token:SPRING"
+    ]
+   },
+   {
+    "to": "PUT_REFINING_ITEM_FURNACE",
+    "w": 1.29,
+    "why": [
+     "token:FURNACE",
+     "token:REFIN",
+     "token:SPRING"
+    ]
+   }
+  ],
+  "START_ROGUE_EXPLORE": [
+   {
+    "to": "END_ROGUE_EXPLORE",
+    "w": 3.46,
+    "why": [
+     "pair:START/END",
+     "token:EXPLORE"
+    ]
+   }
+  ],
+  "STEAL_CROP_EVENT": [
+   {
+    "to": "DISPOSS_HOME_EVENT",
+    "w": 1.51,
+    "why": [
+     "field:crop",
+     "field:aExp"
+    ]
+   },
+   {
+    "to": "CROP_CHANGE_STATE",
+    "w": 1.17,
+    "why": [
+     "field:crop",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "EXPEDITE_CROP",
+    "w": 1.17,
+    "why": [
+     "field:crop",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "OBTAINCROP",
+    "w": 1.14,
+    "why": [
+     "field:aExp",
+     "token:CROP"
+    ]
+   },
+   {
+    "to": "ONE_KEY_OBTAIN_CROP",
+    "w": 1.14,
+    "why": [
+     "field:aExp",
+     "token:CROP"
+    ]
+   }
+  ],
+  "SUBMIT_JIGSAW_PREPARE_ITEM": [
+   {
+    "to": "GET_SUPPORT_PREPARE_CAMP",
+    "w": 1.39,
+    "why": [
+     "token:PARE",
+     "token:PRE",
+     "token:PREPARE"
+    ]
+   },
+   {
+    "to": "JOIN_PREPARE_CAMP",
+    "w": 1.39,
+    "why": [
+     "token:PARE",
+     "token:PRE",
+     "token:PREPARE"
+    ]
+   },
+   {
+    "to": "SUPPORT_PREPARE_CAMP",
+    "w": 1.39,
+    "why": [
+     "token:PARE",
+     "token:PRE",
+     "token:PREPARE"
+    ]
+   }
+  ],
+  "SUPPORT_PREPARE_CAMP": [
+   {
+    "to": "JOIN_PREPARE_CAMP",
+    "w": 3.0,
+    "why": [
+     "field:schoolCamp",
+     "token:CAMP",
+     "token:PARE"
+    ]
+   },
+   {
+    "to": "GET_SUPPORT_PREPARE_CAMP",
+    "w": 2.63,
+    "why": [
+     "token:CAMP",
+     "token:SUPPORT",
+     "token:PARE"
+    ]
+   },
+   {
+    "to": "SUBMIT_JIGSAW_PREPARE_ITEM",
+    "w": 1.39,
+    "why": [
+     "token:PARE",
+     "token:PRE",
+     "token:PREPARE"
+    ]
+   }
+  ],
+  "SWEEP_DUNGEON": [
+   {
+    "to": "ENTER_DUNGEON",
+    "w": 1.73,
+    "why": [
+     "field:copyID",
+     "token:DUNGEON",
+     "token:COPY"
+    ]
+   },
+   {
+    "to": "END_DUNGEON_ADVENTURE",
+    "w": 1.64,
+    "why": [
+     "field:liveness",
+     "token:DUNGEON",
+     "token:COPY"
+    ]
+   }
+  ],
+  "SYCN_TASK": [
+   {
+    "to": "FINISH_TASK",
+    "w": 3.53,
+    "why": [
+     "family:任务主线",
+     "rw:accepted",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "GET_TASK",
+    "w": 3.48,
+    "why": [
+     "family:任务主线",
+     "rw:accepted",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPTCIRCLETASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "ACCEPT_SCHOOL_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CHANGE_DELEGATE_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   },
+   {
+    "to": "CIRCLE_TASK_TASK",
+    "w": 2.26,
+    "why": [
+     "family:任务主线",
+     "token:TASK"
+    ]
+   }
+  ],
+  "TOWER_CHOOSE_PANDA_EVENT": [
+   {
+    "to": "SELECT_SECRET_PANDA_EVENT",
+    "w": 1.18,
+    "why": [
+     "field:batch_sweep_data",
+     "token:PANDA"
+    ]
+   },
+   {
+    "to": "CLOSE_NEW_SWEEP_EVENT",
+    "w": 1.07,
+    "why": [
+     "field:batch_sweep_data",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "GET_NEW_SWEEP_EVENT",
+    "w": 1.07,
+    "why": [
+     "field:batch_sweep_data",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "NEW_TOWER_SWEEP_EVENT",
+    "w": 1.07,
+    "why": [
+     "field:batch_sweep_data",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 1.07,
+    "why": [
+     "field:batch_sweep_data",
+     "token:TOWER"
+    ]
+   }
+  ],
+  "TOWER_RANDOM_EVENT": [
+   {
+    "to": "ACTIVE_TOWER_EVENT",
+    "w": 6.96,
+    "why": [
+     "field:attrType",
+     "field:eggNpc",
+     "field:eventIds"
+    ]
+   },
+   {
+    "to": "REQ_WM_ADV_RWD",
+    "w": 1.2,
+    "why": [
+     "field:npcArr",
+     "token:RANDOM"
+    ]
+   },
+   {
+    "to": "ENTER_GET_CLIMBLING_EVENT",
+    "w": 1.16,
+    "why": [
+     "field:chickenLegNum",
+     "token:TOWER"
+    ]
+   },
+   {
+    "to": "SERVER_NPC_BATTLE_END",
+    "w": 1.16,
+    "why": [
+     "field:muscle",
+     "token:TOWER"
+    ]
+   }
+  ],
+  "TOWER_SPECIAL_SHOP": [
+   {
+    "to": "GET_HOUSE_SHOP_DATA",
+    "w": 1.14,
+    "why": [
+     "field:shopData",
+     "token:SHOP"
+    ]
+   }
+  ],
+  "UNLOADING_EQUIP_EVENT": [
+   {
+    "to": "FINISH_TASK",
+    "w": 2.86,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "REQ_BUY_FASHION",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "EXCHANGE_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "GET_TASK",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "UPGRADE_ACUPOINT": [
+   {
+    "to": "RESET_ACUPOINT",
+    "w": 3.89,
+    "why": [
+     "family:穴位",
+     "field:psych",
+     "token:VEIN"
+    ]
+   }
+  ],
+  "UPGRADE_SKILL_LV": [
+   {
+    "to": "USER_CREATE",
+    "w": 3.14,
+    "why": [
+     "rw:potential",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   },
+   {
+    "to": "USER_LOADGAME",
+    "w": 2.14,
+    "why": [
+     "rw:potential",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   },
+   {
+    "to": "FINISH_TASK",
+    "w": 1.88,
+    "why": [
+     "rw:accepted",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   },
+   {
+    "to": "GET_TASK",
+    "w": 1.83,
+    "why": [
+     "rw:accepted",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   },
+   {
+    "to": "USE_ITEM",
+    "w": 1.38,
+    "why": [
+     "rw:hungerMax",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   }
+  ],
+  "UPGRADE_WIFE_LEVEL": [
+   {
+    "to": "USE_WIFE_PROP",
+    "w": 2.52,
+    "why": [
+     "family:婚姻子女",
+     "token:WIFE"
+    ]
+   },
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BEGIN_WEDDING",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "CHILD_WASH_EVENT",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   }
+  ],
+  "USER_CREATE": [
+   {
+    "to": "USER_LOADGAME",
+    "w": 6.4,
+    "why": [
+     "rw:potential",
+     "rw:name",
+     "rw:baseValueAy"
+    ]
+   },
+   {
+    "to": "JOIN_SCHOOL",
+    "w": 3.5,
+    "why": [
+     "rw:school",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   },
+   {
+    "to": "UPGRADE_SKILL_LV",
+    "w": 3.14,
+    "why": [
+     "rw:potential",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   },
+   {
+    "to": "SELL_ITEM",
+    "w": 2.62,
+    "why": [
+     "rw:coins",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   },
+   {
+    "to": "QUICK_BUY",
+    "w": 2.62,
+    "why": [
+     "rw:coins",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   },
+   {
+    "to": "BUY_SHOP_ITEM",
+    "w": 2.62,
+    "why": [
+     "rw:coins",
+     "rw:saveVersion",
+     "rw:skills"
+    ]
+   }
+  ],
+  "USER_DOUBLE_TRAINING": [
+   {
+    "to": "END_DOUBLE_TRAINING",
+    "w": 0.9,
+    "why": [
+     "token:DOUBLE",
+     "token:TRAIN"
+    ]
+   }
+  ],
+  "USER_FRIENDLIST": [
+   {
+    "to": "GET_BREAK_FRIENDLIST",
+    "w": 0.9,
+    "why": [
+     "token:FRIENDLIST",
+     "token:FRIEND"
+    ]
+   }
+  ],
+  "USER_LOADGAME": [
+   {
+    "to": "USE_ITEM",
+    "w": 6.51,
+    "why": [
+     "rw:titles",
+     "rw:hungerMax",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "USER_CREATE",
+    "w": 6.4,
+    "why": [
+     "rw:potential",
+     "rw:name",
+     "rw:baseValueAy"
+    ]
+   },
+   {
+    "to": "FINISH_TASK",
+    "w": 4.08,
+    "why": [
+     "rw:accepted",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "GET_TASK",
+    "w": 4.02,
+    "why": [
+     "rw:accepted",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "SELL_ITEM",
+    "w": 4.02,
+    "why": [
+     "rw:coins",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "QUICK_BUY",
+    "w": 4.02,
+    "why": [
+     "rw:coins",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   }
+  ],
+  "USER_PVP": [
+   {
+    "to": "REQ_ROGUE_PVP_BATTLE",
+    "w": 2.54,
+    "why": [
+     "field:EnemyData",
+     "field:AttckData",
+     "token:PVP"
+    ]
+   }
+  ],
+  "USER_PVP_OVER": [
+   {
+    "to": "ROGUE_PVP_BATTLE_END",
+    "w": 1.13,
+    "why": [
+     "token:PVP",
+     "token:RESULT",
+     "token:BATTLE"
+    ]
+   }
+  ],
+  "USER_RANKLIST": [
+   {
+    "to": "WB_DMG_RANKLIST",
+    "w": 0.9,
+    "why": [
+     "token:RANKLIST",
+     "token:RANK"
+    ]
+   }
+  ],
+  "USE_ALL_BALL": [
+   {
+    "to": "USE_BATCH_SNOW_BALL",
+    "w": 2.49,
+    "why": [
+     "family:道具使用",
+     "token:BALL"
+    ]
+   },
+   {
+    "to": "USE_SNOW_BALL",
+    "w": 2.49,
+    "why": [
+     "family:道具使用",
+     "token:BALL"
+    ]
+   },
+   {
+    "to": "ROGUE_USE_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_ITEM_ADDITION",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   }
+  ],
+  "USE_BATCH_SNOW_BALL": [
+   {
+    "to": "USE_SNOW_BALL",
+    "w": 2.95,
+    "why": [
+     "family:道具使用",
+     "token:BALL",
+     "token:SNOW"
+    ]
+   },
+   {
+    "to": "USE_ALL_BALL",
+    "w": 2.49,
+    "why": [
+     "family:道具使用",
+     "token:BALL"
+    ]
+   },
+   {
+    "to": "ROGUE_USE_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_ITEM_ADDITION",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   }
+  ],
+  "USE_ITEM": [
+   {
+    "to": "ROGUE_USE_ITEM",
+    "w": 7.29,
+    "why": [
+     "family:道具使用",
+     "fk:npc",
+     "field:getKnackIds"
+    ]
+   },
+   {
+    "to": "USER_LOADGAME",
+    "w": 6.51,
+    "why": [
+     "rw:titles",
+     "rw:hungerMax",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "EXCHANGE_ITEM",
+    "w": 4.29,
+    "why": [
+     "rw:hungerMax",
+     "field:itemID",
+     "rw:fosterArr"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "WASH_ADDITION",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "ADD_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "USE_ITEM_ADDITION": [
+   {
+    "to": "ROGUE_USE_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_ALL_BALL",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_BATCH_SNOW_BALL",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_SNOW_BALL",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   }
+  ],
+  "USE_SNOW_BALL": [
+   {
+    "to": "USE_BATCH_SNOW_BALL",
+    "w": 2.95,
+    "why": [
+     "family:道具使用",
+     "token:BALL",
+     "token:SNOW"
+    ]
+   },
+   {
+    "to": "USE_ALL_BALL",
+    "w": 2.49,
+    "why": [
+     "family:道具使用",
+     "token:BALL"
+    ]
+   },
+   {
+    "to": "ROGUE_USE_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_ITEM",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   },
+   {
+    "to": "USE_ITEM_ADDITION",
+    "w": 2.0,
+    "why": [
+     "family:道具使用"
+    ]
+   }
+  ],
+  "USE_UFO_REFRESH": [
+   {
+    "to": "GET_UFO_CATCHER_DATA",
+    "w": 4.46,
+    "why": [
+     "field:freeRefreshTimes",
+     "field:buyRefreshTimes",
+     "field:refreshTimes"
+    ]
+   },
+   {
+    "to": "BUY_UFO_REFRESH_TIMES",
+    "w": 2.84,
+    "why": [
+     "field:freeRefreshTimes",
+     "field:buyRefreshTimes",
+     "field:refreshTimes"
+    ]
+   },
+   {
+    "to": "REWARD_UFO",
+    "w": 2.03,
+    "why": [
+     "field:rewardPool",
+     "field:signId",
+     "token:UFO"
+    ]
+   }
+  ],
+  "USE_WIFE_PROP": [
+   {
+    "to": "UPGRADE_WIFE_LEVEL",
+    "w": 2.52,
+    "why": [
+     "family:婚姻子女",
+     "token:WIFE"
+    ]
+   },
+   {
+    "to": "ADD_CHILD_FOSTER",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "ADOPTCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BEGIN_WEDDING",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "BIRTHCHILD",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   },
+   {
+    "to": "CHILD_WASH_EVENT",
+    "w": 2.0,
+    "why": [
+     "family:婚姻子女"
+    ]
+   }
+  ],
+  "VIGOR_DAZUO": [
+   {
+    "to": "END_DAZUO",
+    "w": 2.97,
+    "why": [
+     "family:打坐练功",
+     "token:MEDITATION",
+     "token:DAZUO"
+    ]
+   },
+   {
+    "to": "START_DAZUO",
+    "w": 2.97,
+    "why": [
+     "family:打坐练功",
+     "token:MEDITATION",
+     "token:DAZUO"
+    ]
+   },
+   {
+    "to": "BEGIN_LIANGONG",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "BEGIN_RECOVER_MP",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "BEGIN_WOOD_TRAINING",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   },
+   {
+    "to": "END_LIANGONG",
+    "w": 2.0,
+    "why": [
+     "family:打坐练功"
+    ]
+   }
+  ],
+  "VIGOR_UPGSKILL": [
+   {
+    "to": "GET_VIGOR",
+    "w": 1.29,
+    "why": [
+     "field:vigor",
+     "token:VIGOR"
+    ]
+   },
+   {
+    "to": "VIGOR_DAZUO",
+    "w": 1.29,
+    "why": [
+     "field:vigor",
+     "token:VIGOR"
+    ]
+   }
+  ],
+  "WASH_ADDITION": [
+   {
+    "to": "FINISH_TASK",
+    "w": 2.86,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "REQ_BUY_FASHION",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "EXCHANGE_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "USE_ITEM",
+    "w": 2.8,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "WB_DMG_RANKLIST": [
+   {
+    "to": "USER_RANKLIST",
+    "w": 0.9,
+    "why": [
+     "token:RANKLIST",
+     "token:RANK"
+    ]
+   }
+  ],
+  "WEAR_EQUIPMENT_ALL": [
+   {
+    "to": "PUT_ON_EQUIPMENT",
+    "w": 2.87,
+    "why": [
+     "token:EQUIP",
+     "rw:fosterArr",
+     "rw:yuanbao"
+    ]
+   },
+   {
+    "to": "ACTIVITE_SHOP",
+    "w": 2.36,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "REQ_BUY_FASHION",
+    "w": 2.36,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+    "w": 2.36,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "EXCHANGE_ITEM",
+    "w": 2.36,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   },
+   {
+    "to": "BATTLE_END_REWARD",
+    "w": 2.36,
+    "why": [
+     "rw:fosterArr",
+     "rw:yuanbao",
+     "rw:bloodArr"
+    ]
+   }
+  ],
+  "WEAR_FASHION": [
+   {
+    "to": "GET_FASHION_SHOP",
+    "w": 0.94,
+    "why": [
+     "token:FASION",
+     "token:FASHION"
+    ]
+   }
+  ],
+  "WULIN_ASSEMBLY_APPLY_REQ": [
+   {
+    "to": "JOIN_WULIN_PK_SERVER",
+    "w": 0.98,
+    "why": [
+     "token:LIN",
+     "token:WULIN"
+    ]
+   }
+  ]
+ }
+}

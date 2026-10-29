@@ -1,0 +1,962 @@
+{
+  "task1": [
+    {
+      "file": "tools/index.js",
+      "range": "L106347-L106360",
+      "code": "e.prototype.getItemNum = function(t) {\nvar e = h.playerInfo.entity;\nif (1 == t) return this.gold;\nif (4001 == t) return this.coins;\nif (4003 == t) return this.potentials;\nif (4002 == t) return e.exp;\nif (8888 == t) return this.yuanbao;\nif (this._itemObj.hasOwnProperty(t)) return this._itemObj[t].numbers;\nvar o = 0, i = l.InventoryModel.getEquipmentInfo(t);\ni && (o += i.num);\nvar n = l.InventoryModel.getSpecEqArrByItemID(t);\nn && (o += n.length);\nreturn o;\n};"
+    },
+    {
+      "file": "tools/index.js",
+      "range": "L106369-L106379",
+      "code": "e.prototype.getItemNotEquipNum = function(t) {\nvar e = h.playerInfo.entity;\nif (1 == t) return this.gold;\nif (4001 == t) return this.coins;\nif (4003 == t) return this.potentials;\nif (4002 == t) return e.exp;\nif (this._itemObj.hasOwnProperty(t)) return this._itemObj[t].numbers;\nvar o = 0, i = l.InventoryModel.getEquipmentInfo(t);\ni && (o += i.num);\nreturn o;\n};"
+    },
+    {
+      "file": "tools/index.js",
+      "range": "L134428-L134441",
+      "code": "t.judgeItemRequire = function(t) {\nvar e = !0, o = t.split(\"|\");\nif (1 == o.length) {\nvar i = t.split(\",\");\n1 == n.getItem(i[0], \"item\").Type ? 0 == m.EqUtils.getEquipOrUid(i[0]) && (e = !1) : l.RoleBaseInfo.getItemNum(i[0]) < i[1] && (e = !1);\n} else for (var r = 0; r < o.length; r++) {\nvar a = o[r].split(\",\");\nif (l.RoleBaseInfo.getItemNum(a[0]) < a[1]) {\ne = !1;\nbreak;\n}\n}\nreturn e;\n};"
+    },
+    {
+      "file": "tools/scripts3.js",
+      "range": "L73289-L73299",
+      "code": "t.prototype.getItemNum = function(t) {\nvar e = this.entity;\nif (4001 == t) return this.coins;\nif (4002 == t) return e.exp;\nif (this._itemObj.hasOwnProperty(t)) return this._itemObj[t].numbers;\nvar o = 0, i = this.getEquipmentInfo(t);\ni && (o += i.num);\nvar s = this.getSpecEqArrByItemID(t);\ns && (o += s.length);\nreturn o;\n};"
+    }
+  ],
+  "task2": {
+    "file": "tools/index.js",
+    "range": "L64698-L64725",
+    "code": "r.MessageCenter.on(a.HttpConst.ECONOMY_CHNG, function(t, e) {\nfor (var o in e) switch (o) {\ncase \"coins\":\nl.RoleBaseInfo.coins = e[o];\nbreak;\n\ncase \"ptt\":\nl.RoleBaseInfo.potentials = e[o];\nbreak;\n\ncase \"gold\":\nl.RoleBaseInfo.gold = e[o];\nbreak;\n\ncase \"exp\":\nk.playerInfo.entity.exp = e[o];\nl.RoleBaseInfo.exp = e[o];\nbreak;\n\ncase \"chips\":\nl.RoleBaseInfo.chipNum = e[o];\nbreak;\n\ncase \"yuanbao\":\nl.RoleBaseInfo.yuanbao = e[o];\n}\nr.MessageCenter.dispatch(s.EvName.SHOP_BUY_ITEM);\n}, this);",
+    "ecoKeyToField": [
+      {
+        "key": "coins",
+        "field": "RoleBaseInfo.coins",
+        "line": "L64700-L64702"
+      },
+      {
+        "key": "ptt",
+        "field": "RoleBaseInfo.potentials",
+        "line": "L64704-L64706"
+      },
+      {
+        "key": "gold",
+        "field": "RoleBaseInfo.gold",
+        "line": "L64708-L64710"
+      },
+      {
+        "key": "exp",
+        "field": "k.playerInfo.entity.exp / RoleBaseInfo.exp",
+        "line": "L64712-L64715"
+      },
+      {
+        "key": "chips",
+        "field": "RoleBaseInfo.chipNum",
+        "line": "L64717-L64719"
+      },
+      {
+        "key": "yuanbao",
+        "field": "RoleBaseInfo.yuanbao",
+        "line": "L64721-L64723"
+      }
+    ],
+    "consumerRange": "L64698-L64725"
+  },
+  "task3": {
+    "rows": [
+      {
+        "npc": 10385,
+        "rowId": 1063,
+        "rewardId": 4003,
+        "rewardNum": 2000,
+        "costStr": "3117,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1064,
+        "rewardId": 4003,
+        "rewardNum": 2000,
+        "costStr": "3118,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1065,
+        "rewardId": 4003,
+        "rewardNum": 2000,
+        "costStr": "3119,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1066,
+        "rewardId": 4003,
+        "rewardNum": 2000,
+        "costStr": "3120,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1067,
+        "rewardId": 4003,
+        "rewardNum": 2000,
+        "costStr": "3121,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1068,
+        "rewardId": 4003,
+        "rewardNum": 2000,
+        "costStr": "3122,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1069,
+        "rewardId": 4003,
+        "rewardNum": 2000,
+        "costStr": "3123,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1070,
+        "rewardId": 4003,
+        "rewardNum": 2000,
+        "costStr": "3124,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1078,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "3127,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1094,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "4652,1|4653,1|4654,1|4655,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1095,
+        "rewardId": 4003,
+        "rewardNum": 2000,
+        "costStr": "4652,1|4653,1|4656,1|4657,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1096,
+        "rewardId": 4003,
+        "rewardNum": 6666,
+        "costStr": "4658,1|4659,1|4660,1|4661,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1098,
+        "rewardId": 4003,
+        "rewardNum": 3000,
+        "costStr": "4666,1|4664,1|4667,1|4668,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1099,
+        "rewardId": 4003,
+        "rewardNum": 4000,
+        "costStr": "4669,1|4670,1|4671,1|4672,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1100,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "4673,1|4653,1|4656,1|4657,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1101,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "4674,1|4675,1|4676,1|4677,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1102,
+        "rewardId": 4001,
+        "rewardNum": 50000,
+        "costStr": "4678,1|4679,1|4680,1|4689,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1103,
+        "rewardId": 4001,
+        "rewardNum": 66666,
+        "costStr": "4682,1|4683,1|4684,1|4678,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1104,
+        "rewardId": 1,
+        "rewardNum": 9396,
+        "costStr": "4685,1|4686,1|4687,1|4688,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1105,
+        "rewardId": 4001,
+        "rewardNum": 88888,
+        "costStr": "4658,1|4659,1|4681,1|4654,1|4661,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1292,
+        "rewardId": 4001,
+        "rewardNum": 2000,
+        "costStr": "6313,1|6314,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1293,
+        "rewardId": 4003,
+        "rewardNum": 2000,
+        "costStr": "6315,1|6316,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1294,
+        "rewardId": 4001,
+        "rewardNum": 2000,
+        "costStr": "6321,1|6322,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1295,
+        "rewardId": 4003,
+        "rewardNum": 2000,
+        "costStr": "6323,1|6324,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1312,
+        "rewardId": 4001,
+        "rewardNum": 10000,
+        "costStr": "6387,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1345,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "6503,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1346,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "6504,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1347,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "6505,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1348,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "6506,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1349,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "6507,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1350,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "6508,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1351,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "6509,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1352,
+        "rewardId": 4003,
+        "rewardNum": 1000,
+        "costStr": "6510,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1408,
+        "rewardId": 4003,
+        "rewardNum": 10000,
+        "costStr": "6649,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1428,
+        "rewardId": 4003,
+        "rewardNum": 10000,
+        "costStr": "6902,1|6903,1|6904,1|6905,1|6906,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1436,
+        "rewardId": 4003,
+        "rewardNum": 60000,
+        "costStr": "6949,34"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1452,
+        "rewardId": 4003,
+        "rewardNum": 20000,
+        "costStr": "7033,20"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1453,
+        "rewardId": 4003,
+        "rewardNum": 60000,
+        "costStr": "7088,6"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1459,
+        "rewardId": 4003,
+        "rewardNum": 6100,
+        "costStr": "7088,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1463,
+        "rewardId": 4003,
+        "rewardNum": 100000,
+        "costStr": "7119,1|7121,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1464,
+        "rewardId": 4003,
+        "rewardNum": 100000,
+        "costStr": "7121,1|7137,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1465,
+        "rewardId": 4003,
+        "rewardNum": 100000,
+        "costStr": "7119,1|7137,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1466,
+        "rewardId": 4003,
+        "rewardNum": 50000,
+        "costStr": "7119,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1467,
+        "rewardId": 4003,
+        "rewardNum": 50000,
+        "costStr": "7121,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1468,
+        "rewardId": 4003,
+        "rewardNum": 50000,
+        "costStr": "7137,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1470,
+        "rewardId": 4003,
+        "rewardNum": 100000,
+        "costStr": "7558,1|7563,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1471,
+        "rewardId": 4003,
+        "rewardNum": 100000,
+        "costStr": "7558,1|7569,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1472,
+        "rewardId": 4003,
+        "rewardNum": 100000,
+        "costStr": "7563,1|7569,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1473,
+        "rewardId": 4003,
+        "rewardNum": 50000,
+        "costStr": "7558,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1474,
+        "rewardId": 4003,
+        "rewardNum": 50000,
+        "costStr": "7563,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1475,
+        "rewardId": 4003,
+        "rewardNum": 50000,
+        "costStr": "7569,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1478,
+        "rewardId": 4003,
+        "rewardNum": 100000,
+        "costStr": "7206,1|7194,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1479,
+        "rewardId": 4003,
+        "rewardNum": 100000,
+        "costStr": "7206,1|7186,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1480,
+        "rewardId": 4003,
+        "rewardNum": 100000,
+        "costStr": "7194,1|7186,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1481,
+        "rewardId": 4003,
+        "rewardNum": 50000,
+        "costStr": "7206,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1482,
+        "rewardId": 4003,
+        "rewardNum": 50000,
+        "costStr": "7194,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1483,
+        "rewardId": 4003,
+        "rewardNum": 50000,
+        "costStr": "7186,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1526,
+        "rewardId": 4003,
+        "rewardNum": 5000,
+        "costStr": "7493,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1527,
+        "rewardId": 4003,
+        "rewardNum": 5000,
+        "costStr": "7494,10"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1566,
+        "rewardId": 4003,
+        "rewardNum": 60000,
+        "costStr": "7797,6"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1567,
+        "rewardId": 4003,
+        "rewardNum": 6100,
+        "costStr": "7797,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1570,
+        "rewardId": 4003,
+        "rewardNum": 444,
+        "costStr": "7855,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1571,
+        "rewardId": 4003,
+        "rewardNum": 444,
+        "costStr": "7856,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1572,
+        "rewardId": 4003,
+        "rewardNum": 444,
+        "costStr": "7857,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1573,
+        "rewardId": 4003,
+        "rewardNum": 444,
+        "costStr": "7858,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1574,
+        "rewardId": 4003,
+        "rewardNum": 444,
+        "costStr": "7859,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1578,
+        "rewardId": 4003,
+        "rewardNum": 4444,
+        "costStr": "7857,1|7858,1|7859,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1582,
+        "rewardId": 4003,
+        "rewardNum": 4000,
+        "costStr": "7872,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1596,
+        "rewardId": 4003,
+        "rewardNum": 1500,
+        "costStr": "7877,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1597,
+        "rewardId": 4003,
+        "rewardNum": 666,
+        "costStr": "7879,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1598,
+        "rewardId": 4003,
+        "rewardNum": 300,
+        "costStr": "7881,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1599,
+        "rewardId": 4003,
+        "rewardNum": 1500,
+        "costStr": "7878,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1600,
+        "rewardId": 4003,
+        "rewardNum": 666,
+        "costStr": "7880,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1601,
+        "rewardId": 4003,
+        "rewardNum": 300,
+        "costStr": "7882,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1607,
+        "rewardId": 4003,
+        "rewardNum": 777,
+        "costStr": "7890,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1614,
+        "rewardId": 4003,
+        "rewardNum": 555,
+        "costStr": "8247,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1623,
+        "rewardId": 4003,
+        "rewardNum": 5000,
+        "costStr": "8286,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1666,
+        "rewardId": 4003,
+        "rewardNum": 100,
+        "costStr": "8919,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1743,
+        "rewardId": 4003,
+        "rewardNum": 5000,
+        "costStr": "9176,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1790,
+        "rewardId": 4003,
+        "rewardNum": 5000,
+        "costStr": "9494,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1910,
+        "rewardId": 4003,
+        "rewardNum": 5000,
+        "costStr": "9779,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1942,
+        "rewardId": 4003,
+        "rewardNum": 5000,
+        "costStr": "9817,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1964,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "9830,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1965,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "9831,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1966,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "9832,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1968,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "9895,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1969,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "9896,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1970,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "9897,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1982,
+        "rewardId": 4003,
+        "rewardNum": 5000,
+        "costStr": "9980,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 1999,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10001,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2000,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10002,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2001,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10003,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2042,
+        "rewardId": 4003,
+        "rewardNum": 5000,
+        "costStr": "10075,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2059,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10210,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2060,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10211,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2061,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10212,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2093,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10329,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2094,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10330,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2095,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10331,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2114,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10435,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2115,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10436,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2116,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10437,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2130,
+        "rewardId": 4003,
+        "rewardNum": 5000,
+        "costStr": "10541,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2147,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10595,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2148,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10596,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2149,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10597,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2151,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10615,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2152,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10616,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2153,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10617,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2184,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10718,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2185,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10719,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2186,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10720,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2188,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10786,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2189,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10787,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2190,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10788,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2197,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10867,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2198,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10868,1"
+      },
+      {
+        "npc": 10385,
+        "rowId": 2199,
+        "rewardId": 4003,
+        "rewardNum": 500,
+        "costStr": "10869,1"
+      }
+    ],
+    "byRewardId": {
+      "1": 1,
+      "4001": 6,
+      "4003": 111
+    }
+  },
+  "task4": {
+    "grantItemCalls": [
+      {
+        "line": 484,
+        "func": "grantItem"
+      },
+      {
+        "line": 642,
+        "func": "grantFromDrop"
+      },
+      {
+        "line": 956,
+        "func": "getFinishTaskAward"
+      },
+      {
+        "line": 1876,
+        "func": "buyShopItem"
+      },
+      {
+        "line": 1929,
+        "func": "buySpecialShopItem"
+      },
+      {
+        "line": 2005,
+        "func": "BuyAcitivityShop"
+      },
+      {
+        "line": 2067,
+        "func": "exchangeItem"
+      },
+      {
+        "line": 2120,
+        "func": "buyGoodAndEvilShopItem"
+      },
+      {
+        "line": 2170,
+        "func": "rgShopByItem"
+      },
+      {
+        "line": 2199,
+        "func": "QuickBuyItem"
+      },
+      {
+        "line": 2276,
+        "func": "bzBackfillRewards"
+      }
+    ],
+    "currencyRefs": [
+      {
+        "line": 515,
+        "code": "  var CURRENCY_IDS = { 1: 1, 2: 1, 4001: 1, 4002: 1, 4003: 1 };"
+      },
+      {
+        "line": 516,
+        "code": "  function isCurrencyItem(id) { return !!CURRENCY_IDS[parseInt(id, 10) || 0]; }"
+      },
+      {
+        "line": 676,
+        "code": "        if (isCurrencyItem(k)) continue;"
+      }
+    ]
+  },
+  "notFound": [
+    "tools/scripts2.js (货币特判映射未在 scripts2.js 中出现，仅在 tools/index.js 与 tools/scripts3.js 中存在)"
+  ]
+}

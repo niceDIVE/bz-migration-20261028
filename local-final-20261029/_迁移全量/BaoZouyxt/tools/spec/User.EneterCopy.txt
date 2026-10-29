@@ -1,0 +1,99 @@
+# User.EneterCopy  (HttpConst.ENTER_DUNGEON)
+# 出现 2 处
+
+ 64069: t.prototype.init = function() {
+ 64070: var t = this;
+ 64071: r.MessageCenter.on(a.HttpConst.GET_DUNGEON_INFO, function(t, e) {
+ 64072: var o = e.copyArr;
+ 64073: r.MessageCenter.dispatch(s.EvName.INIT_DUNGEON_ENTR, o);
+ 64074: }, this);
+ 64075: r.MessageCenter.on(a.HttpConst.ENTER_DUNGEON, function(e, o) {
+ 64076: if (1 == o.eRet) {
+ 64077: t.dungeonID = o.copyID;
+ 64078: t.level = o.state - 1;
+ 64079: t.start(o.copyID);
+ 64080: } else if (5 == o.eRet) {
+ 64081: var r = i.getItem(o.copyID, "fuben").exp[o.state - 1];
+ 64082: l.default.show(n.getText(1242).replace(/\[1\]/, r));
+ 64083: } else l.default.show("error!");
+ 64084: }, this);
+ 64085: r.MessageCenter.on(a.HttpConst.BUY_DG_CHALLENGE, function(e, o) {
+ 64086: if (2 == o.eRet) {
+ 64087: t.buyCount = 0;
+ 64088: c.StoreModel.openChargeList();
+ 64089: } else if (1 == o.eRet) {
+ 64090: r.MessageCenter.dispatch(s.EvName.BUY_DG_CHALLENGE_SUCCEED, t.buyCount);
+ 64091: t.buyCount = 0;
+ 64092: }
+ 64093: }, this);
+ 64094: r.MessageCenter.on(a.HttpConst.END_DUNGEON_ADVENTURE, function(e, o) {
+ 64095: t.showRewards(o.rewardArray, o.liveness);
+ 64096: t.end();
+ 64097: }, this);
+ 64098: r.MessageCenter.on(a.HttpConst.SWEEP_DUNGEON, function(e, o) {
+ 64099: if (1 == o.eRet) t.showRewards(o.rewardArray, o.liveness); else if (3 == o.eRet) g.LoginMgr.isMiniIos(1) ? l.default.show(n.getText(591)) : l.default.show(n.getText(1180) + "\n" + n.getText(1043), [ {
+ 64100: flag: 0,
+ 64101: name: n.getText("930")
+ 64102: } ], function(t) {
+ 64103: 0 == t && c.StoreModel.reqStoreList();
+ 64104: }); else if (5 == o.eRet) {
+ 64105: var r = i.getItem(o.copyID, "fuben").exp[o.state - 1];
+ 64106: l.default.show(n.getText(1242).replace(/\[1\]/, r));
+ 64107: }
+ 64108: }, this);
+ 64109: };
+ 64110: t.prototype.start = function(t) {
+ 64111: if (!this._started) {
+ 64112: this._started = !0;
+ 64113: p.GSceneMgr.mode = 1;
+ 64114: this.killedNpc = {};
+ 64115: this.killedNpcTmp = {};
+---
+ 64146: };
+ 64147: t.prototype.reqEnterDungeon = function(t, e) {
+ 64148: var o = {
+ 64149: copyID: t,
+ 64150: state: e
+ 64151: };
+ 64152: f.NetMgr.http.sendRequest(a.HttpConst.ENTER_DUNGEON, o);
+ 64153: };
+ 64154: t.prototype.reqBuyChallenge = function(t, e) {
+ 64155: var o = {
+ 64156: copyID: t,
+ 64157: buyCount: e
+ 64158: };
+ 64159: this.buyCount = e;
+ 64160: f.NetMgr.http.sendRequest(a.HttpConst.BUY_DG_CHALLENGE, o);
+ 64161: };
+ 64162: t.prototype.reqLeaveDungeon = function(t) {
+ 64163: var e = [];
+ 64164: for (var o in this.killedNpc) {
+ 64165: e.push(o);
+ 64166: e.push(this.killedNpc[o]);
+ 64167: }
+ 64168: var i = {
+ 64169: copyID: t,
+ 64170: npcArr: e,
+ 64171: flag: this.perfect
+ 64172: };
+ 64173: f.NetMgr.http.sendRequest(a.HttpConst.END_DUNGEON_ADVENTURE, i);
+ 64174: };
+ 64175: t.prototype.reqSweep = function(t, e, o) {
+ 64176: void 0 === o && (o = 1);
+ 64177: f.NetMgr.http.sendRequest(a.HttpConst.SWEEP_DUNGEON, {
+ 64178: copyID: t,
+ 64179: state: e + 1,
+ 64180: sweepCount: o
+ 64181: });
+ 64182: };
+ 64183: t.prototype.showRewards = function(t, e) {
+ 64184: var o = "", r = 0;
+ 64185: for (var a in t) {
+ 64186: var s = i.getItem(a, "item");
+ 64187: 0 != r && (o += "\n");
+ 64188: o += n.getText(s.Name) + " x" + t[a];
+ 64189: ++r;
+ 64190: }
+ 64191: if (e) {
+ 64192: 0 != r && (o += "\n");
+---

@@ -1,0 +1,99 @@
+# User.cookReceive  (HttpConst.COOK_RECEIVE)
+# 出现 2 处
+
+ 62230: r.MessageCenter.on(c.HttpConst.GET_INN_COOK_LIST, this.onInnCookListEvent, this);
+ 62231: r.MessageCenter.on(c.HttpConst.GET_INN_PRODUCT_LIST, this.onInnProductListEvent, this);
+ 62232: r.MessageCenter.on(c.HttpConst.PRODUCT_RECEIVE, this.onInnCookRewardEvent, this);
+ 62233: r.MessageCenter.on(c.HttpConst.PRODUCT_START, this.onProductCookEvent, this);
+ 62234: r.MessageCenter.on(c.HttpConst.PRODUCT_UNLOCK, this.onOpenCookLandEvent, this);
+ 62235: r.MessageCenter.on(c.HttpConst.PRODUCT_ACCELERATE, this.onAddProductEvent, this);
+ 62236: r.MessageCenter.on(c.HttpConst.COOK_RECEIVE, this.onInnKitchenDataChanged, this);
+ 62237: r.MessageCenter.on(c.HttpConst.COOK_ACCELERATE, this.onInnKitchenDataChanged, this);
+ 62238: r.MessageCenter.on(c.HttpConst.COOK_START, this.onInnKitchenDataChanged, this);
+ 62239: r.MessageCenter.on(c.HttpConst.COOK_UNLOCK, this.onInnKitchenDataChanged, this);
+ 62240: r.MessageCenter.on(c.HttpConst.GET_INN_COOK, this.onCookBookData, this);
+ 62241: r.MessageCenter.on(c.HttpConst.DISH_UNLOCK, this.onDishUnlock, this);
+ 62242: r.MessageCenter.on(c.HttpConst.GET_INN_BAG_DATA, this.onBagsDataEvent, this);
+ 62243: r.MessageCenter.on(c.HttpConst.CREATE_ORDER_BY_HOTVAL, this.onCreateOrder, this);
+ 62244: r.MessageCenter.on(c.HttpConst.COMPLETE_ORDER_BY_HOTVAL, this.onFinishOrder, this);
+ 62245: r.MessageCenter.on(c.HttpConst.GET_INN_RANK, this.onShowInnRank, this);
+ 62246: r.MessageCenter.on(c.HttpConst.GET_INN_SHOP, this.onShowInnShop, this);
+ 62247: r.MessageCenter.on(c.HttpConst.INN_BUY_SHOP, this.onShopBuyItem, this);
+ 62248: };
+ 62249: e.prototype.onDishUnlock = function(t, e) {
+ 62250: if (1 == e.eRet) {
+ 62251: for (var o = e.unlockDish, a = 0, l = 0; l < o.length; l++) this.unlockDishData.indexOf(o[l]) < 0 && (a = o[l]);
+ 62252: if (a > 0) {
+ 62253: var c = i.getItem(a, "dishconfig");
+ 62254: h.default.show(n.getText(7901).replace(/\[1\]/, n.getText(c.name)));
+ 62255: }
+ 62256: this.unlockDishData = e.unlockDish;
+ 62257: this.updateMainMenu();
+ 62258: r.MessageCenter.dispatch(s.EvName.INN_UPDATE_BOOK);
+ 62259: }
+ 62260: };
+ 62261: e.prototype.onCookBookData = function(t, e) {
+ 62262: if (1 == e.eRet) {
+ 62263: this.unlockDishData = e.unlockDish;
+ 62264: this.bookBag = e.cookBook;
+ 62265: r.MessageCenter.dispatch(s.EvName.ON_SELECT_COOK_MANAGE, {
+ 62266: tag1: 3,
+ 62267: data: e
+ 62268: });
+ 62269: }
+ 62270: };
+ 62271: e.prototype.onBagsDataEvent = function(t, e) {
+ 62272: 1 == e.eRet && r.MessageCenter.dispatch(s.EvName.ON_SELECT_COOK_MANAGE, {
+ 62273: tag1: 2,
+ 62274: data: e
+ 62275: });
+ 62276: };
+---
+ 62481: dishId: t,
+ 62482: dishNum: e
+ 62483: });
+ 62484: };
+ 62485: e.prototype.reqCookReceive = function(t) {
+ 62486: v.SoundMgr.playEffect("sim_cook");
+ 62487: p.NetMgr.http.sendReqWithMask(c.HttpConst.COOK_RECEIVE, {
+ 62488: cookNum: t
+ 62489: });
+ 62490: };
+ 62491: e.prototype.reqCookAccelerate = function(t) {
+ 62492: p.NetMgr.http.sendReqWithMask(c.HttpConst.COOK_ACCELERATE, {
+ 62493: cookNum: t
+ 62494: });
+ 62495: };
+ 62496: e.prototype.reqTableUnlock = function(t) {
+ 62497: v.SoundMgr.playEffect("sim_unlock");
+ 62498: p.NetMgr.http.sendReqWithMask(c.HttpConst.TABLE_UNLOCK, {
+ 62499: tableId: t
+ 62500: });
+ 62501: };
+ 62502: e.prototype.reqStartEat = function(t) {
+ 62503: this.sss[t - 1] && console.error("Error, this table " + t + " has a guest eating");
+ 62504: cc.log("Table " + t + " is asking for starting eat.");
+ 62505: this.sss[t - 1] = !0;
+ 62506: p.NetMgr.http.sendReqWithMask(c.HttpConst.START_EAT_BY_TABLE, {
+ 62507: tableId: t
+ 62508: });
+ 62509: };
+ 62510: e.prototype.reqReceiveTable = function(t) {
+ 62511: v.SoundMgr.playEffect("sim_money");
+ 62512: p.NetMgr.http.sendReqWithMask(c.HttpConst.TABLE_RECEIVE, {
+ 62513: tableId: t
+ 62514: });
+ 62515: };
+ 62516: e.prototype.recordFinishTables = function(t) {
+ 62517: this.finishTableIdxArr.push(t);
+ 62518: };
+ 62519: e.prototype.reqEndEat = function() {
+ 62520: if (!(this.finishTableIdxArr.length <= 0)) {
+ 62521: for (var t = "Table ", e = 0; e < this.finishTableIdxArr.length; e++) {
+ 62522: this.sss[this.finishTableIdxArr[e] - 1] || console.error("Error, this table " + this.finishTableIdxArr[e] + " doesn't has a guest eating");
+ 62523: t += " " + this.finishTableIdxArr[e];
+ 62524: this.sss[this.finishTableIdxArr[e] - 1] = !1;
+ 62525: }
+ 62526: cc.log(t + " is asking for ending eat.");
+ 62527: var o = this.finishTableIdxArr.splice(0);
+---

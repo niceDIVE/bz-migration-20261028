@@ -1,0 +1,15 @@
+# User.getPaySignAward   (HttpConst.GET_PAYSIGN_AWARD)
+
+## 注册点 1408: r.MessageCenter.on(a.HttpConst.GET_PAYSIGN_AWARD, this.paySignRewardCallBack.bind(this), this);
+
+## 请求点 1791: d.RoleOtherInfo.rechargeLimitArr.length > 0 && g.NetMgr.http.sendReqWithMask(a.HttpConst.GET_PAYSIGN_AWARD, {
+   1783: return this.randOldManObj;
+   1784: };
+   1785: e.prototype.reqLimitPayData = function(t) {
+   1786: void 0 === t && (t = 0);
+   1787: this.stopOnce = t;
+   1788: g.NetMgr.http.sendReqWithMask(a.HttpConst.GET_PAYSIGN_DATA, {});
+   1789: };
+   1790: e.prototype.reqGetSignPayReward = function() {
+
+## 处理函数 bind —— 未找到定义

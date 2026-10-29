@@ -1,0 +1,27 @@
+# User.getCircleTaskAward   (HttpConst.GETCIRCLETASK)
+
+## 注册点 133219: r.MessageCenter.on(s.HttpConst.GETCIRCLETASK, this.getCircleTaskCallBack, this);
+
+## 请求点 133720: p.NetMgr.http.sendReqWithMask(s.HttpConst.GETCIRCLETASK, i);
+   133712: gTime: e.totalGameTime.gameTime
+   133713: };
+   133714: if (5 == o.Type || 7 == o.Type) i.retData = t.reqTaskObj.circleTaskObj.visitNpc; else if (6 == o.Type) i.retData = t.reqTaskObj.circleTaskObj.evilObj.npcId; else if (8 == o.Type) {
+   133715: i.retData = t.reqTaskObj.circleTaskObj.collectItem;
+   133716: var n = this.deleteItemID(t.reqTaskObj.circleTaskObj.collectItem);
+   133717: i.itemType = n.itemType;
+   133718: i.ItemID = n.ItemID;
+   133719: }
+
+## 处理函数 getCircleTaskCallBack (133570-133581)
+133570: e.prototype.getCircleTaskCallBack = function(t, e) {
+133571: if (1 == e.eRet) {
+133572: this.finishTaskAddLikeness(this.finishTaskObj.taskObj.TaskID);
+133573: b.default.operationalTasks(2, this.finishTaskObj, this.taskSelectId);
+133574: if (A.MadUtilsTS.isNullObj(e.rewardArray) && A.MadUtilsTS.isNullObj(e.equipObj)) C.GuideMgr.enterFirstGuide(this.finishTaskObj.taskObj.TaskID, 1); else {
+133575: var o = this.finishTaskObj.taskObj.TaskID, r = this.finishTaskObj.taskObj.Type;
+133576: if (6 == r || 7 == r) {
+133577: var l = "", h = e.rewardArray;
+133578: for (var u in h) {
+133579: var f = i.getItem(u, "item");
+133580: l += n.getText(f.Name) + " x" + h[u] + "\n";
+133581: }

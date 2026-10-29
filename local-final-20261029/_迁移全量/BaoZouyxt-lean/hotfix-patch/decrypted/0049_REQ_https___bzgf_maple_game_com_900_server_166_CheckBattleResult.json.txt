@@ -1,0 +1,2 @@
+POST https://bzgf.maple-game.com/900-server-166/CheckBattleResult
+{"mod":"User","do":"CheckBattleResult","p":{"npcID":310003,"mplimit":200,"mp":200,"hp":519,"hplimit":600,"loss":false,"hg":40,"hgtimes":0,"gTime":0,"hpmax":600,"win":true,"actionArr":[{"t":1,"id":"16374","skillID":1,"useMp":false}],"seed":1792573086885,"aDmgReceived":81,"bDmgReceived":164,"itemSkill":[],"forwards":[81802],"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573098178y5gyfxat"}}

@@ -1,0 +1,13 @@
+# User.GetNoticeAward   (HttpConst.GETNOTICE_REWARD)
+
+## 注册点 108238: r.MessageCenter.on(s.HttpConst.GETNOTICE_REWARD, function(e, o) {
+
+## 请求点 108282: l.NetMgr.http.sendRequest(s.HttpConst.GETNOTICE_REWARD, e);
+   108274: l.NetMgr.http.sendRequest(s.HttpConst.REFRESHNOTICE, e);
+   108275: };
+   108276: e.prototype.reqActiveGetReward = function(t) {
+   108277: this.currentRewardId = t;
+   108278: var e = {
+   108279: typeID: t,
+   108280: eventID: this.activeEventID
+   108281: };

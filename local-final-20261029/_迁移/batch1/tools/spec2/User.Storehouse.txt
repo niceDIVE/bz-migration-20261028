@@ -1,0 +1,13 @@
+# User.Storehouse   (HttpConst.CLAIM_TR_REWARD)
+
+## 注册点 139317: n.MessageCenter.on(r.HttpConst.CLAIM_TR_REWARD, function(e, o) {
+
+## 请求点 139371: c.NetMgr.http.sendReqWithMask(r.HttpConst.CLAIM_TR_REWARD, o);
+   139363: };
+   139364: c.NetMgr.http.sendRequest(r.HttpConst.GET_TR_MAP_INFO, e);
+   139365: };
+   139366: t.prototype.reqGetTreasure = function(t, e) {
+   139367: var o = {
+   139368: groupID: t,
+   139369: flag: e
+   139370: };

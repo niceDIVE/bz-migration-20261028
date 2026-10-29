@@ -1,0 +1,99 @@
+# User.GetShopAllActive  (HttpConst.GET_SHOP_ALL_ACTIVE)
+# 出现 2 处
+
+130769: });
+130770: t.serverTime = o.serverTime;
+130771: t.nextRefreshTime = o.nextRefreshTime;
+130772: o.hasOwnProperty("buyTimes") ? t.buyTimes = o.buyTimes : t.buyTimes = y.RoleOtherInfo.buyTimes;
+130773: }
+130774: }, this);
+130775: l.MessageCenter.on(p.HttpConst.GET_SHOP_ALL_ACTIVE, this.onGetShopAllActive, this);
+130776: l.MessageCenter.on(p.HttpConst.GET_GIFT_DATA, function(e, o) {
+130777: if (0 == o.eRet) {
+130778: c.default.show(i.getText("1093"));
+130779: l.MessageCenter.dispatch(h.EvName.CLOSE_GIFT_PACK);
+130780: } else if (1 == o.eRet) if (1 == t.homeUI) if (0 == t.optionalState) {
+130781: t.optionalState = !0;
+130782: u.default.prefabs.load("storeUI/OptionalGiftUI", cc.Prefab, function(t, e) {
+130783: var i = cc.instantiate(e);
+130784: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer);
+130785: var n = i.getComponent("OptionalGiftUI");
+130786: n.setData(o);
+130787: n.setBackBtn();
+130788: });
+130789: } else l.MessageCenter.dispatch(h.EvName.UPDATE_GIFT_DATA, o); else l.MessageCenter.dispatch(h.EvName.GET_GIFT_DATA, o); else if (2 == o.eRet) {
+130790: c.default.show(i.getText("1093"));
+130791: l.MessageCenter.dispatch(h.EvName.CLOSE_GIFT_PACK);
+130792: } else {
+130793: c.default.show(i.getText("1093"));
+130794: l.MessageCenter.dispatch(h.EvName.CLOSE_GIFT_PACK);
+130795: }
+130796: }, this);
+130797: l.MessageCenter.on(p.HttpConst.BUY_GIFT_PERMANENT, function(t, e) {
+130798: if (1 == e.eRet) {
+130799: T.default.addShowRewardUI1(e.rewardArray, 0, {});
+130800: l.MessageCenter.dispatch(h.EvName.REFRESH_GIFT_DATA, e);
+130801: l.MessageCenter.dispatch("wulinMoneyItemEvent");
+130802: l.MessageCenter.dispatch("jumpFunMoneyEvent");
+130803: l.MessageCenter.dispatch("trainingRefrashItemEvent");
+130804: l.MessageCenter.dispatch("chessTaskRewardEvent");
+130805: }
+130806: }, this);
+130807: l.MessageCenter.on(p.HttpConst.NEW_OPTIONALGIFT_DATA, function(e, o) {
+130808: if (0 == o.eRet) {
+130809: c.default.show(i.getText("1093"));
+130810: l.MessageCenter.dispatch(h.EvName.CLOSE_GIFT_PACK);
+130811: } else if (1 == o.eRet) if (1 == t.homeUI) if (0 == t.optionalState) {
+130812: t.optionalState = !0;
+130813: u.default.prefabs.load("storeUI/NewOptionalGiftUI", cc.Prefab, function(t, e) {
+130814: var i = cc.instantiate(e);
+130815: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer);
+---
+131088: type: 7,
+131089: back: 1
+131090: });
+131091: };
+131092: e.prototype.reqShopAllActive = function(t) {
+131093: void 0 === t && (t = null);
+131094: g.NetMgr.http.sendRequest(p.HttpConst.GET_SHOP_ALL_ACTIVE, {});
+131095: };
+131096: e.prototype.refreshGiftAwardCallback = function(t, e) {
+131097: 1 == e.eRet && l.MessageCenter.dispatch(h.EvName.REFRESH_GIFT_STATE, e.giftAwards);
+131098: };
+131099: e.prototype.getPermanentRewardCallback = function(t, e) {
+131100: if (1 == e.eRet) {
+131101: if (e.hasOwnProperty("rewardArray")) {
+131102: T.default.addShowRewardUI1(e.rewardArray, 0, {});
+131103: l.MessageCenter.dispatch(h.EvName.BUY_MARKET_ITEM_EVENT, {});
+131104: }
+131105: } else 3 == e.eRet ? u.default.prefabs.load("storeUI/DailyGiftUI", cc.Prefab, function(t, o) {
+131106: var i = cc.instantiate(o);
+131107: i.addComponent("StoreDailyGiftUI").setData(e.payData);
+131108: f.PopUpMgr.addPopUp(i, d.LayerMgr.topLayer);
+131109: }) : 4 == e.eRet ? c.default.show(i.getText(998)) : c.default.show(i.getText(1e3));
+131110: };
+131111: e.prototype.giftPermanentCallback = function(t, e) {
+131112: 1 == e.eRet && (this.objData ? 0 == this.objData.back ? l.MessageCenter.dispatch(h.EvName.STORE_SHOW_UI, {
+131113: type: 7,
+131114: back: 0,
+131115: data: e.giftDatas
+131116: }) : l.MessageCenter.dispatch(h.EvName.STORE_SHOW_UI, {
+131117: type: 7,
+131118: back: 1,
+131119: data: e.giftDatas
+131120: }) : c.default.show(i.getText(1e3)));
+131121: this.objData = null;
+131122: };
+131123: e.prototype.deleteOrder = function(t) {
+131124: delete this.unresolvedOrderDic[t];
+131125: };
+131126: e.prototype.receiveYuanBao = function(t) {
+131127: var e = t - v.RoleBaseInfo.yuanbao;
+131128: v.RoleBaseInfo.yuanbao = t;
+131129: if (e > 0) {
+131130: var o = i.getText(10837) + "\n\n", r = n.getItem(8888, "item");
+131131: o += i.getText(r.Name) + "   x" + e;
+131132: c.default.show(o);
+131133: }
+131134: l.MessageCenter.dispatch(h.EvName.REFRESH_YUANBAO_EVENT);
+---

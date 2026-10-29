@@ -1,0 +1,13 @@
+# User.GetHouseShopData   (HttpConst.GET_HOUSE_SHOP_DATA)
+
+## 注册点 58473: i.MessageCenter.on(r.HttpConst.GET_HOUSE_SHOP_DATA, function(e, o) {
+
+## 请求点 58520: h.NetMgr.http.sendRequest(r.HttpConst.GET_HOUSE_SHOP_DATA, {
+   58512: var o = {
+   58513: eventID: this.eventID,
+   58514: choose: t,
+   58515: win: e
+   58516: };
+   58517: h.NetMgr.http.sendRequest(r.HttpConst.GET_SPECIAL_AWARD, o);
+   58518: };
+   58519: t.prototype.reqGetShopData = function() {

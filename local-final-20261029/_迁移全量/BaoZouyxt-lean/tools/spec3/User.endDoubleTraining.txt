@@ -1,0 +1,22 @@
+# User.endDoubleTraining   (HttpConst.END_DOUBLE_TRAINING)
+
+## 注册点 56233: i.MessageCenter.on(l.HttpConst.END_DOUBLE_TRAINING, this.onEndDoubleTraining, this);
+
+## 请求点 56710: c.NetMgr.http.sendRequest(l.HttpConst.END_DOUBLE_TRAINING, o);
+   56702: }
+   56703: };
+   56704: e.prototype.reqEndWifeBreak = function(t) {
+   56705: var e = D.playerInfo.entity, o = {
+   56706: flag: t,
+   56707: hglmt: e.hunger.limit,
+   56708: speed: e.hungerConsumingSpeed.finalValue
+   56709: };
+
+## 处理函数 onEndDoubleTraining (56712-56718)
+ 56712: e.prototype.onEndDoubleTraining = function(t, e) {
+ 56713: if (1 == e.eRet || 0 == e.eRet) {
+ 56714: u.FishingModel.setAutoStartHung(e);
+ 56715: if (0 == e.flag) {
+ 56716: i.MessageCenter.dispatch(h.EvName.CANCEL_BR_RET);
+ 56717: return;
+ 56718: }

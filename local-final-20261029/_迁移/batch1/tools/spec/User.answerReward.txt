@@ -1,0 +1,99 @@
+# User.answerReward  (HttpConst.ANSWER_REWARD)
+# 出现 2 处
+
+ 46935: r.getComponent("AnswerPageUI").setData(o, t.isActive);
+ 46936: n.PopUpMgr.addPopUp(r, s.LayerMgr.popUpLayer);
+ 46937: });
+ 46938: cc.log("重新答题");
+ 46939: } else 6 == o.eRet && r.default.show(p.getText(6406));
+ 46940: }, this);
+ 46941: i.MessageCenter.on(l.HttpConst.ANSWER_REWARD, function(e, o) {
+ 46942: if (1 == o.eRet) {
+ 46943: t.destroy();
+ 46944: o.hasOwnProperty("rewardArray") && f.default.addShowRewardUI1(o.rewardArray, 0);
+ 46945: }
+ 46946: }, this);
+ 46947: };
+ 46948: t.prototype.getBankList = function(t) {
+ 46949: void 0 === t && (t = !1);
+ 46950: this.isActive = t;
+ 46951: u.NetMgr.http.sendRequest(l.HttpConst.GET_BANK_LIST, {
+ 46952: roleID: h.RoleBaseInfo.roleID
+ 46953: });
+ 46954: };
+ 46955: t.prototype.getPaperList = function(t) {
+ 46956: 6 == t && (this.isActive = !0);
+ 46957: u.NetMgr.http.sendRequest(l.HttpConst.GET_PAPER_LIST, {
+ 46958: roleID: h.RoleBaseInfo.roleID,
+ 46959: bankId: t
+ 46960: });
+ 46961: };
+ 46962: t.prototype.getQuestionList = function(t, e) {
+ 46963: this.reviewStatus = e;
+ 46964: 0 == t && (t = this.paperId);
+ 46965: var o = {
+ 46966: roleID: h.RoleBaseInfo.roleID,
+ 46967: bankId: this.bankId,
+ 46968: paperId: t
+ 46969: };
+ 46970: u.NetMgr.http.sendRequest(l.HttpConst.GET_QUESTION_LIST, o);
+ 46971: };
+ 46972: t.prototype.answerQuestion = function(t, e) {
+ 46973: if (t != this.curQuestionId) {
+ 46974: this.curQuestionId = t;
+ 46975: var o = {
+ 46976: roleID: h.RoleBaseInfo.roleID,
+ 46977: questionId: t,
+ 46978: answer: e
+ 46979: };
+ 46980: u.NetMgr.http.sendRequest(l.HttpConst.ANSWER_QUESTION, o);
+ 46981: }
+---
+ 47000: t.prototype.getAnswerReward = function() {
+ 47001: var t = {
+ 47002: roleID: h.RoleBaseInfo.roleID,
+ 47003: bankId: this.bankId,
+ 47004: paperId: this.paperId
+ 47005: };
+ 47006: u.NetMgr.http.sendRequest(l.HttpConst.ANSWER_REWARD, t);
+ 47007: };
+ 47008: t.prototype.loadActivePaperList = function() {
+ 47009: a.default.prefabs.load("Question/PaperList", cc.Prefab, function(t, e) {
+ 47010: var o = cc.instantiate(e);
+ 47011: o.getComponent("ChoosePaperUI").bankId = 6;
+ 47012: n.PopUpMgr.addPopUp(o, s.LayerMgr.popUpLayer);
+ 47013: });
+ 47014: };
+ 47015: t.prototype.generateFakeData = function() {
+ 47016: var t = {};
+ 47017: t.age = this.getRandomNum([ [ 13, 60 ] ]);
+ 47018: t.coat = this.getRandomNum([ [ 2719, 2729 ], [ 2742, 2744 ] ]);
+ 47019: t.sex = this.getRandomNum([ [ 0, 1 ] ]);
+ 47020: t.equip = this.getRandomNum([ [ 1016, 1022 ], [ 1114, 1122 ], [ 1214, 1222 ], [ 1307, 1311 ], [ 1407, 1411 ], [ 1508, 1512 ] ]);
+ 47021: t.face = this.getRandomNum([ [ -1, 4 ] ]);
+ 47022: t.fashi = this.getRandomNum([ [ 2623, 2649 ] ]);
+ 47023: t.head = 0;
+ 47024: t.isShowName = !0;
+ 47025: t.school = this.getRandomNum([ [ 0, 6 ] ]);
+ 47026: t.sexState = t.sex;
+ 47027: t.titleId = 0;
+ 47028: t.userName = "";
+ 47029: t.roleSkillLevel = this.getRandomNum([ [ 1, 600 ] ]);
+ 47030: return t;
+ 47031: };
+ 47032: t.prototype.getRandomNum = function(t) {
+ 47033: var e = Math.floor(Math.random() * t.length);
+ 47034: return Math.floor(Math.random() * (t[e][1] - t[e][0] + 1) + t[e][0]);
+ 47035: };
+ 47036: t.prototype.destroy = function() {
+ 47037: this.bankId = 0;
+ 47038: this.paperId = 0;
+ 47039: this.isActive = !1;
+ 47040: this.curQuestionId = -1;
+ 47041: this.reviewStatus = 0;
+ 47042: };
+ 47043: return t;
+ 47044: }();
+ 47045: o.ExamModel = new d();
+ 47046: cc._RF.pop();
+---

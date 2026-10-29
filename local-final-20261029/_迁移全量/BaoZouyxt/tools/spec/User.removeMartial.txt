@@ -1,0 +1,99 @@
+# User.removeMartial  (HttpConst.REMOVE_MARTIAL)
+# 出现 2 处
+
+120635: s.MessageCenter.on(c.HttpConst.IMPLANTATION, function(t, o) {
+120636: if (1 == o.eRet) {
+120637: e.skillQueue.push(e.selectId);
+120638: s.MessageCenter.dispatch(p.EvName.SELECT_QUEUE_SKILL);
+120639: } else 6 == o.eRet ? l.default.show(r.getText(4239)) : l.default.show(r.getText(3954));
+120640: }, this);
+120641: s.MessageCenter.on(c.HttpConst.REMOVE_MARTIAL, function(t, o) {
+120642: if (1 == o.eRet) {
+120643: var i = e.skillQueue;
+120644: i.indexOf(e.selectId) >= 0 && e.skillQueue.splice(i.indexOf(e.selectId), 1);
+120645: s.MessageCenter.dispatch(p.EvName.SELECT_QUEUE_SKILL);
+120646: }
+120647: }, this);
+120648: s.MessageCenter.on(c.HttpConst.ADD_BREAK_QUEUE, function(t, o) {
+120649: 1 == o.eRet && e.updateBreakQueueData(o.qr);
+120650: }, this);
+120651: s.MessageCenter.on(c.HttpConst.REMOVE_BREAK_QUEUE, function(t, o) {
+120652: 1 == o.eRet && e.updateBreakQueueData(o.qr);
+120653: });
+120654: s.MessageCenter.on(c.HttpConst.GOLD_BREAK_CUR_SKILL, function(t, o) {
+120655: if (1 == o.eRet) {
+120656: e.updateBreakQueueData(o.qr, !0);
+120657: var i = setTimeout(function() {
+120658: clearTimeout(i);
+120659: s.MessageCenter.dispatch(p.EvName.REFRESH_BREAK_STATE);
+120660: }, 100);
+120661: } else 9 == o.eRet && l.default.show(r.getText(8102));
+120662: });
+120663: s.MessageCenter.on(c.HttpConst.GOLD_BREAK_ALL_SKILL, function(t, o) {
+120664: if (1 == o.eRet) {
+120665: e.updateBreakQueueData(o.qr, !0);
+120666: var i = setTimeout(function() {
+120667: clearTimeout(i);
+120668: s.MessageCenter.dispatch(p.EvName.REFRESH_BREAK_STATE);
+120669: }, 100);
+120670: } else 10 == o.eRet && l.default.show(r.getText(8102));
+120671: });
+120672: s.MessageCenter.on(c.HttpConst.BATCH_BREAK_BY_GOLD, function(o, i) {
+120673: if (1 == i.eRet) {
+120674: m.PopUpMgr.cleanup();
+120675: var n = {
+120676: wife: e.breakType > 1,
+120677: data: e.onFinishBreakQueue(i)
+120678: };
+120679: g.default.prefabs.load("comUI/BreakEndUI", cc.Prefab, function(t, e) {
+120680: var o = cc.instantiate(e);
+120681: m.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer);
+---
+121158: for (var t in this.costArr) e.indexOf(parseInt(t)) < 0 && (this.costArr[t] = 0);
+121159: cc.log("-------刷新后-------");
+121160: for (var t in this.costArr) cc.log("skillID:" + t + "  costNum:" + this.costArr[t]);
+121161: };
+121162: e.prototype.reqRemoveList = function(t) {
+121163: this.selectId = t;
+121164: _.NetMgr.http.sendReqWithMask(c.HttpConst.REMOVE_MARTIAL, {
+121165: MartialID: t
+121166: });
+121167: };
+121168: e.prototype.reqRefreshQueueData = function() {
+121169: _.NetMgr.http.sendReqWithMask(c.HttpConst.REFRESH_HOOK_BREAK_LIST);
+121170: };
+121171: e.prototype.reqJoinQueue = function(t) {
+121172: if (this.skillQueue.length >= 3) l.default.show(r.getText(4236)); else {
+121173: for (var e = this.skillQueue, o = this.estimateTime(e), i = 0, n = 0; n < o.length; n++) i += o[n];
+121174: if (i > 28800) l.default.show(r.getText(3954)); else {
+121175: this.selectId = t;
+121176: _.NetMgr.http.sendReqWithMask(c.HttpConst.IMPLANTATION, {
+121177: MartialID: t
+121178: });
+121179: }
+121180: }
+121181: };
+121182: e.prototype.reqRemoveQueue = function(t) {
+121183: this.selectId = t;
+121184: _.NetMgr.http.sendReqWithMask(c.HttpConst.REMOVE_BREAK_QUEUE, {
+121185: skillId: t,
+121186: type: this.breakType
+121187: });
+121188: };
+121189: e.prototype.reqJoinBreakQueue = function(t) {
+121190: var e = this.breakQueue, o = i.getConstByID(287);
+121191: if (e.length >= o) l.default.show(r.getText(7391)); else {
+121192: var n = this.costArr[t] ? this.costArr[t] : 0, a = f.SkillTable.dic[t].lv;
+121193: this.selectId = t;
+121194: _.NetMgr.http.sendReqWithMask(c.HttpConst.ADD_BREAK_QUEUE, {
+121195: skillId: t,
+121196: skillLv: a,
+121197: num: n,
+121198: type: this.breakType
+121199: });
+121200: }
+121201: };
+121202: e.prototype.reqQuitBreakQueue = function() {
+121203: _.NetMgr.http.sendReqWithMask(c.HttpConst.STOP_BREAK_LIST, {
+121204: type: this.breakType
+---

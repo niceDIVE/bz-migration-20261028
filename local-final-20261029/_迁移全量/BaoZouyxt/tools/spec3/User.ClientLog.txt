@@ -1,0 +1,11 @@
+# User.ClientLog   (HttpConst.GAME_LOG)
+
+## 请求点 69292: n.NetMgr.http.sendRequest(i.HttpConst.GAME_LOG, e, null, !1, !1, !1);
+   69284: }
+   69285: }
+   69286: t.prototype.sendLogReq = function(t) {
+   69287: var e = {
+   69288: loginfo: t,
+   69289: flag: 0,
+   69290: macAddress: ""
+   69291: };

@@ -1,0 +1,99 @@
+# User.obtainCrop  (HttpConst.OBTAINCROP)
+# 出现 2 处
+
+ 57692: s.m = i.m;
+ 57693: s.b = i.b;
+ 57694: s.landId = o.sIdx;
+ 57695: r.MessageCenter.dispatch(c.EvName.SEED_CROP_EVENT, s);
+ 57696: } else -1 == o.eRet && a.default.show(n.getText(3320));
+ 57697: }, this);
+ 57698: r.MessageCenter.on(s.HttpConst.OBTAINCROP, function(t, o) {
+ 57699: if (1 == o.eRet) {
+ 57700: e.soilArr[o.sIdx] = {
+ 57701: s: 1
+ 57702: };
+ 57703: var i = {
+ 57704: s: 1,
+ 57705: landId: 0
+ 57706: };
+ 57707: i.landId = o.sIdx;
+ 57708: r.MessageCenter.dispatch(c.EvName.SEED_CROP_EVENT, i);
+ 57709: var n = {};
+ 57710: o.hasOwnProperty("exp") && (e.plantSeedData.plantExp = o.exp);
+ 57711: o.hasOwnProperty("aExp") && (n[7] = o.aExp);
+ 57712: if (o.hasOwnProperty("rewardArray")) for (var a in o.rewardArray) n[a] = o.rewardArray[a];
+ 57713: I.MadUtilsTS.isNullObj(n) || m.default.addShowRewardUI1(n, 0);
+ 57714: } else if (3 == o.eRet) {
+ 57715: e.soilArr[o.sIdx].m.s = 0;
+ 57716: var s = {
+ 57717: s: 0,
+ 57718: landId: 0,
+ 57719: m: {}
+ 57720: };
+ 57721: s.landId = o.sIdx;
+ 57722: s.m.s = 0;
+ 57723: r.MessageCenter.dispatch(c.EvName.SEED_CROP_EVENT, s);
+ 57724: }
+ 57725: }, this);
+ 57726: r.MessageCenter.on(s.HttpConst.ONE_KEY_OBTAIN_CROP, function(o, i) {
+ 57727: if (1 == i.eRet) {
+ 57728: i.hasOwnProperty("matureArr") && Promise.resolve().then(function() {
+ 57729: return t("../../scripts3/model3/DelegateModel");
+ 57730: }).then(function(t) {
+ 57731: t.DelegateModel.matureArr = i.matureArr;
+ 57732: });
+ 57733: r.MessageCenter.dispatch(c.EvName.REMOVE_PLANT_FITLER_UI);
+ 57734: var s = [];
+ 57735: if (i.obtainLands.length <= 0) {
+ 57736: a.default.show(n.getText(69193));
+ 57737: return;
+ 57738: }
+---
+ 58153: v.NetMgr.http.sendRequest(s.HttpConst.BUY_HOME_CROP, {
+ 58154: itemID: t,
+ 58155: itemNum: e
+ 58156: });
+ 58157: };
+ 58158: e.prototype.reqCropGainReward = function(t) {
+ 58159: v.NetMgr.http.sendRequest(s.HttpConst.OBTAINCROP, {
+ 58160: sIdx: t
+ 58161: });
+ 58162: };
+ 58163: e.prototype.reqHomeSpecialEvent = function() {
+ 58164: v.NetMgr.http.sendRequest(s.HttpConst.HOME_SPECIAL_AWARD, {});
+ 58165: };
+ 58166: e.prototype.reqRecommenList = function() {
+ 58167: this.homeGeMap = {};
+ 58168: v.NetMgr.http.sendRequest(s.HttpConst.RECOMMEND_ONESELF_HOME, {});
+ 58169: };
+ 58170: e.prototype.reqHomeFriendList = function() {
+ 58171: this.homeGeMap = {};
+ 58172: v.NetMgr.http.sendRequest(s.HttpConst.OTHER_PLAYER_HOME, {});
+ 58173: };
+ 58174: e.prototype.reqObtainAllCrop = function(t) {
+ 58175: var e = {
+ 58176: matureArr: t
+ 58177: };
+ 58178: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_OBTAIN_CROP, e);
+ 58179: };
+ 58180: e.prototype.reqDispossAllEvent = function() {
+ 58181: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, {});
+ 58182: };
+ 58183: e.prototype.reqFindPlayerHome = function(t) {
+ 58184: t != _.RoleBaseInfo.userName ? v.NetMgr.http.sendRequest(s.HttpConst.FIND_OTHER_HOME, {
+ 58185: fName: t
+ 58186: }) : a.default.show(n.getText(4396));
+ 58187: };
+ 58188: e.prototype.openFriendHome = function(t, e, o) {
+ 58189: var i = 3;
+ 58190: 9 == o ? i = 2 : 15 == o && (i = 1);
+ 58191: this.homeType = i;
+ 58192: this.curHomeScene = e;
+ 58193: this.reqEnterFriendHome(t);
+ 58194: };
+ 58195: e.prototype.reqEnterFriendHome = function(t) {
+ 58196: this.isUpdateData = !1;
+ 58197: this.curFriendId = t;
+ 58198: t > 0 && v.NetMgr.http.sendRequest(s.HttpConst.ENTER_OTHER_HOME, {
+ 58199: fid: t
+---

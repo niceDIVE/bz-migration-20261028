@@ -1,0 +1,177 @@
+{
+  "verdict": "PASS",
+  "summary": {
+    "cases": 11,
+    "pass": 11,
+    "fail": 0,
+    "crossFail": 0,
+    "noSaveCases": 0,
+    "noProbeCases": 0,
+    "byCode": {
+      "INFO L1.OPEN_CONTRACT": 1,
+      "INFO L2.SKIPPED": 1
+    }
+  },
+  "inputs": {
+    "contractsSha8": "6b4e41c9",
+    "m2Sha8": "e1940b69",
+    "configSha8": "001072a0",
+    "casesSha8": "d6cde37d"
+  },
+  "perCase": [
+    {
+      "id": "upgradeSkill.orig0036",
+      "action": "User.upgradeSkill",
+      "file": "fixtures/cases/01-upgradeSkill-orig0036.json",
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "buyShopItem.2001x2",
+      "action": "User.buyShopItem",
+      "file": "fixtures/cases/02-buyShopItem-2001x2.json",
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "saleItem.2001x2",
+      "action": "User.saleItem",
+      "file": "fixtures/cases/03-saleItem-2001x2.json",
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "useItem.food3001",
+      "action": "User.useItem",
+      "file": "fixtures/cases/04-useItem-food.json",
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "useItem.formula3101",
+      "action": "User.useItem",
+      "file": "fixtures/cases/05-useItem-formula.json",
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "saleItem.equip90001",
+      "action": "User.saleItem",
+      "file": "fixtures/cases/06-saleItem-equip.json",
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "BuyFashion.90002",
+      "action": "User.BuyFashion",
+      "file": "fixtures/cases/07-BuyFashion.json",
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "LoadGame.base",
+      "action": "User.LoadGame",
+      "file": "fixtures/cases/08-LoadGame.json",
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "sycnPlayerItemData.base",
+      "action": "User.sycnPlayerItemData",
+      "file": "fixtures/cases/09-sycnPlayerItemData.json",
+      "verdict": "PASS",
+      "findings": []
+    },
+    {
+      "id": "GetPayAward.blocked",
+      "action": "User.GetPayAward",
+      "file": "fixtures/cases/10-pay-GetPayAward.json",
+      "verdict": "PASS",
+      "findings": [
+        {
+          "layer": "L1",
+          "level": "INFO",
+          "code": "L1.OPEN_CONTRACT",
+          "msg": "契约未闭合：命名处理器 this.onGetProduct @tools/index.js:130733 函数体未展开"
+        },
+        {
+          "layer": "L2",
+          "level": "INFO",
+          "code": "L2.SKIPPED",
+          "msg": "case 未带客户端快照（需设备探针 dual 模式产出）"
+        }
+      ]
+    },
+    {
+      "id": "upgradeSkill.ptt",
+      "action": "User.upgradeSkill",
+      "file": "fixtures/cases/11-upgradeSkill-ptt.json",
+      "verdict": "PASS",
+      "findings": []
+    }
+  ],
+  "cross": [],
+  "coverage": {
+    "User.upgradeSkill": {
+      "switches": 1,
+      "bothSides": 0,
+      "onlyAbsent": [
+        "returnPro"
+      ]
+    },
+    "User.buyShopItem": {
+      "switches": 1,
+      "bothSides": 0,
+      "onlyAbsent": []
+    },
+    "User.saleItem": {
+      "switches": 1,
+      "bothSides": 0,
+      "onlyAbsent": []
+    },
+    "User.useItem": {
+      "switches": 22,
+      "bothSides": 1,
+      "onlyAbsent": [
+        "rewardArray",
+        "getKnackIds",
+        "partners",
+        "mpnum",
+        "taskID",
+        "mountID",
+        "titleID",
+        "bloodEndTime",
+        "dogid",
+        "hanyusuiTime",
+        "genGuDan",
+        "stealFlag",
+        "endMonthCardTime",
+        "avatarInfo",
+        "itemRealgarMap",
+        "rewardSkillSkin",
+        "housekeeper",
+        "wId",
+        "weaponSkinId",
+        "emoId",
+        "itemSort"
+      ]
+    },
+    "User.BuyFashion": {
+      "switches": 1,
+      "bothSides": 0,
+      "onlyAbsent": [
+        "titivateObj"
+      ]
+    },
+    "User.LoadGame": {
+      "switches": 0,
+      "bothSides": 0,
+      "onlyAbsent": []
+    },
+    "User.sycnPlayerItemData": {
+      "switches": 0,
+      "bothSides": 0,
+      "onlyAbsent": []
+    }
+  }
+}

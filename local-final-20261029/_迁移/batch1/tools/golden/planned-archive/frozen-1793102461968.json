@@ -1,0 +1,51 @@
+{
+ "archivedAt": "2026-10-27T12:01:01.968Z",
+ "rules": [
+  {
+   "id": "additem-reject",
+   "action": "addItem",
+   "field": [
+    "eRet",
+    "eco",
+    "attrch",
+    "skch",
+    "ivch",
+    "eqch",
+    "itemID"
+   ],
+   "expect": 7,
+   "allowSigma": [
+    [
+     "addItem",
+     "eRet"
+    ],
+    [
+     "addItem",
+     "note.eco"
+    ],
+    [
+     "addItem",
+     "note.attrch"
+    ],
+    [
+     "addItem",
+     "note.skch"
+    ],
+    [
+     "addItem",
+     "note.ivch"
+    ],
+    [
+     "addItem",
+     "note.eqch"
+    ],
+    [
+     "addItem",
+     "itemID"
+    ]
+   ],
+   "ev": "index.js:65353",
+   "why": "2026-10-27 上游提速方案核查：客户端有 send 点（index.js:65353-65358 InventoryModel.addItem → sendRequest(ADD_ITEM)）→ 上游规则'有 send 点改 eRet 拒绝并删白名单行'。addItem 从'记账成功'改为 eRet 2 纯拒绝（防白拿），note.*/itemID 成功字段全部撤销。"
+  }
+ ]
+}

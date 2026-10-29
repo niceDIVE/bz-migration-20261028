@@ -1,0 +1,44 @@
+﻿value | batchSeedCrop | eRet | 1 | → | 2 | sigma | num+→num+
+del | batchSeedCrop | crops | "{}" | → |  | sigma | obj0→absent
+del | batchSeedCrop | recentSeeds | 0 | → |  | sigma | num0→absent
+value | changeSate | eRet | 1 | → | -1 | sigma | num+→num-
+del | changeSate | crop.b | "{}" | → |  | sigma | obj0→absent
+del | changeSate | crop.m | "{}" | → |  | sigma | obj0→absent
+del | changeSate | sIdx | 0 | → |  | sigma | num0→absent
+value | cleanDeadCrop | eRet | 1 | → | 2 | sigma | num+→num+
+del | cleanDeadCrop | sIdx | 0 | → |  | sigma | num0→absent
+value | dispossHomeEvent | eRet | 1 | → | 2 | sigma | num+→num+
+del | dispossHomeEvent | crop.b | "{}" | → |  | sigma | obj0→absent
+del | dispossHomeEvent | crop.m | "{}" | → |  | sigma | obj0→absent
+del | dispossHomeEvent | exp | 0 | → |  | sigma | num0→absent
+del | dispossHomeEvent | flag | 0 | → |  | sigma | num0→absent
+del | dispossHomeEvent | idx | 0 | → |  | sigma | num0→absent
+del | dispossHomeEvent | rewardArray | "{}" | → |  | sigma | obj0→absent
+value | expediteCrop | eRet | 1 | → | 2 | sigma | num+→num+
+del | expediteCrop | crop.b | "{}" | → |  | sigma | obj0→absent
+del | expediteCrop | crop.m | "{}" | → |  | sigma | obj0→absent
+del | expediteCrop | sIdx | 0 | → |  | sigma | num0→absent
+value | getFriendHomeList | soilArr | "{}" | → | "[]" | sigma | obj0→arr0
+value | getHomeList | recentSeeds | 0 | → | "[]" | sigma | num0→arr0
+del | getHomeList | soilArr | "{}" | → |  | sigma | obj0→absent
+value | obtainCrop | eRet | 1 | → | 2 | sigma | num+→num+
+del | obtainCrop | exp | 0 | → |  | sigma | num0→absent
+del | obtainCrop | rewardArray | "{}" | → |  | sigma | obj0→absent
+del | obtainCrop | sIdx | 0 | → |  | sigma | num0→absent
+value | stealCrop | eRet | 1 | → | 2 | sigma | num+→num+
+del | stealCrop | crop.b | "{}" | → |  | sigma | obj0→absent
+del | stealCrop | crop.m | "{}" | → |  | sigma | obj0→absent
+del | stealCrop | exp | 0 | → |  | sigma | num0→absent
+del | stealCrop | idx | 0 | → |  | sigma | num0→absent
+del | stealCrop | rewardArray | "{}" | → |  | sigma | obj0→absent
+add | getHomeList | soilArr[0].s |  | → | 1 | sigma | absent→num+
+add | getHomeList | soilArr[1].s |  | → | 1 | sigma | absent→num+
+add | getHomeList | soilArr[2].s |  | → | 1 | sigma | absent→num+
+add | getHomeList | soilArr[3].s |  | → | 1 | sigma | absent→num+
+add | getHomeList | bShop |  | → | 0 | sigma | absent→num0
+add | onKeyDispossHomeEvent | aExp |  | → | 0 | sigma | absent→num0
+add | onKeyObtainCrop | aExp |  | → | 0 | sigma | absent→num0
+add | onKeyObtainCrop | note.ivch |  | → | "{}" | sigma | absent→obj0
+add | onKeyObtainCrop | note.eqch |  | → | "{}" | sigma | absent→obj0
+add | onKeyObtainCrop | note.eco |  | → | "{}" | sigma | absent→obj0
+diff 总数 = 43

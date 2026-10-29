@@ -1,0 +1,5 @@
+{
+  "passCardAward": "通行证档位：passAward>=4 判已领 + 活跃度门槛（C01 已审）",
+  "useItem": "先扣背包再按表发效果，p.itemID 只用来查表（C05 已审）",
+  "addItem": "【待核】服务端推送/维护口。下游确认客户端没有 send 点后保留本行；如果有 send 点，改成 eRet 拒绝，并删掉本行"
+}

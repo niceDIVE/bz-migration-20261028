@@ -1,0 +1,117 @@
+{
+  "generatedAt": "2026-10-21T23:54:00.000Z",
+  "docBytes": 104776,
+  "docLines": 1217,
+  "checks": [
+    {
+      "id": "C1",
+      "verdict": "HIT",
+      "where": "tools/index.js:59325",
+      "raw": "if (g[I].note) for (var E in g[I].note) f.MessageCenter.dispatch(E, g[I].note[E]);"
+    },
+    {
+      "id": "C2",
+      "verdict": "HIT",
+      "where": "tools/index.js:64674-64677",
+      "raw": "r.MessageCenter.on(a.HttpConst.INVENTORY_CHNG, function(t, o) { for (var n in o) i.getItem(n, \"lh_temporary\") ? b.TowerModel.setItem(n, o[n]) : e.setItem(parseInt(n), o[n]);"
+    },
+    {
+      "id": "C3",
+      "verdict": "HIT",
+      "where": "tools/index.js:64678-64694",
+      "raw": "r.MessageCenter.on(a.HttpConst.EQ_CHNG, function(t, o) { for (var i in o) if (0 == o[i][0]) { e.deleteEq(parseInt(i));"
+    },
+    {
+      "id": "C4",
+      "verdict": "HIT",
+      "where": "tools/index.js:64698-64724",
+      "raw": "r.MessageCenter.on(a.HttpConst.ECONOMY_CHNG, function(t, e) { for (var o in e) switch (o) { case \"coins\":"
+    },
+    {
+      "id": "C5",
+      "verdict": "HIT",
+      "where": "tools/index.js:59569,59570,59572",
+      "raw": "INVENTORY_CHNG: \"ivch\", ECONOMY_CHNG: \"eco\", EQ_CHNG: \"eqch\","
+    },
+    {
+      "id": "C6",
+      "verdict": "HIT",
+      "where": "tools/index.js:65207",
+      "raw": "o += parseInt(g.Price) * h[2];"
+    },
+    {
+      "id": "C7",
+      "verdict": "HIT",
+      "where": "tools/scripts2.js:46443,46452",
+      "raw": "46443: price: s.BuyPrice; 46452: price: s.BuyPrice"
+    },
+    {
+      "id": "C8",
+      "verdict": "HIT",
+      "where": "tools/scripts2.js:46461-46474",
+      "raw": "e.prototype.resListSuccess = function(t, e) { if (e.hasOwnProperty(\"ShopArray\")) { for (var o = e.ShopArray.item, i = e.ShopArray.price, s = 0; s < o.length; s++) {"
+    },
+    {
+      "id": "C9",
+      "verdict": "HIT",
+      "where": "tools/scripts2.js:46521",
+      "raw": "this.npcId > 0 ? o <= h.RoleBaseInfo.gold ? v.SpecialGoodsModel.reqBuy(this.npcId, this.curObj.itemId, this.counts) : y.StoreModel.openChargeList() : o <= h.RoleBaseInfo.coins ? l.InventoryModel.buyIt"
+    },
+    {
+      "id": "C10",
+      "verdict": "HIT",
+      "where": "tools/index.js:123380,123386,59606,59607",
+      "raw": "t.prototype.reqGetSpGoods = function(t) { t.prototype.reqBuy = function(t, e, o) { GET_SPGOODS_LIST: \"User.getShopItem\", BUY_SPECIAL_GOODS: \"User.buySpecialShopItem\","
+    },
+    {
+      "id": "C11",
+      "verdict": "HIT",
+      "where": "tools/index.js:44737-44743",
+      "raw": "i.arm = function(t) { for (var e = r.getItem(this._data.itemID, \"item\"), o = r.getItem(this.getDisplayID(), \"item\"), i = 1; i <= 5; ++i) { var n = \"Property\" + i; this.addProperty(t, e[n], e[l]);"
+    },
+    {
+      "id": "C12",
+      "verdict": "HIT",
+      "where": "tools/index.js:142526-142537",
+      "raw": "for (var t in h.RoleBaseInfo.equipments) if (h.RoleBaseInfo.equipments[t]) { this.entity.putOnEquipment(new a(o, p), parseInt(t));"
+    },
+    {
+      "id": "C13",
+      "verdict": "HIT",
+      "where": "tools/index.js:111888",
+      "raw": "y.UserModel.setupEntity();"
+    },
+    {
+      "id": "C14",
+      "verdict": "HIT",
+      "where": "tools/index.js:57450",
+      "raw": "e.hasOwnProperty(\"activityList\") && (u.RoleOtherInfo.activityList = e.activityList);"
+    },
+    {
+      "id": "C15",
+      "verdict": "HIT",
+      "where": "tools/index.js:107227",
+      "raw": "e.hasOwnProperty(\"activityArrFlag\") && (this.activeObj = e.activityArrFlag);"
+    },
+    {
+      "id": "C16",
+      "verdict": "HIT",
+      "where": "tools/index.js:57455",
+      "raw": "e.hasOwnProperty(\"activityShows\") && (this.activeShowList = e.activityShows);"
+    },
+    {
+      "id": "C17",
+      "verdict": "HIT",
+      "where": "hotfix-patch/core/bz-rpc-server.js:248,256,1384,1396,1538,1576",
+      "raw": "itemBuyPrice:248, npcShopOf:256, getShopItem:1384, buySpecialShopItem:1396, bzGrantCur:1538, delTop:1576"
+    },
+    {
+      "id": "C18",
+      "verdict": "HIT",
+      "where": "tools/gen_task_rewards.js:156,173,211",
+      "raw": "BZ_ITEMPRICE:156, BZ_ITEMBUYPRICE:173, BZ_NPCSHOP:211"
+    }
+  ],
+  "misses": [],
+  "unverified": []
+}

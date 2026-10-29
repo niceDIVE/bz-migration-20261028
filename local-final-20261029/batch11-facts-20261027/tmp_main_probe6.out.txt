@@ -1,0 +1,66 @@
+=== L57578-L57602
+L57578| }, this);
+L57579| r.MessageCenter.on(s.HttpConst.MOVE_HOME_FRAM, function(t, o) {
+L57580| if (1 == o.eRet) {
+L57581| l.RoleOtherInfo.homeFarmId = e.buildScene;
+L57582| a.default.show(n.getText(3229));
+L57583| } else 2 == o.eRet ? a.default.show(n.getText(3227)) : 3 == o.eRet ? a.default.show(n.getText(3243)) : 4 == o.eRet && a.default.show(n.getText(288));
+L57584| }, this);
+L57585| r.MessageCenter.on(s.HttpConst.GETHOME_LIST, function(o, i) {
+L57586| if (1 == i.eRet) {
+L57587| e.cropControlState = 0;
+L57588| e.soilArr = [];
+L57589| e.typeId = 0;
+L57590| e.curFriendId = 0;
+L57591| e.isFriend = 0;
+L57592| i.recentSeeds ? e.recentSs = i.recentSeeds : e.recentSs.length = 0;
+L57593| if (i.hasOwnProperty("soilArr")) {
+L57594| e.plantSeedData.plantExp = i.exp;
+L57595| i.hasOwnProperty("dog") && (e.dogData = i.dog);
+L57596| e.soilArr = i.soilArr;
+L57597| i.hasOwnProperty("bShop") && (e.homeShop = i.bShop);
+L57598| var n = b.PartnerModel.getDailyPartnerDataByDtype(3);
+L57599| e.friendPartnerId = n || 0;
+L57600| if (e.isUpdateData) r.MessageCenter.dispatch(c.EvName.ALL_CROP_DATA_EVENT); else {
+L57601| var a = l.RoleOtherInfo.homeFarmId;
+L57602| e.curMapId = p.GameStates.getLastMapID();
+=== L57940-L57978
+L57940| for (var u = 0; u < s.length; u++) a.push(s[u]);
+L57941| }
+L57942| r.MessageCenter.dispatch(c.EvName.UPDATE_PLANT_ALL_HOME_DATA, {
+L57943| data: a,
+L57944| dataNum: p
+L57945| });
+L57946| }
+L57947| }, this);
+L57948| r.MessageCenter.on(s.HttpConst.FIND_OTHER_HOME, function(t, o) {
+L57949| 1 == o.eRet ? o.hasOwnProperty("findArr") && (o.findArr[0] == _.RoleBaseInfo.roleID ? a.default.show(n.getText(3253)) : e.openFriendHome(o.findArr[0], o.findArr[6], o.findArr[4])) : a.default.show(n.getText(3253));
+L57950| }, this);
+L57951| r.MessageCenter.on(s.HttpConst.ENTER_OTHER_HOME, function(t, o) {
+L57952| if (1 == o.eRet) {
+L57953| e.rewardData = {};
+L57954| if (o.hasOwnProperty("soilArr")) {
+L57955| e.typeId = 1;
+L57956| e.soilArr = [];
+L57957| e.cropControlState = 0;
+L57958| o.hasOwnProperty("dog") && (e.dogData = o.dog);
+L57959| if (o.hasOwnProperty("friendPartnerId")) {
+L57960| e.friendPartnerId = Number(o.friendPartnerId);
+L57961| 0 == e.friendPartnerId && (e.friendPartnerId = -1);
+L57962| } else e.friendPartnerId = -1;
+L57963| e.plantSeedData.plantExp = o.exp;
+L57964| e.soilArr = o.soilArr;
+L57965| e.isFriend = o.flag;
+L57966| e.homeShop = 0;
+L57967| if (e.isUpdateData) r.MessageCenter.dispatch(c.EvName.ALL_CROP_DATA_EVENT); else {
+L57968| var i = e.curHomeScene;
+L57969| r.MessageCenter.dispatch(c.EvName.UPTATE_PLANT_HOME_UI, {
+L57970| farmId: i,
+L57971| type: e.homeType,
+L57972| homeState: 1
+L57973| });
+L57974| r.MessageCenter.dispatch(c.EvName.REMOVE_SEARCH_HOME_UI);
+L57975| }
+L57976| }
+L57977| } else -1 == o.eRet && a.default.show(n.getText(3320));
+L57978| }, this);

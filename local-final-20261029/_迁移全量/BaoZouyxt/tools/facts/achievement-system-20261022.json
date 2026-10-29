@@ -1,0 +1,1601 @@
+{
+  "generatedAt": "2026-10-22T11:18:51.752Z",
+  "scope": [
+    "tools/index.js",
+    "tools/scripts2.js",
+    "tools/scripts3.js",
+    "tools/cfg/dump/*achieve*.json"
+  ],
+  "matchMode": "case-sensitive regex; one entry per source line (occurrences = matches on that line)",
+  "caseNotes": [
+    "taskData: case-sensitive = 88 lines. Case-insensitive would be 272 lines; the 184 extra lines are other identifiers (TaskData / TASK_DATA / deleteTaskDatas / setGuideTaskData / GET_*_TASK_DATA event names), NOT the response field."
+  ],
+  "responseToModelMap": [
+    "2901: response groupPoints -> AchievementModel.gPoints",
+    "2902: response rateIds     -> AchievementModel.rateIds",
+    "2903: response achieveIdArr -> AchievementModel.awardIds",
+    "2904: response rd         -> AchievementModel.receivedIds",
+    "2905: response taskData   -> AchievementModel.tObj",
+    "2906: response srd        -> AchievementModel.suitIds"
+  ],
+  "getAchieveData": {
+    "consumer": {
+      "file": "tools/scripts3.js",
+      "line": 2899,
+      "endLine": 2918,
+      "body": [
+        "2899: i.MessageCenter.on(s.HttpConst.GET_ACHIEVE_DATA, function(e, o) {",
+        "2900: if (1 == o.eRet) {",
+        "2901: o.groupPoints && !cc.js.isEmptyObject(o.groupPoints) && (t.gPoints = o.groupPoints);",
+        "2902: o.rateIds && (t.rateIds = o.rateIds);",
+        "2903: o.achieveIdArr && (t.awardIds = o.achieveIdArr);",
+        "2904: o.rd && (t.receivedIds = o.rd);",
+        "2905: t.tObj = o.taskData;",
+        "2906: o.srd && (t.suitIds = o.srd);",
+        "2907: var s = new Set(t.awardIds);",
+        "2908: t.awardIds = Array.from(s);",
+        "2909: i.MessageCenter.dispatch(r.EvName.ACHV_GET_DATA, o);",
+        "2910: t.updateAchieveRateTips();",
+        "2911: i.MessageCenter.dispatch(r.EvName.ACHV_TIP_UPDATE);",
+        "2912: p.default.prefabs.load(\"network/achievement/AFrontUI\", cc.Prefab, function(t, e) {",
+        "2913: var i = cc.instantiate(e), s = i.addComponent(\"AFrontUI\");",
+        "2914: l.PopUpMgr.addPopUp(i);",
+        "2915: s.setData(o);",
+        "2916: });",
+        "2917: }",
+        "2918: }, this);"
+      ]
+    },
+    "fields": [
+      {
+        "name": "eRet",
+        "readAt": "scripts3.js:2900",
+        "raw": "if (1 == o.eRet) {"
+      },
+      {
+        "name": "groupPoints",
+        "readAt": "scripts3.js:2901",
+        "raw": "o.groupPoints && !cc.js.isEmptyObject(o.groupPoints) && (t.gPoints = o.groupPoints);"
+      },
+      {
+        "name": "rateIds",
+        "readAt": "scripts3.js:2902",
+        "raw": "o.rateIds && (t.rateIds = o.rateIds);"
+      },
+      {
+        "name": "achieveIdArr",
+        "readAt": "scripts3.js:2903",
+        "raw": "o.achieveIdArr && (t.awardIds = o.achieveIdArr);"
+      },
+      {
+        "name": "rd",
+        "readAt": "scripts3.js:2904",
+        "raw": "o.rd && (t.receivedIds = o.rd);"
+      },
+      {
+        "name": "taskData",
+        "readAt": "scripts3.js:2905",
+        "raw": "t.tObj = o.taskData;"
+      },
+      {
+        "name": "srd",
+        "readAt": "scripts3.js:2906",
+        "raw": "o.srd && (t.suitIds = o.srd);"
+      }
+    ],
+    "notes": [
+      "achieveRateId is NOT read in GET_ACHIEVE_DATA; it is read in the ACHV_CHANGE listener at scripts3.js:2897 (o.achieveRateId && (d.RoleOtherInfo.achiRId = o.achieveRateId);).",
+      "Listener is registered inside AchievementModel.init (starts scripts3.js:2882); handler is an anonymous function bound to AchievementModel instance t."
+    ]
+  },
+  "afrontUI": {
+    "file": "tools/scripts3.js",
+    "line": 402,
+    "classRange": "402-654 (var C = function(t) { ... return n([M], e); }(r.UIComponent); o.default = C at 655)",
+    "prefabNameLine": 412,
+    "body": [
+      "402: var r = t(\"../../../scripts/gui/uicomponents/UIComponent\"), a = t(\"../../../scripts/models/RoleOtherInfo\"), c = t(\"../../../scripts/models/UserModel\"), p = t(\"../../../scripts/utils/LayerMask\"), l = t(\"../../../scripts/utils/MadUtilsTS\"), h = t(\"../../model3/AchievementModel\"), d = t(\"../../../scripts/gameconfigs/CFMgr\"), u = t(\"../../../scripts/gameconfigs/LangMgr\"), g = t(\"../../../scripts/gameconfigs/AppData\"), m = t(\"../../../scripts/mgrs/BundleMgr\"), f = t(\"../../../scripts/core/ui/mgrs/PopUpMgr\"), y = t(\"../../../scripts/core/events/MessageCenter\"), v = t(\"../../../scripts/utils/EvName\"), _ = t(\"../../../scripts/mgrs/GSceneMgr\"), M = cc._decorator.ccclass, C = function(t) {",
+      "403: s(e, t);",
+      "404: function e() {",
+      "405: var e = null !== t && t.apply(this, arguments) || this;",
+      "406: e.content = null;",
+      "407: e.itemTemplate = null;",
+      "408: e.title = null;",
+      "409: e._nodes = [];",
+      "410: e._gId = 0;",
+      "411: e._groupIdArr = [];",
+      "412: e.prefabName = \"network/achievement/AFrontUI\";",
+      "413: return e;",
+      "414: }",
+      "415: e.prototype.onLoad = function() {",
+      "416: t.prototype.onLoad.call(this);",
+      "417: _.GSceneMgr.hideScene();",
+      "418: this.content = this.getPathByNode(\"UINode/scrollview/view/content\");",
+      "419: this.itemTemplate = this.getPathByNode(\"box/item\");",
+      "420: this.title = this.getPathByNode(\"UINode/title\").getComponent(cc.Label);",
+      "421: var e = this.getPathByNode(\"UINode/back\");",
+      "422: this.addButtonListen(e, this, this.onClickBack);",
+      "423: this.getPathByNode(\"box\").active = !1;",
+      "424: this.initPerson();",
+      "425: var o = this.getPathByNode(\"bg\"), i = this.getPathByNode(\"UINode\"), s = cc.sys.getSafeAreaRect(), n = o.getComponent(cc.Sprite).spriteFrame.getOriginalSize(), r = s.width > n.width ? n.width : s.width, a = s.height > n.height ? n.height : s.height;",
+      "426: i.setContentSize(r, a);",
+      "427: };",
+      "428: e.prototype.start = function() {",
+      "429: this.showBigList();",
+      "430: this.updateTips();",
+      "431: };",
+      "432: e.prototype.addEventListeners = function() {",
+      "433: y.MessageCenter.on(v.EvName.ACHV_TIP_UPDATE, this.onTipChange, this);",
+      "434: };",
+      "435: e.prototype.removeEventListeners = function() {",
+      "436: y.MessageCenter.off(v.EvName.ACHV_TIP_UPDATE, this.onTipChange, this);",
+      "437: };",
+      "438: e.prototype.onTipChange = function() {",
+      "439: this.updateTips();",
+      "440: this.updatePrg();",
+      "441: };",
+      "442: e.prototype.updateTips = function() {",
+      "443: var t = this, e = h.AchievementModel.awardIds;",
+      "444: if (this._gId > 0) {",
+      "445: var o = h.AchievementModel.getGroupIdArray(1);",
+      "446: this._nodes.forEach(function(t, i) {",
+      "447: var s = !0, n = d.getTable(\"achieve_list\");",
+      "448: for (var r in n) {",
+      "449: var a = n[r].group;",
+      "450: if (o[i] == a) {",
+      "451: var c = parseInt(r);",
+      "452: if (e.includes(c)) {",
+      "453: s = !1;",
+      "454: break;",
+      "455: }",
+      "456: }",
+      "457: }",
+      "458: t.getChildByName(\"tip\").active = !s;",
+      "459: });",
+      "460: } else this._nodes.forEach(function(o, i) {",
+      "461: var s = !0;"
+    ],
+    "bodyNote": "body = first 60 lines of the class module (scripts3.js:402-461), per instruction",
+    "setDataFound": false,
+    "setDataNote": "AFrontUI defines NO own setData (whole class body 402-654 scanned: only calls s.setData(...) at 623/631/635 inside onClickFirstItem/onClickItem). The call s.setData(o) at scripts3.js:2915 therefore resolves to the inherited base UIComponent.prototype.setData.",
+    "inheritedSetData": {
+      "file": "tools/index.js",
+      "line": 139706,
+      "endLine": 139709,
+      "owner": "UIComponent module (index.js:139538)",
+      "body": [
+        "139706: e.prototype.setData = function(t) {",
+        "139707: for (var e = [], o = 1; o < arguments.length; o++) e[o - 1] = arguments[o];",
+        "139708: this.data = t;",
+        "139709: };"
+      ]
+    },
+    "fields": [
+      {
+        "name": "awardIds",
+        "readAt": "scripts3.js:443",
+        "raw": "var t = this, e = h.AchievementModel.awardIds;"
+      },
+      {
+        "name": "suitIds",
+        "readAt": "scripts3.js:463",
+        "raw": "var n = h.AchievementModel.suitIds, r = h.AchievementModel.getGroupIdArray(t._groupIdArr[i]), a = d.getTable(\"achieve_suit\");"
+      },
+      {
+        "name": "rateIds",
+        "readAt": "scripts3.js:492",
+        "raw": "var M = h.AchievementModel.rateIds, C = d.getTable(\"achieve_rate\");"
+      },
+      {
+        "name": "receivedIds",
+        "readAt": "scripts3.js:509",
+        "raw": "var t = {}, e = h.AchievementModel.receivedIds, o = d.getTable(\"achieve_list\");"
+      },
+      {
+        "name": "receivedIds",
+        "readAt": "scripts3.js:581",
+        "raw": "var o = h.AchievementModel.receivedIds;"
+      },
+      {
+        "name": "getPoints(group)",
+        "readAt": "scripts3.js:495",
+        "raw": "if (u.includes(v) && \"0\" != C[c].item && !(h.AchievementModel.getPoints(v) < C[c].points)) {"
+      },
+      {
+        "name": "checkAchieved(achId)",
+        "readAt": "scripts3.js:467",
+        "raw": "for (var l = p.reward.split(\"&\"), u = n[c], g = 0, m = 0; m < p.achieve.length; m++) h.AchievementModel.checkAchieved(p.achieve[m]) && g++;"
+      },
+      {
+        "name": "tables read",
+        "readAt": "scripts3.js:447/463/479/492/509/526/544/568/579/596/604",
+        "raw": "CFMgr.getTable(\"achieve_list\"|\"achieve_suit\"|\"achieve_rate\") and CFMgr.getItem(id,\"achieve_group\")"
+      }
+    ]
+  },
+  "tables": [
+    {
+      "name": "achieve_group",
+      "file": "cfg/dump/achieve_group.json",
+      "columns": [
+        "id",
+        "type",
+        "type1",
+        "title",
+        "order",
+        "time",
+        "opentime"
+      ],
+      "rows": 19,
+      "dataKeys": 19,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "type": 1,
+            "type1": 0,
+            "title": 6010768,
+            "order": 2,
+            "time": "0",
+            "opentime": 0
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "type": 1,
+            "type1": 0,
+            "title": 6010769,
+            "order": 1,
+            "time": "0",
+            "opentime": 0
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "type": 2,
+            "type1": 1,
+            "title": 6010770,
+            "order": 1,
+            "time": "0",
+            "opentime": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "achieve_list",
+      "file": "cfg/dump/achieve_list.json",
+      "columns": [
+        "id",
+        "type",
+        "type1",
+        "require",
+        "pre-require",
+        "times",
+        "group",
+        "title",
+        "des",
+        "reward",
+        "point",
+        "order",
+        "mark",
+        "time",
+        "opentime"
+      ],
+      "rows": 2113,
+      "dataKeys": 2113,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "type": "3",
+            "type1": "1",
+            "require": "0|1000",
+            "pre-require": "0",
+            "times": 1,
+            "group": 3,
+            "title": 6008386,
+            "des": 6009557,
+            "reward": "0",
+            "point": 1,
+            "order": [],
+            "mark": 0,
+            "time": "0",
+            "opentime": 0
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "type": "3",
+            "type1": "1",
+            "require": "0|1001",
+            "pre-require": "0",
+            "times": 1,
+            "group": 3,
+            "title": 6008387,
+            "des": 6009558,
+            "reward": "0",
+            "point": 1,
+            "order": [],
+            "mark": 0,
+            "time": "0",
+            "opentime": 0
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "type": "3",
+            "type1": "1",
+            "require": "0|1002",
+            "pre-require": "0",
+            "times": 1,
+            "group": 3,
+            "title": 6008388,
+            "des": 6009559,
+            "reward": "0",
+            "point": 1,
+            "order": [],
+            "mark": 0,
+            "time": "0",
+            "opentime": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "achieve_mark",
+      "file": "cfg/dump/achieve_mark.json",
+      "columns": [
+        "id",
+        "type",
+        "require",
+        "title",
+        "des",
+        "color"
+      ],
+      "rows": 182,
+      "dataKeys": 182,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "type": 1,
+            "require": "0",
+            "title": 6008106,
+            "des": 6009472,
+            "color": 1
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "type": 1,
+            "require": "0",
+            "title": 6008107,
+            "des": 6009463,
+            "color": 1
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "type": 1,
+            "require": "0",
+            "title": 6008108,
+            "des": 6009481,
+            "color": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "achieve_rate",
+      "file": "cfg/dump/achieve_rate.json",
+      "columns": [
+        "id",
+        "group",
+        "points",
+        "level",
+        "color",
+        "item",
+        "des",
+        "pic"
+      ],
+      "rows": 53,
+      "dataKeys": 53,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "group": 6,
+            "points": 1,
+            "level": 6010705,
+            "color": "ffecbe",
+            "item": "4253,10",
+            "des": 6010757,
+            "pic": "0"
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "group": 6,
+            "points": 3,
+            "level": 6010706,
+            "color": "ffecbe",
+            "item": "7818,1",
+            "des": 6010757,
+            "pic": "0"
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "group": 6,
+            "points": 5,
+            "level": 6010708,
+            "color": "05ac18",
+            "item": "1,50",
+            "des": 6010757,
+            "pic": "0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "achieve_suit",
+      "file": "cfg/dump/achieve_suit.json",
+      "columns": [
+        "id",
+        "name",
+        "group",
+        "describe",
+        "achieve",
+        "reward",
+        "order",
+        "opentime"
+      ],
+      "rows": 240,
+      "dataKeys": 240,
+      "first3": [
+        {
+          "key": "1",
+          "row": {
+            "id": 1,
+            "name": 6011742,
+            "group": 14,
+            "describe": 6011832,
+            "achieve": [
+              700,
+              701,
+              702,
+              703,
+              704,
+              705,
+              1621,
+              1622,
+              1623,
+              1916
+            ],
+            "reward": "3|6253,2&6|3325,1|6658,10&9|1,100&12|3325,1|6658,20",
+            "order": [],
+            "opentime": 1727712000000
+          }
+        },
+        {
+          "key": "2",
+          "row": {
+            "id": 2,
+            "name": 6011743,
+            "group": 14,
+            "describe": 6011833,
+            "achieve": [
+              706,
+              707,
+              708,
+              1624,
+              1625,
+              1626
+            ],
+            "reward": "3|6253,2&6|3325,1|6658,10&9|1,100&12|3325,1|6658,20",
+            "order": [],
+            "opentime": 1727712000000
+          }
+        },
+        {
+          "key": "3",
+          "row": {
+            "id": 3,
+            "name": 6011744,
+            "group": 14,
+            "describe": 6011834,
+            "achieve": [
+              709,
+              710,
+              711,
+              712,
+              713,
+              714,
+              715,
+              1627
+            ],
+            "reward": "3|6253,2&6|3325,1|6658,10&9|1,100&12|3325,1|6658,20",
+            "order": [],
+            "opentime": 1727712000000
+          }
+        }
+      ]
+    }
+  ],
+  "rewardConsumers": [
+    {
+      "name": "RECEIVE_ACHIEVE_REWARD",
+      "file": "tools/scripts3.js",
+      "line": 2919,
+      "endLine": 2944,
+      "body": [
+        "2919: i.MessageCenter.on(s.HttpConst.RECEIVE_ACHIEVE_REWARD, function(e, o) {",
+        "2920: if (1 == o.eRet) {",
+        "2921: for (var s = o.achieveIdArr, n = !0, p = 0; p < s.length; p++) {",
+        "2922: var l = a.getItem(s[p], \"achieve_list\");",
+        "2923: a.getItem(l.group, \"achieve_group\").type1 > 1 && (n = !1);",
+        "2924: var h = t.awardIds.indexOf(s[p]);",
+        "2925: h >= 0 && t.awardIds.splice(h, 1);",
+        "2926: t.receivedIds.includes(s[p]) || t.receivedIds.push(s[p]);",
+        "2927: }",
+        "2928: if (n) {",
+        "2929: var d = 0;",
+        "2930: for (var g in o.groupPoints) {",
+        "2931: var m = t.getPoints(g);",
+        "2932: o.groupPoints[g] - m > 0 && (d += o.groupPoints[g] - m);",
+        "2933: }",
+        "2934: d > 0 && u.default.popText({",
+        "2935: str: c.getText(6004429).replace(/\\[1\\]/, \"\" + d),",
+        "2936: outWidth: 3",
+        "2937: });",
+        "2938: }",
+        "2939: t.gPoints = o.groupPoints;",
+        "2940: i.MessageCenter.dispatch(r.EvName.ACHV_ITEM_REWARD);",
+        "2941: i.MessageCenter.dispatch(r.EvName.ACHV_TIP_UPDATE);",
+        "2942: o.rewardArray && !cc.js.isEmptyObject(o.rewardArray) && t.showReward(o);",
+        "2943: }",
+        "2944: }, this);"
+      ],
+      "fields": [
+        {
+          "name": "eRet",
+          "readAt": "scripts3.js:2920"
+        },
+        {
+          "name": "achieveIdArr",
+          "readAt": "scripts3.js:2921",
+          "raw": "for (var s = o.achieveIdArr, n = !0, p = 0; p < s.length; p++) {"
+        },
+        {
+          "name": "groupPoints",
+          "readAt": "scripts3.js:2930",
+          "raw": "for (var g in o.groupPoints) {"
+        },
+        {
+          "name": "groupPoints[key]",
+          "readAt": "scripts3.js:2932",
+          "raw": "o.groupPoints[g] - m > 0 && (d += o.groupPoints[g] - m);"
+        },
+        {
+          "name": "groupPoints",
+          "readAt": "scripts3.js:2939",
+          "raw": "t.gPoints = o.groupPoints;"
+        },
+        {
+          "name": "rewardArray",
+          "readAt": "scripts3.js:2942",
+          "raw": "o.rewardArray && !cc.js.isEmptyObject(o.rewardArray) && t.showReward(o);"
+        }
+      ]
+    },
+    {
+      "name": "RECEIVE_ACHIEVE_RATE_REWARD",
+      "file": "tools/scripts3.js",
+      "line": 2945,
+      "endLine": 2952,
+      "body": [
+        "2945: i.MessageCenter.on(s.HttpConst.RECEIVE_ACHIEVE_RATE_REWARD, function(e, o) {",
+        "2946: if (1 == o.eRet) {",
+        "2947: for (var s = o.rateIds, n = 0; n < s.length; n++) t.rateIds.includes(s[n]) || t.rateIds.push(s[n]);",
+        "2948: i.MessageCenter.dispatch(r.EvName.ACHV_GROUP_REWARD);",
+        "2949: i.MessageCenter.dispatch(r.EvName.ACHV_TIP_UPDATE);",
+        "2950: o.rewardArray && !cc.js.isEmptyObject(o.rewardArray) && t.showReward(o);",
+        "2951: }",
+        "2952: }, this);"
+      ],
+      "fields": [
+        {
+          "name": "eRet",
+          "readAt": "scripts3.js:2946"
+        },
+        {
+          "name": "rateIds",
+          "readAt": "scripts3.js:2947",
+          "raw": "for (var s = o.rateIds, n = 0; n < s.length; n++) t.rateIds.includes(s[n]) || t.rateIds.push(s[n]);"
+        },
+        {
+          "name": "rewardArray",
+          "readAt": "scripts3.js:2950"
+        }
+      ]
+    },
+    {
+      "name": "RECEIVE_ACHIEVE_SUIT_REWARD",
+      "file": "tools/scripts3.js",
+      "line": 2953,
+      "endLine": 2965,
+      "body": [
+        "2953: i.MessageCenter.on(s.HttpConst.RECEIVE_ACHIEVE_SUIT_REWARD, function(e, o) {",
+        "2954: if (1 == o.eRet) {",
+        "2955: var s = o.srd;",
+        "2956: for (var n in s) {",
+        "2957: var a = void 0;",
+        "2958: a = t.suitIds.hasOwnProperty(n) ? t.suitIds[n] : t.suitIds[n] = [];",
+        "2959: for (var c = 0; c < s[n].length; c++) a.includes(s[n][c]) || a.push(s[n][c]);",
+        "2960: }",
+        "2961: i.MessageCenter.dispatch(r.EvName.ACHV_SUIT_REWARD);",
+        "2962: i.MessageCenter.dispatch(r.EvName.ACHV_TIP_UPDATE);",
+        "2963: o.rewardArray && !cc.js.isEmptyObject(o.rewardArray) && t.showReward(o);",
+        "2964: }",
+        "2965: }, this);"
+      ],
+      "fields": [
+        {
+          "name": "eRet",
+          "readAt": "scripts3.js:2954"
+        },
+        {
+          "name": "srd",
+          "readAt": "scripts3.js:2955",
+          "raw": "var s = o.srd;"
+        },
+        {
+          "name": "srd[key] (array)",
+          "readAt": "scripts3.js:2959",
+          "raw": "for (var c = 0; c < s[n].length; c++) a.includes(s[n][c]) || a.push(s[n][c]);"
+        },
+        {
+          "name": "rewardArray",
+          "readAt": "scripts3.js:2963"
+        }
+      ]
+    }
+  ],
+  "fieldHits": {
+    "achieveIdArr": [
+      {
+        "file": "scripts3.js",
+        "line": 2903,
+        "occurrences": 2,
+        "text": "o.achieveIdArr && (t.awardIds = o.achieveIdArr);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 2921,
+        "occurrences": 1,
+        "text": "for (var s = o.achieveIdArr, n = !0, p = 0; p < s.length; p++) {"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 2981,
+        "occurrences": 1,
+        "text": "achieveIdArr: [ 354 ],"
+      }
+    ],
+    "groupPoints": [
+      {
+        "file": "scripts3.js",
+        "line": 2901,
+        "occurrences": 3,
+        "text": "o.groupPoints && !cc.js.isEmptyObject(o.groupPoints) && (t.gPoints = o.groupPoints);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 2930,
+        "occurrences": 1,
+        "text": "for (var g in o.groupPoints) {"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 2932,
+        "occurrences": 2,
+        "text": "o.groupPoints[g] - m > 0 && (d += o.groupPoints[g] - m);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 2939,
+        "occurrences": 1,
+        "text": "t.gPoints = o.groupPoints;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 2982,
+        "occurrences": 1,
+        "text": "groupPoints: {"
+      }
+    ],
+    "rateIds": [
+      {
+        "file": "scripts3.js",
+        "line": 145,
+        "occurrences": 1,
+        "text": "var t = d.AchievementModel.rateIds, e = new Array(this._groupIdArr.length), o = a.getTable(\"achieve_rate\");"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 201,
+        "occurrences": 1,
+        "text": "for (var s = d.AchievementModel.rateIds, n = !0, r = 0; r < t.length; r++) {"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 492,
+        "occurrences": 1,
+        "text": "var M = h.AchievementModel.rateIds, C = d.getTable(\"achieve_rate\");"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 771,
+        "occurrences": 1,
+        "text": "for (var i = l.AchievementModel.rateIds, s = !0, n = 0; n < t.length; n++) {"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 853,
+        "occurrences": 1,
+        "text": "var t = l.AchievementModel.rateIds, e = new Array(this._groupIdArr.length), o = d.getTable(\"achieve_rate\");"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 1101,
+        "occurrences": 1,
+        "text": "var r = h.AchievementModel.rateIds, p = !0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 2873,
+        "occurrences": 1,
+        "text": "this.rateIds = [];"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 2902,
+        "occurrences": 3,
+        "text": "o.rateIds && (t.rateIds = o.rateIds);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 2947,
+        "occurrences": 3,
+        "text": "for (var s = o.rateIds, n = 0; n < s.length; n++) t.rateIds.includes(s[n]) || t.rateIds.push(s[n]);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 3000,
+        "occurrences": 1,
+        "text": "t += this.rateIds.length;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 3209,
+        "occurrences": 1,
+        "text": "\"0\" != n.item && p >= n.points && !this.rateIds.includes(parseInt(s)) && (o[c] = !0);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 3314,
+        "occurrences": 1,
+        "text": "this.rateIds.length = 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 3671,
+        "occurrences": 1,
+        "text": "var f = d.AchievementModel.rateIds.includes(t), y = d.AchievementModel.getPoints(e.group), v = !f && y >= e.points;"
+      }
+    ],
+    "srd": [
+      {
+        "file": "scripts3.js",
+        "line": 2906,
+        "occurrences": 2,
+        "text": "o.srd && (t.suitIds = o.srd);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 2955,
+        "occurrences": 1,
+        "text": "var s = o.srd;"
+      }
+    ],
+    "taskData": [
+      {
+        "file": "scripts2.js",
+        "line": 58929,
+        "occurrences": 1,
+        "text": "e.taskData = null;"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 58960,
+        "occurrences": 1,
+        "text": "this.taskData = r.getItem(this.data.taskId, \"sect_misson\");"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 58965,
+        "occurrences": 1,
+        "text": "var n = a.getText(this.taskData.misson_name);"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 58966,
+        "occurrences": 1,
+        "text": "if (1 == this.taskData.flag[0]) {"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 58969,
+        "occurrences": 1,
+        "text": "} else if (2 == this.taskData.flag[0]) {"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 58977,
+        "occurrences": 1,
+        "text": "} else 3 == this.taskData.flag[0] && (n = n.replace(/\\[1\\]/, a.getText([ 6027, 6028, 6029, 6030 ][this.data.value - 1])));"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 58978,
+        "occurrences": 2,
+        "text": "this.taskData.variable > 0 && (n = n.replace(/\\[2\\]/, this.taskData.variable));"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 59033,
+        "occurrences": 1,
+        "text": "this.taskData = r.getItem(this.data.taskId, \"sect_misson\");"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 59161,
+        "occurrences": 1,
+        "text": "e.taskData = null;"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 59197,
+        "occurrences": 1,
+        "text": "this.taskData = d.SchoolModel.getTaskListData();"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 59198,
+        "occurrences": 1,
+        "text": "this.addItem(this.taskData);"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 59225,
+        "occurrences": 2,
+        "text": "var e = r.getItem(this.taskData[t].taskId, \"sect_misson\"), o = a.getText(e[\"word\" + d.SchoolModel.othenSchool]), i = this.taskData[t];"
+      },
+      {
+        "file": "scripts2.js",
+        "line": 59239,
+        "occurrences": 1,
+        "text": "this.taskData = d.SchoolModel.getTaskListData();"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 2905,
+        "occurrences": 1,
+        "text": "t.tObj = o.taskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 4133,
+        "occurrences": 1,
+        "text": "e.taskData = {};"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 4161,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][1] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 4164,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][0] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 4167,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][1] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 6062,
+        "occurrences": 2,
+        "text": "this.taskData = e.taskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 6066,
+        "occurrences": 1,
+        "text": "for (var o = 0; o < this.taskData.length; o++) {"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 6067,
+        "occurrences": 1,
+        "text": "var i = this.taskData[o];"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 6104,
+        "occurrences": 2,
+        "text": "this.taskData = e.taskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 6118,
+        "occurrences": 4,
+        "text": "for (var e = 0; e < this.taskData.length; e++) if (this.taskData[e].name == r.RoleBaseInfo.userName && 2 != this.taskData[e].state && this.taskData[e].id != t) return !0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 6170,
+        "occurrences": 2,
+        "text": "if (this.taskData && this.taskData.length) {"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 6172,
+        "occurrences": 5,
+        "text": "for (var t = 0; t < this.taskData.length; t++) 2 == this.taskData[t].state ? this.doneDutyWork.push(this.taskData[t].id) : this.taskData[t].name == r.RoleBaseInfo.userName && this.setDutyWorkId(this.taskData[t].id);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 6375,
+        "occurrences": 1,
+        "text": "this.content.getComponent(h.default).total(d.AdvancedTaskModel.taskData.length);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 6403,
+        "occurrences": 1,
+        "text": "var o = d.AdvancedTaskModel.taskData[e];"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 17066,
+        "occurrences": 1,
+        "text": "e.taskData = {};"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 17145,
+        "occurrences": 1,
+        "text": "for (var t in this.taskData) this.taskNodeMap[t] && this.taskNodeMap[t].getComponent(\"BrewingTaskCell\").updateShow();"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 17208,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][1] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 17211,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][0] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 17258,
+        "occurrences": 1,
+        "text": "this.taskData = e.brewTaskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 17264,
+        "occurrences": 1,
+        "text": "_.RoleOtherInfo.setActivityData(83, this.taskData, this.taskEndT);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 17270,
+        "occurrences": 1,
+        "text": "this.taskData = e.brewTaskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 17274,
+        "occurrences": 1,
+        "text": "_.RoleOtherInfo.setActivityData(83, this.taskData);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 19995,
+        "occurrences": 1,
+        "text": "this.taskData = e.moonstepTaskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 20013,
+        "occurrences": 1,
+        "text": "var e = this.taskData[t][1], o = g.ChessActiveModel.taskStateArray.indexOf(t);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 20021,
+        "occurrences": 1,
+        "text": "this.taskData = e.moonstepTaskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 27745,
+        "occurrences": 1,
+        "text": "e.hasOwnProperty(\"trainingTaskData\") && (this.taskData = e.trainingTaskData);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 27769,
+        "occurrences": 1,
+        "text": "e.hasOwnProperty(\"trainingTaskData\") && (this.taskData = e.trainingTaskData);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 27834,
+        "occurrences": 1,
+        "text": "e.taskData = {};"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 32157,
+        "occurrences": 1,
+        "text": "this.taskData = e.koicarpTaskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 32180,
+        "occurrences": 1,
+        "text": "this.taskData = e.koicarpTaskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 40465,
+        "occurrences": 1,
+        "text": "this.taskData = {};"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 40489,
+        "occurrences": 1,
+        "text": "this.taskData = e.ts;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 40502,
+        "occurrences": 1,
+        "text": "this.taskData = e.ts;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 40527,
+        "occurrences": 1,
+        "text": "this.taskData = e.ts;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 40575,
+        "occurrences": 1,
+        "text": "this.taskData = e.ts;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 40631,
+        "occurrences": 2,
+        "text": "for (var t in this.taskData) if (1 == this.taskData[t][1]) return !0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 41282,
+        "occurrences": 1,
+        "text": "var t = u.JigsawModel.taskData[this.data.toString()], e = this.data;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 41303,
+        "occurrences": 1,
+        "text": "var t = u.JigsawModel.taskData[this.data.toString()], e = p.getItem(this.data, \"anniversary_jigsaw_task\");"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 42059,
+        "occurrences": 1,
+        "text": "this.taskData = e.castleJumpingFunTaskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 42080,
+        "occurrences": 1,
+        "text": "this.taskData = e.castleJumpingFunTaskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 43218,
+        "occurrences": 1,
+        "text": "e.taskData = {};"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 44878,
+        "occurrences": 1,
+        "text": "this.taskData = null;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 45095,
+        "occurrences": 1,
+        "text": "e.taskData = {};"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 45118,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][1] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 45121,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][0] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 45124,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][1] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 45139,
+        "occurrences": 1,
+        "text": "this.taskData = e.wulintreasureTaskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 45160,
+        "occurrences": 1,
+        "text": "this.taskData = e.wulintreasureTaskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 45227,
+        "occurrences": 1,
+        "text": "e.taskData = {};"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 45784,
+        "occurrences": 1,
+        "text": "var t = this.parent.taskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 45866,
+        "occurrences": 1,
+        "text": "e.taskData = {};"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 46201,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][1] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 46204,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][0] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 46247,
+        "occurrences": 1,
+        "text": "this.taskData = o.ts;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 46252,
+        "occurrences": 1,
+        "text": "N.RoleOtherInfo.setActivityData(87, this.taskData, this.endT_0);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 46269,
+        "occurrences": 1,
+        "text": "this.taskData = o.ts;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 46326,
+        "occurrences": 1,
+        "text": "this.taskData = o.ts;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 46330,
+        "occurrences": 1,
+        "text": "N.RoleOtherInfo.setActivityData(87, this.taskData);"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63536,
+        "occurrences": 1,
+        "text": "this.taskData = null;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63563,
+        "occurrences": 1,
+        "text": "t.taskData = null;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63570,
+        "occurrences": 1,
+        "text": "t.taskData = o.oldReturnData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63583,
+        "occurrences": 1,
+        "text": "t.taskData = o.oldReturnData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63589,
+        "occurrences": 1,
+        "text": "t.taskData = o.oldReturnData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63724,
+        "occurrences": 1,
+        "text": "var t = this, e = p.ReturnModel.taskData.tasks, o = null;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63802,
+        "occurrences": 1,
+        "text": "for (var t = c.ReturnModel.taskData.tasks, e = 0; e < t.length; e++) {"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63821,
+        "occurrences": 1,
+        "text": "if (c.ReturnModel.taskData.liveness < a.getItem(e, \"Return_Award\").liveness) {"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63836,
+        "occurrences": 1,
+        "text": "var t = c.ReturnModel.taskData.liveness;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63862,
+        "occurrences": 1,
+        "text": "for (var e = c.ReturnModel.taskData.livenessDatas, o = 0; o < e.length; o++) if (e[o] == t) return !0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63927,
+        "occurrences": 1,
+        "text": "if (h.ReturnModel.sevenDayData && h.ReturnModel.taskData) {"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 63994,
+        "occurrences": 1,
+        "text": "!this.toggles[1].isChecked || h.ReturnModel.taskData ? !this.toggles[2].isChecked || h.ReturnModel.chargeData ? this.show() : h.ReturnModel.reqGetReturnGift() : h.ReturnModel.reqGetReturnTaskData();"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 86281,
+        "occurrences": 1,
+        "text": "e.taskData = {};"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 86303,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][1] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 86306,
+        "occurrences": 2,
+        "text": "return this.taskData.hasOwnProperty(t) ? this.taskData[t][0] : 0;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 86321,
+        "occurrences": 1,
+        "text": "this.taskData = e.springswordTaskData;"
+      },
+      {
+        "file": "scripts3.js",
+        "line": 86354,
+        "occurrences": 1,
+        "text": "this.taskData = e.springswordTaskData;"
+      }
+    ]
+  },
+  "localInit": {
+    "class": "AchievementModel (module key \"AchievementModel\" at scripts3.js:2862, class C = function() at 2869, constructor 2870-2881)",
+    "constructorBody": [
+      "2870: function t() {",
+      "2871: this.gPoints = {};",
+      "2872: this.suitIds = {};",
+      "2873: this.rateIds = [];",
+      "2874: this.receivedIds = [];",
+      "2875: this.awardIds = [];",
+      "2876: this.rTips = {};",
+      "2877: this.tObj = {};",
+      "2878: this._tipArr = [];",
+      "2879: this._loading = !1;",
+      "2880: this._tipNode = null;",
+      "2881: }"
+    ],
+    "initSites": {
+      "achieveIdArr": [],
+      "groupPoints": [],
+      "rateIds": [
+        {
+          "file": "scripts3.js",
+          "line": 2873,
+          "text": "this.rateIds = [];"
+        }
+      ],
+      "srd": [],
+      "taskData": [
+        {
+          "file": "scripts2.js",
+          "line": 58929,
+          "text": "e.taskData = null;"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 58960,
+          "text": "this.taskData = r.getItem(this.data.taskId, \"sect_misson\");"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 59033,
+          "text": "this.taskData = r.getItem(this.data.taskId, \"sect_misson\");"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 59161,
+          "text": "e.taskData = null;"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 59197,
+          "text": "this.taskData = d.SchoolModel.getTaskListData();"
+        },
+        {
+          "file": "scripts2.js",
+          "line": 59239,
+          "text": "this.taskData = d.SchoolModel.getTaskListData();"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 4133,
+          "text": "e.taskData = {};"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 6062,
+          "text": "this.taskData = e.taskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 6104,
+          "text": "this.taskData = e.taskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 17066,
+          "text": "e.taskData = {};"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 17258,
+          "text": "this.taskData = e.brewTaskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 17270,
+          "text": "this.taskData = e.brewTaskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 19995,
+          "text": "this.taskData = e.moonstepTaskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 20021,
+          "text": "this.taskData = e.moonstepTaskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 27745,
+          "text": "e.hasOwnProperty(\"trainingTaskData\") && (this.taskData = e.trainingTaskData);"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 27769,
+          "text": "e.hasOwnProperty(\"trainingTaskData\") && (this.taskData = e.trainingTaskData);"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 27834,
+          "text": "e.taskData = {};"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 32157,
+          "text": "this.taskData = e.koicarpTaskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 32180,
+          "text": "this.taskData = e.koicarpTaskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 40465,
+          "text": "this.taskData = {};"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 40489,
+          "text": "this.taskData = e.ts;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 40502,
+          "text": "this.taskData = e.ts;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 40527,
+          "text": "this.taskData = e.ts;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 40575,
+          "text": "this.taskData = e.ts;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 42059,
+          "text": "this.taskData = e.castleJumpingFunTaskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 42080,
+          "text": "this.taskData = e.castleJumpingFunTaskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 43218,
+          "text": "e.taskData = {};"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 44878,
+          "text": "this.taskData = null;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 45095,
+          "text": "e.taskData = {};"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 45139,
+          "text": "this.taskData = e.wulintreasureTaskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 45160,
+          "text": "this.taskData = e.wulintreasureTaskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 45227,
+          "text": "e.taskData = {};"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 45866,
+          "text": "e.taskData = {};"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 46247,
+          "text": "this.taskData = o.ts;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 46269,
+          "text": "this.taskData = o.ts;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 46326,
+          "text": "this.taskData = o.ts;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 63536,
+          "text": "this.taskData = null;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 86281,
+          "text": "e.taskData = {};"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 86321,
+          "text": "this.taskData = e.springswordTaskData;"
+        },
+        {
+          "file": "scripts3.js",
+          "line": 86354,
+          "text": "this.taskData = e.springswordTaskData;"
+        }
+      ]
+    }
+  },
+  "hitCounts": {
+    "achieveIdArr": 3,
+    "groupPoints": 5,
+    "rateIds": 13,
+    "srd": 2,
+    "taskData": 88
+  }
+}

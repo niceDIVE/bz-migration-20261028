@@ -1,0 +1,51 @@
+# User.CheckName  (HttpConst.USER_CHECK_NAME)
+# 出现 1 处
+
+ 70334: }
+ 70335: e.prototype.init = function() {
+ 70336: var t = this;
+ 70337: v.MessageCenter.on(d.HttpConst.QUICK_LOGIN, function(e, o) {
+ 70338: t.onQuickLoginSuccess(o);
+ 70339: }, this);
+ 70340: v.MessageCenter.on(d.HttpConst.USER_CHECK_NAME, function(e, o) {
+ 70341: t.setRoleAttribute(o);
+ 70342: }, this);
+ 70343: v.MessageCenter.on(d.HttpConst.USER_CREATE, function(e, o) {
+ 70344: t.createRole(o);
+ 70345: }, this);
+ 70346: v.MessageCenter.on(d.HttpConst.USER_LOADGAME, function(e, o) {
+ 70347: t.loadGame(o);
+ 70348: }, this);
+ 70349: v.MessageCenter.on(d.HttpConst.BACKTOLOGIN, function() {}, this);
+ 70350: v.MessageCenter.on(d.HttpConst.USER_GETCHATADDRESS, function(e, o) {
+ 70351: t.chatServerSuccess(o);
+ 70352: }, this);
+ 70353: v.MessageCenter.on(d.HttpConst.ANNOUNCEMENT_ID, function(e, o) {
+ 70354: t.sendAnnouncePhpHttp(o);
+ 70355: }, this);
+ 70356: v.MessageCenter.on(d.HttpConst.RECORD_PHONE, function(t, e) {
+ 70357: if (1 == e.eRet) {
+ 70358: cc.sys.localStorage.setItem("huaweiPhone" + I.RoleBaseInfo.roleID, 1);
+ 70359: D.default.show(s.getText("8951"));
+ 70360: } else 2 == e.eRet ? D.default.show(s.getText("8956")) : 3 == e.eRet ? D.default.show(s.getText("8957")) : 4 == e.eRet && D.default.show(s.getText("8953"));
+ 70361: }, this);
+ 70362: v.MessageCenter.on(d.HttpConst.CHECK_ON_HOOK, function(e, o) {
+ 70363: if (1 == o.eRet) {
+ 70364: t.idleData = o.OnhookObj;
+ 70365: t.onHookScene(!0);
+ 70366: }
+ 70367: });
+ 70368: };
+ 70369: e.prototype.start = function() {
+ 70370: var t = this;
+ 70371: H.LoginMgr.login(function() {
+ 70372: t.showPrologue();
+ 70373: });
+ 70374: };
+ 70375: e.prototype.showPrologue = function() {
+ 70376: z.TESDKHelper.onSdkLogin();
+ 70377: H.LoginMgr.checkMiniGame() ? this.showSvrSelection() : cc.sys.localStorage.getItem("firstInBz") ? this.showSvrSelection() : N.default.prefabs.load("Login/PrologueUI", cc.Prefab, function(t, e) {
+ 70378: var o = cc.instantiate(e);
+ 70379: E.PopUpMgr.addPopUp(o, R.LayerMgr.topLayer, 1);
+ 70380: });
+---

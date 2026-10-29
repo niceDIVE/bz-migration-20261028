@@ -1,0 +1,7 @@
+{
+  "_说明": "A2 复现用例 FP1：动作不在 contracts.byAction 里（模拟 HttpConst3 无 action 映射 / M2 漏抽的新动作）。预期：仅 WARN L1.NO_CONTRACT，verdict PASS。",
+  "id": "FP1.no-contract", "action": "User.GhostAction",
+  "req": { "mod": "User", "do": "GhostAction", "p": {} },
+  "resp": { "eRet": 1, "anythingJunk": { "deep": [1, 2] } },
+  "exceptions": [], "toasts": [], "probe": { "mode": "wrap-on" }
+}

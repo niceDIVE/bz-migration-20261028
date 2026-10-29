@@ -1,0 +1,20 @@
+﻿add | buyUFORefreshTimes | eRet |  | → | 5 | sigma | absent→num+
+add | getUFOCatcherData | eRet |  | → | 1 | sigma | absent→num+
+add | getUFOCatcherData | rewardPool.1 |  | → | 2 | sigma | absent→num+
+add | getUFOCatcherData | rewardPool.2 |  | → | 2 | sigma | absent→num+
+add | getUFOCatcherData | rewardPool.3 |  | → | 1 | sigma | absent→num+
+add | getUFOCatcherData | rewardPool.4 |  | → | 1 | sigma | absent→num+
+add | getUFOCatcherData | rewardPool.5 |  | → | 1 | sigma | absent→num+
+add | getUFOCatcherData | refreshTimes |  | → | 0 | sigma | absent→num0
+add | getUFOCatcherData | freeRefreshTimes |  | → | 1 | sigma | absent→num+
+add | getUFOCatcherData | buyRefreshTimes |  | → | 0 | sigma | absent→num0
+add | getUFOCatcherData | buyCoinCount |  | → | 0 | sigma | absent→num0
+add | getUFOCatcherData | signId |  | → | 2 | sigma | absent→num+
+add | getUFOCatcherData | note.ivch.8117 |  | → | 3 | sigma | absent→num+
+add | getUFOCatcherData | note.ivch.8119 |  | → | 3 | sigma | absent→num+
+add | getUFOCatcherData | note.ivch.8120 |  | → | 3 | sigma | absent→num+
+add | getUFOCatcherData | note.eqch |  | → | "{}" | sigma | absent→obj0
+add | getUFOCatcherData | note.eco |  | → | "{}" | sigma | absent→obj0
+add | rewardUFO | eRet |  | → | 15 | sigma | absent→num+
+add | useUFOrefresh | eRet |  | → | 6 | sigma | absent→num+
+diff 总数 = 19

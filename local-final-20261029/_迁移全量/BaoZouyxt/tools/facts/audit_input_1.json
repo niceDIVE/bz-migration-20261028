@@ -1,0 +1,339 @@
+{
+ "batch": 1,
+ "total": 37,
+ "items": [
+  {
+   "action": "GetFashionList",
+   "field": "FashionTimeMap",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onGetFashionList",
+   "recordedLine": "tools/index.js:75623",
+   "recordedText": "1 == e.type && this.setFashionTime(e.FashionTimeMap);"
+  },
+  {
+   "action": "GetShopAllActive",
+   "field": "activeEndTime",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetShopAllActive",
+   "recordedLine": "tools/index.js:131275",
+   "recordedText": "e.hasOwnProperty(\"activeEndTime\") && (this.shopListEndTime = e.activeEndTime);"
+  },
+  {
+   "action": "GetShopAllActive",
+   "field": "shopActiveList",
+   "currentType": "array",
+   "conf": "name",
+   "consumer": "onGetShopAllActive",
+   "recordedLine": "tools/index.js:131273",
+   "recordedText": "this.shopActiveData = e.shopActiveList;"
+  },
+  {
+   "action": "acceptSchoolTask",
+   "field": "acceptSchoolTask",
+   "currentType": "object",
+   "conf": "usage-1",
+   "consumer": "onAcceptSchoolTask",
+   "recordedLine": "tools/index.js:113633",
+   "recordedText": "for (var o in e.acceptSchoolTask) if (o == this.othenSchool + \"_\" + this.taskTag) {"
+  },
+  {
+   "action": "buyActivityNum",
+   "field": "activeNum",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onBuyActivityNum",
+   "recordedLine": "tools/index.js:55942",
+   "recordedText": "this.paperNum = e.activeNum;"
+  },
+  {
+   "action": "buyInvitationCard",
+   "field": "pass_levelID",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onBuyInvitationCard",
+   "recordedLine": "tools/index.js:55887",
+   "recordedText": "this.cardState = e.pass_levelID;"
+  },
+  {
+   "action": "changeServer",
+   "field": "newAcc",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "showChangeServerData",
+   "recordedLine": "tools/index.js:28163",
+   "recordedText": "s.RoleBaseInfo.userAccount = e.newAcc;"
+  },
+  {
+   "action": "changeServer",
+   "field": "newID",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "showChangeServerData",
+   "recordedLine": "tools/index.js:28162",
+   "recordedText": "s.RoleBaseInfo.roleID = e.newID;"
+  },
+  {
+   "action": "changeWorldServer",
+   "field": "hookData",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onChangeWorldServer",
+   "recordedLine": "tools/index.js:28127",
+   "recordedText": "I.HangUpModel.saveCrossData(e.hookData);"
+  },
+  {
+   "action": "changeWorldServer",
+   "field": "sendurl",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onChangeWorldServer",
+   "recordedLine": "tools/index.js:28126",
+   "recordedText": "o.oldUrlAll = e.sendurl;"
+  },
+  {
+   "action": "childWashProperty",
+   "field": "attrList",
+   "currentType": "array",
+   "conf": "name",
+   "consumer": "childWashCallBack",
+   "recordedLine": "tools/index.js:24634",
+   "recordedText": "i.addComponent(\"SetChildWashUI\").setData(e.attrList);"
+  },
+  {
+   "action": "childWashProperty",
+   "field": "baseArr",
+   "currentType": "array",
+   "conf": "name",
+   "consumer": "childWashCallBack",
+   "recordedLine": "tools/index.js:24629",
+   "recordedText": "c.MarryModel.setChildAttData(e.baseArr, e.attArr);"
+  },
+  {
+   "action": "cookAccelerate",
+   "field": "cookData",
+   "currentType": "object",
+   "conf": "usage-1",
+   "consumer": "onInnKitchenDataChanged",
+   "recordedLine": "tools/index.js:62419",
+   "recordedText": "for (var n in e.cookData) {"
+  },
+  {
+   "action": "cookReceive",
+   "field": "cookData",
+   "currentType": "object",
+   "conf": "usage-1",
+   "consumer": "onInnKitchenDataChanged",
+   "recordedLine": "tools/index.js:62419",
+   "recordedText": "for (var n in e.cookData) {"
+  },
+  {
+   "action": "cookStart",
+   "field": "cookData",
+   "currentType": "object",
+   "conf": "usage-1",
+   "consumer": "onInnKitchenDataChanged",
+   "recordedLine": "tools/index.js:62419",
+   "recordedText": "for (var n in e.cookData) {"
+  },
+  {
+   "action": "cookUnlock",
+   "field": "cookData",
+   "currentType": "object",
+   "conf": "usage-1",
+   "consumer": "onInnKitchenDataChanged",
+   "recordedLine": "tools/index.js:62419",
+   "recordedText": "for (var n in e.cookData) {"
+  },
+  {
+   "action": "dishUnlock",
+   "field": "unlockDish",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onDishUnlock",
+   "recordedLine": "tools/index.js:62251",
+   "recordedText": "for (var o = e.unlockDish, a = 0, l = 0; l < o.length; l++) this.unlockDishData.indexOf(o[l]) < 0 && (a = o[l]);"
+  },
+  {
+   "action": "endEatByTable",
+   "field": "tableList",
+   "currentType": "array",
+   "conf": "name",
+   "consumer": "onEndEatEvent",
+   "recordedLine": "tools/index.js:62626",
+   "recordedText": "this.tablesData = e.tableList;"
+  },
+  {
+   "action": "endPlayGame",
+   "field": "progree",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "endPlayCallBack",
+   "recordedLine": "tools/index.js:24683",
+   "recordedText": "100 == e.progree && c.MarryModel.setPlayAttData(this.playType, 1);"
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "boxArr",
+   "currentType": "array",
+   "conf": "name",
+   "consumer": "onEnterNextFloor",
+   "recordedLine": "tools/index.js:55908",
+   "recordedText": "this.setBoxDataMap(e.boxArr);"
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "floor",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onEnterNextFloor",
+   "recordedLine": "tools/index.js:55907",
+   "recordedText": "this.curFloorNum = e.floor;"
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "isStatus",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onEnterNextFloor",
+   "recordedLine": "tools/index.js:55909",
+   "recordedText": "this.enterToScene(e.boxNum, e.isStatus);"
+  },
+  {
+   "action": "getAllActivity",
+   "field": "activityShows",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetAllActivity",
+   "recordedLine": "tools/index.js:57455",
+   "recordedText": "e.hasOwnProperty(\"activityShows\") && (this.activeShowList = e.activityShows);"
+  },
+  {
+   "action": "getAllActivity",
+   "field": "calendar",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetAllActivity",
+   "recordedLine": "tools/index.js:57456",
+   "recordedText": "e.hasOwnProperty(\"calendar\") && e.calendar > 0 ? this.calendarStr = e.calendar.toString() : this.calendarStr = \"\";"
+  },
+  {
+   "action": "getAllActivity",
+   "field": "digcellTaskRed",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetAllActivity",
+   "recordedLine": "tools/index.js:57454",
+   "recordedText": "e.hasOwnProperty(\"digcellTaskRed\") && u.RoleOtherInfo.setActivityData(79, e.digcellTaskRed);"
+  },
+  {
+   "action": "getAllActivity",
+   "field": "geNianshouTaskRed",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetAllActivity",
+   "recordedLine": "tools/index.js:57448",
+   "recordedText": "e.hasOwnProperty(\"geNianshouTaskRed\") && u.RoleOtherInfo.setActivityData(78, e.geNianshouTaskRed);"
+  },
+  {
+   "action": "getAllActivity",
+   "field": "geSchoolTaskRed",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetAllActivity",
+   "recordedLine": "tools/index.js:57447",
+   "recordedText": "e.hasOwnProperty(\"geSchoolTaskRed\") && (u.RoleOtherInfo.warmUpRed = e.geSchoolTaskRed);"
+  },
+  {
+   "action": "getAllActivity",
+   "field": "jigsawRed",
+   "currentType": "number",
+   "conf": "init-1",
+   "consumer": "onGetAllActivity",
+   "recordedLine": "tools/index.js:57449",
+   "recordedText": "e.hasOwnProperty(\"jigsawRed\") && (u.RoleOtherInfo.jigsawRed = e.jigsawRed);"
+  },
+  {
+   "action": "getAllActivity",
+   "field": "supportCamp",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetAllActivity",
+   "recordedLine": "tools/index.js:57453",
+   "recordedText": "e.hasOwnProperty(\"supportCamp\") && u.RoleOtherInfo.setActivityData(68, e.supportCamp);"
+  },
+  {
+   "action": "getAllActivity",
+   "field": "transGiftShow",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetAllActivity",
+   "recordedLine": "tools/index.js:57457",
+   "recordedText": "u.RoleOtherInfo.setActivityData(80, e.transGiftShow);"
+  },
+  {
+   "action": "getAnniversaryPassGift",
+   "field": "giftDatas",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetAnnPassGiftData",
+   "recordedLine": "tools/index.js:131054",
+   "recordedText": "data: e.giftDatas"
+  },
+  {
+   "action": "getApplyInfo",
+   "field": "masterInfo",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onLookRoleInfo",
+   "recordedLine": "tools/index.js:113941",
+   "recordedText": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.hasOwnProperty(\"ownIsMa"
+  },
+  {
+   "action": "getApplyInfo",
+   "field": "pupilInfo",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onLookRoleInfo",
+   "recordedLine": "tools/index.js:113941",
+   "recordedText": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.hasOwnProperty(\"ownIsMa"
+  },
+  {
+   "action": "getChatPkAiSet",
+   "field": "option",
+   "currentType": "number",
+   "conf": "init-1",
+   "consumer": "getAIInfoData",
+   "recordedLine": "tools/index.js:28551",
+   "recordedText": "this.option = e.option;"
+  },
+  {
+   "action": "getDragon",
+   "field": "currentDragonId",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetDragon",
+   "recordedLine": "tools/index.js:27429",
+   "recordedText": "1 == e.eRet && 0 != e.currentDragonId && (o = e);"
+  },
+  {
+   "action": "getHlexchangeShop",
+   "field": "shopObj",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onGetExchangeData",
+   "recordedLine": "tools/index.js:56094",
+   "recordedText": "if (1 == e.eRet && e.hasOwnProperty(\"shopObj\") && !cc.js.isEmptyObject(e.shopObj)) c.default.prefabs.load(\"homeSim/InnManage/InnExchangeShop\", cc.Prefab, function(t, i) {"
+  },
+  {
+   "action": "getInn",
+   "field": "costDishMap",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onGetInnData",
+   "recordedLine": "tools/index.js:62687",
+   "recordedText": "this.costItems = e.costDishMap;"
+  }
+ ]
+}

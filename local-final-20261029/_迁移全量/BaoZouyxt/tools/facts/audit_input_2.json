@@ -1,0 +1,330 @@
+{
+ "batch": 2,
+ "total": 36,
+ "items": [
+  {
+   "action": "getInn",
+   "field": "showRewardPop",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetInnData",
+   "recordedLine": "tools/index.js:62688",
+   "recordedText": "this.offlineHot = e.showRewardPop;"
+  },
+  {
+   "action": "getInn",
+   "field": "tableEndTime",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetInnData",
+   "recordedLine": "tools/index.js:62681",
+   "recordedText": "this.openTime[1] = e.tableEndTime;"
+  },
+  {
+   "action": "getInn",
+   "field": "tableStartTime",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetInnData",
+   "recordedLine": "tools/index.js:62680",
+   "recordedText": "this.openTime[0] = e.tableStartTime;"
+  },
+  {
+   "action": "getInnCook",
+   "field": "cookBook",
+   "currentType": "array",
+   "conf": "usage-1",
+   "consumer": "onCookBookData",
+   "recordedLine": "tools/index.js:62264",
+   "recordedText": "this.bookBag = e.cookBook;"
+  },
+  {
+   "action": "getInnCook",
+   "field": "unlockDish",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onCookBookData",
+   "recordedLine": "tools/index.js:62263",
+   "recordedText": "this.unlockDishData = e.unlockDish;"
+  },
+  {
+   "action": "getInnCookList",
+   "field": "cookList",
+   "currentType": "array",
+   "conf": "name",
+   "consumer": "onInnCookListEvent",
+   "recordedLine": "tools/index.js:62786",
+   "recordedText": "this.cookData = e.cookList;"
+  },
+  {
+   "action": "getInnProductList",
+   "field": "productList",
+   "currentType": "object",
+   "conf": "init-1",
+   "consumer": "onInnProductListEvent",
+   "recordedLine": "tools/index.js:62795",
+   "recordedText": "this.productList = e.productList;"
+  },
+  {
+   "action": "getInnRank",
+   "field": "innRankList",
+   "currentType": "array",
+   "conf": "name",
+   "consumer": "onShowInnRank",
+   "recordedLine": "tools/index.js:62605",
+   "recordedText": "i.addComponent(\"HotRank\").setData(e.innRankList);"
+  },
+  {
+   "action": "getInnShop",
+   "field": "innSimShopDatas",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onShowInnShop",
+   "recordedLine": "tools/index.js:62598",
+   "recordedText": "i.addComponent(\"InnShop\").setData(e.innSimShopDatas);"
+  },
+  {
+   "action": "getMasterPupilList",
+   "field": "passMeritRewardState",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetMasterPupilList",
+   "recordedLine": "tools/index.js:132518",
+   "recordedText": "e.hasOwnProperty(\"passMeritRewardState\") && (n = e.passMeritRewardState);"
+  },
+  {
+   "action": "getMasterPupilList",
+   "field": "roleList",
+   "currentType": "object",
+   "conf": "usage-1",
+   "consumer": "onGetMasterPupilList",
+   "recordedLine": "tools/index.js:132520",
+   "recordedText": "for (var s in e.roleList) {"
+  },
+  {
+   "action": "getNewGiftPermanent",
+   "field": "giftDatas",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "giftPermanentCallback",
+   "recordedLine": "tools/index.js:131115",
+   "recordedText": "data: e.giftDatas"
+  },
+  {
+   "action": "getSchoolMaster",
+   "field": "masterInfo",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onLookRoleInfo",
+   "recordedLine": "tools/index.js:113941",
+   "recordedText": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.hasOwnProperty(\"ownIsMa"
+  },
+  {
+   "action": "getSchoolMaster",
+   "field": "pupilInfo",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onLookRoleInfo",
+   "recordedLine": "tools/index.js:113941",
+   "recordedText": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.hasOwnProperty(\"ownIsMa"
+  },
+  {
+   "action": "getSchoolPupil",
+   "field": "masterInfo",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onLookRoleInfo",
+   "recordedLine": "tools/index.js:113941",
+   "recordedText": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.hasOwnProperty(\"ownIsMa"
+  },
+  {
+   "action": "getSchoolPupil",
+   "field": "pupilInfo",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onLookRoleInfo",
+   "recordedLine": "tools/index.js:113941",
+   "recordedText": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.hasOwnProperty(\"ownIsMa"
+  },
+  {
+   "action": "getSchoolRoleInfo",
+   "field": "masterInfo",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onLookRoleInfo",
+   "recordedLine": "tools/index.js:113941",
+   "recordedText": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.hasOwnProperty(\"ownIsMa"
+  },
+  {
+   "action": "getSchoolRoleInfo",
+   "field": "pupilInfo",
+   "currentType": "object",
+   "conf": "name",
+   "consumer": "onLookRoleInfo",
+   "recordedLine": "tools/index.js:113941",
+   "recordedText": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.hasOwnProperty(\"ownIsMa"
+  },
+  {
+   "action": "getSchoolTask",
+   "field": "currentServerTime",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetSchoolTask",
+   "recordedLine": "tools/index.js:113618",
+   "recordedText": "M.TimeMgr.sserverT = e.currentServerTime;"
+  },
+  {
+   "action": "getSchoolTask",
+   "field": "xyTodaySchoolId",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetSchoolTask",
+   "recordedLine": "tools/index.js:113617",
+   "recordedText": "this.beforeSchool = parseInt(e.xyTodaySchoolId);"
+  },
+  {
+   "action": "getTreasureFloor",
+   "field": "floor",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetTreasureFloor",
+   "recordedLine": "tools/index.js:55903",
+   "recordedText": "1 == e.eRet ? this.reqEnterTreasure(e.floor) : l.default.show(c.getText(1093));"
+  },
+  {
+   "action": "giveChildName",
+   "field": "childName",
+   "currentType": "array",
+   "conf": "usage-1",
+   "consumer": "setChildNameCallBack",
+   "recordedLine": "tools/index.js:24623",
+   "recordedText": "c.MarryModel.childData.childName = e.childName;"
+  },
+  {
+   "action": "intoSchoolSquare",
+   "field": "schoolTitle",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onInfoSchoolSquare",
+   "recordedLine": "tools/index.js:114500",
+   "recordedText": "e.hasOwnProperty(\"schoolTitle\") && (h.RoleOtherInfo.hastitleLevel = e.schoolTitle);"
+  },
+  {
+   "action": "marryAward",
+   "field": "guestID",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "callBackMarryAward",
+   "recordedLine": "tools/index.js:77268",
+   "recordedText": "this.guestNpcAy.push(e.guestID);"
+  },
+  {
+   "action": "marryHouse",
+   "field": "houseID",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "callBackBuyHouseEvent",
+   "recordedLine": "tools/index.js:77224",
+   "recordedText": "var o = a.getBuildHouseObj(e.houseID);"
+  },
+  {
+   "action": "passCardData",
+   "field": "goldArr",
+   "currentType": "array",
+   "conf": "name",
+   "consumer": "onGetPassCardData",
+   "recordedLine": "tools/index.js:55872",
+   "recordedText": "this.goldAy = e.goldArr;"
+  },
+  {
+   "action": "quitSchool",
+   "field": "openSchoolFirstTryBgUI",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onQuitSchool",
+   "recordedLine": "tools/index.js:113728",
+   "recordedText": "0 == t && o.openSchoolFirstTryBgUI(e);"
+  },
+  {
+   "action": "redeemTable",
+   "field": "hotVal",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onRedeemTable",
+   "recordedLine": "tools/index.js:62671",
+   "recordedText": "this.hotVal = e.hotVal;"
+  },
+  {
+   "action": "redeemTable",
+   "field": "mhv",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onRedeemTable",
+   "recordedLine": "tools/index.js:62672",
+   "recordedText": "this.maxHot = e.mhv;"
+  },
+  {
+   "action": "refreshGiftAward",
+   "field": "giftAwards",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "refreshGiftAwardCallback",
+   "recordedLine": "tools/index.js:131097",
+   "recordedText": "1 == e.eRet && l.MessageCenter.dispatch(h.EvName.REFRESH_GIFT_STATE, e.giftAwards);"
+  },
+  {
+   "action": "resetChildFoster",
+   "field": "foster_point",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "resetChildCallBack",
+   "recordedLine": "tools/index.js:24640",
+   "recordedText": "e.hasOwnProperty(\"foster_point\") && (c.MarryModel.childData.foster_point = e.foster_point);"
+  },
+  {
+   "action": "resetChildFoster",
+   "field": "playArr",
+   "currentType": "object",
+   "conf": "usage-1",
+   "consumer": "resetChildCallBack",
+   "recordedLine": "tools/index.js:24641",
+   "recordedText": "e.hasOwnProperty(\"playArr\") && (c.MarryModel.childData.playArr = e.playArr);"
+  },
+  {
+   "action": "setChatPkOption",
+   "field": "option",
+   "currentType": "number",
+   "conf": "init-1",
+   "consumer": "onSetOption",
+   "recordedLine": "tools/index.js:28556",
+   "recordedText": "this.option = e.option;"
+  },
+  {
+   "action": "setPlayerCardMoutsSycn",
+   "field": "sycn",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "setMoutsSyncCallBack",
+   "recordedLine": "tools/index.js:132087",
+   "recordedText": "g.RoleOtherInfo.isSyncMount = 1 == e.sycn;"
+  },
+  {
+   "action": "startEatByTable",
+   "field": "gn",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onStartEat",
+   "recordedLine": "tools/index.js:62612",
+   "recordedText": "this.guestNum = e.gn;"
+  },
+  {
+   "action": "treasureAward",
+   "field": "isStatus",
+   "currentType": "number",
+   "conf": "fallback",
+   "consumer": "onGetTreasureAward",
+   "recordedLine": "tools/index.js:55915",
+   "recordedText": "this.showTipFlag = e.isStatus;"
+  }
+ ]
+}

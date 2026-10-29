@@ -1,0 +1,5105 @@
+{
+ "generatedAt": "2026-10-22T13:03:32.581Z",
+ "stat": {
+  "unknown": 728,
+  "suspect": 343
+ },
+ "suspicious": [
+  {
+   "action": "BeginFish",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginFish",
+   "field": "advertisementNum",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginFish",
+   "field": "beginTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginFish",
+   "field": "maxTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginFish",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginMeditation",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginMeditation",
+   "field": "beginTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginPlayWooks",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginPlayWooks",
+   "field": "beginTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginPlayWooks",
+   "field": "maxTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginPlayWooks",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginRecoverMP",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginRecoverMP",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginRollDice",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginSaveNpc",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginSaveNpc",
+   "field": "beginTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginSaveNpc",
+   "field": "endTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginSaveNpc",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginTraining",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginTraining",
+   "field": "beginTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginTraining",
+   "field": "hanyusuiTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BeginTraining",
+   "field": "skillID",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BuyFashion",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BuyHomeCrop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BuyHomeCrop",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BuyHouseShop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BuyMarketItem",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BuyMarketItem",
+   "field": "userGold",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BuyMount",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BuyMount",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BuyNpcFeel",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "BuyTowerProp",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ChallengePVP",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ChallengePVP",
+   "field": "AttckData",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ChallengeRoguePVP",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ChallengeRoguePVP",
+   "field": "AttckData",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ChatPkActivity",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "CheckBattleResult",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "CheckBattleResult",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "CheckBattleResult",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "CheckBattleResult",
+   "field": "win",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "CheckOnHook",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "CheckOnHook",
+   "field": "OnhookObj",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "CheckOutSchool",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "CheckOutSchool",
+   "field": "CDTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "CheckOutSchool",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "CheckOutSchool",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "CheckOutSchool",
+   "field": "skillId",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ChooseGirl",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ChooseGirl",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ChooseSanGongDan",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "DogBattleResult",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "DogBattleResult",
+   "field": "endTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "DogBattleResult",
+   "field": "win",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "DoublePractice",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "DoublePractice",
+   "field": "needTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndFish",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndFish",
+   "field": "awardArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndFish",
+   "field": "beginTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndFish",
+   "field": "extraArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndFish",
+   "field": "gTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndFish",
+   "field": "hg",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndFish",
+   "field": "hgtimes",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndFish",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndMeditation",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndMeditation",
+   "field": "hanyusuiTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndMeditation",
+   "field": "note",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndMeditation",
+   "field": "note.attrch",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndPlayWooks",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndPlayWooks",
+   "field": "beginTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndPlayWooks",
+   "field": "exp",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndPlayWooks",
+   "field": "expExtra",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndPlayWooks",
+   "field": "gTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndPlayWooks",
+   "field": "hg",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndPlayWooks",
+   "field": "hgtimes",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndPlayWooks",
+   "field": "potential",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndPlayWooks",
+   "field": "potentialExtra",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndPlayWooks",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndPlayWooks",
+   "field": "specialAny",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndRecoverMP",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndRecoverMP",
+   "field": "hanyusuiTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndSaveNpc",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndSaveNpc",
+   "field": "endTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndTraining",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EndTraining",
+   "field": "hanyusuiTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EneterCopy",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "EquipSuitsUpgrade",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ExChangeJetton",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ExChangeJetton",
+   "field": "curGold",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ExChangeJetton",
+   "field": "curJetton",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ExChangeJetton",
+   "field": "getCoins",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ExChangeJetton",
+   "field": "getPotency",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "FeedDog",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "FriendList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "FriendList",
+   "field": "friendList",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "FriendList",
+   "field": "uIds",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetBossAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetBossAward",
+   "field": "killObj",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetBossAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetClimbingTowerData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetFashionList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetFashionList",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetGMGiveItem",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetHouseShopData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetHouseShopData",
+   "field": "shopData",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetMarketList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetMarketList",
+   "field": "nextRefreshTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetMarketList",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetMountsList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetMountsList",
+   "field": "MountsArr",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetNewSweepTowerData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetNoticeAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetNoticeAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetOnHookFriendLis",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetOnHookFriendLis",
+   "field": "friendList",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetPayAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetPayAward",
+   "field": "curGold",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetPayAward",
+   "field": "curYuanbao",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetPayShowData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetPayShowData",
+   "field": "ShopArray",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetRandomEventAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetRandomEventAward",
+   "field": "npcArr",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetRandomEventAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetSchoolReview",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetSchoolReview",
+   "field": "maxPage",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetSchoolReview",
+   "field": "reviewList",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetSchoolReview",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetShopAllActive",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetShopAllActive",
+   "field": "activeEndTime",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetShopAllActive",
+   "field": "shopActiveList",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetTowerSpecialShop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetTowerSpecialShop",
+   "field": "shopData",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "GetWhoreData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "IphonePay",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "IphonePay",
+   "field": "curGold",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "IphonePay",
+   "field": "curYuanbao",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "LeaveCopy",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "LeaveCopy",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "LookFishAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "LookFishAward",
+   "field": "awardArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "NewPVPBattleResult",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "NewPVPBattleResult",
+   "field": "CDTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnCheckBreak",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnCheckBreak",
+   "field": "finish",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnCheckBreak",
+   "field": "gTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnCheckBreak",
+   "field": "hg",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnCheckBreak",
+   "field": "hgtimes",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnCheckBreak",
+   "field": "itemAddition",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnCheckBreak",
+   "field": "roleGold",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnCheckBreak",
+   "field": "skillID",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnCheckBreak",
+   "field": "skillLevel",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnCheckBreak",
+   "field": "usedTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "Addition",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "Sponsor",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "beginTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "friendName",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "friendSex",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "itemAddition",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "needTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "operate",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "skillID",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OnHookBreak",
+   "field": "skillLevel",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OpenTiger",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OutSchool",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OutSchool",
+   "field": "CDTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OutSchool",
+   "field": "addComponent",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OutSchool",
+   "field": "clearBoxs",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OutSchool",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OutSchool",
+   "field": "npcIDArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OutSchool",
+   "field": "oldSchool",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OutSchool",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OutSchool",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OutSchool",
+   "field": "skillId",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "OutSchool",
+   "field": "textArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "PaymentCallBack",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "PaymentCallBack",
+   "field": "curGold",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "PaymentCallBack",
+   "field": "curYuanbao",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "PopEquip",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "PushEquip",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "PutOnEquipment",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "PutOnEquipment",
+   "field": "equipments",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "QuickBuyItem",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "QuickBuyItem",
+   "field": "userGold",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ReqReview",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "Storehouse",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "Storehouse",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "TowerBattleResult",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "TowerBattleResult",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "TowerBattleResult",
+   "field": "win",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "UseAllBall",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "UseAllBall",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "UseBatchSnowBall",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "UseSnowBall",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "UserWifeProp",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "UserWifeProp",
+   "field": "exp",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "WashMedicine",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "WashMedicine",
+   "field": "armStrong",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "WashMedicine",
+   "field": "bloodArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "WashMedicine",
+   "field": "bone",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "WashMedicine",
+   "field": "fosterArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "WashMedicine",
+   "field": "maxWuxin",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "WashMedicine",
+   "field": "shenFa",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "WashMedicine",
+   "field": "understanding",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "Whoring",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "acceptCircleTask",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "acceptCircleTask",
+   "field": "taskID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "acceptSchoolTask",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "acceptTask",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "acceptTask",
+   "field": "triggerBoxs",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "accountLogOff",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "eventIds",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "npcArr",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "addBreakQueue",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "addEquipLock",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "addItem",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "addItem",
+   "field": "note",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "addItem",
+   "field": "note.eqch",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "addItem",
+   "field": "note.ivch",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "adoptChild",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "adoptChild",
+   "field": "childObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "affiliationSchool",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "answerReward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "answerReward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "applyRemove",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "batchSeedCrop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginCast",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginCast",
+   "field": "inherit",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginCast",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginHookBreakList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginMake",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginMake",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginMakeMedicine",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginMakeMedicine",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginPVEBattle",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginPlayGame",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginPlayGame",
+   "field": "beginTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginPlayGame",
+   "field": "choose",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginPlayGame",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginRoguePVEBattle",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "beginWedding",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "birthChild",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "birthChild",
+   "field": "childObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "bringSpecialAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "bringSpecialAward",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "bringSpecialAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyActivityNum",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyActivityNum",
+   "field": "activeNum",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyActivityNum",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyAnniversaryPassGift",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyAnniversaryPassGift",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyGiftPermanent",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyGiftPermanent",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyInvitationCard",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyInvitationCard",
+   "field": "pass_levelID",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buySchoolShop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buySchoolShop",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buySchoolShop",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyShopItem",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyShopItem",
+   "field": "note",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyShopItem",
+   "field": "note.eqch",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "buyShopItem",
+   "field": "note.ivch",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "callDragon",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "canBuyActivityNum",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "canBuyActivityNum",
+   "field": "gold",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "cancelPay",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "changeDelegateTask",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "changeDelegateTask",
+   "field": "taskObj",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "changePlayWooksState",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "changePower",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "changeSate",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "changeServer",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "changeServer",
+   "field": "newID",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "changeWorldServer",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "changeWorldServer",
+   "field": "hookData",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "equipments",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "eventIds",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "npcArr",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkEquipToTeam",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkHireOnhook",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkHireOnhook",
+   "field": "beginTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkHireOnhook",
+   "field": "maxTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkHireOnhook",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkLive",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkLive",
+   "field": "inherit",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkUploadAttackDamge",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkUploadAttackDamge",
+   "field": "CDTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkUploadAttackDamge",
+   "field": "bossCurHP",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkUploadAttackDamge",
+   "field": "bossMaxHP",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkUploadAttackDamge",
+   "field": "killBoss",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkUploadAttackDamge",
+   "field": "killBossName",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "checkUploadAttackDamge",
+   "field": "maxPotentialLimit",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "childWashProperty",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "childWashProperty",
+   "field": "attrList",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "childWashProperty",
+   "field": "baseArr",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "choosePandaEvent",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "choosePandaEvent",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "chooseSecretEvent",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "chooseSecretEvent",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "chooseSex",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "chooseUsedItemAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "chooseUsedItemAward",
+   "field": "delItemObj",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "circleTaskAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "cleanDeadCrop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "closeNewSweepTowerByLv",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "closedBook",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "closedBook",
+   "field": "deletePartners",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "closedBook",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "collect",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "collect",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "hotVal",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "mhv",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "showRewardCookBook",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "confirmRemove",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "cookAccelerate",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "cookReceive",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "cookStart",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "cookUnlock",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "createOrderByHotVal",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "delEquipLock",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "delegateTask",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "dishUnlock",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "dispossHomeEvent",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "dispossHomeEvent",
+   "field": "exp",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "dispossHomeEvent",
+   "field": "flag",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "dispossHomeEvent",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "divorceNpc",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "divorceNpc",
+   "field": "deletePartners",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "divorceNpc",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "doubleTraining",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "doubleTraining",
+   "field": "itemAddition",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "doubleTraining",
+   "field": "needTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "doubleTraining",
+   "field": "skillID",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "doubleTraining",
+   "field": "skillLevel",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endCast",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endCast",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endCast",
+   "field": "inherit",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endCast",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endDoubleTraining",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endDoubleTraining",
+   "field": "flag",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endEatByTable",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endEatByTable",
+   "field": "tableList",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endMake",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endMake",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endMake",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endMake",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endMakeMedicine",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endMakeMedicine",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endMakeMedicine",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endMakeMedicine",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endPlayGame",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endPlayGame",
+   "field": "flag",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "endPlayGame",
+   "field": "progree",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterMultiPVEBattle",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterMultiPVEBattle",
+   "field": "gold",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterMultiPVEBattle",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "boxArr",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "floor",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "isStatus",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterPVEBattle",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterPVEBattle",
+   "field": "AttckData",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterPVEBattle",
+   "field": "gold",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterPVEBattle",
+   "field": "npcArr",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterPVEBattle",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterPVEBattle",
+   "field": "randSeed",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterRoguePVEBattle",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterRoguePVEBattle",
+   "field": "AttckData",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterRoguePVEBattle",
+   "field": "npcArr",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterRoguePVEBattle",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterRoguePVEBattle",
+   "field": "randSeed",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterSnow",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterWoldBossBattle",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterWoldBossBattle",
+   "field": "AttckData",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterWoldBossBattle",
+   "field": "bossCurHP",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterWoldBossBattle",
+   "field": "bossMaxHP",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterWoldBossBattle",
+   "field": "buffNum",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterWoldBossBattle",
+   "field": "buyNum",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterWoldBossBattle",
+   "field": "curAttackNum",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterWoldBossBattle",
+   "field": "flag",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "enterWoldBossBattle",
+   "field": "randSeed",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipBatchResolve",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipBatchResolve",
+   "field": "itemIDs",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipBatchResolve",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipInherit",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipInherit",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipInherit",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipResolve",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipResolve",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipTitle",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipTitle",
+   "field": "flag",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipUpgrade",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "equipWash",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "exchangeHlexchangeItem",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "exchangeItem",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "exileChild",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "exitSchool",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "exitSchool",
+   "field": "npcIDArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "expediteCrop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "explore",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "explore",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "fashionEffect",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "fashionEffect",
+   "field": "fashionEffect",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "findOHomes",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "findOhter",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getActivity",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getActivity",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getActivityAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getActivityAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllActivity",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllActivity",
+   "field": "activityList",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllActivity",
+   "field": "activityShows",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllActivity",
+   "field": "calendar",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllActivity",
+   "field": "digcellTaskRed",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllActivity",
+   "field": "geNianshouTaskRed",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllActivity",
+   "field": "geSchoolTaskRed",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllActivity",
+   "field": "supportCamp",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllActivity",
+   "field": "transGiftShow",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllServerCount",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllServerCount",
+   "field": "sArr",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllServerCount",
+   "field": "serverArr",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllServerList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAllServerList",
+   "field": "serverArr",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getAnniversaryPassGift",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getApplyInfo",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getApplyInfo",
+   "field": "masterInfo",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getApplyInfo",
+   "field": "pupilInfo",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getBackShop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getBankList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getBankList",
+   "field": "bankList",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getCRAInfo",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getChangeShop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getChangeShop",
+   "field": "shopObj",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getChatPkAiSet",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getCircleTaskAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getCircleTaskAward",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getCircleTaskAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getCircleTaskList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getCircleTaskList",
+   "field": "taskArr",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getCopyData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getCopyData",
+   "field": "copyArr",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getCreateRoleActivity",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getDouYinOpenID",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getDragon",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getDragon",
+   "field": "currentDragonId",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getEnterAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getEnterAward",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getEnterAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getEquipLock",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getEventAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getEventAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getFasionShop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getFighterInfo",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getFinishTaskAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getFinishTaskAward",
+   "field": "clearBoxs",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getFinishTaskAward",
+   "field": "contribution",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getFinishTaskAward",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getFinishTaskAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getFinishTaskAward",
+   "field": "triggerBoxs",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getFriendHomeList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getFriendHomeList",
+   "field": "exp",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getFriendHomeList",
+   "field": "flag",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getGiftPermanentAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getGiftPermanentAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getHlexchangeItemData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getHlexchangeShop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getHlexchangeShop",
+   "field": "shopObj",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getHomeList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getHomeList",
+   "field": "exp",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getHookBreakList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInn",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInn",
+   "field": "costDishMap",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInn",
+   "field": "showRewardPop",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInn",
+   "field": "tableEndTime",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInn",
+   "field": "tableStartTime",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInnBag",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInnCook",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInnCookList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInnCookList",
+   "field": "cookList",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInnProductList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInnRank",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInnRank",
+   "field": "innRankList",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getInnShop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getItemData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getLikeEvent",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getMasterPupilList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getMasterPupilList",
+   "field": "isMaster",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getMasterPupilList",
+   "field": "passMeritRewardState",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getMultiPVESkill",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getMultiPVESkill",
+   "field": "dataArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getNewGiftPermanent",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getOptionalGiftData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getOptionalGiftData",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getPandaEvent",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getPaperList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getPayAuth",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getPayAuth",
+   "field": "AuthCode",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getQuestionList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getRemoveRedDot",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getRogueFinishTaskAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolAppoint",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolAppoint",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolFirstTry",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolMaster",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolMaster",
+   "field": "masterInfo",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolMaster",
+   "field": "pupilInfo",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolPupil",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolPupil",
+   "field": "masterInfo",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolPupil",
+   "field": "pupilInfo",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolRoleInfo",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolRoleInfo",
+   "field": "masterInfo",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolRoleInfo",
+   "field": "pupilInfo",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolShop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolTask",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolTask",
+   "field": "currentServerTime",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSchoolTask",
+   "field": "xyTodaySchoolId",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSnowAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSnowAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSpecialAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getSpecialAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getTeamFighterInfo",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getTeamSkill",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getTeamSkill",
+   "field": "dataArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getTreasureFloor",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getTreasureFloor",
+   "field": "floor",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getUsedItemAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getVigor",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getWashEquip",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getWashEquip",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getWxXyxOpenID",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getsharePicAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "getsharePicAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "giveChildName",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "goldBreakAllSkill",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "goldBreakCurrentSkill",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "h5Pay",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "h5Pay",
+   "field": "gold",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "hideTask",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "hireNpcOnhook",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "homeSpeicalAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "homeSpeicalAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "houseSpecial",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "houseSpecial",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "ignoreRemove",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "innBuyShop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "intoCollectiveCultivation",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "intoCollectiveCultivation",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "intoSchoolArena",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "intoSchoolSquare",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "intoSchoolSquare",
+   "field": "schoolTitle",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "isCycleLife",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "jionChatPkServer",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "joinSchool",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "joinSchool",
+   "field": "cdTimeDays",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "joinSchool",
+   "field": "clearBoxs",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "killNpc",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "killNpc",
+   "field": "npcIDArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "leaveTower",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "leaveTower",
+   "field": "PlayerEquip",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "leaveTower",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "lookDogLog",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "lookSecretEvent",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "makeLove",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "makeLove",
+   "field": "fetationTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "makeWishDragon",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "marryAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "marryAward",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "marryAward",
+   "field": "guestID",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "marryAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "marryHouse",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "marryHouse",
+   "field": "houseID",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "marryHouse",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "marryNpc",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "marryNpc",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "mulitiNpcBattleResult",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "mulitiNpcBattleResult",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "mulitiNpcBattleResult",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "newSweepTower",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "newSweepTower",
+   "field": "batch_sweep_data.items",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "obtainCrop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "obtainCrop",
+   "field": "exp",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "obtainCrop",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onKeyDispossHomeEvent",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onKeyDispossHomeEvent",
+   "field": "cropMap",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onKeyDispossHomeEvent",
+   "field": "exp",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onKeyDispossHomeEvent",
+   "field": "flag",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onKeyDispossHomeEvent",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onKeyObtainCrop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onKeyObtainCrop",
+   "field": "exp",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onKeyObtainCrop",
+   "field": "matureArr",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onKeyObtainCrop",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onQueueCheckBreak",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onQueueCheckBreak",
+   "field": "gTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onQueueCheckBreak",
+   "field": "hg",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onQueueCheckBreak",
+   "field": "hgtimes",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onekeyCompleteSchoolTask",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onekeyCompleteSchoolTask",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "onekeyCompleteSchoolTask",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "optionLikeEvent",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "optionLikeEvent",
+   "field": "delTaskIds",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "passCardAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "passCardAward",
+   "field": "awardArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "passCardAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "passCardData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "passCardData",
+   "field": "goldArr",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "pileGameAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "pileGameAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "productAccelerate",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "productReceive",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "productStart",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "productUnlock",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "proposeNpc",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "proposeNpc",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "quickFinishTask",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "quitSchool",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "quitSchool",
+   "field": "openSchoolFirstTryBgUI",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "quitSchoolSquare",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "rankList",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "rankList",
+   "field": "CDTime",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "receiveAccRechargAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "receiveAccRechargAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "receiveBindingRecuitAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "receiveBindingRecuitAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "receiveChatPkSportsPointAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "receiveChatPkSportsPointAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "receiveNpc",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "receiveNpc",
+   "field": "npcID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "receiveRecuitAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "receiveRecuitAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "reclaimLand",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "recommendOHomes",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "recoverYoung",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "redeemTable",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "redeemTable",
+   "field": "hotVal",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "redeemTable",
+   "field": "mhv",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "refreshGiftAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "removeBreakQueue",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "rentGroup",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "rentGroup",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "resetAnswer",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "resetChildFoster",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "resetChildFoster",
+   "field": "foster_point",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "resetRole",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "resetRole",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "restVein",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "revive",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "revive",
+   "field": "roleID",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "rogueAcceptTask",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "saleItem",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "saleItem",
+   "field": "note",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "saleItem",
+   "field": "note.eqch",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "saleItem",
+   "field": "note.ivch",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "schoolAppoint",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "schoolReceiveWages",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "schoolSectLeader",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "schoolTakeOfficeApply",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "schoolTaskComplete",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "schoolTaskComplete",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "schoolTaskComplete",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "seedCrop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "setChatPkOption",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "setChatRedData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "setChatRedData",
+   "field": "uIds",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "setOnHookWookState",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "setPlayerCardMoutsSycn",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "setPlayerCardMoutsSycn",
+   "field": "e",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "setPlayerCardMoutsSycn",
+   "field": "sycn",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "setPlayerCardType",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "setPlayerCardWingId",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "setPlayerCardWingId",
+   "field": "wId",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "shcoolFirstHonor",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "skillChange",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "skillChange",
+   "field": "serverTime",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "smallGameAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "smallGameAward",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "smallGameAward",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "startEatByTable",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "startEatByTable",
+   "field": "gn",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "stealCrop",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "stealCrop",
+   "field": "exp",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "stealCrop",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "stopBreaklist",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "storyExperience",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "storyExperience",
+   "field": "branchId",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "sweepCopy",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "sweepCopy",
+   "field": "rewardArray",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "sycnPlayerItemData",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "sycnPlayerItemData",
+   "field": "itemObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "sycnTask",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "sycnTask",
+   "field": "PlayerFinishTaskObj",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "tableReceive",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "tableUnlock",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "towerRank",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "towerRank",
+   "field": "rankArr",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "treasureAward",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "treasureAward",
+   "field": "isStatus",
+   "conf": "fallback",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "upFashionFaceState",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "upgradeBed",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "upgradeBed",
+   "field": "bedLevel",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "upgradeSkill",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "upgradeSkill",
+   "field": "returnPro",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "upgradeStorage",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "upgradeVein",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "upgradeWifeLevel",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "upgradeWifeLevel",
+   "field": "exp",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "useItem",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "useItem",
+   "field": "equipObj",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "useItem",
+   "field": "housekeeper.helperId",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "useItem",
+   "field": "note",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "useItem",
+   "field": "note.attrch",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "useItem",
+   "field": "note.skch",
+   "conf": "name",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "useItemAddition",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "useItemAddition",
+   "field": "itemAddition",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "useVigorMeditation",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "useVigorUpGradeSkill",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "useVigorUpGradeSkill",
+   "field": "skillID",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "washAdditionalArr",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "washAdditionalArr",
+   "field": "attrList",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "washAdditionalArr",
+   "field": "bloodArr",
+   "conf": "handler",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "washAdditionalArr",
+   "field": "maxWuxin",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "wearFasion",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "weddingFeast",
+   "field": "eRet",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  },
+  {
+   "action": "weddingFeast",
+   "field": "type",
+   "conf": "capture",
+   "verdict": "unknown",
+   "detail": null
+  }
+ ]
+}

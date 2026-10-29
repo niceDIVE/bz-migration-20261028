@@ -1,0 +1,234 @@
+﻿================================================================================
+【模式】1) numDeaths (正则: numDeaths) -> 命中 40 行
+================================================================================
+F:\BaoZouyxt\tools\index.js:27337 var i = n.calAppearance(t.baseGengu, t.numDeaths, t.appearBase), r = {};
+F:\BaoZouyxt\tools\index.js:39692 (t = e.call(this) || this).numDeaths = 0;
+F:\BaoZouyxt\tools\index.js:39709 this.numDeaths++;
+F:\BaoZouyxt\tools\index.js:39711 if (this.numDeaths % r == 0) {
+F:\BaoZouyxt\tools\index.js:64424 if (0 == v.numDeaths) {
+F:\BaoZouyxt\tools\index.js:70454 I.RoleBaseInfo.numDeaths = e.baseValueAy[41];
+F:\BaoZouyxt\tools\index.js:70987 t.push(I.RoleBaseInfo.numDeaths);
+F:\BaoZouyxt\tools\index.js:74837 e.numDeaths = t.numDeaths;
+F:\BaoZouyxt\tools\index.js:74962 t.numDeaths = e.baseValueAy[41];
+F:\BaoZouyxt\tools\index.js:86380 (t = e.call(this) || this).numDeaths = 0;
+F:\BaoZouyxt\tools\index.js:86394 this.numDeaths++;
+F:\BaoZouyxt\tools\index.js:86396 if (this.numDeaths % r == 0) {
+F:\BaoZouyxt\tools\index.js:88834 numDeaths: 0,
+F:\BaoZouyxt\tools\index.js:96511 (e = t.call(this) || this).numDeaths = 0;
+F:\BaoZouyxt\tools\index.js:96547 return a.appearanceScore(this.baseGengu, this.numDeaths, this.appearBase);
+F:\BaoZouyxt\tools\index.js:96550 return a.calAppearance(this.baseGengu, this.numDeaths, this.appearBase);
+F:\BaoZouyxt\tools\index.js:105935 this.numDeaths = 0;
+F:\BaoZouyxt\tools\index.js:106794 var g = f.calAppearance(t.ohterInfo.baseGengu, t.ohterInfo.numDeaths, t.ohterInfo.appearBase), E = f.calBody(t.ohterInfo.numStuffed);
+F:\BaoZouyxt\tools\index.js:107781 var e = l.calAppearance(t.baseGengu, t.numDeaths, t.appearBase), o = {};
+F:\BaoZouyxt\tools\index.js:107820 var e = t.ohterInfo, o = l.calAppearance(e.baseGengu, e.numDeaths, e.appearBase), i = t.equipments, n = t.equips, a = 0, s = 0, c = 0;
+F:\BaoZouyxt\tools\index.js:111674 v.RoleBaseInfo.numDeaths = 0;
+F:\BaoZouyxt\tools\index.js:111798 v.RoleBaseInfo.numDeaths = t.baseValueAy[41];
+F:\BaoZouyxt\tools\index.js:113184 var o = a.getChiefDiscipleData(C.GSceneMgr.curSceneID), i = l.calAppearance(e.baseGengu, e.numDeaths, e.appearBase), n = t.equipments, r = t.equips, s = 0, c = 0, p = 0;
+F:\BaoZouyxt\tools\index.js:142436 t.entity.numDeaths = o[i];
+F:\BaoZouyxt\tools\index.js:142437 h.RoleBaseInfo.numDeaths = t.entity.numDeaths;
+F:\BaoZouyxt\tools\index.js:142586 this.entity.numDeaths = h.RoleBaseInfo.numDeaths;
+F:\BaoZouyxt\tools\scripts2.js:17888 o.fValue = c.calAppearance(o.ohterInfo.baseGengu, o.ohterInfo.numDeaths, o.ohterInfo.appearBase);
+F:\BaoZouyxt\tools\scripts2.js:53871 var e = this, o = r.getTable("face")[a.calAppearance(h.UserModel.entity.baseGengu, h.UserModel.entity.numDeaths, t)], i = this.getRoleFaceImageStr(o.face);
+F:\BaoZouyxt\tools\scripts2.js:56573 var o = e.ohterInfo, i = c.calAppearance(o.baseGengu, o.numDeaths, o.appearBase), s = e.equipments, n = e.equips, r = 0, l = 0, p = 0;
+F:\BaoZouyxt\tools\scripts2.js:62329 for (var e = a.UserModel.entity.numDeaths, o = 0; o < 10; o++) this.bas[o].active = o < e;
+F:\BaoZouyxt\tools\scripts3.js:3089 r += y.calAppearance(u.baseGengu, u.numDeaths, m.RoleBaseInfo.appearBase);
+F:\BaoZouyxt\tools\scripts3.js:38170 var e = l.calAppearance(t.ohterInfo.baseGengu, t.ohterInfo.numDeaths, t.ohterInfo.appearBase), o = l.calBody(t.ohterInfo.numStuffed);
+F:\BaoZouyxt\tools\scripts3.js:72890 this.numDeaths = 0;
+F:\BaoZouyxt\tools\scripts3.js:73207 this.entity.numDeaths = this.numDeaths;
+F:\BaoZouyxt\tools\scripts3.js:74177 i.RogueRoleInfo.entity.numDeaths = t[e];
+F:\BaoZouyxt\tools\scripts3.js:74178 i.RogueRoleInfo.numDeaths = i.RogueRoleInfo.entity.numDeaths;
+F:\BaoZouyxt\tools\scripts3.js:74289 i.RogueRoleInfo.numDeaths = 0;
+F:\BaoZouyxt\tools\scripts3.js:74345 i.RogueRoleInfo.numDeaths = t.baseValueAy[41];
+F:\BaoZouyxt\tools\scripts3.js:76610 if (0 == o.numDeaths) {
+F:\BaoZouyxt\tools\scripts3.js:76775 var e = p.calAppearance(t.baseGengu, t.numDeaths, t.appearBase), o = {};
+
+================================================================================
+【模式】2) titleObj (正则: titleObj) -> 命中 1 行
+================================================================================
+F:\BaoZouyxt\tools\index.js:111919 n.AchieveModel.setAchieveData(e.hasOwnProperty("titleObj") ? e.titleObj : {});
+
+================================================================================
+【模式】3) \.titles\b (正则: \.titles\b) -> 命中 26 行
+================================================================================
+F:\BaoZouyxt\tools\scripts2.js:26599 e.titles = [];
+F:\BaoZouyxt\tools\scripts2.js:26620 this.titles[0] = e.getComponent(cc.Label);
+F:\BaoZouyxt\tools\scripts2.js:26622 this.titles[1] = e.getComponent(cc.Label);
+F:\BaoZouyxt\tools\scripts2.js:26624 this.titles[2] = e.getComponent(cc.Label);
+F:\BaoZouyxt\tools\scripts2.js:26641 this.titles[0].string = "";
+F:\BaoZouyxt\tools\scripts2.js:26642 this.titles[1].string = r.getText(4276);
+F:\BaoZouyxt\tools\scripts2.js:26643 this.titles[2].string = r.getText(7307);
+F:\BaoZouyxt\tools\scripts2.js:26731 this.titles[1].string = r.getText(i[this.index]);
+F:\BaoZouyxt\tools\scripts2.js:26732 this.index + 1 < this.pages.length ? this.titles[2].string = r.getText(i[this.index + 1]) : this.titles[2].string = "";
+F:\BaoZouyxt\tools\scripts2.js:26733 this.index - 1 >= 0 ? this.titles[0].string = r.getText(i[this.index - 1]) : this.titles[0].string = "";
+F:\BaoZouyxt\tools\scripts2.js:46015 e.titles = [];
+F:\BaoZouyxt\tools\scripts2.js:46049 this.titles.push(this.getPathByNode("frame/leftBtn/Label").getComponent(cc.Label));
+F:\BaoZouyxt\tools\scripts2.js:46050 this.titles.push(this.getPathByNode("frame/midBtn/Label").getComponent(cc.Label));
+F:\BaoZouyxt\tools\scripts2.js:46051 this.titles.push(this.getPathByNode("frame/rightBtn/Label").getComponent(cc.Label));
+F:\BaoZouyxt\tools\scripts2.js:46099 this.titles[1].string = d.getText(t[this.index]);
+F:\BaoZouyxt\tools\scripts2.js:46100 this.index + 1 <= 1 ? this.titles[2].string = d.getText(t[this.index + 1]) : this.titles[2].string = "";
+F:\BaoZouyxt\tools\scripts2.js:46101 this.index - 1 >= 0 ? this.titles[0].string = d.getText(t[this.index - 1]) : this.titles[0].string = "";
+F:\BaoZouyxt\tools\scripts2.js:61110 e.titles = [];
+F:\BaoZouyxt\tools\scripts2.js:61121 this.titles[e] = this.getPathByNode("Button_" + e + "/Label").getComponent(cc.Label);
+F:\BaoZouyxt\tools\scripts2.js:61131 for (var t = m.getItem(d.ChangeBirthModel.birthIdId, "creat_role"), e = 0; e < this.titles.length; e++) {
+F:\BaoZouyxt\tools\scripts2.js:61133 this.titles[e].string = c.getText(this.textMap[e]);
+F:\BaoZouyxt\tools\scripts2.js:61136 y.LoginMgr.judgeLangEn() ? this.btns[e].getComponent(cc.Button).interactable = this.textMap[e] <= d.ChangeBirthModel.birthIdId : this.titles[e].node.parent.getComponent(cc.Button).interactable = this.textMap[e] <= d.ChangeBirthModel.birthIdId;
+F:\BaoZouyxt\tools\scripts3.js:11394 e.titles = [];
+F:\BaoZouyxt\tools\scripts3.js:11414 this.titles = [ 9693, 8970, 8971 ];
+F:\BaoZouyxt\tools\scripts3.js:11417 this.titles = [ 8970, 8971 ];
+F:\BaoZouyxt\tools\scripts3.js:11421 this.toggleTitles[e].string = e < this.titles.length ? h.getText(this.titles[e]) : "";
+
+================================================================================
+【模式】4) REWARD_ITEM (正则: REWARD_ITEM) -> 命中 12 行
+================================================================================
+F:\BaoZouyxt\tools\index.js:45203 REWARD_ITEM: "rewardItem",
+F:\BaoZouyxt\tools\index.js:64774 r.MessageCenter.dispatch(s.EvName.REWARD_ITEM, g);
+F:\BaoZouyxt\tools\index.js:64958 r.MessageCenter.dispatch(s.EvName.REWARD_ITEM, o);
+F:\BaoZouyxt\tools\scripts2.js:36129 l.MessageCenter.on(B.EvName.REWARD_ITEM, this.updateItemFunc, this);
+F:\BaoZouyxt\tools\scripts2.js:36142 l.MessageCenter.off(B.EvName.REWARD_ITEM, this.updateItemFunc, this);
+F:\BaoZouyxt\tools\scripts2.js:43425 l.MessageCenter.dispatch(p.EvName.REWARD_ITEM, t);
+F:\BaoZouyxt\tools\scripts3.js:24476 n.MessageCenter.dispatch(a.EvName.REWARD_ITEM, o);
+F:\BaoZouyxt\tools\scripts3.js:43544 p.MessageCenter.dispatch(l.EvName.REWARD_ITEM, t);
+F:\BaoZouyxt\tools\scripts3.js:69325 u.MessageCenter.on(g.EvName.REWARD_ITEM, this.updateItemFunc, this);
+F:\BaoZouyxt\tools\scripts3.js:69333 u.MessageCenter.off(g.EvName.REWARD_ITEM, this.updateItemFunc, this);
+F:\BaoZouyxt\tools\scripts3.js:70956 p.MessageCenter.dispatch(u.EvName.REWARD_ITEM, o);
+F:\BaoZouyxt\tools\scripts3.js:73964 s.MessageCenter.dispatch(h.EvName.REWARD_ITEM, g);
+
+================================================================================
+【模式】5) rewardItem (正则: rewardItem) -> 命中 90 行
+================================================================================
+F:\BaoZouyxt\tools\index.js:15203 C.CopyFightModel.showOtherRewardItem();
+F:\BaoZouyxt\tools\index.js:26379 this.rewardItem = [];
+F:\BaoZouyxt\tools\index.js:26380 this.rollRewardItem = {};
+F:\BaoZouyxt\tools\index.js:26400 this.otherRewardItem = null;
+F:\BaoZouyxt\tools\index.js:26413 this.rewardItem = [];
+F:\BaoZouyxt\tools\index.js:26414 this.rollRewardItem = {};
+F:\BaoZouyxt\tools\index.js:26472 2 == i.AwardType ? t.otherRewardItem ? t.otherRewardItem = t.otherRewardItem.coat(i.AwardItemList) : t.otherRewardItem = i.AwardItemList : 1 != i.AwardType ? m.BattleMgr.inBattle ? e.rewardItem = i.AwardItemList : r.MessageCenter.dispatch(s.EvName.COPY_REWARD_EVENT, i.AwardItemList) : e.rewardState  [已截断]
+F:\BaoZouyxt\tools\index.js:26480 t.rollRewardItem = {};
+F:\BaoZouyxt\tools\index.js:26490 t.rollRewardItem[c[p].ItemID] = h;
+F:\BaoZouyxt\tools\index.js:26497 if (1 != o.SilentMode && !y.MadUtilsTS.isNullObj(e.rollRewardItem) && o.hasOwnProperty("RollItemInfo")) {
+F:\BaoZouyxt\tools\index.js:26500 index: e.rollRewardItem[n].index,
+F:\BaoZouyxt\tools\index.js:26503 e.rollRewardItem[n] = a;
+F:\BaoZouyxt\tools\index.js:26665 this.rewardItem = [];
+F:\BaoZouyxt\tools\index.js:26769 this.rollRewardItem = {};
+F:\BaoZouyxt\tools\index.js:26772 this.rewardItem = [];
+F:\BaoZouyxt\tools\index.js:26777 e.prototype.showOtherRewardItem = function() {
+F:\BaoZouyxt\tools\index.js:26778 if (!m.BattleMgr.inBattle && this.otherRewardItem) {
+F:\BaoZouyxt\tools\index.js:26779 for (var t = {}, e = 0; e < this.otherRewardItem.length; e++) t[this.otherRewardItem[e].ItemID.toString()] = this.otherRewardItem[e].ItemCount;
+F:\BaoZouyxt\tools\index.js:26781 this.otherRewardItem = null;
+F:\BaoZouyxt\tools\index.js:45203 REWARD_ITEM: "rewardItem",
+F:\BaoZouyxt\tools\index.js:52319 l.CopyFightModel.showOtherRewardItem();
+F:\BaoZouyxt\tools\index.js:55153 if (0 == m.CopyFightModel.rewardItem.length) {
+F:\BaoZouyxt\tools\index.js:55180 for (var i = m.CopyFightModel.rewardItem, n = e.getComponent("BattleResultMediator"), r = {}, a = 0; a < i.length; a++) r[i[a].ItemID] = i[a].ItemCount;
+F:\BaoZouyxt\tools\index.js:55185 } else t.win && (0 == Math.floor(t.roll) ? (n = e.getComponent("TeamCopyResultUI")).setResult(m.CopyFightModel.rewardItem) : e.getComponent("BossSelfResultUI").showRewardUI(m.CopyFightModel.rewardItem));
+F:\BaoZouyxt\tools\index.js:103630 if (this.checkRewardItem() && s.PackageModel.judgePackageLimit()) return;
+F:\BaoZouyxt\tools\index.js:103635 e.prototype.checkRewardItem = function() {
+F:\BaoZouyxt\tools\index.js:136035 f.CopyFightModel.showOtherRewardItem();
+F:\BaoZouyxt\tools\scripts2.js:3543 l.CopyFightModel.showOtherRewardItem();
+F:\BaoZouyxt\tools\scripts2.js:72928 l.CopyFightModel.showOtherRewardItem();
+F:\BaoZouyxt\tools\scripts2.js:72943 this.showResultRewardItemUI();
+F:\BaoZouyxt\tools\scripts2.js:72952 e.prototype.showResultRewardItemUI = function() {
+F:\BaoZouyxt\tools\scripts2.js:72959 var t = l.CopyFightModel.rollRewardItem;
+F:\BaoZouyxt\tools\scripts2.js:74588 g.CopyFightModel.showOtherRewardItem();
+F:\BaoZouyxt\tools\scripts3.js:4046 var o = this.getRewardItemID(), i = c.getItem(o, "item");
+F:\BaoZouyxt\tools\scripts3.js:4054 e.prototype.getRewardItemID = function() {
+F:\BaoZouyxt\tools\scripts3.js:6198 AdvancedTaskRewardItem: [ function(t, e, o) {
+F:\BaoZouyxt\tools\scripts3.js:6200 cc._RF.push(e, "dd573FfvYZHDLireXPyzU1X", "AdvancedTaskRewardItem");
+F:\BaoZouyxt\tools\scripts3.js:6223 o.AdvancedTaskRewardItem = void 0;
+F:\BaoZouyxt\tools\scripts3.js:6272 o.AdvancedTaskRewardItem = g;
+F:\BaoZouyxt\tools\scripts3.js:6317 e.rewardItem = null;
+F:\BaoZouyxt\tools\scripts3.js:6331 this.rewardItem.removeFromParent(!1);
+F:\BaoZouyxt\tools\scripts3.js:6372 this.rewardItem.destroy();
+F:\BaoZouyxt\tools\scripts3.js:6398 this.loadRewardItems();
+F:\BaoZouyxt\tools\scripts3.js:6410 e.prototype.loadRewardItems = function() {
+F:\BaoZouyxt\tools\scripts3.js:6413 var e = cc.instantiate(this.rewardItem);
+F:\BaoZouyxt\tools\scripts3.js:6414 e.getComponent("AdvancedTaskRewardItem").setData(t);
+F:\BaoZouyxt\tools\scripts3.js:6425 n([ y(cc.Node) ], e.prototype, "rewardItem", void 0);
+F:\BaoZouyxt\tools\scripts3.js:8264 this.addButtonListen(d, this, this.onClickRewardItem, c[h][0]);
+F:\BaoZouyxt\tools\scripts3.js:8270 e.prototype.onClickRewardItem = function(t) {
+F:\BaoZouyxt\tools\scripts3.js:12639 n.addComponent("ChessCircleRewardItem").setData(i[s]);
+F:\BaoZouyxt\tools\scripts3.js:13076 for (var t = 0; t < this.rewardObjList.length; t++) this.rewardObjList[t].getComponent("ChessCircleRewardItem").updateStateUI();
+F:\BaoZouyxt\tools\scripts3.js:13958 var i = e[o].split(","), s = this.parent.getRewardItem();
+F:\BaoZouyxt\tools\scripts3.js:14088 e.prototype.getRewardItem = function() {
+F:\BaoZouyxt\tools\scripts3.js:14933 BatchSelectRewardItem: [ function(t, e, o) {
+F:\BaoZouyxt\tools\scripts3.js:14935 cc._RF.push(e, "a2820H4eyVDXqoJdzNZsQ/o", "BatchSelectRewardItem");
+F:\BaoZouyxt\tools\scripts3.js:14958 o.BatchSelectRewardItem = void 0;
+F:\BaoZouyxt\tools\scripts3.js:15037 o.BatchSelectRewardItem = m;
+F:\BaoZouyxt\tools\scripts3.js:15127 i.getComponent("BatchSelectRewardItem").setData(o);
+F:\BaoZouyxt\tools\scripts3.js:19664 ChessCircleRewardItem: [ function(t, e, o) {
+F:\BaoZouyxt\tools\scripts3.js:19666 cc._RF.push(e, "d2c1aJV8hBEZ7OxKEf8V5oV", "ChessCircleRewardItem");
+F:\BaoZouyxt\tools\scripts3.js:19689 o.ChessCircleRewardItem = void 0;
+F:\BaoZouyxt\tools\scripts3.js:19736 o.ChessCircleRewardItem = d;
+F:\BaoZouyxt\tools\scripts3.js:37365 GoodEvilRewardItem: [ function(t, e, o) {
+F:\BaoZouyxt\tools\scripts3.js:37367 cc._RF.push(e, "c74faFO+XxJL76VzhpE0dpV", "GoodEvilRewardItem");
+F:\BaoZouyxt\tools\scripts3.js:37390 o.GoodEvilRewardItem = void 0;
+F:\BaoZouyxt\tools\scripts3.js:37440 o.GoodEvilRewardItem = g;
+F:\BaoZouyxt\tools\scripts3.js:37503 o.getComponent("GoodEvilRewardItem").setData(t[e]);
+F:\BaoZouyxt\tools\scripts3.js:40911 JigsawRewardItem: [ function(t, e, o) {
+F:\BaoZouyxt\tools\scripts3.js:40913 cc._RF.push(e, "1d600BEeedOCpMKwpH7qhf2", "JigsawRewardItem");
+F:\BaoZouyxt\tools\scripts3.js:40936 o.JigsawRewardItem = void 0;
+F:\BaoZouyxt\tools\scripts3.js:40998 o.JigsawRewardItem = u;
+F:\BaoZouyxt\tools\scripts3.js:41609 i.addComponent("JigsawRewardItem").setData(parseInt(e));
+F:\BaoZouyxt\tools\scripts3.js:41669 s.addComponent("JigsawRewardItem").setData(parseInt(o));
+F:\BaoZouyxt\tools\scripts3.js:42658 e.rewardItemList = [];
+F:\BaoZouyxt\tools\scripts3.js:43070 JumpingRewardItem: [ function(t, e, o) {
+F:\BaoZouyxt\tools\scripts3.js:43072 cc._RF.push(e, "315926d7DtMTKuCr/v0fb0R", "JumpingRewardItem");
+F:\BaoZouyxt\tools\scripts3.js:43236 o.addComponent("JumpingRewardItem").init(i);
+F:\BaoZouyxt\tools\scripts3.js:43704 e.rewardItem = null;
+F:\BaoZouyxt\tools\scripts3.js:43711 this.rewardItem.removeFromParent();
+F:\BaoZouyxt\tools\scripts3.js:43742 t = cc.instantiate(i.rewardItem);
+F:\BaoZouyxt\tools\scripts3.js:43761 this.rewardItem.destroy();
+F:\BaoZouyxt\tools\scripts3.js:43764 n([ f(cc.Node) ], e.prototype, "rewardItem", void 0);
+F:\BaoZouyxt\tools\scripts3.js:45975 this.addButtonListen(p, this, this.onClickRewardItem, e[o] + "_" + a);
+F:\BaoZouyxt\tools\scripts3.js:46142 e.prototype.onClickRewardItem = function(t) {
+F:\BaoZouyxt\tools\scripts3.js:62214 e.getComponent("RedPacketRewardItem").setData(t);
+F:\BaoZouyxt\tools\scripts3.js:63005 RedPacketRewardItem: [ function(t, e, o) {
+F:\BaoZouyxt\tools\scripts3.js:63007 cc._RF.push(e, "3767eahwMtN1q7uo7lerRRb", "RedPacketRewardItem");
+F:\BaoZouyxt\tools\scripts3.js:63030 o.ConsumeRewardItem = void 0;
+F:\BaoZouyxt\tools\scripts3.js:63053 o.ConsumeRewardItem = u;
+F:\BaoZouyxt\tools\scripts3.js:100428 }, {}, [ "Bootstrap3", "LoadingScene", "ExploreBoxTrigger", "GoodEvilUtil", "MapTalkUtils", "AlertPlayerAvatar", "Bagua", "BeastNPC", "BoxNpc", "Butler", "ButlerAvatar", "ExploreBox", "Firecracker", "FirecrackerBox", "FollowButler", "GoodEvilBoardNpc", "GoodEvilNpc", "HiddenBackNpc", "HiddenNpc", "M [已截断]
+
+================================================================================
+【模式】6) ConsultUI (正则: ConsultUI) -> 命中 10 行
+================================================================================
+F:\BaoZouyxt\tools\index.js:64413 p.default.prefabs.load("skillsUI/ConsultUI", cc.Prefab, function(t, o) {
+F:\BaoZouyxt\tools\index.js:64416 i.addComponent("ConsultUI").studyData(e.ID, k);
+F:\BaoZouyxt\tools\scripts2.js:13680 ConsultUI: [ function(t, e, o) {
+F:\BaoZouyxt\tools\scripts2.js:13682 cc._RF.push(e, "3d38br2eJZOx4GxrlWBei+9", "ConsultUI");
+F:\BaoZouyxt\tools\scripts2.js:13705 o.ConsultUI = void 0;
+F:\BaoZouyxt\tools\scripts2.js:13710 e.prefabName = "skillsUI/ConsultUI";
+F:\BaoZouyxt\tools\scripts2.js:14140 o.ConsultUI = B;
+F:\BaoZouyxt\tools\scripts2.js:15489 d.NpcDeadModel.judgeNpcIntimacy(this.npcID) ? u.MasterModel.betrayMasterMsg(this.npcID) : U.default.prefabs.load("skillsUI/ConsultUI", cc.Prefab, function(e, o) {
+F:\BaoZouyxt\tools\scripts2.js:15492 i.addComponent("ConsultUI").setNpcID(t.npcID);
+F:\BaoZouyxt\tools\scripts2.js:81775 }, {}, [ "Bootstrap2", "AchieveBgUI", "AchieveBtnUI", "AchieveRender", "AchieveUI", "CheckItem", "DailyMissionUI", "DayActiveCell", "EveryDayRender", "FirstChargeUI", "GiftCellRender", "GiftItemRender", "HomeActiveToggle", "HomeActiveUI", "LimitGiftUI", "LotteryUI", "OptionalGiftCell", "OptionalGift [已截断]
+
+================================================================================
+【模式】7) studyData (正则: studyData) -> 命中 2 行
+================================================================================
+F:\BaoZouyxt\tools\index.js:64416 i.addComponent("ConsultUI").studyData(e.ID, k);
+F:\BaoZouyxt\tools\scripts2.js:13994 e.prototype.studyData = function(t, e) {
+
+================================================================================
+【模式】8) upgradeSkill (正则: upgradeSkill) -> 命中 12 行
+================================================================================
+F:\BaoZouyxt\tools\index.js:45131 UPGRADE_SKILL: "upgradeSkill",
+F:\BaoZouyxt\tools\index.js:59581 UPGRADE_SKILL_LV: "User.upgradeSkill",
+F:\BaoZouyxt\tools\index.js:59798 VIGOR_UPGSKILL: "User.useVigorUpGradeSkill",
+F:\BaoZouyxt\tools\index.js:65531 }); else if (41 == r.Effect) D.SkillUpgradeModel.useItemUpgradeSkillList(e.itemId); else if (62 == r.Effect) Promise.resolve().then(function() {
+F:\BaoZouyxt\tools\index.js:120978 e.prototype.useItemUpgradeSkillList = function(t) {
+F:\BaoZouyxt\tools\index.js:121010 e.prototype.partnerUpgradeSkillList = function(t) {
+F:\BaoZouyxt\tools\index.js:121042 e.prototype.usedItemUpgradeSkill = function(t, e, o) {
+F:\BaoZouyxt\tools\scripts2.js:76661 this.checkSkillState(t.lv, t) && g.SkillUpgradeModel.usedItemUpgradeSkill(this.skillId, this.itemId, this.itemNumbers);
+F:\BaoZouyxt\tools\scripts3.js:59098 if (this.pData) if (this.pData.dData[2].v > 0) g.SkillUpgradeModel.partnerUpgradeSkillList(this.curPId); else if (this.pData.dData[2].ot > 0) {
+F:\BaoZouyxt\tools\scripts3.js:73608 this.upgradeSkill({
+F:\BaoZouyxt\tools\scripts3.js:73614 t.prototype.upgradeSkill = function(t) {
+F:\BaoZouyxt\tools\scripts3.js:73657 this.upgradeSkill({
+
+================================================================================
+【模式】9) ITEMSCH (正则: ITEMSCH) -> 命中 5 行
+================================================================================
+F:\BaoZouyxt\tools\scripts2.js:36574 this.newItemsChecked([ this.currentScrollIndex ], 74 == o.Effect ? 3 : 0);
+F:\BaoZouyxt\tools\scripts2.js:36605 this.newItemsChecked([ this.currentScrollIndex ], 1);
+F:\BaoZouyxt\tools\scripts2.js:36630 i.length > 0 && this.newItemsChecked(i, e);
+F:\BaoZouyxt\tools\scripts2.js:36633 e.prototype.newItemsChecked = function(t, e) {
+F:\BaoZouyxt\tools\scripts3.js:5601 e.prototype.newItemsChecked = function() {};
+

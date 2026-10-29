@@ -1,0 +1,31 @@
+动作关联分析 · 第 2 轮
+
+上一轮的 10 条意见都已处理。抽 rw 的规则改成按 `var H = {` 切段，你建议的那种写法。
+
+准备
+1. 把本包里的 bz-oracle/ 合并进 v2.3 目录。
+   - 会覆盖：forge/analysis/ 下的三个文件
+   - 会新增：config/relate-families.json
+   其余文件都不动。
+
+运行（在 bz-oracle 目录下，不用再设 PYTHONUTF8）
+2. python forge/analysis/extract_rw.py "…\bz-rpc-server.js" "…\bz-handler-impl.js" "…\live\flow.js" > rw.json
+   stderr 会打出一行「# N 个动作抽到存档读写（共扫到 M 个 handler，分派表成员 K）」，把这一行原样记下来。
+   预期 K 约为 87。
+3. python forge/analysis/relate.py --rw rw.json --min-edge 0.9
+
+看结果（约 10 分钟）
+4. 打开 out/relations.md，只看两件事：
+   - 上一轮你点名的那几处现在对不对
+   - 新冒出来的明显错误
+   一共写 3 到 8 句就够了。
+   有你知道、但图里没体现的玩法家族或联动，可以直接改 config/relate-families.json，照着里面已有的格式加一行即可；也可以只写一句话交给我来改。
+
+交回
+- 第 2 步的那行 stderr
+- rw.json
+- out/relations.md
+- 第 4 步的几句话
+- 如果改过 config/relate-families.json，一并交回
+
+本包里的 out/relations.参考-用rw.v2.md 是我用你们上一轮的 rw.v2.json 跑出来的参考结果，只用来对照，不用交回。

@@ -1,0 +1,1 @@
+{"name":"training_lottery","rows":5,"cols":["id","time","consume","frame"],"data":{"1":{"id":1,"time":1,"consume":"10862,1","frame":"1"},"2":{"id":2,"time":2,"consume":"10862,1","frame":"1"},"3":{"id":3,"time":3,"consume":"10862,1","frame":"2"},"4":{"id":4,"time":4,"consume":"10862,1","frame":"2"},"5":{"id":5,"time":5,"consume":"10862,1","frame":"2"}}}

@@ -1,0 +1,99 @@
+# User.WashMedicine  (HttpConst.WASH_MEDICINE)
+# 出现 2 处
+
+144030: function t() {
+144031: this.upgradeObj = {};
+144032: }
+144033: t.prototype.init = function() {
+144034: var t = this;
+144035: this.upgradeObj = {};
+144036: n.MessageCenter.on(r.HttpConst.WASH_MEDICINE, this.onWashMedicneBackCall, this);
+144037: n.MessageCenter.on(r.HttpConst.REQ_CHANGEBLOOD, function(e, o) {
+144038: if (1 == o.eRet) {
+144039: n.MessageCenter.dispatch(a.EvName.CHANGE_BLOOD_SUCCESS);
+144040: t.showUpgradeCartoon(1);
+144041: } else 2 == o.eRet ? s.default.show(i.getText(1064)) : 3 == o.eRet && f.StoreModel.openChargeList();
+144042: }, this);
+144043: n.MessageCenter.on(r.HttpConst.ADD_CHANGE_BLOOD, function(e, o) {
+144044: if (1 == o.eRet) {
+144045: n.MessageCenter.dispatch(a.EvName.CHANGE_BLOOD_SUCCESS);
+144046: t.showUpgradeCartoon(1);
+144047: } else 2 == o.eRet ? s.default.show(i.getText(1064)) : 3 == o.eRet && f.StoreModel.openChargeList();
+144048: }, this);
+144049: n.MessageCenter.on(r.HttpConst.WASH_ADDITION, function(t, e) {
+144050: if (1 == e.eRet) {
+144051: var o = p.MarryModel.cycleData, i = l.RoleBaseInfo.armStrong, r = l.RoleBaseInfo.shenFa, c = l.RoleBaseInfo.bone, v = l.RoleBaseInfo.understanding;
+144052: e.hasOwnProperty("bloodArr") && (p.MarryModel.cycleData[8] = e.bloodArr);
+144053: e.hasOwnProperty("maxWuxin") && (p.MarryModel.maxWuxin = e.maxWuxin);
+144054: for (var _ in h.UserModel.entity.equipments) h.UserModel.entity.equipments[_] && (l.RoleBaseInfo.equipments[_] = h.UserModel.entity.equipments[_].id);
+144055: y.RoleOtherInfo.setAllHpAndMp2();
+144056: h.UserModel.setupEntity();
+144057: if (o.length >= 5) {
+144058: h.UserModel.entity.strength.baseValue = i + e.bloodArr[0] + o[7][0];
+144059: h.UserModel.entity.shenfa.baseValue = r + e.bloodArr[1] + o[7][1];
+144060: h.UserModel.entity.gengu.baseValue = c + e.bloodArr[2] + o[7][2];
+144061: h.UserModel.entity.perception.baseValue = v + e.bloodArr[3] + o[7][3];
+144062: }
+144063: u.JinmaiModel.parseMeridianInfo(u.JinmaiModel.acupoint2Lv);
+144064: h.UserModel.entity.hp.init();
+144065: h.UserModel.entity.mp.init();
+144066: h.UserModel.entity.hp.limit = l.RoleBaseInfo.hpLimit;
+144067: h.UserModel.entity.hp.remaining = l.RoleBaseInfo.hpRemaining;
+144068: h.UserModel.entity.mp.remaining = l.RoleBaseInfo.mpRemaining;
+144069: h.UserModel.entity.exp = l.RoleBaseInfo.exp;
+144070: n.MessageCenter.dispatch(a.EvName.CHANGE_ADDTION_SUCCESS, e);
+144071: } else 3 == e.eRet ? f.StoreModel.openChargeList() : 4 == e.eRet ? d.default.prefabs.load("marrySystem/ChildWashUI", cc.Prefab, function(t, o) {
+144072: var i = cc.instantiate(o);
+144073: i.addComponent("SetWashUI").setData(e.attrList);
+144074: g.PopUpMgr.addPopUp(i, m.LayerMgr.popUpLayer);
+144075: }) : 6 == e.eRet ? s.default.show("等级未达到要求无法洗髓") : 7 == e.eRet && s.default.show("上一世无附加属性无法洗髓");
+144076: });
+---
+144091: shenFa: t[2] - 10,
+144092: bone: t[3] - 10,
+144093: understanding: t[4] - 10,
+144094: addArr: i,
+144095: fosterArr: n
+144096: };
+144097: c.NetMgr.http.sendRequest(r.HttpConst.WASH_MEDICINE, p);
+144098: };
+144099: t.prototype.onWashMedicneBackCall = function(t, e) {
+144100: if (1 == e.eRet) {
+144101: l.RoleBaseInfo.baseArmStrong = e.armStrong;
+144102: l.RoleBaseInfo.baseShenFa = e.shenFa;
+144103: l.RoleBaseInfo.baseBone = e.bone;
+144104: l.RoleBaseInfo.baseUnderstanding = e.understanding;
+144105: l.RoleBaseInfo.armStrong = e.armStrong;
+144106: l.RoleBaseInfo.shenFa = e.shenFa;
+144107: l.RoleBaseInfo.bone = e.bone;
+144108: l.RoleBaseInfo.understanding = e.understanding;
+144109: e.hasOwnProperty("bloodArr") && (p.MarryModel.cycleData[8] = e.bloodArr);
+144110: e.hasOwnProperty("fosterArr") && (p.MarryModel.cycleData[7] = e.fosterArr);
+144111: e.hasOwnProperty("maxWuxin") && (p.MarryModel.maxWuxin = e.maxWuxin);
+144112: var o = p.MarryModel.cycleData;
+144113: for (var n in h.UserModel.entity.equipments) h.UserModel.entity.equipments[n] && (l.RoleBaseInfo.equipments[n] = h.UserModel.entity.equipments[n].id);
+144114: y.RoleOtherInfo.setAllHpAndMp2();
+144115: h.UserModel.setupEntity();
+144116: if (o.length >= 5) {
+144117: h.UserModel.entity.strength.baseValue = e.armStrong + o[7][0] + o[8][0];
+144118: h.UserModel.entity.shenfa.baseValue = e.shenFa + o[7][1] + o[8][1];
+144119: h.UserModel.entity.gengu.baseValue = e.bone + o[7][2] + o[8][2];
+144120: h.UserModel.entity.perception.baseValue = e.understanding + o[7][3] + o[8][3];
+144121: }
+144122: u.JinmaiModel.parseMeridianInfo(u.JinmaiModel.acupoint2Lv);
+144123: h.UserModel.entity.hp.init();
+144124: h.UserModel.entity.mp.init();
+144125: h.UserModel.entity.hp.limit = l.RoleBaseInfo.hpLimit;
+144126: h.UserModel.entity.hp.remaining = l.RoleBaseInfo.hpRemaining;
+144127: h.UserModel.entity.mp.remaining = l.RoleBaseInfo.mpRemaining;
+144128: h.UserModel.entity.exp = l.RoleBaseInfo.exp;
+144129: l.RoleBaseInfo.gold = e.curGold;
+144130: l.RoleBaseInfo.washTime = e.washTimes;
+144131: this.showUpgradeCartoon(0);
+144132: } else 2 == e.eRet ? f.StoreModel.openChargeList() : s.default.show(i.getText("910"));
+144133: };
+144134: t.prototype.reqUpgrade = function(t, e) {
+144135: var o = {
+144136: cID: t
+144137: };
+---

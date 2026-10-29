@@ -1,0 +1,31 @@
+{
+ "archivedAt": "2026-10-22T17:05:57.196Z",
+ "rules": [
+  {
+   "id": "begin-training-validation-20261023",
+   "kind": "handler-fixes",
+   "field": [
+    "eRet",
+    "beginTime",
+    "hanyusuiTime"
+   ],
+   "expect": 3,
+   "ev": "index.js:120515",
+   "why": "SOTA R12 §1 第 1/2 条：① skillID 不能无条件回声、更不能用 ||0 兜底（客户端会拿它查 skill 表，getItem(0) 会崩，且等于允许用没学过的技能练功）→ 改成『账本里已学会才放行，否则 eRet:4 且不写 beginTime』；② isCollective 按请求回声存在性（请求为真才发，否则不发）。冻结基线用的是**空请求** {}，所以这里记录的是『空请求命中拒绝分支』的应答 = {eRet:4}。",
+   "allowSigma": [
+    [
+     "BeginTraining",
+     "eRet"
+    ],
+    [
+     "BeginTraining",
+     "beginTime"
+    ],
+    [
+     "BeginTraining",
+     "hanyusuiTime"
+    ]
+   ]
+  }
+ ]
+}

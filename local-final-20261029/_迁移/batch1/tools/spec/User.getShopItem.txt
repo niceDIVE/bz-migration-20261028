@@ -1,0 +1,63 @@
+# User.getShopItem  (HttpConst.GET_SPGOODS_LIST)
+# 出现 2 处
+
+123367: value: !0
+123368: });
+123369: o.SpecialGoodsModel = void 0;
+123370: var i = t("../core/events/MessageCenter"), n = t("../net/HttpConst"), r = t("../net/NetMgr"), a = t("../utils/EvName"), s = function() {
+123371: function t() {}
+123372: t.prototype.init = function() {
+123373: i.MessageCenter.on(n.HttpConst.GET_SPGOODS_LIST, function(t, e) {
+123374: i.MessageCenter.dispatch(a.EvName.ON_GET_SPECIAL_GOODS, e);
+123375: }, this);
+123376: i.MessageCenter.on(n.HttpConst.BUY_SPECIAL_GOODS, function(t, e) {
+123377: i.MessageCenter.dispatch(a.EvName.REFRESH_SP_SHOP, e);
+123378: }, this);
+123379: };
+123380: t.prototype.reqGetSpGoods = function(t) {
+123381: var e = {
+123382: npcid: t
+123383: };
+123384: r.NetMgr.http.sendRequest(n.HttpConst.GET_SPGOODS_LIST, e);
+123385: };
+123386: t.prototype.reqBuy = function(t, e, o) {
+123387: var i = {
+123388: npcid: t,
+123389: itemID: e,
+123390: itemNum: o
+123391: };
+123392: r.NetMgr.http.sendRequest(n.HttpConst.BUY_SPECIAL_GOODS, i);
+123393: };
+123394: return t;
+123395: }();
+123396: o.SpecialGoodsModel = new s();
+123397: cc._RF.pop();
+123398: }, {
+123399: "../core/events/MessageCenter": "MessageCenter",
+123400: "../net/HttpConst": "HttpConst",
+123401: "../net/NetMgr": "NetMgr",
+123402: "../utils/EvName": "EvName"
+123403: } ],
+123404: SpecialParryPlayer: [ function(t, e, o) {
+123405: "use strict";
+123406: cc._RF.push(e, "42549aoYoxFHp8i+AY9nUt9", "SpecialParryPlayer");
+123407: var i, n = this && this.__extends || (i = function(t, e) {
+123408: return (i = Object.setPrototypeOf || {
+123409: __proto__: []
+123410: } instanceof Array && function(t, e) {
+123411: t.__proto__ = e;
+123412: } || function(t, e) {
+123413: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+---
+123414: })(t, e);
+123415: }, function(t, e) {
+123416: i(t, e);
+123417: function o() {
+123418: this.constructor = t;
+123419: }
+123420: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());
+123421: });
+123422: Object.defineProperty(o, "__esModule", {
+123423: value: !0
+123424: });
+---

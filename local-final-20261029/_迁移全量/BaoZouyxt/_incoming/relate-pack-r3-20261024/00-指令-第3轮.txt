@@ -1,0 +1,24 @@
+动作关联分析 · 第 3 轮（修复复现性）
+
+改了什么
+- extract_rw.py：helper 改成先用 BFS 收齐、再合并，输出和遍历顺序无关；stderr 统一 utf-8，不再乱码。
+- relate.py：还有一处同类问题也一起修了。networkx 的 Louvain 内部用 set 存字符串节点，在你们的 rw.json 上换个 seed，簇数会在 75 和 76 之间来回跳。现在先换成整数节点再分簇。
+- config：用的是你们改好的那版（核心账本、ROGUE 排除、familyWeight 3.0），另外加了 includeKeys，把 SYCNPLAYERITEAMDATA 放进分析范围，并加了一条提醒。
+
+1. 合并本包到 bz-oracle（覆盖 forge/analysis/ 和 config/relate-families.json）。
+2. 复现性检查（Windows cmd 写法）：
+   set PYTHONHASHSEED=1 & python forge\analysis\extract_rw.py <三个服务端文件> > rw.s1.json
+   set PYTHONHASHSEED=2 & python forge\analysis\extract_rw.py <三个服务端文件> > rw.s2.json
+   比较两份文件的 md5，应当相同。
+   对 relate.py 同样用两个 seed 各跑一次，比较 out\relations.md 的 md5，也应当相同。
+3. 正式跑：
+   python forge\analysis\relate.py --rw rw.s1.json --min-edge 0.9
+
+交回
+- stderr 那一行
+- 第 2 步的四个 md5
+- rw.s1.json
+- out\relations.md
+- 一两句话：有没有新的明显错误。没有就写"无"。
+
+我这边用你们第 2 轮的 rw.json 跑出的参考结果：边 899、簇 76、孤立 370，SYCNPLAYERITEAMDATA 进了 C01，和商店/装备在一起。

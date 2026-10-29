@@ -1,0 +1,116 @@
+[
+ {
+  "action": "BeginTraining",
+  "path": "hanyusuiTime",
+  "reason": "契约字段：客户端回调 `e.hyTime = 1e3 * n.hanyusuiTime`（index.js:120521）直接乘 1e3 转毫秒当 buff 时长，少发会算成 NaN。此前形状表里没有这一项，属于漏发。",
+  "ev": "index.js:120521"
+ },
+ {
+  "action": "BuyMarketItem",
+  "path": "note",
+  "reason": "第 1 批商店交易：元宝商城扣金条后按家法回 note.eco 新余额（客户端 ECONOMY_CHNG 监听器直写 RoleBaseInfo，与 buyShopItem 同款）；拒绝路径为空对象，客户端 131256 对 4 只弹文案不读 note。",
+  "ev": "index.js:64698"
+ },
+ {
+  "action": "BuyMount",
+  "path": "note",
+  "reason": "买坐骑扣铜钱后回 note.eco 新余额（同上家法）；客户端购买分支 32144-32161 不读 note，由通用 eco 监听器消费。",
+  "ev": "index.js:64698"
+ },
+ {
+  "action": "buySchoolShop",
+  "path": "note",
+  "reason": "门派商店扣门派贡献/发物品后回 note（buyGoodAndEvilShopItem 2676-2678 同款 ivch/eqch 绝对值回执）。",
+  "ev": "index.js:113677"
+ },
+ {
+  "action": "innBuyShop",
+  "path": "note",
+  "reason": "客栈购买扣铜钱后回 note.eco 新余额；客户端 onShopBuyItem 自己读 foodBag/cookBook 绝对清单，eco 由通用监听器消费。",
+  "ev": "index.js:64698"
+ },
+ {
+  "action": "fashionEffect",
+  "path": "fashionEffect",
+  "reason": "客户端 onFashionEffect 读 e.fashionEffect 控制 fashion.active（0=关是合法业务值）；形状表 switch 分类对本动作是误报，参照 getChangeShop.shopObj 先例按实发登记。",
+  "ev": "index.js:81481"
+ },
+ {
+  "action": "passCardData",
+  "path": "passCard.p",
+  "reason": "侠客令真实现：客户端 index.js:55869 `this.cardState = parseInt(e.passCard.p)` 把当前档位写进 HalloweenModel，InviteCellRender 用 cardState 决定解锁前几格（scripts2.js:35121 `d = p < this.tag`）。缺了会 parseInt(undefined)=NaN，整个档位判断失效。",
+  "ev": "index.js:55869"
+ },
+ {
+  "action": "passCardData",
+  "path": "passCard.n",
+  "reason": "侠客令真实现：index.js:55870 `this.paperNum = e.passCard.n` 是活跃度，InviteCellRender 用 `paperNum >= 该阶 liveness` 判断能否领（scripts2.js:35109/35193），PassCardUI 还把它当信纸数显示（48289）。",
+  "ev": "index.js:55870"
+ },
+ {
+  "action": "passCardData",
+  "path": "passCard.award",
+  "reason": "侠客令真实现：index.js:55871 `this.award = e.passCard.award`，键=阶 id、值=领取状态（4=已领取），InviteCellRender 在 scripts2.js:35099-35108 用它决定按钮文案（已领/可领/未解锁）；缺了会把所有阶都判成可领，可重复领奖。",
+  "ev": "index.js:55871"
+ },
+ {
+  "action": "passCardData",
+  "path": "goldArr",
+  "reason": "侠客令真实现：index.js:55872 `this.goldAy = e.goldArr`，四档价目（本服 pass_level.price = 0/288/600/1000 元宝）；PassCardUI 用 `HalloweenModel.cardState < goldAy.length` 判断还能不能升档（scripts2.js:48292）。",
+  "ev": "index.js:55872"
+ },
+ {
+  "action": "passCardData",
+  "path": "etime",
+  "reason": "侠客令真实现：scripts2.js:48287 PassCardUI.start() 第一句就是 `this.endTime = this.data.etime`，只有 0 != endTime 才起倒计时（48371-48375）。给真实值 BZ_PASS_ENDTIME（pass_liveness 各来源 endtime 最大值）。",
+  "ev": "scripts2.js:48287"
+ },
+ {
+  "action": "passCardData",
+  "path": "passObj",
+  "reason": "侠客令真实现：scripts2.js:48291 `showInviteActionUI(this.data.passObj)` 是唯一数据入口，48343 按值遍历建 dataArr；每行必须长度≥6（[passID, liveness, award1..award4]），因为 InviteCellRender 固定循环 4 个奖励位读 `this.data[2+p][0]`（35118-35119）。原实现正好缺这个字段 → 空 dataArr 却 doLoad=true → 每帧 TypeError（实测 2 秒 110 次）。",
+  "ev": "scripts2.js:48291"
+ },
+ {
+  "action": "enterSnow",
+  "path": "sTime",
+  "reason": "第 2 批 C05 雪球活动：客户端 enterSnow 回调 index.js:122470 读 o.sTime（面板倒计时基准），原形状表与应答均无此字段，属漏发。值取 env.now()。",
+  "ev": "index.js:122470"
+ },
+ {
+  "action": "delegateTask",
+  "path": "sTime",
+  "reason": "委托任务起算时间：client index.js:43506 回调 1==eRet 后读 o.sTime 记委托开始，原形状表与应答都没有该字段",
+  "ev": "index.js:43506"
+ },
+ {
+  "action": "onekeyCompleteSchoolTask",
+  "path": "equipObj",
+  "reason": "一键完成门派任务：client 1 分支把 equipObj 交给发奖窗（装备奖励位），原形状表无该字段",
+  "ev": "index.js:113583"
+ },
+ {
+  "action": "rogueAcceptTask",
+  "path": "skillId",
+  "reason": "肉鸽接任务：client 1 分支读 skillId（与 acceptTask 同族形状），原形状表无",
+  "ev": "index.js:133222"
+ },
+ {
+  "action": "rogueAcceptTask",
+  "path": "CDTime",
+  "reason": "同上，读 CDTime 做冷却显示",
+  "ev": "index.js:133222"
+ },
+ {
+  "action": "rogueAcceptTask",
+  "path": "serverTime",
+  "reason": "同上，读 serverTime 校时",
+  "ev": "index.js:133222"
+ },
+ {
+  "action": "schoolTaskComplete",
+  "path": "equipObj",
+  "reason": "门派任务完成：client 1 分支把 equipObj 交给发奖窗，原形状表无",
+  "ev": "index.js:113578"
+ }
+]

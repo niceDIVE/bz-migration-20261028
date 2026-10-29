@@ -1,0 +1,11 @@
+# User.equipSkill   (HttpConst.EQUIP_SKILL)
+
+## 请求点 142618: v.NetMgr.http.sendReqWithMask(u.HttpConst.EQUIP_SKILL, n);
+   142610: };
+   142611: o.UserModel.equipSkill = function(t, e) {
+   142612: var i = o.UserModel.entity, n = {
+   142613: skillID: t,
+   142614: skillType: e,
+   142615: hp: i.hp.remaining,
+   142616: hplmt: i.hp.limit
+   142617: };

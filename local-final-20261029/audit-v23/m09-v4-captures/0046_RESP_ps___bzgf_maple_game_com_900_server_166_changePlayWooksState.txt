@@ -1,0 +1,5 @@
+status=200 https://bzgf.maple-game.com/900-server-166/changePlayWooksState
+{
+  "code": 200,
+  "MsgData": "6210e5164575b163945e6fbe9db6a479947205486e716535467f7cdfbb26fd6c602db3aab022e45f8cb72ef307d0af85f9ee27a917ea56b96e5a889be70d3b307dd453dbe604453b878222a625f61655"
+}

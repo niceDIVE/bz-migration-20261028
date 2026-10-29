@@ -1,0 +1,243 @@
+# r20-W-F2-nids-sell3020 事实核查取证报告
+
+## 【第一件：achievement.nIds】
+
+### 1) 三个包里 grep `nIds`
+- 命令：`rg -n "nIds" tools/index.js tools/scripts2.js tools/scripts3.js`
+- 退出码：0
+- 搜索结果：
+  - F:\BaoZouyxt\tools\index.js：无匹配
+  - F:\BaoZouyxt\tools\scripts2.js：无匹配
+  - F:\BaoZouyxt\tools\scripts3.js:2887: `                    if (o.nIds) {`
+  - F:\BaoZouyxt\tools\scripts3.js:2888: `                        for (var s = o.nIds, n = 0; n < s.length; n++) {`
+
+- 客户端拿到 nIds 后做了什么（代码抄录，tools/scripts3.js:2884-2896）：
+```javascript
+            i.MessageCenter.on(s.HttpConst.ACHV_CHANGE, function(e, o) {
+                d.RoleOtherInfo.achieveState = o.red ? 1 : 0;
+                i.MessageCenter.dispatch(r.EvName.ACHV_SHOW_RED);
+                if (o.nIds) {
+                    for (var s = o.nIds, n = 0; n < s.length; n++) {
+                        var c = a.getItem(s[n], "achieve_list");
+                        if (c) {
+                            var p = a.getItem(c.group, "achieve_group");
+                            p && (3 == c.type || 13 == c.group || 16 == p.type1 ? t.receivedIds.push(s[n]) : t.awardIds.push(s[n]));
+                        }
+                    }
+                    t.showAchieveTip(s);
+                }
+                o.achieveRateId && (d.RoleOtherInfo.achiRId = o.achieveRateId);
+            }, this);
+```
+说明：客户端监听成就推送（`s.HttpConst.ACHV_CHANGE` 对应字符串 `"achievement"`），遍历 `o.nIds` 中的每个成就 ID，查配置表 `achieve_list` 与 `achieve_group`，根据条件将其分类加入 `t.receivedIds` 或 `t.awardIds`，随后调用 `t.showAchieveTip(s)` 弹出成就提示弹窗。
+
+---
+
+### 2) F:\BaoZouyxt\hotfix-patch\core\templates.json 中的 achievement 对象
+在 `hotfix-patch/core/templates.json` 中共出现 6 处 `achievement` 对象，整段原样分别如下：
+
+- 顶层动作 `create` 内部：
+`hotfix-patch/core/templates.json` (字符偏移 2432 附近):
+```json
+{"red":false,"achieveRateId":0}
+```
+
+- 顶层动作 `getChatAddress` 内部：
+`hotfix-patch/core/templates.json` (字符偏移 2717 附近):
+```json
+{"red":true,"achieveRateId":0,"nIds":[354]}
+```
+
+- 顶层动作 `reqSelfBattleInfo` 内部：
+`hotfix-patch/core/templates.json` (字符偏移 3715 附近):
+```json
+{"red":true,"achieveRateId":0}
+```
+
+- 顶层动作 `checkBattleResult` 内部：
+`hotfix-patch/core/templates.json` (字符偏移 4024 附近):
+```json
+{"red":true,"achieveRateId":0}
+```
+
+- 顶层动作 `getFinishTaskAward` 内部：
+`hotfix-patch/core/templates.json` (字符偏移 4263 附近):
+```json
+{"red":true,"achieveRateId":0}
+```
+
+- 顶层动作 `getCRAInfo` 内部：
+`hotfix-patch/core/templates.json` (字符偏移 4401 附近):
+```json
+{"red":false,"achieveRateId":0}
+```
+
+---
+
+### 3) hotfix-patch\core\bz-rpc-server.js 中 `function ach(` 的实现
+- 路径与行号：F:\BaoZouyxt\hotfix-patch\core\bz-rpc-server.js:333
+- 原文：
+```javascript
+  function ach() { return (TPL.create && clone(TPL.create.achievement)) || { red: false, achieveRateId: 0 }; }
+```
+
+---
+
+## 【第二件：3020（Effect 15）能不能卖】
+
+### 4) F:\BaoZouyxt\tools\cfg\dump\item.full.json 中查 id=3020
+- 整行 JSON 原文：
+```json
+{"ID":3020,"Type":2,"Effect":15,"Data1":0,"Data2":0,"Data3":0,"Data4":0,"Data5":0,"Name":32020,"Description":37020,"Price":20000,"BuyPrice":1000,"Limit":1,"EquipType":0,"WeaponType":0}
+```
+重点字段值：
+- Price: 20000
+- BuyPrice: 1000
+- Limit: 1
+
+---
+
+### 5) 三个包里 grep `SELL_ITEM` 与 `saleArr` 客户端发请求位置
+- 命令：`rg -n "SELL_ITEM|saleArr" tools/index.js tools/scripts2.js tools/scripts3.js`
+- 退出码：0
+- 关键请求调用代码行（文件:行号 + 原文）：
+
+1. F:\BaoZouyxt\tools\index.js:65247:
+```javascript
+                                m.NetMgr.http.sendRequest(a.HttpConst.SELL_ITEM, o);
+```
+（上下文 index.js:65244-65247：`var o = { saleArr: t }; m.NetMgr.http.sendRequest(a.HttpConst.SELL_ITEM, o);`）
+
+2. F:\BaoZouyxt\tools\index.js:65254:
+```javascript
+                        m.NetMgr.http.sendRequest(a.HttpConst.SELL_ITEM, S);
+```
+（上下文 index.js:65251-65254：`var S = { saleArr: t }; m.NetMgr.http.sendRequest(a.HttpConst.SELL_ITEM, S);`）
+
+3. F:\BaoZouyxt\tools\scripts2.js:54921:
+```javascript
+                    l.NetMgr.http.sendRequest(h.HttpConst.SELL_ITEM, this.reqData);
+```
+（上下文 scripts2.js:54911 / 54916-54924：`this.reqData = t.reqData; ... l.NetMgr.http.sendRequest(h.HttpConst.SELL_ITEM, this.reqData);`，其中在 index.js:65223 与 scripts2.js:19157 等处传递的 `reqData` 结构为 `{ saleArr: t }`）
+
+---
+
+### 6) F:\BaoZouyxt\hotfix-patch\test\sale-coins.js 用例名列表与 3020/Effect 15 检查
+- 用例名列表（全部 15 个用例）：
+  - 行 86: `T1 卖 1 件 → 加 1 件价（3003 售价 20）`
+  - 行 93: `T2 卖 5 件 → 加 5 件价`
+  - 行 100: `T3 卖不存在的东西 → 不加钱、不崩`
+  - 行 107: `T4 装备实例按 itemID 计价（2302 售价 100）`
+  - 行 114: `T5 零价物品（4020，Price=0）→ 扣东西但不加钱`
+  - 行 121: `T6 应答带 note.ivch / note.eqch 的键（客户端靠它刷新格子）`
+  - 行 133: `T7 铜钱走 note.eco（客户端 ECONOMY_CHNG 直接赋值 RoleBaseInfo.coins）`
+  - 行 140: `T8 沙盒实例也回同样的 note（投射不再依赖进程内推送）`
+  - 行 152: `T9 LoadGame 的 baseValueAy[35] 与账本 coins 一致`
+  - 行 161: `T10 卖出量按真实库存截断（有 10 卖 50 → 只结算 10）`
+  - 行 169: `T11 note.ivch 必须是【绝对值】0（卖光），不能是本次卖出的数量`
+  - 行 177: `T12 note.ivch 必须是【绝对值】余量（20 卖 1 → 19），不是 1`
+  - 行 185: `T13 装备卖光 → note.eqch[uid] = [0]（客户端 0 开头=deleteEq）`
+  - 行 194: `T14 装备只卖一部分 → note.eqch[uid] = [1, 账本数组]`
+  - 行 202: `T15 卖混装（物品+装备）时 note 三个子表齐全且各司其职`
+
+- 回答：里面有没有任何一个用例提到了 3020 或 Effect 15：
+没有
+
+---
+
+### 7) bz-rpc-server.js 中卖物品 handler 实现与 Effect 15 特判检查
+- 路径与行号：F:\BaoZouyxt\hotfix-patch\core\bz-rpc-server.js:2194-2271
+- 原文逐字实现：
+```javascript
+    saleItem: function (p) {
+      p = p || {};
+      var s = ensureLedger(loadSave());
+      var arr = p.saleArr || [];
+      var sold = [];
+      var coins = 0, pricedN = 0, unpriced = [], ivch = {}, eqch = {};
+      for (var i = 0; i < arr.length; i++) {
+        var e = arr[i], id = 0, cnt = 1, equip = false;
+        if (Array.isArray(e)) {
+          // 客户端格式 [kind, id/uid, count?] ——
+          //   kind: 1=物品(id是itemID)，2=装备(id是uid)
+          //   见 tools/index.js:65191-65208（InventoryModel.sellItem）
+          var kind = e[0];
+          id = e[1];
+          cnt = (e.length >= 3 && e[2] > 0) ? e[2] : 1;
+          equip = (kind === 2);
+        } else if (typeof e === 'object' && e) {
+          id = e.id || e.itemID || e.uid;
+          cnt = e.count || e.num || 1;
+          equip = !!e.equip;
+        } else {
+          id = e; cnt = 1;
+        }
+        if (!id) continue;
+        if (equip) {
+          // 装备：id 是 uid 字符串；计价看 itemID；扣库存扣 playerEquip
+          var haveE = (s.playerEquip && s.playerEquip[id] && s.playerEquip[id][1]) ? s.playerEquip[id][1] : 0;
+          if (cnt > haveE) { env.log('saleItem 装备 ' + id + ' 截断：请求 x' + cnt + '，真实持有 ' + haveE); cnt = haveE; }
+          if (cnt <= 0) continue;
+          var itemID = (s.playerEquip[id] && s.playerEquip[id][0]) ? s.playerEquip[id][0] : id;
+          var unitE = itemPrice(itemID);
+          if (unitE > 0) { coins += unitE * cnt; pricedN += cnt; } else unpriced.push(itemID);
+          s.playerEquip[id][1] -= cnt;
+          if (s.playerEquip[id][1] <= 0) {
+            delete s.playerEquip[id];
+            eqch[id] = [0];
+          } else {
+            eqch[id] = [1, clone(s.playerEquip[id])];
+          }
+          sold.push('eq:' + id + '(item' + itemID + ')x' + cnt + '@' + unitE);
+        } else {
+          // 物品：id 是 itemID；计价看 itemPrice(id)；扣库存扣 bag
+          var have = (s.bag && s.bag[id]) ? s.bag[id] : 0;
+          if (cnt > have) { env.log('saleItem ' + id + ' 截断：请求 x' + cnt + '，真实库存只有 ' + have); cnt = have; }
+          if (cnt <= 0) continue;
+          var unit = itemPrice(id);
+          if (unit > 0) { coins += unit * cnt; pricedN += cnt; } else unpriced.push(id);
+          s.bag[id] -= cnt;
+          if (s.bag[id] <= 0) delete s.bag[id];
+          ivch[String(id)] = (s.bag[id] || 0);
+          sold.push(id + 'x' + cnt + '@' + unit);
+        }
+      }
+      var prevCoins = s.coins || 0;
+      if (coins > 0) {
+        s.coins = prevCoins + coins;
+        // baseValueAy[35] 镜像同步（LoadGame / 存档对齐）
+        if (Array.isArray(s.baseValueAy) && s.baseValueAy.length > 35) {
+          s.baseValueAy[35] = s.coins;
+        }
+      }
+      env.log('saleItem ' + sold.join(',')
+        + ' → +铜钱 ' + coins + '（' + prevCoins + '→' + s.coins + '，计价x' + pricedN
+        + (unpriced.length ? '，零价/无价品:' + unpriced.join('/') : '') + '）');
+      writeSave(s);
+      // R04 终验（2026-10-22）客户端消费端闭环：
+      //   - ivch 必须填【绝对值】（0=卖光删格，>0=余量覆盖），index.js:64730 走 `a.default.saveAllItemCount(c, s[c])`；
+      //   - eqch 必须填 `[0]`（卖光走 deleteEq）或 `[1, 数组]`（余量覆盖），index.js:64737；
+      //   - eco 挂在 note 下触发 ECONOMY_CHNG（index.js:64700 直接赋值 RoleBaseInfo.coins）；
+      //   - eRet 必须是 1（index.js:64727 检查 `1 == t.eRet`）。
+      var payload = {
+        eRet: 1,
+        note: {
+          ivch: ivch,
+          eqch: eqch,
+          eco: { coins: s.coins }
+        }
+      };
+      // ⚠ note 必须落在 `User.saleItem` 里（消费端读 o.note.ivch），不能挂在信封顶层 ——
+      //   shaped('saleItem', payload) 保证 User.saleItem.note 结构原样输出
+      //   （若走旧 wrapped 会被打散）。同时 extra 注入 `{ achievement: ach() }`
+      //   满足通用信封规范。
+      return shaped('saleItem', payload) || wrapped('saleItem', payload, { achievement: ach() });
+    },
+```
+
+- 回答：它对 Effect 15 有没有任何特判：
+没有
+
+---
+
+未验证

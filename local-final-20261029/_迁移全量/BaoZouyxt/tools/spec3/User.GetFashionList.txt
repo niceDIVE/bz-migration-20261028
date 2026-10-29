@@ -1,0 +1,37 @@
+# User.GetFashionList   (HttpConst.GET_FASHION_LIST)
+
+## 注册点 75528: s.MessageCenter.on(l.HttpConst.GET_FASHION_LIST, this.onGetFashionList, this);
+
+## 请求点 75759: m.NetMgr.http.sendReqWithMask(l.HttpConst.GET_FASHION_LIST, {
+   75751: t.prototype.reqChangeFace = function(t) {
+   75752: var e = {
+   75753: type: t
+   75754: };
+   75755: m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BEGIN_CHANGEFACE, e);
+   75756: };
+   75757: t.prototype.reqGetFashionList = function(t) {
+   75758: void 0 === t && (t = 0);
+
+## 处理函数 onGetFashionList (75620-75641)
+ 75620: t.prototype.onGetFashionList = function(t, e) {
+ 75621: var o = this;
+ 75622: if (this.fashionShopMainUI) {
+ 75623: 1 == e.type && this.setFashionTime(e.FashionTimeMap);
+ 75624: s.MessageCenter.dispatch(u.EvName.CHANGE_PAGE_MAKE_UP_EVENT, e);
+ 75625: } else {
+ 75626: var n = new Promise(function(t) {
+ 75627: y.default.prefabs.load("shopUI/FashionShopNewUI", cc.Prefab, function(e, o) {
+ 75628: t(o);
+ 75629: });
+ 75630: }), r = new Promise(function(t) {
+ 75631: y.default.prefabs.load("comUI/ShopBgUI", cc.Prefab, function(e, o) {
+ 75632: t(o);
+ 75633: });
+ 75634: });
+ 75635: Promise.all([ n, r ]).then(function(t) {
+ 75636: var n = i(t, 2), r = (n[0], n[1]), a = cc.instantiate(r);
+ 75637: v.PopUpMgr.addPopUp(a, _.LayerMgr.popUpLayer);
+ 75638: a.addComponent("FashionShopMainUI").showFashionNewShop(e);
+ 75639: o.fashionShopMainUI = a;
+ 75640: });
+ 75641: }

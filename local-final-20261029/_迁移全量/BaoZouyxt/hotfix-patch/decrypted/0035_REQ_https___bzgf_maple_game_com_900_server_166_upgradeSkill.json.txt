@@ -1,0 +1,2 @@
+POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573065628v5ckw23q"}}

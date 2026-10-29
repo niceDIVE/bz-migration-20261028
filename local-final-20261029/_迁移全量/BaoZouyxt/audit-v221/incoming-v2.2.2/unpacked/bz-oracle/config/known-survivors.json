@@ -1,0 +1,6 @@
+{
+  "_说明": "裁判已知抓不到的变异。每条必须写原因和补法；补上后删掉这一条。mutate.js --allow-survivors 时，存活集合必须与本表完全一致（多一个、少一个都判失败）。",
+  "survivors": [
+    {"mutator": "M09.sell_overpay", "case": "saleItem.equip90001", "why": "装备出售价的规则表未取证（哪张表、哪一列）", "fix": "S7：在 rules.json 写出装备出售守恒式后，此条应被击杀"}
+  ]
+}

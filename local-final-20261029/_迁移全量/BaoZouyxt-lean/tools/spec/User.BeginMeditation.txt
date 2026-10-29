@@ -1,0 +1,99 @@
+# User.BeginMeditation  (HttpConst.START_DAZUO)
+# 出现 2 处
+
+138874: this.startTimestamp = 0;
+138875: this.recoverStartTS = 0;
+138876: this.hyTime = 0;
+138877: }
+138878: t.prototype.init = function() {
+138879: var t = this;
+138880: r.MessageCenter.on(s.HttpConst.START_DAZUO, function(e, o) {
+138881: if (1 == o.eRet || 2 == o.eRet) {
+138882: t.startTimestamp = o.beginTime;
+138883: t.hyTime = 1e3 * o.hyTime;
+138884: p.NonBattleBuffModel.setBufferCostStartTime(o.hyTime, o.beginTime);
+138885: r.MessageCenter.dispatch(l.EvName.START_NG_TRAINING);
+138886: }
+138887: }, this);
+138888: r.MessageCenter.on(s.HttpConst.END_DAZUO, function(e, o) {
+138889: t.startTimestamp = 0;
+138890: h.RoleOtherInfo.gengudanTime = o.genguTime;
+138891: p.NonBattleBuffModel.setBufferTotalTime(o.hanyusuiTime);
+138892: o.note.hasOwnProperty("attrch") && o.note.attrch.hasOwnProperty("mpTrained") && (d.RoleBaseInfo.mpTrained = o.note.attrch.mpTrained);
+138893: c.FishingModel.setAutoStartHung(o);
+138894: r.MessageCenter.dispatch(l.EvName.END_NG_TRAINING);
+138895: }, this);
+138896: r.MessageCenter.on(s.HttpConst.BEGIN_RECOVER_MP, function(e, o) {
+138897: if (1 == o.eRet) {
+138898: t.recoverStartTS = o.serverTime;
+138899: p.NonBattleBuffModel.tbbByID.hasOwnProperty(1043) && (t.hyTime = p.NonBattleBuffModel.tbbByID[1043].duration);
+138900: r.MessageCenter.dispatch(l.EvName.ON_MP_RECOVER_STARTED, 0);
+138901: }
+138902: }, this);
+138903: r.MessageCenter.on(s.HttpConst.END_RECOVER_MP, function(t, e) {
+138904: h.RoleOtherInfo.gengudanTime = e.genguTime;
+138905: p.NonBattleBuffModel.setBufferTotalTime(e.hanyusuiTime);
+138906: r.MessageCenter.dispatch(l.EvName.CHANGE_ROLE_INFO);
+138907: r.MessageCenter.dispatch(l.EvName.CLOSE_ROLE_HANG_EVENT);
+138908: }, this);
+138909: r.MessageCenter.on(s.HttpConst.GET_VIGOR, function(t, e) {
+138910: r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);
+138911: }, this);
+138912: r.MessageCenter.on(s.HttpConst.VIGOR_DAZUO, function(t, e) {
+138913: r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);
+138914: a.default.show(n.getText(3259).replace(/\[1\]/, m.playerInfo.entity.mp.limit));
+138915: }, this);
+138916: };
+138917: t.prototype.startRecoverMp = function() {
+138918: u.NetMgr.http.sendRequest(s.HttpConst.BEGIN_RECOVER_MP, {});
+138919: };
+138920: t.prototype.endRecoverMp = function() {
+---
+138932: maxMp: t.mp.limit - t.addEqMp,
+138933: hg: t.hunger.remaining,
+138934: gTime: t.totalGameTime.gameTime,
+138935: hgtimes: t.numStuffed,
+138936: flag: f.IceBedModel.getIceBed()
+138937: };
+138938: u.NetMgr.http.sendRequest(s.HttpConst.START_DAZUO, e);
+138939: };
+138940: t.prototype.reqGetVigors = function() {
+138941: u.NetMgr.http.sendRequest(s.HttpConst.GET_VIGOR, {});
+138942: };
+138943: t.prototype.reqConvVigor2Mp = function() {
+138944: var t = {};
+138945: y.SkillUtils.getMaxNGBonus(t);
+138946: var e = m.playerInfo.entity, o = {
+138947: skillID: t.skillID,
+138948: maxMp: e.mp.limit,
+138949: speed: e.hungerConsumingSpeed.finalValue,
+138950: flag: f.IceBedModel.getIceBed()
+138951: };
+138952: u.NetMgr.http.sendRequest(s.HttpConst.VIGOR_DAZUO, o);
+138953: };
+138954: t.prototype.end = function() {
+138955: var t = {};
+138956: y.SkillUtils.getMaxNGBonus(t);
+138957: var e = m.playerInfo.entity, o = {
+138958: skillID: t.skillID,
+138959: hglmt: e.hunger.limit,
+138960: speed: e.hungerConsumingSpeed.finalValue
+138961: };
+138962: u.NetMgr.http.sendRequest(s.HttpConst.END_DAZUO, o);
+138963: };
+138964: t.prototype.getTrainingSpeed = function() {
+138965: var t = 0;
+138966: d.RoleBaseInfo.isvip && (t = i.getConstByID("200"));
+138967: var e = 1 + .01 * (p.NonBattleBuffModel.speedBonus + f.IceBedModel.getIceBedSp() + t), o = g.SkillUpgradeModel.getGengu();
+138968: return i.getConstByID("31") * (1 + o / i.getConstByID("13")) * e;
+138969: };
+138970: t.prototype.destroy = function() {
+138971: this.isTraining = !1;
+138972: this.startTimestamp = 0;
+138973: this.svmd = "";
+138974: };
+138975: return t;
+138976: }();
+138977: o.TrainingMpModel = new v();
+138978: cc._RF.pop();
+---

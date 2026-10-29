@@ -1,0 +1,21 @@
+# User.GetSchoolReview   (HttpConst.GET_SCHOOL_POSTS)
+
+## 注册点 113573: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_POSTS, this.onGetSchoolPost, this);
+
+## 请求点 113958: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_POSTS, i);
+   113950: 1 == this.pageType ? o.SchoolModel.reqGetSchoolMasterList(this.menpaiSchool) : 2 == this.pageType ? o.SchoolModel.reqGetSchoolPupilList(this.menpaiSchool) : 3 == this.pageType && o.SchoolModel.reqGetApplyList();
+   113951: };
+   113952: t.prototype.reqPostPage = function(t, e, o) {
+   113953: var i = {
+   113954: school: t,
+   113955: type: e,
+   113956: page: o
+   113957: };
+
+## 处理函数 onGetSchoolPost (113605-113610)
+113605: t.prototype.onGetSchoolPost = function(t, e) {
+113606: if (1 == e.eRet) if (1 == e.type) r.MessageCenter.dispatch(l.EvName.ON_GET_MOSTLIKED, e.reviewList); else {
+113607: ++this.newPostPage;
+113608: this.theresmore = this.newPostPage < e.maxPage;
+113609: r.MessageCenter.dispatch(l.EvName.ON_GET_PAGE, e.reviewList);
+113610: }

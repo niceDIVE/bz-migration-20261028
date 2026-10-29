@@ -1,0 +1,5363 @@
+{
+  "BIND_HUAWEI_ACCOUNT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:2272"
+    ],
+    "params": {
+      "code": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.bindingHuaWeiAccount"
+  },
+  "GET_ACHIEVE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:3003"
+    ],
+    "params": {
+      "aNum": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getAchieveData"
+  },
+  "GET_ACHIEVE_MARK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:3008"
+    ],
+    "params": {
+      "markId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getAchieveMark"
+  },
+  "RECEIVE_ACHIEVE_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:3016"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.receiveAchieveReward"
+  },
+  "RECEIVE_ACHIEVE_RATE_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:3019"
+    ],
+    "params": {
+      "rateId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveAchieveRateReward"
+  },
+  "RECEIVE_ACHIEVE_SUIT_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:3028"
+    ],
+    "params": {
+      "suitId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "index": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.receiveAchieveSuitReward"
+  },
+  "SET_ADVANCED_TASKS_TIP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:6029"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.setAdvancedTasksTip"
+  },
+  "RECEIVE_ADVANCED_TASK_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:6044"
+    ],
+    "params": {
+      "boxId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveAdvancedTaskReward"
+  },
+  "RECEIVE_ADVANCED_TASK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:6056"
+    ],
+    "params": {
+      "taskId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveAdvancedTask"
+  },
+  "GET_ADVANCED_TASKS_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:6100"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getAdvancedTasksData"
+  },
+  "GET_ADVANCED_TASKS_TIP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:6135"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getAdvancedTasksTip"
+  },
+  "GET_ALCHEMY_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7070"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getAlchemyData"
+  },
+  "BUY_FORMULA_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7074"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "type": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buyFormula"
+  },
+  "ALCHEMY_ALCHEMYFORMULA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7080"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.alchemyFormula"
+  },
+  "ALCHEMY_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7086"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "isMend": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.alchemyReward"
+  },
+  "UPGRAADE_ALCHEMY": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7092"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.upgradeAlchemy"
+  },
+  "ANN_PASS_GET_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7894"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getAnniversaryPassData"
+  },
+  "ANN_PASS_BUY_UP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7897"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.buyAnniversaryPass"
+  },
+  "ANN_PASS_RECEIVE_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7904"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "vip": {
+        "samples": [
+          "e ? 1 : 0"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.receiveAnniversaryPassAward"
+  },
+  "ANN_PASS_BUY_LIVENESS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7907"
+    ],
+    "params": {
+      "num": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buyAnniversaryPassLiveness"
+  },
+  "ANN_PASS_START_ROGUE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7912"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.startAnniversaryPassRg"
+  },
+  "ANN_PASS_CHOOS_ROGUE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7915"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.chooseAnniversaryPassRg"
+  },
+  "ANN_PASS_FINISH_TASK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:7920"
+    ],
+    "params": {
+      "taskId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveAnniversaryPassTaskReward"
+  },
+  "REQ_WULIN_TEAM_SCORE_RANK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:12188"
+    ],
+    "params": {
+      "TeamId": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "Page": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "see_wu_lin_assembly_team_score_rank"
+  },
+  "REQ_WULIN_TEAM_ELIMINATE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:12202"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "see_wu_lin_assembly_team_eliminate"
+  },
+  "REQ_WULIN_TEAM_ASSEMBLY_INFO": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:12215"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "see_wu_lin_assembly_team_apply_info"
+  },
+  "WASH_MEDICINE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:12236"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "d.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "armStrong": {
+        "samples": [
+          "t[1] - 10"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "shenFa": {
+        "samples": [
+          "t[2] - 10"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "bone": {
+        "samples": [
+          "t[3] - 10"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "understanding": {
+        "samples": [
+          "t[4] - 10"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "addArr": {
+        "samples": [
+          "i"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "fosterArr": {
+        "samples": [
+          "s"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.WashMedicine"
+  },
+  "CHANGE_AUTOMATICFIGHT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:13188"
+    ],
+    "params": {
+      "state": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_PLAYER_AUTO_CONFIG": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:13319"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": null
+  },
+  "SET_PLAYER_AUTO_CONFIG": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:13322"
+    ],
+    "params": {
+      "at": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_CRL_ACTIVE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:13615"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "c.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getCRLActivityData"
+  },
+  "GET_MA_ACTIVITY": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:13620"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getMAActivity"
+  },
+  "SUBMIT_NUM_MA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:13623"
+    ],
+    "params": {
+      "num": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.submitNumMA"
+  },
+  "REWARD_MA_ACTIVITY": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:13628"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.rewardMAActivity"
+  },
+  "GET_BEACH_TREASURE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:15329"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": null
+  },
+  "OPTION_BEACH_TREASURE_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:15332"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "LOTTERY_BEACH_TREASURE_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:15337"
+    ],
+    "params": {
+      "cellId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_BEACH_TREASURE_TASK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:15342"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": null
+  },
+  "BEACH_TREASURE_TASK_AWARDS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:15345"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_BREW_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:17323"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "BREW_TASK_COMPLETE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:17328"
+    ],
+    "params": {
+      "tId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "itemMap": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_BREW_EXCHANGE_SHOP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:17335"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "EXCHANGE_BREW_SHOP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:17338"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "TORCH_ALTAR": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:18558"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t.altarId"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "t.itemNum"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "DOUBLE_HOOK_CHAT_MSG": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:19094"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": null
+  },
+  "GET_PLAYER_EMOJIS_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:19097"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": null
+  },
+  "GET_MOONSTEP_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:19456"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_MOONSTEP_TASK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:19459",
+      "F:/BaoZouyxt/tools/scripts3.js:19991"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "FLING_MOONSTEP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:19473"
+    ],
+    "params": {
+      "isAutoDice": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "stepCount": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "RECEIVE_MOONSTEP_CYCLE_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:19480"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "MOONSTEP_TASK_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:19485"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_HELPER_CALL_LIST": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23248"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getHelperCallList"
+  },
+  "CALL_HELPER_BY_ID": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23251"
+    ],
+    "params": {
+      "helperId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.callHelperId"
+  },
+  "GET_HOUSE_KEEPER": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23555"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getHousekeeper"
+  },
+  "BUTLER_DISPATCH": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23564"
+    ],
+    "params": {
+      "taskArr": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "mapId": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.dispatch"
+  },
+  "SET_TEMPLATE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23623"
+    ],
+    "params": {
+      "template": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "autoTime": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "mapId": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.setTemplateData"
+  },
+  "DISPATCH_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23626"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.dispatchAward"
+  },
+  "SET_BUTLER": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23632"
+    ],
+    "params": {
+      "helperId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.setHelper"
+  },
+  "BUY_BUTLER": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23638"
+    ],
+    "params": {
+      "helperId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.buyHelper"
+  },
+  "RECEIVE_NOTICE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23646"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.receiveNotice"
+  },
+  "GET_EVALUATE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23650"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getEvaluateData"
+  },
+  "PUSH_EVALUATE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23657"
+    ],
+    "params": {
+      "helperId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "type": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.pushEvaluateData"
+  },
+  "BUY_BUTLER_VIP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23662"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.buyMonthlyFee"
+  },
+  "RECEIVE_HELPER_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:23665"
+    ],
+    "params": {
+      "helperId": {
+        "samples": [
+          "this.helperId"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveHelperReward"
+  },
+  "GEM_REFINE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:24497"
+    ],
+    "params": {
+      "gemId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "ids": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "items": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "attrId": {
+        "samples": [
+          "i"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GEM_REFINE_REPLACE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:24505"
+    ],
+    "params": {
+      "gemId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "EQUIP_PUNCH_DISA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:24510"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "MATERIA_LOCK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:24515"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "MATERIA_FUSION": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:24520"
+    ],
+    "params": {
+      "ids": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GEM_CHOOSE_BOX_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:24525"
+    ],
+    "params": {
+      "itemID": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "cData": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GEM_INLAY": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:24531"
+    ],
+    "params": {
+      "equipId": {
+        "samples": [
+          "parseInt(this.equipInfo.uID)"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "ids": {
+        "samples": [
+          "this.nowCrystalIds"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "EQUIP_PUNCH": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:24564"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "BUY_UFO_REFRESH_TIMES": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:25849"
+    ],
+    "params": {
+      "num": {
+        "samples": [
+          "1"
+        ],
+        "sites": 1,
+        "type": "number",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buyUFORefreshTimes"
+  },
+  "BUY_UFO_GAME_COIN": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:25854"
+    ],
+    "params": {
+      "num": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buyUFOGameCoin"
+  },
+  "REWARD_UFO": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:25862"
+    ],
+    "params": {
+      "packages": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "itemId": {
+        "samples": [
+          "i"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "signCode": {
+        "samples": [
+          "n.md5((2 * this.signId + 37).toString())"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rewardUFO"
+  },
+  "GET_UFO_CATCHER_TASK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:25869"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getUFOCatcherTask"
+  },
+  "REWARD_UFO_CATCHER_TASK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:25872"
+    ],
+    "params": {
+      "coinDailyId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rewardUFOCatcherTask"
+  },
+  "USE_UFO_REFRESH": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:25877"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.useUFOrefresh"
+  },
+  "GET_UFO_CATCHER_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:25880"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getUFOCatcherData"
+  },
+  "DRAGON_TRAINING_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:27418"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_THEMEATIVITIE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:27421"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "TRAINING_LOTTERY": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:27424"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "TRAINING_REFRESH": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:27427"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "TRAINING_TASK_AWAARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:27430"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_SEVEN_DAY_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:27437"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "TRAINING_TASK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:27741"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "EQUIP_INHERIT_SPLIT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:28868"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "attrTypes": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.equipInheritSplit"
+  },
+  "GET_SPRING_GIFT_PERMANENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:30925"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getSpringGiftPermanent"
+  },
+  "BUY_SPRING_GIFT_PERMANENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:30935"
+    ],
+    "params": {
+      "giftId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buySpringGiftPermanent"
+  },
+  "GET_SPRING_EXCHANGE_SHOP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:30953"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getSpringExchangeShop"
+  },
+  "EXCHANGE_SPRING_SHOP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:30963"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.exchangeSpringShop"
+  },
+  "GET_SPRING_CHALLENGE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:30982"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getSpringChallengeData"
+  },
+  "RECEIVE_SPRING_CHALLENGE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:30992"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveSpringChallenge"
+  },
+  "GET_SPRING_CELEBRATE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:31006"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getSpringCelebrateData"
+  },
+  "PUT_SPRING_SPARK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:31024"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.putSpringSpark"
+  },
+  "LIGHT_SPRING_SPARK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:31033"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.lightSpringSpark"
+  },
+  "GETKOICARP_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:31998"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "LOTTERY_KOICARP_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:32002"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_UNLOCK_KOICARP_BOX": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:32009"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "OPTION_KOICARP_WWARDS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:32013"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "index": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GETKOICARP_TASK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:32153"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "FISH_TASK_REWARD_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:32174"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_GOLD_LOTTERY_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:34273"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "GOLD_LOTTERY_EXTRACT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:34276"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_GOOD_AND_EVIL_RETIRE_LIST": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36382"
+    ],
+    "params": {
+      "itemId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getGoodAndEvilRetireList"
+  },
+  "GET_GOOD_AND_EVIL_RETIRE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36394"
+    ],
+    "params": {
+      "time": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getGoodAndEvilRetireData"
+  },
+  "GET_GE_HELP_INFO": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36431"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getGeHelpInfo"
+  },
+  "HELP_DONE_TASK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36455"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "targetId": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.helpDoneTask"
+  },
+  "GET_GOOD_AND_EVIL_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36474"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getGoodAndEvilData"
+  },
+  "GET_GOOD_AND_EVIL_RANK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36484"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getGoodAndEvilRankData"
+  },
+  "BUY_GOOD_AND_EVIL_SHOP_ITEM": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36511"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "itemNum": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buyGoodAndEvilShopItem"
+  },
+  "GET_GOOD_AND_EVIL_SHOP_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36525"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getGoodAndEvilShopData"
+  },
+  "CHECK_TARGET_TASK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36544"
+    ],
+    "params": {
+      "targetId": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "type": {
+        "samples": [
+          "i"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.checkTargetTask"
+  },
+  "BUY_TARGET_TASK_NUM": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36564"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.buyTargetTaskNum"
+  },
+  "RECEIVE_NPC_TARGET_TASK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36587"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveNPCTargetTask"
+  },
+  "REFRESH_GOOD_AND_EVIL_NPC_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36602"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.refreshGoodAndEvilNpcData"
+  },
+  "GET_GOOD_AND_EVIL_NPC_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36613"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getGoodAndEvilNpcData"
+  },
+  "RECEIVE_TARGET_TASK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36666"
+    ],
+    "params": {
+      "targetId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveTargetTask"
+  },
+  "GET_GOOD_AND_EVIL_NOTE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36680"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getGoodAndEvilNoteData"
+  },
+  "REFRESH_GOOD_AND_EVIL_TASK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36691"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.refreshGoodAndEvilTaskData"
+  },
+  "GET_GOOD_AND_EVIL_TASK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36701"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getGoodAndEvilTaskData"
+  },
+  "JOIN_GOOD_OR_EVIL": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:36721"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.joinGoodOrEvil"
+  },
+  "SUBMIT_JIGSAW_PREPARE_ITEM": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:40482"
+    ],
+    "params": {
+      "taskId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "itemMap": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.submitJigsawPrePareItem"
+  },
+  "RECEIVE_JIGSAW_TASK_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:40495"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveJigsawTaskAward"
+  },
+  "RECEIVE_JIGSAW_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:40509"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveJigsawAward"
+  },
+  "GET_JIGSAW_TASK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:40523"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getjigsawTaskData"
+  },
+  "SPECIFY_LIGHT_CELL": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:40535"
+    ],
+    "params": {
+      "ids": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.specifyLightCell"
+  },
+  "RANDOM_LIGHT_CELL": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:40551"
+    ],
+    "params": {
+      "num": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.randomLightCell"
+  },
+  "GET_JIGSAW_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:40568"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getjigsawData"
+  },
+  "GET_JUMP_FUNC_TASK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:42055"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_JUMP_FUNC_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:42284"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "LOTTERY_JUMP_FUNC_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:42289"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "JUMP_FUNC_TASK_AWARD_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:42295"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_LEVEL_BONUS_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:43810"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getLevelBonusData"
+  },
+  "RECEIVE_BONUS_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:43830"
+    ],
+    "params": {
+      "bonusId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveBonusAward"
+  },
+  "RECEIVE_LOTTERY_ACTIVE_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:44118"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveLotteryActiveReward"
+  },
+  "GET_LOTTERY_ACTIVE_REWARD_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:44131"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getLotteryActiveRewardData"
+  },
+  "UP_PUSH_SWITCH": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:44281"
+    ],
+    "params": {
+      "gIdMap": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.upPushSwitch"
+  },
+  "OPEN_RANDOM_BOX": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:44588"
+    ],
+    "params": {
+      "boxId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.openRandomBox"
+  },
+  "WULIN_TREASURE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:44886"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "WULIN_TREASURE_TASKDATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:44889",
+      "F:/BaoZouyxt/tools/scripts3.js:45135"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "LOTTERY_WULIN_TREASURE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:44892"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "WULIN_TREASURE_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:44897"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_STAGE_TREASURE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:46335"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "LOTTERY_STAGE_TREASURE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:46338"
+    ],
+    "params": {
+      "isFree": {
+        "samples": [
+          "t ? 1 : 0"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "CHOOSE_STAGE_TREASURE_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:46343"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "BUY_STAGE_TREASURE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:46348"
+    ],
+    "params": {
+      "num": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "STAGE_TREASURE_TASK_COMPLETE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:46355"
+    ],
+    "params": {
+      "tId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "itemMap": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "DICE_BATTLE_RESULT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:50782"
+    ],
+    "params": {
+      "gTime": {
+        "samples": [
+          "t.totalGameTime.gameTime"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "speed": {
+        "samples": [
+          "t.hungerConsumingSpeed.finalValue"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hgtimes": {
+        "samples": [
+          "t.numStuffed"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.diceBattleResult"
+  },
+  "GET_DICE_ACTIVE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:50785"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getDice"
+  },
+  "FLING_DICE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51279",
+      "F:/BaoZouyxt/tools/scripts3.js:51366"
+    ],
+    "params": {
+      "isAutoDice": {
+        "samples": [
+          "1",
+          "2"
+        ],
+        "sites": 2,
+        "type": "number",
+        "optional": false
+      },
+      "stepCount": {
+        "samples": [
+          "0",
+          "t"
+        ],
+        "sites": 2,
+        "type": "mixed",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.flingDice"
+  },
+  "CHOOSE_DICE_BOXITEM": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51294"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.chooseDiceBoxItem"
+  },
+  "DICE_CHECKEXTRA_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51299"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "this.currentGridIndex"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.diceCheckLargeExtra"
+  },
+  "GET_DICE_SHOP_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51305"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getDiceShops"
+  },
+  "BUY_DICE_SHOP_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51309"
+    ],
+    "params": {
+      "itemIndex": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buyDiceShop"
+  },
+  "GOLD_SHOP_REFRESHH_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51322"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.goldShopRefresh"
+  },
+  "GET_EXCHANGE_ALL_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51327"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getDiceExchangeShops"
+  },
+  "GET_EXCHANGE_ITEM_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51332"
+    ],
+    "params": {
+      "itemId": {
+        "samples": [
+          "t[0]"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getExchangeItemData"
+  },
+  "EXCHANGE_ITEM_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51337"
+    ],
+    "params": {
+      "itemId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "itemNum": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.diceExchangeItem"
+  },
+  "EXCHANGE_GIFTCOIN_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51343"
+    ],
+    "params": {
+      "num": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.exchangeGiftCoin"
+  },
+  "TRIGGER_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51348"
+    ],
+    "params": {
+      "isUseCard": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.triggerEvent"
+  },
+  "HIRE_BAG_WEIGHT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51353"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.hireBagWeight"
+  },
+  "USE_CARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51357"
+    ],
+    "params": {
+      "cardId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.useCard"
+  },
+  "MILL_EARNINGS_OBTAIN_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51391"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.millEarningsObtain"
+  },
+  "CELL_ARRIVE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51493",
+      "F:/BaoZouyxt/tools/scripts3.js:51511",
+      "F:/BaoZouyxt/tools/scripts3.js:51872",
+      "F:/BaoZouyxt/tools/scripts3.js:51878"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "this.currentGridIndex",
+          "a.currentGridIndex",
+          "e.currentGridIndex"
+        ],
+        "sites": 4,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.cellArrive"
+  },
+  "CLOSE_CELL_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51514",
+      "F:/BaoZouyxt/tools/scripts3.js:51874"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "a.currentGridIndex",
+          "e.currentGridIndex"
+        ],
+        "sites": 2,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.closeCellEvent"
+  },
+  "TRIGGER_CANDY": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51565"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.triggerCandy"
+  },
+  "ROBOT_MOVE_ACTION": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51910"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.robotMoveAction"
+  },
+  "MILL_BUILD_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51932"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "p.currentGridIndex"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.millBuild"
+  },
+  "MILL_UPGRADE_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51934"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "p.currentGridIndex"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.millUpgrade"
+  },
+  "DICE_BUY_PLACE_GOODS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51958"
+    ],
+    "params": {
+      "goodsId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.diceBuyPlaceGoods"
+  },
+  "DICE_SELL_PLACE_GOODS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:51965"
+    ],
+    "params": {
+      "goodsId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.diceSellPlaceGoods"
+  },
+  "GET_MONOLOP_RANK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:52021"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": null
+  },
+  "GET_MYSTERY_WISH_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:53924"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_MYSTERY_WISH_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:53927"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "BUY_MYSTERY_WISH_ITEM": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:53930"
+    ],
+    "params": {
+      "num": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "MYSTERY_WISH_TASK_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:53935"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "NEW_OPTIONAL_BUY_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:54440"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "l.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "chooseid": {
+        "samples": [
+          "this.configid"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "chooseArr": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buyOptionalGift"
+  },
+  "BOMB_NIAN_SHOU": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:55523"
+    ],
+    "params": {
+      "itemId": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "type": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_NIAN_SHOU_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:55529"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_NIAN_TASK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:55532"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "NIAN_TASK_REFRESH": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:55535"
+    ],
+    "params": {
+      "taskId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "NIAN_TASK_COMPLETE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:55540"
+    ],
+    "params": {
+      "taskId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "SUBMIT_NIAN_ITEM": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:55545"
+    ],
+    "params": {
+      "taskId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "itemMap": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "equipMap": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "UNLOCK_FRIEND_PARTNER": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58430"
+    ],
+    "params": {
+      "fpId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "PARTNERT_BREAK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58436"
+    ],
+    "params": {
+      "pId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "FINISH_PARTNER_TASK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58441"
+    ],
+    "params": {
+      "pId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "taskId": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_FRIEND_PARTNER": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58447"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "CHANGE_PARTNER_STATE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58451"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "UP_FRIEND_PARTNER_SKILL": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58469"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "l.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "fpId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "type": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "skillIds": {
+        "samples": [
+          "[ o ]"
+        ],
+        "sites": 1,
+        "type": "array",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "UP_FRIEND_PARTNER_FOLLOW": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58485"
+    ],
+    "params": {
+      "fpId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "FRIEND_PARTNER_DISPATCH": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58490"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": null
+  },
+  "FRIEND_PARTNER_DISPATCH_CLEAR": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58493"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": null
+  },
+  "FRIEND_PARTNER_TRAINING": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58496"
+    ],
+    "params": {
+      "pId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "FRIEND_PARTNER_END_TRAINING": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58509"
+    ],
+    "params": {
+      "pId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "FRIEND_PARTNER_TRAINING_USE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58521"
+    ],
+    "params": {
+      "pId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "skillID": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "isReplace": {
+        "samples": [
+          "i"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "PARTNERT_GO_FIGHT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58553"
+    ],
+    "params": {
+      "fpId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "PARTNER_HOME_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58835"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "SET_FRIEDN_SHOW_EVENT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58853"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "state": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_MARRY_HAPPINESS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:58863"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_TREE_PLANTING": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:60439"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getTreePlanting"
+  },
+  "PLANT_TREE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:60452"
+    ],
+    "params": {
+      "field": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "id": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.plantTree"
+  },
+  "TENDING_TREES": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:60465"
+    ],
+    "params": {
+      "field": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "type": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "count": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.tendingTrees"
+  },
+  "TREES_RECEIVE_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:60478"
+    ],
+    "params": {
+      "field": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.treesReceiveReward"
+  },
+  "REQ_POP_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:60915"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "u.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.getEjectGift"
+  },
+  "REQ_LOOK_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:60923"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "u.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "giftId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.lookEjectGift"
+  },
+  "REQ_TRGGER_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:60929"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "u.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.checkTrggerEjectGift"
+  },
+  "REQ_BUY_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:60938"
+    ],
+    "params": {
+      "roleID": {
+        "samples": [
+          "u.RoleBaseInfo.roleID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "giftId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "giftGear": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.buyEjectGift"
+  },
+  "OPEN_CHAT_PACKET_RED": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:62506"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.openChatPacketRed"
+  },
+  "GET_PACKET_RANK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:62554"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getPacketRankData"
+  },
+  "GET_PACKET_DETAIL_INFO": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:62581"
+    ],
+    "params": {
+      "packetId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getPacketDetailInfo"
+  },
+  "GET_PACKET_HISTORY": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:62603"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getPacketHistory"
+  },
+  "RECEIVE_PACKET": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:62627"
+    ],
+    "params": {
+      "packetId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receivePacket"
+  },
+  "GET_PACKET_INFO": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:62644"
+    ],
+    "params": {
+      "packetId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getPacketInfo"
+  },
+  "GET_PACKET_REWARD_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:62666"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getPacketRewardData"
+  },
+  "RECEIVE_PACKET_REWARD_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:62679"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.receivePacketRewardReward"
+  },
+  "SEND_RED_PACKET": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:62690"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.sendRedPacket"
+  },
+  "GET_RETURN_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:63595"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getReturnGift"
+  },
+  "RECEIVE_RETURN_GIFT_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:63598"
+    ],
+    "params": {
+      "giftId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveReturnGiftAward"
+  },
+  "REFRESH_RETURN_GIFT_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:63603"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.refreshReturnGiftAward"
+  },
+  "GET_RETURN_SEVEN_DAY_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:63606"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getReturnSevenDayData"
+  },
+  "GET_RETURN_TASK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:63609"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getReturnTaskData"
+  },
+  "RETURN_SEVEN_DAYS_AWARDS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:63612"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.returnSevenDaysAwards"
+  },
+  "RECEIVE_RETURN_DAILY_TASK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:63615"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveReturnDailyTask"
+  },
+  "RECEIVE_LIVENESS_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:63620"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveLivenessAward"
+  },
+  "RG_CHOOSE_USEITEM_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:70941"
+    ],
+    "params": {
+      "itemID": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "cData": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "ROGUE_LEAVE_HIDE_FLOOR": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:70961"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.rogueLeaveHideFloor"
+  },
+  "ROGUE_FLOOR_BUFF": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:70991"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rogueFloorBuff"
+  },
+  "USE_TREASURE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71002"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.useTreasure"
+  },
+  "ROGUE_LOOK_OTHER": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71010"
+    ],
+    "params": {
+      "otherID": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rgLookOther"
+  },
+  "ROGUE_TIANJIESHI_SELL_STORE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71022"
+    ],
+    "params": {
+      "shopId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rogueTianjieshiSellStore"
+  },
+  "ROGUE_EXCHANGE_GOODS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71034"
+    ],
+    "params": {
+      "shopId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "books": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "coins": {
+        "samples": [
+          "o"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hp": {
+        "samples": [
+          "this.entity.hp.remaining"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hplmt": {
+        "samples": [
+          "this.entity.hp.limit"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hpfinalValue": {
+        "samples": [
+          "this.entity.hp.finalValue"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rogueExchangeGoods"
+  },
+  "GET_ROGUE_EXCHANGE_GOODS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71059"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.getRogueExchangeGoods"
+  },
+  "ROGUE_SELL_STORE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71089"
+    ],
+    "params": {
+      "shopId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rogueSellStore"
+  },
+  "ROGUE_GATHER_ITEMS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71099"
+    ],
+    "params": {
+      "hp": {
+        "samples": [
+          "this.entity.hp.remaining"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hplmt": {
+        "samples": [
+          "this.entity.hp.limit"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hpfinalValue": {
+        "samples": [
+          "this.entity.hp.finalValue"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rogueGatherItems"
+  },
+  "ROGUE_GOLD_STORE_REFRESH": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71115"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.rogueGoldStoreRefresh"
+  },
+  "ROGUE_BUY_GOLD_STORE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71125"
+    ],
+    "params": {
+      "shopId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rogueBuyGoldStore"
+  },
+  "ROGUE_STORE_REFRESH": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71139"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.rogueStoreRefresh"
+  },
+  "BUY_AWARDS_COUNT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71149"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.buyAwardsCount"
+  },
+  "ROGUE_REFRESH_VALUABLES": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71158"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.rogueRefreshValuables"
+  },
+  "TEMPORARILY_ROGUE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71168"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.temporarilyRogue"
+  },
+  "RG_EQUIP_UPGRADE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71184"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hpLimit": {
+        "samples": [
+          "this.entity.hp.limit"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hpRemaining": {
+        "samples": [
+          "this.entity.hp.remaining"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hpfinalValue": {
+        "samples": [
+          "this.entity.hp.finalValue"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.rgEquipUpgrade"
+  },
+  "RG_SHOP_BY_ITEM": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71193"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "itemNum": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rgShopByItem"
+  },
+  "RG_GET_SHOP_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71221"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.rgGetShopData"
+  },
+  "ROGUE_OUTFITTING": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71242"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rogueOutfitting"
+  },
+  "ROGUE_EVENT_OPTION": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71260"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "curHp": {
+        "samples": [
+          "e.hp.remaining"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "curMp": {
+        "samples": [
+          "e.mp.remaining"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hpfinalValue": {
+        "samples": [
+          "e.hp.finalValue"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "maxmpLimit": {
+        "samples": [
+          "e.mp.limit"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "maxhpLimit": {
+        "samples": [
+          "e.hp.limit"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rogueEventOption"
+  },
+  "ROGUE_STORE_TRUNK_END": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71294"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.rogueStoreTrunkEnd"
+  },
+  "ROGUE_BUY_STORE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71313"
+    ],
+    "params": {
+      "shopId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hp": {
+        "samples": [
+          "this.entity.hp.remaining"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hplmt": {
+        "samples": [
+          "this.entity.hp.limit"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hpfinalValue": {
+        "samples": [
+          "this.entity.hp.finalValue"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rogueBuyStore"
+  },
+  "LAST_TIME_ROGUE_EXPLORE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71418"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.lastTimeRogueExplore"
+  },
+  "END_ROGUE_EXPLORE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71434"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.endRogueExplore"
+  },
+  "START_ROGUE_EXPLORE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71462"
+    ],
+    "params": {
+      "levelId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.startRogueExplore"
+  },
+  "GET_ROGUE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71481"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getRogueData"
+  },
+  "ROGUE_INIT_OPTION": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71515"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "optionId": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.rogueInitDataOption"
+  },
+  "ROGUE_START_TURN_REFRESH": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71551"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.rogueStartTurnRefresh"
+  },
+  "ROGUE_ENTER_FLOOR": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71606"
+    ],
+    "params": {
+      "pointId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "isHide": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rogueEnterFloor"
+  },
+  "ROGUE_GET_TALENT_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71612"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.rgGetTalentData"
+  },
+  "ROGUE_TALENT_UPLV": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71632"
+    ],
+    "params": {
+      "talentId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rgTalentUpLv"
+  },
+  "ROGUE_TALENT_RESET": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71644"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.rgTalentResetting"
+  },
+  "ROGUE_HONOR_WEEK_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71653"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.rgHonorWeekReward"
+  },
+  "ROGUE_GET_HONOR_RED": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71662"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.rgGetHonorRed"
+  },
+  "ROGUE_GET_RANK_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71668"
+    ],
+    "params": {
+      "seasonId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rgHonorRankReward"
+  },
+  "ROGUE_GET_HONOR": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71684"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.rgGetHonorData"
+  },
+  "ROGUE_HONOR_RANK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71700"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.rgHonorRankData"
+  },
+  "ROGUE_RECEIVE_HONOR": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71715"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.rgHonorLvReward"
+  },
+  "ROGUE_FIND_OTHER_ID": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71729"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.rogueFindFriendByID"
+  },
+  "ROGUE_SEASON_TOP_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:71987"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.rgSeasonTop3Data"
+  },
+  "ROGUE_SYNC_WAIT_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:74029"
+    ],
+    "params": {
+      "waitTr": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "curHp": {
+        "samples": [
+          "e.hp.remaining"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "curMp": {
+        "samples": [
+          "e.mp.remaining"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "maxhpLimit": {
+        "samples": [
+          "e.hp.limit"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hpfinalValue": {
+        "samples": [
+          "e.hp.finalValue"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.rgSycnWaitData"
+  },
+  "ROGUE_EQUIP_WEAPON": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:74043"
+    ],
+    "params": {
+      "EquipmentType": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "itemID": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hp": {
+        "samples": [
+          "o.hp.remaining"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hplmt": {
+        "samples": [
+          "o.hp.limit"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "gTime": {
+        "samples": [
+          "o.totalGameTime.gameTime"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "mp": {
+        "samples": [
+          "o.mp.remaining"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hpfinVal": {
+        "samples": [
+          "o.hp.finalValue"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.rgEquipWeapon"
+  },
+  "ROGUE_CHANGE_SKNACK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:74047"
+    ],
+    "params": {
+      "skillId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "knackIds": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.rgChangeSkillKnack"
+  },
+  "ROGUE_USE_ITEM": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:74109"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.rgUseItem"
+  },
+  "ROGUE_EQUIP_SKILL": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:74133"
+    ],
+    "params": {
+      "skillID": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "skillType": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hp": {
+        "samples": [
+          "o.hp.remaining"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "hplmt": {
+        "samples": [
+          "o.hp.limit"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.rgEquipSkill"
+  },
+  "SET_PLAYER_CARD_MASTER": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:77246"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "RESOLVE_KNACK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:81162"
+    ],
+    "params": {
+      "knack": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.resolveKnack"
+  },
+  "BATCH_RESOLVE_KNACK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:81167"
+    ],
+    "params": {
+      "knackData": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.batchResolveKnack"
+  },
+  "CHANGE_SKILL_KNACK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:81173"
+    ],
+    "params": {
+      "skillId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "knackIds": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.changeSkillKnack"
+  },
+  "SKILL_GRASP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:81179"
+    ],
+    "params": {
+      "skillId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.skillGrasp"
+  },
+  "GET_SKILL_GRASP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:81184"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getSkillGrasp"
+  },
+  "BUY_SKILL_SKIN_ACTIVE_SHOP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:82810"
+    ],
+    "params": {
+      "ids": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buySkillSkinActiveShop"
+  },
+  "GET_SKILL_SKIN_ACTIVE_SHOP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:82827"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getSkillSkinActiveShop"
+  },
+  "REMOVE_SKILL_SKIN": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:82838"
+    ],
+    "params": {
+      "skillId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.removeSkillSkin"
+  },
+  "EQUIP_SKILL_SKIN": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:82849"
+    ],
+    "params": {
+      "skillId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "id": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.equipSkillSkin"
+  },
+  "BUY_SKILL_SKIN_SHOP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:82861"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buySkillSkinShop"
+  },
+  "REFRESH_SKILL_SKIN_SHOP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:82883"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.refreshSkillSkinShop"
+  },
+  "GET_SKILL_SKIN_SHOP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:82894"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getSkillSkinShop"
+  },
+  "GET_TRANS_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:85369"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "BUY_TRANS_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:85372"
+    ],
+    "params": {
+      "giftId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_SPRING_SWORD_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:85756"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "EXCHANGE_SPRING_SWORD_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:85771"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_SPRING_SWORD_GIFT_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:86088"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "BUY_SPRING_SWORD_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:86098"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "num": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_SPRING_SWORD_TASK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:86317"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "SPRING_SWORD_TASK_AWARDS": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:86339"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_COPY_BOOK_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:87306"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getCopyBookData"
+  },
+  "BUY_COPY_BOOK_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:87309"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.buyCopyBookGift"
+  },
+  "REWARD_BOOK_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:87314"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveCopyBookGiftAward"
+  },
+  "GET_TORCH_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:88879"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "TORCH_TASK_COMPLETE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:88886"
+    ],
+    "params": {
+      "taskId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": null
+  },
+  "GET_SERVER_GIFT_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:89274"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": null
+  },
+  "BUY_SERVER_GIFT": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:89277"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "RECEIVE_SERVER_GIFT_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:89282"
+    ],
+    "params": {
+      "id": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "index": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_SKILL_TRICK_EXCHANGE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:89723"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getSkillTrickExchangeData"
+  },
+  "REFRESH_SKILL_TRICK_EXCHANGE_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:89740"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.refreshSkillTrickExchangeData"
+  },
+  "SKILL_TRICK_EXCHANGE_INDEX": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:89752"
+    ],
+    "params": {
+      "index": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.skillTrickExchangeIndex"
+  },
+  "SKILL_TRICK_SET_ID": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:89787"
+    ],
+    "params": {
+      "skillId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "RECEIVE_ACHIEVEMENT_REWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:90023"
+    ],
+    "params": {
+      "skillId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.receiveAchievementReward"
+  },
+  "GET_KNACK_LOTTERY_HISTORY": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:90035"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getKnackLotteryHistory"
+  },
+  "GET_KNACK_LOTTERY": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:90047"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "User.getKnackLottery"
+  },
+  "KNACK_LOTTERY": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:90078"
+    ],
+    "params": {
+      "lotteryId": {
+        "samples": [
+          "this.lotteryId"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "lotteryType": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "skillId": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.knackLottery"
+  },
+  "OPTIONAL_SKILL_UP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:90104"
+    ],
+    "params": {
+      "lotteryId": {
+        "samples": [
+          "this.lotteryId"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "upId": {
+        "samples": [
+          "t + 1"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "skillId": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": null
+  },
+  "GET_SUPPORT_PREPARE_CAMP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:92745"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getSchoolSupportPrePareCamp"
+  },
+  "JOIN_PREPARE_CAMP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:92748"
+    ],
+    "params": {
+      "geSchool": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.joinSchoolPrePareCamp"
+  },
+  "SUPPORT_PREPARE_CAMP": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:92750"
+    ],
+    "params": {
+      "geSchool": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.joinSchoolSupportPrePareCamp"
+  },
+  "GETWEAPONSKINDATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:95393"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": null
+  },
+  "UNLOCK_WEAPONSKIN": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:95397"
+    ],
+    "params": {
+      "skinId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "EQUIPWEAPONSKIN": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:95403"
+    ],
+    "params": {
+      "skinId": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "equipId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "CLEAR_WEAPON_SKIN": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:95410"
+    ],
+    "params": {
+      "equipId": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": null
+  },
+  "GET_OPEN_ACTIVE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:95642"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getOpenActive"
+  },
+  "GET_SIGN_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:95645"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getSignAward"
+  },
+  "GET_PRAY_SIGN_ACTIVR": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:95663"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getPraySignActive"
+  },
+  "GET_PRAY_SIGN_AWARD": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:95666"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getPraySignAward"
+  },
+  "JOIN_WULIN_PK_SERVER": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:95959"
+    ],
+    "params": {
+      "avgPower": {
+        "samples": [
+          "R.SkillTable.getMySkEvalLv()"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "linkId": {
+        "samples": [
+          "k.WebSocketModel.linkData.linkID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "inser": {
+        "samples": [
+          "S.SServerFightModel.curSeverID"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "channel": {
+        "samples": [
+          "cc.sys.isNative ? 1 : 2"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "type": {
+        "samples": [
+          "this.matchType"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.jionWuLinPkServer"
+  },
+  "GET_WULIN_ARENA_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:95962"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "User.getwulinArenaData"
+  },
+  "UPLOAD_PLAYER_ARENA_DATA": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:95977"
+    ],
+    "params": {
+      "skillments": {
+        "samples": [
+          "this.curSkills"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "equipments": {
+        "samples": [
+          "this.curEquips"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "skillKnack": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      },
+      "type": {
+        "samples": [
+          "this.matchType"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "viaVar": 1,
+    "action": "User.uploadPlayerArenaData"
+  },
+  "REQ_WULIN_ASSEMBLY_MATCHTIME": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:96195"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "see_wu_lin_assembly_match_time"
+  },
+  "REQ_WULIN_ASSEMBLY_INFO": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:96496"
+    ],
+    "params": {},
+    "dynamic": 0,
+    "action": "see_wu_lin_assembly_apply_info"
+  },
+  "REQ_WULIN_SCORE_RANK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:96503"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "see_wu_lin_assembly_score_rank"
+  },
+  "REQ_WULIN_ASSEMBLY_ELIMINATE": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:96510"
+    ],
+    "params": {},
+    "dynamic": 1,
+    "action": "see_wu_lin_assembly_eliminate"
+  },
+  "WULIN_ASSEMBLY_APPLY_REQ": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:96518"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "e"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.wuLinAssemblyApplyReq"
+  },
+  "CANCLE_WULIN_PK": {
+    "sites": [
+      "F:/BaoZouyxt/tools/scripts3.js:96523"
+    ],
+    "params": {
+      "type": {
+        "samples": [
+          "t"
+        ],
+        "sites": 1,
+        "type": "expr",
+        "optional": false
+      }
+    },
+    "dynamic": 0,
+    "action": "User.cancelWulinPk"
+  },
+  "__unresolved": [
+    {
+      "site": "F:/BaoZouyxt/tools/scripts3.js:92755",
+      "first": "this.myHttpConstArr.receiveWages[this.openActiveId]"
+    },
+    {
+      "site": "F:/BaoZouyxt/tools/scripts3.js:92777",
+      "first": "this.myHttpConstArr.submitTask[this.openActiveId]"
+    },
+    {
+      "site": "F:/BaoZouyxt/tools/scripts3.js:92804",
+      "first": "this.myHttpConstArr.refreshTask[this.openActiveId]"
+    },
+    {
+      "site": "F:/BaoZouyxt/tools/scripts3.js:92820",
+      "first": "this.myHttpConstArr.completeTask[this.openActiveId]"
+    },
+    {
+      "site": "F:/BaoZouyxt/tools/scripts3.js:92837",
+      "first": "this.myHttpConstArr.buyTime[this.openActiveId]"
+    },
+    {
+      "site": "F:/BaoZouyxt/tools/scripts3.js:92852",
+      "first": "this.myHttpConstArr.getData[this.openActiveId]"
+    }
+  ]
+}

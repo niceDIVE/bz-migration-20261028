@@ -1,0 +1,41 @@
+# User.checkUploadAttackDamge   (HttpConst.UPLOAD_WB_DMG)
+
+## 请求点 19704: p.NetMgr.http.sendRequest(c.HttpConst.UPLOAD_WB_DMG, r);
+   19696: bossHp: this.bossHp,
+   19697: bossQgLv: d.SkillTable.getMaxQgLv(),
+   19698: itemSkill: this.itemSkills
+   19699: };
+   19700: y.playerInfo.entity.hp.limit = n.hp.limit;
+   19701: y.playerInfo.entity.hp.remaining = n.hp.remaining;
+   19702: y.playerInfo.entity.mp.remaining = n.mp.remaining;
+   19703: g.MessageCenter.dispatch(m.EvName.UPLOAD_WB_DMG_DATA, i);
+
+## 注册点 145516: a.MessageCenter.on(s.HttpConst.UPLOAD_WB_DMG, this.onUploadDmg, this);
+
+## 处理函数 onUploadDmg (145542-145567)
+145542: e.prototype.onUploadDmg = function(e, o) {
+145543: if (2 == o.eRet) {
+145544: c.default.show(r.getText(880));
+145545: this.end();
+145546: } else if (3 == o.eRet) {
+145547: if (h.RoleBaseInfo.roleID == o.killBoss) if (this.win) c.default.show(r.getText(882)); else {
+145548: var i = n.getItem(this.bossID, "npc");
+145549: c.default.show(r.getText(881).replace(/\[1\]/, r.getText(i.NpcName)));
+145550: } else c.default.show(r.getText(878));
+145551: var a = n.getItem(this.bossID, "npc"), s = r.getText(864).replace(/\[1\]/, r.getText(a.NpcName)).replace(/\[2\]/, o.killBossName);
+145552: _.bulletTitleMgr.show(s, 3);
+145553: this.end();
+145554: } else if (1 == o.eRet) {
+145555: this.bossHpMax = o.bossMaxHP;
+145556: this.bossHp = o.bossCurHP;
+145557: this.nxtAvailableTs = u.TimeMgr.getSTimestamp() + o.CDTime;
+145558: isNaN(this.nxtAvailableTs) && (this.nxtAvailableTs = 0);
+145559: this.checkMapChange();
+145560: } else c.default.show(r.getText(933));
+145561: o.hasOwnProperty("maxPotentialLimit") && o.maxPotentialLimit && c.default.show(r.getText(6016943));
+145562: Promise.resolve().then(function() {
+145563: return t("./RoleOtherInfo");
+145564: }).then(function(t) {
+145565: t.RoleOtherInfo.setAllHpAndMp(o);
+145566: });
+145567: };

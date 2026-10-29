@@ -1,0 +1,26 @@
+# User.EndSaveNpc   (HttpConst.END_SAVE_NPC)
+
+## 注册点 90056: r.MessageCenter.on(a.HttpConst.END_SAVE_NPC, this.callBackEndNpc, this);
+
+## 请求点 90253: p.NetMgr.http.sendRequest(a.HttpConst.END_SAVE_NPC, e);
+   90245: };
+   90246: t.prototype.reqEndHealNpc = function(t) {
+   90247: var e = {
+   90248: speed: h.UserModel.entity.hungerConsumingSpeed.finalValue,
+   90249: hglmt: Math.floor(h.UserModel.entity.hunger.finalValue),
+   90250: flag: t
+   90251: };
+   90252: this.hearTag = t;
+
+## 处理函数 callBackEndNpc (90101-90111)
+ 90101: t.prototype.callBackEndNpc = function(t, e) {
+ 90102: if (1 == e.eRet) {
+ 90103: y.FishingModel.setAutoStartHung(e);
+ 90104: y.FishingModel.getAutoHungData();
+ 90105: var n = i.getItem(this.currentNpcId, "npc");
+ 90106: if (4 == n.sex) {
+ 90107: 1 == this.hearTag && v.HomePlantModel.setDogCurState(1, 0);
+ 90108: e.hasOwnProperty("endTime") && v.HomePlantModel.setDogCurTime(e.endTime);
+ 90109: this.setDogHangState(!1);
+ 90110: return;
+ 90111: }

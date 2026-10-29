@@ -1,0 +1,99 @@
+# User.dispossHomeEvent  (HttpConst.DISPOSS_HOME_EVENT)
+# 出现 2 处
+
+ 57973: });
+ 57974: r.MessageCenter.dispatch(c.EvName.REMOVE_SEARCH_HOME_UI);
+ 57975: }
+ 57976: }
+ 57977: } else -1 == o.eRet && a.default.show(n.getText(3320));
+ 57978: }, this);
+ 57979: r.MessageCenter.on(s.HttpConst.DISPOSS_HOME_EVENT, function(t, o) {
+ 57980: if (o.hasOwnProperty("crop")) {
+ 57981: var i = {
+ 57982: m: {},
+ 57983: s: 1,
+ 57984: b: {}
+ 57985: };
+ 57986: o.crop.hasOwnProperty("m") && (i.m = o.crop.m);
+ 57987: o.crop.hasOwnProperty("b") && (i.b = o.crop.b);
+ 57988: e.soilArr[o.idx] = i;
+ 57989: var s = {
+ 57990: m: {},
+ 57991: s: 1,
+ 57992: landId: 0,
+ 57993: b: {}
+ 57994: };
+ 57995: s.m = i.m;
+ 57996: s.b = i.b;
+ 57997: s.landId = o.idx;
+ 57998: r.MessageCenter.dispatch(c.EvName.SEED_CROP_EVENT, s);
+ 57999: var l = {};
+ 58000: o.hasOwnProperty("exp") && o.exp > 0 && (e.plantSeedData.plantExp = o.exp);
+ 58001: o.hasOwnProperty("aExp") && (l[7] = o.aExp);
+ 58002: if (o.hasOwnProperty("rewardArray")) for (var p in o.rewardArray) l[p] = o.rewardArray[p];
+ 58003: I.MadUtilsTS.isNullObj(l) ? 0 == o.flag && a.default.show(n.getText(3268)) : m.default.addShowRewardUI1(l, 0);
+ 58004: }
+ 58005: 2 == o.eRet ? a.default.show(n.getText(3268)) : 3 == o.eRet ? a.default.show(n.getText(3317)) : -1 == o.eRet && a.default.show(n.getText(3320));
+ 58006: }, this);
+ 58007: r.MessageCenter.on(s.HttpConst.STEAL_CROP_EVENT, function(t, o) {
+ 58008: if (1 == o.eRet || 3 == o.eRet || 4 == o.eRet) {
+ 58009: var s = {
+ 58010: m: {},
+ 58011: s: 1,
+ 58012: b: {}
+ 58013: };
+ 58014: o.crop.hasOwnProperty("m") && (s.m = o.crop.m);
+ 58015: o.crop.hasOwnProperty("b") ? s.b = o.crop.b : delete s.b;
+ 58016: e.soilArr[o.idx] = s;
+ 58017: var l = {
+ 58018: m: {},
+ 58019: s: 1,
+---
+ 58209: e.prototype.reqDispossHomeEvent = function(t) {
+ 58210: var e = {
+ 58211: fid: 0,
+ 58212: idx: t
+ 58213: };
+ 58214: this.curFriendId > 0 ? e.fid = this.curFriendId : delete e.fid;
+ 58215: v.NetMgr.http.sendRequest(s.HttpConst.DISPOSS_HOME_EVENT, e);
+ 58216: };
+ 58217: e.prototype.reqStealCrop = function(t) {
+ 58218: v.NetMgr.http.sendRequest(s.HttpConst.STEAL_CROP_EVENT, {
+ 58219: fid: this.curFriendId,
+ 58220: idx: t
+ 58221: });
+ 58222: };
+ 58223: e.prototype.reqLookDogLog = function(t) {
+ 58224: v.NetMgr.http.sendRequest(s.HttpConst.LOOK_DOG_LOG, {
+ 58225: type: t
+ 58226: });
+ 58227: };
+ 58228: e.prototype.reqFeedDog = function(t, e) {
+ 58229: v.NetMgr.http.sendRequest(s.HttpConst.FEED_DOG, {
+ 58230: propID: t,
+ 58231: propnum: e
+ 58232: });
+ 58233: };
+ 58234: e.prototype.reqResultFight = function(t) {
+ 58235: var e = h.UserModel.entity, o = {
+ 58236: fID: this.curFriendId,
+ 58237: dogID: this.dogData.id,
+ 58238: gTime: e.totalGameTime.gameTime,
+ 58239: hg: e.hunger.remaining,
+ 58240: hgtimes: e.numStuffed,
+ 58241: win: t
+ 58242: };
+ 58243: v.NetMgr.http.sendRequest(s.HttpConst.DOG_BATTLE_RESULT, o);
+ 58244: };
+ 58245: e.prototype.updateHomeNewData = function() {
+ 58246: this.typeId > 0 ? this.reqUpdateFriendHome(this.curFriendId) : this.reqHomeAllData();
+ 58247: };
+ 58248: e.prototype.openPlantEvent = function(t) {
+ 58249: var e = this, o = this.soilArr[t], r = this;
+ 58250: if (0 == this.typeId) {
+ 58251: if (o.hasOwnProperty("m") && o.m.hasOwnProperty("s")) {
+ 58252: var s = o.m;
+ 58253: switch (s.s) {
+ 58254: case 0:
+ 58255: 1 == this.cropControlState ? a.default.show(n.getText(3285)) : 2 == this.cropControlState ? a.default.show(n.getText(3177)) : this.reqCleanCrop(t);
+---

@@ -1,0 +1,58 @@
+# User.getFinishTaskAward   (HttpConst.FINISH_TASK)
+
+## 注册点 133216: r.MessageCenter.on(s.HttpConst.FINISH_TASK, this.finishTaskCallBack, this);
+
+## 请求点 133849: }) : p.NetMgr.http.sendReqWithMask(s.HttpConst.FINISH_TASK, o);
+   133841: 3 == i.getItem(o.taskID, "tasknew").TaskType && f.GSceneMgr.mode == f.GSceneMgr.modeMap.rogue ? Promise.resolve().then(function() {
+   133842: return t("../../scripts3/model3/vos/RogueRoleInfo");
+   133843: }).then(function(t) {
+   133844: var e = t.RogueRoleInfo.entity;
+   133845: o.hp = e.hp.remaining;
+   133846: o.hplmt = e.hp.limit;
+   133847: o.hpfinalValue = e.hp.finalValue;
+   133848: p.NetMgr.http.sendReqWithMask(s.HttpConst.ROGUE_FINISHTASK_REWARD, o);
+
+## 请求点 133857: p.NetMgr.http.sendReqWithMask(s.HttpConst.FINISH_TASK, i);
+   133849: }) : p.NetMgr.http.sendReqWithMask(s.HttpConst.FINISH_TASK, o);
+   133850: }
+   133851: };
+   133852: e.prototype.judgeYearTask = function(t, e, o, i) {
+   133853: if (t == e) this.checkSpecialTask(o, i); else {
+   133854: this.taskSelectId = t;
+   133855: i.choose = t;
+   133856: cc.log("完成任务ID == " + i.taskID);
+
+## 处理函数 finishTaskCallBack (133383-133415)
+133383: e.prototype.finishTaskCallBack = function(e, o) {
+133384: var u = this;
+133385: if (1 == o.eRet) {
+133386: Promise.resolve().then(function() {
+133387: return t("../../scripts3/model3/RogueModel");
+133388: }).then(function(t) {
+133389: t.RogueModel.checkUpdateEquips(o);
+133390: });
+133391: o.hasOwnProperty("triggerBoxs") && Promise.resolve().then(function() {
+133392: return t("../../scripts3/model3/MapBoxModel");
+133393: }).then(function(t) {
+133394: t.MapBoxModel.addBox(o.triggerBoxs);
+133395: });
+133396: o.hasOwnProperty("clearBoxs") && Promise.resolve().then(function() {
+133397: return t("../../scripts3/model3/MapBoxModel");
+133398: }).then(function(t) {
+133399: t.MapBoxModel.removeBox(o.clearBoxs);
+133400: });
+133401: this.setTasksChecked([ this.finishTaskObj.taskObj.TaskID ]);
+133402: this.finishTaskAddLikeness(this.finishTaskObj.taskObj.TaskID);
+133403: b.default.operationalTasks(2, this.finishTaskObj, this.taskSelectId);
+133404: var f = this;
+133405: if (A.MadUtilsTS.isNullObj(o.rewardArray) && A.MadUtilsTS.isNullObj(o.equipObj)) {
+133406: C.GuideMgr.enterFirstGuide(this.finishTaskObj.taskObj.TaskID, 0);
+133407: this.taskFinishDataFunc();
+133408: this.taskRewardCloseEvent(o);
+133409: } else {
+133410: var y = this.finishTaskObj.taskObj.TaskID, _ = {};
+133411: if (o.contribution) {
+133412: var S = o.contribution - c.RoleBaseInfo.goodEvilContribution;
+133413: S > 0 && (_[c.RoleBaseInfo.goodEvilCamp == c.RoleBaseInfo.goodCamp ? 6001811 : 6001812] = S);
+133414: c.RoleBaseInfo.goodEvilContribution = o.contribution;
+133415: }

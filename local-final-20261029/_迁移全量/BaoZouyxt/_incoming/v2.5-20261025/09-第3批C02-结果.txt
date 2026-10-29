@@ -1,0 +1,116 @@
+第 3 批 C02〔任务主线〕结果（2026-10-25）
+
+范围：relations.md 的 C02 共 19 个 = 已有 3 + 新写 16
+
+════ 一、改好的 bz-rpc-server.js ════
+
+  路径：hotfix-patch\core\bz-rpc-server.js
+  大小：259,214 B     md5：F214299DC9015A6C7523189E1BFB73BA
+  线上：impl=h87a9cb11  flow=ffaec47c3  selfCheck 1262 全过（failed=[] missingRequired=[]）
+  进程：pid 6188 未变（热重载，未重启）
+
+  acceptance 40/40 绿（新增 c02-smoke 后 39→40），known-red 0，cap 0
+  check_shape_freeze diff 0，C1–C8/C10–C13 全过
+  check_reject_codes OK（动作 39 / 条目 43 / 拒绝点 63）
+
+════ 二、注册名与线上名大面积错位（本次最大的坑）════
+
+  这 19 个动作里，注册名与线上名**对不上的比例极高**，按注册名写 handler 会全部静默失效：
+
+  已有 3 个（本次未改代码，仅确认）：
+    GET_TASK      -> User.acceptTask
+    FINISH_TASK   -> User.getFinishTaskAward
+    SYCN_TASK     -> User.sycnTask
+
+  新写 16 个（H 的键 = 下面右边这一列）：
+    GET_CIRCLE_TASK_LIST          -> getCircleTaskList
+    GET_SCHOOL_TASK               -> getSchoolTask
+    HIDE_TASK                     -> hideTask
+    ONE_KEY_COMPLETE_SCHOOL_TASK  -> onekeyCompleteSchoolTask
+    SCHOOL_TASK_COMPLETE          -> schoolTaskComplete
+    ACCEPTCIRCLETASK              -> acceptCircleTask
+    CIRCLE_TASK_TASK              -> circleTaskAward
+    GETCIRCLETASK                 -> getCircleTaskAward
+    ACCEPT_SCHOOL_TASK            -> acceptSchoolTask
+    REFRESH_SCHOOL_TASK           -> refreshSchoolTask
+    SCHOOL_TASK_AWARD             -> schoolTaskAward
+    CHANGE_DELEGATE_TASK          -> changeDelegateTask
+    DELEGATE_TASK                 -> delegateTask
+    QUICK_FINISH_TASK             -> quickFinishTask
+    ROGUE_ACCEPT_TASK             -> rogueAcceptTask
+    ROGUE_FINISHTASK_REWARD       -> getRogueFinishTaskAward
+
+  ⚠ GET_TASK 这个注册名听起来是"取任务列表"，实际线上名是 acceptTask（接任务）。
+     同批还有 GETCIRCLETASK（取奖）/ GET_CIRCLE_TASK_LIST（取列表）两个反向的，极易搞混。
+
+════ 三、存档模型（C02 与其它批不一样的地方）════
+
+  任务进度只存 **s.accepted / s.done 两个 id 数组**。
+  taskLog / finishTaskObj / acceptTaskArray / acceptTaskOrder 在存档里**根本不存在**，
+  是在 LoadGame / sycnTask 应答里**动态投射**出来的。
+  → 所以本批 handler 只碰 accepted/done，不去造这些字段。
+
+  guardSave 会拒绝"done 数量减少"，这正好帮我们兜住"领过又变回没领"这类回滚。
+
+════ 四、冒烟勾选表 ════
+
+  自动化冒烟：test/c02-smoke.js  11/11 PASS（真实 dispatch 全链路）
+
+  getCircleTaskList          通过  回 cNum(数字) + taskArr(数组)
+  getSchoolTask              通过  5 个字段齐全；schoolTask 是**数组**（形状默认的 {} 会在 .length 处得 undefined）
+  hideTask                   通过  hTaskArr 记录正确
+  refreshSchoolTask          通过  只回 eRet:1；客户端回调只 cc.log，不发任何东西
+  schoolTaskAward            通过  只回 eRet:1；**故意不发奖**（避免变成第二个发放出口）
+  delegateTask               通过  回 sTime
+  changeDelegateTask         通过  回 taskObj + num
+  acceptSchoolTask           通过  回 dateFinishTimes + acceptSchoolTask
+  onekeyCompleteSchoolTask   通过  weekQuickCompleteTaskTimes +1
+  schoolTaskComplete         通过  字段齐全
+  acceptCircleTask           通过  入 accepted；非法 taskID -> eRet:6 且不动档
+  circleTaskAward            通过  接->领->再领被拒（防重复领）
+  getCircleTaskAward         通过  同上，防重复领
+  rogueAcceptTask            通过  入 accepted
+  getRogueFinishTaskAward    通过  接->领->再领被拒
+  quickFinishTask            通过  **改为元宝购买**：元宝够 -> eRet:1 扣 50 元宝 + 发任务奖励 + 移入 done；
+                                   元宝不足/未接过 -> eRet:2（客户端 2 就是 openChargeList）
+
+  【14 条与"白拿钱"直接相关的断言】
+    未接过的任务领奖 -> eRet:4 且 bag 一字节不动
+    领过一次再领      -> eRet:4 且存档逐字节不变
+    quickFinishTask   -> eRet:2 且存档逐字节不变
+    schoolTaskAward   -> 不发任何东西
+  【已有 3 个】标「未实测（功能层）」：本批不改它们的代码；鲁棒层由 r14-catch-smoke 全 handler 覆盖。
+
+════ 五、卡住的 / 没做的（如实报）════
+
+  1 **circle_task.json 的解码规则查清了，但表还没生成。**
+     规则（已复验，有据）：混淆对象 {"_value":[18120],"offset":17995,"tag":"cfMon"} 的真实值是
+       **value = _value[0] - offset**   -> 例：18120 - 17995 = 125
+     取值点：客户端 index.js:73908-73914 的 value getter（this._value[0] - this.offset）。
+     注意 offset 是**运行时随机生成**的（index.js:73898：Math.floor(1e4*Math.random()+1e4)），
+     但 dump 里每行都带了 offset 字段，所以能解；只是**不能跨版本硬编码 offset**。
+     → 待办：把 circle_task 按这个规则解进 BZ_CIRCLE_TASK（走 tools/gen_shop_tables.js），
+       本轮没做，因为改生成器会再触发一轮形状冻结审批，留作下一轮。
+  2 UI 渲染层整体未验（同 C05）：任务面板没点开过。雪球 UI 也仍欠一次。
+  3 getCircleTaskList 的 taskArr 现在回空数组（s.circleTaskArr 未接来源）；
+     面板能开、不崩，但列表是空的。要真数据得先做第 1 条的 circle_task 表。
+
+════ 六、名单外顺带做的 ════
+
+  1 新增 test/c02-smoke.js（已进 acceptance，39→40 项）
+  2 形状审批登记（家法 §6，未跳步）：
+      planned-changes.json     10 条规则，覆盖 20 行差异
+      approved-widening.json   +6（delegateTask.sTime、onekeyCompleteSchoolTask.equipObj、
+                                  rogueAcceptTask.skillId/CDTime/serverTime、schoolTaskComplete.equipObj）
+      approved-narrowing.json  +4（acceptCircleTask.taskID、circleTaskAward.rewardObj、
+                                  getCircleTaskAward.rewardArray、quickFinishTask.caidan），全部 escape:"closed"
+  3 tools/facts/reject-codes.json +5 个动作（acceptCircleTask/circleTaskAward/getCircleTaskAward/
+    getRogueFinishTaskAward/quickFinishTask），ev 用客户端原文行真算 sha1 前 8 位。
+
+════ 七、需要上游回的 ════
+
+  A （已自行拍板，仅备案）quickFinishTask 改成**游戏内货币购买**：扣 50 元宝，元宝够就完成并发任务奖励，
+    不够回 eRet:2（客户端 2 -> openChargeList）。理由：离线版没有真实支付通道，回 1 等于免费一键完成
+    （白拿钱），留着回 2 又等于功能废掉。单价 50 元宝是本工程自定值（原版价在真实支付链里取不到，
+    同 980 大侠令的处理）。以后遇到"原版要求真实付费"的功能，一律按这个做法改成金条/元宝。
+  B getCircleTaskList.taskArr 现在空。等 circle_task 表做完才有真实列表 —— 确认优先级。

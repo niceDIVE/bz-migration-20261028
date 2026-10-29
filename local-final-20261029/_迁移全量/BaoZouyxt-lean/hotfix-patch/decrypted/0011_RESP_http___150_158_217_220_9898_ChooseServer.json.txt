@@ -1,0 +1,2 @@
+status=200 http://150.158.217.220:9898/ChooseServer
+{"error":0,"p":"User.ChooseServer","resultCode":200,"User.ChooseServer":{"eRet":1}}

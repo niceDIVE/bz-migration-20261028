@@ -1,0 +1,1637 @@
+{
+    "generatedAt":  "2026-10-22T06:10:18+08:00",
+    "changed":  [
+                    {
+                        "path":  "docs\\OPEN-ISSUES.md",
+                        "bytes":  5274,
+                        "mtime":  "2026-10-22 06:05"
+                    },
+                    {
+                        "path":  "docs\\sota\\A03-save-versioning\\adopted.md",
+                        "bytes":  6442,
+                        "mtime":  "2026-10-22 03:20"
+                    },
+                    {
+                        "path":  "docs\\sota\\A03-save-versioning\\prompt.md",
+                        "bytes":  5672,
+                        "mtime":  "2026-10-22 02:48"
+                    },
+                    {
+                        "path":  "docs\\sota\\B01-A04\\adopted.md",
+                        "bytes":  6248,
+                        "mtime":  "2026-10-22 03:47"
+                    },
+                    {
+                        "path":  "docs\\sota\\inbox\\R01-reply-fix.docx",
+                        "bytes":  20599,
+                        "mtime":  "2026-10-22 04:22"
+                    },
+                    {
+                        "path":  "docs\\sota\\inbox\\R01-reply-fix.txt",
+                        "bytes":  17635,
+                        "mtime":  "2026-10-22 04:23"
+                    },
+                    {
+                        "path":  "docs\\sota\\inbox\\R02-reply.docx",
+                        "bytes":  22696,
+                        "mtime":  "2026-10-22 04:43"
+                    },
+                    {
+                        "path":  "docs\\sota\\inbox\\R02-reply.txt",
+                        "bytes":  18490,
+                        "mtime":  "2026-10-22 04:44"
+                    },
+                    {
+                        "path":  "docs\\sota\\inbox\\R03-reply.docx",
+                        "bytes":  21225,
+                        "mtime":  "2026-10-22 05:22"
+                    },
+                    {
+                        "path":  "docs\\sota\\inbox\\R03-reply.txt",
+                        "bytes":  15595,
+                        "mtime":  "2026-10-22 05:22"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\00-INSTRUCTION.txt",
+                        "bytes":  1173,
+                        "mtime":  "2026-10-22 02:50"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\01-A03-save-versioning.txt",
+                        "bytes":  3872,
+                        "mtime":  "2026-10-22 02:49"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\02-A01-contract-tests.txt",
+                        "bytes":  3451,
+                        "mtime":  "2026-10-22 02:49"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\03-A02-state-machine.txt",
+                        "bytes":  4097,
+                        "mtime":  "2026-10-22 02:56"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\04-ALL-A01-A02-A03.txt",
+                        "bytes":  10739,
+                        "mtime":  "2026-10-22 02:59"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\05-B01-quest-progress.txt",
+                        "bytes":  4073,
+                        "mtime":  "2026-10-22 03:20"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\06-A04-guard-policy.txt",
+                        "bytes":  4676,
+                        "mtime":  "2026-10-22 03:28"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\07-ALL-B01-A04.txt",
+                        "bytes":  8804,
+                        "mtime":  "2026-10-22 03:29"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\08-R01-b01-facts-reply.txt",
+                        "bytes":  5307,
+                        "mtime":  "2026-10-22 04:04"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\09-R02-sprequire-semantics-overlay.txt",
+                        "bytes":  12544,
+                        "mtime":  "2026-10-22 04:34"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\10-R03-progress-corrections.txt",
+                        "bytes":  10465,
+                        "mtime":  "2026-10-22 05:16"
+                    },
+                    {
+                        "path":  "docs\\sota\\outbox\\11-R04-stage-overview.txt",
+                        "bytes":  8663,
+                        "mtime":  "2026-10-22 06:09"
+                    },
+                    {
+                        "path":  "docs\\sota\\R02\\adopted.md",
+                        "bytes":  12964,
+                        "mtime":  "2026-10-22 05:14"
+                    },
+                    {
+                        "path":  "docs\\sota\\R03\\adopted.md",
+                        "bytes":  4497,
+                        "mtime":  "2026-10-22 05:26"
+                    },
+                    {
+                        "path":  "docs\\sota\\reply-A01-A02-A03.docx",
+                        "bytes":  31423,
+                        "mtime":  "2026-10-22 03:13"
+                    },
+                    {
+                        "path":  "docs\\sota\\reply-A01-A02-A03.txt",
+                        "bytes":  34290,
+                        "mtime":  "2026-10-22 03:13"
+                    },
+                    {
+                        "path":  "docs\\sota\\reply-B01-A04.docx",
+                        "bytes":  28199,
+                        "mtime":  "2026-10-22 03:46"
+                    },
+                    {
+                        "path":  "docs\\sota\\reply-B01-A04.txt",
+                        "bytes":  30702,
+                        "mtime":  "2026-10-22 03:47"
+                    },
+                    {
+                        "path":  "docs\\SOTA-BATCHES.md",
+                        "bytes":  6903,
+                        "mtime":  "2026-10-22 02:46"
+                    },
+                    {
+                        "path":  "docs\\SOTA-PROMPTS.md",
+                        "bytes":  11325,
+                        "mtime":  "2026-10-22 02:45"
+                    },
+                    {
+                        "path":  "hotfix-patch\\core\\bz-handler-impl.js",
+                        "bytes":  20400,
+                        "mtime":  "2026-10-22 06:02"
+                    },
+                    {
+                        "path":  "hotfix-patch\\core\\bz-rpc-server.js",
+                        "bytes":  72416,
+                        "mtime":  "2026-10-22 06:04"
+                    },
+                    {
+                        "path":  "hotfix-patch\\core\\bz-shapes.generated.js",
+                        "bytes":  22443,
+                        "mtime":  "2026-10-22 03:33"
+                    },
+                    {
+                        "path":  "hotfix-patch\\core\\bz-tasks.generated.js",
+                        "bytes":  462924,
+                        "mtime":  "2026-10-22 06:02"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\bag_state.js",
+                        "bytes":  1348,
+                        "mtime":  "2026-10-22 01:13"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\bag_tab_probe.js",
+                        "bytes":  1855,
+                        "mtime":  "2026-10-22 01:28"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\check_bag.js",
+                        "bytes":  1477,
+                        "mtime":  "2026-10-22 01:11"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\check_live_potential.js",
+                        "bytes":  1083,
+                        "mtime":  "2026-10-22 02:02"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\dump_all_tables.js",
+                        "bytes":  3268,
+                        "mtime":  "2026-10-22 05:59"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\dump_bag_ui.js",
+                        "bytes":  1861,
+                        "mtime":  "2026-10-22 01:12"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\dump_drop.js",
+                        "bytes":  2202,
+                        "mtime":  "2026-10-22 04:56"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\dump_npc_drop.js",
+                        "bytes":  1943,
+                        "mtime":  "2026-10-22 04:01"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\dump_npc_stats.js",
+                        "bytes":  2118,
+                        "mtime":  "2026-10-22 06:02"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\dump_shop.js",
+                        "bytes":  1745,
+                        "mtime":  "2026-10-22 04:55"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\dump_tables.js",
+                        "bytes":  3594,
+                        "mtime":  "2026-10-22 00:58"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\find_ids.js",
+                        "bytes":  1623,
+                        "mtime":  "2026-10-22 04:57"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\find_inv.js",
+                        "bytes":  2087,
+                        "mtime":  "2026-10-22 01:08"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\find_tables.js",
+                        "bytes":  2389,
+                        "mtime":  "2026-10-22 00:52"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\find_tables2.js",
+                        "bytes":  2714,
+                        "mtime":  "2026-10-22 00:56"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\fs_api_probe.js",
+                        "bytes":  1064,
+                        "mtime":  "2026-10-22 02:55"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\gold_label_probe.js",
+                        "bytes":  2581,
+                        "mtime":  "2026-10-22 01:36"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\live_log.jsonl",
+                        "bytes":  18628,
+                        "mtime":  "2026-10-22 01:48"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\live_log2.jsonl",
+                        "bytes":  20609,
+                        "mtime":  "2026-10-22 01:50"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\live_log3.jsonl",
+                        "bytes":  28012,
+                        "mtime":  "2026-10-22 01:52"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\live_watch.log",
+                        "bytes":  70538,
+                        "mtime":  "2026-10-22 06:04"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\npc_table_probe.js",
+                        "bytes":  2061,
+                        "mtime":  "2026-10-22 04:01"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\require_probe.js",
+                        "bytes":  3124,
+                        "mtime":  "2026-10-22 01:28"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\screen13.png",
+                        "bytes":  500040,
+                        "mtime":  "2026-10-22 00:04"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\screen14.png",
+                        "bytes":  1165660,
+                        "mtime":  "2026-10-22 00:04"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\screen15.png",
+                        "bytes":  501019,
+                        "mtime":  "2026-10-22 00:09"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\scripts2.jsc",
+                        "bytes":  487852,
+                        "mtime":  "2026-10-22 01:12"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\scripts3.jsc",
+                        "bytes":  622100,
+                        "mtime":  "2026-10-22 01:12"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\seed_bag.js",
+                        "bytes":  2406,
+                        "mtime":  "2026-10-22 00:50"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shop_probe.js",
+                        "bytes":  2099,
+                        "mtime":  "2026-10-22 04:55"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_bag_food.png",
+                        "bytes":  158068,
+                        "mtime":  "2026-10-22 01:29"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_bag_shuxin.png",
+                        "bytes":  138257,
+                        "mtime":  "2026-10-22 01:29"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_bag1.png",
+                        "bytes":  145884,
+                        "mtime":  "2026-10-22 01:29"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_coldstart.png",
+                        "bytes":  1207926,
+                        "mtime":  "2026-10-22 01:32"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_foreground.png",
+                        "bytes":  1206861,
+                        "mtime":  "2026-10-22 01:45"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_gold_fixed.png",
+                        "bytes":  336471,
+                        "mtime":  "2026-10-22 01:37"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_now.png",
+                        "bytes":  340944,
+                        "mtime":  "2026-10-22 01:28"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_panel_fresh.png",
+                        "bytes":  339430,
+                        "mtime":  "2026-10-22 01:32"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_task1.png",
+                        "bytes":  295676,
+                        "mtime":  "2026-10-22 01:35"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_task2.png",
+                        "bytes":  794844,
+                        "mtime":  "2026-10-22 01:35"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_wallet.png",
+                        "bytes":  340957,
+                        "mtime":  "2026-10-22 01:30"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_wallet2.png",
+                        "bytes":  340958,
+                        "mtime":  "2026-10-22 01:31"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\shot_wallet3.png",
+                        "bytes":  340957,
+                        "mtime":  "2026-10-22 01:31"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\task_state_probe.js",
+                        "bytes":  1905,
+                        "mtime":  "2026-10-22 01:34"
+                    },
+                    {
+                        "path":  "hotfix-patch\\probe\\wallet_probe.js",
+                        "bytes":  1393,
+                        "mtime":  "2026-10-22 01:31"
+                    },
+                    {
+                        "path":  "hotfix-patch\\test\\drop-table.js",
+                        "bytes":  5421,
+                        "mtime":  "2026-10-22 05:26"
+                    },
+                    {
+                        "path":  "hotfix-patch\\test\\overlay-projection.js",
+                        "bytes":  10911,
+                        "mtime":  "2026-10-22 05:14"
+                    },
+                    {
+                        "path":  "hotfix-patch\\test\\push-grants.js",
+                        "bytes":  4752,
+                        "mtime":  "2026-10-22 05:56"
+                    },
+                    {
+                        "path":  "hotfix-patch\\test\\save-migrate.js",
+                        "bytes":  7798,
+                        "mtime":  "2026-10-22 03:53"
+                    },
+                    {
+                        "path":  "hotfix-patch\\test\\selfcheck-model-push.js",
+                        "bytes":  3431,
+                        "mtime":  "2026-10-22 05:54"
+                    },
+                    {
+                        "path":  "hotfix-patch\\test\\selfcheck-nosave.js",
+                        "bytes":  3082,
+                        "mtime":  "2026-10-22 02:01"
+                    },
+                    {
+                        "path":  "hotfix-patch\\test\\upgrade-skill-target.js",
+                        "bytes":  4838,
+                        "mtime":  "2026-10-22 02:39"
+                    },
+                    {
+                        "path":  "tools\\action_facts_all.json",
+                        "bytes":  159825,
+                        "mtime":  "2026-10-22 00:09"
+                    },
+                    {
+                        "path":  "tools\\action_facts_listener.json",
+                        "bytes":  118741,
+                        "mtime":  "2026-10-22 03:33"
+                    },
+                    {
+                        "path":  "tools\\audit_shapes_evidence.js",
+                        "bytes":  3978,
+                        "mtime":  "2026-10-22 03:30"
+                    },
+                    {
+                        "path":  "tools\\check_shapes.js",
+                        "bytes":  6836,
+                        "mtime":  "2026-10-22 00:49"
+                    },
+                    {
+                        "path":  "tools\\coverage_all.js",
+                        "bytes":  1344,
+                        "mtime":  "2026-10-22 00:09"
+                    },
+                    {
+                        "path":  "tools\\decrypt_bundles.js",
+                        "bytes":  1817,
+                        "mtime":  "2026-10-22 01:12"
+                    },
+                    {
+                        "path":  "tools\\drop_coverage.js",
+                        "bytes":  3610,
+                        "mtime":  "2026-10-22 04:02"
+                    },
+                    {
+                        "path":  "tools\\extract_all.js",
+                        "bytes":  4352,
+                        "mtime":  "2026-10-22 00:09"
+                    },
+                    {
+                        "path":  "tools\\extract_listeners.js",
+                        "bytes":  7337,
+                        "mtime":  "2026-10-22 03:33"
+                    },
+                    {
+                        "path":  "tools\\facts\\action-tables.json",
+                        "bytes":  30909,
+                        "mtime":  "2026-10-22 06:00"
+                    },
+                    {
+                        "path":  "tools\\facts\\activity-verify.json",
+                        "bytes":  3576,
+                        "mtime":  "2026-10-22 06:04"
+                    },
+                    {
+                        "path":  "tools\\facts\\ask-skill-ui.json",
+                        "bytes":  184,
+                        "mtime":  "2026-10-22 01:55"
+                    },
+                    {
+                        "path":  "tools\\facts\\audit_batch1.json",
+                        "bytes":  423,
+                        "mtime":  "2026-10-22 00:36"
+                    },
+                    {
+                        "path":  "tools\\facts\\audit_batch1.progress.md",
+                        "bytes":  39,
+                        "mtime":  "2026-10-22 00:36"
+                    },
+                    {
+                        "path":  "tools\\facts\\audit_batch2.json",
+                        "bytes":  459,
+                        "mtime":  "2026-10-22 00:37"
+                    },
+                    {
+                        "path":  "tools\\facts\\audit_batch2.progress.md",
+                        "bytes":  68,
+                        "mtime":  "2026-10-22 00:37"
+                    },
+                    {
+                        "path":  "tools\\facts\\audit_input_1.json",
+                        "bytes":  10373,
+                        "mtime":  "2026-10-22 00:35"
+                    },
+                    {
+                        "path":  "tools\\facts\\audit_input_2.json",
+                        "bytes":  10210,
+                        "mtime":  "2026-10-22 00:35"
+                    },
+                    {
+                        "path":  "tools\\facts\\battle-verify.json",
+                        "bytes":  3565,
+                        "mtime":  "2026-10-22 06:03"
+                    },
+                    {
+                        "path":  "tools\\facts\\cfg-index.json",
+                        "bytes":  685806,
+                        "mtime":  "2026-10-22 06:01"
+                    },
+                    {
+                        "path":  "tools\\facts\\cmd-channel.json",
+                        "bytes":  7001,
+                        "mtime":  "2026-10-22 01:36"
+                    },
+                    {
+                        "path":  "tools\\facts\\cmd-channel-full.json",
+                        "bytes":  19305,
+                        "mtime":  "2026-10-22 01:43"
+                    },
+                    {
+                        "path":  "tools\\facts\\drop-coverage.json",
+                        "bytes":  70081,
+                        "mtime":  "2026-10-22 04:02"
+                    },
+                    {
+                        "path":  "tools\\facts\\drop-verify.json",
+                        "bytes":  5585,
+                        "mtime":  "2026-10-22 05:10"
+                    },
+                    {
+                        "path":  "tools\\facts\\equip-struct.json",
+                        "bytes":  24513,
+                        "mtime":  "2026-10-22 05:56"
+                    },
+                    {
+                        "path":  "tools\\facts\\flow-autotap-audit.json",
+                        "bytes":  8779,
+                        "mtime":  "2026-10-22 01:43"
+                    },
+                    {
+                        "path":  "tools\\facts\\includes-hunt.json",
+                        "bytes":  12459,
+                        "mtime":  "2026-10-22 01:47"
+                    },
+                    {
+                        "path":  "tools\\facts\\includes-locate.json",
+                        "bytes":  1423,
+                        "mtime":  "2026-10-22 03:58"
+                    },
+                    {
+                        "path":  "tools\\facts\\inv-w1-index-setitem.json",
+                        "bytes":  21168,
+                        "mtime":  "2026-10-22 01:22"
+                    },
+                    {
+                        "path":  "tools\\facts\\inv-w2-scripts2-itemsystemui.json",
+                        "bytes":  25625,
+                        "mtime":  "2026-10-22 01:23"
+                    },
+                    {
+                        "path":  "tools\\facts\\inv-w3-scripts3-inventory.json",
+                        "bytes":  3388,
+                        "mtime":  "2026-10-22 01:26"
+                    },
+                    {
+                        "path":  "tools\\facts\\inv-w4-dic-readiness.json",
+                        "bytes":  17756,
+                        "mtime":  "2026-10-22 01:23"
+                    },
+                    {
+                        "path":  "tools\\facts\\mode-evidence.json",
+                        "bytes":  15192,
+                        "mtime":  "2026-10-22 04:07"
+                    },
+                    {
+                        "path":  "tools\\facts\\push-verify.json",
+                        "bytes":  3236,
+                        "mtime":  "2026-10-22 05:55"
+                    },
+                    {
+                        "path":  "tools\\facts\\push-verify2.json",
+                        "bytes":  3624,
+                        "mtime":  "2026-10-22 05:57"
+                    },
+                    {
+                        "path":  "tools\\facts\\r01-screen.json",
+                        "bytes":  22448,
+                        "mtime":  "2026-10-22 04:23"
+                    },
+                    {
+                        "path":  "tools\\facts\\r02-bagwriters.json",
+                        "bytes":  3087246,
+                        "mtime":  "2026-10-22 04:49"
+                    },
+                    {
+                        "path":  "tools\\facts\\r02-clientpaths.json",
+                        "bytes":  28139,
+                        "mtime":  "2026-10-22 04:46"
+                    },
+                    {
+                        "path":  "tools\\facts\\r02-hostside.json",
+                        "bytes":  3978,
+                        "mtime":  "2026-10-22 04:45"
+                    },
+                    {
+                        "path":  "tools\\facts\\r02-shop-coverage.json",
+                        "bytes":  3453,
+                        "mtime":  "2026-10-22 04:55"
+                    },
+                    {
+                        "path":  "tools\\facts\\r02-verify.json",
+                        "bytes":  3372,
+                        "mtime":  "2026-10-22 04:54"
+                    },
+                    {
+                        "path":  "tools\\facts\\r02-writers-compact.json",
+                        "bytes":  76367,
+                        "mtime":  "2026-10-22 04:54"
+                    },
+                    {
+                        "path":  "tools\\facts\\r03-accept-sites.json",
+                        "bytes":  11904,
+                        "mtime":  "2026-10-22 05:24"
+                    },
+                    {
+                        "path":  "tools\\facts\\r03-rewardpath.json",
+                        "bytes":  70258,
+                        "mtime":  "2026-10-22 05:24"
+                    },
+                    {
+                        "path":  "tools\\facts\\residual_fields.md",
+                        "bytes":  11600,
+                        "mtime":  "2026-10-22 00:37"
+                    },
+                    {
+                        "path":  "tools\\facts\\save-fixtures.json",
+                        "bytes":  2497,
+                        "mtime":  "2026-10-22 03:20"
+                    },
+                    {
+                        "path":  "tools\\facts\\save-write-paths.json",
+                        "bytes":  9194,
+                        "mtime":  "2026-10-22 03:22"
+                    },
+                    {
+                        "path":  "tools\\facts\\selfcheck-touch-surface.json",
+                        "bytes":  6019,
+                        "mtime":  "2026-10-22 02:02"
+                    },
+                    {
+                        "path":  "tools\\facts\\shape-alchemy-levelbonus.json",
+                        "bytes":  14140,
+                        "mtime":  "2026-10-22 02:03"
+                    },
+                    {
+                        "path":  "tools\\facts\\shaped-actions.json",
+                        "bytes":  209,
+                        "mtime":  "2026-10-22 06:00"
+                    },
+                    {
+                        "path":  "tools\\facts\\shapes-evidence-audit.json",
+                        "bytes":  91734,
+                        "mtime":  "2026-10-22 03:33"
+                    },
+                    {
+                        "path":  "tools\\facts\\shape-weak-evidence.json",
+                        "bytes":  48616,
+                        "mtime":  "2026-10-22 03:20"
+                    },
+                    {
+                        "path":  "tools\\facts\\symptom-fields.json",
+                        "bytes":  52547,
+                        "mtime":  "2026-10-22 06:01"
+                    },
+                    {
+                        "path":  "tools\\facts\\table-usage.json",
+                        "bytes":  234416,
+                        "mtime":  "2026-10-22 06:01"
+                    },
+                    {
+                        "path":  "tools\\facts\\task-buckets.json",
+                        "bytes":  25575,
+                        "mtime":  "2026-10-22 03:56"
+                    },
+                    {
+                        "path":  "tools\\facts\\task-t1-judge.json",
+                        "bytes":  4007,
+                        "mtime":  "2026-10-22 01:35"
+                    },
+                    {
+                        "path":  "tools\\facts\\task-t2-handlers.json",
+                        "bytes":  4804,
+                        "mtime":  "2026-10-22 01:38"
+                    },
+                    {
+                        "path":  "tools\\facts\\upgrade-skill-send-path.json",
+                        "bytes":  14833,
+                        "mtime":  "2026-10-22 02:02"
+                    },
+                    {
+                        "path":  "tools\\facts\\weak-evidence-scan.json",
+                        "bytes":  112136,
+                        "mtime":  "2026-10-22 03:30"
+                    },
+                    {
+                        "path":  "tools\\facts\\weak-verified-a.json",
+                        "bytes":  42765,
+                        "mtime":  "2026-10-22 03:48"
+                    },
+                    {
+                        "path":  "tools\\facts\\weak-verified-all.json",
+                        "bytes":  74002,
+                        "mtime":  "2026-10-22 03:53"
+                    },
+                    {
+                        "path":  "tools\\facts\\weak-verified-b.json",
+                        "bytes":  41528,
+                        "mtime":  "2026-10-22 03:36"
+                    },
+                    {
+                        "path":  "tools\\gen_action_tables.js",
+                        "bytes":  4019,
+                        "mtime":  "2026-10-22 06:00"
+                    },
+                    {
+                        "path":  "tools\\gen_shapes.js",
+                        "bytes":  21944,
+                        "mtime":  "2026-10-22 03:33"
+                    },
+                    {
+                        "path":  "tools\\gen_task_rewards.js",
+                        "bytes":  9580,
+                        "mtime":  "2026-10-22 06:02"
+                    },
+                    {
+                        "path":  "tools\\grep_src.js",
+                        "bytes":  1361,
+                        "mtime":  "2026-10-22 00:46"
+                    },
+                    {
+                        "path":  "tools\\r01_screen.js",
+                        "bytes":  15093,
+                        "mtime":  "2026-10-22 04:23"
+                    },
+                    {
+                        "path":  "tools\\r02_hostside.js",
+                        "bytes":  7726,
+                        "mtime":  "2026-10-22 04:45"
+                    },
+                    {
+                        "path":  "tools\\run_verify_b.js",
+                        "bytes":  3051,
+                        "mtime":  "2026-10-22 03:30"
+                    },
+                    {
+                        "path":  "tools\\scan_weak_fields.js",
+                        "bytes":  3404,
+                        "mtime":  "2026-10-22 03:30"
+                    },
+                    {
+                        "path":  "tools\\scripts2.js",
+                        "bytes":  3102830,
+                        "mtime":  "2026-10-22 01:12"
+                    },
+                    {
+                        "path":  "tools\\scripts3.js",
+                        "bytes":  3733348,
+                        "mtime":  "2026-10-22 01:12"
+                    },
+                    {
+                        "path":  "tools\\shapes.json",
+                        "bytes":  581127,
+                        "mtime":  "2026-10-22 03:33"
+                    },
+                    {
+                        "path":  "tools\\shapes_report.md",
+                        "bytes":  26185,
+                        "mtime":  "2026-10-22 03:33"
+                    },
+                    {
+                        "path":  "tools\\task_buckets.js",
+                        "bytes":  4047,
+                        "mtime":  "2026-10-22 03:56"
+                    },
+                    {
+                        "path":  "tools\\task_chain.js",
+                        "bytes":  3094,
+                        "mtime":  "2026-10-22 01:35"
+                    },
+                    {
+                        "path":  "tools\\todo_shapes.json",
+                        "bytes":  2902,
+                        "mtime":  "2026-10-22 00:09"
+                    }
+                ],
+    "backups":  [
+                    {
+                        "dir":  "2026-10-22-0038-pre-P0-shapes",
+                        "files":  5,
+                        "bytes":  79168,
+                        "saveMd5":  null
+                    },
+                    {
+                        "dir":  "2026-10-22-0044-pre-task-ledger",
+                        "files":  5,
+                        "bytes":  95227,
+                        "saveMd5":  null
+                    },
+                    {
+                        "dir":  "2026-10-22-012652-pre-bagprobe",
+                        "files":  13,
+                        "bytes":  139501,
+                        "saveMd5":  "967e800bfc89c811b4f9b2694f97d464"
+                    },
+                    {
+                        "dir":  "2026-10-22-0205-pre-selfcheck-isolation",
+                        "files":  6,
+                        "bytes":  194587,
+                        "saveMd5":  "d8af398f41a4b903cbb530bb2b41066c"
+                    },
+                    {
+                        "dir":  "2026-10-22-0212-pre-alchemy-handlers",
+                        "files":  4,
+                        "bytes":  221316,
+                        "saveMd5":  null
+                    },
+                    {
+                        "dir":  "2026-10-22-0232-pre-skill-target",
+                        "files":  4,
+                        "bytes":  170313,
+                        "saveMd5":  "39b5e89051204e453f90f3ce85f11a6a"
+                    },
+                    {
+                        "dir":  "2026-10-22-0250-pre-pgr-persist",
+                        "files":  4,
+                        "bytes":  163177,
+                        "saveMd5":  "7ac1d40331c99f92139c3303986449bd"
+                    },
+                    {
+                        "dir":  "2026-10-22-0345-pre-shape-audit-fix",
+                        "files":  6,
+                        "bytes":  762926,
+                        "saveMd5":  "96c21eda8bb95775191b90b65449bcea"
+                    },
+                    {
+                        "dir":  "2026-10-22-0405-pre-guard-rollback",
+                        "files":  4,
+                        "bytes":  188907,
+                        "saveMd5":  "96c21eda8bb95775191b90b65449bcea"
+                    },
+                    {
+                        "dir":  "2026-10-22-0430-pre-overlay",
+                        "files":  22,
+                        "bytes":  481833,
+                        "saveMd5":  "96c21eda8bb95775191b90b65449bcea"
+                    },
+                    {
+                        "dir":  "2026-10-22-0430-pre-redispatch",
+                        "files":  4,
+                        "bytes":  138691,
+                        "saveMd5":  "96c21eda8bb95775191b90b65449bcea"
+                    },
+                    {
+                        "dir":  "2026-10-22-0452-pre-r02fix",
+                        "files":  19,
+                        "bytes":  394738,
+                        "saveMd5":  "96c21eda8bb95775191b90b65449bcea"
+                    },
+                    {
+                        "dir":  "2026-10-22-0515-pre-backfill",
+                        "files":  1,
+                        "bytes":  756,
+                        "saveMd5":  "96c21eda8bb95775191b90b65449bcea"
+                    },
+                    {
+                        "dir":  "2026-10-22-0519-pre-restart",
+                        "files":  2,
+                        "bytes":  54278,
+                        "saveMd5":  "dec9d1c671488d938a4663575ac3563c"
+                    },
+                    {
+                        "dir":  "2026-10-22-0525-pre-r03",
+                        "files":  18,
+                        "bytes":  390445,
+                        "saveMd5":  "dec9d1c671488d938a4663575ac3563c"
+                    },
+                    {
+                        "dir":  "2026-10-22-0543-pre-grant-weapon",
+                        "files":  1,
+                        "bytes":  774,
+                        "saveMd5":  "dec9d1c671488d938a4663575ac3563c"
+                    }
+                ],
+    "facts":  [
+                  {
+                      "file":  "action-tables.json",
+                      "bytes":  30909,
+                      "keys":  [
+                                   "generatedAt",
+                                   "window",
+                                   "actionsWithFields",
+                                   "actionsWithTable",
+                                   "map"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T22:00:28.184Z"
+                  },
+                  {
+                      "file":  "activity-verify.json",
+                      "bytes":  3576,
+                      "keys":  [
+                                   "generatedAt",
+                                   "runs",
+                                   "device",
+                                   "pass",
+                                   "unverified"
+                               ],
+                      "pass":  true,
+                      "generatedAt":  "2026-10-22T06:04:46+08:00"
+                  },
+                  {
+                      "file":  "ask-skill-ui.json",
+                      "bytes":  184,
+                      "keys":  [
+                                   "hits",
+                                   "found",
+                                   "errors"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "audit_batch1.json",
+                      "bytes":  423,
+                      "keys":  [
+                                   "batch",
+                                   "checked",
+                                   "items"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "audit_batch2.json",
+                      "bytes":  459,
+                      "keys":  [
+                                   "batch",
+                                   "checked",
+                                   "items"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "audit_input_1.json",
+                      "bytes":  10373,
+                      "keys":  [
+                                   "batch",
+                                   "total",
+                                   "items"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "audit_input_2.json",
+                      "bytes":  10210,
+                      "keys":  [
+                                   "batch",
+                                   "total",
+                                   "items"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "batch0.json",
+                      "bytes":  9382,
+                      "keys":  [
+                                   "[ARRAY n=50]"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "batch1.json",
+                      "bytes":  9117,
+                      "keys":  [
+                                   "[ARRAY n=46]"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "batch2.json",
+                      "bytes":  8835,
+                      "keys":  [
+                                   "[ARRAY n=43]"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "batch3.json",
+                      "bytes":  6812,
+                      "keys":  [
+                                   "[ARRAY n=40]"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "batch4.json",
+                      "bytes":  8680,
+                      "keys":  [
+                                   "[ARRAY n=43]"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "battle-verify.json",
+                      "bytes":  3565,
+                      "keys":  [
+                                   "generatedAt",
+                                   "runs",
+                                   "device",
+                                   "pass",
+                                   "unverified"
+                               ],
+                      "pass":  true,
+                      "generatedAt":  "2026-10-22T06:03:23+08:00"
+                  },
+                  {
+                      "file":  "cfg-index.json",
+                      "bytes":  685806,
+                      "keys":  [
+                                   "generatedAt",
+                                   "files",
+                                   "tables",
+                                   "top30",
+                                   "keywordHits",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-22T06:01:31+08:00"
+                  },
+                  {
+                      "file":  "cmd-channel.json",
+                      "bytes":  7001,
+                      "keys":  [
+                                   "file",
+                                   "hits",
+                                   "found",
+                                   "errors"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "cmd-channel-full.json",
+                      "bytes":  19305,
+                      "keys":  [
+                                   "file",
+                                   "found",
+                                   "errors"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "drop-coverage.json",
+                      "bytes":  70081,
+                      "keys":  [
+                                   "generatedAt",
+                                   "npc",
+                                   "dropItems",
+                                   "needItems",
+                                   "coveredItems",
+                                   "missingItems",
+                                   "covered",
+                                   "missing"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T20:02:12.453Z"
+                  },
+                  {
+                      "file":  "drop-verify.json",
+                      "bytes":  5585,
+                      "keys":  [
+                                   "generatedAt",
+                                   "runs",
+                                   "device",
+                                   "pass",
+                                   "unverified"
+                               ],
+                      "pass":  true,
+                      "generatedAt":  "2026-10-22T05:10:42+08:00"
+                  },
+                  {
+                      "file":  "equip-struct.json",
+                      "bytes":  24513,
+                      "keys":  [
+                                   "generatedAt",
+                                   "addEq",
+                                   "parseEq_hits",
+                                   "parseEq_body",
+                                   "updateEq_hits",
+                                   "updateEq_body",
+                                   "fields",
+                                   "unverified",
+                                   "addEq_other_definitions",
+                                   "parseEq_body_other_definitions",
+                                   "EqItem_class"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-22T05:56:00+08:00"
+                  },
+                  {
+                      "file":  "flow-autotap-audit.json",
+                      "bytes":  8779,
+                      "keys":  [
+                                   "file",
+                                   "hits",
+                                   "found",
+                                   "errors"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "includes-hunt.json",
+                      "bytes":  12459,
+                      "keys":  [
+                                   "hits",
+                                   "found",
+                                   "includesLines",
+                                   "errors"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "includes-locate.json",
+                      "bytes":  1423,
+                      "keys":  [
+                                   "task",
+                                   "items",
+                                   "commands",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "inv-w1-index-setitem.json",
+                      "bytes":  21168,
+                      "keys":  [
+                                   "file",
+                                   "segments",
+                                   "grep_hits",
+                                   "errors"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "inv-w2-scripts2-itemsystemui.json",
+                      "bytes":  25625,
+                      "keys":  [
+                                   "file",
+                                   "segments",
+                                   "grep_hits",
+                                   "errors"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "inv-w3-scripts3-inventory.json",
+                      "bytes":  3388,
+                      "keys":  [
+                                   "file",
+                                   "segments",
+                                   "grep_hits",
+                                   "errors"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "inv-w4-dic-readiness.json",
+                      "bytes":  17756,
+                      "keys":  [
+                                   "file",
+                                   "grep_hits",
+                                   "segments",
+                                   "errors"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "mode-evidence.json",
+                      "bytes":  15192,
+                      "keys":  [
+                                   "task",
+                                   "items",
+                                   "commands",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "push-verify.json",
+                      "bytes":  3236,
+                      "keys":  [
+                                   "generatedAt",
+                                   "runs",
+                                   "device",
+                                   "pass",
+                                   "unverified"
+                               ],
+                      "pass":  false,
+                      "generatedAt":  "2026-06-11T00:00:00+08:00"
+                  },
+                  {
+                      "file":  "push-verify2.json",
+                      "bytes":  3624,
+                      "keys":  [
+                                   "generatedAt",
+                                   "runs",
+                                   "device",
+                                   "pass",
+                                   "unverified"
+                               ],
+                      "pass":  true,
+                      "generatedAt":  "2026-10-22T05:57:09+08:00"
+                  },
+                  {
+                      "file":  "r01-screen.json",
+                      "bytes":  22448,
+                      "keys":  [
+                                   "generatedAt",
+                                   "source",
+                                   "basis",
+                                   "counts",
+                                   "v1",
+                                   "v5",
+                                   "repeat",
+                                   "prefixHistogram",
+                                   "crossTable",
+                                   "v1PairsSample",
+                                   "missingItemTableIds"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T20:23:56.030Z"
+                  },
+                  {
+                      "file":  "r02-bagwriters.json",
+                      "bytes":  3087246,
+                      "keys":  [
+                                   "generatedAt",
+                                   "step1_writers",
+                                   "step2_callsites",
+                                   "step3_reachability",
+                                   "step4_1_cases",
+                                   "step4_2_type_2_12_13",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T20:48:57.430Z"
+                  },
+                  {
+                      "file":  "r02-clientpaths.json",
+                      "bytes":  28139,
+                      "keys":  [
+                                   "generatedAt",
+                                   "q1_getTaskCallBack",
+                                   "q1_itemObj_hits",
+                                   "q1_msgdata_hits",
+                                   "q1_generic_dispatch_hits",
+                                   "q2_1_repeat_reads",
+                                   "q2_2_finish_hasown",
+                                   "q2_3_period_fields",
+                                   "q3_1_prerequire_hits",
+                                   "q3_2_parse_loops",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T20:46:34.787Z"
+                  },
+                  {
+                      "file":  "r02-hostside.json",
+                      "bytes":  3978,
+                      "keys":  [
+                                   "generatedAt",
+                                   "source",
+                                   "basis",
+                                   "h1_bz_tasks_need_by_type",
+                                   "h3_true_item_needs",
+                                   "h2_item_columns_vs_dropids",
+                                   "h4_dead_task_event_columns"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T20:45:04.179Z"
+                  },
+                  {
+                      "file":  "r02-shop-coverage.json",
+                      "bytes":  3453,
+                      "keys":  [
+                                   "generatedAt",
+                                   "needKinds",
+                                   "shopCovered",
+                                   "equipNeed",
+                                   "equipShopCovered",
+                                   "neither",
+                                   "shopSrcSize",
+                                   "samples"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T20:55:33.561Z"
+                  },
+                  {
+                      "file":  "r02-verify.json",
+                      "bytes":  3372,
+                      "keys":  [
+                                   "generatedAt",
+                                   "runs",
+                                   "device",
+                                   "pass",
+                                   "unverified"
+                               ],
+                      "pass":  true,
+                      "generatedAt":  "2026-10-22T04:54:33+08:00"
+                  },
+                  {
+                      "file":  "r02-writers-compact.json",
+                      "bytes":  76367,
+                      "keys":  [
+                                   "generatedAt",
+                                   "source_md5",
+                                   "writers",
+                                   "localStorage_noise",
+                                   "type_2_12_13",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T20:54:04.183Z"
+                  },
+                  {
+                      "file":  "r03-accept-sites.json",
+                      "bytes":  11904,
+                      "keys":  [
+                                   "generatedAt",
+                                   "step1_action_const",
+                                   "step2_send_hits",
+                                   "step3_send_functions",
+                                   "step4_call_sites",
+                                   "step5_entry_hints",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T21:24:48.733Z"
+                  },
+                  {
+                      "file":  "r03-rewardpath.json",
+                      "bytes":  70258,
+                      "keys":  [
+                                   "generatedAt",
+                                   "q1_1_checkbattleresult",
+                                   "q1_2_retry_hits",
+                                   "q1_2_sendrequest_hits",
+                                   "q1_3_xhr_handlers",
+                                   "q2_1_finishTaskCallBack",
+                                   "q2_2_addShowRewardUI1",
+                                   "q2_3_hits_in_addShowRewardUI1",
+                                   "q2_4_reward_item_hits",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T21:24:43.155Z"
+                  },
+                  {
+                      "file":  "save-fixtures.json",
+                      "bytes":  2497,
+                      "keys":  [
+                                   "snapshots"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "save-write-paths.json",
+                      "bytes":  9194,
+                      "keys":  [
+                                   "items",
+                                   "commands",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "selfcheck-touch-surface.json",
+                      "bytes":  6019,
+                      "keys":  [
+                                   "task",
+                                   "items",
+                                   "commands",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "shape-alchemy-levelbonus.json",
+                      "bytes":  14140,
+                      "keys":  [
+                                   "task",
+                                   "items",
+                                   "commands",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "shaped-actions.json",
+                      "bytes":  209,
+                      "keys":  [
+                                   "shaped",
+                                   "unknown",
+                                   "req",
+                                   "lines"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "shapes-evidence-audit.json",
+                      "bytes":  91734,
+                      "keys":  [
+                                   "generatedAt",
+                                   "stat",
+                                   "suspicious"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T19:33:39.372Z"
+                  },
+                  {
+                      "file":  "shape-weak-evidence.json",
+                      "bytes":  48616,
+                      "keys":  [
+                                   "counts",
+                                   "items"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "symptom-fields.json",
+                      "bytes":  52547,
+                      "keys":  [
+                                   "generatedAt",
+                                   "activity",
+                                   "battle",
+                                   "equip",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-22 06:01:18"
+                  },
+                  {
+                      "file":  "table-usage.json",
+                      "bytes":  234416,
+                      "keys":  [
+                                   "generatedAt",
+                                   "totals",
+                                   "byTable",
+                                   "top30",
+                                   "raw",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-22T06:01:33.300+08:00"
+                  },
+                  {
+                      "file":  "task-buckets.json",
+                      "bytes":  25575,
+                      "keys":  [
+                                   "generatedAt",
+                                   "source",
+                                   "totalTasks",
+                                   "columns",
+                                   "by",
+                                   "facts"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T19:56:11.300Z"
+                  },
+                  {
+                      "file":  "task-t1-judge.json",
+                      "bytes":  4007,
+                      "keys":  [
+                                   "file",
+                                   "found",
+                                   "hits",
+                                   "errors"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "task-t2-handlers.json",
+                      "bytes":  4804,
+                      "keys":  [
+                                   "file",
+                                   "found",
+                                   "hits",
+                                   "errors"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "upgrade-skill-send-path.json",
+                      "bytes":  14833,
+                      "keys":  [
+                                   "task",
+                                   "items",
+                                   "commands",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "weak-evidence-scan.json",
+                      "bytes":  112136,
+                      "keys":  [
+                                   "generatedAt",
+                                   "fields",
+                                   "stat"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T19:30:15.872Z"
+                  },
+                  {
+                      "file":  "weak-verified-a.json",
+                      "bytes":  42765,
+                      "keys":  [
+                                   "range",
+                                   "fields",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  },
+                  {
+                      "file":  "weak-verified-all.json",
+                      "bytes":  74002,
+                      "keys":  [
+                                   "generatedAt",
+                                   "total",
+                                   "agree",
+                                   "disagree",
+                                   "byStatus",
+                                   "fields"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  "2026-10-21T19:53:02.287Z"
+                  },
+                  {
+                      "file":  "weak-verified-b.json",
+                      "bytes":  41528,
+                      "keys":  [
+                                   "range",
+                                   "fields",
+                                   "unverified"
+                               ],
+                      "pass":  null,
+                      "generatedAt":  null
+                  }
+              ],
+    "implVersions":  [
+                         {
+                             "v":  "ha60c18b1",
+                             "count":  102
+                         },
+                         {
+                             "v":  "h0f20e751",
+                             "count":  48
+                         },
+                         {
+                             "v":  "hb5e4fddc",
+                             "count":  45
+                         },
+                         {
+                             "v":  "h6ffd4f2a",
+                             "count":  45
+                         },
+                         {
+                             "v":  "h38d6a2ea",
+                             "count":  45
+                         }
+                     ],
+    "logLines":  287,
+    "unverified":  [
+                       "D-note: the literal command form whose grep pattern contains escaped double quotes inside single quotes lost its quoting when passed through PowerShell 5.1 native argument handling and returned empty output with exit 0; an equivalent pattern impl.:.h[a-f0-9]* (dot matches the quote char) was used for the histogram; wc -l exit=0"
+                   ]
+}

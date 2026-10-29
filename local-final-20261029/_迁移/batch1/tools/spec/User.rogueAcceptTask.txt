@@ -1,0 +1,99 @@
+# User.rogueAcceptTask  (HttpConst.ROGUE_ACCEPT_TASK)
+# 出现 2 处
+
+133216: r.MessageCenter.on(s.HttpConst.FINISH_TASK, this.finishTaskCallBack, this);
+133217: r.MessageCenter.on(s.HttpConst.SYCN_TASK, this.sycnTaskCallBack, this);
+133218: r.MessageCenter.on(s.HttpConst.ACCEPTCIRCLETASK, this.acccptCircleTaskCallBack, this);
+133219: r.MessageCenter.on(s.HttpConst.GETCIRCLETASK, this.getCircleTaskCallBack, this);
+133220: r.MessageCenter.on(s.HttpConst.HIDE_TASK, this.hideTaskCallBack, this);
+133221: r.MessageCenter.on(l.EvName.FIGHT_TASK_DATA_SET, this.onSetFightTaskCallBack, this);
+133222: r.MessageCenter.on(s.HttpConst.ROGUE_ACCEPT_TASK, this.getRogueTaskCallBack, this);
+133223: r.MessageCenter.on(s.HttpConst.ROGUE_FINISHTASK_REWARD, this.finishRogueTaskCallBack, this);
+133224: };
+133225: e.prototype.getRogueTaskCallBack = function(e, o) {
+133226: if (1 == o.eRet) {
+133227: if (0 == this.isOrBubble) {
+133228: this.npcTaskInfo.hasOwnProperty("taskObj") && this.clearHideTask(this.npcTaskInfo.taskObj.TaskID);
+133229: b.default.operationalTasks(0, this.npcTaskInfo);
+133230: if (b.default.blankTaskArray.length) return;
+133231: var s = this.npcTaskInfo.taskObj.Fight;
+133232: if (s > 0) {
+133233: T.BattleMgr.startRoguePVEFight({
+133234: npcID: s
+133235: });
+133236: c.RoleBaseInfo.autoFightTaskId = this.npcTaskInfo.taskObj.TaskID;
+133237: return;
+133238: }
+133239: var p = b.default.judgeCurTaskIsFinish(this.npcTaskInfo.taskObj.TaskID, this.npcId);
+133240: 1 == p.npcState && b.default.finishTaskCheckUI(p);
+133241: } else if (1 == this.isOrBubble) {
+133242: b.default.operationalTasks(0, this.npcTaskInfo);
+133243: r.MessageCenter.dispatch(l.EvName.ON_BUBBLE_TASK, 1);
+133244: } else 2 == this.isOrBubble && b.default.operationalTasks(0, this.npcTaskInfo);
+133245: Promise.resolve().then(function() {
+133246: return t("../../scripts3/model3/RogueModel");
+133247: }).then(function(t) {
+133248: return t.RogueModel.checkTaskTips();
+133249: });
+133250: } else if (4 == o.eRet) {
+133251: var h = i.getItem(this.npcTaskInfo.taskObj.TaskID, "tasktime");
+133252: h && h.hasOwnProperty("overtimetips_on") && 0 == h.overtimetips_on && a.default.show(n.getText("1093"));
+133253: } else if (6 == o.eRet) {
+133254: var u = i.getItem(o.skillId, "skill"), f = o.CDTime - o.serverTime, d = Math.floor(f / 864e5), g = Math.floor((f - 864e5 * d) / 36e5), m = Math.floor((f - 864e5 * d - 36e5 * g) / 6e4), y = n.getText(6079).replace(/\[1\]/, n.getText(u.Name));
+133255: d > 0 && (y += d + n.getText(3784));
+133256: y += g + n.getText(3785);
+133257: y += m + n.getText(1414);
+133258: a.default.show(y);
+133259: }
+133260: };
+133261: e.prototype.finishRogueTaskCallBack = function(e, o) {
+133262: var s = this;
+---
+133610: this.npcTaskInfo = t;
+133611: var i = this.checkOrderDelete(parseInt(t.taskObj.TaskID)), n = {
+133612: taskID: t.taskObj.TaskID,
+133613: delOrder: i
+133614: };
+133615: cc.log("请求接取任务ID == " + t.taskObj.TaskID);
+133616: 3 == t.taskObj.TaskType && f.GSceneMgr.mode == f.GSceneMgr.modeMap.rogue ? p.NetMgr.http.sendReqWithMask(s.HttpConst.ROGUE_ACCEPT_TASK, n) : p.NetMgr.http.sendReqWithMask(s.HttpConst.GET_TASK, n);
+133617: };
+133618: e.prototype.clearOrder = function() {
+133619: for (var t = this.checkOrderDelete(), e = c.RoleBaseInfo.taskOrder, o = 0; o < t.length; o++) {
+133620: var i = e.indexOf(t[o]);
+133621: i >= 0 && e.splice(i, 1);
+133622: }
+133623: };
+133624: e.prototype.checkOrderDelete = function(t) {
+133625: void 0 === t && (t = 0);
+133626: for (var e = c.RoleBaseInfo.taskOrder, o = [], n = 0; n < e.length; n++) {
+133627: var r = e[n];
+133628: if (c.RoleBaseInfo.finishTaskObj.hasOwnProperty(r)) {
+133629: var a = i.getTask(r);
+133630: if (a && a.Completetips) {
+133631: var s = a.Completetips.split("|");
+133632: 0 != parseInt(s[0]) && this.checkCompleteTip(s[1], parseInt(s[2]), t) || o.push(r);
+133633: }
+133634: }
+133635: }
+133636: return o;
+133637: };
+133638: e.prototype.reqFinishTaskMsg = function(t, e) {
+133639: f.GSceneMgr.mode != f.GSceneMgr.modeMap.rogue && _.PackageModel.judgeTaskPackageLimit();
+133640: var o = S.UserModel.entity, n = t.taskObj, r = n.TaskID;
+133641: this.taskSelectId = e;
+133642: this.finishTaskObj = t;
+133643: if (5 != n.Type && 6 != n.Type && 7 != n.Type && 8 != n.Type && 9 != n.Type && 10 != n.Type && 11 != n.Type && 12 != n.Type && 13 != n.Type) {
+133644: var a = 1;
+133645: 5 == n.Type || 6 == n.Type || 7 == n.Type || 8 == n.Type ? a = 2 : 1 == n.Repeat && (a = 3);
+133646: var s = {
+133647: type: a,
+133648: taskID: r,
+133649: choose: e,
+133650: gTime: o.totalGameTime.gameTime
+133651: }, l = i.getItem(r, "tasknew");
+133652: 1 == a && n.Record && (s.taskLogID = "1," + r);
+133653: if (8 == n.Type) {
+133654: var c = this.deleteItemID(t.reqTaskObj.circleTaskObj.collectItem);
+133655: s.itemType = c.itemType;
+133656: s.ItemID = c.ItemID;
+---

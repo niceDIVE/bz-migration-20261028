@@ -1,0 +1,49 @@
+== V3.1 relations.md 第3行原文 ==
+'范围内 700 个动作｜边 901｜簇 76｜孤立 370｜成对 21｜有存档读写的动作 32'
+== V3.2 relations.md 「## 第」行 ==
+count = 76
+first = ## 第1批 · C01〔商店交易〕（27 个，可信度强）  共享：family:商店交易、rw:bloodArr、rw:contribution、rw:fosterArr
+last  = ## 第76批 · C76（2 个，可信度弱（主要靠名字相似））  共享：token:RANKLIST、token:RANK
+== V3.3 relations.json __meta ==
+{"inScope": 700, "edges": 901, "clusters": 76, "lone": 370, "pairs": 21, "rwActions": 32, "families": {"任务主线": 17, "核心账本": 5, "婚姻子女": 16, "技巧摸奖": 7, "战斗结算": 7, "龙": 4, "打坐练功": 10, "商店交易": 12, "斗狗": 6, "成就": 6, "穴位": 2, "道具使用": 6}, "weights": {"rw": 4.0, "family": 3.0, "pair": 3.0, "field": 1.0, "fk": 1.5, "token": 0.6, "link": 0.5}, "version": "relate v2.1", "included": ["SYCNPLAYERITEAMDATA"], "note": "只用于归型和排序，不是闸门；拿不准的关联标为「可能相关」【推断】"}
+== V3.4 实际数组 ==
+len(clusters) = 76  len(lone) = 370  sum(cluster.size) = 330  sum+lone = 700
+cluster ids = ['C01', 'C05', 'C02', 'C03', 'C16', 'C04', 'C06', 'C07', 'C08', 'C09', 'C10', 'C11', 'C12', 'C13', 'C14', 'C15', 'C17', 'C18', 'C19', 'C20', 'C21', 'C22', 'C23', 'C24', 'C25', 'C26', 'C27', 'C28', 'C29', 'C30', 'C31', 'C32', 'C33', 'C34', 'C35', 'C36', 'C37', 'C38', 'C39', 'C40', 'C41', 'C42', 'C43', 'C44', 'C45', 'C46', 'C47', 'C48', 'C49', 'C50', 'C51', 'C52', 'C53', 'C54', 'C55', 'C56', 'C57', 'C58', 'C59', 'C60', 'C61', 'C62', 'C63', 'C64', 'C65', 'C66', 'C67', 'C68', 'C69', 'C70', 'C71', 'C72', 'C73', 'C74', 'C75', 'C76']
+batch 序列连续1..N = True
+members+lone 去重后 = 700  簇/lone 重复键数 = 0 []
+== V3.5 对照集 ==
+registry 总行数 = 1125
+status 分布 = {"ALT": 16, "DEAD": 189, "DONE": 6, "GEN-READY": 317, "IMPL-UNJUDGED": 74, "NEEDS-S2": 282, "NO-CONTRACT": 20, "OUT": 29, "PUSH": 192}
+scope_keys = 699  includeKeys = 1  并集 U = 700
+U - actual = 0 []
+actual - U = 0 []
+includeKeys - scope_keys = 1 ['SYCNPLAYERITEAMDATA']
+== V4.1 config 合法性 ==
+valid JSON = True, 顶层键 = ['_说明', 'crossFamilyDamp', 'families', 'familyWeight', 'includeKeys', 'links', 'notes']
+includeKeys = ["SYCNPLAYERITEAMDATA"]
+families 条目数 = 12  名称 = ['核心账本', '任务主线', '商店交易', '道具使用', '打坐练功', '婚姻子女', '穴位', '成就', '技巧摸奖', '斗狗', '龙', '战斗结算']
+links 条数 = 2  notes 条数 = 3
+familyWeight = 3.0  crossFamilyDamp = 0.25
+== V4.2 逐 family 命中 KEY 的簇分布 ==
+[核心账本] match='^(QUICK_LOGIN|USER_LOADGAME|USER_CREATE|BACKTOLOGIN|ACCOUNT_LOG_OFF)$' 命中总数=5 簇分布={"C05": 5}
+[任务主线] match='^(?!ROGUE_)(GET_TASK|FINISH_TASK|QUICK_FINISH_TASK|SYCN_TASK|HIDE_TASK|DELEGATE_TASK|CHANGE_DELEGATE_TASK|ACCEPTCIRCLETASK|GETCIRCLETASK|GET_CIRCLE_TASK_LIST|CIRCLE_TASK_TASK)$|SCHOOL_TASK' 命中总数=17 簇分布={"C02": 17}
+[商店交易] match='^(SELL_ITEM|BUY_SHOP_ITEM|BUY_MARKET_ITEM|QUICK_BUY|BUY_SPECIAL_GOODS|BUY_SCHOOL_SHOP|INN_BUY_SHOP|REQ_BUY_FASHION|BUY_MOUNT|BUY_FORMULA_DATA|REQ_BUY_GIFT|BUY_GOOD_AND_EVIL_SHOP_ITEM)$' 命中总数=12 簇分布={"C01": 12}
+[道具使用] match='^(USE_ITEM|ROGUE_USE_ITEM|USE_ITEM_ADDITION|USE_SNOW_BALL|USE_BATCH_SNOW_BALL|USE_ALL_BALL)$' 命中总数=6 簇分布={"C05": 6}
+[打坐练功] match='DAZUO|LIANGONG|RECOVER_MP|WOOD_TRAINING' 命中总数=10 簇分布={"C06": 10}
+[婚姻子女] match='WIFE|MARRY|WEDD|CHILD|DIVORCE|CHOOSE_GIRL|PROPOSE|MAKE_LOVE' 命中总数=16 簇分布={"C04": 16}
+[穴位] match='ACUPOINT' 命中总数=2 簇分布={"C73": 2}
+[成就] match='ACHIEV' 命中总数=6 簇分布={"C16": 6}
+[技巧摸奖] match='KNACK' 命中总数=7 簇分布={"C09": 7}
+[斗狗] match='DOG' 命中总数=6 簇分布={"C13": 6}
+[龙] match='DRAGON' 命中总数=4 簇分布={"C15": 4}
+[战斗结算] match='BATTLE_END|BATTLE_RESULT|NPC_BATTLE_END' 命中总数=8 簇分布={"C03": 7, "C13": 1}
+== V5 SYCNPLAYERITEAMDATA ==
+所在簇 id = C01
+簇 family 标签 = 商店交易
+簇 size/batch/confidence = (27, 1, '强')
+notes 里有它？ True  notes 原值 = "三大重建入口之一，应答为空会清空背包；客户端从不主动发（registry 记为 PUSH），但服务端有 handler"
+registry status 原值 = "PUSH"  contract = "SYCNPLAYERITEAMDATA"
+它在 includeKeys 里？ True  它 status∈SCOPE？ False
+簇成员顺序中它的位置 = 11
+meta.included = ["SYCNPLAYERITEAMDATA"]
+meta.families = {"任务主线": 17, "核心账本": 5, "婚姻子女": 16, "技巧摸奖": 7, "战斗结算": 7, "龙": 4, "打坐练功": 10, "商店交易": 12, "斗狗": 6, "成就": 6, "穴位": 2, "道具使用": 6}

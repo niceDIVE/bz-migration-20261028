@@ -1,0 +1,99 @@
+# User.checkUploadAttackDamge  (HttpConst.UPLOAD_WB_DMG)
+# 出现 2 处
+
+ 19698: itemSkill: this.itemSkills
+ 19699: };
+ 19700: y.playerInfo.entity.hp.limit = n.hp.limit;
+ 19701: y.playerInfo.entity.hp.remaining = n.hp.remaining;
+ 19702: y.playerInfo.entity.mp.remaining = n.mp.remaining;
+ 19703: g.MessageCenter.dispatch(m.EvName.UPLOAD_WB_DMG_DATA, i);
+ 19704: p.NetMgr.http.sendRequest(c.HttpConst.UPLOAD_WB_DMG, r);
+ 19705: };
+ 19706: return e;
+ 19707: }(h.Local1v1Base);
+ 19708: o.BossfightMgr = v;
+ 19709: cc._RF.pop();
+ 19710: }, {
+ 19711: "../../battlesystem/NpcBattleEntity": "NpcBattleEntity",
+ 19712: "../../battlesystem/attributesystem/FinalBonus": "FinalBonus",
+ 19713: "../../core/events/MessageCenter": "MessageCenter",
+ 19714: "../../gameconfigs/CFMgr": "CFMgr",
+ 19715: "../../gameconfigs/LangMgr": "LangMgr",
+ 19716: "../../models/SkillTable": "SkillTable",
+ 19717: "../../models/vos/PlayerInfo": "PlayerInfo",
+ 19718: "../../models/vos/RoleBaseInfo": "RoleBaseInfo",
+ 19719: "../../net/HttpConst": "HttpConst",
+ 19720: "../../net/NetMgr": "NetMgr",
+ 19721: "../../utils/EvName": "EvName",
+ 19722: "../../utils/MadUtils": "MadUtils",
+ 19723: "./Local1v1Base": "Local1v1Base"
+ 19724: } ],
+ 19725: BreathAction: [ function(t, e, o) {
+ 19726: "use strict";
+ 19727: cc._RF.push(e, "ff3f2T+yKdOgZqizBWb9AgI", "BreathAction");
+ 19728: var i, n = this && this.__extends || (i = function(t, e) {
+ 19729: return (i = Object.setPrototypeOf || {
+ 19730: __proto__: []
+ 19731: } instanceof Array && function(t, e) {
+ 19732: t.__proto__ = e;
+ 19733: } || function(t, e) {
+ 19734: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+ 19735: })(t, e);
+ 19736: }, function(t, e) {
+ 19737: i(t, e);
+ 19738: function o() {
+ 19739: this.constructor = t;
+ 19740: }
+ 19741: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());
+ 19742: });
+ 19743: Object.defineProperty(o, "__esModule", {
+ 19744: value: !0
+---
+145510: }
+145511: e.prototype.init = function() {
+145512: var t = this;
+145513: this.numAtkBonus = new i("wbab");
+145514: this.numAtkBonus.value = 0;
+145515: a.MessageCenter.on(s.HttpConst.FIGHT_WORLD_BOSS, this.onGetBossData, this);
+145516: a.MessageCenter.on(s.HttpConst.UPLOAD_WB_DMG, this.onUploadDmg, this);
+145517: a.MessageCenter.on(s.HttpConst.WB_DMG_RANKLIST, this.onGetRankList, this);
+145518: a.MessageCenter.on(l.EvName.QUICK_BUY_COMPLETE + "1", function(e, o) {
+145519: t.setAtkBonus(o.num);
+145520: a.MessageCenter.dispatch(l.EvName.WB_GOD_HELP_BOUGHT, o.num);
+145521: }, this);
+145522: a.MessageCenter.on(s.HttpConst.GET_BOSS_REWARD, function(t, e) {
+145523: 3 == e.eRet ? c.default.show(r.getText(1127)) : 2 == e.eRet ? c.default.show(r.getText(1128)) : 1 == e.eRet && m.default.prefabs.load("worldBoss/DamageReward", cc.Prefab, function(t, o) {
+145524: var i = cc.instantiate(o);
+145525: y.PopUpMgr.addPopUp(i, v.LayerMgr.popUpLayer, 1, !0);
+145526: i.addComponent("WBRewardUI").setData({
+145527: firstPlayer: e.firstName,
+145528: lastKill: e.killName,
+145529: rewardDic: e.rewardArray,
+145530: killReward: e.killObj
+145531: });
+145532: });
+145533: }, this);
+145534: a.MessageCenter.on(l.EvName.UPLOAD_WB_DMG_DATA, this.onUploadDmgData, this);
+145535: };
+145536: e.prototype.reqBossReward = function() {
+145537: p.NetMgr.http.sendRequest(s.HttpConst.GET_BOSS_REWARD);
+145538: };
+145539: e.prototype.onGetRankList = function(t, e) {
+145540: a.MessageCenter.dispatch(l.EvName.ON_GET_WB_RANKLIST, e);
+145541: };
+145542: e.prototype.onUploadDmg = function(e, o) {
+145543: if (2 == o.eRet) {
+145544: c.default.show(r.getText(880));
+145545: this.end();
+145546: } else if (3 == o.eRet) {
+145547: if (h.RoleBaseInfo.roleID == o.killBoss) if (this.win) c.default.show(r.getText(882)); else {
+145548: var i = n.getItem(this.bossID, "npc");
+145549: c.default.show(r.getText(881).replace(/\[1\]/, r.getText(i.NpcName)));
+145550: } else c.default.show(r.getText(878));
+145551: var a = n.getItem(this.bossID, "npc"), s = r.getText(864).replace(/\[1\]/, r.getText(a.NpcName)).replace(/\[2\]/, o.killBossName);
+145552: _.bulletTitleMgr.show(s, 3);
+145553: this.end();
+145554: } else if (1 == o.eRet) {
+145555: this.bossHpMax = o.bossMaxHP;
+145556: this.bossHp = o.bossCurHP;
+---

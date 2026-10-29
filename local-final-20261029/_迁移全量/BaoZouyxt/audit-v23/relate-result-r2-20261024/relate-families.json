@@ -1,0 +1,59 @@
+{
+ "_说明": "relate.py 的可编辑知识。families：已知同一玩法的动作，簇内互相加边，并削弱它们和其他家族之间的弱连接。links：已知联动，只影响批次先后，不并簇。notes：写在结果里的提醒。正则匹配的是 registry 的 KEY。",
+ "families": {
+  "核心账本": {
+   "match": "^(QUICK_LOGIN|USER_LOADGAME|USER_CREATE|BACKTOLOGIN|ACCOUNT_LOG_OFF)$"
+  },
+  "任务主线": {
+   "match": "^(?!ROGUE_)(GET_TASK|FINISH_TASK|QUICK_FINISH_TASK|SYCN_TASK|HIDE_TASK|DELEGATE_TASK|CHANGE_DELEGATE_TASK|ACCEPTCIRCLETASK|GETCIRCLETASK|GET_CIRCLE_TASK_LIST|CIRCLE_TASK_TASK)$|SCHOOL_TASK"
+  },
+  "商店交易": {
+   "match": "^(SELL_ITEM|BUY_SHOP_ITEM|BUY_MARKET_ITEM|QUICK_BUY|BUY_SPECIAL_GOODS|BUY_SCHOOL_SHOP|INN_BUY_SHOP|REQ_BUY_FASHION|BUY_MOUNT|BUY_FORMULA_DATA|REQ_BUY_GIFT|BUY_GOOD_AND_EVIL_SHOP_ITEM)$"
+  },
+  "道具使用": {
+   "match": "^(USE_ITEM|ROGUE_USE_ITEM|USE_ITEM_ADDITION|USE_SNOW_BALL|USE_BATCH_SNOW_BALL|USE_ALL_BALL)$"
+  },
+  "打坐练功": {
+   "match": "DAZUO|LIANGONG|RECOVER_MP|WOOD_TRAINING"
+  },
+  "婚姻子女": {
+   "match": "WIFE|MARRY|WEDD|CHILD|DIVORCE|CHOOSE_GIRL|PROPOSE|MAKE_LOVE"
+  },
+  "穴位": {
+   "match": "ACUPOINT"
+  },
+  "成就": {
+   "match": "ACHIEV"
+  },
+  "技巧摸奖": {
+   "match": "KNACK"
+  },
+  "斗狗": {
+   "match": "DOG"
+  },
+  "龙": {
+   "match": "DRAGON"
+  },
+  "战斗结算": {
+   "match": "BATTLE_END|BATTLE_RESULT|NPC_BATTLE_END"
+  }
+ },
+ "familyWeight": 3.0,
+ "crossFamilyDamp": 0.25,
+ "links": [
+  [
+   "END_DUNGEON_ADVENTURE",
+   "GET_ACHIEVE_DATA",
+   "完成副本会推进成就（第 1 轮意见 #10）"
+  ],
+  [
+   "END_DUNGEON_ADVENTURE",
+   "GET_TASK",
+   "完成副本会推进每日任务进度（第 1 轮意见 #10）"
+  ]
+ ],
+ "notes": {
+  "END_DAZUO": "已知做不了结算：请求里不带时长，先按「只回成功、不结算」写",
+  "END_LIANGONG": "已知做不了结算：请求里不带时长，先按「只回成功、不结算」写"
+ }
+}

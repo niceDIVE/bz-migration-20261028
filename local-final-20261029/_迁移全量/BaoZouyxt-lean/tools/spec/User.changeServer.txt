@@ -1,0 +1,99 @@
+# User.changeServer  (HttpConst.CHANGE_SERVER)
+# 出现 2 处
+
+ 28099: this.crossData = null;
+ 28100: this.oldUID = 0;
+ 28101: this.oldAccount = "";
+ 28102: this.loginReqTeamState = !1;
+ 28103: this.selectState = 0;
+ 28104: this.isHaveChatMain = !1;
+ 28105: d.MessageCenter.on(a.HttpConst.CHANGE_SERVER, this.showChangeServerData, this);
+ 28106: d.MessageCenter.on(a.HttpConst.CHANGE_WORLD_SERVER, this.onChangeWorldServer, this);
+ 28107: d.MessageCenter.on(a.HttpConst.CHECK_EQUIP_TO_TEAM, this.showCheckEquipToTeam, this);
+ 28108: };
+ 28109: e.prototype.needLocalUrlAndPort = function(t) {
+ 28110: if (E.WebSocketFactory.isCrossChat()) {
+ 28111: this.restoreLocalServer();
+ 28112: t && t();
+ 28113: this.setCrossServer();
+ 28114: } else t && t();
+ 28115: };
+ 28116: e.prototype.onChangeWorldServer = function(t, e) {
+ 28117: if (1 == e.eRet) {
+ 28118: this.oldUID = s.RoleBaseInfo.roleID;
+ 28119: this.oldAccount = s.RoleBaseInfo.userAccount;
+ 28120: var o = {};
+ 28121: o.userName = s.RoleBaseInfo.userName;
+ 28122: o.serverUrl = l.Net.getUrlStr();
+ 28123: o.serverPort = l.Net.getPort();
+ 28124: o.oldHttpIpListObj = r.NetMgr.http.getIpListObj();
+ 28125: o.oldHttpPort = r.NetMgr.http.getPort();
+ 28126: o.oldUrlAll = e.sendurl;
+ 28127: I.HangUpModel.saveCrossData(e.hookData);
+ 28128: this.oldData = o;
+ 28129: this.crossData = e;
+ 28130: this.setCrossServer();
+ 28131: E.WebSocketFactory.closeSocket();
+ 28132: u.WebSocketModel.openSocketNet("CrossChat");
+ 28133: }
+ 28134: };
+ 28135: e.prototype.setCrossServer = function() {
+ 28136: var t = new RegExp("[0-9]+.[0-9]+.[0-9]+.[0-9]+"), e = this.crossData.chatServerIP, o = (t.test(e) ? "ws" : "wss") + "://";
+ 28137: s.RoleBaseInfo.userName = this.crossData.roleName;
+ 28138: s.RoleBaseInfo.roleID = this.crossData.newID;
+ 28139: s.RoleBaseInfo.userAccount = this.crossData.newAcc;
+ 28140: var i = this.crossData.ip, n = this.crossData.gport, a = {
+ 28141: index: 0,
+ 28142: svrList: [ i ]
+ 28143: };
+ 28144: r.NetMgr.http.setUrlAndPort(a, n, r.NetMgr.http.serverID);
+ 28145: l.Net.setUrlAndPort(o + e, this.crossData.chatServerPort);
+---
+ 28173: 1 == e.eRet ? u.WebSocketModel.openSocketNet("team") : 2 == e.eRet ? c.default.show(i.getText(4259)) : cc.log("error enter");
+ 28174: };
+ 28175: e.prototype.reqCrossService = function(t) {
+ 28176: this.selectState = t;
+ 28177: var e;
+ 28178: e = cc.sys.isNative ? 0 == n.platformID ? 1 : 2 : 3;
+ 28179: r.NetMgr.http.sendRequest(a.HttpConst.CHANGE_SERVER, {
+ 28180: roleID: s.RoleBaseInfo.roleID,
+ 28181: channel: e,
+ 28182: serid: this.serverData[0]
+ 28183: });
+ 28184: };
+ 28185: e.prototype.reqChangeWorldServer = function() {
+ 28186: r.NetMgr.http.sendRequest(a.HttpConst.CHANGE_WORLD_SERVER, {
+ 28187: serid: this.serverData[0]
+ 28188: });
+ 28189: };
+ 28190: e.prototype.onEnterCrossServer = function() {
+ 28191: if (cc.sys.localStorage.getItem(s.RoleBaseInfo.roleID + "$#&A")) {
+ 28192: cc.sys.localStorage.removeItem(s.RoleBaseInfo.roleID + "$#&A");
+ 28193: cc.sys.localStorage.removeItem(s.RoleBaseInfo.roleID + "$#&T");
+ 28194: }
+ 28195: Promise.resolve().then(function() {
+ 28196: return t("./GameStates");
+ 28197: }).then(function(t) {
+ 28198: t.GameStates.destroy();
+ 28199: });
+ 28200: f.MultiPlayerModel.destroy();
+ 28201: cc.sys.localStorage.removeItem(s.RoleBaseInfo.roleID + "$#&A");
+ 28202: cc.sys.localStorage.removeItem(s.RoleBaseInfo.roleID + "$#&T");
+ 28203: Promise.resolve().then(function() {
+ 28204: return t("../mgrs/SaveDataMgr");
+ 28205: }).then(function(t) {
+ 28206: t.SaveDataMgr.resetModel();
+ 28207: });
+ 28208: m.LocalStorageMgr.setItem("madHeroFlag", 0);
+ 28209: };
+ 28210: e.prototype.setUrlAndPort = function(t) {
+ 28211: var e = t.ip, o = t.lPort, i = t.gport, n = {
+ 28212: index: 0,
+ 28213: svrList: [ e ]
+ 28214: };
+ 28215: y.sListModel.svrUrl = n;
+ 28216: r.NetMgr.http.setUrlAndPort(n, i, r.NetMgr.http.serverID);
+ 28217: r.NetMgr.loginHttp.setUrlAndPort(n, o, r.NetMgr.http.serverID);
+ 28218: };
+ 28219: e.prototype.exitCrossServerFight = function() {
+---

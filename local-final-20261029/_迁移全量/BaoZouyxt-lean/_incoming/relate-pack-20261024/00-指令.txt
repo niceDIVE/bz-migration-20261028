@@ -1,0 +1,31 @@
+动作关联分析：跑一轮，把数据交回
+
+目的：给 699 个动作分簇、排写作顺序，减少后期返工。这一步只是分析，不设任何门槛。
+
+准备
+1. 把本包里的 bz-oracle/ 合并进你手上现有的 bz-oracle v2.3 目录。只新增 forge/analysis/ 和 out/relations.*，其他文件不会被改动。
+2. pip install networkx   （需要 Python 3.8 或更高）
+
+运行（在 bz-oracle 目录下执行）
+3. python3 forge/analysis/extract_rw.py <bz-rpc-server.js 的路径> > rw.json
+   结尾会在 stderr 打出一行「# N 个动作抽到存档读写」，把这个 N 记下来。
+   如果还有 bz-handler-impl.js、live/flow.js 这些处理器文件，路径直接接在后面一起传。
+4. python3 forge/analysis/relate.py --rw rw.json
+   运行后会重新生成 out/relations.md 和 out/relations.json。
+
+看结果（大约 15 分钟，不用写报告）
+5. 打开 out/relations.md，挑你熟悉的玩法看：
+   - 明显分错的簇：写簇号，加一句原因。例如「C01：使用道具和管家没关系」。
+   - 本该放在一起却被拆开的：写出动作名。例如「BUY_ITEM 和 SALE_ITEM 应该同簇」。
+   - 你知道但图里没体现的联动：一句话就行。例如「完成副本会推进成就」。
+   一共写 5 到 10 条就够了，多写也欢迎。
+
+交回
+- rw.json
+- out/relations.md（第 4 步重跑后的版本）
+- 第 3 步的 N
+- 第 5 步的几句话（txt 格式即可）
+
+遇到问题
+- 第 3 步 N 为 0 或者特别小：说明服务端的协议名写法和脚本默认的不一样。随便截一段处理某个动作的代码（20 行左右）发回来，我来改匹配规则。
+- 其他报错：把报错原文直接贴回来就行，不用自己排查。

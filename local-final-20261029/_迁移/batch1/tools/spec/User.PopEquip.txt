@@ -1,0 +1,88 @@
+# User.PopEquip  (HttpConst.POP_EQUIP_STORAGE)
+# 出现 2 处
+
+ 61054: n.hasOwnProperty(e.ItemID) ? n[e.ItemID].num = n[e.ItemID].num + o.num : r.MarryModel.storageEquip[e.ItemID] = o;
+ 61055: var l = f.RoleBaseInfo.itemSort.indexOf(e.ItemID);
+ 61056: l >= 0 && f.RoleBaseInfo.itemSort.splice(l, 1);
+ 61057: i.MessageCenter.dispatch(c.EvName.CONTROLE_EQUIP_EVENT, e);
+ 61058: } else 4 == e.eRet ? a.default.show(s.getText(1222)) : 6 == e.eRet ? a.default.show(s.getText(5033)) : 10 == e.eRet ? cc.log("获取装备锁定数据出错") : 11 == e.eRet && a.default.show(s.getText(8156));
+ 61059: }, this);
+ 61060: i.MessageCenter.on(n.HttpConst.POP_EQUIP_STORAGE, function(e, o) {
+ 61061: if (1 == o.eRet) {
+ 61062: h.InhertEquipModel.allInhertEquips = r.MarryModel.tempInhertEquips;
+ 61063: r.MarryModel.tempInhertEquips = {};
+ 61064: var n = r.MarryModel.storageEquip;
+ 61065: n.hasOwnProperty(o.ItemID) && (n[o.ItemID].num == o.ItemNum ? delete n[o.ItemID] : n[o.ItemID].num = n[o.ItemID].num - o.ItemNum);
+ 61066: i.MessageCenter.dispatch(c.EvName.CONTROLE_EQUIP_EVENT, o);
+ 61067: } else 3 == o.eRet && a.default.show(s.getText(1221));
+ 61068: t.popingItem = 0;
+ 61069: }, this);
+ 61070: };
+ 61071: t.prototype.sendUpgradeBed = function() {
+ 61072: u.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_BED, {});
+ 61073: };
+ 61074: t.prototype.setIceBed = function(t) {
+ 61075: this.useIceBed = t;
+ 61076: };
+ 61077: t.prototype.getIceBed = function() {
+ 61078: return this.useIceBed;
+ 61079: };
+ 61080: t.prototype.getIceBedSp = function() {
+ 61081: if (0 == this.useIceBed) return 0;
+ 61082: var t = r.MarryModel.bedLevel;
+ 61083: if (0 == t) return 0;
+ 61084: var e = l.getItem(t, "bedlevel");
+ 61085: return parseInt(e.capacity);
+ 61086: };
+ 61087: t.prototype.getIceBedObj = function() {
+ 61088: var t = r.MarryModel.bedLevel;
+ 61089: return l.getItem(t, "bedlevel");
+ 61090: };
+ 61091: t.prototype.reqUpgradeStorage = function() {
+ 61092: u.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_STORAGE, {});
+ 61093: };
+ 61094: t.prototype.reqPopEquip = function(t, e) {
+ 61095: this.popingItem = t;
+ 61096: u.NetMgr.http.sendRequest(n.HttpConst.POP_EQUIP_STORAGE, {
+ 61097: ItemID: t,
+ 61098: ItemNum: e
+ 61099: });
+ 61100: };
+---
+ 61101: t.prototype.reqPushEquip = function(t, e) {
+ 61102: u.NetMgr.http.sendRequest(n.HttpConst.PUSH_EQUIP_STORAGE, {
+ 61103: ItemID: t,
+ 61104: ItemNum: e
+ 61105: });
+ 61106: };
+ 61107: t.prototype.destroy = function() {
+ 61108: this.useIceBed = 0;
+ 61109: };
+ 61110: return t;
+ 61111: }();
+ 61112: o.IceBedModel = new d();
+ 61113: cc._RF.pop();
+ 61114: }, {
+ 61115: "../core/events/MessageCenter": "MessageCenter",
+ 61116: "../gameconfigs/CFMgr": "CFMgr",
+ 61117: "../gameconfigs/LangMgr": "LangMgr",
+ 61118: "../gui/uicomponents/Alert": "Alert",
+ 61119: "../net/HttpConst": "HttpConst",
+ 61120: "../net/NetMgr": "NetMgr",
+ 61121: "../utils/EvName": "EvName",
+ 61122: "./InhertEquipModel": "InhertEquipModel",
+ 61123: "./MarryModel": "MarryModel",
+ 61124: "./StoreModel": "StoreModel",
+ 61125: "./vos/RoleBaseInfo": "RoleBaseInfo"
+ 61126: } ],
+ 61127: IceBedNpc: [ function(t, e, o) {
+ 61128: "use strict";
+ 61129: cc._RF.push(e, "89884myNQZKQJh61PgoeedT", "IceBedNpc");
+ 61130: var i, n = this && this.__extends || (i = function(t, e) {
+ 61131: return (i = Object.setPrototypeOf || {
+ 61132: __proto__: []
+ 61133: } instanceof Array && function(t, e) {
+ 61134: t.__proto__ = e;
+ 61135: } || function(t, e) {
+ 61136: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+---

@@ -1,0 +1,1132 @@
+{
+  "generatedAt": "2026-10-22T00:02:12.286Z",
+  "queries": [
+    {
+      "pattern": "RoleBaseInfo.gold",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:24006: l.RoleBaseInfo.gold += h;",
+        "tools/index.js:51360: if (d.RoleBaseInfo.gold >= this.inviteEventObj.gold) {",
+        "tools/index.js:55779: this.goldNum.getComponent(cc.Label).string = p.RoleBaseInfo.gold.toString();",
+        "tools/index.js:55795: this.goldNum.getComponent(cc.Label).string = p.RoleBaseInfo.gold.toString();",
+        "tools/index.js:55804: this.goldNum.getComponent(cc.Label).string = p.RoleBaseInfo.gold.toString();",
+        "tools/index.js:64300: a.RoleBaseInfo.gold = t;",
+        "tools/index.js:64709: l.RoleBaseInfo.gold = e[o];",
+        "tools/index.js:69706: if (e.PlatformApi) e.PlatformApi.setUserInfo && e.PlatformApi.setUserInfo(String(p.RoleBaseInfo.roleID), p.RoleBaseInfo.userName, t, String(p.RoleBaseInfo.level), String(f.NetMgr.http.serverID), d.RoleOtherInfo.serverName, String(p.RoleBaseInfo.gold), \"1\", String(Math.floor(.001 * g.TimeMgr.getSTimestamp()))); else if (cc.sys.isNative) switch (cc.sys.os) {",
+        "tools/index.js:69708: jsb.reflection.callStaticMethod(\"com/maple/madherogo/AppActivity\", \"setUserInfo\", \"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V\", String(p.RoleBaseInfo.roleID), p.RoleBaseInfo.userName, t, String(p.RoleBaseInfo.level), String(f.NetMgr.http.serverID), d.RoleOtherInfo.serverName, String(p.RoleBaseInfo.gold), \"1\", String(Math.floor(.001 * g.TimeMgr.getSTimestamp())));",
+        "tools/index.js:69715: var o = [ String(p.RoleBaseInfo.roleID), p.RoleBaseInfo.userName, t, String(p.RoleBaseInfo.level), String(f.NetMgr.http.serverID), d.RoleOtherInfo.serverName, String(p.RoleBaseInfo.gold), \"1\", String(Math.floor(.001 * g.TimeMgr.getSTimestamp())) ], i = JSON.stringify(o);",
+        "tools/index.js:70457: I.RoleBaseInfo.gold = e.curGold;",
+        "tools/index.js:70896: I.RoleBaseInfo.gold = t.userGold;",
+        "tools/index.js:77524: 41 == i.Type ? c.RoleBaseInfo.coins >= parseInt(e) ? this.weddingType > 0 ? p.default.show(r.getText(\"jh7\")) : this.reqWedding(2) : p.default.show(r.getText(\"jh59\")) : 42 == i.Type && (c.RoleBaseInfo.gold >= o ? 2 == this.weddingType ? this.marryPopTip(5, 1) : 1 == this.weddingType ? p.default.show(r.getText(\"jh7\")) : this.reqWedding(1) : p.default.show(r.getText(\"jh59\")));",
+        "tools/index.js:77548: c.RoleBaseInfo.gold >= o ? e.buyHouseMap(t, 1) : p.default.show(r.getText(\"jh59\"));",
+        "tools/index.js:131234: e.hasOwnProperty(\"userGold\") && (v.RoleBaseInfo.gold = e.userGold);",
+        "tools/index.js:144129: l.RoleBaseInfo.gold = e.curGold;"
+      ]
+    },
+    {
+      "pattern": "openChargeList",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:24636: }) : p.StoreModel.openChargeList();",
+        "tools/index.js:24686: } else 4 == e.eRet && p.StoreModel.openChargeList();",
+        "tools/index.js:24698: } else p.StoreModel.openChargeList();",
+        "tools/index.js:32165: t.StoreModel.openChargeList();",
+        "tools/index.js:43504: } else 2 == o.eRet && m.StoreModel.openChargeList();",
+        "tools/index.js:44547: } else 8 == e.eRet ? a.default.show(s.getText(1261)) : 9 == e.eRet && l.StoreModel.openChargeList();",
+        "tools/index.js:54269: } else 2 == e.eRet ? u.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(r.getText(\"762\"));",
+        "tools/index.js:61038: } else 2 == e.eRet ? p.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(s.getText(\"1213\"));",
+        "tools/index.js:61045: } else 2 == e.eRet ? p.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(s.getText(\"1213\"));",
+        "tools/index.js:64088: c.StoreModel.openChargeList();",
+        "tools/index.js:67601: if (2 === o.eRet) c.StoreModel.openChargeList(); else if (t.btUI) {",
+        "tools/index.js:67778: d.StoreModel.openChargeList();",
+        "tools/index.js:70500: } else 2 == e.eRet && A.StoreModel.openChargeList();",
+        "tools/index.js:75578: } else 2 == o.eRet ? c.default.show(n.getText(\"968\")) : 3 == o.eRet ? f.StoreModel.openChargeList() : 4 == o.eRet ? c.default.show(n.getText(\"1161\")) : 7 == o.eRet && c.default.show(n.getText(\"1455\"));",
+        "tools/index.js:102115: } else 2 == e.eRet && h.StoreModel.openChargeList();",
+        "tools/index.js:102130: } else 2 == e.eRet && h.StoreModel.openChargeList();",
+        "tools/index.js:102145: } else 2 == e.eRet && h.StoreModel.openChargeList();",
+        "tools/index.js:120691: } else 11 == i.eRet && O.StoreModel.openChargeList();",
+        "tools/index.js:130848: e.prototype.openChargeList = function(t) {",
+        "tools/index.js:131256: } else 4 == e.eRet ? c.default.show(i.getText(6000575)) : this.openChargeList();",
+        "tools/index.js:144041: } else 2 == o.eRet ? s.default.show(i.getText(1064)) : 3 == o.eRet && f.StoreModel.openChargeList();",
+        "tools/index.js:144047: } else 2 == o.eRet ? s.default.show(i.getText(1064)) : 3 == o.eRet && f.StoreModel.openChargeList();",
+        "tools/index.js:144071: } else 3 == e.eRet ? f.StoreModel.openChargeList() : 4 == e.eRet ? d.default.prefabs.load(\"marrySystem/ChildWashUI\", cc.Prefab, function(t, o) {",
+        "tools/index.js:144132: } else 2 == e.eRet ? f.StoreModel.openChargeList() : s.default.show(i.getText(\"910\"));"
+      ]
+    },
+    {
+      "pattern": "\\.gold\\b",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:51360: if (d.RoleBaseInfo.gold >= this.inviteEventObj.gold) {",
+        "tools/index.js:69706: if (e.PlatformApi) e.PlatformApi.setUserInfo && e.PlatformApi.setUserInfo(String(p.RoleBaseInfo.roleID), p.RoleBaseInfo.userName, t, String(p.RoleBaseInfo.level), String(f.NetMgr.http.serverID), d.RoleOtherInfo.serverName, String(p.RoleBaseInfo.gold), \"1\", String(Math.floor(.001 * g.TimeMgr.getSTimestamp()))); else if (cc.sys.isNative) switch (cc.sys.os) {",
+        "tools/index.js:69708: jsb.reflection.callStaticMethod(\"com/maple/madherogo/AppActivity\", \"setUserInfo\", \"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V\", String(p.RoleBaseInfo.roleID), p.RoleBaseInfo.userName, t, String(p.RoleBaseInfo.level), String(f.NetMgr.http.serverID), d.RoleOtherInfo.serverName, String(p.RoleBaseInfo.gold), \"1\", String(Math.floor(.001 * g.TimeMgr.getSTimestamp())));",
+        "tools/index.js:69715: var o = [ String(p.RoleBaseInfo.roleID), p.RoleBaseInfo.userName, t, String(p.RoleBaseInfo.level), String(f.NetMgr.http.serverID), d.RoleOtherInfo.serverName, String(p.RoleBaseInfo.gold), \"1\", String(Math.floor(.001 * g.TimeMgr.getSTimestamp())) ], i = JSON.stringify(o);",
+        "tools/index.js:77524: 41 == i.Type ? c.RoleBaseInfo.coins >= parseInt(e) ? this.weddingType > 0 ? p.default.show(r.getText(\"jh7\")) : this.reqWedding(2) : p.default.show(r.getText(\"jh59\")) : 42 == i.Type && (c.RoleBaseInfo.gold >= o ? 2 == this.weddingType ? this.marryPopTip(5, 1) : 1 == this.weddingType ? p.default.show(r.getText(\"jh7\")) : this.reqWedding(1) : p.default.show(r.getText(\"jh59\")));",
+        "tools/index.js:77548: c.RoleBaseInfo.gold >= o ? e.buyHouseMap(t, 1) : p.default.show(r.getText(\"jh59\"));",
+        "tools/index.js:106343: this.gold -= e;",
+        "tools/index.js:106344: this.gold < 0 && (this.gold = 0);"
+      ]
+    },
+    {
+      "pattern": "payment",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "RoleBaseInfo.gold",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:1887: if (1 == this.data.giftData.money[0] && p.RoleBaseInfo.gold < Math.floor(this.data.giftData.money[1] * this.data.ratio * this.itemNum)) {",
+        "tools/scripts2.js:2325: if (this.cost > c.RoleBaseInfo.gold) m.StoreModel.openChargeList(); else {",
+        "tools/scripts2.js:5979: l.RoleBaseInfo.gold < e && (this.itemNum = 0);",
+        "tools/scripts2.js:5991: (0 != this.data.limit && Math.ceil(this.itemNum + 1) <= parseInt(this.data.curNum) || 0 == this.data.limit) && l.RoleBaseInfo.gold >= o && this.itemNum++;",
+        "tools/scripts2.js:5994: if (l.RoleBaseInfo.gold >= o) 0 != this.data.limit && Math.ceil(this.itemNum + 10) <= parseInt(this.data.curNum) || 0 == this.data.limit ? this.itemNum += 10 : this.itemNum = parseInt(this.data.curNum); else if (l.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:5995: var i = Math.floor(l.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:6135: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+        "tools/scripts2.js:6146: (0 != this.data.limit && Math.ceil(this.itemNum + 1) <= parseInt(this.data.curNum) || 0 == this.data.limit) && p.RoleBaseInfo.gold >= o && this.itemNum++;",
+        "tools/scripts2.js:6149: if (p.RoleBaseInfo.gold >= o) 0 != this.data.limit && Math.ceil(this.itemNum + 10) <= parseInt(this.data.curNum) || 0 == this.data.limit ? this.itemNum += 10 : this.itemNum = parseInt(this.data.curNum); else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:6150: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:6556: this.max = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:6630: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+        "tools/scripts2.js:6649: if (p.RoleBaseInfo.gold >= o) this.itemNum++; else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:6655: if (p.RoleBaseInfo.gold >= o) this.itemNum += 10; else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:6656: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:6730: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+        "tools/scripts2.js:6749: if (p.RoleBaseInfo.gold >= o && this.itemNum < 10 - Math.ceil(l.StoreModel.buyTimes % 10)) this.itemNum++; else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:6755: if (p.RoleBaseInfo.gold >= o) Math.ceil(this.itemNum + 10) <= 10 - Math.ceil(l.StoreModel.buyTimes % 10) ? this.itemNum += 10 : this.itemNum = Math.ceil(10 - Math.ceil(l.StoreModel.buyTimes % 10)); else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:6756: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:6836: 1 == this.data[1] ? this.total = h.RoleBaseInfo.getItemNum(8114) : this.total = h.RoleBaseInfo.gold;",
+        "tools/scripts2.js:6942: this.itemNum = p.RoleBaseInfo.gold < e ? 0 : 1;",
+        "tools/scripts2.js:6992: e > p.RoleBaseInfo.gold && v.StoreModel.openChargeList();",
+        "tools/scripts2.js:7058: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+        "tools/scripts2.js:7075: if (p.RoleBaseInfo.gold >= o && this.itemNum < this.data.timeNum) this.itemNum++; else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:7081: if (p.RoleBaseInfo.gold >= o) Math.ceil(this.itemNum + 10) <= this.data.timeNum - this.data.curNum ? this.itemNum += 10 : this.itemNum = Math.ceil(this.data.timeNum - this.data.curNum); else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:7082: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:7161: l.RoleBaseInfo.gold < this.itemObj.price && (this.itemNum = 0);",
+        "tools/scripts2.js:7172: l.RoleBaseInfo.gold >= o ? this.itemNum++ : p.StoreModel.openChargeList();",
+        "tools/scripts2.js:7175: if (l.RoleBaseInfo.gold >= o) this.itemNum += 10; else {",
+        "tools/scripts2.js:7176: var i = Math.floor(l.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:7413: p.RoleBaseInfo.gold < o && (this.itemNum = 0);",
+        "tools/scripts2.js:7424: (0 != this.itemObj.limit && Math.ceil(this.itemNum + 1) <= parseInt(this.itemObj.curNum) || 0 == this.itemObj.limit) && p.RoleBaseInfo.gold >= o && this.itemNum++;",
+        "tools/scripts2.js:7425: p.RoleBaseInfo.gold < o && u.StoreModel.openChargeList();",
+        "tools/scripts2.js:7428: if (p.RoleBaseInfo.gold >= o) 0 != this.itemObj.limit && Math.ceil(this.itemNum + 10) <= parseInt(this.itemObj.curNum) || 0 == this.itemObj.limit ? this.itemNum += 10 : this.itemNum = parseInt(this.itemObj.curNum); else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:7429: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:7441: if (p.RoleBaseInfo.gold < i || 0 == p.RoleBaseInfo.gold) {",
+        "tools/scripts2.js:8821: this.moneyNum.getComponent(cc.Label).string = y.RoleBaseInfo.gold.toString();",
+        "tools/scripts2.js:8827: this.moneyNum.getComponent(cc.Label).string = y.RoleBaseInfo.gold.toString();",
+        "tools/scripts2.js:13163: 0 == e && (g.RoleBaseInfo.gold >= t ? h.ChildrenModel.reqChildEndPlayGame(2) : u.StoreModel.openChargeList());",
+        "tools/scripts2.js:18754: 0 == t && (p.RoleBaseInfo.gold < parseInt(s) ? f.StoreModel.openChargeList() : d.DriverModel.reqBuyMount(o.selectDriverId));",
+        "tools/scripts2.js:20006: this.payNumList[4].string = n.toString() + \"/\" + f.RoleBaseInfo.gold;",
+        "tools/scripts2.js:21023: this.goldNum.getComponent(cc.Label).string = p.RoleBaseInfo.gold.toString();",
+        "tools/scripts2.js:25428: this.coinNum.getComponent(cc.Label).string = (this.curType > 0 ? this.moneyOneself : h.RoleBaseInfo.gold).toString();",
+        "tools/scripts2.js:32776: 0 == t && (y.RoleBaseInfo.gold >= s ? h.InnManageModel.reqQuickHarvest(e) : C.StoreModel.openChargeList());",
+        "tools/scripts2.js:33653: if (y.RoleBaseInfo.gold < c) {",
+        "tools/scripts2.js:33983: var t = g.InnManageModel.hotVal, e = m.RoleBaseInfo.gold, o = m.RoleBaseInfo.getItemNum(8114);",
+        "tools/scripts2.js:34407: this.goldNum.getComponent(cc.Label).string = String(u.RoleBaseInfo.gold);",
+        "tools/scripts2.js:34424: this.goldNum.getComponent(cc.Label).string = String(u.RoleBaseInfo.gold);",
+        "tools/scripts2.js:45167: this.labels[1].getComponent(cc.Label).string = d.RoleBaseInfo.gold.toString();",
+        "tools/scripts2.js:45237: this.labels[1].getComponent(cc.Label).string = d.RoleBaseInfo.gold.toString();",
+        "tools/scripts2.js:46521: this.npcId > 0 ? o <= h.RoleBaseInfo.gold ? v.SpecialGoodsModel.reqBuy(this.npcId, this.curObj.itemId, this.counts) : y.StoreModel.openChargeList() : o <= h.RoleBaseInfo.coins ? l.InventoryModel.buyItem(this.curObj.itemId, this.counts) : m.default.show(f.getText(\"124\"));",
+        "tools/scripts2.js:46527: this.npcId > 0 && (i = h.RoleBaseInfo.gold);",
+        "tools/scripts2.js:48290: this.goldNum.string = String(c.RoleBaseInfo.gold);",
+        "tools/scripts2.js:48391: this.goldNum.string = String(c.RoleBaseInfo.gold);",
+        "tools/scripts2.js:48399: this.goldNum.string = String(c.RoleBaseInfo.gold);",
+        "tools/scripts2.js:49725: e = l.getText(506) + o + v.RoleBaseInfo.gold;",
+        "tools/scripts2.js:54159: c.RumorModel.getEventCount() > 0 ? c.RumorModel.reqActiveNotice(0) : I.RoleBaseInfo.gold < 10 ? b.StoreModel.openChargeList() : y.default.show(h.getText(1106), [ {",
+        "tools/scripts2.js:55065: u.RoleBaseInfo.gold = t.curGold;",
+        "tools/scripts2.js:55066: this.goldNum.getComponent(cc.Label).string = \" \" + u.RoleBaseInfo.gold;",
+        "tools/scripts2.js:59819: if (s > d.RoleBaseInfo.gold && 0 == this.type && this.former) {",
+        "tools/scripts2.js:59851: this.goldText.string = String(d.RoleBaseInfo.gold - s > 0 ? d.RoleBaseInfo.gold - s : 0);",
+        "tools/scripts2.js:61128: this.goldTxt.string = r.RoleBaseInfo.gold.toString();",
+        "tools/scripts2.js:61557: var t = u.ChangeBirthModel.nBirthIdId > 0 ? u.ChangeBirthModel.nBirthIdId : u.ChangeBirthModel.birthIdId, e = u.ChangeBirthModel.nAppearId > 0 ? u.ChangeBirthModel.nAppearId : u.ChangeBirthModel.appearId, o = a.getItem(t, \"creat_role\"), i = a.getItem(e, \"creat_role\"), s = a.getItem(u.ChangeBirthModel.appearId, \"creat_role\"), n = a.getItem(u.ChangeBirthModel.birthIdId, \"creat_role\"), r = parseInt(o.Price) + parseInt(i.Price) - parseInt(s.Price) - parseInt(n.Price), l = c.RoleBaseInfo.gold > r ? c.RoleBaseInfo.gold - r : 0;",
+        "tools/scripts2.js:67239: if (1 == this.giftData.money[0] && u.RoleBaseInfo.gold < Math.floor(this.giftData.money[1] * this.ratio)) {",
+        "tools/scripts2.js:69061: if (d.RoleBaseInfo.gold >= e) {",
+        "tools/scripts2.js:70140: if (m.RoleBaseInfo.gold >= o) {",
+        "tools/scripts2.js:77209: M.LoginMgr.judgeLangEn() ? this.glodTitle.getComponent(cc.Label).string = c.getText(\"4682\") + c.getText(\"506\") + \"  0/\" + f.RoleBaseInfo.gold : this.glodTitle.getComponent(cc.Label).string = c.getText(506) + \"  0/\" + f.RoleBaseInfo.gold;",
+        "tools/scripts2.js:77236: M.LoginMgr.judgeLangEn() ? this.glodTitle.getComponent(cc.Label).string = c.getText(\"4682\") + c.getText(\"506\") + \"  \" + e + \"/\" + f.RoleBaseInfo.gold : this.glodTitle.getComponent(cc.Label).string = c.getText(506) + \"  \" + e + \"/\" + f.RoleBaseInfo.gold;",
+        "tools/scripts2.js:77239: e - f.RoleBaseInfo.gold > 0 ? this.insufficientMoney = !0 : this.insufficientMoney = !1;",
+        "tools/scripts2.js:77946: this.equipUpdata.num1 - g.RoleBaseInfo.gold > 0 ? this.insufficientMoney = !0 : this.insufficientMoney = !1;",
+        "tools/scripts2.js:78471: u.RoleBaseInfo.gold < this.itemObj.price && (this.itemNum = 0);"
+      ]
+    },
+    {
+      "pattern": "openChargeList",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:2325: if (this.cost > c.RoleBaseInfo.gold) m.StoreModel.openChargeList(); else {",
+        "tools/scripts2.js:6548: l.StoreModel.openChargeList();",
+        "tools/scripts2.js:6650: l.StoreModel.openChargeList();",
+        "tools/scripts2.js:6658: l.StoreModel.openChargeList();",
+        "tools/scripts2.js:6750: l.StoreModel.openChargeList();",
+        "tools/scripts2.js:6758: l.StoreModel.openChargeList();",
+        "tools/scripts2.js:6881: this.itemNum * this.getPriceValue() > this.total ? 2 == this.data[1] ? f.StoreModel.openChargeList() : u.default.show(l.getText(202201181)) : d.InnManageModel.reqInnShopBuy(this.data[0], this.itemNum);",
+        "tools/scripts2.js:6992: e > p.RoleBaseInfo.gold && v.StoreModel.openChargeList();",
+        "tools/scripts2.js:7076: l.StoreModel.openChargeList();",
+        "tools/scripts2.js:7084: l.StoreModel.openChargeList();",
+        "tools/scripts2.js:7172: l.RoleBaseInfo.gold >= o ? this.itemNum++ : p.StoreModel.openChargeList();",
+        "tools/scripts2.js:7177: this.itemNum == i && p.StoreModel.openChargeList();",
+        "tools/scripts2.js:7425: p.RoleBaseInfo.gold < o && u.StoreModel.openChargeList();",
+        "tools/scripts2.js:13163: 0 == e && (g.RoleBaseInfo.gold >= t ? h.ChildrenModel.reqChildEndPlayGame(2) : u.StoreModel.openChargeList());",
+        "tools/scripts2.js:18754: 0 == t && (p.RoleBaseInfo.gold < parseInt(s) ? f.StoreModel.openChargeList() : d.DriverModel.reqBuyMount(o.selectDriverId));",
+        "tools/scripts2.js:32776: 0 == t && (y.RoleBaseInfo.gold >= s ? h.InnManageModel.reqQuickHarvest(e) : C.StoreModel.openChargeList());",
+        "tools/scripts2.js:33654: I.StoreModel.openChargeList();",
+        "tools/scripts2.js:34443: c.StoreModel.openChargeList();",
+        "tools/scripts2.js:46521: this.npcId > 0 ? o <= h.RoleBaseInfo.gold ? v.SpecialGoodsModel.reqBuy(this.npcId, this.curObj.itemId, this.counts) : y.StoreModel.openChargeList() : o <= h.RoleBaseInfo.coins ? l.InventoryModel.buyItem(this.curObj.itemId, this.counts) : m.default.show(f.getText(\"124\"));",
+        "tools/scripts2.js:54159: c.RumorModel.getEventCount() > 0 ? c.RumorModel.reqActiveNotice(0) : I.RoleBaseInfo.gold < 10 ? b.StoreModel.openChargeList() : y.default.show(h.getText(1106), [ {",
+        "tools/scripts2.js:69072: } else m.StoreModel.openChargeList();"
+      ]
+    },
+    {
+      "pattern": "\\.gold\\b",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:1887: if (1 == this.data.giftData.money[0] && p.RoleBaseInfo.gold < Math.floor(this.data.giftData.money[1] * this.data.ratio * this.itemNum)) {",
+        "tools/scripts2.js:2325: if (this.cost > c.RoleBaseInfo.gold) m.StoreModel.openChargeList(); else {",
+        "tools/scripts2.js:5979: l.RoleBaseInfo.gold < e && (this.itemNum = 0);",
+        "tools/scripts2.js:5991: (0 != this.data.limit && Math.ceil(this.itemNum + 1) <= parseInt(this.data.curNum) || 0 == this.data.limit) && l.RoleBaseInfo.gold >= o && this.itemNum++;",
+        "tools/scripts2.js:5994: if (l.RoleBaseInfo.gold >= o) 0 != this.data.limit && Math.ceil(this.itemNum + 10) <= parseInt(this.data.curNum) || 0 == this.data.limit ? this.itemNum += 10 : this.itemNum = parseInt(this.data.curNum); else if (l.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:5995: var i = Math.floor(l.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:6135: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+        "tools/scripts2.js:6146: (0 != this.data.limit && Math.ceil(this.itemNum + 1) <= parseInt(this.data.curNum) || 0 == this.data.limit) && p.RoleBaseInfo.gold >= o && this.itemNum++;",
+        "tools/scripts2.js:6149: if (p.RoleBaseInfo.gold >= o) 0 != this.data.limit && Math.ceil(this.itemNum + 10) <= parseInt(this.data.curNum) || 0 == this.data.limit ? this.itemNum += 10 : this.itemNum = parseInt(this.data.curNum); else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:6150: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:6556: this.max = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:6630: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+        "tools/scripts2.js:6649: if (p.RoleBaseInfo.gold >= o) this.itemNum++; else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:6655: if (p.RoleBaseInfo.gold >= o) this.itemNum += 10; else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:6656: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:6730: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+        "tools/scripts2.js:6749: if (p.RoleBaseInfo.gold >= o && this.itemNum < 10 - Math.ceil(l.StoreModel.buyTimes % 10)) this.itemNum++; else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:6755: if (p.RoleBaseInfo.gold >= o) Math.ceil(this.itemNum + 10) <= 10 - Math.ceil(l.StoreModel.buyTimes % 10) ? this.itemNum += 10 : this.itemNum = Math.ceil(10 - Math.ceil(l.StoreModel.buyTimes % 10)); else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:6756: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:6942: this.itemNum = p.RoleBaseInfo.gold < e ? 0 : 1;",
+        "tools/scripts2.js:6992: e > p.RoleBaseInfo.gold && v.StoreModel.openChargeList();",
+        "tools/scripts2.js:7058: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+        "tools/scripts2.js:7075: if (p.RoleBaseInfo.gold >= o && this.itemNum < this.data.timeNum) this.itemNum++; else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:7081: if (p.RoleBaseInfo.gold >= o) Math.ceil(this.itemNum + 10) <= this.data.timeNum - this.data.curNum ? this.itemNum += 10 : this.itemNum = Math.ceil(this.data.timeNum - this.data.curNum); else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:7082: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:7161: l.RoleBaseInfo.gold < this.itemObj.price && (this.itemNum = 0);",
+        "tools/scripts2.js:7172: l.RoleBaseInfo.gold >= o ? this.itemNum++ : p.StoreModel.openChargeList();",
+        "tools/scripts2.js:7175: if (l.RoleBaseInfo.gold >= o) this.itemNum += 10; else {",
+        "tools/scripts2.js:7176: var i = Math.floor(l.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:7413: p.RoleBaseInfo.gold < o && (this.itemNum = 0);",
+        "tools/scripts2.js:7424: (0 != this.itemObj.limit && Math.ceil(this.itemNum + 1) <= parseInt(this.itemObj.curNum) || 0 == this.itemObj.limit) && p.RoleBaseInfo.gold >= o && this.itemNum++;",
+        "tools/scripts2.js:7425: p.RoleBaseInfo.gold < o && u.StoreModel.openChargeList();",
+        "tools/scripts2.js:7428: if (p.RoleBaseInfo.gold >= o) 0 != this.itemObj.limit && Math.ceil(this.itemNum + 10) <= parseInt(this.itemObj.curNum) || 0 == this.itemObj.limit ? this.itemNum += 10 : this.itemNum = parseInt(this.itemObj.curNum); else if (p.RoleBaseInfo.gold < o) {",
+        "tools/scripts2.js:7429: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts2.js:7441: if (p.RoleBaseInfo.gold < i || 0 == p.RoleBaseInfo.gold) {",
+        "tools/scripts2.js:13163: 0 == e && (g.RoleBaseInfo.gold >= t ? h.ChildrenModel.reqChildEndPlayGame(2) : u.StoreModel.openChargeList());",
+        "tools/scripts2.js:18754: 0 == t && (p.RoleBaseInfo.gold < parseInt(s) ? f.StoreModel.openChargeList() : d.DriverModel.reqBuyMount(o.selectDriverId));",
+        "tools/scripts2.js:25428: this.coinNum.getComponent(cc.Label).string = (this.curType > 0 ? this.moneyOneself : h.RoleBaseInfo.gold).toString();",
+        "tools/scripts2.js:32776: 0 == t && (y.RoleBaseInfo.gold >= s ? h.InnManageModel.reqQuickHarvest(e) : C.StoreModel.openChargeList());",
+        "tools/scripts2.js:33653: if (y.RoleBaseInfo.gold < c) {",
+        "tools/scripts2.js:46521: this.npcId > 0 ? o <= h.RoleBaseInfo.gold ? v.SpecialGoodsModel.reqBuy(this.npcId, this.curObj.itemId, this.counts) : y.StoreModel.openChargeList() : o <= h.RoleBaseInfo.coins ? l.InventoryModel.buyItem(this.curObj.itemId, this.counts) : m.default.show(f.getText(\"124\"));",
+        "tools/scripts2.js:46527: this.npcId > 0 && (i = h.RoleBaseInfo.gold);",
+        "tools/scripts2.js:54159: c.RumorModel.getEventCount() > 0 ? c.RumorModel.reqActiveNotice(0) : I.RoleBaseInfo.gold < 10 ? b.StoreModel.openChargeList() : y.default.show(h.getText(1106), [ {",
+        "tools/scripts2.js:59819: if (s > d.RoleBaseInfo.gold && 0 == this.type && this.former) {",
+        "tools/scripts2.js:59851: this.goldText.string = String(d.RoleBaseInfo.gold - s > 0 ? d.RoleBaseInfo.gold - s : 0);",
+        "tools/scripts2.js:61557: var t = u.ChangeBirthModel.nBirthIdId > 0 ? u.ChangeBirthModel.nBirthIdId : u.ChangeBirthModel.birthIdId, e = u.ChangeBirthModel.nAppearId > 0 ? u.ChangeBirthModel.nAppearId : u.ChangeBirthModel.appearId, o = a.getItem(t, \"creat_role\"), i = a.getItem(e, \"creat_role\"), s = a.getItem(u.ChangeBirthModel.appearId, \"creat_role\"), n = a.getItem(u.ChangeBirthModel.birthIdId, \"creat_role\"), r = parseInt(o.Price) + parseInt(i.Price) - parseInt(s.Price) - parseInt(n.Price), l = c.RoleBaseInfo.gold > r ? c.RoleBaseInfo.gold - r : 0;",
+        "tools/scripts2.js:67239: if (1 == this.giftData.money[0] && u.RoleBaseInfo.gold < Math.floor(this.giftData.money[1] * this.ratio)) {",
+        "tools/scripts2.js:69061: if (d.RoleBaseInfo.gold >= e) {",
+        "tools/scripts2.js:70140: if (m.RoleBaseInfo.gold >= o) {",
+        "tools/scripts2.js:77239: e - f.RoleBaseInfo.gold > 0 ? this.insufficientMoney = !0 : this.insufficientMoney = !1;",
+        "tools/scripts2.js:77946: this.equipUpdata.num1 - g.RoleBaseInfo.gold > 0 ? this.insufficientMoney = !0 : this.insufficientMoney = !1;",
+        "tools/scripts2.js:78471: u.RoleBaseInfo.gold < this.itemObj.price && (this.itemNum = 0);"
+      ]
+    },
+    {
+      "pattern": "payment",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:32075: if (2 == this.itemObject[e].payment) {",
+        "tools/scripts2.js:45204: for (var e in this.itemObject) t != parseInt(this.itemObject[e].payment) && this.itemList.push(this.itemObject[e]);",
+        "tools/scripts2.js:55280: if (o[t] == s.payment && parseInt(s.page) == e + 1) {"
+      ]
+    },
+    {
+      "pattern": "RoleBaseInfo.gold",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:6654: if (y.AlchemyModel.alchemyDataList[this.curAlchemyType].price > f.RoleBaseInfo.gold) a.default.show(h.getText(6003087), [ {",
+        "tools/scripts3.js:6843: this.moneyNum.getComponent(cc.Label).string = f.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:8279: 0 == t.node.tag1 ? a.getConstByID(554) > g.RoleBaseInfo.gold ? m.StoreModel.openChargeList() : c.AnniversaryModel.reqBuyAnnUpgradePass() : p.PopUpMgr.removePopUp(this.node);",
+        "tools/scripts3.js:12267: d.RoleBaseInfo.gold = e.curGold;",
+        "tools/scripts3.js:16298: o = l.RoleBaseInfo.gold >= s && (2 == r.type || this.parent.getCanFinishTimes() > 0);",
+        "tools/scripts3.js:16370: p.NewYearBombModel.getNeedNum(this.data.id) <= l.RoleBaseInfo.gold ? p.NewYearBombModel.reqCompleteTask(this.data.id) : d.StoreModel.openChargeList();",
+        "tools/scripts3.js:16458: this.goldNum.string = \"\" + M.RoleBaseInfo.gold;",
+        "tools/scripts3.js:16512: this.goldNum.string = \"\" + M.RoleBaseInfo.gold;",
+        "tools/scripts3.js:16519: this.goldNum.string = \"\" + M.RoleBaseInfo.gold;",
+        "tools/scripts3.js:16528: this.goldNum.string = \"\" + M.RoleBaseInfo.gold;",
+        "tools/scripts3.js:16703: 0 == t.node.tag1 && (a.getConstByID(563) <= p.RoleBaseInfo.gold ? this.callback() : l.StoreModel.openChargeList());",
+        "tools/scripts3.js:18303: this.itemNum = a.RoleBaseInfo.gold < e ? 0 : 1;",
+        "tools/scripts3.js:18393: var n = Math.floor(u.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts3.js:18418: if (this.itemNum < 0) this.itemNum = 0; else if (this.itemNum > this._max) this.itemNum = this._max; else if (this.itemNum * this.getPriceValue() > u.RoleBaseInfo.gold) {",
+        "tools/scripts3.js:18436: if (e > u.RoleBaseInfo.gold) {",
+        "tools/scripts3.js:18752: var e = this.getPriceValue(), o = Math.min(Math.max(1, Math.floor(p.RoleBaseInfo.gold / e)), this._max);",
+        "tools/scripts3.js:18759: if (t > p.RoleBaseInfo.gold) u.StoreModel.openChargeList(); else if (this.itemNum > 0) {",
+        "tools/scripts3.js:18868: var e = this.getPriceValue(), o = Math.min(Math.max(1, Math.floor(p.RoleBaseInfo.gold / e)), this._max - this.buyCounts);",
+        "tools/scripts3.js:18875: if (t > p.RoleBaseInfo.gold) u.StoreModel.openChargeList(); else if (this.itemNum > 0) {",
+        "tools/scripts3.js:28561: this.goldNum.getComponent(cc.Label).string = c.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:29290: this.costMoney > _.RoleBaseInfo.gold ? g.default.show(p.getText(535), [ {",
+        "tools/scripts3.js:29334: this.cost.string = p.getText(9673) + p.getText(506) + \"  \" + t + \"/\" + _.RoleBaseInfo.gold;",
+        "tools/scripts3.js:30690: 0 != this.giftData[6] && h.RoleBaseInfo.yuanbao < this.giftData[6] ? t = 8845 : 0 != this.giftData[8] && h.RoleBaseInfo.gold < this.giftData[8] ? t = 9223 : this.giftData[7] >= this.giftData[4] && (t = 7353);",
+        "tools/scripts3.js:30842: this.goldNum.string = l.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:34177: this.gLabel.string = p.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:35713: l.RoleBaseInfo.gold < c.GoodEvilModel.helpInfo.price ? h.GoodEvilUtil.showCharge() : this.confirmCall && this.confirmCall();",
+        "tools/scripts3.js:44549: if (h.RoleBaseInfo.gold < e) {",
+        "tools/scripts3.js:46709: this.moneyNum.getComponent(cc.Label).string = u.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:46860: u.RoleBaseInfo.gold >= n ? i ? M.default.show(m.getText(6020004), [ {",
+        "tools/scripts3.js:48818: this.goldTxt.getComponent(cc.Label).string = f.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:48851: this.goldTxt.getComponent(cc.Label).string = f.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:48858: this.goldTxt.getComponent(cc.Label).string = f.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:48916: this.goldTxt.getComponent(cc.Label).string = f.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:49863: l.RoleBaseInfo.gold < this.itemObj.price && (this.itemNum = 0);",
+        "tools/scripts3.js:49879: l.RoleBaseInfo.gold >= o ? this.buyMaxNum >= o ? this.itemNum++ : this.itemNum = this.buyMaxNum : d.MonoplyState.openChargeList();",
+        "tools/scripts3.js:49882: if (l.RoleBaseInfo.gold >= o) this.buyMaxNum >= o ? this.itemNum += 10 : this.itemNum = this.buyMaxNum; else {",
+        "tools/scripts3.js:49883: var i = Math.floor(l.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts3.js:50489: 7427 == e && l.RoleBaseInfo.gold < o ? m.default.show(r.getText(535), [ {",
+        "tools/scripts3.js:60730: if (h.RoleBaseInfo.gold < i) {",
+        "tools/scripts3.js:64675: if (d.RoleBaseInfo.gold < h.getConstByID(520)) c.default.show(p.getText(9223)); else {",
+        "tools/scripts3.js:67075: d.RoleBaseInfo.gold < t ? _.StoreModel.openChargeList() : g.RogueModel.storeRefresh();",
+        "tools/scripts3.js:67140: 0 == t && (d.RoleBaseInfo.gold >= o ? g.RogueModel.storeBuy(e, 1) : _.StoreModel.openChargeList());",
+        "tools/scripts3.js:68367: havePriceNum: p.RoleBaseInfo.gold,",
+        "tools/scripts3.js:68464: this.goldNum.string = h.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:68494: h.RoleBaseInfo.gold < f.getConstByID(515) ? c.default.show(g.getText(9223)) : u.RogueModel.goldExChangeTime >= f.getConstByID(514) ? c.default.show(g.getText(7335)) : u.RogueModel.goldStoreRefresh();",
+        "tools/scripts3.js:72765: this.goldNum.string = h.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:72786: u.RogueModel.refreshCZPrice > 0 && h.RoleBaseInfo.getItemNum(this.addItemId) <= 0 && h.RoleBaseInfo.gold < u.RogueModel.refreshCZPrice ? c.default.show(g.getText(9223)) : u.RogueModel.refreshOutfitting();",
+        "tools/scripts3.js:77427: 0 == e && (1 == i && h.RoleBaseInfo.gold < s ? d.StoreModel.openChargeList() : 2 == i && h.RoleBaseInfo.yuanbao < s ? d.StoreModel.openChargeYuanbaoUI() : p.SpreadFirePackModel.reqBuyPack(t.pId));",
+        "tools/scripts3.js:78027: this.gNum.string = \"\" + u.RoleBaseInfo.gold;",
+        "tools/scripts3.js:78117: u.RoleBaseInfo.gold < t ? f.StoreModel.openChargeList() : this.buyNum >= e ? r.default.show(c.getText(6001805)) : m.default.addBuyItemUI({",
+        "tools/scripts3.js:81763: if (this.getAllCost() > d.RoleBaseInfo.gold) l.default.show(h.getText(9223)); else {",
+        "tools/scripts3.js:81951: havePriceNum: p.RoleBaseInfo.gold,",
+        "tools/scripts3.js:83118: havePriceNum: p.RoleBaseInfo.gold,",
+        "tools/scripts3.js:83298: this.goldNum.string = l.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:83313: l.RoleBaseInfo.gold < d.SkinModel.refreshCost ? a.default.show(h.getText(9223)) : d.SkinModel.refreshShop();",
+        "tools/scripts3.js:85862: (1 == e.cost[0] ? l.RoleBaseInfo.gold >= o : l.RoleBaseInfo.yuanbao >= o) ? this.parent.reqBuyGift(this.giftId, 1) : 1 == e.cost[0] ? h.StoreModel.openChargeList() : h.StoreModel.openChargeYuanbaoUI();",
+        "tools/scripts3.js:86046: this.goldNum && (this.goldNum.string = \"\" + d.RoleBaseInfo.gold);",
+        "tools/scripts3.js:89862: this.goldNum.string = p.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:89906: this.goldNum.string = p.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:89945: 0 == t && (p.RoleBaseInfo.gold < l.TrickExModel.costPrice ? g.default.show(h.getText(9223)) : l.TrickExModel.reqRefreshTrickExchange());",
+        "tools/scripts3.js:92348: var e = Math.min(Math.floor(h.RoleBaseInfo.gold / p.getConstByID(487)), l.WarmUpModel.canBuyTime);",
+        "tools/scripts3.js:92354: h.RoleBaseInfo.gold < this.getGoldNum() ? d.default.show(a.getText(9223)) : l.WarmUpModel.buyTime(this.num);",
+        "tools/scripts3.js:92585: if (this.type == this.goldType) return g.RoleBaseInfo.gold >= this.needNum;",
+        "tools/scripts3.js:93655: this.goldNum.string = c.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:94118: this.goldNum.getComponent(cc.Label).string = String(p.RoleBaseInfo.gold);",
+        "tools/scripts3.js:94155: this.goldNum.getComponent(cc.Label).string = String(p.RoleBaseInfo.gold);",
+        "tools/scripts3.js:94570: this.goldLabel.string = d.RoleBaseInfo.gold.toString();",
+        "tools/scripts3.js:95904: if (1 == i && T.RoleBaseInfo.gold < r) c.default.show(n.getText(9223)); else if (2 == i && T.RoleBaseInfo.coins < r) c.default.show(n.getText(3589)); else {",
+        "tools/scripts3.js:95915: 1 == e.type ? T.RoleBaseInfo.gold -= o : T.RoleBaseInfo.coins -= o;"
+      ]
+    },
+    {
+      "pattern": "openChargeList",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:8279: 0 == t.node.tag1 ? a.getConstByID(554) > g.RoleBaseInfo.gold ? m.StoreModel.openChargeList() : c.AnniversaryModel.reqBuyAnnUpgradePass() : p.PopUpMgr.removePopUp(this.node);",
+        "tools/scripts3.js:16370: p.NewYearBombModel.getNeedNum(this.data.id) <= l.RoleBaseInfo.gold ? p.NewYearBombModel.reqCompleteTask(this.data.id) : d.StoreModel.openChargeList();",
+        "tools/scripts3.js:16703: 0 == t.node.tag1 && (a.getConstByID(563) <= p.RoleBaseInfo.gold ? this.callback() : l.StoreModel.openChargeList());",
+        "tools/scripts3.js:18420: p.StoreModel.openChargeList();",
+        "tools/scripts3.js:18438: p.StoreModel.openChargeList();",
+        "tools/scripts3.js:18759: if (t > p.RoleBaseInfo.gold) u.StoreModel.openChargeList(); else if (this.itemNum > 0) {",
+        "tools/scripts3.js:18875: if (t > p.RoleBaseInfo.gold) u.StoreModel.openChargeList(); else if (this.itemNum > 0) {",
+        "tools/scripts3.js:23167: } else 4 == o.eRet && C.StoreModel.openChargeList();",
+        "tools/scripts3.js:46884: }) : d.StoreModel.openChargeList();",
+        "tools/scripts3.js:49879: l.RoleBaseInfo.gold >= o ? this.buyMaxNum >= o ? this.itemNum++ : this.itemNum = this.buyMaxNum : d.MonoplyState.openChargeList();",
+        "tools/scripts3.js:49884: this.itemNum == i && d.MonoplyState.openChargeList();",
+        "tools/scripts3.js:50621: e.prototype.openChargeList = function() {",
+        "tools/scripts3.js:58665: } else if (5 == e.eRet) N.StoreModel.openChargeList(); else if (7 == e.eRet) a.default.show(f.getText(6018426)); else if (6 == e.eRet) {",
+        "tools/scripts3.js:67075: d.RoleBaseInfo.gold < t ? _.StoreModel.openChargeList() : g.RogueModel.storeRefresh();",
+        "tools/scripts3.js:67140: 0 == t && (d.RoleBaseInfo.gold >= o ? g.RogueModel.storeBuy(e, 1) : _.StoreModel.openChargeList());",
+        "tools/scripts3.js:71650: } else 10 == e.eRet && R.StoreModel.openChargeList();",
+        "tools/scripts3.js:77427: 0 == e && (1 == i && h.RoleBaseInfo.gold < s ? d.StoreModel.openChargeList() : 2 == i && h.RoleBaseInfo.yuanbao < s ? d.StoreModel.openChargeYuanbaoUI() : p.SpreadFirePackModel.reqBuyPack(t.pId));",
+        "tools/scripts3.js:78117: u.RoleBaseInfo.gold < t ? f.StoreModel.openChargeList() : this.buyNum >= e ? r.default.show(c.getText(6001805)) : m.default.addBuyItemUI({",
+        "tools/scripts3.js:85862: (1 == e.cost[0] ? l.RoleBaseInfo.gold >= o : l.RoleBaseInfo.yuanbao >= o) ? this.parent.reqBuyGift(this.giftId, 1) : 1 == e.cost[0] ? h.StoreModel.openChargeList() : h.StoreModel.openChargeYuanbaoUI();",
+        "tools/scripts3.js:95459: } else 5 == e.eRet ? n.default.show(g.getText(3589)) : 6 == e.eRet ? c.StoreModel.openChargeList() : 7 == e.eRet && c.StoreModel.openChargeYuanbaoUI();",
+        "tools/scripts3.js:95470: } else 7 == e.eRet ? n.default.show(g.getText(6016283)) : 8 == e.eRet ? n.default.show(g.getText(3589)) : 9 == e.eRet ? c.StoreModel.openChargeList() : 10 == e.eRet && c.StoreModel.openChargeYuanbaoUI();"
+      ]
+    },
+    {
+      "pattern": "\\.gold\\b",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:6654: if (y.AlchemyModel.alchemyDataList[this.curAlchemyType].price > f.RoleBaseInfo.gold) a.default.show(h.getText(6003087), [ {",
+        "tools/scripts3.js:8279: 0 == t.node.tag1 ? a.getConstByID(554) > g.RoleBaseInfo.gold ? m.StoreModel.openChargeList() : c.AnniversaryModel.reqBuyAnnUpgradePass() : p.PopUpMgr.removePopUp(this.node);",
+        "tools/scripts3.js:16298: o = l.RoleBaseInfo.gold >= s && (2 == r.type || this.parent.getCanFinishTimes() > 0);",
+        "tools/scripts3.js:16370: p.NewYearBombModel.getNeedNum(this.data.id) <= l.RoleBaseInfo.gold ? p.NewYearBombModel.reqCompleteTask(this.data.id) : d.StoreModel.openChargeList();",
+        "tools/scripts3.js:16703: 0 == t.node.tag1 && (a.getConstByID(563) <= p.RoleBaseInfo.gold ? this.callback() : l.StoreModel.openChargeList());",
+        "tools/scripts3.js:18303: this.itemNum = a.RoleBaseInfo.gold < e ? 0 : 1;",
+        "tools/scripts3.js:18393: var n = Math.floor(u.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts3.js:18418: if (this.itemNum < 0) this.itemNum = 0; else if (this.itemNum > this._max) this.itemNum = this._max; else if (this.itemNum * this.getPriceValue() > u.RoleBaseInfo.gold) {",
+        "tools/scripts3.js:18436: if (e > u.RoleBaseInfo.gold) {",
+        "tools/scripts3.js:18752: var e = this.getPriceValue(), o = Math.min(Math.max(1, Math.floor(p.RoleBaseInfo.gold / e)), this._max);",
+        "tools/scripts3.js:18759: if (t > p.RoleBaseInfo.gold) u.StoreModel.openChargeList(); else if (this.itemNum > 0) {",
+        "tools/scripts3.js:18868: var e = this.getPriceValue(), o = Math.min(Math.max(1, Math.floor(p.RoleBaseInfo.gold / e)), this._max - this.buyCounts);",
+        "tools/scripts3.js:18875: if (t > p.RoleBaseInfo.gold) u.StoreModel.openChargeList(); else if (this.itemNum > 0) {",
+        "tools/scripts3.js:29290: this.costMoney > _.RoleBaseInfo.gold ? g.default.show(p.getText(535), [ {",
+        "tools/scripts3.js:30690: 0 != this.giftData[6] && h.RoleBaseInfo.yuanbao < this.giftData[6] ? t = 8845 : 0 != this.giftData[8] && h.RoleBaseInfo.gold < this.giftData[8] ? t = 9223 : this.giftData[7] >= this.giftData[4] && (t = 7353);",
+        "tools/scripts3.js:35713: l.RoleBaseInfo.gold < c.GoodEvilModel.helpInfo.price ? h.GoodEvilUtil.showCharge() : this.confirmCall && this.confirmCall();",
+        "tools/scripts3.js:44549: if (h.RoleBaseInfo.gold < e) {",
+        "tools/scripts3.js:46860: u.RoleBaseInfo.gold >= n ? i ? M.default.show(m.getText(6020004), [ {",
+        "tools/scripts3.js:49863: l.RoleBaseInfo.gold < this.itemObj.price && (this.itemNum = 0);",
+        "tools/scripts3.js:49879: l.RoleBaseInfo.gold >= o ? this.buyMaxNum >= o ? this.itemNum++ : this.itemNum = this.buyMaxNum : d.MonoplyState.openChargeList();",
+        "tools/scripts3.js:49882: if (l.RoleBaseInfo.gold >= o) this.buyMaxNum >= o ? this.itemNum += 10 : this.itemNum = this.buyMaxNum; else {",
+        "tools/scripts3.js:49883: var i = Math.floor(l.RoleBaseInfo.gold / this.getPriceValue());",
+        "tools/scripts3.js:50489: 7427 == e && l.RoleBaseInfo.gold < o ? m.default.show(r.getText(535), [ {",
+        "tools/scripts3.js:60730: if (h.RoleBaseInfo.gold < i) {",
+        "tools/scripts3.js:62362: var e = this.data.gold > 0;",
+        "tools/scripts3.js:64675: if (d.RoleBaseInfo.gold < h.getConstByID(520)) c.default.show(p.getText(9223)); else {",
+        "tools/scripts3.js:67075: d.RoleBaseInfo.gold < t ? _.StoreModel.openChargeList() : g.RogueModel.storeRefresh();",
+        "tools/scripts3.js:67140: 0 == t && (d.RoleBaseInfo.gold >= o ? g.RogueModel.storeBuy(e, 1) : _.StoreModel.openChargeList());",
+        "tools/scripts3.js:68494: h.RoleBaseInfo.gold < f.getConstByID(515) ? c.default.show(g.getText(9223)) : u.RogueModel.goldExChangeTime >= f.getConstByID(514) ? c.default.show(g.getText(7335)) : u.RogueModel.goldStoreRefresh();",
+        "tools/scripts3.js:72786: u.RogueModel.refreshCZPrice > 0 && h.RoleBaseInfo.getItemNum(this.addItemId) <= 0 && h.RoleBaseInfo.gold < u.RogueModel.refreshCZPrice ? c.default.show(g.getText(9223)) : u.RogueModel.refreshOutfitting();",
+        "tools/scripts3.js:77427: 0 == e && (1 == i && h.RoleBaseInfo.gold < s ? d.StoreModel.openChargeList() : 2 == i && h.RoleBaseInfo.yuanbao < s ? d.StoreModel.openChargeYuanbaoUI() : p.SpreadFirePackModel.reqBuyPack(t.pId));",
+        "tools/scripts3.js:78117: u.RoleBaseInfo.gold < t ? f.StoreModel.openChargeList() : this.buyNum >= e ? r.default.show(c.getText(6001805)) : m.default.addBuyItemUI({",
+        "tools/scripts3.js:81763: if (this.getAllCost() > d.RoleBaseInfo.gold) l.default.show(h.getText(9223)); else {",
+        "tools/scripts3.js:83313: l.RoleBaseInfo.gold < d.SkinModel.refreshCost ? a.default.show(h.getText(9223)) : d.SkinModel.refreshShop();",
+        "tools/scripts3.js:85862: (1 == e.cost[0] ? l.RoleBaseInfo.gold >= o : l.RoleBaseInfo.yuanbao >= o) ? this.parent.reqBuyGift(this.giftId, 1) : 1 == e.cost[0] ? h.StoreModel.openChargeList() : h.StoreModel.openChargeYuanbaoUI();",
+        "tools/scripts3.js:89945: 0 == t && (p.RoleBaseInfo.gold < l.TrickExModel.costPrice ? g.default.show(h.getText(9223)) : l.TrickExModel.reqRefreshTrickExchange());",
+        "tools/scripts3.js:92348: var e = Math.min(Math.floor(h.RoleBaseInfo.gold / p.getConstByID(487)), l.WarmUpModel.canBuyTime);",
+        "tools/scripts3.js:92354: h.RoleBaseInfo.gold < this.getGoldNum() ? d.default.show(a.getText(9223)) : l.WarmUpModel.buyTime(this.num);",
+        "tools/scripts3.js:92585: if (this.type == this.goldType) return g.RoleBaseInfo.gold >= this.needNum;",
+        "tools/scripts3.js:95904: if (1 == i && T.RoleBaseInfo.gold < r) c.default.show(n.getText(9223)); else if (2 == i && T.RoleBaseInfo.coins < r) c.default.show(n.getText(3589)); else {",
+        "tools/scripts3.js:95915: 1 == e.type ? T.RoleBaseInfo.gold -= o : T.RoleBaseInfo.coins -= o;"
+      ]
+    },
+    {
+      "pattern": "payment",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    }
+  ],
+  "sinks": [
+    {
+      "ui": "HDShopBgUI",
+      "where": "tools/index.js:55779: this.goldNum.getComponent(cc.Label).string = p.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/index.js:55777: e.prototype.start = function() {"
+    },
+    {
+      "ui": "HDShopBgUI",
+      "where": "tools/index.js:55795: this.goldNum.getComponent(cc.Label).string = p.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/index.js:55793: e.prototype.onBuySuccess = function() {"
+    },
+    {
+      "ui": "HDShopBgUI",
+      "where": "tools/index.js:55804: this.goldNum.getComponent(cc.Label).string = p.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/index.js:55803: e.prototype.changFashionShopMoneyNum = function(t, e) {"
+    },
+    {
+      "ui": "BatchDailyGiftUsedUI",
+      "where": "tools/scripts2.js:1887: if (1 == this.data.giftData.money[0] && p.RoleBaseInfo.gold < Math.floor(this.data.giftData.money[1] * this.data.ratio * this.itemNum)) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:1879: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "ui": "BetterIdConfirmUI",
+      "where": "tools/scripts2.js:2325: if (this.cost > c.RoleBaseInfo.gold) m.StoreModel.openChargeList(); else {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:2324: e.prototype.onConfirmBtn = function() {"
+    },
+    {
+      "ui": "BuyItemUI10",
+      "where": "tools/scripts2.js:5979: l.RoleBaseInfo.gold < e && (this.itemNum = 0);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:5974: e.prototype.start = function() {"
+    },
+    {
+      "ui": "BuyItemUI10",
+      "where": "tools/scripts2.js:5991: (0 != this.data.limit && Math.ceil(this.itemNum + 1) <= parseInt(this.data.curNum) || 0 == this.data.limit) && l.RoleBaseInfo.gold >= o && this.itemNum++;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:5987: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI10",
+      "where": "tools/scripts2.js:5994: if (l.RoleBaseInfo.gold >= o) 0 != this.data.limit && Math.ceil(this.itemNum + 10) <= parseInt(this.data.curNum) || 0 == this.data.limit ? this.itemNum += 10 : this.itemNum = parseInt(this.data.curNum); else if (l.RoleBaseInfo.gold < o) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:5987: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI10",
+      "where": "tools/scripts2.js:5995: var i = Math.floor(l.RoleBaseInfo.gold / this.getPriceValue());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:5987: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI12",
+      "where": "tools/scripts2.js:6135: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6131: e.prototype.start = function() {"
+    },
+    {
+      "ui": "BuyItemUI12",
+      "where": "tools/scripts2.js:6146: (0 != this.data.limit && Math.ceil(this.itemNum + 1) <= parseInt(this.data.curNum) || 0 == this.data.limit) && p.RoleBaseInfo.gold >= o && this.itemNum++;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6142: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI12",
+      "where": "tools/scripts2.js:6149: if (p.RoleBaseInfo.gold >= o) 0 != this.data.limit && Math.ceil(this.itemNum + 10) <= parseInt(this.data.curNum) || 0 == this.data.limit ? this.itemNum += 10 : this.itemNum = parseInt(this.data.curNum); else if (p.RoleBaseInfo.gold < o) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6142: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI12",
+      "where": "tools/scripts2.js:6150: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6142: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI18",
+      "where": "tools/scripts2.js:6556: this.max = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6553: e.prototype.setData = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI19",
+      "where": "tools/scripts2.js:6630: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6629: t.prototype.start.call(this);"
+    },
+    {
+      "ui": "BuyItemUI19",
+      "where": "tools/scripts2.js:6649: if (p.RoleBaseInfo.gold >= o) this.itemNum++; else if (p.RoleBaseInfo.gold < o) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6642: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI19",
+      "where": "tools/scripts2.js:6655: if (p.RoleBaseInfo.gold >= o) this.itemNum += 10; else if (p.RoleBaseInfo.gold < o) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6642: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI19",
+      "where": "tools/scripts2.js:6656: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6642: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI20",
+      "where": "tools/scripts2.js:6730: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6729: t.prototype.start.call(this);"
+    },
+    {
+      "ui": "BuyItemUI20",
+      "where": "tools/scripts2.js:6749: if (p.RoleBaseInfo.gold >= o && this.itemNum < 10 - Math.ceil(l.StoreModel.buyTimes % 10)) this.itemNum++; else if (p.RoleBaseInfo.gold < o) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6742: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI20",
+      "where": "tools/scripts2.js:6755: if (p.RoleBaseInfo.gold >= o) Math.ceil(this.itemNum + 10) <= 10 - Math.ceil(l.StoreModel.buyTimes % 10) ? this.itemNum += 10 : this.itemNum = Math.ceil(10 - Math.ceil(l.StoreModel.buyTimes % 10)); else if (p.RoleBaseInfo.gold < o) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6742: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI20",
+      "where": "tools/scripts2.js:6756: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6742: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI26",
+      "where": "tools/scripts2.js:6836: 1 == this.data[1] ? this.total = h.RoleBaseInfo.getItemNum(8114) : this.total = h.RoleBaseInfo.gold;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6831: t.prototype.start.call(this);"
+    },
+    {
+      "ui": "BuyItemUI27",
+      "where": "tools/scripts2.js:6942: this.itemNum = p.RoleBaseInfo.gold < e ? 0 : 1;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6937: e.prototype.setData = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI27",
+      "where": "tools/scripts2.js:6992: e > p.RoleBaseInfo.gold && v.StoreModel.openChargeList();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:6989: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "ui": "BuyItemUI34",
+      "where": "tools/scripts2.js:7058: p.RoleBaseInfo.gold < this.data.price && (this.itemNum = 0);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7057: o.prototype.start = function() {"
+    },
+    {
+      "ui": "BuyItemUI34",
+      "where": "tools/scripts2.js:7075: if (p.RoleBaseInfo.gold >= o && this.itemNum < this.data.timeNum) this.itemNum++; else if (p.RoleBaseInfo.gold < o) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7068: o.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI34",
+      "where": "tools/scripts2.js:7081: if (p.RoleBaseInfo.gold >= o) Math.ceil(this.itemNum + 10) <= this.data.timeNum - this.data.curNum ? this.itemNum += 10 : this.itemNum = Math.ceil(this.data.timeNum - this.data.curNum); else if (p.RoleBaseInfo.gold < o) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7068: o.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI34",
+      "where": "tools/scripts2.js:7082: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7068: o.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI3",
+      "where": "tools/scripts2.js:7161: l.RoleBaseInfo.gold < this.itemObj.price && (this.itemNum = 0);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7159: e.prototype.setData = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI3",
+      "where": "tools/scripts2.js:7172: l.RoleBaseInfo.gold >= o ? this.itemNum++ : p.StoreModel.openChargeList();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7168: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI3",
+      "where": "tools/scripts2.js:7175: if (l.RoleBaseInfo.gold >= o) this.itemNum += 10; else {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7168: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI3",
+      "where": "tools/scripts2.js:7176: var i = Math.floor(l.RoleBaseInfo.gold / this.getPriceValue());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7168: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI6",
+      "where": "tools/scripts2.js:7413: p.RoleBaseInfo.gold < o && (this.itemNum = 0);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7409: e.prototype.setData = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI6",
+      "where": "tools/scripts2.js:7424: (0 != this.itemObj.limit && Math.ceil(this.itemNum + 1) <= parseInt(this.itemObj.curNum) || 0 == this.itemObj.limit) && p.RoleBaseInfo.gold >= o && this.itemNum++;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7420: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI6",
+      "where": "tools/scripts2.js:7425: p.RoleBaseInfo.gold < o && u.StoreModel.openChargeList();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7420: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI6",
+      "where": "tools/scripts2.js:7428: if (p.RoleBaseInfo.gold >= o) 0 != this.itemObj.limit && Math.ceil(this.itemNum + 10) <= parseInt(this.itemObj.curNum) || 0 == this.itemObj.limit ? this.itemNum += 10 : this.itemNum = parseInt(this.itemObj.curNum); else if (p.RoleBaseInfo.gold < o) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7420: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI6",
+      "where": "tools/scripts2.js:7429: var i = Math.floor(p.RoleBaseInfo.gold / this.getPriceValue());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7420: e.prototype.onChangeNumEvent = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI6",
+      "where": "tools/scripts2.js:7441: if (p.RoleBaseInfo.gold < i || 0 == p.RoleBaseInfo.gold) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:7436: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "ui": "ChargeShopUI",
+      "where": "tools/scripts2.js:8821: this.moneyNum.getComponent(cc.Label).string = y.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:8820: o.prototype.showMoneyUI = function() {"
+    },
+    {
+      "ui": "ChargeShopUI",
+      "where": "tools/scripts2.js:8827: this.moneyNum.getComponent(cc.Label).string = y.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:8826: o.prototype.updateMoeny = function() {"
+    },
+    {
+      "ui": "ChildrenHangUpUI",
+      "where": "tools/scripts2.js:13163: 0 == e && (g.RoleBaseInfo.gold >= t ? h.ChildrenModel.reqChildEndPlayGame(2) : u.StoreModel.openChargeList());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:13162: } ], function(e) {"
+    },
+    {
+      "ui": "DriverShopUI",
+      "where": "tools/scripts2.js:18754: 0 == t && (p.RoleBaseInfo.gold < parseInt(s) ? f.StoreModel.openChargeList() : d.DriverModel.reqBuyMount(o.selectDriverId));",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:18753: } ], function(t) {"
+    },
+    {
+      "ui": "EquipWashUI",
+      "where": "tools/scripts2.js:20006: this.payNumList[4].string = n.toString() + \"/\" + f.RoleBaseInfo.gold;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:19991: e.prototype.setSumCostPay = function() {"
+    },
+    {
+      "ui": "FashionShopAlertUI",
+      "where": "tools/scripts2.js:21023: this.goldNum.getComponent(cc.Label).string = p.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:20985: t.prototype.onLoad.call(this);"
+    },
+    {
+      "ui": "GambingUI",
+      "where": "tools/scripts2.js:25428: this.coinNum.getComponent(cc.Label).string = (this.curType > 0 ? this.moneyOneself : h.RoleBaseInfo.gold).toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:25425: o.prototype.setDatas = function(t) {"
+    },
+    {
+      "ui": "MysticShopUI",
+      "where": "tools/scripts2.js:45167: this.labels[1].getComponent(cc.Label).string = d.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:45164: e.prototype.start = function() {"
+    },
+    {
+      "ui": "MysticShopUI",
+      "where": "tools/scripts2.js:45237: this.labels[1].getComponent(cc.Label).string = d.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:45226: e.prototype.changeItemNumEvent = function(t, e) {"
+    },
+    {
+      "ui": "NormalShopUI",
+      "where": "tools/scripts2.js:46521: this.npcId > 0 ? o <= h.RoleBaseInfo.gold ? v.SpecialGoodsModel.reqBuy(this.npcId, this.curObj.itemId, this.counts) : y.StoreModel.openChargeList() : o <= h.RoleBaseInfo.coins ? l.InventoryModel.buyItem(this.curObj.itemId, this.counts) : m.default.show(f.getText(\"124\"));",
+      "currency": "gold|coins",
+      "enclosingFunction": "tools/scripts2.js:46515: var e = setTimeout(function() {"
+    },
+    {
+      "ui": "NormalShopUI",
+      "where": "tools/scripts2.js:46527: this.npcId > 0 && (i = h.RoleBaseInfo.gold);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:46525: e.prototype.setMaxNumbers = function(t) {"
+    },
+    {
+      "ui": "PassCardUI",
+      "where": "tools/scripts2.js:48290: this.goldNum.string = String(c.RoleBaseInfo.gold);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:48286: e.prototype.start = function() {"
+    },
+    {
+      "ui": "PassCardUI",
+      "where": "tools/scripts2.js:48391: this.goldNum.string = String(c.RoleBaseInfo.gold);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:48390: e.prototype.onPayGoldEvent = function() {"
+    },
+    {
+      "ui": "PassCardUI",
+      "where": "tools/scripts2.js:48399: this.goldNum.string = String(c.RoleBaseInfo.gold);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:48397: e.prototype.onUpdateScoreData = function() {"
+    },
+    {
+      "ui": "PropertyUI",
+      "where": "tools/scripts2.js:49725: e = l.getText(506) + o + v.RoleBaseInfo.gold;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:49723: o.prototype.setBaseInfo = function() {"
+    },
+    {
+      "ui": "SelectAppearanceUI",
+      "where": "tools/scripts2.js:59819: if (s > d.RoleBaseInfo.gold && 0 == this.type && this.former) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:59810: e.prototype.onSelectAppear = function(t, e) {"
+    },
+    {
+      "ui": "SelectAppearanceUI",
+      "where": "tools/scripts2.js:59851: this.goldText.string = String(d.RoleBaseInfo.gold - s > 0 ? d.RoleBaseInfo.gold - s : 0);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:59828: this.dressScript ? this.dressScript.changePreviewFace(f) : l.default.prefabs.load(\"home/RoleDressUI\", cc.Prefab, function(t, e) {"
+    },
+    {
+      "ui": "SelectIdUI",
+      "where": "tools/scripts2.js:61128: this.goldTxt.string = r.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:61127: e.prototype.start = function() {"
+    },
+    {
+      "ui": "SelectTalentUI",
+      "where": "tools/scripts2.js:61557: var t = u.ChangeBirthModel.nBirthIdId > 0 ? u.ChangeBirthModel.nBirthIdId : u.ChangeBirthModel.birthIdId, e = u.ChangeBirthModel.nAppearId > 0 ? u.ChangeBirthModel.nAppearId : u.ChangeBirthModel.appearId, o = a.getItem(t, \"creat_role\"), i = a.getItem(e, \"creat_role\"), s = a.getItem(u.ChangeBirthModel.appearId, \"creat_role\"), n = a.getItem(u.ChangeBirthModel.birthIdId, \"creat_role\"), r = parseInt(o.Price) + parseInt(i.Price) - parseInt(s.Price) - parseInt(n.Price), l = c.RoleBaseInfo.gold > r ? c.RoleBaseInfo.gold - r : 0;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:61556: e.prototype.start = function() {"
+    },
+    {
+      "ui": "StoreDailyGiftUI",
+      "where": "tools/scripts2.js:67239: if (1 == this.giftData.money[0] && u.RoleBaseInfo.gold < Math.floor(this.giftData.money[1] * this.ratio)) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:67231: e.prototype.buyCallBack = function() {"
+    },
+    {
+      "ui": "SurgeryFaceUI",
+      "where": "tools/scripts2.js:69061: if (d.RoleBaseInfo.gold >= e) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:69055: e.prototype.onEnterBtn = function() {"
+    },
+    {
+      "ui": "SweepUI",
+      "where": "tools/scripts2.js:70140: if (m.RoleBaseInfo.gold >= o) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts2.js:70137: } ], function(e) {"
+    },
+    {
+      "ui": "AnniversaryUpgradeUI",
+      "where": "tools/scripts3.js:8279: 0 == t.node.tag1 ? a.getConstByID(554) > g.RoleBaseInfo.gold ? m.StoreModel.openChargeList() : c.AnniversaryModel.reqBuyAnnUpgradePass() : p.PopUpMgr.removePopUp(this.node);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:8278: e.prototype.onClick = function(t) {"
+    },
+    {
+      "ui": "BombBeastUI",
+      "where": "tools/scripts3.js:16458: this.goldNum.string = \"\" + M.RoleBaseInfo.gold;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:16441: t.prototype.onLoad.call(this);"
+    },
+    {
+      "ui": "BombBeastUI",
+      "where": "tools/scripts3.js:16512: this.goldNum.string = \"\" + M.RoleBaseInfo.gold;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:16509: e.prototype.onRefreshTask = function(t, e) {"
+    },
+    {
+      "ui": "BombBeastUI",
+      "where": "tools/scripts3.js:16519: this.goldNum.string = \"\" + M.RoleBaseInfo.gold;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:16514: e.prototype.onFinishTask = function(t, e) {"
+    },
+    {
+      "ui": "BombBeastUI",
+      "where": "tools/scripts3.js:16528: this.goldNum.string = \"\" + M.RoleBaseInfo.gold;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:16527: e.prototype.onGoldCh = function() {"
+    },
+    {
+      "ui": "BombRefreshUI",
+      "where": "tools/scripts3.js:16703: 0 == t.node.tag1 && (a.getConstByID(563) <= p.RoleBaseInfo.gold ? this.callback() : l.StoreModel.openChargeList());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:16702: e.prototype.onClickBtn = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI28",
+      "where": "tools/scripts3.js:18303: this.itemNum = a.RoleBaseInfo.gold < e ? 0 : 1;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:18299: e.prototype.setData = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI29",
+      "where": "tools/scripts3.js:18393: var n = Math.floor(u.RoleBaseInfo.gold / this.getPriceValue());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:18379: t.prototype.onLoad.call(this);"
+    },
+    {
+      "ui": "BuyItemUI29",
+      "where": "tools/scripts3.js:18418: if (this.itemNum < 0) this.itemNum = 0; else if (this.itemNum > this._max) this.itemNum = this._max; else if (this.itemNum * this.getPriceValue() > u.RoleBaseInfo.gold) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:18401: e.prototype.changeNum = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI29",
+      "where": "tools/scripts3.js:18436: if (e > u.RoleBaseInfo.gold) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:18432: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "ui": "BuyItemUI32",
+      "where": "tools/scripts3.js:18752: var e = this.getPriceValue(), o = Math.min(Math.max(1, Math.floor(p.RoleBaseInfo.gold / e)), this._max);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:18751: e.prototype.updateNumShow = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI32",
+      "where": "tools/scripts3.js:18759: if (t > p.RoleBaseInfo.gold) u.StoreModel.openChargeList(); else if (this.itemNum > 0) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:18757: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "ui": "BuyItemUI33",
+      "where": "tools/scripts3.js:18868: var e = this.getPriceValue(), o = Math.min(Math.max(1, Math.floor(p.RoleBaseInfo.gold / e)), this._max - this.buyCounts);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:18867: e.prototype.updateNumShow = function(t) {"
+    },
+    {
+      "ui": "BuyItemUI33",
+      "where": "tools/scripts3.js:18875: if (t > p.RoleBaseInfo.gold) u.StoreModel.openChargeList(); else if (this.itemNum > 0) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:18873: e.prototype.onBuyClick = function() {"
+    },
+    {
+      "ui": "EquipRestoreBgUI",
+      "where": "tools/scripts3.js:28561: this.goldNum.getComponent(cc.Label).string = c.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:28559: e.prototype.onEquipRestoreFin = function() {"
+    },
+    {
+      "ui": "EquipSplitUI",
+      "where": "tools/scripts3.js:29290: this.costMoney > _.RoleBaseInfo.gold ? g.default.show(p.getText(535), [ {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:29288: e.prototype.onClickSplit = function() {"
+    },
+    {
+      "ui": "EquipSplitUI",
+      "where": "tools/scripts3.js:29334: this.cost.string = p.getText(9673) + p.getText(506) + \"  \" + t + \"/\" + _.RoleBaseInfo.gold;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:29328: e.prototype.refreshCost = function() {"
+    },
+    {
+      "ui": "FireGiftAlertUI",
+      "where": "tools/scripts3.js:30690: 0 != this.giftData[6] && h.RoleBaseInfo.yuanbao < this.giftData[6] ? t = 8845 : 0 != this.giftData[8] && h.RoleBaseInfo.gold < this.giftData[8] ? t = 9223 : this.giftData[7] >= this.giftData[4] && (t = 7353);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:30688: e.prototype.onClickBuy = function() {"
+    },
+    {
+      "ui": "FireGiftUI",
+      "where": "tools/scripts3.js:30842: this.goldNum.string = l.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:30840: e.prototype.refresh = function() {"
+    },
+    {
+      "ui": "GoldLotteryUI",
+      "where": "tools/scripts3.js:34177: this.gLabel.string = p.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:34176: e.prototype.updateMoney = function() {"
+    },
+    {
+      "ui": "GoodEvilHelpUI",
+      "where": "tools/scripts3.js:35713: l.RoleBaseInfo.gold < c.GoodEvilModel.helpInfo.price ? h.GoodEvilUtil.showCharge() : this.confirmCall && this.confirmCall();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:35712: e.prototype.onClickConfirm = function() {"
+    },
+    {
+      "ui": "ManureUI",
+      "where": "tools/scripts3.js:44549: if (h.RoleBaseInfo.gold < e) {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:44546: e.prototype.onClickBtn = function(t) {"
+    },
+    {
+      "ui": "MateriaFusionUI",
+      "where": "tools/scripts3.js:46709: this.moneyNum.getComponent(cc.Label).string = u.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:46708: e.prototype.updateMoeny = function() {"
+    },
+    {
+      "ui": "MateriaFusionUI",
+      "where": "tools/scripts3.js:46860: u.RoleBaseInfo.gold >= n ? i ? M.default.show(m.getText(6020004), [ {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:46848: e.prototype.onClickBtn = function(t) {"
+    },
+    {
+      "ui": "RogueBuyTimeUI",
+      "where": "tools/scripts3.js:64675: if (d.RoleBaseInfo.gold < h.getConstByID(520)) c.default.show(p.getText(9223)); else {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:64674: e.prototype.onClickConfirm = function() {"
+    },
+    {
+      "ui": "RogueExchangeUI",
+      "where": "tools/scripts3.js:67075: d.RoleBaseInfo.gold < t ? _.StoreModel.openChargeList() : g.RogueModel.storeRefresh();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:67072: e.prototype.onClickChange = function() {"
+    },
+    {
+      "ui": "RogueExchangeUI",
+      "where": "tools/scripts3.js:67140: 0 == t && (d.RoleBaseInfo.gold >= o ? g.RogueModel.storeBuy(e, 1) : _.StoreModel.openChargeList());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:67139: } ], function(t) {"
+    },
+    {
+      "ui": "RogueGoldExUI",
+      "where": "tools/scripts3.js:68464: this.goldNum.string = h.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:68463: e.prototype.setGoldNum = function() {"
+    },
+    {
+      "ui": "RogueGoldExUI",
+      "where": "tools/scripts3.js:68494: h.RoleBaseInfo.gold < f.getConstByID(515) ? c.default.show(g.getText(9223)) : u.RogueModel.goldExChangeTime >= f.getConstByID(514) ? c.default.show(g.getText(7335)) : u.RogueModel.goldStoreRefresh();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:68493: e.prototype.onClickChange = function() {"
+    },
+    {
+      "ui": "RogueRewardUI",
+      "where": "tools/scripts3.js:72765: this.goldNum.string = h.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:72764: e.prototype.refresh = function() {"
+    },
+    {
+      "ui": "RogueRewardUI",
+      "where": "tools/scripts3.js:72786: u.RogueModel.refreshCZPrice > 0 && h.RoleBaseInfo.getItemNum(this.addItemId) <= 0 && h.RoleBaseInfo.gold < u.RogueModel.refreshCZPrice ? c.default.show(g.getText(9223)) : u.RogueModel.refreshOutfitting();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:72785: e.prototype.onClickChange = function() {"
+    },
+    {
+      "ui": "ScrapeLotteryUI",
+      "where": "tools/scripts3.js:78027: this.gNum.string = \"\" + u.RoleBaseInfo.gold;",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:78025: e.prototype.refresh = function() {"
+    },
+    {
+      "ui": "ScrapeLotteryUI",
+      "where": "tools/scripts3.js:78117: u.RoleBaseInfo.gold < t ? f.StoreModel.openChargeList() : this.buyNum >= e ? r.default.show(c.getText(6001805)) : m.default.addBuyItemUI({",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:78115: e.prototype.showBuyTicketUI = function() {"
+    },
+    {
+      "ui": "SkinActiveAllBuyUI",
+      "where": "tools/scripts3.js:81763: if (this.getAllCost() > d.RoleBaseInfo.gold) l.default.show(h.getText(9223)); else {",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:81758: e.prototype.onClickBuy = function() {"
+    },
+    {
+      "ui": "SkinShopUI",
+      "where": "tools/scripts3.js:83298: this.goldNum.string = l.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:83297: e.prototype.setGoldNum = function() {"
+    },
+    {
+      "ui": "SkinShopUI",
+      "where": "tools/scripts3.js:83313: l.RoleBaseInfo.gold < d.SkinModel.refreshCost ? a.default.show(h.getText(9223)) : d.SkinModel.refreshShop();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:83312: e.prototype.onClickRefresh = function() {"
+    },
+    {
+      "ui": "SpringSwordGiftUI",
+      "where": "tools/scripts3.js:86046: this.goldNum && (this.goldNum.string = \"\" + d.RoleBaseInfo.gold);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:86043: e.prototype.update = function() {"
+    },
+    {
+      "ui": "TrickExUI",
+      "where": "tools/scripts3.js:89862: this.goldNum.string = p.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:89858: t.prototype.onLoad.call(this);"
+    },
+    {
+      "ui": "TrickExUI",
+      "where": "tools/scripts3.js:89906: this.goldNum.string = p.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:89901: e.prototype.onRefreshList = function() {"
+    },
+    {
+      "ui": "TrickExUI",
+      "where": "tools/scripts3.js:89945: 0 == t && (p.RoleBaseInfo.gold < l.TrickExModel.costPrice ? g.default.show(h.getText(9223)) : l.TrickExModel.reqRefreshTrickExchange());",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:89944: } ], function(t) {"
+    },
+    {
+      "ui": "WarmUpBuyTimeUI",
+      "where": "tools/scripts3.js:92348: var e = Math.min(Math.floor(h.RoleBaseInfo.gold / p.getConstByID(487)), l.WarmUpModel.canBuyTime);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:92339: t.prototype.onLoad.call(this);"
+    },
+    {
+      "ui": "WarmUpBuyTimeUI",
+      "where": "tools/scripts3.js:92354: h.RoleBaseInfo.gold < this.getGoldNum() ? d.default.show(a.getText(9223)) : l.WarmUpModel.buyTime(this.num);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:92353: e.prototype.onClickConfirm = function() {"
+    },
+    {
+      "ui": "WarmUpUI",
+      "where": "tools/scripts3.js:93655: this.goldNum.string = c.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:93654: e.prototype.setGoldNum = function() {"
+    },
+    {
+      "ui": "WatchGiftUI",
+      "where": "tools/scripts3.js:94118: this.goldNum.getComponent(cc.Label).string = String(p.RoleBaseInfo.gold);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:94107: this._tables.sort(function(t) {"
+    },
+    {
+      "ui": "WatchGiftUI",
+      "where": "tools/scripts3.js:94155: this.goldNum.getComponent(cc.Label).string = String(p.RoleBaseInfo.gold);",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:94154: e.prototype.onReceiveMsg = function() {"
+    },
+    {
+      "ui": "WeapAppearanUI",
+      "where": "tools/scripts3.js:94570: this.goldLabel.string = d.RoleBaseInfo.gold.toString();",
+      "currency": "gold",
+      "enclosingFunction": "tools/scripts3.js:94568: e.prototype.updateMoneyNum = function() {"
+    }
+  ],
+  "chargeEntries": [
+    "tools/index.js:24636: }) : p.StoreModel.openChargeList();",
+    "tools/index.js:24686: } else 4 == e.eRet && p.StoreModel.openChargeList();",
+    "tools/index.js:24698: } else p.StoreModel.openChargeList();",
+    "tools/index.js:32165: t.StoreModel.openChargeList();",
+    "tools/index.js:43504: } else 2 == o.eRet && m.StoreModel.openChargeList();",
+    "tools/index.js:44547: } else 8 == e.eRet ? a.default.show(s.getText(1261)) : 9 == e.eRet && l.StoreModel.openChargeList();",
+    "tools/index.js:54269: } else 2 == e.eRet ? u.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(r.getText(\"762\"));",
+    "tools/index.js:61038: } else 2 == e.eRet ? p.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(s.getText(\"1213\"));",
+    "tools/index.js:61045: } else 2 == e.eRet ? p.StoreModel.openChargeList() : 3 == e.eRet && a.default.show(s.getText(\"1213\"));",
+    "tools/index.js:64088: c.StoreModel.openChargeList();",
+    "tools/index.js:67601: if (2 === o.eRet) c.StoreModel.openChargeList(); else if (t.btUI) {",
+    "tools/index.js:67778: d.StoreModel.openChargeList();",
+    "tools/index.js:70500: } else 2 == e.eRet && A.StoreModel.openChargeList();",
+    "tools/index.js:75578: } else 2 == o.eRet ? c.default.show(n.getText(\"968\")) : 3 == o.eRet ? f.StoreModel.openChargeList() : 4 == o.eRet ? c.default.show(n.getText(\"1161\")) : 7 == o.eRet && c.default.show(n.getText(\"1455\"));",
+    "tools/index.js:102115: } else 2 == e.eRet && h.StoreModel.openChargeList();",
+    "tools/index.js:102130: } else 2 == e.eRet && h.StoreModel.openChargeList();",
+    "tools/index.js:102145: } else 2 == e.eRet && h.StoreModel.openChargeList();",
+    "tools/index.js:120691: } else 11 == i.eRet && O.StoreModel.openChargeList();",
+    "tools/index.js:130848: e.prototype.openChargeList = function(t) {",
+    "tools/index.js:131256: } else 4 == e.eRet ? c.default.show(i.getText(6000575)) : this.openChargeList();",
+    "tools/index.js:144041: } else 2 == o.eRet ? s.default.show(i.getText(1064)) : 3 == o.eRet && f.StoreModel.openChargeList();",
+    "tools/index.js:144047: } else 2 == o.eRet ? s.default.show(i.getText(1064)) : 3 == o.eRet && f.StoreModel.openChargeList();",
+    "tools/index.js:144071: } else 3 == e.eRet ? f.StoreModel.openChargeList() : 4 == e.eRet ? d.default.prefabs.load(\"marrySystem/ChildWashUI\", cc.Prefab, function(t, o) {",
+    "tools/index.js:144132: } else 2 == e.eRet ? f.StoreModel.openChargeList() : s.default.show(i.getText(\"910\"));",
+    "tools/scripts2.js:2325: if (this.cost > c.RoleBaseInfo.gold) m.StoreModel.openChargeList(); else {",
+    "tools/scripts2.js:6548: l.StoreModel.openChargeList();",
+    "tools/scripts2.js:6650: l.StoreModel.openChargeList();",
+    "tools/scripts2.js:6658: l.StoreModel.openChargeList();",
+    "tools/scripts2.js:6750: l.StoreModel.openChargeList();",
+    "tools/scripts2.js:6758: l.StoreModel.openChargeList();",
+    "tools/scripts2.js:6881: this.itemNum * this.getPriceValue() > this.total ? 2 == this.data[1] ? f.StoreModel.openChargeList() : u.default.show(l.getText(202201181)) : d.InnManageModel.reqInnShopBuy(this.data[0], this.itemNum);",
+    "tools/scripts2.js:6992: e > p.RoleBaseInfo.gold && v.StoreModel.openChargeList();",
+    "tools/scripts2.js:7076: l.StoreModel.openChargeList();",
+    "tools/scripts2.js:7084: l.StoreModel.openChargeList();",
+    "tools/scripts2.js:7172: l.RoleBaseInfo.gold >= o ? this.itemNum++ : p.StoreModel.openChargeList();",
+    "tools/scripts2.js:7177: this.itemNum == i && p.StoreModel.openChargeList();",
+    "tools/scripts2.js:7425: p.RoleBaseInfo.gold < o && u.StoreModel.openChargeList();",
+    "tools/scripts2.js:13163: 0 == e && (g.RoleBaseInfo.gold >= t ? h.ChildrenModel.reqChildEndPlayGame(2) : u.StoreModel.openChargeList());",
+    "tools/scripts2.js:18754: 0 == t && (p.RoleBaseInfo.gold < parseInt(s) ? f.StoreModel.openChargeList() : d.DriverModel.reqBuyMount(o.selectDriverId));",
+    "tools/scripts2.js:32776: 0 == t && (y.RoleBaseInfo.gold >= s ? h.InnManageModel.reqQuickHarvest(e) : C.StoreModel.openChargeList());",
+    "tools/scripts2.js:33654: I.StoreModel.openChargeList();",
+    "tools/scripts2.js:34443: c.StoreModel.openChargeList();",
+    "tools/scripts2.js:46521: this.npcId > 0 ? o <= h.RoleBaseInfo.gold ? v.SpecialGoodsModel.reqBuy(this.npcId, this.curObj.itemId, this.counts) : y.StoreModel.openChargeList() : o <= h.RoleBaseInfo.coins ? l.InventoryModel.buyItem(this.curObj.itemId, this.counts) : m.default.show(f.getText(\"124\"));",
+    "tools/scripts2.js:54159: c.RumorModel.getEventCount() > 0 ? c.RumorModel.reqActiveNotice(0) : I.RoleBaseInfo.gold < 10 ? b.StoreModel.openChargeList() : y.default.show(h.getText(1106), [ {",
+    "tools/scripts2.js:69072: } else m.StoreModel.openChargeList();",
+    "tools/scripts3.js:8279: 0 == t.node.tag1 ? a.getConstByID(554) > g.RoleBaseInfo.gold ? m.StoreModel.openChargeList() : c.AnniversaryModel.reqBuyAnnUpgradePass() : p.PopUpMgr.removePopUp(this.node);",
+    "tools/scripts3.js:16370: p.NewYearBombModel.getNeedNum(this.data.id) <= l.RoleBaseInfo.gold ? p.NewYearBombModel.reqCompleteTask(this.data.id) : d.StoreModel.openChargeList();",
+    "tools/scripts3.js:16703: 0 == t.node.tag1 && (a.getConstByID(563) <= p.RoleBaseInfo.gold ? this.callback() : l.StoreModel.openChargeList());",
+    "tools/scripts3.js:18420: p.StoreModel.openChargeList();",
+    "tools/scripts3.js:18438: p.StoreModel.openChargeList();",
+    "tools/scripts3.js:18759: if (t > p.RoleBaseInfo.gold) u.StoreModel.openChargeList(); else if (this.itemNum > 0) {",
+    "tools/scripts3.js:18875: if (t > p.RoleBaseInfo.gold) u.StoreModel.openChargeList(); else if (this.itemNum > 0) {",
+    "tools/scripts3.js:23167: } else 4 == o.eRet && C.StoreModel.openChargeList();",
+    "tools/scripts3.js:46884: }) : d.StoreModel.openChargeList();",
+    "tools/scripts3.js:49879: l.RoleBaseInfo.gold >= o ? this.buyMaxNum >= o ? this.itemNum++ : this.itemNum = this.buyMaxNum : d.MonoplyState.openChargeList();",
+    "tools/scripts3.js:49884: this.itemNum == i && d.MonoplyState.openChargeList();",
+    "tools/scripts3.js:50621: e.prototype.openChargeList = function() {",
+    "tools/scripts3.js:58665: } else if (5 == e.eRet) N.StoreModel.openChargeList(); else if (7 == e.eRet) a.default.show(f.getText(6018426)); else if (6 == e.eRet) {",
+    "tools/scripts3.js:67075: d.RoleBaseInfo.gold < t ? _.StoreModel.openChargeList() : g.RogueModel.storeRefresh();",
+    "tools/scripts3.js:67140: 0 == t && (d.RoleBaseInfo.gold >= o ? g.RogueModel.storeBuy(e, 1) : _.StoreModel.openChargeList());",
+    "tools/scripts3.js:71650: } else 10 == e.eRet && R.StoreModel.openChargeList();",
+    "tools/scripts3.js:77427: 0 == e && (1 == i && h.RoleBaseInfo.gold < s ? d.StoreModel.openChargeList() : 2 == i && h.RoleBaseInfo.yuanbao < s ? d.StoreModel.openChargeYuanbaoUI() : p.SpreadFirePackModel.reqBuyPack(t.pId));",
+    "tools/scripts3.js:78117: u.RoleBaseInfo.gold < t ? f.StoreModel.openChargeList() : this.buyNum >= e ? r.default.show(c.getText(6001805)) : m.default.addBuyItemUI({",
+    "tools/scripts3.js:85862: (1 == e.cost[0] ? l.RoleBaseInfo.gold >= o : l.RoleBaseInfo.yuanbao >= o) ? this.parent.reqBuyGift(this.giftId, 1) : 1 == e.cost[0] ? h.StoreModel.openChargeList() : h.StoreModel.openChargeYuanbaoUI();",
+    "tools/scripts3.js:95459: } else 5 == e.eRet ? n.default.show(g.getText(3589)) : 6 == e.eRet ? c.StoreModel.openChargeList() : 7 == e.eRet && c.StoreModel.openChargeYuanbaoUI();",
+    "tools/scripts3.js:95470: } else 7 == e.eRet ? n.default.show(g.getText(6016283)) : 8 == e.eRet ? n.default.show(g.getText(3589)) : 9 == e.eRet ? c.StoreModel.openChargeList() : 10 == e.eRet && c.StoreModel.openChargeYuanbaoUI();"
+  ],
+  "paymentColumnReads": [
+    "tools/scripts2.js:32075: if (2 == this.itemObject[e].payment) {",
+    "tools/scripts2.js:45204: for (var e in this.itemObject) t != parseInt(this.itemObject[e].payment) && this.itemList.push(this.itemObject[e]);",
+    "tools/scripts2.js:55280: if (o[t] == s.payment && parseInt(s.page) == e + 1) {"
+  ],
+  "unverified": [],
+  "out_of_scope": []
+}

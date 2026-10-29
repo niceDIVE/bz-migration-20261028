@@ -1,0 +1,82 @@
+# User.getSpecialevts  (HttpConst.GET_SPECIALEVTS)
+# 出现 2 处
+
+108249: }
+108250: a.default.show(s, void 0, void 0, i.getText(123));
+108251: t.refreshDispatch();
+108252: }
+108253: r.MessageCenter.dispatch(c.EvName.FINISH_TREASURE_EVENT, t.currentRewardId);
+108254: }, this);
+108255: r.MessageCenter.on(s.HttpConst.GET_SPECIALEVTS, function(t, e) {
+108256: 1 == e.eRet && r.MessageCenter.dispatch(c.EvName.NOTICE_BOOK_EVENT, e);
+108257: }, this);
+108258: };
+108259: e.prototype.refreshDispatch = function() {
+108260: Promise.resolve().then(function() {
+108261: return t("../../scripts3/model3/DelegateModel");
+108262: }).then(function(t) {
+108263: -1 != t.DelegateModel.noticeIndex && (t.DelegateModel.noticeIndex = -1);
+108264: if (1 == t.DelegateModel.noticeArr.length) {
+108265: t.DelegateModel.noticeArr = [];
+108266: r.MessageCenter.dispatch(c.EvName.REFRESH_DISPATCH_NOTICE_BUTTON, !1);
+108267: }
+108268: });
+108269: };
+108270: e.prototype.reqActiveNotice = function(t) {
+108271: var e = {
+108272: type: t
+108273: };
+108274: l.NetMgr.http.sendRequest(s.HttpConst.REFRESHNOTICE, e);
+108275: };
+108276: e.prototype.reqActiveGetReward = function(t) {
+108277: this.currentRewardId = t;
+108278: var e = {
+108279: typeID: t,
+108280: eventID: this.activeEventID
+108281: };
+108282: l.NetMgr.http.sendRequest(s.HttpConst.GETNOTICE_REWARD, e);
+108283: };
+108284: e.prototype.reqAdventureState = function() {
+108285: l.NetMgr.http.sendRequest(s.HttpConst.GET_SPECIALEVTS, {});
+108286: };
+108287: e.prototype.onPrivateEvents = function(t) {
+108288: this.resetCleanActiveEvent();
+108289: this.activeEventID = t.eventID;
+108290: this.activeCdTime = t.cdTime;
+108291: if (1 == t.eRet) {
+108292: this.activeTypeID = t.eventType;
+108293: this.curCount = t.count;
+108294: switch (this.activeTypeID) {
+108295: case 1:
+---
+108296: this.hasSpecialEvent = !0;
+108297: this.selectedDesID = this.eventDes1[Math.floor(Math.random() * this.eventDes1.length)];
+108298: var e = this.locations[Math.floor(Math.random() * this.locations.length)];
+108299: this.evLoc = {
+108300: x: e[0],
+108301: y: e[1]
+108302: };
+108303: break;
+108304: 
+108305: case 3:
+108306: this.fightLevel = p.SkillTable.minSkillLevel();
+108307: t.hasOwnProperty("idArr") && (this.randEventArray = t.idArr);
+108308: h.DartModel.setOpenDart(t.eventID);
+108309: break;
+108310: 
+108311: case 5:
+108312: this.fightLevel = p.SkillTable.minSkillLevel();
+108313: u.ActiveModel.setKillActiveEvent(this.activeTypeID, t.eventID, t.beginTime);
+108314: break;
+108315: 
+108316: case 6:
+108317: this.fightLevel = p.SkillTable.minSkillLevel();
+108318: t.hasOwnProperty("idArr") && (this.randEventArray = t.idArr);
+108319: f.WMapAdvModel.start();
+108320: }
+108321: } else 5 == t.eRet && a.default.show(i.getText("1104"));
+108322: r.MessageCenter.dispatch(c.EvName.ON_ACTIVE_EVENT);
+108323: if (t.hasOwnProperty("collectArr") && t.collectArr.length) {
+108324: g.CollectItemModel.setCollectArrData(t.collectArr, t.bTime);
+108325: r.MessageCenter.dispatch(c.EvName.ADD_COLLECT_NPC_EVENT, 0);
+---

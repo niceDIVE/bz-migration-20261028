@@ -1,0 +1,8139 @@
+{
+ "User.quicklogin": {
+  "const": "QUICK_LOGIN",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.login": {
+  "const": "USER_LOGIN",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.Create": {
+  "const": "USER_CREATE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.register": {
+  "const": "USER_REGISTER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.CheckName": {
+  "const": "USER_CHECK_NAME",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.OnHookBreak": {
+  "const": "USER_ONHOOK_BREAK",
+  "handlers": [
+   "onBreakReqReturn"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "Addition",
+   "Sponsor",
+   "beginTime",
+   "eRet",
+   "friendName",
+   "friendSex",
+   "itemAddition",
+   "needTime",
+   "operate",
+   "serverTime",
+   "skillID",
+   "skillLevel"
+  ],
+  "field_lines": {
+   "skillID": 56586,
+   "skillLevel": 56587,
+   "itemAddition": 56589,
+   "needTime": 56590,
+   "operate": 56590,
+   "eRet": 56591,
+   "serverTime": 56595,
+   "beginTime": 56595,
+   "Sponsor": 56605,
+   "friendName": 56606,
+   "friendSex": 56607,
+   "Addition": 56608
+  },
+  "occurrences": 2
+ },
+ "User.FriendList": {
+  "const": "USER_FRIENDLIST",
+  "handlers": [
+   "onSuccessFriendList"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "friendList",
+   "uIds"
+  ],
+  "field_lines": {
+   "eRet": 132209,
+   "uIds": 132210,
+   "friendList": 132212
+  },
+  "occurrences": 3
+ },
+ "User.ApplyFriend": {
+  "const": "USER_APPLAYFRIEND",
+  "handlers": [
+   "onSuccessApplayFriend"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 132270
+  },
+  "occurrences": 2
+ },
+ "User.AnswerFriend": {
+  "const": "USER_ANSWERFRIEND",
+  "handlers": [
+   "answerSuccessCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.FindFriend": {
+  "const": "USER_FIND_FRIEND",
+  "handlers": [
+   "onSuccessFriendFind"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 132225
+  },
+  "occurrences": 2
+ },
+ "User.FriendRegister": {
+  "const": "USER_FRIENDREGISTER",
+  "handlers": [
+   "onSuccessRegistener"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.FriendDelete": {
+  "const": "USER_FRIEND_DELETE",
+  "handlers": [
+   "onSuccessFriendDelete"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 132222
+  },
+  "occurrences": 2
+ },
+ "User.SaveGame": {
+  "const": "USER_SAVEGAME",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.LoadGame": {
+  "const": "USER_LOADGAME",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ChallengePVP": {
+  "const": "USER_PVP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.NewPVPBattleResult": {
+  "const": "USER_PVP_OVER",
+  "handlers": [
+   "onUserPvpOver",
+   "onPvpResultCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "CDTime",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 101530,
+   "CDTime": 101531
+  },
+  "occurrences": 4
+ },
+ "User.rankList": {
+  "const": "USER_RANKLIST",
+  "handlers": [
+   "onSuccessRankList"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "CDTime",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 101516,
+   "CDTime": 101517
+  },
+  "occurrences": 2
+ },
+ "User.LookOther": {
+  "const": "USER_LOOKOTHER",
+  "handlers": [
+   "onSuccessLook"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 101523
+  },
+  "occurrences": 2
+ },
+ "User.getCRAInfo": {
+  "const": "GET_CREATE_INFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.OnCheckBreak": {
+  "const": "CHECK_BREAK",
+  "handlers": [
+   "onCheckBreak"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "finish",
+   "gTime",
+   "hg",
+   "hgtimes",
+   "itemAddition",
+   "roleGold",
+   "skillID",
+   "skillLevel",
+   "usedTime"
+  ],
+  "field_lines": {
+   "finish": 56280,
+   "eRet": 56281,
+   "itemAddition": 56283,
+   "gTime": 56286,
+   "hg": 56287,
+   "hgtimes": 56288,
+   "roleGold": 56289,
+   "skillID": 56291,
+   "skillLevel": 56292,
+   "usedTime": 56293
+  },
+  "occurrences": 2
+ },
+ "User.GetOnHookFriendLis": {
+  "const": "GET_BREAK_FRIENDLIST",
+  "handlers": [
+   "onGetBrList"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "friendList"
+  ],
+  "field_lines": {
+   "friendList": 56457
+  },
+  "occurrences": 2
+ },
+ "User.DoublePractice": {
+  "const": "REQ_DOUBLE_BR",
+  "handlers": [
+   "onReqDouble"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "needTime"
+  ],
+  "field_lines": {
+   "eRet": 56439,
+   "needTime": 56440
+  },
+  "occurrences": 2
+ },
+ "User.GetChatAddress": {
+  "const": "USER_GETCHATADDRESS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.KillSelf": {
+  "const": "KILL_SELF",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.OpenBox": {
+  "const": "OPEN_BOX_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetSecretOrderAward": {
+  "const": "SECRET_ORDER_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BuyMarketItem": {
+  "const": "BUY_MARKET_ITEM",
+  "handlers": [
+   "onPaySuccess"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "buyTimes",
+   "userGold"
+  ],
+  "field_lines": {
+   "userGold": 131234,
+   "buyTimes": 131236
+  },
+  "occurrences": 2
+ },
+ "User.GetPayShowData": {
+  "const": "GET_PAY_SHOW_DATA",
+  "handlers": [
+   "onOpenStoreList"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "ShopArray",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 131213,
+   "ShopArray": 131215
+  },
+  "occurrences": 3
+ },
+ "User.GetIosPayShowData": {
+  "const": "GET_IOSPAY_SHOW_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.PAY_ITEM_ID": {
+  "const": "PAY_ITEM_ID",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.OnlineReward": {
+  "const": "ONLINE_REWARD_ID",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGMGiveItemList": {
+  "const": "GET_GMGIVE_ITEM_LIST",
+  "handlers": [
+   "sendOnlineList"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetGMGiveItem": {
+  "const": "GET_GMGIVE_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BeginPlayWooks": {
+  "const": "BEGIN_WOOD_TRAINING",
+  "handlers": [
+   "onReqWoodTr"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "beginTime",
+   "eRet",
+   "maxTime",
+   "serverTime"
+  ],
+  "field_lines": {
+   "eRet": 86189,
+   "beginTime": 86192,
+   "serverTime": 86193,
+   "maxTime": 86194
+  },
+  "occurrences": 2
+ },
+ "User.EndPlayWooks": {
+  "const": "END_WOOD_TRAINING",
+  "handlers": [
+   "onEndWoodTr"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "beginTime",
+   "eRet",
+   "exp",
+   "expExtra",
+   "gTime",
+   "hg",
+   "hgtimes",
+   "potential",
+   "potentialExtra",
+   "serverTime",
+   "specialAny"
+  ],
+  "field_lines": {
+   "eRet": 86202,
+   "serverTime": 86205,
+   "beginTime": 86205,
+   "gTime": 86207,
+   "hg": 86208,
+   "hgtimes": 86209,
+   "potential": 86210,
+   "exp": 86211,
+   "expExtra": 86214,
+   "potentialExtra": 86215,
+   "specialAny": 86217
+  },
+  "occurrences": 2
+ },
+ "User.changePlayWooksState": {
+  "const": "PAUSE_WOOD_TRAINING",
+  "handlers": [
+   "onPauseWoodTr"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 86182
+  },
+  "occurrences": 2
+ },
+ "User.AccountBindEmail": {
+  "const": "BIND_EMAIL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.FindAccountPwd": {
+  "const": "FIND_PASS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.ChangeAccountPwd": {
+  "const": "CHANGE_PASS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.GetRoldSaveTime": {
+  "const": "SAVE_GAMETIME",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetAdvertisementNum": {
+  "const": "GET_NUMADS_AVAILABLE",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.LookAdvertisement": {
+  "const": "GET_AD_REWARD",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.BeginFish": {
+  "const": "START_FISHING",
+  "handlers": [
+   "onStartFishing"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "advertisementNum",
+   "beginTime",
+   "eRet",
+   "maxTime",
+   "serverTime"
+  ],
+  "field_lines": {
+   "eRet": 51558,
+   "serverTime": 51560,
+   "beginTime": 51560,
+   "advertisementNum": 51561,
+   "maxTime": 51562
+  },
+  "occurrences": 2
+ },
+ "User.BeginRollDice": {
+  "const": "BEGIN_ROLLDICE",
+  "handlers": [
+   "onCallBackRollDice"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 54256
+  },
+  "occurrences": 2
+ },
+ "User.EndFish": {
+  "const": "END_FISHING",
+  "handlers": [
+   "onEndFishing"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "awardArr",
+   "beginTime",
+   "eRet",
+   "extraArr",
+   "gTime",
+   "hg",
+   "hgtimes",
+   "serverTime"
+  ],
+  "field_lines": {
+   "eRet": 51577,
+   "serverTime": 51580,
+   "beginTime": 51580,
+   "gTime": 51583,
+   "hg": 51584,
+   "hgtimes": 51585,
+   "awardArr": 51586,
+   "extraArr": 51587
+  },
+  "occurrences": 2
+ },
+ "User.LookFishAward": {
+  "const": "CHECK_FISHING_REWARDS",
+  "handlers": [
+   "onCheckFishingRewards"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "awardArr"
+  ],
+  "field_lines": {
+   "awardArr": 51546
+  },
+  "occurrences": 2
+ },
+ "User.IphonePay": {
+  "const": "IOS_PAY",
+  "handlers": [
+   "onGetProduct"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "curGold",
+   "curYuanbao",
+   "eRet",
+   "orderId"
+  ],
+  "field_lines": {
+   "orderId": 130935,
+   "eRet": 130938,
+   "curGold": 130939,
+   "curYuanbao": 130940
+  },
+  "occurrences": 1
+ },
+ "User.IosChooseProduct": {
+  "const": "PREPARE_IOS_PAY",
+  "handlers": [
+   "onPrepareIOSPay"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.BackToLogin": {
+  "const": "BACKTOLOGIN",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetBigMapSpecialEvent": {
+  "const": "SPECIAL_EVENTS",
+  "handlers": [
+   "onSpecialEvents"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.wxPay": {
+  "const": "GET_WECHAT_SIGN",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.aliPay": {
+  "const": "REQ_ALI_PAY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.GetPayAward": {
+  "const": "REQ_PRODUCT",
+  "handlers": [
+   "onGetProduct"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "curGold",
+   "curYuanbao",
+   "eRet",
+   "orderId"
+  ],
+  "field_lines": {
+   "orderId": 130935,
+   "eRet": 130938,
+   "curGold": 130939,
+   "curYuanbao": 130940
+  },
+  "occurrences": 2
+ },
+ "User.cancelPay": {
+  "const": "CANCEL_PAY",
+  "handlers": [
+   "onCancelPay"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "StoreModel"
+  ],
+  "field_lines": {
+   "StoreModel": 130907
+  },
+  "occurrences": 2
+ },
+ "User.OpenDropBox": {
+  "const": "OPEN_DROP_BOX",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.ClientLog": {
+  "const": "GAME_LOG",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.ExChangeJetton": {
+  "const": "EXCHANFE_JETTON",
+  "handlers": [
+   "onExchangeChip"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "chipTimes",
+   "curGold",
+   "curJetton",
+   "eRet",
+   "getCoins",
+   "getPotency"
+  ],
+  "field_lines": {
+   "curGold": 54263,
+   "curJetton": 54264,
+   "chipTimes": 54265,
+   "eRet": 54266,
+   "getPotency": 54267,
+   "getCoins": 54268
+  },
+  "occurrences": 2
+ },
+ "User.ReqReview": {
+  "const": "CREATE_POST",
+  "handlers": [
+   "onCreatePost"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "id"
+  ],
+  "field_lines": {
+   "eRet": 113600,
+   "id": 113600
+  },
+  "occurrences": 2
+ },
+ "User.ReqGiveSupport": {
+  "const": "LIKE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.GetSchoolReview": {
+  "const": "GET_SCHOOL_POSTS",
+  "handlers": [
+   "onGetSchoolPost"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "maxPage",
+   "reviewList",
+   "type"
+  ],
+  "field_lines": {
+   "eRet": 113606,
+   "type": 113606,
+   "reviewList": 113606,
+   "maxPage": 113608
+  },
+  "occurrences": 2
+ },
+ "User.GetSchoolRankList": {
+  "const": "GET_SCHOOL_RANK",
+  "handlers": [
+   "onGetSchoolRank"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 113603
+  },
+  "occurrences": 2
+ },
+ "User.enterWoldBossBattle": {
+  "const": "FIGHT_WORLD_BOSS",
+  "handlers": [
+   "onGetBossData"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "AttckData",
+   "bossCurHP",
+   "bossMaxHP",
+   "buffNum",
+   "buyNum",
+   "curAttackNum",
+   "eRet",
+   "flag",
+   "randSeed"
+  ],
+  "field_lines": {
+   "flag": 145593,
+   "bossCurHP": 145594,
+   "bossMaxHP": 145595,
+   "curAttackNum": 145596,
+   "randSeed": 145597,
+   "buyNum": 145598,
+   "buffNum": 145599,
+   "eRet": 145600,
+   "AttckData": 145602
+  },
+  "occurrences": 2
+ },
+ "User.GetBossAward": {
+  "const": "GET_BOSS_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.QuickBuyItem": {
+  "const": "QUICK_BUY",
+  "handlers": [
+   "onQuickBuy"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "itemID",
+   "itemNum",
+   "userGold"
+  ],
+  "field_lines": {
+   "eRet": 130883,
+   "userGold": 130884,
+   "itemID": 130885,
+   "itemNum": 130886
+  },
+  "occurrences": 2
+ },
+ "User.checkUploadAttackDamge": {
+  "const": "UPLOAD_WB_DMG",
+  "handlers": [
+   "onUploadDmg"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "CDTime",
+   "bossCurHP",
+   "bossMaxHP",
+   "eRet",
+   "killBoss",
+   "killBossName",
+   "maxPotentialLimit"
+  ],
+  "field_lines": {
+   "eRet": 145543,
+   "killBoss": 145547,
+   "killBossName": 145551,
+   "bossMaxHP": 145555,
+   "bossCurHP": 145556,
+   "CDTime": 145557,
+   "maxPotentialLimit": 145561
+  },
+  "occurrences": 2
+ },
+ "User.WashMedicine": {
+  "const": "WASH_MEDICINE",
+  "handlers": [
+   "onWashMedicneBackCall"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "armStrong",
+   "bloodArr",
+   "bone",
+   "eRet",
+   "fosterArr",
+   "maxWuxin",
+   "shenFa",
+   "understanding"
+  ],
+  "field_lines": {
+   "eRet": 144100,
+   "armStrong": 144101,
+   "shenFa": 144102,
+   "bone": 144103,
+   "understanding": 144104,
+   "bloodArr": 144109,
+   "fosterArr": 144110,
+   "maxWuxin": 144111
+  },
+  "occurrences": 2
+ },
+ "User.boosRankList": {
+  "const": "WB_DMG_RANKLIST",
+  "handlers": [
+   "onGetRankList"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.endescortAward": {
+  "const": "END_ESCORTAWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.addSpecailTask": {
+  "const": "LEVEAL_TWONTTASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.ReqMiguPay": {
+  "const": "REQ_MIGU_PAY",
+  "handlers": [
+   "onGetMiguPaySign"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetFashionList": {
+  "const": "GET_FASHION_LIST",
+  "handlers": [
+   "onGetFashionList"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "FashionTimeMap",
+   "type"
+  ],
+  "field_lines": {
+   "type": 75623,
+   "FashionTimeMap": 75623
+  },
+  "occurrences": 2
+ },
+ "User.doubleTraining": {
+  "const": "USER_DOUBLE_TRAINING",
+  "handlers": [
+   "onDoubleTraining"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "itemAddition",
+   "needTime",
+   "skillID",
+   "skillLevel"
+  ],
+  "field_lines": {
+   "skillID": 56669,
+   "skillLevel": 56670,
+   "itemAddition": 56671,
+   "eRet": 56672,
+   "needTime": 56673
+  },
+  "occurrences": 2
+ },
+ "User.endDoubleTraining": {
+  "const": "END_DOUBLE_TRAINING",
+  "handlers": [
+   "onEndDoubleTraining"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "flag"
+  ],
+  "field_lines": {
+   "eRet": 56713,
+   "flag": 56715
+  },
+  "occurrences": 2
+ },
+ "User.AddTrainingRate": {
+  "const": "ADD_TRAINING_RATE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.sycnPlayerItemData": {
+  "const": "SYCNPLAYERITEAMDATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.AddSubtitleReq": {
+  "const": "ADD_SUBTITLEREQ",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.cancelChatPk": {
+  "const": "CANCEL_CHAT_PK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.saleItem": {
+  "const": "SELL_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.buyShopItem": {
+  "const": "BUY_SHOP_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.useItem": {
+  "const": "USE_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 6
+ },
+ "User.addItem": {
+  "const": "ADD_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.acceptTask": {
+  "const": "GET_TASK",
+  "handlers": [
+   "getTaskCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "triggerBoxs"
+  ],
+  "field_lines": {
+   "eRet": 133339,
+   "triggerBoxs": 133343
+  },
+  "occurrences": 2
+ },
+ "User.getFinishTaskAward": {
+  "const": "FINISH_TASK",
+  "handlers": [
+   "finishTaskCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "clearBoxs",
+   "contribution",
+   "eRet",
+   "equipObj",
+   "rewardArray",
+   "triggerBoxs"
+  ],
+  "field_lines": {
+   "eRet": 133385,
+   "triggerBoxs": 133394,
+   "clearBoxs": 133399,
+   "rewardArray": 133405,
+   "equipObj": 133405,
+   "contribution": 133411
+  },
+  "occurrences": 3
+ },
+ "User.upgradeSkill": {
+  "const": "UPGRADE_SKILL_LV",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BeginTraining": {
+  "const": "BEGIN_LIANGONG",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.EndTraining": {
+  "const": "END_LIANGONG",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BeginMeditation": {
+  "const": "START_DAZUO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.joinSchool": {
+  "const": "JOIN_SCHOOL",
+  "handlers": [
+   "joinSchoolCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "cdTimeDays",
+   "clearBoxs",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 77854,
+   "clearBoxs": 77858,
+   "cdTimeDays": 77873
+  },
+  "occurrences": 3
+ },
+ "User.exitSchool": {
+  "const": "EXIT_SCHOOL",
+  "handlers": [
+   "exitSchoolCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "npcIDArr"
+  ],
+  "field_lines": {
+   "npcIDArr": 77889
+  },
+  "occurrences": 2
+ },
+ "User.clearGeSchoolClothing": {
+  "const": "CLEAR_SXHOOL_CD",
+  "handlers": [
+   "onClearCDSchool"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 77848
+  },
+  "occurrences": 2
+ },
+ "User.EndMeditation": {
+  "const": "END_DAZUO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.CheckBattleResult": {
+  "const": "BATTLE_END_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.equipSkill": {
+  "const": "EQUIP_SKILL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.equipWeapon": {
+  "const": "PUT_ON_EQUIPMENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.UnloadingEuipment": {
+  "const": "UNLOADING_EQUIP_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.PutOnEquipment": {
+  "const": "WEAR_EQUIPMENT_ALL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.playerCure": {
+  "const": "UPLOAD_HEAL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.killNpc": {
+  "const": "KILL_NPC",
+  "handlers": [
+   "callBackKilNpc"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "npcIDArr"
+  ],
+  "field_lines": {
+   "eRet": 90059,
+   "npcIDArr": 90061
+  },
+  "occurrences": 2
+ },
+ "User.npcRevive": {
+  "const": "NPC_REVIVE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.BeginSaveNpc": {
+  "const": "BEGINSAVE_NPC",
+  "handlers": [
+   "callBackBeginNpc"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "beginTime",
+   "eRet",
+   "endTime",
+   "npcID"
+  ],
+  "field_lines": {
+   "eRet": 90083,
+   "npcID": 90087,
+   "beginTime": 90088,
+   "endTime": 90089
+  },
+  "occurrences": 2
+ },
+ "User.EndSaveNpc": {
+  "const": "END_SAVE_NPC",
+  "handlers": [
+   "callBackEndNpc"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "endTime"
+  ],
+  "field_lines": {
+   "eRet": 90102,
+   "endTime": 90108
+  },
+  "occurrences": 2
+ },
+ "User.FindFriendByID": {
+  "const": "FINS_FRIENDID",
+  "handlers": [
+   "findFriendIdCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 132228
+  },
+  "occurrences": 7
+ },
+ "User.ClientGMCommand": {
+  "const": "CLIENTGMCOMMON",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getCopyData": {
+  "const": "GET_DUNGEON_INFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.EneterCopy": {
+  "const": "ENTER_DUNGEON",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BuyChallengeCount": {
+  "const": "BUY_DG_CHALLENGE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.LeaveCopy": {
+  "const": "END_DUNGEON_ADVENTURE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getShopItem": {
+  "const": "GET_SPGOODS_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.buySpecialShopItem": {
+  "const": "BUY_SPECIAL_GOODS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BeginRecoverMP": {
+  "const": "BEGIN_RECOVER_MP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.EndRecoverMP": {
+  "const": "END_RECOVER_MP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ReqSelfBattleInfo": {
+  "const": "REQ_PVE_BATTLE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BeginTitivate": {
+  "const": "REQ_BEGINTITIVATE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BuyFashion": {
+  "const": "REQ_BUY_FASHION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.ChooseGirl": {
+  "const": "CHOOSE_GIRL_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.Whoring": {
+  "const": "WHORING_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetWhoreData": {
+  "const": "WHORING_GIRL_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.UseDebris": {
+  "const": "GET_TR_MAP_INFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.Storehouse": {
+  "const": "CLAIM_TR_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetSpecialShopData": {
+  "const": "SPECIAL_SHOP",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BuyAcitivityShop": {
+  "const": "ACTIVITE_SHOP",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetvillainAward": {
+  "const": "SAVR_VILLAGE",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetRandomEventAward": {
+  "const": "REQ_WM_ADV_RWD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getSevenTaskList": {
+  "const": "REQ_SEVENTASK_EVENT",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getSevenTaskAward": {
+  "const": "REQ_SEVENREWARD_EVENT",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetFirstPayAward": {
+  "const": "REQ_FIRST_PAY_EVENT",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BeginChangeFace": {
+  "const": "REQ_BEGIN_CHANGEFACE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ChangeBlood": {
+  "const": "REQ_CHANGEBLOOD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.AddChangeFace": {
+  "const": "ADD_CHANGE_FACE",
+  "handlers": [],
+  "request_params": [
+   "itemObj"
+  ],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.AddChangeBlood": {
+  "const": "ADD_CHANGE_BLOOD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetServerList": {
+  "const": "REQ_SERVER_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 4
+ },
+ "User.ChooseServer": {
+  "const": "LOG_SVR_SELECTION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.enterSnow": {
+  "const": "SNOWACTIVE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.UseSnowBall": {
+  "const": "USE_SNOW_BALL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getSnowAward": {
+  "const": "GET_SNOW_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.UseAllBall": {
+  "const": "USE_ALL_BALL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.scortResult": {
+  "const": "SCORTRESULT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.refreshNotice": {
+  "const": "REFRESHNOTICE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetNoticeAward": {
+  "const": "GETNOTICE_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BuyNpcFeel": {
+  "const": "BUY_NPC_FEEL",
+  "handlers": [
+   "buyFellCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 77936
+  },
+  "occurrences": 2
+ },
+ "User.sycnTask": {
+  "const": "SYCN_TASK",
+  "handlers": [
+   "sycnTaskCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "PlayerFinishTaskObj",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 133514,
+   "PlayerFinishTaskObj": 133516
+  },
+  "occurrences": 5
+ },
+ "User.ChangePlace": {
+  "const": "CHANGEPLACE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.proposeNpc": {
+  "const": "PROPOSE_NPC",
+  "handlers": [
+   "callBackProposeNpc"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "npcID"
+  ],
+  "field_lines": {
+   "eRet": 77124,
+   "npcID": 77125
+  },
+  "occurrences": 2
+ },
+ "User.rentGroup": {
+  "const": "RENT_EVENT",
+  "handlers": [
+   "callBackRentEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "type"
+  ],
+  "field_lines": {
+   "eRet": 77130,
+   "type": 77131
+  },
+  "occurrences": 2
+ },
+ "User.weddingFeast": {
+  "const": "WEEDIND_EVENT",
+  "handlers": [
+   "callBackWeedindEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "type"
+  ],
+  "field_lines": {
+   "eRet": 77136,
+   "type": 77137
+  },
+  "occurrences": 2
+ },
+ "User.receiveNpc": {
+  "const": "RECEIVENPC_EVENT",
+  "handlers": [
+   "callBackReceiveNpcEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "npcID"
+  ],
+  "field_lines": {
+   "eRet": 77231,
+   "npcID": 77232
+  },
+  "occurrences": 2
+ },
+ "User.closedBook": {
+  "const": "WRITE_BOOK_EVENT",
+  "handlers": [
+   "callBackWriteBookEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "deletePartners",
+   "eRet",
+   "npcID"
+  ],
+  "field_lines": {
+   "eRet": 77258,
+   "npcID": 77261,
+   "deletePartners": 77263
+  },
+  "occurrences": 2
+ },
+ "User.marryHouse": {
+  "const": "BUY_HOUSE_EVENT",
+  "handlers": [
+   "callBackBuyHouseEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "houseID",
+   "type"
+  ],
+  "field_lines": {
+   "eRet": 77223,
+   "houseID": 77224,
+   "type": 77225
+  },
+  "occurrences": 2
+ },
+ "User.marryNpc": {
+  "const": "MARRY_NPC_EVENT",
+  "handlers": [
+   "callBackMarryNpcEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "npcID"
+  ],
+  "field_lines": {
+   "eRet": 77237,
+   "npcID": 77242
+  },
+  "occurrences": 2
+ },
+ "User.divorceNpc": {
+  "const": "DIVORCENPC",
+  "handlers": [
+   "callBackDivorceNpc"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "deletePartners",
+   "eRet",
+   "npcID"
+  ],
+  "field_lines": {
+   "eRet": 77258,
+   "npcID": 77261,
+   "deletePartners": 77263
+  },
+  "occurrences": 2
+ },
+ "User.marryAward": {
+  "const": "MARRY_AWARD",
+  "handlers": [
+   "callBackMarryAward"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "equipObj",
+   "guestID",
+   "rewardArray"
+  ],
+  "field_lines": {
+   "eRet": 77267,
+   "guestID": 77268,
+   "rewardArray": 77269,
+   "equipObj": 77269
+  },
+  "occurrences": 2
+ },
+ "User.beginWedding": {
+  "const": "BEGIN_WEDDING",
+  "handlers": [
+   "callBackBeginWedding"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 77273
+  },
+  "occurrences": 2
+ },
+ "User.makeLove": {
+  "const": "MAKE_LOVE",
+  "handlers": [
+   "callBackMakeLove"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "fetationTime"
+  ],
+  "field_lines": {
+   "eRet": 77279,
+   "fetationTime": 77285
+  },
+  "occurrences": 2
+ },
+ "User.equipResolve": {
+  "const": "EQUIP_RESOLVE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.equipBatchResolve": {
+  "const": "EQUIP_BATCH_RESOLVE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getUsedItemAward": {
+  "const": "GET_USEITEM_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.chooseUsedItemAward": {
+  "const": "CHOOSE_USEITEM_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ChangeName": {
+  "const": "CHANGE_NAME",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.isCanShare": {
+  "const": "IS_CAN_SHARE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getsharePicAward": {
+  "const": "GETSHARE_PIC_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetH5PayInfo": {
+  "const": "GET_H5_PROD_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.h5Pay": {
+  "const": "H5_BUY_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.acceptCircleTask": {
+  "const": "ACCEPTCIRCLETASK",
+  "handlers": [
+   "acccptCircleTaskCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "taskID"
+  ],
+  "field_lines": {
+   "eRet": 133546,
+   "taskID": 133551
+  },
+  "occurrences": 2
+ },
+ "User.getCircleTaskAward": {
+  "const": "GETCIRCLETASK",
+  "handlers": [
+   "getCircleTaskCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "equipObj",
+   "rewardArray"
+  ],
+  "field_lines": {
+   "eRet": 133571,
+   "rewardArray": 133574,
+   "equipObj": 133574
+  },
+  "occurrences": 2
+ },
+ "User.Addmaster": {
+  "const": "ADD_SEX_KILL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ReqLeDuOrderID": {
+  "const": "GET_H5_ORDERID",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.sweepCopy": {
+  "const": "SWEEP_DUNGEON",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.recoverYoung": {
+  "const": "RECOVER_YOUNG",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.OutSchool": {
+  "const": "LEVEAL_SCHOOL",
+  "handlers": [
+   "levealSchoolCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "CDTime",
+   "addComponent",
+   "clearBoxs",
+   "eRet",
+   "npcID",
+   "npcIDArr",
+   "oldSchool",
+   "rewardArray",
+   "serverTime",
+   "skillId",
+   "textArr"
+  ],
+  "field_lines": {
+   "eRet": 77894,
+   "clearBoxs": 77898,
+   "npcID": 77900,
+   "addComponent": 77904,
+   "textArr": 77908,
+   "rewardArray": 77908,
+   "oldSchool": 77912,
+   "npcIDArr": 77913,
+   "CDTime": 77925,
+   "serverTime": 77925,
+   "skillId": 77925
+  },
+  "occurrences": 2
+ },
+ "User.CheckOutSchool": {
+  "const": "CHECK_OUT_SCHOOL",
+  "handlers": [
+   "onCheckOutSchool"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "CDTime",
+   "eRet",
+   "npcID",
+   "serverTime",
+   "skillId"
+  ],
+  "field_lines": {
+   "npcID": 78022,
+   "eRet": 78023,
+   "CDTime": 78024,
+   "serverTime": 78024,
+   "skillId": 78024
+  },
+  "occurrences": 2
+ },
+ "User.upgradeBed": {
+  "const": "UPGRADE_BED",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.upgradeStorage": {
+  "const": "UPGRADE_STORAGE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.PushEquip": {
+  "const": "PUSH_EQUIP_STORAGE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.PopEquip": {
+  "const": "POP_EQUIP_STORAGE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.houseSpecial": {
+  "const": "HOUSE_SPECIAL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getSpecialAward": {
+  "const": "GET_SPECIAL_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetHouseShopData": {
+  "const": "GET_HOUSE_SHOP_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BuyHouseShop": {
+  "const": "BUY_HOUSE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.birthChild": {
+  "const": "BIRTHCHILD",
+  "handlers": [
+   "callBackBirthild"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "childObj",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 77353,
+   "childObj": 77355
+  },
+  "occurrences": 2
+ },
+ "User.giveChildName": {
+  "const": "GIVE_CHILD_NAME",
+  "handlers": [
+   "setChildNameCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "childName",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 24622,
+   "childName": 24623
+  },
+  "occurrences": 2
+ },
+ "User.childWashProperty": {
+  "const": "CHILD_WASH_EVENT",
+  "handlers": [
+   "childWashCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "attArr",
+   "attrList",
+   "baseArr",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 24628,
+   "baseArr": 24629,
+   "attArr": 24629,
+   "attrList": 24634
+  },
+  "occurrences": 3
+ },
+ "User.beginPlayGame": {
+  "const": "BEGIN_PLAY_GAME",
+  "handlers": [
+   "beginPlayCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "beginTime",
+   "choose",
+   "eRet",
+   "progress",
+   "serverTime"
+  ],
+  "field_lines": {
+   "eRet": 24658,
+   "choose": 24659,
+   "progress": 24660,
+   "serverTime": 24661,
+   "beginTime": 24663
+  },
+  "occurrences": 2
+ },
+ "User.endPlayGame": {
+  "const": "END_PLAY_GAME",
+  "handlers": [
+   "endPlayCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "flag",
+   "progree"
+  ],
+  "field_lines": {
+   "eRet": 24678,
+   "flag": 24680,
+   "progree": 24683
+  },
+  "occurrences": 2
+ },
+ "User.getWashEquip": {
+  "const": "GET_WASH_EQUIP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.equipWash": {
+  "const": "EQUIP_WASH",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.changeProperty": {
+  "const": "CHANGE_PROPERTY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.chooseSex": {
+  "const": "CHOOSE_SEX",
+  "handlers": [
+   "chooseSexCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 24689
+  },
+  "occurrences": 2
+ },
+ "User.adoptChild": {
+  "const": "ADOPTCHILD",
+  "handlers": [
+   "onAdoptChild"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "childObj",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 24695,
+   "childObj": 24697
+  },
+  "occurrences": 2
+ },
+ "User.checkHireOnhook": {
+  "const": "CHECK_HIRE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.hireNpcOnhook": {
+  "const": "HIRE_NPC",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.checkLive": {
+  "const": "CHECK_LIVE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.beginCast": {
+  "const": "BEGINCAST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.endCast": {
+  "const": "END_CAST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.beginMake": {
+  "const": "BEGIN_MAKE_QUIP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.endMake": {
+  "const": "END_MAKE_QUIP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getChangeShop": {
+  "const": "GET_CHANGE_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getItemData": {
+  "const": "GET_ITEM_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getGardenShop": {
+  "const": "GET_GARDEN_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.exchangeItem": {
+  "const": "EXCHANGE_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.exileChild": {
+  "const": "EXILE_CHILD",
+  "handlers": [
+   "callBackExileChild"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 77383
+  },
+  "occurrences": 2
+ },
+ "User.upgradeVein": {
+  "const": "UPGRADE_ACUPOINT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.restVein": {
+  "const": "RESET_ACUPOINT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.cycleLife": {
+  "const": "CYCLE_LIFE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.cycleLifeEnd": {
+  "const": "CYCLE_LIFE_END",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.checkSpecial": {
+  "const": "CHECKSPECIAL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.rollDice": {
+  "const": "ROLLDICE_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.bringSpecialAward": {
+  "const": "BRING_SPECIAL_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getActivity": {
+  "const": "GET_ACTIVITY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getActivityAward": {
+  "const": "GET_ACTIVITY_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.smallGameAward": {
+  "const": "SMALL_GAME_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getActivityRank": {
+  "const": "GET_ACTIVITY_RANK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.collect": {
+  "const": "COLLECT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.beginMakeMedicine": {
+  "const": "BEGINE_MAKE_MEDICINE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.endMakeMedicine": {
+  "const": "END_MAKE_MEDICINE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.equipTitle": {
+  "const": "EQUIP_TITLE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.LoginReq": {
+  "const": "SERVER_CHECK_LOGIN",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.getActivityCounts": {
+  "const": "GET_EVERYDAY_ACTIVE",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getGiftPermanent": {
+  "const": "GET_GIFT_PERMANENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGiftPermanentAward": {
+  "const": "GET_PERMANENT_REWARD",
+  "handlers": [
+   "getPermanentRewardCallback"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "rewardArray"
+  ],
+  "field_lines": {
+   "eRet": 131100,
+   "rewardArray": 131102
+  },
+  "occurrences": 2
+ },
+ "User.CRLActivityAward": {
+  "const": "CRL_GET_REWARD",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getCRLActivityPayInfo": {
+  "const": "CRL_ACTIVE_PAYINFO",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getCRLActivityData": {
+  "const": "GET_CRL_ACTIVE_DATA",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getCRLActivityPayResult": {
+  "const": "GET_CRL_ACTIVE_PAY_RESULT",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.refreshGiftAward": {
+  "const": "REFRESH_GIFT_AWARD",
+  "handlers": [
+   "refreshGiftAwardCallback"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "giftAwards"
+  ],
+  "field_lines": {
+   "eRet": 131097,
+   "giftAwards": 131097
+  },
+  "occurrences": 2
+ },
+ "User.getPayAuth": {
+  "const": "GET_MYCARD_AUTH",
+  "handlers": [
+   "onGetMyCardAuth"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "AuthCode"
+  ],
+  "field_lines": {
+   "AuthCode": 130839
+  },
+  "occurrences": 2
+ },
+ "User.PaymentCallBack": {
+  "const": "MYCARD_REQ_PRODUCT",
+  "handlers": [
+   "onGetProduct"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "curGold",
+   "curYuanbao",
+   "eRet",
+   "orderId"
+  ],
+  "field_lines": {
+   "orderId": 130935,
+   "eRet": 130938,
+   "curGold": 130939,
+   "curYuanbao": 130940
+  },
+  "occurrences": 2
+ },
+ "User.GetMountsList": {
+  "const": "GET_MOUNTSLIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BuyMount": {
+  "const": "BUY_MOUNT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetMarketList": {
+  "const": "GET_MARKETLIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.Impeach": {
+  "const": "TIP_OFF_USER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getRecruitData": {
+  "const": "GET_RECRUIT_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.generateCode": {
+  "const": "GENERATE_CODE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getCodeAward": {
+  "const": "GET_CODE_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.authentication": {
+  "const": "AUTHEN_TICATION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.bindCode": {
+  "const": "BING_CODE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.lookBindUser": {
+  "const": "LOOK_BING_USER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.lookinviteUser": {
+  "const": "LOOK_INVITE_USER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getReturnAward": {
+  "const": "GET_RETURN_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getPaySginData": {
+  "const": "GET_PAYSIGN_DATA",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getPaySignAward": {
+  "const": "GET_PAYSIGN_AWARD",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getRecruitShowData": {
+  "const": "GET_RECRUIT_SHOP_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.intergrelExchange": {
+  "const": "GET_RECRUIT_EXCHANGE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getAwardInfo": {
+  "const": "GET_RECRUIT_AWARD_INFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getReceiveAward": {
+  "const": "GET_RECRUIT_AWARD_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.RecruitUnbindd": {
+  "const": "RECRUIT_UNBIND",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.agreeBindPlayr": {
+  "const": "AGREE_BINDPLAYER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getRecruitNewData": {
+  "const": "GET_RECRUIT_NEWDATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.lookBindNewUser": {
+  "const": "LOOKBIND_NEWUSER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.lookinviteNewUser": {
+  "const": "LOOKINVITE_NEWUSER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.generateNewCode": {
+  "const": "GENERATE_NEWCODE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.authenticationNew": {
+  "const": "AUTHENTICATION_NEW",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.bindNewCode": {
+  "const": "BIND_NEWCODE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.agreeNewBindPlayr": {
+  "const": "AGREE_NEWBIND_PLAYR",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getReturnNewAward": {
+  "const": "GET_RETURN_NEWAWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getNewCodeAward": {
+  "const": "GET_NEWCODE_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getNewAwardInfo": {
+  "const": "GET_NEWAWARD_INFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getReceiveAwardNew": {
+  "const": "GET_RECEIVEAWARD_NEW",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.RecruitUnbindNew": {
+  "const": "RECRUIT_UNBIND_NEW",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.GetClimbingTowerData": {
+  "const": "ENTER_GET_CLIMBLING_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.towerRank": {
+  "const": "TOWER_RANK_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetTowerSpecialShop": {
+  "const": "TOWER_SPECIAL_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BuyTowerProp": {
+  "const": "TOWER_BUY_PROP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.towerEquip": {
+  "const": "TOWER_USE_EQUIP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.chanllengeTower": {
+  "const": "TOWER_RANDOM_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.getPandaEvent": {
+  "const": "TOWER_GET_PANDA_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.choosePandaEvent": {
+  "const": "TOWER_CHOOSE_PANDA_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.leaveTower": {
+  "const": "TOWER_LEAVE_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 4
+ },
+ "User.getEventAward": {
+  "const": "TOWER_GET_REWARD_BOX",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.TowerBattleResult": {
+  "const": "SERVER_NPC_BATTLE_END",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.lookSecretEvent": {
+  "const": "LOOK_SECRET_PANDA_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.chooseSecretEvent": {
+  "const": "SELECT_SECRET_PANDA_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.sweepTower": {
+  "const": "TOWER_SWEEP_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.newSweepTower": {
+  "const": "NEW_TOWER_SWEEP_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetNewSweepTowerData": {
+  "const": "GET_NEW_SWEEP_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.closeNewSweepTowerByLv": {
+  "const": "CLOSE_NEW_SWEEP_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.activateTowerEvent": {
+  "const": "ACTIVE_TOWER_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getCircleTaskList": {
+  "const": "GET_CIRCLE_TASK_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.quickFinishTask": {
+  "const": "QUICK_FINISH_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.delegateTask": {
+  "const": "DELEGATE_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 5
+ },
+ "User.changeDelegateTask": {
+  "const": "CHANGE_DELEGATE_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.circleTaskAward": {
+  "const": "CIRCLE_TASK_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetCastElite": {
+  "const": "GET_CAST_COLLECT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.checkCast": {
+  "const": "CHEAK_CAST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.enterPVEBattle": {
+  "const": "REQ_LANGHUAN_COMBAT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.beginPVEBattle": {
+  "const": "PVE_ACTION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.enterMultiPVEBattle": {
+  "const": "INIT_MPPVE_BATTLE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.startMultiPVEBattle": {
+  "const": "START_MPPVE_BATTLE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.beginMultiPVEBattle": {
+  "const": "MPPVE_ACTION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.chooseTarget": {
+  "const": "MPPVE_SELECT_TARGET",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.hideTask": {
+  "const": "HIDE_TASK",
+  "handlers": [
+   "hideTaskCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 133596
+  },
+  "occurrences": 2
+ },
+ "User.revive": {
+  "const": "LANGH_REVIVE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getMultiPVESkill": {
+  "const": "GET_MP_ULTSKILLS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.shcoolFirstHonor": {
+  "const": "SCHOOL_FIRST_HONOR",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.firstHonorResult": {
+  "const": "FIRST_HONOR_RESULT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getFighterInfo": {
+  "const": "REQ_MPPVE_FIGHTER_INFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.reviveMulti": {
+  "const": "LANGH_MP_REVIVE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getVigor": {
+  "const": "GET_VIGOR",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.useVigorMeditation": {
+  "const": "VIGOR_DAZUO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.useVigorUpGradeSkill": {
+  "const": "VIGOR_UPGSKILL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.upgradeWifeLevel": {
+  "const": "UPGRADE_WIFE_LEVEL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.UserWifeProp": {
+  "const": "USE_WIFE_PROP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getFasionShop": {
+  "const": "GET_FASHION_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.wearFasion": {
+  "const": "WEAR_FASHION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 4
+ },
+ "User.passCardData": {
+  "const": "PASS_CARD_DATA",
+  "handlers": [
+   "onGetPassCardData"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "goldArr",
+   "passCard"
+  ],
+  "field_lines": {
+   "eRet": 55868,
+   "passCard": 55869,
+   "goldArr": 55872
+  },
+  "occurrences": 2
+ },
+ "User.passCardAward": {
+  "const": "PASS_CARD_REWARD",
+  "handlers": [
+   "onGetPassCardReward"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "awardArr",
+   "eRet",
+   "rewardArray"
+  ],
+  "field_lines": {
+   "eRet": 55880,
+   "awardArr": 55881,
+   "rewardArray": 55882
+  },
+  "occurrences": 2
+ },
+ "User.buyInvitationCard": {
+  "const": "BUY_INVITATIONCARD",
+  "handlers": [
+   "onBuyInvitationCard"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "pass_levelID"
+  ],
+  "field_lines": {
+   "eRet": 55886,
+   "pass_levelID": 55887
+  },
+  "occurrences": 2
+ },
+ "User.getTreasureFloor": {
+  "const": "GET_TREASURE_FLOOR",
+  "handlers": [
+   "onGetTreasureFloor"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "floor"
+  ],
+  "field_lines": {
+   "eRet": 55903,
+   "floor": 55903
+  },
+  "occurrences": 2
+ },
+ "User.enterNextFloor": {
+  "const": "ENTER_NEXT_FLOOR",
+  "handlers": [
+   "onEnterNextFloor"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "boxArr",
+   "boxNum",
+   "eRet",
+   "floor",
+   "isStatus"
+  ],
+  "field_lines": {
+   "eRet": 55906,
+   "floor": 55907,
+   "boxArr": 55908,
+   "boxNum": 55909,
+   "isStatus": 55909
+  },
+  "occurrences": 2
+ },
+ "User.treasureAward": {
+  "const": "GET_TREASURE_AWARD",
+  "handlers": [
+   "onGetTreasureAward"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "boxNum",
+   "eRet",
+   "isStatus"
+  ],
+  "field_lines": {
+   "eRet": 55913,
+   "boxNum": 55914,
+   "isStatus": 55915
+  },
+  "occurrences": 2
+ },
+ "User.equipInherit": {
+  "const": "EQUIP_INHERIT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ChooseFixDan": {
+  "const": "CHOOSE_FIX_DAN",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BeginList": {
+  "const": "BEGIN_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.Implantation": {
+  "const": "IMPLANTATION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.removeMartial": {
+  "const": "REMOVE_MARTIAL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.canBuyActivityNum": {
+  "const": "CAN_BUYACTIVITY_NUM",
+  "handlers": [
+   "onCanBuyActivityNum"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "gold"
+  ],
+  "field_lines": {
+   "eRet": 55935,
+   "gold": 55937
+  },
+  "occurrences": 2
+ },
+ "User.buyActivityNum": {
+  "const": "BUY_ACTIVITY_NUM",
+  "handlers": [
+   "onBuyActivityNum"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "activeNum",
+   "eRet",
+   "rewardArray"
+  ],
+  "field_lines": {
+   "eRet": 55941,
+   "activeNum": 55942,
+   "rewardArray": 55943
+  },
+  "occurrences": 2
+ },
+ "User.getGrowupData": {
+  "const": "GET_GROWUP_DATA",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getBigGrowupData": {
+  "const": "GET_BIG_GROWUP_DATA",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ReceiveAward": {
+  "const": "GET_RECEIVE_AWARD",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ReceiveBigAward": {
+  "const": "GET_RECEIVE_BIG_AWARD",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getPayData": {
+  "const": "GET_PAY_DATA",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getBigPayData": {
+  "const": "GET_BIG_PAY_DATA",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getPayState": {
+  "const": "GET_PAY_STATE_DATA",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getBigPayState": {
+  "const": "GET_BIGPAY_STATE_DATA",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getDice": {
+  "const": "GET_DICE_ACTIVE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.flingDice": {
+  "const": "FLING_DICE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.chooseDiceBoxItem": {
+  "const": "CHOOSE_DICE_BOXITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.cellArrive": {
+  "const": "CELL_ARRIVE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.closeCellEvent": {
+  "const": "CLOSE_CELL_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.diceCheckLargeExtra": {
+  "const": "DICE_CHECKEXTRA_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getDiceShops": {
+  "const": "GET_DICE_SHOP_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyDiceShop": {
+  "const": "BUY_DICE_SHOP_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getDiceExchangeShops": {
+  "const": "GET_EXCHANGE_ALL_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.diceExchangeItem": {
+  "const": "EXCHANGE_ITEM_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getExchangeItemData": {
+  "const": "GET_EXCHANGE_ITEM_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.exchangeGiftCoin": {
+  "const": "EXCHANGE_GIFTCOIN_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.millUpgrade": {
+  "const": "MILL_UPGRADE_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.millBuild": {
+  "const": "MILL_BUILD_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.millEarningsObtain": {
+  "const": "MILL_EARNINGS_OBTAIN_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.goldShopRefresh": {
+  "const": "GOLD_SHOP_REFRESHH_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.triggerEvent": {
+  "const": "TRIGGER_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.useCard": {
+  "const": "USE_CARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.diceBattleResult": {
+  "const": "DICE_BATTLE_RESULT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buildHomeFarm": {
+  "const": "BUILD_HOMEFRARM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.removalHomeFarm": {
+  "const": "MOVE_HOME_FRAM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getHomeList": {
+  "const": "GETHOME_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.seedCrop": {
+  "const": "SEED_CROP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.obtainCrop": {
+  "const": "OBTAINCROP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.batchSeedCrop": {
+  "const": "BATCH_SEED_CROP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.changeSate": {
+  "const": "CROP_CHANGE_STATE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.reclaimLand": {
+  "const": "RECLAIM_LAND",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.cleanDeadCrop": {
+  "const": "CLEAN_DEAD_CROP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.expediteCrop": {
+  "const": "EXPEDITE_CROP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.BuyHomeCrop": {
+  "const": "BUY_HOME_CROP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getBackShop": {
+  "const": "GET_BACK_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.homeSpeicalAward": {
+  "const": "HOME_SPECIAL_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.recommendOHomes": {
+  "const": "RECOMMEND_ONESELF_HOME",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.findOHomes": {
+  "const": "OTHER_PLAYER_HOME",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.findOhter": {
+  "const": "FIND_OTHER_HOME",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getFriendHomeList": {
+  "const": "ENTER_OTHER_HOME",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.dispossHomeEvent": {
+  "const": "DISPOSS_HOME_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.stealCrop": {
+  "const": "STEAL_CROP_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.lookDogLog": {
+  "const": "LOOK_DOG_LOG",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.DogBattleResult": {
+  "const": "DOG_BATTLE_RESULT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ChooseSanGongDan": {
+  "const": "SAN_GONG",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.FeedDog": {
+  "const": "FEED_DOG",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.changeServer": {
+  "const": "CHANGE_SERVER",
+  "handlers": [
+   "showChangeServerData"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "newAcc",
+   "newID"
+  ],
+  "field_lines": {
+   "eRet": 28156,
+   "newID": 28162,
+   "newAcc": 28163
+  },
+  "occurrences": 2
+ },
+ "User.chooseState": {
+  "const": "CHOOSE_STATE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.checkEquipToTeam": {
+  "const": "CHECK_EQUIP_TO_TEAM",
+  "handlers": [
+   "showCheckEquipToTeam"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 28173
+  },
+  "occurrences": 2
+ },
+ "User.getTeamSkill": {
+  "const": "GET_TEAM_ULTSKILLS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getTeamFighterInfo": {
+  "const": "GET_TEAM_FIGHTER_INFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getNpcSteal": {
+  "const": "GET_STEAL_NPC_INFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.stealGoods": {
+  "const": "REQ_STRETCH",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.chooseSteal": {
+  "const": "DO_STEAL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.OutPrison": {
+  "const": "END_PRISON",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.WinPrison": {
+  "const": "WIN_PRISON",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.changePower": {
+  "const": "CHANGE_POWER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.checkTiger": {
+  "const": "REQ_INSERT_COINS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.OpenTiger": {
+  "const": "OPEN_TIGER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ClearingTiger": {
+  "const": "CLEAEING_TIGER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getOpenActive": {
+  "const": "GET_OPEN_ACTIVE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSignAward": {
+  "const": "GET_SIGN_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getPraySignActive": {
+  "const": "GET_PRAY_SIGN_ACTIVR",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getPraySignAward": {
+  "const": "GET_PRAY_SIGN_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.TellAction": {
+  "const": "TALK_DATA_ACTION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.OpenNovice": {
+  "const": "OPEN_NOVICE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.jionChatPkServer": {
+  "const": "JOIN_CHATPK_SERVER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getSpecialevts": {
+  "const": "GET_SPECIALEVTS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.enterDogPVEBattle": {
+  "const": "ENTER_PVEDOG_FIGHT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.skillChange": {
+  "const": "SWAP_SKILL_PROGRESS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getSkillChange": {
+  "const": "GET_SKILL_CHANGE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getAllServerCount": {
+  "const": "GET_ALL_SERVER_COUNT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getAllServerList": {
+  "const": "GET_ALL_SERVER_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.changeToTeamServer": {
+  "const": "CHANGE_TO_TEAMSERVER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.backToSelfServer": {
+  "const": "BACK_TO_SELF_SERVER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.SevenDaysAwards": {
+  "const": "SEVEN_DAYS_AWARDS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.checkLargeExtra": {
+  "const": "CHECK_LARGE_EXTRA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getLargeExtra": {
+  "const": "GET_LARGE_EXTRA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.GetGiftData": {
+  "const": "GET_GIFT_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.RecordGiftData": {
+  "const": "RECORD_GIFT_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.ReceiveGift": {
+  "const": "RECEIVE_GIFT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGiftPayData": {
+  "const": "GET_GIFT_PAY_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.resetChildFoster": {
+  "const": "RESET_CHILD_FOSTER",
+  "handlers": [
+   "resetChildCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "foster_point",
+   "playArr"
+  ],
+  "field_lines": {
+   "eRet": 24639,
+   "foster_point": 24640,
+   "playArr": 24641
+  },
+  "occurrences": 1
+ },
+ "User.addChildFoster": {
+  "const": "ADD_CHILD_FOSTER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.enterMulitiNpcBattle": {
+  "const": "REQ_MPFIGHT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.mulitiNpcBattleResult": {
+  "const": "REQ_MP_RESULT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.equipUpgrade": {
+  "const": "REQ_EQUIP_UPGRADE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.GetShopAllActive": {
+  "const": "GET_SHOP_ALL_ACTIVE",
+  "handlers": [
+   "onGetShopAllActive"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "activeEndTime",
+   "eRet",
+   "shopActiveData",
+   "shopActiveList"
+  ],
+  "field_lines": {
+   "eRet": 131272,
+   "shopActiveList": 131273,
+   "shopActiveData": 131274,
+   "activeEndTime": 131275
+  },
+  "occurrences": 2
+ },
+ "User.enterSingleNpcBattle": {
+  "const": "REQ_SINGLE_NPC_BATTLE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSchoolTask": {
+  "const": "GET_SCHOOL_TASK",
+  "handlers": [
+   "onGetSchoolTask"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "affiliationSchool",
+   "currentServerTime",
+   "schoolTask",
+   "weekQuickCompleteTaskTimes",
+   "xyTodaySchoolId"
+  ],
+  "field_lines": {
+   "schoolTask": 113614,
+   "weekQuickCompleteTaskTimes": 113615,
+   "affiliationSchool": 113616,
+   "xyTodaySchoolId": 113617,
+   "currentServerTime": 113618
+  },
+  "occurrences": 2
+ },
+ "User.getSchoolShop": {
+  "const": "GET_SCHOOL_SHOP",
+  "handlers": [
+   "onGetSchoolShop"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 113623
+  },
+  "occurrences": 2
+ },
+ "User.acceptSchoolTask": {
+  "const": "ACCEPT_SCHOOL_TASK",
+  "handlers": [
+   "onAcceptSchoolTask"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "acceptSchoolTask",
+   "dateFinishTimes",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 113630,
+   "dateFinishTimes": 113631,
+   "acceptSchoolTask": 113633
+  },
+  "occurrences": 2
+ },
+ "User.schoolTaskComplete": {
+  "const": "SCHOOL_TASK_COMPLETE",
+  "handlers": [
+   "onSchoolTaskComplete"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "equipObj",
+   "rewardArray",
+   "schoolTask"
+  ],
+  "field_lines": {
+   "eRet": 113642,
+   "schoolTask": 113643,
+   "rewardArray": 113644,
+   "equipObj": 113644
+  },
+  "occurrences": 2
+ },
+ "User.schoolTaskAward": {
+  "const": "SCHOOL_TASK_AWARD",
+  "handlers": [
+   "onSchoolTaskAward"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.schoolReceiveWages": {
+  "const": "SCHOOL_RECEIVE_WAGES",
+  "handlers": [
+   "onSchoolReceiveWages"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "isReceiveWages",
+   "upSchoolTaskCP"
+  ],
+  "field_lines": {
+   "eRet": 113657,
+   "isReceiveWages": 113659,
+   "upSchoolTaskCP": 113660
+  },
+  "occurrences": 2
+ },
+ "User.buySchoolShop": {
+  "const": "BUY_SCHOOL_SHOP",
+  "handlers": [
+   "onBuySchoolShop"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "equipObj",
+   "rewardArray",
+   "updateSchoolContribution"
+  ],
+  "field_lines": {
+   "eRet": 113673,
+   "updateSchoolContribution": 113674,
+   "rewardArray": 113677,
+   "equipObj": 113677
+  },
+  "occurrences": 2
+ },
+ "User.refreshSchoolTask": {
+  "const": "REFRESH_SCHOOL_TASK",
+  "handlers": [
+   "onRefreshSchoolTask"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.onekeyCompleteSchoolTask": {
+  "const": "ONE_KEY_COMPLETE_SCHOOL_TASK",
+  "handlers": [
+   "onOnekeyCompleteSchoolTask"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "equipObj",
+   "rewardArray",
+   "schoolTask",
+   "weekQuickCompleteTaskTimes"
+  ],
+  "field_lines": {
+   "eRet": 113685,
+   "schoolTask": 113686,
+   "weekQuickCompleteTaskTimes": 113687,
+   "rewardArray": 113691,
+   "equipObj": 113691
+  },
+  "occurrences": 2
+ },
+ "User.affiliationSchool": {
+  "const": "AFFILIATION_SCHOOL",
+  "handlers": [
+   "onAffiliationSchool"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "affiliationSchool",
+   "eRet",
+   "upRoleSchoolLevel"
+  ],
+  "field_lines": {
+   "eRet": 113698,
+   "affiliationSchool": 113699,
+   "upRoleSchoolLevel": 113701
+  },
+  "occurrences": 2
+ },
+ "User.quitSchool": {
+  "const": "QUIT_SCHOOL",
+  "handlers": [
+   "onQuitSchool"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "npcList",
+   "openSchoolFirstTryBgUI"
+  ],
+  "field_lines": {
+   "eRet": 113715,
+   "npcList": 113718,
+   "openSchoolFirstTryBgUI": 113728
+  },
+  "occurrences": 2
+ },
+ "User.getChatPkAward": {
+  "const": "GET_CHAT_PK_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveChatPkAward": {
+  "const": "RECEIVE_CHAT_PK_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.ChatPkActivity": {
+  "const": "CHAT_PK_ACTIVITY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.receiveChatPkSportsPointAward": {
+  "const": "RECEIVE_CHAT_PK_POINTAWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getBankList": {
+  "const": "GET_BANK_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getPaperList": {
+  "const": "GET_PAPER_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getQuestionList": {
+  "const": "GET_QUESTION_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.anserQuestion": {
+  "const": "ANSWER_QUESTION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.resetAnswer": {
+  "const": "RESET_ANSWER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.answerResult": {
+  "const": "ANSWER_RESULT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.answerReward": {
+  "const": "ANSWER_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.useItemAddition": {
+  "const": "USE_ITEM_ADDITION",
+  "handlers": [
+   "addBreakRate"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "itemAddition"
+  ],
+  "field_lines": {
+   "eRet": 56856,
+   "itemAddition": 56857
+  },
+  "occurrences": 2
+ },
+ "User.getSchoolFirstTry": {
+  "const": "GET_SCHOOL_FIRSTTRY",
+  "handlers": [
+   "onGetSchoolFirstTry"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "npcList"
+  ],
+  "field_lines": {
+   "eRet": 113715,
+   "npcList": 113718
+  },
+  "occurrences": 2
+ },
+ "User.intoSchoolArena": {
+  "const": "INTO_SCHOOL_ARENA",
+  "handlers": [
+   "onInfoSchoolArena"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "signData"
+  ],
+  "field_lines": {
+   "eRet": 113746,
+   "signData": 113748
+  },
+  "occurrences": 2
+ },
+ "User.schoolSectLeader": {
+  "const": "SCHOOL_SECTLEADER",
+  "handlers": [
+   "onSchoolSectLeader"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "id",
+   "school"
+  ],
+  "field_lines": {
+   "eRet": 113773,
+   "school": 113778,
+   "id": 113779
+  },
+  "occurrences": 2
+ },
+ "User.getSchoolAppoint": {
+  "const": "GET_SCHOOL_APPOINT",
+  "handlers": [
+   "onGetSchoolAppoint"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "appointList",
+   "eRet",
+   "type"
+  ],
+  "field_lines": {
+   "eRet": 113796,
+   "type": 113797,
+   "appointList": 113799
+  },
+  "occurrences": 2
+ },
+ "User.schoolTakeOfficeApply": {
+  "const": "SCHOOL_TAKE_OFFICE_APPLY",
+  "handlers": [
+   "onSchoolTakeOfficeApply"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 113854
+  },
+  "occurrences": 2
+ },
+ "User.schoolAppoint": {
+  "const": "SCHOOL_APPOINT",
+  "handlers": [
+   "onSchoolAppoint"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "appointDatas",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 113861,
+   "appointDatas": 113862
+  },
+  "occurrences": 2
+ },
+ "User.UseBatchSnowBall": {
+  "const": "USE_BATCH_SNOW_BALL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.setChatPkAiSet": {
+  "const": "SAVE_CUSTOM_AI",
+  "handlers": [
+   "saveAiData"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getChatPkAiSet": {
+  "const": "GET_CUSTOM_AI",
+  "handlers": [
+   "getAIInfoData"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "option"
+  ],
+  "field_lines": {
+   "option": 28551
+  },
+  "occurrences": 2
+ },
+ "User.setChatPkOption": {
+  "const": "SET_CHAT_PK_OPTION",
+  "handlers": [
+   "onSetOption"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "option"
+  ],
+  "field_lines": {
+   "eRet": 28555,
+   "option": 28556
+  },
+  "occurrences": 2
+ },
+ "User.getCreateRoleActivity": {
+  "const": "GET_CREATE_ROLE_ACT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.resetRole": {
+  "const": "RESET_ROLE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getDailyPayActivity": {
+  "const": "GET_DAILY_PAY_ACTIVITY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.dailyPayActivityAward": {
+  "const": "DAILY_PAY_ACTIVITY_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.explore": {
+  "const": "GET_EXPLORE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.upPartnerQueue": {
+  "const": "UP_PARTNER_QUEQUE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.retrievePartner": {
+  "const": "RETRIEVE_PARTNER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.beginHookBreakList": {
+  "const": "BEGIN_HOOK_BREAK_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.onQueueCheckBreak": {
+  "const": "QUEUE_CHECK_BREAK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.stopBreaklist": {
+  "const": "STOP_BREAK_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.goldBreakAllSkill": {
+  "const": "GOLD_BREAK_ALL_SKILL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.goldBreakCurrentSkill": {
+  "const": "GOLD_BREAK_CUR_SKILL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.removeBreakQueue": {
+  "const": "REMOVE_BREAK_QUEUE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.addBreakQueue": {
+  "const": "ADD_BREAK_QUEUE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getHookBreakList": {
+  "const": "REFRESH_HOOK_BREAK_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.onBatchBreakByGold": {
+  "const": "BATCH_BREAK_BY_GOLD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.intoSchoolSquare": {
+  "const": "INTO_SCHOOL_SQUARE",
+  "handlers": [
+   "onInfoSchoolSquare"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "intoSchool",
+   "isSchoolAward",
+   "schoolTitle"
+  ],
+  "field_lines": {
+   "eRet": 114496,
+   "intoSchool": 114498,
+   "isSchoolAward": 114499,
+   "schoolTitle": 114500
+  },
+  "occurrences": 2
+ },
+ "User.quitSchoolSquare": {
+  "const": "QUIT_SCHOOL_SQUARE",
+  "handlers": [
+   "onQuitSchoolSquare"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 114505
+  },
+  "occurrences": 2
+ },
+ "User.intoCollectiveCultivation": {
+  "const": "INFO_COLLECTIVE_CULTIVATION",
+  "handlers": [
+   "onIntoCollectiveCultivation"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "rewardArray",
+   "surplusTime"
+  ],
+  "field_lines": {
+   "surplusTime": 114514,
+   "rewardArray": 114516,
+   "eRet": 114517
+  },
+  "occurrences": 2
+ },
+ "User.addEquipLock": {
+  "const": "ADD_EQUIP_LOCK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.delEquipLock": {
+  "const": "DELETE_EQUIP_LOCK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getEquipLock": {
+  "const": "GET_EQUIP_LOCKS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getInn": {
+  "const": "GET_INN",
+  "handlers": [
+   "onGetInnData"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "costDishMap",
+   "eRet",
+   "showRewardPop",
+   "showRewardPrice",
+   "tableEndTime",
+   "tableStartTime"
+  ],
+  "field_lines": {
+   "eRet": 62678,
+   "tableStartTime": 62680,
+   "tableEndTime": 62681,
+   "showRewardPrice": 62686,
+   "costDishMap": 62687,
+   "showRewardPop": 62688
+  },
+  "occurrences": 2
+ },
+ "User.productUnlock": {
+  "const": "PRODUCT_UNLOCK",
+  "handlers": [
+   "onOpenCookLandEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 62410
+  },
+  "occurrences": 2
+ },
+ "User.productStart": {
+  "const": "PRODUCT_START",
+  "handlers": [
+   "onProductCookEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 62413
+  },
+  "occurrences": 2
+ },
+ "User.productReceive": {
+  "const": "PRODUCT_RECEIVE",
+  "handlers": [
+   "onInnCookRewardEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "foodBag"
+  ],
+  "field_lines": {
+   "eRet": 62278,
+   "foodBag": 62279
+  },
+  "occurrences": 2
+ },
+ "User.productAccelerate": {
+  "const": "PRODUCT_ACCELERATE",
+  "handlers": [
+   "onAddProductEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 62404
+  },
+  "occurrences": 2
+ },
+ "User.dishUnlock": {
+  "const": "DISH_UNLOCK",
+  "handlers": [
+   "onDishUnlock"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "unlockDish"
+  ],
+  "field_lines": {
+   "eRet": 62250,
+   "unlockDish": 62251
+  },
+  "occurrences": 2
+ },
+ "User.cookUnlock": {
+  "const": "COOK_UNLOCK",
+  "handlers": [
+   "onInnKitchenDataChanged"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "cookData",
+   "eRet",
+   "foodBag"
+  ],
+  "field_lines": {
+   "eRet": 62416,
+   "foodBag": 62417,
+   "cookData": 62419
+  },
+  "occurrences": 2
+ },
+ "User.cookStart": {
+  "const": "COOK_START",
+  "handlers": [
+   "onInnKitchenDataChanged"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "cookData",
+   "eRet",
+   "foodBag"
+  ],
+  "field_lines": {
+   "eRet": 62416,
+   "foodBag": 62417,
+   "cookData": 62419
+  },
+  "occurrences": 2
+ },
+ "User.cookReceive": {
+  "const": "COOK_RECEIVE",
+  "handlers": [
+   "onInnKitchenDataChanged"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "cookData",
+   "eRet",
+   "foodBag"
+  ],
+  "field_lines": {
+   "eRet": 62416,
+   "foodBag": 62417,
+   "cookData": 62419
+  },
+  "occurrences": 2
+ },
+ "User.cookAccelerate": {
+  "const": "COOK_ACCELERATE",
+  "handlers": [
+   "onInnKitchenDataChanged"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "cookData",
+   "eRet",
+   "foodBag"
+  ],
+  "field_lines": {
+   "eRet": 62416,
+   "foodBag": 62417,
+   "cookData": 62419
+  },
+  "occurrences": 2
+ },
+ "User.startAndCloseInn": {
+  "const": "START_AND_CLOSE_INN",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.tableUnlock": {
+  "const": "TABLE_UNLOCK",
+  "handlers": [
+   "onTableUnlock"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "tableData"
+  ],
+  "field_lines": {
+   "eRet": 62657,
+   "tableData": 62659
+  },
+  "occurrences": 2
+ },
+ "User.tableReceive": {
+  "const": "TABLE_RECEIVE",
+  "handlers": [
+   "onTableReceive"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "tableData"
+  ],
+  "field_lines": {
+   "eRet": 62640,
+   "tableData": 62642
+  },
+  "occurrences": 2
+ },
+ "User.startEatByTable": {
+  "const": "START_EAT_BY_TABLE",
+  "handlers": [
+   "onStartEat"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "gn",
+   "tableData"
+  ],
+  "field_lines": {
+   "eRet": 62610,
+   "gn": 62612,
+   "tableData": 62613
+  },
+  "occurrences": 2
+ },
+ "User.endEatByTable": {
+  "const": "END_EAT_BY_TABLE",
+  "handlers": [
+   "onEndEatEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "tableList"
+  ],
+  "field_lines": {
+   "eRet": 62625,
+   "tableList": 62626
+  },
+  "occurrences": 2
+ },
+ "User.redeemTable": {
+  "const": "REDEEM_TABLE",
+  "handlers": [
+   "onRedeemTable"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "hotVal",
+   "mhv"
+  ],
+  "field_lines": {
+   "eRet": 62668,
+   "hotVal": 62671,
+   "mhv": 62672
+  },
+  "occurrences": 2
+ },
+ "User.getInnProductList": {
+  "const": "GET_INN_PRODUCT_LIST",
+  "handlers": [
+   "onInnProductListEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "productList"
+  ],
+  "field_lines": {
+   "eRet": 62794,
+   "productList": 62795
+  },
+  "occurrences": 2
+ },
+ "User.getInnCookList": {
+  "const": "GET_INN_COOK_LIST",
+  "handlers": [
+   "onInnCookListEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "cookList",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 62785,
+   "cookList": 62786
+  },
+  "occurrences": 2
+ },
+ "User.getHlexchangeShop": {
+  "const": "GET_HLEX_CHANGESHOP",
+  "handlers": [
+   "onGetExchangeData"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "shopObj"
+  ],
+  "field_lines": {
+   "eRet": 56094,
+   "shopObj": 56094
+  },
+  "occurrences": 2
+ },
+ "User.getHlexchangeItemData": {
+  "const": "GET_HLEX_CHANGEITEMDATA",
+  "handlers": [
+   "onGetExchangeItemsData"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "limit"
+  ],
+  "field_lines": {
+   "eRet": 56104,
+   "limit": 56109
+  },
+  "occurrences": 2
+ },
+ "User.exchangeHlexchangeItem": {
+  "const": "EXCHANGE_HLEX_CHANGEITEM",
+  "handlers": [
+   "onBuyExchangeData"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "itemID",
+   "itemNum"
+  ],
+  "field_lines": {
+   "eRet": 56114,
+   "itemID": 56119,
+   "itemNum": 56121
+  },
+  "occurrences": 2
+ },
+ "User.getInnBag": {
+  "const": "GET_INN_BAG_DATA",
+  "handlers": [
+   "onBagsDataEvent"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 62272
+  },
+  "occurrences": 2
+ },
+ "User.getInnCook": {
+  "const": "GET_INN_COOK",
+  "handlers": [
+   "onCookBookData"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "cookBook",
+   "eRet",
+   "unlockDish"
+  ],
+  "field_lines": {
+   "eRet": 62262,
+   "unlockDish": 62263,
+   "cookBook": 62264
+  },
+  "occurrences": 2
+ },
+ "User.createOrderByHotVal": {
+  "const": "CREATE_ORDER_BY_HOTVAL",
+  "handlers": [
+   "onCreateOrder"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "orderId"
+  ],
+  "field_lines": {
+   "eRet": 62368,
+   "orderId": 62369
+  },
+  "occurrences": 2
+ },
+ "User.completeOrderByHotVal": {
+  "const": "COMPLETE_ORDER_BY_HOTVAL",
+  "handlers": [
+   "onFinishOrder"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "cookBook",
+   "dishBag",
+   "eRet",
+   "hotVal",
+   "mhv",
+   "showRewardCookBook"
+  ],
+  "field_lines": {
+   "eRet": 62374,
+   "hotVal": 62376,
+   "cookBook": 62377,
+   "mhv": 62378,
+   "dishBag": 62379,
+   "showRewardCookBook": 62381
+  },
+  "occurrences": 2
+ },
+ "User.getInnRank": {
+  "const": "GET_INN_RANK",
+  "handlers": [
+   "onShowInnRank"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "innRankList"
+  ],
+  "field_lines": {
+   "eRet": 62603,
+   "innRankList": 62605
+  },
+  "occurrences": 2
+ },
+ "User.getInnShop": {
+  "const": "GET_INN_SHOP",
+  "handlers": [
+   "onShowInnShop"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "innSimShopDatas"
+  ],
+  "field_lines": {
+   "eRet": 62596,
+   "innSimShopDatas": 62598
+  },
+  "occurrences": 2
+ },
+ "User.innBuyShop": {
+  "const": "INN_BUY_SHOP",
+  "handlers": [
+   "onShopBuyItem"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "foodBag"
+  ],
+  "field_lines": {
+   "eRet": 62578,
+   "foodBag": 62579
+  },
+  "occurrences": 2
+ },
+ "User.beginDragonRollDice": {
+  "const": "BEGIN_DRAGON_ROLLDICE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getDouYinOpenID": {
+  "const": "GET_DOU_YIN_OPENID",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getWxXyxOpenID": {
+  "const": "GET_WX_XYX_OPENID",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getDragon": {
+  "const": "GET_DRAGON",
+  "handlers": [
+   "onGetDragon"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "currentDragonId",
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 27429,
+   "currentDragonId": 27429
+  },
+  "occurrences": 2
+ },
+ "User.callDragon": {
+  "const": "CALL_DRAGON",
+  "handlers": [
+   "onCallDragon"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 27425
+  },
+  "occurrences": 2
+ },
+ "User.makeWishDragon": {
+  "const": "MAKE_WISH_DRAGON",
+  "handlers": [
+   "onMakeWishDragon"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 27437
+  },
+  "occurrences": 2
+ },
+ "User.specialCycleLife": {
+  "const": "SPECIAL_CYCLE_LIFE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.EquipSuitsUpgrade": {
+  "const": "EUIQP_SUITS_UPGRADE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getFlipCard": {
+  "const": "GET_FLIP_CARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.flipCardCell": {
+  "const": "FLIP_CARD_CELL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.refreshFlipCard": {
+  "const": "REFRESH_FLIP_CARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.washAdditionalArr": {
+  "const": "WASH_ADDITION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 3
+ },
+ "User.getSchoolMasterList": {
+  "const": "GET_SCHOOL_MASTER_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getSchoolPupilList": {
+  "const": "GET_SCHOOL_PUPIL_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getApplyList": {
+  "const": "GET_APPLY_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.registerPupil": {
+  "const": "REGISTER_PUPIL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.registerMaster": {
+  "const": "REGISTER_MASTER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getSchoolMaster": {
+  "const": "GET_SCHOOL_MASTER",
+  "handlers": [
+   "onLookRoleInfo"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "masterInfo",
+   "pupilInfo",
+   "roleInfo"
+  ],
+  "field_lines": {
+   "eRet": 113937,
+   "masterInfo": 113941,
+   "pupilInfo": 113941,
+   "roleInfo": 113941
+  },
+  "occurrences": 2
+ },
+ "User.getSchoolPupil": {
+  "const": "GET_SCHOOL_PUPIL",
+  "handlers": [
+   "onLookRoleInfo"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "masterInfo",
+   "pupilInfo",
+   "roleInfo"
+  ],
+  "field_lines": {
+   "eRet": 113937,
+   "masterInfo": 113941,
+   "pupilInfo": 113941,
+   "roleInfo": 113941
+  },
+  "occurrences": 2
+ },
+ "User.applyMaster": {
+  "const": "APPLY_MASTER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.applyPupil": {
+  "const": "APPLY_PUPIL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getApplyInfo": {
+  "const": "GET_APPLY_INFO",
+  "handlers": [
+   "onLookRoleInfo"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "masterInfo",
+   "pupilInfo",
+   "roleInfo"
+  ],
+  "field_lines": {
+   "eRet": 113937,
+   "masterInfo": 113941,
+   "pupilInfo": 113941,
+   "roleInfo": 113941
+  },
+  "occurrences": 2
+ },
+ "User.cancelApply": {
+  "const": "CANCEL_APPLY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.confirmApply": {
+  "const": "CONFIRM_APPLY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getMasterPupilList": {
+  "const": "GET_MASTER_PUPIL_LIST",
+  "handlers": [
+   "onGetMasterPupilList"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "isMaster",
+   "passMeritRewardState",
+   "removeApplyList",
+   "roleList"
+  ],
+  "field_lines": {
+   "eRet": 132509,
+   "isMaster": 132513,
+   "removeApplyList": 132515,
+   "passMeritRewardState": 132518,
+   "roleList": 132520
+  },
+  "occurrences": 3
+ },
+ "User.getSchoolRoleInfo": {
+  "const": "GET_SCHOOL_ROLE_INFO",
+  "handlers": [
+   "onLookRoleInfo"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "masterInfo",
+   "pupilInfo",
+   "roleInfo"
+  ],
+  "field_lines": {
+   "eRet": 113937,
+   "masterInfo": 113941,
+   "pupilInfo": 113941,
+   "roleInfo": 113941
+  },
+  "occurrences": 2
+ },
+ "User.applyRemove": {
+  "const": "APPLY_REMOVE",
+  "handlers": [
+   "onApplyRemove"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 132603
+  },
+  "occurrences": 3
+ },
+ "User.ignoreRemove": {
+  "const": "IGNORE_REMOVE",
+  "handlers": [
+   "onIgnoreRemove"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 132594
+  },
+  "occurrences": 3
+ },
+ "User.confirmRemove": {
+  "const": "CONFIRM_REMOVE",
+  "handlers": [
+   "onConfirmRemove"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 132597
+  },
+  "occurrences": 3
+ },
+ "User.getRemoveApplyList": {
+  "const": "GET_REMOVE_APPLY_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSchoolMasterNoticeList": {
+  "const": "GET_SCHOOL_MASTER_NOTICE_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.confirmNotice": {
+  "const": "CONFIRM_NOTICE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.showNotice": {
+  "const": "SHOW_NOTICE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getPupilRewardList": {
+  "const": "GET_PUPIL_REWARD_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.pupilReward": {
+  "const": "PUPIL_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getMasterRewardList": {
+  "const": "GET_MASTER_REWARD_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.masterReward": {
+  "const": "MASTER_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.masterOutSchoolReward": {
+  "const": "MASTER_OUT_SCHOOL_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.masterPassMerit": {
+  "const": "MASTER_PASS_MERIT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.pupilPassMeritReward": {
+  "const": "PUPIL_PASS_MASTER_MERIT_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getRemoveRedDot": {
+  "const": "GET_REMOVE_RED_DOT",
+  "handlers": [
+   "onGetRemoveRedDot"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "removeNotice"
+  ],
+  "field_lines": {
+   "eRet": 88015,
+   "removeNotice": 88016
+  },
+  "occurrences": 3
+ },
+ "User.getRecuit": {
+  "const": "GET_RECUIT_MESSAGE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.createRecuitCode": {
+  "const": "CREATE_RECUIT_CODE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.bindingRecuitCode": {
+  "const": "BIND_RECUIT_CODE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.receiveRecuitAward": {
+  "const": "RECEIVE_RECUIT_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.receiveBindingRecuitAward": {
+  "const": "RECEIVE_BIND_RECUITAWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getReturnSevenDayData": {
+  "const": "GET_RETURN_SEVEN_DAY_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getReturnTaskData": {
+  "const": "GET_RETURN_TASK_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.returnSevenDaysAwards": {
+  "const": "RETURN_SEVEN_DAYS_AWARDS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveReturnDailyTask": {
+  "const": "RECEIVE_RETURN_DAILY_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveLivenessAward": {
+  "const": "RECEIVE_LIVENESS_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getReturnGift": {
+  "const": "GET_RETURN_GIFT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveReturnGiftAward": {
+  "const": "RECEIVE_RETURN_GIFT_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.refreshReturnGiftAward": {
+  "const": "REFRESH_RETURN_GIFT_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getAllActivity": {
+  "const": "GET_ALL_ACTIVITY",
+  "handlers": [
+   "onGetAllActivity"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "activityList",
+   "activityShows",
+   "calendar",
+   "digcellTaskRed",
+   "geNianshouTaskRed",
+   "geSchoolTaskRed",
+   "idType",
+   "jigsawRed",
+   "supportCamp",
+   "transGiftShow"
+  ],
+  "field_lines": {
+   "geSchoolTaskRed": 57447,
+   "geNianshouTaskRed": 57448,
+   "jigsawRed": 57449,
+   "activityList": 57450,
+   "idType": 57451,
+   "supportCamp": 57453,
+   "digcellTaskRed": 57454,
+   "activityShows": 57455,
+   "calendar": 57456,
+   "transGiftShow": 57457
+  },
+  "occurrences": 2
+ },
+ "User.getUFOCatcherTask": {
+  "const": "GET_UFO_CATCHER_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rewardUFOCatcherTask": {
+  "const": "REWARD_UFO_CATCHER_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getUFOCatcherData": {
+  "const": "GET_UFO_CATCHER_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyUFORefreshTimes": {
+  "const": "BUY_UFO_REFRESH_TIMES",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.useUFOrefresh": {
+  "const": "USE_UFO_REFRESH",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rewardUFO": {
+  "const": "REWARD_UFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyUFOGameCoin": {
+  "const": "BUY_UFO_GAME_COIN",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.recordPhone": {
+  "const": "RECORD_PHONE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.hireBagWeight": {
+  "const": "HIRE_BAG_WEIGHT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.triggerCandy": {
+  "const": "TRIGGER_CANDY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.robotMoveAction": {
+  "const": "ROBOT_MOVE_ACTION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.GetEmailState": {
+  "const": "GET_EMAIL_STATE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.diceBuyPlaceGoods": {
+  "const": "DICE_BUY_PLACE_GOODS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.diceSellPlaceGoods": {
+  "const": "DICE_SELL_PLACE_GOODS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.wuLinAssemblyApplyReq": {
+  "const": "WULIN_ASSEMBLY_APPLY_REQ",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.jionWuLinPkServer": {
+  "const": "JOIN_WULIN_PK_SERVER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.cancelWulinPk": {
+  "const": "CANCLE_WULIN_PK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getwulinArenaData": {
+  "const": "GET_WULIN_ARENA_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.uploadPlayerArenaData": {
+  "const": "UPLOAD_PLAYER_ARENA_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getDropAward": {
+  "const": "GET_DROP_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getEjectGift": {
+  "const": "REQ_POP_GIFT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyEjectGift": {
+  "const": "REQ_BUY_GIFT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.lookEjectGift": {
+  "const": "REQ_LOOK_GIFT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.checkTrggerEjectGift": {
+  "const": "REQ_TRGGER_GIFT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.skillGrasp": {
+  "const": "SKILL_GRASP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSkillGrasp": {
+  "const": "GET_SKILL_GRASP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.changeSkillKnack": {
+  "const": "CHANGE_SKILL_KNACK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.resolveKnack": {
+  "const": "RESOLVE_KNACK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.batchResolveKnack": {
+  "const": "BATCH_RESOLVE_KNACK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getAccRecharged": {
+  "const": "REQ_GET_RECHARDED",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.receiveAccRechargAward": {
+  "const": "REQ_AWARD_RECHARDED",
+  "handlers": [
+   "onGetAwardRechard"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "rewardArray"
+  ],
+  "field_lines": {
+   "eRet": 57426,
+   "rewardArray": 57427
+  },
+  "occurrences": 2
+ },
+ "User.recommendFindOHomes": {
+  "const": "REQ_GET_ALL_HOME_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.CheckOnHook": {
+  "const": "CHECK_ON_HOOK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getTreePlanting": {
+  "const": "GET_TREE_PLANTING",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.plantTree": {
+  "const": "PLANT_TREE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.tendingTrees": {
+  "const": "TENDING_TREES",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.treesReceiveReward": {
+  "const": "TREES_RECEIVE_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.equipInheritSplit": {
+  "const": "EQUIP_INHERIT_SPLIT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getMAActivity": {
+  "const": "GET_MA_ACTIVITY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.submitNumMA": {
+  "const": "SUBMIT_NUM_MA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rewardMAActivity": {
+  "const": "REWARD_MA_ACTIVITY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getNewGiftPermanent": {
+  "const": "GET_NEW_GIFT_PERMANENT",
+  "handlers": [
+   "giftPermanentCallback"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "giftDatas"
+  ],
+  "field_lines": {
+   "eRet": 131112,
+   "giftDatas": 131115
+  },
+  "occurrences": 3
+ },
+ "User.buyGiftPermanent": {
+  "const": "BUY_GIFT_PERMANENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.buyGiftTime": {
+  "const": "GFUI_BUY_GIFT",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.buyBigGiftTime": {
+  "const": "GFUI_BUY_BIG_GIFT",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.upPushSwitch": {
+  "const": "UP_PUSH_SWITCH",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getLevelBonusData": {
+  "const": "GET_LEVEL_BONUS_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveBonusAward": {
+  "const": "RECEIVE_BONUS_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getHousekeeper": {
+  "const": "GET_HOUSE_KEEPER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.dispatch": {
+  "const": "BUTLER_DISPATCH",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.dispatchAward": {
+  "const": "DISPATCH_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.setHelper": {
+  "const": "SET_BUTLER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyHelper": {
+  "const": "BUY_BUTLER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyMonthlyFee": {
+  "const": "BUY_BUTLER_VIP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.setTemplateData": {
+  "const": "SET_TEMPLATE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getEvaluateData": {
+  "const": "GET_EVALUATE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.pushEvaluateData": {
+  "const": "PUSH_EVALUATE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveNotice": {
+  "const": "RECEIVE_NOTICE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveHelperReward": {
+  "const": "RECEIVE_HELPER_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGoldConsumedRewardData": {
+  "const": "GET_GOLD_CONSUME_REWARD_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.receiveGoldConsumedReward": {
+  "const": "RECEIVE_GOLD_CONSUME_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getSkillTrickExchangeData": {
+  "const": "GET_SKILL_TRICK_EXCHANGE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.refreshSkillTrickExchangeData": {
+  "const": "REFRESH_SKILL_TRICK_EXCHANGE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.skillTrickExchangeIndex": {
+  "const": "SKILL_TRICK_EXCHANGE_INDEX",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.onKeyObtainCrop": {
+  "const": "ONE_KEY_OBTAIN_CROP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.onKeyDispossHomeEvent": {
+  "const": "ONE_KEY_DISPOSS_HOME_EVENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getKnackLottery": {
+  "const": "GET_KNACK_LOTTERY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.knackLottery": {
+  "const": "KNACK_LOTTERY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getKnackLotteryHistory": {
+  "const": "GET_KNACK_LOTTERY_HISTORY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveAchievementReward": {
+  "const": "RECEIVE_ACHIEVEMENT_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSpringSevenDayData": {
+  "const": "GET_SPRING_SEVEN_DAY_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.springSevenDaysAwards": {
+  "const": "SPRING_SEVEN_DAYS_AWARDS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.receiveSpringAccReward": {
+  "const": "RECEIVE_SPRING_ACC_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getSpringRefiningData": {
+  "const": "GET_FURNACE_DATA",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.startSpringRefiningData": {
+  "const": "START_REFINING_FURNACE",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.putSpringRefiningItem": {
+  "const": "PUT_REFINING_ITEM_FURNACE",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getSpringRefiningResource": {
+  "const": "GET_REFINING_RESOURCE",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getSpringCelebrateData": {
+  "const": "GET_SPRING_CELEBRATE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.putSpringSpark": {
+  "const": "PUT_SPRING_SPARK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.lightSpringSpark": {
+  "const": "LIGHT_SPRING_SPARK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSpringChallengeData": {
+  "const": "GET_SPRING_CHALLENGE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveSpringChallenge": {
+  "const": "RECEIVE_SPRING_CHALLENGE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSpringExchangeShop": {
+  "const": "GET_SPRING_EXCHANGE_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.exchangeSpringShop": {
+  "const": "EXCHANGE_SPRING_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSpringGiftPermanent": {
+  "const": "GET_SPRING_GIFT_PERMANENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buySpringGiftPermanent": {
+  "const": "BUY_SPRING_GIFT_PERMANENT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.GetNewAdvertisementNum": {
+  "const": "GET_NEW_NUMADS_AVAILABLE",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.LookNewAdvertisement": {
+  "const": "GET_NEW_AD_REWARD",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.joinGoodOrEvil": {
+  "const": "JOIN_GOOD_OR_EVIL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGoodAndEvilTaskData": {
+  "const": "GET_GOOD_AND_EVIL_TASK_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.refreshGoodAndEvilTaskData": {
+  "const": "REFRESH_GOOD_AND_EVIL_TASK_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGoodAndEvilNoteData": {
+  "const": "GET_GOOD_AND_EVIL_NOTE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveTargetTask": {
+  "const": "RECEIVE_TARGET_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.goodAndEvilBattleResult": {
+  "const": "GOOD_AND_EVIL_BATTLE_RESULT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getGoodAndEvilNpcData": {
+  "const": "GET_GOOD_AND_EVIL_NPC_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.refreshGoodAndEvilNpcData": {
+  "const": "REFRESH_GOOD_AND_EVIL_NPC_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveNPCTargetTask": {
+  "const": "RECEIVE_NPC_TARGET_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyTargetTaskNum": {
+  "const": "BUY_TARGET_TASK_NUM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.checkTargetTask": {
+  "const": "CHECK_TARGET_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGoodAndEvilShopData": {
+  "const": "GET_GOOD_AND_EVIL_SHOP_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyGoodAndEvilShopItem": {
+  "const": "BUY_GOOD_AND_EVIL_SHOP_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGoodAndEvilRankData": {
+  "const": "GET_GOOD_AND_EVIL_RANK_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.helpDoneTask": {
+  "const": "HELP_DONE_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGeHelpInfo": {
+  "const": "GET_GE_HELP_INFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGoodAndEvilData": {
+  "const": "GET_GOOD_AND_EVIL_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGoodAndEvilRetireList": {
+  "const": "GET_GOOD_AND_EVIL_RETIRE_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getGoodAndEvilRetireData": {
+  "const": "GET_GOOD_AND_EVIL_RETIRE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.sendRedPacket": {
+  "const": "SEND_RED_PACKET",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getPacketRewardData": {
+  "const": "GET_PACKET_REWARD_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receivePacketRewardReward": {
+  "const": "RECEIVE_PACKET_REWARD_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getPacketInfo": {
+  "const": "GET_PACKET_INFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receivePacket": {
+  "const": "RECEIVE_PACKET",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getPacketHistory": {
+  "const": "GET_PACKET_HISTORY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getPacketDetailInfo": {
+  "const": "GET_PACKET_DETAIL_INFO",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getPacketRankData": {
+  "const": "GET_PACKET_RANK_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.openChatPacketRed": {
+  "const": "OPEN_CHAT_PACKET_RED",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.bindingHuaWeiAccount": {
+  "const": "BIND_HUAWEI_ACCOUNT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.accountLogOff": {
+  "const": "ACCOUNT_LOG_OFF",
+  "handlers": [
+   "onLogOffEvt"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 117207
+  },
+  "occurrences": 3
+ },
+ "User.joinSchoolPrePareCamp": {
+  "const": "JOIN_PREPARE_CAMP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSchoolPrepareTaskData": {
+  "const": "GET_SCHOOL_PREPARE_TASK_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSchoolSupportPrepareTaskData": {
+  "const": "GET_SCHOOL_SUPPORT_PREPARE_TASK_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.schoolPrePareBuyNum": {
+  "const": "SCHOOL_PREPARE_BUY_NUM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.schoolSupportPrePareBuyNum": {
+  "const": "SCHOOL_SUPPORT_PREPARE_BUY_NUM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.schoolPrePareTaskComplete": {
+  "const": "SCHOOL_PREPARE_TASK_COMPLETE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.schoolSupportPrePareTaskComplete": {
+  "const": "SCHOOL_SUPPORT_PREPARE_TASK_COMPLETE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.schoolPrePareTaskRefresh": {
+  "const": "SCHOOL_PREPARE_TASK_REFRESH",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.schoolSupportPrePareTaskRefresh": {
+  "const": "SCHOOL_SUPPORT_PREPARE_TASK_REFRESH",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.submitSchoolPrePareItem": {
+  "const": "SUBMIT_SCHOOL_PREPARE_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.submitSchoolSupportPrePareItem": {
+  "const": "SUBMIT_SCHOOL_SUPPORT_PREPARE_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.schoolPrePareReceiveWages": {
+  "const": "SCHOOL_PREPARE_RECEIVE_WAGES",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.schoolSupportPrePareReceiveWages": {
+  "const": "SCHOOL_SUPPORT_PREPARE_RECEIVE_WAGES",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getOptionalGiftData": {
+  "const": "NEW_OPTIONALGIFT_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.buyOptionalGift": {
+  "const": "NEW_OPTIONAL_BUY_GIFT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getLotteryActiveRewardData": {
+  "const": "GET_LOTTERY_ACTIVE_REWARD_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveLotteryActiveReward": {
+  "const": "RECEIVE_LOTTERY_ACTIVE_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.openRandomBox": {
+  "const": "OPEN_RANDOM_BOX",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getAdvancedTasksData": {
+  "const": "GET_ADVANCED_TASKS_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveAdvancedTask": {
+  "const": "RECEIVE_ADVANCED_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveAdvancedTaskReward": {
+  "const": "RECEIVE_ADVANCED_TASK_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.setAdvancedTasksTip": {
+  "const": "SET_ADVANCED_TASKS_TIP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.startLookAdvertisement": {
+  "const": "STARTLOOK_AD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getAdvancedTasksTip": {
+  "const": "GET_ADVANCED_TASKS_TIP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getAlchemyData": {
+  "const": "GET_ALCHEMY_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyFormula": {
+  "const": "BUY_FORMULA_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.alchemyFormula": {
+  "const": "ALCHEMY_ALCHEMYFORMULA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.alchemyReward": {
+  "const": "ALCHEMY_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.mendalchemyReward": {
+  "const": "MEND_ALCHEMY_FORMULA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.upgradeAlchemy": {
+  "const": "UPGRAADE_ALCHEMY",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getScratchLotto": {
+  "const": "GET_SCRATH_LOTTO",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.scrapingLottery": {
+  "const": "SCRAPING_LOTTERY",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.buyTicket": {
+  "const": "BUY_TICKET",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.joinSchoolSupportPrePareCamp": {
+  "const": "SUPPORT_PREPARE_CAMP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSchoolSupportPrePareCamp": {
+  "const": "GET_SUPPORT_PREPARE_CAMP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getNationalDayCopy": {
+  "const": "GET_NATIONAL_DAY_COPY",
+  "handlers": [
+   "bind"
+  ],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ReqRogueSelfBattleInfo": {
+  "const": "REQ_ROGUE_PVE_BATTLE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.CheckRoguePVEBattleResult": {
+  "const": "ROGUE_PVE_BATTLE_END",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.ChallengeRoguePVP": {
+  "const": "REQ_ROGUE_PVP_BATTLE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.NewRoguePVPBattleResult": {
+  "const": "ROGUE_PVP_BATTLE_END",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.enterRogueMulitiNpcBattle": {
+  "const": "ENTER_PVE_ROGUE_FIGHT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.rogueBattleResult": {
+  "const": "SERVER_ROGUE_NPC_BATTLE_END",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.beginRogueMultiPVEBattle": {
+  "const": "ROGUE_MPPVE_ACTION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getRogueData": {
+  "const": "GET_ROGUE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.startRogueExplore": {
+  "const": "START_ROGUE_EXPLORE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.endRogueExplore": {
+  "const": "END_ROGUE_EXPLORE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.lastTimeRogueExplore": {
+  "const": "LAST_TIME_ROGUE_EXPLORE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueBuyStore": {
+  "const": "ROGUE_BUY_STORE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueStoreTrunkEnd": {
+  "const": "ROGUE_STORE_TRUNK_END",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueEventOption": {
+  "const": "ROGUE_EVENT_OPTION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueOutfitting": {
+  "const": "ROGUE_OUTFITTING",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgGetShopData": {
+  "const": "RG_GET_SHOP_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgShopByItem": {
+  "const": "RG_SHOP_BY_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgEquipUpgrade": {
+  "const": "RG_EQUIP_UPGRADE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.temporarilyRogue": {
+  "const": "TEMPORARILY_ROGUE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueRefreshValuables": {
+  "const": "ROGUE_REFRESH_VALUABLES",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyAwardsCount": {
+  "const": "BUY_AWARDS_COUNT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueStoreRefresh": {
+  "const": "ROGUE_STORE_REFRESH",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueBuyGoldStore": {
+  "const": "ROGUE_BUY_GOLD_STORE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueGoldStoreRefresh": {
+  "const": "ROGUE_GOLD_STORE_REFRESH",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueGatherItems": {
+  "const": "ROGUE_GATHER_ITEMS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueSellStore": {
+  "const": "ROGUE_SELL_STORE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getRogueExchangeGoods": {
+  "const": "GET_ROGUE_EXCHANGE_GOODS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueExchangeGoods": {
+  "const": "ROGUE_EXCHANGE_GOODS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueTianjieshiSellStore": {
+  "const": "ROGUE_TIANJIESHI_SELL_STORE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgLookOther": {
+  "const": "ROGUE_LOOK_OTHER",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueLeaveHideFloor": {
+  "const": "ROGUE_LEAVE_HIDE_FLOOR",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueInitDataOption": {
+  "const": "ROGUE_INIT_OPTION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueEnterFloor": {
+  "const": "ROGUE_ENTER_FLOOR",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueRecoverYoung": {
+  "const": "ROGUE_RECOVER_YOUNG",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueStartTurnRefresh": {
+  "const": "ROGUE_START_TURN_REFRESH",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgEquipWeapon": {
+  "const": "ROGUE_EQUIP_WEAPON",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgEquipSkill": {
+  "const": "ROGUE_EQUIP_SKILL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgUseItem": {
+  "const": "ROGUE_USE_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgChangeSkillKnack": {
+  "const": "ROGUE_CHANGE_SKNACK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgGetTalentData": {
+  "const": "ROGUE_GET_TALENT_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgTalentUpLv": {
+  "const": "ROGUE_TALENT_UPLV",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgTalentResetting": {
+  "const": "ROGUE_TALENT_RESET",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueAcceptTask": {
+  "const": "ROGUE_ACCEPT_TASK",
+  "handlers": [
+   "getRogueTaskCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 133226
+  },
+  "occurrences": 2
+ },
+ "User.getRogueFinishTaskAward": {
+  "const": "ROGUE_FINISHTASK_REWARD",
+  "handlers": [
+   "finishRogueTaskCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 133263
+  },
+  "occurrences": 2
+ },
+ "User.rgGetHonorData": {
+  "const": "ROGUE_GET_HONOR",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgHonorLvReward": {
+  "const": "ROGUE_RECEIVE_HONOR",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgHonorRankData": {
+  "const": "ROGUE_HONOR_RANK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgSycnWaitData": {
+  "const": "ROGUE_SYNC_WAIT_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueFindFriendByID": {
+  "const": "ROGUE_FIND_OTHER_ID",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgHonorWeekReward": {
+  "const": "ROGUE_HONOR_WEEK_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgGetHonorRed": {
+  "const": "ROGUE_GET_HONOR_RED",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgHonorRankReward": {
+  "const": "ROGUE_GET_RANK_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rgSeasonTop3Data": {
+  "const": "ROGUE_SEASON_TOP_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getEnterAward": {
+  "const": "BYTEDANCE_ENTER_AWARD",
+  "handlers": [],
+  "request_params": [
+   "fail"
+  ],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getCopyBookData": {
+  "const": "GET_COPY_BOOK_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyCopyBookGift": {
+  "const": "BUY_COPY_BOOK_GIFT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveCopyBookGiftAward": {
+  "const": "REWARD_BOOK_GIFT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getSkillSkinShop": {
+  "const": "GET_SKILL_SKIN_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.refreshSkillSkinShop": {
+  "const": "REFRESH_SKILL_SKIN_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buySkillSkinShop": {
+  "const": "BUY_SKILL_SKIN_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.equipSkillSkin": {
+  "const": "EQUIP_SKILL_SKIN",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.removeSkillSkin": {
+  "const": "REMOVE_SKILL_SKIN",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getHelperCallList": {
+  "const": "GET_HELPER_CALL_LIST",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.callHelperId": {
+  "const": "CALL_HELPER_BY_ID",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getLikeEvent": {
+  "const": "INVITE_NPC_GETLIKE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.optionLikeEvent": {
+  "const": "INVITE_NPC_OPTION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.getSkillSkinActiveShop": {
+  "const": "GET_SKILL_SKIN_ACTIVE_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buySkillSkinActiveShop": {
+  "const": "BUY_SKILL_SKIN_ACTIVE_SHOP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.isCycleLife": {
+  "const": "IS_CYCLE_LIFE",
+  "handlers": [
+   "onIsCycleLife"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 101925
+  },
+  "occurrences": 2
+ },
+ "User.storyExperience": {
+  "const": "STORY_EXPERIENCE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.useTreasure": {
+  "const": "USE_TREASURE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.rogueFloorBuff": {
+  "const": "ROGUE_FLOOR_BUFF",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.fashionEffect": {
+  "const": "FASHION_EFFECT",
+  "handlers": [
+   "onFashionEffect"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "fashionEffect"
+  ],
+  "field_lines": {
+   "eRet": 81480,
+   "fashionEffect": 81481
+  },
+  "occurrences": 5
+ },
+ "User.setPlayerCardWingId": {
+  "const": "SET_PLAYER_WING_ID",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.enterRoguePVEBattle": {
+  "const": "REQ_ROGUE_PVE_COMBAT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.beginRoguePVEBattle": {
+  "const": "ROGUE_PVE_ACTION",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.roguePveBattleResult": {
+  "const": "ROGUE_PVE_BATTLE_RESULT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.getAchieveData": {
+  "const": "GET_ACHIEVE_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.setAchieveMark": {
+  "const": "SET_ACHIEVE_MARK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getAchieveMark": {
+  "const": "GET_ACHIEVE_MARK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveAchieveReward": {
+  "const": "RECEIVE_ACHIEVE_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveAchieveRateReward": {
+  "const": "RECEIVE_ACHIEVE_RATE_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveAchieveSuitReward": {
+  "const": "RECEIVE_ACHIEVE_SUIT_REWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getAnniversaryPassData": {
+  "const": "ANN_PASS_GET_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.buyAnniversaryPass": {
+  "const": "ANN_PASS_BUY_UP",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveAnniversaryPassAward": {
+  "const": "ANN_PASS_RECEIVE_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getAnniversaryPassGift": {
+  "const": "ANN_PASS_GET_GIFT_DATA",
+  "handlers": [
+   "onGetAnnPassGiftData"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "giftDatas"
+  ],
+  "field_lines": {
+   "eRet": 131051,
+   "giftDatas": 131054
+  },
+  "occurrences": 2
+ },
+ "User.buyAnniversaryPassGift": {
+  "const": "ANN_PASS_BUY_GIFT",
+  "handlers": [
+   "onBuyAnnPassGift"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "rewardArray"
+  ],
+  "field_lines": {
+   "eRet": 131063,
+   "rewardArray": 131064
+  },
+  "occurrences": 2
+ },
+ "User.buyAnniversaryPassLiveness": {
+  "const": "ANN_PASS_BUY_LIVENESS",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.startAnniversaryPassRg": {
+  "const": "ANN_PASS_START_ROGUE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.chooseAnniversaryPassRg": {
+  "const": "ANN_PASS_CHOOS_ROGUE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveAnniversaryPassTaskReward": {
+  "const": "ANN_PASS_FINISH_TASK",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getjigsawData": {
+  "const": "GET_JIGSAW_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.randomLightCell": {
+  "const": "RANDOM_LIGHT_CELL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.specifyLightCell": {
+  "const": "SPECIFY_LIGHT_CELL",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.getjigsawTaskData": {
+  "const": "GET_JIGSAW_TASK_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveJigsawAward": {
+  "const": "RECEIVE_JIGSAW_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.receiveJigsawTaskAward": {
+  "const": "RECEIVE_JIGSAW_TASK_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.submitJigsawPrePareItem": {
+  "const": "SUBMIT_JIGSAW_PREPARE_ITEM",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 0
+ },
+ "User.setPlayerCardType": {
+  "const": "SET_PLAYER_CARD_TYPE",
+  "handlers": [
+   "setPlayerCardTypeCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 132267
+  },
+  "occurrences": 2
+ },
+ "User.setPlayerCardMoutsSycn": {
+  "const": "SET_PLAYER_CARD_MOUTS_SYCN",
+  "handlers": [
+   "setMoutsSyncCallBack"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "e",
+   "eRet",
+   "sycn"
+  ],
+  "field_lines": {
+   "eRet": 132086,
+   "sycn": 132087,
+   "e": 132088
+  },
+  "occurrences": 2
+ },
+ "User.setChatRedData": {
+  "const": "SET_CHAT_RED_DATA",
+  "handlers": [
+   "onSetChatRedData"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "uIds"
+  ],
+  "field_lines": {
+   "eRet": 132069,
+   "uIds": 132070
+  },
+  "occurrences": 2
+ },
+ "User.getPileGameData": {
+  "const": "GET_PILE_GAME_DATA",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.pileGameAward": {
+  "const": "PILE_GAME_AWARD",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.changeWorldServer": {
+  "const": "CHANGE_WORLD_SERVER",
+  "handlers": [
+   "onChangeWorldServer"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet",
+   "hookData",
+   "sendurl"
+  ],
+  "field_lines": {
+   "eRet": 28117,
+   "sendurl": 28126,
+   "hookData": 28127
+  },
+  "occurrences": 2
+ },
+ "User.setPlayerItemSort": {
+  "const": "SET_PLAYER_ITEMSORT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.setPlayerSkillSort": {
+  "const": "SET_PLAYER_SKILLSORT",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 1
+ },
+ "User.setOnHookWookState": {
+  "const": "SET_ONHOOK_WOOK_STATE",
+  "handlers": [
+   "onHookWoodStateCh"
+  ],
+  "request_params": [],
+  "response_fields": [
+   "eRet"
+  ],
+  "field_lines": {
+   "eRet": 56868
+  },
+  "occurrences": 2
+ },
+ "User.upFashionFaceState": {
+  "const": "SET_YP_EFFECT_STATE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.ReqDogPartnerBattleInfo": {
+  "const": "REQ_DOG_PARTNER_PVE_BATTLE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ },
+ "User.CheckDogPartnerPVEBattleResult": {
+  "const": "REQ_DOG_PARTNER_END_BATTLE",
+  "handlers": [],
+  "request_params": [],
+  "response_fields": [],
+  "field_lines": {},
+  "occurrences": 2
+ }
+}

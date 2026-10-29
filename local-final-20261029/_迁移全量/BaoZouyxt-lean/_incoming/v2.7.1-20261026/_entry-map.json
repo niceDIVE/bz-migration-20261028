@@ -1,0 +1,20 @@
+﻿[
+    {
+        "Idx":  0,
+        "Orig":  "00-先看这个-v2.7.1与三件拍�?txt",
+        "File":  "00-先看这个-v2.7.1与三件拍板.txt",
+        "Len":  3265
+    },
+    {
+        "Idx":  4,
+        "Orig":  "bz-oracle/forge/analysis/README.md",
+        "File":  "04-bz-oracle__forge__analysis__README.md",
+        "Len":  8881
+    },
+    {
+        "Idx":  5,
+        "Orig":  "bz-oracle/forge/analysis/extract_shape.py",
+        "File":  "05-bz-oracle__forge__analysis__extract_shape.py",
+        "Len":  22291
+    }
+]

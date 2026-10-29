@@ -1,0 +1,2 @@
+status=200 http://150.158.217.220:9898/TellAction
+{"error":0,"p":"User.TellAction","resultCode":200,"User.TellAction":{"eRet":1}}

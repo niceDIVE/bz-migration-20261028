@@ -1,0 +1,1558 @@
+{
+ "generatedAt": "2026-10-27T12:08:07.303Z",
+ "note": "C9a 超集：出现在 getItem(<obj>.<field>, ...) 第一个参数路径上的字段名。只用于拦截中性化，不校验取值。",
+ "count": 371,
+ "fields": {
+  "ApplySkillLevel": [
+   "scripts3.js:26454"
+  ],
+  "AttckData": [
+   "index.js:18034",
+   "index.js:104106",
+   "index.js:104135"
+  ],
+  "AttributeType": [
+   "index.js:74642",
+   "scripts2.js:14348"
+  ],
+  "BaguaModel": [
+   "scripts3.js:14375"
+  ],
+  "BallLevel": [
+   "index.js:115318"
+  ],
+  "BuffSet": [
+   "index.js:43937",
+   "scripts2.js:77889",
+   "scripts2.js:77912"
+  ],
+  "ChangeBirthModel": [
+   "scripts2.js:2279",
+   "scripts2.js:2279",
+   "scripts2.js:2279",
+   "scripts2.js:59813"
+  ],
+  "Data": [
+   "index.js:131251"
+  ],
+  "Data1": [
+   "index.js:43886",
+   "index.js:43905",
+   "index.js:43918",
+   "index.js:65319"
+  ],
+  "Data2": [
+   "index.js:64902",
+   "scripts2.js:78500",
+   "scripts2.js:78505",
+   "scripts3.js:73979"
+  ],
+  "DataM": [
+   "index.js:15380",
+   "index.js:15487",
+   "index.js:109843",
+   "index.js:109853"
+  ],
+  "DataN": [
+   "index.js:15375",
+   "index.js:15411",
+   "index.js:15495",
+   "index.js:109849"
+  ],
+  "DelegateModel": [
+   "scripts3.js:98531"
+  ],
+  "Drop": [
+   "index.js:134927"
+  ],
+  "Effect": [
+   "index.js:24376",
+   "index.js:24391",
+   "scripts2.js:77887",
+   "scripts2.js:77910"
+  ],
+  "EqUtils": [
+   "index.js:93540",
+   "scripts3.js:21647",
+   "scripts3.js:28428",
+   "scripts3.js:28435"
+  ],
+  "Equip": [
+   "index.js:74683",
+   "scripts2.js:10349"
+  ],
+  "EquipType": [
+   "index.js:44186",
+   "index.js:142161"
+  ],
+  "Fake_FinishNpc": [
+   "index.js:133968",
+   "index.js:137002"
+  ],
+  "FishingModel": [
+   "index.js:70728"
+  ],
+  "GSceneMgr": [
+   "index.js:81233",
+   "index.js:103942",
+   "index.js:114509",
+   "index.js:117255"
+  ],
+  "GoodEvilModel": [
+   "scripts3.js:34379"
+  ],
+  "HangUpModel": [
+   "scripts2.js:4618",
+   "scripts2.js:4620",
+   "scripts2.js:4837"
+  ],
+  "HomePlantModel": [
+   "index.js:90279",
+   "scripts2.js:48669",
+   "scripts3.js:57481"
+  ],
+  "ID": [
+   "index.js:64347",
+   "index.js:64383",
+   "scripts2.js:54623"
+  ],
+  "InhertEquipModel": [
+   "scripts2.js:60020",
+   "scripts2.js:78157",
+   "scripts3.js:29346"
+  ],
+  "InnManageModel": [
+   "index.js:63387",
+   "index.js:63403",
+   "index.js:63407",
+   "index.js:63619"
+  ],
+  "InstDungeonModel": [
+   "index.js:32608"
+  ],
+  "InventoryModel": [
+   "scripts3.js:24623",
+   "scripts3.js:24626",
+   "scripts3.js:24630",
+   "scripts3.js:24633"
+  ],
+  "ItemID": [
+   "index.js:26265",
+   "index.js:85833",
+   "index.js:115522",
+   "scripts2.js:73953"
+  ],
+  "ItemId": [
+   "index.js:146021",
+   "index.js:146067",
+   "scripts2.js:72277"
+  ],
+  "ItemNumberID": [
+   "scripts3.js:54349"
+  ],
+  "Itemid": [
+   "scripts3.js:78037"
+  ],
+  "KnackObjs": [
+   "scripts3.js:73726",
+   "scripts3.js:73741",
+   "scripts3.js:81141",
+   "scripts3.js:81156"
+  ],
+  "Map": [
+   "index.js:135014"
+  ],
+  "MapBoxModel": [
+   "scripts3.js:44699"
+  ],
+  "MarryModel": [
+   "index.js:143996",
+   "index.js:143999",
+   "index.js:144007"
+  ],
+  "NewYearBombModel": [
+   "scripts3.js:56127"
+  ],
+  "RedPacketModel": [
+   "scripts3.js:62151"
+  ],
+  "Replace": [
+   "index.js:11941",
+   "index.js:119891",
+   "index.js:120255"
+  ],
+  "Ret": [
+   "index.js:26517",
+   "index.js:26523"
+  ],
+  "RogueModel": [
+   "index.js:92241",
+   "index.js:92258",
+   "scripts3.js:39113",
+   "scripts3.js:65566"
+  ],
+  "RogueRoleInfo": [
+   "scripts3.js:70024"
+  ],
+  "RogueUtil": [
+   "scripts2.js:30550",
+   "scripts3.js:67214"
+  ],
+  "RoleBaseInfo": [
+   "index.js:2542",
+   "index.js:24506",
+   "index.js:24510",
+   "index.js:24532"
+  ],
+  "RoleLevel": [
+   "scripts2.js:57542",
+   "scripts2.js:58380",
+   "scripts2.js:58552",
+   "scripts2.js:66575"
+  ],
+  "RoleOtherInfo": [
+   "index.js:85261",
+   "index.js:142646",
+   "index.js:142721",
+   "scripts2.js:30305"
+  ],
+  "RoleSkillLevel": [
+   "scripts2.js:1692"
+  ],
+  "SkillUpgradeModel": [
+   "scripts2.js:38167",
+   "scripts2.js:38186",
+   "scripts2.js:38221",
+   "scripts2.js:38290"
+  ],
+  "SkinModel": [
+   "scripts3.js:82054"
+  ],
+  "TaskModel": [
+   "index.js:137000"
+  ],
+  "TowerModel": [
+   "index.js:51927",
+   "index.js:78709",
+   "index.js:87521",
+   "index.js:91931"
+  ],
+  "TrickExModel": [
+   "scripts3.js:89879"
+  ],
+  "TrickLotteryModel": [
+   "scripts3.js:90355",
+   "scripts3.js:90410",
+   "scripts3.js:90537",
+   "scripts3.js:90549"
+  ],
+  "Trick_des_group": [
+   "scripts3.js:2719",
+   "scripts3.js:3458",
+   "scripts3.js:4946",
+   "scripts3.js:5078"
+  ],
+  "Trick_quality": [
+   "index.js:103791",
+   "scripts3.js:89556",
+   "scripts3.js:91128"
+  ],
+  "Trick_use_skill": [
+   "scripts3.js:89558",
+   "scripts3.js:91461",
+   "scripts3.js:91489",
+   "scripts3.js:91507"
+  ],
+  "UsedItemId": [
+   "scripts3.js:97080",
+   "scripts3.js:97096"
+  ],
+  "WeapToSkill": [
+   "index.js:74807",
+   "index.js:74809",
+   "index.js:74810",
+   "index.js:106835"
+  ],
+  "Weapon": [
+   "scripts2.js:10303",
+   "scripts2.js:10346",
+   "scripts2.js:10354",
+   "scripts3.js:56646"
+  ],
+  "WeaponType": [
+   "scripts3.js:61051"
+  ],
+  "WorldBossModel": [
+   "scripts2.js:54135",
+   "scripts2.js:54135"
+  ],
+  "WuGongLevel": [
+   "scripts3.js:9041"
+  ],
+  "_ais": [
+   "index.js:12494"
+  ],
+  "_curId": [
+   "scripts3.js:34247"
+  ],
+  "_curSkillId": [
+   "scripts3.js:60123"
+  ],
+  "_data": [
+   "index.js:44738",
+   "scripts3.js:47855",
+   "scripts3.js:47925",
+   "scripts3.js:48034"
+  ],
+  "_equipDataList": [
+   "scripts2.js:24342",
+   "scripts2.js:24386",
+   "scripts2.js:36350",
+   "scripts2.js:44772"
+  ],
+  "_featID": [
+   "index.js:89128",
+   "index.js:89199",
+   "index.js:119256"
+  ],
+  "_firendSkillId": [
+   "scripts3.js:58337"
+  ],
+  "_friendId": [
+   "scripts3.js:60083",
+   "scripts3.js:60125"
+  ],
+  "_groupIdArr": [
+   "scripts3.js:220",
+   "scripts3.js:259",
+   "scripts3.js:754",
+   "scripts3.js:983"
+  ],
+  "_id": [
+   "index.js:28833",
+   "index.js:30460",
+   "index.js:36216",
+   "index.js:37437"
+  ],
+  "_itemDataList": [
+   "scripts2.js:24429",
+   "scripts2.js:36159",
+   "scripts2.js:36564",
+   "scripts2.js:79129"
+  ],
+  "_itemList": [
+   "scripts2.js:19210"
+  ],
+  "_lockMap": [
+   "scripts3.js:8132"
+  ],
+  "_mapID": [
+   "scripts2.js:30467",
+   "scripts2.js:30820"
+  ],
+  "_npcID": [
+   "index.js:6045",
+   "index.js:46267",
+   "index.js:58704",
+   "index.js:60743"
+  ],
+  "_rId": [
+   "scripts3.js:335",
+   "scripts3.js:1342"
+  ],
+  "_skillID": [
+   "index.js:119269",
+   "index.js:121799",
+   "index.js:121935"
+  ],
+  "_skillId": [
+   "scripts3.js:58340"
+  ],
+  "abs": [
+   "index.js:120376",
+   "scripts3.js:76749"
+  ],
+  "achId": [
+   "scripts3.js:2537",
+   "scripts3.js:2572",
+   "scripts3.js:2664",
+   "scripts3.js:2677"
+  ],
+  "achiId": [
+   "scripts3.js:2330"
+  ],
+  "act": [
+   "index.js:9456",
+   "index.js:9766",
+   "index.js:15359",
+   "index.js:15392"
+  ],
+  "actID": [
+   "scripts3.js:27197",
+   "scripts3.js:27212"
+  ],
+  "actIdNum": [
+   "scripts3.js:27601"
+  ],
+  "action": [
+   "index.js:5619",
+   "index.js:94874",
+   "index.js:96996"
+  ],
+  "activeId": [
+   "scripts2.js:20222"
+  ],
+  "addItemId": [
+   "scripts3.js:66420",
+   "scripts3.js:72792"
+  ],
+  "adventEventId": [
+   "index.js:58454",
+   "index.js:58479",
+   "index.js:58493",
+   "index.js:58503"
+  ],
+  "adventureData": [
+   "index.js:123078"
+  ],
+  "ais": [
+   "index.js:74698"
+  ],
+  "allInhertEquips": [
+   "index.js:61590",
+   "index.js:61594"
+  ],
+  "altarId": [
+   "scripts3.js:18508",
+   "scripts3.js:18549"
+  ],
+  "appearArr": [
+   "scripts2.js:59736",
+   "scripts2.js:59811"
+  ],
+  "arr": [
+   "scripts3.js:1323",
+   "scripts3.js:1745"
+  ],
+  "artAy": [
+   "scripts3.js:80439",
+   "scripts3.js:80487"
+  ],
+  "artLevel": [
+   "scripts2.js:56166"
+  ],
+  "attackSkillEquipped": [
+   "index.js:4184",
+   "index.js:96622",
+   "index.js:109727",
+   "scripts2.js:16589"
+  ],
+  "availableNg": [
+   "scripts2.js:55816"
+  ],
+  "battleData": [
+   "scripts2.js:3548",
+   "scripts2.js:3576",
+   "scripts2.js:72983",
+   "scripts2.js:73001"
+  ],
+  "battleInfo": [
+   "scripts2.js:3344"
+  ],
+  "birthID": [
+   "index.js:101887"
+  ],
+  "bossID": [
+   "index.js:145548",
+   "index.js:145551",
+   "index.js:145575",
+   "index.js:145608"
+  ],
+  "bosslevel": [
+   "scripts2.js:10324"
+  ],
+  "box": [
+   "scripts3.js:17654"
+  ],
+  "bs": [
+   "index.js:98954"
+  ],
+  "buffID": [
+   "index.js:137682"
+  ],
+  "burrerData": [
+   "scripts3.js:17562"
+  ],
+  "buyItemId": [
+   "index.js:131240"
+  ],
+  "cellLv": [
+   "scripts3.js:44472"
+  ],
+  "cf": [
+   "scripts3.js:83087",
+   "scripts3.js:83087"
+  ],
+  "checkSiteID": [
+   "index.js:51452"
+  ],
+  "circleTaskInfo": [
+   "scripts2.js:68086",
+   "scripts2.js:71350"
+  ],
+  "clothId": [
+   "scripts3.js:89361"
+  ],
+  "condition": [
+   "scripts3.js:35090"
+  ],
+  "config": [
+   "scripts3.js:7385"
+  ],
+  "configid": [
+   "scripts3.js:54406"
+  ],
+  "content": [
+   "index.js:13606",
+   "index.js:14800",
+   "index.js:73622",
+   "index.js:73645"
+  ],
+  "cookBook": [
+   "index.js:62587"
+  ],
+  "copyID": [
+   "index.js:64081",
+   "index.js:64105"
+  ],
+  "costId": [
+   "scripts3.js:75340"
+  ],
+  "costItemAy": [
+   "scripts3.js:19566"
+  ],
+  "costItemId": [
+   "scripts3.js:18542",
+   "scripts3.js:18654"
+  ],
+  "counts": [
+   "scripts2.js:19978"
+  ],
+  "curCardId": [
+   "scripts3.js:18952",
+   "scripts3.js:92040",
+   "scripts3.js:92058"
+  ],
+  "curDay": [
+   "scripts2.js:62137"
+  ],
+  "curExIds": [
+   "scripts3.js:85659"
+  ],
+  "curFloor": [
+   "scripts3.js:46053",
+   "scripts3.js:46106"
+  ],
+  "curHour": [
+   "index.js:22523"
+  ],
+  "curId": [
+   "scripts3.js:56645"
+  ],
+  "curIdx": [
+   "scripts3.js:19526"
+  ],
+  "curIndex": [
+   "scripts3.js:44462"
+  ],
+  "curItemId": [
+   "index.js:64902",
+   "index.js:64970",
+   "scripts3.js:73979"
+  ],
+  "curLv": [
+   "scripts2.js:38193",
+   "scripts2.js:38221",
+   "scripts2.js:38323",
+   "scripts2.js:38335"
+  ],
+  "curMapId": [
+   "index.js:114430",
+   "index.js:114492"
+  ],
+  "curObj": [
+   "scripts2.js:46519",
+   "scripts2.js:46534",
+   "scripts3.js:61049"
+  ],
+  "curPartnerData": [
+   "scripts3.js:57217",
+   "scripts3.js:57229",
+   "scripts3.js:57263",
+   "scripts3.js:57285"
+  ],
+  "curSelectId": [
+   "scripts2.js:61262",
+   "scripts3.js:31807"
+  ],
+  "curSkillID": [
+   "index.js:11571",
+   "index.js:11647",
+   "index.js:11679"
+  ],
+  "curWeather": [
+   "scripts2.js:79452"
+  ],
+  "currentNpcId": [
+   "index.js:90105"
+  ],
+  "curty": [
+   "scripts3.js:38691"
+  ],
+  "d": [
+   "index.js:10246",
+   "index.js:10283",
+   "index.js:10342",
+   "index.js:10349"
+  ],
+  "danmuKey": [
+   "scripts2.js:72376"
+  ],
+  "data": [
+   "index.js:10014",
+   "index.js:11178",
+   "index.js:12048",
+   "index.js:12054"
+  ],
+  "datas": [
+   "scripts2.js:37729",
+   "scripts2.js:37729",
+   "scripts2.js:37754",
+   "scripts2.js:37780"
+  ],
+  "degreeLv": [
+   "index.js:11521",
+   "index.js:11527"
+  ],
+  "difficulty": [
+   "scripts3.js:66455",
+   "scripts3.js:66464",
+   "scripts3.js:66484"
+  ],
+  "dishId": [
+   "index.js:62945",
+   "scripts2.js:33607",
+   "scripts2.js:33642"
+  ],
+  "dogid": [
+   "index.js:64817",
+   "scripts3.js:73974"
+  ],
+  "dungeonID": [
+   "scripts2.js:12154",
+   "scripts2.js:34946"
+  ],
+  "dutyId": [
+   "scripts3.js:6145"
+  ],
+  "e": [
+   "index.js:106723",
+   "scripts2.js:49793"
+  ],
+  "eid": [
+   "index.js:95587",
+   "index.js:95602"
+  ],
+  "elitMasterData": [
+   "index.js:138287"
+  ],
+  "emoId": [
+   "index.js:64886"
+  ],
+  "entity": [
+   "index.js:399",
+   "index.js:412",
+   "index.js:4482",
+   "index.js:4492"
+  ],
+  "eqArr": [
+   "scripts3.js:87085"
+  ],
+  "equip": [
+   "index.js:107801"
+  ],
+  "equipId": [
+   "scripts3.js:76492",
+   "scripts3.js:76496",
+   "scripts3.js:76502",
+   "scripts3.js:76505"
+  ],
+  "equipInfo": [
+   "scripts3.js:29331",
+   "scripts3.js:29342",
+   "scripts3.js:29344"
+  ],
+  "equipList": [
+   "scripts2.js:60826"
+  ],
+  "equipUpdata": [
+   "scripts2.js:77197",
+   "scripts2.js:77218",
+   "scripts2.js:77909",
+   "scripts2.js:77937"
+  ],
+  "equiplevel": [
+   "index.js:43695",
+   "index.js:66230",
+   "scripts2.js:20009"
+  ],
+  "equipments": [
+   "index.js:4133",
+   "index.js:109716"
+  ],
+  "eventArr": [
+   "index.js:137657",
+   "index.js:137657",
+   "index.js:137657",
+   "index.js:137668"
+  ],
+  "eventId": [
+   "index.js:51157"
+  ],
+  "eventInfo": [
+   "scripts3.js:49113"
+  ],
+  "eventList": [
+   "scripts2.js:75136",
+   "scripts2.js:75145",
+   "scripts2.js:75153"
+  ],
+  "fashionBId": [
+   "index.js:96397",
+   "index.js:96462"
+  ],
+  "featID": [
+   "index.js:6275"
+  ],
+  "fightArrayID": [
+   "index.js:72519",
+   "index.js:72574",
+   "index.js:72861"
+  ],
+  "fightData": [
+   "index.js:112638"
+  ],
+  "fightFriendId": [
+   "index.js:106879"
+  ],
+  "finalBoosId": [
+   "scripts3.js:66625"
+  ],
+  "fistID": [
+   "scripts2.js:51362"
+  ],
+  "fistSkill": [
+   "index.js:74005"
+  ],
+  "fistSkillEquipped": [
+   "scripts2.js:16617"
+  ],
+  "floor": [
+   "index.js:92037",
+   "scripts2.js:20856"
+  ],
+  "formulaID": [
+   "index.js:64794"
+  ],
+  "formulaId": [
+   "scripts2.js:60134",
+   "scripts2.js:60140",
+   "scripts2.js:60162",
+   "scripts2.js:60312"
+  ],
+  "friendSkillId": [
+   "index.js:12016",
+   "index.js:75146",
+   "index.js:94373",
+   "index.js:94392"
+  ],
+  "gearId": [
+   "index.js:26439",
+   "scripts3.js:14472",
+   "scripts3.js:86579"
+  ],
+  "getAppearance": [
+   "index.js:4164"
+  ],
+  "getBodyType": [
+   "index.js:74051"
+  ],
+  "getDisplayID": [
+   "index.js:11204",
+   "index.js:11218",
+   "index.js:44738",
+   "index.js:74059"
+  ],
+  "getEquipItemId": [
+   "index.js:44025"
+  ],
+  "getMountID": [
+   "scripts3.js:96834"
+  ],
+  "getNpcID": [
+   "index.js:6008",
+   "index.js:6014",
+   "index.js:20288",
+   "index.js:20293"
+  ],
+  "getTrunkId": [
+   "scripts3.js:71872"
+  ],
+  "giftId": [
+   "scripts3.js:85861",
+   "scripts3.js:85946"
+  ],
+  "group": [
+   "scripts3.js:2891",
+   "scripts3.js:2923",
+   "scripts3.js:3787"
+  ],
+  "groupId": [
+   "scripts3.js:1145"
+  ],
+  "hId": [
+   "scripts3.js:71583",
+   "scripts3.js:71819"
+  ],
+  "helperId": [
+   "scripts3.js:23705"
+  ],
+  "housekeeper": [
+   "index.js:64860"
+  ],
+  "id": [
+   "index.js:2327",
+   "index.js:2336",
+   "index.js:2341",
+   "index.js:2664"
+  ],
+  "idArr": [
+   "scripts2.js:47844",
+   "scripts3.js:54702"
+  ],
+  "ids": [
+   "scripts3.js:35049",
+   "scripts3.js:35088"
+  ],
+  "index": [
+   "index.js:63803",
+   "scripts2.js:51692",
+   "scripts2.js:51716"
+  ],
+  "inhertEquip": [
+   "index.js:24375"
+  ],
+  "inhertEquipData": [
+   "index.js:61517",
+   "scripts2.js:19448"
+  ],
+  "initSkill": [
+   "scripts3.js:82590"
+  ],
+  "inlayEquipInfo": [
+   "scripts2.js:36096"
+  ],
+  "item": [
+   "scripts2.js:1756",
+   "scripts2.js:1781",
+   "scripts2.js:1794",
+   "scripts2.js:6161"
+  ],
+  "itemArray": [
+   "scripts3.js:31941"
+  ],
+  "itemD": [
+   "scripts2.js:63569"
+  ],
+  "itemData2": [
+   "scripts3.js:93401"
+  ],
+  "itemID": [
+   "index.js:15066",
+   "index.js:24120",
+   "index.js:24318",
+   "index.js:24327"
+  ],
+  "itemId": [
+   "index.js:15077",
+   "index.js:24390",
+   "index.js:25340",
+   "index.js:26843"
+  ],
+  "itemInfo": [
+   "scripts2.js:31929"
+  ],
+  "itemList": [
+   "scripts3.js:98980",
+   "scripts3.js:99172"
+  ],
+  "itemObj": [
+   "scripts2.js:7411",
+   "scripts2.js:7438",
+   "scripts2.js:7515",
+   "scripts2.js:7541"
+  ],
+  "jineng": [
+   "index.js:8118",
+   "index.js:18102",
+   "index.js:74000",
+   "index.js:74361"
+  ],
+  "jumpId": [
+   "index.js:66918",
+   "index.js:112671"
+  ],
+  "jump_id": [
+   "index.js:112673"
+  ],
+  "keys": [
+   "scripts2.js:76407",
+   "scripts2.js:76447"
+  ],
+  "kid": [
+   "scripts2.js:61383"
+  ],
+  "knackBagArr": [
+   "scripts3.js:91461",
+   "scripts3.js:91478",
+   "scripts3.js:91489",
+   "scripts3.js:91507"
+  ],
+  "level": [
+   "scripts2.js:51360",
+   "scripts3.js:17670",
+   "scripts3.js:17689",
+   "scripts3.js:17694"
+  ],
+  "levelId": [
+   "scripts3.js:66613"
+  ],
+  "loadScritName": [
+   "scripts3.js:100265"
+  ],
+  "lockId": [
+   "scripts2.js:74519"
+  ],
+  "lv": [
+   "index.js:64401",
+   "index.js:65521",
+   "index.js:120859",
+   "index.js:120910"
+  ],
+  "mapID": [
+   "index.js:145575",
+   "index.js:145608",
+   "scripts2.js:79334"
+  ],
+  "mapId": [
+   "index.js:76206",
+   "index.js:76394",
+   "scripts3.js:51658",
+   "scripts3.js:51757"
+  ],
+  "meridians": [
+   "index.js:19651",
+   "index.js:98841",
+   "scripts2.js:37358",
+   "scripts2.js:37490"
+  ],
+  "mountID": [
+   "index.js:64810",
+   "index.js:80514",
+   "index.js:80521",
+   "index.js:80540"
+  ],
+  "mountId": [
+   "scripts3.js:33044"
+  ],
+  "myActor": [
+   "index.js:71780",
+   "index.js:104796"
+  ],
+  "myData": [
+   "scripts3.js:31101",
+   "scripts3.js:31107",
+   "scripts3.js:66853",
+   "scripts3.js:66857"
+  ],
+  "nTalentId": [
+   "index.js:23126"
+  ],
+  "name": [
+   "index.js:78590",
+   "index.js:78595",
+   "index.js:78797",
+   "index.js:91717"
+  ],
+  "nameArray": [
+   "scripts3.js:100077"
+  ],
+  "needItems": [
+   "scripts3.js:87070",
+   "scripts3.js:87077"
+  ],
+  "needitem": [
+   "scripts2.js:23269",
+   "scripts2.js:42168"
+  ],
+  "neiID": [
+   "scripts2.js:51362"
+  ],
+  "neigong": [
+   "index.js:74015",
+   "scripts2.js:61397",
+   "scripts3.js:57929"
+  ],
+  "neigongSkillID": [
+   "index.js:4187",
+   "index.js:109730"
+  ],
+  "newItems": [
+   "index.js:65680",
+   "index.js:65708",
+   "scripts2.js:36300"
+  ],
+  "newact_multi": [
+   "index.js:6281",
+   "index.js:6344",
+   "index.js:6376",
+   "index.js:6389"
+  ],
+  "node": [
+   "scripts3.js:67564",
+   "scripts3.js:67649",
+   "scripts3.js:68997",
+   "scripts3.js:75454"
+  ],
+  "normalSkill": [
+   "index.js:5052",
+   "index.js:9832",
+   "index.js:10019"
+  ],
+  "npcArr": [
+   "index.js:143831"
+  ],
+  "npcData": [
+   "scripts3.js:39310"
+  ],
+  "npcFormerId": [
+   "scripts3.js:22815",
+   "scripts3.js:22821"
+  ],
+  "npcID": [
+   "index.js:4156",
+   "index.js:8249",
+   "index.js:15015",
+   "index.js:15087"
+  ],
+  "npcIDArr": [
+   "index.js:90061",
+   "index.js:90071",
+   "index.js:90078"
+  ],
+  "npcId": [
+   "index.js:77864",
+   "scripts2.js:5215",
+   "scripts2.js:5295",
+   "scripts2.js:28444"
+  ],
+  "npcMarryState": [
+   "index.js:77356",
+   "index.js:77572",
+   "index.js:77575",
+   "index.js:77579"
+  ],
+  "npcTaskInfo": [
+   "index.js:133251",
+   "index.js:133371"
+  ],
+  "npcid": [
+   "scripts2.js:23264",
+   "scripts2.js:34183",
+   "scripts2.js:42163"
+  ],
+  "numAttr": [
+   "index.js:93601",
+   "index.js:93601",
+   "index.js:93602"
+  ],
+  "obj": [
+   "scripts2.js:39909",
+   "scripts2.js:70828",
+   "scripts2.js:79734"
+  ],
+  "objData": [
+   "scripts3.js:49757",
+   "scripts3.js:79750",
+   "scripts3.js:79794"
+  ],
+  "objectItem": [
+   "scripts2.js:20415",
+   "scripts2.js:20471"
+  ],
+  "openGearId": [
+   "index.js:26520",
+   "index.js:26854"
+  ],
+  "origritNpcId": [
+   "index.js:86756",
+   "index.js:86839"
+  ],
+  "outwitSkill": [
+   "index.js:109651"
+  ],
+  "pId": [
+   "scripts3.js:77410"
+  ],
+  "pandaEventId": [
+   "index.js:137675"
+  ],
+  "pandaNpcId": [
+   "index.js:137730"
+  ],
+  "paperId": [
+   "scripts2.js:1306",
+   "scripts2.js:13262"
+  ],
+  "param": [
+   "index.js:43554",
+   "index.js:43558",
+   "index.js:43574",
+   "scripts2.js:27979"
+  ],
+  "parameter": [
+   "index.js:46240"
+  ],
+  "parentSkill": [
+   "index.js:126113"
+  ],
+  "partner2Id": [
+   "index.js:48710",
+   "index.js:131973"
+  ],
+  "partnerData": [
+   "scripts3.js:57893",
+   "scripts3.js:57926",
+   "scripts3.js:58119",
+   "scripts3.js:58158"
+  ],
+  "partnerFreeAy": [
+   "scripts3.js:79317"
+  ],
+  "partnerId": [
+   "index.js:83119",
+   "index.js:94192",
+   "index.js:94427",
+   "index.js:94807"
+  ],
+  "partnerSkillId": [
+   "index.js:94268",
+   "index.js:109662"
+  ],
+  "pathId": [
+   "index.js:29382",
+   "index.js:29408"
+  ],
+  "performer": [
+   "index.js:124",
+   "index.js:6279",
+   "index.js:6342",
+   "index.js:6374"
+  ],
+  "platfStr": [
+   "scripts2.js:46731",
+   "scripts2.js:46751"
+  ],
+  "player2": [
+   "index.js:14041"
+  ],
+  "pondID": [
+   "index.js:51563",
+   "index.js:51597"
+  ],
+  "prepare": [
+   "scripts3.js:68572"
+  ],
+  "qId": [
+   "scripts2.js:1314"
+  ],
+  "qingID": [
+   "scripts2.js:51362"
+  ],
+  "qinggong": [
+   "index.js:74010",
+   "scripts2.js:61397",
+   "scripts3.js:57929"
+  ],
+  "qingongSkillID": [
+   "index.js:4185",
+   "index.js:109728"
+  ],
+  "quality": [
+   "index.js:44040",
+   "index.js:93605",
+   "index.js:93607"
+  ],
+  "randomIndex": [
+   "index.js:51129"
+  ],
+  "rank": [
+   "scripts2.js:11445"
+  ],
+  "reBirthData": [
+   "scripts2.js:52364"
+  ],
+  "recuit": [
+   "scripts2.js:52178",
+   "scripts2.js:52204"
+  ],
+  "replace": [
+   "scripts2.js:18726"
+  ],
+  "reputation": [
+   "scripts3.js:75308"
+  ],
+  "reputationLevelId": [
+   "index.js:106873",
+   "scripts3.js:71441"
+  ],
+  "resultData": [
+   "index.js:47212"
+  ],
+  "reward": [
+   "scripts3.js:16274",
+   "scripts3.js:32410",
+   "scripts3.js:85678",
+   "scripts3.js:97420"
+  ],
+  "rewardAy": [
+   "scripts3.js:87580",
+   "scripts3.js:87653"
+  ],
+  "rewardData": [
+   "scripts2.js:3457",
+   "scripts2.js:3457",
+   "scripts2.js:3463",
+   "scripts2.js:26535"
+  ],
+  "rewards": [
+   "scripts2.js:45935",
+   "scripts3.js:4377"
+  ],
+  "roleData": [
+   "index.js:96069",
+   "scripts3.js:27014"
+  ],
+  "roleFashion": [
+   "scripts2.js:12577",
+   "scripts2.js:53599",
+   "scripts3.js:66127"
+  ],
+  "roleWig": [
+   "scripts2.js:12545",
+   "scripts2.js:12591",
+   "scripts2.js:53567",
+   "scripts2.js:53613"
+  ],
+  "sId": [
+   "scripts3.js:53028",
+   "scripts3.js:59035"
+  ],
+  "sRoleSkillLevel": [
+   "scripts2.js:43261"
+  ],
+  "sc1": [
+   "index.js:95206"
+  ],
+  "scene": [
+   "index.js:22523"
+  ],
+  "sceneId": [
+   "index.js:135019"
+  ],
+  "school": [
+   "index.js:74062",
+   "index.js:74071",
+   "scripts2.js:73839"
+  ],
+  "schoolId": [
+   "scripts2.js:12631",
+   "scripts2.js:12695",
+   "scripts2.js:12721",
+   "scripts2.js:12730"
+  ],
+  "sect": [
+   "scripts3.js:78250"
+  ],
+  "selectDriverId": [
+   "scripts2.js:18665",
+   "scripts2.js:18717",
+   "scripts2.js:18784",
+   "scripts2.js:18811"
+  ],
+  "selectEquipData": [
+   "index.js:61517",
+   "index.js:61576",
+   "index.js:61594",
+   "scripts2.js:19448"
+  ],
+  "selectWeapData": [
+   "scripts3.js:94613"
+  ],
+  "selectedAcupoint": [
+   "scripts2.js:37487",
+   "scripts2.js:37512"
+  ],
+  "selectedDataArr": [
+   "scripts2.js:55650"
+  ],
+  "selectedMeridian": [
+   "scripts2.js:37235",
+   "scripts2.js:37247",
+   "scripts2.js:37298",
+   "scripts2.js:37304"
+  ],
+  "selectingIndex": [
+   "scripts2.js:55617"
+  ],
+  "shopCf": [
+   "scripts3.js:81930"
+  ],
+  "shopId": [
+   "scripts2.js:46436"
+  ],
+  "showRewardCookBook": [
+   "index.js:62382"
+  ],
+  "siteID": [
+   "index.js:51434",
+   "index.js:51474",
+   "index.js:51496"
+  ],
+  "skillAy": [
+   "scripts2.js:32385"
+  ],
+  "skillData": [
+   "scripts3.js:43371",
+   "scripts3.js:80389",
+   "scripts3.js:80804"
+  ],
+  "skillID": [
+   "index.js:86528",
+   "index.js:119669",
+   "index.js:119964",
+   "index.js:120570"
+  ],
+  "skillID1": [
+   "scripts2.js:39034"
+  ],
+  "skillID2": [
+   "scripts2.js:39034"
+  ],
+  "skillId": [
+   "index.js:77925",
+   "index.js:78024",
+   "index.js:133254",
+   "index.js:133374"
+  ],
+  "skillIds": [
+   "scripts2.js:57594",
+   "scripts2.js:57596"
+  ],
+  "skillLevel": [
+   "scripts3.js:21796",
+   "scripts3.js:21938"
+  ],
+  "skillList": [
+   "scripts2.js:4255",
+   "scripts2.js:4255"
+  ],
+  "skillid": [
+   "index.js:19099",
+   "scripts3.js:4929",
+   "scripts3.js:78420",
+   "scripts3.js:78424"
+  ],
+  "skills1": [
+   "scripts2.js:57601"
+  ],
+  "skills2": [
+   "scripts2.js:57603"
+  ],
+  "skinId": [
+   "scripts3.js:82422"
+  ],
+  "stID": [
+   "index.js:54639",
+   "index.js:128507",
+   "index.js:128514"
+  ],
+  "stage": [
+   "scripts3.js:46276"
+  ],
+  "state": [
+   "index.js:100605",
+   "index.js:100605",
+   "index.js:105071",
+   "index.js:110790"
+  ],
+  "statedata": [
+   "scripts2.js:25259"
+  ],
+  "stealLv": [
+   "scripts2.js:66945"
+  ],
+  "storyEndingID": [
+   "scripts2.js:52647"
+  ],
+  "storyId": [
+   "scripts2.js:5203",
+   "scripts2.js:68245",
+   "scripts2.js:68253",
+   "scripts3.js:86786"
+  ],
+  "storyNum": [
+   "scripts3.js:25029",
+   "scripts3.js:25111",
+   "scripts3.js:25203"
+  ],
+  "suitId": [
+   "scripts3.js:1894",
+   "scripts3.js:1918",
+   "scripts3.js:1969"
+  ],
+  "talkId": [
+   "scripts2.js:71318"
+  ],
+  "target": [
+   "index.js:33266"
+  ],
+  "taskCircleObj": [
+   "scripts2.js:10182"
+  ],
+  "taskData": [
+   "scripts2.js:59225"
+  ],
+  "taskGuideStateKey": [
+   "index.js:54455",
+   "index.js:54458"
+  ],
+  "taskID": [
+   "index.js:64789",
+   "index.js:133467",
+   "index.js:133551",
+   "index.js:133841"
+  ],
+  "taskId": [
+   "scripts3.js:3959",
+   "scripts3.js:13955",
+   "scripts3.js:13969",
+   "scripts3.js:16970"
+  ],
+  "task_level": [
+   "scripts3.js:16274",
+   "scripts3.js:16282",
+   "scripts3.js:16328",
+   "scripts3.js:55553"
+  ],
+  "teamItemID": [
+   "scripts3.js:51115"
+  ],
+  "tempTaskId": [
+   "scripts2.js:70833"
+  ],
+  "template": [
+   "scripts3.js:23305",
+   "scripts3.js:23446"
+  ],
+  "textMap": [
+   "scripts2.js:61132"
+  ],
+  "tipSkills": [
+   "scripts2.js:40777"
+  ],
+  "titleID": [
+   "index.js:4190",
+   "index.js:96535",
+   "index.js:96539",
+   "index.js:109733"
+  ],
+  "toString": [
+   "index.js:93205",
+   "index.js:93211",
+   "scripts3.js:80489"
+  ],
+  "trickData": [
+   "scripts3.js:89640",
+   "scripts3.js:89656"
+  ],
+  "tricks": [
+   "scripts3.js:91931"
+  ],
+  "type": [
+   "scripts2.js:27977",
+   "scripts2.js:28262"
+  ],
+  "uiEffIds": [
+   "index.js:73600"
+  ],
+  "unlock_cookbook": [
+   "scripts2.js:33391"
+  ],
+  "unlocklevel": [
+   "scripts3.js:48034"
+  ],
+  "upgradeID": [
+   "scripts2.js:14082"
+  ],
+  "useItemId": [
+   "scripts3.js:27883"
+  ],
+  "usecondition": [
+   "index.js:20655",
+   "index.js:71899",
+   "index.js:75352",
+   "index.js:104904"
+  ],
+  "value": [
+   "scripts2.js:59227",
+   "scripts2.js:59230",
+   "scripts3.js:51722"
+  ],
+  "veinID": [
+   "index.js:66516"
+  ],
+  "weapToSkinData": [
+   "index.js:4227",
+   "index.js:4240",
+   "index.js:4807",
+   "index.js:5003"
+  ],
+  "weaponID": [
+   "index.js:82698",
+   "index.js:95964"
+  ],
+  "weaponSkinId": [
+   "index.js:64878"
+  ],
+  "weaponskinId": [
+   "index.js:95925",
+   "index.js:95968",
+   "index.js:109705",
+   "scripts2.js:12616"
+  ],
+  "weather": [
+   "index.js:22543"
+  ]
+ }
+}

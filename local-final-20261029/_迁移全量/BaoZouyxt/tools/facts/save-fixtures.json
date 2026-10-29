@@ -1,0 +1,118 @@
+{
+  "snapshots": [
+    {
+      "path": "F:\\BaoZouyxt\\_backup\\2026-10-22-012652-pre-bagprobe\\bz_offline_save.json",
+      "bytes": 602,
+      "topKeys": [
+        "accepted",
+        "bag",
+        "baseValueAy",
+        "done",
+        "equipments",
+        "name",
+        "playerEquip",
+        "potential",
+        "rewarded",
+        "roleID",
+        "school",
+        "skills"
+      ],
+      "skills": {
+        "1": "number",
+        "1112": "number",
+        "1262": "number"
+      },
+      "bagCount": 6,
+      "doneCount": 10,
+      "acceptedCount": 11,
+      "potential": 99999
+    },
+    {
+      "path": "F:\\BaoZouyxt\\_backup\\2026-10-22-0205-pre-selfcheck-isolation\\bz_offline_save.json",
+      "bytes": 668,
+      "topKeys": [
+        "accepted",
+        "bag",
+        "baseValueAy",
+        "done",
+        "equipments",
+        "name",
+        "playerEquip",
+        "potential",
+        "rewarded",
+        "roleID",
+        "school",
+        "skills"
+      ],
+      "skills": {
+        "1": "array3",
+        "7": "array3",
+        "8": "array3",
+        "1112": "number",
+        "1262": "number"
+      },
+      "bagCount": 6,
+      "doneCount": 12,
+      "acceptedCount": 12,
+      "potential": 98699
+    },
+    {
+      "path": "F:\\BaoZouyxt\\_backup\\2026-10-22-0232-pre-skill-target\\bz_offline_save.json",
+      "bytes": 669,
+      "topKeys": [
+        "accepted",
+        "bag",
+        "baseValueAy",
+        "done",
+        "equipments",
+        "name",
+        "playerEquip",
+        "potential",
+        "rewarded",
+        "roleID",
+        "school",
+        "skills"
+      ],
+      "skills": {
+        "1": "array3",
+        "7": "array3",
+        "8": "array3",
+        "1112": "number",
+        "1262": "number"
+      },
+      "bagCount": 6,
+      "doneCount": 12,
+      "acceptedCount": 12,
+      "potential": 97599
+    },
+    {
+      "path": "F:\\BaoZouyxt\\_backup\\2026-10-22-0250-pre-pgr-persist\\bz_offline_save.json",
+      "bytes": 686,
+      "topKeys": [
+        "accepted",
+        "bag",
+        "baseValueAy",
+        "done",
+        "equipments",
+        "name",
+        "playerEquip",
+        "potential",
+        "rewarded",
+        "roleID",
+        "school",
+        "skills"
+      ],
+      "skills": {
+        "1": "array3",
+        "7": "array3",
+        "8": "array3",
+        "1112": "number",
+        "1262": "number"
+      },
+      "bagCount": 7,
+      "doneCount": 12,
+      "acceptedCount": 13,
+      "potential": 95199
+    }
+  ]
+}

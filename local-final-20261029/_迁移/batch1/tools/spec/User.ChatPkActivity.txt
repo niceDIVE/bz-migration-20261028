@@ -1,0 +1,99 @@
+# User.ChatPkActivity  (HttpConst.CHAT_PK_ACTIVITY)
+# 出现 2 处
+
+ 24021: a.MessageCenter.on(s.HttpConst.CANCEL_CHAT_PK, function(e, o) {
+ 24022: if (1 == o.eRet && 0 == t.cancelPkState) {
+ 24023: t.reqCloseWorldMatch();
+ 24024: t.startPkFight = !1;
+ 24025: }
+ 24026: }, this);
+ 24027: a.MessageCenter.on(s.HttpConst.CHAT_PK_ACTIVITY, function(t, e) {
+ 24028: if (1 == e.eRet) {
+ 24029: this.chatPkOption = e.option;
+ 24030: a.MessageCenter.dispatch(m.EvName.CHAT_MATCH_NPC_EVENT, e.NpcId);
+ 24031: } else 2 == e.eRet && y.default.show(r.getText(5933));
+ 24032: }, this);
+ 24033: a.MessageCenter.on(s.HttpConst.RECEIVE_CHAT_PK_POINTAWARD, function(t, e) {
+ 24034: e.hasOwnProperty("rewardArray") && E.default.addShowRewardUI1(e.rewardArray, 0, {});
+ 24035: }, this);
+ 24036: a.MessageCenter.on(s.HttpConst.STC_ADDED_MATCH_INFONOTIFY, function(e, o) {
+ 24037: n.getChatPkScoreData(o.Score).id >= 4 && (t.scoreState = !0);
+ 24038: t.startPkFight = !0;
+ 24039: }, this);
+ 24040: a.MessageCenter.on(s.HttpConst.STC_OPEN_MATCH_INTERFACERES, function(e, o) {
+ 24041: t.pkStartTime = o.NowSystemTime;
+ 24042: t.pkEndTime = o.SeasonEndTime;
+ 24043: o.hasOwnProperty("canMatchTime") && o.canMatchTime.length > 1 && (t.canMatchTimeAy = o.canMatchTime);
+ 24044: I.default.prefabs.load("chats/BattleMatch", cc.Prefab, function(t, e) {
+ 24045: var o = cc.instantiate(e);
+ 24046: o.addComponent("ReadyPkUI");
+ 24047: b.PopUpMgr.addPopUp(o, T.LayerMgr.popUpLayer, 1, !0);
+ 24048: });
+ 24049: }, this);
+ 24050: a.MessageCenter.on(s.HttpConst.STC_UPDATE_ROLE_SCORE_NOTIFY, function(e, o) {
+ 24051: o.hasOwnProperty("RoleScore") && (t.scoreArray[1] = o.RoleScore);
+ 24052: }, this);
+ 24053: a.MessageCenter.on(s.HttpConst.STC_WORLD_MATCH_TIP, function(t, e) {
+ 24054: e.hasOwnProperty("UniqueRoleId") && a.MessageCenter.dispatch(m.EvName.CHAT_PK_BURROR_EVENT, e);
+ 24055: }, this);
+ 24056: a.MessageCenter.on(s.HttpConst.RES_WORLD_OFFLINE_MATCH_REC, function(t, e) {
+ 24057: e.hasOwnProperty("show_world_offline_match_battle_record_list") ? a.MessageCenter.dispatch(m.EvName.SHOW_OFFLINE_REC, e.show_world_offline_match_battle_record_list) : cc.log("聊天跨服PK离线对战记录没有收到数据！！！");
+ 24058: }, this);
+ 24059: };
+ 24060: t.prototype.getFirstEnterAward = function() {
+ 24061: h.NetMgr.http.sendRequest(s.HttpConst.RECEIVE_CHAT_PK_POINTAWARD, {});
+ 24062: };
+ 24063: t.prototype.isEnterConnect = function() {
+ 24064: var t = !1;
+ 24065: if (1 == this.chatPkState) {
+ 24066: t = !0;
+ 24067: v.WebSocketModel.openSocketNet("chat");
+---
+ 24202: t.prototype.reqQuickWorldMatch = function(t) {
+ 24203: p.Net.sendMsg(s.HttpConst.CTS_SHORTOUT_WORLD_MATCH_INTERFACE_REQ, {
+ 24204: TargetUniqueRoleId: t
+ 24205: });
+ 24206: };
+ 24207: t.prototype.reqMatchNpcOrRole = function() {
+ 24208: h.NetMgr.http.sendReqWithMask(s.HttpConst.CHAT_PK_ACTIVITY, {});
+ 24209: };
+ 24210: t.prototype.getPkEndTime = function() {
+ 24211: var t = 0;
+ 24212: this.pkEndTime >= this.pkStartTime && (t = Math.floor(this.pkEndTime - this.pkStartTime));
+ 24213: var e = t / 60, o = Math.floor(e / 1440), i = Math.floor(e % 1440 / 60), n = Math.floor(e % 1440 % 60);
+ 24214: n = Math.max(1, n);
+ 24215: var a = r.getText(5973).replace(/\[1\]/, o.toString());
+ 24216: return (a = a.replace(/\[1\]/, i.toString())).replace(/\[1\]/, n.toString());
+ 24217: };
+ 24218: t.prototype.reqOfflineMatchRec = function() {
+ 24219: h.NetMgr.chatPkHttp.sendRequest(s.HttpConst.REQ_WORLD_OFFLINE_MATCH_REC, o.ChatVSFightModel.roleUniqueId, null, !0);
+ 24220: };
+ 24221: t.prototype.destroy = function() {
+ 24222: this.chatPKReward = {};
+ 24223: this.hungData = {};
+ 24224: this.scoreArray = [];
+ 24225: this.chatPkState = 0;
+ 24226: this.cancelPkState = 0;
+ 24227: };
+ 24228: return t;
+ 24229: }();
+ 24230: o.ChatVSFightModel = new A();
+ 24231: cc._RF.pop();
+ 24232: }, {
+ 24233: "../battlesystem/SkillTypes": "SkillTypes",
+ 24234: "../core/events/MessageCenter": "MessageCenter",
+ 24235: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 24236: "../gameconfigs/CFMgr": "CFMgr",
+ 24237: "../gameconfigs/LangMgr": "LangMgr",
+ 24238: "../gui/uicomponents/Alert": "Alert",
+ 24239: "../mgrs/BattleMgr": "BattleMgr",
+ 24240: "../mgrs/BundleMgr": "BundleMgr",
+ 24241: "../mgrs/LayerMgr": "LayerMgr",
+ 24242: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+ 24243: "../models/vos/RoleBaseInfo": "RoleBaseInfo",
+ 24244: "../net/HttpConst": "HttpConst",
+ 24245: "../net/Net": "Net",
+ 24246: "../net/NetMgr": "NetMgr",
+ 24247: "../utils/EvName": "EvName",
+ 24248: "./InhertEquipModel": "InhertEquipModel",
+---

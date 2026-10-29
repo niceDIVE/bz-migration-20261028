@@ -1,0 +1,255 @@
+### SelectAppearanceUI ###
+
+=== onLoad ===
+function() {
+t.prototype.onLoad.call(this);
+if (I.LoginMgr.judgeLangEn()) {
+this.itemTemplate = this.getPathByNode("toggle_1");
+this.itemTemplate.removeFromParent(!1);
+}
+}
+
+=== start ===
+function() {
+this.btnLabel.node.color = cc.color(150, 150, 150, 255);
+var t = m.ChangeBirthModel.appearId;
+0 == this.type && h.talkDataModel.reqTalkData(h.TalkDataEnum.Choice_Appearance);
+var e = d.RoleBaseInfo.appearId;
+this.setAppearArr(e);
+var o = 0;
+if (1 == this.type) o = parseInt(a.getItem(e, "creat_role").Price); else if (t > 0) {
+var i = m.ChangeBirthModel.sexId;
+e = t;
+d.RoleBaseInfo.sexId != i && (e = 0 == i ? t + 10 : t - 10);
+for (var s = 0; s < this.appearArr.length; s++) if (e < this.appearArr[s]) {
+this.appearArr[s] = e;
+this.appearArr.splice(s + 1, this.appearArr.length - s - 1);
+} else e == this.appearArr[s] && this.appearArr.splice(s + 1, this.appearArr.length - s - 1);
+o = parseInt(a.getItem(e, "creat_role").Price);
+}
+var n = this.appearArr.length, r = -1;
+for (s = 0; s < n; s++) if (cc.isValid(this.toggleContainer)) {
+var l = cc.instantiate(this.itemTemplate);
+l.active = !0;
+this.toggleContainer.addChild(l);
+1 == n ? l.setPosition(0, 0) : l.setPosition(0, 30 * n - 60 * s * n / (n - 1));
+var p = l.getComponent(cc.Toggle), u = a.getItem(this.appearArr[s], "creat_role"), g = l.getChildByName("label").getComponent(cc.Label), f = l.getChildByName("money").getComponent(cc.Label), v = parseInt(u.Price) - o;
+p.checkEvents[0].customEventData = String(s);
+g.string = c.getText(this.appearArr[s]);
+f.string = String(v > 0 ? v : 0);
+if (1 == this.type) {
+if (this.appearArr[s] == e) {
+r = s;
+g.string = c.getText(7228);
+p.isChecked = !0;
+}
+} else {
+this.appearArr[s] == e && (g.string = c.getText(7228));
+p.isChecked = s == n - 1;
+r = s;
+s == n - 1 && (this.former = p);
+}
+}
+this.onSelectAppear(this.former, r);
+}
+
+=== setAppearArr ===
+function(t) {
+if (1 == this.type) {
+var e = m.ChangeBirthModel.nBirthIdId;
+0 == e && (e = m.ChangeBirthModel.birthIdId);
+switch (e) {
+case 279:
+this.appearArr = [ 292, 294, 297, 300 ];
+break;
+
+case 280:
+this.appearArr = [ 293, 296, 298, 300 ];
+break;
+
+case 281:
+this.appearArr = [ 295, 297, 299, 301 ];
+break;
+
+case 282:
+this.appearArr = [ 296, 298, 299, 301 ];
+break;
+
+case 283:
+this.appearArr = [ 302, 304, 307, 310 ];
+break;
+
+case 284:
+this.appearArr = [ 303, 306, 308, 310 ];
+break;
+
+case 285:
+this.appearArr = [ 305, 307, 309, 311 ];
+break;
+
+case 286:
+this.appearArr = [ 306, 308, 309, 311 ];
+}
+for (var o = !0, i = 0; i < this.appearArr.length; i++) {
+if (this.appearArr[i] == t) {
+this.appearArr.splice(i + 1, this.appearArr.length - i - 1);
+o = !1;
+break;
+}
+if (this.appearArr[i] > t) {
+o = !1;
+this.appearArr.splice(i, this.appearArr.length - i, t);
+break;
+}
+}
+o && this.appearArr.splice(this.appearArr.length, 0, t);
+} else 0 == d.RoleBaseInfo.sexId ? this.appearArr = [ 298, 301 ] : this.appearArr = [ 308, 311 ];
+}
+
+=== onClick ===
+function() {}
+
+=== onToggled ===
+function(t, e) {
+1 == t.isChecked ? this.onSelectAppear(t, parseInt(e)) : this.former = t;
+}
+
+=== onSelectAppear ===
+function(t, e) {
+var o = this, i = a.getItem(this.appearArr[e], "creat_role"), s = parseInt(i.Price);
+if (1 == this.type) {
+var n = m.ChangeBirthModel.nBirthIdId > 0 ? m.ChangeBirthModel.nBirthIdId : m.ChangeBirthModel.birthIdId, r = a.getItem(n, "creat_role"), h = a.getItem(m.ChangeBirthModel.birthIdId, "creat_role"), u = a.getItem(m.ChangeBirthModel.appearId, "creat_role");
+s += parseInt(r.Price) - parseInt(h.Price) - parseInt(u.Price);
+} else if (m.ChangeBirthModel.appearId > 0) {
+u = a.getItem(m.ChangeBirthModel.appearId, "creat_role");
+s -= parseInt(u.Price);
+}
+if (s > d.RoleBaseInfo.gold && 0 == this.type && this.former) {
+this.former.isChecked = !0;
+t.isChecked = !1;
+g.default.show(c.getText(288));
+} else {
+this.former = t;
+if (this.appearId != this.appearArr[e]) {
+this.appearId = this.appearArr[e];
+var f = a.getCreateRole(this.appearId).Award[1];
+this.dressScript ? this.dressScript.changePreviewFace(f) : l.default.prefabs.load("home/RoleDressUI", cc.Prefab, function(t, e) {
+var i = cc.instantiate(e);
+i.active = !1;
+o.dressScript = i.addComponent("RoleDressUI");
+i.setPosition(-160, -160);
+var s = p.calAppearance(10, 0, f), n = {
+bValue: p.calBody(0),
+fValue: s,
+equipments: {
+1: 0,
+2: 0,
+3: 0,
+4: 0,
+5: 0,
+6: 0,
+7: 0
+},
+equips: {}
+};
+o.dressScript.setDressData(n, -1, 0);
+o.imageNode && o.imageNode.addChild(i);
+i.active = !0;
+});
+this.goldText.string = String(d.RoleBaseInfo.gold - s > 0 ? d.RoleBaseInfo.gold - s : 0);
+this.btnLabel.node.color = cc.color(0, 0, 0, 255);
+}
+}
+}
+
+=== onNextPage ===
+function() {
+var t = this;
+if (this.appearId > 0) {
+var e = "", o = f.LayerMgr.topLayer;
+if (0 == this.type) {
+d.RoleBaseInfo.appearId = this.appearId;
+e = "ShowTalentUI";
+} else {
+m.ChangeBirthModel.nAppearId = this.appearId;
+e = m.ChangeBirthModel.checkJumpTo(2, 1);
+o = f.LayerMgr.popUpLayer;
+}
+l.default.prefabs.load("Login/" + e, cc.Prefab, function(e, i) {
+var s = cc.instantiate(i);
+r.PopUpMgr.removePopUp(t.node);
+r.PopUpMgr.addPopUp(s, o, 0);
+});
+}
+}
+
+=== onBackBtn ===
+function() {
+var t = this, e = "SelectIdUI", o = f.LayerMgr.topLayer;
+if (0 == this.type) e = "SelectSexUI"; else {
+if (0 == m.ChangeBirthModel.nBirthIdId) {
+v.MessageCenter.dispatch(y.EvName.QUIT_CHANGE_BIRTH);
+r.PopUpMgr.removePopUp(this.node);
+return;
+}
+o = f.LayerMgr.popUpLayer;
+m.ChangeBirthModel.nBirthIdId = 0;
+}
+l.default.prefabs.load("Login/" + e, cc.Prefab, function(e, i) {
+var s = cc.instantiate(i);
+r.PopUpMgr.removePopUp(t.node);
+r.PopUpMgr.addPopUp(s, o, 0);
+});
+}
+
+=== tipClickBtn ===
+function() {
+f.LayerMgr.popUpLayer = f.LayerMgr.popUpLayer1 = this.node.parent;
+g.default.show(c.getText("312"));
+}
+
+=== onDestroy ===
+function() {
+t.prototype.onDestroy.call(this);
+I.LoginMgr.judgeLangEn() && this.itemTemplate.destroy();
+}
+
+### instance fields ###
+_super = null
+_name = ""
+_objFlags = 124928
+__scriptAsset = false
+_enabled = true
+_id = "Comp.2928"
+__eventTargets = []
+viewMap = {}
+lbMap = {}
+data = null
+prefabName = "Login/SelectAppearanceUI"
+paths = {}
+isOnClick = true
+lastToggle = null
+prefabMap = null
+_tHandler = null
+_delayTween = null
+_closeEvents = []
+appearId = 311
+appearArr = [308,311]
+type = 0
+name = "SelectAppearanceUI<SelectAppearanceUI>"
+uuid = "Comp.2928"
+enabled = true
+enabledInHierarchy = true
+_isOnLoadCalled = 16384
+update = null
+lateUpdate = null
+__preload = null
+onEnable = null
+onFocusInEditor = null
+onLostFocusInEditor = null
+resetInEditor = null
+_getLocalBounds = null
+onRestore = null
+__scriptUuid = ""
+isValid = true
+_deserialize = null

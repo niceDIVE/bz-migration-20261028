@@ -1,0 +1,1 @@
+get:(function(){var sc=cc.director.getScene();return sc.children.map(function(t){return (t.name||'?')+'子'+(t.children?t.children.length:0)+'组'+(t.components?t.components.length:0)}).join(' | ')})()

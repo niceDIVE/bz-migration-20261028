@@ -1,0 +1,306 @@
+{
+ "archivedAt": "2026-10-27T12:07:52.035Z",
+ "rules": [
+  {
+   "id": "c19-getSkillSkinShop",
+   "action": "getSkillSkinShop",
+   "field": [
+    "eRet",
+    "price",
+    "freeTime",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22"
+   ],
+   "expect": 25,
+   "allowSigma": [
+    [
+     "getSkillSkinShop",
+     "eRet"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.price"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.freeTime"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.1"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.2"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.3"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.4"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.5"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.6"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.7"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.8"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.9"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.10"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.11"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.12"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.13"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.14"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.15"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.16"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.17"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.18"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.19"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.20"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.21"
+    ],
+    [
+     "getSkillSkinShop",
+     "shopData.ds.22"
+    ]
+   ],
+   "ev": "index.js:60558",
+   "why": "C19 货架门（scripts3.js:82904-82916）：eRet1 + shopData.ds{22 行 type=1:已购数} + price=20 元宝/次（自定申报）+ freeTime=0；eRet==1 才 showShop 开 SkinShopUI。"
+  },
+  {
+   "id": "c19-getSkillSkinActiveShop",
+   "action": "getSkillSkinActiveShop",
+   "field": [
+    "eRet",
+    "endTime",
+    "shopDatas",
+    "isSelect"
+   ],
+   "expect": 16,
+   "allowSigma": [
+    [
+     "getSkillSkinActiveShop",
+     "eRet"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "endTime"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "isSelect"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[0]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[1]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[2]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[3]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[4]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[5]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[6]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[7]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[8]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[9]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[10]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[11]"
+    ],
+    [
+     "getSkillSkinActiveShop",
+     "shopDatas[12]"
+    ]
+   ],
+   "ev": "index.js:60569",
+   "why": "C19 活动商店门（scripts3.js:82829-82836）：eRet1 + endTime(now+30 天常开) + shopDatas=13 个 type=2 行 id + isSelect=0；GET_SKIN_ACTIVE_DATA → 活动页 1027 切页。"
+  },
+  {
+   "id": "c19-buySkillSkinShop",
+   "action": "buySkillSkinShop",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "buySkillSkinShop",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60560",
+   "why": "C19 买道具（82873）：空请求 id=0 非 type=1 → eRet 2（监听只有 1 分支）；成功路径才带 shopData.ds/rewardArray/note。"
+  },
+  {
+   "id": "c19-buySkillSkinActiveShop",
+   "action": "buySkillSkinActiveShop",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "buySkillSkinActiveShop",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60570",
+   "why": "C19 买活动皮肤（82815）：空请求 ids 空 → eRet 2（2→6003145 提示）；成功路径带 rewardSkillSkin/isSelect/note。"
+  },
+  {
+   "id": "c19-refreshSkillSkinShop",
+   "action": "refreshSkillSkinShop",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "refreshSkillSkinShop",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60559",
+   "why": "C19 刷新（82885）：空请求（清档元宝 0 < 20）→ eRet 2；成功路径带 shopData + note.eco。"
+  },
+  {
+   "id": "c19-equipSkillSkin",
+   "action": "equipSkillSkin",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "equipSkillSkin",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60561",
+   "why": "C19 装皮肤（82854）：空请求未拥有 → eRet 2；成功路径带 skillSkinWeap。"
+  },
+  {
+   "id": "c19-removeSkillSkin",
+   "action": "removeSkillSkin",
+   "field": [
+    "eRet",
+    "skillSkinWeap",
+    "0"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "removeSkillSkin",
+     "eRet"
+    ],
+    [
+     "removeSkillSkin",
+     "skillSkinWeap.0"
+    ]
+   ],
+   "ev": "index.js:60562",
+   "why": "C19 卸皮肤（82842）：eRet1 + skillSkinWeap{槽:0}（成功路径，无前置校验）。"
+  }
+ ]
+}

@@ -1,0 +1,311 @@
+{
+  "verdict": "FAIL",
+  "cases": 11,
+  "byVia": {
+    "stub": 6,
+    "rule": 3,
+    "stub-unsafe": 2
+  },
+  "rejected": [],
+  "l0": "not-run",
+  "l2": "not-run",
+  "judge": {
+    "cases": 11,
+    "pass": 9,
+    "fail": 2,
+    "crossFail": 0,
+    "noSaveCases": 0,
+    "noProbeCases": 11,
+    "byCode": {
+      "FAIL L1.REQUIRED": 11,
+      "INFO L1.OPEN_CONTRACT": 1
+    }
+  },
+  "regressions": 9,
+  "regress": [
+    {
+      "id": "upgradeSkill.orig0036",
+      "action": "User.upgradeSkill",
+      "via": "stub",
+      "diffs": [
+        {
+          "path": "$.note",
+          "a": {
+            "eco": {},
+            "skch": {
+              "1262": [
+                1,
+                0,
+                0
+              ]
+            }
+          },
+          "kind": "missingB"
+        }
+      ]
+    },
+    {
+      "id": "useItem.food3001",
+      "action": "User.useItem",
+      "via": "stub",
+      "diffs": [
+        {
+          "path": "$.note",
+          "a": {
+            "ivch": {
+              "3001": 4
+            },
+            "attrch": {
+              "hunger": 80
+            }
+          },
+          "kind": "missingB"
+        }
+      ]
+    },
+    {
+      "id": "useItem.formula3101",
+      "action": "User.useItem",
+      "via": "stub",
+      "diffs": [
+        {
+          "path": "$.formulaID",
+          "a": 501,
+          "kind": "missingB"
+        },
+        {
+          "path": "$.note",
+          "a": {
+            "ivch": {
+              "3101": 0
+            }
+          },
+          "kind": "missingB"
+        }
+      ]
+    },
+    {
+      "id": "saleItem.equip90001",
+      "action": "User.saleItem",
+      "via": "rule",
+      "diffs": [
+        {
+          "path": "$.eRet",
+          "a": 1,
+          "b": 0,
+          "kind": "value"
+        },
+        {
+          "path": "$.note",
+          "a": {
+            "eqch": {
+              "90001": [
+                0
+              ]
+            },
+            "eco": {
+              "coins": 1030
+            }
+          },
+          "kind": "missingB"
+        }
+      ]
+    },
+    {
+      "id": "BuyFashion.90002",
+      "action": "User.BuyFashion",
+      "via": "stub",
+      "diffs": [
+        {
+          "path": "$.note",
+          "a": {
+            "eqch": {
+              "90002": [
+                1,
+                [
+                  7,
+                  1
+                ]
+              ]
+            },
+            "eco": {
+              "gold": 40
+            }
+          },
+          "kind": "missingB"
+        }
+      ]
+    },
+    {
+      "id": "LoadGame.base",
+      "action": "User.LoadGame",
+      "via": "stub-unsafe",
+      "diffs": [
+        {
+          "path": "$.finishTaskObj",
+          "a": [
+            "101080,1"
+          ],
+          "kind": "missingB"
+        },
+        {
+          "path": "$.acceptTaskArray",
+          "a": [],
+          "kind": "missingB"
+        },
+        {
+          "path": "$.acceptTaskOrder",
+          "a": [],
+          "kind": "missingB"
+        },
+        {
+          "path": "$.taskLog",
+          "a": {},
+          "kind": "missingB"
+        },
+        {
+          "path": "$.itemObj",
+          "a": {
+            "2001": 5,
+            "3001": 5,
+            "3101": 1
+          },
+          "kind": "missingB"
+        }
+      ]
+    },
+    {
+      "id": "sycnPlayerItemData.base",
+      "action": "User.sycnPlayerItemData",
+      "via": "stub-unsafe",
+      "diffs": [
+        {
+          "path": "$.itemObj",
+          "a": {
+            "2001": 5,
+            "3001": 5,
+            "3101": 1
+          },
+          "kind": "missingB"
+        }
+      ]
+    },
+    {
+      "id": "GetPayAward.blocked",
+      "action": "User.GetPayAward",
+      "via": "stub",
+      "diffs": [
+        {
+          "path": "$.reason",
+          "a": "PAY_BLOCKED",
+          "kind": "missingB"
+        }
+      ]
+    },
+    {
+      "id": "upgradeSkill.ptt",
+      "action": "User.upgradeSkill",
+      "via": "stub",
+      "diffs": [
+        {
+          "path": "$.note",
+          "a": {
+            "eco": {
+              "ptt": 200
+            },
+            "skch": {
+              "1112": [
+                3,
+                0,
+                1
+              ]
+            }
+          },
+          "kind": "missingB"
+        }
+      ]
+    }
+  ],
+  "perCase": [
+    {
+      "id": "upgradeSkill.orig0036@replay",
+      "action": "User.upgradeSkill",
+      "verdict": "PASS",
+      "fails": []
+    },
+    {
+      "id": "useItem.food3001@replay",
+      "action": "User.useItem",
+      "verdict": "PASS",
+      "fails": []
+    },
+    {
+      "id": "useItem.formula3101@replay",
+      "action": "User.useItem",
+      "verdict": "PASS",
+      "fails": []
+    },
+    {
+      "id": "saleItem.equip90001@replay",
+      "action": "User.saleItem",
+      "verdict": "PASS",
+      "fails": []
+    },
+    {
+      "id": "BuyFashion.90002@replay",
+      "action": "User.BuyFashion",
+      "verdict": "PASS",
+      "fails": []
+    },
+    {
+      "id": "LoadGame.base@replay",
+      "action": "User.LoadGame",
+      "verdict": "FAIL",
+      "fails": [
+        "L1.REQUIRED 缺必回字段 finishTaskObj",
+        "L1.REQUIRED 缺必回字段 acceptTaskArray",
+        "L1.REQUIRED 缺必回字段 acceptTaskOrder",
+        "L1.REQUIRED 缺必回字段 taskLog",
+        "L1.REQUIRED 缺必回字段 itemObj",
+        "L1.REQUIRED 缺必回字段 PlayerEquip",
+        "L1.REQUIRED 缺必回字段 equipments",
+        "L1.REQUIRED 缺必回字段 cycleObj",
+        "L1.REQUIRED 缺必回字段 OnhookObj.serverTime",
+        "L1.REQUIRED 缺必回字段 baseValueAy"
+      ]
+    },
+    {
+      "id": "sycnPlayerItemData.base@replay",
+      "action": "User.sycnPlayerItemData",
+      "verdict": "FAIL",
+      "fails": [
+        "L1.REQUIRED 缺必回字段 itemObj"
+      ]
+    },
+    {
+      "id": "GetPayAward.blocked@replay",
+      "action": "User.GetPayAward",
+      "verdict": "PASS",
+      "fails": []
+    },
+    {
+      "id": "upgradeSkill.ptt@replay",
+      "action": "User.upgradeSkill",
+      "verdict": "PASS",
+      "fails": []
+    },
+    {
+      "id": "buyShopItem.2001x2@replay",
+      "action": "User.buyShopItem",
+      "verdict": "PASS",
+      "fails": []
+    },
+    {
+      "id": "saleItem.2001x2@replay",
+      "action": "User.saleItem",
+      "verdict": "PASS",
+      "fails": []
+    }
+  ],
+  "totalMs": 9.26
+}

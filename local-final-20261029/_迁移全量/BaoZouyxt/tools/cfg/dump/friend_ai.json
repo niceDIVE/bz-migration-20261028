@@ -1,0 +1,1 @@
+{"name":"friend_ai","rows":1,"cols":["id","battletype","condition1","tag","interval","event","data","talk","text","bubble","shake","zhenping"],"data":{"1":{"id":1,"battletype":1,"condition1":"6:0","tag":0,"interval":999,"event":1,"data":4591,"talk":1,"text":4591,"bubble":"1","shake":0,"zhenping":0}}}

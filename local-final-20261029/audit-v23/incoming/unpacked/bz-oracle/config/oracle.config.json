@@ -1,0 +1,128 @@
+{
+  "_说明": "裁判配置。标 TODO 的项需按仓库真实值替换；其余取自 R21 材料，括号里是出处。",
+  "payActionRe": "(?i)(pay|recharge|order|product|wxPay|aliPay|IphonePay|IosChooseProduct|PaymentCallBack|getPaySginData|h5Pay)",
+  "_payActionRe_TODO": "替换为 bz-rpc-server.js 里真实的 PAY_ACTION_RE（全量 §二）；默认正则只是按 M1 动作名猜的",
+  "payBlockedERet": 4,
+  "noteKeys": {
+    "known": [
+      "ivch",
+      "eqch",
+      "eco",
+      "skch",
+      "attrch",
+      "gemch"
+    ],
+    "_来源": "M4 §0 五键 + M2 scripts3.js:24482 的 note.gemch"
+  },
+  "eco": {
+    "keys": [
+      "coins",
+      "ptt",
+      "gold",
+      "exp",
+      "chips",
+      "yuanbao"
+    ],
+    "saveMap": {
+      "coins": "coins",
+      "ptt": "potential",
+      "gold": "gold",
+      "yuanbao": "yuanbao",
+      "chips": "chip"
+    },
+    "_来源": "M4 §3 已证子键；saveMap 来自 M3 §1",
+    "derived": [
+      "exp"
+    ],
+    "_derived": "eco.exp 写 entity.exp/RoleBaseInfo.exp（M4:79），M3 无存档字段：不对账，只查是数字"
+  },
+  "attrch": {
+    "known": [
+      "mpTrained",
+      "mpbase",
+      "hpbase",
+      "curmp",
+      "curhp",
+      "hplmt",
+      "exp",
+      "evil",
+      "school",
+      "seniorSchool",
+      "ndeath",
+      "hunger"
+    ],
+    "unknownIs": "WARN",
+    "hungerMax": 10000000,
+    "_来源": "M4 §5；switch 未读到结尾（M4 §7.1），所以未知键只报 WARN",
+    "persistent": {
+      "hunger": "hunger",
+      "school": "school"
+    },
+    "derived": [
+      "mpTrained",
+      "mpbase",
+      "hpbase",
+      "curmp",
+      "curhp",
+      "hplmt",
+      "exp",
+      "evil",
+      "seniorSchool",
+      "ndeath"
+    ],
+    "_分类": "处置验收 §六（2026-10-23）：按 M3 有无存档字段二分。persistent（M3:28 hunger、M3:37 school）进投射与对账，L1 查绝对值与完备性；derived 是客户端活值 setter（M4:109），不进对账，L1 只查形状，离线模型报 UNMODELED，由 fuzz + 真机 L2 验证。若真实 bz-rpc-server.js 证实某 derived 键有存档字段，则移入 persistent 并补 M3。"
+  },
+  "currencyItemIds": [
+    1,
+    4001,
+    4002,
+    4003,
+    8888
+  ],
+  "_currency来源": "全量 §七 货币 id → 钱包；货币不得进背包（M4 §3 已知坑）",
+  "paidCurrencyKeys": [
+    "yuanbao"
+  ],
+  "volatileKeyRe": "([Tt]ime|[Ss]tamp|^now$|^ts$|serverT)",
+  "idKeyRe": "^(roleID|account|uid|token|sessionId)$",
+  "snapshotDomains": [
+    "bag",
+    "wallet",
+    "skills",
+    "equips",
+    "attrs"
+  ],
+  "l2": {
+    "expectedFromSave": {
+      "bag": "save.bag (去掉 0 值)",
+      "wallet": "eco.saveMap 映射",
+      "skills": "save.skills",
+      "equips": "save.playerEquip"
+    }
+  },
+  "toastAllow": [],
+  "noContractIs": "FAIL",
+  "_noContractIs": "中层审计 A2#1：无契约动作字段检查为零，默认 FAIL；只做取证判级（HAR、--layers L1）时可临时改 WARN",
+  "noProbeIs": "FAIL",
+  "_noProbeIs": "中层审计 A2#5：probe.mode=none 时 L0 失明，默认 FAIL",
+  "metaEscapes": {
+    "_说明": "中层审计 A2#2：case.meta 豁免只在这里登记过才生效。每条必须写 why（证据行号）；不在此表的 meta.abolish / fullReload / l4Allow 一律忽略并报 META_IGNORED",
+    "User.LoadGame": {
+      "fullReload": true,
+      "why": "全量重建路径：客户端 LoadGame 整体重建状态，不走 note（R21 全量 §八）"
+    },
+    "User.sycnPlayerItemData": {
+      "fullReload": true,
+      "why": "全量 itemObj 同步，客户端整表替换（R21 全量 §八）"
+    }
+  },
+  "rejectForms": [
+    {
+      "name": "bare-errorCode",
+      "key": "errorCode",
+      "okValue": 0,
+      "source": "R22 §三.1 / D2-抓包与M09取证报告（2026-10-24 真服实测）：非法 uid、无此物品、出售已穿戴装备三种场景都回裸 {\"errorCode\":1}，在信封外，没有 code/MsgData",
+      "clientHandling": "材料未提供：M2 中没有任何 errorCode 读点（grep 0 命中），客户端在 MessageCenter 之前怎么处理它尚未取证"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "_说明": "A2 复现用例 FP3：probe.mode=none（探针没挂上）时异常探针失效为 WARN。case 本身无异常记录——真实客户端监听器若抛异常，离线/无探针场景下永远看不到。verdict 仍 PASS。",
+  "id": "FP3.probe-none", "action": "User.buyShopItem", "probe": { "mode": "none" },
+  "req": { "mod": "User", "do": "buyShopItem", "p": { "itemID": 2001, "num": 2 } },
+  "resp": { "eRet": 1, "note": { "ivch": { "2001": 7 }, "eco": { "coins": 880 } } },
+  "saveBefore": { "coins": 1000, "bag": { "2001": 5 } },
+  "saveAfter": { "coins": 880, "bag": { "2001": 7 } },
+  "exceptions": [], "toasts": []
+}

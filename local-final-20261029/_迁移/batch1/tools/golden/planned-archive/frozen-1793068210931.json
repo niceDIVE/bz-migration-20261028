@@ -1,0 +1,605 @@
+{
+ "archivedAt": "2026-10-27T02:30:10.931Z",
+ "rules": [
+  {
+   "id": "c12-buyHelper",
+   "field": [
+    "eRet"
+   ],
+   "action": "buyHelper",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "buyHelper",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60397",
+   "why": "C12 买管家：空请求 helperId=0 不在表 → eRet 4（客户端 openChargeList 分支 23167，同 BuyMount 先例）；成功路径才带 housekeeper.helperIdArr + note.eco.yuanbao"
+  },
+  {
+   "id": "c12-buyMonthlyFee",
+   "field": [
+    "eRet"
+   ],
+   "action": "buyMonthlyFee",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "buyMonthlyFee",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60398",
+   "why": "C12 月卡（★线上名 User.buyMonthlyFee）：空请求 type=0 非法 → eRet 2（6000402 分支 23193）；拍板②自定 300 元宝/30 天；成功才带 housekeeper.dueTime（毫秒）"
+  },
+  {
+   "id": "c12-callHelperId",
+   "field": [
+    "eRet"
+   ],
+   "action": "callHelperId",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "callHelperId",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60564",
+   "why": "C12 呼叫管家（★线上名 callHelperId）：空请求未拥有 → eRet 2（无 else 静默，23235-23245）；housekeeper 字段有守卫"
+  },
+  {
+   "id": "c12-dispatch",
+   "field": [
+    "eRet",
+    "helperId",
+    "dueTime",
+    "task",
+    "taskArr",
+    "noticeArr",
+    "noticeIndex",
+    "template",
+    "dispatchTime",
+    "dispatchEndTime",
+    "autoTime",
+    "evaluateType",
+    "type",
+    "taskRtm",
+    "noticeRtm",
+    "taskNum",
+    "mapId",
+    "templateInitTime",
+    "templateTask",
+    "matureArr",
+    "helperIdArr",
+    "helperRewardArr",
+    "e",
+    "tgd",
+    "curTime",
+    "canNoticeNum",
+    "ivch",
+    "eqch",
+    "attrch",
+    "yuanbao"
+   ],
+   "action": "dispatch",
+   "expect": 30,
+   "allowSigma": [
+    [
+     "dispatch",
+     "eRet"
+    ],
+    [
+     "dispatch",
+     "housekeeper.helperId"
+    ],
+    [
+     "dispatch",
+     "housekeeper.dueTime"
+    ],
+    [
+     "dispatch",
+     "housekeeper.task"
+    ],
+    [
+     "dispatch",
+     "housekeeper.taskArr"
+    ],
+    [
+     "dispatch",
+     "housekeeper.noticeArr"
+    ],
+    [
+     "dispatch",
+     "housekeeper.noticeIndex"
+    ],
+    [
+     "dispatch",
+     "housekeeper.template"
+    ],
+    [
+     "dispatch",
+     "housekeeper.dispatchTime"
+    ],
+    [
+     "dispatch",
+     "housekeeper.dispatchEndTime"
+    ],
+    [
+     "dispatch",
+     "housekeeper.autoTime"
+    ],
+    [
+     "dispatch",
+     "housekeeper.evaluateType"
+    ],
+    [
+     "dispatch",
+     "housekeeper.type"
+    ],
+    [
+     "dispatch",
+     "housekeeper.taskRtm"
+    ],
+    [
+     "dispatch",
+     "housekeeper.noticeRtm"
+    ],
+    [
+     "dispatch",
+     "housekeeper.taskNum"
+    ],
+    [
+     "dispatch",
+     "housekeeper.mapId"
+    ],
+    [
+     "dispatch",
+     "housekeeper.templateInitTime"
+    ],
+    [
+     "dispatch",
+     "housekeeper.templateTask"
+    ],
+    [
+     "dispatch",
+     "housekeeper.matureArr"
+    ],
+    [
+     "dispatch",
+     "housekeeper.helperIdArr"
+    ],
+    [
+     "dispatch",
+     "housekeeper.helperRewardArr"
+    ],
+    [
+     "dispatch",
+     "housekeeper.e"
+    ],
+    [
+     "dispatch",
+     "housekeeper.tgd"
+    ],
+    [
+     "dispatch",
+     "housekeeper.curTime"
+    ],
+    [
+     "dispatch",
+     "housekeeper.canNoticeNum"
+    ],
+    [
+     "dispatch",
+     "note.ivch"
+    ],
+    [
+     "dispatch",
+     "note.eqch"
+    ],
+    [
+     "dispatch",
+     "note.attrch"
+    ],
+    [
+     "dispatch",
+     "note.eco.yuanbao"
+    ]
+   ],
+   "ev": "index.js:60394",
+   "why": "C12 派遣（★线上名 User.dispatch）：空请求 fresh 档不忙 → 派遣成功落档（dispatchTime/dispatchEndTime=now+30min/mapId=0，拍板③档 A），housekeeper 全量回 + note 四键（★成功分支裸读 o.note.eco.yuanbao 23125）"
+  },
+  {
+   "id": "c12-dispatchAward",
+   "field": [
+    "eRet"
+   ],
+   "action": "dispatchAward",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "dispatchAward",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60395",
+   "why": "C12 领派遣奖：空请求无进行中派遣 → eRet 3（1530 分支 23151）；其余码走 else 1145 兜底"
+  },
+  {
+   "id": "c12-getHelperCallList",
+   "field": [
+    "eRet",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "action": "getHelperCallList",
+   "expect": 9,
+   "allowSigma": [
+    [
+     "getHelperCallList",
+     "eRet"
+    ],
+    [
+     "getHelperCallList",
+     "callData.1"
+    ],
+    [
+     "getHelperCallList",
+     "callData.2"
+    ],
+    [
+     "getHelperCallList",
+     "callData.3"
+    ],
+    [
+     "getHelperCallList",
+     "callData.4"
+    ],
+    [
+     "getHelperCallList",
+     "callData.5"
+    ],
+    [
+     "getHelperCallList",
+     "callData.6"
+    ],
+    [
+     "getHelperCallList",
+     "callData.7"
+    ],
+    [
+     "getHelperCallList",
+     "callData.8"
+    ]
+   ],
+   "ev": "index.js:60563",
+   "why": "C12 呼叫列表：callData = 8 管家映射（当前跟随=3，其余=1，自定口径）；UI 侧 price<=0||checkBought 自过滤（scripts3.js:20107）"
+  },
+  {
+   "id": "c12-getHousekeeper",
+   "field": [
+    "eRet",
+    "helperId",
+    "dueTime",
+    "task",
+    "taskArr",
+    "noticeArr",
+    "noticeIndex",
+    "template",
+    "dispatchTime",
+    "dispatchEndTime",
+    "autoTime",
+    "evaluateType",
+    "type",
+    "taskRtm",
+    "noticeRtm",
+    "taskNum",
+    "mapId",
+    "templateInitTime",
+    "templateTask",
+    "matureArr",
+    "helperIdArr",
+    "helperRewardArr",
+    "e",
+    "tgd",
+    "curTime",
+    "canNoticeNum"
+   ],
+   "action": "getHousekeeper",
+   "expect": 26,
+   "allowSigma": [
+    [
+     "getHousekeeper",
+     "eRet"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.helperId"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.dueTime"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.task"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.taskArr"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.noticeArr"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.noticeIndex"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.template"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.dispatchTime"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.dispatchEndTime"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.autoTime"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.evaluateType"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.type"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.taskRtm"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.noticeRtm"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.taskNum"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.mapId"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.templateInitTime"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.templateTask"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.matureArr"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.helperIdArr"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.helperRewardArr"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.e"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.tgd"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.curTime"
+    ],
+    [
+     "getHousekeeper",
+     "housekeeper.canNoticeNum"
+    ]
+   ],
+   "ev": "index.js:60393",
+   "why": "C12 面板开关（并入申报）：delegateUI 在它 1 分支 new（scripts3.js:23111）。housekeeper 22 字段全量下发（testFunc 23578-23606 + templates.json create 双源互证）；空档 fresh 值 dueTime=null/noticeRtm=null/type=-1（create 初值），时间戳毫秒"
+  },
+  {
+   "id": "c12-receiveNotice",
+   "field": [
+    "eRet",
+    "helperId",
+    "dueTime",
+    "task",
+    "taskArr",
+    "noticeArr",
+    "noticeIndex",
+    "template",
+    "dispatchTime",
+    "dispatchEndTime",
+    "autoTime",
+    "evaluateType",
+    "type",
+    "taskRtm",
+    "noticeRtm",
+    "taskNum",
+    "mapId",
+    "templateInitTime",
+    "templateTask",
+    "matureArr",
+    "helperIdArr",
+    "helperRewardArr",
+    "e",
+    "tgd",
+    "curTime",
+    "canNoticeNum",
+    "eventType"
+   ],
+   "action": "receiveNotice",
+   "expect": 27,
+   "allowSigma": [
+    [
+     "receiveNotice",
+     "eRet"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.helperId"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.dueTime"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.task"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.taskArr"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.noticeArr"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.noticeIndex"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.template"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.dispatchTime"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.dispatchEndTime"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.autoTime"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.evaluateType"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.type"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.taskRtm"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.noticeRtm"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.taskNum"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.mapId"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.templateInitTime"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.templateTask"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.matureArr"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.helperIdArr"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.helperRewardArr"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.e"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.tgd"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.curTime"
+    ],
+    [
+     "receiveNotice",
+     "housekeeper.canNoticeNum"
+    ],
+    [
+     "receiveNotice",
+     "eventType"
+    ]
+   ],
+   "ev": "index.js:60402",
+   "why": "C12 通知（第4批顺手键并入申报）：档 A 无通知内容恒 1 no-op，eventType:0 必带（23198/23257 裸读）；housekeeper 全量回；★非 1 → 客户端 dataDestroy（23220）故拒绝码仅 catch 兜底"
+  },
+  {
+   "id": "c12-setHelper",
+   "field": [
+    "eRet"
+   ],
+   "action": "setHelper",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "setHelper",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60396",
+   "why": "C12 设置管家：空请求 helperId=0 未拥有 → eRet 2（6000506 分支 23160）；成功路径才带 housekeeper.helperId（23156 裸读）"
+  },
+  {
+   "id": "c12-setTemplateData",
+   "field": [
+    "eRet"
+   ],
+   "action": "setTemplateData",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "setTemplateData",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60399",
+   "why": "C12 自动派遣模板（并入申报）：空请求 autoTime=-1 非法 → eRet 2（6000332 分支 23132）；档 A 只存 template/autoTime/mapId 不执行"
+  }
+ ]
+}

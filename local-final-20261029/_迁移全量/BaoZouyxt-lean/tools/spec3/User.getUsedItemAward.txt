@@ -1,0 +1,13 @@
+# User.getUsedItemAward   (HttpConst.GET_USEITEM_AWARD)
+
+## 注册点 64938: r.MessageCenter.on(a.HttpConst.GET_USEITEM_AWARD, function(t, o) {
+
+## 请求点 65425: m.NetMgr.http.sendRequest(a.HttpConst.GET_USEITEM_AWARD, {
+   65417: m.NetMgr.http.sendRequest(a.HttpConst.EQUIP_BATCH_RESOLVE, {
+   65418: itemIDs: t
+   65419: });
+   65420: };
+   65421: e.prototype.reqGetItemBox = function(t, e) {
+   65422: void 0 === e && (e = 0);
+   65423: this.curItemId = t;
+   65424: this.boxType = e;

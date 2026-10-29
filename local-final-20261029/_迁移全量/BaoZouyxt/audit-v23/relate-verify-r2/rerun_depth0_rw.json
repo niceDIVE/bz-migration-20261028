@@ -1,0 +1,339 @@
+{
+ "User.BeginTraining": {
+  "reads": [
+   "skills"
+  ],
+  "writes": [],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.BuyAcitivityShop": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [
+   "gold"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.BuyFashion": {
+  "reads": [],
+  "writes": [
+   "bag",
+   "equipments",
+   "gold",
+   "playerEquip"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.Create": {
+  "reads": [
+   "roleID"
+  ],
+  "writes": [
+   "baseValueAy",
+   "coins",
+   "name",
+   "potential",
+   "school",
+   "skills"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.ExChangeJetton": {
+  "reads": [
+   "chip",
+   "gold"
+  ],
+  "writes": [],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.GetSpecialShopData": {
+  "reads": [
+   "gold"
+  ],
+  "writes": [],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.LoadGame": {
+  "reads": [
+   "bag",
+   "baseValueAy",
+   "bloodArr",
+   "chip",
+   "coins",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "name",
+   "playerEquip",
+   "potential",
+   "roleID",
+   "roleSnapshot",
+   "skills",
+   "yuanbao"
+  ],
+  "writes": [
+   "titles"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.OnCheckBreak": {
+  "reads": [
+   "gold"
+  ],
+  "writes": [],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.QuickBuyItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [
+   "coins"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.ReqSelfBattleInfo": {
+  "reads": [
+   "baseValueAy"
+  ],
+  "writes": [],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.UnloadingEuipment": {
+  "reads": [
+   "equipments"
+  ],
+  "writes": [],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.acceptTask": {
+  "reads": [],
+  "writes": [
+   "accepted"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.buyGoodAndEvilShopItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [
+   "contribution"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.buyShopItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [
+   "coins"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.buySpecialShopItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [
+   "gold"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.bzBackfillRewards": {
+  "reads": [
+   "bag",
+   "done"
+  ],
+  "writes": [
+   "rewarded"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.bzGrantCur": {
+  "reads": [
+   "coins",
+   "contribution",
+   "gold",
+   "yuanbao"
+  ],
+  "writes": [],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.bzSeedBag": {
+  "reads": [],
+  "writes": [
+   "bag",
+   "playerEquip"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.exchangeItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.getAchieveData": {
+  "reads": [
+   "achieve"
+  ],
+  "writes": [],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.getFinishTaskAward": {
+  "reads": [],
+  "writes": [
+   "accepted",
+   "done",
+   "rewarded"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.joinSchool": {
+  "reads": [],
+  "writes": [
+   "school"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.quicklogin": {
+  "reads": [
+   "createdAt",
+   "name",
+   "roleID"
+  ],
+  "writes": [],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.rgShopByItem": {
+  "reads": [
+   "bag",
+   "playerEquip"
+  ],
+  "writes": [],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.saleItem": {
+  "reads": [
+   "bag",
+   "equipments"
+  ],
+  "writes": [
+   "coins",
+   "playerEquip"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.sycnPlayerItemData": {
+  "reads": [
+   "playerEquip"
+  ],
+  "writes": [],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.upgradeSkill": {
+  "reads": [
+   "SkillTable"
+  ],
+  "writes": [
+   "bag",
+   "potential",
+   "skills"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.useItem": {
+  "reads": [
+   "bag",
+   "hungerMax"
+  ],
+  "writes": [
+   "hunger",
+   "skills",
+   "titles"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.washAdditionalArr": {
+  "reads": [],
+  "writes": [
+   "bloodArr"
+  ],
+  "via": [
+   "table:H"
+  ]
+ }
+}

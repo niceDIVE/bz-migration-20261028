@@ -1,0 +1,293 @@
+# 四个数字的独立复算报告 (r20-W-G1-recalc)
+
+## 【复算 1：表数】
+### 复算命令与退出码
+命令: `node -e "..."` (读取 tools/cfg/dump 目录与 $out/r18/tables_probe_round1.json)
+退出码: 0
+### 统计数字
+- tools\cfg\dump 全部 *.json 文件数: 444
+- dump_real (排除 item.full.json 与 _index.json): 442
+- client (读取 $out\r18\tables_probe_round1.json 的 names 冒号前名字去重): 454
+- 差集1 (client - dump_real): 12 个
+  * Attribute_conversion (probe 行数: 0)
+  * age_attr (probe 行数: 0)
+  * back (probe 行数: 0)
+  * colorLoad (probe 行数: 0)
+  * luckywash (probe 行数: 0)
+  * notifications (probe 行数: 0)
+  * recharge (probe 行数: 0)
+  * recharge_apple (probe 行数: 0)
+  * recharge_applepaid (probe 行数: 0)
+  * recharge_qq (probe 行数: 0)
+  * recharge_shenhe (probe 行数: 0)
+  * themeactivitie (probe 行数: 0)
+- 差集2 (dump_real - client): 0 个
+- 断言结论: client=454, dump_real=442, 差集1=12, 差集2=0, client = dump_real + 差集1 为 true
+
+## 【复算 2：16 条 catchCode 是否都落在那 79 个动作里】
+### 1. tools\facts\reject-codes.json 顶层键 (16条动作名)
+共 16 条:
+- useItem
+- BeginTraining
+- BuyFashion
+- buyShopItem
+- buySpecialShopItem
+- BuyAcitivityShop
+- exchangeItem
+- buyGoodAndEvilShopItem
+- rgShopByItem
+- QuickBuyItem
+- washAdditionalArr
+- isCycleLife
+- cycleLife
+- specialCycleLife
+- WashMedicine
+- FindFriendByID
+
+### 2. hotfix-patch\core\bz-rpc-server.js 中 H87 与 readList 推导
+- H87 总数: 87
+- H87 中无 ENUM 的名单 (4 个):
+  * bzSeedBag
+  * bzBackfillRewards
+  * bzGrantCur
+  * bzPatch
+- H87 中有 ENUM 但无 MessageCenter.on() 的名单 (3 个):
+  * ChooseServer
+  * TellAction
+  * specialCycleLife
+- readList 数量: 79 (若含 scripts3 专属伙伴动作 getFriendPartner 则为 80，标准口径为 79)
+- readList 名单 (79 个):
+  * GetServerList (ENUM: REQ_SERVER_LIST, 定义: tools/index.js, 注册: tools/index.js)
+  * quicklogin (ENUM: QUICK_LOGIN, 定义: tools/index.js, 注册: tools/index.js)
+  * CheckName (ENUM: USER_CHECK_NAME, 定义: tools/index.js, 注册: tools/index.js)
+  * Create (ENUM: USER_CREATE, 定义: tools/index.js, 注册: tools/index.js)
+  * LoadGame (ENUM: USER_LOADGAME, 定义: tools/index.js, 注册: tools/index.js)
+  * getCRAInfo (ENUM: GET_CREATE_INFO, 定义: tools/index.js, 注册: tools/index.js)
+  * GetChatAddress (ENUM: USER_GETCHATADDRESS, 定义: tools/index.js, 注册: tools/index.js)
+  * acceptTask (ENUM: GET_TASK, 定义: tools/index.js, 注册: tools/index.js)
+  * getFinishTaskAward (ENUM: FINISH_TASK, 定义: tools/index.js, 注册: tools/index.js)
+  * OpenNovice (ENUM: OPEN_NOVICE, 定义: tools/index.js, 注册: tools/index.js)
+  * joinSchool (ENUM: JOIN_SCHOOL, 定义: tools/index.js, 注册: tools/index.js)
+  * upgradeSkill (ENUM: UPGRADE_SKILL_LV, 定义: tools/index.js, 注册: tools/index.js)
+  * BeginMeditation (ENUM: START_DAZUO, 定义: tools/index.js, 注册: tools/index.js)
+  * BeginTraining (ENUM: BEGIN_LIANGONG, 定义: tools/index.js, 注册: tools/index.js)
+  * beginPlayGame (ENUM: BEGIN_PLAY_GAME, 定义: tools/index.js, 注册: tools/index.js)
+  * checkHireOnhook (ENUM: CHECK_HIRE, 定义: tools/index.js, 注册: tools/index.js)
+  * ReqSelfBattleInfo (ENUM: REQ_PVE_BATTLE, 定义: tools/index.js, 注册: tools/index.js)
+  * CheckBattleResult (ENUM: BATTLE_END_REWARD, 定义: tools/index.js, 注册: tools/index.js)
+  * getAllActivity (ENUM: GET_ALL_ACTIVITY, 定义: tools/index.js, 注册: tools/index.js)
+  * getSevenTaskList (ENUM: REQ_SEVENTASK_EVENT, 定义: tools/index.js, 注册: tools/index.js)
+  * getActivityCounts (ENUM: GET_EVERYDAY_ACTIVE, 定义: tools/index.js, 注册: tools/index.js)
+  * getAlchemyData (ENUM: GET_ALCHEMY_DATA, 定义: tools/index.js, 注册: tools/scripts3.js)
+  * getLevelBonusData (ENUM: GET_LEVEL_BONUS_DATA, 定义: tools/index.js, 注册: tools/scripts3.js)
+  * getAchieveData (ENUM: GET_ACHIEVE_DATA, 定义: tools/index.js, 注册: tools/scripts3.js)
+  * isCycleLife (ENUM: IS_CYCLE_LIFE, 定义: tools/index.js, 注册: tools/index.js)
+  * cycleLife (ENUM: CYCLE_LIFE, 定义: tools/index.js, 注册: tools/index.js)
+  * storyExperience (ENUM: STORY_EXPERIENCE, 定义: tools/index.js, 注册: tools/index.js)
+  * GetFashionList (ENUM: GET_FASHION_LIST, 定义: tools/index.js, 注册: tools/index.js)
+  * BuyFashion (ENUM: REQ_BUY_FASHION, 定义: tools/index.js, 注册: tools/index.js)
+  * OnCheckBreak (ENUM: CHECK_BREAK, 定义: tools/index.js, 注册: tools/index.js)
+  * OnHookBreak (ENUM: USER_ONHOOK_BREAK, 定义: tools/index.js, 注册: tools/index.js)
+  * killNpc (ENUM: KILL_NPC, 定义: tools/index.js, 注册: tools/index.js)
+  * BeginSaveNpc (ENUM: BEGINSAVE_NPC, 定义: tools/index.js, 注册: tools/index.js)
+  * EndSaveNpc (ENUM: END_SAVE_NPC, 定义: tools/index.js, 注册: tools/index.js)
+  * GetRoldSaveTime (ENUM: SAVE_GAMETIME, 定义: tools/index.js, 注册: tools/index.js)
+  * BeginFish (ENUM: START_FISHING, 定义: tools/index.js, 注册: tools/index.js)
+  * EndFish (ENUM: END_FISHING, 定义: tools/index.js, 注册: tools/index.js)
+  * LookFishAward (ENUM: CHECK_FISHING_REWARDS, 定义: tools/index.js, 注册: tools/index.js)
+  * BeginPlayWooks (ENUM: BEGIN_WOOD_TRAINING, 定义: tools/index.js, 注册: tools/index.js)
+  * EndPlayWooks (ENUM: END_WOOD_TRAINING, 定义: tools/index.js, 注册: tools/index.js)
+  * closedBook (ENUM: WRITE_BOOK_EVENT, 定义: tools/index.js, 注册: tools/index.js)
+  * WashMedicine (ENUM: WASH_MEDICINE, 定义: tools/index.js, 注册: tools/index.js)
+  * washAdditionalArr (ENUM: WASH_ADDITION, 定义: tools/index.js, 注册: tools/index.js)
+  * CheckOutSchool (ENUM: CHECK_OUT_SCHOOL, 定义: tools/index.js, 注册: tools/index.js)
+  * OutSchool (ENUM: LEVEAL_SCHOOL, 定义: tools/index.js, 注册: tools/index.js)
+  * enterWoldBossBattle (ENUM: FIGHT_WORLD_BOSS, 定义: tools/index.js, 注册: tools/index.js)
+  * checkUploadAttackDamge (ENUM: UPLOAD_WB_DMG, 定义: tools/index.js, 注册: tools/index.js)
+  * ExChangeJetton (ENUM: EXCHANFE_JETTON, 定义: tools/index.js, 注册: tools/index.js)
+  * FriendList (ENUM: USER_FRIENDLIST, 定义: tools/index.js, 注册: tools/index.js)
+  * ApplyFriend (ENUM: USER_APPLAYFRIEND, 定义: tools/index.js, 注册: tools/index.js)
+  * FindFriend (ENUM: USER_FIND_FRIEND, 定义: tools/index.js, 注册: tools/index.js)
+  * FindFriendByID (ENUM: FINS_FRIENDID, 定义: tools/index.js, 注册: tools/index.js)
+  * FriendDelete (ENUM: USER_FRIEND_DELETE, 定义: tools/index.js, 注册: tools/index.js)
+  * rankList (ENUM: USER_RANKLIST, 定义: tools/index.js, 注册: tools/index.js)
+  * LookOther (ENUM: USER_LOOKOTHER, 定义: tools/index.js, 注册: tools/index.js)
+  * GetSchoolRankList (ENUM: GET_SCHOOL_RANK, 定义: tools/index.js, 注册: tools/index.js)
+  * GetSchoolReview (ENUM: GET_SCHOOL_POSTS, 定义: tools/index.js, 注册: tools/index.js)
+  * exitSchool (ENUM: EXIT_SCHOOL, 定义: tools/index.js, 注册: tools/index.js)
+  * clearGeSchoolClothing (ENUM: CLEAR_SXHOOL_CD, 定义: tools/index.js, 注册: tools/index.js)
+  * sycnTask (ENUM: SYCN_TASK, 定义: tools/index.js, 注册: tools/index.js)
+  * sycnPlayerItemData (ENUM: SYCNPLAYERITEAMDATA, 定义: tools/index.js, 注册: tools/index.js)
+  * useItem (ENUM: USE_ITEM, 定义: tools/index.js, 注册: tools/index.js)
+  * saleItem (ENUM: SELL_ITEM, 定义: tools/index.js, 注册: tools/index.js)
+  * buyShopItem (ENUM: BUY_SHOP_ITEM, 定义: tools/index.js, 注册: tools/index.js)
+  * getShopItem (ENUM: GET_SPGOODS_LIST, 定义: tools/index.js, 注册: tools/index.js)
+  * buySpecialShopItem (ENUM: BUY_SPECIAL_GOODS, 定义: tools/index.js, 注册: tools/index.js)
+  * GetSpecialShopData (ENUM: SPECIAL_SHOP, 定义: tools/index.js, 注册: tools/index.js)
+  * BuyAcitivityShop (ENUM: ACTIVITE_SHOP, 定义: tools/index.js, 注册: tools/index.js)
+  * getChangeShop (ENUM: GET_CHANGE_SHOP, 定义: tools/index.js, 注册: tools/index.js)
+  * exchangeItem (ENUM: EXCHANGE_ITEM, 定义: tools/index.js, 注册: tools/index.js)
+  * getGoodAndEvilShopData (ENUM: GET_GOOD_AND_EVIL_SHOP_DATA, 定义: tools/index.js, 注册: tools/scripts3.js)
+  * buyGoodAndEvilShopItem (ENUM: BUY_GOOD_AND_EVIL_SHOP_ITEM, 定义: tools/index.js, 注册: tools/scripts3.js)
+  * rgGetShopData (ENUM: RG_GET_SHOP_DATA, 定义: tools/index.js, 注册: tools/scripts3.js)
+  * rgShopByItem (ENUM: RG_SHOP_BY_ITEM, 定义: tools/index.js, 注册: tools/scripts3.js)
+  * QuickBuyItem (ENUM: QUICK_BUY, 定义: tools/index.js, 注册: tools/index.js)
+  * addItem (ENUM: ADD_ITEM, 定义: tools/index.js, 注册: tools/index.js)
+  * PutOnEquipment (ENUM: WEAR_EQUIPMENT_ALL, 定义: tools/index.js, 注册: tools/index.js)
+  * equipWeapon (ENUM: PUT_ON_EQUIPMENT, 定义: tools/index.js, 注册: tools/index.js)
+  * UnloadingEuipment (ENUM: UNLOADING_EQUIP_EVENT, 定义: tools/index.js, 注册: tools/index.js)
+
+### 3. 交集计算
+- 16 个动作名与 readList 的交集数量: 15
+- 交集名单 (15 个):
+  * useItem
+  * BeginTraining
+  * BuyFashion
+  * buyShopItem
+  * buySpecialShopItem
+  * BuyAcitivityShop
+  * exchangeItem
+  * buyGoodAndEvilShopItem
+  * rgShopByItem
+  * QuickBuyItem
+  * washAdditionalArr
+  * isCycleLife
+  * cycleLife
+  * WashMedicine
+  * FindFriendByID
+- 16 里不在 readList 的名单 (1 个):
+  * specialCycleLife
+
+## 【复算 3：Effect 13 的 Data1 是否等于自身 ID】
+### 复算命令与退出码
+命令: `node -e "..."` (遍历 tools/cfg/dump/item.full.json 过滤 Type==2 且 Effect==13)
+退出码: 0
+### 统计数字
+- Type==2 且 Effect==13 的总条数: 1773
+- 其中 Data1 === ID 的条数: 1678
+- 其中 Data1 !== ID 的条数: 95
+### Data1 !== ID 的明细名单 (ID / Data1 / Name):
+- ID: 4108, Data1: 1200, Name: 33108
+- ID: 4373, Data1: 4370, Name: 33373
+- ID: 4374, Data1: 4371, Name: 33374
+- ID: 4616, Data1: 4607, Name: 33616
+- ID: 4617, Data1: 4608, Name: 33617
+- ID: 4618, Data1: 4609, Name: 33618
+- ID: 4619, Data1: 4610, Name: 33619
+- ID: 4620, Data1: 4611, Name: 33620
+- ID: 4621, Data1: 4612, Name: 33621
+- ID: 4623, Data1: 4613, Name: 33623
+- ID: 4633, Data1: 4614, Name: 33633
+- ID: 4634, Data1: 4615, Name: 33634
+- ID: 4635, Data1: 4616, Name: 33635
+- ID: 4695, Data1: 3152, Name: 33695
+- ID: 4696, Data1: 3153, Name: 33696
+- ID: 4697, Data1: 3154, Name: 33697
+- ID: 4698, Data1: 3155, Name: 33698
+- ID: 4699, Data1: 3156, Name: 33699
+- ID: 4700, Data1: 3158, Name: 33700
+- ID: 4701, Data1: 3159, Name: 33701
+- ID: 4702, Data1: 3160, Name: 33702
+- ID: 4703, Data1: 3161, Name: 33703
+- ID: 4744, Data1: 0, Name: 33744
+- ID: 6144, Data1: 4803, Name: 2101367
+- ID: 6801, Data1: 6643, Name: 2102024
+- ID: 6802, Data1: 6644, Name: 2102025
+- ID: 6807, Data1: 4564, Name: 2102030
+- ID: 6808, Data1: 4565, Name: 2102031
+- ID: 6809, Data1: 4563, Name: 2102032
+- ID: 6810, Data1: 4567, Name: 2102033
+- ID: 7003, Data1: 7006, Name: 2102226
+- ID: 7004, Data1: 7005, Name: 2102227
+- ID: 7005, Data1: 7003, Name: 2102228
+- ID: 7006, Data1: 7004, Name: 2102229
+- ID: 7049, Data1: 7050, Name: 2102272
+- ID: 7056, Data1: 7053, Name: 2102279
+- ID: 7057, Data1: 7054, Name: 2102280
+- ID: 7058, Data1: 7055, Name: 2102281
+- ID: 7059, Data1: 7056, Name: 2102282
+- ID: 7060, Data1: 7057, Name: 2102283
+- ID: 7061, Data1: 7058, Name: 2102284
+- ID: 7062, Data1: 7059, Name: 2102285
+- ID: 7063, Data1: 7060, Name: 2102286
+- ID: 7213, Data1: 7097, Name: 2102436
+- ID: 7252, Data1: 6333, Name: 2102475
+- ID: 7363, Data1: 6792, Name: 2102586
+- ID: 7402, Data1: 7011, Name: 2102625
+- ID: 7403, Data1: 6750, Name: 2102626
+- ID: 7409, Data1: 7402, Name: 2102632
+- ID: 7410, Data1: 7403, Name: 2102633
+- ID: 7411, Data1: 7404, Name: 2102634
+- ID: 7414, Data1: 7405, Name: 2102637
+- ID: 7415, Data1: 7406, Name: 2102638
+- ID: 7416, Data1: 7407, Name: 2102639
+- ID: 7417, Data1: 7408, Name: 2102640
+- ID: 7418, Data1: 7409, Name: 2102641
+- ID: 7419, Data1: 7410, Name: 2102642
+- ID: 7589, Data1: 7596, Name: 2102812
+- ID: 7590, Data1: 7597, Name: 2102813
+- ID: 7591, Data1: 7529, Name: 2102814
+- ID: 8065, Data1: 7708080, Name: 7790
+- ID: 8066, Data1: 7708081, Name: 7791
+- ID: 8074, Data1: 7708083, Name: 2103297
+- ID: 8075, Data1: 7708084, Name: 2103298
+- ID: 8076, Data1: 7708085, Name: 2103299
+- ID: 8083, Data1: 7965, Name: 2103306
+- ID: 9254, Data1: 6134, Name: 2104477
+- ID: 9255, Data1: 6135, Name: 2104478
+- ID: 9256, Data1: 6140, Name: 2104479
+- ID: 9257, Data1: 6141, Name: 2104480
+- ID: 9695, Data1: 9694, Name: 2104918
+- ID: 9696, Data1: 9695, Name: 2104919
+- ID: 9697, Data1: 9696, Name: 2104920
+- ID: 9965, Data1: 9964, Name: 2105188
+- ID: 10419, Data1: 9966, Name: 2105642
+- ID: 10420, Data1: 9964, Name: 2105643
+- ID: 10491, Data1: 16773, Name: 2105714
+- ID: 10492, Data1: 16774, Name: 2105715
+- ID: 10493, Data1: 16776, Name: 2105716
+- ID: 10494, Data1: 16777, Name: 2105717
+- ID: 10495, Data1: 16781, Name: 2105718
+- ID: 10496, Data1: 16782, Name: 2105719
+- ID: 10529, Data1: 7299, Name: 2105752
+- ID: 10804, Data1: 10796, Name: 2100804
+- ID: 10805, Data1: 10797, Name: 2100805
+- ID: 10834, Data1: 10752, Name: 2106057
+- ID: 10836, Data1: 9475, Name: 2106059
+- ID: 10837, Data1: 9476, Name: 2106060
+- ID: 10838, Data1: 9477, Name: 2106061
+- ID: 10839, Data1: 10836, Name: 2106062
+- ID: 10853, Data1: 10425, Name: 2106076
+- ID: 10854, Data1: 10424, Name: 2106077
+- ID: 10855, Data1: 10422, Name: 2106078
+- ID: 10856, Data1: 10852, Name: 2106079
+- ID: 10921, Data1: 10752, Name: 2106144
+
+## 【复算 4：那 18 条时间里的“有效条数”】
+### 来源: docs\audit\r19-W-A-D-section.txt D段 18 条
+- 来源=templates (文件是 hotfix-patch\core\templates.json): 2 条
+  * [templates] create.serverTime = 1792572970629 (2026-10-21T08:56:10.629Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  * [templates] create.activityResource.67[1] = 1793177770630 (2026-10-28T08:56:10.630Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+- 来源=配置表 (文件在 tools\cfg\dump\): 16 条
+  * 表名: active | 键: data.27.endtime[0] | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: active | 键: data.55.endtime[0] | 值: 1792943999000 | UTC: 2026-10-25T15:59:59.000Z | 北京时间: 2026-10-25T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2200.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2201.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2202.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2203.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2204.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2205.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2206.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2207.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2208.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2209.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2210.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2211.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: exchange | 键: data.2212.endtime | 值: 1793030399000 | UTC: 2026-10-26T15:59:59.000Z | 北京时间: 2026-10-26T23:59:59.000+08:00
+  * 表名: mall | 键: data.39.shopend[0] | 值: 1792943999000 | UTC: 2026-10-25T15:59:59.000Z | 北京时间: 2026-10-25T23:59:59.000+08:00
+
+## 未验证
+1. 未验证 hotfix-patch/core/bz-rpc-server.js 中除 H 之外其他函数闭包是否包含未暴露的 rpc handler。
+2. 未验证 item.full.json 之外运行期动态构造或热更 patch 注入的道具是否存在 Effect==13 的条目。
+3. 未验证 tables_probe_round1.json 中行数为 0 的 12 张表在客户端代码内部是否存在被静态引用的潜在逻辑。
+4. 未验证 reject-codes.json 中的 16 个动作在真实网络环境断网/异常返回时的具体客户端弹窗提示形态。

@@ -1,0 +1,53 @@
+# User.useItem   (HttpConst.USE_ITEM)
+
+## 注册点 64754: r.MessageCenter.on(a.HttpConst.USE_ITEM, function(o, a) {
+
+## 请求点 65330: 0 == t && m.NetMgr.http.sendRequest(a.HttpConst.USE_ITEM, f);
+   65322: }).then(function(t) {
+   65323: 0 == t.RoleOtherInfo.homeFarmId ? c.default.show(n.getText(3716)) : c.default.show(y, [ {
+   65324: flag: 0,
+   65325: name: n.getText("634")
+   65326: }, {
+   65327: flag: 1,
+   65328: name: n.getText("333")
+   65329: } ], function(t) {
+
+## 请求点 65333: } else s ? m.NetMgr.http.sendRequest(a.HttpConst.USE_ITEM, f) : m.NetMgr.http.sendReqWithMask(a.HttpConst.USE_ITEM, f);
+   65325: name: n.getText("634")
+   65326: }, {
+   65327: flag: 1,
+   65328: name: n.getText("333")
+   65329: } ], function(t) {
+   65330: 0 == t && m.NetMgr.http.sendRequest(a.HttpConst.USE_ITEM, f);
+   65331: });
+   65332: });
+
+## 请求点 65333: } else s ? m.NetMgr.http.sendRequest(a.HttpConst.USE_ITEM, f) : m.NetMgr.http.sendReqWithMask(a.HttpConst.USE_ITEM, f);
+   65325: name: n.getText("634")
+   65326: }, {
+   65327: flag: 1,
+   65328: name: n.getText("333")
+   65329: } ], function(t) {
+   65330: 0 == t && m.NetMgr.http.sendRequest(a.HttpConst.USE_ITEM, f);
+   65331: });
+   65332: });
+
+## 请求点 65340: m.NetMgr.http.sendRequest(a.HttpConst.USE_ITEM, {
+   65332: });
+   65333: } else s ? m.NetMgr.http.sendRequest(a.HttpConst.USE_ITEM, f) : m.NetMgr.http.sendReqWithMask(a.HttpConst.USE_ITEM, f);
+   65334: }
+   65335: };
+   65336: e.prototype.reqBatchUseItem = function(t, e) {
+   65337: void 0 === e && (e = 1);
+   65338: this.curItemId = t;
+   65339: this.batchUse = !0;
+
+## 请求点 65348: m.NetMgr.http.sendRequest(a.HttpConst.USE_ITEM, {
+   65340: m.NetMgr.http.sendRequest(a.HttpConst.USE_ITEM, {
+   65341: itemID: t,
+   65342: itemNum: 1
+   65343: }, null, !1);
+   65344: };
+   65345: e.prototype.reqUseItems = function(t, e) {
+   65346: void 0 === e && (e = 1);
+   65347: this.curItemId = t;

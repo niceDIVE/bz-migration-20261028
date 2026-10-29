@@ -1,0 +1,194 @@
+# P3: 客户端资源 7105/7106/7226 键值与文件取证报告
+生成时间: 2026-10-23
+交付目标: F:\BaoZouyxt\docs\audit\r19-W-C2-p3-assets.txt
+
+================================================================================
+第一步：client-analysis 清单统计（含子目录）
+================================================================================
+【命令原文】
+Get-ChildItem -Path "F:\BaoZouyxt\client-analysis" -Recurse -File | Group-Object Extension | Select-Object Name, Count, @{Name="TotalBytes"; Expression={($_.Group | Measure-Object -Property Length -Sum).Sum}} | Sort-Object Count -Descending
+【退出码】0
+【扩展名分组汇总】
+扩展名               文件数       总字节数(Bytes)
+--------------------------------------------------
+.png                     39         16141891
+.dex                      4         16675728
+.js                       3           545417
+.json                     2              937
+.md                       2             9720
+.jsc                      1              320
+(无扩展名)                    1          7699855
+.xml                      1            43360
+.properties               1              394
+
+【大于 100KB 的非图片文件清单】
+【命令原文】
+Get-ChildItem -Path "F:\BaoZouyxt\client-analysis" -Recurse -File | Where-Object { $_.Length -gt 100KB -and $_.Extension -notmatch '^\.(png|jpg|jpeg|gif|webp)$' } | Select-Object FullName, Length
+【退出码】0
+【文件路径与字节数】
+F:\BaoZouyxt\client-analysis\jsb-builtin.js  (331240 Bytes)
+F:\BaoZouyxt\client-analysis\jsb-engine.js  (208721 Bytes)
+F:\BaoZouyxt\client-analysis\bundles\706353064  (7699855 Bytes)
+F:\BaoZouyxt\client-analysis\dex\classes.dex  (6993464 Bytes)
+F:\BaoZouyxt\client-analysis\dex\classes3.dex  (9304596 Bytes)
+F:\BaoZouyxt\client-analysis\dex\classes4.dex  (376116 Bytes)
+
+================================================================================
+第二步：文本类文件搜索 (7105 / 7106 / 7226)
+================================================================================
+【扫描目录】
+- F:\BaoZouyxt\client-analysis\
+- F:\BaoZouyxt\$out\
+- F:\BaoZouyxt\hotfix-patch\decrypted\
+【扫描后缀】*.js, *.json, *.txt, *.xml, *.properties, *.manifest（跳过 *.png, *.jpg, *.dex, *.so）
+【命令原文】
+Select-String -Path $textFiles -Pattern <7105|7106|7226>
+【退出码】0
+
+--------------------------------------------------------------------------------
+目标数字: 7105  |  命中总条数: 3
+--------------------------------------------------------------------------------
+F:\BaoZouyxt\$out\r18\gift_scan.js:123: console.log('=== 含 6625/6810/7105/7106/7226 任一键的表（对照 F1a 失败原因）===');
+F:\BaoZouyxt\$out\r18\gift_scan2.js:10: *   故本版改为「逐 id 定位」：对 6625/6810/7105/7106/7226 各自列出「哪张表把它当键」并打印该行。
+F:\BaoZouyxt\$out\r18\gift_scan2.js:18: const TARGETS = [6625, 6810, 7105, 7106, 7226];
+
+--------------------------------------------------------------------------------
+目标数字: 7106  |  命中总条数: 3
+--------------------------------------------------------------------------------
+F:\BaoZouyxt\$out\r18\gift_scan.js:123: console.log('=== 含 6625/6810/7105/7106/7226 任一键的表（对照 F1a 失败原因）===');
+F:\BaoZouyxt\$out\r18\gift_scan2.js:10: *   故本版改为「逐 id 定位」：对 6625/6810/7105/7106/7226 各自列出「哪张表把它当键」并打印该行。
+F:\BaoZouyxt\$out\r18\gift_scan2.js:18: const TARGETS = [6625, 6810, 7105, 7106, 7226];
+
+--------------------------------------------------------------------------------
+目标数字: 7226  |  命中总条数: 3
+--------------------------------------------------------------------------------
+F:\BaoZouyxt\$out\r18\gift_scan.js:123: console.log('=== 含 6625/6810/7105/7106/7226 任一键的表（对照 F1a 失败原因）===');
+F:\BaoZouyxt\$out\r18\gift_scan2.js:10: *   故本版改为「逐 id 定位」：对 6625/6810/7105/7106/7226 各自列出「哪张表把它当键」并打印该行。
+F:\BaoZouyxt\$out\r18\gift_scan2.js:18: const TARGETS = [6625, 6810, 7105, 7106, 7226];
+
+================================================================================
+第三步：PK 开头二进制文件分析（仅查目录，不解压整个包）
+================================================================================
+【目标文件】client-analysis\bundles\706353064
+【文件绝对路径】F:\BaoZouyxt\client-analysis\bundles\706353064
+【文件头魔数验证】0x50 0x4B 0x03 0x04 (PK.. 标准 ZIP)
+【命令原文】
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+$zip = [System.IO.Compression.ZipFile]::OpenRead("F:\BaoZouyxt\client-analysis\bundles\706353064")
+$zip.Entries | Select-Object -First 80 -ExpandProperty FullName
+【退出码】0
+
+【总条目数】457
+【前 80 个文件名清单】
+  1. res/layout/tt_browser_titlebar.xml
+  2. res/drawable-xhdpi-v4/tt_splash_unlock_btn_bg.png
+  3. res/drawable-xhdpi-v4/tt_reward_coin.png
+  4. res/layout/tt_hand_shake_interaction_type_16.xml
+  5. res/drawable/tt_live_loading_0.png
+  6. res/drawable-xxhdpi-v4/tt_splash_card_btn_bg.png
+  7. res/drawable/tt_ad_cover_btn_begin_bg.xml
+  8. res/drawable/tt_splash_compliance_bar_bg.xml
+  9. res/layout-v17/tt_browser_titlebar.xml
+ 10. res/layout-v17/tt_activity_full_image_model_173_h.xml
+ 11. res/drawable-xhdpi-v4/tt_lefterbackicon_titlebar_press.png
+ 12. res/drawable-xhdpi-v4/tt_splash_mute.png
+ 13. res/layout/tt_video_ad_cover_layout.xml
+ 14. res/drawable-xhdpi-v4/playable_loading_background.jpeg
+ 15. res/layout/tt_splash_slide_up.xml
+ 16. res/layout/tt_interaction_style_3_2.xml
+ 17. res/drawable/tt_close_move_detail.xml
+ 18. res/drawable/tt_playable_structure_progress_bar_style.xml
+ 19. res/layout-v22/tt_app_privacy_dialog.xml
+ 20. res/drawable-anydpi-v21/ic_top_again_bg.xml
+ 21. res/drawable/tt_ad_backup_bk.xml
+ 22. res/drawable/tt_ad_skip_btn_bg.xml
+ 23. res/drawable-xhdpi-v4/tt_open_app_detail_download_btn_bg.png
+ 24. res/drawable-xhdpi-v4/tt_white_lefterbackicon_titlebar.png
+ 25. res/drawable-xhdpi-v4/tt_dislike_icon_inter_night.png
+ 26. res/drawable-xhdpi-v4/tt_splash_unlock_image_arrow.png
+ 27. res/layout-v17/tt_backup_banner_layout2.xml
+ 28. res/layout/tt_app_tag_download_dialog_portrait.xml
+ 29. res/layout-v22/tt_app_privacy_half_dialog_landscape.xml
+ 30. res/layout/tt_activity_full_image_model_3_178_h.xml
+ 31. res/layout/tt_browser_titlebar_for_dark.xml
+ 32. res/drawable/tt_gift_box.png
+ 33. res/layout/tt_dynamic_splash_slide_up.xml
+ 34. res/drawable-xxxhdpi-v4/tt_splash_card_feedback_bg.png
+ 35. res/anim/tt_dislike_animation_dismiss.xml
+ 36. res/drawable-xhdpi-v4/tt_ad_logo_small.png
+ 37. res/drawable/tt_dislike_top_bg.xml
+ 38. res/layout/tt_interaction_style_1_1.xml
+ 39. res/drawable/tt_seek_thumb_fullscreen.xml
+ 40. res/drawable/tt_live_loading_21.png
+ 41. res/drawable-xhdpi-v4/tt_refreshing_video_textpage_pressed.png
+ 42. res/drawable/tt_dislike_top_seletor.xml
+ 43. res/drawable/tt_video_black_desc_gradient.xml
+ 44. res/drawable-ldpi-v4/ic_top_again_bg.png
+ 45. res/drawable/tt_browser_download_selector.xml
+ 46. res/drawable/tt_leftbackbutton_titlebar_photo_preview.xml
+ 47. res/drawable-xhdpi-v4/tt_playable_game_icon.png
+ 48. res/drawable/tt_play_movebar_textpage.xml
+ 49. lib/arm64-v8a/libPglmetasec_ml.so
+ 50. res/drawable/tt_backup_btn_1.xml
+ 51. res/drawable/tt_playable_structure_progress_background.xml
+ 52. lib/armeabi-v7a/liblynx.so
+ 53. res/drawable/tt_ad_logo_background.xml
+ 54. res/drawable/tt_live_loading_7.png
+ 55. res/layout-v17/tt_interaction_style_2_3_h.xml
+ 56. res/drawable/tt_reward_live_dialog_btn_bg.xml
+ 57. res/layout/tt_activity_middle_page.xml
+ 58. res/layout/tt_app_permission_list_dialog_landscape.xml
+ 59. res/drawable/tt_live_loading_13.png
+ 60. res/drawable-xhdpi-v4/tt_reward_browse_multi_icon.png
+ 61. res/drawable-xxhdpi-v4/ic_top_again_bg.png
+ 62. res/layout-v17/tt_backup_splash.xml
+ 63. res/layout-v17/tt_activity_video_scroll_landingpage.xml
+ 64. res/layout/tt_splash_eye_image.xml
+ 65. res/drawable-hdpi-v4/tt_splash_card_btn_bg.png
+ 66. res/drawable/tt_ad_backup_bk2.xml
+ 67. res/layout/tt_activity_full_image_model_3_178_v.xml
+ 68. res/drawable-xhdpi-v4/tt_splash_hand3.png
+ 69. res/layout/tt_activity_full_video_live_h_style.xml
+ 70. res/drawable/tt_seek_thumb.xml
+ 71. res/drawable/tt_live_loading_8.png
+ 72. res/layout-v17/tt_backup_banner_layout1.xml
+ 73. res/layout-v17/tt_custom_dialog_layout.xml
+ 74. res/layout/tt_activity_ttlandingpage_playable.xml
+ 75. res/layout/tt_insert_ad_layout.xml
+ 76. res/drawable-xhdpi-v4/tt_reward_box_time_bg.png
+ 77. res/layout-v22/tt_app_permission_list_dialog_landscape.xml
+ 78. lib/arm64-v8a/libttmplayer_lite.so
+ 79. res/drawable/tt_playable_loading_tip_bg.xml
+ 80. res/layout/tt_hand_shake.xml
+
+【目录结构分布统计】
+res                    422 条目
+lib                     20 条目
+assets                   9 条目
+META-INF                 3 条目
+AndroidManifest.xml      1 条目
+resources.arsc           1 条目
+classes.dex              1 条目
+
+【扩展名分布统计】
+.xml                   277 条目
+.png                   145 条目
+.so                     20 条目
+.db                      3 条目
+(无扩展名)                   2 条目
+.dex                     2 条目
+.RSA                     1 条目
+.MF                      1 条目
+.SF                      1 条目
+.arsc                    1 条目
+.czl                     1 条目
+.jpeg                    1 条目
+.pro                     1 条目
+.js                      1 条目
+
+【二进制性质判断】
+判断结论: Android res (穿山甲/字节跳动 TT / CSJ 广告 SDK 的 Android 资源包 / AAR 结构，含 res/layout, res/drawable, lib/*.so, AndroidManifest.xml 等，非 Cocos/游戏主逻辑的 JS bundle)
+
+================================================================================
+未验证
+================================================================================

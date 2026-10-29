@@ -1,0 +1,99 @@
+# User.receiveAccRechargAward  (HttpConst.REQ_AWARD_RECHARDED)
+# 出现 2 处
+
+  1838: };
+  1839: e.prototype.reqRechargedAward = function(t) {
+  1840: var e = {
+  1841: roleID: S.RoleBaseInfo.roleID,
+  1842: id: t
+  1843: };
+  1844: E.PackageModel.judgePackageLimit() || g.NetMgr.http.sendReqWithMask(a.HttpConst.REQ_AWARD_RECHARDED, e);
+  1845: };
+  1846: e.prototype.reqDailyPayActivityAward = function() {
+  1847: g.NetMgr.http.sendRequest(a.HttpConst.DAILY_PAY_ACTIVITY_AWARD, {});
+  1848: };
+  1849: e.prototype.setOpenChargeUI = function(t) {
+  1850: if (0 == t.accRechargedData.isEnd) {
+  1851: this.rechargedIsEnd = 0;
+  1852: 1 == t.accRechargedData.isMainShow && (this.openChargeUI = !0);
+  1853: 1 == t.accRechargedData.isRedDot && (this.openRedDot = !0);
+  1854: } else this.rechargedIsEnd = 1;
+  1855: };
+  1856: e.prototype.reqAddCostData = function() {
+  1857: g.NetMgr.http.sendRequest(a.HttpConst.GET_GOLD_CONSUME_REWARD_DATA, {});
+  1858: };
+  1859: e.prototype.reqAddCostReward = function(t) {
+  1860: g.NetMgr.http.sendRequest(a.HttpConst.RECEIVE_GOLD_CONSUME_REWARD, {
+  1861: id: t
+  1862: });
+  1863: };
+  1864: e.prototype.reqGetSpringData = function() {
+  1865: g.NetMgr.http.sendRequest(a.HttpConst.GET_SPRING_SEVEN_DAY_DATA, {});
+  1866: };
+  1867: e.prototype.reqSevenDaysAwards = function(t) {
+  1868: g.NetMgr.http.sendRequest(a.HttpConst.SPRING_SEVEN_DAYS_AWARDS, {
+  1869: index: t
+  1870: });
+  1871: };
+  1872: e.prototype.reqSpringAccReward = function() {
+  1873: g.NetMgr.http.sendRequest(a.HttpConst.RECEIVE_SPRING_ACC_REWARD, {});
+  1874: };
+  1875: e.prototype.showOldBeggarNpc = function(t) {
+  1876: var e = this.getRandomBeggarInfo();
+  1877: if (null != t.id && null != e && e.hasOwnProperty("map") && e.map == t.id) {
+  1878: var o = y.NpcFactory.createSceneObj({
+  1879: id: 10163
+  1880: });
+  1881: o.setPosition(cc.v3(e.coordinate[0], e.coordinate[1]));
+  1882: t.add2Scene(o);
+  1883: t.oldMan = o;
+  1884: }
+---
+ 57379: this.objData = null;
+ 57380: i.MessageCenter.on(l.HttpConst.REQ_SEVENTASK_EVENT, this.sevenTaskCallback.bind(this), this);
+ 57381: i.MessageCenter.on(l.HttpConst.REQ_SEVENREWARD_EVENT, this.sevenRewardCallback.bind(this), this);
+ 57382: i.MessageCenter.on(l.HttpConst.REQ_FIRST_PAY_EVENT, this.fristPayCallback.bind(this), this);
+ 57383: i.MessageCenter.on(l.HttpConst.GET_EVERYDAY_ACTIVE, this.everydayActiveCallback.bind(this), this);
+ 57384: i.MessageCenter.on(l.HttpConst.GET_ALL_ACTIVITY, this.onGetAllActivity, this);
+ 57385: i.MessageCenter.on(l.HttpConst.REQ_AWARD_RECHARDED, this.onGetAwardRechard, this);
+ 57386: };
+ 57387: t.prototype.sevenTaskCallback = function(t, e) {
+ 57388: if (e.hasOwnProperty("taskObj")) {
+ 57389: if (this.checkNull(e.taskObj)) {
+ 57390: this.reqEveryDayActive();
+ 57391: u.RoleOtherInfo.activeObj[0] = 0;
+ 57392: return;
+ 57393: }
+ 57394: this.objData ? i.MessageCenter.dispatch(p.EvName.STORE_SHOW_UI, {
+ 57395: type: this.objData.type,
+ 57396: back: this.objData.back,
+ 57397: data: e
+ 57398: }) : a.default.prefabs.load("comUI/ComBgUI", cc.Prefab, function(t, o) {
+ 57399: var i = cc.instantiate(o);
+ 57400: i.addComponent("HomeActiveUI").setData(e);
+ 57401: n.PopUpMgr.addPopUp(i, s.LayerMgr.popUpLayer);
+ 57402: });
+ 57403: }
+ 57404: this.objData = null;
+ 57405: };
+ 57406: t.prototype.checkNull = function(t) {
+ 57407: for (var e in t) return !1;
+ 57408: return !0;
+ 57409: };
+ 57410: t.prototype.sevenRewardCallback = function(t, e) {
+ 57411: if (1 == e.eRet) {
+ 57412: e.hasOwnProperty("rewardArray") && d.default.addShowRewardUI1(e.rewardArray, 0);
+ 57413: i.MessageCenter.dispatch(p.EvName.SEVEN_REWARD_EVENT, this.taskId);
+ 57414: this.target.updateBtnEvent();
+ 57415: } else r.default.show(h.getText(1025));
+ 57416: };
+ 57417: t.prototype.fristPayCallback = function(t, e) {
+ 57418: if (1 == e.eRet) {
+ 57419: e.hasOwnProperty("rewardArray") && d.default.addShowRewardUI1(e.rewardArray, 0);
+ 57420: i.MessageCenter.dispatch(p.EvName.FIRST_RECHARGE_REWRAD, 0);
+ 57421: f.StoreModel.updateMonthCard(e);
+ 57422: u.RoleOtherInfo.activeObj[1] = 0;
+ 57423: }
+ 57424: };
+ 57425: t.prototype.onGetAwardRechard = function(t, e) {
+---

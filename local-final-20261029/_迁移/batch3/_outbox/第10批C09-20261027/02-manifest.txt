@@ -1,0 +1,48 @@
+MANIFEST  第10批 C09〔技巧摸奖〕回执包（2026-10-27）
+
+══ 这一包能直接跑（与上一包同结构）══
+  test/ 与 core/ 是同级目录，解包后**不用改任何路径**：
+      node test/c09-smoke.js     → 期望 "c09-smoke: 全部通过（11 条）"
+      node test/c08-smoke.js     → 期望 "c08-smoke: 全部通过（12 条）"
+      node test/drop-table.js    → "[drop] PASS  8/8"
+  依赖只有 node 本体（测试不引 lz-string）；不需要设备、不需要联网。
+
+══ 部署指纹（core/bz-rpc-server.js 就是线上跑的这份）══
+  impl=hefbb1ad4   flow=ffaec47c3   pid 22577
+  selfCheck 1286 全过，implErr=null
+  patch\live\handlers.js      1,492,613 B   md5 4AAE8E937C8C59CCE9F4083AEBD261E3
+  core\bz-rpc-server.js         383,776 B   md5 211B2E536D57D1C831131A3089452F43
+  core\bz-c09.generated.js       18,899 B   md5 3298DB7C005579DD08E7F81E53ABBB09（本批新增的表）
+
+══ 包内文件（md5 · 字节）══
+  ⚠ `02-manifest.txt` 自身不在清单里（自指算不出自己的 md5）；`bz-rpc-server.js` 与 `core/bz-rpc-server.js`
+    是同一份（根目录沿用上几包的摆放习惯），两者 md5 相同。
+
+00-转发说明.txt                          7B773FE9A8A0AED0111C7D64FFF6B9DE    见文件本身（给转发人看）
+01-receipt-batch10-c09.txt               14FA49DC1FD36D52239EA86E5C0B45DD    6200
+bz-rpc-server.js                         211B2E536D57D1C831131A3089452F43  383776
+core/bz-rpc-server.js                    211B2E536D57D1C831131A3089452F43  383776
+core/bz-c09.generated.js                 3298DB7C005579DD08E7F81E53ABBB09   18899
+core/bz-shapes.generated.js              CD3C95AAA1327C31629C3CCDE02D597A   26828
+core/bz-shops.generated.js               257F30E050F98C148DB7ED07FBF9FA81  265217
+core/bz-tasks.generated.js               4486247F701441F09B84278CCDAB98D5  640516
+core/templates.json                      692B4286E1051F34554C2AD1285B8C7B    7325
+facts/C1-c09-forensics.md                424C62189C889A20A8480012BE72127C   10917
+facts/C2-c09-execution.md                4868581E94E23F6B36AA62B57B007FA6    8233
+facts/C3-scoutJ-reqkeys.md               8ED8EADC7ECE66FAD189C32B694DED05   38552
+facts/C4-scoutK-tables.md                2E5A47CD0E2910C32B81967C35090174   42562
+facts/C5-scoutM-ui-fields.md             FD6107282F1B34384C11479D25AAD77A   29147
+facts/C6-scoutN-store-entry.md           F00E509DFEF2D9161D3AB0509659C6F5   43342
+facts/C7-open-issues.md                  5BB5DD06F93F585ED9EC762341E35A10   13813
+test/…（46 个 js，含 c09-smoke.js 与全部回归；逐文件 md5 见 zip 内实际内容，本清单不重复列）
+
+══ 怎么验（3 步，全部离线）══
+  1) 解包后算 `core/bz-rpc-server.js` 的 md5 → 应等于 211B2E536D57D1C831131A3089452F43（= 部署版）
+  2) `node test/c09-smoke.js` → 期望 `c09-smoke: 全部通过（11 条）`
+  3) 想复核"没改坏老的"：`node test/c08-smoke.js`、`node test/drop-table.js`
+  （完整闸门是 `node tools/acceptance.js` 49/49，但它要 tools/，在包外——要跑我单独发 tools）
+
+══ 本包没带的东西（明确列出，免得以为漏了）══
+  · `patch\live\handlers.js`（合成产物 1.49 MB）—— 只带源 `core\bz-rpc-server.js`，指纹对得上就够。
+  · `tools\`（生成器 / 验收器 / 形状基线 / gen_c09_tables.js）—— 需要复核闸门再要。
+  · 真机探针脚本（tmp_encode_rpc.js / probe*.hex）—— 一次性工具，需要可补发。

@@ -1,0 +1,1463 @@
+{
+  "generatedAt": "2026-10-21T22:25:04.004Z",
+  "queries": [
+    {
+      "pattern": "activeShowList",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:55361: if (1003 == e && (0 != h.RoleOtherInfo.activeObj[1] || 0 == f.ActiveModel.rechargedIsEnd) && 0 != m.HomeActiveModel.activeShowList[0]) return !0;",
+        "tools/index.js:55362: if (1004 == e && 0 != m.HomeActiveModel.activeShowList[1]) return !0;",
+        "tools/index.js:57373: this.activeShowList = [ 1, 1 ];",
+        "tools/index.js:57455: e.hasOwnProperty(\"activityShows\") && (this.activeShowList = e.activityShows);",
+        "tools/index.js:57493: this.activeShowList = [ 1, 1 ];"
+      ]
+    },
+    {
+      "pattern": "activeShowList",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activeShowList",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "themeActiveAy",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:55234: this.themeActiveAy = [];",
+        "tools/index.js:55237: this.themeActiveAy = [];",
+        "tools/index.js:55351: -1 == this.themeActiveAy.indexOf(r.active) && this.getActiveState(t, r.number, r.active) && o.push(r);"
+      ]
+    },
+    {
+      "pattern": "themeActiveAy",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:29936: J.GrowthModel.themeActiveAy.indexOf(64) >= 0 && (this.GiftPackBtn.active = !1);"
+      ]
+    },
+    {
+      "pattern": "themeActiveAy",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:27415: for (var e in t) g.GrowthModel.themeActiveAy.push(t[e].id);"
+      ]
+    },
+    {
+      "pattern": "getActiveSortData",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:55347: e.prototype.getActiveSortData = function(t) {"
+      ]
+    },
+    {
+      "pattern": "getActiveSortData",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:29182: e.listAy = p.GrowthModel.getActiveSortData(e.data);"
+      ]
+    },
+    {
+      "pattern": "getActiveSortData",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "hasOwnProperty(\"",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:277: e.hasOwnProperty(\"e\") && e.e == this.data.id && (t = 0);",
+        "tools/scripts2.js:296: if (n.hasOwnProperty(\"e\") && n.e == this.data.id) this.btn.getComponentInChildren(cc.Label).string = c.getText(60); else if (n.hasOwnProperty(this.data.id) && o) this.btn.getComponentInChildren(cc.Label).string = c.getText(55); else {",
+        "tools/scripts2.js:1014: this.dragonData && this.dragonData.hasOwnProperty(\"rewardArray\") && v.default.addShowRewardUI1(this.dragonData.rewardArray, 0, this.dragonData.equipObj, null, function() {",
+        "tools/scripts2.js:1089: if (this.dragonData.hasOwnProperty(\"currentDragonId\")) {",
+        "tools/scripts2.js:1091: this.dragonData.hasOwnProperty(\"isDragonPrize\") && (this.prizeDialogueId = this.dragonData.dialogue);",
+        "tools/scripts2.js:1102: this.dragonData.hasOwnProperty(\"options\") && (this.optionsIndexs = this.dragonData.options);",
+        "tools/scripts2.js:1304: this.rightArr = t.hasOwnProperty(\"historyRightList\") ? t.historyRightList : [];",
+        "tools/scripts2.js:1694: t.hasOwnProperty(\"SeniorSchool\") && t.SeniorSchool > 0 ? this.txtAy[1].string = r.getSchool(t.RoleSchool) + \"|\" + r.getSchool(t.SeniorSchool) : this.txtAy[1].string = r.getSchool(t.RoleSchool);",
+        "tools/scripts2.js:1779: if (t.hasOwnProperty(\"Extratotalnum\")) {",
+        "tools/scripts2.js:1785: if (t.hasOwnProperty(\"failnum\")) {",
+        "tools/scripts2.js:3182: e.hasOwnProperty(\"SeniorSchool\") && e.SeniorSchool > 0 ? this.selfRandAy[2].string = u.getSchool(e.RoleBangPai) + \"|\" + u.getSchool(e.SeniorSchool) : this.selfRandAy[2].string = u.getSchool(e.RoleBangPai);",
+        "tools/scripts2.js:3265: e.hasOwnProperty(\"SeniorSchool\") && e.SeniorSchool > 0 ? this.schoolTxt.string = a.getSchool(e.RoleBangPai) + \"|\" + a.getSchool(e.SeniorSchool) : this.schoolTxt.string = a.getSchool(e.RoleBangPai);",
+        "tools/scripts2.js:3268: e.hasOwnProperty(\"SeniorSchool\") && e.SeniorSchool > 0 ? this.schoolTxt.fontSize = 20 : this.schoolTxt.fontSize = 26;",
+        "tools/scripts2.js:3937: if (o.hasOwnProperty(\"9\")) {",
+        "tools/scripts2.js:3940: i && i.hasOwnProperty(\"parameter\") && parseInt(i.parameter) > 0 && l.GSceneMgr.go2Scene(i.parameter, cc.v3(i.pox[0], i.pox[1]));",
+        "tools/scripts2.js:3953: if (e.hasOwnProperty(\"1\")) {",
+        "tools/scripts2.js:4000: u && u.hasOwnProperty(\"text\") && (o += \"\\n\" + a.getText(u.text));",
+        "tools/scripts2.js:4032: if (e.hasOwnProperty(\"9\")) {",
+        "tools/scripts2.js:4039: if (t.hasOwnProperty(\"cdSkill\")) {",
+        "tools/scripts2.js:4051: if (e.hasOwnProperty(\"1\")) {",
+        "tools/scripts2.js:4098: u && u.hasOwnProperty(\"text\") && (o += \"\\n\" + a.getText(u.text));",
+        "tools/scripts2.js:4130: if (e.hasOwnProperty(\"9\")) {",
+        "tools/scripts2.js:4138: if (t.hasOwnProperty(\"cdSkill\")) {",
+        "tools/scripts2.js:4367: this.data.hasOwnProperty(\"wife\") && (this.wife = this.data.wife);",
+        "tools/scripts2.js:4478: t.hasOwnProperty(\"cnt\") && (this.timeLeft = t.cnt);",
+        "tools/scripts2.js:4613: this.data.hasOwnProperty(\"wife\") && (this.wife = this.data.wife);",
+        "tools/scripts2.js:5205: t.hasOwnProperty(\"Choose\") && (this.chooseAy = t.Choose);",
+        "tools/scripts2.js:5978: this.data.hasOwnProperty(\"sale\") && parseInt(this.data.sale) > 0 && (e = this.data.sale);",
+        "tools/scripts2.js:6055: this.data.hasOwnProperty(\"sale\") && parseInt(this.data.sale) > 0 && (e = this.data.sale);",
+        "tools/scripts2.js:7412: this.itemObj.hasOwnProperty(\"sale\") && parseInt(this.itemObj.sale) > 0 && (o = this.itemObj.sale);",
+        "tools/scripts2.js:7516: this.itemObj.hasOwnProperty(\"sale\") && parseInt(this.itemObj.sale) > 0 && (o = this.itemObj.sale);",
+        "tools/scripts2.js:7731: this.curState && (s = e.hasOwnProperty(\"BattleType\") && 4 == parseInt(e.BattleType) ? r.getText(4492) : t);",
+        "tools/scripts2.js:7740: if (this.chatObj.hasOwnProperty(\"BattleType\") && 4 == parseInt(this.chatObj.BattleType)) {",
+        "tools/scripts2.js:7760: this.chatObj.hasOwnProperty(\"BattleType\") && 4 == parseInt(this.chatObj.BattleType) && (e = 1);",
+        "tools/scripts2.js:7761: if (t && this.chatObj.hasOwnProperty(\"RecordId\")) {",
+        "tools/scripts2.js:7763: t.hasOwnProperty(\"RoundCount\") && (o = parseInt(t.RoundCount));",
+        "tools/scripts2.js:8357: if (null != this.data && this.data.hasOwnProperty(\"back\")) {",
+        "tools/scripts2.js:8360: if (1 == c) if (this.data.hasOwnProperty(\"type\")) {",
+        "tools/scripts2.js:8418: e.hasOwnProperty(\"serverGift\") ? this.listData[o].data[6] = e.serverGift : this.listData[o].data[5] = e.buyCount;",
+        "tools/scripts2.js:8478: o.hasOwnProperty(\"type\") && (n = o.type);",
+        "tools/scripts2.js:8483: o.hasOwnProperty(\"back\") && (r = o.back);",
+        "tools/scripts2.js:8794: e.hasOwnProperty(\"type\") && (t = \"NewOptionalGiftUI\");",
+        "tools/scripts2.js:9127: null != this.data && this.data.hasOwnProperty(\"bgmusic\") ? d.SoundMgr.playBgMusic(\"jinglebells\", !0, !0, !1) : l.MessageCenter.dispatch(I.EvName.CHANGE_BGM);",
+        "tools/scripts2.js:10181: if (this.taskCircleObj.hasOwnProperty(\"taskId\") && 1000010 == Math.floor(this.taskCircleObj.taskId)) {",
+        "tools/scripts2.js:10232: if (this.npcData.hasOwnProperty(\"taskObj\")) {",
+        "tools/scripts2.js:10483: if (t.hasOwnProperty(\"TextProperty\") && t.TextProperty.length > 0) for (var s = t.TextProperty.split(\",\"), n = 0; n < s.length; n++) {",
+        "tools/scripts2.js:10951: if (e.hasOwnProperty(\"SendContext\")) {",
+        "tools/scripts2.js:11029: if (o.hasOwnProperty(\"friendList\")) for (var s in o.friendList) {",
+        "tools/scripts2.js:11235: this.curState && (s = e.hasOwnProperty(\"BattleType\") && 4 == parseInt(e.BattleType) ? a.getText(4492) : t);",
+        "tools/scripts2.js:11243: if (t.hasOwnProperty(\"BattleType\") && 4 == parseInt(t.BattleType)) {",
+        "tools/scripts2.js:11329: if (e.hasOwnProperty(\"Extratotalnum\")) {",
+        "tools/scripts2.js:11333: if (e.hasOwnProperty(\"failnum\")) {",
+        "tools/scripts2.js:11340: if (t.hasOwnProperty(\"Extratotalnum\")) {",
+        "tools/scripts2.js:11344: if (t.hasOwnProperty(\"failnum\")) {",
+        "tools/scripts2.js:11584: t.hasOwnProperty(\"RoundCount\") && (e = parseInt(t.RoundCount));",
+        "tools/scripts2.js:11920: t.hasOwnProperty(\"self\") && t.self && t.self.hasOwnProperty(\"ExploitData\") && (e = !0);",
+        "tools/scripts2.js:12642: if (this.roleInfo.hasOwnProperty(\"bValue\")) {",
+        "tools/scripts2.js:12651: } else if (this.roleInfo.hasOwnProperty(\"body\")) {",
+        "tools/scripts2.js:12661: this.roleInfo.hasOwnProperty(\"weaponskinId\") && (this.weaponskinId = this.roleInfo.weaponskinId);",
+        "tools/scripts2.js:12665: this.makeInfo = this.roleInfo.hasOwnProperty(\"makeInfo\") ? this.roleInfo.makeInfo : {};",
+        "tools/scripts2.js:12666: this.roleInfo.hasOwnProperty(\"makeUpID\") && this.roleInfo.makeUpID > 0 && (this.makeInfo[5] = this.roleInfo.makeUpID);",
+        "tools/scripts2.js:12948: e.hasOwnProperty(\"foster_point\") && (l.MarryModel.childData.foster_point = e.foster_point);",
+        "tools/scripts2.js:12949: e.hasOwnProperty(\"playArr\") && (l.MarryModel.childData.playArr = e.playArr);",
+        "tools/scripts2.js:13263: if (this.data.hasOwnProperty(\"reviewStatus\")) {",
+        "tools/scripts2.js:13269: this.data.hasOwnProperty(\"doing\") && (this.wIcon.active = !0);",
+        "tools/scripts2.js:13346: e.hasOwnProperty(\"currentQuestionsInfo\") ? this.curData = e.currentQuestionsInfo : this.curData = {};",
+        "tools/scripts2.js:13357: if (this.curData.hasOwnProperty(\"paperId\") && i.paper == this.curData.paperId) {",
+        "tools/scripts2.js:13441: if (this.data.hasOwnProperty(\"ID\")) {",
+        "tools/scripts2.js:13451: this.data.hasOwnProperty(\"fun\") && (this.callBack = this.data.fun);",
+        "tools/scripts2.js:14360: o.hasOwnProperty(\"ohterInfo\") && o.ohterInfo.id == m.RoleBaseInfo.roleID && (e = !0);",
+        "tools/scripts2.js:14474: this.npcData.hasOwnProperty(\"Task\") && this.npcData.Task.length && this.npcData.Task[1] > 0 && this.btnArray.push(this.npcData.Task[1]);",
+        "tools/scripts2.js:15032: if (m.RoleBaseInfo.finishTaskObj.hasOwnProperty(\"L1000\")) {",
+        "tools/scripts2.js:15449: this.npcData.hasOwnProperty(\"BeforeBattle\") && this.npcData.BeforeBattle ? p.MessageCenter.dispatch(S.EvName.BATTLE_DIALOG_EVENT, s) : h.BattleMgr.startNpcFight(s);",
+        "tools/scripts2.js:15501: if (g.default.judgeMasterTaskCondition(e)) g.default.saveMasterTask(this.npcID); else if (e.hasOwnProperty(\"text\") && e.text > 0) this.talkShowPopUI(a.getText(e.text), 0); else {",
+        "tools/scripts2.js:15601: if (G.SchoolModel.doorMianData.hasOwnProperty(\"id\")) if (G.SchoolModel.doorMianData.id != m.RoleBaseInfo.roleID) if (e >= o.need_pre) {",
+        "tools/scripts2.js:15614: } else G.SchoolModel.reqSchoolTakeOfficeApply(); else G.SchoolModel.reqGetSchoolAppoint(1); else if (null != t && t.hasOwnProperty(\"id\")) if (t.id != m.RoleBaseInfo.roleID) if (e >= o.need_pre) {",
+        "tools/scripts2.js:16139: if (t.hasOwnProperty(\"TeamId\") && parseInt(t.TeamId) > 0) h.default.show(l.getText(3640)); else {",
+        "tools/scripts2.js:16799: if (o.hasOwnProperty(\"chatPkAiStatus\")) {",
+        "tools/scripts2.js:18772: if (t.hasOwnProperty(\"e\")) {",
+        "tools/scripts2.js:19419: this.inhertEquipData.hasOwnProperty(\"uID\") && a.InhertEquipModel.reqInhertEquip(this.curIndex);",
+        "tools/scripts2.js:19425: if (this.inhertEquipData.hasOwnProperty(\"uID\")) {",
+        "tools/scripts2.js:19453: if (this.inhertEquipData.hasOwnProperty(\"uID\")) {",
+        "tools/scripts2.js:19469: this.inhertEquipData.hasOwnProperty(\"uID\") && a.InhertEquipModel.reqInhertEquip(this.curIndex);",
+        "tools/scripts2.js:19483: this.selectEquipData.hasOwnProperty(\"uID\") ? u.default.prefabs.load(\"shopUI/InhertEquiUI\", cc.Prefab, function(t, e) {",
+        "tools/scripts2.js:21436: if (this.data.hasOwnProperty(\"type\")) {",
+        "tools/scripts2.js:21461: if (this.data.hasOwnProperty(\"FashionArr\")) for (var u = 0; u < this.data.FashionArr.length; u++) {",
+        "tools/scripts2.js:22326: if (y.MarryModel.wifeUpdateData.hasOwnProperty(\"fasion\")) {",
+        "tools/scripts2.js:23598: o && o.hasOwnProperty(\"parameter\") && parseInt(o.parameter) > 0 && (null === (e = l.GSceneMgr.go2Scene(o.parameter, cc.v3(o.pox[0], o.pox[1]))) || void 0 === e || e.then(function() {",
+        "tools/scripts2.js:23909: this.employment = this.data.hasOwnProperty(\"employment\") ? this.data.employment : 0;",
+        "tools/scripts2.js:24519: if (t.hasOwnProperty(\"itemID\")) if (1 == t.type) {",
+        "tools/scripts2.js:24536: if (e.hasOwnProperty(\"itemID\")) if (1 == e.type) {",
+        "tools/scripts2.js:24869: if (this.data.hasOwnProperty(\"inherit\")) {",
+        "tools/scripts2.js:25691: if (t.hasOwnProperty(\"chip\") && t.chip.length) {",
+        "tools/scripts2.js:25712: (t.hasOwnProperty(\"rewardArray\") && !B.MadUtilsTS.isNullObj(t.rewardArray) || t.hasOwnProperty(\"equipObj\") && !B.MadUtilsTS.isNullObj(t.equipObj)) && v.default.addShowRewardUI1(t.rewardArray, 0, t.equipObj);",
+        "tools/scripts2.js:25715: (t.hasOwnProperty(\"rewardArray\") && !B.MadUtilsTS.isNullObj(t.rewardArray) || t.hasOwnProperty(\"equipObj\") && !B.MadUtilsTS.isNullObj(t.equipObj)) && v.default.addShowRewardUI1(t.rewardArray, 0, t.equipObj);",
+        "tools/scripts2.js:27126: v.LocalStorageMgr.setItem(\"declaration\", e.hasOwnProperty(\"declaration\") ? e.declaration : \"\");",
+        "tools/scripts2.js:27962: if (!this.dataObj.hasOwnProperty(\"state\") || 3 == this.dataObj.state) {",
+        "tools/scripts2.js:28055: t.hasOwnProperty(\"sTime\") && (this.beginTimeNum = t.sTime);",
+        "tools/scripts2.js:30847: if (e && e.hasOwnProperty(\"map\")) {",
+        "tools/scripts2.js:31123: if (s.hasOwnProperty(\"en_display\") && 0 == s.en_display) continue;",
+        "tools/scripts2.js:31931: if (this.itemInfo.hasOwnProperty(\"sale\") && 0 == this.itemInfo.sale) {",
+        "tools/scripts2.js:32080: t.hasOwnProperty(\"selfData\") ? this.selfItemObj = t.selfData : this.selfItemObj = {};",
+        "tools/scripts2.js:34026: e.hasOwnProperty(\"data\") && s.setInnDatas(e.data);",
+        "tools/scripts2.js:35443: if (this.data.hasOwnProperty(\"topup\") && 1 == this.data.topup) {",
+        "tools/scripts2.js:35619: if (this.data.hasOwnProperty(\"topup\") && 1 == this.data.topup) {",
+        "tools/scripts2.js:35830: this.data.hasOwnProperty(\"weaponSkinId\") && this.data.weaponSkinId > 0 ? this.skinSprit.active = !0 : this.skinSprit.active = !1;",
+        "tools/scripts2.js:36177: e.hasOwnProperty(\"itemSort\") && (v.RoleBaseInfo.itemSort = e.itemSort);",
+        "tools/scripts2.js:36831: e.hasOwnProperty(\"topup\") || (e.topup = 0);",
+        "tools/scripts2.js:36832: o.hasOwnProperty(\"topup\") || (o.topup = 0);",
+        "tools/scripts2.js:37032: t && t.hasOwnProperty(\"weaponSkinId\") && t.weaponSkinId > 0 && (this.weaponSkintip.active = !0);",
+        "tools/scripts2.js:37035: if (t && t.hasOwnProperty(\"weaponSkinId\") && t.weaponSkinId > 0) {",
+        "tools/scripts2.js:37042: if (t && t.hasOwnProperty(\"weaponSkinId\") && t.weaponSkinId > 0) {",
+        "tools/scripts2.js:37665: if (p.HomePlantModel.soilArr[this.landId].hasOwnProperty(\"m\")) {",
+        "tools/scripts2.js:37667: this.datas.hasOwnProperty(\"m\") && this.datas.m.hasOwnProperty(\"id\") && this.showCropPic();",
+        "tools/scripts2.js:37676: this.datas.hasOwnProperty(\"m\") && this.datas.m.hasOwnProperty(\"id\") && this.showCropPic();",
+        "tools/scripts2.js:37686: this.datas.hasOwnProperty(\"m\") && this.datas.m.hasOwnProperty(\"b\") && (this.datas.pox = Math.floor(5 * Math.random()));",
+        "tools/scripts2.js:37687: if (this.datas.hasOwnProperty(\"s\")) {",
+        "tools/scripts2.js:37704: this.datas.hasOwnProperty(\"m\") && this.datas.m.hasOwnProperty(\"s\") && (this.cropState = this.datas.m.s);",
+        "tools/scripts2.js:37709: t.hasOwnProperty(\"m\") && t.m.hasOwnProperty(\"b\") && (e = o.hasOwnProperty(\"pox\") ? o.pox : Math.floor(5 * Math.random()));",
+        "tools/scripts2.js:37721: if (this.datas.hasOwnProperty(\"m\") && this.cropState > 0) {",
+        "tools/scripts2.js:37725: if (this.datas.m.hasOwnProperty(\"at\")) {",
+        "tools/scripts2.js:37753: if (this.datas.hasOwnProperty(\"m\") && this.datas.m.hasOwnProperty(\"id\")) {",
+        "tools/scripts2.js:37768: if (this.datas.m.hasOwnProperty(\"eid\") && this.datas.m.eid > 0) {",
+        "tools/scripts2.js:37775: if (this.cropState > 0 && this.datas.m.hasOwnProperty(\"b\")) for (var c = this.datas.pox, l = t.chengzhang + \"/\" + t.chengzhang, p = 0; p < 5; p++) p == c && this.addSpineNode(this.companionNode[c], l, \"atk\", 0, .6, o);",
+        "tools/scripts2.js:37793: if (this.datas.hasOwnProperty(\"m\")) {",
+        "tools/scripts2.js:37794: this.datas.m.hasOwnProperty(\"t\") && (t = this.datas.m.t);",
+        "tools/scripts2.js:37795: this.datas.m.hasOwnProperty(\"id\") && (e = l.PlantSystemMgr.getCropGrowingTime(this.cropState, this.datas.m.id));",
+        "tools/scripts2.js:37796: this.datas.m.hasOwnProperty(\"pt\") && (o = this.datas.m.pt);",
+        "tools/scripts2.js:38135: t.hasOwnProperty(\"_isTrainingMp\") && (this._isTrainingMp = t._isTrainingMp);",
+        "tools/scripts2.js:41848: if (1 == e.eRet && e.hasOwnProperty(\"rankArr\")) {",
+        "tools/scripts2.js:41955: for (var t = i.getItem(this.id, \"meridians\"), e = 1; ;++e) if (!t.hasOwnProperty(\"acupoint\" + e)) return this.numLayer = e - 1;",
+        "tools/scripts2.js:42508: o && o.hasOwnProperty(\"parameter\") && parseInt(o.parameter) > 0 && (null === (e = h.GSceneMgr.go2Scene(o.parameter, cc.v3(o.pox[0], o.pox[1]))) || void 0 === e || e.then(function() {",
+        "tools/scripts2.js:42811: this.employment = this.data.hasOwnProperty(\"employment\") ? this.data.employment : 0;",
+        "tools/scripts2.js:43397: e.hasOwnProperty(\"equipObj\") && (i = e.equipObj);",
+        "tools/scripts2.js:43398: e.hasOwnProperty(\"gemId\") && (s = e.gemId);",
+        "tools/scripts2.js:45172: this.selfItemObj = t.hasOwnProperty(\"selfData\") ? t.selfData : {};",
+        "tools/scripts2.js:45393: if (e.hasOwnProperty(\"friendList\")) {",
+        "tools/scripts2.js:45556: t.hasOwnProperty(\"TeamDeclaration\") && (this.txtAy[3].string = t.TeamDeclaration);",
+        "tools/scripts2.js:46462: if (e.hasOwnProperty(\"ShopArray\")) {",
+        "tools/scripts2.js:47543: for (var i = 1; i <= 3; i++) if (t.hasOwnProperty(\"awardArr\" + i)) {",
+        "tools/scripts2.js:47546: null != e && e[this.configid].hasOwnProperty(\"choose\" + i) && (n = e[this.configid][\"choose\" + i]);",
+        "tools/scripts2.js:47589: if (t[this.configid].hasOwnProperty(\"choose\" + s)) for (var r = 0; r < t[this.configid][\"choose\" + s].length; r++) n.push(parseInt(t[this.configid][\"choose\" + s][r][0]));",
+        "tools/scripts2.js:47600: for (var t = 0, e = 1; e <= 3; e++) this.data.giftObj[this.configid].hasOwnProperty(\"awardArr\" + e) && t++;",
+        "tools/scripts2.js:47705: if (s[o].hasOwnProperty(\"choose\" + i)) for (var n = s[o][\"choose\" + i], c = 0; c < n.length; c++) if (n[c][0] == t) {",
+        "tools/scripts2.js:47819: e[this.id].hasOwnProperty(\"choose\" + this.index) && (t = e[this.id][\"choose\" + this.index]);",
+        "tools/scripts2.js:47838: if (i[this.id].hasOwnProperty(\"choose\" + this.index)) for (var h = i[this.id][\"choose\" + this.index], d = 0; d < h.length; d++) h[d][0] == t.giftObj[e][\"awardArr\" + o][n][0] && this.onSelectGiftId(null, [ t.giftObj[e][\"awardArr\" + o][n][0], t.giftObj[e][\"awardArr\" + o][n][1] ]);",
+        "tools/scripts2.js:47989: if (e.hasOwnProperty(\"ReceiveState\") && e.hasOwnProperty(\"chooseID\")) {",
+        "tools/scripts2.js:47994: if (e.hasOwnProperty(\"rewardArray\")) {",
+        "tools/scripts2.js:48639: if (e.hasOwnProperty(\"id\")) {",
+        "tools/scripts2.js:49792: if (j.hasOwnProperty(\"e\") && parseInt(j.e) > 0) {",
+        "tools/scripts2.js:50225: if (this.data.hasOwnProperty(\"topup\") && 1 == this.data.topup) {",
+        "tools/scripts2.js:50858: if (s.hasOwnProperty(\"id\") && s.id == e.data.id) {",
+        "tools/scripts2.js:50873: if (e.hasOwnProperty(\"id\") && this.data && this.data.id == e.id) {",
+        "tools/scripts2.js:51356: if (e.hasOwnProperty(\"Score\")) {",
+        "tools/scripts2.js:51915: if (this.data.hasOwnProperty(\"ID\")) {",
+        "tools/scripts2.js:53493: t && t.hasOwnProperty(\"colorvalue\") ? this.colorValue = !0 : this.colorValue = !1;",
+        "tools/scripts2.js:53672: this.roleInfo.hasOwnProperty(\"readAgeNum\") && this.roleInfo.readAgeNum > 0 && (this.roleAge = this.roleInfo.readAgeNum);",
+        "tools/scripts2.js:53673: if (this.roleInfo.hasOwnProperty(\"avatarInfo\") && this.roleInfo.avatarInfo.length > 0 && t <= this.roleInfo.avatarInfo[2]) {",
+        "tools/scripts2.js:53693: r.hasOwnProperty(\"weaponSkinId\") && r.weaponSkinId > 0 && (this.weaponskinId = r.weaponSkinId);",
+        "tools/scripts2.js:53703: this.roleInfo.ohterInfo.hasOwnProperty(\"titivateObj\") ? this.makeInfo = this.roleInfo.ohterInfo.titivateObj : this.makeInfo = {};",
+        "tools/scripts2.js:53733: b.hasOwnProperty(\"weaponSkinId\") && b.weaponSkinId > 0 && (this.weaponskinId = b.weaponSkinId);",
+        "tools/scripts2.js:54627: this.oriPriceLabel.node.active = t.hasOwnProperty(\"sale\") && 0 != t.sale;",
+        "tools/scripts2.js:54912: t.hasOwnProperty(\"newNameStr\") ? this.nameLabel.string = t.newNameStr : this.nameLabel.string = c.getText(\"4559\");",
+        "tools/scripts2.js:54914: t.hasOwnProperty(\"callFunc\") && (this.callFunc = t.callFunc);",
+        "tools/scripts2.js:54917: if (this.data.hasOwnProperty(\"newNameStr\")) {",
+        "tools/scripts2.js:55234: t.hasOwnProperty(\"selfData\") ? this.selfItemObj = t.selfData : this.selfItemObj = {};",
+        "tools/scripts2.js:56028: e.hasOwnProperty(\"idType\") && (h.SchoolModel.idType = e.idType);",
+        "tools/scripts2.js:56035: e.hasOwnProperty(\"idType\") && (h.SchoolModel.idType = e.idType);",
+        "tools/scripts2.js:56042: e.hasOwnProperty(\"idType\") && (h.SchoolModel.idType = e.idType);",
+        "tools/scripts2.js:56043: e.hasOwnProperty(\"isMaster\") && (h.SchoolModel.idType = e.isMaster ? 2 : 1);",
+        "tools/scripts2.js:56050: o.hasOwnProperty(\"masterName\") && (r = o.masterName);",
+        "tools/scripts2.js:56051: o.hasOwnProperty(\"pupilName\") && (r = o.pupilName);",
+        "tools/scripts2.js:56052: o.hasOwnProperty(\"nickName\") && (r = o.nickName);",
+        "tools/scripts2.js:56053: o.hasOwnProperty(\"declaration\") && (a = o.declaration);",
+        "tools/scripts2.js:56164: t.hasOwnProperty(\"ohterNickName\") && (i.getComponent(cc.Label).string = t.ohterNickName);",
+        "tools/scripts2.js:56189: if (o) if (o.hasOwnProperty(\"masterId\")) {",
+        "tools/scripts2.js:56195: } else if (o.hasOwnProperty(\"pupilId\")) {",
+        "tools/scripts2.js:56201: } else if (o.hasOwnProperty(\"roleId\")) {",
+        "tools/scripts2.js:56524: if (this.data.hasOwnProperty(\"status\")) if (0 == this.data.status) {",
+        "tools/scripts2.js:56550: if (this.data.hasOwnProperty(\"schoolWinner\")) {",
+        "tools/scripts2.js:56572: if (null == this.playerNode && e.hasOwnProperty(\"ohterInfo\")) {",
+        "tools/scripts2.js:56594: if (o.hasOwnProperty(\"equipTitle\")) {",
+        "tools/scripts2.js:56775: if (e.hasOwnProperty(\"Loser\") && e.Loser.RoleId == v.RoleBaseInfo.roleID) {",
+        "tools/scripts2.js:56783: if (e.hasOwnProperty(\"winner\")) {",
+        "tools/scripts2.js:57539: if (this.data && this.data.hasOwnProperty(\"data\") && this.data.data && this.data.data.hasOwnProperty(\"CampaignRolePair\")) {",
+        "tools/scripts2.js:57606: this.data && this.data.hasOwnProperty(\"data\") && this.data.data && this.data.data.hasOwnProperty(\"CampaignRolePair\") && this.schedule(this.updateTime, 1);",
+        "tools/scripts2.js:57615: if (this.data && this.data.hasOwnProperty(\"statusNotifyData\") && this.data.statusNotifyData) {",
+        "tools/scripts2.js:57671: if (this.data && this.data.hasOwnProperty(\"data\") && this.data.data) {",
+        "tools/scripts2.js:57789: e.hasOwnProperty(\"affSchool\") && (this.affschool = e.affSchool);",
+        "tools/scripts2.js:57790: if (e.hasOwnProperty(\"isSchoolNotice\") && 1 == e.isSchoolNotice) {",
+        "tools/scripts2.js:58084: t.hasOwnProperty(\"_isTrainingMp\") && (this._isTrainingMp = t._isTrainingMp);",
+        "tools/scripts2.js:58375: if (this.data && this.data.hasOwnProperty(\"CampaignRolePair\")) {",
+        "tools/scripts2.js:58547: if (this.data && this.data.hasOwnProperty(\"data\") && this.data.data && this.data.data.hasOwnProperty(\"CampaignRolePair\")) {",
+        "tools/scripts2.js:60135: n.hasOwnProperty(\"time\") && (o += h.RumorModel.showSecondTime(this.selectNum * parseInt(n.time)));",
+        "tools/scripts2.js:60313: n.hasOwnProperty(\"time\") && (o += h.RumorModel.showSecondTime(this.selectNum * parseInt(n.time)));",
+        "tools/scripts2.js:60643: s.hasOwnProperty(\"RoleCount\") && (n.RoleCount = s.RoleCount);",
+        "tools/scripts2.js:62129: this.data.hasOwnProperty(\"curDay\") && (this.curDay = parseInt(this.data.curDay) > 7 ? 7 : this.data.curDay);",
+        "tools/scripts2.js:62408: e.hasOwnProperty(\"SeniorSchool\") && e.SeniorSchool > 0 ? this.schoolName.string = a.getSchool(e.roleSchool) + \"|\" + a.getSchool(e.SeniorSchool) : this.schoolName.string = a.getSchool(e.roleSchool);",
+        "tools/scripts2.js:63694: this.data.hasOwnProperty(\"rewardArray\") && u.default.addShowRewardUI1(this.data.rewardArray, 0, this.data.equipObj);",
+        "tools/scripts2.js:64533: if (this.data && this.data.hasOwnProperty(\"useBed\")) {",
+        "tools/scripts2.js:64551: if (o.data && o.data.hasOwnProperty(\"useBed\")) {",
+        "tools/scripts2.js:64598: if (this.data && this.data.hasOwnProperty(\"type\")) if (2 == this.data.type) {",
+        "tools/scripts2.js:66890: if (!i.hasOwnProperty(\"rewardArray\")) {",
+        "tools/scripts2.js:66925: if (i.hasOwnProperty(\"rewardArray\")) {",
+        "tools/scripts2.js:67474: t.hasOwnProperty(\"back\") && (this.back = t.back);",
+        "tools/scripts2.js:67486: if (o.hasOwnProperty(\"Type\") && 7 == o.Type && o.endTime > 0) {",
+        "tools/scripts2.js:67505: if (!a.hasOwnProperty(\"Type\") || 7 != a.Type && 11 != a.Type) {",
+        "tools/scripts2.js:67506: if (a.hasOwnProperty(\"nameID\")) {",
+        "tools/scripts2.js:67516: a.hasOwnProperty(\"up\") && 1 == a.up && (s.saleSps[i].active = !0);",
+        "tools/scripts2.js:67534: } else if (a.hasOwnProperty(\"Name\")) {",
+        "tools/scripts2.js:67571: var u = a.hasOwnProperty(\"nameID\") && a.yuanbao > 0 && a.extraGold > 0;",
+        "tools/scripts2.js:67605: if (!t.hasOwnProperty(\"Type\") || 7 != t.Type && 11 != t.Type) {",
+        "tools/scripts2.js:67606: if (t.hasOwnProperty(\"nameID\")) {",
+        "tools/scripts2.js:67609: } else if (t.hasOwnProperty(\"Name\")) {",
+        "tools/scripts2.js:67615: if (!f.RoleBaseInfo.finishTaskObj.hasOwnProperty(\"L1000\")) {",
+        "tools/scripts2.js:67822: t.hasOwnProperty(\"back\") && (this.back = t.back);",
+        "tools/scripts2.js:68246: t.hasOwnProperty(\"Choose\") && (this.chooseAy = t.Choose);",
+        "tools/scripts2.js:68579: if (this.data.hasOwnProperty(\"ID\")) {",
+        "tools/scripts2.js:68720: var c = this.currentObjTitle.hasOwnProperty(\"description\") ? p.getText(this.currentObjTitle.description) : \"\", h = l.getTable(\"evaluate\"), d = 1;",
+        "tools/scripts2.js:69833: if (t.hasOwnProperty(\"qiyus\") && t.qiyus.length) this.egsBtns.qiyus ? this.egsBtns.qiyus.active = !0 : this.addEventBtn(\"lh_8\", 1, 0, this.eventButton, \"qiyus\"); else if (this.egsBtns.qiyus) {",
+        "tools/scripts2.js:69837: if (t.hasOwnProperty(\"pandas\") && t.pandas.length) if (this.egsBtns.pandas) {",
+        "tools/scripts2.js:69848: if (t.hasOwnProperty(\"shopids\") && !M.MadUtilsTS.isNullObj(t.shopids)) this.egsBtns.shopids ? this.egsBtns.shopids.active = !0 : this.addEventBtn(\"lh_1\", 3, 0, this.eventButton, \"shopids\"); else if (this.egsBtns.shopids) {",
+        "tools/scripts2.js:69852: if (t.hasOwnProperty(\"shopidsBook\") && t.shopidsBook.length) if (this.egsBtns.shopidsBook) {",
+        "tools/scripts2.js:70827: if (this.obj.hasOwnProperty(\"taskId\")) {",
+        "tools/scripts2.js:71320: t.hasOwnProperty(\"Choose\") && (this.chooseAy = t.Choose);",
+        "tools/scripts2.js:71329: if (t.hasOwnProperty(\"music\")) for (var e = t.music.split(\"|\"), o = 0; o < e.length && \"0\" != e; o++) {",
+        "tools/scripts2.js:71333: if (t.hasOwnProperty(\"sound\")) for (var s = t.sound.split(\"|\"), n = 0; n < s.length && \"0\" != s; n++) {",
+        "tools/scripts2.js:72464: var i = h.CopyTeamModel.teamBrief.hasOwnProperty(\"TeamId\") ? 0 : 1;",
+        "tools/scripts2.js:72512: if (h.CopyTeamModel.teamBrief.hasOwnProperty(\"TeamId\")) p.WorldChatModel.reqOpenChatChannel(\"TeamChannel\"); else {",
+        "tools/scripts2.js:72584: if (0 != this.chatType || 1 == this.openScene || h.CopyTeamModel.teamBrief.hasOwnProperty(\"TeamId\")) if (3 != this.chatType || N.MultiPlayerModel.wulinMgr.isInTeam()) {",
+        "tools/scripts2.js:72783: if (0 != this.chatType || 1 == this.openScene || h.CopyTeamModel.teamBrief.hasOwnProperty(\"TeamId\")) if (Math.floor(g.TimeMgr.getSTimestamp()) - Math.floor(m.RoleOtherInfo.curGameT) < 5e3) u.default.show(r.getText(\"924\")); else {",
+        "tools/scripts2.js:74194: if (t.hasOwnProperty(\"TeamId\")) {",
+        "tools/scripts2.js:74319: if (e.TeamMember.hasOwnProperty(\"RoleBoatId\") && e.TeamMember.RoleBoatId) {",
+        "tools/scripts2.js:74337: if (e.TeamMember.hasOwnProperty(\"RoleId\")) {",
+        "tools/scripts2.js:74362: if (a.CopyTeamModel.teamBrief.hasOwnProperty(\"TeamId\")) {",
+        "tools/scripts2.js:74381: if (o.hasOwnProperty(\"RoleBoatId\") && o.RoleBoatId) {",
+        "tools/scripts2.js:74518: this.lockData.hasOwnProperty(\"leftTimes\") ? this.leftIimes = this.lockData.leftTimes : this.leftIimes = 0;",
+        "tools/scripts2.js:74575: this.lockData.hasOwnProperty(\"leftTimes\") ? this.leftIimes = this.lockData.leftTimes : this.leftIimes = 0;",
+        "tools/scripts2.js:74585: this.lockData.hasOwnProperty(\"status\") && 0 != this.lockData.status && cc.tween(this.node).delay(1).call(function() {",
+        "tools/scripts2.js:74587: o.lockData.hasOwnProperty(\"triggerID\") && o.lockData.triggerID > 0 ? u.default.popLayer(r.getText(o.lockData.triggerID), function() {",
+        "tools/scripts2.js:74827: this.rewards = e.hasOwnProperty(\"rewardArray\") ? e.rewardArray : null;",
+        "tools/scripts2.js:76288: if (e.hasOwnProperty(\"AwardIDArr\")) {",
+        "tools/scripts2.js:76306: if (e.hasOwnProperty(\"showAwardArr\")) {",
+        "tools/scripts2.js:76312: i.rewardData.hasOwnProperty(\"showAwardArr\") && o.newanim(i.rewardData.AwardIDArr, i.rewardData.showAwardArr);",
+        "tools/scripts2.js:76431: if (this.rewardData.hasOwnProperty(\"showAwardArr\")) {",
+        "tools/scripts2.js:79956: if (e && e.hasOwnProperty(\"married_model\")) {",
+        "tools/scripts2.js:80457: t[l].hasOwnProperty(\"color\") && (h.color = cc.color(t[l].color[0], t[l].color[1], t[l].color[2]));",
+        "tools/scripts2.js:80459: t[l].hasOwnProperty(\"enabled\") && (u.interactable = t[l].enabled);",
+        "tools/scripts2.js:80620: if (this.data.hasOwnProperty(\"rewardArray\")) for (var u in this.data.rewardArray) d++;",
+        "tools/scripts2.js:80724: e.flipCard.hasOwnProperty(\"refreshCount\") && (o.refreshCount = e.flipCard.refreshCount);",
+        "tools/scripts2.js:81407: e.hasOwnProperty(\"SevenDaysArr\") && (a.RoleOtherInfo.SevenDaysArr = e.SevenDaysArr);",
+        "tools/scripts2.js:81410: if (e.hasOwnProperty(\"rewardArray\")) {",
+        "tools/scripts2.js:81754: if (t.hasOwnProperty(\"tag1\")) return t.tag1;"
+      ]
+    },
+    {
+      "pattern": "hasOwnProperty('",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    }
+  ],
+  "getActiveStateFields": [
+    {
+      "field": "RoleOtherInfo.activeObj[0]",
+      "where": "tools/index.js:55359",
+      "raw": "if (1001 == e && h.RoleOtherInfo.activeObj[0]) return !0;"
+    },
+    {
+      "field": "RoleOtherInfo.activeObj[0]",
+      "where": "tools/index.js:55360",
+      "raw": "if (1002 == e && h.RoleOtherInfo.activeObj[0] <= 0) return !0;"
+    },
+    {
+      "field": "RoleOtherInfo.activeObj[1]",
+      "where": "tools/index.js:55361",
+      "raw": "if (1003 == e && (0 != h.RoleOtherInfo.activeObj[1] || 0 == f.ActiveModel.rechargedIsEnd) && 0 != m.HomeActiveModel.activeShowList[0]) return !0;"
+    },
+    {
+      "field": "ActiveModel.rechargedIsEnd",
+      "where": "tools/index.js:55361",
+      "raw": "if (1003 == e && (0 != h.RoleOtherInfo.activeObj[1] || 0 == f.ActiveModel.rechargedIsEnd) && 0 != m.HomeActiveModel.activeShowList[0]) return !0;"
+    },
+    {
+      "field": "HomeActiveModel.activeShowList[0]",
+      "where": "tools/index.js:55361",
+      "raw": "if (1003 == e && (0 != h.RoleOtherInfo.activeObj[1] || 0 == f.ActiveModel.rechargedIsEnd) && 0 != m.HomeActiveModel.activeShowList[0]) return !0;"
+    },
+    {
+      "field": "HomeActiveModel.activeShowList[1]",
+      "where": "tools/index.js:55362",
+      "raw": "if (1004 == e && 0 != m.HomeActiveModel.activeShowList[1]) return !0;"
+    },
+    {
+      "field": "TimeMgr.getSTimestamp()",
+      "where": "tools/index.js:55364",
+      "raw": "var i = u.TimeMgr.getSTimestamp(), r = 1e3 * n.getConstByID(132);"
+    },
+    {
+      "field": "CFMgr.getConstByID(132)",
+      "where": "tools/index.js:55364",
+      "raw": "var i = u.TimeMgr.getSTimestamp(), r = 1e3 * n.getConstByID(132);"
+    },
+    {
+      "field": "CFMgr.getConstByID(156)",
+      "where": "tools/index.js:55365",
+      "raw": "if (1e3 * n.getConstByID(156) <= i && i <= r) return !0;"
+    },
+    {
+      "field": "RoleOtherInfo.passCardAction",
+      "where": "tools/index.js:55367",
+      "raw": "if (1006 == e && 1 == h.RoleOtherInfo.passCardAction) return !1;"
+    },
+    {
+      "field": "RoleOtherInfo.giftendtime",
+      "where": "tools/index.js:55368",
+      "raw": "if (1010 == e && 0 != h.RoleOtherInfo.giftendtime) return !1;"
+    },
+    {
+      "field": "t.schoolActivityOpen",
+      "where": "tools/index.js:55369",
+      "raw": "if (1012 == e && 1 == t.schoolActivityOpen) return !0;"
+    },
+    {
+      "field": "t.schoolArenaOpen",
+      "where": "tools/index.js:55370",
+      "raw": "if (1013 == e && 1 == t.schoolArenaOpen) return !0;"
+    },
+    {
+      "field": "ActiveModel.checkActive(o)",
+      "where": "tools/index.js:55371",
+      "raw": "if (1013 == e && 1 == t.schoolArenaOpen) return !0;"
+    },
+    {
+      "field": "this.themeActiveAy",
+      "where": "tools/index.js:55351",
+      "raw": "-1 == this.themeActiveAy.indexOf(r.active) && this.getActiveState(t, r.number, r.active) && o.push(r);"
+    }
+  ],
+  "callSiteContext": [
+    {
+      "call": "tools/scripts2.js:29182: e.listAy = p.GrowthModel.getActiveSortData(e.data);",
+      "next20": [
+        "tools/scripts2.js:29183: o.btnNode.addComponent(\"HomeActiveToggle\").setBtns(o.listAy);",
+        "tools/scripts2.js:29184: }",
+        "tools/scripts2.js:29185: });",
+        "tools/scripts2.js:29186: this.topMenu.active = !1;",
+        "tools/scripts2.js:29187: };",
+        "tools/scripts2.js:29188: e.prototype.addEventListeners = function() {",
+        "tools/scripts2.js:29189: t.prototype.addEventListeners.call(this);",
+        "tools/scripts2.js:29190: r.MessageCenter.on(h.EvName.CHANGE_ACTIVE_PAGE, this.setShowUI, this);",
+        "tools/scripts2.js:29191: r.MessageCenter.on(h.EvName.START_EXAMINATION, this.onStartExamination, this);",
+        "tools/scripts2.js:29192: r.MessageCenter.on(h.EvName.NEW_ROLE_RECHARGE_EVENT, this.newRoleDataEvent, this);",
+        "tools/scripts2.js:29193: };",
+        "tools/scripts2.js:29194: e.prototype.removeEventListeners = function() {",
+        "tools/scripts2.js:29195: t.prototype.removeEventListeners.call(this);",
+        "tools/scripts2.js:29196: r.MessageCenter.off(h.EvName.CHANGE_ACTIVE_PAGE, this.setShowUI, this);",
+        "tools/scripts2.js:29197: r.MessageCenter.off(h.EvName.START_EXAMINATION, this.onStartExamination, this);",
+        "tools/scripts2.js:29198: r.MessageCenter.off(h.EvName.NEW_ROLE_RECHARGE_EVENT, this.newRoleDataEvent, this);",
+        "tools/scripts2.js:29199: };",
+        "tools/scripts2.js:29200: e.prototype.setData = function(t, e) {",
+        "tools/scripts2.js:29201: this.data = t;",
+        "tools/scripts2.js:29202: this.type = e;"
+      ]
+    }
+  ],
+  "hasOwnPropertyHits": [
+    {
+      "hit": "tools/scripts2.js:277: e.hasOwnProperty(\"e\") && e.e == this.data.id && (t = 0);",
+      "enclosingFunction": "tools/scripts2.js:275: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:296: if (n.hasOwnProperty(\"e\") && n.e == this.data.id) this.btn.getComponentInChildren(cc.Label).string = c.getText(60); else if (n.hasOwnProperty(this.data.id) && o) this.btn.getComponentInChildren(cc.Label).string = c.getText(55); else {",
+      "enclosingFunction": "tools/scripts2.js:285: e.prototype.dataChanged = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:1014: this.dragonData && this.dragonData.hasOwnProperty(\"rewardArray\") && v.default.addShowRewardUI1(this.dragonData.rewardArray, 0, this.dragonData.equipObj, null, function() {",
+      "enclosingFunction": "tools/scripts2.js:1010: e.prototype.backFun = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:1089: if (this.dragonData.hasOwnProperty(\"currentDragonId\")) {",
+      "enclosingFunction": "tools/scripts2.js:1087: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:1091: this.dragonData.hasOwnProperty(\"isDragonPrize\") && (this.prizeDialogueId = this.dragonData.dialogue);",
+      "enclosingFunction": "tools/scripts2.js:1087: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:1102: this.dragonData.hasOwnProperty(\"options\") && (this.optionsIndexs = this.dragonData.options);",
+      "enclosingFunction": "tools/scripts2.js:1087: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:1304: this.rightArr = t.hasOwnProperty(\"historyRightList\") ? t.historyRightList : [];",
+      "enclosingFunction": "tools/scripts2.js:1297: e.prototype.setData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:1694: t.hasOwnProperty(\"SeniorSchool\") && t.SeniorSchool > 0 ? this.txtAy[1].string = r.getSchool(t.RoleSchool) + \"|\" + r.getSchool(t.SeniorSchool) : this.txtAy[1].string = r.getSchool(t.RoleSchool);",
+      "enclosingFunction": "tools/scripts2.js:1689: e.prototype.dataChanged = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:1779: if (t.hasOwnProperty(\"Extratotalnum\")) {",
+      "enclosingFunction": "tools/scripts2.js:1778: e.prototype.onSuccessCallback = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:1785: if (t.hasOwnProperty(\"failnum\")) {",
+      "enclosingFunction": "tools/scripts2.js:1778: e.prototype.onSuccessCallback = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:3182: e.hasOwnProperty(\"SeniorSchool\") && e.SeniorSchool > 0 ? this.selfRandAy[2].string = u.getSchool(e.RoleBangPai) + \"|\" + u.getSchool(e.SeniorSchool) : this.selfRandAy[2].string = u.getSchool(e.RoleBangPai);",
+      "enclosingFunction": "tools/scripts2.js:3177: e.prototype.showCurrentOnwRank = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:3265: e.hasOwnProperty(\"SeniorSchool\") && e.SeniorSchool > 0 ? this.schoolTxt.string = a.getSchool(e.RoleBangPai) + \"|\" + a.getSchool(e.SeniorSchool) : this.schoolTxt.string = a.getSchool(e.RoleBangPai);",
+      "enclosingFunction": "tools/scripts2.js:3260: e.prototype.setData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:3268: e.hasOwnProperty(\"SeniorSchool\") && e.SeniorSchool > 0 ? this.schoolTxt.fontSize = 20 : this.schoolTxt.fontSize = 26;",
+      "enclosingFunction": "tools/scripts2.js:3260: e.prototype.setData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:3937: if (o.hasOwnProperty(\"9\")) {",
+      "enclosingFunction": "tools/scripts2.js:3918: e.prototype.onClick = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:3940: i && i.hasOwnProperty(\"parameter\") && parseInt(i.parameter) > 0 && l.GSceneMgr.go2Scene(i.parameter, cc.v3(i.pox[0], i.pox[1]));",
+      "enclosingFunction": "tools/scripts2.js:3918: e.prototype.onClick = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:3953: if (e.hasOwnProperty(\"1\")) {",
+      "enclosingFunction": "tools/scripts2.js:3951: e.prototype.setEvents = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:4000: u && u.hasOwnProperty(\"text\") && (o += \"\\n\" + a.getText(u.text));",
+      "enclosingFunction": "tools/scripts2.js:3951: e.prototype.setEvents = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:4032: if (e.hasOwnProperty(\"9\")) {",
+      "enclosingFunction": "tools/scripts2.js:3951: e.prototype.setEvents = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:4039: if (t.hasOwnProperty(\"cdSkill\")) {",
+      "enclosingFunction": "tools/scripts2.js:3951: e.prototype.setEvents = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:4051: if (e.hasOwnProperty(\"1\")) {",
+      "enclosingFunction": "tools/scripts2.js:4049: e.prototype.setDoubleEvents = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:4098: u && u.hasOwnProperty(\"text\") && (o += \"\\n\" + a.getText(u.text));",
+      "enclosingFunction": "tools/scripts2.js:4049: e.prototype.setDoubleEvents = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:4130: if (e.hasOwnProperty(\"9\")) {",
+      "enclosingFunction": "tools/scripts2.js:4049: e.prototype.setDoubleEvents = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:4138: if (t.hasOwnProperty(\"cdSkill\")) {",
+      "enclosingFunction": "tools/scripts2.js:4049: e.prototype.setDoubleEvents = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:4367: this.data.hasOwnProperty(\"wife\") && (this.wife = this.data.wife);",
+      "enclosingFunction": "tools/scripts2.js:4366: o.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:4478: t.hasOwnProperty(\"cnt\") && (this.timeLeft = t.cnt);",
+      "enclosingFunction": "tools/scripts2.js:4470: o.prototype.refresh = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:4613: this.data.hasOwnProperty(\"wife\") && (this.wife = this.data.wife);",
+      "enclosingFunction": "tools/scripts2.js:4612: o.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5205: t.hasOwnProperty(\"Choose\") && (this.chooseAy = t.Choose);",
+      "enclosingFunction": "tools/scripts2.js:5202: e.prototype.setShowBubbleUI = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:5978: this.data.hasOwnProperty(\"sale\") && parseInt(this.data.sale) > 0 && (e = this.data.sale);",
+      "enclosingFunction": "tools/scripts2.js:5974: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:6055: this.data.hasOwnProperty(\"sale\") && parseInt(this.data.sale) > 0 && (e = this.data.sale);",
+      "enclosingFunction": "tools/scripts2.js:6051: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:7412: this.itemObj.hasOwnProperty(\"sale\") && parseInt(this.itemObj.sale) > 0 && (o = this.itemObj.sale);",
+      "enclosingFunction": "tools/scripts2.js:7409: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7516: this.itemObj.hasOwnProperty(\"sale\") && parseInt(this.itemObj.sale) > 0 && (o = this.itemObj.sale);",
+      "enclosingFunction": "tools/scripts2.js:7512: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7731: this.curState && (s = e.hasOwnProperty(\"BattleType\") && 4 == parseInt(e.BattleType) ? r.getText(4492) : t);",
+      "enclosingFunction": "tools/scripts2.js:7727: e.prototype.setDatas = function(t, e, o, i) {"
+    },
+    {
+      "hit": "tools/scripts2.js:7740: if (this.chatObj.hasOwnProperty(\"BattleType\") && 4 == parseInt(this.chatObj.BattleType)) {",
+      "enclosingFunction": "tools/scripts2.js:7738: e.prototype.getDesContent = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:7760: this.chatObj.hasOwnProperty(\"BattleType\") && 4 == parseInt(this.chatObj.BattleType) && (e = 1);",
+      "enclosingFunction": "tools/scripts2.js:7758: e.prototype.playBattleVideo = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:7761: if (t && this.chatObj.hasOwnProperty(\"RecordId\")) {",
+      "enclosingFunction": "tools/scripts2.js:7758: e.prototype.playBattleVideo = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:7763: t.hasOwnProperty(\"RoundCount\") && (o = parseInt(t.RoundCount));",
+      "enclosingFunction": "tools/scripts2.js:7758: e.prototype.playBattleVideo = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:8357: if (null != this.data && this.data.hasOwnProperty(\"back\")) {",
+      "enclosingFunction": "tools/scripts2.js:8274: o.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:8360: if (1 == c) if (this.data.hasOwnProperty(\"type\")) {",
+      "enclosingFunction": "tools/scripts2.js:8274: o.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:8418: e.hasOwnProperty(\"serverGift\") ? this.listData[o].data[6] = e.serverGift : this.listData[o].data[5] = e.buyCount;",
+      "enclosingFunction": "tools/scripts2.js:8416: o.prototype.onTreasurSucess = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:8478: o.hasOwnProperty(\"type\") && (n = o.type);",
+      "enclosingFunction": "tools/scripts2.js:8472: o.prototype.openBuyGoldEvent = function(e, o) {"
+    },
+    {
+      "hit": "tools/scripts2.js:8483: o.hasOwnProperty(\"back\") && (r = o.back);",
+      "enclosingFunction": "tools/scripts2.js:8472: o.prototype.openBuyGoldEvent = function(e, o) {"
+    },
+    {
+      "hit": "tools/scripts2.js:8794: e.hasOwnProperty(\"type\") && (t = \"NewOptionalGiftUI\");",
+      "enclosingFunction": "tools/scripts2.js:8788: o.prototype.onShowOptionalData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:9127: null != this.data && this.data.hasOwnProperty(\"bgmusic\") ? d.SoundMgr.playBgMusic(\"jinglebells\", !0, !0, !1) : l.MessageCenter.dispatch(I.EvName.CHANGE_BGM);",
+      "enclosingFunction": "tools/scripts2.js:9117: o.prototype.onDestroy = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:10181: if (this.taskCircleObj.hasOwnProperty(\"taskId\") && 1000010 == Math.floor(this.taskCircleObj.taskId)) {",
+      "enclosingFunction": "tools/scripts2.js:10175: o.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:10232: if (this.npcData.hasOwnProperty(\"taskObj\")) {",
+      "enclosingFunction": "tools/scripts2.js:10224: o.prototype.closeEvent = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:10483: if (t.hasOwnProperty(\"TextProperty\") && t.TextProperty.length > 0) for (var s = t.TextProperty.split(\",\"), n = 0; n < s.length; n++) {",
+      "enclosingFunction": "tools/scripts2.js:10461: e.prototype.setDatas = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:10951: if (e.hasOwnProperty(\"SendContext\")) {",
+      "enclosingFunction": "tools/scripts2.js:10946: o.prototype.insertPushItem = function(e, o, i) {"
+    },
+    {
+      "hit": "tools/scripts2.js:11029: if (o.hasOwnProperty(\"friendList\")) for (var s in o.friendList) {",
+      "enclosingFunction": "tools/scripts2.js:11024: o.prototype.friendListCallBack = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:11235: this.curState && (s = e.hasOwnProperty(\"BattleType\") && 4 == parseInt(e.BattleType) ? a.getText(4492) : t);",
+      "enclosingFunction": "tools/scripts2.js:11231: e.prototype.setDatas = function(t, e, o, i) {"
+    },
+    {
+      "hit": "tools/scripts2.js:11243: if (t.hasOwnProperty(\"BattleType\") && 4 == parseInt(t.BattleType)) {",
+      "enclosingFunction": "tools/scripts2.js:11241: e.prototype.getConentString = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:11329: if (e.hasOwnProperty(\"Extratotalnum\")) {",
+      "enclosingFunction": "tools/scripts2.js:11327: e.prototype.onGetLargeExtra = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:11333: if (e.hasOwnProperty(\"failnum\")) {",
+      "enclosingFunction": "tools/scripts2.js:11327: e.prototype.onGetLargeExtra = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:11340: if (t.hasOwnProperty(\"Extratotalnum\")) {",
+      "enclosingFunction": "tools/scripts2.js:11339: e.prototype.onSuccessCallback = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:11344: if (t.hasOwnProperty(\"failnum\")) {",
+      "enclosingFunction": "tools/scripts2.js:11339: e.prototype.onSuccessCallback = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:11584: t.hasOwnProperty(\"RoundCount\") && (e = parseInt(t.RoundCount));",
+      "enclosingFunction": "tools/scripts2.js:11582: e.prototype.onPlayBattle = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:11920: t.hasOwnProperty(\"self\") && t.self && t.self.hasOwnProperty(\"ExploitData\") && (e = !0);",
+      "enclosingFunction": "tools/scripts2.js:11917: e.prototype.oneSvrRankData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:12642: if (this.roleInfo.hasOwnProperty(\"bValue\")) {",
+      "enclosingFunction": "tools/scripts2.js:12641: e.prototype.getRoleBaseValue = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:12651: } else if (this.roleInfo.hasOwnProperty(\"body\")) {",
+      "enclosingFunction": "tools/scripts2.js:12641: e.prototype.getRoleBaseValue = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:12661: this.roleInfo.hasOwnProperty(\"weaponskinId\") && (this.weaponskinId = this.roleInfo.weaponskinId);",
+      "enclosingFunction": "tools/scripts2.js:12641: e.prototype.getRoleBaseValue = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:12665: this.makeInfo = this.roleInfo.hasOwnProperty(\"makeInfo\") ? this.roleInfo.makeInfo : {};",
+      "enclosingFunction": "tools/scripts2.js:12641: e.prototype.getRoleBaseValue = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:12666: this.roleInfo.hasOwnProperty(\"makeUpID\") && this.roleInfo.makeUpID > 0 && (this.makeInfo[5] = this.roleInfo.makeUpID);",
+      "enclosingFunction": "tools/scripts2.js:12641: e.prototype.getRoleBaseValue = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:12948: e.hasOwnProperty(\"foster_point\") && (l.MarryModel.childData.foster_point = e.foster_point);",
+      "enclosingFunction": "tools/scripts2.js:12946: e.prototype.onAddChildFoster = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:12949: e.hasOwnProperty(\"playArr\") && (l.MarryModel.childData.playArr = e.playArr);",
+      "enclosingFunction": "tools/scripts2.js:12946: e.prototype.onAddChildFoster = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:13263: if (this.data.hasOwnProperty(\"reviewStatus\")) {",
+      "enclosingFunction": "tools/scripts2.js:13258: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:13269: this.data.hasOwnProperty(\"doing\") && (this.wIcon.active = !0);",
+      "enclosingFunction": "tools/scripts2.js:13258: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:13346: e.hasOwnProperty(\"currentQuestionsInfo\") ? this.curData = e.currentQuestionsInfo : this.curData = {};",
+      "enclosingFunction": "tools/scripts2.js:13345: e.prototype.onGetPaperList = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:13357: if (this.curData.hasOwnProperty(\"paperId\") && i.paper == this.curData.paperId) {",
+      "enclosingFunction": "tools/scripts2.js:13352: e.prototype.initializeData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:13441: if (this.data.hasOwnProperty(\"ID\")) {",
+      "enclosingFunction": "tools/scripts2.js:13439: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:13451: this.data.hasOwnProperty(\"fun\") && (this.callBack = this.data.fun);",
+      "enclosingFunction": "tools/scripts2.js:13439: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:14360: o.hasOwnProperty(\"ohterInfo\") && o.ohterInfo.id == m.RoleBaseInfo.roleID && (e = !0);",
+      "enclosingFunction": "tools/scripts2.js:14354: o.prototype.showGoodEvilChiefBtn = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:14474: this.npcData.hasOwnProperty(\"Task\") && this.npcData.Task.length && this.npcData.Task[1] > 0 && this.btnArray.push(this.npcData.Task[1]);",
+      "enclosingFunction": "tools/scripts2.js:14366: o.prototype.setCurrentSelectBtn = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:15032: if (m.RoleBaseInfo.finishTaskObj.hasOwnProperty(\"L1000\")) {",
+      "enclosingFunction": "tools/scripts2.js:14635: o.prototype.selectCheckBtnCall = function(e, o) {"
+    },
+    {
+      "hit": "tools/scripts2.js:15449: this.npcData.hasOwnProperty(\"BeforeBattle\") && this.npcData.BeforeBattle ? p.MessageCenter.dispatch(S.EvName.BATTLE_DIALOG_EVENT, s) : h.BattleMgr.startNpcFight(s);",
+      "enclosingFunction": "tools/scripts2.js:15412: o.prototype.onBattleCallBack = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:15501: if (g.default.judgeMasterTaskCondition(e)) g.default.saveMasterTask(this.npcID); else if (e.hasOwnProperty(\"text\") && e.text > 0) this.talkShowPopUI(a.getText(e.text), 0); else {",
+      "enclosingFunction": "tools/scripts2.js:15485: o.prototype.onLearnCallBack = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:15601: if (G.SchoolModel.doorMianData.hasOwnProperty(\"id\")) if (G.SchoolModel.doorMianData.id != m.RoleBaseInfo.roleID) if (e >= o.need_pre) {",
+      "enclosingFunction": "tools/scripts2.js:15599: o.prototype.onAppointAction = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:15614: } else G.SchoolModel.reqSchoolTakeOfficeApply(); else G.SchoolModel.reqGetSchoolAppoint(1); else if (null != t && t.hasOwnProperty(\"id\")) if (t.id != m.RoleBaseInfo.roleID) if (e >= o.need_pre) {",
+      "enclosingFunction": "tools/scripts2.js:15599: o.prototype.onAppointAction = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:16139: if (t.hasOwnProperty(\"TeamId\") && parseInt(t.TeamId) > 0) h.default.show(l.getText(3640)); else {",
+      "enclosingFunction": "tools/scripts2.js:16137: e.prototype.onResetCopy = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:16799: if (o.hasOwnProperty(\"chatPkAiStatus\")) {",
+      "enclosingFunction": "tools/scripts2.js:16790: e.prototype.onSaveAICallBack = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:18772: if (t.hasOwnProperty(\"e\")) {",
+      "enclosingFunction": "tools/scripts2.js:18769: e.prototype.showListItems = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:19419: this.inhertEquipData.hasOwnProperty(\"uID\") && a.InhertEquipModel.reqInhertEquip(this.curIndex);",
+      "enclosingFunction": "tools/scripts2.js:19418: e.prototype.onTapCloseCallBack = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:19425: if (this.inhertEquipData.hasOwnProperty(\"uID\")) {",
+      "enclosingFunction": "tools/scripts2.js:19424: e.prototype.showEquipDescripText = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:19453: if (this.inhertEquipData.hasOwnProperty(\"uID\")) {",
+      "enclosingFunction": "tools/scripts2.js:19452: e.prototype.onTapInhertCallBack = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:19469: this.inhertEquipData.hasOwnProperty(\"uID\") && a.InhertEquipModel.reqInhertEquip(this.curIndex);",
+      "enclosingFunction": "tools/scripts2.js:19468: e.prototype.showTapEquip = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:19483: this.selectEquipData.hasOwnProperty(\"uID\") ? u.default.prefabs.load(\"shopUI/InhertEquiUI\", cc.Prefab, function(t, e) {",
+      "enclosingFunction": "tools/scripts2.js:19482: e.prototype.onSelectEquipList = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21436: if (this.data.hasOwnProperty(\"type\")) {",
+      "enclosingFunction": "tools/scripts2.js:21428: e.prototype.showItem = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:21461: if (this.data.hasOwnProperty(\"FashionArr\")) for (var u = 0; u < this.data.FashionArr.length; u++) {",
+      "enclosingFunction": "tools/scripts2.js:21428: e.prototype.showItem = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:22326: if (y.MarryModel.wifeUpdateData.hasOwnProperty(\"fasion\")) {",
+      "enclosingFunction": "tools/scripts2.js:22323: e.prototype.openWifeWardrobe = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:23598: o && o.hasOwnProperty(\"parameter\") && parseInt(o.parameter) > 0 && (null === (e = l.GSceneMgr.go2Scene(o.parameter, cc.v3(o.pox[0], o.pox[1]))) || void 0 === e || e.then(function() {",
+      "enclosingFunction": "tools/scripts2.js:23586: e.prototype.onClick = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:23909: this.employment = this.data.hasOwnProperty(\"employment\") ? this.data.employment : 0;",
+      "enclosingFunction": "tools/scripts2.js:23906: o.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:24519: if (t.hasOwnProperty(\"itemID\")) if (1 == t.type) {",
+      "enclosingFunction": "tools/scripts2.js:24513: e.prototype.checkStateCallBack = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:24536: if (e.hasOwnProperty(\"itemID\")) if (1 == e.type) {",
+      "enclosingFunction": "tools/scripts2.js:24531: e.prototype.beginEnterCast = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:24869: if (this.data.hasOwnProperty(\"inherit\")) {",
+      "enclosingFunction": "tools/scripts2.js:24863: e.prototype.setCurrentTime = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:25691: if (t.hasOwnProperty(\"chip\") && t.chip.length) {",
+      "enclosingFunction": "tools/scripts2.js:25645: o.prototype.onOpenResultEvent = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:25712: (t.hasOwnProperty(\"rewardArray\") && !B.MadUtilsTS.isNullObj(t.rewardArray) || t.hasOwnProperty(\"equipObj\") && !B.MadUtilsTS.isNullObj(t.equipObj)) && v.default.addShowRewardUI1(t.rewardArray, 0, t.equipObj);",
+      "enclosingFunction": "tools/scripts2.js:25708: o.prototype.adventRewardDialog = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:25715: (t.hasOwnProperty(\"rewardArray\") && !B.MadUtilsTS.isNullObj(t.rewardArray) || t.hasOwnProperty(\"equipObj\") && !B.MadUtilsTS.isNullObj(t.equipObj)) && v.default.addShowRewardUI1(t.rewardArray, 0, t.equipObj);",
+      "enclosingFunction": "tools/scripts2.js:25708: o.prototype.adventRewardDialog = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:27126: v.LocalStorageMgr.setItem(\"declaration\", e.hasOwnProperty(\"declaration\") ? e.declaration : \"\");",
+      "enclosingFunction": "tools/scripts2.js:27107: e.prototype.onShowFriendList = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:27962: if (!this.dataObj.hasOwnProperty(\"state\") || 3 == this.dataObj.state) {",
+      "enclosingFunction": "tools/scripts2.js:27961: e.prototype.update = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:28055: t.hasOwnProperty(\"sTime\") && (this.beginTimeNum = t.sTime);",
+      "enclosingFunction": "tools/scripts2.js:28053: e.prototype.setNewBaseData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:30847: if (e && e.hasOwnProperty(\"map\")) {",
+      "enclosingFunction": "tools/scripts2.js:30838: o.prototype.onclickBeggar = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:31123: if (s.hasOwnProperty(\"en_display\") && 0 == s.en_display) continue;",
+      "enclosingFunction": "tools/scripts2.js:31118: o.prototype.checkParterStateArr = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:31931: if (this.itemInfo.hasOwnProperty(\"sale\") && 0 == this.itemInfo.sale) {",
+      "enclosingFunction": "tools/scripts2.js:31926: e.prototype.setData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:32080: t.hasOwnProperty(\"selfData\") ? this.selfItemObj = t.selfData : this.selfItemObj = {};",
+      "enclosingFunction": "tools/scripts2.js:32071: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:34026: e.hasOwnProperty(\"data\") && s.setInnDatas(e.data);",
+      "enclosingFunction": "tools/scripts2.js:33988: e.prototype.onSelectOptionEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:35443: if (this.data.hasOwnProperty(\"topup\") && 1 == this.data.topup) {",
+      "enclosingFunction": "tools/scripts2.js:35409: e.prototype.updateData = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:35619: if (this.data.hasOwnProperty(\"topup\") && 1 == this.data.topup) {",
+      "enclosingFunction": "tools/scripts2.js:35596: e.prototype.updateData = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:35830: this.data.hasOwnProperty(\"weaponSkinId\") && this.data.weaponSkinId > 0 ? this.skinSprit.active = !0 : this.skinSprit.active = !1;",
+      "enclosingFunction": "tools/scripts2.js:35785: o.prototype.updateData = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:36177: e.hasOwnProperty(\"itemSort\") && (v.RoleBaseInfo.itemSort = e.itemSort);",
+      "enclosingFunction": "tools/scripts2.js:36176: e.prototype.onTopUpEvt = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:36831: e.hasOwnProperty(\"topup\") || (e.topup = 0);",
+      "enclosingFunction": "tools/scripts2.js:36788: e.prototype.divisionItem = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:36832: o.hasOwnProperty(\"topup\") || (o.topup = 0);",
+      "enclosingFunction": "tools/scripts2.js:36788: e.prototype.divisionItem = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:37032: t && t.hasOwnProperty(\"weaponSkinId\") && t.weaponSkinId > 0 && (this.weaponSkintip.active = !0);",
+      "enclosingFunction": "tools/scripts2.js:37027: e.prototype.checkWeapSkinState = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:37035: if (t && t.hasOwnProperty(\"weaponSkinId\") && t.weaponSkinId > 0) {",
+      "enclosingFunction": "tools/scripts2.js:37027: e.prototype.checkWeapSkinState = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:37042: if (t && t.hasOwnProperty(\"weaponSkinId\") && t.weaponSkinId > 0) {",
+      "enclosingFunction": "tools/scripts2.js:37027: e.prototype.checkWeapSkinState = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:37665: if (p.HomePlantModel.soilArr[this.landId].hasOwnProperty(\"m\")) {",
+      "enclosingFunction": "tools/scripts2.js:37664: e.prototype.onUpdataCropCallBack = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37667: this.datas.hasOwnProperty(\"m\") && this.datas.m.hasOwnProperty(\"id\") && this.showCropPic();",
+      "enclosingFunction": "tools/scripts2.js:37664: e.prototype.onUpdataCropCallBack = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37676: this.datas.hasOwnProperty(\"m\") && this.datas.m.hasOwnProperty(\"id\") && this.showCropPic();",
+      "enclosingFunction": "tools/scripts2.js:37673: e.prototype.updateLandData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:37686: this.datas.hasOwnProperty(\"m\") && this.datas.m.hasOwnProperty(\"b\") && (this.datas.pox = Math.floor(5 * Math.random()));",
+      "enclosingFunction": "tools/scripts2.js:37685: e.prototype.addPlantObject = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37687: if (this.datas.hasOwnProperty(\"s\")) {",
+      "enclosingFunction": "tools/scripts2.js:37685: e.prototype.addPlantObject = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37704: this.datas.hasOwnProperty(\"m\") && this.datas.m.hasOwnProperty(\"s\") && (this.cropState = this.datas.m.s);",
+      "enclosingFunction": "tools/scripts2.js:37692: e.prototype.seedCrop = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:37709: t.hasOwnProperty(\"m\") && t.m.hasOwnProperty(\"b\") && (e = o.hasOwnProperty(\"pox\") ? o.pox : Math.floor(5 * Math.random()));",
+      "enclosingFunction": "tools/scripts2.js:37707: e.prototype.getRandomIndex = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:37721: if (this.datas.hasOwnProperty(\"m\") && this.cropState > 0) {",
+      "enclosingFunction": "tools/scripts2.js:37719: e.prototype.setTimeText = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37725: if (this.datas.m.hasOwnProperty(\"at\")) {",
+      "enclosingFunction": "tools/scripts2.js:37719: e.prototype.setTimeText = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37753: if (this.datas.hasOwnProperty(\"m\") && this.datas.m.hasOwnProperty(\"id\")) {",
+      "enclosingFunction": "tools/scripts2.js:37752: e.prototype.showCropPic = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37768: if (this.datas.m.hasOwnProperty(\"eid\") && this.datas.m.eid > 0) {",
+      "enclosingFunction": "tools/scripts2.js:37752: e.prototype.showCropPic = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37775: if (this.cropState > 0 && this.datas.m.hasOwnProperty(\"b\")) for (var c = this.datas.pox, l = t.chengzhang + \"/\" + t.chengzhang, p = 0; p < 5; p++) p == c && this.addSpineNode(this.companionNode[c], l, \"atk\", 0, .6, o);",
+      "enclosingFunction": "tools/scripts2.js:37752: e.prototype.showCropPic = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37793: if (this.datas.hasOwnProperty(\"m\")) {",
+      "enclosingFunction": "tools/scripts2.js:37791: e.prototype.getCurBeganTime = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37794: this.datas.m.hasOwnProperty(\"t\") && (t = this.datas.m.t);",
+      "enclosingFunction": "tools/scripts2.js:37791: e.prototype.getCurBeganTime = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37795: this.datas.m.hasOwnProperty(\"id\") && (e = l.PlantSystemMgr.getCropGrowingTime(this.cropState, this.datas.m.id));",
+      "enclosingFunction": "tools/scripts2.js:37791: e.prototype.getCurBeganTime = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:37796: this.datas.m.hasOwnProperty(\"pt\") && (o = this.datas.m.pt);",
+      "enclosingFunction": "tools/scripts2.js:37791: e.prototype.getCurBeganTime = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:38135: t.hasOwnProperty(\"_isTrainingMp\") && (this._isTrainingMp = t._isTrainingMp);",
+      "enclosingFunction": "tools/scripts2.js:38133: o.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:41848: if (1 == e.eRet && e.hasOwnProperty(\"rankArr\")) {",
+      "enclosingFunction": "tools/scripts2.js:41847: e.prototype.updateAddItem = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:41955: for (var t = i.getItem(this.id, \"meridians\"), e = 1; ;++e) if (!t.hasOwnProperty(\"acupoint\" + e)) return this.numLayer = e - 1;",
+      "enclosingFunction": "tools/scripts2.js:41942: var i = t(\"../../../scripts/gameconfigs/CFMgr\"), s = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:42508: o && o.hasOwnProperty(\"parameter\") && parseInt(o.parameter) > 0 && (null === (e = h.GSceneMgr.go2Scene(o.parameter, cc.v3(o.pox[0], o.pox[1]))) || void 0 === e || e.then(function() {",
+      "enclosingFunction": "tools/scripts2.js:42496: e.prototype.onClick = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:42811: this.employment = this.data.hasOwnProperty(\"employment\") ? this.data.employment : 0;",
+      "enclosingFunction": "tools/scripts2.js:42807: o.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:43397: e.hasOwnProperty(\"equipObj\") && (i = e.equipObj);",
+      "enclosingFunction": "tools/scripts2.js:43395: e.prototype.saveRewardCallBack = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:43398: e.hasOwnProperty(\"gemId\") && (s = e.gemId);",
+      "enclosingFunction": "tools/scripts2.js:43395: e.prototype.saveRewardCallBack = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:45172: this.selfItemObj = t.hasOwnProperty(\"selfData\") ? t.selfData : {};",
+      "enclosingFunction": "tools/scripts2.js:45170: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:45393: if (e.hasOwnProperty(\"friendList\")) {",
+      "enclosingFunction": "tools/scripts2.js:45391: e.prototype.checkRoleFriend = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:45556: t.hasOwnProperty(\"TeamDeclaration\") && (this.txtAy[3].string = t.TeamDeclaration);",
+      "enclosingFunction": "tools/scripts2.js:45551: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:46462: if (e.hasOwnProperty(\"ShopArray\")) {",
+      "enclosingFunction": "tools/scripts2.js:46461: e.prototype.resListSuccess = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:47543: for (var i = 1; i <= 3; i++) if (t.hasOwnProperty(\"awardArr\" + i)) {",
+      "enclosingFunction": "tools/scripts2.js:47539: e.prototype.refreshNode = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:47546: null != e && e[this.configid].hasOwnProperty(\"choose\" + i) && (n = e[this.configid][\"choose\" + i]);",
+      "enclosingFunction": "tools/scripts2.js:47539: e.prototype.refreshNode = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:47589: if (t[this.configid].hasOwnProperty(\"choose\" + s)) for (var r = 0; r < t[this.configid][\"choose\" + s].length; r++) n.push(parseInt(t[this.configid][\"choose\" + s][r][0]));",
+      "enclosingFunction": "tools/scripts2.js:47577: e.prototype.onBuyBtn = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:47600: for (var t = 0, e = 1; e <= 3; e++) this.data.giftObj[this.configid].hasOwnProperty(\"awardArr\" + e) && t++;",
+      "enclosingFunction": "tools/scripts2.js:47599: e.prototype.getArrNum = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:47705: if (s[o].hasOwnProperty(\"choose\" + i)) for (var n = s[o][\"choose\" + i], c = 0; c < n.length; c++) if (n[c][0] == t) {",
+      "enclosingFunction": "tools/scripts2.js:47701: e.prototype.setData = function(t, e, o, i, s) {"
+    },
+    {
+      "hit": "tools/scripts2.js:47819: e[this.id].hasOwnProperty(\"choose\" + this.index) && (t = e[this.id][\"choose\" + this.index]);",
+      "enclosingFunction": "tools/scripts2.js:47816: e.prototype.getArr = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:47838: if (i[this.id].hasOwnProperty(\"choose\" + this.index)) for (var h = i[this.id][\"choose\" + this.index], d = 0; d < h.length; d++) h[d][0] == t.giftObj[e][\"awardArr\" + o][n][0] && this.onSelectGiftId(null, [ t.giftObj[e][\"awardArr\" + o][n][0], t.giftObj[e][\"awardArr\" + o][n][1] ]);",
+      "enclosingFunction": "tools/scripts2.js:47822: e.prototype.setData = function(t, e, o) {"
+    },
+    {
+      "hit": "tools/scripts2.js:47989: if (e.hasOwnProperty(\"ReceiveState\") && e.hasOwnProperty(\"chooseID\")) {",
+      "enclosingFunction": "tools/scripts2.js:47987: e.prototype.onReceiveGift = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:47994: if (e.hasOwnProperty(\"rewardArray\")) {",
+      "enclosingFunction": "tools/scripts2.js:47987: e.prototype.onReceiveGift = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:48639: if (e.hasOwnProperty(\"id\")) {",
+      "enclosingFunction": "tools/scripts2.js:48637: o.prototype.showDogNpc = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:49792: if (j.hasOwnProperty(\"e\") && parseInt(j.e) > 0) {",
+      "enclosingFunction": "tools/scripts2.js:49723: o.prototype.setBaseInfo = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:50225: if (this.data.hasOwnProperty(\"topup\") && 1 == this.data.topup) {",
+      "enclosingFunction": "tools/scripts2.js:50196: e.prototype.updateItem = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:50858: if (s.hasOwnProperty(\"id\") && s.id == e.data.id) {",
+      "enclosingFunction": "tools/scripts2.js:50845: o.prototype.updateData = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:50873: if (e.hasOwnProperty(\"id\") && this.data && this.data.id == e.id) {",
+      "enclosingFunction": "tools/scripts2.js:50872: o.prototype.updateOrder = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:51356: if (e.hasOwnProperty(\"Score\")) {",
+      "enclosingFunction": "tools/scripts2.js:51344: o.prototype.showEnemyDes = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:51915: if (this.data.hasOwnProperty(\"ID\")) {",
+      "enclosingFunction": "tools/scripts2.js:51911: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:53493: t && t.hasOwnProperty(\"colorvalue\") ? this.colorValue = !0 : this.colorValue = !1;",
+      "enclosingFunction": "tools/scripts2.js:53488: e.prototype.setDressData = function(t, e, o, i) {"
+    },
+    {
+      "hit": "tools/scripts2.js:53672: this.roleInfo.hasOwnProperty(\"readAgeNum\") && this.roleInfo.readAgeNum > 0 && (this.roleAge = this.roleInfo.readAgeNum);",
+      "enclosingFunction": "tools/scripts2.js:53664: e.prototype.getRoleBaseValue = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:53673: if (this.roleInfo.hasOwnProperty(\"avatarInfo\") && this.roleInfo.avatarInfo.length > 0 && t <= this.roleInfo.avatarInfo[2]) {",
+      "enclosingFunction": "tools/scripts2.js:53664: e.prototype.getRoleBaseValue = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:53693: r.hasOwnProperty(\"weaponSkinId\") && r.weaponSkinId > 0 && (this.weaponskinId = r.weaponSkinId);",
+      "enclosingFunction": "tools/scripts2.js:53664: e.prototype.getRoleBaseValue = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:53703: this.roleInfo.ohterInfo.hasOwnProperty(\"titivateObj\") ? this.makeInfo = this.roleInfo.ohterInfo.titivateObj : this.makeInfo = {};",
+      "enclosingFunction": "tools/scripts2.js:53664: e.prototype.getRoleBaseValue = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:53733: b.hasOwnProperty(\"weaponSkinId\") && b.weaponSkinId > 0 && (this.weaponskinId = b.weaponSkinId);",
+      "enclosingFunction": "tools/scripts2.js:53664: e.prototype.getRoleBaseValue = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:54627: this.oriPriceLabel.node.active = t.hasOwnProperty(\"sale\") && 0 != t.sale;",
+      "enclosingFunction": "tools/scripts2.js:54618: e.prototype.dataChanged = function(t, e, o) {"
+    },
+    {
+      "hit": "tools/scripts2.js:54912: t.hasOwnProperty(\"newNameStr\") ? this.nameLabel.string = t.newNameStr : this.nameLabel.string = c.getText(\"4559\");",
+      "enclosingFunction": "tools/scripts2.js:54909: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:54914: t.hasOwnProperty(\"callFunc\") && (this.callFunc = t.callFunc);",
+      "enclosingFunction": "tools/scripts2.js:54909: e.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:54917: if (this.data.hasOwnProperty(\"newNameStr\")) {",
+      "enclosingFunction": "tools/scripts2.js:54916: e.prototype.clickBtnSureCB = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:55234: t.hasOwnProperty(\"selfData\") ? this.selfItemObj = t.selfData : this.selfItemObj = {};",
+      "enclosingFunction": "tools/scripts2.js:55231: e.prototype.setShowData = function(t, e, o) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56028: e.hasOwnProperty(\"idType\") && (h.SchoolModel.idType = e.idType);",
+      "enclosingFunction": "tools/scripts2.js:56024: e.prototype.onSchoolMasterList = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56035: e.hasOwnProperty(\"idType\") && (h.SchoolModel.idType = e.idType);",
+      "enclosingFunction": "tools/scripts2.js:56031: e.prototype.onSchoolPupilList = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56042: e.hasOwnProperty(\"idType\") && (h.SchoolModel.idType = e.idType);",
+      "enclosingFunction": "tools/scripts2.js:56038: e.prototype.onApplyList = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56043: e.hasOwnProperty(\"isMaster\") && (h.SchoolModel.idType = e.isMaster ? 2 : 1);",
+      "enclosingFunction": "tools/scripts2.js:56038: e.prototype.onApplyList = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56050: o.hasOwnProperty(\"masterName\") && (r = o.masterName);",
+      "enclosingFunction": "tools/scripts2.js:56046: e.prototype.onRefreshEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56051: o.hasOwnProperty(\"pupilName\") && (r = o.pupilName);",
+      "enclosingFunction": "tools/scripts2.js:56046: e.prototype.onRefreshEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56052: o.hasOwnProperty(\"nickName\") && (r = o.nickName);",
+      "enclosingFunction": "tools/scripts2.js:56046: e.prototype.onRefreshEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56053: o.hasOwnProperty(\"declaration\") && (a = o.declaration);",
+      "enclosingFunction": "tools/scripts2.js:56046: e.prototype.onRefreshEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56164: t.hasOwnProperty(\"ohterNickName\") && (i.getComponent(cc.Label).string = t.ohterNickName);",
+      "enclosingFunction": "tools/scripts2.js:56160: e.prototype.showRoleItem = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56189: if (o) if (o.hasOwnProperty(\"masterId\")) {",
+      "enclosingFunction": "tools/scripts2.js:56187: e.prototype.onLookEv = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56195: } else if (o.hasOwnProperty(\"pupilId\")) {",
+      "enclosingFunction": "tools/scripts2.js:56187: e.prototype.onLookEv = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56201: } else if (o.hasOwnProperty(\"roleId\")) {",
+      "enclosingFunction": "tools/scripts2.js:56187: e.prototype.onLookEv = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56524: if (this.data.hasOwnProperty(\"status\")) if (0 == this.data.status) {",
+      "enclosingFunction": "tools/scripts2.js:56512: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:56550: if (this.data.hasOwnProperty(\"schoolWinner\")) {",
+      "enclosingFunction": "tools/scripts2.js:56512: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:56572: if (null == this.playerNode && e.hasOwnProperty(\"ohterInfo\")) {",
+      "enclosingFunction": "tools/scripts2.js:56566: e.prototype.addArenaUI = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56594: if (o.hasOwnProperty(\"equipTitle\")) {",
+      "enclosingFunction": "tools/scripts2.js:56566: e.prototype.addArenaUI = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56775: if (e.hasOwnProperty(\"Loser\") && e.Loser.RoleId == v.RoleBaseInfo.roleID) {",
+      "enclosingFunction": "tools/scripts2.js:56773: e.prototype.onUpdateSchoolWinnerNotify = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:56783: if (e.hasOwnProperty(\"winner\")) {",
+      "enclosingFunction": "tools/scripts2.js:56773: e.prototype.onUpdateSchoolWinnerNotify = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:57539: if (this.data && this.data.hasOwnProperty(\"data\") && this.data.data && this.data.data.hasOwnProperty(\"CampaignRolePair\")) {",
+      "enclosingFunction": "tools/scripts2.js:57537: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:57606: this.data && this.data.hasOwnProperty(\"data\") && this.data.data && this.data.data.hasOwnProperty(\"CampaignRolePair\") && this.schedule(this.updateTime, 1);",
+      "enclosingFunction": "tools/scripts2.js:57537: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:57615: if (this.data && this.data.hasOwnProperty(\"statusNotifyData\") && this.data.statusNotifyData) {",
+      "enclosingFunction": "tools/scripts2.js:57608: e.prototype.onClick = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:57671: if (this.data && this.data.hasOwnProperty(\"data\") && this.data.data) {",
+      "enclosingFunction": "tools/scripts2.js:57659: e.prototype.onStartClick = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:57789: e.hasOwnProperty(\"affSchool\") && (this.affschool = e.affSchool);",
+      "enclosingFunction": "tools/scripts2.js:57788: e.prototype.onGetRankList = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:57790: if (e.hasOwnProperty(\"isSchoolNotice\") && 1 == e.isSchoolNotice) {",
+      "enclosingFunction": "tools/scripts2.js:57788: e.prototype.onGetRankList = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:58084: t.hasOwnProperty(\"_isTrainingMp\") && (this._isTrainingMp = t._isTrainingMp);",
+      "enclosingFunction": "tools/scripts2.js:58082: o.prototype.setData = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:58375: if (this.data && this.data.hasOwnProperty(\"CampaignRolePair\")) {",
+      "enclosingFunction": "tools/scripts2.js:58374: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:58547: if (this.data && this.data.hasOwnProperty(\"data\") && this.data.data && this.data.data.hasOwnProperty(\"CampaignRolePair\")) {",
+      "enclosingFunction": "tools/scripts2.js:58545: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:60135: n.hasOwnProperty(\"time\") && (o += h.RumorModel.showSecondTime(this.selectNum * parseInt(n.time)));",
+      "enclosingFunction": "tools/scripts2.js:60125: e.prototype.needFormulaData = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:60313: n.hasOwnProperty(\"time\") && (o += h.RumorModel.showSecondTime(this.selectNum * parseInt(n.time)));",
+      "enclosingFunction": "tools/scripts2.js:60303: e.prototype.needFormulaData = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:60643: s.hasOwnProperty(\"RoleCount\") && (n.RoleCount = s.RoleCount);",
+      "enclosingFunction": "tools/scripts2.js:60632: e.prototype.getChannelLine = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:62129: this.data.hasOwnProperty(\"curDay\") && (this.curDay = parseInt(this.data.curDay) > 7 ? 7 : this.data.curDay);",
+      "enclosingFunction": "tools/scripts2.js:62127: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:62408: e.hasOwnProperty(\"SeniorSchool\") && e.SeniorSchool > 0 ? this.schoolName.string = a.getSchool(e.roleSchool) + \"|\" + a.getSchool(e.SeniorSchool) : this.schoolName.string = a.getSchool(e.roleSchool);",
+      "enclosingFunction": "tools/scripts2.js:62401: e.prototype.dataChanged = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:63694: this.data.hasOwnProperty(\"rewardArray\") && u.default.addShowRewardUI1(this.data.rewardArray, 0, this.data.equipObj);",
+      "enclosingFunction": "tools/scripts2.js:63692: e.prototype.onOpenCallBack = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:64533: if (this.data && this.data.hasOwnProperty(\"useBed\")) {",
+      "enclosingFunction": "tools/scripts2.js:64531: e.prototype.onClick = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:64551: if (o.data && o.data.hasOwnProperty(\"useBed\")) {",
+      "enclosingFunction": "tools/scripts2.js:64541: e.prototype.playHeal = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:64598: if (this.data && this.data.hasOwnProperty(\"type\")) if (2 == this.data.type) {",
+      "enclosingFunction": "tools/scripts2.js:64597: e.prototype.setCompleteListener = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:66890: if (!i.hasOwnProperty(\"rewardArray\")) {",
+      "enclosingFunction": "tools/scripts2.js:66886: e.prototype.onRageChange = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:66925: if (i.hasOwnProperty(\"rewardArray\")) {",
+      "enclosingFunction": "tools/scripts2.js:66886: e.prototype.onRageChange = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:67474: t.hasOwnProperty(\"back\") && (this.back = t.back);",
+      "enclosingFunction": "tools/scripts2.js:67471: e.prototype.setData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:67486: if (o.hasOwnProperty(\"Type\") && 7 == o.Type && o.endTime > 0) {",
+      "enclosingFunction": "tools/scripts2.js:67481: e.prototype.update = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:67505: if (!a.hasOwnProperty(\"Type\") || 7 != a.Type && 11 != a.Type) {",
+      "enclosingFunction": "tools/scripts2.js:67498: for (var o, i = function(i) {"
+    },
+    {
+      "hit": "tools/scripts2.js:67506: if (a.hasOwnProperty(\"nameID\")) {",
+      "enclosingFunction": "tools/scripts2.js:67498: for (var o, i = function(i) {"
+    },
+    {
+      "hit": "tools/scripts2.js:67516: a.hasOwnProperty(\"up\") && 1 == a.up && (s.saleSps[i].active = !0);",
+      "enclosingFunction": "tools/scripts2.js:67498: for (var o, i = function(i) {"
+    },
+    {
+      "hit": "tools/scripts2.js:67534: } else if (a.hasOwnProperty(\"Name\")) {",
+      "enclosingFunction": "tools/scripts2.js:67498: for (var o, i = function(i) {"
+    },
+    {
+      "hit": "tools/scripts2.js:67571: var u = a.hasOwnProperty(\"nameID\") && a.yuanbao > 0 && a.extraGold > 0;",
+      "enclosingFunction": "tools/scripts2.js:67498: for (var o, i = function(i) {"
+    },
+    {
+      "hit": "tools/scripts2.js:67605: if (!t.hasOwnProperty(\"Type\") || 7 != t.Type && 11 != t.Type) {",
+      "enclosingFunction": "tools/scripts2.js:67604: e.prototype.onTapEnterShop = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:67606: if (t.hasOwnProperty(\"nameID\")) {",
+      "enclosingFunction": "tools/scripts2.js:67604: e.prototype.onTapEnterShop = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:67609: } else if (t.hasOwnProperty(\"Name\")) {",
+      "enclosingFunction": "tools/scripts2.js:67604: e.prototype.onTapEnterShop = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:67615: if (!f.RoleBaseInfo.finishTaskObj.hasOwnProperty(\"L1000\")) {",
+      "enclosingFunction": "tools/scripts2.js:67604: e.prototype.onTapEnterShop = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:67822: t.hasOwnProperty(\"back\") && (this.back = t.back);",
+      "enclosingFunction": "tools/scripts2.js:67820: e.prototype.setData = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:68246: t.hasOwnProperty(\"Choose\") && (this.chooseAy = t.Choose);",
+      "enclosingFunction": "tools/scripts2.js:68244: e.prototype.setShowBubbleUI = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:68579: if (this.data.hasOwnProperty(\"ID\")) {",
+      "enclosingFunction": "tools/scripts2.js:68577: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:68720: var c = this.currentObjTitle.hasOwnProperty(\"description\") ? p.getText(this.currentObjTitle.description) : \"\", h = l.getTable(\"evaluate\"), d = 1;",
+      "enclosingFunction": "tools/scripts2.js:68706: e.prototype.showUI = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:69833: if (t.hasOwnProperty(\"qiyus\") && t.qiyus.length) this.egsBtns.qiyus ? this.egsBtns.qiyus.active = !0 : this.addEventBtn(\"lh_8\", 1, 0, this.eventButton, \"qiyus\"); else if (this.egsBtns.qiyus) {",
+      "enclosingFunction": "tools/scripts2.js:69831: e.prototype.showRollRewardUI = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:69837: if (t.hasOwnProperty(\"pandas\") && t.pandas.length) if (this.egsBtns.pandas) {",
+      "enclosingFunction": "tools/scripts2.js:69831: e.prototype.showRollRewardUI = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:69848: if (t.hasOwnProperty(\"shopids\") && !M.MadUtilsTS.isNullObj(t.shopids)) this.egsBtns.shopids ? this.egsBtns.shopids.active = !0 : this.addEventBtn(\"lh_1\", 3, 0, this.eventButton, \"shopids\"); else if (this.egsBtns.shopids) {",
+      "enclosingFunction": "tools/scripts2.js:69831: e.prototype.showRollRewardUI = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:69852: if (t.hasOwnProperty(\"shopidsBook\") && t.shopidsBook.length) if (this.egsBtns.shopidsBook) {",
+      "enclosingFunction": "tools/scripts2.js:69831: e.prototype.showRollRewardUI = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:70827: if (this.obj.hasOwnProperty(\"taskId\")) {",
+      "enclosingFunction": "tools/scripts2.js:70826: e.prototype.isCheckTaskInfo = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:71320: t.hasOwnProperty(\"Choose\") && (this.chooseAy = t.Choose);",
+      "enclosingFunction": "tools/scripts2.js:71317: e.prototype.setShowBubbleUI = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:71329: if (t.hasOwnProperty(\"music\")) for (var e = t.music.split(\"|\"), o = 0; o < e.length && \"0\" != e; o++) {",
+      "enclosingFunction": "tools/scripts2.js:71328: e.prototype.setMusicAndSound = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:71333: if (t.hasOwnProperty(\"sound\")) for (var s = t.sound.split(\"|\"), n = 0; n < s.length && \"0\" != s; n++) {",
+      "enclosingFunction": "tools/scripts2.js:71328: e.prototype.setMusicAndSound = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:72464: var i = h.CopyTeamModel.teamBrief.hasOwnProperty(\"TeamId\") ? 0 : 1;",
+      "enclosingFunction": "tools/scripts2.js:72460: o.prototype.setData = function(e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:72512: if (h.CopyTeamModel.teamBrief.hasOwnProperty(\"TeamId\")) p.WorldChatModel.reqOpenChatChannel(\"TeamChannel\"); else {",
+      "enclosingFunction": "tools/scripts2.js:72505: o.prototype.changeChatType = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:72584: if (0 != this.chatType || 1 == this.openScene || h.CopyTeamModel.teamBrief.hasOwnProperty(\"TeamId\")) if (3 != this.chatType || N.MultiPlayerModel.wulinMgr.isInTeam()) {",
+      "enclosingFunction": "tools/scripts2.js:72582: o.prototype.onSendChatMsg = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:72783: if (0 != this.chatType || 1 == this.openScene || h.CopyTeamModel.teamBrief.hasOwnProperty(\"TeamId\")) if (Math.floor(g.TimeMgr.getSTimestamp()) - Math.floor(m.RoleOtherInfo.curGameT) < 5e3) u.default.show(r.getText(\"924\")); else {",
+      "enclosingFunction": "tools/scripts2.js:72782: o.prototype.onClickGIF = function(t) {"
+    },
+    {
+      "hit": "tools/scripts2.js:74194: if (t.hasOwnProperty(\"TeamId\")) {",
+      "enclosingFunction": "tools/scripts2.js:74192: e.prototype.showTeamMemberSlot = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:74319: if (e.TeamMember.hasOwnProperty(\"RoleBoatId\") && e.TeamMember.RoleBoatId) {",
+      "enclosingFunction": "tools/scripts2.js:74299: e.prototype.onTeamChangeCallBack = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:74337: if (e.TeamMember.hasOwnProperty(\"RoleId\")) {",
+      "enclosingFunction": "tools/scripts2.js:74299: e.prototype.onTeamChangeCallBack = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:74362: if (a.CopyTeamModel.teamBrief.hasOwnProperty(\"TeamId\")) {",
+      "enclosingFunction": "tools/scripts2.js:74361: e.prototype.setTeamRoleInfo = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:74381: if (o.hasOwnProperty(\"RoleBoatId\") && o.RoleBoatId) {",
+      "enclosingFunction": "tools/scripts2.js:74361: e.prototype.setTeamRoleInfo = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:74518: this.lockData.hasOwnProperty(\"leftTimes\") ? this.leftIimes = this.lockData.leftTimes : this.leftIimes = 0;",
+      "enclosingFunction": "tools/scripts2.js:74510: e.prototype.onLoad = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:74575: this.lockData.hasOwnProperty(\"leftTimes\") ? this.leftIimes = this.lockData.leftTimes : this.leftIimes = 0;",
+      "enclosingFunction": "tools/scripts2.js:74570: e.prototype.updateLock = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:74585: this.lockData.hasOwnProperty(\"status\") && 0 != this.lockData.status && cc.tween(this.node).delay(1).call(function() {",
+      "enclosingFunction": "tools/scripts2.js:74570: e.prototype.updateLock = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:74587: o.lockData.hasOwnProperty(\"triggerID\") && o.lockData.triggerID > 0 ? u.default.popLayer(r.getText(o.lockData.triggerID), function() {",
+      "enclosingFunction": "tools/scripts2.js:74570: e.prototype.updateLock = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:74827: this.rewards = e.hasOwnProperty(\"rewardArray\") ? e.rewardArray : null;",
+      "enclosingFunction": "tools/scripts2.js:74823: e.prototype.onGetSlotResultEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:76288: if (e.hasOwnProperty(\"AwardIDArr\")) {",
+      "enclosingFunction": "tools/scripts2.js:76275: e.prototype.onCheckLargetExtra = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:76306: if (e.hasOwnProperty(\"showAwardArr\")) {",
+      "enclosingFunction": "tools/scripts2.js:76275: e.prototype.onCheckLargetExtra = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:76312: i.rewardData.hasOwnProperty(\"showAwardArr\") && o.newanim(i.rewardData.AwardIDArr, i.rewardData.showAwardArr);",
+      "enclosingFunction": "tools/scripts2.js:76275: e.prototype.onCheckLargetExtra = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:76431: if (this.rewardData.hasOwnProperty(\"showAwardArr\")) {",
+      "enclosingFunction": "tools/scripts2.js:76426: e.prototype.jumpClickCallBack = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:79956: if (e && e.hasOwnProperty(\"married_model\")) {",
+      "enclosingFunction": "tools/scripts2.js:79954: e.prototype.showWifeImageModel = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:80457: t[l].hasOwnProperty(\"color\") && (h.color = cc.color(t[l].color[0], t[l].color[1], t[l].color[2]));",
+      "enclosingFunction": "tools/scripts2.js:80435: e.prototype.setBtns = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:80459: t[l].hasOwnProperty(\"enabled\") && (u.interactable = t[l].enabled);",
+      "enclosingFunction": "tools/scripts2.js:80435: e.prototype.setBtns = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:80620: if (this.data.hasOwnProperty(\"rewardArray\")) for (var u in this.data.rewardArray) d++;",
+      "enclosingFunction": "tools/scripts2.js:80592: e.prototype.start = function() {"
+    },
+    {
+      "hit": "tools/scripts2.js:80724: e.flipCard.hasOwnProperty(\"refreshCount\") && (o.refreshCount = e.flipCard.refreshCount);",
+      "enclosingFunction": "tools/scripts2.js:80704: e.prototype.flipCardCellDataEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:81407: e.hasOwnProperty(\"SevenDaysArr\") && (a.RoleOtherInfo.SevenDaysArr = e.SevenDaysArr);",
+      "enclosingFunction": "tools/scripts2.js:81401: e.prototype.sevenDaysAwardsEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:81410: if (e.hasOwnProperty(\"rewardArray\")) {",
+      "enclosingFunction": "tools/scripts2.js:81401: e.prototype.sevenDaysAwardsEvent = function(t, e) {"
+    },
+    {
+      "hit": "tools/scripts2.js:81754: if (t.hasOwnProperty(\"tag1\")) return t.tag1;",
+      "enclosingFunction": "tools/scripts2.js:81753: e.prototype.getTag = function(t) {"
+    }
+  ],
+  "unverified": [],
+  "out_of_scope": []
+}

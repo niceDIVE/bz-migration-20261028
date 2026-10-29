@@ -1,0 +1,51 @@
+# User.sycnPlayerItemData  (HttpConst.SYCNPLAYERITEAMDATA)
+# 出现 1 处
+
+ 24008: }
+ 24009: a.MessageCenter.dispatch(m.EvName.PK_SCROE_UPDATE_EVENT);
+ 24010: }, this);
+ 24011: a.MessageCenter.on(s.HttpConst.RES_WORLD_RANK_RES, function(t, e) {
+ 24012: e.hasOwnProperty("self") && e.self && a.MessageCenter.dispatch(m.EvName.FIGHT_RANK_EVENT, e);
+ 24013: }, this);
+ 24014: a.MessageCenter.on(s.HttpConst.SYCNPLAYERITEAMDATA, function(t, e) {
+ 24015: if (1 == e.eRet) {
+ 24016: l.RoleBaseInfo._itemObj = {};
+ 24017: l.RoleBaseInfo.type2Items = {};
+ 24018: for (var o in e.itemObj) parseInt(o) > 0 && parseInt(e.itemObj[o]) > 0 && l.RoleBaseInfo.setItem(parseInt(o), e.itemObj[o]);
+ 24019: }
+ 24020: }, this);
+ 24021: a.MessageCenter.on(s.HttpConst.CANCEL_CHAT_PK, function(e, o) {
+ 24022: if (1 == o.eRet && 0 == t.cancelPkState) {
+ 24023: t.reqCloseWorldMatch();
+ 24024: t.startPkFight = !1;
+ 24025: }
+ 24026: }, this);
+ 24027: a.MessageCenter.on(s.HttpConst.CHAT_PK_ACTIVITY, function(t, e) {
+ 24028: if (1 == e.eRet) {
+ 24029: this.chatPkOption = e.option;
+ 24030: a.MessageCenter.dispatch(m.EvName.CHAT_MATCH_NPC_EVENT, e.NpcId);
+ 24031: } else 2 == e.eRet && y.default.show(r.getText(5933));
+ 24032: }, this);
+ 24033: a.MessageCenter.on(s.HttpConst.RECEIVE_CHAT_PK_POINTAWARD, function(t, e) {
+ 24034: e.hasOwnProperty("rewardArray") && E.default.addShowRewardUI1(e.rewardArray, 0, {});
+ 24035: }, this);
+ 24036: a.MessageCenter.on(s.HttpConst.STC_ADDED_MATCH_INFONOTIFY, function(e, o) {
+ 24037: n.getChatPkScoreData(o.Score).id >= 4 && (t.scoreState = !0);
+ 24038: t.startPkFight = !0;
+ 24039: }, this);
+ 24040: a.MessageCenter.on(s.HttpConst.STC_OPEN_MATCH_INTERFACERES, function(e, o) {
+ 24041: t.pkStartTime = o.NowSystemTime;
+ 24042: t.pkEndTime = o.SeasonEndTime;
+ 24043: o.hasOwnProperty("canMatchTime") && o.canMatchTime.length > 1 && (t.canMatchTimeAy = o.canMatchTime);
+ 24044: I.default.prefabs.load("chats/BattleMatch", cc.Prefab, function(t, e) {
+ 24045: var o = cc.instantiate(e);
+ 24046: o.addComponent("ReadyPkUI");
+ 24047: b.PopUpMgr.addPopUp(o, T.LayerMgr.popUpLayer, 1, !0);
+ 24048: });
+ 24049: }, this);
+ 24050: a.MessageCenter.on(s.HttpConst.STC_UPDATE_ROLE_SCORE_NOTIFY, function(e, o) {
+ 24051: o.hasOwnProperty("RoleScore") && (t.scoreArray[1] = o.RoleScore);
+ 24052: }, this);
+ 24053: a.MessageCenter.on(s.HttpConst.STC_WORLD_MATCH_TIP, function(t, e) {
+ 24054: e.hasOwnProperty("UniqueRoleId") && a.MessageCenter.dispatch(m.EvName.CHAT_PK_BURROR_EVENT, e);
+---

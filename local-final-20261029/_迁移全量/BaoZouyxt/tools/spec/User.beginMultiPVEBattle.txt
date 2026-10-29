@@ -1,0 +1,99 @@
+# User.beginMultiPVEBattle  (HttpConst.MPPVE_ACTION)
+# 出现 2 处
+
+110870: r.MessageCenter.on(c.HttpConst.START_MPPVE_BATTLE, function(t, o) {
+110871: if (1 == o.eRet) {
+110872: e.btUI && e.btUI.getComponent("MPUIMediator").setPartnerBtn(o);
+110873: e.playWithData(o);
+110874: }
+110875: }, e);
+110876: r.MessageCenter.on(c.HttpConst.MPPVE_ACTION, function(t, o) {
+110877: 1 == o.eRet && e.playWithData(o);
+110878: }, e);
+110879: r.MessageCenter.on(c.HttpConst.GET_MP_ULTSKILLS, function(t, o) {
+110880: var i;
+110881: if (1 == o.eRet) {
+110882: var n = e.btUI.getComponent("MPUIMediator");
+110883: if (n) {
+110884: if (o.dataArr && o.dataArr.length >= 1) {
+110885: n.attackMpCost = o.dataArr.pop();
+110886: for (var r = [], a = 0; a < o.dataArr.length; ++a) {
+110887: var s = o.dataArr[a];
+110888: [ 1921, 1922, 1923, 1992, 1988, 2082, 2124, 2165 ].indexOf(s.id) >= 0 || r.push(s);
+110889: }
+110890: null === (i = e.btUI) || void 0 === i || i.emit(h.EvName.ON_GET_MP_ULTSKILLS, r);
+110891: }
+110892: o.hasOwnProperty("atkSkillID") && (n.atkSkillID = o.atkSkillID);
+110893: }
+110894: }
+110895: }, e);
+110896: r.MessageCenter.on(c.HttpConst.REQ_MPPVE_FIGHTER_INFO, function(t, o) {
+110897: var i;
+110898: 1 == o.eRet && o.info && (null === (i = e.btUI) || void 0 === i || i.emit(h.EvName.SHOW_MP_PLAYER_INFO, {
+110899: id: o.battleID,
+110900: info: o.info
+110901: }));
+110902: }, e);
+110903: return e;
+110904: }
+110905: e.prototype.playWithData = function(e) {
+110906: t.prototype.playWithData.call(this, e);
+110907: if (e && e.hasOwnProperty("playerSkills") && this.btUI) {
+110908: var o = this.btUI.getComponent("MPUIMediator");
+110909: if (o) {
+110910: var i = e.playerSkills[o.battleID];
+110911: if (i && i.dataArr) {
+110912: o.attackMpCost = i.mpCost;
+110913: o.dataArr = i.dataArr;
+110914: o.uiEffIds = i.uiEffIds;
+110915: o.summomState = i.summomState;
+110916: o.playerSkillsData = i;
+---
+110933: e.prototype.postProcess = function(t) {
+110934: t.on(h.EvName.START_BATTLE, function() {
+110935: p.NetMgr.http.sendRequest(c.HttpConst.START_MPPVE_BATTLE);
+110936: });
+110937: };
+110938: e.prototype.listen4Action = function(t) {
+110939: p.NetMgr.http.sendRequest(c.HttpConst.MPPVE_ACTION, {
+110940: action: t.action,
+110941: battleID: t.param2,
+110942: attackID: t.param3,
+110943: paramID: t.param1
+110944: });
+110945: };
+110946: e.prototype.getPlayerInfo = function(t) {
+110947: p.NetMgr.http.sendRequest(c.HttpConst.REQ_MPPVE_FIGHTER_INFO, {
+110948: battleID: t
+110949: });
+110950: };
+110951: e.prototype.ultClick = function(t) {
+110952: p.NetMgr.http.sendRequest(c.HttpConst.GET_MP_ULTSKILLS, {
+110953: battleID: t
+110954: });
+110955: };
+110956: e.prototype.getPanelScript = function() {
+110957: return l.SPMPBattleUI;
+110958: };
+110959: e.prototype.tackleResult = function(t) {
+110960: var e = this;
+110961: t.mainNpc = this.state.mainNpc;
+110962: t.npcID = this.state.NpcId;
+110963: d.SoundMgr.resumeLastMusic();
+110964: return new Promise(function(o) {
+110965: u.default.prefabs.load("BattleResultUI/normalBattle", cc.Prefab, function(i, n) {
+110966: var r = cc.instantiate(n);
+110967: a.PopUpMgr.addPopUp(r, f.LayerMgr.topLayer);
+110968: var l = r.getComponent(s.BattleResultMediator);
+110969: l.setResult(t);
+110970: l.resolve = e.fightEndCb;
+110971: o(r);
+110972: });
+110973: });
+110974: };
+110975: return e;
+110976: }(t("./MpMgrBase").MpMgrBase);
+110977: o.SPMpBtMgr = g;
+110978: cc._RF.pop();
+110979: }, {
+---

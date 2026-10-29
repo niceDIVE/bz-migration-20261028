@@ -1,0 +1,99 @@
+# User.GetSpecialShopData  (HttpConst.SPECIAL_SHOP)
+# 出现 2 处
+
+  1398: this.FirstChargeState = 0;
+  1399: this.furnaceId = 0;
+  1400: this.doubleEndTime = 0;
+  1401: this.tempData = null;
+  1402: }
+  1403: e.prototype.init = function() {
+  1404: r.MessageCenter.on(a.HttpConst.SPECIAL_SHOP, this.specialShopCallBack.bind(this), this);
+  1405: r.MessageCenter.on(a.HttpConst.ACTIVITE_SHOP, this.activeShppCallBack.bind(this), this);
+  1406: r.MessageCenter.on(a.HttpConst.SAVR_VILLAGE, this.savrVillageCallBack.bind(this), this);
+  1407: r.MessageCenter.on(a.HttpConst.GET_PAYSIGN_DATA, this.getPaySignCallBack.bind(this), this);
+  1408: r.MessageCenter.on(a.HttpConst.GET_PAYSIGN_AWARD, this.paySignRewardCallBack.bind(this), this);
+  1409: r.MessageCenter.on(a.HttpConst.GET_CRL_ACTIVE_DATA, this.crlActiveDataCallBack.bind(this), this);
+  1410: r.MessageCenter.on(a.HttpConst.CRL_GET_REWARD, this.crlGetRewardCallBack.bind(this), this);
+  1411: r.MessageCenter.on(a.HttpConst.CRL_ACTIVE_PAYINFO, this.crlActivePayinfoCallBack.bind(this), this);
+  1412: r.MessageCenter.on(a.HttpConst.GET_CRL_ACTIVE_PAY_RESULT, this.getCrlActivePayResultCallBack.bind(this), this);
+  1413: r.MessageCenter.on(a.HttpConst.GET_FURNACE_DATA, this.getFurnaceData.bind(this), this);
+  1414: r.MessageCenter.on(a.HttpConst.START_REFINING_FURNACE, this.startRefiningFurnace.bind(this), this);
+  1415: r.MessageCenter.on(a.HttpConst.PUT_REFINING_ITEM_FURNACE, this.putRefiningItemFurnace.bind(this), this);
+  1416: r.MessageCenter.on(a.HttpConst.GET_REFINING_RESOURCE, this.getRefiningResource.bind(this), this);
+  1417: r.MessageCenter.on(a.HttpConst.GET_SCRATH_LOTTO, this.onGetScrathData.bind(this), this);
+  1418: r.MessageCenter.on(a.HttpConst.SCRAPING_LOTTERY, this.onScrapLottery.bind(this), this);
+  1419: r.MessageCenter.on(a.HttpConst.BUY_TICKET, this.onBuyTicket.bind(this), this);
+  1420: r.MessageCenter.on(a.HttpConst.GET_NATIONAL_DAY_COPY, this.onGetNationalCopy.bind(this), this);
+  1421: };
+  1422: e.prototype.onGetNationalCopy = function(t, e) {
+  1423: var o = this;
+  1424: if (1 == e.eRet) {
+  1425: if (!this.tempData) return;
+  1426: s.default.prefabs.load("checkNpc/ConvstnBoard", cc.Prefab, function(t, i) {
+  1427: var n = cc.instantiate(i);
+  1428: l.PopUpMgr.addPopUp(n, c.LayerMgr.popUpLayer, 2, !1);
+  1429: n.addComponent("ConvstnBoard").setNpcData(e, o.tempData);
+  1430: o.tempData = null;
+  1431: });
+  1432: } else p.default.show(i.getText(1093));
+  1433: };
+  1434: e.prototype.onGetScrathData = function(t, e) {
+  1435: 1 == e.eRet && r.MessageCenter.dispatch(h.EvName.GET_SCRAPE_EVENT, e);
+  1436: };
+  1437: e.prototype.onScrapLottery = function(t, e) {
+  1438: if (1 == e.eRet) {
+  1439: d.RoleOtherInfo.setActivityData(66, !1);
+  1440: r.MessageCenter.dispatch(h.EvName.SCRAPE_SUCCESS_EVENT, e);
+  1441: }
+  1442: };
+  1443: e.prototype.onBuyTicket = function(t, e) {
+  1444: 1 == e.eRet && r.MessageCenter.dispatch(h.EvName.BUY_ITEM_SUCCESS, e);
+---
+  1635: g.NetMgr.http.sendRequest(a.HttpConst.ACTIVITE_SHOP, i);
+  1636: };
+  1637: e.prototype.reqRandomShop = function(t) {
+  1638: var e = {
+  1639: npcID: t
+  1640: };
+  1641: g.NetMgr.http.sendRequest(a.HttpConst.SPECIAL_SHOP, e);
+  1642: };
+  1643: e.prototype.setActiveState = function(t, e) {
+  1644: this.eventID = e;
+  1645: switch (t) {
+  1646: case 4:
+  1647: case 9:
+  1648: this.shopState = 1;
+  1649: break;
+  1650: 
+  1651: case 7:
+  1652: this.shopState = 2;
+  1653: this.getRandomBeggarAy();
+  1654: r.MessageCenter.dispatch(h.EvName.SHOW_OLDBEGGAR_EVENT);
+  1655: r.MessageCenter.dispatch(h.EvName.CONTROL_BEGGAR_BUTTON, !0);
+  1656: }
+  1657: };
+  1658: e.prototype.setKillActiveEvent = function(t, e, o) {
+  1659: this.ActiveEventId = e;
+  1660: this.saveVillageState = 1;
+  1661: this.beginTime = o;
+  1662: r.MessageCenter.dispatch(h.EvName.START_VILLAGE_EVENT);
+  1663: r.MessageCenter.dispatch(h.EvName.MAIN_MENU_EVENT, 0);
+  1664: };
+  1665: e.prototype.getRandomShopState = function() {
+  1666: return this.shopState;
+  1667: };
+  1668: e.prototype.getSaveVillageState = function() {
+  1669: return this.saveVillageState;
+  1670: };
+  1671: e.prototype.talkToTownDialog = function() {
+  1672: f.default.addDialogEvent(1500006, 0, null, this.selectEscape.bind(this), this.selectSaveVillage.bind(this));
+  1673: };
+  1674: e.prototype.selectEscape = function() {
+  1675: this.taskSelect = 1;
+  1676: var t = setTimeout(function() {
+  1677: clearTimeout(t);
+  1678: f.default.addDialogEvent(1500009, 0);
+  1679: }, 10);
+  1680: };
+  1681: e.prototype.selectSaveVillage = function() {
+---

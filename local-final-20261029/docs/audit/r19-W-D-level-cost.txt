@@ -1,0 +1,96 @@
+# R19-W-D: 书升级一本书要花多少进度 c 的计算链审计记录
+
+## 【第一件：level 表】
+- 文件路径: tools/cfg/dump/level.json
+- cols 全列表 (共 21 列):
+  ["Level","SkillPotential","SkillMoney","SkillEvaluate","abbreviation","Time","Success","CooperateAdd","Potential","NeedBreak","allpotential","zhenyuan","HP","MP","Attack","Hit","Miss","Defense","BreakDef","InterDamRes","exp"]
+- 行数: 999 行（level.json 中 rows 字段值为 999，data 对象下主键数量为 999）
+- 键的最小值与最大值: 最小值 1，最大值 999
+- 最大值 (键 999) 那行的完整 JSON:
+{"Level":999,"SkillPotential":19940080,"SkillMoney":199400800,"SkillEvaluate":60101,"abbreviation":60301,"Time":0,"Success":0,"CooperateAdd":0,"Potential":16.02,"NeedBreak":0,"allpotential":4931132600,"zhenyuan":295397,"HP":94945,"MP":12226,"Attack":160,"Hit":138,"Miss":128,"Defense":160,"BreakDef":80,"InterDamRes":50,"exp":9974738531}
+- 键为 40、41、42、43 的四行完整 JSON:
+键 40: {"Level":40,"SkillPotential":650,"SkillMoney":6500,"SkillEvaluate":60005,"abbreviation":60205,"Time":0,"Success":0,"CooperateAdd":0,"Potential":1.26,"NeedBreak":0,"allpotential":6493,"zhenyuan":19,"HP":742,"MP":528,"Attack":30,"Hit":101,"Miss":20,"Defense":29,"BreakDef":16,"InterDamRes":0,"exp":7143}
+键 41: {"Level":41,"SkillPotential":700,"SkillMoney":7000,"SkillEvaluate":60005,"abbreviation":60205,"Time":0,"Success":0,"CooperateAdd":0,"Potential":1.26,"NeedBreak":0,"allpotential":7143,"zhenyuan":20,"HP":749,"MP":540,"Attack":30,"Hit":101,"Miss":20,"Defense":29,"BreakDef":16,"InterDamRes":0,"exp":7843}
+键 42: {"Level":42,"SkillPotential":751,"SkillMoney":7510,"SkillEvaluate":60005,"abbreviation":60205,"Time":0,"Success":0,"CooperateAdd":0,"Potential":1.26,"NeedBreak":0,"allpotential":7843,"zhenyuan":22,"HP":756,"MP":552,"Attack":30,"Hit":101,"Miss":20,"Defense":29,"BreakDef":16,"InterDamRes":0,"exp":8594}
+键 43: {"Level":43,"SkillPotential":806,"SkillMoney":8060,"SkillEvaluate":60005,"abbreviation":60205,"Time":0,"Success":0,"CooperateAdd":0,"Potential":1.26,"NeedBreak":0,"allpotential":8594,"zhenyuan":23,"HP":763,"MP":564,"Attack":30,"Hit":101,"Miss":20,"Defense":29,"BreakDef":16,"InterDamRes":0,"exp":9400}
+- 列存在性检查:
+  - SkillPotential: 有（存在于 cols 中）
+  - SkillMoney: 有（存在于 cols 中）
+  - NeedBreak: 有（存在于 cols 中）
+
+## 【第二件：函数体逐字抽取】
+
+1) getLGCost
+路径: tools/index.js:120785-120789
+定义行与完整函数体:
+e.prototype.getLGCost = function(t, e, o) {
+o > 200 && (o = 200);
+var i = this.getTrainingCoe(o);
+return Math.floor(t * e * i);
+};
+
+2) getQualitySkillCoefficient
+路径: tools/index.js:120384-120387
+定义行与完整函数体:
+o.SkillTable.getQualitySkillCoefficient = function(t, e) {
+var o = this.skillknackmodel.getSkillQuality(e);
+return o > 0 ? this.skillknackmodel.getQualitySkillCoefficient(e, o) : t.Coefficient;
+};
+
+[补充定义 1 (SkillKnackModel 中同名实现)]
+路径: tools/scripts3.js:81235-81238
+定义行与完整函数体:
+t.prototype.getQualitySkillCoefficient = function(t, e) {
+var o = this.getQualitySkill(t, e);
+return o ? o.Coefficient : 0;
+};
+
+3) getSkillTopLevel
+路径: tools/index.js:120782-120784
+定义行与完整函数体:
+e.prototype.getSkillTopLevel = function(t) {
+return Math.floor(f.SkillTable.getSkillLevel(f.SkillTable.getBaseSkillID(t)) + T.playerInfo.entity.perception.getRawValue() / i.getConstByID("34"));
+};
+
+4) maxSkillLevel
+- 被赋值/定义的那一行:
+  路径: tools/index.js:21874
+  代码: n.maxSkillLevel = Math.min(this.getConstByID("41"), t);
+- 所在初始化函数 (getMaxSkillLevel):
+  路径: tools/index.js:21870-21875
+  定义行与完整函数体:
+getMaxSkillLevel: function() {
+var t = 0, e = this.getTable("level");
+for (var o in e) ++t;
+n.topSkillLevel = t;
+n.maxSkillLevel = Math.min(this.getConstByID("41"), t);
+},
+- 该函数的调用处:
+  路径: tools/index.js:21706
+  代码: this.getMaxSkillLevel(); （处于 CFMgr 的 init 函数 tools/index.js:21606 内）
+
+5) SkillUpgradeModel 里与 pgr 相关的 get/set 函数
+- 检查结论: 未在 SkillUpgradeModel 原型上定义独立的 getPgr / setPgr 函数；在 1) getLGCost 中计算升级所需总进度/消耗。技能进度 pgr 的全局存储与修改函数实现在 SkillTable：
+  - o.SkillTable.setUpgrdPgr = function(t, e) { this.dic[t].pgr = e; }; (tools/index.js:120145-120147)
+  - 在 SkillUpgradeModel 内部针对当前技能计算/显示 pgr 的业务逻辑多为直接计算表达式，如 tools/index.js:120860: `p.pgr = Math.floor(f.SkillTable.dic[a].pgr / (h.SkillPotential * u) * 100);`。若以 1) 计算升级消耗 progress 而言，已在 1) 覆盖。
+
+## 【第三件：公式合成（只抄不判断）】
+按源码里的运算符顺序原样写成一行伪代码，并注明每个符号取自哪一行：
+
+- 一行伪代码:
+c = Math.floor(t * (o > 0 ? skillknackmodel.getQualitySkill(e, o).Coefficient : t_skill.Coefficient) * (1 - (Math.min(o_perception, 200) + 10 * skillUpgCostRd.finalValue) / constant["16"].Date))
+
+- 符号对应源码行号与来源:
+1. `c = Math.floor(t * e * i)` 取自 tools/index.js:120788 (`getLGCost`)
+2. `t`: 传入的等级基础潜能参数，取自 `level.json[lv].SkillPotential`（调用处如 tools/scripts2.js:13847 `s.SkillPotential`、tools/scripts2.js:58176 `e.SkillPotential`）
+3. `e` / `系数`: 取自 `SkillTable.getQualitySkillCoefficient`（tools/index.js:120386 `return o > 0 ? this.skillknackmodel.getQualitySkillCoefficient(e, o) : t.Coefficient;` 及 tools/scripts3.js:81237 `return o ? o.Coefficient : 0;`）
+4. `i` / `trainingCoe`: 取自 tools/index.js:120790-120794 (`getTrainingCoe`)：`var e = 1 - (t + 10 * T.playerInfo.entity.skillUpgCostRd.finalValue) / i.getConstByID("16"); e < .1 && (e = .1); return e;`，其中入参 `o > 200 && (o = 200)`（tools/index.js:120786, 120791）
+5. `constant["16"].Date`: 取自 tools/cfg/dump/constant.json ID 16 (`Date: 1000`)
+6. `上限 lv 约束` (getSkillTopLevel & maxSkillLevel):
+   - `getSkillTopLevel`: `Math.floor(SkillTable.getSkillLevel(SkillTable.getBaseSkillID(t)) + perception.getRawValue() / constant["34"].Date)` 取自 tools/index.js:120783（constant ID 34 Date 为 10）
+   - `maxSkillLevel`: `Math.min(constant["41"].Date, t_level_rows_count)` 取自 tools/index.js:21874（constant ID 41 Date 为 600）
+
+## 【未验证】
+1. tools/index.js:120793 中 `e < .1 && (e = .1)` 下限截断逻辑在理论极端高悟性/减耗属性下是否会触发，未能确认。
+2. tools/index.js:120782 中 `T.playerInfo.entity.perception.getRawValue()` 与 tools/scripts2.js:13799 中传入 `this.perception.getRawValue()` 在不同调用场景下是否包含装备或临时潜能加成，未能确认。
+3. tools/cfg/dump/level.json 与客户端内嵌 asset 的 hash 一致性未做二进制比对，未能确认。

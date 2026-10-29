@@ -1,0 +1,13 @@
+# User.BuyChallengeCount   (HttpConst.BUY_DG_CHALLENGE)
+
+## 注册点 64085: r.MessageCenter.on(a.HttpConst.BUY_DG_CHALLENGE, function(e, o) {
+
+## 请求点 64160: f.NetMgr.http.sendRequest(a.HttpConst.BUY_DG_CHALLENGE, o);
+   64152: f.NetMgr.http.sendRequest(a.HttpConst.ENTER_DUNGEON, o);
+   64153: };
+   64154: t.prototype.reqBuyChallenge = function(t, e) {
+   64155: var o = {
+   64156: copyID: t,
+   64157: buyCount: e
+   64158: };
+   64159: this.buyCount = e;

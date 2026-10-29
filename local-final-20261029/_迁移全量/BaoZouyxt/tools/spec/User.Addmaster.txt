@@ -1,0 +1,99 @@
+# User.Addmaster  (HttpConst.ADD_SEX_KILL)
+# 出现 2 处
+
+ 64601: e.prototype.reqSexKill = function() {
+ 64602: Promise.resolve().then(function() {
+ 64603: return t("./InventoryModel");
+ 64604: }).then(function(t) {
+ 64605: var e = t.InventoryModel, o = e.getSpecEqArrByItemID(6529), i = e.getSpecEqArrByItemID(1415), r = 0;
+ 64606: a.RoleBaseInfo.getItemNotEquipNum(6529) > 0 ? r = 6529 : a.RoleBaseInfo.getItemNotEquipNum(1415) > 0 ? r = 1415 : o && o.length ? r = o[0].id : i && i.length && (r = i[0].id);
+ 64607: 0 == r ? s.default.show(n.getText(1455)) : y.NetMgr.http.sendRequest(v.HttpConst.ADD_SEX_KILL, {
+ 64608: equipid: r
+ 64609: });
+ 64610: });
+ 64611: };
+ 64612: return e;
+ 64613: }();
+ 64614: o.InventoryDB = new S();
+ 64615: cc._RF.pop();
+ 64616: }, {
+ 64617: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 64618: "../gameconfigs/AppData": "AppData",
+ 64619: "../gameconfigs/CFMgr": "CFMgr",
+ 64620: "../gameconfigs/LangMgr": "LangMgr",
+ 64621: "../gui/uicomponents/Alert": "Alert",
+ 64622: "../mgrs/BundleMgr": "BundleMgr",
+ 64623: "../mgrs/LayerMgr": "LayerMgr",
+ 64624: "../net/HttpConst": "HttpConst",
+ 64625: "../net/NetMgr": "NetMgr",
+ 64626: "../utils/SkillUtils": "SkillUtils",
+ 64627: "./InventoryModel": "InventoryModel",
+ 64628: "./RoleOtherInfo": "RoleOtherInfo",
+ 64629: "./SkillTable": "SkillTable",
+ 64630: "./SkillUpgradeModel": "SkillUpgradeModel",
+ 64631: "./TaskSystemMgr": "TaskSystemMgr",
+ 64632: "./vos/PlayerInfo": "PlayerInfo",
+ 64633: "./vos/RoleBaseInfo": "RoleBaseInfo"
+ 64634: } ],
+ 64635: InventoryModel: [ function(t, e, o) {
+ 64636: "use strict";
+ 64637: cc._RF.push(e, "055eamtISdFDZorrB9mYBKN", "InventoryModel");
+ 64638: Object.defineProperty(o, "__esModule", {
+ 64639: value: !0
+ 64640: });
+ 64641: o.InventoryModel = void 0;
+ 64642: var i = t("../gameconfigs/CFMgr"), n = t("../gameconfigs/LangMgr"), r = t("../core/events/MessageCenter"), a = t("../net/HttpConst"), s = t("../utils/EvName"), l = t("./vos/RoleBaseInfo"), c = t("../gui/uicomponents/Alert"), p = t("../mgrs/BundleMgr"), h = t("../core/ui/mgrs/PopUpMgr"), u = t("../mgrs/LayerMgr"), f = t("./vos/EqItem"), d = t("./InventoryDB"), g = t("./vos/IvItem"), m = t("../net/NetMgr"), y = t("./InhertEquipModel"), v = t("../mgrs/StoryDialogMgr"), _ = t("./TaskSystemMgr"), S = t("./AchieveModel"), M = t("./NonBattleBuffModel"), E = t("./StealModel"), I = t("./StoreModel"), b = t("./TowerModel"), T = t("./PackageModel"), C = t("./CrossServiceModel"), A = t("./AdModel"), k = t("./vos/PlayerInfo"), D = t("./SkillUpgradeModel"), N = t("./PartnerModel"), R = t("./RecastModel"), P = t("../mgrs/LocalStorageMgr"), O = t("./SkillTable"), B = t("./IceBedModel"), w = t("./TaskModel"), L = t("../mgrs/TimeMgr"), U = t("./UserModel"), x = t("./vos/CrystalItem"), F = t("./RoleOtherInfo"), H = function() {
+ 64643: function e() {
+ 64644: this.curItemId = 0;
+ 64645: this.boxType = 0;
+ 64646: this.equipmentDic = {};
+ 64647: this.equipByItemID = {};
+---
+ 64995: r.MessageCenter.on(a.HttpConst.IS_CAN_SHARE, function(t, e) {
+ 64996: 1 == e.eRet && r.MessageCenter.dispatch(s.EvName.SHARE_ITEM_REWRAD_EVENT, e);
+ 64997: }, this);
+ 64998: r.MessageCenter.on(a.HttpConst.GETSHARE_PIC_AWARD, function(t, e) {
+ 64999: 1 == e.eRet ? v.default.addShowRewardUI1(e.rewardArray, 0) : c.default.show(n.getText(1093));
+ 65000: }, this);
+ 65001: r.MessageCenter.on(a.HttpConst.ADD_SEX_KILL, function(t, e) {
+ 65002: if (1 == e.eRet) {
+ 65003: l.RoleBaseInfo.sexState = 2;
+ 65004: var o = {
+ 65005: str: n.getText("3804")
+ 65006: };
+ 65007: p.default.prefabs.load("comUI/KillDeadUI", cc.Prefab, function(t, e) {
+ 65008: var i = cc.instantiate(e);
+ 65009: h.PopUpMgr.addPopUp(i, u.LayerMgr.popUpLayer);
+ 65010: i.addComponent("KillDeadUI").setData(o);
+ 65011: });
+ 65012: r.MessageCenter.dispatch(s.EvName.CHANGE_PLAYER_EVENT);
+ 65013: }
+ 65014: }, this);
+ 65015: r.MessageCenter.on(a.HttpConst.PUT_ON_EQUIPMENT, function(t, e) {
+ 65016: if (1 == e.eRet) {
+ 65017: r.MessageCenter.dispatch(s.EvName.CHANGE_ROLE_INFO);
+ 65018: r.MessageCenter.dispatch(s.EvName.UPDATE_PLAYER_EVENT);
+ 65019: }
+ 65020: }, this);
+ 65021: r.MessageCenter.on(a.HttpConst.GET_EQUIP_LOCKS, function(t, o) {
+ 65022: 1 == o.eRet && (e.lockEquips = o.equipLocks);
+ 65023: });
+ 65024: r.MessageCenter.on(a.HttpConst.ADD_EQUIP_LOCK, function(t, o) {
+ 65025: if (1 == o.eRet) {
+ 65026: e.lockEquips = o.equipLocks;
+ 65027: r.MessageCenter.dispatch(s.EvName.REFRESH_LOCK_ARRAY, o.equipLocks);
+ 65028: }
+ 65029: }, this);
+ 65030: r.MessageCenter.on(a.HttpConst.DELETE_EQUIP_LOCK, function(t, o) {
+ 65031: if (1 == o.eRet) {
+ 65032: e.lockEquips = o.equipLocks;
+ 65033: r.MessageCenter.dispatch(s.EvName.REFRESH_LOCK_ARRAY, o.equipLocks);
+ 65034: }
+ 65035: }, this);
+ 65036: r.MessageCenter.on(a.HttpConst.GET_DROP_AWARD, function(t, e) {
+ 65037: 1 == e.eRet && r.MessageCenter.dispatch(s.EvName.RECEIVED_DROP_AWARD, e);
+ 65038: }, this);
+ 65039: };
+ 65040: e.prototype.reqGetEquipLocks = function() {
+ 65041: m.NetMgr.http.sendReqWithMask(a.HttpConst.GET_EQUIP_LOCKS, {});
+---

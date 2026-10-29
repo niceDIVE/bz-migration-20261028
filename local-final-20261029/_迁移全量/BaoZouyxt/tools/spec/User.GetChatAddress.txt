@@ -1,0 +1,99 @@
+# User.GetChatAddress  (HttpConst.USER_GETCHATADDRESS)
+# 出现 2 处
+
+ 70344: t.createRole(o);
+ 70345: }, this);
+ 70346: v.MessageCenter.on(d.HttpConst.USER_LOADGAME, function(e, o) {
+ 70347: t.loadGame(o);
+ 70348: }, this);
+ 70349: v.MessageCenter.on(d.HttpConst.BACKTOLOGIN, function() {}, this);
+ 70350: v.MessageCenter.on(d.HttpConst.USER_GETCHATADDRESS, function(e, o) {
+ 70351: t.chatServerSuccess(o);
+ 70352: }, this);
+ 70353: v.MessageCenter.on(d.HttpConst.ANNOUNCEMENT_ID, function(e, o) {
+ 70354: t.sendAnnouncePhpHttp(o);
+ 70355: }, this);
+ 70356: v.MessageCenter.on(d.HttpConst.RECORD_PHONE, function(t, e) {
+ 70357: if (1 == e.eRet) {
+ 70358: cc.sys.localStorage.setItem("huaweiPhone" + I.RoleBaseInfo.roleID, 1);
+ 70359: D.default.show(s.getText("8951"));
+ 70360: } else 2 == e.eRet ? D.default.show(s.getText("8956")) : 3 == e.eRet ? D.default.show(s.getText("8957")) : 4 == e.eRet && D.default.show(s.getText("8953"));
+ 70361: }, this);
+ 70362: v.MessageCenter.on(d.HttpConst.CHECK_ON_HOOK, function(e, o) {
+ 70363: if (1 == o.eRet) {
+ 70364: t.idleData = o.OnhookObj;
+ 70365: t.onHookScene(!0);
+ 70366: }
+ 70367: });
+ 70368: };
+ 70369: e.prototype.start = function() {
+ 70370: var t = this;
+ 70371: H.LoginMgr.login(function() {
+ 70372: t.showPrologue();
+ 70373: });
+ 70374: };
+ 70375: e.prototype.showPrologue = function() {
+ 70376: z.TESDKHelper.onSdkLogin();
+ 70377: H.LoginMgr.checkMiniGame() ? this.showSvrSelection() : cc.sys.localStorage.getItem("firstInBz") ? this.showSvrSelection() : N.default.prefabs.load("Login/PrologueUI", cc.Prefab, function(t, e) {
+ 70378: var o = cc.instantiate(e);
+ 70379: E.PopUpMgr.addPopUp(o, R.LayerMgr.topLayer, 1);
+ 70380: });
+ 70381: };
+ 70382: e.prototype.showSvrSelection = function(t) {
+ 70383: void 0 === t && (t = 0);
+ 70384: this.isLoginEnter = t;
+ 70385: if (I.RoleBaseInfo.userAccount && "" != I.RoleBaseInfo.userAccount) {
+ 70386: Y.uiMgr.hideNetworkUI();
+ 70387: E.PopUpMgr.cleanupAll(!0);
+ 70388: cc.director.loadScene("scenes/svrselect");
+ 70389: }
+ 70390: };
+---
+ 70558: this.roleAttribute = e;
+ 70559: this.roleAttribute._attributeValue = [];
+ 70560: this.roleAttribute._attributeValue = o;
+ 70561: S.NetMgr.loginHttp.sendRequest(t, e);
+ 70562: };
+ 70563: e.prototype.setChatWebsoketIp = function() {
+ 70564: S.NetMgr.http.sendRequest(d.HttpConst.USER_GETCHATADDRESS, {
+ 70565: roleID: I.RoleBaseInfo.roleID
+ 70566: }, function() {}.bind(this), !1);
+ 70567: };
+ 70568: e.prototype.chatServerSuccess = function(e) {
+ 70569: if (1 == e.eRet) {
+ 70570: I.RoleBaseInfo.luckNum = e.Luck;
+ 70571: W.UserModel.entity.luck = e.Luck;
+ 70572: M.NonBattleBuffModel.setBufferTotalTime(e.hanyusuiTime);
+ 70573: var o = S.NetMgr.loginHttp.port;
+ 70574: if (Number.isNaN(Number(o))) {
+ 70575: var i = X.sListModel.svrUrl;
+ 70576: if (i && i.svrList[0]) {
+ 70577: var n = i.svrList[0];
+ 70578: i.svrList[0].indexOf("//") >= 0 && (n = i.svrList[0].split("//")[1]);
+ 70579: var r = (new RegExp("[0-9]+.[0-9]+.[0-9]+.[0-9]+").test(n) ? "ws" : "wss") + "://";
+ 70580: _.Net.setUrlAndPort(r + n, e.ChatServerPort);
+ 70581: }
+ 70582: } else {
+ 70583: var a = e.domain;
+ 70584: r = (new RegExp("[0-9]+.[0-9]+.[0-9]+.[0-9]+").test(a) ? "ws" : "wss") + "://";
+ 70585: _.Net.setUrlAndPort(cc.sys.isNative ? "ws://" + e.ChatServerIP : r + e.domain, e.ChatServerPort);
+ 70586: }
+ 70587: if (e.hasOwnProperty("bloodEndTime")) {
+ 70588: 7 != W.UserModel.entity.getEquippedSkill(2) && (W.UserModel.moveMode = 1);
+ 70589: P.RoleOtherInfo.setBloodEndTime(e.bloodEndTime);
+ 70590: }
+ 70591: this.enterGame();
+ 70592: if (e.hasOwnProperty("AnnouncementDomain")) {
+ 70593: var s = e.AnnouncementDomain, l = (new RegExp("[0-9]+.[0-9]+.[0-9]+.[0-9]+").test(s) ? "ws" : "wss") + "://";
+ 70594: Promise.resolve().then(function() {
+ 70595: return t("../../scripts3/net3/MessNet");
+ 70596: }).then(function(t) {
+ 70597: null === e.AnnouncementServerPort ? cc.log("没有跑马灯怎么说？") : Number.isNaN(Number(e.AnnouncementServerPort)) ? t.MessNet.setUrlAndPort(l + s, e.AnnouncementServerPort) : t.MessNet.setUrlAndPort(cc.sys.isNative ? "ws://" + e.AnnouncementIP : l + e.AnnouncementDomain, e.AnnouncementServerPort);
+ 70598: });
+ 70599: }
+ 70600: }
+ 70601: };
+ 70602: e.prototype.enterGame = function() {
+ 70603: var t = this;
+ 70604: this.idleData && f.HangUpModel.setSchoolTitle(this.idleData);
+---

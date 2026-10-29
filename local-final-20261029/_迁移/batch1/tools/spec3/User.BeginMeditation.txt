@@ -1,0 +1,13 @@
+# User.BeginMeditation   (HttpConst.START_DAZUO)
+
+## 注册点 138880: r.MessageCenter.on(s.HttpConst.START_DAZUO, function(e, o) {
+
+## 请求点 138938: u.NetMgr.http.sendRequest(s.HttpConst.START_DAZUO, e);
+   138930: var t = m.playerInfo.entity, e = {
+   138931: curMp: t.mp.remaining,
+   138932: maxMp: t.mp.limit - t.addEqMp,
+   138933: hg: t.hunger.remaining,
+   138934: gTime: t.totalGameTime.gameTime,
+   138935: hgtimes: t.numStuffed,
+   138936: flag: f.IceBedModel.getIceBed()
+   138937: };

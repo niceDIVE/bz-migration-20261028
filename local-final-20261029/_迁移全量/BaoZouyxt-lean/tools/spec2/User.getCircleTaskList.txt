@@ -1,0 +1,13 @@
+# User.getCircleTaskList   (HttpConst.GET_CIRCLE_TASK_LIST)
+
+## 注册点 43487: i.MessageCenter.on(n.HttpConst.GET_CIRCLE_TASK_LIST, function(e, o) {
+
+## 请求点 43543: f.NetMgr.http.sendRequest(n.HttpConst.GET_CIRCLE_TASK_LIST, {});
+   43535: i.MessageCenter.dispatch(l.EvName.SUCCESS_TASK_EVENT, {
+   43536: target: t.curTarget
+   43537: });
+   43538: u.default.addShowRewardUI1(o.rewardObj, 0);
+   43539: }
+   43540: }, this);
+   43541: };
+   43542: t.prototype.reqCircleHangTask = function() {

@@ -1,0 +1,36 @@
+转发说明（给转发人看的 30 秒版）
+====================================================================
+这是什么：第 12 批 C11〔周年通行证〕的下游回执包（实现 + 取证 + 测试一次性给全）。
+
+只要转 1 个文件：下游回执-第12批C11-20261027.zip
+（不需要单独转 bz-rpc-server.js，包里有）
+
+包里有什么（条目数与体积见 02-manifest.txt）
+--------------------------------------------------------------------
+  00-转发说明.txt                  ← 你正在看的这个
+  01-receipt-batch12-c11.txt       ← 回执正本（交付内容 + 口径申报 + 未做项）
+  02-manifest.txt                  ← 逐文件 md5 + 怎么验 + 哪些测试要 tools\
+  bz-rpc-server.js                 ← 业务层单文件（与 core\ 里那份同 md5）
+  core\                            ← 完整 core（含本批新表 bz-c11.generated.js），解包即可跑测试
+  facts\C1–C12                     ← 取证与策略 / 执行记录 / 侦察五份 / 主审探针 / 工单 / 工人验收 / OPEN-ISSUES
+  test\                            ← 全量测试（含本批新增 c11-smoke.js，13 条）
+  tools\gen_c11_tables.js          ← 本批新生成器（对面要重算 bz-c11.generated.js 时用）
+  tools\gen_c10_tables.js          ← 上批生成器（c10 表用）
+  tools\gen_c09_tables.js          ← 上批生成器（c09 表用）
+
+对面自验三步（都能独立跑，不依赖我们的环境）
+--------------------------------------------------------------------
+  1) cp core\* 覆盖本地 core → node build-handlers.js
+     期望 ver=h70337301、selfCheck 1320、CATCH CODES 103 个动作
+  2) node test\c11-smoke.js      → 期望 13/13
+     node test\c10-smoke.js      → 期望 18/18（回归）
+  3) node tools\check_shape_freeze.js → 期望 diff 0（基线 342 动作）
+
+一句话摘要
+--------------------------------------------------------------------
+周年通行证 7 键全做（含上游标"可能已下线"的 buyAnniversaryPassLiveness —— 入口实存，
+scripts3.js:18448）。面板开关 = getAnniversaryPassData（AnniversaryMainUI 在它回调里 new，
+scripts3.js:7831）。礼包两键走通用商店 type 11 货架（scripts2.js:8550-8572）。
+四个自定口径（详见回执 §四）：endtime=now+30 天、VIP 300 元宝、活跃 10 gold/点上限 565、
+礼包按元宝扣限购照表。真机全链已通（升档/买活跃/双轨领奖/买礼包），任务奖励恒"未达标"
+（本批不伪造进度，已申报）。

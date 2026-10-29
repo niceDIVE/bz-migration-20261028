@@ -1,0 +1,99 @@
+# User.enterSnow  (HttpConst.SNOWACTIVE)
+# 出现 2 处
+
+122456: this.firecrackerHp = 0;
+122457: this.snowActId = 0;
+122458: this.activetimeList = [];
+122459: }
+122460: t.prototype.init = function() {
+122461: var t = this;
+122462: r.MessageCenter.on(l.HttpConst.SNOWACTIVE, function(e, o) {
+122463: if (0 == o.eRet) 0 == t.activeType ? a.default.show(n.getText(4061)) : a.default.show(n.getText(1093)); else if (2 == o.eRet) if (2 == t.activeType) {
+122464: u.WebSocketModel.openSocketNet("active");
+122465: t.setBeastState(o.eRet);
+122466: t.setSnowManHp(o.hp);
+122467: t.boxNum = o.boxnum;
+122468: } else a.default.show(n.getText(1098)); else if (1 == o.eRet) {
+122469: if (0 == t.activeType) {
+122470: o.sTime;
+122471: t.setSnowManHp(o.hp);
+122472: r.MessageCenter.dispatch(p.EvName.REFRESH_SNOW_EVENT);
+122473: } else if (1 == t.activeType) {
+122474: t.setFirecrackerHP(o.hp);
+122475: r.MessageCenter.dispatch(p.EvName.REFRESH_FIRECRACK_EVENT);
+122476: t.getFirecrackerItems().length > 0 ? d.default.prefabs.load("activeUI/StackFirecrackerUI", cc.Prefab, function(t, e) {
+122477: var o = cc.instantiate(e);
+122478: g.PopUpMgr.addPopUp(o, m.LayerMgr.popUpLayer, 1, !0);
+122479: o.addComponent("StackFirecrackerUI");
+122480: }) : a.default.show(n.getText(3126));
+122481: } else if (2 == t.activeType) {
+122482: u.WebSocketModel.openSocketNet("active");
+122483: t.setSnowManHp(o.hp);
+122484: t.setBeastState(o.eRet);
+122485: }
+122486: } else if (3 == o.eRet) if (0 == t.activeType) {
+122487: t.setSnowManHp(o.hp);
+122488: t.boxNum = o.boxnum;
+122489: if (0 == t.boxNum) {
+122490: a.default.show(n.getText(1094));
+122491: return;
+122492: }
+122493: r.MessageCenter.dispatch(p.EvName.SNOW_BALL_PO_EVENT);
+122494: } else if (1 == t.activeType) {
+122495: t.setFirecrackerHP(o.hp);
+122496: t.boxNum = o.boxnum;
+122497: 0 == t.boxNum ? a.default.show(n.getText(1094)) : c.NetMgr.http.sendReqWithMask(l.HttpConst.GET_SNOW_REWARD);
+122498: } else if (2 == t.activeType) {
+122499: u.WebSocketModel.openSocketNet("active");
+122500: t.setBeastState(o.eRet);
+122501: t.setSnowManHp(o.hp);
+122502: t.boxNum = o.boxnum;
+---
+122555: if (!this.acting) {
+122556: void 0 === t && (t = 0);
+122557: this.activeType = t;
+122558: var e = {
+122559: roleID: h.RoleBaseInfo.roleID
+122560: };
+122561: c.NetMgr.http.sendRequest(l.HttpConst.SNOWACTIVE, e);
+122562: }
+122563: };
+122564: t.prototype.reqAddSnowHp = function(t) {
+122565: var e = {
+122566: roleID: h.RoleBaseInfo.roleID,
+122567: type: t
+122568: };
+122569: c.NetMgr.http.sendReqWithMask(l.HttpConst.USE_SNOW_BALL, e);
+122570: };
+122571: t.prototype.reqAddBatchSnowHp = function(t, e) {
+122572: var o = {
+122573: roleID: h.RoleBaseInfo.roleID,
+122574: type: t,
+122575: batchType: e
+122576: };
+122577: c.NetMgr.http.sendReqWithMask(l.HttpConst.USE_BATCH_SNOW_BALL, o);
+122578: };
+122579: t.prototype.reqSnowReward = function(t) {
+122580: this.treatureId = t;
+122581: var e = {
+122582: roleID: h.RoleBaseInfo.roleID
+122583: };
+122584: c.NetMgr.http.sendReqWithMask(l.HttpConst.GET_SNOW_REWARD, e);
+122585: };
+122586: t.prototype.getSnowHp = function() {
+122587: return this.currentSnowHp;
+122588: };
+122589: t.prototype.setSnowManHp = function(t) {
+122590: this.currentSnowHp = t;
+122591: };
+122592: t.prototype.setBeastState = function(t) {
+122593: this.beastState = t;
+122594: };
+122595: t.prototype.getBeastState = function() {
+122596: return this.beastState;
+122597: };
+122598: t.prototype.getSnowInfo = function() {
+122599: var t = i.getSnowData(this.activeType), e = this.currentSnowHp, o = 0;
+122600: for (var n in t) {
+122601: if (e < t[n].hp) {
+---

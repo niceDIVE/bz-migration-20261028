@@ -1,0 +1,99 @@
+# User.changeDelegateTask  (HttpConst.CHANGE_DELEGATE_TASK)
+# 出现 2 处
+
+ 43509: target: t.curTarget,
+ 43510: time: o.sTime
+ 43511: };
+ 43512: i.MessageCenter.dispatch(l.EvName.START_ENTRUST_TASK_EVENT, n);
+ 43513: } else 4 == o.eRet ? cc.log("服务器获取锁定装备数据出错") : 5 == o.eRet ? c.default.show(p.getText(8156)) : c.default.show(p.getText(1608));
+ 43514: }, this);
+ 43515: i.MessageCenter.on(n.HttpConst.CHANGE_DELEGATE_TASK, function(e, o) {
+ 43516: if (1 == o.eRet) {
+ 43517: var n = {};
+ 43518: for (var r in o.taskObj) {
+ 43519: var a = o.taskObj[r], s = {};
+ 43520: s.id = r;
+ 43521: s.state = a.s;
+ 43522: s.type = a.t;
+ 43523: s.lv = a.lv;
+ 43524: s.award = a.aw;
+ 43525: s.param = a.c;
+ 43526: s.sTime = a.d;
+ 43527: n[r] = s;
+ 43528: }
+ 43529: t.entrustNum = o.num;
+ 43530: i.MessageCenter.dispatch(l.EvName.CHANGE_ENTRUST_TASK_EVENT, n);
+ 43531: } else 4 == o.eRet ? c.default.show(p.getText("jh59")) : 3 == o.eRet && c.default.show(p.getText(1455));
+ 43532: }, this);
+ 43533: i.MessageCenter.on(n.HttpConst.CIRCLE_TASK_TASK, function(e, o) {
+ 43534: if (1 == o.eRet) {
+ 43535: i.MessageCenter.dispatch(l.EvName.SUCCESS_TASK_EVENT, {
+ 43536: target: t.curTarget
+ 43537: });
+ 43538: u.default.addShowRewardUI1(o.rewardObj, 0);
+ 43539: }
+ 43540: }, this);
+ 43541: };
+ 43542: t.prototype.reqCircleHangTask = function() {
+ 43543: f.NetMgr.http.sendRequest(n.HttpConst.GET_CIRCLE_TASK_LIST, {});
+ 43544: };
+ 43545: t.prototype.reqQuickFinishTask = function(t, e) {
+ 43546: this.curTarget = e;
+ 43547: f.NetMgr.http.sendRequest(n.HttpConst.QUICK_FINISH_TASK, {
+ 43548: taskID: t
+ 43549: });
+ 43550: };
+ 43551: t.prototype.reqDelegateTask = function(t, e) {
+ 43552: this.curTarget = e;
+ 43553: if (2 == t.type) {
+ 43554: var o = h.getItem(t.param[1], "item"), i = p.getText(1611);
+ 43555: if (1 == o.Type) {
+---
+ 43597: });
+ 43598: }) : c.default.show(p.getText(1608)) : f.NetMgr.http.sendRequest(n.HttpConst.DELEGATE_TASK, {
+ 43599: taskID: t.id
+ 43600: });
+ 43601: };
+ 43602: t.prototype.reqChangeDelegateTask = function(t, e) {
+ 43603: f.NetMgr.http.sendRequest(n.HttpConst.CHANGE_DELEGATE_TASK, {
+ 43604: tIDArr: t,
+ 43605: type: e
+ 43606: });
+ 43607: };
+ 43608: t.prototype.reqGetDelegateReward = function(t, e) {
+ 43609: this.curTarget = e;
+ 43610: f.NetMgr.http.sendRequest(n.HttpConst.CIRCLE_TASK_TASK, {
+ 43611: taskID: t
+ 43612: });
+ 43613: };
+ 43614: return t;
+ 43615: }();
+ 43616: o.EntrustModel = new y();
+ 43617: cc._RF.pop();
+ 43618: }, {
+ 43619: "../core/events/MessageCenter": "MessageCenter",
+ 43620: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 43621: "../gameconfigs/CFMgr": "CFMgr",
+ 43622: "../gameconfigs/LangMgr": "LangMgr",
+ 43623: "../gui/uicomponents/Alert": "Alert",
+ 43624: "../mgrs/BundleMgr": "BundleMgr",
+ 43625: "../mgrs/LayerMgr": "LayerMgr",
+ 43626: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+ 43627: "../net/HttpConst": "HttpConst",
+ 43628: "../net/NetMgr": "NetMgr",
+ 43629: "../utils/EvName": "EvName",
+ 43630: "./InventoryModel": "InventoryModel",
+ 43631: "./StoreModel": "StoreModel",
+ 43632: "./vos/RoleBaseInfo": "RoleBaseInfo"
+ 43633: } ],
+ 43634: EqItem: [ function(t, e, o) {
+ 43635: "use strict";
+ 43636: cc._RF.push(e, "53b48aQYSFAKpiaOeUjVHfh", "EqItem");
+ 43637: Object.defineProperty(o, "__esModule", {
+ 43638: value: !0
+ 43639: });
+ 43640: o.EqItem = void 0;
+ 43641: var i = t("../../utils/MadNumber"), n = function() {
+ 43642: function t() {
+ 43643: this.id = 0;
+---

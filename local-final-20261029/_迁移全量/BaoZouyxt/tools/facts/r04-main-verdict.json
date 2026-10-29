@@ -1,0 +1,139 @@
+{
+  "generatedAt": "2026-10-22T06:55:00+08:00",
+  "by": "main-auditor（R04 回执落地第一轮：只读取证 + 一条只读探针；未改任何代码）",
+  "inputs": {
+    "reply": "docs/sota/inbox/R04-reply.txt（由 R04-审阅.docx 抽出，工具 tools/docx2txt.js）",
+    "workers": ["tools/facts/r04-sale-price.json", "tools/facts/r04-active-fields.json", "tools/facts/r04-reward-deref.json"],
+    "probe": {"file": "hotfix-patch/probe/equip_attr_probe.js", "rawOutput": "见本文件 equipAttribute.probeRaw"}
+  },
+
+  "equipAttribute": {
+    "status": "已实测，属性确实生效 —— §16.6-1 关闭",
+    "probeRaw": {
+      "slotsFromLoadGame": {"5": 2302},
+      "entitySlots": {
+        "1": {"displayID": 1001, "itemID": 1001, "type": 1, "bonusCount": 1, "bonuses": [[9, 8]]},
+        "2": {"displayID": "null", "bonusCount": -1},
+        "3": {"displayID": "null", "bonusCount": -1},
+        "4": {"displayID": "null", "bonusCount": -1},
+        "5": {"displayID": 2302, "itemID": 2302, "type": 1, "bonusCount": 2, "bonuses": [[10, 1], [8, 5]]},
+        "6": {"displayID": "null", "bonusCount": -1},
+        "7": {"displayID": "null", "bonusCount": -1}
+      },
+      "attrs": {
+        "attack": {"base": 20, "finalValue": 248, "rawCount": 1, "rawSumFirst10": 8},
+        "defense": {"base": 0, "finalValue": 1, "rawCount": 1, "rawSumFirst10": 1},
+        "dodge": {"base": 0, "finalValue": 29, "rawCount": 1, "rawSumFirst10": 5},
+        "hp": {"base": 100, "limit": 600, "finalValue": 680},
+        "mp": {"base": 100, "limit": 240, "finalValue": 240},
+        "strength": {"base": 40, "finalValue": 44},
+        "shenfa": {"base": 20, "finalValue": 24},
+        "gengu": {"base": 10, "finalValue": 14},
+        "perception": {"base": 10, "finalValue": 10}
+      }
+    },
+    "crossCheck": [
+      {"equip": 1001, "entityBonuses": [[9, 8]], "itemTable": "Property1=9 / Data1=8", "verdict": "逐项对上"},
+      {"equip": 2302, "entityBonuses": [[10, 1], [8, 5]], "itemTable": "Property1=10/Data1=1 + Property2=8/Data2=5", "verdict": "逐项对上"}
+    ],
+    "conclusion": "装备属性 = item 表 Property1..5/Data1..5，由 Equipment.arm(index.js:44737) 变成实体上的 bonuse；type==1 的 PlayerEquip 不需要 attrs。R04 的 H1（穿戴状态来自 LoadGame 某个字段）成立：就是 equipments + PlayerEquip，我方两样都在发。",
+    "newFinding": {
+      "what": "活客户端 RoleBaseInfo.equipments 只有 {\"5\":2302}，缺槽 1 的 1001，而存档是 {1:1001,5:2302}",
+      "why_matters": "说明客户端那本账与存档账会漂移；但重登时以我方存档投射为准，所以不会丢装备",
+      "evidence": "探针 slotsFromLoadGame={\"5\":2302} vs `run.ps1 cmd state` 的 equipments={1:1001,5:2302}"
+    },
+    "probeGaps": [
+      "equipmentDic 读成 -1/{}：__require('InventoryModel') 拿到的是类不是单例；不影响结论（entitySlots 已直接证明），下次改用已实例化引用。",
+      "itemRows 空：CFMgr 的 getItem 形参顺序与探针假设不同，没取到；已用 tools/cfg/tbl_item.json 离线交叉核对。"
+    ],
+    "r04_q1_rest": {
+      "强化/倍率": "equipStateAttruteMult 是【setter，只吃数字】(index.js:143325-143328)，调用点是 buff 类：`6 == this.dataN[0] && (target.id2AttributeDic[6].equipStateAttruteMult = this.bonus.baseMultiplier)`（index.js:7343/7348、41211/41216）。所以它不是装备强化等级，不存在『倍率永远是 1 因为等级没落盘』这个问题。",
+      "assert建议": "采纳 R04 断言：每个 equipments[槽]=uid 必须满足 playerEquip[uid] 存在，且同一 uid 出现次数 ≤ playerEquip[uid][1]"
+    }
+  },
+
+  "saleCoins_P0": {
+    "found": "售价列 = item 表的 `Price`（不是 BuyPrice）",
+    "evidence": [
+      "tools/index.js:65191-65208  e.prototype.sellItem = function(t) { for (var e = this.equipmentDic, o = 0, ...) { var h = t[p], u = 0; if (2 == h[0]) { u = e[h[1]].itemID; ... } else u = h[1]; var g = i.getItem(u, \"item\"); o += parseInt(g.Price) * h[2]; }",
+      "tools/index.js:65209  if (r) if (l.RoleBaseInfo.coins + o > 15e8) {   // o 只用于上限检查，客户端不本地加钱",
+      "tools/index.js:65254  m.NetMgr.http.sendRequest(a.HttpConst.SELL_ITEM, S);",
+      "tools/index.js:59574  SELL_ITEM: \"User.saleItem\""
+    ],
+    "itemTablePriceColumns": ["BuyPrice", "Price"],
+    "priceSamples": [{"ID": 1001, "BuyPrice": 300, "Price": 100}, {"ID": 1002, "BuyPrice": 3, "Price": 1}, {"ID": 1003, "BuyPrice": 1200, "Price": 100}],
+    "consumerOfResponse": {
+      "where": "tools/index.js:64726-64742",
+      "readsOnly": ["eRet", "note.ivch", "note.eqch", "eRet==5 锁定装备不能出售", "eRet==6 服务器锁定数据出错"],
+      "important": "消费端【完全不读任何铜钱字段】→ 铜钱必须由我方结算，且必须主动投射进客户端（RoleBaseInfo.coins / baseValueAy[35]），否则玩家看不到钱变多"
+    },
+    "ourCurrentGap": {
+      "handler": "core/bz-rpc-server.js:1144-1186",
+      "whatItDoes": "只扣 bag / playerEquip、清 equipments 槽、persist、回 shaped('saleItem')",
+      "whatItDoesNotDo": "不结算铜钱、不回 note.ivch（客户端因此不刷新被卖掉的格子）",
+      "walletInSave": "s.coins 已有读写路径：bz-rpc-server.js:582（缺省 99999）、601（baseValueAy[35] = s.coins）；但当前存档文件里没有 coins 字段"
+    },
+    "formula": "coinDelta = Σ over saleArr of parseInt(itemTable[id].Price) * realCount  （realCount = min(请求数量, 真实持有)）",
+    "open_decisions": [
+      "s.coins 的初值：当前存档没有 coins 字段 → 首次结算会从缺省 99999 起算。若不想凭空给 99999，需要先定一个初值（例如取 baseValueAy[35] 现值 0）并写迁移。",
+      "是否同时回 note.ivch：客户端靠它刷新被卖格子；不回则只有铜钱变。"
+    ]
+  },
+
+  "activityPanel_Q2": {
+    "spec_for_getAllActivity": {
+      "activityList": "当期活动 id 数组（客户端只用它做 tab 白名单：ActiveModel.checkActive → RoleOtherInfo.activityList，index.js:1893-1900 / 57450）",
+      "activityArrFlag": "对应 RoleOtherInfo.activeObj = [x,y]（index.js:107227）；x=0 → 走 1002（每日任务），x>0 → 走 1001（七日活动）",
+      "activityShows": "对应 HomeActiveModel.activeShowList（index.js:57455），缺省 [1,1]（57373/57493）→ 可省",
+      "schoolActivityOpen": "10012 号 tab 用（index.js:55369）",
+      "schoolArenaOpen": "1013 号 tab 用（index.js:55370）",
+      "dataArr": "数组；第 i 项=第 i+1 天次数（DailyMissionUI 当 length + numTime 用，scripts2:17184-17191 / 20218-20227）"
+    },
+    "getActiveState_fields_15": [
+      "RoleOtherInfo.activeObj[0]", "RoleOtherInfo.activeObj[1]", "ActiveModel.rechargedIsEnd",
+      "HomeActiveModel.activeShowList[0]", "HomeActiveModel.activeShowList[1]", "TimeMgr.getSTimestamp()",
+      "CFMgr.getConstByID(132)", "CFMgr.getConstByID(156)", "RoleOtherInfo.passCardAction",
+      "RoleOtherInfo.giftendtime", "t.schoolActivityOpen", "t.schoolArenaOpen",
+      "ActiveModel.checkActive(o)", "this.themeActiveAy"
+    ],
+    "r04_condition_check": {
+      "cond1_字段齐全": "部分成立：activeShowList 有缺省 [1,1]，不是致命项；真正必给的是 activityList / activityArrFlag / schoolActivityOpen / schoolArenaOpen",
+      "cond2_允许零 tab": "成立：getActiveSortData 调用点之后 20 行内没有 [0] 无防护下标读取（scripts2:29182-29187 只有 setBtns）",
+      "cond3_无防护字段给类型正确的空值": "待逐字段判定（W5 已产出 253 条 hasOwnProperty 命中，需按活动链路人工筛）"
+    },
+    "tab_prefab_map": {
+      "where": "tools/scripts2.js:28534-28574",
+      "note": "1001→SevendayActiveUI, 1002→DailyMissionUI, 1003→FirstChargeUI, 1004→NewGFUI, 1005→EverydayActiveUI, 1009→sevendays, 1012/1013→ArenaOpen, … 1044→fishShadow/FishShadowUI。客户端常量，服务器不用给。"
+    }
+  },
+
+  "reward_Q3": {
+    "verdict": "客户端【零解引用】Reward：\\.Reward\\b / [\"Reward\"] / ['Reward'] 三包全部 0 命中",
+    "implication": "R04 判读方式第 1 条成立 → 奖励表只存在于原版服务端，客户端无法恢复这 776 个 Reward",
+    "action": "按 R04：pending = rewarded ∩ {Reward 无法解析的任务} − RepeatIds，随时可推导，不必为它把存档迁到 v5；等查清后补发用 bzPatch 以任务 id 作幂等键",
+    "caveat": "H3 成立（官方配置不变）才可推导"
+  },
+
+  "r04_flagged_inconsistencies": {
+    "tables_442_vs_454": {
+      "裁定": "两个数都对，口径不同：454 = 游戏内 CFMgr.dic 的表键数；442 = 已导出落盘到 tools/cfg/dump 的表数（差额为空表）。以后材料统一写『CFMgr.dic 454 键 / 落盘 442 张』"
+    },
+    "overlay_口径": {
+      "裁定": "两句话说的是两件事，不算矛盾：①【账本层】不写差额——接任务/交任务都不改 bag，差额 = need − bag 只在读的时候算；②【可见性层】有推送——发奖/掉落/叠加会主动 setItem 到活客户端，只是让界面即时可见，不改账本。以后材料统一写『账本不含叠加；叠加在投射(LoadGame/sycn)与推送(setItem)两处计算』"
+    }
+  },
+
+  "worker_acceptance": {
+    "W4": {"file": "tools/facts/r04-sale-price.json", "bytes": 83926, "sampled": "抽 itemTablePriceColumns=[BuyPrice,Price] 与 itemSamples(1001→300/100) 回 tools/cfg/tbl_item.json 核对 → 一致；抽 saleArr 命中行回源码 → 一致", "verdict": "可信"},
+    "W5": {"file": "tools/facts/r04-active-fields.json", "bytes": 96666, "sampled": "抽 getActiveStateFields 与我亲读 index.js:55358-55374 逐条比对 → 15 条全对；抽 activeShowList 缺省 [1,1] 回 index.js:57373 核对 → 一致", "verdict": "可信"},
+    "W6": {"file": "tools/facts/r04-reward-deref.json", "bytes": 2673, "sampled": "9 条查询全部 0 命中；主审用自己的正则复跑 index.js 一遍确认 0 命中", "verdict": "可信（结论：无解引用）"}
+  },
+
+  "next_actions_requiring_approval": [
+    "P0（R04 第 0 位）：saleItem 结算铜钱 = Σ Price×realCount，写 s.coins，并在应答里回 note.ivch + 推客户端 coins。改动文件：tools/gen_task_rewards.js（新增 BZ_ITEMPRICE）、core/bz-rpc-server.js（saleItem）、新增 test/sale-coins.js。按 AGENTS.md 需先备份再改。",
+    "P1：getAllActivity 回 activityList/activityArrFlag/schoolActivityOpen/schoolArenaOpen（Q2 已给全规格）。",
+    "P2：动作计数 save.meta.actionStats（R04 Q4 已给完整实现草案）。",
+    "P3：ISSUE-3 flow.js stepNotice 兜底改 PopUpMgr.removePopUp。",
+    "文档：把本轮结论与两处口径裁定写进 HANDOVER（改前备份 + 再问一次）"
+  ]
+}

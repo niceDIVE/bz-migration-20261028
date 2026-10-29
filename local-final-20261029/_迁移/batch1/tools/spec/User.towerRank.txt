@@ -1,0 +1,99 @@
+# User.towerRank  (HttpConst.TOWER_RANK_LIST)
+# 出现 2 处
+
+137576: g.NetMgr.http.sendRequest(c.HttpConst.SYCN_TASK, {
+137577: roleID: d.RoleBaseInfo.roleID
+137578: }, null, !1);
+137579: }
+137580: } else cc.log("error!!");
+137581: }, this);
+137582: l.MessageCenter.on(c.HttpConst.TOWER_RANK_LIST, function(t, e) {
+137583: 1 == e.eRet && e.hasOwnProperty("rankArr") && h.default.prefabs.load("towerUI/TowerRank", cc.Prefab, function(t, o) {
+137584: var i = cc.instantiate(o);
+137585: u.PopUpMgr.addPopUp(i, f.LayerMgr.popUpLayer);
+137586: i.addComponent("TowerRank").setData(e.rankArr);
+137587: });
+137588: }, this);
+137589: l.MessageCenter.on(c.HttpConst.TOWER_RANDOM_EVENT, function(e, o) {
+137590: if (1 == o.eRet) {
+137591: t.sweepState = !1;
+137592: if (0 == t.eventType) {
+137593: t.curFloorNum++;
+137594: t.eventType = 1;
+137595: }
+137596: t.randomMonsterData = o.npcArr;
+137597: o.hasOwnProperty("eventID") && (t.randomEventId = o.eventID);
+137598: o.hasOwnProperty("muscle") && (t.curStrengthNum = o.muscle);
+137599: o.hasOwnProperty("attrType") && (t.attriType = o.attrType);
+137600: if (o.hasOwnProperty("equipments")) {
+137601: var i = o.equipments;
+137602: for (var r in i) {
+137603: k.playerInfo.entity.putOffEquipment(parseInt(r));
+137604: if (i[r]) {
+137605: var s = m.InventoryModel.getEquipmentInfo(i[r]);
+137606: if (s) {
+137607: var l = {
+137608: id: s.id,
+137609: type: s.type,
+137610: itemID: s.itemID,
+137611: attrs: s.attrs,
+137612: numAttr: s.numAttr,
+137613: crystalIds: s.crystalIds
+137614: }, c = I.InhertEquipModel.allInhertEquips, p = c.hasOwnProperty(s.id) ? c[s.id] : 0;
+137615: k.playerInfo.entity.putOnEquipment(new n(l, p), parseInt(r));
+137616: 1 == parseInt(r) && m.InventoryModel.freshEquipWeap(parseInt(r), l.id);
+137617: }
+137618: }
+137619: }
+137620: }
+137621: if (o.mapID > 0) {
+137622: t.towerShowMapId = o.mapID;
+---
+137938: e.prototype.reqOpenBoxAward = function(t) {
+137939: g.NetMgr.http.sendRequest(c.HttpConst.TOWER_GET_REWARD_BOX, {
+137940: eventID: t
+137941: });
+137942: };
+137943: e.prototype.reqTowerRankList = function() {
+137944: g.NetMgr.http.sendRequest(c.HttpConst.TOWER_RANK_LIST, {});
+137945: };
+137946: e.prototype.reqGetShopList = function(t, e) {
+137947: g.NetMgr.http.sendRequest(c.HttpConst.TOWER_SPECIAL_SHOP, {
+137948: npcID: t,
+137949: lv: e
+137950: });
+137951: };
+137952: e.prototype.reqBuyTowerItem = function(t, e) {
+137953: this.sum = e;
+137954: this.sweepState ? g.NetMgr.http.sendRequest(c.HttpConst.TOWER_BUY_PROP, {
+137955: itemID: t,
+137956: itemNum: e,
+137957: lv: this.sweepLv
+137958: }) : g.NetMgr.http.sendRequest(c.HttpConst.TOWER_BUY_PROP, {
+137959: itemID: t,
+137960: itemNum: e
+137961: });
+137962: };
+137963: e.prototype.reqGetPandaEvent = function(t) {
+137964: void 0 === t && (t = 0);
+137965: void 0 === t && (t = 0);
+137966: 0 == t ? g.NetMgr.http.sendRequest(c.HttpConst.TOWER_GET_PANDA_EVENT, {}) : g.NetMgr.http.sendRequest(c.HttpConst.TOWER_GET_PANDA_EVENT, {
+137967: lv: t
+137968: });
+137969: };
+137970: e.prototype.reqSelectPandaEvent = function(t, e) {
+137971: this.pandaEventId = e;
+137972: this.sweepState ? g.NetMgr.http.sendRequest(c.HttpConst.TOWER_CHOOSE_PANDA_EVENT, {
+137973: idx: t,
+137974: lv: this.sweepLv
+137975: }) : g.NetMgr.http.sendRequest(c.HttpConst.TOWER_CHOOSE_PANDA_EVENT, {
+137976: idx: t
+137977: });
+137978: };
+137979: e.prototype.reqLookPandaNpc = function(t) {
+137980: var e = this;
+137981: this.pandaNpcId = t.id;
+137982: if (3 == t.type) this.sweepState ? g.NetMgr.http.sendRequest(c.HttpConst.LOOK_SECRET_PANDA_EVENT, {
+137983: npcID: t.id,
+137984: lv: this.sweepLv
+---

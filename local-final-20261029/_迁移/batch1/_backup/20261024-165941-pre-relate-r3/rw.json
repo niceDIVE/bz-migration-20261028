@@ -1,0 +1,744 @@
+{
+ "User.BeginTraining": {
+  "reads": [
+   "bag",
+   "done"
+  ],
+  "writes": [
+   "equipments",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.BuyAcitivityShop": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.BuyFashion": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.CheckBattleResult": {
+  "reads": [
+   "done",
+   "hungerMax",
+   "rewarded",
+   "skills"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "yuanbao"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.Create": {
+  "reads": [
+   "bag",
+   "done",
+   "roleID"
+  ],
+  "writes": [
+   "baseValueAy",
+   "coins",
+   "equipments",
+   "name",
+   "playerEquip",
+   "potential",
+   "rewarded",
+   "saveVersion",
+   "school",
+   "skills"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.EndFish": {
+  "reads": [
+   "bag",
+   "done"
+  ],
+  "writes": [
+   "equipments",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.ExChangeJetton": {
+  "reads": [
+   "bag",
+   "chip",
+   "done",
+   "gold"
+  ],
+  "writes": [
+   "equipments",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.GetSpecialShopData": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.LoadGame": {
+  "reads": [
+   "accepted",
+   "baseValueAy",
+   "chip",
+   "coins",
+   "done",
+   "hungerMax",
+   "name",
+   "potential",
+   "roleID",
+   "roleSnapshot"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "titles",
+   "yuanbao"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.OnCheckBreak": {
+  "reads": [
+   "bag",
+   "done",
+   "gold"
+  ],
+  "writes": [
+   "equipments",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.PutOnEquipment": {
+  "reads": [],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.QuickBuyItem": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "coins",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.ReqSelfBattleInfo": {
+  "reads": [
+   "bag",
+   "baseValueAy",
+   "done",
+   "hungerMax"
+  ],
+  "writes": [
+   "equipments",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.UnloadingEuipment": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.acceptTask": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "accepted",
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.addItem": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.buyGoodAndEvilShopItem": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.buyShopItem": {
+  "reads": [
+   "done",
+   "hungerMax"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "coins",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.buySpecialShopItem": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.bzBackfillRewards": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.bzGrantCur": {
+  "reads": [
+   "coins",
+   "done",
+   "hungerMax"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.bzPatch": {
+  "reads": [
+   "bag",
+   "done"
+  ],
+  "writes": [
+   "equipments",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.bzSeedBag": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.equipWeapon": {
+  "reads": [],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.exchangeItem": {
+  "reads": [
+   "done",
+   "hungerMax"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.getAchieveData": {
+  "reads": [
+   "achieve",
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.getFinishTaskAward": {
+  "reads": [
+   "hungerMax"
+  ],
+  "writes": [
+   "accepted",
+   "bag",
+   "bloodArr",
+   "contribution",
+   "done",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.joinSchool": {
+  "reads": [
+   "bag",
+   "done"
+  ],
+  "writes": [
+   "equipments",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "school",
+   "skills"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.quicklogin": {
+  "reads": [
+   "bag",
+   "createdAt",
+   "done",
+   "name",
+   "roleID"
+  ],
+  "writes": [
+   "equipments",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.rgShopByItem": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.saleItem": {
+  "reads": [
+   "done",
+   "hungerMax"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "coins",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ },
+ "User.sycnPlayerItemData": {
+  "reads": [
+   "accepted",
+   "done",
+   "hungerMax"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.sycnTask": {
+  "reads": [
+   "accepted",
+   "done",
+   "hungerMax"
+  ],
+  "writes": [],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.upgradeSkill": {
+  "reads": [
+   "SkillTable",
+   "accepted",
+   "done",
+   "hungerMax"
+  ],
+  "writes": [
+   "bag",
+   "equipments",
+   "playerEquip",
+   "potential",
+   "rewarded",
+   "saveVersion",
+   "skills"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.useItem": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "hunger",
+   "hungerMax",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "titles",
+   "yuanbao"
+  ],
+  "via": [
+   "literal",
+   "table:H"
+  ]
+ },
+ "User.washAdditionalArr": {
+  "reads": [
+   "done"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "contribution",
+   "equipments",
+   "fosterArr",
+   "gold",
+   "playerEquip",
+   "rewarded",
+   "saveVersion",
+   "skills",
+   "yuanbao"
+  ],
+  "via": [
+   "table:H"
+  ]
+ }
+}

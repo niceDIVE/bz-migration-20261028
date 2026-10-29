@@ -1,0 +1,99 @@
+# User.BeginTraining  (HttpConst.BEGIN_LIANGONG)
+# 出现 2 处
+
+120509: this.isBreaking = !1;
+120510: this.isIceBed = 0;
+120511: this.isSchoolLiang = 0;
+120512: }
+120513: e.prototype.init = function() {
+120514: var e = this;
+120515: s.MessageCenter.on(c.HttpConst.BEGIN_LIANGONG, function(o, n) {
+120516: if (1 == n.eRet || 2 == n.eRet) {
+120517: e.skill2Upgrade = n.skillID;
+120518: e.startTimestamp = n.beginTime;
+120519: E.TimeMgr.sserverT = n.beginTime;
+120520: E.TimeMgr.startTime = Date.now();
+120521: e.hyTime = 1e3 * n.hanyusuiTime;
+120522: d.NonBattleBuffModel.setBufferCostStartTime(n.hanyusuiTime, n.beginTime);
+120523: if (n.hasOwnProperty("isCollective")) if (0 == n.isCollective) if (2 == e.isSchoolLiang) {
+120524: s.MessageCenter.dispatch(p.EvName.CLOSE_SCHOOL_LIAN_GONG_UI);
+120525: var a = {
+120526: _isTrainingMp: !0
+120527: };
+120528: g.default.prefabs.load("comUI/LiangongUI", cc.Prefab, function(t, e) {
+120529: var o = cc.instantiate(e);
+120530: m.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer);
+120531: var i = o.addComponent("LiangongUI");
+120532: i.setData(a);
+120533: i.setLabelTitle(r.getText(263));
+120534: });
+120535: } else if (1 != e.isSchoolLiang) {
+120536: var c = {
+120537: _isTrainingMp: !0
+120538: };
+120539: g.default.prefabs.load("comUI/LiangongUI", cc.Prefab, function(t, e) {
+120540: var o = cc.instantiate(e);
+120541: m.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer);
+120542: var i = o.addComponent("LiangongUI");
+120543: i.setData(c);
+120544: i.setLabelTitle(r.getText(263));
+120545: });
+120546: Promise.resolve().then(function() {
+120547: return t("../../scripts3/model3/PopGiftModel");
+120548: }).then(function(t) {
+120549: t.PopGiftModel.setHomeDataUI(n);
+120550: });
+120551: } else s.MessageCenter.dispatch(p.EvName.START_SKILL_TRAINING); else {
+120552: B.SchoolSquareModel.isCollective = n.isCollective;
+120553: s.MessageCenter.dispatch(p.EvName.CLOSE_LIAN_GONG_UI);
+120554: if (2 != e.isSchoolLiang) {
+120555: g.default.prefabs.load("menpai/MenpaiSquareXiulian", cc.Prefab, function(t, e) {
+---
+120756: gTime: o.totalGameTime.gameTime,
+120757: hgtimes: o.numStuffed,
+120758: flag: v.IceBedModel.getIceBed(),
+120759: isCollective: e
+120760: };
+120761: b.CrossServiceModel.needLocalUrlAndPort(function() {
+120762: _.NetMgr.http.sendRequest(c.HttpConst.BEGIN_LIANGONG, i);
+120763: });
+120764: };
+120765: e.prototype.reqConvVigors2SkillLv = function(t) {
+120766: var e = {
+120767: skillID: t,
+120768: flag: v.IceBedModel.getIceBed()
+120769: };
+120770: _.NetMgr.http.sendRequest(c.HttpConst.VIGOR_UPGSKILL, e);
+120771: };
+120772: e.prototype.end = function(t) {
+120773: var e = T.playerInfo.entity;
+120774: b.CrossServiceModel.needLocalUrlAndPort(function() {
+120775: _.NetMgr.http.sendRequest(c.HttpConst.END_LIANGONG, {
+120776: hglmt: e.hunger.limit,
+120777: speed: e.hungerConsumingSpeed.finalValue,
+120778: auto: t
+120779: });
+120780: });
+120781: };
+120782: e.prototype.getSkillTopLevel = function(t) {
+120783: return Math.floor(f.SkillTable.getSkillLevel(f.SkillTable.getBaseSkillID(t)) + T.playerInfo.entity.perception.getRawValue() / i.getConstByID("34"));
+120784: };
+120785: e.prototype.getLGCost = function(t, e, o) {
+120786: o > 200 && (o = 200);
+120787: var i = this.getTrainingCoe(o);
+120788: return Math.floor(t * e * i);
+120789: };
+120790: e.prototype.getTrainingCoe = function(t) {
+120791: t > 200 && (t = 200);
+120792: var e = 1 - (t + 10 * T.playerInfo.entity.skillUpgCostRd.finalValue) / i.getConstByID("16");
+120793: e < .1 && (e = .1);
+120794: return e;
+120795: };
+120796: e.prototype.getUpgrdSpeed = function(t, e, o) {
+120797: void 0 === t && (t = !0);
+120798: void 0 === e && (e = !0);
+120799: void 0 === o && (o = !0);
+120800: void 0 === t && (t = !0);
+120801: void 0 === e && (e = !0);
+120802: void 0 === o && (o = !0);
+---

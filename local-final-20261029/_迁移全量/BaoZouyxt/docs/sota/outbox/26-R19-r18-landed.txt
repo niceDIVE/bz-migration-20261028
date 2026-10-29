@@ -1,0 +1,235 @@
+【指令】
+你是一位资深客户端逆向与静态分析方向的架构顾问。这是第 26 批材料（上一批 25 号：R17 处置 + 3 问；你的回执是 R18）。
+本批是**对 R18 的逐条处置 + 一条把 R18 核心前提推翻的原文证据（A1 失败）+ Effect 11 请求链闭合 + 4 项静态判定 + 3 项落地修**，末尾 4 个新问题 + 一段针对我自己的"反附和"约束（§六）。
+回答规则（沿用）：
+1. 结论要么带条件说明，要么带可执行形式；不接受"建议考虑"。
+2. 凡是你推断的、材料里没有明说的，一律标注【推断】；材料没有的直说"材料未提供"。
+3. 必须给一段"反例"。
+4. 严格按末尾编号格式输出。
+5. 约束不变：不能改客户端、不能加数据库、**仓库仍然不是 git**。
+6. 本批所有证据都可在本机复算；标注「实测」的句子都有命令/行号。
+
+────────────────────────────────────────────────────────
+【一、部署与基线】
+
+本批开始：`impl=h84faae07 / flow=ffaec47c3`，`pid 29928`。本批落地后：**`impl=hc1455196`**，`pid 29928`（热重载，未重启），
+`selfCheck passed=1242 / failed=[] / missingRequired=[]`，`scene=gamescene`。
+验收：`node tools\acceptance.js` → **项=38 绿=38 已知红=0 cap=0，退出码 0**（本批新增 3 套测试：r18-skch-lv0 / r18-titleobj-projection / r18-unreachable）。
+`node tools\check_shape_freeze.js` 绿（含在 acceptance 里）；`build-handlers` → `HANDLERS OK selfCheck=1242`。
+存档：`roleID=16374 FZhou v4`；`coins=11155859 gold=5099799 yuanbao=1000 potential=84599`；
+背包 `{1301:2,1501:1,3003:52,3007:13,3020:17,3626:1,4014:1,4015:1,4016:1,4020:5,4101:1,7027:1}`（**未动玩家存档**）。
+本轮复核全过程落盘 `docs\audit\r18-verification.md`（含每条的行号）。
+
+────────────────────────────────────────────────────────
+【二、R18 逐条处置】
+
+| # | R18 条目 | 处置 |
+|---|---|---|
+| 1 | §1-1 平移副作用：活动永续/永不开局 | **接受，登记为行为**：「活动窗口在每次 LoadGame 按 `now-抓包时刻` 平移 ⇒ 活动状态永续」。10 位秒级不平移是已知边界（`>1.6e12` 才动）。**实测**：`core\templates.json → create.activityResource = {"67":[null,1793177770630]}`，递归只有 1 个数字项、10 位秒级 **0 个** ⇒ 你那条边界在本快照上是空集；且 `[0]=null`（活动 67 没有开始时间）⇒ "尚未开始的活动永远差 Δ"在本快照上同样不适用。 |
+| 2 | §1-2 称号重启即丢（缺 `s.titles → titleObj` 投射） | **成立，确认是真 bug，本批已修**（§3.1）。客户端只认 `titleObj`（`index.js:111919`）；我方 LoadGame 只回模板里那份 `{e:0}`，**账本里的称号从来没有投出去** ⇒ 重启后称号必丢。修法：在模板对象上补数字键（不整个替换，否则抹掉 `e`），值按客户端口径归一（0/1=永久、>1=到期 ms）。 |
+| 3 | §1-3 `dic 非空 ≡ 已学会` 的前提 | **成立，且我方能自己触发**（§3.2）：`upgradeSkill` 的"等级不变"分支在 `curLv=0` 时写 `skch[id]=[0,…]`。**本批已修**（`curLv<=0` 时不落账、不发 skch），并加 `test\r18-skch-lv0.js` 锁死。 |
+| 4 | §3 / Q2：`ConsultUI` 不在 `index.js`，Effect 11 可能在别处发请求 | **闭合完成，但你的 A1 前提被推翻**（§3.3 / §3.4）：`ConsultUI` 在 `tools\scripts2.js`（skillsUI 分包，13680-14140），确认时发 `User.upgradeSkill`；**但 `case 11` 是 `break` 不是 `return !0`，所以 useItem 也真的会发**。 |
+| 5 | §3.3 条件（无 lv=0 的 skch） | 见 #3，同一个缺口；C 侧 `setSkill`（`119832`）确实不过滤 0。 |
+| 6 | §4③ 3020 先判可达性 | **实测 unreachable 成立 + 已登记 + exitCheck 可执行**（§3.5）：`baseValueAy[41]=0` 恒真 ⇒ 客户端本地 `return !0` 拦截，不发请求、不扣物品（`3020` 仍 17 件）。exitCheck 落成 `tools\facts\r18-unreachable.json` + `test\r18-unreachable.js`（服务端出现 `numDeaths` 或写 `baseValueAy[40..49]` 即判红）。 |
+| 7 | §2① F1-F3 定礼包表 | **F1 字面不可满足**（§3.6）：Effect 13 = **1780 件**，没有一张表能装下 1780 个键。逐 id 定位：`7105/7106/7226` 在 442 张表里**零命中**，`6625/6810` 只命中 `item` 与 `lh_temporary`（都不是礼包表）。无 useItem 抓包 ⇒ 按你的 A4 登记"待判"，不构造。 |
+| 8 | §2③ 6810→4567 的判据与辅助证据 | **辅助证据反向不成立**（§3.7）：`4567` 自身是 `Effect=23, Data1=0`，**不是** Effect 13。四分支里"只有 4567 的表"= `buff`（BUFF 表），"两者都有"= `item`/`lh_temporary`，都不是礼包表 ⇒ 无法据此判键。 |
+| 9 | §2② 前提一：`REWARD_ITEM` 会不会双加 | **前提一自动满足**（§3.8）：唯一监听者 = 背包面板 UI（`scripts2.js:36129 → 36723 updateItemFunc`），只改 `this._itemDataList` 与 `needUpdate`，不写 `RoleBaseInfo`/`PackageModel`。 |
+| 10 | §5 顺序 | **采纳，改两点**：① Effect 11 的"观察"已被静态证据取代（不必再点书）；② Effect 13 排在 catchCode 之后（因为 442 表已证筛不出，必须先解决"表集是否完整"的前置）。 |
+
+────────────────────────────────────────────────────────
+【三、原文证据】
+
+§3.1 称号投射缺口（全仓 `titleObj` 在**代码**里仅 1 处，实测 `grep` 三包 + W1 worker 独立复跑一致）：
+```
+index.js:111919  n.AchieveModel.setAchieveData(e.hasOwnProperty("titleObj") ? e.titleObj : {});
+   ← 同一应答处理段内还有 111798 v.RoleBaseInfo.numDeaths = t.baseValueAy[41];
+     111916 h.MakeUpModel.read(e.titivateObj);  111897 m.hp.limit = v.RoleBaseInfo.hpLimit;
+```
+⚠ 一条**更正**（我们自己的测试抓出来的，不是你的材料里的）：`core\templates.json → create.titleObj = {"e":0}` ——
+抓包真值里本来就有这个键，所以 LoadGame **确实会回** `titleObj`，只是里面**只有** `{e:0}`（e = 当前佩戴的称号，`index.js:627`）。
+⇒ 缺的不是"字段没发"，而是"**账本里的称号从没被投射进来**"。这条更正改变修法：
+必须在模板对象上补数字键，**不能整个替换**（替换会把 `e` 抹掉，客户端 `627` 行读 `playerTitle.e`）。
+实测存档：`titles = undefined`（还没用过 7027）；背包 `7027: 1`。
+我方：`bz-rpc-server.js:2095` 只写 `s.titles[String(giveTitleId)] = 1`；`grep titleObj bz-shapes.generated.js` → 0 命中。
+**本批修法**（`bz-rpc-server.js` LoadGame 内，`env.log('LoadGame → 快照…')` 之前）：
+```js
+if (s.titles && typeof s.titles === 'object') {
+  var tObj = (base.titleObj && typeof base.titleObj === 'object') ? base.titleObj : {};  // 保留 e
+  for (var tk in s.titles) {
+    if (!/^\d+$/.test(String(tk))) continue;               // 非表键会让 checkTitleBuff TypeError
+    var tv = s.titles[tk];
+    tObj[tk] = (typeof tv === 'number' && tv > 1) ? tv : 0; // 账本 1（永久）→ 客户端口径 0
+  }
+  base.titleObj = tObj;
+}
+```
+值口根据（四个读点）：`635 getAchieveEndT`（只把 >1 当到期 ms）、`638 deleteTitle`（要求 >1）、
+`673 checkTitleBuff`（>1 用 `value-now` 当剩余时长，否则 unlimited）、`658 showTitleReward`（新称号写 **0**）。
+回归：`test\r18-titleobj-projection.js` 4 条（T1 用掉后"重启"必须投出；T2 空档只许有 `e`；T3 `>1` 原样；T4 非数字键过滤）。
+
+§3.2 `skch` 可写出 `lv=0` 的那条路（我方自己）：
+```
+bz-rpc-server.js:1216  var cur = s.skills[id]; var curLv = Array.isArray(cur) ? (cur[0] || 0) : (cur || 0);
+bz-rpc-server.js:1225  var lv = Math.max(curLv, reqLv || 0);
+bz-rpc-server.js:1236  if (gained <= 0) { …1242 s.skills[id] = [curLv, keptPgr, keptBrlv];
+                                        …1246 kept.skch[id] = [curLv, keptPgr, keptBrlv]; }
+```
+客户端：`index.js:119832 s.SkillTable.setSkill(n, e[o][0]);`（不过滤 0）、`120070 getSkillItem` 只判 `hasOwnProperty`。
+
+§3.3 **A1 被推翻**：`case 11` 是 `break`，`useItem` 真的会发
+```
+index.js:64316  e.prototype.useItem = function(e, o) {         ← 64321 if (2==e.Type) switch (e.Effect) {
+index.js:64382  case 11:
+index.js:64383  var b = i.getItem(e.ID,"master_book"), T = h.SkillTable.getSkillItem(e.Data1), C = T ? b.ConditionUp : b.Condition;
+index.js:64413  p.default.prefabs.load("skillsUI/ConsultUI", cc.Prefab, function(t,o){ …64416 i.addComponent("ConsultUI").studyData(e.ID, k); });
+index.js:64418  break;                 ← 不是 return !0
+index.js:64502  }
+index.js:64503  return !1;             ← useItem 的"未在本地处理"出口
+```
+调用链（背包面板"使用"按钮）：
+```
+index.js:65499  e.prototype.itemUsePopLayer = function(e) {
+index.js:65500  var o = this, r = i.getItem(e.itemId, "item");
+index.js:65501  if (!d.InventoryDB.useItem(r)) if (1==2==3==4==47==19==32==34 …) ChooseItemUI …
+index.js:65535  } else {            65553: this.useItemFunc(e.itemId, r.Effect, 1);
+index.js:65264  e.prototype.useItemFunc = function(e,o,r,s){ …65273 f={itemID:e,itemNum:r} … 65333 sendRequest(USE_ITEM,f) }
+```
+⇒ `useItem()` 返回 `!1` ⇒ 进入分支 ⇒ Effect 11 不在名单 ⇒ 65553 ⇒ **USE_ITEM 请求发出**，同时 ConsultUI 弹出。
+⇒ 所以你 §3 的"无论学没学会都走 ConsultUI ⇒ 升级请求多半不是 useItem ⇒ useItem 里补的逻辑可能永远执行不到"这一串，**第二步不成立**：两条请求都会发生（useItem 立刻发；upgradeSkill 等玩家在 ConsultUI 里点确认才发）。
+
+§3.4 ConsultUI 的确认请求链（R17 卡点已闭合，`scripts2.js` 是 skillsUI 分包）
+```
+scripts2.js:13994  e.prototype.studyData = function(t, e) { this.type = 1; this.teacher = t; this._itemDataList = e; … }
+scripts2.js:13868  e.prototype.onLearnSkill = function(t, e) { 13872 if (SkillTable.isSkillLearned(i)) { …skillItem={pgr,lv,brlv}; checkCanUpgrade(i) && … LearnSkill(e)
+scripts2.js:13846  e.prototype.LearnSkill = function(t) {
+scripts2.js:13848    if (o.pgr >= c) { this.sendUpgradeReq(e, { lv: o.lv + 1, pgr: o.pgr - c, brlv: o.brlv }); }
+scripts2.js:13904    else { e.lv = 1; … this.sendUpgradeReq(i, { lv: 1, pgr: 0, brlv: 1 }); }
+scripts2.js:13923  e.prototype.sendUpgradeReq = function(t, e) { …13927 h.SkillModel.reqChangeSkillLv(t, e.lv, e.pgr, e.brlv, this.teacher, this.type);
+index.js:119873    t.prototype.reqChangeSkillLv = function(t,e,o,i,a,s) {
+index.js:119874      var l = { skillID: t, skillArr: [e, Math.floor(o), i], NPCID: a, flag: s };
+index.js:119880      r.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_SKILL_LV, l);   ← index.js:59581 = "User.upgradeSkill"
+scripts2.js:14045  … if (e.lv >= c.maxSkillLevel) { show(getText(590)); return !1; }      ← 封顶在客户端
+scripts2.js:14054  if (!SkillTable.isBaseSkillID(t) && e.lv >= SkillUpgradeModel.getSkillTopLevel(t)) { … return !1; }
+```
+⇒ 书的升级请求形态：`User.upgradeSkill{skillID, skillArr:[目标lv, 剩余pgr, brlv], NPCID=<书的itemID>, flag=1}`。
+我方 `upgradeSkill` handler（`bz-rpc-server.js:1213-1259`）读 `skillID`/`skillArr`，**忽略 `NPCID`/`flag`、不扣书、不读 `level` 封顶**。
+
+§3.5 3020（Effect 15）可达性实测
+```
+index.js:64423  case 15:
+index.js:64424  if (0 == v.numDeaths) { s.default.show(n.getText(4374)); return !0; }
+index.js:111674  v.RoleBaseInfo.numDeaths = 0;                    // 登录先清零
+index.js:111798  v.RoleBaseInfo.numDeaths = t.baseValueAy[41];     // LoadGame 覆盖
+index.js:70454   I.RoleBaseInfo.numDeaths = e.baseValueAy[41];     // 属性同步
+index.js:70987   t.push(I.RoleBaseInfo.numDeaths);                 // 上传回 baseValueAy[41]
+```
+实测：`.\run.ps1 cmd "state"` 与 `adb pull bz_offline_save.json` 双证 → `baseValueAy[41] = 0`（number，数组长 44）。
+我方：`grep numDeaths hotfix-patch\**` → **0 命中**；`grep "baseValueAy\[4[0-9]\]" bz-rpc-server.js` → **0 命中**。
+⇒ 恒等拦截，不发请求、不扣物品（存档 `3020: 17` 前后一致）。
+exitCheck（可直接当断言）：`服务端源码里 numDeaths 命中数必须为 0，且 baseValueAy[41] 必须恒为 0；任一越界判红`。
+
+§3.6 礼包表筛选的实测结果（`$out\r18\gift_scan2.js`，输出 `docs\audit\r18-W2-gift-table-scan.txt`）
+```
+item.full.json: 6525 行；Effect==13 共 1780 件（Type==2），Data1 覆盖 1780 个不同 id
+⇒ 442 张表里没有一张的键集能容下这 1780 个键（F1 字面筛出空集，不是"很多张"）
+
+逐 id：6625→仅 item(3000键)；6810→item + lh_temporary(64键)；7105/7106/7226 → 0 张
+奖励样字段：item 行只有 icon_item / box_condition（都 known=0）；lh_temporary 行 = {"id":6810,"main":1,"icon":"lh_17"}
+decrypted/：含 rewardArray 的 5 个应答全是 getFinishTaskAward / CheckBattleResult，无一条 useItem
+```
+⚠ 未验证：442 是否等于客户端 `ConfigMgr` 的全部表数（要探针拉全名单，本轮没跑）。
+
+§3.7 R18 §2③ 的辅助证据反向
+```
+item.full.json → 4567: {"ID":4567,"Name":33567,"Type":2,"Effect":23,"Data1":0}
+分支实测：有键 6810 = item, lh_temporary ；有键 4567 = buff, item, lh_temporary ；
+         两者都有 = item, lh_temporary ；只有 4567 = buff ；只有 6810 = 无
+```
+
+§3.8 `REWARD_ITEM` 的唯一监听者
+```
+scripts2.js:36129  l.MessageCenter.on(B.EvName.REWARD_ITEM, this.updateItemFunc, this);   // 背包面板
+scripts2.js:36142  l.MessageCenter.off(…)
+scripts2.js:36723  e.prototype.updateItemFunc = function(t, e) { … this._itemDataList[n].numbers += parseInt(o[i].numbers) … this.needUpdate = !0; }
+scripts2.js:43425  l.MessageCenter.dispatch(p.EvName.REWARD_ITEM, t);
+index.js:45203     REWARD_ITEM: "rewardItem",    index.js:64774 / 64958 dispatch
+```
+`updateItemFunc` 全程不碰 `RoleBaseInfo` / `PackageModel`。
+
+────────────────────────────────────────────────────────
+【四、本批没做的（如实交代）】
+
+1. **改了 3 处服务端代码**（已备份 `_backup\2026-10-23-0326-pre-r19\`，带 MD5SUMS.txt；设备端旧 `handlers.js` 也留了 `.prebuild` 副本）：
+   ① LoadGame 投射 `titleObj`；② `upgradeSkill` 禁发 lv=0 的 skch；③ 3020/Effect 13 的登记表 + exitCheck 测试。
+   回滚 = 拷回 `bz-rpc-server.js` → `build-handlers` → `run.ps1 handlers` → `check_shape_freeze`。
+2. Effect 13 / 15 / 24 / 6 / 8 仍未实现（15 已判 unreachable；13 缺表）。
+3. 87 动作的 `catchCode` 表 + `handled` 抽取扩展（R17 §1-1 / R18 §5-3）仍未做。
+4. `R5` 夹具、业务哈希、门控两态仍未做（R18 §5-5 要求"每改一族 useItem 就补"，本批改的两族都还没补）。
+5. 没在端上点任何物品；`3626`（唯一一本 Effect 11 书，Data1=1112 已学会 lv41）与 `7027` 都还在包里，未消耗。
+6. 未验证 442 张表是否等于客户端全表集。
+7. `HANDOVER.md` §2 的"项=35 / impl=h84faae07"已过期（现 38 / hc1455196），**未改**——上一轮交接文档由主审独占，本批没得到改它的授权。
+
+────────────────────────────────────────────────────────
+【五、我要你回答的 4 件事】
+
+> 编号 ①②③ 是技术判定；④ 是"我打算做的动作该不该做"——**这一类也归你判，不归玩家判**。
+> 玩家只保留一类权力：**许可**（动他的东西、动他的文档）。判断权在你这。
+
+Q1（Effect 11 已学会：两条请求并存时，useItem 侧该怎么答？）
+  已证 `useItem` 会发（§3.3），且 `ConsultUI` 确认时另发 `upgradeSkill{NPCID=书ID, flag=1}`（§3.4）。
+  请判：
+  ① `useItem{itemID:3626,itemNum:1}` 且 `SkillTable.getSkillItem(1112).lv=41`、`ConditionUp` 已满足时，原版**期待**的应答是
+     "扣 1 本 + `note.skch` 无变化"、"扣 1 本 + 给一次升级/进度"、还是"不扣 + 只回 `eRet`"？有没有可以判定的客户端读点
+     （我在 `64754-64911` 只看到 `skch` / `rewardArray` / `titleID` 三支）？
+  ② 如果 useItem 已经扣了 1 本，那么 ConsultUI 里点确认发的 `upgradeSkill` 是否**再扣 1 本**？也就是说"一本书 = 一次升级"还是"一本书 = 解锁一次花潜能的升级"？
+  ③ `NPCID` 与 `flag` 这两个字段服务端要不要读？只读 `skillArr` 有什么可观测的破窗？
+
+Q2（Effect 13：442 张表里根本没有礼包表，下一步怎么走）
+  实测：F1 字面筛出 0 张；`7105/7106/7226` 零命中；`6625/6810` 只命中 `item`/`lh_temporary`；没有 useItem 抓包（§3.6）。
+  请判：
+  ① 在"不能改客户端、不能连外网"的约束下，还剩下哪几条**可执行**的取表路径（例如探针 `ConfigMgr.getTable(全名单)` 后与 442 做差集、或 `item` 表里 `box_condition` / `icon_item` 这两列的语义）？
+  ② 如果我拉出全表名单发现"客户端确实没有礼包表"，那 Effect 13 是否应当与 3020 同样处理：登记 `role:"unreachable"`（客户端零本地逻辑 ⇒ 我们只要回 `eRet` 不扣不放）？还是"照扣无效果 + `CONSUME_UNMODELED`"？
+  ③ `box_condition`（item 行里那一列）有没有可能是礼包内容的条件表键？若不是，请直接说材料未提供。
+
+Q3（3020 判 unreachable 之后，包里那 17 件怎么办）
+  实测 `baseValueAy[41]=0` 恒真、服务端零写点（§3.5）⇒ 客户端永远本地拦截、不发请求、不扣物品。
+  请判：
+  ① 这个 `unreachable` 登记是否还需要一条"回包侧"断言（例如：任何应答都不许出现改 `baseValueAy` 的字段）？
+  ② 玩家包里 17 件 3020 永远用不掉——这在账本上要不要单列一个"不可消耗持有物"分类，还是保持现状（能看、能卖、不能用）？
+  ③ 若将来实现死亡计数，`baseValueAy[41]` 是不是唯一正确的写点（`70987 t.push(RoleBaseInfo.numDeaths)` 那条上传路径要不要一并建模）？
+
+Q4（我打算做的三件"不动代码"的动作，请你判该不该做、有没有更便宜的替代）
+  这三件我原本是打算问玩家要许可的。但"该不该做"是技术判断，不是许可问题，所以改成问你。
+  ① **端上实测**：用掉背包里唯一一件 Effect 11 的书（`3626`，`Data1=1112`，该技能已 `lv=41`）点一次，
+     抓 `useItem` 与 `upgradeSkill` 的真实到达顺序与字段。代价：消耗玩家 1 件**不可再生**道具
+     （商店无售、没有第三方来源，背包里就这 1 件）。
+     请判：静态证据（§3.3 / §3.4）**够不够**支撑 Effect 11 的实现？
+     · 如果够 —— 直接说"不必实测"，我按静态结论实现，不消耗玩家任何东西；
+     · 如果不够 —— 请给出**最小可判集**：日志里必须出现哪几条、带哪几个字段，才算够（不许给"多抓几次更好"这种话）。
+  ② **全表名单**：跑探针拉 `ConfigMgr` 全表名，与 442 张 dump 做差集，判 Effect 13 还有没有表可取。
+     请判：差集为空能否当"Effect 13 在本约束下不可实现"的**终局**证据？若不能，还缺什么，缺的东西我有没有可能在不出网、不改客户端的前提下拿到？
+  ③ **17 件 3020**：判 `unreachable` 之后它们在账本里怎么记。请判：要单列"不可消耗持有物"，还是保持"能看/能卖/不能用"？
+     并请判：我为了"看起来干净"去给它们单独分类，是不是**多余动作**（如果是，直接说不必要）。
+
+────────────────────────────────────────────────────────
+【六、给你的额外约束（本批新增，必读）】
+
+我（提问方）发现自己有一个系统性偏差，需要在工单层面堵住：
+
+1. **我对"自己想做的事"倾向于自我合理化**：先有了想做的动作（实测、换顺序、加分类），再去找理由。本批 §2 / §4 / §5 / Q4 里凡是**我主动提出的做法**，请按"先假定它不成立"来审。
+2. **我对你的结论也倾向于附和**：所以请**主动找我错**。本批回答里至少要有一条是否定我的（"这条不该做 / 这条判据不成立 / 这个顺序是错的"）。
+   如果确实一条都没有，请明说「本批你的判断全部成立」，并给出你逐条查验过的依据（不许只写"成立"两个字）。
+3. **不许给折中方案**：你判"不成立"时直接给替代路径或"材料未提供"，不要写"建议同时考虑…"这种两头都对的句子。
+4. **我特别担心的一条**（请单独回答）：我会不会因为"玩家已经同意过平移/落码"这类既往许可，而把本该重新取得裁定的事**当成已批**？如果是，请列出本批里你认为**必须重新取得用户裁定**的动作清单。
+
+────────────────────────────────────────────────────────
+【输出格式（严格 1-8，不许增删小标题）】
+
+1. 结论（≤6 句）：§2 十项处置各自成立否；§3.1 / §3.3 / §3.5 三处判断是否成立；A1 被推翻这件事影响你哪些结论
+2. Q1 答（Effect 11 已学会：useItem 侧 + upgradeSkill 侧各回什么）
+3. Q2 答（442 表无礼包表时的取表路径与 Effect 13 的处置定性）
+4. Q3 答（3020 unreachable 的断言与 17 件的账本归属）
+5. 对"下一批顺序"的意见：本批已落地 ①（titleObj 投射 + skch lv=0 断言 + 3020/13 登记，38/38 绿）；接下来我准备按 ② Effect 11 useItem 已学会分支（按你 Q1 的答） ③ 87 动作 catchCode ④ 探针拉全表名单后再判 Effect 13 ⑤ R5 家族夹具 走，要不要换
+6. 反例：我这批处置在什么具体场景下会出错
+7. 假设：哪条前提不成立时，你上面哪些结论失效（按编号点名）
+8. Q4 答（三件非写码动作各判该不该做 + §六 第 4 条要求的"必须重新取得用户裁定的动作清单"）

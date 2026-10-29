@@ -1,0 +1,47 @@
+回执 第8批 C07〔善恶〕+ 练功计时结算结论（2026-10-27）
+
+══ 部署指纹 ══
+  构建：ver=he29a670a（链 h9de8c1d7→h73b8869e→he29a670a；中段为练功计时实现）｜flow=ffaec47c3｜pid 不变
+  selfCheck 1285 全过，implErr=null
+  patch\live\handlers.js      1,438,257 B  md5 2AC6F2CB569A54B085668E780C3201F2
+  core\bz-rpc-server.js       md5 921DFDB801DB881C1791D8FE55DD6029
+
+══ 一、练功计时结算结论（v2.7.1-accept3，限时 2 小时——按时完成）══
+  已按四条规则落地：BeginTraining/BeginMeditation 成功记 s.trainBegin/s.medBegin={t:now, g:请求 gTime}；
+  End 按真实流逝分钟结算；无 Begin 记录不结算；结算即清记录（一次 Begin 只结一次）。
+  分流结果：**EndTraining 不结算**——客户端 EndTraining 回调（index.js:120574-120601 逐行）不读 note，
+  按"客户端确实读才结算"规则只清账；**EndMeditation 结算修为**——客户端读 note.attrch.mpTrained（138892）
+  写回 RoleBaseInfo.mpTrained，持久槽 = baseValueAy[32]（客户端 111789 同源）。
+  数额：客户端无每分钟公式 → 按拍板默认 **1 点修为/分钟**；收益上限 = 内功等级×10
+  （getMaxNGBonus = index.js:121690-121701，常量 33 MadNumber 解码 11252-11242=10，_actIntv 交叉核对一致），
+  加成侧客户端自行 Math.min 封顶，服务端修为只累加。
+  验证：c06-smoke 10/10（0 分钟不结算清账 / 90 分钟 +90 进 baseValueAy[32] / gTime 封顶 / 无记录不动档）；
+  真机 Begin→真实流逝<1 分钟→不结算+记录清+二次不重复。
+  顺带修一个真 bug：结算日志无条件读 s.baseValueAy[32]，空档上 TypeError → 应答丢 eRet
+  （形状冻结 diff 暴露；真档有 baseValueAy 所以真机没炸）。
+
+══ 二、C07〔善恶〕11 动作：全锁（eRet 2 静默）══
+  成员（relations.md:61）：getGoodAndEvilTaskData / refreshGoodAndEvilTaskData / getGoodAndEvilNoteData /
+  getGoodAndEvilNpcData / refreshGoodAndEvilNpcData / getGoodAndEvilRankData / helpDoneTask /
+  getGeHelpInfo / getGoodAndEvilData / getGoodAndEvilRetireList / getGoodAndEvilRetireData。
+  锁死依据：
+  1. 玩法门槛 = 加入阵营（JOIN_GOOD_OR_EVIL，index.js:60433，不在本批且未实现）；
+  2. GET_GOOD_AND_EVIL_DATA 成功时 GoodEvilInfoUI 对 goodAndEvilData 的 16 个字段全部 .toString()
+     直读（scripts3.js:35795-35861）——缺键即 TypeError，不给半截成功；
+  3. helpDoneTask 发 prestige/contribution/addScore（36462-36468）——善恶贡献无存档槽，白给=伪造进度。
+  回调分支核实：10 个动作非 1 无 else（静默）；helpDoneTask 非 1 非 6 静默。
+  真机：getGoodAndEvilData / getGoodAndEvilTaskData / helpDoneTask / getGoodAndEvilRankData 抽样全
+  eRet 2，coins/contribution 分文未动。
+
+══ 三、门禁 ══
+  acceptance **47/47 绿**（+c07-smoke 2 条），known-red 0，cap 0
+  check_shape_freeze diff 0（善恶 11 动作不在 337 基线，无审批项）
+  check_reject_codes OK：动作 **76** / 条目 **90** / 拒绝点 **113**（+11 动作登记）
+  冒烟：c07 2/2、c06 10/10、c04 12/12、v271 15/15、achieve 6/6、c16 10/10、circle-task 15/15、
+        c03 11/11、c02 19/19、c05 16/16
+  热重载：pid 不变、selfCheck 1285 全过
+  独立验收：工人全量复跑（acceptance-worker-c07.md）。
+
+══ 四、进度与下一步 ══
+  C01✅ C02✅ C05✅ C03✅ C16✅ C04✅ C06✅ C07✅ → 下一批 C08（9 个，PVE 战斗族，relations.md:63）。
+  升级报告的条件不变：存档写坏，或者能白拿钱/道具（均未发生）。

@@ -1,0 +1,113 @@
+# upgradeSkill 应答处理函数与请求字段全扫审计报告
+
+## 【第一步】找 upgradeSkill 的应答处理函数
+
+### 检索证据
+- 检索命令：`Select-String -Path "tools\index.js", "tools\scripts2.js", "tools\scripts3.js" -Pattern "UPGRADE_SKILL_LV|User\.upgradeSkill"`
+- 退出码：0
+- 关键输出：
+  - `tools\index.js:59581:UPGRADE_SKILL_LV: "User.upgradeSkill",`
+  - `tools\index.js:119842:i.MessageCenter.on(n.HttpConst.UPGRADE_SKILL_LV, function(t, e) {`
+  - `tools\index.js:119880:r.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_SKILL_LV, l);`
+  - `tools\scripts2.js` 与 `tools\scripts3.js` 中无匹配。
+
+### 完整函数体逐字抄出
+位置：`tools\index.js:119842-119845`
+```javascript
+i.MessageCenter.on(n.HttpConst.UPGRADE_SKILL_LV, function(t, e) {
+i.MessageCenter.dispatch(a.EvName.SYNC_UPGRADE_RES, e.eRet);
+e.hasOwnProperty("returnPro") && u.default.show(p.getText("6003371").replace(/\[1\]/, e.returnPro));
+}, this);
+```
+
+---
+
+## 【第二步】函数体逐字段回答"读了没"
+
+在该处理函数（第 119842 行至第 119845 行）中，参数 `t` 为事件名，参数 `e` 为服务端返回的应答数据对象：
+
+1) `eRet`: 读了
+   - 路径:行号：`tools\index.js:119843`
+   - 原文整行：`i.MessageCenter.dispatch(a.EvName.SYNC_UPGRADE_RES, e.eRet);`
+
+2) `note.skch`（含 skch 的下标/取值）: 没读
+   - 路径:行号：未能确认（`tools\index.js:119842-119845` 内无任何 `note` 或 `skch` 读取）
+
+3) `note.eco`（含 ptt）: 没读
+   - 路径:行号：未能确认（`tools\index.js:119842-119845` 内无任何 `note` 或 `eco` 或 `ptt` 读取）
+
+4) 顶层 `potential`: 没读
+   - 路径:行号：未能确认（`tools\index.js:119842-119845` 内无任何顶层 `potential` 读取）
+
+5) `returnPro`: 读了
+   - 路径:行号：`tools\index.js:119844`
+   - 原文整行：`e.hasOwnProperty("returnPro") && u.default.show(p.getText("6003371").replace(/\[1\]/, e.returnPro));`
+
+6) `achievement`（含 nIds）: 没读
+   - 路径:行号：未能确认（`tools\index.js:119842-119845` 内无任何 `achievement` 或 `nIds` 读取）
+
+7) 其它任何读到的字段: 无
+   - 整个函数体内除 `e.eRet` 与 `e.returnPro` 外，未读取应答对象 `e` 的任何其它字段。
+
+---
+
+## 【第三步】发送 upgradeSkill 的地方（reqChangeSkillLv）与 flag 取值
+
+### 读请求字段部分抄出
+位置：`tools\index.js:119873-119881`
+```javascript
+t.prototype.reqChangeSkillLv = function(t, e, o, i, a, s) {
+var l = {
+skillID: t,
+skillArr: [ e, Math.floor(o), i ],
+NPCID: a,
+flag: s
+};
+r.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_SKILL_LV, l);
+};
+```
+
+### flag 实参来源逐层抄出
+1. 调用层：`tools\scripts2.js:13923-13928`
+```javascript
+e.prototype.sendUpgradeReq = function(t, e) {
+var o = r.getItem(t, "skill");
+this.titleLabel.getComponent(cc.Label).string = a.getText(o.Name);
+this.perception.basicSkillLv = d.SkillTable.getSkillLevel(9);
+h.SkillModel.reqChangeSkillLv(t, e.lv, e.pgr, e.brlv, this.teacher, this.type);
+};
+```
+实参 `s` 传入的是 `this.type`。
+
+2. 全局调用 `reqChangeSkillLv` 的位置排查：
+   - 全工程检索 `reqChangeSkillLv` 仅在 `tools\scripts2.js:13927` 调用一次。
+
+3. `this.type` 的可能取值：
+   - 构造默认赋值：`tools\scripts2.js:13736` `e.type = 0;`（即默认值为 `0`）
+   - `studyData` 赋值：`tools\scripts2.js:13995` `this.type = 1;`（即切磋/请教进入时赋为 `1`）
+   - 因此，客户端构造 `flag` 的取值只可能是 `0` 或 `1`。
+
+---
+
+## 【第四步】grep flag 与 type 在 ConsultUI（scripts2.js 13680-14140）里的赋值
+
+### 检索证据
+- 检索命令：`Select-String -Path "tools\scripts2.js" -Pattern "(type\s*=)" | Where-Object { $_.LineNumber -ge 13680 -and $_.LineNumber -le 14140 }`
+- 退出码：0
+- 关键输出：
+  - `13696: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());`（类继承样板代码，非属性赋值）
+  - `13736: e.type = 0;`
+  - `13995: this.type = 1;`
+
+### this.type 被赋值的全部取值
+1. 取值 `0`：
+   - 路径:行号：`tools\scripts2.js:13736`
+   - 原文整行：`e.type = 0;`
+2. 取值 `1`：
+   - 路径:行号：`tools\scripts2.js:13995`
+   - 原文整行：`this.type = 1;`
+
+---
+
+## 【未验证】
+未验证服务端在 `UPGRADE_SKILL_LV` 协议应答中返回顶层 `potential`、`note.skch`、`note.eco`、`achievement` 时，客户端通用网络底层或框架拦截器（如公共派发层）是否会对这些旁路字段做静默全局同步。

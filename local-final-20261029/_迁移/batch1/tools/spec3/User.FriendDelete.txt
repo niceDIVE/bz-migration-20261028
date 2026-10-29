@@ -1,0 +1,18 @@
+# User.FriendDelete   (HttpConst.USER_FRIEND_DELETE)
+
+## 注册点 132052: i.MessageCenter.on(n.HttpConst.USER_FRIEND_DELETE, this.onSuccessFriendDelete, this);
+
+## 请求点 132120: 0 == t && a.NetMgr.http.sendRequest(n.HttpConst.USER_FRIEND_DELETE, o, function() {});
+   132112: };
+   132113: s.default.show(l.getText("4577").replace(/\[1\]/, e), [ {
+   132114: name: l.getText("332"),
+   132115: flag: 0
+   132116: }, {
+   132117: name: l.getText("333"),
+   132118: flag: 1
+   132119: } ], function(t) {
+
+## 处理函数 onSuccessFriendDelete (132221-132223)
+132221: t.prototype.onSuccessFriendDelete = function(t, e) {
+132222: 1 == e.eRet && i.MessageCenter.dispatch(c.EvName.USER_FRIEND_DELETE, e);
+132223: };

@@ -1,0 +1,99 @@
+# User.EndPlayWooks  (HttpConst.END_WOOD_TRAINING)
+# 出现 2 处
+
+ 86170: this.maxTime = 0;
+ 86171: this.potentialExtra = 0;
+ 86172: this.expExtra = 0;
+ 86173: }
+ 86174: t.prototype.init = function() {
+ 86175: r.MessageCenter.on(a.HttpConst.BEGIN_WOOD_TRAINING, this.onReqWoodTr, this);
+ 86176: r.MessageCenter.on(a.HttpConst.END_WOOD_TRAINING, this.onEndWoodTr, this);
+ 86177: r.MessageCenter.on(a.HttpConst.PAUSE_WOOD_TRAINING, this.onPauseWoodTr, this);
+ 86178: r.MessageCenter.on(s.EvName.REQ_END_WOOD_RET, this.onReqEndWoodRet, this);
+ 86179: r.MessageCenter.on(s.EvName.BEGIN_HITTING_WOOD, this.onBeginHittingWoodEvent, this);
+ 86180: };
+ 86181: t.prototype.onPauseWoodTr = function(t, e) {
+ 86182: if (this.isPracticing && 1 == e.eRet) {
+ 86183: this.isPracticing = !1;
+ 86184: r.MessageCenter.dispatch(s.EvName.REQ_END_WOOD_RET, !1);
+ 86185: _.FishingModel.setAutoStartHung({});
+ 86186: }
+ 86187: };
+ 86188: t.prototype.onReqWoodTr = function(t, e) {
+ 86189: 0 != e.eRet && (this.isPracticing = !0);
+ 86190: r.MessageCenter.dispatch(s.EvName.ON_HOOK_BG_CLOSE);
+ 86191: var o = i.getItem(l.RoleBaseInfo.isvip ? 2 : 1, "wood");
+ 86192: this.beginTime = e.beginTime;
+ 86193: this.serverTime = e.serverTime;
+ 86194: e.hasOwnProperty("maxTime") && (this.maxTime = e.maxTime);
+ 86195: this.setRemainingFatigue(Math.floor(o.Hp - 5e-4 * (e.serverTime - e.beginTime)));
+ 86196: r.MessageCenter.dispatch(s.EvName.BEGIN_HITTING_WOOD, e.eRet);
+ 86197: S.LoginMgr.storeByScene(2, Number(e.beginTime) + 1e3 * Number(e.maxTime));
+ 86198: };
+ 86199: t.prototype.onEndWoodTr = function(t, e) {
+ 86200: r.MessageCenter.dispatch(s.EvName.ON_HOOK_BG_CLOSE);
+ 86201: if (this.isPracticing) {
+ 86202: if (1 == e.eRet) {
+ 86203: this.isPracticing = !1;
+ 86204: i.getItem(l.RoleBaseInfo.isvip ? 2 : 1, "wood").Hp;
+ 86205: var o = .001 * (e.serverTime - e.beginTime);
+ 86206: this.timeElapsed = Math.min(this.maxTime, o);
+ 86207: c.UserModel.entity.totalGameTime.gameTime = e.gTime;
+ 86208: c.UserModel.entity.hunger.remaining = e.hg;
+ 86209: c.UserModel.entity.numStuffed = e.hgtimes;
+ 86210: this.potGot = e.potential;
+ 86211: this.expGot = e.exp;
+ 86212: c.UserModel.entity.exp += this.expGot;
+ 86213: l.RoleBaseInfo.potentials += this.potGot;
+ 86214: e.hasOwnProperty("expExtra") ? this.expExtra = e.expExtra : this.expExtra = 0;
+ 86215: e.hasOwnProperty("potentialExtra") ? this.potentialExtra = e.potentialExtra : this.potentialExtra = 0;
+ 86216: this.suprises = [];
+---
+ 86278: artLevel: p.SkillTable.skillEvaluation(),
+ 86279: maxHP: t.hp.finalValue,
+ 86280: maxMP: t.mp.finalValue,
+ 86281: hglmt: t.hunger.limit,
+ 86282: speed: t.hungerConsumingSpeed.finalValue
+ 86283: };
+ 86284: u.NetMgr.http.sendRequest(a.HttpConst.END_WOOD_TRAINING, e);
+ 86285: };
+ 86286: t.prototype.reqPauseWoodTr = function() {
+ 86287: u.NetMgr.http.sendRequest(a.HttpConst.PAUSE_WOOD_TRAINING, {});
+ 86288: };
+ 86289: t.prototype.setRemainingFatigue = function(t) {
+ 86290: this.remainingFatigue = t;
+ 86291: this.remainingFatigue < 0 && (this.remainingFatigue = 0);
+ 86292: };
+ 86293: t.prototype.checkWoodTime = function() {
+ 86294: var t = !1, e = l.RoleBaseInfo.endMonthCardTime, o = f.TimeMgr.getSTimestamp();
+ 86295: l.RoleBaseInfo.isvip && e > o && .001 * (e - o) < 86400 && (t = !0);
+ 86296: return t;
+ 86297: };
+ 86298: t.prototype.onReqEndWoodRet = function(t, e) {
+ 86299: r.MessageCenter.dispatch(s.EvName.ON_HOOK_BG_CLOSE);
+ 86300: e && (v.RoleOtherInfo.isStayState || d.default.prefabs.load("comUI/MZONHookEndUI", cc.Prefab, function(t, e) {
+ 86301: if (!t) {
+ 86302: var o = cc.instantiate(e);
+ 86303: g.PopUpMgr.addPopUp(o, m.LayerMgr.popUpLayer);
+ 86304: o.addComponent("MuzhuangEndUI").setLabelTitle(n.getText(569));
+ 86305: }
+ 86306: }));
+ 86307: };
+ 86308: t.prototype.onBeginHittingWoodEvent = function(t, e) {
+ 86309: 0 != e ? d.default.prefabs.load("comUI/MZONHookUI", cc.Prefab, function(t, e) {
+ 86310: if (!t) {
+ 86311: var o = cc.instantiate(e);
+ 86312: g.PopUpMgr.addPopUp(o, m.LayerMgr.popUpLayer);
+ 86313: o.addComponent("MuzhuangIngUI").setLabelTitle(n.getText(263));
+ 86314: }
+ 86315: }) : y.default.show("request failed!");
+ 86316: };
+ 86317: t.prototype.openEndWoodBox = function() {
+ 86318: var t = this;
+ 86319: null == this.boxLayer && (this.boxLayer = y.default.show(n.getText(914), [ {
+ 86320: name: n.getText(915),
+ 86321: flag: 0
+ 86322: }, {
+ 86323: name: n.getText(916),
+ 86324: flag: 1
+---

@@ -1,0 +1,11 @@
+# User.GetIosPayShowData   (HttpConst.GET_IOSPAY_SHOW_DATA)
+
+## 请求点 131007: r.mode == r.M_WEB || (cc.sys.os == cc.sys.OS_IOS && 1 == r.specialEdition ? g.NetMgr.http.sendRequest(p.HttpConst.GET_IOSPAY_SHOW_DATA, {
+   130999: e.prototype.reqOnStoreList = function(t) {
+   131000: void 0 === t && (t = null);
+   131001: this.objData = {
+   131002: back: 1
+   131003: };
+   131004: null != t && (this.objData = {
+   131005: back: t.back
+   131006: });

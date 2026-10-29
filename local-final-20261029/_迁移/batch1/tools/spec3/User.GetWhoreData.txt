@@ -1,0 +1,13 @@
+# User.GetWhoreData   (HttpConst.WHORING_GIRL_EVENT)
+
+## 注册点 51112: i.MessageCenter.on(n.HttpConst.WHORING_GIRL_EVENT, function(t, o) {
+
+## 请求点 51227: g.NetMgr.http.sendRequest(n.HttpConst.WHORING_GIRL_EVENT, e);
+   51219: t.prototype.getCurrentState = function() {
+   51220: return this.curState;
+   51221: };
+   51222: t.prototype.reqGirlAllData = function(t) {
+   51223: this.npcId = t;
+   51224: var e = {
+   51225: roleID: d.RoleBaseInfo.roleID
+   51226: };

@@ -1,0 +1,21 @@
+# User.weddingFeast   (HttpConst.WEEDIND_EVENT)
+
+## 注册点 77021: i.MessageCenter.on(n.HttpConst.WEEDIND_EVENT, this.callBackWeedindEvent, this);
+
+## 请求点 77411: _.NetMgr.http.sendRequest(n.HttpConst.WEEDIND_EVENT, {
+   77403: });
+   77404: };
+   77405: e.prototype.reqRentTeam = function(t) {
+   77406: _.NetMgr.http.sendRequest(n.HttpConst.RENT_EVENT, {
+   77407: type: t
+   77408: });
+   77409: };
+   77410: e.prototype.reqWedding = function(t) {
+
+## 处理函数 callBackWeedindEvent (77135-77140)
+ 77135: e.prototype.callBackWeedindEvent = function(t, e) {
+ 77136: if (1 == e.eRet) {
+ 77137: this.weddingType = e.type;
+ 77138: this.marryPopTip(4);
+ 77139: } else p.default.show(r.getText("jh59"));
+ 77140: };

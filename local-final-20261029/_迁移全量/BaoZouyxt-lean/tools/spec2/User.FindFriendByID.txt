@@ -1,0 +1,104 @@
+# User.FindFriendByID   (HttpConst.FINS_FRIENDID)
+
+## 注册点 132057: i.MessageCenter.on(n.HttpConst.FINS_FRIENDID, this.findFriendIdCallBack, this);
+
+## 请求点 132137: a.NetMgr.http.sendRequest(n.HttpConst.FINS_FRIENDID, e, function() {}.bind(this));
+   132129: };
+   132130: t.prototype.reqFriendIdFind = function(t) {
+   132131: if (3 != this.openScene) if (f.BattleMgr.inBattle) s.default.show(l.getText(3143)); else {
+   132132: var e = {
+   132133: roleID: r.RoleBaseInfo.roleID,
+   132134: otherID: t
+   132135: };
+   132136: this.checkType = 0;
+
+## 请求点 132146: a.NetMgr.http.sendRequest(n.HttpConst.FINS_FRIENDID, e, function() {}.bind(this));
+   132138: }
+   132139: };
+   132140: t.prototype.reqSchoolFirstRole = function(t) {
+   132141: var e = {
+   132142: roleID: r.RoleBaseInfo.roleID,
+   132143: otherID: t
+   132144: };
+   132145: this.checkType = 1;
+
+## 请求点 132154: a.NetMgr.http.sendRequest(n.HttpConst.FINS_FRIENDID, e, function() {}.bind(this));
+   132146: a.NetMgr.http.sendRequest(n.HttpConst.FINS_FRIENDID, e, function() {}.bind(this));
+   132147: };
+   132148: t.prototype.reqFindChatPlayer = function(t) {
+   132149: var e = {
+   132150: roleID: r.RoleBaseInfo.roleID,
+   132151: otherID: t
+   132152: };
+   132153: this.checkType = 2;
+
+## 请求点 132162: a.NetMgr.http.sendRequest(n.HttpConst.FINS_FRIENDID, o, function() {}.bind(this));
+   132154: a.NetMgr.http.sendRequest(n.HttpConst.FINS_FRIENDID, e, function() {}.bind(this));
+   132155: };
+   132156: t.prototype.reqFindTeamPlayer = function(t, e) {
+   132157: var o = {
+   132158: roleID: r.RoleBaseInfo.roleID,
+   132159: otherID: t
+   132160: };
+   132161: this.checkType = e;
+
+## 请求点 132170: a.NetMgr.http.sendRequest(n.HttpConst.FINS_FRIENDID, e, function() {}.bind(this));
+   132162: a.NetMgr.http.sendRequest(n.HttpConst.FINS_FRIENDID, o, function() {}.bind(this));
+   132163: };
+   132164: t.prototype.reqRegistrationPlayer = function(t) {
+   132165: var e = {
+   132166: roleID: r.RoleBaseInfo.roleID,
+   132167: otherID: t
+   132168: };
+   132169: this.checkType = 8;
+
+## 请求点 132178: a.NetMgr.http.sendRequest(n.HttpConst.FINS_FRIENDID, e, function() {}.bind(this), !1);
+   132170: a.NetMgr.http.sendRequest(n.HttpConst.FINS_FRIENDID, e, function() {}.bind(this));
+   132171: };
+   132172: t.prototype.reqFindArenaRole = function(t) {
+   132173: var e = {
+   132174: roleID: r.RoleBaseInfo.roleID,
+   132175: otherID: t
+   132176: };
+   132177: this.checkType = 9;
+
+## 处理函数 findFriendIdCallBack (132227-132265)
+132227: t.prototype.findFriendIdCallBack = function(t, e) {
+132228: if (1 == e.eRet) switch (this.checkType) {
+132229: case 0:
+132230: i.MessageCenter.dispatch(c.EvName.FINS_FRIENDID, e);
+132231: break;
+132232: 
+132233: case 1:
+132234: p.ChiefDiscipleModel.chiefDiscpleRole = e;
+132235: i.MessageCenter.dispatch(c.EvName.ADD_FIRST_SCHOOL_NPC, e);
+132236: break;
+132237: 
+132238: case 2:
+132239: i.MessageCenter.dispatch(c.EvName.FINDS_FRIEND_INFO, e);
+132240: break;
+132241: 
+132242: case 3:
+132243: i.MessageCenter.dispatch(c.EvName.FINS_FRIENDID, e);
+132244: break;
+132245: 
+132246: case 5:
+132247: i.MessageCenter.dispatch(c.EvName.FINDS_FRIEND_INFO, e);
+132248: break;
+132249: 
+132250: case 4:
+132251: case 6:
+132252: i.MessageCenter.dispatch(c.EvName.FINDS_TEAM_MEMBER_INFO, {
+132253: obj: e,
+132254: type: this.checkType
+132255: });
+132256: break;
+132257: 
+132258: case 8:
+132259: i.MessageCenter.dispatch(c.EvName.REGISTRATION_PLAYER, e);
+132260: break;
+132261: 
+132262: case 9:
+132263: i.MessageCenter.dispatch(c.EvName.ADD_SCHOOL_ARENA_NPC, e);
+132264: } else s.default.show(l.getText("371"));
+132265: };

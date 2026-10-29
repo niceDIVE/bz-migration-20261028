@@ -1,0 +1,112 @@
+# User.GetPayShowData  (HttpConst.GET_PAY_SHOW_DATA)
+# 出现 3 处
+
+130725: this.shopActiveRes = {};
+130726: this.shopListEndTime = {};
+130727: this.sucessRewardOrderObj = [];
+130728: }
+130729: e.prototype.init = function() {
+130730: var t = this;
+130731: l.MessageCenter.on(p.HttpConst.GET_PAY_SHOW_DATA, this.onOpenStoreList, this);
+130732: l.MessageCenter.on(p.HttpConst.IOS_PAY, this.onGetProduct, this);
+130733: l.MessageCenter.on(p.HttpConst.REQ_PRODUCT, this.onGetProduct, this);
+130734: l.MessageCenter.on(p.HttpConst.BUY_MARKET_ITEM, this.onPaySuccess, this);
+130735: l.MessageCenter.on(p.HttpConst.CANCEL_PAY, this.onCancelPay, this);
+130736: l.MessageCenter.on(p.HttpConst.QUICK_BUY, this.onQuickBuy, this);
+130737: l.MessageCenter.on(p.HttpConst.PREPARE_IOS_PAY, this.onPrepareIOSPay, this);
+130738: l.MessageCenter.on(p.HttpConst.REQ_MIGU_PAY, this.onGetMiguPaySign, this);
+130739: l.MessageCenter.on(p.HttpConst.GET_MYCARD_AUTH, this.onGetMyCardAuth, this);
+130740: l.MessageCenter.on(p.HttpConst.MYCARD_REQ_PRODUCT, this.onGetProduct, this);
+130741: l.MessageCenter.on(p.HttpConst.GET_NEW_GIFT_PERMANENT, this.giftPermanentCallback, this);
+130742: l.MessageCenter.on(p.HttpConst.GET_PERMANENT_REWARD, this.getPermanentRewardCallback, this);
+130743: l.MessageCenter.on(p.HttpConst.REFRESH_GIFT_AWARD, this.refreshGiftAwardCallback, this);
+130744: l.MessageCenter.on(p.HttpConst.ANN_PASS_GET_GIFT_DATA, this.onGetAnnPassGiftData, this);
+130745: l.MessageCenter.on(p.HttpConst.ANN_PASS_BUY_GIFT, this.onBuyAnnPassGift, this);
+130746: l.MessageCenter.on(h.EvName.IOS_PAY_SUCCEED, function() {}, this);
+130747: l.MessageCenter.on(p.HttpConst.H5_BUY_ITEM, function(t, e) {
+130748: if (e.hasOwnProperty("gold")) {
+130749: m.InventoryDB.addItem(1, e.gold);
+130750: var o = i.getText(10837) + "\n\n", r = n.getItem(1, "item");
+130751: o += "      " + i.getText(r.Name) + "x" + e.gold;
+130752: c.default.show(o);
+130753: }
+130754: e.hasOwnProperty("endMonthCardTime") && (v.RoleBaseInfo.endMonthCardTime = e.endMonthCardTime);
+130755: l.MessageCenter.dispatch(h.EvName.GET_PRODUCT);
+130756: l.MessageCenter.dispatch(h.EvName.BUY_MARKET_ITEM_EVENT);
+130757: }, this);
+130758: l.MessageCenter.on(h.EvName.IOS_PAY_FAILED, function() {}, this);
+130759: l.MessageCenter.on("IOS_ReceiveResponse", function() {}, this);
+130760: l.MessageCenter.on(p.HttpConst.GET_MARKETLIST, function(e, o) {
+130761: if (1 == o.eRet) {
+130762: var i = 0;
+130763: null != t.objData && t.objData.hasOwnProperty("back") && (i = t.objData.back);
+130764: t.objData = null;
+130765: l.MessageCenter.dispatch(h.EvName.STORE_SHOW_UI, {
+130766: type: 1,
+130767: market: o.market,
+130768: back: i
+130769: });
+130770: t.serverTime = o.serverTime;
+130771: t.nextRefreshTime = o.nextRefreshTime;
+---
+131003: };
+131004: null != t && (this.objData = {
+131005: back: t.back
+131006: });
+131007: r.mode == r.M_WEB || (cc.sys.os == cc.sys.OS_IOS && 1 == r.specialEdition ? g.NetMgr.http.sendRequest(p.HttpConst.GET_IOSPAY_SHOW_DATA, {
+131008: roleID: v.RoleBaseInfo.roleID
+131009: }) : g.NetMgr.http.sendRequest(p.HttpConst.GET_PAY_SHOW_DATA, {
+131010: roleID: v.RoleBaseInfo.roleID
+131011: }));
+131012: };
+131013: e.prototype.reqYuanBaoList = function(t) {
+131014: void 0 === t && (t = null);
+131015: this.objData = {
+131016: back: 1
+131017: };
+131018: null != t && (this.objData = {
+131019: back: t.back
+131020: });
+131021: g.NetMgr.http.sendRequest(p.HttpConst.GET_PAY_SHOW_DATA, {
+131022: roleID: v.RoleBaseInfo.roleID,
+131023: type: 1
+131024: });
+131025: };
+131026: e.prototype.reqDayGiftList = function(t) {
+131027: void 0 === t && (t = null);
+131028: this.objData = {
+131029: back: 1
+131030: };
+131031: null != t && (this.objData = {
+131032: back: t.back
+131033: });
+131034: g.NetMgr.http.sendRequest(p.HttpConst.GET_NEW_GIFT_PERMANENT, {
+131035: roleID: v.RoleBaseInfo.roleID
+131036: });
+131037: };
+131038: e.prototype.reqAnnPassGiftShop = function(t) {
+131039: void 0 === t && (t = null);
+131040: this.objData = {
+131041: back: 1
+131042: };
+131043: null != t && (this.objData = {
+131044: back: t.back
+131045: });
+131046: g.NetMgr.http.sendRequest(p.HttpConst.ANN_PASS_GET_GIFT_DATA, {
+131047: roleID: v.RoleBaseInfo.roleID
+131048: });
+131049: };
+---
+131050: e.prototype.onGetAnnPassGiftData = function(t, e) {
+131051: 1 == e.eRet && l.MessageCenter.dispatch(h.EvName.STORE_SHOW_UI, {
+131052: type: 11,
+131053: back: 1,
+131054: data: e.giftDatas
+131055: });
+131056: };
+131057: e.prototype.reqBuyAnnPassGift = function(t) {
+131058: g.NetMgr.http.sendReqWithMask(p.HttpConst.ANN_PASS_BUY_GIFT, {
+131059: giftId: t
+131060: });
+131061: };
+---

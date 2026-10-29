@@ -1,0 +1,32 @@
+# User.QuickBuyItem   (HttpConst.QUICK_BUY)
+
+## 注册点 130736: l.MessageCenter.on(p.HttpConst.QUICK_BUY, this.onQuickBuy, this);
+
+## 请求点 130879: g.NetMgr.http.sendRequest(p.HttpConst.QUICK_BUY, o);
+   130871: });
+   130872: };
+   130873: e.prototype.reqQuickBuy = function(t, e) {
+   130874: e < 0 && (e = 0);
+   130875: var o = {
+   130876: itemID: t,
+   130877: itemNum: e
+   130878: };
+
+## 处理函数 onQuickBuy (130881-130897)
+130881: e.prototype.onQuickBuy = function(t, e) {
+130882: var o = this;
+130883: if (1 == e.eRet) {
+130884: m.InventoryDB.setGold(e.userGold);
+130885: l.MessageCenter.dispatch(h.EvName.QUICK_BUY_COMPLETE + e.itemID, {
+130886: num: e.itemNum
+130887: });
+130888: } else 3 == e.eRet || c.default.show(i.getText(535), [ {
+130889: flag: 0,
+130890: name: i.getText(10839)
+130891: }, {
+130892: flag: 1,
+130893: name: i.getText(10840)
+130894: } ], function(t) {
+130895: 0 == t && o.reqStoreList();
+130896: }, "", !1);
+130897: };

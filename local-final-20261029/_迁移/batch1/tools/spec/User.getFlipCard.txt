@@ -1,0 +1,51 @@
+# User.getFlipCard  (HttpConst.GET_FLIP_CARD)
+# 出现 1 处
+
+  1813: e.prototype.reqEveryRewardState = function() {
+  1814: g.NetMgr.http.sendRequest(a.HttpConst.GET_CRL_ACTIVE_PAY_RESULT, {
+  1815: roleID: S.RoleBaseInfo.roleID
+  1816: });
+  1817: };
+  1818: e.prototype.reqGetFlipCard = function() {
+  1819: g.NetMgr.http.sendRequest(a.HttpConst.GET_FLIP_CARD, {}, null);
+  1820: };
+  1821: e.prototype.reqFlipCardCell = function(t) {
+  1822: g.NetMgr.http.sendRequest(a.HttpConst.FLIP_CARD_CELL, {
+  1823: index: t
+  1824: }, null, !1);
+  1825: };
+  1826: e.prototype.reqRefreshFlipCard = function() {
+  1827: g.NetMgr.http.sendRequest(a.HttpConst.REFRESH_FLIP_CARD, {}, null, !1);
+  1828: };
+  1829: e.prototype.reqGetDailyPayActivity = function() {
+  1830: g.NetMgr.http.sendRequest(a.HttpConst.GET_DAILY_PAY_ACTIVITY, {});
+  1831: };
+  1832: e.prototype.reqGetRecharged = function(t) {
+  1833: this.FirstChargeState = t;
+  1834: var e = {
+  1835: roleID: S.RoleBaseInfo.roleID
+  1836: };
+  1837: g.NetMgr.http.sendReqWithMask(a.HttpConst.REQ_GET_RECHARDED, e);
+  1838: };
+  1839: e.prototype.reqRechargedAward = function(t) {
+  1840: var e = {
+  1841: roleID: S.RoleBaseInfo.roleID,
+  1842: id: t
+  1843: };
+  1844: E.PackageModel.judgePackageLimit() || g.NetMgr.http.sendReqWithMask(a.HttpConst.REQ_AWARD_RECHARDED, e);
+  1845: };
+  1846: e.prototype.reqDailyPayActivityAward = function() {
+  1847: g.NetMgr.http.sendRequest(a.HttpConst.DAILY_PAY_ACTIVITY_AWARD, {});
+  1848: };
+  1849: e.prototype.setOpenChargeUI = function(t) {
+  1850: if (0 == t.accRechargedData.isEnd) {
+  1851: this.rechargedIsEnd = 0;
+  1852: 1 == t.accRechargedData.isMainShow && (this.openChargeUI = !0);
+  1853: 1 == t.accRechargedData.isRedDot && (this.openRedDot = !0);
+  1854: } else this.rechargedIsEnd = 1;
+  1855: };
+  1856: e.prototype.reqAddCostData = function() {
+  1857: g.NetMgr.http.sendRequest(a.HttpConst.GET_GOLD_CONSUME_REWARD_DATA, {});
+  1858: };
+  1859: e.prototype.reqAddCostReward = function(t) {
+---

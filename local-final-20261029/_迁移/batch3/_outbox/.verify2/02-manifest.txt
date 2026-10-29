@@ -1,0 +1,98 @@
+第11批 C10〔农作物〕回执包 · manifest（2026-10-27）
+
+== 关键文件 ==
+bz-rpc-server.js                       416106 B  7FDDAEE8A563FE68C4A414395C78418F
+core\bz-rpc-server.js                  416106 B  7FDDAEE8A563FE68C4A414395C78418F
+core\bz-c10.generated.js                16423 B  54340732AAB7BF7FD4FB63EE4E7B5E23
+core\bz-shapes.generated.js             27037 B  D24988B9655CED4AAA18DE113E415AAB
+core\templates.json                      7325 B  692B4286E1051F34554C2AD1285B8C7B
+core\bz-handler-impl.js                 36793 B  5EF2D98601FD88EAF1A15E153F3D7536
+01-receipt-batch11-c10.txt               9760 B  59241E696EE39E7F32D1198C2D69867C
+tools\gen_c10_tables.js                  7882 B  A6EA5532901621343922DFAFFC192476
+test\c10-smoke.js                       19561 B  DA1C389B770173B2B23443C470B7398C
+facts\C2-c10-execution.md               13042 B  7457EADD1817B51111986476008EABDA
+facts\C9-open-issues.md                 17443 B  195DAE54C8DD3A5579ED93E8E0EB5824
+
+== 逐文件清单（相对路径 / 字节 / md5）==
+00-转发说明.txt                                          2658 B  57E982A716834B77A63C210D52E296C0
+01-receipt-batch11-c10.txt                           9760 B  59241E696EE39E7F32D1198C2D69867C
+bz-rpc-server.js                                   416106 B  7FDDAEE8A563FE68C4A414395C78418F
+core\bz-c09.generated.js                            18899 B  3298DB7C005579DD08E7F81E53ABBB09
+core\bz-c10.generated.js                            16423 B  54340732AAB7BF7FD4FB63EE4E7B5E23
+core\bz-handler-impl.js                             36793 B  5EF2D98601FD88EAF1A15E153F3D7536
+core\bz-rpc-core.js                                  6122 B  146DF25C20DB68AFE9A832DC8AE930F5
+core\bz-rpc-server.js                              416106 B  7FDDAEE8A563FE68C4A414395C78418F
+core\bz-shapes.generated.js                         27037 B  D24988B9655CED4AAA18DE113E415AAB
+core\bz-shops.generated.js                         265217 B  257F30E050F98C148DB7ED07FBF9FA81
+core\bz-tasks.generated.js                         640516 B  4486247F701441F09B84278CCDAB98D5
+core\templates.json                                  7325 B  692B4286E1051F34554C2AD1285B8C7B
+facts\C10-corpses.md                                 2974 B  965B70068556B4E22A45C4D3163D23F0
+facts\C11-worker-verify.md                           5630 B  BCD514B11AD5A75C67E23E828DA98F7C
+facts\C12-execution-log.md                          36127 B  A159627D324932F491E76E0142A6644F
+facts\C1-c10-forensics.md                           13906 B  E750B425DF1C2C82444B1FB2546A1795
+facts\C2-c10-execution.md                           13042 B  7457EADD1817B51111986476008EABDA
+facts\C3-scoutP1-core.md                             4175 B  B31C8C41C72B4A248A06F82D2504698C
+facts\C4-scoutP2-event.md                            4000 B  0374B8356A31E42D1AD1995340C1737E
+facts\C5-scoutP3-onekey.md                           4203 B  1EFFF19A3538C3361C81A89553662194
+facts\C6-scoutR-home-data.md                         5553 B  E8D18698BEDD7FF437092B374DFD3B66
+facts\C7-scoutS-crop-items.md                        4409 B  CFEE8932ABE1C9370C85D2974D46BEB2
+facts\C8-scoutT-homeshop.md                          3524 B  0708A645368BF733251FDFCE9FE6203C
+facts\C9-open-issues.md                             17443 B  195DAE54C8DD3A5579ED93E8E0EB5824
+test\achieve-data.js                                 7248 B  C5252087E6E6B199F96920B48253B9CE
+test\action-stats.js                                 4583 B  D4DFC6413D0B6911BBEC5B84D7E5E1DD
+test\activity-panel.js                               4869 B  353F1AC41EB2953CDA08982DF7139E33
+test\battle-npc-arr.js                               5504 B  DCA8909059BF6C47CF821E06C23EA8D4
+test\c02-smoke.js                                   16548 B  461F8A7AC756EDF39DF4355C0DFF24B1
+test\c03-smoke.js                                   11725 B  AB5C72322A6ABC39D21AF3D47B761978
+test\c04-smoke.js                                   13688 B  C467C1022D72A7DDE42B39BE81462B0E
+test\c05-smoke.js                                    8427 B  4280392E99F216782B87E692F9553991
+test\c06-smoke.js                                    8290 B  1EC33A851FA4CA50B7763F782246CA4A
+test\c07-smoke.js                                    3658 B  846FA25B821D7554E7661C3D5F0BAB55
+test\c08-smoke.js                                   11663 B  504DFF4641B6DA8D4A03B64A28637407
+test\c09-smoke.js                                   11228 B  86CF7E3C7C8E8BEDBB6412C15D531925
+test\c10-smoke.js                                   19561 B  DA1C389B770173B2B23443C470B7398C
+test\c16-smoke.js                                    8568 B  C13E3027FCACBE59B12610C0A91D28E7
+test\circle-task.js                                 16747 B  475FEFDA1E738EFF858EF2DB4A1B02E4
+test\core-test.js                                    3663 B  43534C46B24CE3867B69012D537EC04D
+test\core-test-server.js                             5161 B  9C9ED91B93304F74D53618C02AAB0A21
+test\cycle-entry.js                                  5576 B  72F9C53B965F383E7AD4B714AA33E7FA
+test\drop-table.js                                   5421 B  5E97F20411871ADCE33784A450AEF171
+test\fashion-pages.js                               13148 B  1D61CE24962EA566D0D2634592B6D703
+test\l0-envelope.js                                  8247 B  4F37719F357E12C1292C3DE950A4860F
+test\l0-xhr.js                                       4260 B  52CC0AB6E90751D56CCF737E258CAEE2
+test\obs-guard.js                                    6796 B  DDDD93D8A88FE64F9021D6429C998569
+test\overlay-projection.js                          11138 B  8A91C814071B97D626B7677380949135
+test\panel-fixes.js                                  5127 B  E43313F1C48A490D5282B452C5088F9F
+test\premium-shop.js                                 7888 B  02F33F4D90071B9E16F9D1A3958336BB
+test\push-grants.js                                  4752 B  4B4B739EBB6A903A4B52CE1F0D1FAA82
+test\r05-f2-l4.js                                    8859 B  5646C316E45F33CE8535E47B2266EEF6
+test\r06-medicine-scholar.js                         8748 B  21D6C6D61A35B29FD74CB767D8E5A79F
+test\r13-reject-codes.js                             9622 B  33EC6047E3683E608789F54510AD0E1C
+test\r14-catch-smoke.js                             11255 B  84700258FE70528BE3892E500DA9D94A
+test\r16-effect5.js                                  5695 B  4AC2D99A08CC3496253A709DDCA90161
+test\r17-effect28.js                                 5919 B  A7299B7AF424C687E246476B6F52389A
+test\r18-skch-lv0.js                                 7214 B  44CCEC26B8E939CE6F4788789819B9CC
+test\r18-titleobj-projection.js                      8709 B  49695AF11779E4D5841338B4B7D3485D
+test\r18-unreachable.js                             11454 B  5C2BC83A04AB1C8F5A3A1C238986912D
+test\sale-coins.js                                  10729 B  37F619B5A9B4F8E7FEE1078B44A297A7
+test\save-migrate.js                                 7798 B  89004013033F8D6C200F605F7F359DBF
+test\selfcheck-model-push.js                         3431 B  BC832E434772B484C44D59C73DF62CE8
+test\selfcheck-nosave.js                             3082 B  2857831CCB19F19F8A6B45612E1E6DBC
+test\shop-ge-rogue.js                                7786 B  764F042C71F981244A41B02AD3551209
+test\shop-special-exchange.js                       13910 B  0266C72B368B9B641D113DE9D82AF54A
+test\trade-buy.js                                    8174 B  BA3C19AFCC570DA4FBAC0C5028DF8D1D
+test\upgrade-skill-target.js                         4838 B  C1225E9E64404BF53A8210F6723B2E31
+test\useitem-branches.js                             7039 B  8047502E426E2459BB9338B006A753CD
+test\v271-smoke.js                                  11545 B  D628CB6CAD279EA2F2129715588F92E7
+test\wash-points.js                                  5759 B  779B34F33479E0869FFAAA50029BC48B
+tools\gen_c09_tables.js                              5653 B  55575098B65B7FAC944D045DB8A8B6C7
+tools\gen_c10_tables.js                              7882 B  A6EA5532901621343922DFAFFC192476
+
+== 怎么验（对面三步）==
+1) cp core\* 覆盖本地 core；node build-handlers.js   期望 ver=h90b31552 / selfCheck 1300 / CATCH CODES 96
+2) node test\c10-smoke.js                           期望 18/18
+3) node tools\check_shape_freeze.js                  期望 C1–C8、C10–C13 全过、diff 0（需同批 tools\golden）
+
+== 哪些测试要 tools\ ==
+c10-smoke / c09-smoke / c08-smoke 只需 core\（vm.runInThisContext 读 core\bz-*.generated.js）；
+acceptance / check_shape_freeze 要 tools\ 与 tools\golden\（本包未附 golden，门禁数字见回执 §六）。

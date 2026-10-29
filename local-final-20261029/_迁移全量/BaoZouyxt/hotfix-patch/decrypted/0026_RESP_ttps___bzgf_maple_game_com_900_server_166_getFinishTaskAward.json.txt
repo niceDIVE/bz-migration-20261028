@@ -1,0 +1,2 @@
+status=200 https://bzgf.maple-game.com/900-server-166/getFinishTaskAward
+{"error":0,"p":"User.getFinishTaskAward","User.getFinishTaskAward":{"eRet":1,"note":{"eco":{},"attrch":{},"ivch":{},"eqch":{}},"rewardArray":{},"taskID":101080,"choose":0},"achievement":{"red":true,"achieveRateId":0}}

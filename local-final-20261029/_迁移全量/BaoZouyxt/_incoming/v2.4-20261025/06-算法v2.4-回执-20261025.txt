@@ -1,0 +1,66 @@
+算法 v2.4 回执（2026-10-25）
+跑的环境：本机 Windows，Python 3.13.2 + networkx 3.5，客户端用你们给的三包（index.js/scripts2.js/scripts3.js，md5 4D69655D…/8AEC2E47…/C2A64735…）
+做法：整棵复制 v2.3 的 bz-oracle 到干净目录，只覆盖你们给的 3 个文件，out/ 保持我们的，没覆盖。
+
+一、extract_shape 重跑的 stdout 那行 JSON
+
+  {"actions": 150, "kinds": {"array|object|array|string": 69, "array|array|string": 26, "array|string": 12, "container": 58, "array|array|object|array|string|scalar": 1, "scalar": 21, "array|array|object|array|string": 5, "array": 16, "array|object|object|scalar": 4, "array|object": 3, "array|array|object": 2}, "unsafe": 132, "zeroIsWrong": 196, "note": "正则启发式【推断】；consumedAt 是复核用的落点"}
+
+  exit=0，耗时 3.7 秒（你们说大文件 7 秒内，符合）
+  shape-hints.md：9474 B → 41782 B（4.4 倍），其它两处改动确实干了大量活。
+
+二、三行在不在
+
+  1) GetMarketList.market —— 在 ✅
+       | GET_MARKETLIST | User.GetMarketList | market 缺了会崩（scripts2.js:8472,scripts2.js:8511⚠）|
+     对比证据：v2.3 那份 shape-hints.md 里连 GET_MARKETLIST 这一行都没有。
+     → 这一处修好了，跨行 dispatch + X.prototype.f + 另一方法里的 for..in 这条链通了。
+
+  2) passCardData.passObj —— 不在 ❌
+  3) getBigGrowupData     —— 不在 ❌
+
+三、--trace 结果：两条都**没有输出任何 [trace] 行**。原因已定位，不是正则漏，是契约表里没字段可追
+
+  我用 python 直接读 out/contracts.json（1028 个契约）：
+
+     GET_MARKETLIST       fields = ['eRet','market','serverTime','nextRefreshTime','buyTimes']   ← 有米，能追
+     GET_BIG_GROWUP_DATA  fields = []                                                            ← 空
+     GET_GROWUP_DATA      fields = []                                                            ← 空
+     PASS_CARD_DATA       fields = []                                                            ← 空
+     PASS_CARD_REWARD     fields = []                                                            ← 空
+
+  extract_shape.py 里 trace 的判定是 `if trace and act == trace[0]`，而下游逐字段循环遍历的是契约的 fields。
+  这两个契约的 fields 是空数组 → 没有字段名可迭代 → 一行 [trace] 都打不出来（不是 trace 坏了，是没东西可追）。
+
+  所以想请你们确认一句：你们合成样例里这两处能认出来，是不是因为样例的 contracts.json 里这两个契约**有**字段？
+  如果是，那这两处漏报在我们这份 out/contracts.json 上无法复现，得先补契约字段，正则改不改都追不出来。
+
+四、另外，passObj 这个名字和我们这版真客户端对不上
+
+  ⚠ 修正（同日 19:05）：下面第一段"找不到对应物"的说法**不准确**，已核实推翻 ——
+     passObj **是真实存在的下发字段**，服务端 bz-rpc-server.js:1845 就是 `passObj: rows`，
+     而且早就登记在 tools/golden/approved-widening.json 里（action=passCardData, path=passObj，
+     理由是 scripts2.js:48291 `showInviteActionUI(this.data.passObj)`，每行必须是
+     [passID, liveness, award1..award4] 长度 ≥6）。
+     所以它不是"不存在"，而是"**已经在发、但 contracts.json 里没有这个字段**"。
+     → 这恰好支持第三节的结论：shape-hints 追不到它，是因为契约表缺字段，不是正则漏。
+
+  以下为原始记录（保留）：
+
+  - contracts.json 全文不含字符串 "passObj"（用 python 读文件直接判的，不是 grep 漏）。
+  - 真客户端里 .passObj 只出现 1 次：
+        scripts2.js:48291   this.showInviteActionUI(this.data.passObj);
+    该处在**万圣节**面板里（同段 L48288 用 a.HalloweenModel.cardState、L48292 用 a.HalloweenModel.goldAy），
+    读的是 UI 自己的 this.data.passObj，不是某个回包的顶层字段。
+  - 而 PassCard 面板真正的回包字段是 passCard，子字段是 p / n / award：
+        index.js:55867   t.prototype.onGetPassCardData = function(t, e) {
+        index.js:55869       this.cardState = parseInt(e.passCard.p);
+        index.js:55870       this.paperNum  = e.passCard.n;
+        index.js:55871       this.award     = e.passCard.award;
+
+  → 「passCardData.passObj」在我们这版客户端里找不到对应物。请指一下你们指的是哪个：
+     (a) PASS_CARD_DATA 回包里的 passCard（那就该把 passCard 及其 p/n/award 补进 contracts 的 fields，
+         补完之后 extract_shape 才有可能追到「缺了会崩」）
+     (b) 万圣节面板的 this.data.passObj（那是 UI 传参，不是网络字段，extract_shape 按设计追不到，属于不可达项）
+
+五、C05 范围已收到 24，取证完成，代码还没动（等拍板那两件事）。明细另附。

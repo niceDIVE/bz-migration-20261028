@@ -1,0 +1,13 @@
+# User.TowerBattleResult   (HttpConst.SERVER_NPC_BATTLE_END)
+
+## 注册点 67698: a.MessageCenter.on(l.HttpConst.SERVER_NPC_BATTLE_END, function(e, o) {
+
+## 请求点 71461: n.NetMgr.http.sendRequest(i.HttpConst.SERVER_NPC_BATTLE_END, s);
+   71453: var a = r.UserModel.entity, s = {
+   71454: npcID: e,
+   71455: gTime: a.totalGameTime.gameTime,
+   71456: hg: a.hunger.remaining,
+   71457: hgtimes: a.numStuffed,
+   71458: win: o
+   71459: };
+   71460: t.TowerModel.sweepState && (s.lv = t.TowerModel.sweepLv);

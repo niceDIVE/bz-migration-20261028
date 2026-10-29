@@ -1,0 +1,243 @@
+# User.sycnTask  (HttpConst.SYCN_TASK)
+# 出现 5 处
+
+133211: this.taskAy = [];
+133212: this.trackMapId = "";
+133213: this.trackNpcId = 0;
+133214: this.clickPageId = 0;
+133215: r.MessageCenter.on(s.HttpConst.GET_TASK, this.getTaskCallBack, this);
+133216: r.MessageCenter.on(s.HttpConst.FINISH_TASK, this.finishTaskCallBack, this);
+133217: r.MessageCenter.on(s.HttpConst.SYCN_TASK, this.sycnTaskCallBack, this);
+133218: r.MessageCenter.on(s.HttpConst.ACCEPTCIRCLETASK, this.acccptCircleTaskCallBack, this);
+133219: r.MessageCenter.on(s.HttpConst.GETCIRCLETASK, this.getCircleTaskCallBack, this);
+133220: r.MessageCenter.on(s.HttpConst.HIDE_TASK, this.hideTaskCallBack, this);
+133221: r.MessageCenter.on(l.EvName.FIGHT_TASK_DATA_SET, this.onSetFightTaskCallBack, this);
+133222: r.MessageCenter.on(s.HttpConst.ROGUE_ACCEPT_TASK, this.getRogueTaskCallBack, this);
+133223: r.MessageCenter.on(s.HttpConst.ROGUE_FINISHTASK_REWARD, this.finishRogueTaskCallBack, this);
+133224: };
+133225: e.prototype.getRogueTaskCallBack = function(e, o) {
+133226: if (1 == o.eRet) {
+133227: if (0 == this.isOrBubble) {
+133228: this.npcTaskInfo.hasOwnProperty("taskObj") && this.clearHideTask(this.npcTaskInfo.taskObj.TaskID);
+133229: b.default.operationalTasks(0, this.npcTaskInfo);
+133230: if (b.default.blankTaskArray.length) return;
+133231: var s = this.npcTaskInfo.taskObj.Fight;
+133232: if (s > 0) {
+133233: T.BattleMgr.startRoguePVEFight({
+133234: npcID: s
+133235: });
+133236: c.RoleBaseInfo.autoFightTaskId = this.npcTaskInfo.taskObj.TaskID;
+133237: return;
+133238: }
+133239: var p = b.default.judgeCurTaskIsFinish(this.npcTaskInfo.taskObj.TaskID, this.npcId);
+133240: 1 == p.npcState && b.default.finishTaskCheckUI(p);
+133241: } else if (1 == this.isOrBubble) {
+133242: b.default.operationalTasks(0, this.npcTaskInfo);
+133243: r.MessageCenter.dispatch(l.EvName.ON_BUBBLE_TASK, 1);
+133244: } else 2 == this.isOrBubble && b.default.operationalTasks(0, this.npcTaskInfo);
+133245: Promise.resolve().then(function() {
+133246: return t("../../scripts3/model3/RogueModel");
+133247: }).then(function(t) {
+133248: return t.RogueModel.checkTaskTips();
+133249: });
+133250: } else if (4 == o.eRet) {
+133251: var h = i.getItem(this.npcTaskInfo.taskObj.TaskID, "tasktime");
+133252: h && h.hasOwnProperty("overtimetips_on") && 0 == h.overtimetips_on && a.default.show(n.getText("1093"));
+133253: } else if (6 == o.eRet) {
+133254: var u = i.getItem(o.skillId, "skill"), f = o.CDTime - o.serverTime, d = Math.floor(f / 864e5), g = Math.floor((f - 864e5 * d) / 36e5), m = Math.floor((f - 864e5 * d - 36e5 * g) / 6e4), y = n.getText(6079).replace(/\[1\]/, n.getText(u.Name));
+133255: d > 0 && (y += d + n.getText(3784));
+133256: y += g + n.getText(3785);
+133257: y += m + n.getText(1414);
+---
+133373: } else if (6 == o.eRet) {
+133374: var g = i.getItem(o.skillId, "skill"), m = o.CDTime - o.serverTime, y = Math.floor(m / 864e5), v = Math.floor((m - 864e5 * y) / 36e5), _ = Math.floor((m - 864e5 * y - 36e5 * v) / 6e4), S = n.getText(6079).replace(/\[1\]/, n.getText(g.Name));
+133375: y > 0 && (S += y + n.getText(3784));
+133376: S += v + n.getText(3785);
+133377: S += _ + n.getText(1414);
+133378: a.default.show(S);
+133379: } else p.NetMgr.http.sendRequest(s.HttpConst.SYCN_TASK, {
+133380: roleID: c.RoleBaseInfo.roleID
+133381: }, null, !1);
+133382: };
+133383: e.prototype.finishTaskCallBack = function(e, o) {
+133384: var u = this;
+133385: if (1 == o.eRet) {
+133386: Promise.resolve().then(function() {
+133387: return t("../../scripts3/model3/RogueModel");
+133388: }).then(function(t) {
+133389: t.RogueModel.checkUpdateEquips(o);
+133390: });
+133391: o.hasOwnProperty("triggerBoxs") && Promise.resolve().then(function() {
+133392: return t("../../scripts3/model3/MapBoxModel");
+133393: }).then(function(t) {
+133394: t.MapBoxModel.addBox(o.triggerBoxs);
+133395: });
+133396: o.hasOwnProperty("clearBoxs") && Promise.resolve().then(function() {
+133397: return t("../../scripts3/model3/MapBoxModel");
+133398: }).then(function(t) {
+133399: t.MapBoxModel.removeBox(o.clearBoxs);
+133400: });
+133401: this.setTasksChecked([ this.finishTaskObj.taskObj.TaskID ]);
+133402: this.finishTaskAddLikeness(this.finishTaskObj.taskObj.TaskID);
+133403: b.default.operationalTasks(2, this.finishTaskObj, this.taskSelectId);
+133404: var f = this;
+133405: if (A.MadUtilsTS.isNullObj(o.rewardArray) && A.MadUtilsTS.isNullObj(o.equipObj)) {
+133406: C.GuideMgr.enterFirstGuide(this.finishTaskObj.taskObj.TaskID, 0);
+133407: this.taskFinishDataFunc();
+133408: this.taskRewardCloseEvent(o);
+133409: } else {
+133410: var y = this.finishTaskObj.taskObj.TaskID, _ = {};
+133411: if (o.contribution) {
+133412: var S = o.contribution - c.RoleBaseInfo.goodEvilContribution;
+133413: S > 0 && (_[c.RoleBaseInfo.goodEvilCamp == c.RoleBaseInfo.goodCamp ? 6001811 : 6001812] = S);
+133414: c.RoleBaseInfo.goodEvilContribution = o.contribution;
+133415: }
+133416: this.taskFinishDataFunc();
+133417: v.default.addShowRewardUI1(o.rewardArray, y, o.equipObj, _, function() {
+133418: o.rewardArray = {};
+133419: f.taskRewardCloseEvent(o);
+---
+133457: d.default.prefabs.load("comUI/KillDeadUI", cc.Prefab, function(t, e) {
+133458: var o = cc.instantiate(e);
+133459: g.PopUpMgr.addPopUp(o, m.LayerMgr.popUpLayer);
+133460: o.addComponent("KillDeadUI").setData(N);
+133461: });
+133462: }
+133463: } else if (4 == o.eRet) a.default.show(n.getText("931")); else if (5 == o.eRet) a.default.show(n.getText("932")); else if (2 == o.eRet) p.NetMgr.http.sendRequest(s.HttpConst.SYCN_TASK, {
+133464: roleID: c.RoleBaseInfo.roleID
+133465: }, null, !1); else if (7 == o.eRet) {
+133466: b.default.operationalTasks(2, this.finishTaskObj, this.taskSelectId);
+133467: var P = i.getItem(o.taskID, "tasktime");
+133468: P && P.dialog > 0 && v.default.addDialogEvent(P.dialog, 0);
+133469: } else 10 == o.eRet ? cc.log("获取装备锁定数据出错") : 11 == o.eRet && a.default.show(n.getText(8156));
+133470: };
+133471: e.prototype.taskFinishDataFunc = function() {
+133472: i.getAdventureTaskEvent(this.finishTaskObj.taskObj.TaskID) && delete h.RoleOtherInfo.adventureEvent[this.finishTaskObj.taskObj.TaskID];
+133473: this.finishTaskObj.hasOwnProperty("taskObj") && this.clearHideTask(this.finishTaskObj.taskObj.TaskID);
+133474: };
+133475: e.prototype.taskRewardCloseEvent = function(t) {
+133476: var e = this;
+133477: if (this.finishTaskObj.taskObj.textdescribe > 0) {
+133478: var o = this.finishTaskObj.taskObj.transfer, i = this, r = {
+133479: str: n.getText(this.finishTaskObj.taskObj.textdescribe),
+133480: callBack: function() {
+133481: b.default.nextCheckMapTask(i.finishTaskObj);
+133482: if (o.length) if (2 == o[0]) i.changeSceneShowReward(t, function() {
+133483: u.TowerModel.taskFinishEnterTower(0);
+133484: }); else {
+133485: var e = f.GSceneMgr.go2Scene(o[1], cc.v3(o[2], o[3]));
+133486: e && e.then(function() {
+133487: i.changeSceneShowReward(t);
+133488: });
+133489: }
+133490: }
+133491: };
+133492: this.finishTaskObj.taskObj.roadAni > 0 ? d.default.prefabs.load("taskUI/TaskMapAnim", cc.Prefab, function(t, o) {
+133493: if (t) {
+133494: cc.log(t);
+133495: e.gotoSceneDilogUI(r);
+133496: } else {
+133497: var i = cc.instantiate(o);
+133498: i.addComponent("TaskMapAnim").setData(e.finishTaskObj.taskObj.roadAni, function() {
+133499: e.gotoSceneDilogUI(r);
+133500: });
+133501: g.PopUpMgr.addPopUp(i);
+133502: }
+133503: }) : this.gotoSceneDilogUI(r);
+---
+133581: }
+133582: l += n.getText(6 == r ? 4277 : 4278);
+133583: a.default.show(l, [], null, n.getText(123));
+133584: } else v.default.addShowRewardUI1(e.rewardArray, o, e.equipObj);
+133585: }
+133586: this.finishTaskObj.hasOwnProperty("taskObj") && this.clearHideTask(this.finishTaskObj.taskObj.TaskID);
+133587: } else 4 == e.eRet ? a.default.show(n.getText("931")) : 5 == e.eRet ? a.default.show(n.getText("932")) : 2 == e.eRet ? p.NetMgr.http.sendRequest(s.HttpConst.SYCN_TASK, {
+133588: roleID: c.RoleBaseInfo.roleID
+133589: }, null, !1) : 8 == e.eRet ? a.default.show(n.getText({
+133590: 1000010: 1539,
+133591: 1000020: 1540,
+133592: 1000030: 1541
+133593: }[e.taskID])) : 9 == e.eRet ? a.default.show(n.getText(1093)) : 10 == e.eRet ? a.default.show(n.getText(4320)) : 11 == e.eRet ? cc.log("获取锁定装备数据出错") : 12 == e.eRet && a.default.show(n.getText(8156));
+133594: };
+133595: e.prototype.hideTaskCallBack = function(t, e) {
+133596: if (1 == e.eRet) if (1 == this.hideType) {
+133597: h.RoleOtherInfo.hTaskArr[this.taskAy[0]] = 1;
+133598: r.MessageCenter.dispatch(l.EvName.HIDE_TASK_EVENT, this.taskAy[0]);
+133599: } else this.clearHideTask(this.taskAy[0]);
+133600: };
+133601: e.prototype.clearHideTask = function(t) {
+133602: if (h.RoleOtherInfo.hTaskArr.hasOwnProperty(t)) {
+133603: delete h.RoleOtherInfo.hTaskArr[t];
+133604: r.MessageCenter.dispatch(l.EvName.SHOW_TASK_EVENT, t);
+133605: }
+133606: };
+133607: e.prototype.reqGetTask = function(t, e, o) {
+133608: this.isOrBubble = e;
+133609: this.npcId = o;
+133610: this.npcTaskInfo = t;
+133611: var i = this.checkOrderDelete(parseInt(t.taskObj.TaskID)), n = {
+133612: taskID: t.taskObj.TaskID,
+133613: delOrder: i
+133614: };
+133615: cc.log("请求接取任务ID == " + t.taskObj.TaskID);
+133616: 3 == t.taskObj.TaskType && f.GSceneMgr.mode == f.GSceneMgr.modeMap.rogue ? p.NetMgr.http.sendReqWithMask(s.HttpConst.ROGUE_ACCEPT_TASK, n) : p.NetMgr.http.sendReqWithMask(s.HttpConst.GET_TASK, n);
+133617: };
+133618: e.prototype.clearOrder = function() {
+133619: for (var t = this.checkOrderDelete(), e = c.RoleBaseInfo.taskOrder, o = 0; o < t.length; o++) {
+133620: var i = e.indexOf(t[o]);
+133621: i >= 0 && e.splice(i, 1);
+133622: }
+133623: };
+133624: e.prototype.checkOrderDelete = function(t) {
+133625: void 0 === t && (t = 0);
+133626: for (var e = c.RoleBaseInfo.taskOrder, o = [], n = 0; n < e.length; n++) {
+133627: var r = e[n];
+---
+137570: h.default.prefabs.load("towerUI/TowerStartUI", cc.Prefab, function(e, i) {
+137571: var n = cc.instantiate(i);
+137572: u.PopUpMgr.addPopUp(n, f.LayerMgr.popUpLayer, 1, !0);
+137573: n.addComponent("TowerStartUI").setData(o.towerArray);
+137574: t.towerStartUI = n;
+137575: });
+137576: g.NetMgr.http.sendRequest(c.HttpConst.SYCN_TASK, {
+137577: roleID: d.RoleBaseInfo.roleID
+137578: }, null, !1);
+137579: }
+137580: } else cc.log("error!!");
+137581: }, this);
+137582: l.MessageCenter.on(c.HttpConst.TOWER_RANK_LIST, function(t, e) {
+137583: 1 == e.eRet && e.hasOwnProperty("rankArr") && h.default.prefabs.load("towerUI/TowerRank", cc.Prefab, function(t, o) {
+137584: var i = cc.instantiate(o);
+137585: u.PopUpMgr.addPopUp(i, f.LayerMgr.popUpLayer);
+137586: i.addComponent("TowerRank").setData(e.rankArr);
+137587: });
+137588: }, this);
+137589: l.MessageCenter.on(c.HttpConst.TOWER_RANDOM_EVENT, function(e, o) {
+137590: if (1 == o.eRet) {
+137591: t.sweepState = !1;
+137592: if (0 == t.eventType) {
+137593: t.curFloorNum++;
+137594: t.eventType = 1;
+137595: }
+137596: t.randomMonsterData = o.npcArr;
+137597: o.hasOwnProperty("eventID") && (t.randomEventId = o.eventID);
+137598: o.hasOwnProperty("muscle") && (t.curStrengthNum = o.muscle);
+137599: o.hasOwnProperty("attrType") && (t.attriType = o.attrType);
+137600: if (o.hasOwnProperty("equipments")) {
+137601: var i = o.equipments;
+137602: for (var r in i) {
+137603: k.playerInfo.entity.putOffEquipment(parseInt(r));
+137604: if (i[r]) {
+137605: var s = m.InventoryModel.getEquipmentInfo(i[r]);
+137606: if (s) {
+137607: var l = {
+137608: id: s.id,
+137609: type: s.type,
+137610: itemID: s.itemID,
+137611: attrs: s.attrs,
+137612: numAttr: s.numAttr,
+137613: crystalIds: s.crystalIds
+137614: }, c = I.InhertEquipModel.allInhertEquips, p = c.hasOwnProperty(s.id) ? c[s.id] : 0;
+137615: k.playerInfo.entity.putOnEquipment(new n(l, p), parseInt(r));
+137616: 1 == parseInt(r) && m.InventoryModel.freshEquipWeap(parseInt(r), l.id);
+---

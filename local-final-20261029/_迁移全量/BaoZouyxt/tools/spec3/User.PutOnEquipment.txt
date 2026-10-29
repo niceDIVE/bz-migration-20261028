@@ -1,0 +1,13 @@
+# User.PutOnEquipment   (HttpConst.WEAR_EQUIPMENT_ALL)
+
+## 注册点 92806: a.MessageCenter.on(s.HttpConst.WEAR_EQUIPMENT_ALL, function(t, e) {
+
+## 请求点 92857: u.NetMgr.http.sendRequest(s.HttpConst.WEAR_EQUIPMENT_ALL, e);
+   92849: t.prototype.reqPutonAllEquip = function() {
+   92850: f.default.show(n.getText(this.getSaveEquipState() ? 3330 : 3329));
+   92851: var t = p.UserModel.entity, e = {
+   92852: equipments: this.checkPutEquipsData(),
+   92853: hp: t.hp.remaining,
+   92854: hplmt: t.hp.limit,
+   92855: mp: t.mp.remaining
+   92856: };

@@ -1,0 +1,531 @@
+{
+ "generatedAt": "2026-10-22T11:23:25.151Z",
+ "homeActiveUI": {
+  "file": "F:/BaoZouyxt/tools/scripts2.js",
+  "line": 29171,
+  "body": [
+   "29171: e.prototype.onLoad = function() {",
+   "29172: var e = this;",
+   "29173: t.prototype.onLoad.call(this);",
+   "29174: l.GSceneMgr.hideScene();",
+   "29175: var o = this;",
+   "29176: this.loading = !0;",
+   "29177: c.default.prefabs.load(\"activeUI/HomeActiveToggle\", cc.Prefab, function(t, i) {",
+   "29178: if (cc.isValid(o.downNode)) {",
+   "29179: o.btnNode = cc.instantiate(i);",
+   "29180: o.downNode.addChild(o.btnNode);",
+   "29181: o.loading = !1;",
+   "29182: e.listAy = p.GrowthModel.getActiveSortData(e.data);",
+   "29183: o.btnNode.addComponent(\"HomeActiveToggle\").setBtns(o.listAy);",
+   "29184: }",
+   "29185: });",
+   "29186: this.topMenu.active = !1;",
+   "29187: };",
+   "29188: e.prototype.addEventListeners = function() {",
+   "29189: t.prototype.addEventListeners.call(this);",
+   "29190: r.MessageCenter.on(h.EvName.CHANGE_ACTIVE_PAGE, this.setShowUI, this);",
+   "29191: r.MessageCenter.on(h.EvName.START_EXAMINATION, this.onStartExamination, this);",
+   "29192: r.MessageCenter.on(h.EvName.NEW_ROLE_RECHARGE_EVENT, this.newRoleDataEvent, this);",
+   "29193: };",
+   "29194: e.prototype.removeEventListeners = function() {",
+   "29195: t.prototype.removeEventListeners.call(this);",
+   "29196: r.MessageCenter.off(h.EvName.CHANGE_ACTIVE_PAGE, this.setShowUI, this);",
+   "29197: r.MessageCenter.off(h.EvName.START_EXAMINATION, this.onStartExamination, this);",
+   "29198: r.MessageCenter.off(h.EvName.NEW_ROLE_RECHARGE_EVENT, this.newRoleDataEvent, this);",
+   "29199: };",
+   "29200: e.prototype.setData = function(t, e) {",
+   "29201: this.data = t;",
+   "29202: this.type = e;",
+   "29203: this.actDataMap = t.dataArr;",
+   "29204: };",
+   "29205: e.prototype.setShowUI = function(t, e) {",
+   "29206: var o = this, i = e.prefabName;",
+   "29207: this.loading = !0;",
+   "29208: if (\"DigginggridsUI\" == i) {",
+   "29209: var s = g.TimeMgr.getSTimestamp();",
+   "29210: e.data.endTime - s <= 0 && (i = \"DigginggridsEndUI\");",
+   "29211: }",
+   "29212: this.loadScritName = i;",
+   "29213: m.uiMgr.showNetworkUI();",
+   "29214: c.default.prefabs.load(\"activeUI/\" + i, cc.Prefab, function(t, s) {",
+   "29215: if (o.loadScritName == i) {",
+   "29216: o.midleNode.destroyAllChildren();",
+   "29217: if (s) {",
+   "29218: var n = cc.instantiate(s), r = o.btnNode.getComponent(\"HomeActiveToggle\").flag, a = i.split(\"/\"), c = a[a.length - 1], l = [ \"NewYear23\", \"ScrapeLotteryUI\", \"SwordsManUI\", \"BombBeastUI\", \"SFPackUI\", \"TorchAltarUI\", \"BMConsUI\", \"BrewingUI\", \"MysteriousPrayUI\", \"GoldLotteryUI\", \"MartialStageUI\", \"SpringSwordBg\", \"MartialArtTreUI\", \"JumpingFunUI\", \"AutoChessUI\", \"FishShadowUI\" ], p = l.indexOf(c);",
+   "29219: p >= 0 ? n.addComponent(l[p]).setData(o.listAy[r]) : \"SevendayActiveUI\" == i ? n.getComponent(\"SevendayActiveUI\").setData(o.data, o.listAy[r].tips) : \"DailyMissionUI\" == i ? n.getComponent(\"DailyMissionUI\").setData(o.actDataMap) : \"ArenaOpen\" == i ? n.addComponent(\"SchoolArenaDescribeUI\").setData(o.data) : \"DailyGiftUI\" == i ? n.addComponent(\"LotteryUI\").setData(e.data) : \"NewGFUI\" == i ? n.addComponent(\"NewGFUI\") : \"chuochuoLuckUI\" == i ? n.addComponent(\"chuochuoLuck\").setData(e.data) : \"sevendays\" == i ? n.addComponent(\"sevendays\").setData(e.data) : \"Recruit\" == i ? n.getComponent(\"Recruit\").setData(e.data) : \"ReturnUI\" == i || (\"qiuxueRewardl\" == i ? 2 == u.SchoolModel.idRwType ? n.addComponent(\"GrowthRewardMasterUI\").setData(e.data) : 1 == u.SchoolModel.idRwType && n.addComponent(\"GrowthRewardPupilUI\").setData(e.data) : \"FirstChargeUI\" == i ? n.addComponent(\"FirstChargeUI\").setData(e.data) : \"AddCostUI\" == i ? n.addComponent(\"AddCostUI\").setData(o.listAy[r]) : \"FireCelebrateUI\" == i ? n.getComponent(\"FireUI\").setData(o.listAy[r]) : \"DigginggridsUI\" == i ? n.addComponent(\"DigginggridsUI\").setData(e.data) : \"DigginggridsEndUI\" == i ? n.addComponent(\"DigginggridsEndUI\").setData(e.data) : \"BeachtreasureUI\" == c ? n.addComponent(\"BeachtreasureUI\").setData(e.data) : \"DragonTraining\" == c && n.addComponent(\"DragonTraining\").setData(e.data));",
+   "29220: o.midleNode.addChild(n);",
+   "29221: o.loading = !1;",
+   "29222: m.uiMgr.hideNetworkUI();",
+   "29223: } else {",
+   "29224: cc.log(\"There is no such prefab \" + i + \" to load! Be careful.\");",
+   "29225: o.loading = !1;",
+   "29226: }",
+   "29227: }",
+   "29228: });",
+   "29229: };"
+  ],
+  "tabFields": [
+   "id",
+   "number",
+   "active",
+   "name",
+   "tips"
+  ]
+ },
+ "listAy": {
+  "structure": "数组；元素 = active_order 行对象本身（{id,number,active,name,tips}）；过滤：themeActiveAy.indexOf(r.active)===-1 且 getActiveState(data,r.number,r.active)===true；排序：o.sort((a,b)=>a.id-b.id)；tab 文案 name→LangMgr.getText；tab tips → SevendayActiveUI.setData 第二参；prefabName 不由配置给出，由 HomeActiveToggle.map[number] 代码映射得出（1022/1027/1029/1035/1037/1038/1039/1040/1041/1042/1043/1044 带子目录路径）",
+  "sources": [
+   {
+    "file": "F:/BaoZouyxt/tools/index.js",
+    "line": 55347,
+    "text": "e.prototype.getActiveSortData = function(t) {"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/index.js",
+    "line": 55348,
+    "text": "var e = n.getTable(\"active_order\"), o = [];"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/index.js",
+    "line": 55351,
+    "text": "-1 == this.themeActiveAy.indexOf(r.active) && this.getActiveState(t, r.number, r.active) && o.push(r);"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/index.js",
+    "line": 55353,
+    "text": "o.sort(function(t, e) {"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/index.js",
+    "line": 55354,
+    "text": "return t.id - e.id;"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 29182,
+    "text": "e.listAy = p.GrowthModel.getActiveSortData(e.data);"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 29183,
+    "text": "o.btnNode.addComponent(\"HomeActiveToggle\").setBtns(o.listAy);"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 28534,
+    "text": "t.map = {"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 28535,
+    "text": "1001: \"SevendayActiveUI\","
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 28573,
+    "text": "1044: \"fishShadow/FishShadowUI\""
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 28691,
+    "text": "o.prototype.setBtns = function(t) {"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 28708,
+    "text": "this.nameArray.push(t[o].number);"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 28712,
+    "text": "i.getChildByName(\"Label1\").getComponent(cc.Label).string = r.getText(t[o].name);"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 28750,
+    "text": "this.onChangePage(l);"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 28913,
+    "text": "default:"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 28914,
+    "text": "this.map[e] && a.MessageCenter.dispatch(l.EvName.CHANGE_ACTIVE_PAGE, {"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 29206,
+    "text": "var o = this, i = e.prefabName;"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/scripts2.js",
+    "line": 29218,
+    "text": "var n = cc.instantiate(s), r = o.btnNode.getComponent(\"HomeActiveToggle\").flag, a = i.split(\"/\"), c = a[a.length - 1], l = [ \"NewYear23\", \"ScrapeLotteryUI\", \"SwordsManUI\", \"BombBeastUI\", \"SFPackUI\", \"TorchAltarUI\", \"BMConsUI\", \"BrewingUI\", \"MysteriousPrayUI\", \"GoldLotteryUI\", \"MartialStageUI\", \"Spri"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/cfg/dump/active_order.json",
+    "line": 1,
+    "text": "cols=id,number,active,name,tips rows=44"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/cfg/dump/active.json",
+    "line": 1,
+    "text": "cols=id,type,name,pointaward,pointlevel,pointlimit,max,awardtype,award,level,awardnum,score,single_award,times,delItem,sId,mail,mail_name,mail_des,begintime,endtime,activebegintime,activeendtime,awardbegintime,awardendtime,c_task rows=88"
+   },
+   {
+    "file": "F:/BaoZouyxt/tools/cfg/dump/activetime.json",
+    "line": 1,
+    "text": "cols=type,begintime,endtime,isdaily,awardnum,basicpotential,basicexp,basicmoney,coefficient,begintime1,endtime1,position,name,awardbegintime,awardendtime,item rows=3"
+   }
+  ]
+ },
+ "sevenTask": {
+  "file": "F:/BaoZouyxt/tools/index.js",
+  "line": 57387,
+  "body": [
+   "57387: t.prototype.sevenTaskCallback = function(t, e) {",
+   "57388: if (e.hasOwnProperty(\"taskObj\")) {",
+   "57389: if (this.checkNull(e.taskObj)) {",
+   "57390: this.reqEveryDayActive();",
+   "57391: u.RoleOtherInfo.activeObj[0] = 0;",
+   "57392: return;",
+   "57393: }",
+   "57394: this.objData ? i.MessageCenter.dispatch(p.EvName.STORE_SHOW_UI, {",
+   "57395: type: this.objData.type,",
+   "57396: back: this.objData.back,",
+   "57397: data: e",
+   "57398: }) : a.default.prefabs.load(\"comUI/ComBgUI\", cc.Prefab, function(t, o) {",
+   "57399: var i = cc.instantiate(o);",
+   "57400: i.addComponent(\"HomeActiveUI\").setData(e);",
+   "57401: n.PopUpMgr.addPopUp(i, s.LayerMgr.popUpLayer);",
+   "57402: });",
+   "57403: }",
+   "57404: this.objData = null;",
+   "57405: };"
+  ],
+  "taskObjFields": [
+   "taskObj (对象，key=sevenday.target 里的 id，value=数组)",
+   "data.taskObj[key][0] (状态 0/1/2)",
+   "data.taskObj[key][1] (进度数值)",
+   "data.curDay (数字，>7 截为 7)"
+  ]
+ },
+ "dailyMission": {
+  "file": "F:/BaoZouyxt/tools/scripts2.js",
+  "line": 17216,
+  "body": [
+   "17183: o.prototype.start = function() {",
+   "17184: for (var e = 0; e < this.dailyTaskData.length; e++) {",
+   "17185: var o = a.getItem(e + 1, \"daily_active_tips\");",
+   "17186: if (o && parseInt(o.isshow) > 0) {",
+   "17187: var i = cc.instantiate(this.itemTemplate);",
+   "17188: i.active = !0;",
+   "17189: if (u.LoginMgr.judgeLangEn()) {",
+   "17190: this.content.addChild(i);",
+   "17191: i.getComponent(\"EveryDayRender\").setData(e + 1, this.dailyTaskData[e]);",
+   "17192: } else {",
+   "17193: i.getComponent(\"EveryDayRender\").setData(e + 1, this.dailyTaskData[e]);",
+   "17194: this.content.addChild(i);",
+   "17195: }",
+   "17196: }",
+   "17197: }",
+   "17198: var s = this.getPathByNode(\"calendar\"), n = s.getChildByName(\"Background\");",
+   "17199: this.setSpriteFrame(n, \"ui/avtive/calendarICON\");",
+   "17200: this.addButtonListen(s, this, this.onClickCalendar);",
+   "17201: var r = this.getPathByNode(\"survey\");",
+   "17202: if (!u.LoginMgr.checkMiniGame()) {",
+   "17203: Promise.resolve().then(function() {",
+   "17204: return t(\"../../../scripts3/model3/NewRoleDataModel\");",
+   "17205: }).then(function(t) {",
+   "17206: var e = t.NewRoleDataModel.surveyUrl;",
+   "17207: r.active = e.length > 0;",
+   "17208: });",
+   "17209: this.addButtonListen(r, this, this.onClickSurvy);",
+   "17210: }",
+   "17211: };",
+   "17212: o.prototype.onDestroy = function() {",
+   "17213: e.prototype.onDestroy.call(this);",
+   "17214: u.LoginMgr.judgeLangEn() && this.itemTemplate.destroy();",
+   "17215: };",
+   "17216: o.prototype.setData = function(t) {",
+   "17217: this.dailyTaskData = t;",
+   "17218: };"
+  ],
+  "dataArrFields": [
+   {
+    "field": "dailyTaskData.length",
+    "where": "scripts2.js:17184",
+    "note": "仅取数组长度作循环上限"
+   },
+   {
+    "field": "dailyTaskData[i] (标量数值)",
+    "where": "scripts2.js:17191 / 17193 → EveryDayRender.setData(index, value) → scripts2.js:20221 this.numTime=e",
+    "note": "作为 numTime 参与文案 [1] 替换（20224/20226）"
+   },
+   {
+    "field": "e.id",
+    "where": "未找到：DailyMissionUI / EveryDayRender 内的 dataArr 元素 .id 读取"
+   },
+   {
+    "field": "e.num",
+    "where": "未找到：DailyMissionUI / EveryDayRender 内的 dataArr 元素 .num 读取"
+   },
+   {
+    "field": "e.state",
+    "where": "未找到：DailyMissionUI / EveryDayRender 内的 dataArr 元素 .state 读取"
+   },
+   {
+    "field": "e.receive",
+    "where": "未找到：DailyMissionUI / EveryDayRender 内的 dataArr 元素 .receive 读取"
+   }
+  ]
+ },
+ "sevenDayUI": {
+  "file": "F:/BaoZouyxt/tools/scripts2.js",
+  "line": 62132,
+  "body": [
+   "62127: e.prototype.start = function() {",
+   "62128: this.sevenData = this.data.taskObj;",
+   "62129: this.data.hasOwnProperty(\"curDay\") && (this.curDay = parseInt(this.data.curDay) > 7 ? 7 : this.data.curDay);",
+   "62130: this.showEveryDayUI();",
+   "62131: };",
+   "62132: e.prototype.setData = function(t, e) {",
+   "62133: this.data = t;",
+   "62134: this.tip = e;",
+   "62135: };",
+   "62136: e.prototype.showEveryDayUI = function() {",
+   "62137: this.dayInfo = r.getItem(this.curDay, \"sevenday\");",
+   "62138: this.titleLabel.string = a.getText(this.dayInfo.main);",
+   "62139: this.labelList[0].string = 1 == this.curDay ? \"\" : a.getText(7771e3 + this.curDay - 1);",
+   "62140: this.labelList[1].string = a.getText(7771e3 + this.curDay);",
+   "62141: this.labelList[2].string = 7 == this.curDay ? \"\" : a.getText(7771e3 + this.curDay + 1);",
+   "62142: this.content.removeAllChildren();",
+   "62143: this.setCurrentDayInfoList();",
+   "62144: for (var t = 0; t < this.curDayList.length; t++) {",
+   "62145: var e = cc.instantiate(this.itemTemplate);",
+   "62146: g.LoginMgr.judgeLangEn() && this.content.addChild(e);",
+   "62147: e.getComponent(\"DayActiveCell\").setData(this.curDayList[t]);",
+   "62148: g.LoginMgr.judgeLangEn() || this.content.addChild(e);",
+   "62149: }",
+   "62150: };",
+   "62151: e.prototype.setCurrentDayInfoList = function() {",
+   "62152: this.curDayList = [];",
+   "62153: for (var t = this.dayInfo.target, e = 0; e < t.length; e++) if (this.sevenData.hasOwnProperty(t[e])) {",
+   "62154: var o = {",
+   "62155: id: t[e],",
+   "62156: state: this.sevenData[t[e]]",
+   "62157: };",
+   "62158: this.curDayList.push(o);",
+   "62159: }",
+   "62160: };"
+  ],
+  "dataFields": [
+   "data.taskObj (62128 this.sevenData=this.data.taskObj)",
+   "data.curDay (62129, parseInt>7 → 7)",
+   "sevenData[key] (62153 hasOwnProperty 判断，key 来自 sevenday.target 列表)",
+   "sevenData[key][0] (62156 存为 curDayList[].state[0])",
+   "sevenData[key][1] (DayActiveCell 读 state[1] 作进度)",
+   "listAy[flag].tips (第二参 this.tip，62176 Alert 显示)"
+  ]
+ },
+ "activityListVsActiveOrder": [
+  {
+   "file": "scripts2.js",
+   "line": 14592,
+   "text": "k.RoleOtherInfo.activityList.indexOf(75) >= 0 && 10828 == this.npcData.NpcID && this.btnArray.push(\"6000488\");"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 29857,
+   "text": "this.goldFurnaceBtn.active = !n && d.RoleOtherInfo.activityList.indexOf(67) >= 0;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 30127,
+   "text": "var t = d.RoleOtherInfo.activityList.indexOf(67);"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 30128,
+   "text": "d.RoleOtherInfo.activityList.splice(t, 1);"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 30967,
+   "text": "var e = d.RoleOtherInfo.activityList.indexOf(67);"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 30968,
+   "text": "d.RoleOtherInfo.activityList.splice(e, 1);"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 31099,
+   "text": "if (-1 == d.RoleOtherInfo.activityList.indexOf(92)) {"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 31139,
+   "text": "for (var s in this.newActiveNodeMap) this.newActiveNodeMap[s].btn.active = !i && d.RoleOtherInfo.activityList.indexOf(Number(s)) >= 0;"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 20982,
+   "text": "d.RoleOtherInfo.activityList.includes(62) ? t = c.getSchool(this.data) : d.RoleOtherInfo.activityList.includes(68) && (t = c.getText(10 == this.data ? 6001875 : 6001876));"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 31991,
+   "text": "-1 == u.RoleOtherInfo.activityList.indexOf(96) && cc.sys.localStorage.removeItem(\"FishShadowAction\");"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 90377,
+   "text": "this.btnRebate.active = M.RoleOtherInfo.activityList.includes(65);"
+  },
+  {
+   "file": "index.js",
+   "line": 1894,
+   "text": "var e = d.RoleOtherInfo.activityList, o = !1;"
+  },
+  {
+   "file": "index.js",
+   "line": 1907,
+   "text": "for (var e = d.RoleOtherInfo.activityList, o = 0; o < e.length; o++) e[o] == t && e.splice(o, 1);"
+  },
+  {
+   "file": "index.js",
+   "line": 57450,
+   "text": "e.hasOwnProperty(\"activityList\") && (u.RoleOtherInfo.activityList = e.activityList);"
+  },
+  {
+   "file": "index.js",
+   "line": 78930,
+   "text": "} else if (101 == parseInt(i.Type) || 103 == parseInt(i.Type)) S.LoginMgr.isMiniIos(3) || (o = e.addComponent(\"MiniNpc\")); else if (105 == parseInt(i.Type)) A.RoleOtherInfo.activityList && A.RoleOtherInfo.activityList.includes(46) && (o = e.addComponent(\"MiniNpc\")); else if (112 == parseInt(i.Type))"
+  },
+  {
+   "file": "index.js",
+   "line": 90346,
+   "text": "if (!d.RoleOtherInfo.activityList || !d.RoleOtherInfo.activityList.includes(46)) return null;"
+  },
+  {
+   "file": "index.js",
+   "line": 90348,
+   "text": "} else if (112 == parseInt(r.Type)) f.MultiPlayerModel.wulinMgr && 2 == f.MultiPlayerModel.wulinMgr.matchType && (o = e.addComponent(\"NormalNpc\")); else if (80 == parseInt(r.Type)) d.RoleOtherInfo.activityList.indexOf(25) >= 0 && (o = e.addComponent(\"NormalNpc\")).setNpcScale(1e3 / 667); else if (82 "
+  },
+  {
+   "file": "index.js",
+   "line": 98305,
+   "text": "if (0 != this.activeID && l.RoleOtherInfo.activityList.indexOf(this.activeID) < 0) {"
+  },
+  {
+   "file": "index.js",
+   "line": 107174,
+   "text": "this.activityList = [];"
+  },
+  {
+   "file": "index.js",
+   "line": 107250,
+   "text": "if (e.hasOwnProperty(\"activityList\")) {"
+  },
+  {
+   "file": "index.js",
+   "line": 107251,
+   "text": "this.activityList = e.activityList;"
+  },
+  {
+   "file": "index.js",
+   "line": 107252,
+   "text": "this.activityList.indexOf(92) >= 0 && Promise.resolve().then(function() {"
+  },
+  {
+   "file": "index.js",
+   "line": 108102,
+   "text": "this.activityList = [];"
+  },
+  {
+   "file": "index.js",
+   "line": 108137,
+   "text": "if (o.RoleOtherInfo.activityList.indexOf(91) >= 0) for (var t = [ 20, 40, 60 ], e = 0; e < t.length; e++) {"
+  },
+  {
+   "file": "index.js",
+   "line": 108143,
+   "text": "if (this.activityList.indexOf(t) >= 0 && this.activeRedMap.hasOwnProperty(t)) {"
+  },
+  {
+   "file": "index.js",
+   "line": 122440,
+   "text": "var o = _.RoleOtherInfo.activityList.includes(S.ActiveIDEnum.ClimbingTower), i = M.GSceneMgr.getCurSceneID();"
+  },
+  {
+   "file": "index.js",
+   "line": 131304,
+   "text": "y.RoleOtherInfo.activityList.indexOf(23) >= 0 ? g.NetMgr.http.sendRequest(p.HttpConst.GET_GIFT_DATA, {"
+  },
+  {
+   "file": "index.js",
+   "line": 131306,
+   "text": "}) : y.RoleOtherInfo.activityList.indexOf(64) >= 0 && g.NetMgr.http.sendRequest(p.HttpConst.NEW_OPTIONALGIFT_DATA, {"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 27633,
+   "text": "var e = d.getTable(\"active_order\"), o = {};"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 93671,
+   "text": "var t = p.getItem(23, \"active_order\");"
+  },
+  {
+   "file": "index.js",
+   "line": 55348,
+   "text": "var e = n.getTable(\"active_order\"), o = [];"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 29936,
+   "text": "J.GrowthModel.themeActiveAy.indexOf(64) >= 0 && (this.GiftPackBtn.active = !1);"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 27415,
+   "text": "for (var e in t) g.GrowthModel.themeActiveAy.push(t[e].id);"
+  },
+  {
+   "file": "index.js",
+   "line": 55234,
+   "text": "this.themeActiveAy = [];"
+  },
+  {
+   "file": "index.js",
+   "line": 55237,
+   "text": "this.themeActiveAy = [];"
+  },
+  {
+   "file": "index.js",
+   "line": 55351,
+   "text": "-1 == this.themeActiveAy.indexOf(r.active) && this.getActiveState(t, r.number, r.active) && o.push(r);"
+  },
+  {
+   "file": "F:/BaoZouyxt/tools/scripts3.js",
+   "line": 27415,
+   "text": "for (var e in t) g.GrowthModel.themeActiveAy.push(t[e].id);"
+  },
+  {
+   "file": "F:/BaoZouyxt/tools/index.js",
+   "line": 57450,
+   "text": "e.hasOwnProperty(\"activityList\") && (u.RoleOtherInfo.activityList = e.activityList);"
+  },
+  {
+   "file": "-",
+   "line": 0,
+   "text": "未找到：activityList 与 active_order.number 交叉引用（全包 active_order 仅出现 3 处：scripts3.js:27633、scripts3.js:93671、index.js:55348，均无 indexOf/includes 以 activityList 为另一侧）"
+  }
+ ]
+}

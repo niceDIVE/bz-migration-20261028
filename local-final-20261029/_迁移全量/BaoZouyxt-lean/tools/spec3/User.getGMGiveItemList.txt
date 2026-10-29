@@ -1,0 +1,18 @@
+# User.getGMGiveItemList   (HttpConst.GET_GMGIVE_ITEM_LIST)
+
+## 注册点 88285: i.MessageCenter.on(n.HttpConst.GET_GMGIVE_ITEM_LIST, this.sendOnlineList, this);
+
+## 请求点 88298: r.NetMgr.http.sendRequest(n.HttpConst.GET_GMGIVE_ITEM_LIST, {
+   88290: var o = e.titleID, n = e.expireTime, r = {};
+   88291: r[o] = n;
+   88292: s.AchieveModel.setAchieveData(r);
+   88293: }
+   88294: }
+   88295: });
+   88296: };
+   88297: t.prototype.reqGetOnlineList = function() {
+
+## 处理函数 sendOnlineList (88302-88304)
+ 88302: t.prototype.sendOnlineList = function(t, e) {
+ 88303: i.MessageCenter.dispatch(a.EvName.GET_GMGIVE_ITEM_LIST, e);
+ 88304: };

@@ -1,0 +1,13 @@
+# User.getCRAInfo   (HttpConst.GET_CREATE_INFO)
+
+## 注册点 23086: i.MessageCenter.on(r.HttpConst.GET_CREATE_INFO, function(e, o) {
+
+## 请求点 23096: p.NetMgr.http.sendRequest(r.HttpConst.GET_CREATE_INFO, {
+   23088: o.hasOwnProperty("birthId") && (t.birthIdId = o.birthId);
+   23089: o.hasOwnProperty("faceId") && (t.appearId = o.faceId);
+   23090: o.hasOwnProperty("talnetId") && (t.talentId = o.talnetId);
+   23091: i.MessageCenter.dispatch(u.EvName.RECEIVE_CREATE_INFO);
+   23092: } else cc.log("-----创角获取活动数据失败-----");
+   23093: }, this);
+   23094: };
+   23095: t.prototype.getCreateInfo = function() {

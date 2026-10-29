@@ -1,0 +1,16 @@
+=== tools\index.js hits=13
+L57527| this.plantSeedData = {};
+L57529| this.soilArr = [];
+L57546| this.recentSs = [];
+L57552| this.plantSeedData = {
+L57557| this.soilArr = [];
+L57588| e.soilArr = [];
+L57592| i.recentSeeds ? e.recentSs = i.recentSeeds : e.recentSs.length = 0;
+L57596| e.soilArr = i.soilArr;
+L57672| e.recentSs = o.recentSeeds;
+L57956| e.soilArr = [];
+L57964| e.soilArr = o.soilArr;
+L58376| this.plantSeedData = {
+L58381| this.soilArr = [];
+=== tools\scripts3.js hits=0
+=== tools\scripts2.js hits=0

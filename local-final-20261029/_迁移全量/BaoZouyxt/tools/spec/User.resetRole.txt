@@ -1,0 +1,99 @@
+# User.resetRole  (HttpConst.RESET_ROLE)
+# 出现 2 处
+
+ 23063: var i = cc.instantiate(e);
+ 23064: i.getComponent("ChangeIdUI").setData(o.createTime);
+ 23065: l.PopUpMgr.addPopUp(i, c.LayerMgr.popUpLayer);
+ 23066: });
+ 23067: } else 2 != o.eRet && 4 != o.eRet && 6 != o.eRet && 8 != o.eRet || n.default.show(a.getText(7231));
+ 23068: }, this);
+ 23069: i.MessageCenter.on(r.HttpConst.RESET_ROLE, function(e, o) {
+ 23070: if (0 == o.eRet) {
+ 23071: n.default.show(a.getText(1093));
+ 23072: i.MessageCenter.dispatch(u.EvName.RESET_ROLE);
+ 23073: } else if (1 == o.eRet) {
+ 23074: h.RoleBaseInfo.birthIdId = o.birthId;
+ 23075: h.RoleBaseInfo.appearId = o.faceId;
+ 23076: h.RoleBaseInfo.talentId = o.talnetId;
+ 23077: o.hasOwnProperty("rewardArray") && d.default.addShowRewardUI1(o.rewardArray, 0, {});
+ 23078: i.MessageCenter.dispatch(u.EvName.UPDATE_PLAYER_EVENT);
+ 23079: i.MessageCenter.dispatch(u.EvName.RESET_ROLE);
+ 23080: } else if (2 == o.eRet || 3 == o.eRet) {
+ 23081: n.default.show(a.getText(7231));
+ 23082: i.MessageCenter.dispatch(u.EvName.RESET_ROLE);
+ 23083: }
+ 23084: t.destroy();
+ 23085: }, this);
+ 23086: i.MessageCenter.on(r.HttpConst.GET_CREATE_INFO, function(e, o) {
+ 23087: if (2 == o.eRet) i.MessageCenter.dispatch(u.EvName.RECEIVE_CREATE_INFO); else if (1 == o.eRet) {
+ 23088: o.hasOwnProperty("birthId") && (t.birthIdId = o.birthId);
+ 23089: o.hasOwnProperty("faceId") && (t.appearId = o.faceId);
+ 23090: o.hasOwnProperty("talnetId") && (t.talentId = o.talnetId);
+ 23091: i.MessageCenter.dispatch(u.EvName.RECEIVE_CREATE_INFO);
+ 23092: } else cc.log("-----创角获取活动数据失败-----");
+ 23093: }, this);
+ 23094: };
+ 23095: t.prototype.getCreateInfo = function() {
+ 23096: p.NetMgr.http.sendRequest(r.HttpConst.GET_CREATE_INFO, {
+ 23097: roleID: h.RoleBaseInfo.roleID
+ 23098: });
+ 23099: };
+ 23100: t.prototype.getCreateRoleAct = function() {
+ 23101: p.NetMgr.http.sendRequest(r.HttpConst.GET_CREATE_ROLE_ACT, {
+ 23102: roleID: h.RoleBaseInfo.roleID
+ 23103: });
+ 23104: };
+ 23105: t.prototype.resetRole = function() {
+ 23106: this.roleAttr = [ h.RoleBaseInfo.armStrong, h.RoleBaseInfo.shenFa, h.RoleBaseInfo.bone, h.RoleBaseInfo.understanding ];
+ 23107: switch (h.RoleBaseInfo.talentId) {
+ 23108: case 314:
+ 23109: this.roleAttr[0] -= 10;
+---
+ 23125: 0 == this.nAppearId && (this.nAppearId = this.appearId);
+ 23126: var t = f.getItem(this.nTalentId, "creat_role"), e = this.roleAttr.slice();
+ 23127: if (t) {
+ 23128: var o = t.Award;
+ 23129: 3 == o[0] && (e[o[1] - 1] += o[2]);
+ 23130: }
+ 23131: p.NetMgr.http.sendRequest(r.HttpConst.RESET_ROLE, {
+ 23132: roleID: h.RoleBaseInfo.roleID,
+ 23133: birthId: this.nBirthIdId,
+ 23134: faceId: this.nAppearId,
+ 23135: talenId: this.nTalentId,
+ 23136: roleAttr: e
+ 23137: });
+ 23138: };
+ 23139: t.prototype.checkPreBirthIdId = function(t) {
+ 23140: var e = 1, o = this.birthIdId, i = this.appearId;
+ 23141: o <= 282 ? e = 0 : i <= 301 && (e = 0);
+ 23142: this.sexId = e;
+ 23143: this.birthIdId > 0 ? h.RoleBaseInfo.birthIdId = t == e ? o : 0 == e ? o + 4 : o - 4 : h.RoleBaseInfo.birthIdId = 1 == t ? 286 : 282;
+ 23144: };
+ 23145: t.prototype.checkPreAppearId = function(t) {
+ 23146: var e = 1, o = this.appearId;
+ 23147: this.birthIdId;
+ 23148: o <= 301 && (e = 0);
+ 23149: this.sexId = e;
+ 23150: if (this.birthIdId > 0) {
+ 23151: var i = [ 279, 282 ], n = -4;
+ 23152: if (1 == t) {
+ 23153: i = [ 283, 286 ];
+ 23154: n = 4;
+ 23155: }
+ 23156: this.birthIdId <= i[1] && this.birthIdId >= i[0] ? h.RoleBaseInfo.birthIdId = this.birthIdId : h.RoleBaseInfo.birthIdId = this.birthIdId + n;
+ 23157: } else h.RoleBaseInfo.birthIdId = 1 == t ? 286 : 282;
+ 23158: };
+ 23159: t.prototype.checkJumpTo = function(t, e) {
+ 23160: var o = 0;
+ 23161: for (o = t; o >= 0 && o <= 3; o += e) {
+ 23162: var i = !0;
+ 23163: switch (o) {
+ 23164: case 0:
+ 23165: 279 != this.birthIdId && 283 != this.birthIdId || (i = !1);
+ 23166: break;
+ 23167: 
+ 23168: case 1:
+ 23169: 302 != this.appearId && 292 != this.appearId || (i = !1);
+ 23170: break;
+ 23171: 
+---

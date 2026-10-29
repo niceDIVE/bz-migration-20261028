@@ -1,0 +1,13 @@
+# User.ReqSelfBattleInfo   (HttpConst.REQ_PVE_BATTLE)
+
+## 注册点 69157: r.MessageCenter.on(a.HttpConst.REQ_PVE_BATTLE, function(t, e) {
+
+## 请求点 69166: s.NetMgr.http.sendRequest(a.HttpConst.REQ_PVE_BATTLE, {
+   69158: 1 === e.eRet && o.prepareForBattle(e);
+   69159: }, o);
+   69160: return o;
+   69161: }
+   69162: e.prototype.startBattle = function(t, e) {
+   69163: void 0 === e && (e = !1);
+   69164: var o = p.playerInfo.entity;
+   69165: this.isRmd = e;

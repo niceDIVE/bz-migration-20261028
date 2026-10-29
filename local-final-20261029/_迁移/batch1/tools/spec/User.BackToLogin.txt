@@ -1,0 +1,99 @@
+# User.BackToLogin  (HttpConst.BACKTOLOGIN)
+# 出现 2 处
+
+ 70343: v.MessageCenter.on(d.HttpConst.USER_CREATE, function(e, o) {
+ 70344: t.createRole(o);
+ 70345: }, this);
+ 70346: v.MessageCenter.on(d.HttpConst.USER_LOADGAME, function(e, o) {
+ 70347: t.loadGame(o);
+ 70348: }, this);
+ 70349: v.MessageCenter.on(d.HttpConst.BACKTOLOGIN, function() {}, this);
+ 70350: v.MessageCenter.on(d.HttpConst.USER_GETCHATADDRESS, function(e, o) {
+ 70351: t.chatServerSuccess(o);
+ 70352: }, this);
+ 70353: v.MessageCenter.on(d.HttpConst.ANNOUNCEMENT_ID, function(e, o) {
+ 70354: t.sendAnnouncePhpHttp(o);
+ 70355: }, this);
+ 70356: v.MessageCenter.on(d.HttpConst.RECORD_PHONE, function(t, e) {
+ 70357: if (1 == e.eRet) {
+ 70358: cc.sys.localStorage.setItem("huaweiPhone" + I.RoleBaseInfo.roleID, 1);
+ 70359: D.default.show(s.getText("8951"));
+ 70360: } else 2 == e.eRet ? D.default.show(s.getText("8956")) : 3 == e.eRet ? D.default.show(s.getText("8957")) : 4 == e.eRet && D.default.show(s.getText("8953"));
+ 70361: }, this);
+ 70362: v.MessageCenter.on(d.HttpConst.CHECK_ON_HOOK, function(e, o) {
+ 70363: if (1 == o.eRet) {
+ 70364: t.idleData = o.OnhookObj;
+ 70365: t.onHookScene(!0);
+ 70366: }
+ 70367: });
+ 70368: };
+ 70369: e.prototype.start = function() {
+ 70370: var t = this;
+ 70371: H.LoginMgr.login(function() {
+ 70372: t.showPrologue();
+ 70373: });
+ 70374: };
+ 70375: e.prototype.showPrologue = function() {
+ 70376: z.TESDKHelper.onSdkLogin();
+ 70377: H.LoginMgr.checkMiniGame() ? this.showSvrSelection() : cc.sys.localStorage.getItem("firstInBz") ? this.showSvrSelection() : N.default.prefabs.load("Login/PrologueUI", cc.Prefab, function(t, e) {
+ 70378: var o = cc.instantiate(e);
+ 70379: E.PopUpMgr.addPopUp(o, R.LayerMgr.topLayer, 1);
+ 70380: });
+ 70381: };
+ 70382: e.prototype.showSvrSelection = function(t) {
+ 70383: void 0 === t && (t = 0);
+ 70384: this.isLoginEnter = t;
+ 70385: if (I.RoleBaseInfo.userAccount && "" != I.RoleBaseInfo.userAccount) {
+ 70386: Y.uiMgr.hideNetworkUI();
+ 70387: E.PopUpMgr.cleanupAll(!0);
+ 70388: cc.director.loadScene("scenes/svrselect");
+ 70389: }
+---
+ 70624: });
+ 70625: } else t.onEnterScene();
+ 70626: });
+ 70627: }
+ 70628: };
+ 70629: e.prototype.BackToLogin = function() {
+ 70630: S.NetMgr.http.getSelectedHttpUrl() && S.NetMgr.http.sendRequest(d.HttpConst.BACKTOLOGIN, {
+ 70631: account: I.RoleBaseInfo.userAccount
+ 70632: });
+ 70633: };
+ 70634: e.prototype.checkSceneState = function() {
+ 70635: C.SServerFightModel.teamServerData && C.SServerFightModel.teamServerData.length ? C.SServerFightModel.reqLoginCrossServer(C.SServerFightModel.teamServerData) : this.onEnterScene();
+ 70636: };
+ 70637: e.prototype.onEnterScene = function() {
+ 70638: var t, e, o = this;
+ 70639: l.CrossServiceModel.oldUID = I.RoleBaseInfo.roleID;
+ 70640: l.CrossServiceModel.oldAccount = I.RoleBaseInfo.userAccount;
+ 70641: var i = B.MarryModel.weddingType, n = B.MarryModel.getMarryNpcId(), s = q.SchoolSquareModel.intoSchool;
+ 70642: if (n > 0 && i > 0) this.gotoMap(i > 1 ? 3002 : 3001); else if (this.idleData && 15 == this.idleData.operate) {
+ 70643: p.FishingModel.timeElapsed = .001 * (this.idleData.serverTime - this.idleData.beginTime);
+ 70644: p.FishingModel.pondID = this.idleData.fishpondID;
+ 70645: this.idleData.hasOwnProperty("maxTime") && (p.FishingModel.maxTime = this.idleData.maxTime);
+ 70646: p.FishingModel.limitHungState = !0;
+ 70647: var c = a.getConst(178);
+ 70648: null === (t = u.GSceneMgr.go2Scene(c)) || void 0 === t || t.then(function() {
+ 70649: o.enterHungScene();
+ 70650: });
+ 70651: } else if (s) null === (e = u.GSceneMgr.go2Scene(h.GameStates.getSavedMapID())) || void 0 === e || e.then(function() {
+ 70652: q.SchoolSquareModel.intoSchool > 0 && o.idleData && o.onHookScene();
+ 70653: cc.director.once(cc.Director.EVENT_AFTER_DRAW, function() {
+ 70654: w.WebSocketModel.openSocketNet("schoolSquare");
+ 70655: });
+ 70656: }); else {
+ 70657: var f = h.GameStates.getSavedMapID();
+ 70658: 1004 == f ? this.checkMarryOrOrigin(f) : this.gotoMap(this.getSpawnMap(f));
+ 70659: }
+ 70660: 2 == r.platformID && 28 == parseInt(r.platfStr) && 1 != parseInt(cc.sys.localStorage.getItem("huaweiPhone" + I.RoleBaseInfo.roleID)) && cc.assetManager.getBundle("accountTransferBundle").load("HuaweiPhonePanel", cc.Prefab, function(t, e) {
+ 70661: var o = cc.instantiate(e);
+ 70662: E.PopUpMgr.addPopUp(o, R.LayerMgr.popUpLayer);
+ 70663: o.addComponent("HuaweiPhonePanel");
+ 70664: });
+ 70665: var d = y.LocalStorageMgr.getItem("transKey");
+ 70666: if (P.RoleOtherInfo.transferCode.length > 0 && 1 != d) {
+ 70667: y.LocalStorageMgr.setItem("transKey", 1);
+ 70668: cc.assetManager.getBundle("accountTransferBundle").load("AccountTransferUI", cc.Prefab, function(t, e) {
+ 70669: var o = cc.instantiate(e);
+ 70670: o.addComponent("AccountTransferUI");
+---

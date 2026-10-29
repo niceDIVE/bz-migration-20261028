@@ -1,0 +1,99 @@
+# User.getSpringRefiningResource  (HttpConst.GET_REFINING_RESOURCE)
+# 出现 2 处
+
+  1410: r.MessageCenter.on(a.HttpConst.CRL_GET_REWARD, this.crlGetRewardCallBack.bind(this), this);
+  1411: r.MessageCenter.on(a.HttpConst.CRL_ACTIVE_PAYINFO, this.crlActivePayinfoCallBack.bind(this), this);
+  1412: r.MessageCenter.on(a.HttpConst.GET_CRL_ACTIVE_PAY_RESULT, this.getCrlActivePayResultCallBack.bind(this), this);
+  1413: r.MessageCenter.on(a.HttpConst.GET_FURNACE_DATA, this.getFurnaceData.bind(this), this);
+  1414: r.MessageCenter.on(a.HttpConst.START_REFINING_FURNACE, this.startRefiningFurnace.bind(this), this);
+  1415: r.MessageCenter.on(a.HttpConst.PUT_REFINING_ITEM_FURNACE, this.putRefiningItemFurnace.bind(this), this);
+  1416: r.MessageCenter.on(a.HttpConst.GET_REFINING_RESOURCE, this.getRefiningResource.bind(this), this);
+  1417: r.MessageCenter.on(a.HttpConst.GET_SCRATH_LOTTO, this.onGetScrathData.bind(this), this);
+  1418: r.MessageCenter.on(a.HttpConst.SCRAPING_LOTTERY, this.onScrapLottery.bind(this), this);
+  1419: r.MessageCenter.on(a.HttpConst.BUY_TICKET, this.onBuyTicket.bind(this), this);
+  1420: r.MessageCenter.on(a.HttpConst.GET_NATIONAL_DAY_COPY, this.onGetNationalCopy.bind(this), this);
+  1421: };
+  1422: e.prototype.onGetNationalCopy = function(t, e) {
+  1423: var o = this;
+  1424: if (1 == e.eRet) {
+  1425: if (!this.tempData) return;
+  1426: s.default.prefabs.load("checkNpc/ConvstnBoard", cc.Prefab, function(t, i) {
+  1427: var n = cc.instantiate(i);
+  1428: l.PopUpMgr.addPopUp(n, c.LayerMgr.popUpLayer, 2, !1);
+  1429: n.addComponent("ConvstnBoard").setNpcData(e, o.tempData);
+  1430: o.tempData = null;
+  1431: });
+  1432: } else p.default.show(i.getText(1093));
+  1433: };
+  1434: e.prototype.onGetScrathData = function(t, e) {
+  1435: 1 == e.eRet && r.MessageCenter.dispatch(h.EvName.GET_SCRAPE_EVENT, e);
+  1436: };
+  1437: e.prototype.onScrapLottery = function(t, e) {
+  1438: if (1 == e.eRet) {
+  1439: d.RoleOtherInfo.setActivityData(66, !1);
+  1440: r.MessageCenter.dispatch(h.EvName.SCRAPE_SUCCESS_EVENT, e);
+  1441: }
+  1442: };
+  1443: e.prototype.onBuyTicket = function(t, e) {
+  1444: 1 == e.eRet && r.MessageCenter.dispatch(h.EvName.BUY_ITEM_SUCCESS, e);
+  1445: };
+  1446: e.prototype.getFurnaceData = function(t, e) {
+  1447: 1 == e.eRet ? s.default.prefabs.load("activeUI/FurnaceUI", cc.Prefab, function(t, o) {
+  1448: var i = cc.instantiate(o);
+  1449: l.PopUpMgr.addPopUp(i, c.LayerMgr.popUpLayer);
+  1450: i.addComponent("FurnaceUI").setData(e);
+  1451: }) : 2 == e.eRet && p.default.show(i.getText("1014"));
+  1452: };
+  1453: e.prototype.startRefiningFurnace = function(t, e) {
+  1454: 1 == e.eRet ? r.MessageCenter.dispatch(h.EvName.SUCCESS_REFINING, e) : 2 == e.eRet && p.default.show(i.getText("1014"));
+  1455: };
+  1456: e.prototype.putRefiningItemFurnace = function(t, e) {
+---
+  1911: };
+  1912: e.prototype.reqGetFiningResource = function(t) {
+  1913: this.furnaceId = t;
+  1914: var e = {
+  1915: id: t
+  1916: };
+  1917: g.NetMgr.http.sendRequest(a.HttpConst.GET_REFINING_RESOURCE, e);
+  1918: };
+  1919: e.prototype.reqRefiningFurnace = function(t) {
+  1920: var e = {
+  1921: id: t
+  1922: };
+  1923: g.NetMgr.http.sendRequest(a.HttpConst.START_REFINING_FURNACE, e);
+  1924: };
+  1925: e.prototype.reqRefiningItem = function(t, e) {
+  1926: var o = {
+  1927: id: t,
+  1928: itemMap: e
+  1929: };
+  1930: g.NetMgr.http.sendRequest(a.HttpConst.PUT_REFINING_ITEM_FURNACE, o);
+  1931: };
+  1932: e.prototype.reqScrathData = function() {
+  1933: g.NetMgr.http.sendRequest(a.HttpConst.GET_SCRATH_LOTTO, {});
+  1934: };
+  1935: e.prototype.reqScrapLottery = function() {
+  1936: g.NetMgr.http.sendRequest(a.HttpConst.SCRAPING_LOTTERY, {});
+  1937: };
+  1938: e.prototype.reqBuyTicket = function(t) {
+  1939: g.NetMgr.http.sendRequest(a.HttpConst.BUY_TICKET, {
+  1940: count: t
+  1941: });
+  1942: };
+  1943: e.prototype.reqNationalCopy = function(t) {
+  1944: this.tempData = t;
+  1945: g.NetMgr.http.sendRequest(a.HttpConst.GET_NATIONAL_DAY_COPY, {});
+  1946: };
+  1947: e.prototype.reqGetDiggingGrids = function() {
+  1948: Promise.resolve().then(function() {
+  1949: return t("../../scripts3/net3/HttpConst3");
+  1950: }).then(function(t) {
+  1951: g.NetMgr.http.sendRequest(t.HttpConst3.GET_DIGGING_GRIDS, {});
+  1952: });
+  1953: };
+  1954: e.prototype.cofirmRareDiggingGrid = function(e) {
+  1955: Promise.resolve().then(function() {
+  1956: return t("../../scripts3/net3/HttpConst3");
+  1957: }).then(function(t) {
+---

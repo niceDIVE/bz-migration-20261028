@@ -1,0 +1,1 @@
+get:(function(){var out=[];var walk=function(n,d){out.push((n.name||'?')+d);if(d<3)(n.children||[]).forEach(function(c){walk(c,d+1)})};cc.director.getScene().children.forEach(function(top){(top.children||[]).forEach(function(c){if(c.name==='LEFT-PANEL'||c.name==='RIGHT-PANEL')walk(c,0)})});return out.join('|').slice(0,3500)})()

@@ -1,0 +1,1 @@
+{"name":"rogue_hidden","rows":1,"cols":["id","trunk","level","npcid","hidden","back","probability","text"],"data":{"1":{"id":1,"trunk":[6,5,5],"level":[2,12],"npcid":[16577,16577],"hidden":[1,100],"back":1,"probability":100,"text":[6004661,6004662]}}}

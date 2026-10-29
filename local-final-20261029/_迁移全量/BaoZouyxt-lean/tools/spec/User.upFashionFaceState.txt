@@ -1,0 +1,99 @@
+# User.upFashionFaceState  (HttpConst.SET_YP_EFFECT_STATE)
+# 出现 2 处
+
+ 75593: if (1 == e.eRet) {
+ 75594: S.RoleOtherInfo.wId = e.wId;
+ 75595: s.MessageCenter.dispatch(u.EvName.FASHION_BACK_CHANGE);
+ 75596: s.MessageCenter.dispatch(u.EvName.UPDATE_PLAYER_EVENT);
+ 75597: }
+ 75598: }, this);
+ 75599: s.MessageCenter.on(l.HttpConst.SET_YP_EFFECT_STATE, function(e, o) {
+ 75600: if (1 == o.eRet) {
+ 75601: o.hasOwnProperty("titivateObj") && t.read(o.titivateObj);
+ 75602: s.MessageCenter.dispatch("changeYpState");
+ 75603: s.MessageCenter.dispatch(u.EvName.UPDATE_PLAYER_EVENT);
+ 75604: }
+ 75605: }, this);
+ 75606: };
+ 75607: t.prototype.setFashionTime = function(t) {
+ 75608: for (var e in t) for (var o = t[e], i = 0; i < o.length; i++) {
+ 75609: var n = e.split("_");
+ 75610: this.fashionTimeMap[o[i]] = [ parseInt(n[0]), parseInt(n[1]) ];
+ 75611: }
+ 75612: };
+ 75613: t.prototype.getFashionTime = function(t) {
+ 75614: return this.fashionTimeMap[t.toString()];
+ 75615: };
+ 75616: t.prototype.getFashionTimeType = function(t) {
+ 75617: var e = this.getFashionTime(t);
+ 75618: return g.TimeMgr.getSTimestamp() > e[1] ? this.fashionTimeType.sellOut : e[0] <= g.TimeMgr.getSTimestamp() && g.TimeMgr.getSTimestamp() <= e[1] ? this.fashionTimeType.hotSell : g.TimeMgr.getSTimestamp() < e[0] ? this.fashionTimeType.coming : -1;
+ 75619: };
+ 75620: t.prototype.onGetFashionList = function(t, e) {
+ 75621: var o = this;
+ 75622: if (this.fashionShopMainUI) {
+ 75623: 1 == e.type && this.setFashionTime(e.FashionTimeMap);
+ 75624: s.MessageCenter.dispatch(u.EvName.CHANGE_PAGE_MAKE_UP_EVENT, e);
+ 75625: } else {
+ 75626: var n = new Promise(function(t) {
+ 75627: y.default.prefabs.load("shopUI/FashionShopNewUI", cc.Prefab, function(e, o) {
+ 75628: t(o);
+ 75629: });
+ 75630: }), r = new Promise(function(t) {
+ 75631: y.default.prefabs.load("comUI/ShopBgUI", cc.Prefab, function(e, o) {
+ 75632: t(o);
+ 75633: });
+ 75634: });
+ 75635: Promise.all([ n, r ]).then(function(t) {
+ 75636: var n = i(t, 2), r = (n[0], n[1]), a = cc.instantiate(r);
+ 75637: v.PopUpMgr.addPopUp(a, _.LayerMgr.popUpLayer);
+ 75638: a.addComponent("FashionShopMainUI").showFashionNewShop(e);
+ 75639: o.fashionShopMainUI = a;
+---
+ 75789: var e = {
+ 75790: wId: t
+ 75791: };
+ 75792: m.NetMgr.http.sendRequest(l.HttpConst.SET_PLAYER_WING_ID, e);
+ 75793: };
+ 75794: t.prototype.reqSetYpEffect = function(t) {
+ 75795: m.NetMgr.http.sendRequest(l.HttpConst.SET_YP_EFFECT_STATE, {
+ 75796: state: t
+ 75797: });
+ 75798: };
+ 75799: t.prototype.getNewFashionID = function(t) {
+ 75800: void 0 === t && (t = {});
+ 75801: var e = 0;
+ 75802: for (var o in this.currentFashion) if (parseInt(this.currentFashion[o]) > 0) {
+ 75803: e = this.checkTitivateValue(parseInt(this.currentFashion[o]), t);
+ 75804: break;
+ 75805: }
+ 75806: return e;
+ 75807: };
+ 75808: t.prototype.curCoatFashionID = function() {
+ 75809: for (var t = [ 8, 9 ], e = 0, o = 0; o < t.length; o++) {
+ 75810: var i = p.UserModel.entity.getEquipment(t[o]);
+ 75811: if (i) {
+ 75812: e = this.checkTitivateValue(parseInt(i.id));
+ 75813: break;
+ 75814: }
+ 75815: }
+ 75816: return e;
+ 75817: };
+ 75818: t.prototype.checkTitivateValue = function(t, e) {
+ 75819: void 0 === e && (e = {});
+ 75820: if (0 == t) return 0;
+ 75821: var o = r.getItem(t, "fashionall"), i = 0;
+ 75822: if (o && o.hasOwnProperty("titivate") && "0" != o.titivate) {
+ 75823: var n = o.titivate.split("&");
+ 75824: if (1 == n.length) this.checkFashionState(n[0], e) && (i = parseInt(n[0])); else if (2 == n.length) {
+ 75825: var a = n[0].split(","), s = n[1].split(",");
+ 75826: this.checkSexState(s) && this.checkFashionState(a, e) && (i = parseInt(a[0]));
+ 75827: }
+ 75828: }
+ 75829: return i;
+ 75830: };
+ 75831: t.prototype.checkFashionState = function(t, e) {
+ 75832: void 0 === e && (e = {});
+ 75833: var o = !1, i = p.UserModel.entity.getEquipment(8), n = p.UserModel.entity.getEquipment(9);
+ 75834: e.hasOwnProperty(8) && (i = e[8]);
+ 75835: e.hasOwnProperty(9) && (n = e[9]);
+---

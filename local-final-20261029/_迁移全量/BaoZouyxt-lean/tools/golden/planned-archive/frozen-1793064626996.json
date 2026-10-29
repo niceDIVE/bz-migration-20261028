@@ -1,0 +1,338 @@
+{
+ "archivedAt": "2026-10-27T01:30:26.996Z",
+ "rules": [
+  {
+   "id": "c11-buyAnniversaryPass",
+   "field": [
+    "eRet"
+   ],
+   "action": "buyAnniversaryPass",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "buyAnniversaryPass",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60588",
+   "why": "C11 升 VIP：空档 + 固定时钟 fresh save 元宝 0 < 300（拍板②自定价）→ eRet:4（getText 8845 分支，scripts3.js:7848）；成功路径才置 vip=1"
+  },
+  {
+   "id": "c11-buyAnniversaryPassGift",
+   "field": [
+    "eRet",
+    "rewardArray"
+   ],
+   "action": "buyAnniversaryPassGift",
+   "expect": 2,
+   "allowSigma": [
+    [
+     "buyAnniversaryPassGift",
+     "rewardArray"
+    ]
+   ],
+   "ev": "index.js:60591",
+   "why": "C11 买礼包：空请求 giftId=0 不在表 → eRet:2（回调无 else，index.js:131062-131067）；旧形状 eRet:1/rewardArray:{} 是 SHAPED 兜底，现在成功路径才发 rewardArray + giftData（单数，客户端 67466 刷已购数）"
+  },
+  {
+   "id": "c11-buyAnniversaryPassLiveness",
+   "field": [
+    "eRet"
+   ],
+   "action": "buyAnniversaryPassLiveness",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "buyAnniversaryPassLiveness",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60592",
+   "why": "C11 买活跃度：空请求 num=0 非法 → eRet:3（getText 7353 分支，scripts3.js:7863）；拍板③ 扣 gold、10/点、上限 565；★上游\"可能已下线\"已推翻（入口 scripts3.js:18448）"
+  },
+  {
+   "id": "c11-getAnniversaryPassData",
+   "field": [
+    "eRet",
+    "n",
+    "vip",
+    "rd",
+    "vrd",
+    "dt",
+    "td",
+    "dv",
+    "endtime"
+   ],
+   "action": "getAnniversaryPassData",
+   "expect": 9,
+   "allowSigma": [
+    [
+     "getAnniversaryPassData",
+     "eRet"
+    ],
+    [
+     "getAnniversaryPassData",
+     "anniversaryPassData.n"
+    ],
+    [
+     "getAnniversaryPassData",
+     "anniversaryPassData.vip"
+    ],
+    [
+     "getAnniversaryPassData",
+     "anniversaryPassData.rd"
+    ],
+    [
+     "getAnniversaryPassData",
+     "anniversaryPassData.vrd"
+    ],
+    [
+     "getAnniversaryPassData",
+     "anniversaryPassData.dt"
+    ],
+    [
+     "getAnniversaryPassData",
+     "anniversaryPassData.td"
+    ],
+    [
+     "getAnniversaryPassData",
+     "anniversaryPassData.dv"
+    ],
+    [
+     "getAnniversaryPassData",
+     "endtime"
+    ]
+   ],
+   "ev": "index.js:60587",
+   "why": "C11 面板开关（AnniversaryMainUI 在其 1 分支 new，scripts3.js:7831）：空请求首次建档 → eRet:1 + anniversaryPassData 七字段（rd/vrd/dt 数组、td/dv 对象，客户端 7821-7828 全裸读，类型是硬约束）+ endtime 毫秒（7574 (e-t)/1e3）；拍板① endtime=now+30 天，sweep 固定时钟下为定值"
+  },
+  {
+   "id": "c11-getAnniversaryPassGift",
+   "field": [
+    "giftDatas",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "action": "getAnniversaryPassGift",
+   "expect": 45,
+   "allowSigma": [
+    [
+     "getAnniversaryPassGift",
+     "giftDatas"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.1[0]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.1[1]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.1[2]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.1[3]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.1[4]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.1[5]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.1[6]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.1[7]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.1[8]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.1[9]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.1[10]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.2[0]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.2[1]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.2[2]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.2[3]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.2[4]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.2[5]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.2[6]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.2[7]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.2[8]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.2[9]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.2[10]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.3[0]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.3[1]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.3[2]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.3[3]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.3[4]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.3[5]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.3[6]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.3[7]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.3[8]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.3[9]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.3[10]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.4[0]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.4[1]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.4[2]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.4[3]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.4[4]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.4[5]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.4[6]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.4[7]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.4[8]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.4[9]"
+    ],
+    [
+     "getAnniversaryPassGift",
+     "giftDatas.4[10]"
+    ]
+   ],
+   "ev": "index.js:60590",
+   "why": "C11 礼包货架：旧形状 giftDatas:[]（空货架）换成 4 行 11 元数组（type 11 分支 scripts2.js:8550-8572 按下标取；[5]=award 原串（67216 split 解析）、[8]=已购次数初始 0（67563 limitnum-num））；del 项 = 旧 \"[]\" 不再出现"
+  },
+  {
+   "id": "c11-receiveAnniversaryPassAward",
+   "field": [
+    "eRet"
+   ],
+   "action": "receiveAnniversaryPassAward",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "receiveAnniversaryPassAward",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60589",
+   "why": "C11 领奖：空请求 id=0 不在 award 表 → eRet:2（回调无 else，scripts3.js:7850-7857，静默）；成功路径才带 id/vip/rewardArray（REJECT_ALLOW 收窄）"
+  },
+  {
+   "id": "c11-receiveAnniversaryPassTaskReward",
+   "field": [
+    "eRet"
+   ],
+   "action": "receiveAnniversaryPassTaskReward",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "receiveAnniversaryPassTaskReward",
+     "eRet"
+    ]
+   ],
+   "ev": "index.js:60595",
+   "why": "C11 任务领奖（★线上名不叫 finishTask）：空请求 taskId=0 不在表 → eRet:2（回调无 else，scripts3.js:7878-7888）；本批 dv 不累计进度 → 正常流程恒 notReached；rewardArray 裸读无守卫 → 成功路径才发"
+  }
+ ]
+}

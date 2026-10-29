@@ -1,0 +1,1169 @@
+{
+ "httpconst3": [
+  {
+   "key": "BEACH_TREASURE_TASK_AWARDS",
+   "value": "User.beachtreasureTaskAwards",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "BOMB_NIAN_SHOU",
+   "value": "User.bombNianshou",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "BREW_TASK_COMPLETE",
+   "value": "User.brewTaskComplete",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "BUY_MYSTERY_WISH_ITEM",
+   "value": "User.buyMysterywishItem",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "BUY_SERVER_GIFT",
+   "value": "User.bugServerGift",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "BUY_SPRING_SWORD_GIFT",
+   "value": "User.buySpringswordGift",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "BUY_STAGE_TREASURE",
+   "value": "User.buyStagetreasure",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "BUY_TRANS_GIFT",
+   "value": "User.buyTransGift",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "CHANGE_AUTOMATICFIGHT",
+   "value": "User.changeAutomaticFight",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "CHANGE_PARTNER_STATE",
+   "value": "User.setPlayerCardPartner",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "CHOOSE_STAGE_TREASURE_AWARD",
+   "value": "User.chooseStagetreasureAwards",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "CLEAR_WEAPON_SKIN",
+   "value": "User.clearEquipWeaponSkin",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "CTS_DOUBLE_ACCEPT_REQ",
+   "value": "DoubleMajorAcceptReq",
+   "cls": "客户端请求(CTS_)",
+   "send": 0,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "CTS_DOUBLE_APPLY_LIST_REQ",
+   "value": "DoubleMajorApplyListReq",
+   "cls": "客户端请求(CTS_)",
+   "send": 0,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "CTS_DOUBLE_APPLY_REQ",
+   "value": "DoubleMajorApplyReq",
+   "cls": "客户端请求(CTS_)",
+   "send": 0,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "CTS_DOUBLE_IGNORE_REQ",
+   "value": "DoubleMajorIgnoreReq",
+   "cls": "客户端请求(CTS_)",
+   "send": 0,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "CTS_EXCHANGE_INFO_REQ",
+   "value": "ExchangeInfoReq",
+   "cls": "客户端请求(CTS_)",
+   "send": 0,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "CTS_EXCHANGE_REQ",
+   "value": "ExchangeReq",
+   "cls": "客户端请求(CTS_)",
+   "send": 0,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "CTS_EXCHANGE_RESET_REQ",
+   "value": "ExchangeResetReq",
+   "cls": "客户端请求(CTS_)",
+   "send": 0,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "CTS_EightDiagramsActivateReq",
+   "value": "EightDiagramsActivateReq",
+   "cls": "客户端请求(CTS_)",
+   "send": 0,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "CTS_ExploreBoxOpenReq",
+   "value": "ExploreBoxOpenReq",
+   "cls": "客户端请求(CTS_)",
+   "send": 0,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "CTS_PARTNERS_CHANGED_REQ",
+   "value": "FriendPartnersChangeReq",
+   "cls": "客户端请求(CTS_)",
+   "send": 0,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "CTS_StatueChangeReq",
+   "value": "StatueChangeReq",
+   "cls": "客户端请求(CTS_)",
+   "send": 0,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "DIGCELL_TASK_SUBMIT_ITEM",
+   "value": "User.digcellTaskSubmitItem",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "DOUBLE_HOOK_CHAT_MSG",
+   "value": "User.OnHookMsgSendKFChat",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "DRAGON_TRAINING_DATA",
+   "value": "User.getTrainingData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "EQUIPWEAPONSKIN",
+   "value": "User.equipWeaponSkin",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "EQUIP_PUNCH",
+   "value": "User.equipPunch",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "EQUIP_PUNCH_DISA",
+   "value": "User.equipPunchDisassembly",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "EXCHANGE_BOOKMARK_SHOP",
+   "value": "User.exchangeBookmarkShop",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "EXCHANGE_BREW_SHOP",
+   "value": "User.exchangeBrewShop",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "EXCHANGE_SPRING_SWORD_REWARD",
+   "value": "User.exchangeSpringswordReward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "FINISH_PARTNER_TASK",
+   "value": "User.friendPartnerTaskComplete",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "FISH_TASK_REWARD_EVENT",
+   "value": "User.koicarpTaskAwards",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "FLING_MOONSTEP",
+   "value": "User.flingMoonstep",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "FRIEND_PARTNER_DISPATCH",
+   "value": "User.friendPartnerDispatch",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "FRIEND_PARTNER_DISPATCH_CLEAR",
+   "value": "User.friendPartnerDispatchClear",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "FRIEND_PARTNER_END_TRAINING",
+   "value": "User.friendPartnerEndTraining",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "FRIEND_PARTNER_TRAINING",
+   "value": "User.friendPartnerTraining",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "FRIEND_PARTNER_TRAINING_USE",
+   "value": "User.friendPartnerTrainingUse",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GEM_CHOOSE_BOX_REWARD",
+   "value": "User.gemChooseUsedItemAward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GEM_INLAY",
+   "value": "User.gemInlay",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GEM_REFINE",
+   "value": "User.gemRefine",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GEM_REFINE_REPLACE",
+   "value": "User.gemRefineReplace",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GETKOICARP_DATA",
+   "value": "User.getKoicarpData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GETKOICARP_TASK_DATA",
+   "value": "User.getKoicarpTaskData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GETWEAPONSKINDATA",
+   "value": "User.getWeaponSkinData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_BEACH_TREASURE_DATA",
+   "value": "User.getBeachtreasureData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_BEACH_TREASURE_TASK_DATA",
+   "value": "User.getBeachtreasureTaskData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_BOOKMARK_DATA",
+   "value": "User.getBookmarkData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_BOOKMARK_EXCHANGE_SHOP",
+   "value": "User.getBookmarkExchangeShop",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_BOOKMARK_TASK_AWARDS",
+   "value": "User.getBookmarkTaskAwards",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_BREW_DATA",
+   "value": "User.getBrewData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_BREW_EXCHANGE_SHOP",
+   "value": "User.getBrewExchangeShop",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_CONFIRM_RARE_DIG_GRID",
+   "value": "User.setDigcellRareReward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_DAILY_TASKS",
+   "value": "User.getDigTaskData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_DAILY_TASKS_RECEIVE",
+   "value": "User.getDigTaskReward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_DIGGING_GRIDS",
+   "value": "User.getDigcellData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_FLIP_DIG_GRID",
+   "value": "User.getDigcellReward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_FRIEND_PARTNER",
+   "value": "User.getFriendPartner",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_GOLD_LOTTERY_DATA",
+   "value": "User.getGoldLotteryData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_JUMP_FUNC_DATA",
+   "value": "User.getCastleJumpingFunData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_JUMP_FUNC_TASK_DATA",
+   "value": "User.getCastleJumpingFunTaskData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_MARRY_HAPPINESS",
+   "value": "User.getMarryHappinessNum",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_MONOLOP_RANK_DATA",
+   "value": "User.getDiceRankData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_MOONSTEP_DATA",
+   "value": "User.getMoonstepData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_MOONSTEP_TASK_DATA",
+   "value": "User.getMoonstepTaskData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 3
+  },
+  {
+   "key": "GET_MYSTERY_WISH_AWARD",
+   "value": "User.mysterywishAward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_MYSTERY_WISH_DATA",
+   "value": "User.getMysterywishData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_NEXT_DIGGING_GRIDS",
+   "value": "User.digcellNextFloor",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_NIAN_SHOU_DATA",
+   "value": "User.getNianshouData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_NIAN_TASK_DATA",
+   "value": "User.getNianshouPrepareTaskData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_PLAYER_AUTO_CONFIG",
+   "value": "User.getPlayerAutoConfig",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_PLAYER_EMOJIS_DATA",
+   "value": "User.getPlayerEmojis",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_SERVER_GIFT_DATA",
+   "value": "User.getServerGiftData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_SEVEN_DAY_DATA",
+   "value": "User.GetSevenDaysData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_SPRING_SWORD_DATA",
+   "value": "User.getSpringswordData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_SPRING_SWORD_GIFT_DATA",
+   "value": "User.getSpringswordGiftData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_SPRING_SWORD_TASK_DATA",
+   "value": "User.getSpringswordTaskData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_STAGE_TREASURE_DATA",
+   "value": "User.getStagetreasureData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_THEMEATIVITIE",
+   "value": "User.getThemeactivitie",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_TORCH_DATA",
+   "value": "User.getTorchData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "GET_TRANS_GIFT",
+   "value": "User.getTransGift",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GET_UNLOCK_KOICARP_BOX",
+   "value": "User.getKoicarpUnlockBox",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "GOLD_LOTTERY_EXTRACT",
+   "value": "User.goldLotteryExtract",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "JUMP_FUNC_TASK_AWARD_DATA",
+   "value": "User.castleJumpingFunTaskAwards",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "LOTTERY_BEACH_TREASURE_AWARD",
+   "value": "User.lotteryBeachtreasureAward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "LOTTERY_JUMP_FUNC_DATA",
+   "value": "User.lotteryCastleJumpingFun",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "LOTTERY_KOICARP_DATA",
+   "value": "User.lotteryKoicarp",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "LOTTERY_STAGE_TREASURE",
+   "value": "User.lotteryStagetreasure",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "LOTTERY_WULIN_TREASURE",
+   "value": "User.lotteryWulintreasure",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "MATERIA_FUSION",
+   "value": "User.gemcombine",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "MATERIA_LOCK",
+   "value": "User.gemLock",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "MOONSTEP_TASK_AWARD",
+   "value": "User.moonstepTaskAwards",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "MYSTERY_WISH_TASK_AWARD",
+   "value": "User.mysterywishTaskAward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "NIAN_TASK_COMPLETE",
+   "value": "User.nianshouPrePareTaskComplete",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "NIAN_TASK_REFRESH",
+   "value": "User.nianshouPrePareTaskRefresh",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "OPTIONAL_SKILL_UP",
+   "value": "User.optionalSkillUp",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "OPTION_BEACH_TREASURE_AWARD",
+   "value": "User.optionBeachtreasureAward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "OPTION_KOICARP_WWARDS",
+   "value": "User.optionKoicarpAwards",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "PARTNERT_BREAK",
+   "value": "User.friendPartnerBreak",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "PARTNERT_GO_FIGHT",
+   "value": "User.upFriendPartnerGoFight",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "PARTNER_HOME_AWARD",
+   "value": "User.getFriendPartnerHomeAward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "PLAYER_AUTO_OBJ",
+   "value": "autoObj",
+   "cls": "其他",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "RECEIVE_MOONSTEP_CYCLE_AWARD",
+   "value": "User.receiveMoonstepCycleAward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "RECEIVE_SERVER_GIFT_REWARD",
+   "value": "User.receiveServerGift",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "RECORD_ATTRIBUTES",
+   "value": "User.recordAttributes",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "RG_CHOOSE_USEITEM_AWARD",
+   "value": "User.rgChooseUsedItemAward",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "SET_FRIEDN_SHOW_EVENT",
+   "value": "User.setFriendPartnerShow",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 0,
+   "otherRefs": 1
+  },
+  {
+   "key": "SET_PLAYER_AUTO_CONFIG",
+   "value": "User.setPlayerAutoConfig",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "SET_PLAYER_CARD_MASTER",
+   "value": "User.setPlayerCardMasters",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "SKILL_TRICK_SET_ID",
+   "value": "User.skillTrickSetId",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "SPRING_SWORD_TASK_AWARDS",
+   "value": "User.springswordTaskAwards",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "STAGE_TREASURE_TASK_COMPLETE",
+   "value": "User.stagetreasureTaskComplete",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "STC_DOUBLE_ACCEPT_NOTIFY",
+   "value": "DmChatAcceptNotify",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_DOUBLE_ACCEPT_RES",
+   "value": "DoubleMajorAcceptRes",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_DOUBLE_APPLY_LIST_RES",
+   "value": "DoubleMajorApplyListRes",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_DOUBLE_APPLY_RES",
+   "value": "DoubleMajorApplyRes",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_DOUBLE_IGNORE_RES",
+   "value": "DoubleMajorIgnoreRes",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_DOUBLE_RED_NOTIFY",
+   "value": "DmChatRedDotNotify",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_EXCHANGE_INFO_RES",
+   "value": "ExchangeInfoRes",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_EXCHANGE_NOTIFY",
+   "value": "ExchangeNotify",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_EXCHANGE_RES",
+   "value": "ExchangeRes",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_EXCHANGE_RESET_NOTIFY",
+   "value": "ExchangeResetNotify",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_EXCHANGE_RESET_RES",
+   "value": "ExchangeResetRes",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_EightDiagramsActivateNotify",
+   "value": "EightDiagramsActivateNotify",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_ExploreBoxOpenNotify",
+   "value": "ExploreBoxOpenNotify",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_ExploreBoxRefreshNotify",
+   "value": "ExploreBoxInfoRefreshNotify",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_PARTNERS_CHANGED_NOTIFY",
+   "value": "FriendPartnersChangeNotify",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_StatueChangeNotify",
+   "value": "StatueChangeNotify",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "STC_StatueChangeRes",
+   "value": "StatueChangeRes",
+   "cls": "服务端通知(STC_)",
+   "send": 0,
+   "on": 1,
+   "otherRefs": 0
+  },
+  {
+   "key": "SUBMIT_NIAN_ITEM",
+   "value": "User.submitNianshouPrePareItem",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "TORCH_ALTAR",
+   "value": "User.torchAltar",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "TORCH_TASK_COMPLETE",
+   "value": "User.torchTaskComplete",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "TRAINING_LOTTERY",
+   "value": "User.lotteryTraining",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "TRAINING_REFRESH",
+   "value": "User.refreshTraining",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "TRAINING_TASK_AWAARD",
+   "value": "User.trainingTaskAwards",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "TRAINING_TASK_DATA",
+   "value": "User.getTrainingTaskData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "UNLOCK_FRIEND_PARTNER",
+   "value": "User.unlockFriendPartner",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "UNLOCK_WEAPONSKIN",
+   "value": "User.unlockWeaponSkin",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "UP_FRIEND_PARTNER_FOLLOW",
+   "value": "User.upFriendPartnerFollow",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "UP_FRIEND_PARTNER_SKILL",
+   "value": "User.upFriendPartnerSkill",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "WULIN_TREASURE_DATA",
+   "value": "User.getWulintreasureData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 1
+  },
+  {
+   "key": "WULIN_TREASURE_REWARD",
+   "value": "User.wulintreasureTaskAwards",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 2
+  },
+  {
+   "key": "WULIN_TREASURE_TASKDATA",
+   "value": "User.getWulintreasureTaskData",
+   "cls": "动作(User.*)",
+   "send": 1,
+   "on": 1,
+   "otherRefs": 3
+  }
+ ],
+ "m2_field_assert": {
+  "total": 0,
+  "hit": 0,
+  "misses": []
+ }
+}

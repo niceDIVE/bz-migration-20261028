@@ -1,0 +1,10 @@
+{
+  "attempt": 1,
+  "fails": [
+    "L1.NO_RESP 应答体不是对象",
+    "L5.RULE 守恒式不成立：买入扣 BuyPrice×num 铜币（d('coins') === -T.item[p.itemID].BuyPrice * p.num）",
+    "L5.RULE 守恒式不成立：买入加 num 个物品（dbag(p.itemID) === p.num）",
+    "生成的 handler 只接管了 0/1 个用例（其余走了 stub/rule/hand）"
+  ],
+  "regressions": []
+}

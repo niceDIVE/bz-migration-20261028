@@ -1,0 +1,80 @@
+# User.receiveChatPkSportsPointAward  (HttpConst.RECEIVE_CHAT_PK_POINTAWARD)
+# 出现 2 处
+
+ 24027: a.MessageCenter.on(s.HttpConst.CHAT_PK_ACTIVITY, function(t, e) {
+ 24028: if (1 == e.eRet) {
+ 24029: this.chatPkOption = e.option;
+ 24030: a.MessageCenter.dispatch(m.EvName.CHAT_MATCH_NPC_EVENT, e.NpcId);
+ 24031: } else 2 == e.eRet && y.default.show(r.getText(5933));
+ 24032: }, this);
+ 24033: a.MessageCenter.on(s.HttpConst.RECEIVE_CHAT_PK_POINTAWARD, function(t, e) {
+ 24034: e.hasOwnProperty("rewardArray") && E.default.addShowRewardUI1(e.rewardArray, 0, {});
+ 24035: }, this);
+ 24036: a.MessageCenter.on(s.HttpConst.STC_ADDED_MATCH_INFONOTIFY, function(e, o) {
+ 24037: n.getChatPkScoreData(o.Score).id >= 4 && (t.scoreState = !0);
+ 24038: t.startPkFight = !0;
+ 24039: }, this);
+ 24040: a.MessageCenter.on(s.HttpConst.STC_OPEN_MATCH_INTERFACERES, function(e, o) {
+ 24041: t.pkStartTime = o.NowSystemTime;
+ 24042: t.pkEndTime = o.SeasonEndTime;
+ 24043: o.hasOwnProperty("canMatchTime") && o.canMatchTime.length > 1 && (t.canMatchTimeAy = o.canMatchTime);
+ 24044: I.default.prefabs.load("chats/BattleMatch", cc.Prefab, function(t, e) {
+ 24045: var o = cc.instantiate(e);
+ 24046: o.addComponent("ReadyPkUI");
+ 24047: b.PopUpMgr.addPopUp(o, T.LayerMgr.popUpLayer, 1, !0);
+ 24048: });
+ 24049: }, this);
+ 24050: a.MessageCenter.on(s.HttpConst.STC_UPDATE_ROLE_SCORE_NOTIFY, function(e, o) {
+ 24051: o.hasOwnProperty("RoleScore") && (t.scoreArray[1] = o.RoleScore);
+ 24052: }, this);
+ 24053: a.MessageCenter.on(s.HttpConst.STC_WORLD_MATCH_TIP, function(t, e) {
+ 24054: e.hasOwnProperty("UniqueRoleId") && a.MessageCenter.dispatch(m.EvName.CHAT_PK_BURROR_EVENT, e);
+ 24055: }, this);
+ 24056: a.MessageCenter.on(s.HttpConst.RES_WORLD_OFFLINE_MATCH_REC, function(t, e) {
+ 24057: e.hasOwnProperty("show_world_offline_match_battle_record_list") ? a.MessageCenter.dispatch(m.EvName.SHOW_OFFLINE_REC, e.show_world_offline_match_battle_record_list) : cc.log("聊天跨服PK离线对战记录没有收到数据！！！");
+ 24058: }, this);
+ 24059: };
+ 24060: t.prototype.getFirstEnterAward = function() {
+ 24061: h.NetMgr.http.sendRequest(s.HttpConst.RECEIVE_CHAT_PK_POINTAWARD, {});
+ 24062: };
+ 24063: t.prototype.isEnterConnect = function() {
+ 24064: var t = !1;
+ 24065: if (1 == this.chatPkState) {
+ 24066: t = !0;
+ 24067: v.WebSocketModel.openSocketNet("chat");
+ 24068: }
+ 24069: return t;
+ 24070: };
+ 24071: t.prototype.setNewServerUID = function(t) {
+ 24072: if (t.length) {
+ 24073: this.roleUniqueId = t[0];
+---
+ 24074: this.newAccount = t[1];
+ 24075: this.chatPkState = t[2];
+ 24076: }
+ 24077: };
+ 24078: t.prototype.reqChatPkSrver = function() {
+ 24079: if (C.BattleMgr.inBattle) y.default.show(r.getText(3143)); else {
+ 24080: var t = u.RoleOtherInfo.reBirthTime, e = l.RoleBaseInfo.getItemNum(4170);
+ 24081: if (t <= 0 && 0 == e) y.default.show(r.getText(4516)); else if (v.WebSocketModel.linkData && v.WebSocketModel.linkData.hasOwnProperty("linkID")) {
+ 24082: var o = {
+ 24083: linkId: v.WebSocketModel.linkData.linkID,
+ 24084: avgPower: g.SkillTable.getMySkEvalLv(),
+ 24085: inser: _.SServerFightModel.curSeverID,
+ 24086: channel: cc.sys.isNative ? 1 : 2
+ 24087: };
+ 24088: h.NetMgr.http.sendReqWithMask(s.HttpConst.JOIN_CHATPK_SERVER, o);
+ 24089: } else y.default.show("跨服网络不稳定");
+ 24090: }
+ 24091: };
+ 24092: t.prototype.reqStartCheckRole = function() {
+ 24093: var t = c.UserModel.entity, e = Math.floor(t.age.finalValue) - u.RoleOtherInfo.buyAgeTime, o = 0, r = 0, a = 0, h = 0, m = 0;
+ 24094: if (t.getEquipment(3)) {
+ 24095: var y = t.getEquipment(3).id;
+ 24096: o = f.InventoryModel.getEquipmentInfo(y).itemID;
+ 24097: d.InhertEquipModel.allInhertEquips.hasOwnProperty(y) && (o = d.InhertEquipModel.allInhertEquips[y]);
+ 24098: }
+ 24099: if (t.getEquipment(2)) {
+ 24100: var v = t.getEquipment(2).id;
+ 24101: r = f.InventoryModel.getEquipmentInfo(v).itemID;
+---

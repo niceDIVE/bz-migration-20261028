@@ -1,0 +1,5094 @@
+{
+ "generatedAt": "2026-10-21T19:30:15.872Z",
+ "fields": [
+  {
+   "action": "BeginList",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1429,
+     "text": "n.addComponent(\"ConvstnBoard\").setNpcData(e, o.tempData);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1450,
+     "text": "i.addComponent(\"FurnaceUI\").setData(e);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1464,
+     "text": "n.addComponent(\"FurnaceFrame\").setData(e.resourceData, o.furnaceId);"
+    }
+   ]
+  },
+  {
+   "action": "BeginList",
+   "field": "skill",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 12480,
+     "text": "this.partnerUltAttack(o.skill);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 19118,
+     "text": "for (var h in p) if (p[h].skill.indexOf(t.skillid) >= 0) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 21731,
+     "text": "o.skill_open > 0 && (this.rogueSkillSeasonMap[o.skill[0]] = o.skill_open);"
+    }
+   ]
+  },
+  {
+   "action": "BuyMount",
+   "field": "sync",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 32170,
+     "text": "g.RoleOtherInfo.isSyncMount = 1 == i.sync;"
+    }
+   ]
+  },
+  {
+   "action": "BuyTowerProp",
+   "field": "hjzcNum",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137650,
+     "text": "o.hasOwnProperty(\"hjzcNum\") && (t.towerItemData[5] = o.hjzcNum);"
+    }
+   ]
+  },
+  {
+   "action": "ChallengeRoguePVP",
+   "field": "floorBuff",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 18033,
+     "text": "if (o.AttckData.floorBuff) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 18034,
+     "text": "var r = l.getItem(o.AttckData.floorBuff, \"rogue_floorbuff\");"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 104105,
+     "text": "if (o.AttckData.floorBuff && (!o.AttckData.hasOwnProperty(\"isBoss\") || 0 == o.AttckData.isBoss)) {"
+    }
+   ]
+  },
+  {
+   "action": "ChallengeRoguePVP",
+   "field": "rogueFloorBuffs",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 18036,
+     "text": "o.AttckData.rogueFloorBuffs = r.playerbuff;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 18037,
+     "text": "o.EnemyData.rogueFloorBuffs = r.enemybuff;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 75080,
+     "text": "if (e.hasOwnProperty(\"rogueFloorBuffs\") && (h = e.rogueFloorBuffs.split(\"|\")) && h.length > 0) for (var g = 0; g < h.length; g++) {"
+    }
+   ]
+  },
+  {
+   "action": "ChallengeRoguePVP",
+   "field": "rogueFloorBuffs",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 18036,
+     "text": "o.AttckData.rogueFloorBuffs = r.playerbuff;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 18037,
+     "text": "o.EnemyData.rogueFloorBuffs = r.enemybuff;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 75080,
+     "text": "if (e.hasOwnProperty(\"rogueFloorBuffs\") && (h = e.rogueFloorBuffs.split(\"|\")) && h.length > 0) for (var g = 0; g < h.length; g++) {"
+    }
+   ]
+  },
+  {
+   "action": "CheckBattleResult",
+   "field": "gemId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64768,
+     "text": "v.default.addShowRewardUI1(a.rewardArray, 0, a.equipObj, {}, null, a.getKnackIds, a.gemId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 67711,
+     "text": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 89341,
+     "text": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+    }
+   ]
+  },
+  {
+   "action": "ChooseGirl",
+   "field": "eTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 51142,
+     "text": "t.girlData[n.npcID] = n.eTime;"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 55467,
+     "text": "t.endTime = o.eTime;"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 90060,
+     "text": "this.machineEndTimeMap = t.eTime;"
+    }
+   ]
+  },
+  {
+   "action": "ChooseSanGongDan",
+   "field": "backpro",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64992,
+     "text": "c.default.show(n.getText(123) + e.backpro + n.getText(37));"
+    }
+   ]
+  },
+  {
+   "action": "EndMeditation",
+   "field": "genguTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 120578,
+     "text": "u.RoleOtherInfo.gengudanTime = o.genguTime;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138890,
+     "text": "h.RoleOtherInfo.gengudanTime = o.genguTime;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138904,
+     "text": "h.RoleOtherInfo.gengudanTime = e.genguTime;"
+    }
+   ]
+  },
+  {
+   "action": "EndRecoverMP",
+   "field": "genguTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 120578,
+     "text": "u.RoleOtherInfo.gengudanTime = o.genguTime;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138890,
+     "text": "h.RoleOtherInfo.gengudanTime = o.genguTime;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138904,
+     "text": "h.RoleOtherInfo.gengudanTime = e.genguTime;"
+    }
+   ]
+  },
+  {
+   "action": "EndTraining",
+   "field": "genguTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 120578,
+     "text": "u.RoleOtherInfo.gengudanTime = o.genguTime;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138890,
+     "text": "h.RoleOtherInfo.gengudanTime = o.genguTime;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138904,
+     "text": "h.RoleOtherInfo.gengudanTime = e.genguTime;"
+    }
+   ]
+  },
+  {
+   "action": "EndTraining",
+   "field": "skillid",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 19099,
+     "text": "var o = a.SkillTable.dic, i = s.getItem(t.skillid.toString(), \"skill\");"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 19104,
+     "text": "} else if (o.hasOwnProperty(t.skillid)) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 19118,
+     "text": "for (var h in p) if (p[h].skill.indexOf(t.skillid) >= 0) {"
+    }
+   ]
+  },
+  {
+   "action": "EneterCopy",
+   "field": "copyID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64077,
+     "text": "t.dungeonID = o.copyID;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64079,
+     "text": "t.start(o.copyID);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64081,
+     "text": "var r = i.getItem(o.copyID, \"fuben\").exp[o.state - 1];"
+    }
+   ]
+  },
+  {
+   "action": "EquipSuitsUpgrade",
+   "field": "equipInherit",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 59809,
+     "text": "EQUIP_INHERIT: \"User.equipInherit\","
+    },
+    {
+     "file": "tools/index.js",
+     "line": 142026,
+     "text": "e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 142064,
+     "text": "e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));"
+    }
+   ]
+  },
+  {
+   "action": "FeedDog",
+   "field": "bigDog",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 58056,
+     "text": "o.hasOwnProperty(\"bigDog\") && (e.dogData.id = o.bigDog);"
+    }
+   ]
+  },
+  {
+   "action": "GetBossAward",
+   "field": "firstName",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 145527,
+     "text": "firstPlayer: e.firstName,"
+    }
+   ]
+  },
+  {
+   "action": "GetBossAward",
+   "field": "killName",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 145528,
+     "text": "lastKill: e.killName,"
+    }
+   ]
+  },
+  {
+   "action": "GetBossAward",
+   "field": "killObj",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 145530,
+     "text": "killReward: e.killObj"
+    }
+   ]
+  },
+  {
+   "action": "GetClimbingTowerData",
+   "field": "chickenLegNum",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137561,
+     "text": "t.toEatNum = o.chickenLegNum;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137628,
+     "text": "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137827,
+     "text": "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);"
+    }
+   ]
+  },
+  {
+   "action": "GetGMGiveItem",
+   "field": "expireTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 88290,
+     "text": "var o = e.titleID, n = e.expireTime, r = {};"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 133440,
+     "text": "var M = o.titleID, E = o.expireTime, I = {};"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 71213,
+     "text": "var o = e.titleID, i = e.expireTime, s = {};"
+    }
+   ]
+  },
+  {
+   "action": "GetMarketList",
+   "field": "market",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 130767,
+     "text": "market: o.market,"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 8508,
+     "text": "var a = o.market;"
+    }
+   ]
+  },
+  {
+   "action": "GetMountsList",
+   "field": "MountsArr",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 32137,
+     "text": "r.addComponent(\"DriverShopBg\").setData(e.MountsArr, 0);"
+    }
+   ]
+  },
+  {
+   "action": "GetNoticeAward",
+   "field": "liveness",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64095,
+     "text": "t.showRewards(o.rewardArray, o.liveness);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64099,
+     "text": "if (1 == o.eRet) t.showRewards(o.rewardArray, o.liveness); else if (3 == o.eRet) g.LoginMgr.isMiniIos(1) ? l.default.show(n.getText(591)) : l.default.show(n.get"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 108246,
+     "text": "if (o.liveness) {"
+    }
+   ]
+  },
+  {
+   "action": "GetRandomEventAward",
+   "field": "liveness",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64095,
+     "text": "t.showRewards(o.rewardArray, o.liveness);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64099,
+     "text": "if (1 == o.eRet) t.showRewards(o.rewardArray, o.liveness); else if (3 == o.eRet) g.LoginMgr.isMiniIos(1) ? l.default.show(n.getText(591)) : l.default.show(n.get"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 108246,
+     "text": "if (o.liveness) {"
+    }
+   ]
+  },
+  {
+   "action": "GetShopAllActive",
+   "field": "activeEndTime",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 131275,
+     "text": "e.hasOwnProperty(\"activeEndTime\") && (this.shopListEndTime = e.activeEndTime);"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 27397,
+     "text": "this.activeEndTime = 0;"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 27455,
+     "text": "this.activeEndTime = e.endTime;"
+    }
+   ]
+  },
+  {
+   "action": "GetShopAllActive",
+   "field": "shopActiveList",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 131273,
+     "text": "this.shopActiveData = e.shopActiveList;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 131276,
+     "text": "l.MessageCenter.dispatch(h.EvName.STORE_ACTIVE_LIST_UI, e.shopActiveList);"
+    }
+   ]
+  },
+  {
+   "action": "LeaveCopy",
+   "field": "liveness",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64095,
+     "text": "t.showRewards(o.rewardArray, o.liveness);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64099,
+     "text": "if (1 == o.eRet) t.showRewards(o.rewardArray, o.liveness); else if (3 == o.eRet) g.LoginMgr.isMiniIos(1) ? l.default.show(n.getText(591)) : l.default.show(n.get"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 108246,
+     "text": "if (o.liveness) {"
+    }
+   ]
+  },
+  {
+   "action": "OutSchool",
+   "field": "addComponent",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1429,
+     "text": "n.addComponent(\"ConvstnBoard\").setNpcData(e, o.tempData);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1450,
+     "text": "i.addComponent(\"FurnaceUI\").setData(e);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1464,
+     "text": "n.addComponent(\"FurnaceFrame\").setData(e.resourceData, o.furnaceId);"
+    }
+   ]
+  },
+  {
+   "action": "PopEquip",
+   "field": "ItemID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 25345,
+     "text": "this.itemId = t.ItemID;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 26226,
+     "text": "var n = this.copyCollectItem[o].ItemID;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 26256,
+     "text": "ItemID: e.ItemID,"
+    }
+   ]
+  },
+  {
+   "action": "PushEquip",
+   "field": "ItemID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 25345,
+     "text": "this.itemId = t.ItemID;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 26226,
+     "text": "var n = this.copyCollectItem[o].ItemID;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 26256,
+     "text": "ItemID: e.ItemID,"
+    }
+   ]
+  },
+  {
+   "action": "PushEquip",
+   "field": "storageItem",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 61051,
+     "text": "var o = r.MarryModel.parseStorageEq(e.ItemID, e.storageItem);"
+    }
+   ]
+  },
+  {
+   "action": "TowerBattleResult",
+   "field": "gemId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64768,
+     "text": "v.default.addShowRewardUI1(a.rewardArray, 0, a.equipObj, {}, null, a.getKnackIds, a.gemId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 67711,
+     "text": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 89341,
+     "text": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+    }
+   ]
+  },
+  {
+   "action": "TowerBattleResult",
+   "field": "muscle",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 67714,
+     "text": "o.hasOwnProperty(\"muscle\") && (s.TowerModel.curStrengthNum = o.muscle);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137598,
+     "text": "o.hasOwnProperty(\"muscle\") && (t.curStrengthNum = o.muscle);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137824,
+     "text": "o.hasOwnProperty(\"muscle\") && (t.curStrengthNum = o.muscle);"
+    }
+   ]
+  },
+  {
+   "action": "UseAllBall",
+   "field": "hp",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1198,
+     "text": "e.hp = i[0];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1199,
+     "text": "o.hp = i[3];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1209,
+     "text": "r.hp = o;"
+    }
+   ]
+  },
+  {
+   "action": "UseBatchSnowBall",
+   "field": "hp",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1198,
+     "text": "e.hp = i[0];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1199,
+     "text": "o.hp = i[3];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1209,
+     "text": "r.hp = o;"
+    }
+   ]
+  },
+  {
+   "action": "UseSnowBall",
+   "field": "hp",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1198,
+     "text": "e.hp = i[0];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1199,
+     "text": "o.hp = i[3];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1209,
+     "text": "r.hp = o;"
+    }
+   ]
+  },
+  {
+   "action": "Whoring",
+   "field": "makeID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 51147,
+     "text": "var i = o.makeID, n = c.getItem(i, \"make\"), r = t.randomGirl[t.npcId], a = r.reality, s = r.picture;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 77308,
+     "text": "e.hasOwnProperty(\"makeID\") && (l = e.makeID);"
+    }
+   ]
+  },
+  {
+   "action": "acceptSchoolTask",
+   "field": "acceptSchoolTask",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 60051,
+     "text": "ACCEPT_SCHOOL_TASK: \"User.acceptSchoolTask\","
+    },
+    {
+     "file": "tools/index.js",
+     "line": 113633,
+     "text": "for (var o in e.acceptSchoolTask) if (o == this.othenSchool + \"_\" + this.taskTag) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 113634,
+     "text": "var i = e.acceptSchoolTask[o];"
+    }
+   ]
+  },
+  {
+   "action": "acceptTask",
+   "field": "triggerBoxs",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 133343,
+     "text": "t.MapBoxModel.addBox(o.triggerBoxs);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 133394,
+     "text": "t.MapBoxModel.addBox(o.triggerBoxs);"
+    }
+   ]
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "attrType",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137599,
+     "text": "o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137825,
+     "text": "o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);"
+    }
+   ]
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "chickenLegNum",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137561,
+     "text": "t.toEatNum = o.chickenLegNum;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137628,
+     "text": "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137827,
+     "text": "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);"
+    }
+   ]
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "eggNpc",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137625,
+     "text": "o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137826,
+     "text": "o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];"
+    }
+   ]
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "eventIds",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137627,
+     "text": "t.towerEventAy = o.hasOwnProperty(\"eventIds\") ? o.eventIds : [];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137829,
+     "text": "t.towerEventAy = o.hasOwnProperty(\"eventIds\") ? o.eventIds : [];"
+    }
+   ]
+  },
+  {
+   "action": "activateTowerEvent",
+   "field": "muscle",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 67714,
+     "text": "o.hasOwnProperty(\"muscle\") && (s.TowerModel.curStrengthNum = o.muscle);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137598,
+     "text": "o.hasOwnProperty(\"muscle\") && (t.curStrengthNum = o.muscle);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137824,
+     "text": "o.hasOwnProperty(\"muscle\") && (t.curStrengthNum = o.muscle);"
+    }
+   ]
+  },
+  {
+   "action": "addBreakQueue",
+   "field": "qr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 56580,
+     "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120649,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120652,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    }
+   ]
+  },
+  {
+   "action": "addEquipLock",
+   "field": "equipLocks",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 65022,
+     "text": "1 == o.eRet && (e.lockEquips = o.equipLocks);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 65026,
+     "text": "e.lockEquips = o.equipLocks;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 65027,
+     "text": "r.MessageCenter.dispatch(s.EvName.REFRESH_LOCK_ARRAY, o.equipLocks);"
+    }
+   ]
+  },
+  {
+   "action": "batchSeedCrop",
+   "field": "crops",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57657,
+     "text": "for (var n in o.crops) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57658,
+     "text": "var a = parseInt(n), s = o.crops[n], l = {"
+    }
+   ]
+  },
+  {
+   "action": "batchSeedCrop",
+   "field": "recentSeeds",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57592,
+     "text": "i.recentSeeds ? e.recentSs = i.recentSeeds : e.recentSs.length = 0;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57672,
+     "text": "e.recentSs = o.recentSeeds;"
+    }
+   ]
+  },
+  {
+   "action": "beginCast",
+   "field": "sTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 43510,
+     "text": "time: o.sTime"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 43526,
+     "text": "s.sTime = a.d;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 90077,
+     "text": "c.TimeMgr.sserverT = e.sTime;"
+    }
+   ]
+  },
+  {
+   "action": "beginHookBreakList",
+   "field": "qr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 56580,
+     "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120649,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120652,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    }
+   ]
+  },
+  {
+   "action": "beginHookBreakList",
+   "field": "setData",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1450,
+     "text": "i.addComponent(\"FurnaceUI\").setData(e);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1464,
+     "text": "n.addComponent(\"FurnaceFrame\").setData(e.resourceData, o.furnaceId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1568,
+     "text": "i.addComponent(\"RechargeGiftUI\").setData(e.payData);"
+    }
+   ]
+  },
+  {
+   "action": "beginHookBreakList",
+   "field": "setLabelTitle",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 24673,
+     "text": "n.setLabelTitle(i.getText(263));"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 51200,
+     "text": "n.setLabelTitle(\"\");"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 51527,
+     "text": "i.setLabelTitle(n.getText(263));"
+    }
+   ]
+  },
+  {
+   "action": "beginMake",
+   "field": "sTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 43510,
+     "text": "time: o.sTime"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 43526,
+     "text": "s.sTime = a.d;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 90077,
+     "text": "c.TimeMgr.sserverT = e.sTime;"
+    }
+   ]
+  },
+  {
+   "action": "beginMakeMedicine",
+   "field": "sTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 43510,
+     "text": "time: o.sTime"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 43526,
+     "text": "s.sTime = a.d;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 90077,
+     "text": "c.TimeMgr.sserverT = e.sTime;"
+    }
+   ]
+  },
+  {
+   "action": "beginPVEBattle",
+   "field": "paramID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 98880,
+     "text": "t.bs.castSkill(i, o.paramID, 0, o.paramID1);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 98884,
+     "text": "t.bs.usePotion(i, o.paramID);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 98885,
+     "text": "t.reduceItem(o.paramID);"
+    }
+   ]
+  },
+  {
+   "action": "beginPVEBattle",
+   "field": "paramID1",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 98880,
+     "text": "t.bs.castSkill(i, o.paramID, 0, o.paramID1);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 98893,
+     "text": "t.bs.switchPlayer(o.paramID, o.paramID1);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 104210,
+     "text": "t.bs.castSkill(i, o.paramID, 0, o.paramID1);"
+    }
+   ]
+  },
+  {
+   "action": "beginPVEBattle",
+   "field": "paramID2",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 98877,
+     "text": "o.paramID2 && \"\" != o.paramID2 && (i = o.paramID2);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 104207,
+     "text": "o.paramID2 && \"\" != o.paramID2 && (i = o.paramID2);"
+    }
+   ]
+  },
+  {
+   "action": "beginRoguePVEBattle",
+   "field": "paramID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 98880,
+     "text": "t.bs.castSkill(i, o.paramID, 0, o.paramID1);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 98884,
+     "text": "t.bs.usePotion(i, o.paramID);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 98885,
+     "text": "t.reduceItem(o.paramID);"
+    }
+   ]
+  },
+  {
+   "action": "beginRoguePVEBattle",
+   "field": "paramID1",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 98880,
+     "text": "t.bs.castSkill(i, o.paramID, 0, o.paramID1);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 98893,
+     "text": "t.bs.switchPlayer(o.paramID, o.paramID1);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 104210,
+     "text": "t.bs.castSkill(i, o.paramID, 0, o.paramID1);"
+    }
+   ]
+  },
+  {
+   "action": "beginRoguePVEBattle",
+   "field": "paramID2",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 98877,
+     "text": "o.paramID2 && \"\" != o.paramID2 && (i = o.paramID2);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 104207,
+     "text": "o.paramID2 && \"\" != o.paramID2 && (i = o.paramID2);"
+    }
+   ]
+  },
+  {
+   "action": "buyActivityNum",
+   "field": "activeNum",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 55942,
+     "text": "this.paperNum = e.activeNum;"
+    }
+   ]
+  },
+  {
+   "action": "buyInvitationCard",
+   "field": "pass_levelID",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 55887,
+     "text": "this.cardState = e.pass_levelID;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 55888,
+     "text": "i.MessageCenter.dispatch(r.EvName.PAY_GOLD_INVITE, e.pass_levelID);"
+    }
+   ]
+  },
+  {
+   "action": "buySchoolShop",
+   "field": "updateSchoolContribution",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113674,
+     "text": "var o = e.updateSchoolContribution[this.othenSchool];"
+    }
+   ]
+  },
+  {
+   "action": "changeSate",
+   "field": "b",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 4694,
+     "text": "r[4] = o.b;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 9892,
+     "text": "s.b = i.b;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 25435,
+     "text": "this.target.color = cc.color(255 - (255 - e.r) * o, 255 - (255 - e.g) * o, 255 - (255 - e.b) * o, 255);"
+    }
+   ]
+  },
+  {
+   "action": "changeSate",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57638,
+     "text": "var i = o.sIdx, n = {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57685,
+     "text": "e.soilArr[o.sIdx] = i;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57694,
+     "text": "s.landId = o.sIdx;"
+    }
+   ]
+  },
+  {
+   "action": "changeServer",
+   "field": "newID",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 28138,
+     "text": "s.RoleBaseInfo.roleID = this.crossData.newID;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 28162,
+     "text": "s.RoleBaseInfo.roleID = e.newID;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 111132,
+     "text": "this.saveRoleDriverState(p.RoleBaseInfo.roleID, t.newID);"
+    }
+   ]
+  },
+  {
+   "action": "changeWorldServer",
+   "field": "hookData",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 28127,
+     "text": "I.HangUpModel.saveCrossData(e.hookData);"
+    }
+   ]
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "attrType",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137599,
+     "text": "o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137825,
+     "text": "o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);"
+    }
+   ]
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "chickenLegNum",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137561,
+     "text": "t.toEatNum = o.chickenLegNum;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137628,
+     "text": "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137827,
+     "text": "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);"
+    }
+   ]
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "eggNpc",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137625,
+     "text": "o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137826,
+     "text": "o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];"
+    }
+   ]
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "eventIds",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137627,
+     "text": "t.towerEventAy = o.hasOwnProperty(\"eventIds\") ? o.eventIds : [];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137829,
+     "text": "t.towerEventAy = o.hasOwnProperty(\"eventIds\") ? o.eventIds : [];"
+    }
+   ]
+  },
+  {
+   "action": "chanllengeTower",
+   "field": "muscle",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 67714,
+     "text": "o.hasOwnProperty(\"muscle\") && (s.TowerModel.curStrengthNum = o.muscle);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137598,
+     "text": "o.hasOwnProperty(\"muscle\") && (t.curStrengthNum = o.muscle);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137824,
+     "text": "o.hasOwnProperty(\"muscle\") && (t.curStrengthNum = o.muscle);"
+    }
+   ]
+  },
+  {
+   "action": "checkHireOnhook",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1429,
+     "text": "n.addComponent(\"ConvstnBoard\").setNpcData(e, o.tempData);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1450,
+     "text": "i.addComponent(\"FurnaceUI\").setData(e);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1464,
+     "text": "n.addComponent(\"FurnaceFrame\").setData(e.resourceData, o.furnaceId);"
+    }
+   ]
+  },
+  {
+   "action": "checkHireOnhook",
+   "field": "siteID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 51434,
+     "text": "var o, s = i.getItem(e.siteID, \"fishpond\");"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 51474,
+     "text": "} else if (2 != o.eRet) if (i.getItem(o.siteID, \"fishpond\").type != s.type) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 51494,
+     "text": "} else if (t.checkSiteID != o.siteID) {"
+    }
+   ]
+  },
+  {
+   "action": "childWashProperty",
+   "field": "attrList",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 24634,
+     "text": "i.addComponent(\"SetChildWashUI\").setData(e.attrList);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 144073,
+     "text": "i.addComponent(\"SetWashUI\").setData(e.attrList);"
+    }
+   ]
+  },
+  {
+   "action": "childWashProperty",
+   "field": "baseArr",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 24629,
+     "text": "c.MarryModel.setChildAttData(e.baseArr, e.attArr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 77086,
+     "text": "this.childData.baseArr = t;"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 12255,
+     "text": "for (var t = u.MarryModel.childData, e = t.baseArr, o = t.addArr, i = [], s = 1; s < t.playArr.length; s++) i.push(t.playArr[s]);"
+    }
+   ]
+  },
+  {
+   "action": "choosePandaEvent",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1429,
+     "text": "n.addComponent(\"ConvstnBoard\").setNpcData(e, o.tempData);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1450,
+     "text": "i.addComponent(\"FurnaceUI\").setData(e);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1464,
+     "text": "n.addComponent(\"FurnaceFrame\").setData(e.resourceData, o.furnaceId);"
+    }
+   ]
+  },
+  {
+   "action": "choosePandaEvent",
+   "field": "buffID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137681,
+     "text": "t.towerBuffer.push(o.buffID);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137682,
+     "text": "var s = r.getItem(o.buffID, \"buff\"), c = {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137690,
+     "text": "var d = p.UserModel.entity, g = i.createStatusEffect(o.buffID, d, d, 0);"
+    }
+   ]
+  },
+  {
+   "action": "chooseUsedItemAward",
+   "field": "cData",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64952,
+     "text": "v.default.addShowRewardUI1(e.cData);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64954,
+     "text": "for (var i in e.cData) o.push({"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64956,
+     "text": "numbers: e.cData[i]"
+    }
+   ]
+  },
+  {
+   "action": "chooseUsedItemAward",
+   "field": "chooseID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64951,
+     "text": "e.chooseID;"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 47990,
+     "text": "var o = e.chooseID;"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 54835,
+     "text": "var o = e.chooseID;"
+    }
+   ]
+  },
+  {
+   "action": "chooseUsedItemAward",
+   "field": "delItemObj",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64907,
+     "text": "var j = a.delItemObj;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64961,
+     "text": "var n = e.delItemObj;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 70332,
+     "text": "this.delItemObj = null;"
+    }
+   ]
+  },
+  {
+   "action": "cleanDeadCrop",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57638,
+     "text": "var i = o.sIdx, n = {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57685,
+     "text": "e.soilArr[o.sIdx] = i;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57694,
+     "text": "s.landId = o.sIdx;"
+    }
+   ]
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "cookBook",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62264,
+     "text": "this.bookBag = e.cookBook;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62377,
+     "text": "this.bookBag = e.cookBook;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62586,
+     "text": "for (var u = 0; u < e.cookBook.length; u++) if (this.bookBag.indexOf(e.cookBook[u]) < 0) {"
+    }
+   ]
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "hotVal",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62376,
+     "text": "this.hotVal = e.hotVal;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62633,
+     "text": "this.hotVal = e.hotVal;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62671,
+     "text": "this.hotVal = e.hotVal;"
+    }
+   ]
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "mhv",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62378,
+     "text": "this.maxHot = e.mhv;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62635,
+     "text": "this.maxHot = e.mhv;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62672,
+     "text": "this.maxHot = e.mhv;"
+    }
+   ]
+  },
+  {
+   "action": "completeOrderByHotVal",
+   "field": "showRewardCookBook",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62381,
+     "text": "if (e.showRewardCookBook > 0) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62382,
+     "text": "var l = i.getItem(e.showRewardCookBook, \"cookbookconfig\"), c = {"
+    }
+   ]
+  },
+  {
+   "action": "cookAccelerate",
+   "field": "cookData",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62089,
+     "text": "this.cookData = {};"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62419,
+     "text": "for (var n in e.cookData) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62420,
+     "text": "this.cookData[n] = e.cookData[n];"
+    }
+   ]
+  },
+  {
+   "action": "cookReceive",
+   "field": "cookData",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62089,
+     "text": "this.cookData = {};"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62419,
+     "text": "for (var n in e.cookData) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62420,
+     "text": "this.cookData[n] = e.cookData[n];"
+    }
+   ]
+  },
+  {
+   "action": "cookStart",
+   "field": "cookData",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62089,
+     "text": "this.cookData = {};"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62419,
+     "text": "for (var n in e.cookData) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62420,
+     "text": "this.cookData[n] = e.cookData[n];"
+    }
+   ]
+  },
+  {
+   "action": "cookUnlock",
+   "field": "cookData",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62089,
+     "text": "this.cookData = {};"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62419,
+     "text": "for (var n in e.cookData) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62420,
+     "text": "this.cookData[n] = e.cookData[n];"
+    }
+   ]
+  },
+  {
+   "action": "delEquipLock",
+   "field": "equipLocks",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 65022,
+     "text": "1 == o.eRet && (e.lockEquips = o.equipLocks);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 65026,
+     "text": "e.lockEquips = o.equipLocks;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 65027,
+     "text": "r.MessageCenter.dispatch(s.EvName.REFRESH_LOCK_ARRAY, o.equipLocks);"
+    }
+   ]
+  },
+  {
+   "action": "delegateTask",
+   "field": "sTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 43510,
+     "text": "time: o.sTime"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 43526,
+     "text": "s.sTime = a.d;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 90077,
+     "text": "c.TimeMgr.sserverT = e.sTime;"
+    }
+   ]
+  },
+  {
+   "action": "dispossHomeEvent",
+   "field": "aExp",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57711,
+     "text": "o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57753,
+     "text": "i.hasOwnProperty(\"aExp\") && i.aExp > 0 && (h[7] = i.aExp);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57797,
+     "text": "o.hasOwnProperty(\"aExp\") && o.aExp > 0 && (f[7] = o.aExp);"
+    }
+   ]
+  },
+  {
+   "action": "dispossHomeEvent",
+   "field": "b",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 4694,
+     "text": "r[4] = o.b;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 9892,
+     "text": "s.b = i.b;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 25435,
+     "text": "this.target.color = cc.color(255 - (255 - e.r) * o, 255 - (255 - e.g) * o, 255 - (255 - e.b) * o, 255);"
+    }
+   ]
+  },
+  {
+   "action": "endEatByTable",
+   "field": "tableList",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62626,
+     "text": "this.tablesData = e.tableList;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62722,
+     "text": "this.tablesData = this.innData.tableList;"
+    }
+   ]
+  },
+  {
+   "action": "endPlayGame",
+   "field": "progree",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 24683,
+     "text": "100 == e.progree && c.MarryModel.setPlayAttData(this.playType, 1);"
+    }
+   ]
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "boxArr",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 55908,
+     "text": "this.setBoxDataMap(e.boxArr);"
+    }
+   ]
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "floor",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1726,
+     "text": "t.HP = (o.hp.finalValue - o.hp.getLv1Conversion()) * Math.floor(12 - 2 * e) * .1;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1727,
+     "text": "t.MP = (o.mp.finalValue - o.mp.getLv1Conversion()) * Math.floor(12 - 2 * e) * .1;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1728,
+     "text": "t.Attack = (o.attack.finalValue - o.attack.getLv1Conversion()) * Math.floor(12 - 2 * e) * .1;"
+    }
+   ]
+  },
+  {
+   "action": "enterNextFloor",
+   "field": "isStatus",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 55909,
+     "text": "this.enterToScene(e.boxNum, e.isStatus);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 55915,
+     "text": "this.showTipFlag = e.isStatus;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 55925,
+     "text": "this.showTipFlag = e.isStatus;"
+    }
+   ]
+  },
+  {
+   "action": "enterRoguePVEBattle",
+   "field": "floorBuff",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 18033,
+     "text": "if (o.AttckData.floorBuff) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 18034,
+     "text": "var r = l.getItem(o.AttckData.floorBuff, \"rogue_floorbuff\");"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 104105,
+     "text": "if (o.AttckData.floorBuff && (!o.AttckData.hasOwnProperty(\"isBoss\") || 0 == o.AttckData.isBoss)) {"
+    }
+   ]
+  },
+  {
+   "action": "enterRoguePVEBattle",
+   "field": "rogueFloorBuffs",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 18036,
+     "text": "o.AttckData.rogueFloorBuffs = r.playerbuff;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 18037,
+     "text": "o.EnemyData.rogueFloorBuffs = r.enemybuff;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 75080,
+     "text": "if (e.hasOwnProperty(\"rogueFloorBuffs\") && (h = e.rogueFloorBuffs.split(\"|\")) && h.length > 0) for (var g = 0; g < h.length; g++) {"
+    }
+   ]
+  },
+  {
+   "action": "enterSnow",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1429,
+     "text": "n.addComponent(\"ConvstnBoard\").setNpcData(e, o.tempData);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1450,
+     "text": "i.addComponent(\"FurnaceUI\").setData(e);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1464,
+     "text": "n.addComponent(\"FurnaceFrame\").setData(e.resourceData, o.furnaceId);"
+    }
+   ]
+  },
+  {
+   "action": "enterSnow",
+   "field": "boxnum",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 122467,
+     "text": "t.boxNum = o.boxnum;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 122488,
+     "text": "t.boxNum = o.boxnum;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 122496,
+     "text": "t.boxNum = o.boxnum;"
+    }
+   ]
+  },
+  {
+   "action": "enterSnow",
+   "field": "hp",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1198,
+     "text": "e.hp = i[0];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1199,
+     "text": "o.hp = i[3];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1209,
+     "text": "r.hp = o;"
+    }
+   ]
+  },
+  {
+   "action": "enterSnow",
+   "field": "sTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 43510,
+     "text": "time: o.sTime"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 43526,
+     "text": "s.sTime = a.d;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 90077,
+     "text": "c.TimeMgr.sserverT = e.sTime;"
+    }
+   ]
+  },
+  {
+   "action": "equipBatchResolve",
+   "field": "itemIDs",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64935,
+     "text": "r.MessageCenter.dispatch(s.EvName.BATCH_DECOMPOSE_SUCCESS_EVENT, e.itemIDs);"
+    }
+   ]
+  },
+  {
+   "action": "equipUpgrade",
+   "field": "equipInherit",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 59809,
+     "text": "EQUIP_INHERIT: \"User.equipInherit\","
+    },
+    {
+     "file": "tools/index.js",
+     "line": 142026,
+     "text": "e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 142064,
+     "text": "e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));"
+    }
+   ]
+  },
+  {
+   "action": "equipWash",
+   "field": "addArr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 35604,
+     "text": "this.addArr = [];"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 35607,
+     "text": "this.dataN.indexOf(i.Effect) >= 0 && !this.target.emotionLocked && !this.target._unarmedWeapon && this.addArr.push(o);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 35612,
+     "text": "for (var t = 0; t < this.addArr.length; t++) (this.target.getStateByEffectID(this.addArr[t]) || this.target.resistIds.includes(this.addArr[t])) && (this.target."
+    }
+   ]
+  },
+  {
+   "action": "equipWash",
+   "field": "newAtt",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 44542,
+     "text": "newAtt: e.newAtt,"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 20081,
+     "text": "var o = this.getCurrentEquipObj(), i = e.newAtt, s = g.EqUtils.getSType2BonusValue(i, o.itemId, o.numAttr), n = c.InventoryModel.equipmentDic, a = [];"
+    }
+   ]
+  },
+  {
+   "action": "expediteCrop",
+   "field": "b",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 4694,
+     "text": "r[4] = o.b;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 9892,
+     "text": "s.b = i.b;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 25435,
+     "text": "this.target.color = cc.color(255 - (255 - e.r) * o, 255 - (255 - e.g) * o, 255 - (255 - e.b) * o, 255);"
+    }
+   ]
+  },
+  {
+   "action": "expediteCrop",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57638,
+     "text": "var i = o.sIdx, n = {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57685,
+     "text": "e.soilArr[o.sIdx] = i;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57694,
+     "text": "s.landId = o.sIdx;"
+    }
+   ]
+  },
+  {
+   "action": "explore",
+   "field": "eventId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 47189,
+     "text": "0 == i.eventType ? e.resultData.resultMsg = \"7105\" : t.getResultMsg(i.eventType, i.eventValue, i.eventId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 51157,
+     "text": "var i = c.getItem(o.eventId, \"like_event\");"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 61992,
+     "text": "var e = t.eventId;"
+    }
+   ]
+  },
+  {
+   "action": "explore",
+   "field": "eventValue",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 47189,
+     "text": "0 == i.eventType ? e.resultData.resultMsg = \"7105\" : t.getResultMsg(i.eventType, i.eventValue, i.eventId);"
+    }
+   ]
+  },
+  {
+   "action": "explore",
+   "field": "fixedEvents",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 47202,
+     "text": "e.mapHasExploredIds[e.resultData.mapId] = i.fixedEvents;"
+    }
+   ]
+  },
+  {
+   "action": "findOhter",
+   "field": "findArr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57949,
+     "text": "1 == o.eRet ? o.hasOwnProperty(\"findArr\") && (o.findArr[0] == _.RoleBaseInfo.roleID ? a.default.show(n.getText(3253)) : e.openFriendHome(o.findArr[0], o.findArr"
+    }
+   ]
+  },
+  {
+   "action": "getAllActivity",
+   "field": "calendar",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57456,
+     "text": "e.hasOwnProperty(\"calendar\") && e.calendar > 0 ? this.calendarStr = e.calendar.toString() : this.calendarStr = \"\";"
+    }
+   ]
+  },
+  {
+   "action": "getAllActivity",
+   "field": "digcellTaskRed",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57454,
+     "text": "e.hasOwnProperty(\"digcellTaskRed\") && u.RoleOtherInfo.setActivityData(79, e.digcellTaskRed);"
+    }
+   ]
+  },
+  {
+   "action": "getAllActivity",
+   "field": "geNianshouTaskRed",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57448,
+     "text": "e.hasOwnProperty(\"geNianshouTaskRed\") && u.RoleOtherInfo.setActivityData(78, e.geNianshouTaskRed);"
+    }
+   ]
+  },
+  {
+   "action": "getAllActivity",
+   "field": "geSchoolTaskRed",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57447,
+     "text": "e.hasOwnProperty(\"geSchoolTaskRed\") && (u.RoleOtherInfo.warmUpRed = e.geSchoolTaskRed);"
+    }
+   ]
+  },
+  {
+   "action": "getAllActivity",
+   "field": "supportCamp",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57453,
+     "text": "e.hasOwnProperty(\"supportCamp\") && u.RoleOtherInfo.setActivityData(68, e.supportCamp);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 107266,
+     "text": "e.hasOwnProperty(\"supportCamp\") && (this.activityObj[68] = e.supportCamp);"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 92725,
+     "text": "var r = o.supportCamp;"
+    }
+   ]
+  },
+  {
+   "action": "getAllActivity",
+   "field": "transGiftShow",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57457,
+     "text": "u.RoleOtherInfo.setActivityData(80, e.transGiftShow);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 111873,
+     "text": "d.RoleOtherInfo.setActivityData(80, e.transGiftShow);"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 85361,
+     "text": "p.RoleOtherInfo.setActivityData(80, o.transGiftShow);"
+    }
+   ]
+  },
+  {
+   "action": "getAllServerCount",
+   "field": "sArr",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 111015,
+     "text": "var o = e.sArr, n = e.serverArr;"
+    }
+   ]
+  },
+  {
+   "action": "getAllServerCount",
+   "field": "serverArr",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 111015,
+     "text": "var o = e.sArr, n = e.serverArr;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 111028,
+     "text": "1 == e.eRet ? r.MessageCenter.dispatch(s.EvName.SELECT_COPY_SERVER_EVENT, e.serverArr) : 7 == e.eRet && cc.log(\"等级不够奥\");"
+    }
+   ]
+  },
+  {
+   "action": "getAllServerList",
+   "field": "serverArr",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 111015,
+     "text": "var o = e.sArr, n = e.serverArr;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 111028,
+     "text": "1 == e.eRet ? r.MessageCenter.dispatch(s.EvName.SELECT_COPY_SERVER_EVENT, e.serverArr) : 7 == e.eRet && cc.log(\"等级不够奥\");"
+    }
+   ]
+  },
+  {
+   "action": "getApplyInfo",
+   "field": "masterInfo",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113941,
+     "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+    }
+   ]
+  },
+  {
+   "action": "getApplyInfo",
+   "field": "pupilInfo",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113941,
+     "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+    }
+   ]
+  },
+  {
+   "action": "getBackShop",
+   "field": "shopArr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57853,
+     "text": "n.addComponent(\"HomeShopBgUI\").setData(o.shopArr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 145350,
+     "text": "for (var i = 0; i < o.shopArr.length; i++) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 145351,
+     "text": "var n = o.shopArr[i];"
+    }
+   ]
+  },
+  {
+   "action": "getBankList",
+   "field": "bankList",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 46892,
+     "text": "i.getComponent(\"StartExamUI\").setData(o.bankList);"
+    }
+   ]
+  },
+  {
+   "action": "getCRAInfo",
+   "field": "birthId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 23055,
+     "text": "t.birthIdId = o.birthId < 283 ? parseInt(o.birthId) + 4 : parseInt(o.birthId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23058,
+     "text": "t.birthIdId = o.birthId < 283 ? parseInt(o.birthId) : parseInt(o.birthId) - 4;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23074,
+     "text": "h.RoleBaseInfo.birthIdId = o.birthId;"
+    }
+   ]
+  },
+  {
+   "action": "getCRAInfo",
+   "field": "faceId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 23056,
+     "text": "t.appearId = o.faceId < 302 ? parseInt(o.faceId) + 10 : parseInt(o.faceId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23059,
+     "text": "t.appearId = o.faceId < 302 ? parseInt(o.faceId) : parseInt(o.faceId) - 10;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23075,
+     "text": "h.RoleBaseInfo.appearId = o.faceId;"
+    }
+   ]
+  },
+  {
+   "action": "getCRAInfo",
+   "field": "talnetId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 23061,
+     "text": "t.talentId = o.talnetId;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23076,
+     "text": "h.RoleBaseInfo.talentId = o.talnetId;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23090,
+     "text": "o.hasOwnProperty(\"talnetId\") && (t.talentId = o.talnetId);"
+    }
+   ]
+  },
+  {
+   "action": "getChangeShop",
+   "field": "shopObj",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 47077,
+     "text": "1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EXCHANGE_SHOP_DATA, e.shopObj);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 56094,
+     "text": "if (1 == e.eRet && e.hasOwnProperty(\"shopObj\") && !cc.js.isEmptyObject(e.shopObj)) c.default.prefabs.load(\"homeSim/InnManage/InnExchangeShop\", cc.Prefab, functi"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 56096,
+     "text": "r.addComponent(\"HalloweenChangeShop\").setDatas(e.shopObj, o.npcID);"
+    }
+   ]
+  },
+  {
+   "action": "getCircleTaskList",
+   "field": "cNum",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 43489,
+     "text": "t.entrustNum = o.cNum;"
+    }
+   ]
+  },
+  {
+   "action": "getCopyData",
+   "field": "copyArr",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64072,
+     "text": "var o = e.copyArr;"
+    }
+   ]
+  },
+  {
+   "action": "getCreateRoleActivity",
+   "field": "birthId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 23055,
+     "text": "t.birthIdId = o.birthId < 283 ? parseInt(o.birthId) + 4 : parseInt(o.birthId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23058,
+     "text": "t.birthIdId = o.birthId < 283 ? parseInt(o.birthId) : parseInt(o.birthId) - 4;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23074,
+     "text": "h.RoleBaseInfo.birthIdId = o.birthId;"
+    }
+   ]
+  },
+  {
+   "action": "getCreateRoleActivity",
+   "field": "createTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 23064,
+     "text": "i.getComponent(\"ChangeIdUI\").setData(o.createTime);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 132526,
+     "text": "return t.createTime > e.createTime ? 1 : -1;"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 23841,
+     "text": "e.createTime = 0;"
+    }
+   ]
+  },
+  {
+   "action": "getCreateRoleActivity",
+   "field": "faceId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 23056,
+     "text": "t.appearId = o.faceId < 302 ? parseInt(o.faceId) + 10 : parseInt(o.faceId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23059,
+     "text": "t.appearId = o.faceId < 302 ? parseInt(o.faceId) : parseInt(o.faceId) - 10;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23075,
+     "text": "h.RoleBaseInfo.appearId = o.faceId;"
+    }
+   ]
+  },
+  {
+   "action": "getCreateRoleActivity",
+   "field": "talnetId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 23061,
+     "text": "t.talentId = o.talnetId;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23076,
+     "text": "h.RoleBaseInfo.talentId = o.talnetId;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23090,
+     "text": "o.hasOwnProperty(\"talnetId\") && (t.talentId = o.talnetId);"
+    }
+   ]
+  },
+  {
+   "action": "getDouYinOpenID",
+   "field": "openid",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 116693,
+     "text": "s.RoleBaseInfo.userAccount = o.openid;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 116696,
+     "text": "account: o.openid,"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 116705,
+     "text": "s.RoleBaseInfo.userAccount = o.openid;"
+    }
+   ]
+  },
+  {
+   "action": "getDragon",
+   "field": "currentDragonId",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 27429,
+     "text": "1 == e.eRet && 0 != e.currentDragonId && (o = e);"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 1096,
+     "text": "this.dragonId = this.dragonData.currentDragonId;"
+    }
+   ]
+  },
+  {
+   "action": "getEquipLock",
+   "field": "equipLocks",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 65022,
+     "text": "1 == o.eRet && (e.lockEquips = o.equipLocks);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 65026,
+     "text": "e.lockEquips = o.equipLocks;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 65027,
+     "text": "r.MessageCenter.dispatch(s.EvName.REFRESH_LOCK_ARRAY, o.equipLocks);"
+    }
+   ]
+  },
+  {
+   "action": "getFinishTaskAward",
+   "field": "contribution",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113645,
+     "text": "this.schoolTaskData.schoolContribution[this.othenSchool][0] = e.schoolTask[this.othenSchool].contribution;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 113661,
+     "text": "o = Math.abs(e.upSchoolTaskCP[this.othenSchool] - this.schoolTaskData.schoolTask[this.othenSchool].contribution);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 113662,
+     "text": "this.schoolTaskData.schoolTask[this.othenSchool].contribution = e.upSchoolTaskCP[this.othenSchool];"
+    }
+   ]
+  },
+  {
+   "action": "getFinishTaskAward",
+   "field": "triggerBoxs",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 133343,
+     "text": "t.MapBoxModel.addBox(o.triggerBoxs);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 133394,
+     "text": "t.MapBoxModel.addBox(o.triggerBoxs);"
+    }
+   ]
+  },
+  {
+   "action": "getFriendHomeList",
+   "field": "dog",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57595,
+     "text": "i.hasOwnProperty(\"dog\") && (e.dogData = i.dog);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57958,
+     "text": "o.hasOwnProperty(\"dog\") && (e.dogData = o.dog);"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 18200,
+     "text": "e.dog = null;"
+    }
+   ]
+  },
+  {
+   "action": "getHlexchangeShop",
+   "field": "shopObj",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 47077,
+     "text": "1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EXCHANGE_SHOP_DATA, e.shopObj);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 56094,
+     "text": "if (1 == e.eRet && e.hasOwnProperty(\"shopObj\") && !cc.js.isEmptyObject(e.shopObj)) c.default.prefabs.load(\"homeSim/InnManage/InnExchangeShop\", cc.Prefab, functi"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 56096,
+     "text": "r.addComponent(\"HalloweenChangeShop\").setDatas(e.shopObj, o.npcID);"
+    }
+   ]
+  },
+  {
+   "action": "getHomeList",
+   "field": "bShop",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57597,
+     "text": "i.hasOwnProperty(\"bShop\") && (e.homeShop = i.bShop);"
+    }
+   ]
+  },
+  {
+   "action": "getHomeList",
+   "field": "dog",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57595,
+     "text": "i.hasOwnProperty(\"dog\") && (e.dogData = i.dog);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57958,
+     "text": "o.hasOwnProperty(\"dog\") && (e.dogData = o.dog);"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 18200,
+     "text": "e.dog = null;"
+    }
+   ]
+  },
+  {
+   "action": "getHomeList",
+   "field": "friendPartnerAward",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57633,
+     "text": "i.hasOwnProperty(\"friendPartnerAward\") && (e.rewardData = i.friendPartnerAward);"
+    }
+   ]
+  },
+  {
+   "action": "getHomeList",
+   "field": "recentSeeds",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57592,
+     "text": "i.recentSeeds ? e.recentSs = i.recentSeeds : e.recentSs.length = 0;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57672,
+     "text": "e.recentSs = o.recentSeeds;"
+    }
+   ]
+  },
+  {
+   "action": "getHookBreakList",
+   "field": "qr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 56580,
+     "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120649,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120652,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    }
+   ]
+  },
+  {
+   "action": "getInn",
+   "field": "costDishMap",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62687,
+     "text": "this.costItems = e.costDishMap;"
+    }
+   ]
+  },
+  {
+   "action": "getInn",
+   "field": "showRewardPop",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62688,
+     "text": "this.offlineHot = e.showRewardPop;"
+    }
+   ]
+  },
+  {
+   "action": "getInn",
+   "field": "tableEndTime",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62681,
+     "text": "this.openTime[1] = e.tableEndTime;"
+    }
+   ]
+  },
+  {
+   "action": "getInn",
+   "field": "tableStartTime",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62680,
+     "text": "this.openTime[0] = e.tableStartTime;"
+    }
+   ]
+  },
+  {
+   "action": "getInnCook",
+   "field": "cookBook",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62264,
+     "text": "this.bookBag = e.cookBook;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62377,
+     "text": "this.bookBag = e.cookBook;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62586,
+     "text": "for (var u = 0; u < e.cookBook.length; u++) if (this.bookBag.indexOf(e.cookBook[u]) < 0) {"
+    }
+   ]
+  },
+  {
+   "action": "getInnCookList",
+   "field": "cookList",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62709,
+     "text": "this.cookData = this.innData.cookList;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62786,
+     "text": "this.cookData = e.cookList;"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 33550,
+     "text": "this.data = t.cookList;"
+    }
+   ]
+  },
+  {
+   "action": "getInnRank",
+   "field": "innRankList",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62605,
+     "text": "i.addComponent(\"HotRank\").setData(e.innRankList);"
+    }
+   ]
+  },
+  {
+   "action": "getItemData",
+   "field": "limittype",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 47082,
+     "text": "o.hasOwnProperty(\"limittype\") && (i = o.limittype);"
+    }
+   ]
+  },
+  {
+   "action": "getLikeEvent",
+   "field": "eventId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 47189,
+     "text": "0 == i.eventType ? e.resultData.resultMsg = \"7105\" : t.getResultMsg(i.eventType, i.eventValue, i.eventId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 51157,
+     "text": "var i = c.getItem(o.eventId, \"like_event\");"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 61992,
+     "text": "var e = t.eventId;"
+    }
+   ]
+  },
+  {
+   "action": "getMasterPupilList",
+   "field": "passMeritRewardState",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 132518,
+     "text": "e.hasOwnProperty(\"passMeritRewardState\") && (n = e.passMeritRewardState);"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 80069,
+     "text": "this.roleInfo.otherIsMaster ? this.roleInfo.passMeritTimes > 0 ? o = [ 6314 ] : 0 != this.roleInfo.passMeritRewardState && 2 != this.roleInfo.passMeritRewardSta"
+    }
+   ]
+  },
+  {
+   "action": "getMasterPupilList",
+   "field": "removeApplyList",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 132348,
+     "text": "e.removeApplyList = null;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 132515,
+     "text": "this.removeTotal = e.removeApplyList.length;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 132516,
+     "text": "this.removeApplyList = e.removeApplyList;"
+    }
+   ]
+  },
+  {
+   "action": "getMasterPupilList",
+   "field": "roleList",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 132520,
+     "text": "for (var s in e.roleList) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 132521,
+     "text": "var l = e.roleList[s];"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 56041,
+     "text": "1 == e.eRet ? this.listDatas = e.roleList : e.eRet;"
+    }
+   ]
+  },
+  {
+   "action": "getMultiPVESkill",
+   "field": "pop",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 61,
+     "text": "cc._RF.pop();"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 83,
+     "text": "cc._RF.pop();"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 242,
+     "text": "cc._RF.pop();"
+    }
+   ]
+  },
+  {
+   "action": "getPandaEvent",
+   "field": "eventArr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137657,
+     "text": "var i = r.getItem(o.eventArr[0], \"lh_panda\"), n = r.getItem(o.eventArr[1], \"lh_panda\"), s = r.getItem(o.eventArr[2], \"lh_panda\");"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137668,
+     "text": "var i = r.getItem(o.eventArr[e], \"lh_panda\");"
+    }
+   ]
+  },
+  {
+   "action": "getPayAuth",
+   "field": "AuthCode",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 130839,
+     "text": "jsb.reflection.callStaticMethod(\"com/maple/madherogo/AppActivity\", \"platformPay\", \"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljav"
+    }
+   ]
+  },
+  {
+   "action": "getQuestionList",
+   "field": "currentAnswerNum",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 46906,
+     "text": "o.currentAnswerNum >= o.questionMaxNum ? t.answerResult() : a.default.prefabs.load(\"Question/Paper\", cc.Prefab, function(e, i) {"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 1301,
+     "text": "this.count = t.currentAnswerNum;"
+    }
+   ]
+  },
+  {
+   "action": "getQuestionList",
+   "field": "questionMaxNum",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 46906,
+     "text": "o.currentAnswerNum >= o.questionMaxNum ? t.answerResult() : a.default.prefabs.load(\"Question/Paper\", cc.Prefab, function(e, i) {"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 1495,
+     "text": "var t = 0, e = 0, o = this.data.rightNum, i = this.data.questionMaxNum;"
+    }
+   ]
+  },
+  {
+   "action": "getSchoolMaster",
+   "field": "masterInfo",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113941,
+     "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+    }
+   ]
+  },
+  {
+   "action": "getSchoolMaster",
+   "field": "pupilInfo",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113941,
+     "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+    }
+   ]
+  },
+  {
+   "action": "getSchoolPupil",
+   "field": "masterInfo",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113941,
+     "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+    }
+   ]
+  },
+  {
+   "action": "getSchoolPupil",
+   "field": "pupilInfo",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113941,
+     "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+    }
+   ]
+  },
+  {
+   "action": "getSchoolRoleInfo",
+   "field": "masterInfo",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113941,
+     "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+    }
+   ]
+  },
+  {
+   "action": "getSchoolRoleInfo",
+   "field": "pupilInfo",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113941,
+     "text": "e.hasOwnProperty(\"masterInfo\") ? n.setBtns(e.masterInfo, 0) : e.hasOwnProperty(\"pupilInfo\") ? n.setBtns(e.pupilInfo, 1) : e.hasOwnProperty(\"roleInfo\") && (e.has"
+    }
+   ]
+  },
+  {
+   "action": "getSchoolTask",
+   "field": "currentServerTime",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113618,
+     "text": "M.TimeMgr.sserverT = e.currentServerTime;"
+    }
+   ]
+  },
+  {
+   "action": "getSchoolTask",
+   "field": "xyTodaySchoolId",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113617,
+     "text": "this.beforeSchool = parseInt(e.xyTodaySchoolId);"
+    }
+   ]
+  },
+  {
+   "action": "getTeamSkill",
+   "field": "pop",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 61,
+     "text": "cc._RF.pop();"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 83,
+     "text": "cc._RF.pop();"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 242,
+     "text": "cc._RF.pop();"
+    }
+   ]
+  },
+  {
+   "action": "getTreasureFloor",
+   "field": "floor",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1726,
+     "text": "t.HP = (o.hp.finalValue - o.hp.getLv1Conversion()) * Math.floor(12 - 2 * e) * .1;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1727,
+     "text": "t.MP = (o.mp.finalValue - o.mp.getLv1Conversion()) * Math.floor(12 - 2 * e) * .1;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1728,
+     "text": "t.Attack = (o.attack.finalValue - o.attack.getLv1Conversion()) * Math.floor(12 - 2 * e) * .1;"
+    }
+   ]
+  },
+  {
+   "action": "getUsedItemAward",
+   "field": "awardObj",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64944,
+     "text": "items: o.awardObj,"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64947,
+     "text": "}) : 2 == e.batchType && c.default.showBatchSelectDialog([ e.curItemId, o.awardObj, o.awardStates ]));"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 67705,
+     "text": "o.hasOwnProperty(\"awardObj\") && (i.rewards = o.awardObj);"
+    }
+   ]
+  },
+  {
+   "action": "getUsedItemAward",
+   "field": "awardStates",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64945,
+     "text": "states: o.awardStates"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64947,
+     "text": "}) : 2 == e.batchType && c.default.showBatchSelectDialog([ e.curItemId, o.awardObj, o.awardStates ]));"
+    }
+   ]
+  },
+  {
+   "action": "getVigor",
+   "field": "vigor",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 120603,
+     "text": "s.MessageCenter.dispatch(p.EvName.REFRESH_VIGORS, e.vigor);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138910,
+     "text": "r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138913,
+     "text": "r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);"
+    }
+   ]
+  },
+  {
+   "action": "getWxXyxOpenID",
+   "field": "openid",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 116693,
+     "text": "s.RoleBaseInfo.userAccount = o.openid;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 116696,
+     "text": "account: o.openid,"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 116705,
+     "text": "s.RoleBaseInfo.userAccount = o.openid;"
+    }
+   ]
+  },
+  {
+   "action": "getWxXyxOpenID",
+   "field": "session_key",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 116694,
+     "text": "c.LoginMgr.token = o.session_key;"
+    }
+   ]
+  },
+  {
+   "action": "goldBreakAllSkill",
+   "field": "qr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 56580,
+     "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120649,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120652,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    }
+   ]
+  },
+  {
+   "action": "goldBreakCurrentSkill",
+   "field": "qr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 56580,
+     "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120649,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120652,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    }
+   ]
+  },
+  {
+   "action": "hireNpcOnhook",
+   "field": "siteID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 51434,
+     "text": "var o, s = i.getItem(e.siteID, \"fishpond\");"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 51474,
+     "text": "} else if (2 != o.eRet) if (i.getItem(o.siteID, \"fishpond\").type != s.type) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 51494,
+     "text": "} else if (t.checkSiteID != o.siteID) {"
+    }
+   ]
+  },
+  {
+   "action": "homeSpeicalAward",
+   "field": "eid",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57876,
+     "text": "y.PlantSystemMgr.productHomeEvent(e.eid, o);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 58261,
+     "text": "1 == this.cropControlState ? s.hasOwnProperty(\"eid\") && s.eid > 0 ? a.default.show(n.getText(3322)) : this.addSpeed(t, s) : 2 == this.cropControlState && a.defa"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 58265,
+     "text": "1 == this.cropControlState ? s.hasOwnProperty(\"eid\") && s.eid > 0 ? a.default.show(n.getText(3322)) : this.addSpeed(t, s) : 2 == this.cropControlState && a.defa"
+    }
+   ]
+  },
+  {
+   "action": "intoSchoolSquare",
+   "field": "schoolTitle",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 111833,
+     "text": "e.hasOwnProperty(\"schoolTitle\") && (d.RoleOtherInfo.hastitleLevel = e.schoolTitle);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 114500,
+     "text": "e.hasOwnProperty(\"schoolTitle\") && (h.RoleOtherInfo.hastitleLevel = e.schoolTitle);"
+    }
+   ]
+  },
+  {
+   "action": "jionChatPkServer",
+   "field": "agreeOfflineMatch",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 23967,
+     "text": "t.officeMatch = o.agreeOfflineMatch;"
+    }
+   ]
+  },
+  {
+   "action": "joinSchool",
+   "field": "cdTimeDays",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 77873,
+     "text": "var f = o.cdTimeDays, d = {"
+    }
+   ]
+  },
+  {
+   "action": "lookDogLog",
+   "field": "log",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 403,
+     "text": "console.log(\"========武器外观=======武器外观id \" + this.entity.weaponskinId + \" 战斗武器外观模型id \" + o.weaponFightSkin);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 406,
+     "text": "console.log(\"========武器外观=====战斗里没有这个资源目录singlebattle/weapons=====\", o.weaponFightSkin);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 414,
+     "text": "console.log(\"========武器外观=======武器外观id \" + this.entity.weaponskinId + \" 战斗武器外观模型id \" + o.weaponFightSkin);"
+    }
+   ]
+  },
+  {
+   "action": "lookSecretEvent",
+   "field": "secret",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137731,
+     "text": "i.secret = o.secret;"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 75376,
+     "text": "for (var e = \"\", o = 0; o < t.data.secret.length; o++) e += t.data.secret[o] + \"    \";"
+    }
+   ]
+  },
+  {
+   "action": "marryAward",
+   "field": "guestID",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 77268,
+     "text": "this.guestNpcAy.push(e.guestID);"
+    }
+   ]
+  },
+  {
+   "action": "marryHouse",
+   "field": "houseID",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 77224,
+     "text": "var o = a.getBuildHouseObj(e.houseID);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 77226,
+     "text": "this.marryHouseMap[e.houseID] = e.type;"
+    }
+   ]
+  },
+  {
+   "action": "mulitiNpcBattleResult",
+   "field": "gemId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64768,
+     "text": "v.default.addShowRewardUI1(a.rewardArray, 0, a.equipObj, {}, null, a.getKnackIds, a.gemId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 67711,
+     "text": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 89341,
+     "text": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+    }
+   ]
+  },
+  {
+   "action": "newSweepTower",
+   "field": "awardObj",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64944,
+     "text": "items: o.awardObj,"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64947,
+     "text": "}) : 2 == e.batchType && c.default.showBatchSelectDialog([ e.curItemId, o.awardObj, o.awardStates ]));"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 67705,
+     "text": "o.hasOwnProperty(\"awardObj\") && (i.rewards = o.awardObj);"
+    }
+   ]
+  },
+  {
+   "action": "newSweepTower",
+   "field": "beginLv",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137781,
+     "text": "t.beginFloor = o.batch_sweep_data.beginLv;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137784,
+     "text": "t.sweepTotalLv = parseInt(o.batch_sweep_data.clv) - parseInt(o.batch_sweep_data.beginLv) + 1;"
+    }
+   ]
+  },
+  {
+   "action": "newSweepTower",
+   "field": "canSweep",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137782,
+     "text": "t.isCanSweep = o.batch_sweep_data.canSweep;"
+    }
+   ]
+  },
+  {
+   "action": "newSweepTower",
+   "field": "clv",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137777,
+     "text": "t.curFloorNum = o.batch_sweep_data.clv;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 137784,
+     "text": "t.sweepTotalLv = parseInt(o.batch_sweep_data.clv) - parseInt(o.batch_sweep_data.beginLv) + 1;"
+    }
+   ]
+  },
+  {
+   "action": "obtainCrop",
+   "field": "aExp",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57711,
+     "text": "o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57753,
+     "text": "i.hasOwnProperty(\"aExp\") && i.aExp > 0 && (h[7] = i.aExp);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57797,
+     "text": "o.hasOwnProperty(\"aExp\") && o.aExp > 0 && (f[7] = o.aExp);"
+    }
+   ]
+  },
+  {
+   "action": "obtainCrop",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57638,
+     "text": "var i = o.sIdx, n = {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57685,
+     "text": "e.soilArr[o.sIdx] = i;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57694,
+     "text": "s.landId = o.sIdx;"
+    }
+   ]
+  },
+  {
+   "action": "onBatchBreakByGold",
+   "field": "setData",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1450,
+     "text": "i.addComponent(\"FurnaceUI\").setData(e);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1464,
+     "text": "n.addComponent(\"FurnaceFrame\").setData(e.resourceData, o.furnaceId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1568,
+     "text": "i.addComponent(\"RechargeGiftUI\").setData(e.payData);"
+    }
+   ]
+  },
+  {
+   "action": "onBatchBreakByGold",
+   "field": "setLabelTitle",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 24673,
+     "text": "n.setLabelTitle(i.getText(263));"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 51200,
+     "text": "n.setLabelTitle(\"\");"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 51527,
+     "text": "i.setLabelTitle(n.getText(263));"
+    }
+   ]
+  },
+  {
+   "action": "onKeyDispossHomeEvent",
+   "field": "aExp",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57711,
+     "text": "o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57753,
+     "text": "i.hasOwnProperty(\"aExp\") && i.aExp > 0 && (h[7] = i.aExp);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57797,
+     "text": "o.hasOwnProperty(\"aExp\") && o.aExp > 0 && (f[7] = o.aExp);"
+    }
+   ]
+  },
+  {
+   "action": "onKeyDispossHomeEvent",
+   "field": "cropMap",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57760,
+     "text": "var i = !1, s = [], l = o.cropMap;"
+    }
+   ]
+  },
+  {
+   "action": "onKeyObtainCrop",
+   "field": "aExp",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57711,
+     "text": "o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57753,
+     "text": "i.hasOwnProperty(\"aExp\") && i.aExp > 0 && (h[7] = i.aExp);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57797,
+     "text": "o.hasOwnProperty(\"aExp\") && o.aExp > 0 && (f[7] = o.aExp);"
+    }
+   ]
+  },
+  {
+   "action": "optionLikeEvent",
+   "field": "delTaskIds",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 51170,
+     "text": "o.hasOwnProperty(\"delTaskIds\") && S.TaskModel.clearRogueTaskData(o.delTaskIds);"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 70984,
+     "text": "e.hasOwnProperty(\"delTaskIds\") && v.TaskModel.clearRogueTaskData(e.delTaskIds);"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 71455,
+     "text": "e.hasOwnProperty(\"delTaskIds\") && v.TaskModel.clearRogueTaskData(e.delTaskIds);"
+    }
+   ]
+  },
+  {
+   "action": "optionLikeEvent",
+   "field": "feel",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 51168,
+     "text": "var n = o.npcId, r = o.feel;"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 66909,
+     "text": "g.default.setNcpIntimacy(this.npcID, i.feel);"
+    }
+   ]
+  },
+  {
+   "action": "passCardData",
+   "field": "goldArr",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 55872,
+     "text": "this.goldAy = e.goldArr;"
+    }
+   ]
+  },
+  {
+   "action": "quickFinishTask",
+   "field": "caidan",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 43501,
+     "text": "caidan: o.caidan"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 27989,
+     "text": "1 == t.caidan ? n = n + \"   \" + h.getText(506) + \"10\" : 2 == t.caidan ? n = n + \"(\" + h.getText(1594) + \")\" : 3 == t.caidan && (n = n + \"(\" + h.getText(1595) + "
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 28301,
+     "text": "var o = e.target, i = e.caidan;"
+    }
+   ]
+  },
+  {
+   "action": "quitSchool",
+   "field": "openSchoolFirstTryBgUI",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113728,
+     "text": "0 == t && o.openSchoolFirstTryBgUI(e);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 113729,
+     "text": "}) : this.openSchoolFirstTryBgUI(e);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 113738,
+     "text": "t.prototype.openSchoolFirstTryBgUI = function(t) {"
+    }
+   ]
+  },
+  {
+   "action": "reclaimLand",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57638,
+     "text": "var i = o.sIdx, n = {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57685,
+     "text": "e.soilArr[o.sIdx] = i;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57694,
+     "text": "s.landId = o.sIdx;"
+    }
+   ]
+  },
+  {
+   "action": "redeemTable",
+   "field": "hotVal",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62376,
+     "text": "this.hotVal = e.hotVal;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62633,
+     "text": "this.hotVal = e.hotVal;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62671,
+     "text": "this.hotVal = e.hotVal;"
+    }
+   ]
+  },
+  {
+   "action": "redeemTable",
+   "field": "mhv",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62378,
+     "text": "this.maxHot = e.mhv;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62635,
+     "text": "this.maxHot = e.mhv;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62672,
+     "text": "this.maxHot = e.mhv;"
+    }
+   ]
+  },
+  {
+   "action": "removeBreakQueue",
+   "field": "qr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 56580,
+     "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120649,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120652,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    }
+   ]
+  },
+  {
+   "action": "resetChildFoster",
+   "field": "foster_point",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 24640,
+     "text": "e.hasOwnProperty(\"foster_point\") && (c.MarryModel.childData.foster_point = e.foster_point);"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 12944,
+     "text": "this.labele.getComponent(cc.Label).string = a.getText(4568).replace(/\\[1\\]/, t.foster_point);"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 12948,
+     "text": "e.hasOwnProperty(\"foster_point\") && (l.MarryModel.childData.foster_point = e.foster_point);"
+    }
+   ]
+  },
+  {
+   "action": "resetChildFoster",
+   "field": "playArr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 24641,
+     "text": "e.hasOwnProperty(\"playArr\") && (c.MarryModel.childData.playArr = e.playArr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 77090,
+     "text": "this.childData.playArr[t] += e;"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 12255,
+     "text": "for (var t = u.MarryModel.childData, e = t.baseArr, o = t.addArr, i = [], s = 1; s < t.playArr.length; s++) i.push(t.playArr[s]);"
+    }
+   ]
+  },
+  {
+   "action": "resetRole",
+   "field": "birthId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 23055,
+     "text": "t.birthIdId = o.birthId < 283 ? parseInt(o.birthId) + 4 : parseInt(o.birthId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23058,
+     "text": "t.birthIdId = o.birthId < 283 ? parseInt(o.birthId) : parseInt(o.birthId) - 4;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23074,
+     "text": "h.RoleBaseInfo.birthIdId = o.birthId;"
+    }
+   ]
+  },
+  {
+   "action": "resetRole",
+   "field": "faceId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 23056,
+     "text": "t.appearId = o.faceId < 302 ? parseInt(o.faceId) + 10 : parseInt(o.faceId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23059,
+     "text": "t.appearId = o.faceId < 302 ? parseInt(o.faceId) : parseInt(o.faceId) - 10;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23075,
+     "text": "h.RoleBaseInfo.appearId = o.faceId;"
+    }
+   ]
+  },
+  {
+   "action": "resetRole",
+   "field": "talnetId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 23061,
+     "text": "t.talentId = o.talnetId;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23076,
+     "text": "h.RoleBaseInfo.talentId = o.talnetId;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 23090,
+     "text": "o.hasOwnProperty(\"talnetId\") && (t.talentId = o.talnetId);"
+    }
+   ]
+  },
+  {
+   "action": "restVein",
+   "field": "psych",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 66518,
+     "text": "c.RoleBaseInfo.zhenyuan = o.psych;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 66533,
+     "text": "c.RoleBaseInfo.zhenyuan = o.psych;"
+    }
+   ]
+  },
+  {
+   "action": "schoolAppoint",
+   "field": "appointDatas",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 113862,
+     "text": "for (var o = 0; o < e.appointDatas.length; o++) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 113863,
+     "text": "for (var n = e.appointDatas[o], a = !0, s = 0; s < this.weirenAppointData.length; s++) if (n.appointRoleId == this.weirenAppointData[s].role_id) {"
+    }
+   ]
+  },
+  {
+   "action": "seedCrop",
+   "field": "sIdx",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57638,
+     "text": "var i = o.sIdx, n = {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57685,
+     "text": "e.soilArr[o.sIdx] = i;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57694,
+     "text": "s.landId = o.sIdx;"
+    }
+   ]
+  },
+  {
+   "action": "setPlayerCardMoutsSycn",
+   "field": "sycn",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 132087,
+     "text": "g.RoleOtherInfo.isSyncMount = 1 == e.sycn;"
+    }
+   ]
+  },
+  {
+   "action": "skillChange",
+   "field": "changeCD",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 119858,
+     "text": "(y = o.changeCD + 864e5 * s - o.serverTime) < 0 && (y = 0);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 119861,
+     "text": "i.MessageCenter.dispatch(a.EvName.REFRESH_SWAP_CD, o.changeCD);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 119864,
+     "text": "o.changeCD + 864e5 * s - o.serverTime), v = (l = Math.floor(y / 864e5), h = Math.floor((y - 864e5 * l) / 36e5),"
+    }
+   ]
+  },
+  {
+   "action": "startEatByTable",
+   "field": "gn",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 62612,
+     "text": "this.guestNum = e.gn;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 62714,
+     "text": "this.guestNum = this.innData.gn;"
+    }
+   ]
+  },
+  {
+   "action": "stealCrop",
+   "field": "aExp",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 57711,
+     "text": "o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57753,
+     "text": "i.hasOwnProperty(\"aExp\") && i.aExp > 0 && (h[7] = i.aExp);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 57797,
+     "text": "o.hasOwnProperty(\"aExp\") && o.aExp > 0 && (f[7] = o.aExp);"
+    }
+   ]
+  },
+  {
+   "action": "stealCrop",
+   "field": "b",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 4694,
+     "text": "r[4] = o.b;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 9892,
+     "text": "s.b = i.b;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 25435,
+     "text": "this.target.color = cc.color(255 - (255 - e.r) * o, 255 - (255 - e.g) * o, 255 - (255 - e.b) * o, 255);"
+    }
+   ]
+  },
+  {
+   "action": "stopBreaklist",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1429,
+     "text": "n.addComponent(\"ConvstnBoard\").setNpcData(e, o.tempData);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1450,
+     "text": "i.addComponent(\"FurnaceUI\").setData(e);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1464,
+     "text": "n.addComponent(\"FurnaceFrame\").setData(e.resourceData, o.furnaceId);"
+    }
+   ]
+  },
+  {
+   "action": "stopBreaklist",
+   "field": "qr",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 56580,
+     "text": "M.SkillUpgradeModel.restoreBreakQueueData(t.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120649,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 120652,
+     "text": "1 == o.eRet && e.updateBreakQueueData(o.qr);"
+    }
+   ]
+  },
+  {
+   "action": "storyExperience",
+   "field": "branchId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 101916,
+     "text": "_.RoleBaseInfo.storyId = e.branchId;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 111877,
+     "text": "v.RoleBaseInfo.storyId = e.branchId ? e.branchId : 1;"
+    }
+   ]
+  },
+  {
+   "action": "sweepCopy",
+   "field": "copyID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64077,
+     "text": "t.dungeonID = o.copyID;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64079,
+     "text": "t.start(o.copyID);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64081,
+     "text": "var r = i.getItem(o.copyID, \"fuben\").exp[o.state - 1];"
+    }
+   ]
+  },
+  {
+   "action": "sweepCopy",
+   "field": "liveness",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64095,
+     "text": "t.showRewards(o.rewardArray, o.liveness);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64099,
+     "text": "if (1 == o.eRet) t.showRewards(o.rewardArray, o.liveness); else if (3 == o.eRet) g.LoginMgr.isMiniIos(1) ? l.default.show(n.getText(591)) : l.default.show(n.get"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 108246,
+     "text": "if (o.liveness) {"
+    }
+   ]
+  },
+  {
+   "action": "towerRank",
+   "field": "rankArr",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 137586,
+     "text": "i.addComponent(\"TowerRank\").setData(e.rankArr);"
+    },
+    {
+     "file": "tools/scripts2.js",
+     "line": 41849,
+     "text": "this.rankList = e.rankArr;"
+    }
+   ]
+  },
+  {
+   "action": "treasureAward",
+   "field": "isStatus",
+   "conf": "fallback",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 55909,
+     "text": "this.enterToScene(e.boxNum, e.isStatus);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 55915,
+     "text": "this.showTipFlag = e.isStatus;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 55925,
+     "text": "this.showTipFlag = e.isStatus;"
+    }
+   ]
+  },
+  {
+   "action": "upgradeVein",
+   "field": "addComponent",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 1429,
+     "text": "n.addComponent(\"ConvstnBoard\").setNpcData(e, o.tempData);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1450,
+     "text": "i.addComponent(\"FurnaceUI\").setData(e);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 1464,
+     "text": "n.addComponent(\"FurnaceFrame\").setData(e.resourceData, o.furnaceId);"
+    }
+   ]
+  },
+  {
+   "action": "upgradeVein",
+   "field": "psych",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 66518,
+     "text": "c.RoleBaseInfo.zhenyuan = o.psych;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 66533,
+     "text": "c.RoleBaseInfo.zhenyuan = o.psych;"
+    }
+   ]
+  },
+  {
+   "action": "upgradeVein",
+   "field": "veinID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 66507,
+     "text": "4001 == o.veinID && 1 == o.lv && u.default.prefabs.load(\"comUI/PromptUI\", cc.Prefab, function(t, e) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 66514,
+     "text": "e.acupoint2Lv[o.veinID] = o.lv;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 66515,
+     "text": "a.updateAcpt(o.veinID, o.lv);"
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "bloodEndTime",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64815,
+     "text": "t.RoleOtherInfo.setBloodEndTime(a.bloodEndTime);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 70589,
+     "text": "P.RoleOtherInfo.setBloodEndTime(e.bloodEndTime);"
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "dogid",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64817,
+     "text": "var T = i.getItem(a.dogid, \"npc\");"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 73974,
+     "text": "var m = a.getItem(o.dogid, \"npc\");"
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "formulaID",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64794,
+     "text": "var y = i.getItem(a.formulaID, \"formula\");"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64795,
+     "text": "R.RecastModel.formulaArr.push(\"\" + a.formulaID);"
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "gemId",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64768,
+     "text": "v.default.addShowRewardUI1(a.rewardArray, 0, a.equipObj, {}, null, a.getKnackIds, a.gemId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 67711,
+     "text": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 89341,
+     "text": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "genGuDan",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64825,
+     "text": "t.RoleOtherInfo.gengudanTime = a.genGuDan;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 107241,
+     "text": "this.gengudanTime = e.hasOwnProperty(\"genGuDan\") ? e.genGuDan : 0;"
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "getKnackIds",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64768,
+     "text": "v.default.addShowRewardUI1(a.rewardArray, 0, a.equipObj, {}, null, a.getKnackIds, a.gemId);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64775,
+     "text": "} else a.hasOwnProperty(\"getKnackIds\") && v.default.addShowRewardUI1({}, 0, {}, {}, null, a.getKnackIds);"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 73958,
+     "text": "o.hasOwnProperty(\"getKnackIds\") ? d.default.addShowRewardUI1(o.rewardArray, 0, o.equipObj, {}, null, o.getKnackIds) : d.default.addShowRewardUI1(o.rewardArray, "
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "itemRealgarMap",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64850,
+     "text": "t.RoleOtherInfo.wineData = a.itemRealgarMap;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 107260,
+     "text": "e.hasOwnProperty(\"itemRealgarMap\") && (this.wineData = e.itemRealgarMap);"
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "mpnum",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64783,
+     "text": "c.default.show(n.getText(\"4671\").replace(/\\[1\\]/, a.mpnum));"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 73972,
+     "text": "l.default.show(c.getText(\"4671\").replace(/\\[1\\]/, o.mpnum));"
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "skch",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64758,
+     "text": "var h = a.note.skch, u = 0;"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 73951,
+     "text": "var n = o.note.skch, r = 0;"
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "partners",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64777,
+     "text": "a.hasOwnProperty(\"partners\") && N.PartnerModel.updatePartners(a.partners);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 133428,
+     "text": "o.hasOwnProperty(\"partners\") && k.PartnerModel.updatePartners(o.partners);"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 59532,
+     "text": "e.partners = {};"
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "rewardSkillSkin",
+   "conf": "usage-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64853,
+     "text": "for (var D in a.rewardSkillSkin) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 64854,
+     "text": "l.RoleBaseInfo.skillSkinData.skinData[D] = a.rewardSkillSkin[D];"
+    },
+    {
+     "file": "tools/scripts3.js",
+     "line": 82817,
+     "text": "e.rewardSkillSkin && this.setSkin(e.rewardSkillSkin);"
+    }
+   ]
+  },
+  {
+   "action": "useItem",
+   "field": "stealFlag",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 64827,
+     "text": "E.StealModel.canSteal = a.stealFlag;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 70551,
+     "text": "O.StealModel.canSteal = e.stealFlag;"
+    }
+   ]
+  },
+  {
+   "action": "useVigorMeditation",
+   "field": "vigor",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 120603,
+     "text": "s.MessageCenter.dispatch(p.EvName.REFRESH_VIGORS, e.vigor);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138910,
+     "text": "r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138913,
+     "text": "r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);"
+    }
+   ]
+  },
+  {
+   "action": "useVigorUpGradeSkill",
+   "field": "vigor",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 120603,
+     "text": "s.MessageCenter.dispatch(p.EvName.REFRESH_VIGORS, e.vigor);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138910,
+     "text": "r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 138913,
+     "text": "r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);"
+    }
+   ]
+  },
+  {
+   "action": "washAdditionalArr",
+   "field": "attrList",
+   "conf": "name",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 24634,
+     "text": "i.addComponent(\"SetChildWashUI\").setData(e.attrList);"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 144073,
+     "text": "i.addComponent(\"SetWashUI\").setData(e.attrList);"
+    }
+   ]
+  },
+  {
+   "action": "wearFasion",
+   "field": "fasionid",
+   "conf": "listener-1",
+   "found": true,
+   "hits": [
+    {
+     "file": "tools/index.js",
+     "line": 145366,
+     "text": "c.MarryModel.wifeUpdateData.eid = o.fasionid;"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 145367,
+     "text": "if (parseInt(o.fasionid) > 0) {"
+    },
+    {
+     "file": "tools/index.js",
+     "line": 145368,
+     "text": "if (!c.MarryModel.wifeUpdateData.fasion.hasOwnProperty(o.fasionid)) {"
+    }
+   ]
+  }
+ ],
+ "stat": {
+  "verified": 255,
+  "notFound": 0
+ }
+}

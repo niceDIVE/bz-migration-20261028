@@ -1,0 +1,2 @@
+status=200 https://bzgf.maple-game.com/900-server-166/TellAction
+{"error":0,"p":"User.TellAction","resultCode":200,"User.TellAction":{"eRet":1},"achievement":{"red":true,"achieveRateId":0}}

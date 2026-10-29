@@ -1,0 +1,320 @@
+{
+  "generatedAt": "2026-10-22T00:04:22.183Z",
+  "queries": [
+    {
+      "pattern": "bloodArr",
+      "file": "index.js",
+      "exit": 0,
+      "hits": [
+        "index.js:144052: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);",
+        "index.js:144058: h.UserModel.entity.strength.baseValue = i + e.bloodArr[0] + o[7][0];",
+        "index.js:144059: h.UserModel.entity.shenfa.baseValue = r + e.bloodArr[1] + o[7][1];",
+        "index.js:144060: h.UserModel.entity.gengu.baseValue = c + e.bloodArr[2] + o[7][2];",
+        "index.js:144061: h.UserModel.entity.perception.baseValue = v + e.bloodArr[3] + o[7][3];",
+        "index.js:144109: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);"
+      ]
+    },
+    {
+      "pattern": "bloodArr",
+      "file": "scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "bloodArr",
+      "file": "scripts3.js",
+      "exit": 0,
+      "hits": [
+        "scripts3.js:12248: e.hasOwnProperty(\"bloodArr\") && (b.MarryModel.cycleData[8] = e.bloodArr);"
+      ]
+    },
+    {
+      "pattern": "maxWuxin",
+      "file": "index.js",
+      "exit": 0,
+      "hits": [
+        "index.js:76972: this.maxWuxin = 0;",
+        "index.js:77034: e.hasOwnProperty(\"maxWuxin\") && (this.maxWuxin = e.maxWuxin);",
+        "index.js:108022: var t = Math.floor(I.SkillTable.getSkillLevel(9) / 10), e = M.MarryModel.maxWuxin, o = M.MarryModel.cycleData;",
+        "index.js:144053: e.hasOwnProperty(\"maxWuxin\") && (p.MarryModel.maxWuxin = e.maxWuxin);",
+        "index.js:144111: e.hasOwnProperty(\"maxWuxin\") && (p.MarryModel.maxWuxin = e.maxWuxin);"
+      ]
+    },
+    {
+      "pattern": "maxWuxin",
+      "file": "scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "maxWuxin",
+      "file": "scripts3.js",
+      "exit": 0,
+      "hits": [
+        "scripts3.js:12250: e.hasOwnProperty(\"maxWuxin\") && (b.MarryModel.maxWuxin = e.maxWuxin);"
+      ]
+    },
+    {
+      "pattern": "cycleLifeRetains",
+      "file": "index.js",
+      "exit": 0,
+      "hits": [
+        "index.js:70504: T.SkillTable.init(e.skillMap, e.cycleLifeRetains);",
+        "index.js:119991: o.SkillTable.cycleLifeRetains = [];",
+        "index.js:120055: o && (this.cycleLifeRetains = o);"
+      ]
+    },
+    {
+      "pattern": "cycleLifeRetains",
+      "file": "scripts2.js",
+      "exit": 0,
+      "hits": [
+        "scripts2.js:55803: for (var e = l.SkillTable.cycleLifeRetains, o = 0; o < e.length; o++) if (t.toString() == e[o].toString()) return !0;"
+      ]
+    },
+    {
+      "pattern": "cycleLifeRetains",
+      "file": "scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "cycleData",
+      "file": "index.js",
+      "exit": 0,
+      "hits": [
+        "index.js:76990: this.cycleData = [];",
+        "index.js:77012: this.cycleData = [];",
+        "index.js:77051: e.hasOwnProperty(\"cycleObj\") && (this.cycleData = e.cycleObj);",
+        "index.js:77052: if (this.cycleData.length) {",
+        "index.js:77053: var r = this.cycleData[1].length, a = this;",
+        "index.js:77057: t.RoleOtherInfo.reBirthTime = a.cycleData[0];",
+        "index.js:77058: r > 0 && (t.RoleOtherInfo.matherId = a.cycleData[1][r - 1]);",
+        "index.js:77060: E.RoleOtherInfo.reBirthTime = this.cycleData[0];",
+        "index.js:77061: r > 0 && (E.RoleOtherInfo.matherId = this.cycleData[1][r - 1]);",
+        "index.js:77644: this.cycleData = [];",
+        "index.js:108022: var t = Math.floor(I.SkillTable.getSkillLevel(9) / 10), e = M.MarryModel.maxWuxin, o = M.MarryModel.cycleData;",
+        "index.js:111889: var m = y.UserModel.entity, _ = f.MarryModel.cycleData;",
+        "index.js:120815: var e = 0, o = M.MarryModel.cycleData, i = f.SkillTable.getSkillLevel(8);",
+        "index.js:144051: var o = p.MarryModel.cycleData, i = l.RoleBaseInfo.armStrong, r = l.RoleBaseInfo.shenFa, c = l.RoleBaseInfo.bone, v = l.RoleBaseInfo.understanding;",
+        "index.js:144052: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);",
+        "index.js:144109: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);",
+        "index.js:144110: e.hasOwnProperty(\"fosterArr\") && (p.MarryModel.cycleData[7] = e.fosterArr);",
+        "index.js:144112: var o = p.MarryModel.cycleData;"
+      ]
+    },
+    {
+      "pattern": "cycleData",
+      "file": "scripts2.js",
+      "exit": 0,
+      "hits": [
+        "scripts2.js:2141: for (var e = 0; e < 4; e++) this.addtionNum += u.MarryModel.cycleData[4][e];",
+        "scripts2.js:2142: var o = u.MarryModel.cycleData[1].length - 2;",
+        "scripts2.js:2144: if (Array.isArray(u.MarryModel.cycleData[1][o])) {",
+        "scripts2.js:2145: var i = u.MarryModel.cycleData[1][o][2];",
+        "scripts2.js:2146: u.MarryModel.cycleData[1][o][0] > this.wifeLvMax && (this.wifeState = !0);",
+        "scripts2.js:2195: var e = 0, o = 0, i = 0, s = 0, n = u.MarryModel.cycleData;",
+        "scripts2.js:12256: for (var n = u.MarryModel.cycleData[8], r = [ 41, 42, 44, 43 ], c = 0; c < e.length; c++) this.labels[c + 1].getComponent(cc.Label).string = a.getText(r[c]) + \":\" + e[c] + \" (+\" + n[c] + \") +\" + o[c] + \" (+\" + i[c] + \")\";",
+        "scripts2.js:36535: E.MarryModel.cycleData[3].pTims++;",
+        "scripts2.js:36536: r = E.MarryModel.cycleData[3].pTims;",
+        "scripts2.js:36538: E.MarryModel.cycleData[3].eTims++;",
+        "scripts2.js:36539: r = E.MarryModel.cycleData[3].eTims;",
+        "scripts2.js:36579: var i = 4435 == o.ID ? E.MarryModel.cycleData[3].pTims : E.MarryModel.cycleData[3].eTims, s = Math.max(o.Data3 - i, 0);",
+        "scripts2.js:49785: var w = m.MarryModel.cycleData[2], x = l.getText(393).replace(/\\[48\\]/, w[0]);",
+        "scripts2.js:50942: o.getComponent(cc.Label).string = p.MarryModel.cycleData[4][e];",
+        "scripts2.js:50943: this.addtionNum += p.MarryModel.cycleData[4][e];",
+        "scripts2.js:50946: var i = p.MarryModel.cycleData[1].length - 2;",
+        "scripts2.js:50947: if (Array.isArray(p.MarryModel.cycleData[1][i])) {",
+        "scripts2.js:50948: var s = p.MarryModel.cycleData[1][i][0];",
+        "scripts2.js:51002: p.MarryModel.cycleData[4][o] = e.attArr[o];",
+        "scripts2.js:51009: for (var t = [], e = 0; e < 4; e++) t.push(p.MarryModel.cycleData[4][e]);",
+        "scripts2.js:81627: var e = 0, o = 0, i = 0, s = p.MarryModel.cycleData;"
+      ]
+    },
+    {
+      "pattern": "cycleData",
+      "file": "scripts3.js",
+      "exit": 0,
+      "hits": [
+        "scripts3.js:12248: e.hasOwnProperty(\"bloodArr\") && (b.MarryModel.cycleData[8] = e.bloodArr);",
+        "scripts3.js:12249: e.hasOwnProperty(\"fosterArr\") && (b.MarryModel.cycleData[7] = e.fosterArr);",
+        "scripts3.js:12251: var o = b.MarryModel.cycleData;"
+      ]
+    },
+    {
+      "pattern": "reqWishAddtion",
+      "file": "index.js",
+      "exit": 0,
+      "hits": [
+        "index.js:144154: t.prototype.reqWishAddtion = function(t) {"
+      ]
+    },
+    {
+      "pattern": "reqWishAddtion",
+      "file": "scripts2.js",
+      "exit": 0,
+      "hits": [
+        "scripts2.js:51014: h.WashModel.reqWishAddtion();",
+        "scripts2.js:51016: }) : h.WashModel.reqWishAddtion();",
+        "scripts2.js:61731: c.WashModel.reqWishAddtion(this.curIndex);"
+      ]
+    },
+    {
+      "pattern": "reqWishAddtion",
+      "file": "scripts3.js",
+      "exit": 0,
+      "hits": []
+    }
+  ],
+  "functions": [
+    {
+      "name": "WashModel.prototype.init",
+      "file": "tools/index.js",
+      "startLine": 144033,
+      "endLine": 144077,
+      "lines": [
+        "144033: t.prototype.init = function() {",
+        "144034: var t = this;",
+        "144035: this.upgradeObj = {};",
+        "144036: n.MessageCenter.on(r.HttpConst.WASH_MEDICINE, this.onWashMedicneBackCall, this);",
+        "144037: n.MessageCenter.on(r.HttpConst.REQ_CHANGEBLOOD, function(e, o) {",
+        "144038: if (1 == o.eRet) {",
+        "144039: n.MessageCenter.dispatch(a.EvName.CHANGE_BLOOD_SUCCESS);",
+        "144040: t.showUpgradeCartoon(1);",
+        "144041: } else 2 == o.eRet ? s.default.show(i.getText(1064)) : 3 == o.eRet && f.StoreModel.openChargeList();",
+        "144042: }, this);",
+        "144043: n.MessageCenter.on(r.HttpConst.ADD_CHANGE_BLOOD, function(e, o) {",
+        "144044: if (1 == o.eRet) {",
+        "144045: n.MessageCenter.dispatch(a.EvName.CHANGE_BLOOD_SUCCESS);",
+        "144046: t.showUpgradeCartoon(1);",
+        "144047: } else 2 == o.eRet ? s.default.show(i.getText(1064)) : 3 == o.eRet && f.StoreModel.openChargeList();",
+        "144048: }, this);",
+        "144049: n.MessageCenter.on(r.HttpConst.WASH_ADDITION, function(t, e) {",
+        "144050: if (1 == e.eRet) {",
+        "144051: var o = p.MarryModel.cycleData, i = l.RoleBaseInfo.armStrong, r = l.RoleBaseInfo.shenFa, c = l.RoleBaseInfo.bone, v = l.RoleBaseInfo.understanding;",
+        "144052: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);",
+        "144053: e.hasOwnProperty(\"maxWuxin\") && (p.MarryModel.maxWuxin = e.maxWuxin);",
+        "144054: for (var _ in h.UserModel.entity.equipments) h.UserModel.entity.equipments[_] && (l.RoleBaseInfo.equipments[_] = h.UserModel.entity.equipments[_].id);",
+        "144055: y.RoleOtherInfo.setAllHpAndMp2();",
+        "144056: h.UserModel.setupEntity();",
+        "144057: if (o.length >= 5) {",
+        "144058: h.UserModel.entity.strength.baseValue = i + e.bloodArr[0] + o[7][0];",
+        "144059: h.UserModel.entity.shenfa.baseValue = r + e.bloodArr[1] + o[7][1];",
+        "144060: h.UserModel.entity.gengu.baseValue = c + e.bloodArr[2] + o[7][2];",
+        "144061: h.UserModel.entity.perception.baseValue = v + e.bloodArr[3] + o[7][3];",
+        "144062: }",
+        "144063: u.JinmaiModel.parseMeridianInfo(u.JinmaiModel.acupoint2Lv);",
+        "144064: h.UserModel.entity.hp.init();",
+        "144065: h.UserModel.entity.mp.init();",
+        "144066: h.UserModel.entity.hp.limit = l.RoleBaseInfo.hpLimit;",
+        "144067: h.UserModel.entity.hp.remaining = l.RoleBaseInfo.hpRemaining;",
+        "144068: h.UserModel.entity.mp.remaining = l.RoleBaseInfo.mpRemaining;",
+        "144069: h.UserModel.entity.exp = l.RoleBaseInfo.exp;",
+        "144070: n.MessageCenter.dispatch(a.EvName.CHANGE_ADDTION_SUCCESS, e);",
+        "144071: } else 3 == e.eRet ? f.StoreModel.openChargeList() : 4 == e.eRet ? d.default.prefabs.load(\"marrySystem/ChildWashUI\", cc.Prefab, function(t, o) {",
+        "144072: var i = cc.instantiate(o);",
+        "144073: i.addComponent(\"SetWashUI\").setData(e.attrList);",
+        "144074: g.PopUpMgr.addPopUp(i, m.LayerMgr.popUpLayer);",
+        "144075: }) : 6 == e.eRet ? s.default.show(\"等级未达到要求无法洗髓\") : 7 == e.eRet && s.default.show(\"上一世无附加属性无法洗髓\");",
+        "144076: });",
+        "144077: };"
+      ]
+    },
+    {
+      "name": "UIComponent.prototype.setData (inherited by SetWashUI)",
+      "file": "tools/index.js",
+      "startLine": 139706,
+      "endLine": 139709,
+      "lines": [
+        "139706: e.prototype.setData = function(t) {",
+        "139707: for (var e = [], o = 1; o < arguments.length; o++) e[o - 1] = arguments[o];",
+        "139708: this.data = t;",
+        "139709: };"
+      ]
+    },
+    {
+      "name": "SetWashUI",
+      "file": "tools/scripts2.js",
+      "startLine": 61703,
+      "endLine": 61738,
+      "lines": [
+        "61703: function(t) {",
+        "61704: s(e, t);",
+        "61705: function e() {",
+        "61706: var e = null !== t && t.apply(this, arguments) || this;",
+        "61707: e.curIndex = 1;",
+        "61708: return e;",
+        "61709: }",
+        "61710: e.prototype.onLoad = function() {",
+        "61711: t.prototype.onLoad.call(this);",
+        "61712: var e = this.getPathByNode(\"bg/confirmButton\");",
+        "61713: this.addButtonListen(e, this, this.onTapCallBack);",
+        "61714: var o = this.getPathByNode(\"bg/cancelButton\");",
+        "61715: this.addButtonListen(o, this, this.onCancelCallBack);",
+        "61716: for (var i = 1; i < 5; i++) {",
+        "61717: var s = this.getPathByNode(\"bg/toggleContainer/toggle\" + i);",
+        "61718: this.addButtonListen(s, this, this.onCheckCallBack, i);",
+        "61719: }",
+        "61720: var n = [ 41, 42, 44, 43 ], r = this.data.split(\"|\");",
+        "61721: for (i = 1; i < 5; i++) {",
+        "61722: var c = r[i - 1].split(\",\");",
+        "61723: this.getPathByNode(\"bg/toggleContainer/toggle\" + i + \"/label\" + i).getComponent(cc.Label).string = a.getText(n[i - 1]) + \"+\" + c[1];",
+        "61724: }",
+        "61725: };",
+        "61726: e.prototype.start = function() {};",
+        "61727: e.prototype.onCheckCallBack = function(t) {",
+        "61728: this.curIndex != t.node.tag1 && (this.curIndex = t.node.tag1);",
+        "61729: };",
+        "61730: e.prototype.onTapCallBack = function() {",
+        "61731: c.WashModel.reqWishAddtion(this.curIndex);",
+        "61732: r.PopUpMgr.removePopUp(this.node);",
+        "61733: };",
+        "61734: e.prototype.onCancelCallBack = function() {",
+        "61735: r.PopUpMgr.removePopUp(this.node);",
+        "61736: };",
+        "61737: return n([ h ], e);",
+        "61738: }(l.UIComponent));"
+      ]
+    }
+  ],
+  "answers": {
+    "bloodArr_in_loadgame": "no",
+    "bloodArr_where": [
+      "tools/index.js:144052: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);",
+      "tools/index.js:144058: h.UserModel.entity.strength.baseValue = i + e.bloodArr[0] + o[7][0];",
+      "tools/index.js:144059: h.UserModel.entity.shenfa.baseValue = r + e.bloodArr[1] + o[7][1];",
+      "tools/index.js:144060: h.UserModel.entity.gengu.baseValue = c + e.bloodArr[2] + o[7][2];",
+      "tools/index.js:144061: h.UserModel.entity.perception.baseValue = v + e.bloodArr[3] + o[7][3];",
+      "tools/index.js:144109: e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);",
+      "tools/scripts3.js:12248: e.hasOwnProperty(\"bloodArr\") && (b.MarryModel.cycleData[8] = e.bloodArr);"
+    ],
+    "bloodArr_signatures": [
+      "tools/index.js:144049: n.MessageCenter.on(r.HttpConst.WASH_ADDITION, function(t, e) {",
+      "tools/index.js:144099: t.prototype.onWashMedicneBackCall = function(t, e) {",
+      "tools/scripts3.js:12238: t.prototype.onWashRes = function(t, e) {"
+    ],
+    "childwash_lines": [
+      "index.js:24634: i.addComponent(\"SetChildWashUI\").setData(e.attrList);",
+      "scripts2.js:12256: for (var n = u.MarryModel.cycleData[8], r = [ 41, 42, 44, 43 ], c = 0; c < e.length; c++) this.labels[c + 1].getComponent(cc.Label).string = a.getText(r[c]) + \":\" + e[c] + \" (+\" + n[c] + \") +\" + o[c] + \" (+\" + i[c] + \")\";",
+      "scripts2.js:61649: var n = [ 41, 42, 44, 43 ], r = this.data.split(\"|\");",
+      "scripts2.js:61650: for (i = 1; i < 5; i++) {",
+      "scripts2.js:61651: var c = r[i - 1].split(\",\");",
+      "scripts2.js:61652: this.getPathByNode(\"bg/toggleContainer/toggle\" + i + \"/label\" + i).getComponent(cc.Label).string = a.getText(n[i - 1]) + \"+\" + c[1];",
+      "scripts2.js:61660: c.ChildrenModel.reqChildWash(this.curIndex);"
+    ],
+    "attrList_fields": [
+      "tools/index.js:144073: i.addComponent(\"SetWashUI\").setData(e.attrList);",
+      "tools/scripts2.js:61720: var n = [ 41, 42, 44, 43 ], r = this.data.split(\"|\");",
+      "tools/scripts2.js:61721: for (i = 1; i < 5; i++) {",
+      "tools/scripts2.js:61722: var c = r[i - 1].split(\",\");",
+      "tools/scripts2.js:61723: this.getPathByNode(\"bg/toggleContainer/toggle\" + i + \"/label\" + i).getComponent(cc.Label).string = a.getText(n[i - 1]) + \"+\" + c[1];"
+    ],
+    "reqWishAddtion_callers": [
+      "tools/scripts2.js:51014: h.WashModel.reqWishAddtion();",
+      "tools/scripts2.js:51016: }) : h.WashModel.reqWishAddtion();",
+      "tools/scripts2.js:61731: c.WashModel.reqWishAddtion(this.curIndex);"
+    ]
+  },
+  "unverified": [],
+  "out_of_scope": []
+}

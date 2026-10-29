@@ -1,0 +1,2 @@
+POST https://bzgf.maple-game.com/900-server-166/joinSchool
+{"mod":"User","do":"joinSchool","p":{"npcID":1003,"school":0,"taskArr":[],"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"17925730619469kk9ceb4"}}

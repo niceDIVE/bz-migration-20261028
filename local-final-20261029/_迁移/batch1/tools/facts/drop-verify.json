@@ -1,0 +1,119 @@
+﻿{
+    "generatedAt":  "2026-10-22T05:10:42+08:00",
+    "runs":  [
+                 {
+                     "cmd":  "node test/l0-envelope.js",
+                     "exit":  0,
+                     "tail":  [
+                                  "  ok   Create 后落盘",
+                                  "  ok   落盘内容可解析且含名字",
+                                  "  ok   state() 读回同一份",
+                                  "  ok   reset 清空（无 baseValueAy）",
+                                  "[L0-2] PASS 82 项"
+                              ]
+                 },
+                 {
+                     "cmd":  "node test/l0-xhr.js",
+                     "exit":  0,
+                     "tail":  [
+                                  "  ok   impl 缺失 → 日志可见",
+                                  "  ok   abort → readyState=4 / status=0",
+                                  "  ok   abort 事件触发",
+                                  "  ok   abort 后 send 不再改写响应",
+                                  "[L0-1] PASS 21 项"
+                              ]
+                 },
+                 {
+                     "cmd":  "node test/save-migrate.js",
+                     "exit":  0,
+                     "tail":  [
+                                  "    \"2026-10-22-0205-pre-selfcheck-isolation\",",
+                                  "    \"2026-10-22-0232-pre-skill-target\",",
+                                  "    \"2026-10-22-0250-pre-pgr-persist\"",
+                                  "  ]",
+                                  "}"
+                              ]
+                 },
+                 {
+                     "cmd":  "node test/upgrade-skill-target.js",
+                     "exit":  0,
+                     "tail":  [
+                                  "      1",
+                                  "    ]",
+                                  "  },",
+                                  "  \"finalPotential\": 97599",
+                                  "}"
+                              ]
+                 },
+                 {
+                     "cmd":  "node test/selfcheck-nosave.js",
+                     "exit":  0,
+                     "tail":  [
+                                  "    \"bytes\": 668,",
+                                  "    \"sha\": \"53bb1795f255\"",
+                                  "  },",
+                                  "  \"failedNames\": []",
+                                  "}"
+                              ]
+                 },
+                 {
+                     "cmd":  "node test/selfcheck-model-push.js",
+                     "exit":  0,
+                     "tail":  [
+                                  "  \"failed\": 0,",
+                                  "  \"selfCheckTouchedLiveModel\": false,",
+                                  "  \"potPushes\": [],",
+                                  "  \"setSkillCalls\": []",
+                                  "}"
+                              ]
+                 },
+                 {
+                     "cmd":  "node test/overlay-projection.js",
+                     "exit":  0,
+                     "tail":  [
+                                  "  ok   T11 Type3 不产生叠加",
+                                  "  ok   T12 Repeat 任务不写 done",
+                                  "  ok   T13 出售按真实形状结算",
+                                  "",
+                                  "[overlay] PASS  13/13"
+                              ]
+                 },
+                 {
+                     "cmd":  "node test/drop-table.js",
+                     "exit":  0,
+                     "tail":  [
+                                  "  ok   T4 输了不发",
+                                  "  ok   T5 没有掉落表的 npc 不崩",
+                                  "  ok   T6 数据自洽（npc→drop→条目）",
+                                  "",
+                                  "[drop] PASS  6/6"
+                              ]
+                 },
+                 {
+                     "cmd":  "node test/core-test-server.js",
+                     "exit":  1,
+                     "tail":  [
+                                  "[stderr]",
+                                  "  actual: undefined,",
+                                  "  expected: [Array],",
+                                  "  operator: \u0027deepStrictEqual\u0027,",
+                                  "  diff: \u0027simple\u0027"
+                              ]
+                 }
+             ],
+    "device":  {
+                   "saveMd5":  "96c21eda8bb95775191b90b65449bcea",
+                   "saveSize":  756,
+                   "logTail":  [
+                                   "{\"t\":1792616988519,\"boot\":\"boot-2\",\"impl\":\"hd243721b\",\"flow\":\"fe3500480\",\"kind\":\"reload\",\"ok\":true,\"ms\":210}",
+                                   "{\"t\":1792616988524,\"boot\":\"boot-2\",\"impl\":\"hd243721b\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[flow] 进入场景 gamescene\"}",
+                                   "{\"t\":1792616988527,\"boot\":\"boot-2\",\"impl\":\"hd243721b\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[flow] 已进入主场景 gamescene\"}"
+                               ],
+                   "implHitCount":  45,
+                   "adbStatus":  "ok"
+               },
+    "pass":  true,
+    "unverified":  [
+
+                   ]
+}

@@ -1,0 +1,47 @@
+算法 v2.3 跑完结果（2026-10-25）
+环境：Python 3.13.2 / networkx 3.5 / Windows
+
+一、extract_panel 的 stderr 最后三行
+# scripts3.js：100428 行，663 个脚本区间
+# 枢纽事件 4 个不参与认面板：GET_PRECAMP_SUCCESS、SEED_CROP_EVENT、UPDATE_PLAYER_EVENT、USE_NEW_ITEM_EVENT
+# 902 个动作拿到面板；来源计数 {'site': 917, 'event': 488, 'ref': 63}；726 个找到常量定义行
+
+二、GET_MARKETLIST、GET_MOUNTSLIST 有没有出现在 C01 的「同面板必做」里
+有，都在。relations.md 第 12 行原文：
+  ... GET_GIFT_DATA（ChargeShopUI）、GET_MARKETLIST（ChargeShopUI）、GET_SHOP_ALL_ACTIVE（ChargeShopUI）、
+      NEW_OPTIONALGIFT_DATA（ChargeShopUI）... GET_MOUNTSLIST（DriverModel）...
+同一行还带出了 GET_SHOP_ALL_ACTIVE、GET_ALCHEMY_DATA、REQ_POP_GIFT ——
+这三个也是我们实际踩过的缺口，说明「面板维度」这条修得准。
+
+三、shape-hints.md 里 market 和 passObj 两行有没有被认出来
+都没有。
+- shape-hints.md 与 shape-hints.json 里 market、passObj 均 0 命中；
+- User.GetMarketList、User.passCardData 也不在那 104 个有线索的动作里。
+这两处我们踩过（market 发 0 → 货架全空；passObj 缺 → 每帧 TypeError），正好是漏报的典型。
+
+四、误报或漏报最明显的 3 处（各一句话）
+1（漏报）GetMarketList.market：该标「不能用 0 兜底」；我们发 0 → 客户端 for..in 零次迭代 → 货架全空。
+2（漏报）passCardData.passObj：该标「不能安全兜底」；缺了 PassCardUI 每帧 TypeError（实测 2 秒 110 次）。
+3（漏报）getBigGrowupData 的空 growObj：该标「数据空会重发请求」；工具只标了 getPayState，
+   而真正把界面 lockScreen 锁死的是它（scripts2.js:46175 changePage → reqBigGrowUpData）。
+
+补充：误报暂未找到明显一例。已知「0 是合法值」的对照项（BeginTraining.isCollective、
+getActivityCounts.dataArr）都没有被误标，说明零值白名单那类没被误伤。
+覆盖率是结构性原因：shape-hints 只覆盖 104 个动作（inScope 700，约 15%），
+上面三处漏报都落在覆盖范围之外。
+
+五、relate --panel --tables 的规模数字
+{"inScope":700,"edges":940,"clusters":76,"lone":362,"pairs":21,"rwActions":32,
+ "panelAttached":143,"panelMust":142,"reach":{"可达":688,"客户端不发":12}}
+
+六、一个环境坑（别的下游可能也踩）
+PowerShell 的 `>` 重定向会把 panel.json 写成 UTF-16（首字节 FF FE），relate.py 直接报
+  UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0
+改用 Start-Process -RedirectStandardOutput（或 cmd /c 重定向）即可。建议 README 加一句。
+
+七、本次交回的文件
+out/panel.json            extract_panel 产物
+err_panel.txt             extract_panel 的 stderr 全文
+out/shape-hints.md/.json  extract_shape 产物
+out/table-links.md/.json  table_link 产物
+out/relations.md/.json    relate --panel --tables 产物

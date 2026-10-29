@@ -1,0 +1,991 @@
+{
+  "generatedAt": "2026-10-21T22:16:53.723Z",
+  "queries": [
+    {
+      "pattern": "taskObj",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:43518: for (var r in o.taskObj) {",
+        "tools/index.js:43519: var a = o.taskObj[r], s = {};",
+        "tools/index.js:57388: if (e.hasOwnProperty(\"taskObj\")) {",
+        "tools/index.js:57389: if (this.checkNull(e.taskObj)) {",
+        "tools/index.js:64789: taskObj: i.getItem(a.taskID, \"tasknew\")",
+        "tools/index.js:78039: taskObj: {}",
+        "tools/index.js:78042: g.taskObj = _;",
+        "tools/index.js:105939: this.taskObj = {};",
+        "tools/index.js:111670: v.RoleBaseInfo.taskObj = {};",
+        "tools/index.js:112052: taskObj: u,",
+        "tools/index.js:133115: } else 1 == this.taskStateId ? this.setShowBubbleUI(a.getText(t.taskObj.FinishDialog)) : 2 == this.taskStateId ? this.setShowBubbleUI(a.getText(t.taskObj.ReceiveDialog)) : 3 == this.taskStateId && this.setShowBubbleUI(a.getText(t.taskObj.UnfinishDialog));",
+        "tools/index.js:133146: } else 1 == e ? o = a.getText(t.taskObj.FinishDialog) : 2 == e ? o = a.getText(t.taskObj.ReceiveDialog) : 3 == e && (o = a.getText(t.taskObj.UnfinishDialog));",
+        "tools/index.js:133228: this.npcTaskInfo.hasOwnProperty(\"taskObj\") && this.clearHideTask(this.npcTaskInfo.taskObj.TaskID);",
+        "tools/index.js:133231: var s = this.npcTaskInfo.taskObj.Fight;",
+        "tools/index.js:133236: c.RoleBaseInfo.autoFightTaskId = this.npcTaskInfo.taskObj.TaskID;",
+        "tools/index.js:133239: var p = b.default.judgeCurTaskIsFinish(this.npcTaskInfo.taskObj.TaskID, this.npcId);",
+        "tools/index.js:133251: var h = i.getItem(this.npcTaskInfo.taskObj.TaskID, \"tasktime\");",
+        "tools/index.js:133270: i.getAdventureTaskEvent(this.finishTaskObj.taskObj.TaskID) && delete h.RoleOtherInfo.adventureEvent[this.finishTaskObj.taskObj.TaskID];",
+        "tools/index.js:133271: this.finishTaskObj.hasOwnProperty(\"taskObj\") && this.clearHideTask(this.finishTaskObj.taskObj.TaskID);",
+        "tools/index.js:133272: if (this.finishTaskObj.taskObj.textdescribe > 0) {",
+        "tools/index.js:133273: var c = this.finishTaskObj.taskObj.transfer, p = this, m = {",
+        "tools/index.js:133274: str: n.getText(this.finishTaskObj.taskObj.textdescribe),",
+        "tools/index.js:133287: this.finishTaskObj.taskObj.roadAni > 0 ? d.default.prefabs.load(\"taskUI/TaskMapAnim\", cc.Prefab, function(t, e) {",
+        "tools/index.js:133293: o.addComponent(\"TaskMapAnim\").setData(s.finishTaskObj.taskObj.roadAni, function() {",
+        "tools/index.js:133300: r.MessageCenter.dispatch(l.EvName.DELETE_TASK_MIST, this.finishTaskObj.taskObj.TaskID);",
+        "tools/index.js:133345: this.signNewTasks(this.npcTaskInfo.taskObj.TaskID);",
+        "tools/index.js:133346: C.GuideMgr.enterFirstGuide(this.npcTaskInfo.taskObj.TaskID, 1);",
+        "tools/index.js:133347: D.talkDataModel.reqTaskTalkData(parseInt(this.npcTaskInfo.taskObj.TaskID));",
+        "tools/index.js:133349: this.npcTaskInfo.hasOwnProperty(\"taskObj\") && this.clearHideTask(this.npcTaskInfo.taskObj.TaskID);",
+        "tools/index.js:133352: var h = this.npcTaskInfo.taskObj.Fight;",
+        "tools/index.js:133361: c.RoleBaseInfo.autoFightTaskId = this.npcTaskInfo.taskObj.TaskID;",
+        "tools/index.js:133364: var f = b.default.judgeCurTaskIsFinish(this.npcTaskInfo.taskObj.TaskID, this.npcId);",
+        "tools/index.js:133371: var d = i.getItem(this.npcTaskInfo.taskObj.TaskID, \"tasktime\");",
+        "tools/index.js:133401: this.setTasksChecked([ this.finishTaskObj.taskObj.TaskID ]);",
+        "tools/index.js:133402: this.finishTaskAddLikeness(this.finishTaskObj.taskObj.TaskID);",
+        "tools/index.js:133406: C.GuideMgr.enterFirstGuide(this.finishTaskObj.taskObj.TaskID, 0);",
+        "tools/index.js:133410: var y = this.finishTaskObj.taskObj.TaskID, _ = {};",
+        "tools/index.js:133422: 212320 != this.finishTaskObj.taskObj.TaskID && 212650 != this.finishTaskObj.taskObj.TaskID || r.MessageCenter.dispatch(l.EvName.CHANGE_PLAYER_EVENT);",
+        "tools/index.js:133423: 722670 == this.finishTaskObj.taskObj.TaskID && d.default.prefabs.load(\"uispineAct/TaskAutoActionUI\", cc.Prefab, function(t, e) {",
+        "tools/index.js:133429: r.MessageCenter.dispatch(l.EvName.DELETE_TASK_MIST, this.finishTaskObj.taskObj.TaskID);",
+        "tools/index.js:133433: t.AdvancedTaskModel.dutyCheck(u.finishTaskObj.taskObj.TaskID);",
+        "tools/index.js:133472: i.getAdventureTaskEvent(this.finishTaskObj.taskObj.TaskID) && delete h.RoleOtherInfo.adventureEvent[this.finishTaskObj.taskObj.TaskID];",
+        "tools/index.js:133473: this.finishTaskObj.hasOwnProperty(\"taskObj\") && this.clearHideTask(this.finishTaskObj.taskObj.TaskID);",
+        "tools/index.js:133477: if (this.finishTaskObj.taskObj.textdescribe > 0) {",
+        "tools/index.js:133478: var o = this.finishTaskObj.taskObj.transfer, i = this, r = {",
+        "tools/index.js:133479: str: n.getText(this.finishTaskObj.taskObj.textdescribe),",
+        "tools/index.js:133492: this.finishTaskObj.taskObj.roadAni > 0 ? d.default.prefabs.load(\"taskUI/TaskMapAnim\", cc.Prefab, function(t, o) {",
+        "tools/index.js:133498: i.addComponent(\"TaskMapAnim\").setData(e.finishTaskObj.taskObj.roadAni, function() {",
+        "tools/index.js:133509: var o = this.finishTaskObj.taskObj.TaskID;",
+        "tools/index.js:133530: taskObj: a,",
+        "tools/index.js:133550: taskObj: {}",
+        "tools/index.js:133554: o.taskObj = l;",
+        "tools/index.js:133557: var p = o.taskObj.Type;",
+        "tools/index.js:133572: this.finishTaskAddLikeness(this.finishTaskObj.taskObj.TaskID);",
+        "tools/index.js:133574: if (A.MadUtilsTS.isNullObj(e.rewardArray) && A.MadUtilsTS.isNullObj(e.equipObj)) C.GuideMgr.enterFirstGuide(this.finishTaskObj.taskObj.TaskID, 1); else {",
+        "tools/index.js:133575: var o = this.finishTaskObj.taskObj.TaskID, r = this.finishTaskObj.taskObj.Type;",
+        "tools/index.js:133586: this.finishTaskObj.hasOwnProperty(\"taskObj\") && this.clearHideTask(this.finishTaskObj.taskObj.TaskID);",
+        "tools/index.js:133611: var i = this.checkOrderDelete(parseInt(t.taskObj.TaskID)), n = {",
+        "tools/index.js:133612: taskID: t.taskObj.TaskID,",
+        "tools/index.js:133615: cc.log(\"请求接取任务ID == \" + t.taskObj.TaskID);",
+        "tools/index.js:133616: 3 == t.taskObj.TaskType && f.GSceneMgr.mode == f.GSceneMgr.modeMap.rogue ? p.NetMgr.http.sendReqWithMask(s.HttpConst.ROGUE_ACCEPT_TASK, n) : p.NetMgr.http.sendReqWithMask(s.HttpConst.GET_TASK, n);",
+        "tools/index.js:133640: var o = S.UserModel.entity, n = t.taskObj, r = n.TaskID;",
+        "tools/index.js:133709: var e = S.UserModel.entity, o = t.taskObj, i = {",
+        "tools/index.js:134305: taskObj: {}",
+        "tools/index.js:134311: e.taskObj = a;",
+        "tools/index.js:134321: taskObj: {}",
+        "tools/index.js:134327: e.taskObj = s;",
+        "tools/index.js:134345: taskObj: {}",
+        "tools/index.js:134349: e.taskObj = r;",
+        "tools/index.js:134357: taskObj: {}",
+        "tools/index.js:134364: e.taskObj = r;",
+        "tools/index.js:134370: e.taskObj = r;",
+        "tools/index.js:134380: taskObj: {}",
+        "tools/index.js:134385: o.taskObj = r;",
+        "tools/index.js:134390: o.taskObj = r;",
+        "tools/index.js:134452: taskId: e.taskObj.TaskID,",
+        "tools/index.js:134454: taskObj: e.taskObj,",
+        "tools/index.js:134458: (r = l.RoleBaseInfo.taskOrder.indexOf(e.taskObj.TaskID)) >= 0 && l.RoleBaseInfo.taskOrder.splice(r, 1);",
+        "tools/index.js:134459: l.RoleBaseInfo.taskOrder.unshift(e.taskObj.TaskID);",
+        "tools/index.js:134461: parseInt(e.taskObj.ReceiveNpc) > 0 && y.MessageCenter.dispatch(v.EvName.FINISH_TASK_NPC_STATE, e.taskObj.ReceiveNpc);",
+        "tools/index.js:134463: P.BrushNpcModel.addReceiveEvent(e.taskObj.TaskID);",
+        "tools/index.js:134464: N.TaskModel.checkTrack(e.taskObj.TaskID);",
+        "tools/index.js:134473: (r = l.RoleBaseInfo.taskOrder.indexOf(e.taskObj.TaskID)) >= 0 && l.RoleBaseInfo.taskOrder.splice(r, 1);",
+        "tools/index.js:134474: l.RoleBaseInfo.taskOrder.unshift(e.taskObj.TaskID);",
+        "tools/index.js:134475: N.TaskModel.completeTask(e.taskObj.TaskID);",
+        "tools/index.js:134476: P.BrushNpcModel.addCompletionEvent(e.taskObj.TaskID);",
+        "tools/index.js:134477: if (100340 == e.taskObj.TaskID) {",
+        "tools/index.js:134481: if (101110 == e.taskObj.TaskID) {",
+        "tools/index.js:134485: if (210200 == e.taskObj.TaskID) {",
+        "tools/index.js:134489: if (this.checkTaskIsClear(e.taskObj.TaskID)) {",
+        "tools/index.js:134493: if (e.hasOwnProperty(\"taskObj\") && e.taskObj.hasOwnProperty(\"textdescribe\") && e.taskObj.textdescribe > 0) cc.log(\"-----------跳出-------\"); else if (this.blankTaskArray.length) this.checkMapTask(this.blankTaskArray, 0); else {",
+        "tools/index.js:134494: if (n.eliteBossTaskArray.indexOf(Math.floor(e.taskObj.TaskID)) >= 0) return;",
+        "tools/index.js:134495: this.nextTaskShow(e.taskObj);",
+        "tools/index.js:134501: this.checkTaskIsClear(t.taskObj.TaskID) || (this.blankTaskArray.length ? this.checkMapTask(this.blankTaskArray, 0) : this.nextTaskShow(t.taskObj));",
+        "tools/index.js:134523: var o = t.taskObj.TaskID, i = t.taskObj.Type;",
+        "tools/index.js:134524: if (0 == t.taskObj.Repeat) {",
+        "tools/index.js:134535: delete l.RoleBaseInfo.fightTaskObj[t.taskObj.SpRequire];",
+        "tools/index.js:134557: e.hasOwnProperty(\"taskObj\") && e.taskObj.hasOwnProperty(\"Repeat\") && 1 == e.taskObj.Repeat || e.hasOwnProperty(\"taskObj\") && e.taskObj.hasOwnProperty(\"Chain\") && e.taskObj.Chain == t.Chain && this.enterToNextTalk(e);",
+        "tools/index.js:134942: taskObj: {}",
+        "tools/index.js:134951: i.taskObj = s;",
+        "tools/index.js:134960: i.taskObj = p;",
+        "tools/index.js:134971: i.taskObj = f;",
+        "tools/index.js:134991: a.taskObj = s;",
+        "tools/index.js:135041: a.taskObj = r;",
+        "tools/index.js:135047: a.taskObj = r;",
+        "tools/index.js:135059: taskObj: {}",
+        "tools/index.js:135063: s.taskObj = c;",
+        "tools/index.js:135070: for (var e = {}, o = 0; o < t.length; o++) e[t[o].taskObj.TaskID] = !0;",
+        "tools/index.js:135079: s.taskObj = c;",
+        "tools/index.js:135086: if (t.taskObj.receive_action.length > 0) {",
+        "tools/index.js:135087: var e = t.taskObj.receive_action;",
+        "tools/index.js:135096: if (t.taskObj.finish_action.length > 0) {",
+        "tools/index.js:135097: var e = t.taskObj.finish_action;",
+        "tools/index.js:135162: 0 == e ? 0 == t.taskObj[\"Pre-Picture\"].length || 2 == t.taskObj[\"Pre-Picture\"][0] ? this.showTaskDialogUI(t) : 1 == t.taskObj[\"Pre-Picture\"][0] && this.showCartoonUI(t, 0) : 1 == e && (0 == t.taskObj.Picture.length || 2 == t.taskObj.Picture[0] ? this.showTaskDialogUI(t) : 1 == t.taskObj.Picture[0] && this.showCartoonUI(t, 1));"
+      ]
+    },
+    {
+      "pattern": "taskObj",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:10133: t.taskObj = [];",
+        "tools/scripts2.js:10205: this.taskObj = e;",
+        "tools/scripts2.js:10215: this.taskObj && this.taskObj.splice(0, 1);",
+        "tools/scripts2.js:10216: if (null != this.taskObj && this.taskObj.length) {",
+        "tools/scripts2.js:10221: this.detailLabel.getComponent(cc.Label).string = this.taskObj[0];",
+        "tools/scripts2.js:10232: if (this.npcData.hasOwnProperty(\"taskObj\")) {",
+        "tools/scripts2.js:15213: var e = t.npcState, o = t.taskObj.TaskID, i = a.getText(o);",
+        "tools/scripts2.js:15342: if (5 == o.taskObj.Type) {",
+        "tools/scripts2.js:15343: this.showTaskInfo(a.getText(o.taskObj.FinishDialog), 5, o);",
+        "tools/scripts2.js:15349: var i = o.taskObj;",
+        "tools/scripts2.js:15353: var s = o.taskObj;",
+        "tools/scripts2.js:15356: var n = o.taskObj.Fight, r = {",
+        "tools/scripts2.js:15366: var c = {}, l = a.getText(o.taskObj.UnfinishDialog);",
+        "tools/scripts2.js:15367: if (5 == o.taskObj.Type || 6 == o.taskObj.Type || 7 == o.taskObj.Type || 8 == o.taskObj.Type) {",
+        "tools/scripts2.js:15368: var p = m.RoleBaseInfo.requireTaskObj, d = p[o.taskObj.TaskID].circleTaskObj;",
+        "tools/scripts2.js:15369: l = 8 == o.taskObj.Type ? l.replace(/1/, d.collectName) : (l = l.replace(/1/, d.visitMap)).replace(/2/, d.visitName);",
+        "tools/scripts2.js:15370: c = p[o.taskObj.TaskID];",
+        "tools/scripts2.js:46852: if (5 == o.taskObj.Type) {",
+        "tools/scripts2.js:46853: this.showTaskInfo(r.getText(o.taskObj.FinishDialog), 5, o);",
+        "tools/scripts2.js:46858: var n = o.taskObj;",
+        "tools/scripts2.js:46861: var l = o.taskObj;",
+        "tools/scripts2.js:46863: var d = o.taskObj.Fight;",
+        "tools/scripts2.js:46874: var u = r.getText(o.taskObj.UnfinishDialog);",
+        "tools/scripts2.js:46875: if (5 == o.taskObj.Type || 6 == o.taskObj.Type || 7 == o.taskObj.Type || 8 == o.taskObj.Type) {",
+        "tools/scripts2.js:46876: var g = h.RoleBaseInfo.requireTaskObj, f = g[o.taskObj.TaskID].circleTaskObj;",
+        "tools/scripts2.js:46877: u = 8 == o.taskObj.Type ? u.replace(/1/, f.collectName) : (u = u.replace(/1/, f.visitMap)).replace(/2/, f.visitName);",
+        "tools/scripts2.js:46878: g[o.taskObj.TaskID];",
+        "tools/scripts2.js:46968: var e = t.npcState, o = t.taskObj.TaskID, i = r.getText(o);",
+        "tools/scripts2.js:62128: this.sevenData = this.data.taskObj;",
+        "tools/scripts2.js:67882: e.taskObject = {};",
+        "tools/scripts2.js:68035: this.taskObject = {};",
+        "tools/scripts2.js:68085: if (1000010 == this.taskObject.taskObj.TaskID) {",
+        "tools/scripts2.js:70665: e.taskObj = {};",
+        "tools/scripts2.js:70682: var t = this.taskObj.taskObj[\"Pre-Picture\"], e = this.taskObj.taskObj.Picture;",
+        "tools/scripts2.js:70683: 0 == this.taskType && 1 == t[0] ? c.TaskModel.showTaskDialogUI(this.taskObj) : 0 == this.taskType && 2 == t[0] ? c.TaskModel.reqGetTask(this.taskObj, 0, this.selectId) : 1 == this.taskType && 1 == e[0] ? c.TaskModel.showTaskDialogUI(this.taskObj) : 1 == this.taskType && 2 == e[0] && c.TaskModel.reqFinishTaskMsg(this.taskObj, this.selectId);",
+        "tools/scripts2.js:70688: this.taskObj = t;",
+        "tools/scripts2.js:70691: for (var i = t.taskObj[\"Pre-Picture\"], s = t.taskObj.Picture, n = 0 == e ? i : s, r = 1; r < n.length; r++) this.resKeyAy.push(n[r]);",
+        "tools/scripts2.js:70694: var t = this.taskObj.taskObj.receive_action, e = this.taskObj.taskObj.finish_action;",
+        "tools/scripts2.js:70696: l.default.afterFinishTaskAction(t[1], this.taskObj, this.selectId, 0);",
+        "tools/scripts2.js:70699: l.default.afterFinishTaskAction(t[1], this.taskObj, this.selectId, 1);",
+        "tools/scripts2.js:70998: e.taskObject = {};",
+        "tools/scripts2.js:71087: this.setCurrentTaskIdOrNpcId(this.taskObject);",
+        "tools/scripts2.js:71143: var e = this.taskObject.taskObj.finish_action;",
+        "tools/scripts2.js:71144: 2 == this.taskObject.taskObj.Picture[0] ? this.showCartoonUI(this.taskObject, 1, t) : e.length > 0 && 2 == e[0] ? p.default.afterFinishTaskAction(e[1], this.taskObject, t, 1) : u.TaskModel.reqFinishTaskMsg(this.taskObject, t);",
+        "tools/scripts2.js:71153: this.taskObject.circleTaskObj = this.circleTaskInfo;",
+        "tools/scripts2.js:71156: if (5 == this.taskType || 6 == this.taskType || 7 == this.taskType || 8 == this.taskType || 9 == this.taskType || 10 == this.taskType || 11 == this.taskType || 12 == this.taskType || 13 == this.taskType) p.default.operationalTasks(0, this.taskObject); else {",
+        "tools/scripts2.js:71157: var e = this.taskObject.taskObj.receive_action;",
+        "tools/scripts2.js:71158: if (2 == this.taskObject.taskObj[\"Pre-Picture\"][0]) this.showCartoonUI(this.taskObject, 0, this.npcId); else if (e.length > 0 && 2 == e[0]) p.default.afterFinishTaskAction(e[1], this.taskObject, this.npcId, 0); else {",
+        "tools/scripts2.js:71160: u.TaskModel.reqGetTask(this.taskObject, 0, this.npcId);",
+        "tools/scripts2.js:71189: this.taskObject = {};",
+        "tools/scripts2.js:71195: this.taskObject = t;",
+        "tools/scripts2.js:71198: this.taskType = t.taskObj.Type;",
+        "tools/scripts2.js:71202: var e = 1 == t.npcState ? t.taskObj.FinishDialog : t.taskObj.ReceiveDialog;",
+        "tools/scripts2.js:71203: this.npcId = 2 == t.npcState ? t.taskObj.ReceiveNpc : t.taskObj.FinishNpc;",
+        "tools/scripts2.js:71349: if (1000010 == this.taskObject.taskObj.TaskID) {"
+      ]
+    },
+    {
+      "pattern": "taskObj",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:6085: taskObj: s.getItem(t, \"tasknew\")",
+        "tools/scripts3.js:6093: taskObj: s.getItem(t, \"tasknew\")",
+        "tools/scripts3.js:44699: taskObj: h.getItem(_.MapBoxModel.taskId, \"tasknew\")"
+      ]
+    },
+    {
+      "pattern": "taskobj",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "taskobj",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "taskobj",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "dataArr",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:48479: e.dataArr = null;",
+        "tools/index.js:54941: if (o.dataArr && o.dataArr.length >= 1) {",
+        "tools/index.js:54942: n.attackMpCost = o.dataArr.pop();",
+        "tools/index.js:54943: for (var r = [], a = 0; a < o.dataArr.length; ++a) {",
+        "tools/index.js:54944: var s = o.dataArr[a];",
+        "tools/index.js:55053: if (u && u.dataArr) {",
+        "tools/index.js:55055: c.dataArr = u.dataArr;",
+        "tools/index.js:55092: if (s && s.dataArr) {",
+        "tools/index.js:55094: a.dataArr = s.dataArr;",
+        "tools/index.js:55117: if (i && i.dataArr) {",
+        "tools/index.js:55119: o.dataArr = i.dataArr;",
+        "tools/index.js:57437: data: e.dataArr",
+        "tools/index.js:73364: e.dataArr = [];",
+        "tools/index.js:73576: this.checkUniqueskillRelease(this.dataArr);",
+        "tools/index.js:110855: if (n && n.dataArr) {",
+        "tools/index.js:110857: t.dataArr = n.dataArr;",
+        "tools/index.js:110884: if (o.dataArr && o.dataArr.length >= 1) {",
+        "tools/index.js:110885: n.attackMpCost = o.dataArr.pop();",
+        "tools/index.js:110886: for (var r = [], a = 0; a < o.dataArr.length; ++a) {",
+        "tools/index.js:110887: var s = o.dataArr[a];",
+        "tools/index.js:110911: if (i && i.dataArr) {",
+        "tools/index.js:110913: o.dataArr = i.dataArr;"
+      ]
+    },
+    {
+      "pattern": "dataArr",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:16498: e.dataArr = [];",
+        "tools/scripts2.js:16645: this.dataArr = t;",
+        "tools/scripts2.js:16657: if (this.dataArr.length < this.maxNumItems) {",
+        "tools/scripts2.js:16661: s.getComponent(\"SingleAIItem\").setData(this.conditionTree, this.actionTree, (this.dataArr.length ? this.dataArr.length : 0) + 1);",
+        "tools/scripts2.js:26610: e.dataArr = [];",
+        "tools/scripts2.js:26668: var e = !1, o = this.dataArr[t];",
+        "tools/scripts2.js:26685: this.dataArr[0] = e;",
+        "tools/scripts2.js:26686: this.dataArr[1] = [];",
+        "tools/scripts2.js:26698: this.dataArr[1] = o;",
+        "tools/scripts2.js:26706: this.dataArr[this.index][this.selectTag][0] = 2;",
+        "tools/scripts2.js:26751: if (this.dataArr[t].length && this.itemList[this.index].length != this.dataArr[t].length) {",
+        "tools/scripts2.js:26769: var t = this.dataArr[this.index], e = cc.instantiate(this.itemTemplate);",
+        "tools/scripts2.js:29203: this.actDataMap = t.dataArr;",
+        "tools/scripts2.js:46020: e.dataArr = [];",
+        "tools/scripts2.js:46117: o >= this.dataArr[this.index].length && (o -= this.dataArr[0].length);",
+        "tools/scripts2.js:46118: this.dataArr[this.index][o][0] = 2;",
+        "tools/scripts2.js:46132: this.dataArr[1] = o;",
+        "tools/scripts2.js:46136: this.layout.changetotal(this.dataArr[this.index].length);",
+        "tools/scripts2.js:46148: this.dataArr[0] = e;",
+        "tools/scripts2.js:46149: this.dataArr[1] = [];",
+        "tools/scripts2.js:46155: if (this.dataArr[t].length > 0) {",
+        "tools/scripts2.js:46172: this.layout.total(this.dataArr[t].length).then(function() {",
+        "tools/scripts2.js:46178: var o = this.dataArr[this.index][e];",
+        "tools/scripts2.js:46200: this.dataArr[this.index][t].splice(t, 1);",
+        "tools/scripts2.js:46201: this.layout.total(this.dataArr[this.index].length);",
+        "tools/scripts2.js:48263: e.dataArr = [];",
+        "tools/scripts2.js:48345: this.dataArr = [];",
+        "tools/scripts2.js:48346: for (var e in t) this.dataArr.push(t[e]);",
+        "tools/scripts2.js:48351: for (var t = 0, e = a.HalloweenModel.paperNum, o = a.HalloweenModel.award, i = a.HalloweenModel.cardState, s = 0; s < this.dataArr.length && !(e < this.dataArr[s][1]); s++) {",
+        "tools/scripts2.js:48353: if (o.hasOwnProperty(this.dataArr[s][0])) {",
+        "tools/scripts2.js:48354: if (o[this.dataArr[s][0]] < i) break;",
+        "tools/scripts2.js:48355: } else if (e > this.dataArr[s][1]) break;",
+        "tools/scripts2.js:48366: e.setData(this.dataArr[this.idx], this.curRecruitValue, this.scrollView);",
+        "tools/scripts2.js:48368: this.doLoad = this.idx < this.dataArr.length;"
+      ]
+    },
+    {
+      "pattern": "dataArr",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:4481: e.dataArr = [];",
+        "tools/scripts3.js:4531: this.dataArr = [];",
+        "tools/scripts3.js:4534: this.dataArr.push(e.rewardCfg[i]);",
+        "tools/scripts3.js:4540: this.layout.total(this.dataArr.length).then(function() {",
+        "tools/scripts3.js:4548: this.tag > 0 && (this.dataArr[this.tag - 1][0] = 2);",
+        "tools/scripts3.js:4550: this.layout.changetotal(this.dataArr.length);",
+        "tools/scripts3.js:4554: var o = this.dataArr[e];",
+        "tools/scripts3.js:4565: l.ActiveModel.reqAddCostReward(this.dataArr[t][7]);"
+      ]
+    },
+    {
+      "pattern": "dataarr",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "dataarr",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "dataarr",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "SevenDaysArr",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:57433: e.hasOwnProperty(\"SevenDaysArr\") && (u.RoleOtherInfo.SevenDaysArr = e.SevenDaysArr);",
+        "tools/index.js:107170: this.SevenDaysArr = [];",
+        "tools/index.js:108095: this.SevenDaysArr = [];"
+      ]
+    },
+    {
+      "pattern": "SevenDaysArr",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:81336: var t = this, e = a.RoleOtherInfo.SevenDaysArr, o = 1 == e[e.length - 1] ? e.length - 1 : e.length, i = cc.assetManager.getBundle(\"sevendaySign\");",
+        "tools/scripts2.js:81404: a.RoleOtherInfo.SevenDaysArr = [];",
+        "tools/scripts2.js:81407: e.hasOwnProperty(\"SevenDaysArr\") && (a.RoleOtherInfo.SevenDaysArr = e.SevenDaysArr);",
+        "tools/scripts2.js:81408: var o = a.RoleOtherInfo.SevenDaysArr;",
+        "tools/scripts2.js:81412: this.showAnim(this.awardArr[e.SevenDaysArr.length - 1], e.rewardArray);",
+        "tools/scripts2.js:81418: var o = this, i = a.RoleOtherInfo.SevenDaysArr, s = 1 == i[i.length - 1] ? i.length - 1 : i.length, n = t.convertToWorldSpaceAR(cc.v3());"
+      ]
+    },
+    {
+      "pattern": "SevenDaysArr",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:27467: e.hasOwnProperty(\"SevenDaysArr\") && (u.RoleOtherInfo.SevenDaysArr = e.SevenDaysArr);"
+      ]
+    },
+    {
+      "pattern": "sevendaysarr",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "sevendaysarr",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "sevendaysarr",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "sevenDaysArr",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "sevenDaysArr",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "sevenDaysArr",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:55190: this.sevenArr = e.sevenDaysArr;",
+        "tools/scripts3.js:63561: t.sevenDayData = o.sevenDaysArr;",
+        "tools/scripts3.js:63577: t.sevenDayData = o.sevenDaysArr;"
+      ]
+    },
+    {
+      "pattern": "activityShows",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:57455: e.hasOwnProperty(\"activityShows\") && (this.activeShowList = e.activityShows);"
+      ]
+    },
+    {
+      "pattern": "activityShows",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activityShows",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activityshows",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activityshows",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activityshows",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activityList",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:1894: var e = d.RoleOtherInfo.activityList, o = !1;",
+        "tools/index.js:1907: for (var e = d.RoleOtherInfo.activityList, o = 0; o < e.length; o++) e[o] == t && e.splice(o, 1);",
+        "tools/index.js:57450: e.hasOwnProperty(\"activityList\") && (u.RoleOtherInfo.activityList = e.activityList);",
+        "tools/index.js:78930: } else if (101 == parseInt(i.Type) || 103 == parseInt(i.Type)) S.LoginMgr.isMiniIos(3) || (o = e.addComponent(\"MiniNpc\")); else if (105 == parseInt(i.Type)) A.RoleOtherInfo.activityList && A.RoleOtherInfo.activityList.includes(46) && (o = e.addComponent(\"MiniNpc\")); else if (112 == parseInt(i.Type)) C.MultiPlayerModel.wulinMgr && 2 == C.MultiPlayerModel.wulinMgr.matchType && (o = e.addComponent(\"MiniNpc\")); else if (80 == parseInt(i.Type)) A.RoleOtherInfo.activityList.indexOf(25) >= 0 && (o = e.addComponent(\"MiniNpc\")).setNpcScale(1e3 / 667); else if (82 == parseInt(i.Type)) A.RoleOtherInfo.activityList.indexOf(1025) >= 0 && (o = e.addComponent(\"MiniNpc\")); else if (114 == parseInt(i.Type)) (A.RoleOtherInfo.activityList.includes(62) || A.RoleOtherInfo.activityList.includes(68)) && (o = e.addComponent(\"MiniNpc\")); else if (12508 == parseInt(t.id) || 12569 == parseInt(t.id)) A.RoleOtherInfo.activityList.includes(69) && (o = e.addComponent(\"MiniNpc\")); else if (125 == parseInt(i.Type)) T.ActiveModel.checkActive(73) && (o = e.addComponent(\"MiniNpc\")); else if (126 == parseInt(i.Type)) b.TimeMgr.getSTimestamp() < 1e3 * A.RoleOtherInfo.mEndTime && (o = e.addComponent(\"MiniNpc\")); else if (127 == parseInt(i.Type)) {",
+        "tools/index.js:90346: if (!d.RoleOtherInfo.activityList || !d.RoleOtherInfo.activityList.includes(46)) return null;",
+        "tools/index.js:90348: } else if (112 == parseInt(r.Type)) f.MultiPlayerModel.wulinMgr && 2 == f.MultiPlayerModel.wulinMgr.matchType && (o = e.addComponent(\"NormalNpc\")); else if (80 == parseInt(r.Type)) d.RoleOtherInfo.activityList.indexOf(25) >= 0 && (o = e.addComponent(\"NormalNpc\")).setNpcScale(1e3 / 667); else if (82 == parseInt(r.Type)) d.RoleOtherInfo.activityList.indexOf(1025) >= 0 && (o = e.addComponent(\"NormalNpc\")); else if (83 == parseInt(r.Type)) o = e.addComponent(\"NPC83\"); else if (114 == parseInt(r.Type)) (d.RoleOtherInfo.activityList.includes(62) || d.RoleOtherInfo.activityList.includes(68)) && (o = e.addComponent(\"NormalNpc\")); else if (12508 == parseInt(t.id) || 12569 == parseInt(t.id)) d.RoleOtherInfo.activityList.includes(69) && (o = e.addComponent(\"HumanNpc\")); else if (119 == parseInt(r.Type)) (o = e.addComponent(\"RogueNpc\")).tag = 99; else if (125 == parseInt(r.Type)) c.ActiveModel.checkActive(73) && (o = e.addComponent(\"NormalNpc\")); else if (126 == parseInt(r.Type)) l.TimeMgr.getSTimestamp() < 1e3 * d.RoleOtherInfo.mEndTime && (o = e.addComponent(\"Npc\")); else if (127 == parseInt(r.Type)) {",
+        "tools/index.js:98305: if (0 != this.activeID && l.RoleOtherInfo.activityList.indexOf(this.activeID) < 0) {",
+        "tools/index.js:107174: this.activityList = [];",
+        "tools/index.js:107250: if (e.hasOwnProperty(\"activityList\")) {",
+        "tools/index.js:107251: this.activityList = e.activityList;",
+        "tools/index.js:107252: this.activityList.indexOf(92) >= 0 && Promise.resolve().then(function() {",
+        "tools/index.js:108102: this.activityList = [];",
+        "tools/index.js:108137: if (o.RoleOtherInfo.activityList.indexOf(91) >= 0) for (var t = [ 20, 40, 60 ], e = 0; e < t.length; e++) {",
+        "tools/index.js:108143: if (this.activityList.indexOf(t) >= 0 && this.activeRedMap.hasOwnProperty(t)) {",
+        "tools/index.js:122440: var o = _.RoleOtherInfo.activityList.includes(S.ActiveIDEnum.ClimbingTower), i = M.GSceneMgr.getCurSceneID();",
+        "tools/index.js:131304: y.RoleOtherInfo.activityList.indexOf(23) >= 0 ? g.NetMgr.http.sendRequest(p.HttpConst.GET_GIFT_DATA, {",
+        "tools/index.js:131306: }) : y.RoleOtherInfo.activityList.indexOf(64) >= 0 && g.NetMgr.http.sendRequest(p.HttpConst.NEW_OPTIONALGIFT_DATA, {"
+      ]
+    },
+    {
+      "pattern": "activityList",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:14592: k.RoleOtherInfo.activityList.indexOf(75) >= 0 && 10828 == this.npcData.NpcID && this.btnArray.push(\"6000488\");",
+        "tools/scripts2.js:29857: this.goldFurnaceBtn.active = !n && d.RoleOtherInfo.activityList.indexOf(67) >= 0;",
+        "tools/scripts2.js:30127: var t = d.RoleOtherInfo.activityList.indexOf(67);",
+        "tools/scripts2.js:30128: d.RoleOtherInfo.activityList.splice(t, 1);",
+        "tools/scripts2.js:30967: var e = d.RoleOtherInfo.activityList.indexOf(67);",
+        "tools/scripts2.js:30968: d.RoleOtherInfo.activityList.splice(e, 1);",
+        "tools/scripts2.js:31099: if (-1 == d.RoleOtherInfo.activityList.indexOf(92)) {",
+        "tools/scripts2.js:31139: for (var s in this.newActiveNodeMap) this.newActiveNodeMap[s].btn.active = !i && d.RoleOtherInfo.activityList.indexOf(Number(s)) >= 0;"
+      ]
+    },
+    {
+      "pattern": "activityList",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:20982: d.RoleOtherInfo.activityList.includes(62) ? t = c.getSchool(this.data) : d.RoleOtherInfo.activityList.includes(68) && (t = c.getText(10 == this.data ? 6001875 : 6001876));",
+        "tools/scripts3.js:31991: -1 == u.RoleOtherInfo.activityList.indexOf(96) && cc.sys.localStorage.removeItem(\"FishShadowAction\");",
+        "tools/scripts3.js:90377: this.btnRebate.active = M.RoleOtherInfo.activityList.includes(65);"
+      ]
+    },
+    {
+      "pattern": "activitylist",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activitylist",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activitylist",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "schoolActivityOpen",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:55369: if (1012 == e && 1 == t.schoolActivityOpen) return !0;"
+      ]
+    },
+    {
+      "pattern": "schoolActivityOpen",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:56309: 1 == this.data.schoolActivityOpen && (t = 7037);"
+      ]
+    },
+    {
+      "pattern": "schoolActivityOpen",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "schoolactivityopen",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "schoolactivityopen",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "schoolactivityopen",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activeShowList",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:55361: if (1003 == e && (0 != h.RoleOtherInfo.activeObj[1] || 0 == f.ActiveModel.rechargedIsEnd) && 0 != m.HomeActiveModel.activeShowList[0]) return !0;",
+        "tools/index.js:55362: if (1004 == e && 0 != m.HomeActiveModel.activeShowList[1]) return !0;",
+        "tools/index.js:57373: this.activeShowList = [ 1, 1 ];",
+        "tools/index.js:57455: e.hasOwnProperty(\"activityShows\") && (this.activeShowList = e.activityShows);",
+        "tools/index.js:57493: this.activeShowList = [ 1, 1 ];"
+      ]
+    },
+    {
+      "pattern": "activeShowList",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activeShowList",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activeshowlist",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activeshowlist",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "activeshowlist",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "schoolArenaOpen",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:55370: if (1013 == e && 1 == t.schoolArenaOpen) return !0;"
+      ]
+    },
+    {
+      "pattern": "schoolArenaOpen",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:56310: 1 == this.data.schoolArenaOpen && (t = 7038);"
+      ]
+    },
+    {
+      "pattern": "schoolArenaOpen",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "schoolarenaopen",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "schoolarenaopen",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "schoolarenaopen",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    }
+  ],
+  "functions": [
+    {
+      "name": "HomeActiveUI (cc.Class whole definition)",
+      "file": "tools/scripts2.js",
+      "startLine": 29132,
+      "endLine": 29260,
+      "lines": [
+        "29132: HomeActiveUI: [ function(t, e, o) {",
+        "29133: \"use strict\";",
+        "29134: cc._RF.push(e, \"fbc45h/jotP8rJ0IzyGVbNi\", \"HomeActiveUI\");",
+        "29135: var i, s = this && this.__extends || (i = function(t, e) {",
+        "29136: return (i = Object.setPrototypeOf || {",
+        "29137: __proto__: []",
+        "29138: } instanceof Array && function(t, e) {",
+        "29139: t.__proto__ = e;",
+        "29140: } || function(t, e) {",
+        "29141: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);",
+        "29142: })(t, e);",
+        "29143: }, function(t, e) {",
+        "29144: i(t, e);",
+        "29145: function o() {",
+        "29146: this.constructor = t;",
+        "29147: }",
+        "29148: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());",
+        "29149: }), n = this && this.__decorate || function(t, e, o, i) {",
+        "29150: var s, n = arguments.length, r = n < 3 ? e : null === i ? i = Object.getOwnPropertyDescriptor(e, o) : i;",
+        "29151: if (\"object\" == typeof Reflect && \"function\" == typeof Reflect.decorate) r = Reflect.decorate(t, e, o, i); else for (var a = t.length - 1; a >= 0; a--) (s = t[a]) && (r = (n < 3 ? s(r) : n > 3 ? s(e, o, r) : s(e, o)) || r);",
+        "29152: return n > 3 && r && Object.defineProperty(e, o, r), r;",
+        "29153: };",
+        "29154: Object.defineProperty(o, \"__esModule\", {",
+        "29155: value: !0",
+        "29156: });",
+        "29157: o.HomeActiveUI = void 0;",
+        "29158: var r = t(\"../../../scripts/core/events/MessageCenter\"), a = t(\"../../../scripts/core/ui/mgrs/PopUpMgr\"), c = t(\"../../../scripts/mgrs/BundleMgr\"), l = t(\"../../../scripts/mgrs/GSceneMgr\"), p = t(\"../../../scripts/models/GrowthModel\"), h = t(\"../../../scripts/utils/EvName\"), d = t(\"../../../scripts/gui/uiComSCript/ComBgUI\"), u = t(\"../../../scripts/models/SchoolModel\"), g = t(\"../../../scripts/mgrs/TimeMgr\"), m = t(\"../../../scripts/mgrs/UIMgr\"), f = cc._decorator.ccclass, v = function(t) {",
+        "29159: s(e, t);",
+        "29160: function e() {",
+        "29161: var e = null !== t && t.apply(this, arguments) || this;",
+        "29162: e.curSelect = 1;",
+        "29163: e.listAy = [];",
+        "29164: e.btnNode = null;",
+        "29165: e.type = null;",
+        "29166: e.loading = !1;",
+        "29167: e.actDataMap = {};",
+        "29168: e.loadScritName = \"\";",
+        "29169: return e;",
+        "29170: }",
+        "29171: e.prototype.onLoad = function() {",
+        "29172: var e = this;",
+        "29173: t.prototype.onLoad.call(this);",
+        "29174: l.GSceneMgr.hideScene();",
+        "29175: var o = this;",
+        "29176: this.loading = !0;",
+        "29177: c.default.prefabs.load(\"activeUI/HomeActiveToggle\", cc.Prefab, function(t, i) {",
+        "29178: if (cc.isValid(o.downNode)) {",
+        "29179: o.btnNode = cc.instantiate(i);",
+        "29180: o.downNode.addChild(o.btnNode);",
+        "29181: o.loading = !1;",
+        "29182: e.listAy = p.GrowthModel.getActiveSortData(e.data);",
+        "29183: o.btnNode.addComponent(\"HomeActiveToggle\").setBtns(o.listAy);",
+        "29184: }",
+        "29185: });",
+        "29186: this.topMenu.active = !1;",
+        "29187: };",
+        "29188: e.prototype.addEventListeners = function() {",
+        "29189: t.prototype.addEventListeners.call(this);",
+        "29190: r.MessageCenter.on(h.EvName.CHANGE_ACTIVE_PAGE, this.setShowUI, this);",
+        "29191: r.MessageCenter.on(h.EvName.START_EXAMINATION, this.onStartExamination, this);",
+        "29192: r.MessageCenter.on(h.EvName.NEW_ROLE_RECHARGE_EVENT, this.newRoleDataEvent, this);",
+        "29193: };",
+        "29194: e.prototype.removeEventListeners = function() {",
+        "29195: t.prototype.removeEventListeners.call(this);",
+        "29196: r.MessageCenter.off(h.EvName.CHANGE_ACTIVE_PAGE, this.setShowUI, this);",
+        "29197: r.MessageCenter.off(h.EvName.START_EXAMINATION, this.onStartExamination, this);",
+        "29198: r.MessageCenter.off(h.EvName.NEW_ROLE_RECHARGE_EVENT, this.newRoleDataEvent, this);",
+        "29199: };",
+        "29200: e.prototype.setData = function(t, e) {",
+        "29201: this.data = t;",
+        "29202: this.type = e;",
+        "29203: this.actDataMap = t.dataArr;",
+        "29204: };",
+        "29205: e.prototype.setShowUI = function(t, e) {",
+        "29206: var o = this, i = e.prefabName;",
+        "29207: this.loading = !0;",
+        "29208: if (\"DigginggridsUI\" == i) {",
+        "29209: var s = g.TimeMgr.getSTimestamp();",
+        "29210: e.data.endTime - s <= 0 && (i = \"DigginggridsEndUI\");",
+        "29211: }",
+        "29212: this.loadScritName = i;",
+        "29213: m.uiMgr.showNetworkUI();",
+        "29214: c.default.prefabs.load(\"activeUI/\" + i, cc.Prefab, function(t, s) {",
+        "29215: if (o.loadScritName == i) {",
+        "29216: o.midleNode.destroyAllChildren();",
+        "29217: if (s) {",
+        "29218: var n = cc.instantiate(s), r = o.btnNode.getComponent(\"HomeActiveToggle\").flag, a = i.split(\"/\"), c = a[a.length - 1], l = [ \"NewYear23\", \"ScrapeLotteryUI\", \"SwordsManUI\", \"BombBeastUI\", \"SFPackUI\", \"TorchAltarUI\", \"BMConsUI\", \"BrewingUI\", \"MysteriousPrayUI\", \"GoldLotteryUI\", \"MartialStageUI\", \"SpringSwordBg\", \"MartialArtTreUI\", \"JumpingFunUI\", \"AutoChessUI\", \"FishShadowUI\" ], p = l.indexOf(c);",
+        "29219: p >= 0 ? n.addComponent(l[p]).setData(o.listAy[r]) : \"SevendayActiveUI\" == i ? n.getComponent(\"SevendayActiveUI\").setData(o.data, o.listAy[r].tips) : \"DailyMissionUI\" == i ? n.getComponent(\"DailyMissionUI\").setData(o.actDataMap) : \"ArenaOpen\" == i ? n.addComponent(\"SchoolArenaDescribeUI\").setData(o.data) : \"DailyGiftUI\" == i ? n.addComponent(\"LotteryUI\").setData(e.data) : \"NewGFUI\" == i ? n.addComponent(\"NewGFUI\") : \"chuochuoLuckUI\" == i ? n.addComponent(\"chuochuoLuck\").setData(e.data) : \"sevendays\" == i ? n.addComponent(\"sevendays\").setData(e.data) : \"Recruit\" == i ? n.getComponent(\"Recruit\").setData(e.data) : \"ReturnUI\" == i || (\"qiuxueRewardl\" == i ? 2 == u.SchoolModel.idRwType ? n.addComponent(\"GrowthRewardMasterUI\").setData(e.data) : 1 == u.SchoolModel.idRwType && n.addComponent(\"GrowthRewardPupilUI\").setData(e.data) : \"FirstChargeUI\" == i ? n.addComponent(\"FirstChargeUI\").setData(e.data) : \"AddCostUI\" == i ? n.addComponent(\"AddCostUI\").setData(o.listAy[r]) : \"FireCelebrateUI\" == i ? n.getComponent(\"FireUI\").setData(o.listAy[r]) : \"DigginggridsUI\" == i ? n.addComponent(\"DigginggridsUI\").setData(e.data) : \"DigginggridsEndUI\" == i ? n.addComponent(\"DigginggridsEndUI\").setData(e.data) : \"BeachtreasureUI\" == c ? n.addComponent(\"BeachtreasureUI\").setData(e.data) : \"DragonTraining\" == c && n.addComponent(\"DragonTraining\").setData(e.data));",
+        "29220: o.midleNode.addChild(n);",
+        "29221: o.loading = !1;",
+        "29222: m.uiMgr.hideNetworkUI();",
+        "29223: } else {",
+        "29224: cc.log(\"There is no such prefab \" + i + \" to load! Be careful.\");",
+        "29225: o.loading = !1;",
+        "29226: }",
+        "29227: }",
+        "29228: });",
+        "29229: };",
+        "29230: e.prototype.newRoleDataEvent = function(t, e) {",
+        "29231: var o = this;",
+        "29232: this.loading = !0;",
+        "29233: this.loadScritName = \"LimitGiftUI\";",
+        "29234: c.default.prefabs.load(\"activeUI/LimitGiftUI\", cc.Prefab, function(t, i) {",
+        "29235: if (\"LimitGiftUI\" == o.loadScritName) {",
+        "29236: o.midleNode.destroyAllChildren();",
+        "29237: if (i) {",
+        "29238: var s = cc.instantiate(i);",
+        "29239: s.addComponent(\"LimitGiftUI\").setData(e);",
+        "29240: o.midleNode.addChild(s);",
+        "29241: o.loading = !1;",
+        "29242: } else o.loading = !1;",
+        "29243: }",
+        "29244: });",
+        "29245: };",
+        "29246: e.prototype.onStartExamination = function() {",
+        "29247: a.PopUpMgr.removePopUp(this.node);",
+        "29248: };",
+        "29249: e.prototype.onBack = function() {",
+        "29250: this.loading || a.PopUpMgr.removePopUp(this.node);",
+        "29251: };",
+        "29252: e.prototype.onDestroy = function() {",
+        "29253: t.prototype.onDestroy.call(this);",
+        "29254: l.GSceneMgr.showScene();",
+        "29255: };",
+        "29256: return n([ f ], e);",
+        "29257: }(d.ComBgUI);",
+        "29258: o.HomeActiveUI = v;",
+        "29259: cc._RF.pop();",
+        "29260: }, {"
+      ]
+    },
+    {
+      "name": "HomeActiveUI.prototype.onLoad",
+      "file": "tools/scripts2.js",
+      "startLine": 29171,
+      "endLine": 29187,
+      "lines": [
+        "29171: e.prototype.onLoad = function() {",
+        "29172: var e = this;",
+        "29173: t.prototype.onLoad.call(this);",
+        "29174: l.GSceneMgr.hideScene();",
+        "29175: var o = this;",
+        "29176: this.loading = !0;",
+        "29177: c.default.prefabs.load(\"activeUI/HomeActiveToggle\", cc.Prefab, function(t, i) {",
+        "29178: if (cc.isValid(o.downNode)) {",
+        "29179: o.btnNode = cc.instantiate(i);",
+        "29180: o.downNode.addChild(o.btnNode);",
+        "29181: o.loading = !1;",
+        "29182: e.listAy = p.GrowthModel.getActiveSortData(e.data);",
+        "29183: o.btnNode.addComponent(\"HomeActiveToggle\").setBtns(o.listAy);",
+        "29184: }",
+        "29185: });",
+        "29186: this.topMenu.active = !1;",
+        "29187: };"
+      ]
+    },
+    {
+      "name": "HomeActiveUI.prototype.setData",
+      "file": "tools/scripts2.js",
+      "startLine": 29200,
+      "endLine": 29204,
+      "lines": [
+        "29200: e.prototype.setData = function(t, e) {",
+        "29201: this.data = t;",
+        "29202: this.type = e;",
+        "29203: this.actDataMap = t.dataArr;",
+        "29204: };"
+      ]
+    },
+    {
+      "name": "HomeActiveUI.prototype.setShowUI",
+      "file": "tools/scripts2.js",
+      "startLine": 29205,
+      "endLine": 29229,
+      "lines": [
+        "29205: e.prototype.setShowUI = function(t, e) {",
+        "29206: var o = this, i = e.prefabName;",
+        "29207: this.loading = !0;",
+        "29208: if (\"DigginggridsUI\" == i) {",
+        "29209: var s = g.TimeMgr.getSTimestamp();",
+        "29210: e.data.endTime - s <= 0 && (i = \"DigginggridsEndUI\");",
+        "29211: }",
+        "29212: this.loadScritName = i;",
+        "29213: m.uiMgr.showNetworkUI();",
+        "29214: c.default.prefabs.load(\"activeUI/\" + i, cc.Prefab, function(t, s) {",
+        "29215: if (o.loadScritName == i) {",
+        "29216: o.midleNode.destroyAllChildren();",
+        "29217: if (s) {",
+        "29218: var n = cc.instantiate(s), r = o.btnNode.getComponent(\"HomeActiveToggle\").flag, a = i.split(\"/\"), c = a[a.length - 1], l = [ \"NewYear23\", \"ScrapeLotteryUI\", \"SwordsManUI\", \"BombBeastUI\", \"SFPackUI\", \"TorchAltarUI\", \"BMConsUI\", \"BrewingUI\", \"MysteriousPrayUI\", \"GoldLotteryUI\", \"MartialStageUI\", \"SpringSwordBg\", \"MartialArtTreUI\", \"JumpingFunUI\", \"AutoChessUI\", \"FishShadowUI\" ], p = l.indexOf(c);",
+        "29219: p >= 0 ? n.addComponent(l[p]).setData(o.listAy[r]) : \"SevendayActiveUI\" == i ? n.getComponent(\"SevendayActiveUI\").setData(o.data, o.listAy[r].tips) : \"DailyMissionUI\" == i ? n.getComponent(\"DailyMissionUI\").setData(o.actDataMap) : \"ArenaOpen\" == i ? n.addComponent(\"SchoolArenaDescribeUI\").setData(o.data) : \"DailyGiftUI\" == i ? n.addComponent(\"LotteryUI\").setData(e.data) : \"NewGFUI\" == i ? n.addComponent(\"NewGFUI\") : \"chuochuoLuckUI\" == i ? n.addComponent(\"chuochuoLuck\").setData(e.data) : \"sevendays\" == i ? n.addComponent(\"sevendays\").setData(e.data) : \"Recruit\" == i ? n.getComponent(\"Recruit\").setData(e.data) : \"ReturnUI\" == i || (\"qiuxueRewardl\" == i ? 2 == u.SchoolModel.idRwType ? n.addComponent(\"GrowthRewardMasterUI\").setData(e.data) : 1 == u.SchoolModel.idRwType && n.addComponent(\"GrowthRewardPupilUI\").setData(e.data) : \"FirstChargeUI\" == i ? n.addComponent(\"FirstChargeUI\").setData(e.data) : \"AddCostUI\" == i ? n.addComponent(\"AddCostUI\").setData(o.listAy[r]) : \"FireCelebrateUI\" == i ? n.getComponent(\"FireUI\").setData(o.listAy[r]) : \"DigginggridsUI\" == i ? n.addComponent(\"DigginggridsUI\").setData(e.data) : \"DigginggridsEndUI\" == i ? n.addComponent(\"DigginggridsEndUI\").setData(e.data) : \"BeachtreasureUI\" == c ? n.addComponent(\"BeachtreasureUI\").setData(e.data) : \"DragonTraining\" == c && n.addComponent(\"DragonTraining\").setData(e.data));",
+        "29220: o.midleNode.addChild(n);",
+        "29221: o.loading = !1;",
+        "29222: m.uiMgr.hideNetworkUI();",
+        "29223: } else {",
+        "29224: cc.log(\"There is no such prefab \" + i + \" to load! Be careful.\");",
+        "29225: o.loading = !1;",
+        "29226: }",
+        "29227: }",
+        "29228: });",
+        "29229: };"
+      ]
+    },
+    {
+      "name": "DailyMissionUI.prototype.setData",
+      "file": "tools/scripts2.js",
+      "startLine": 17216,
+      "endLine": 17218,
+      "lines": [
+        "17216: o.prototype.setData = function(t) {",
+        "17217: this.dailyTaskData = t;",
+        "17218: };"
+      ]
+    },
+    {
+      "name": "SevendayActiveUI.prototype.setData",
+      "file": "tools/scripts2.js",
+      "startLine": 62132,
+      "endLine": 62135,
+      "lines": [
+        "62132: e.prototype.setData = function(t, e) {",
+        "62133: this.data = t;",
+        "62134: this.tip = e;",
+        "62135: };"
+      ]
+    },
+    {
+      "name": "GrowthModel.prototype.getActiveSortData",
+      "file": "tools/index.js",
+      "startLine": 55347,
+      "endLine": 55357,
+      "lines": [
+        "55347: e.prototype.getActiveSortData = function(t) {",
+        "55348: var e = n.getTable(\"active_order\"), o = [];",
+        "55349: for (var i in e) {",
+        "55350: var r = e[i];",
+        "55351: -1 == this.themeActiveAy.indexOf(r.active) && this.getActiveState(t, r.number, r.active) && o.push(r);",
+        "55352: }",
+        "55353: o.sort(function(t, e) {",
+        "55354: return t.id - e.id;",
+        "55355: });",
+        "55356: return o;",
+        "55357: };"
+      ]
+    },
+    {
+      "name": "GrowthModel.prototype.getActiveState",
+      "file": "tools/index.js",
+      "startLine": 55358,
+      "endLine": 55374,
+      "lines": [
+        "55358: e.prototype.getActiveState = function(t, e, o) {",
+        "55359: if (1001 == e && h.RoleOtherInfo.activeObj[0]) return !0;",
+        "55360: if (1002 == e && h.RoleOtherInfo.activeObj[0] <= 0) return !0;",
+        "55361: if (1003 == e && (0 != h.RoleOtherInfo.activeObj[1] || 0 == f.ActiveModel.rechargedIsEnd) && 0 != m.HomeActiveModel.activeShowList[0]) return !0;",
+        "55362: if (1004 == e && 0 != m.HomeActiveModel.activeShowList[1]) return !0;",
+        "55363: if (1005 == e) {",
+        "55364: var i = u.TimeMgr.getSTimestamp(), r = 1e3 * n.getConstByID(132);",
+        "55365: if (1e3 * n.getConstByID(156) <= i && i <= r) return !0;",
+        "55366: } else {",
+        "55367: if (1006 == e && 1 == h.RoleOtherInfo.passCardAction) return !1;",
+        "55368: if (1010 == e && 0 != h.RoleOtherInfo.giftendtime) return !1;",
+        "55369: if (1012 == e && 1 == t.schoolActivityOpen) return !0;",
+        "55370: if (1013 == e && 1 == t.schoolArenaOpen) return !0;",
+        "55371: if (f.ActiveModel.checkActive(o)) return !0;",
+        "55372: }",
+        "55373: return !1;",
+        "55374: };"
+      ]
+    }
+  ],
+  "fieldsRead": [
+    {
+      "field": "dataArr",
+      "where": "tools/scripts2.js:29203",
+      "form": "prop",
+      "raw": "this.actDataMap = t.dataArr;"
+    },
+    {
+      "field": "active",
+      "where": "tools/index.js:55351",
+      "form": "prop",
+      "raw": "-1 == this.themeActiveAy.indexOf(r.active) && this.getActiveState(t, r.number, r.active) && o.push(r);"
+    },
+    {
+      "field": "number",
+      "where": "tools/index.js:55351",
+      "form": "prop",
+      "raw": "-1 == this.themeActiveAy.indexOf(r.active) && this.getActiveState(t, r.number, r.active) && o.push(r);"
+    },
+    {
+      "field": "id",
+      "where": "tools/index.js:55354",
+      "form": "prop",
+      "raw": "return t.id - e.id;"
+    },
+    {
+      "field": "schoolActivityOpen",
+      "where": "tools/index.js:55369",
+      "form": "prop",
+      "raw": "if (1012 == e && 1 == t.schoolActivityOpen) return !0;"
+    },
+    {
+      "field": "schoolArenaOpen",
+      "where": "tools/index.js:55370",
+      "form": "prop",
+      "raw": "if (1013 == e && 1 == t.schoolArenaOpen) return !0;"
+    },
+    {
+      "field": "prefabName",
+      "where": "tools/scripts2.js:29206",
+      "form": "prop",
+      "raw": "var o = this, i = e.prefabName;"
+    },
+    {
+      "field": "endTime",
+      "where": "tools/scripts2.js:29210",
+      "form": "prop",
+      "raw": "e.data.endTime - s <= 0 && (i = \"DigginggridsEndUI\");"
+    },
+    {
+      "field": "tips",
+      "where": "tools/scripts2.js:29219",
+      "form": "prop",
+      "raw": "p >= 0 ? n.addComponent(l[p]).setData(o.listAy[r]) : \"SevendayActiveUI\" == i ? n.getComponent(\"SevendayActiveUI\").setData(o.data, o.listAy[r].tips) : \"DailyMissionUI\" == i ? n.getComponent(\"DailyMissionUI\").setData(o.actDataMap) : \"ArenaOpen\" == i ? n.addComponent(\"SchoolArenaDescribeUI\").setData(o.data) : \"DailyGiftUI\" == i ? n.addComponent(\"LotteryUI\").setData(e.data) : \"NewGFUI\" == i ? n.addComponent(\"NewGFUI\") : \"chuochuoLuckUI\" == i ? n.addComponent(\"chuochuoLuck\").setData(e.data) : \"sevendays\" == i ? n.addComponent(\"sevendays\").setData(e.data) : \"Recruit\" == i ? n.getComponent(\"Recruit\").setData(e.data) : \"ReturnUI\" == i || (\"qiuxueRewardl\" == i ? 2 == u.SchoolModel.idRwType ? n.addComponent(\"GrowthRewardMasterUI\").setData(e.data) : 1 == u.SchoolModel.idRwType && n.addComponent(\"GrowthRewardPupilUI\").setData(e.data) : \"FirstChargeUI\" == i ? n.addComponent(\"FirstChargeUI\").setData(e.data) : \"AddCostUI\" == i ? n.addComponent(\"AddCostUI\").setData(o.listAy[r]) : \"FireCelebrateUI\" == i ? n.getComponent(\"FireUI\").setData(o.listAy[r]) : \"DigginggridsUI\" == i ? n.addComponent(\"DigginggridsUI\").setData(e.data) : \"DigginggridsEndUI\" == i ? n.addComponent(\"DigginggridsEndUI\").setData(e.data) : \"BeachtreasureUI\" == c ? n.addComponent(\"BeachtreasureUI\").setData(e.data) : \"DragonTraining\" == c && n.addComponent(\"DragonTraining\").setData(e.data));"
+    },
+    {
+      "field": "taskObj",
+      "where": "tools/scripts2.js:62128",
+      "form": "prop",
+      "raw": "this.sevenData = this.data.taskObj;"
+    },
+    {
+      "field": "curDay",
+      "where": "tools/scripts2.js:62129",
+      "form": "hasOwnProperty",
+      "raw": "this.data.hasOwnProperty(\"curDay\") && (this.curDay = parseInt(this.data.curDay) > 7 ? 7 : this.data.curDay);"
+    },
+    {
+      "field": "curDay",
+      "where": "tools/scripts2.js:62129",
+      "form": "prop",
+      "raw": "this.data.hasOwnProperty(\"curDay\") && (this.curDay = parseInt(this.data.curDay) > 7 ? 7 : this.data.curDay);"
+    },
+    {
+      "field": "isshow",
+      "where": "tools/scripts2.js:17186",
+      "form": "prop",
+      "raw": "if (o && parseInt(o.isshow) > 0) {"
+    },
+    {
+      "field": "i",
+      "where": "tools/index.js:55349",
+      "form": "forin",
+      "raw": "for (var i in e) {"
+    }
+  ],
+  "unverified": [
+    "DailyMissionUI in tools/index.js (not found, class only defined in tools/scripts2.js:17138-17252)",
+    "DailyMissionUI in tools/scripts3.js (not found, class only defined in tools/scripts2.js:17138-17252)",
+    "SevendayActiveUI in tools/index.js (not found, class only defined in tools/scripts2.js:62056-62184)",
+    "SevendayActiveUI in tools/scripts3.js (not found, class only defined in tools/scripts2.js:62056-62184)",
+    "getActiveSortData in tools/scripts2.js (only callsite at line 29182, definition in tools/index.js:55347-55357)",
+    "getActiveSortData in tools/scripts3.js (not found, definition in tools/index.js:55347-55357)",
+    "getActiveState in tools/scripts2.js (not found, definition in tools/index.js:55358-55374)",
+    "getActiveState in tools/scripts3.js (not found, definition in tools/index.js:55358-55374)"
+  ],
+  "out_of_scope": []
+}

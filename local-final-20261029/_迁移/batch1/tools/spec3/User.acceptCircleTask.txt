@@ -1,0 +1,26 @@
+# User.acceptCircleTask   (HttpConst.ACCEPTCIRCLETASK)
+
+## 注册点 133218: r.MessageCenter.on(s.HttpConst.ACCEPTCIRCLETASK, this.acccptCircleTaskCallBack, this);
+
+## 请求点 133706: p.NetMgr.http.sendReqWithMask(s.HttpConst.ACCEPTCIRCLETASK, e);
+   133698: taskID: "L1000,1"
+   133699: }, function() {});
+   133700: };
+   133701: e.prototype.reqCircleGetTaskData = function(t) {
+   133702: var e = {
+   133703: taskID: t,
+   133704: flag: "zntehzd"
+   133705: };
+
+## 处理函数 acccptCircleTaskCallBack (133545-133555)
+133545: e.prototype.acccptCircleTaskCallBack = function(t, e) {
+133546: if (1 == e.eRet) {
+133547: var o = {
+133548: npcState: 0,
+133549: reqTaskObj: {},
+133550: taskObj: {}
+133551: }, r = c.RoleBaseInfo.finishTaskObj, s = c.RoleBaseInfo.requireTaskObj, l = i.getItem(e.taskID, "tasknew");
+133552: if (!s.hasOwnProperty(e.taskID) && !r.hasOwnProperty(e.taskID) && b.default.judgeTaskCondition(l["Pre-Require"]) && b.default.judgeBranchId(l.branchid) && b.default.checkTaskTime(e.taskID)) {
+133553: o.npcState = 2;
+133554: o.taskObj = l;
+133555: }

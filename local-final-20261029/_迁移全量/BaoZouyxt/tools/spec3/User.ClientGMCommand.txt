@@ -1,0 +1,11 @@
+# User.ClientGMCommand   (HttpConst.CLIENTGMCOMMON)
+
+## 请求点 65459: m.NetMgr.http.sendReqWithMask(a.HttpConst.CLIENTGMCOMMON, e);
+   65451: break;
+   65452: }
+   65453: return e;
+   65454: };
+   65455: e.prototype.reqClientGm = function(t) {
+   65456: var e = {
+   65457: gmString: t
+   65458: };

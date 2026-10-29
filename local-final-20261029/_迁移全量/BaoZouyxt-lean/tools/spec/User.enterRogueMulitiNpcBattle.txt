@@ -1,0 +1,51 @@
+# User.enterRogueMulitiNpcBattle  (HttpConst.ENTER_PVE_ROGUE_FIGHT)
+# 出现 1 处
+
+105552: }) ];
+105553: }
+105554: });
+105555: });
+105556: };
+105557: o.prototype.startBattle = function(t) {
+105558: h.NetMgr.http.sendRequest(p.HttpConst.ENTER_PVE_ROGUE_FIGHT, t);
+105559: };
+105560: o.prototype.listen4Action = function(t) {
+105561: h.NetMgr.http.sendRequest(p.HttpConst.ROGUE_MPPVE_ACTION, {
+105562: action: t.action,
+105563: battleID: t.param2,
+105564: paramID: t.param1
+105565: });
+105566: };
+105567: o.prototype.playWithData = function(e) {
+105568: var o;
+105569: this.state.actingPlayerID = e.hasOwnProperty("target") ? e.target[0] : 0;
+105570: this.state.actingPlayerID == g.RoleBaseInfo.roleID.toString() && d.MessageCenter.dispatch(m.EvName.ON_MPPVE_TARGET_CHANGE, e.target[1]);
+105571: this.state.gameOver = e.gameOver;
+105572: if (this.state.gameOver) {
+105573: this.state.winID = e.winID;
+105574: e.endInfo && (this.state.endInfo = e.endInfo);
+105575: if (e.hasOwnProperty("roleArr")) for (var i = e.roleArr, n = 0; n < i.length; ++n) {
+105576: var r = i[n];
+105577: g.RoleBaseInfo.roleID == parseInt(r[0]) && Promise.resolve().then(function() {
+105578: return t("../../../scripts3/model3/RogueModel");
+105579: }).then(function(t) {
+105580: var e = t.RogueModel.entity;
+105581: e.hp.limit = r[3];
+105582: e.hp.remaining = r[1];
+105583: e.mp.remaining = r[2];
+105584: });
+105585: }
+105586: }
+105587: e.arr && (null === (o = this.btUI) || void 0 === o || o.emit(m.EvName.PLAY_WITH_MPBATTLEINFO, e.arr));
+105588: };
+105589: o.prototype.getPanelScript = function() {
+105590: return s.RogueMPBattleUI;
+105591: };
+105592: o.prototype.onComplete = function(t) {
+105593: this.dispose();
+105594: u.SoundMgr.resumeLastMusic();
+105595: this.endBattle(t.data);
+105596: };
+105597: o.prototype.endBattle = function(t) {
+105598: var e = {
+---

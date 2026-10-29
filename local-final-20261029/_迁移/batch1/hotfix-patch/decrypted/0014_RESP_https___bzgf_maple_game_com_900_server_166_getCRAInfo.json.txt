@@ -1,0 +1,2 @@
+status=200 https://bzgf.maple-game.com/900-server-166/getCRAInfo
+{"error":0,"p":"User.getCRAInfo","resultCode":200,"User.getCRAInfo":{"eRet":2},"achievement":{"red":false,"achieveRateId":0},"friendWookUs":[1,2],"friendHookUs":[1]}

@@ -1,0 +1,95 @@
+# User.revive  (HttpConst.LANGH_REVIVE)
+# 出现 2 处
+
+ 67761: n(o, e);
+ 67762: function o() {
+ 67763: var t = e.call(this) || this;
+ 67764: t.revivePanel = null;
+ 67765: t.reviveUsed = !1;
+ 67766: t.tower = 1;
+ 67767: r.MessageCenter.on(a.HttpConst.LANGH_REVIVE, function(e, o) {
+ 67768: switch (o.eRet) {
+ 67769: case 1:
+ 67770: t.bs.revive(o.roleID, o.battleID);
+ 67771: t.removeRevivePanel();
+ 67772: t.btPanel.emit(s.EvName.BUY_REVIVE_RESULT);
+ 67773: t.btPanel.emit(s.EvName.PLAY_BATTLE_ITEM);
+ 67774: t.reviveUsed = !0;
+ 67775: break;
+ 67776: 
+ 67777: case 2:
+ 67778: d.StoreModel.openChargeList();
+ 67779: break;
+ 67780: 
+ 67781: default:
+ 67782: t.removeRevivePanel();
+ 67783: t.doComplete();
+ 67784: }
+ 67785: }, t);
+ 67786: return t;
+ 67787: }
+ 67788: o.prototype.removeRevivePanel = function() {
+ 67789: h.PopUpMgr.removePopUp(this.revivePanel);
+ 67790: l.default.prefabs.release("towerUI/RevivePanel", cc.Prefab);
+ 67791: this.revivePanel = null;
+ 67792: };
+ 67793: o.prototype.checkComplete = function() {
+ 67794: var t = this.bs, e = t.esced, o = t.finTarget, i = t.entityA;
+ 67795: t.entityAs && t.entityAs.length > 0 && (i = t.entityAs[0]);
+ 67796: var n = e && o != i.battleID || !e && o == i.battleID;
+ 67797: return e || n || this.reviveUsed;
+ 67798: };
+ 67799: o.prototype.donotComplete = function() {
+ 67800: var e = this;
+ 67801: l.default.prefabs.load("towerUI/RevivePanel", cc.Prefab, function(o, i) {
+ 67802: Promise.resolve().then(function() {
+ 67803: return t("../../../scripts2/ui/towerSystem/RevivePanel");
+ 67804: }).then(function(t) {
+ 67805: var o = t.RevivePanel, n = cc.instantiate(i);
+ 67806: e.revivePanel = n;
+ 67807: var r = n.getComponent(o);
+---
+ 67808: r.description.string = p.getText(1625).replace(/\[1\]/g, e.reviveCost);
+ 67809: r.setCb(function(t) {
+ 67810: f.NetMgr.http.sendRequest(a.HttpConst.LANGH_REVIVE, {
+ 67811: flag: t,
+ 67812: battleID: e.bs.entityA.battleID
+ 67813: });
+ 67814: });
+ 67815: h.PopUpMgr.addPopUp(n, u.LayerMgr.popUpLayer);
+ 67816: });
+ 67817: });
+ 67818: };
+ 67819: o.prototype.endBattle = function(t, e) {
+ 67820: null == e || e.addComponent(g.LangHRwds);
+ 67821: m.MPBattleModel.reqTowerEnd(t.npcID, t.data[0]);
+ 67822: var o = t.entityA;
+ 67823: y.playerInfo.entity.hp.limit = o.hp.limit;
+ 67824: y.playerInfo.entity.hp.remaining = o.hp.remaining;
+ 67825: y.playerInfo.entity.mp.remaining = o.mp.remaining;
+ 67826: };
+ 67827: o.prototype.getPanelScript = function() {
+ 67828: return "SPLangHPanel";
+ 67829: };
+ 67830: return o;
+ 67831: }(c.PveSvr1v1Mgr);
+ 67832: o.LangHSingleMgr = v;
+ 67833: cc._RF.pop();
+ 67834: }, {
+ 67835: "../../../scripts2/ui/towerSystem/RevivePanel": void 0,
+ 67836: "../../core/events/MessageCenter": "MessageCenter",
+ 67837: "../../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 67838: "../../gameconfigs/LangMgr": "LangMgr",
+ 67839: "../../gui/battle/resultscripts/rewardscripts/LangHRwds": "LangHRwds",
+ 67840: "../../models/MPBattleModel": "MPBattleModel",
+ 67841: "../../models/StoreModel": "StoreModel",
+ 67842: "../../models/vos/PlayerInfo": "PlayerInfo",
+ 67843: "../../net/HttpConst": "HttpConst",
+ 67844: "../../net/NetMgr": "NetMgr",
+ 67845: "../../utils/EvName": "EvName",
+ 67846: "../BundleMgr": "BundleMgr",
+ 67847: "../LayerMgr": "LayerMgr",
+ 67848: "./PveSvr1v1Mgr": "PveSvr1v1Mgr"
+ 67849: } ],
+ 67850: LangMgr: [ function(t, e) {
+---

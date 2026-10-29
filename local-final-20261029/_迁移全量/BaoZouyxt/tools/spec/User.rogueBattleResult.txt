@@ -1,0 +1,51 @@
+# User.rogueBattleResult  (HttpConst.SERVER_ROGUE_NPC_BATTLE_END)
+# 出现 1 处
+
+105596: };
+105597: o.prototype.endBattle = function(t) {
+105598: var e = {
+105599: npcID: t.npcID,
+105600: win: t.data[0]
+105601: };
+105602: h.NetMgr.http.sendRequest(p.HttpConst.SERVER_ROGUE_NPC_BATTLE_END, e);
+105603: };
+105604: return o;
+105605: }(f.SPMpBtMgr);
+105606: o.RogueMpFightMgr = b;
+105607: cc._RF.pop();
+105608: }, {
+105609: "../../../scripts3/model3/RogueModel": void 0,
+105610: "../../core/events/MessageCenter": "MessageCenter",
+105611: "../../core/resmgr/ResMgr": "ResMgr",
+105612: "../../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+105613: "../../gameconfigs/CFMgr": "CFMgr",
+105614: "../../gui/mpbattle/MPUIMediator": "MPUIMediator",
+105615: "../../gui/mpbattle/RogueMPBattleUI": "RogueMPBattleUI",
+105616: "../../models/vos/RoleBaseInfo": "RoleBaseInfo",
+105617: "../../net/HttpConst": "HttpConst",
+105618: "../../net/NetMgr": "NetMgr",
+105619: "../../utils/EvName": "EvName",
+105620: "../../utils/MadUtilsTS": "MadUtilsTS",
+105621: "../BattleMgr": "BattleMgr",
+105622: "../BundleMgr": "BundleMgr",
+105623: "../LayerMgr": "LayerMgr",
+105624: "../SoundMgr": "SoundMgr",
+105625: "../UIMgr": "UIMgr",
+105626: "./../../battlesystem/EquipmentType": "EquipmentType",
+105627: "./SPMpBtMgr": "SPMpBtMgr"
+105628: } ],
+105629: RoguePanel: [ function(t, e, o) {
+105630: "use strict";
+105631: cc._RF.push(e, "cc666UcxJNOAq2CErFHDMFk", "RoguePanel");
+105632: var i, n = this && this.__extends || (i = function(t, e) {
+105633: return (i = Object.setPrototypeOf || {
+105634: __proto__: []
+105635: } instanceof Array && function(t, e) {
+105636: t.__proto__ = e;
+105637: } || function(t, e) {
+105638: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+105639: })(t, e);
+105640: }, function(t, e) {
+105641: i(t, e);
+105642: function o() {
+---

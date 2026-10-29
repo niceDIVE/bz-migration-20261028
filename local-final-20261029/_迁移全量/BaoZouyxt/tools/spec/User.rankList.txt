@@ -1,0 +1,63 @@
+# User.rankList  (HttpConst.USER_RANKLIST)
+# 出现 2 处
+
+101482: this.cdTime = 0;
+101483: this.currentObj = {};
+101484: }
+101485: t.prototype.init = function() {
+101486: this.checkType = 0;
+101487: this.cdTime = 0;
+101488: n.MessageCenter.on(r.HttpConst.USER_RANKLIST, this.onSuccessRankList, this);
+101489: n.MessageCenter.on(r.HttpConst.USER_LOOKOTHER, this.onSuccessLook, this);
+101490: n.MessageCenter.on(r.HttpConst.USER_PVP_OVER, this.onUserPvpOver, this);
+101491: n.MessageCenter.on(r.HttpConst.CHANGEPLACE, function(t, e) {
+101492: if (1 == e.eRet) {
+101493: n.MessageCenter.dispatch(s.EvName.UPDATERANK, 1);
+101494: a.default.show(i.getText(1121));
+101495: } else 2 == e.eRet ? a.default.show(i.getText(1119)) : 4 == e.eRet && a.default.show(i.getText(1120));
+101496: }, this);
+101497: };
+101498: t.prototype.reqRankList = function() {
+101499: l.NetMgr.http.sendRequest(r.HttpConst.USER_RANKLIST, {
+101500: roleID: c.RoleBaseInfo.roleID
+101501: }, null);
+101502: };
+101503: t.prototype.reqRankLook = function(t, e) {
+101504: this.checkType = e;
+101505: l.NetMgr.http.sendRequest(r.HttpConst.USER_LOOKOTHER, {
+101506: otherID: t
+101507: });
+101508: };
+101509: t.prototype.reqChangeRank = function(t) {
+101510: var e = {
+101511: rankNum: t
+101512: };
+101513: l.NetMgr.http.sendRequest(r.HttpConst.CHANGEPLACE, e, null, !1);
+101514: };
+101515: t.prototype.onSuccessRankList = function(t, e) {
+101516: if (1 == e.eRet) {
+101517: this.cdTime = e.CDTime;
+101518: n.MessageCenter.dispatch(s.EvName.USER_RANKLIST, e);
+101519: }
+101520: };
+101521: t.prototype.onSuccessLook = function(t, e) {
+101522: var o = this;
+101523: 1 == e.eRet && h.default.prefabs.load("comUI/RoleInfoUI", cc.Prefab, function(t, i) {
+101524: var n = cc.instantiate(i);
+101525: u.PopUpMgr.addPopUp(n, p.LayerMgr.popUpLayer, 1, !0);
+101526: n.addComponent("RankRoleInfo").showRoleInfo(e, o.checkType, o.cdTime);
+101527: });
+101528: };
+---
+101529: t.prototype.onUserPvpOver = function(t, e) {
+101530: if (1 == e.eRet) {
+101531: e.hasOwnProperty("CDTime") && (this.cdTime = e.CDTime);
+101532: f.RoleOtherInfo.setAllHpAndMp(e);
+101533: n.MessageCenter.dispatch(s.EvName.UPDATERANK_PK_CDTIME, e);
+101534: } else a.default.show(i.getText("933"));
+101535: };
+101536: t.prototype.destroy = function() {};
+101537: return t;
+101538: }();
+101539: o.RankModel = new d();
+---

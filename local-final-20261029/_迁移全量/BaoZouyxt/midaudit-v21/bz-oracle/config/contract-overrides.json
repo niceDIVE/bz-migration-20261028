@@ -1,0 +1,52 @@
+{
+  "_说明": "M2 抽不到、但材料有证据的契约补充。每条写来源。S2 跨函数抽取落地后，这里的条目应由抽取器产出，人工条目逐步清零。",
+  "actions": {
+    "USER_LOADGAME": {
+      "action": "User.LoadGame",
+      "required": [
+        "finishTaskObj",
+        "acceptTaskArray",
+        "acceptTaskOrder",
+        "taskLog",
+        "itemObj",
+        "PlayerEquip",
+        "equipments",
+        "cycleObj",
+        "OnhookObj.serverTime",
+        "baseValueAy"
+      ],
+      "shapes": {
+        "finishTaskObj": "stringArray:^\\d+,\\d+$",
+        "baseValueAy": "arrayLen:44",
+        "itemObj": "fullBag"
+      },
+      "closedBy": "全量 §八 必回字段表（跨函数读取，M2 记 0 读取）",
+      "closed": true,
+      "_itemObj": "【推断】LoadGame 的 itemObj 也是全量重建，回空等同清空背包；由变异 M07 在 LoadGame 上存活发现"
+    },
+    "SYCN_TASK": {
+      "action": "User.sycnTask",
+      "shapes": {
+        "PlayerFinishTaskObj": "objectOf:number"
+      },
+      "_来源": "全量 §八：PlayerFinishTaskObj 要对象 {\"101080\":1}；KEY 名以 M1 为准，若不符请改"
+    },
+    "SYCNPLAYERITEAMDATA": {
+      "action": "User.sycnPlayerItemData",
+      "required": [
+        "itemObj"
+      ],
+      "shapes": {
+        "itemObj": "fullBag"
+      },
+      "_来源": "全量 §八：回空 = 背包清空；itemObj 必须等于全部持有物"
+    },
+    "BEGIN_LIANGONG": {
+      "action": "User.BeginTraining",
+      "switchZeroAllowed": [
+        "isCollective"
+      ],
+      "_来源": "全量 §八：isCollective 的 0 是语义分支，index.js:120523"
+    }
+  }
+}

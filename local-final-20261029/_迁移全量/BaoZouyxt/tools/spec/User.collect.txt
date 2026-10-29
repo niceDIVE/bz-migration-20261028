@@ -1,0 +1,94 @@
+# User.collect  (HttpConst.COLLECT)
+# 出现 3 处
+
+ 25202: this.collectTime = 0;
+ 25203: this.copyCollectItem = {};
+ 25204: this.copyRewardIdx = 0;
+ 25205: }
+ 25206: t.prototype.init = function() {
+ 25207: var t = this;
+ 25208: r.MessageCenter.on(a.HttpConst.COLLECT, function(e, o) {
+ 25209: if (1 == o.eRet) {
+ 25210: if (o.hasOwnProperty("rewardArray") && !d.MadUtilsTS.isNullObj(o.rewardArray)) {
+ 25211: var a = n.getConstByID(96), f = s.TimeMgr.getSTimestamp(), g = t.collectTime + 1e3 * parseInt(a), m = l.RumorModel.showActiveTime(g - f), y = i.getText(1436) + m;
+ 25212: c.default.show(y);
+ 25213: var v = 0;
+ 25214: for (var _ in o.rewardArray) v = _;
+ 25215: if (parseInt(v) > 0) {
+ 25216: var S = n.getItem(v, "item");
+ 25217: p.InventoryModel.useItemFunc(S.ID, S.Effect, 1);
+ 25218: }
+ 25219: }
+ 25220: } else 4 == o.eRet && c.default.show(i.getText(1454));
+ 25221: var M = h.GSceneMgr.getCurSceneID();
+ 25222: t.collectData.hasOwnProperty(M) && delete t.collectData[M];
+ 25223: r.MessageCenter.dispatch(u.EvName.DELETE_COLLECT_NPC_EVENT);
+ 25224: }, this);
+ 25225: };
+ 25226: t.prototype.reqCollectItem = function() {
+ 25227: var t = this, e = h.GSceneMgr.getCurSceneID();
+ 25228: if (this.collectData.hasOwnProperty(e)) {
+ 25229: var o = this.collectData[e];
+ 25230: if (0 == o[1]) {
+ 25231: var i = {
+ 25232: itemID: o[0],
+ 25233: mapID: e,
+ 25234: bTime: this.collectTime
+ 25235: };
+ 25236: f.NetMgr.http.sendRequest(a.HttpConst.COLLECT, i);
+ 25237: } else {
+ 25238: var n = d.MadUtilsTS.getRandomNpcData(o[1]);
+ 25239: g.default.addDialogEvent(1500202, o[1], function() {
+ 25240: var i = {
+ 25241: npcSceneID: 1,
+ 25242: npcID: o[1],
+ 25243: npcData: n,
+ 25244: showbubble: !1
+ 25245: };
+ 25246: y.BattleMgr.startNpcFight(i).then(function(i) {
+ 25247: g.default.addDialogEvent(1500203, o[1], function() {
+ 25248: var n = i.win ? 1 : 0;
+---
+ 25249: f.NetMgr.http.sendRequest(a.HttpConst.COLLECT, {
+ 25250: itemID: o[0],
+ 25251: mapID: e,
+ 25252: bTime: t.collectTime,
+ 25253: flag: n
+ 25254: });
+ 25255: });
+ 25256: });
+ 25257: });
+ 25258: }
+ 25259: }
+ 25260: };
+ 25261: t.prototype.setCollectArrData = function(t, e) {
+ 25262: this.collectTime = e;
+ 25263: for (var o = 0; o < t.length; o++) this.collectData[t[o][2]] = t[o];
+ 25264: };
+ 25265: t.prototype.getCollectDataMap = function() {
+ 25266: return this.collectData;
+ 25267: };
+ 25268: t.prototype.reqCopyCollectItem = function() {
+ 25269: f.NetMgr.http.sendRequest(a.HttpConst.GET_CAST_COLLECT, {
+ 25270: copy: m.CopyFightModel.copyType
+ 25271: }, null, !1);
+ 25272: };
+ 25273: return t;
+ 25274: }();
+ 25275: o.CollectItemModel = new v();
+ 25276: cc._RF.pop();
+---
+ 25277: }, {
+ 25278: "../core/events/MessageCenter": "MessageCenter",
+ 25279: "../gameconfigs/CFMgr": "CFMgr",
+ 25280: "../gameconfigs/LangMgr": "LangMgr",
+ 25281: "../gui/uicomponents/Alert": "Alert",
+ 25282: "../mgrs/BattleMgr": "BattleMgr",
+ 25283: "../mgrs/GSceneMgr": "GSceneMgr",
+ 25284: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+ 25285: "../mgrs/TimeMgr": "TimeMgr",
+ 25286: "../net/HttpConst": "HttpConst",
+ 25287: "../net/NetMgr": "NetMgr",
+ 25288: "../utils/EvName": "EvName",
+ 25289: "../utils/MadUtilsTS": "MadUtilsTS",
+---

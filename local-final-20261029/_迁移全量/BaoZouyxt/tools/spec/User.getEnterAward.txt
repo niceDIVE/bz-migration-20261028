@@ -1,0 +1,99 @@
+# User.getEnterAward  (HttpConst.BYTEDANCE_ENTER_AWARD)
+# 出现 2 处
+
+ 21262: tt.onKeyboardConfirm(function(t) {
+ 21263: t.value;
+ 21264: });
+ 21265: tt.onShow(function(e) {
+ 21266: "homepage" == e.launch_from && "sidebar_card" == e.location && t.reqGetAward();
+ 21267: });
+ 21268: n.MessageCenter.on(l.HttpConst.BYTEDANCE_ENTER_AWARD, function(t, e) {
+ 21269: if (1 == e.eRet) {
+ 21270: u.RoleOtherInfo.byRewardState = 2;
+ 21271: s.default.addShowRewardUI1(e.rewardArray, 0, e.equipObj);
+ 21272: n.MessageCenter.dispatch(p.EvName.BYTEDANCE_GOT_ENTER_REWARD);
+ 21273: } else 4 == e.eRet ? r.default.show("创建好角色后才能领取奖励哦！") : console.log("Receive bytedance reward failed, with code " + e.eRet);
+ 21274: }, this);
+ 21275: }
+ 21276: };
+ 21277: t.prototype.isByteDanceGame = function() {
+ 21278: return cc.sys.platform == cc.sys.BYTEDANCE_GAME;
+ 21279: };
+ 21280: t.prototype.gameVideoClear = function() {
+ 21281: this.gameVideoStatus = 0;
+ 21282: };
+ 21283: t.prototype.gameVideoStart = function() {
+ 21284: this.isByteDanceGame() && this.gameRecorder && this.gameRecorder.start({
+ 21285: duration: 300
+ 21286: });
+ 21287: };
+ 21288: t.prototype.gameVideoStop = function() {
+ 21289: this.isByteDanceGame() && 1 == this.gameVideoStatus && this.gameRecorder && this.gameRecorder.stop();
+ 21290: };
+ 21291: t.prototype.isGameVideoShare = function() {
+ 21292: return this.isByteDanceGame() && 3 == this.gameVideoStatus;
+ 21293: };
+ 21294: t.prototype.checkVideoShare = function() {
+ 21295: return "" != this.appName && "novelapp" != this.appName && "reading" != this.appName;
+ 21296: };
+ 21297: t.prototype.gameVideoShare = function(t) {
+ 21298: var e = this;
+ 21299: this.isByteDanceGame() && (this.checkVideoShare() && 3 == this.gameVideoStatus ? tt.shareAppMessage({
+ 21300: channel: "video",
+ 21301: title: "暴走英雄坛",
+ 21302: desc: "分享赢金条啊！",
+ 21303: extra: {
+ 21304: videoPath: e.videoPath
+ 21305: },
+ 21306: success: function() {
+ 21307: t();
+ 21308: e.isGetShareRaward && h.AdModel.reqGetShareReward();
+---
+ 21486: };
+ 21487: t.prototype.checkReward = function() {
+ 21488: var t = globalThis;
+ 21489: return this.isByteDanceGame() && t.PlatformApi ? t.PlatformApi.sidebarOpen : 0;
+ 21490: };
+ 21491: t.prototype.reqGetAward = function() {
+ 21492: c.NetMgr.http.sendRequest(l.HttpConst.BYTEDANCE_ENTER_AWARD, {});
+ 21493: };
+ 21494: t.prototype.setSpriteFrameName = function(t, e, o, i, n) {
+ 21495: var r = this;
+ 21496: void 0 === i && (i = null);
+ 21497: if (t) {
+ 21498: n || (n = a.default.common);
+ 21499: n.load(e, cc.SpriteAtlas, function(n, a) {
+ 21500: if (n) {
+ 21501: cc.log(n);
+ 21502: i && i(null, n);
+ 21503: } else {
+ 21504: a.addRef();
+ 21505: if (cc.isValid(t, !0)) {
+ 21506: var s = t.getComponent(cc.Sprite);
+ 21507: if (s) {
+ 21508: r.paths[t.uuid] && r.paths[t.uuid].decRef();
+ 21509: r.paths[t.uuid] = a;
+ 21510: var l = a.getSpriteFrame(o);
+ 21511: l || cc.warn(e + " doesn't contain img " + o + ".");
+ 21512: s.spriteFrame = l;
+ 21513: i && i(l);
+ 21514: }
+ 21515: } else a.decRef();
+ 21516: }
+ 21517: });
+ 21518: }
+ 21519: };
+ 21520: return t;
+ 21521: }();
+ 21522: o.ByteDanceModel = new d();
+ 21523: cc._RF.pop();
+ 21524: }, {
+ 21525: "../../scripts/mgrs/LoginMgr": "LoginMgr",
+ 21526: "../core/events/MessageCenter": "MessageCenter",
+ 21527: "../gui/uicomponents/Alert": "Alert",
+ 21528: "../mgrs/BundleMgr": "BundleMgr",
+ 21529: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+ 21530: "../net/HttpConst": "HttpConst",
+ 21531: "../net/NetMgr": "NetMgr",
+ 21532: "../utils/EvName": "EvName",
+---

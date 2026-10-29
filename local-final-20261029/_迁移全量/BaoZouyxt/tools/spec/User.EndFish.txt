@@ -1,0 +1,99 @@
+# User.EndFish  (HttpConst.END_FISHING)
+# 出现 2 处
+
+ 51420: this.autoMuzhuangData = {};
+ 51421: this.fishOrMining = 0;
+ 51422: }
+ 51423: e.prototype.init = function() {
+ 51424: var t = this;
+ 51425: r.MessageCenter.on(s.HttpConst.START_FISHING, this.onStartFishing, this);
+ 51426: r.MessageCenter.on(s.HttpConst.END_FISHING, this.onEndFishing, this);
+ 51427: r.MessageCenter.on(s.HttpConst.CHECK_FISHING_REWARDS, this.onCheckFishingRewards, this);
+ 51428: r.MessageCenter.on(s.HttpConst.HIRE_NPC, function(t, e) {
+ 51429: if (1 == e.eRet) {
+ 51430: a.default.show(n.getText("1267"));
+ 51431: r.MessageCenter.dispatch(l.EvName.ON_HIRE_SUCCESS);
+ 51432: r.MessageCenter.dispatch(l.EvName.LIMIT_HIRE_SUCCESS, 1);
+ 51433: } else if (6 == e.eRet) {
+ 51434: var o, s = i.getItem(e.siteID, "fishpond");
+ 51435: switch (s.type) {
+ 51436: case 2:
+ 51437: o = 1300;
+ 51438: break;
+ 51439: 
+ 51440: case 3:
+ 51441: o = 1301;
+ 51442: break;
+ 51443: 
+ 51444: default:
+ 51445: o = 1299;
+ 51446: }
+ 51447: var c = n.getText(1298).replace(/\[2\]/, n.getText(o)).replace(/\[1\]/, n.getText(s.Name));
+ 51448: a.default.show(c);
+ 51449: }
+ 51450: }, this);
+ 51451: r.MessageCenter.on(s.HttpConst.CHECK_HIRE, function(e, o) {
+ 51452: var s = i.getItem(t.checkSiteID, "fishpond");
+ 51453: o.hasOwnProperty("maxTime") && (t.maxTime = o.maxTime);
+ 51454: if (1 == o.eRet) {
+ 51455: if (3 == s.type) t.openLimitHungUI(); else if (2 == s.type) {
+ 51456: var u = {
+ 51457: id: t.checkSiteID
+ 51458: };
+ 51459: c.default.prefabs.load("comUI/MiningBeginUI", cc.Prefab, function(t, e) {
+ 51460: var o = cc.instantiate(e);
+ 51461: p.PopUpMgr.addPopUp(o, h.LayerMgr.popUpLayer);
+ 51462: o.addComponent("MiningBeginUI").setData(u);
+ 51463: });
+ 51464: } else if (1 == s.type) {
+ 51465: var f = {
+ 51466: id: t.checkSiteID
+---
+ 51672: this.pondID = t;
+ 51673: var e = y.playerInfo.entity, o = {
+ 51674: fishpondID: t,
+ 51675: hglmt: e.hunger.limit,
+ 51676: speed: e.hungerConsumingSpeed.finalValue
+ 51677: };
+ 51678: g.NetMgr.http.sendRequest(s.HttpConst.END_FISHING, o);
+ 51679: };
+ 51680: e.prototype.reqCheckRwds = function(t) {
+ 51681: var e = {
+ 51682: fishpondID: t
+ 51683: };
+ 51684: g.NetMgr.http.sendRequest(s.HttpConst.CHECK_FISHING_REWARDS, e);
+ 51685: };
+ 51686: e.prototype.setLastWatchTs = function() {};
+ 51687: e.prototype.getLastWatchTs = function() {
+ 51688: cc.sys.localStorage.getItem(u.RoleBaseInfo.roleID + "_fishAd");
+ 51689: return 0;
+ 51690: };
+ 51691: e.prototype.getTotalTime = function() {
+ 51692: return this.maxTime;
+ 51693: };
+ 51694: e.prototype.hungActionState = function(t, e) {
+ 51695: if (t.hasOwnProperty("progress")) {
+ 51696: this.setHungProgress(t.progress);
+ 51697: this.limitHungState = e;
+ 51698: }
+ 51699: t.hasOwnProperty("NumActive") && (this.hungManNum = t.NumActive);
+ 51700: };
+ 51701: e.prototype.openLimitHungUI = function() {
+ 51702: var t = this;
+ 51703: a.default.show(n.getText(4311), [ {
+ 51704: name: n.getText("4312"),
+ 51705: flag: 0
+ 51706: }, {
+ 51707: name: n.getText(4313),
+ 51708: flag: 1
+ 51709: } ], function(e) {
+ 51710: 0 == e && t.reqFishing(t.checkSiteID);
+ 51711: });
+ 51712: };
+ 51713: e.prototype.judgeCostItemHire = function(t) {
+ 51714: var e = this, o = i.getItem(t, "fishpond"), r = i.getConstByID(99);
+ 51715: u.RoleBaseInfo.isvip && (r = i.getConstByID(87));
+ 51716: for (var s = o.hire, l = 0, c = 0; c < s.length; c++) if (u.RoleBaseInfo.getItemNum(s[c]) >= r) {
+ 51717: l = s[c];
+ 51718: break;
+---

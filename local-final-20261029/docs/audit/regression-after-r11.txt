@@ -1,0 +1,34 @@
+test\core-test.js | exit=0 | CORE TESTS PASSED ✅
+test\l0-xhr.js | exit=0 | [L0-1] PASS 21 项
+test\selfcheck-nosave.js | exit=0 | }
+test\upgrade-skill-target.js | exit=0 | }
+test\save-migrate.js | exit=0 | }
+test\drop-table.js | exit=0 | [drop] PASS  8/8
+test\selfcheck-model-push.js | exit=0 | }
+test\push-grants.js | exit=0 | [push] PASS  5/5
+test\overlay-projection.js | exit=0 | [overlay] PASS  14/14
+test\sale-coins.js | exit=0 | [sale] PASS  15/15
+test\trade-buy.js | exit=0 | [buy] PASS  8/8
+test\premium-shop.js | exit=0 | [shop] PASS  9/9
+test\battle-npc-arr.js | exit=0 | [battle] PASS  6/6
+test\wash-points.js | exit=0 | [wash] PASS  6/6
+test\useitem-branches.js | exit=0 | [useitem] PASS  6/6
+test\shop-ge-rogue.js | exit=0 | [shops2] PASS  9/9
+test\action-stats.js | exit=0 | [stats] PASS  5/5
+test\activity-panel.js | exit=0 | [activity] PASS  5/5
+test\achieve-data.js | exit=0 | [achieve] PASS  5/5
+test\panel-fixes.js | exit=0 | [panelfix] PASS  5/5
+test\fashion-pages.js | exit=0 | [fashion-pages] PASS  12/12
+test\r05-f2-l4.js | exit=0 | [r05-f2-l4] PASS  7/7
+test\obs-guard.js | exit=0 | [obs] PASS  7/7
+test\cycle-entry.js | exit=0 | [cycle] PASS  6/6
+test\r06-medicine-scholar.js | exit=0 | [r06-medicine-scholar] PASS  6/6
+test\shop-special-exchange.js | exit=0 | [shops] PASS  13/13
+test\l0-envelope.js | exit=0 | [L0-2] PASS 82 项
+node ..\tools\check_exchange_currency.js | exit=0 | ✅ 118/118 行全部通过（钱包精确入账 + 账本无假键 + eco 键名正确 + 成本照扣）
+node ..\tools\classify_fields.js | exit=0 | -> tools\facts\field-classes.json
+node ..\tools\gen_shapes.js | exit=0 | }
+node ..\tools\check_shape_freeze.js | exit=0 | ✅ C1–C8、C10–C13 全部通过（C9b 未实现）
+$env:BZ_PROBE='0'; node build-handlers.js | exit=0 | FLOW     OK  bytes=17862  -> patch/live/flow.js
+total=32/pass=32/fail=0
+build | ver=h6c98bf9b/selfCheck=1233

@@ -1,0 +1,177 @@
+R11 审阅：两处翻转之后
+2026-10-22
+Table of Contents
+TOC \o "1-2" \h \z \u
+1. 结论
+两处翻转都成立，而且都由配置或源码逐字证明。 第一处：buff 1043 的配置，加上商城第 2 号商品 [1043, 86400]，加上 89056 行的 duration = 1e3 * t，证明 hyTime 是寒玉髓 buff 的剩余秒数。第二处：13167、13178 和 51516 三处都有对 beginTime 的减法，证明 A7 那两个动作确实在出错。
+时钟断言第一次运行抓到的值，暴露了材料里一处没解释的矛盾。 构建期 bz.now() = 1792572970629，换算是 2026-10-21 01:56 PDT。但 R08 时你写的是 GEN_NOW = 1792612412000（同日 12:53 PDT），并说它”与各测试的固定 now 同值”。两个值不一样，说明仓库里至少还有第二个固定时钟来源。
+判别：grep -rn "17925729706\|1792612412" tools/ hotfix-patch/，列出所有固定时钟常量。断言整个仓库里只允许存在一个。
+C9a 声称是超集，但它只匹配 getItem(<obj>.<field>, …) 这种点路径写法，所以并不是超集。 下面几种写法都会漏掉：
+先赋给别名：var n = e.itemId; getItem(n, …)
+下标形态：getItem(e.list[i].id, …)
+作为参数传进再查表的函数：setIcon(e.id)，函数里再 getItem(t, …)
+漏掉的查表键会被归进 B1 到 B3，被中性化成 0，复现 F1 那种查表失败。所以 371 这个数应视为下界。C9a 必须补上一层别名、下标形态和”参数传入查表函数”的回溯，才配叫超集。
+clock:liveIsReal 只在 __BZ_HARNESS__.impl 存在时才断言，所以 live 进程如果缺了这个对象，断言会静默跳过。 补一条：当 scene === &#39;gamescene&#39; 时，__BZ_HARNESS__.impl 必须存在，否则 FAIL。
+两个最小 handler 其余的字段都靠 fillShape 兜底，而兜底值可能正是 204 项里跨动作继承来的值。 比如 beginPlayGame 的孩子相关字段如果是从别的动作继承的，“开始游戏”之后就会显示别人的数据。要先在 C12 的 src 里查这两个动作有没有 borrowed-* 条目。
+其余处置没有错位。 F3 的三处补强、登记清零、allowSigma、approved-widening 这四项，都和 R10 一致。
+2. Q1 答
+(a) 抽取伪代码
+依赖 R07 Q3 已经建好的东西：分词器、函数树、回调 span 到动作的映射，以及形参和别名的绑定解析。
+# 第 1 步：时间源集合 TS（不动点迭代）
+TS_EXPR = { "getSTimestamp()", "Date.now()", "new Date().getTime()", "(new Date).getTime()" }
+TS_FUNC = {}
+repeat:
+  for 每个函数 F:
+    if F 的某个 return 表达式只由 TS_EXPR、TS_FUNC 的调用和 +、- 常量组成:
+      TS_FUNC.add(F 的可调用名)            # 例如 TimeMgr.getSTimestamp、某个 getNowMs
+until TS_FUNC 不再变化
+
+# 第 2 步：减法位点
+for 每个处于代码状态的 "-" 记号 at p:
+  L = 左操作数, R = 右操作数              # 用括号配平取出最短完整操作数
+  if isTS(L) and not isTS(R): emit Site(operand=R, role="elapsed", line)
+  if isTS(R) and not isTS(L): emit Site(operand=L, role="remaining", line)
+# isTS(x)：x 本身是时间源，或者 x 由时间源与常量的乘除组成，例如 0.001 * getSTimestamp()
+
+# 第 3 步：把操作数规约成存储位置 Loc
+loc(operand):
+  "this.m"（在类 C 里）  -> Loc("C.m")    # C 取 cc.Class 被赋给的变量名或模块导出名
+  "C.m" / "X.C.m"        -> Loc("C.m")    # 单例模型按类名对齐，例如 l.ChildrenModel.beginTime
+  局部变量 v              -> 在绑定函数里找 v 的赋值，递归处理右值
+  "resp.f"（resp 绑定为动作 A 的响应形参） -> Resp(A, "f")
+  "1e3 * x"、"x * 1e3"     -> loc(x)，并记 unit = "s"
+
+# 第 4 步：反向追踪（深度不超过 3）
+trace(loc, depth, chain):
+  if loc 是 Resp(A, f): 输出 (A, f, unit, chain); return
+  if depth == 3: 输出 Unresolved(loc, chain); return
+  for 每处赋值 "loc = RHS"（三包全扫，包括类内的 this.m 和类外的 C.m）:
+    trace(loc(RHS), depth+1, chain + [赋值行])
+  for 每个 setter 函数 S(p1..pn)，函数体里有 "loc = pk":
+    for 每个调用点 S(a1..an):
+      trace(loc(ak), depth+1, chain + [调用行])   # 例如 setBufferCostStartTime(o.hyTime, o.beginTime)
+
+CONSUMED = 对每个 Site 跑 trace 后得到的 (A, f, unit, chain) 并集
+(b) 排除判据
+一个（A，f）进入 C11b 的登记，必须同时满足下面三条。只满足一部分的，只报告，不登记。
+减法结构：它在 Site 里是被减的一方，并且这个减法表达式的另一侧恰好是时间源本身，而不是一个复合表达式。
+比如 duration - (getSTimestamp() - o)：o 计入，duration 不计入，因为 duration 不是直接和时间源相减。
+比如 getSTimestamp() - 36e5：右侧是常量，第 2 步的 isTS 判定已经把它挡在外面了。
+量级证据（二选一）：
+抓包 templates 里这个（A，f）的真实值 ≥ 1e9（按秒计的时间戳）或 ≥ 1e12（按毫秒计的时间戳），并且和 unit 一致；
+没有抓包时：这个存储位置在三包里的所有其他赋值，右值要么来自时间源，要么来自 CONSUMED 里的字段，要么是哨兵值（0、null）。只要出现一个非时间常量的赋值（例如 Loc = 5），就排除。
+角色一致：如果 role 是 remaining，f 的名字或证据要表明它是”结束时刻”，这时 handler 必须返回 now + 时长，而这个时长同样需要有来源。如果时长没有来源，就只登记、不实现，归入 R10 N7 的”未实现”棘轮。
+(c) 必然漏的形态（都能在三包里 grep 出来）
+grep -nE "getSTimestamp\(\)\s*[<>]=?|[<>]=?\s*[A-Za-z_$.]*getSTimestamp\(\)" index.js scripts2.js scripts3.js   # 比较，没有减法
+grep -nE "new Date\(\s*(1e3\s*\*\s*)?[A-Za-z_$]" index.js scripts2.js scripts3.js                               # 被构造成 Date 对象，不经过减法
+grep -nE "for\s*\(\s*var\s+\w+\s+in\s+[a-z]\s*\)\s*\w+(\.\w+)*\[\w+\]\s*=" index.js scripts2.js scripts3.js   # for..in 整体拷贝，成员名是动态的
+grep -nE "\.push\(\s*[a-z]\.\w*[Tt]ime" index.js scripts2.js scripts3.js                                         # 时间戳被放进数组，之后按下标再取
+第一种是只做比较、不做减法，例如 getSTimestamp() >= this.endTime。endTime 被当作时间戳使用，但第 2 步只看减法，必然漏掉。修法是把第 2 步扩展到 <、>、<=、>= 比较，按同样的规则处理。
+第二到第四种，在深度 3 的反向追踪下也会漏掉：Date 对象之后的取值没有被跟踪；动态成员名无法规约成存储位置；数组下标让位置无法对齐。这些形态只能进人工清单。
+3. Q2 答
+(a) 在”不结算”的前提下，按读取形态决定发什么
+原则是三句话：状态字段回声，收益字段归零，流程开关关闭。
+读取形态
+判据
+发什么
+
+状态设置：值被传给 setter，或者被直接赋给模型，比如 setBufferTotalTime(o.hanyusuiTime)
+这个值描述的是”结束后应当保持的状态”
+回声当前状态。hanyusuiTime 发 0，与 Begin 时给的值以及”没有 buff”这一前提保持一致
+
+累加收益：x += note.attrch.mpTrained 或者 x = x + …
+少发会算出 NaN
+发 0。外层容器 note、attrch 按 R06 Q1 的 R2、R3 规则给出外壳
+
+带存在判断的收益：hasOwnProperty("mpTrained") 或真值判断
+缺席就不进分支
+不发
+
+列表收益：rewardArray 被遍历，或者被取 .length
+契约
+发 []
+
+整体外传：setAutoStartHung(o)
+响应对象逃逸到另一个函数
+读这个函数的函数体，对里面每一处读取再按本表处理。决定是否自动重新开始挂机的开关字段，一律发假值，否则客户端会自动循环一个没有收益的挂机
+
+饱食度 hg（如果回调会读）
+状态设置
+只读取活模型当前值回声，并截断到请求的 hglmt 以内；读不到时按 R10 N4 处理
+
+“回声”在 CI 的沙盒里没有活模型可读。这时取值规则是：回声值等于同一个会话里 Begin 时发出的对应值，在本例里就是 0，这样 CI 和真机的取值来源是一致的。
+(b) 能写进 CI 的断言
+function assertEndNoGainNoCrash(action, resp, before, after, facts) {
+  // 1) 没有收益：收益路径下的数值叶子全部为 0，数组全部为空
+  REWARD_PATHS[action].forEach(function (p) {
+    walkLeaves(getPath(resp, p), function (v) {
+      assert(v === 0 || (Array.isArray(v) && v.length === 0) || v === undefined, action + &#39;:gain@&#39; + p);
+    });
+  });
+  assert(bizHash(before) === bizHash(after), action + &#39;:ledger&#39;);          // 账本不变
+  assert(probe.push === 0 && probe.write === 0, action + &#39;:noPush&#39;);        // 没有推送，也没有写盘
+  // 2) 不崩溃（静态代理）：回调 span 里，以及逃逸进去的函数体里，所有没有防护的读取都有对应类型的值
+  facts.unguardedReads(action).forEach(function (r) {                       // r = {path, form}
+    assert(pathState(resp, r.path) === &#39;present&#39;, action + &#39;:missing@&#39; + r.path);
+    assert(sigma(getPath(resp, r.path)) in ALLOWED_SIGMA[r.form], action + &#39;:type@&#39; + r.path);
+  });
+  // 3) 流程开关全部关闭
+  FLOW_FLAGS[action].forEach(function (p) { assert(!getPath(resp, p), action + &#39;:flow@&#39; + p); });
+}
+需要说明的是：CI 里没有客户端，所以”不崩溃”在 CI 只能用第 2 部分作为静态代理来证明。真正的不崩溃，由真机冒烟证明：Begin 之后 End，err=0，并且只读探针测得 End 前后 mp 和 buff 1043 的 duration 都没有变化。两者合起来，才能证明”没发奖，也没崩”。
+4. Q3 答
+(a) B0 可做项的算法
+先纠正一个前提：K 不排斥 B0。 B5 的”在 C9b 通过之前不许动”，约束的是会改变发出值的操作。而 B0 的定义就是”发出的值不变”，所以 B0 的检查要排在 B5 之前。另外，B0 只改标签，不改值：一旦改了值，就已经不属于 B0 了。
+for item in borrowed(204):
+  if item 在 C11b 登记里: bucket = BT; continue
+  m = isOwnCapture(item)                         # 用 R10 Q2 的完整路由串判定
+  if m == &#39;mislabel&#39; and not S(item):
+      bucket = B0-relabel   # src 改为 capture:<自身动作>，值不动，从棘轮里扣除
+  elif handlerAlwaysSets(item):                   # 静态证明：handler 的每一个 return 对象字面量里，这个键都无条件存在
+      bucket = B0-dead      # 改标签为 dead-default，值不动；不从棘轮里扣除，移入 dead 桶
+  else:
+      按 R10 §3 的规则分到 B1–B5 / BU
+handlerAlwaysSets 不能只看录制样本。 样本没有覆盖到的分支，仍然可能让默认值被发出去。只有在静态证明成立时，才算作 B0-dead。
+预期规模：材料未提供。 能确定的只有上界：
+B0-relabel 只可能来自 borrowed-capture 这一类，而 204 项里 borrowed-capture 和 borrowed-handler 各有多少，材料没有给；
+B0-dead 只可能出现在有 handler 的动作上，也就是全部 83+4 个 handler 所覆盖的那些条目。
+实际数量以 tools/borrowed_buckets.js 跑出来的结果为准。
+(b) 值不值得做
+按 K×V/X 计算：B0 消除的已知缺陷数 K = 0，因为它只改标签，客户端行为一点不变，所以优先级是 0。
+结论：B0 不单独排期。 它是生成棘轮分桶时顺带产出的结果，跑一次脚本就有了，不管有几项都不值得为它单独做一轮。
+真正应该先做的是 B4（账本状态镜像）里正在出错的那些项。 例如 BuyMarketItem.userGold 继承自 quicklogin.userGold，买完东西之后，客户端显示的钱包余额是抓包那一刻的值。这是一个正在发生的显示缺陷，K 大于 0。判别：在 B4 桶里，逐项看客户端回调是不是把这个字段直接赋给了模型（证据形态和 ECONOMY_CHNG 的 RoleBaseInfo.coins = e[o] 一样）；凡是直接赋值的，K 计 1，修法是从账本投射真实值，归入 L3 投射的工作。
+(c) 棘轮口径确认
+确认，有一处精确化： 棘轮锁的是条目集合，不是一个数。
+冻结模式：脚本按实测集合重写 ceiling 文件，所以 ceiling 的条目集合 = 实测集合，total 是这个集合的大小，由脚本算出，不由人填。
+校验模式：只要求实测集合 ⊆ ceiling 集合。
+B0-dead 项只是移桶，不出集合，所以做完 B0 之后，total 只会减少 B0-relabel 那部分的项数。你说的”降到的值必须等于实测值”，在冻结模式下由”集合相等”自动保证，不需要单独设一个数值。
+5. 对”0 正确但依赖没实现 buff 系统”这一判断
+同意，但这个前提不能只写在文档里，要变成断言，因为它有一条现成的破坏路径。 商城第 2 号商品售价 200，给的是 buff 1043。
+如果现在通用的商城购买 handler 会处理 Type 2（buff 类）的商品，玩家付了 200，却没有得到 buff。这和秘籍”用掉了但不落地”是同一族的不可逆损失。
+200 是什么货币，材料未提供；如果是元宝这类付费货币，还要按 R05 的规定排除支付功能。
+编号
+断言
+
+H1
+商城购买 handler 遇到 Type == 2（buff）的商品：回拒绝码，并且这个拒绝码落在客户端有提示的分支里；账本哈希不变
+
+H2
+在 core/ 下 grep 1043，或者 grep 会写 buff 的代码。只要存在会授予 buff 1043 的写路径，Begin 和 End 两个 handler 里的 hyTime: 0 和 hanyusuiTime: 0 字面量就判为 FAIL，强制改成”剩余秒数 = 账本里记录的 buff 结束时刻减去 now，最小为 0”
+
+H3
+在配置的物品表里找 Effect 或 Data 指向 buff 1043 的物品。如果有，useItem 遇到这类物品，要么拒绝，要么在 H2 实现之后才放行，否则就是又一个秘籍式的损失
+
+6. 反例
+别名查表键漏进 B1：var n = e.cId; … getItem(n, "item")，C9a 漏掉了 cId。cId 被分进 B1，被中性化为 0，客户端拿 0 查表得到 null，读 .name 崩溃。复现：grep -nE "getItem\(\s*[a-z]\s*," index.js scripts2.js scripts3.js，看有多少处首参是单个字母的局部变量。
+两个固定时钟：一部分测试用 1792572970629，生成器用 1792612412000。产出判定”beginTime === env.now()“在两套时钟下各自都是绿的，但跨工具比对时（例如 C3 用 sha 核对冻结快照）会出现时间值不一致；如果这时用 allowSigma 草率放行，就会把真问题也一起放过去。
+buff 已在生效的老档：如果存档是从原版服务端继承来的，客户端本地的 buff 1043 状态可能来自原版。是否会在 LoadGame 里投射，材料未提供。这时 Begin 回 hyTime: 0，会把玩家花钱买来的 24 小时 buff 清零。
+End 自动重开：setAutoStartHung(o) 的函数体里，如果读取的开关不叫 auto，而是叫别的名字，又没有被识别进 FLOW_FLAGS，那么它会按形状默认值发出。如果这个默认值是继承来的真值，挂机就会无限地自动重开，并且没有任何收益。
+remaining 角色的时间字段：某个字段是”结束时刻”，按 Q1 (b) 第 3 条它只登记、不实现。但如果把它当成 elapsed 型，给它 env.now()，剩余时间就恒为 0，表现和”一进去就完成”一样。
+量级证据误排：抓包的那一刻刚好处于”没有进行中的状态”，值是 0，量级证据不成立，这个字段被排除，C11b 漏登记，它继续拿默认值 0 去做被减数。
+7. 假设
+A1：仓库里应当只有一个固定时钟常量。如果确实需要两个（例如某些测试刻意用不同的时间点），第 1 节第 2 条作废，改为断言”每个固定时钟常量都有一个注明用途的登记”。
+A2：C9a 的抽取只覆盖了点路径写法（根据材料的措辞判断）。如果实际上已经处理了别名和下标，第 1 节第 3 条和反例 1 作废，371 就可以当作真正的超集。
+A3：抓包 templates 里存有时间字段的真实值。如果没有，Q1 (b) 第 2 条只剩”无抓包时”那一支，排除判据会更保守，报告多、登记少。
+A4：setAutoStartHung 能在三包里静态定位到函数体。如果定位不到，Q2 (a) 表里”整体外传”那一行只能把这个函数读到的所有字段按惰性处理并且不发，同时把它列进人工清单，真机冒烟必须覆盖自动挂机的场景。
+A5：商城购买目前走的是通用 handler，会接受 Type 2 商品。如果目前根本没有实现商城购买，第 5 节的 H1 只是防线，不是在修一个现存的缺陷。
+A6：B4 里的状态镜像字段，是被客户端回调直接赋给模型的。如果回调对它们有防护，或者根本不读，Q3 (b) 里”B4 先做”的依据就作废，204 项就没有一项是现存缺陷，整个清理只是在降低未来的风险。

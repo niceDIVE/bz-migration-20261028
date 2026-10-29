@@ -1,0 +1,44 @@
+回执 第7批 C06〔打坐练功〕（2026-10-26）
+
+══ 部署指纹 ══
+  构建：ver=h9de8c1d7（链 h3828b816→h9de8c1d7）｜flow=ffaec47c3｜pid 不变（热重载）
+  selfCheck **1285** 全过（+1 条新 handler 检查），implErr=null
+  patch\live\handlers.js      1,430,971 B  md5 B5BFFB4B4F9C9C2FC65FF9B2EBA3AE42
+  core\bz-rpc-server.js       md5 EC14C0C79AE04CA69008CB2E8CC56211
+  core\bz-shops.generated.js  md5 257F30E050F98C148DB7ED07FBF9FA81（本批未动表）
+
+══ 一、口径 ══
+  15 动作里 4 个前批已有（BeginTraining/BeginMeditation/BeginPlayWooks/EndPlayWooks），本批补 11 个：
+  EndTraining / EndMeditation / EndRecoverMP / getVigor / useVigorMeditation / useVigorUpGradeSkill /
+  BeginRecoverMP / changePlayWooksState / setOnHookWookState / Implantation / removeMartial。
+  口径（relations.md 预警采纳）：END_* 请求**不带时长** → 只回成功、不结算——练功收益、内功修为
+  （mpTrained）、体力消耗全部不建模。**本批发钱口 = 0**（真机 11 动作全打一遍，coins/exp/potential
+  前后逐字节一致）。
+  消费端形状硬约束（已按实给齐）：
+  - 三个 END_* 回调**没有 eRet 判断**（120574/138888/138903 直接读字段）→ genguTime/hanyusuiTime
+    给 0（无 buff）；**EndMeditation 的 138892 `o.note.hasOwnProperty("attrch")` 无守护 → note 必带**，
+    attrch 空 = 修为不结算（四本空账本一并提供，贴基线形状）。
+  - vigor 无存档槽 → getVigor/useVigorMeditation/useVigorUpGradeSkill 恒 vigor 0（诚实空态）。
+  - useVigorUpGradeSkill 的 120604 `getSkillLevel(e.skillID)` 拼文案 → skillID 回声（客户端本地
+    表查它自己报的 id，无奖励面）。
+  - BEGIN_RECOVER_MP：serverTime = 请求时刻（回蓝计时基座，index.js:138898）。
+  - Implantation/removeMartial：skillQueue 是客户端本地模型 → ack。
+
+══ 二、门禁 ══
+  acceptance **46/46 绿**（+c06-smoke 6 条），known-red 0, cap 0
+  check_shape_freeze：4 项差异（BeginRecoverMP|serverTime 值变 + hanyusuiTime 新发 ×3）走
+  planned-changes/widening 审批后 --freeze 入基线，C1-C13 全过（动作 337）
+  check_reject_codes OK：动作 65 / 条目 79 / 拒绝点 102（本批无新增拒绝码——11 个动作全 eRet 1）
+  冒烟：c06-smoke 6/6（含"11 动作跑完存档逐字节不动"）、c04 12/12、v271 15/15、achieve 6/6、
+        c16 10/10、circle-task 15/15、c03 11/11、c02 19/19、c05 16/16
+  热重载：pid 不变、selfCheck 1285 全过
+  独立验收：工人 14 条全量复跑全 0 退出码（acceptance-worker-c06.md），主审抽样逐字一致。
+
+══ 三、真机验证（codec 全链路，probe\c06-verify-probe.js）══
+  11 动作全 eRet 1；EndMeditation note.attrch 链路通（无 TypeError）；vigor 0；
+  useVigorUpGradeSkill 回声 skillID=7；BeginRecoverMP serverTime 有值；
+  before/after：coins 20832359 / exp 450 / potential 102799 **完全一致**——不结算批零白拿面。
+
+══ 四、进度与下一步 ══
+  C01✅ C02✅ C05✅ C03✅ C16✅ C04✅ C06✅ → 下一批 C07〔善恶〕11 个（relations.md:60）。
+  升级报告的条件不变：存档写坏，或者能白拿钱/道具（均未发生）。

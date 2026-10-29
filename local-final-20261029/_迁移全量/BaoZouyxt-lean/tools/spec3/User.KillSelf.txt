@@ -1,0 +1,13 @@
+# User.KillSelf   (HttpConst.KILL_SELF)
+
+## 注册点 54310: n.MessageCenter.on(r.HttpConst.KILL_SELF, function(e, o) {
+
+## 请求点 54337: m.RoleOtherInfo.isUntie ? c.default.show(i.getText(6372)) : a.NetMgr.http.sendRequest(r.HttpConst.KILL_SELF, {
+   54329: s.RoleBaseInfo.isvip || 1 != s.RoleBaseInfo.teleport || o.push(1072);
+   54330: if (o.length > 1) for (var n = 0; n < o.length; n++) e = e + "\n             " + (n + 1).toString() + "." + i.getText(o[n]); else 1 == o.length && (e = e + "\n             " + i.getText(o[0]));
+   54331: var l;
+   54332: l = o.length > 0 ? t.replace(/\[1\]/, e) + "\n" + i.getText(1069) : i.getText(1069);
+   54333: h.default.prefabs.load("comUI/PromptUI", cc.Prefab, function(t, e) {
+   54334: var o = cc.instantiate(e);
+   54335: u.PopUpMgr.addPopUp(o, f.LayerMgr.popUpLayer);
+   54336: o.addComponent("PromptUI").setData(l, !0, null, function() {

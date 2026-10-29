@@ -1,0 +1,99 @@
+# User.activateTowerEvent  (HttpConst.ACTIVE_TOWER_EVENT)
+# 出现 2 处
+
+137814: t.setNewSweepData(i);
+137815: }
+137816: 14 == t.sweepLv ? l.MessageCenter.dispatch(S.EvName.CHEAK_SWEEP_EVENT_EVENT, t.getSweepRewardDatas()) : t.sweepMapQuit();
+137817: t.sweepLv = 0;
+137818: }
+137819: }, this);
+137820: l.MessageCenter.on(c.HttpConst.ACTIVE_TOWER_EVENT, function(e, o) {
+137821: if (1 == o.eRet) {
+137822: t.randomMonsterData = o.npcArr;
+137823: o.hasOwnProperty("eventID") && (t.randomEventId = o.eventID);
+137824: o.hasOwnProperty("muscle") && (t.curStrengthNum = o.muscle);
+137825: o.hasOwnProperty("attrType") && (t.attriType = o.attrType);
+137826: o.hasOwnProperty("eggNpc") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];
+137827: o.hasOwnProperty("chickenLegNum") && (t.toEatNum = o.chickenLegNum);
+137828: t.canActivateStatus = !!o.hasOwnProperty("canActivateStatus") && o.canActivateStatus;
+137829: t.towerEventAy = o.hasOwnProperty("eventIds") ? o.eventIds : [];
+137830: l.MessageCenter.dispatch(S.EvName.TOWER_AUTO_FIGHT_EVENT);
+137831: }
+137832: }, this);
+137833: };
+137834: e.prototype.setNewSweepData = function(t) {
+137835: if (t.hasOwnProperty("eggs")) {
+137836: this.colorEggData = [];
+137837: for (var e in t.eggs) this.colorEggData.push(t.eggs[e]);
+137838: }
+137839: if (t.hasOwnProperty("qiyus")) {
+137840: this.qiyuDatas = [];
+137841: for (var o in t.qiyus) this.qiyuDatas.push(t.qiyus[o]);
+137842: }
+137843: if (t.hasOwnProperty("pandas")) {
+137844: this.pandaDatas = [];
+137845: for (var i in t.pandas) this.pandaDatas.push(t.pandas[i]);
+137846: }
+137847: t.hasOwnProperty("shopids") && (this.shopData = t.shopids);
+137848: if (t.hasOwnProperty("shopidsBook")) {
+137849: this.shopBookShop = [];
+137850: for (var n in t.shopidsBook) this.shopBookShop.push(t.shopidsBook[n]);
+137851: }
+137852: t.hasOwnProperty("isHaveEvent") && (this.isSweepEvent = t.isHaveEvent);
+137853: };
+137854: e.prototype.reqOpenClimbingTower = function() {
+137855: g.NetMgr.http.sendReqWithMask(c.HttpConst.ENTER_GET_CLIMBLING_EVENT, {});
+137856: };
+137857: e.prototype.reqEnterTower = function(t) {
+137858: var e = this.curFloorNum;
+137859: this.eventType = t;
+137860: 0 == t && e++;
+---
+138315: } else this.reqGetPandaEvent(this.sweepLv);
+138316: };
+138317: e.prototype.checkSweepMaxFloor = function() {
+138318: return !(this.curFloorNum <= this.maxFloor && this.isCanSweep);
+138319: };
+138320: e.prototype.reqSelectTowerEvent = function(t) {
+138321: g.NetMgr.http.sendRequest(c.HttpConst.ACTIVE_TOWER_EVENT, {
+138322: eventID: t
+138323: });
+138324: };
+138325: e.prototype.setLeaveTowerEquips = function(t, e) {
+138326: var o = m.InventoryModel.getEquipmentInfo(t), i = {
+138327: id: o.id,
+138328: type: o.type,
+138329: itemID: o.itemID,
+138330: attrs: o.attrs,
+138331: numAttr: o.numAttr,
+138332: crystalIds: o.crystalIds
+138333: }, r = I.InhertEquipModel.allInhertEquips, a = r.hasOwnProperty(o.id) ? r[o.id] : 0;
+138334: p.UserModel.entity.putOffEquipment(parseInt(e));
+138335: p.UserModel.entity.putOnEquipment(new n(i, a), parseInt(e));
+138336: 1 == e && m.InventoryModel.freshEquipWeap(e, i.id);
+138337: };
+138338: e.prototype.destroy = function() {
+138339: this.curMapId = 0;
+138340: this.enterX = 0;
+138341: this.enterY = 0;
+138342: this.towerData = {};
+138343: this.randomMonsterData = [];
+138344: this.randomEventId = 0;
+138345: this.challengeTime = 0;
+138346: this.sum = 0;
+138347: this.curFloorNum = 0;
+138348: this.towerItemData = {};
+138349: this.towerEquipData = {};
+138350: this.equipObjDec = {};
+138351: this.resGlodNum = 0;
+138352: this.pandaEventId = 0;
+138353: this.pandaNpcId = {};
+138354: this.towerShowMapId = 0;
+138355: this.curStrengthNum = 0;
+138356: this.attriType = -1;
+138357: this.challeageState = 0;
+138358: this.tempFlootNum = 0;
+138359: this.fightEsc = 0;
+138360: this.elitMasterData = [];
+138361: this.maxFloor = 0;
+---

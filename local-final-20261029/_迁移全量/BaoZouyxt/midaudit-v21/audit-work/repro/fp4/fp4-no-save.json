@@ -1,0 +1,7 @@
+{
+  "_说明": "A2 复现用例 FP4：不带 saveBefore/saveAfter 的用例，note.ivch 发了错误绝对值 999（真实客户端背包会被赋成 999）。无存档 → L1.IVCH_ABS 与 L1.NOTE_MISSING_IVCH 全部跳过 → PASS。",
+  "id": "FP4.no-save-wrong-ivch", "action": "User.buyShopItem",
+  "req": { "mod": "User", "do": "buyShopItem", "p": { "itemID": 2001, "num": 2 } },
+  "resp": { "eRet": 1, "note": { "ivch": { "2001": 999 }, "eco": { "coins": 123456 } } },
+  "exceptions": [], "toasts": [], "probe": { "mode": "wrap-on" }
+}

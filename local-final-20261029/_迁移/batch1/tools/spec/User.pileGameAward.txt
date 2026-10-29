@@ -1,0 +1,99 @@
+# User.pileGameAward  (HttpConst.PILE_GAME_AWARD)
+# 出现 2 处
+
+ 57258: break;
+ 57259: 
+ 57260: default:
+ 57261: cc.log("很致命的错误啊，问后端😈");
+ 57262: }
+ 57263: }, this);
+ 57264: n.MessageCenter.on(a.HttpConst.PILE_GAME_AWARD, function(t, e) {
+ 57265: switch (e.eRet) {
+ 57266: case 1:
+ 57267: h.ActiveModel.isNullMap(e.rewardArray) || r.default.showReward(e.rewardArray, 0, {}, {}, null, [], void 0, e.isDouble ? i.getText(6013066) : "");
+ 57268: n.MessageCenter.dispatch(s.EvName.ACTIVE_GAME_REWARD, e);
+ 57269: break;
+ 57270: 
+ 57271: case 2:
+ 57272: r.default.show(i.getText(1093));
+ 57273: break;
+ 57274: 
+ 57275: case 3:
+ 57276: cc.log("你太叼了，不准继续玩了");
+ 57277: break;
+ 57278: 
+ 57279: case 4:
+ 57280: r.default.show(i.getText(6013069));
+ 57281: n.MessageCenter.dispatch(s.EvName.ACTIVE_GAME_REWARD, e);
+ 57282: break;
+ 57283: 
+ 57284: case 5:
+ 57285: r.default.show(i.getText(6013067));
+ 57286: break;
+ 57287: 
+ 57288: case 6:
+ 57289: cc.log("后端说是策划的问题");
+ 57290: }
+ 57291: });
+ 57292: };
+ 57293: t.prototype.reqAllActiveState = function(t) {
+ 57294: if (this.curActiveID != t) {
+ 57295: this.curActiveID = t;
+ 57296: c.NetMgr.http.sendRequest(a.HttpConst.GET_ACTIVITY, {
+ 57297: type: t
+ 57298: });
+ 57299: }
+ 57300: };
+ 57301: t.prototype.reqActiveReward = function(t) {
+ 57302: c.NetMgr.http.sendRequest(a.HttpConst.GET_ACTIVITY_AWARD, {
+ 57303: type: t
+ 57304: });
+---
+ 57305: };
+ 57306: t.prototype.reqPileData = function(t) {
+ 57307: this.youngPileNpcid = t;
+ 57308: c.NetMgr.http.sendRequest(a.HttpConst.GET_PILE_GAME_DATA, {});
+ 57309: };
+ 57310: t.prototype.reqPileAward = function(t) {
+ 57311: c.NetMgr.http.sendRequest(a.HttpConst.PILE_GAME_AWARD, {
+ 57312: score: t
+ 57313: });
+ 57314: };
+ 57315: t.prototype.reqRankList = function(t) {
+ 57316: var e = {
+ 57317: roleID: l.RoleBaseInfo.roleID,
+ 57318: type: t
+ 57319: };
+ 57320: cc.log("data", e);
+ 57321: c.NetMgr.http.sendRequest(a.HttpConst.GET_ACTIVITY_RANK, e);
+ 57322: };
+ 57323: t.prototype.reqSmallReward = function(t, e) {
+ 57324: var o = {
+ 57325: roleID: l.RoleBaseInfo.roleID,
+ 57326: type: 1,
+ 57327: score: e
+ 57328: };
+ 57329: cc.log("data", o);
+ 57330: c.NetMgr.http.sendRequest(a.HttpConst.SMALL_GAME_AWARD, o);
+ 57331: };
+ 57332: t.prototype.openActiveUI = function(t) {
+ 57333: switch (t.type) {
+ 57334: case 1:
+ 57335: u.default.prefabs.load("meihuaPile/MeihuaPileUI", cc.Prefab, function(e, o) {
+ 57336: var i = cc.instantiate(o);
+ 57337: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer, 1, !0);
+ 57338: i.addComponent("MeihuaPileUI").setData(t);
+ 57339: });
+ 57340: }
+ 57341: };
+ 57342: return t;
+ 57343: }();
+ 57344: o.HolidayActiveModel = new g();
+ 57345: cc._RF.pop();
+ 57346: }, {
+ 57347: "../core/events/MessageCenter": "MessageCenter",
+ 57348: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 57349: "../gameconfigs/LangMgr": "LangMgr",
+ 57350: "../gui/uicomponents/Alert": "Alert",
+ 57351: "../mgrs/BundleMgr": "BundleMgr",
+---

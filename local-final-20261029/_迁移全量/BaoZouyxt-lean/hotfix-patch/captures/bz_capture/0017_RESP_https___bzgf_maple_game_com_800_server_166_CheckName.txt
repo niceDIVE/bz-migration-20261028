@@ -1,0 +1,5 @@
+status=200 https://bzgf.maple-game.com/800-server-166/CheckName
+{
+  "code": 200,
+  "MsgData": "91161c11e2db968f4ec893e5850d709ba268d0ae16d770100300580b2efe9986"
+}

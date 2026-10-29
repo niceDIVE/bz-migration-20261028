@@ -1,0 +1,260 @@
+/* bz-handler-impl —— 策略层（热更新单元）
+ *
+ * 本文件不单独运行：由 build-handlers.js 拼接成 <writable>/hotfix/live/handlers.js，
+ * 在进程内经 new Function('bz', src) 求值，必须 return 契约对象：
+ *   { version, handle(req), selfCheck(), reset(), state() }
+ *
+ * 依赖已在前文定义：__TPL__（模板）、createBzServer（服务器）、IMPL_VERSION（构建注入）、bz（引导 API）
+ */
+
+var server = null;
+var memStore = null;
+var quiet = false;   // 自检批量跑动作时闭嘴，避免每次 reload 刷 120 行日志
+
+function implLog(m) { if (quiet) return; try { bz.log('[impl] ' + m); } catch (e) {} }
+
+function diskRead() {
+  try { return bz.exists(bz.savePath) ? bz.readFile(bz.savePath) : null; } catch (e) { return null; }
+}
+function diskWrite(k, text) { bz.writeFile(bz.savePath, text); }
+
+/** store=null → 用磁盘存档；store={read,write} → 内存（自检专用，绝不碰真档） */
+function makeServer(store) {
+  return createBzServer({
+    now: bz.now,
+    log: implLog,
+    templates: __TPL__,
+    codec: bz.codec,
+    readSave: store ? store.read : diskRead,
+    writeSave: store ? store.write : diskWrite,
+    // 隔离实例（store 为内存）= 自检专用：handler 里任何"推给活客户端模型"的副作用都必须跳过。
+    // 反面教材：upgradeSkill 结尾的 window.__require 推送，曾让每次 reload 把 potentials 改成
+    // 99699 并塞进假技能 skill 0（回归用例 test/selfcheck-model-push.js）。
+    sandbox: !!store,
+    // 默认走「有档直接进」（实测冷启动 16s）；放 bz_forcewizard 文件可强制回到建角向导
+    hintHasRole: !bz.exists(bz.dir + 'bz_forcewizard'),
+  });
+}
+
+function memMake() {
+  var data = {};
+  return { read: function (k) { return Object.prototype.hasOwnProperty.call(data, k) ? data[k] : null; }, write: function (k, v) { data[k] = v; } };
+}
+
+server = makeServer(null);
+
+var RPC_URL_RE = /(\/register\.php)|(notice-server)|(:9898\/)|(bzgf\.maple-game\.com)/;
+
+function handle(req) {
+  var url = String((req && req.url) || '');
+  var body = req ? req.body : null;
+  var t0 = bz.now();
+
+  if (url.indexOf('/register.php') >= 0) {
+    return { status: 200, text: 'success', meta: { action: 'register', envelope: 'plain', ms: bz.now() - t0 } };
+  }
+  if (url.indexOf('notice-server') >= 0) {
+    return { status: 200, text: '{"statusCode":200,"data":[]}', meta: { action: 'notice', envelope: 'plain', ms: bz.now() - t0 } };
+  }
+  if (url.indexOf(':9898/') >= 0 || url.indexOf('bzgf.maple-game.com') >= 0) {
+    var r = server.handleRequest(body, url);
+    if (!r || !r.ok) {
+      return { status: 502, text: '', meta: { action: 'rpc-fail', error: (r && r.error) || 'unknown', url: url.slice(0, 100), ms: bz.now() - t0 } };
+    }
+    return { status: 200, text: r.text, meta: { action: r.action, envelope: r.envelope, bytes: (r.text || '').length, ms: bz.now() - t0 } };
+  }
+  return { status: 200, text: '', meta: { action: 'blackhole', url: url.slice(0, 100), ms: bz.now() - t0 } };
+}
+
+var CHECK_ACTIONS = [
+  'GetServerList', 'ChooseServer', 'TellAction', 'quicklogin', 'CheckName', 'Create',
+  'getCRAInfo', 'GetChatAddress', 'acceptTask', 'getFinishTaskAward', 'OpenNovice',
+  'joinSchool', 'upgradeSkill', 'ReqSelfBattleInfo', 'CheckBattleResult',
+];
+
+function selfCheck() {
+  var passed = 0, failed = [], detail = [];
+  function ok(name, cond, info) {
+    if (cond) { passed++; return; }
+    failed.push(name);
+    detail.push({ name: name, info: info === undefined ? null : info });
+  }
+  if (!bz.codec) { failed.push('codec:missing'); return { ok: false, version: IMPL_VERSION, passed: passed, failed: failed, detail: detail }; }
+
+  ok('codec:roundtrip', (function () {
+    try { return bz.codec.decode(bz.codec.encode('{"a":1}')) === '{"a":1}'; } catch (e) { return false; }
+  })());
+  ok('tpl:serverList', !!(__TPL__ && __TPL__.getServerList));
+  ok('tpl:create', !!(__TPL__ && __TPL__.create));
+
+  // 自检开始前留一份真存档的字节快照：自检全程**不许**写它（见函数末尾 selfcheck:noSaveWrite）
+  var diskBefore = diskRead();
+
+  // 每个动作：包络（code/无 code）+ 载荷可解码 + 必须"恰好一次成功应答"
+  var iso = makeServer(memMake());
+  for (var i = 0; i < CHECK_ACTIONS.length; i++) {
+    var a = CHECK_ACTIONS[i];
+    var reqBody;
+    try { reqBody = bz.codec.encode(JSON.stringify({ mod: 'User', do: a, p: {} })); } catch (e) { ok(a + ':encode-req', false, String(e)); continue; }
+
+    var res = iso.handleRequest(reqBody, 'https://bzgf.maple-game.com/900-server-166/' + a);
+    ok(a + ':ok', !!(res && res.ok), res && res.error);
+    var env1 = null;
+    try { env1 = JSON.parse(res.text); } catch (e) {}
+    ok(a + ':code', !!(env1 && env1.code === 200 && typeof env1.MsgData === 'string'));
+    var inner = null;
+    try { inner = JSON.parse(bz.codec.decode(env1.MsgData)); } catch (e) {}
+    ok(a + ':payload', inner !== null && typeof inner === 'object');
+
+    var res2 = iso.handleRequest(reqBody, 'http://10.0.0.1:9898/' + a);
+    var env2 = null;
+    try { env2 = JSON.parse(res2.text); } catch (e) {}
+    ok(a + ':nocode', !!(env2 && env2.code === undefined && typeof env2.MsgData === 'string'), env2 && env2.code);
+  }
+
+  // 信封必须按 URL 区分，且 unknown 动作要有 ACK 兜底
+  var unk = bz.codec.encode(JSON.stringify({ mod: 'User', do: 'neverSeenAction', p: {} }));
+  var ru = iso.handleRequest(unk, 'https://bzgf.maple-game.com/900-server-166/x');
+  var pu = null;
+  try { pu = JSON.parse(bz.codec.decode(JSON.parse(ru.text).MsgData)); } catch (e) {}
+  ok('unknown:ack', !!(pu && pu.resultCode === 200), pu);
+
+  // 任务账本闭环：接受 → 完成 → 重进(LoadGame) → 同步(sycnTask)
+  // 两个集合必须都回放；sycnTask 回空 = 客户端把"做过"清零（这条断言就是防它回归）
+  quiet = true;
+  var ts = makeServer(memMake());
+  ts.dispatch('User', 'acceptTask', { taskID: 100010 });
+  ts.dispatch('User', 'acceptTask', { taskID: 100020 });
+  ts.dispatch('User', 'getFinishTaskAward', { taskID: 100010 });
+  var lgd = ts.dispatch('User', 'LoadGame', {});
+  var lp = (lgd && lgd['User.LoadGame']) || {};
+  ok('task:load:finishArr', Array.isArray(lp.finishTaskObj) && lp.finishTaskObj.indexOf('100010,1') >= 0, lp.finishTaskObj);
+  ok('task:load:doneExcluded', Array.isArray(lp.acceptTaskArray) && lp.acceptTaskArray.indexOf(100020) >= 0 && lp.acceptTaskArray.indexOf(100010) < 0, lp.acceptTaskArray);
+  ok('task:load:order', Array.isArray(lp.acceptTaskOrder) && lp.acceptTaskOrder.length >= 2, lp.acceptTaskOrder);
+  ok('task:load:taskLog', Array.isArray(lp.taskLog), lp.taskLog);
+  var sy = ts.dispatch('User', 'sycnTask', {});
+  var sp = (sy && sy['User.sycnTask']) || {};
+  ok('task:sync:notEmpty', !!sp.PlayerFinishTaskObj && !Array.isArray(sp.PlayerFinishTaskObj) && sp.PlayerFinishTaskObj['100010'] === 1, sp.PlayerFinishTaskObj);
+  ok('task:sync:acceptMap', !!sp.acceptTaskMap && sp.acceptTaskMap['100020'] === 100020 && !sp.acceptTaskMap['100010'], sp.acceptTaskMap);
+  ok('task:sync:order', Array.isArray(sp.acceptTaskOrder) && sp.acceptTaskOrder.length >= 2, sp.acceptTaskOrder);
+  ok('task:sync:taskLog', Array.isArray(sp.taskLog), sp.taskLog);
+
+  // 物品账本：买 → 用 → 同步 → 重进，全程必须记得住
+  // （客户端收到 sycnPlayerItemData 会先 `_itemObj = {}` 再按应答重建，回空就是清空背包）
+  var isrv = makeServer(memMake());
+  isrv.dispatch('User', 'buyShopItem', { itemID: 3626, itemNum: 3 });
+  var ur = (isrv.dispatch('User', 'useItem', { itemID: 3626, itemNum: 1 }) || {})['User.useItem'] || {};
+  ok('item:use:note', !!ur.note && !!ur.note.skch && !!ur.note.ivch && !!ur.note.eqch, ur.note);
+  ok('item:use:echo', ur.itemID === 3626, ur.itemID);
+  var ip = (isrv.dispatch('User', 'sycnPlayerItemData', {}) || {})['User.sycnPlayerItemData'] || {};
+  ok('item:sync:itemObj', !!ip.itemObj && ip.itemObj['3626'] === 2, ip.itemObj);
+  var lg2 = (isrv.dispatch('User', 'LoadGame', {}) || {})['User.LoadGame'] || {};
+  ok('item:load:itemObj', !!lg2.itemObj && lg2.itemObj['3626'] === 2, lg2.itemObj);
+  ok('item:load:hasEquip', lg2.PlayerEquip !== undefined, typeof lg2.PlayerEquip);
+
+  // 任务奖励 / 任务所需物品（数据来自游戏原始配置表：tasknew + drop + item）
+  var rw = makeServer(memMake());
+  rw.dispatch('User', 'acceptTask', { taskID: 100150 });      // 该任务 SpRequire = 4015×1
+  var rs1 = rw.loadSave();
+  ok('task:need:granted', (parseInt(rs1.bag['4015'], 10) || 0) >= 1, rs1.bag);
+  var fa1 = (rw.dispatch('User', 'getFinishTaskAward', { taskID: 100010 }) || {})['User.getFinishTaskAward'] || {};
+  ok('task:reward:array', !!fa1.rewardArray && Object.keys(fa1.rewardArray).length > 0, fa1.rewardArray);
+  var rs2 = rw.loadSave();
+  var firstKey = Object.keys(fa1.rewardArray || {})[0];
+  ok('task:reward:inBag', firstKey ? (parseInt(rs2.bag[firstKey], 10) || 0) > 0 : false, rs2.bag);
+  var fa2 = (rw.dispatch('User', 'getFinishTaskAward', { taskID: 100010 }) || {})['User.getFinishTaskAward'] || {};
+  ok('task:reward:once', !!fa2.rewardArray && Object.keys(fa2.rewardArray).length === 0, fa2.rewardArray);
+
+  // 装备穿脱：穿要记账（否则重进回放成旧的 = 白穿），卸要清空 <8 的槽
+  var es = makeServer(memMake());
+  es.dispatch('User', 'PutOnEquipment', { EquipmentType: 1, itemID: 7535 });
+  var ed = es.loadSave();
+  ok('equip:put', !!(ed.equipments && ed.equipments[1] === 7535), ed.equipments);
+  ok('equip:instance', !!(ed.playerEquip && Array.isArray(ed.playerEquip[7535])), ed.playerEquip);
+  var eg = (es.dispatch('User', 'LoadGame', {}) || {})['User.LoadGame'] || {};
+  ok('equip:replay', eg.equipments && eg.equipments[1] === 7535, eg.equipments);
+  es.dispatch('User', 'UnloadingEuipment', { hp: 1, hplmt: 1, mp: 1 });
+  var ed2 = es.loadSave();
+  ok('equip:down', !(ed2.equipments && ed2.equipments[1]), ed2.equipments);
+  // 装备类奖励要进 PlayerEquip 而不是背包（客户端按 Type==1 走 getEquipOrUid）
+  var gs = makeServer(memMake());
+  var gfa = (gs.dispatch('User', 'getFinishTaskAward', { taskID: 100240 }) || {})['User.getFinishTaskAward'] || {};
+  var gd = gs.loadSave();
+  ok('equip:reward', !!(gd.playerEquip && Object.keys(gd.playerEquip).length > 0), { reward: gfa.rewardArray, equip: gd.playerEquip });
+  quiet = false;
+
+  // 形状表：每个动作的应答必须带齐「客户端真会读」的字段，且 eRet=1
+  // 注意 dispatch 会先走手写 handler，再走形状表——所以这条断言同时也在验那 53 个 handler
+  // （distpatch 里的 fillShape 只补缺，不覆盖 handler 自己算的值）
+  if (typeof BZ_SHAPES !== 'undefined' && BZ_SHAPES) {
+    quiet = true;
+    var shapedCount = 0;
+    var implShape = {};
+    var implList = BZ_SHAPES.__impl || [];
+    for (var ii = 0; ii < implList.length; ii++) implShape[implList[ii]] = 1;
+    for (var act in BZ_SHAPES) {
+      if (!BZ_SHAPES.hasOwnProperty(act) || act === '__meta' || act === '__impl') continue;
+      shapedCount++;
+      var want = BZ_SHAPES[act];
+      var got = iso.dispatch('User', act, {});
+      var inner2 = got && got['User.' + act];
+      ok('shape:' + act + ':present', !!inner2, act);
+      // 支付类一律必须"看起来失败"（项目边界：不伪造任何付费）；抓包真值允许 handler 自己定 eRet
+      if (/(Pay|pay|Order|Recharge|IAP|Jetton)/.test(act)) {
+        ok('shape:' + act + ':payBlocked', !!(inner2 && inner2.eRet !== 1), inner2 && inner2.eRet);
+      } else if (implShape[act]) ok('shape:' + act + ':eRet', !!(inner2 && typeof inner2.eRet === 'number'), inner2 && inner2.eRet);
+      else ok('shape:' + act + ':eRet', !!(inner2 && inner2.eRet === 1), inner2 && inner2.eRet);
+      var missing = [];
+      for (var fld in want) {
+        if (!want.hasOwnProperty(fld)) continue;
+        if (!(inner2 && Object.prototype.hasOwnProperty.call(inner2, fld))) missing.push(fld);
+      }
+      ok('shape:' + act + ':fields', missing.length === 0, missing);
+    }
+    ok('shape:count', shapedCount > 0, shapedCount);
+    ok('shape:meta', !!(BZ_SHAPES.__meta && BZ_SHAPES.__meta.total === shapedCount), BZ_SHAPES.__meta);
+    quiet = false;
+  }
+
+  // 收尾护栏：自检全程不许写真存档。自检是同步跑的（游戏主线程不会插进来），
+  // 所以字节变了 = 我们自己写的 → 立刻还原原始字节并把断言判 FAIL（大声失败，不静默）。
+  try {
+    var diskAfter = diskRead();
+    if (diskBefore !== diskAfter) {
+      var restored = false;
+      try { if (diskBefore !== null) { bz.writeFile(bz.savePath, diskBefore); restored = true; } } catch (e) {}
+      ok('selfcheck:noSaveWrite', false, {
+        bytesBefore: diskBefore === null ? 0 : diskBefore.length,
+        bytesAfter: diskAfter === null ? 0 : diskAfter.length,
+        restored: restored,
+      });
+      try { bz.log('[impl] ⚠ 自检写到了真存档，已还原（' + (diskBefore === null ? 0 : diskBefore.length) + ' B）'); } catch (e) {}
+    } else {
+      ok('selfcheck:noSaveWrite', true, null);
+    }
+  } catch (e2) { ok('selfcheck:noSaveWrite', false, String(e2)); }
+
+  return { ok: failed.length === 0, version: IMPL_VERSION, passed: passed, failed: failed, detail: detail, t: bz.now() };
+}
+
+function reset() {
+  server = makeServer(null);
+  var r = server.reset();
+  implLog('reset → roleID=' + r.roleID);
+  return { ok: true, version: IMPL_VERSION, roleID: r.roleID };
+}
+
+function state() {
+  try {
+    var raw = diskRead();
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) { return null; }
+}
+
+return {
+  version: IMPL_VERSION,
+  handle: handle,
+  selfCheck: selfCheck,
+  reset: reset,
+  state: state,
+};

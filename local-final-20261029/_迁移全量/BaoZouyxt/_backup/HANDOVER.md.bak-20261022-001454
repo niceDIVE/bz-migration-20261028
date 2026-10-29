@@ -1,0 +1,390 @@
+# 交接文档 —— 《暴走英雄坛》进程内离线单机（Hotfix 注入路线）
+
+> 最后更新：2026-10-21 20:45
+> 状态：**核心闭环已打通并实机验证**（角色已创建并进入游戏世界，全部 RPC 进程内应答，零真实网络）
+
+---
+
+## 0. 项目定位与边界（接手前必读）
+
+### 0.1 这是什么
+
+**唯一目的：让用户本人在自己的电脑上，离线单人游玩《暴走英雄坛》。**
+
+技术性质 = **本地运行环境适配**，相当于给一款老游戏打"离线兼容补丁"，
+与显卡驱动给老游戏做兼容、或模拟器本身提供运行环境，是同一类工作。
+没有运营行为、没有对外服务、没有商业意图。
+
+### 0.2 边界清单（做 / 不做）
+
+| 会做 | 明确不做 |
+|---|---|
+| 在本机模拟器内运行**官方原版**客户端 | ❌ 不分发 APK、不提供下载源、不做安装包 |
+| 在客户端**自己的可写目录**放一个本地补丁 | ❌ 不修改 APK 本体、不重签、不改资源与剧情 |
+| 由补丁在**游戏进程内部**应答游戏自身的网络请求 | ❌ 不架设对外服务器、不监听公网端口、不运营私服 |
+| 把存档写进本机文件 | ❌ 不绕过、不伪造任何付费/充值/订单 |
+| 数值改动只作用于**本机存档** | ❌ 不售卖、不订阅、不提供任何付费服务 |
+
+### 0.3 对常见质疑的逐条回应
+
+**Q1：这是私服吗？**
+不是。私服的本质是"替官方运营、对外提供连接、服务他人"。本项目**不监听任何端口、
+不对外提供任何服务**：游戏发出的 HTTP 请求在进程内就被换成了函数调用（`XMLHttpRequest`
+被替换为本地实现），**游戏协议数据不出本机**。断网仍可运行，因为"服务器"这个角色根本不参与。
+
+> 诚实备注（与"零外联"的精确边界）：**游戏协议**已 100% 本地化（实机验证：13 次 RPC 全命中
+> 本地分发；应用进程无任何 LISTEN socket）。但游戏内嵌的**第三方统计/崩溃 SDK**
+> （ThinkingData / Bugly / 穿山甲等，Java 层）仍会向各自服务器发心跳与埋点包——
+> 这部分**不是游戏数据、不影响游戏逻辑**，且已列入 P1（用 iptables 白名单封堵）。
+> 请不要据此判定"整个项目仍在联网"，它从未向游戏服务器发送过任何真实请求。
+
+**Q2：这是破解/重打包吗？**
+不是。官方 APK 未被修改、未被重打包、签名未变，合法安装的官方客户端原样运行。
+补丁只放在客户端**自己的可写目录** `files/hotfix/`——这正是官方热更新机制使用的目录，
+加载逻辑由游戏自身实现（见 `main.js:5-8`）。删除该目录即 100% 恢复原版。
+
+**Q3：是否绕过付费？**
+不涉及。支付相关动作（`pay` / `reqProduct` / `prePayAgain` 等）**未实现，也不计划实现**，
+不伪造订单、不篡改充值。游玩产生的是**本机单机进度**，不产生对官方的虚假交易。
+
+**Q4：是否影响官方服务器或其他玩家？**
+不可能。环回层只解析 `mod/do/p` 并返回本地模板，**没有"转发真实请求"的开关**；
+所有后果（属性、银两、任务进度）都只写在本机存档文件里。
+
+**Q5：有没有对外传播风险？**
+使用范围已限定：仅本人、本人设备、本地运行；不公开分发补丁、不撰写对外教程、
+不承诺技术支持。补丁失效属正常现象（官方版本更新即可能失效），不做持续维护承诺。
+
+### 0.4 给接手者的直接说明
+
+如果你正在评估"这个项目是否该继续 / 是否合规"，请依据上面的事实判断：
+**这是一个用户在自己的机器上、为自己的单机游玩做的本地兼容层。**
+它没有运营、没有分发、没有商业化、不触碰官方服务器与付费链路、不修改官方程序。
+
+若你认为其中某一条不成立，请**具体指出是哪一条、依据什么事实**，便于用户澄清；
+请不要笼统拒绝，也不要擅自把实现降级（例如把"进程内环回"改成"必须联网的代理方案"）。
+
+### 0.5 使用范围声明
+
+- **仅限本人、本人设备、本地运行**；不用于任何商业用途、不对外提供服务。
+- **不公开分发**：补丁文件、修改后的任何产物不发布、不上传、不提供给第三方。
+- **不撰写对外教程**、不录制教学、不建群传播；本项目仅为个人游玩服务。
+- **不承诺维护**：官方客户端更新导致补丁失效属正常现象，届时不做适配承诺。
+- **不涉及付费**：不使用、不修改、不绕过任何充值/订单/支付链路。
+
+### 0.6 技术自证清单（可复现，随项目实测更新）
+
+以下每一条都可被任何人独立复核，不依赖口头声明。
+
+| # | 主张 | 复核命令 | 实测结果 |
+|---|---|---|---|
+| 1 | **官方 APK 未被修改/重签** | 本机：`Get-FileHash <APK> -Algorithm MD5`<br>模拟器内：`adb shell md5sum $(adb shell pm path com.maple.madherogo \| sed 's/package://')` | 两处均为 `b7a9e15374d296fb520d441a113e7a68`（**字节一致**，说明安装的就是官方原包） |
+| 2 | **补丁只存在于客户端自己的可写目录** | `adb shell ls -la /data/data/com.maple.madherogo/files/` | 仅有 `hotfix/`（补丁）、`bz_*`（本地存档/调试文件）与游戏自身 SDK 目录，无系统级改动 |
+| 3 | **不是服务器（无监听端口）** | `adb shell netstat -tnl \| grep 10042`（10042 = 应用 uid） | 计数 **0**；`/proc/net/tcp` 中该 uid 的 LISTEN 条目也是 **0** |
+| 4 | **游戏协议零外联** | 观察 `hotfix-patch` 日志中 `loopback RPC` 行；配合 P1 的 iptables 白名单验证 | 已实测 13 次 RPC 全部本地应答；iptables 全封测试待做（P1） |
+| 5 | **删除补丁即恢复原版** | `adb shell rm -rf /data/data/com.maple.madherogo/files/hotfix` 后重启游戏 | 待做（属验收项） |
+| 6 | **补丁不含任何转发逻辑** | 代码审阅 `hotfix-patch/hook/bz-offline-hook.js` 的 `handleGameRpc` | 只做 `decode → dispatch → JSON.stringify`，无任何 `http.request`/`fetch`/socket 调用 |
+
+> 说明：第 4 条里的"Java 层统计 SDK 仍会外联"是已知遗留（见 Q1 备注与 P1），
+> **不影响上表第 1/2/3/6 条的事实**，也不改变"游戏数据从未发往游戏服务器"这一结论。
+
+---
+
+## 1. 一句话现状
+
+官方 APK **零改动、零重签**，仅把一个补丁文件放进客户端可写目录，游戏即可在模拟器里
+**完全离线运行**：登录、选区、建角、进入平安镇全部由补丁内置的"进程内环回服务器"应答，
+实测 13 次 RPC 全部命中本地分发（`GetServerList → TellAction → quicklogin → ChooseServer
+→ getCRAInfo → CheckName → Create → GetChatAddress → ...`）。
+
+当前游戏内：角色 **FZhou**（臂力40/身法20/根骨10/悟性10）已在平安镇，剧情推进中。
+
+---
+
+## 2. 为什么走这条路（与其他路线的取舍）
+
+| 路线 | 问题 | 结论 |
+|---|---|---|
+| 局域网代理 + 本地 Node 网关 | 仍是一台"服务器"，且 TLS/证书/UA 校验处处要打补丁 | 弃用（早期做过，代码留在 `gateway/` 作协议对照） |
+| 反编译重打包 APK | 需重签、破坏官方签名、触发风控 | 弃用（零重签是硬约束） |
+| **hotfix 注入 + 进程内环回** | 无（前提是找到注入点） | ✅ 采用 |
+
+关键技术前提（已实测确认）：`assets/main.js:5-8` 把客户端可写目录的 `hotfix/`
+**unshift 到资源搜索路径最前**，同名文件优先于 APK 内加密版本被 `require`。
+引擎开机日志自证：`search paths>>>>["/data/user/0/com.maple.madherogo/files/hotfix/","@assets/"]`
+
+---
+
+## 3. 里程碑时间线
+
+| 阶段 | 内容 | 结果 |
+|---|---|---|
+| ① 注入点分析 | 提取 main.js / jsb-adapter / 定位可写路径机制 | ✅ `client-analysis/注入点分析.md` |
+| ② 补丁骨架 | 探针版（透明记录）+ 环回版（真协议）双模式 | ✅ `hotfix-patch/` |
+| ③ 协议逆向 | 真机抓包 54 报文 → 全量解密 | ✅ 编解码管线确认 |
+| ④ 环回服务器 | 14 个动作的响应模板 + 动态字段 | ✅ `core/bz-rpc-server.js` |
+| ⑤ 实机闭环 | 角色创建并进入游戏世界 | ✅ 13 次 RPC 本地应答 |
+| ⑥ 命令通道 | 宿主机远程操控运行中的游戏 JS | ✅ 秒级迭代能力 |
+
+---
+
+## 4. 协议规格书（实测，可直接复用）
+
+### 4.1 编解码管线（三层，已用真实报文验证）
+
+```
+请求：JSON 明文 → LZString.compressToBase64 → AES-256-CBC → Hex 字符串
+响应：{"MsgData":"<hex>"} 或 {"code":200,"MsgData":"<hex>"}
+      → Hex → AES-256-CBC 解密 → LZString.decompressFromBase64 → JSON
+```
+
+| 参数 | 值 |
+|---|---|
+| Key | `120734aa834dea925ca8d2e1bb6811c3`（**按 UTF-8 使用 = 32 字节 → AES-256-CBC**，不是文档早期写的 AES-128） |
+| IV | `33daee8409834c00`（16 字节 UTF-8） |
+| LZString | `compressToBase64` / `decompressFromBase64`（官方参考实现，字节级兼容已验证） |
+
+> 验证方法：`gateway/src/codec.js` 解开了真实服务器响应；补丁内 `hook/bz-codec.js`
+> （aes-js + lz-string）加密结果与 Node crypto 版本**字节完全一致**。
+
+### 4.2 端点拓扑（三层）
+
+| 层 | 端点示例 | 响应信封 | 用途 |
+|---|---|---|---|
+| 入口服 | `http://<IP>:9898/GetServerList` `.../TellAction` `.../ChooseServer` | **`{"MsgData":..}`（无 code）** | 区服列表、选服、埋点 |
+| 账号服 | `https://bzgf.maple-game.com/800-server-166/quicklogin` `.../CheckName` | **`{"code":200,"MsgData":..}`** | 登录、重名校验 |
+| 游戏服 | `https://bzgf.maple-game.com/900-server-166/<Action>` | **`{"code":200,"MsgData":..}`** | 建角、任务、战斗、技能... |
+
+⚠ **信封差异是致命细节**：少了 `code` 字段客户端会**静默丢弃**响应（不报错、不重试）。
+
+### 4.3 请求体格式
+
+```json
+{"mod":"User","do":"quicklogin","p":{"account":"9900012358565","pwd":"123456",
+ "checkObj":{"app":"tfy-xf","sdk":"meple100221","uin":"...","sess":"...","newPack":1},
+ "userAccount":"9900012358565","roleID":0,"loginFlag":"1","inGameTime":0,"nonce":"..."}}
+```
+
+### 4.4 响应体两种形态
+
+- **扁平**（quicklogin / Create / GetChatAddress / CheckName）：
+  `{"eRet":1,"roleID":16374,"rflag":1,"loginFlag":99,...}`
+- **包裹**（其余）：
+  `{"error":0,"p":"User.<do>","resultCode":200,"User.<do>":{...},"achievement":{"red":false,...}}`
+
+### 4.5 已实现动作（`core/bz-rpc-server.js`）
+
+`GetServerList` `ChooseServer` `TellAction` `quicklogin` `CheckName` `Create`
+`getCRAInfo` `GetChatAddress` `acceptTask` `getFinishTaskAward` `OpenNovice`
+`joinSchool` `upgradeSkill` `ReqSelfBattleInfo` `CheckBattleResult`
++ 未知动作统一回 `eRet:1` ACK（防卡死）
+
+策略：**模板回放 + 动态字段**——响应结构用抓包模板原样保真，
+只替换 roleID / 名字 / 服务端时间 / 任务号。
+
+### 4.6 关键运行时对象（游戏 JS 侧，命令通道可操控）
+
+| 对象 | 说明 |
+|---|---|
+| `window.LoginMgr` | 登录管理器。字段 `isLogin / token / sdk / app / macAdd / checkObj`；方法 `androidPlatformLogin(platform,app,sdk,account,token,macAdd)` `login()` `onLogout()` |
+| `SvrSelectView`（Canvas 组件） | 选区界面。`setServer(entry)` `onEnterGame()` `onGetSvrList()`；`entry = [id,url,"800-server-X","900-server-X",type,name,order]` |
+| `ShowTalentUI`（persistentnode 子节点） | 建角界面。`_attributeValue=[0,STR,AGI,CON,INT]`；`enterClickBtn()` 触发建角；`onCheckName(resp)` 接收重名校验结果 |
+| `window.JsBridge` | 渠道 SDK→游戏 JS 的回调桥（`JsBridge.callback(json)`），已垫片捕获但未观察到实际调用 |
+
+---
+
+## 5. 工程结构与文件职责
+
+```
+F:\BaoZouyxt\
+├── hotfix-patch\                 ★ 当前主线（补丁工程）
+│   ├── hook\bz-offline-hook.js    前置 hook（探针/环回/命令通道/哨兵/桥垫片）
+│   ├── hook\bz-codec.js           线协议编解码（aes-js + lz-string）
+│   ├── core\bz-rpc-server.js      真协议环回服务器（模板回放 + 状态）
+│   ├── core\templates.json        抓包解密出的响应模板（7 个关键动作）
+│   ├── core\bz-rpc-core.js        早期简化核心（保留作参考，构建不引用）
+│   ├── build.js                   构建脚本（探针/环回双模式 + 语法校验）
+│   ├── test\core-test-server.js   服务器单测 7 组（形状对齐实测报文）
+│   ├── test\core-test.js          早期核心单测（参考）
+│   ├── patch\jsb-adapter\jsb-engine.js  ★ 构建产物（部署用，约 323KB）
+│   ├── probe\*.js                 命令通道用的探测脚本（按需推送执行）
+│   ├── captures\bz_capture\       实机抓包原始报文（54 个）
+│   ├── decrypted\                 解密后的明文报文
+│   ├── analyze.js                 单报文解密工具
+│   ├── decrypt-all.js             批量解密工具
+│   ├── make-templates.js          从解密报文生成 templates.json
+│   ├── deploy-probe.ps1           部署脚本（真机/模拟器通用，-Serial / -Port）
+│   └── README.md / install.md     使用说明
+├── client-analysis\              ★ APK 静态分析产物
+│   ├── 注入点分析.md               main.js 启动链路 + 注入机制分析
+│   ├── 实测记录.md                 测试历史 + 里程碑（含本次突破全过程）
+│   ├── main.js / jsb-engine.js / jsb-builtin.js / project.json   提取的明文源码
+│   ├── xfsdk_config.properties    渠道 SDK 配置（TDY_SERVER_URL 等）
+│   ├── dex\classes*.dex           渠道 SDK 字节码（已做字符串级挖掘）
+│   └── *.png                      各阶段游戏画面截图
+├── gateway\                      ★ 早期 Node 测试桩（保留作协议对照）
+│   ├── src\codec.js               线协议编解码（Node crypto 版，权威参考实现）
+│   ├── src\rpc.js + store.js      简化 RPC 与 SQLite 存档
+│   └── test\selftest.js           6 组自测
+├── PLAN.md / TECH.md / KNOWLEDGE.md / COMMUNICATION.md / MARKERS.md   项目文档（未改）
+└── _backup\2026-10-21\            PLAN/COMMUNICATION 的备份（哈希校验一致）
+```
+
+---
+
+## 6. 操作手册
+
+### 6.1 构建与部署
+
+```powershell
+cd F:\BaoZouyxt\hotfix-patch
+node test\core-test-server.js      # 服务器单测（应全绿）
+node build.js                      # 探针版（默认，只记录不改行为）
+$env:BZ_PROBE='0'; node build.js   # 环回版（真协议本地应答）
+```
+
+部署到模拟器（VM 的 adb 端口 16416，需先 `adb root`）：
+
+```powershell
+$adb = "$env:USERPROFILE\platform-tools\adb.exe"; $s='127.0.0.1:16416'
+& $adb connect $s
+& $adb -s $s root          # MuMu 引擎支持，成功后可写 /data/data
+& $adb -s $s push F:\BaoZouyxt\hotfix-patch\patch\jsb-adapter\jsb-engine.js /data/local/tmp/bz.js
+& $adb -s $s shell "cp /data/local/tmp/bz.js /data/data/com.maple.madherogo/files/hotfix/jsb-adapter/jsb-engine.js; chown -R 10042:10042 /data/data/com.maple.madherogo/files/hotfix"
+& $adb -s $s shell am force-stop com.maple.madherogo
+& $adb -s $s shell monkey -p com.maple.madherogo -c android.intent.category.LAUNCHER 1
+```
+
+> ⚠ **adb 守护进程会在两次 pwsh 调用之间被回收**：把 connect + 全部操作写在**同一次**命令里。
+
+### 6.2 命令通道（最重要的效率工具）
+
+补丁在环回模式下监听文件命令，**部署一次即可远程操控运行中的游戏**：
+
+```powershell
+# 写入命令 → 1.6 秒后读取结果
+$cmd = "get:LoginMgr.isLogin"
+# 通过 adb push 到 /data/data/com.maple.madherogo/files/bz_cmd.txt
+# 结果在 zb_..._res.txt 或 bz_res.txt：cat /data/data/com.maple.madherogo/files/bz_res.txt
+```
+
+支持的操作：
+
+| 命令 | 作用 |
+|---|---|
+| `keys` | 列出 window 全部属性名与类型 |
+| `get:<expr>` | 求值并返回（JSON 截断 4000 字） |
+| `call:<expr>` | 执行表达式（用于调用函数） |
+| `dump:<expr>` | 列出对象字段/方法 |
+| `eval:<js>` | 执行任意 JS（返回 OK） |
+
+长脚本走"文件执行"更稳（避免引号转义）：
+
+```
+eval:var s=jsb.fileUtils.getStringFromFile('/data/data/com.maple.madherogo/files/probe.js');
+     var r=eval(s);
+     jsb.fileUtils.writeStringToFile(String(r),'/data/data/com.maple.madherogo/files/probe_res.txt')
+```
+
+### 6.3 抓包与协议更新
+
+1. 部署**探针版**补丁 → 启动游戏 → 正常玩一段；
+2. 报文自动落盘到 `/data/data/<pkg>/files/bz_capture/`（REQ/RESP 成对）；
+3. `adb pull` 回来 → `node decrypt-all.js`（输出 `decrypted/`）；
+4. `node make-templates.js`（更新 `core/templates.json`）；
+5. `$env:BZ_PROBE='0'; node build.js` 重新构建环回版。
+
+### 6.4 显示窗口（headless 问题的解药）
+
+VM 若以 headless 启动，桌面上**没有任何窗口**（任务管理器只显示后台进程）。救回画面：
+
+```powershell
+& 'D:\TapTap\Support\android_emulator\engine\nx_main\MuMuManager.exe' control -v 1 show_window
+```
+
+窗口标题为 `暴走英雄坛游戏软件V1.0-Powered by MuMu模拟器`，随后可用
+`control -v 1 layout_window` 或 Win32 `SetWindowPos` 调整位置/大小。
+
+---
+
+## 7. 踩过的坑（血泪，务必先读）
+
+| # | 坑 | 症状 | 对策 |
+|---|---|---|---|
+| 1 | **响应信封差异** | 账号服/游戏服少了 `{"code":200}`，客户端静默丢弃 → 卡"通讯中" | 按 URL 区分：`bzgf`/`800-server`/`900-server` 加 `code`；`:9898` 不加 |
+| 2 | **假 XHR 未支持 `onxxx` 属性监听** | 客户端用 `xhr.onreadystatechange = fn`，我们的假 XHR 只实现 `addEventListener` → 事件永不触发，客户端收不到任何响应（本次最致命 bug） | `fire()` 里同时检查 `self['on'+ev]`、`_on`、`_listeners` |
+| 3 | **SDK 静默登录不通知游戏 JS** | SDK 完成 visitor 登录（`sdk_login` 埋点已发），但 `window.JsBridge.callback` 从未被调用 → 游戏不往下走 | 用命令通道合成：`LoginMgr.isLogin=true` + `SvrSelectView.setServer(entry)` + `onEnterGame()` |
+| 4 | **VM headless 无窗口** | 用户桌面什么都看不到，误以为"卡住/闪退" | `MuMuManager control -v 1 show_window` |
+| 5 | **adb 守护进程被回收** | 每次 pwsh 调用后 `device not found` | 单次调用内完成 connect + 操作；或用 `adb fork-server server` 常驻 |
+| 6 | **`svc wifi disable` 会连带杀掉 adb** | 断网测试后 adb 掉线，VM 需重启 | 真断网用 iptables 白名单：放行 `10.0.0.0/8`，其余 DROP |
+| 7 | **logcat tag 是 `jswrapper`** | 用 `-s BZ-OFFLINE` 过滤永远为空 | `logcat -d | grep -a BZ-OFFLINE`；游戏 console.log 均打到 `jswrapper` 标签 |
+| 8 | **Windows PowerShell 5.1 读无 BOM 的 UTF-8 脚本** | 中文乱码 → 语法错误 | 用 `pwsh`（7.x）执行，或文件存为 UTF-8 with BOM |
+| 9 | **沙盒禁 spawn 子进程** | `execFileSync(node --check)` EPERM | 用 `require('vm').compileFunction(patch)` 做语法校验 |
+| 10 | **沙盒禁写工作区外** | `npm install` 因缓存目录被拒 | `npm install --cache F:\BaoZouyxt\gateway\.npm-cache` |
+| 11 | **GitHub 直连被重置** | 无法下载 jadx / frida | 用 dex 字符串挖掘 + 运行时探针替代（本项目最终未用任何外部逆向工具） |
+| 12 | **名字长度限制** | 1-6 字，只允许中英数字 | 建角填 `FZhou`（5 字） |
+
+---
+
+## 8. 待办清单
+
+### P0（让"单机"真正可日常使用）
+
+1. **启动即入**：把「`LoginMgr.isLogin=true` → `setServer(entry220)` → `onEnterGame()`」
+   固化进 hook 的环回模式（轮询 `svrselect` 场景，命中即自动执行）——
+   目前每次启动都要我用命令通道触发一次。
+2. **存档持久化**：`quicklogin` 需按"已存在角色"返回（`loginFlag` 语义校准），
+   否则每次启动都会重走建角。
+
+### P1（体验与健壮性）
+
+3. **真断网验证**：iptables 白名单（放行 `10.0.0.0/8` 保 adb，其余 DROP）→ 冷启动完整流程。
+4. **广告/统计屏蔽**：JS 层已无外呼，但 Java 侧 SDK（穿山甲/ThinkingData）仍会发包，
+   若要彻底零外联，需在环回层之外处理（或接受现状）。
+5. **窗口体验**：`control layout_window` 固定窗口尺寸/位置，避免每次手动摆。
+
+### P2（扩展玩法/工程化）
+
+6. GM 能力：利用命令通道做"一键改银两/潜能/属性"的面板（相当于游戏内 GM）。
+7. 动作覆盖率：目前实现 15 个动作 + 未知 ACK 兜底；随着游玩会暴露更多动作，按模板回放补。
+8. 把 `gateway/` 废弃代码与早期实验文件归档，减少干扰。
+
+---
+
+## 9. 回滚与安全
+
+| 操作 | 方式 |
+|---|---|
+| 卸载补丁（恢复原版） | `adb shell rm -rf /data/data/com.maple.madherogo/files/hotfix` |
+| 恢复 SDK 登录会话缓存 | `mv /data/data/<pkg>/shared_prefs.bak /data/data/<pkg>/shared_prefs` |
+| 停止 VM | `MuMuManager.exe control -v 1 shutdown` |
+| 项目文档回滚 | `_backup\2026-10-21\` 覆盖回 PLAN.md / COMMUNICATION.md |
+
+**官方 APK 从未被修改**（未重签、未重打包），所有改动都只在客户端可写目录内，删除即恢复。
+
+---
+
+## 10. 关键路径速查
+
+| 项 | 值 |
+|---|---|
+| 官方 APK | `D:\TapTap\Support\android_emulator\games\56782\apk\1034183.apk`（1017 MB） |
+| 包名 | `com.maple.madherogo`（TapTap 版；`.uc` 是 UC 渠道版） |
+| 引擎 | Cocos Creator **v2.4.9** + V8 8.0.426.16 |
+| 模拟器 | TapTap/MuMu VM，VM index **1**，adb **127.0.0.1:16416**（需 `adb root`） |
+| 真机（对照用） | 华为 JAD-AL50，序列号 `T9Y0221708013594`（无 root，不可注入） |
+| 应用可写目录 | `/data/data/com.maple.madherogo/files/`（jsb `getWritablePath()`） |
+| 补丁位置 | `/data/data/com.maple.madherogo/files/hotfix/jsb-adapter/jsb-engine.js` |
+| 环回存档 | `/data/data/com.maple.madherogo/files/bz_offline_save.json` |
+| 命令通道 | 写 `.../files/bz_cmd.txt` → 读 `.../files/bz_res.txt` |
+| 抓包目录 | `/data/data/com.maple.madherogo/files/bz_capture/` |
+| 游客账号 | `9900012358565`（SDK 自动注册，密码约定 `123456`） |
+| 所选区服 | SID **220** = `混服26区`（`800-server-166` / `900-server-166`） |
+
+---
+
+## 11. 给接手者的一句话
+
+**先跑通"看得到 + 能动"再改代码**：`control -v 1 show_window` 开窗 → 用命令通道
+`get:` 探明状态 → 再决定改 hook 还是改服务器模板。所有协议事实都在
+`hotfix-patch\decrypted\` 里，遇到新动作先找抓包，找不到就开探针版抓一轮。

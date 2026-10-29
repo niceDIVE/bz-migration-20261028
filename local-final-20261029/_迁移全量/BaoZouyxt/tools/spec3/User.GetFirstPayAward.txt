@@ -1,0 +1,15 @@
+# User.GetFirstPayAward   (HttpConst.REQ_FIRST_PAY_EVENT)
+
+## 注册点 57382: i.MessageCenter.on(l.HttpConst.REQ_FIRST_PAY_EVENT, this.fristPayCallback.bind(this), this);
+
+## 请求点 57474: g.PackageModel.judgePackageLimit() || c.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_FIRST_PAY_EVENT, {});
+   57466: var o = {
+   57467: taskID: t
+   57468: };
+   57469: this.taskId = t;
+   57470: this.target = e;
+   57471: c.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_SEVENREWARD_EVENT, o);
+   57472: };
+   57473: t.prototype.reqFirstPayReward = function() {
+
+## 处理函数 bind —— 未找到定义

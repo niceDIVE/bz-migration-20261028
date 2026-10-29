@@ -1,0 +1,99 @@
+{
+ "archivedAt": "2026-10-27T10:19:14.111Z",
+ "rules": [
+  {
+   "id": "c14-getHomeList-dog",
+   "action": "getHomeList",
+   "field": [
+    "dog",
+    "id",
+    "s",
+    "t",
+    "p",
+    "n"
+   ],
+   "expect": 6,
+   "allowSigma": [
+    [
+     "getHomeList",
+     "dog"
+    ],
+    [
+     "getHomeList",
+     "dog.id"
+    ],
+    [
+     "getHomeList",
+     "dog.s"
+    ],
+    [
+     "getHomeList",
+     "dog.t"
+    ],
+    [
+     "getHomeList",
+     "dog.p"
+    ],
+    [
+     "getHomeList",
+     "dog.n"
+    ]
+   ],
+   "ev": "index.js:57593",
+   "why": "C14 建横：getHomeList.dog 从 0（无狗）改为建模对象 {id,s,t,p,n}。客户端 57593-57595 `i.hasOwnProperty(\"dog\") && (e.dogData = i.dog)` 整对象赋值；s=0/t=0 = 健康无恢复期（getDogCurState 58364-58367）→ 喂狗/狗日志链才可达。好友家未实现+stealCrop 档A锁，狗战路径保持不可达。"
+  },
+  {
+   "id": "c14-FeedDog",
+   "action": "FeedDog",
+   "field": [
+    "eRet",
+    "progress"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "FeedDog",
+     "eRet"
+    ],
+    [
+     "FeedDog",
+     "progress"
+    ]
+   ],
+   "ev": "index.js:59865",
+   "why": "C14 喂狗：空请求 propID=0 非狗粮 6285 → eRet 2（监听 58053 只有 1 == eRet 分支，非 1 静默）；progress 只在成功路径发（o.progress → dogData.p，58054-58057）。成功路径另带 bigDog（喂满 10000 升 11194）。"
+  },
+  {
+   "id": "c14-lookDogLog",
+   "action": "lookDogLog",
+   "field": [
+    "log"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "lookDogLog",
+     "log"
+    ]
+   ],
+   "ev": "index.js:59862",
+   "why": "C14 狗日志：成功回 1 + log:[]（监听 58047 `1 == eRet && e.hasOwnProperty(\"log\")` 才 dispatch；HomeLogUI 对空数组安全，scripts2.js:29389/29412-29418）。"
+  },
+  {
+   "id": "c14-DogBattleResult",
+   "action": "DogBattleResult",
+   "field": [
+    "win"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "DogBattleResult",
+     "win"
+    ]
+   ],
+   "ev": "index.js:59863",
+   "why": "C14 狗战结算桥接：win 取客户端上报布尔值（空请求 false）；监听 58050 只看 o.win 真值 → setDogCurState(0, endTime)。当前不可达（好友家未实现）。"
+  }
+ ]
+}

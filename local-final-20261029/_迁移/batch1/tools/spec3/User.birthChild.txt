@@ -1,0 +1,40 @@
+# User.birthChild   (HttpConst.BIRTHCHILD)
+
+## 注册点 77030: i.MessageCenter.on(n.HttpConst.BIRTHCHILD, this.callBackBirthild, this);
+
+## 请求点 77398: _.NetMgr.http.sendRequest(n.HttpConst.BIRTHCHILD, {});
+   77390: }, {
+   77391: flag: 1,
+   77392: name: r.getText(10840)
+   77393: } ], function(t) {
+   77394: 0 == t && v.StoreModel.reqStoreList();
+   77395: }, "", !1) : p.default.show(r.getText(2116)));
+   77396: };
+   77397: e.prototype.reqBirthChild = function() {
+
+## 处理函数 callBackBirthild (77352-77376)
+ 77352: e.prototype.callBackBirthild = function(t, e) {
+ 77353: if (1 == e.eRet) {
+ 77354: this.loveState = 0;
+ 77355: this.childData = e.childObj;
+ 77356: var o = a.getItem(this.npcMarryState, "propose");
+ 77357: f.default.addSpecialDialog(o.beforeborn, 0, function() {
+ 77358: var t = "ui/multilingual/" + s.lang + "/pic/sz1";
+ 77359: d.default.common.get(t + "_" + s.lang, cc.SpriteFrame) && (t = t + "_" + s.lang);
+ 77360: var e = "ui/multilingual/" + s.lang + "/pic/sz2";
+ 77361: d.default.common.get(e + "_" + s.lang, cc.SpriteFrame) && (e = e + "_" + s.lang);
+ 77362: d.default.prefabs.load("comUI/ComicsStoryUI", cc.Prefab, function(n, r) {
+ 77363: var a = cc.instantiate(r);
+ 77364: g.PopUpMgr.addPopUp(a, m.LayerMgr.topLayer);
+ 77365: a.addComponent("ComicsStoryUI").setData({
+ 77366: Data1: [ t, e ],
+ 77367: fun: function() {
+ 77368: f.default.addSpecialDialog(o.afterborn, 0, function() {
+ 77369: d.default.prefabs.load("marrySystem/NameAlert", cc.Prefab, function(t, e) {
+ 77370: var o = cc.instantiate(e);
+ 77371: g.PopUpMgr.addPopUp(o, m.LayerMgr.popUpLayer, 2, !0);
+ 77372: o.addComponent("ChildNameUI");
+ 77373: i.MessageCenter.dispatch(u.EvName.ADD_CHILDREN_EVENT);
+ 77374: });
+ 77375: });
+ 77376: }

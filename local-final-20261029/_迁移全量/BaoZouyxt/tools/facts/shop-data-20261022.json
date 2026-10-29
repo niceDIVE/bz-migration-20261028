@@ -1,0 +1,4276 @@
+{
+  "generatedAt": "2026-10-22T11:07:30.618Z",
+  "dataShape": {
+    "npc": "F:/BaoZouyxt/tools/cfg/dump/npc.json 顶层键 = [name,rows,kept,cols,truncated,data]；rows=6551(全表行数)，kept=3000(实际保留)，truncated=true，cols=60 列；data 形如 {行键:{列:值}}，仅前 3000 行。F:/BaoZouyxt/tools/cfg/npc_compact.json 顶层键 = [npc]；npc 形如 {NpcID:{d,e,h,a,t}}，6551 行（与全表行数一致），5 个压缩字段；经 3000 行重叠逐行比对：d=Drop,e=exp,h=HP,a=Attack,t=Type，0 处不一致。",
+    "shop_tables": "F:/BaoZouyxt/tools/cfg/shop_tables.json 顶层键 = [ok,tables,summary]；ok=1；tables 形如 {表名:{行键:{列:值}}}，11 张表；summary 形如 [{name,rows,sampleKey}]。 事实：dump/shop_entrance.json 共 11 行，shop_type 取值集合 = [1,2,3,5,6,7,8,9,10,12]（不存在 shop_type=4）；dump/random_shop.json 含 npc 列（237 行）。",
+    "dump": "F:/BaoZouyxt/tools/cfg/dump/*.json 统一结构 = {name,rows,cols,data}；data 形如 {行键:{列:值}}；本次匹配 /shop|mall|change|exchange|random|rogue|evil|sect|panda|store/i 的文件 61 个，全部为该结构（无数组型 data）。"
+  },
+  "npcTableInfo": {
+    "file": "F:/BaoZouyxt/tools/cfg/dump/npc.json",
+    "rows": 6551,
+    "truncated": true,
+    "keptRows": 3000,
+    "columnsCount": 61,
+    "columns": [
+      "NpcID",
+      "ModelID",
+      "NpcName",
+      "Type",
+      "Task",
+      "nokill",
+      "Camp",
+      "Description",
+      "Dialog",
+      "BeforeBattle",
+      "BehindBattle",
+      "Drop",
+      "exp",
+      "bili",
+      "shenfa",
+      "gengu",
+      "wuxing",
+      "HP",
+      "MP",
+      "Attack",
+      "Hit",
+      "Miss",
+      "Defense",
+      "BreakDef",
+      "InterDamRes",
+      "AttributeType",
+      "Weapon",
+      "Equip",
+      "jineng",
+      "qinggong",
+      "neigong",
+      "jineng_trick",
+      "MasterTask",
+      "Age",
+      "AI",
+      "Shop",
+      "Map",
+      "menpai",
+      "order",
+      "face",
+      "IsWarrior",
+      "group",
+      "sex",
+      "meridians",
+      "HardModel",
+      "fightarray",
+      "action",
+      "reward",
+      "steal",
+      "catch",
+      "steal_condition",
+      "excess",
+      "excess_trick",
+      "plotAI",
+      "FightScene",
+      "scale",
+      "skin",
+      "head",
+      "npcTalk",
+      "exchange_npc",
+      "speciallook"
+    ],
+    "hitTypes": [
+      33,
+      35,
+      108,
+      110,
+      117
+    ],
+    "hitsInKeptSlice": 2,
+    "hitsInFullTable": 9,
+    "note": "dump/npc.json 只保留了全表 6551 行中的前 3000 行，故 npcRows 只能给出该切片内的命中行；其余命中行见 npcHitsFromCompact（来自 npc_compact.json，仅含 NpcID/Type/Drop/exp/HP/Attack 6 个字段，NpcName 等其余列不在该文件中）。"
+  },
+  "npcRows": [
+    {
+      "NpcID": 1009,
+      "ModelID": 1009,
+      "NpcName": 20009,
+      "Type": 33,
+      "Task": [
+        129029
+      ],
+      "nokill": 1,
+      "Camp": 0,
+      "Description": 22009,
+      "Dialog": [
+        24017,
+        24018
+      ],
+      "BeforeBattle": 27009,
+      "BehindBattle": [
+        28009,
+        29009
+      ],
+      "Drop": 0,
+      "exp": 2477,
+      "bili": 23,
+      "shenfa": 23,
+      "gengu": 23,
+      "wuxing": 23,
+      "HP": 346,
+      "MP": -92,
+      "Attack": 0,
+      "Hit": 40,
+      "Miss": -10,
+      "Defense": 13,
+      "BreakDef": 0,
+      "InterDamRes": 0,
+      "AttributeType": 1,
+      "Weapon": 0,
+      "Equip": [
+        2401,
+        2502
+      ],
+      "jineng": [
+        1,
+        30
+      ],
+      "qinggong": [
+        7,
+        30
+      ],
+      "neigong": [
+        8,
+        30
+      ],
+      "jineng_trick": [],
+      "MasterTask": [],
+      "Age": 101,
+      "AI": [],
+      "Shop": 0,
+      "Map": 1008,
+      "menpai": 0,
+      "order": [],
+      "face": -1,
+      "IsWarrior": 0,
+      "group": [],
+      "sex": 0,
+      "meridians": [
+        2,
+        3
+      ],
+      "HardModel": [
+        0,
+        0
+      ],
+      "fightarray": [],
+      "action": 0,
+      "reward": 6438,
+      "steal": 1,
+      "catch": 1,
+      "steal_condition": 0,
+      "excess": "0",
+      "excess_trick": [],
+      "plotAI": [],
+      "FightScene": "",
+      "scale": [
+        100,
+        100
+      ],
+      "skin": "",
+      "head": 0,
+      "npcTalk": [],
+      "exchange_npc": [],
+      "speciallook": "0"
+    },
+    {
+      "NpcID": 10163,
+      "ModelID": 10163,
+      "NpcName": 1200163,
+      "Type": 35,
+      "Task": [],
+      "nokill": 1,
+      "Camp": 0,
+      "Description": 1210163,
+      "Dialog": [
+        1220163
+      ],
+      "BeforeBattle": 0,
+      "BehindBattle": [],
+      "Drop": 0,
+      "exp": 76240211,
+      "bili": 68,
+      "shenfa": 50,
+      "gengu": 50,
+      "wuxing": 50,
+      "HP": 16658,
+      "MP": 3700,
+      "Attack": 52,
+      "Hit": 98,
+      "Miss": 12,
+      "Defense": 80,
+      "BreakDef": 52,
+      "InterDamRes": 35,
+      "AttributeType": 1,
+      "Weapon": 0,
+      "Equip": [
+        2001
+      ],
+      "jineng": [
+        1085,
+        300
+      ],
+      "qinggong": [
+        1110,
+        300
+      ],
+      "neigong": [
+        1121,
+        300
+      ],
+      "jineng_trick": [],
+      "MasterTask": [],
+      "Age": 107,
+      "AI": [],
+      "Shop": 0,
+      "Map": 0,
+      "menpai": 0,
+      "order": [],
+      "face": -3,
+      "IsWarrior": 0,
+      "group": [],
+      "sex": 0,
+      "meridians": [
+        2,
+        3
+      ],
+      "HardModel": [
+        0,
+        0
+      ],
+      "fightarray": [],
+      "action": 0,
+      "reward": 6429,
+      "steal": 1,
+      "catch": 1,
+      "steal_condition": 0,
+      "excess": "0",
+      "excess_trick": [],
+      "plotAI": [],
+      "FightScene": "",
+      "scale": [
+        100,
+        95
+      ],
+      "skin": "qigai",
+      "head": 10163,
+      "npcTalk": [],
+      "exchange_npc": [],
+      "speciallook": "0"
+    }
+  ],
+  "npcHitsFromCompact": [
+    {
+      "NpcID": 1009,
+      "Type": 33,
+      "Drop": 0,
+      "exp": 2477,
+      "HP": 346,
+      "Attack": 0,
+      "inDumpKeptSlice": true
+    },
+    {
+      "NpcID": 10163,
+      "Type": 35,
+      "Drop": 0,
+      "exp": 76240211,
+      "HP": 16658,
+      "Attack": 52,
+      "inDumpKeptSlice": true
+    },
+    {
+      "NpcID": 15549,
+      "Type": 108,
+      "Drop": 9001002,
+      "exp": 11,
+      "HP": 81,
+      "Attack": 0,
+      "inDumpKeptSlice": false
+    },
+    {
+      "NpcID": 15621,
+      "Type": 108,
+      "Drop": 0,
+      "exp": 913102791,
+      "HP": 38590,
+      "Attack": 80,
+      "inDumpKeptSlice": false
+    },
+    {
+      "NpcID": 15690,
+      "Type": 110,
+      "Drop": 9001002,
+      "exp": 11,
+      "HP": 81,
+      "Attack": 0,
+      "inDumpKeptSlice": false
+    },
+    {
+      "NpcID": 15692,
+      "Type": 110,
+      "Drop": 0,
+      "exp": 913102791,
+      "HP": 38590,
+      "Attack": 80,
+      "inDumpKeptSlice": false
+    },
+    {
+      "NpcID": 15744,
+      "Type": 108,
+      "Drop": 0,
+      "exp": 11,
+      "HP": 81,
+      "Attack": 0,
+      "inDumpKeptSlice": false
+    },
+    {
+      "NpcID": 15745,
+      "Type": 110,
+      "Drop": 0,
+      "exp": 11,
+      "HP": 81,
+      "Attack": 0,
+      "inDumpKeptSlice": false
+    },
+    {
+      "NpcID": 16072,
+      "Type": 117,
+      "Drop": 0,
+      "exp": 0,
+      "HP": 0,
+      "Attack": 0,
+      "inDumpKeptSlice": false
+    }
+  ],
+  "shopTables": [
+    {
+      "name": "active_store",
+      "file": "active_store.json",
+      "rows": 6,
+      "columns": [
+        "id",
+        "name1",
+        "name2",
+        "description",
+        "limit",
+        "num",
+        "award",
+        "buy_price",
+        "ingots_price",
+        "picture"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "name1": 6000500,
+          "name2": 6000500,
+          "description": 6000169,
+          "limit": 1,
+          "num": 1,
+          "award": "9208,5",
+          "buy_price": 0,
+          "ingots_price": 0,
+          "picture": "actgift1"
+        },
+        {
+          "id": 2,
+          "name1": 6000501,
+          "name2": 6000501,
+          "description": 6000169,
+          "limit": 1,
+          "num": 1,
+          "award": "9208,12|9209,8",
+          "buy_price": 0,
+          "ingots_price": 300,
+          "picture": "actgift2"
+        },
+        {
+          "id": 3,
+          "name1": 6000502,
+          "name2": 6000502,
+          "description": 6000169,
+          "limit": 1,
+          "num": 1,
+          "award": "1,60|9208,12|9209,12",
+          "buy_price": 60,
+          "ingots_price": 0,
+          "picture": "actgift3"
+        }
+      ]
+    },
+    {
+      "name": "activityshop",
+      "file": "activityshop.json",
+      "rows": 2,
+      "columns": [
+        "npcID",
+        "begintime",
+        "endtime",
+        "item",
+        "price"
+      ],
+      "first3": [
+        {
+          "npcID": 1009,
+          "begintime": 1506787200,
+          "endtime": 1507478400,
+          "item": [
+            3017,
+            3019,
+            3020
+          ],
+          "price": [
+            10,
+            100,
+            1000
+          ]
+        },
+        {
+          "npcID": 1288,
+          "begintime": 1506787200,
+          "endtime": 4070883661,
+          "item": [
+            4175,
+            4106,
+            4220,
+            4221,
+            4222,
+            4527
+          ],
+          "price": [
+            10,
+            10,
+            20,
+            100,
+            1000,
+            500
+          ]
+        }
+      ]
+    },
+    {
+      "name": "brew_exchange",
+      "file": "brew_exchange.json",
+      "rows": 23,
+      "columns": [
+        "id",
+        "reward",
+        "cost",
+        "type",
+        "time",
+        "unlock",
+        "content",
+        "begintime",
+        "endtime"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "reward": "10686,1",
+          "cost": "10681,60",
+          "type": 1,
+          "time": 1,
+          "unlock": "0",
+          "content": 0,
+          "begintime": 1779120000000,
+          "endtime": 1779811199000
+        },
+        {
+          "id": 2,
+          "reward": "3316,1",
+          "cost": "10681,200",
+          "type": 2,
+          "time": 1,
+          "unlock": "0",
+          "content": 0,
+          "begintime": 1779120000000,
+          "endtime": 1779811199000
+        },
+        {
+          "id": 3,
+          "reward": "4253,10",
+          "cost": "10681,50",
+          "type": 2,
+          "time": 5,
+          "unlock": "0",
+          "content": 0,
+          "begintime": 1779120000000,
+          "endtime": 1779811199000
+        }
+      ]
+    },
+    {
+      "name": "change",
+      "file": "change.json",
+      "rows": 3,
+      "columns": [
+        "id",
+        "face",
+        "price"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "face": 60,
+          "price": 70
+        },
+        {
+          "id": 2,
+          "face": 80,
+          "price": 180
+        },
+        {
+          "id": 3,
+          "face": 100,
+          "price": 1100
+        }
+      ]
+    },
+    {
+      "name": "changeface",
+      "file": "changeface.json",
+      "rows": 3,
+      "columns": [
+        "id",
+        "name",
+        "face",
+        "name2",
+        "price"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "name": 1054,
+          "face": 60,
+          "name2": 4307,
+          "price": 70
+        },
+        {
+          "id": 2,
+          "name": 1055,
+          "face": 80,
+          "name2": 4308,
+          "price": 180
+        },
+        {
+          "id": 3,
+          "name": 1056,
+          "face": 100,
+          "name2": 4309,
+          "price": 1100
+        }
+      ]
+    },
+    {
+      "name": "diceexchange",
+      "file": "diceexchange.json",
+      "rows": 46,
+      "columns": [
+        "id",
+        "item",
+        "num",
+        "cost",
+        "limittype",
+        "limit",
+        "begintime",
+        "endtime"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "item": 10371,
+          "num": 1,
+          "cost": "7428,1500",
+          "limittype": 2,
+          "limit": 1,
+          "begintime": 1745424000000,
+          "endtime": 1747151999000
+        },
+        {
+          "id": 2,
+          "item": 7515,
+          "num": 1,
+          "cost": "7428,50000",
+          "limittype": 2,
+          "limit": 1,
+          "begintime": 1790697600000,
+          "endtime": 1792339199000
+        },
+        {
+          "id": 3,
+          "item": 4612,
+          "num": 1,
+          "cost": "7428,50000",
+          "limittype": 2,
+          "limit": 1,
+          "begintime": 1790697600000,
+          "endtime": 1792339199000
+        }
+      ]
+    },
+    {
+      "name": "diceshop",
+      "file": "diceshop.json",
+      "rows": 14,
+      "columns": [
+        "id",
+        "type",
+        "data",
+        "ratio",
+        "price",
+        "num",
+        "limit"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "type": 1,
+          "data": 7426,
+          "ratio": 0,
+          "price": 10,
+          "num": 1,
+          "limit": 6
+        },
+        {
+          "id": 2,
+          "type": 2,
+          "data": 7427,
+          "ratio": 0,
+          "price": 50,
+          "num": 1,
+          "limit": 7
+        },
+        {
+          "id": 3,
+          "type": 3,
+          "data": 7446,
+          "ratio": 15,
+          "price": 20,
+          "num": 1,
+          "limit": 0
+        }
+      ]
+    },
+    {
+      "name": "droptye_random",
+      "file": "droptye_random.json",
+      "rows": 15,
+      "columns": [
+        "DropType",
+        "E",
+        "D",
+        "C",
+        "B",
+        "A",
+        "S"
+      ],
+      "first3": [
+        {
+          "DropType": 0,
+          "E": 100,
+          "D": 0,
+          "C": 0,
+          "B": 0,
+          "A": 0,
+          "S": 0
+        },
+        {
+          "DropType": 2,
+          "E": 65,
+          "D": 30,
+          "C": 5,
+          "B": 0,
+          "A": 0,
+          "S": 0
+        },
+        {
+          "DropType": 3,
+          "E": 0,
+          "D": 74,
+          "C": 20,
+          "B": 5,
+          "A": 1,
+          "S": 0
+        }
+      ]
+    },
+    {
+      "name": "equip_random",
+      "file": "equip_random.json",
+      "rows": 7,
+      "columns": [
+        "EquType",
+        "Atk",
+        "Def",
+        "BreakDef",
+        "HP",
+        "Hit",
+        "Dodge",
+        "Wearable",
+        "PrimaryAttr",
+        "WeaponCoe",
+        "InterDamRes",
+        "SkillLv",
+        "SkillPassive"
+      ],
+      "first3": [
+        {
+          "EquType": "1",
+          "Atk": 27,
+          "Def": 0,
+          "BreakDef": 2,
+          "HP": 27,
+          "Hit": 27,
+          "Dodge": 0,
+          "Wearable": 5,
+          "PrimaryAttr": 5,
+          "WeaponCoe": 2,
+          "InterDamRes": 0,
+          "SkillLv": 5,
+          "SkillPassive": 0
+        },
+        {
+          "EquType": "2",
+          "Atk": 0,
+          "Def": 27,
+          "BreakDef": 0,
+          "HP": 29,
+          "Hit": 0,
+          "Dodge": 27,
+          "Wearable": 5,
+          "PrimaryAttr": 5,
+          "WeaponCoe": 0,
+          "InterDamRes": 2,
+          "SkillLv": 5,
+          "SkillPassive": 0
+        },
+        {
+          "EquType": "3",
+          "Atk": 0,
+          "Def": 21,
+          "BreakDef": 0,
+          "HP": 22,
+          "Hit": 21,
+          "Dodge": 21,
+          "Wearable": 5,
+          "PrimaryAttr": 5,
+          "WeaponCoe": 0,
+          "InterDamRes": 0,
+          "SkillLv": 5,
+          "SkillPassive": 0
+        }
+      ]
+    },
+    {
+      "name": "exchange",
+      "file": "exchange.json",
+      "rows": 1220,
+      "columns": [
+        "id",
+        "type",
+        "type1",
+        "item",
+        "formula",
+        "num",
+        "cost",
+        "limittype",
+        "limit",
+        "begintime",
+        "endtime",
+        "npc",
+        "order",
+        "judgment"
+      ],
+      "first3": [
+        {
+          "id": 1001,
+          "type": 1,
+          "type1": 1,
+          "item": 4343,
+          "formula": 0,
+          "num": 1,
+          "cost": "4185,2",
+          "limittype": 0,
+          "limit": 0,
+          "begintime": 0,
+          "endtime": 0,
+          "npc": 10385,
+          "order": 0,
+          "judgment": "0"
+        },
+        {
+          "id": 1002,
+          "type": 1,
+          "type1": 1,
+          "item": 4343,
+          "formula": 0,
+          "num": 1,
+          "cost": "4186,2",
+          "limittype": 0,
+          "limit": 0,
+          "begintime": 0,
+          "endtime": 0,
+          "npc": 10385,
+          "order": 0,
+          "judgment": "0"
+        },
+        {
+          "id": 1003,
+          "type": 1,
+          "type1": 1,
+          "item": 4343,
+          "formula": 0,
+          "num": 1,
+          "cost": "4187,2",
+          "limittype": 0,
+          "limit": 0,
+          "begintime": 0,
+          "endtime": 0,
+          "npc": 10385,
+          "order": 0,
+          "judgment": "0"
+        }
+      ]
+    },
+    {
+      "name": "exchangepage",
+      "file": "exchangepage.json",
+      "rows": 15,
+      "columns": [
+        "id",
+        "type",
+        "name"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "type": [
+            1,
+            2,
+            3
+          ],
+          "name": [
+            3270,
+            3271,
+            3272
+          ]
+        },
+        {
+          "id": 2,
+          "type": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "name": [
+            3273,
+            3274,
+            3275,
+            3276
+          ]
+        },
+        {
+          "id": 3,
+          "type": [
+            1,
+            2
+          ],
+          "name": [
+            6000157,
+            6000158
+          ]
+        }
+      ]
+    },
+    {
+      "name": "firework_exchange",
+      "file": "firework_exchange.json",
+      "rows": 15,
+      "columns": [
+        "id",
+        "type",
+        "limit",
+        "item",
+        "cost"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "type": 1,
+          "limit": 1,
+          "item": [
+            3016,
+            3
+          ],
+          "cost": [
+            9209,
+            50
+          ]
+        },
+        {
+          "id": 2,
+          "type": 1,
+          "limit": 3,
+          "item": [
+            7602,
+            2
+          ],
+          "cost": [
+            9209,
+            50
+          ]
+        },
+        {
+          "id": 3,
+          "type": 1,
+          "limit": 3,
+          "item": [
+            6089,
+            2
+          ],
+          "cost": [
+            9209,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ge_shop",
+      "file": "ge_shop.json",
+      "rows": 25,
+      "columns": [
+        "ID",
+        "Name",
+        "Description",
+        "Data",
+        "Price",
+        "camp",
+        "rankopen",
+        "rank1Num",
+        "rank2Num",
+        "rank3Num",
+        "rank4Num",
+        "rank5Num"
+      ],
+      "first3": [
+        {
+          "ID": 1,
+          "Name": 32316,
+          "Description": 37316,
+          "Data": [
+            3316,
+            1
+          ],
+          "Price": 4000,
+          "camp": 1,
+          "rankopen": 1,
+          "rank1Num": 0,
+          "rank2Num": 0,
+          "rank3Num": 0,
+          "rank4Num": 0,
+          "rank5Num": 0
+        },
+        {
+          "ID": 2,
+          "Name": 32325,
+          "Description": 37325,
+          "Data": [
+            3325,
+            1
+          ],
+          "Price": 1600,
+          "camp": 1,
+          "rankopen": 1,
+          "rank1Num": 0,
+          "rank2Num": 0,
+          "rank3Num": 0,
+          "rank4Num": 0,
+          "rank5Num": 0
+        },
+        {
+          "ID": 3,
+          "Name": 2101476,
+          "Description": 2301476,
+          "Data": [
+            6253,
+            1
+          ],
+          "Price": 400,
+          "camp": 1,
+          "rankopen": 1,
+          "rank1Num": 0,
+          "rank2Num": 0,
+          "rank3Num": 0,
+          "rank4Num": 0,
+          "rank5Num": 0
+        }
+      ]
+    },
+    {
+      "name": "hlexchange",
+      "file": "hlexchange.json",
+      "rows": 349,
+      "columns": [
+        "id",
+        "item",
+        "num",
+        "cost",
+        "limittype",
+        "limit",
+        "npc",
+        "begintime",
+        "endtime",
+        "judgment"
+      ],
+      "first3": [
+        {
+          "id": 15,
+          "item": 7944,
+          "num": 1,
+          "cost": "7943,10",
+          "limittype": 0,
+          "limit": 0,
+          "npc": 0,
+          "begintime": 0,
+          "endtime": 0,
+          "judgment": "0"
+        },
+        {
+          "id": 16,
+          "item": 7530,
+          "num": 1,
+          "cost": "7943,4199",
+          "limittype": 3,
+          "limit": 2500,
+          "npc": 0,
+          "begintime": 0,
+          "endtime": 0,
+          "judgment": "0"
+        },
+        {
+          "id": 17,
+          "item": 4806,
+          "num": 1,
+          "cost": "7943,500",
+          "limittype": 3,
+          "limit": 4000,
+          "npc": 0,
+          "begintime": 0,
+          "endtime": 0,
+          "judgment": "0"
+        }
+      ]
+    },
+    {
+      "name": "house_shop",
+      "file": "house_shop.json",
+      "rows": 27,
+      "columns": [
+        "ID",
+        "npc",
+        "probability",
+        "payment",
+        "limit",
+        "isserver",
+        "price",
+        "sale",
+        "salebegintime",
+        "saleendtime"
+      ],
+      "first3": [
+        {
+          "ID": 3016,
+          "npc": 10459,
+          "probability": 100,
+          "payment": 2,
+          "limit": 10,
+          "isserver": 0,
+          "price": 100,
+          "sale": 90,
+          "salebegintime": 1576684800000,
+          "saleendtime": 1578240000000
+        },
+        {
+          "ID": 3092,
+          "npc": 10459,
+          "probability": 100,
+          "payment": 1,
+          "limit": 1,
+          "isserver": 0,
+          "price": 20000,
+          "sale": 0,
+          "salebegintime": 0,
+          "saleendtime": 0
+        },
+        {
+          "ID": 3108,
+          "npc": 10459,
+          "probability": 100,
+          "payment": 1,
+          "limit": 2,
+          "isserver": 0,
+          "price": 1000,
+          "sale": 0,
+          "salebegintime": 0,
+          "saleendtime": 0
+        }
+      ]
+    },
+    {
+      "name": "lh_panda",
+      "file": "lh_panda.json",
+      "rows": 7,
+      "columns": [
+        "id",
+        "raio",
+        "event",
+        "name"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "raio": 10,
+          "event": 7,
+          "name": 3090
+        },
+        {
+          "id": 2,
+          "raio": 10,
+          "event": 8,
+          "name": 3091
+        },
+        {
+          "id": 3,
+          "raio": 10,
+          "event": 9,
+          "name": 3092
+        }
+      ]
+    },
+    {
+      "name": "lh_randommap",
+      "file": "lh_randommap.json",
+      "rows": 2,
+      "columns": [
+        "id",
+        "map"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "map": [
+            41001,
+            41002,
+            41003,
+            41004,
+            41005
+          ]
+        },
+        {
+          "id": 2,
+          "map": [
+            41101,
+            41102,
+            41103,
+            41104,
+            41105
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lh_shop",
+      "file": "lh_shop.json",
+      "rows": 116,
+      "columns": [
+        "ID",
+        "item",
+        "npc",
+        "probability",
+        "payment",
+        "limit",
+        "thisnum",
+        "price",
+        "group"
+      ],
+      "first3": [
+        {
+          "ID": 1,
+          "item": 3146,
+          "npc": 10163,
+          "probability": 50,
+          "payment": 2,
+          "limit": 1,
+          "thisnum": 1,
+          "price": 30000,
+          "group": 0
+        },
+        {
+          "ID": 2,
+          "item": 3603,
+          "npc": 10163,
+          "probability": 50,
+          "payment": 2,
+          "limit": 1,
+          "thisnum": 1,
+          "price": 30000,
+          "group": 0
+        },
+        {
+          "ID": 3,
+          "item": 3634,
+          "npc": 10163,
+          "probability": 50,
+          "payment": 2,
+          "limit": 1,
+          "thisnum": 1,
+          "price": 30000,
+          "group": 0
+        }
+      ]
+    },
+    {
+      "name": "mafexchange",
+      "file": "mafexchange.json",
+      "rows": 22,
+      "columns": [
+        "id",
+        "num",
+        "reward",
+        "client_num",
+        "coefficient",
+        "reward_extra"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "num": [
+            0,
+            9
+          ],
+          "reward": 0,
+          "client_num": 10,
+          "coefficient": 0,
+          "reward_extra": []
+        },
+        {
+          "id": 2,
+          "num": [
+            10,
+            10
+          ],
+          "reward": 9676,
+          "client_num": 20,
+          "coefficient": 0,
+          "reward_extra": [
+            9679,
+            10
+          ]
+        },
+        {
+          "id": 3,
+          "num": [
+            11,
+            11
+          ],
+          "reward": 9676,
+          "client_num": 20,
+          "coefficient": 0,
+          "reward_extra": [
+            9679,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mall",
+      "file": "mall.json",
+      "rows": 39,
+      "columns": [
+        "ID",
+        "Type",
+        "Name",
+        "Description",
+        "Price",
+        "Num",
+        "Discount",
+        "Limit",
+        "Belong",
+        "icon",
+        "Data",
+        "Begintime",
+        "Endtime",
+        "shopbegin",
+        "shopend"
+      ],
+      "first3": [
+        {
+          "ID": 1,
+          "Type": 1,
+          "Name": 52001,
+          "Description": 52101,
+          "Price": 100,
+          "Num": 0,
+          "Discount": 0,
+          "Limit": 0,
+          "Belong": 0,
+          "icon": "shop52001",
+          "Data": [
+            4003,
+            10000
+          ],
+          "Begintime": [],
+          "Endtime": [],
+          "shopbegin": [],
+          "shopend": []
+        },
+        {
+          "ID": 2,
+          "Type": 2,
+          "Name": 52002,
+          "Description": 52102,
+          "Price": 200,
+          "Num": 0,
+          "Discount": 0,
+          "Limit": 0,
+          "Belong": 0,
+          "icon": "shop52002",
+          "Data": [
+            1043,
+            86400
+          ],
+          "Begintime": [],
+          "Endtime": [],
+          "shopbegin": [],
+          "shopend": []
+        },
+        {
+          "ID": 3,
+          "Type": 3,
+          "Name": 52003,
+          "Description": 52103,
+          "Price": 300,
+          "Num": 0,
+          "Discount": 0,
+          "Limit": 0,
+          "Belong": 0,
+          "icon": "shop52003",
+          "Data": [],
+          "Begintime": [],
+          "Endtime": [],
+          "shopbegin": [],
+          "shopend": []
+        }
+      ]
+    },
+    {
+      "name": "partnerfashionshop",
+      "file": "partnerfashionshop.json",
+      "rows": 8,
+      "columns": [
+        "ID",
+        "condition",
+        "ontime",
+        "offtime",
+        "sex"
+      ],
+      "first3": [
+        {
+          "ID": 1001,
+          "condition": [
+            1,
+            500
+          ],
+          "ontime": 0,
+          "offtime": 0,
+          "sex": 0
+        },
+        {
+          "ID": 1002,
+          "condition": [
+            1,
+            500
+          ],
+          "ontime": 0,
+          "offtime": 0,
+          "sex": 0
+        },
+        {
+          "ID": 1003,
+          "condition": [
+            1,
+            500
+          ],
+          "ontime": 0,
+          "offtime": 0,
+          "sex": 0
+        }
+      ]
+    },
+    {
+      "name": "random_attribute",
+      "file": "random_attribute.json",
+      "rows": 51,
+      "columns": [
+        "Level",
+        "Atk",
+        "Def",
+        "BreakDef",
+        "HP",
+        "Hit",
+        "Dodge",
+        "Wearable",
+        "PrimaryAttr",
+        "WeaponCoe",
+        "InterDamRes",
+        "SkillLv"
+      ],
+      "first3": [
+        {
+          "Level": 1,
+          "Atk": 1,
+          "Def": 1,
+          "BreakDef": 4,
+          "HP": 36,
+          "Hit": 1,
+          "Dodge": 1,
+          "Wearable": 50,
+          "PrimaryAttr": 1,
+          "WeaponCoe": 1,
+          "InterDamRes": 0,
+          "SkillLv": 10
+        },
+        {
+          "Level": 10,
+          "Atk": 3,
+          "Def": 3,
+          "BreakDef": 12,
+          "HP": 37,
+          "Hit": 1,
+          "Dodge": 1,
+          "Wearable": 50,
+          "PrimaryAttr": 1,
+          "WeaponCoe": 1,
+          "InterDamRes": 0,
+          "SkillLv": 10
+        },
+        {
+          "Level": 20,
+          "Atk": 3,
+          "Def": 3,
+          "BreakDef": 12,
+          "HP": 39,
+          "Hit": 1,
+          "Dodge": 1,
+          "Wearable": 50,
+          "PrimaryAttr": 1,
+          "WeaponCoe": 1,
+          "InterDamRes": 0,
+          "SkillLv": 10
+        }
+      ]
+    },
+    {
+      "name": "random_buff",
+      "file": "random_buff.json",
+      "rows": 2,
+      "columns": [
+        "ID",
+        "buff"
+      ],
+      "first3": [
+        {
+          "ID": 1,
+          "buff": "1226,0|1231,1"
+        },
+        {
+          "ID": 2,
+          "buff": "1223,1|1236,2"
+        }
+      ]
+    },
+    {
+      "name": "random_config",
+      "file": "random_config.json",
+      "rows": 12,
+      "columns": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "AttrType",
+        "Quality",
+        "Fluctuate"
+      ],
+      "first3": [
+        {
+          "1": 0.5,
+          "2": 0.6,
+          "3": 0.7,
+          "4": 0.8,
+          "5": 1,
+          "AttrType": 1,
+          "Quality": 1,
+          "Fluctuate": 4
+        },
+        {
+          "1": 0.5,
+          "2": 0.6,
+          "3": 0.7,
+          "4": 0.8,
+          "5": 1,
+          "AttrType": 2,
+          "Quality": 1,
+          "Fluctuate": 4
+        },
+        {
+          "1": 0.5,
+          "2": 0.6,
+          "3": 0.7,
+          "4": 0.8,
+          "5": 1,
+          "AttrType": 3,
+          "Quality": 1,
+          "Fluctuate": 4
+        }
+      ]
+    },
+    {
+      "name": "random_shop",
+      "file": "random_shop.json",
+      "rows": 237,
+      "columns": [
+        "ID",
+        "npc",
+        "probability",
+        "payment",
+        "page",
+        "limit",
+        "isserver",
+        "price",
+        "sale",
+        "salebegintime",
+        "saleendtime"
+      ],
+      "first3": [
+        {
+          "ID": 3016,
+          "npc": 1009,
+          "probability": 10,
+          "payment": 2,
+          "page": 2,
+          "limit": 100,
+          "isserver": 1,
+          "price": 100,
+          "sale": 0,
+          "salebegintime": 0,
+          "saleendtime": 0
+        },
+        {
+          "ID": 3017,
+          "npc": 1009,
+          "probability": 10,
+          "payment": 2,
+          "page": 2,
+          "limit": 10,
+          "isserver": 0,
+          "price": 16,
+          "sale": 0,
+          "salebegintime": 0,
+          "saleendtime": 0
+        },
+        {
+          "ID": 3019,
+          "npc": 1009,
+          "probability": 10,
+          "payment": 2,
+          "page": 2,
+          "limit": 100,
+          "isserver": 1,
+          "price": 80,
+          "sale": 0,
+          "salebegintime": 0,
+          "saleendtime": 0
+        }
+      ]
+    },
+    {
+      "name": "randombox",
+      "file": "randombox.json",
+      "rows": 17,
+      "columns": [
+        "id",
+        "pic",
+        "opentype",
+        "desF",
+        "desS",
+        "remain",
+        "suicide",
+        "showtype",
+        "result"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "pic": "box1_break",
+          "opentype": "0",
+          "desF": 1001,
+          "desS": 1002,
+          "remain": 0,
+          "suicide": 1,
+          "showtype": [
+            1
+          ],
+          "result": [
+            1,
+            9047
+          ]
+        },
+        {
+          "id": 2,
+          "pic": "box2_break",
+          "opentype": "0",
+          "desF": 1001,
+          "desS": 1002,
+          "remain": 0,
+          "suicide": 1,
+          "showtype": [
+            1
+          ],
+          "result": [
+            2,
+            100010
+          ]
+        },
+        {
+          "id": 3,
+          "pic": "leaves1_break",
+          "opentype": "2,18,1|34,10",
+          "desF": 1001,
+          "desS": 1002,
+          "remain": 0,
+          "suicide": 0,
+          "showtype": [
+            3,
+            101070
+          ],
+          "result": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RandomName",
+      "file": "RandomName.json",
+      "rows": 227,
+      "columns": [
+        "id",
+        "surname",
+        "man",
+        "woman"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "surname": 5099,
+          "man": 5326,
+          "woman": 5553
+        },
+        {
+          "id": 2,
+          "surname": 5100,
+          "man": 5327,
+          "woman": 5554
+        },
+        {
+          "id": 3,
+          "surname": 5101,
+          "man": 5328,
+          "woman": 5555
+        }
+      ]
+    },
+    {
+      "name": "recruit_shop",
+      "file": "recruit_shop.json",
+      "rows": 4,
+      "columns": [
+        "id",
+        "item",
+        "num",
+        "integral",
+        "limittype",
+        "limit",
+        "begintime",
+        "endtime",
+        "type"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "item": 3056,
+          "num": 1,
+          "integral": 5,
+          "limittype": 1,
+          "limit": 1,
+          "begintime": 0,
+          "endtime": 0,
+          "type": 1
+        },
+        {
+          "id": 2,
+          "item": 3056,
+          "num": 3,
+          "integral": 10,
+          "limittype": 2,
+          "limit": 1,
+          "begintime": 1581955200000,
+          "endtime": 1584460800000,
+          "type": 2
+        },
+        {
+          "id": 3,
+          "item": 3061,
+          "num": 1,
+          "integral": 15,
+          "limittype": 0,
+          "limit": 0,
+          "begintime": 0,
+          "endtime": 0,
+          "type": 1
+        }
+      ]
+    },
+    {
+      "name": "Return_store",
+      "file": "Return_store.json",
+      "rows": 3,
+      "columns": [
+        "id",
+        "recharge_id",
+        "recharge_ios",
+        "t_recharge_ios",
+        "name",
+        "award",
+        "Price",
+        "en_recharge",
+        "en_recharge_ios"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "recharge_id": "25_huigui",
+          "recharge_ios": "25_huigui",
+          "t_recharge_ios": "25_huigui_t",
+          "name": 8817,
+          "award": "1,275|6658,100|6089,10",
+          "Price": 25,
+          "en_recharge": "25_huigui_en",
+          "en_recharge_ios": "25_huigui_en"
+        },
+        {
+          "id": 2,
+          "recharge_id": "68_huigui",
+          "recharge_ios": "68_huigui",
+          "t_recharge_ios": "68_huigui_t",
+          "name": 8818,
+          "award": "1,816|4909,2|6089,30",
+          "Price": 68,
+          "en_recharge": "68_huigui_en",
+          "en_recharge_ios": "68_huigui_en"
+        },
+        {
+          "id": 3,
+          "recharge_id": "98_huigui",
+          "recharge_ios": "98_huigui",
+          "t_recharge_ios": "98_huigui_t",
+          "name": 8819,
+          "award": "1,1225|4909,4|6089,40",
+          "Price": 98,
+          "en_recharge": "98_huigui_en",
+          "en_recharge_ios": "98_huigui_en"
+        }
+      ]
+    },
+    {
+      "name": "rogue_adventure",
+      "file": "rogue_adventure.json",
+      "rows": 89,
+      "columns": [
+        "id",
+        "group",
+        "require",
+        "rate",
+        "new_rate",
+        "npc",
+        "replay",
+        "Require",
+        "Ro_require",
+        "taskcomplete"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "group": 0,
+          "require": [],
+          "rate": 50,
+          "new_rate": 50,
+          "npc": [
+            16290
+          ],
+          "replay": 1,
+          "Require": "0",
+          "Ro_require": "0",
+          "taskcomplete": []
+        },
+        {
+          "id": 2,
+          "group": 0,
+          "require": [],
+          "rate": 50,
+          "new_rate": 50,
+          "npc": [
+            16200
+          ],
+          "replay": 1,
+          "Require": "0",
+          "Ro_require": "0",
+          "taskcomplete": []
+        },
+        {
+          "id": 3,
+          "group": 0,
+          "require": [],
+          "rate": 50,
+          "new_rate": 50,
+          "npc": [
+            16217
+          ],
+          "replay": 1,
+          "Require": "0",
+          "Ro_require": "0",
+          "taskcomplete": []
+        }
+      ]
+    },
+    {
+      "name": "rogue_book",
+      "file": "rogue_book.json",
+      "rows": 109,
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "type",
+        "skill",
+        "rare",
+        "weight",
+        "begin",
+        "unlock",
+        "score",
+        "lvunlock",
+        "skill_open",
+        "season_unlock"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "name": 6002022,
+          "description": 6002126,
+          "type": 4,
+          "skill": [
+            1000,
+            1035,
+            1036,
+            1037,
+            1038
+          ],
+          "rare": 2,
+          "weight": "0,300|1,300|2,240|3,180|4,60|5,0",
+          "begin": 1,
+          "unlock": 0,
+          "score": 800,
+          "lvunlock": 0,
+          "skill_open": 0,
+          "season_unlock": 0
+        },
+        {
+          "id": 2,
+          "name": 6002023,
+          "description": 6002127,
+          "type": 4,
+          "skill": [
+            1003,
+            1042
+          ],
+          "rare": 2,
+          "weight": "0,300|1,300|2,240|3,180|4,60|5,0",
+          "begin": 1,
+          "unlock": 0,
+          "score": 800,
+          "lvunlock": 0,
+          "skill_open": 0,
+          "season_unlock": 0
+        },
+        {
+          "id": 3,
+          "name": 6002024,
+          "description": 6002128,
+          "type": 4,
+          "skill": [
+            1005,
+            1060,
+            1180
+          ],
+          "rare": 2,
+          "weight": "0,300|1,300|2,240|3,180|4,60|5,0",
+          "begin": 1,
+          "unlock": 0,
+          "score": 800,
+          "lvunlock": 0,
+          "skill_open": 0,
+          "season_unlock": 0
+        }
+      ]
+    },
+    {
+      "name": "rogue_buff",
+      "file": "rogue_buff.json",
+      "rows": 180,
+      "columns": [
+        "id",
+        "type",
+        "effect",
+        "content",
+        "season",
+        "order",
+        "des"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "type": "0",
+          "effect": "1002,60,4|1002,60,5",
+          "content": "0",
+          "season": 3,
+          "order": 1,
+          "des": 6010668
+        },
+        {
+          "id": 2,
+          "type": "0",
+          "effect": "1002,60,7|1002,60,9",
+          "content": "0",
+          "season": 3,
+          "order": 2,
+          "des": 6010669
+        },
+        {
+          "id": 3,
+          "type": "0",
+          "effect": "1002,60,6|1002,60,8",
+          "content": "0",
+          "season": 3,
+          "order": 3,
+          "des": 6010670
+        }
+      ]
+    },
+    {
+      "name": "rogue_career",
+      "file": "rogue_career.json",
+      "rows": 14,
+      "columns": [
+        "id",
+        "name",
+        "advantage",
+        "inferiority",
+        "gold",
+        "ability",
+        "buff",
+        "item",
+        "skin",
+        "unlock",
+        "season",
+        "pic",
+        "warm"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "name": 6002284,
+          "advantage": 6002289,
+          "inferiority": 6002294,
+          "gold": 1000,
+          "ability": "1,30|2,65|3,30|4,30|5,3600|6,3800|7,100|8,15|12,250000000|14,20|16,100|4001,8000",
+          "buff": [],
+          "item": "1,3325,2",
+          "skin": [
+            2609,
+            2769
+          ],
+          "unlock": [],
+          "season": [
+            1
+          ],
+          "pic": "careerid1",
+          "warm": 0
+        },
+        {
+          "id": 2,
+          "name": 6002285,
+          "advantage": 6002290,
+          "inferiority": 6002295,
+          "gold": 100,
+          "ability": "1,60|2,30|3,30|4,30|5,4500|6,3200|7,105|12,250000000|14,40|16,100|4001,4000",
+          "buff": [],
+          "item": "1,9570,1|1,9575,1",
+          "skin": [
+            26003,
+            27003
+          ],
+          "unlock": [],
+          "season": [
+            1
+          ],
+          "pic": "careerid2",
+          "warm": 0
+        },
+        {
+          "id": 3,
+          "name": 6002286,
+          "advantage": 6002291,
+          "inferiority": 6002296,
+          "gold": 100,
+          "ability": "1,30|2,30|3,30|4,60|5,3000|6,4100|7,100|12,250000000|14,20|16,100|4001,20000",
+          "buff": [],
+          "item": "0",
+          "skin": [
+            26006,
+            27006
+          ],
+          "unlock": [],
+          "season": [
+            1
+          ],
+          "pic": "careerid3",
+          "warm": 0
+        }
+      ]
+    },
+    {
+      "name": "rogue_effectcategory",
+      "file": "rogue_effectcategory.json",
+      "rows": 2,
+      "columns": [
+        "3480",
+        "id",
+        "type",
+        "page",
+        "undefined",
+        "任务",
+        "name"
+      ],
+      "first3": [
+        {
+          "3480": "3481",
+          "id": 1,
+          "type": "2,3,23,25,33,24,36,79",
+          "page": "2,3,23,25,33,79|24|36",
+          "undefined": "",
+          "任务": "活动",
+          "name": [
+            3484,
+            3486,
+            3478
+          ]
+        },
+        {
+          "3480": "3483",
+          "id": 2,
+          "type": "0",
+          "page": "0",
+          "undefined": "",
+          "任务": "食物",
+          "name": []
+        }
+      ]
+    },
+    {
+      "name": "rogue_elite",
+      "file": "rogue_elite.json",
+      "rows": 25,
+      "columns": [
+        "ID",
+        "sect",
+        "unlock",
+        "name",
+        "description",
+        "score",
+        "icon"
+      ],
+      "first3": [
+        {
+          "ID": 1,
+          "sect": "1,3251|2,3370",
+          "unlock": [
+            15,
+            16,
+            17,
+            18
+          ],
+          "name": 6003893,
+          "description": 6003904,
+          "score": 100,
+          "icon": "emotion1"
+        },
+        {
+          "ID": 2,
+          "sect": "1,3253|2,3371",
+          "unlock": [
+            15,
+            16,
+            17,
+            18
+          ],
+          "name": 6003895,
+          "description": 6003906,
+          "score": 100,
+          "icon": "emotion2"
+        },
+        {
+          "ID": 3,
+          "sect": "1,3254|2,3255|2,3372",
+          "unlock": [
+            15,
+            16,
+            17,
+            18
+          ],
+          "name": 6003896,
+          "description": 6003907,
+          "score": 100,
+          "icon": "emotion3"
+        }
+      ]
+    },
+    {
+      "name": "rogue_floorbuff",
+      "file": "rogue_floorbuff.json",
+      "rows": 12,
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "icon",
+        "playerbuff",
+        "enemybuff"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "name": 6004115,
+          "description": 6004127,
+          "icon": "floorbuff_3",
+          "playerbuff": "3,2587",
+          "enemybuff": "3,2587"
+        },
+        {
+          "id": 2,
+          "name": 6004116,
+          "description": 6004128,
+          "icon": "floorbuff_4",
+          "playerbuff": "20,27,-10|20,28,-10|20,29,-10|20,24,10|20,25,10|20,26,10",
+          "enemybuff": "0"
+        },
+        {
+          "id": 3,
+          "name": 6004117,
+          "description": 6004129,
+          "icon": "floorbuff_5",
+          "playerbuff": "3,2589",
+          "enemybuff": "3,2589"
+        }
+      ]
+    },
+    {
+      "name": "rogue_gather",
+      "file": "rogue_gather.json",
+      "rows": 12,
+      "columns": [
+        "id",
+        "drop",
+        "floor"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "drop": "1,9607,1,400|1,9562,1,100|1,9563,1,100|1,9564,1,100|1,9565,1,100|1,9566,1,100|1,9567,1,100|1,3109,1,300|1,3110,1,60|1,3209,1,300|1,3210,1,60|1,3325,1,400|1,6040,1,150|1,3316,1,80",
+          "floor": [
+            1
+          ]
+        },
+        {
+          "id": 2,
+          "drop": "1,9607,1,400|1,9562,1,100|1,9563,1,100|1,9564,1,100|1,9565,1,100|1,9566,1,100|1,9567,1,100|1,3109,1,300|1,3110,1,60|1,3209,2,300|1,3210,2,60|1,3325,1,400|1,6040,1,150|1,3316,1,80",
+          "floor": [
+            1
+          ]
+        },
+        {
+          "id": 3,
+          "drop": "1,9607,1,400|1,9562,1,100|1,9563,1,100|1,9564,1,100|1,9565,1,100|1,9566,1,100|1,9567,1,100|1,3109,2,300|1,3110,2,60|1,3209,1,300|1,3210,1,60|1,3325,2,400|1,6040,1,150|1,3316,1,80",
+          "floor": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rogue_hidden",
+      "file": "rogue_hidden.json",
+      "rows": 1,
+      "columns": [
+        "id",
+        "trunk",
+        "level",
+        "npcid",
+        "hidden",
+        "back",
+        "probability",
+        "text"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "trunk": [
+            6,
+            5,
+            5
+          ],
+          "level": [
+            2,
+            12
+          ],
+          "npcid": [
+            16577,
+            16577
+          ],
+          "hidden": [
+            1,
+            100
+          ],
+          "back": 1,
+          "probability": 100,
+          "text": [
+            6004661,
+            6004662
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rogue_item",
+      "file": "rogue_item.json",
+      "rows": 470,
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "rare",
+        "buff",
+        "unlock",
+        "floor",
+        "suit",
+        "adjust",
+        "available",
+        "score",
+        "value",
+        "invisible",
+        "eff_career",
+        "pvp",
+        "replace"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "name": 6002822,
+          "description": 6002890,
+          "rare": 1,
+          "buff": "20,1,10|20,3,10|20,22,2|20,5,800",
+          "unlock": "4,2,4",
+          "floor": "0,360|1,360|2,360|3,180|4,90|5,72",
+          "suit": 1,
+          "adjust": "550|1,2|1,3",
+          "available": 0,
+          "score": 600,
+          "value": 6000,
+          "invisible": 0,
+          "eff_career": "0",
+          "pvp": 1,
+          "replace": "0"
+        },
+        {
+          "id": 2,
+          "name": 6002823,
+          "description": 6002891,
+          "rare": 1,
+          "buff": "20,2,10|20,4,10|20,22,2|20,5,800",
+          "unlock": "4,2,4",
+          "floor": "0,360|1,360|2,360|3,180|4,90|5,72",
+          "suit": 1,
+          "adjust": "550|1,1|1,3",
+          "available": 0,
+          "score": 600,
+          "value": 6000,
+          "invisible": 0,
+          "eff_career": "0",
+          "pvp": 1,
+          "replace": "0"
+        },
+        {
+          "id": 3,
+          "name": 6002824,
+          "description": 6002892,
+          "rare": 2,
+          "buff": "20,1,10|20,2,10|20,3,10|20,4,10|20,5,1200",
+          "unlock": "4,2,4",
+          "floor": "0,180|1,180|2,360|3,180|4,135|5,90",
+          "suit": 1,
+          "adjust": "550|1,1|1,2",
+          "available": 0,
+          "score": 900,
+          "value": 8000,
+          "invisible": 0,
+          "eff_career": "0",
+          "pvp": 1,
+          "replace": "0"
+        }
+      ]
+    },
+    {
+      "name": "rogue_level",
+      "file": "rogue_level.json",
+      "rows": 26,
+      "columns": [
+        "id",
+        "chapter",
+        "level",
+        "times",
+        "buff",
+        "level_score",
+        "level_buff",
+        "level_txt",
+        "judge",
+        "locked",
+        "map",
+        "reward",
+        "floor",
+        "pic",
+        "prepare",
+        "floorbuff",
+        "season",
+        "fog"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "chapter": 6003667,
+          "level": 1,
+          "times": 0,
+          "buff": "1,4001,12000|2,375|2,374|2,384|2,388|2,380|2,18|2,12",
+          "level_score": "0.05|0.05",
+          "level_buff": "1,-0.1|2,-0.5|3,-0.15|4,-0.15|5,-0.7|12,-0.45|10,-70",
+          "level_txt": 6003666,
+          "judge": [
+            0,
+            50
+          ],
+          "locked": 0,
+          "map": [
+            99
+          ],
+          "reward": [
+            9630,
+            10
+          ],
+          "floor": 2,
+          "pic": 1,
+          "prepare": 2221,
+          "floorbuff": "0|0",
+          "season": 1,
+          "fog": "0|0"
+        },
+        {
+          "id": 2,
+          "chapter": 6001893,
+          "level": 2,
+          "times": 1,
+          "buff": "1,4001,10000|2,375|2,47|2,112",
+          "level_score": "0.3|0.3",
+          "level_buff": "1,-0.1|3,0.1|4,-0.15|5,-0.1|12,-0.1|10,-18",
+          "level_txt": 6003509,
+          "judge": [
+            29000,
+            31000
+          ],
+          "locked": 0,
+          "map": [
+            92,
+            93
+          ],
+          "reward": [],
+          "floor": 3,
+          "pic": 1,
+          "prepare": 2221,
+          "floorbuff": "0|0|0",
+          "season": 1,
+          "fog": "0|0|0"
+        },
+        {
+          "id": 3,
+          "chapter": 6001894,
+          "level": 3,
+          "times": 2,
+          "buff": "1,4001,2000|2,375|2,112",
+          "level_score": "0.45|0.45",
+          "level_buff": "1,0.3|3,0.1|5,-0.1|12,-0.1|10,-3",
+          "level_txt": 6003510,
+          "judge": [
+            46000,
+            53000
+          ],
+          "locked": 0,
+          "map": [
+            95,
+            96
+          ],
+          "reward": [],
+          "floor": 4,
+          "pic": 1,
+          "prepare": 2221,
+          "floorbuff": "0|0|0|0",
+          "season": 1,
+          "fog": "0|0|0|0"
+        }
+      ]
+    },
+    {
+      "name": "rogue_point",
+      "file": "rogue_point.json",
+      "rows": 807,
+      "columns": [
+        "id",
+        "floor",
+        "group",
+        "trunk",
+        "num",
+        "unlock",
+        "showfog"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "floor": 2,
+          "group": 1,
+          "trunk": [
+            51,
+            52
+          ],
+          "num": 1,
+          "unlock": [],
+          "showfog": 0
+        },
+        {
+          "id": 2,
+          "floor": 2,
+          "group": 1,
+          "trunk": [
+            52,
+            6,
+            8,
+            11,
+            13,
+            15,
+            18
+          ],
+          "num": 2,
+          "unlock": [
+            1
+          ],
+          "showfog": 0
+        },
+        {
+          "id": 3,
+          "floor": 2,
+          "group": 1,
+          "trunk": [
+            22,
+            26,
+            28,
+            33,
+            35,
+            36,
+            37,
+            38
+          ],
+          "num": 2,
+          "unlock": [
+            1
+          ],
+          "showfog": 0
+        }
+      ]
+    },
+    {
+      "name": "rogue_rank",
+      "file": "rogue_rank.json",
+      "rows": 36,
+      "columns": [
+        "id",
+        "name",
+        "des",
+        "drop",
+        "rank",
+        "pic",
+        "view",
+        "reward_text",
+        "season"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "name": 6003445,
+          "des": 6003448,
+          "drop": "9687,1|9767,1",
+          "rank": [
+            1,
+            1
+          ],
+          "pic": "reward1",
+          "view": "rewardIcon",
+          "reward_text": 6003451,
+          "season": 1
+        },
+        {
+          "id": 2,
+          "name": 6003446,
+          "des": 6003449,
+          "drop": "9688,1",
+          "rank": [
+            2,
+            5
+          ],
+          "pic": "reward2",
+          "view": "0",
+          "reward_text": 6003452,
+          "season": 1
+        },
+        {
+          "id": 3,
+          "name": 6003447,
+          "des": 6003450,
+          "drop": "9689,1",
+          "rank": [
+            6,
+            10
+          ],
+          "pic": "reward3",
+          "view": "0",
+          "reward_text": 6003453,
+          "season": 1
+        }
+      ]
+    },
+    {
+      "name": "rogue_reputation",
+      "file": "rogue_reputation.json",
+      "rows": 13,
+      "columns": [
+        "id",
+        "lv",
+        "name",
+        "reputation",
+        "reward",
+        "icon",
+        "task_reward",
+        "season",
+        "shift",
+        "reward2"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "lv": 1,
+          "name": 6002267,
+          "reputation": 28000,
+          "reward": "9630,5|9673,400|6649,3|4003,30000",
+          "icon": "repu1",
+          "task_reward": "9673,600|9681,3",
+          "season": 1,
+          "shift": 0,
+          "reward2": "0"
+        },
+        {
+          "id": 2,
+          "lv": 2,
+          "name": 6002268,
+          "reputation": 48000,
+          "reward": "9673,400|6253,5|4003,50000",
+          "icon": "repu2",
+          "task_reward": "9673,750|9681,5",
+          "season": 1,
+          "shift": 0,
+          "reward2": "0"
+        },
+        {
+          "id": 3,
+          "lv": 3,
+          "name": 6002269,
+          "reputation": 89000,
+          "reward": "9630,5|9673,400|6089,5|4003,70000",
+          "icon": "repu3",
+          "task_reward": "9673,850|9681,7",
+          "season": 1,
+          "shift": 0,
+          "reward2": "0"
+        }
+      ]
+    },
+    {
+      "name": "rogue_shop",
+      "file": "rogue_shop.json",
+      "rows": 33,
+      "columns": [
+        "id",
+        "item",
+        "costitem",
+        "cost",
+        "rank",
+        "num",
+        "refresh",
+        "open",
+        "close",
+        "season",
+        "reputation",
+        "opentime",
+        "closetime"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "item": 9630,
+          "costitem": 9673,
+          "cost": 20,
+          "rank": 0,
+          "num": 10,
+          "refresh": 2,
+          "open": 26223650,
+          "close": [
+            63140127650
+          ],
+          "season": 1,
+          "reputation": 0,
+          "opentime": 0,
+          "closetime": 0
+        },
+        {
+          "id": 2,
+          "item": 9630,
+          "costitem": 9673,
+          "cost": 50,
+          "rank": 0,
+          "num": 2,
+          "refresh": 2,
+          "open": 26223650,
+          "close": [
+            63140127650
+          ],
+          "season": 1,
+          "reputation": 0,
+          "opentime": 0,
+          "closetime": 0
+        },
+        {
+          "id": 3,
+          "item": 4806,
+          "costitem": 9673,
+          "cost": 240,
+          "rank": 0,
+          "num": 1,
+          "refresh": 2,
+          "open": 26223650,
+          "close": [
+            63140127650
+          ],
+          "season": 1,
+          "reputation": 0,
+          "opentime": 0,
+          "closetime": 0
+        }
+      ]
+    },
+    {
+      "name": "rogue_store",
+      "file": "rogue_store.json",
+      "rows": 224,
+      "columns": [
+        "id",
+        "type",
+        "item",
+        "num",
+        "price",
+        "rate",
+        "stage",
+        "lvunlock"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "type": 1,
+          "item": [
+            1,
+            3110
+          ],
+          "num": 2,
+          "price": [
+            650,
+            659,
+            689,
+            710,
+            730
+          ],
+          "rate": 400,
+          "stage": [
+            1,
+            2
+          ],
+          "lvunlock": 0
+        },
+        {
+          "id": 2,
+          "type": 1,
+          "item": [
+            1,
+            3210
+          ],
+          "num": 2,
+          "price": [
+            650,
+            659,
+            689,
+            710,
+            730
+          ],
+          "rate": 400,
+          "stage": [
+            1,
+            2
+          ],
+          "lvunlock": 0
+        },
+        {
+          "id": 3,
+          "type": 1,
+          "item": [
+            1,
+            3315
+          ],
+          "num": 2,
+          "price": [
+            650,
+            659,
+            689,
+            710,
+            730
+          ],
+          "rate": 400,
+          "stage": [
+            1,
+            2
+          ],
+          "lvunlock": 0
+        }
+      ]
+    },
+    {
+      "name": "rogue_suit",
+      "file": "rogue_suit.json",
+      "rows": 26,
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "attribute",
+        "score"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "name": 6003106,
+          "description": 6003116,
+          "attribute": "2,1,10|2,2,10|2,3,10|2,4,10|20,10,10",
+          "score": 1440
+        },
+        {
+          "id": 2,
+          "name": 6003107,
+          "description": 6003117,
+          "attribute": "3,2383",
+          "score": 2880
+        },
+        {
+          "id": 3,
+          "name": 6003108,
+          "description": 6003118,
+          "attribute": "20,51,50",
+          "score": 2400
+        }
+      ]
+    },
+    {
+      "name": "rogue_talent",
+      "file": "rogue_talent.json",
+      "rows": 69,
+      "columns": [
+        "id",
+        "talent",
+        "price",
+        "name",
+        "description",
+        "buff",
+        "maxlv",
+        "pic",
+        "effective",
+        "unlock"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "talent": [
+            1001
+          ],
+          "price": [
+            1
+          ],
+          "name": [
+            6002233
+          ],
+          "description": [
+            6002250
+          ],
+          "buff": "2,38,2",
+          "maxlv": [
+            5
+          ],
+          "pic": "0",
+          "effective": "0",
+          "unlock": []
+        },
+        {
+          "id": 2,
+          "talent": [
+            2001,
+            2002
+          ],
+          "price": [
+            1,
+            1
+          ],
+          "name": [
+            6002244,
+            6002243
+          ],
+          "description": [
+            6002261,
+            6002260
+          ],
+          "buff": "2,10,4|2,22,4",
+          "maxlv": [
+            4,
+            4
+          ],
+          "pic": "0,0",
+          "effective": "0|0",
+          "unlock": []
+        },
+        {
+          "id": 3,
+          "talent": [
+            3001
+          ],
+          "price": [
+            2
+          ],
+          "name": [
+            6002231
+          ],
+          "description": [
+            6002248
+          ],
+          "buff": "2,5,1000",
+          "maxlv": [
+            3
+          ],
+          "pic": "0",
+          "effective": "0",
+          "unlock": []
+        }
+      ]
+    },
+    {
+      "name": "Rogue_trunk",
+      "file": "Rogue_trunk.json",
+      "rows": 276,
+      "columns": [
+        "id",
+        "type",
+        "levelunlock",
+        "npc",
+        "reward",
+        "choose",
+        "choose2",
+        "trigger",
+        "weight",
+        "name",
+        "start",
+        "picture",
+        "end",
+        "valuables",
+        "score",
+        "icon",
+        "adventureRate",
+        "adventureNpc",
+        "newAdventure",
+        "mapinfo",
+        "maps",
+        "fail",
+        "upgrade",
+        "buff_rate",
+        "disable",
+        "extra_score",
+        "replace"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "type": 1001,
+          "levelunlock": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "npc": [
+            16075,
+            16076,
+            16077
+          ],
+          "reward": "4001,1000,100|3315,1,5|3209,1,10|3109,1,10",
+          "choose": [
+            6002715,
+            6002716
+          ],
+          "choose2": [
+            6003369,
+            6003370
+          ],
+          "trigger": "0",
+          "weight": 100,
+          "name": 6002413,
+          "start": 60229,
+          "picture": "stagePic1",
+          "end": [
+            60011
+          ],
+          "valuables": "1,50|2,50",
+          "score": 1000,
+          "icon": "1",
+          "adventureRate": 0,
+          "adventureNpc": "0",
+          "newAdventure": [],
+          "mapinfo": [],
+          "maps": [
+            2225,
+            2226,
+            2227,
+            2228,
+            2229,
+            2230,
+            2231,
+            2232,
+            2233,
+            2234,
+            2235,
+            2236
+          ],
+          "fail": 0,
+          "upgrade": 0,
+          "buff_rate": "0",
+          "disable": [],
+          "extra_score": [],
+          "replace": "0"
+        },
+        {
+          "id": 2,
+          "type": 1001,
+          "levelunlock": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "npc": [
+            16078
+          ],
+          "reward": "4001,1500,100|3315,1,5|3209,1,10|3109,1,10",
+          "choose": [
+            6002715,
+            6002716
+          ],
+          "choose2": [
+            6003369,
+            6003370
+          ],
+          "trigger": "0",
+          "weight": 40,
+          "name": 60202,
+          "start": 60230,
+          "picture": "stagePic1",
+          "end": [
+            60012
+          ],
+          "valuables": "1,50|2,50",
+          "score": 1600,
+          "icon": "2",
+          "adventureRate": 0,
+          "adventureNpc": "0",
+          "newAdventure": [],
+          "mapinfo": [],
+          "maps": [
+            2237
+          ],
+          "fail": 0,
+          "upgrade": 0,
+          "buff_rate": "0",
+          "disable": [],
+          "extra_score": [],
+          "replace": "0"
+        },
+        {
+          "id": 3,
+          "type": 4001,
+          "levelunlock": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "npc": [
+            16084,
+            16085
+          ],
+          "reward": "0",
+          "choose": [
+            6003669,
+            6003671
+          ],
+          "choose2": [
+            6003670,
+            6003672
+          ],
+          "trigger": "0",
+          "weight": 1,
+          "name": 6003576,
+          "start": 6003577,
+          "picture": "stagePic1",
+          "end": [
+            6003578
+          ],
+          "valuables": "0",
+          "score": 0,
+          "icon": "3",
+          "adventureRate": 0,
+          "adventureNpc": "0",
+          "newAdventure": [],
+          "mapinfo": [
+            6,
+            1
+          ],
+          "maps": [
+            2252,
+            2253
+          ],
+          "fail": 0,
+          "upgrade": 100,
+          "buff_rate": "0",
+          "disable": [],
+          "extra_score": [],
+          "replace": "0"
+        }
+      ]
+    },
+    {
+      "name": "sect_level",
+      "file": "sect_level.json",
+      "rows": 9,
+      "columns": [
+        "ID",
+        "isfree",
+        "level",
+        "name",
+        "cycle",
+        "num",
+        "reward_con",
+        "reward_pre",
+        "need_pre",
+        "item",
+        "egg",
+        "salary",
+        "pay",
+        "pay_num",
+        "egg_per",
+        "times"
+      ],
+      "first3": [
+        {
+          "ID": 1,
+          "isfree": 0,
+          "level": 1,
+          "name": 6070,
+          "cycle": 1,
+          "num": 5,
+          "reward_con": 12,
+          "reward_pre": 12,
+          "need_pre": 0,
+          "item": 424,
+          "egg": 429,
+          "salary": 0,
+          "pay": 125,
+          "pay_num": 14,
+          "egg_per": 3,
+          "times": 0
+        },
+        {
+          "ID": 2,
+          "isfree": 0,
+          "level": 2,
+          "name": 6071,
+          "cycle": 1,
+          "num": 4,
+          "reward_con": 18,
+          "reward_pre": 15,
+          "need_pre": 420,
+          "item": 425,
+          "egg": 429,
+          "salary": 430,
+          "pay": 250,
+          "pay_num": 14,
+          "egg_per": 4,
+          "times": 0
+        },
+        {
+          "ID": 3,
+          "isfree": 0,
+          "level": 4,
+          "name": 0,
+          "cycle": 1,
+          "num": 2,
+          "reward_con": 45,
+          "reward_pre": 30,
+          "need_pre": 1920,
+          "item": 426,
+          "egg": 429,
+          "salary": 431,
+          "pay": 32000,
+          "pay_num": 7,
+          "egg_per": 8,
+          "times": 10.41
+        }
+      ]
+    },
+    {
+      "name": "sect_misson",
+      "file": "sect_misson.json",
+      "rows": 36,
+      "columns": [
+        "id",
+        "type",
+        "variable",
+        "level",
+        "isfree",
+        "misson_name",
+        "word1",
+        "word2",
+        "word3",
+        "word4",
+        "word5",
+        "word6",
+        "word7",
+        "word8",
+        "flag",
+        "random"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "type": 1,
+          "variable": 5,
+          "level": 1,
+          "isfree": 0,
+          "misson_name": 5987,
+          "word1": "xq022",
+          "word2": "xq001",
+          "word3": "xq029",
+          "word4": "xq043",
+          "word5": "xq036",
+          "word6": "xq050",
+          "word7": "xq015",
+          "word8": "xq008",
+          "flag": [],
+          "random": []
+        },
+        {
+          "id": 2,
+          "type": 2,
+          "variable": 0,
+          "level": 1,
+          "isfree": 0,
+          "misson_name": 5988,
+          "word1": "xq023",
+          "word2": "xq002",
+          "word3": "xq030",
+          "word4": "xq044",
+          "word5": "xq037",
+          "word6": "xq051",
+          "word7": "xq016",
+          "word8": "xq009",
+          "flag": [
+            1
+          ],
+          "random": [
+            310002,
+            310007,
+            1028,
+            1007,
+            1009,
+            1014,
+            1030,
+            1039,
+            1041,
+            1045
+          ]
+        },
+        {
+          "id": 3,
+          "type": 2,
+          "variable": 0,
+          "level": 2,
+          "isfree": 0,
+          "misson_name": 5988,
+          "word1": "xq023",
+          "word2": "xq002",
+          "word3": "xq030",
+          "word4": "xq044",
+          "word5": "xq037",
+          "word6": "xq051",
+          "word7": "xq016",
+          "word8": "xq009",
+          "flag": [
+            1
+          ],
+          "random": [
+            310002,
+            310007,
+            1028,
+            1007,
+            1009,
+            1014,
+            1030,
+            1039,
+            1041,
+            1045,
+            310009,
+            1013,
+            1035,
+            1042,
+            1065,
+            1008,
+            1010,
+            1011,
+            1017,
+            1046,
+            1015,
+            1029,
+            1032
+          ]
+        }
+      ]
+    },
+    {
+      "name": "sect_seat",
+      "file": "sect_seat.json",
+      "rows": 80,
+      "columns": [
+        "id",
+        "npc_id",
+        "level",
+        "sect",
+        "locate_up",
+        "menpai",
+        "undefined"
+      ],
+      "first3": [
+        {
+          "id": 1,
+          "npc_id": 13671,
+          "level": 1,
+          "sect": 6,
+          "locate_up": 50,
+          "menpai": 1,
+          "undefined": "雪山"
+        },
+        {
+          "id": 2,
+          "npc_id": 13672,
+          "level": 2,
+          "sect": 5,
+          "locate_up": 50,
+          "menpai": 1,
+          "undefined": "雪山"
+        },
+        {
+          "id": 3,
+          "npc_id": 13673,
+          "level": 2,
+          "sect": 3,
+          "locate_up": 50,
+          "menpai": 1,
+          "undefined": "雪山"
+        }
+      ]
+    },
+    {
+      "name": "sect_shop",
+      "file": "sect_shop.json",
+      "rows": 13,
+      "columns": [
+        "ID",
+        "item",
+        "price",
+        "item_name",
+        "item_describe",
+        "sect_list"
+      ],
+      "first3": [
+        {
+          "ID": 1,
+          "item": 4220,
+          "price": 336,
+          "item_name": 33220,
+          "item_describe": 38220,
+          "sect_list": [
+            7
+          ]
+        },
+        {
+          "ID": 2,
+          "item": 3325,
+          "price": 1344,
+          "item_name": 32325,
+          "item_describe": 37325,
+          "sect_list": [
+            5
+          ]
+        },
+        {
+          "ID": 3,
+          "item": 6539,
+          "price": 3360,
+          "item_name": 2101762,
+          "item_describe": 2301762,
+          "sect_list": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "name": "sectmanual",
+      "file": "sectmanual.json",
+      "rows": 8,
+      "columns": [
+        "id",
+        "sect",
+        "introduction",
+        "picture",
+        "kungfu",
+        "teacher",
+        "roadAni",
+        "map"
+      ],
+      "first3": [
+        {
+          "id": "1",
+          "sect": 1,
+          "introduction": 6004430,
+          "picture": "xueshan",
+          "kungfu": 6004431,
+          "teacher": "1086,6004454|1085,6004455|1084,6004456",
+          "roadAni": 3,
+          "map": 1045
+        },
+        {
+          "id": "2",
+          "sect": 2,
+          "introduction": 6004432,
+          "picture": "taiji",
+          "kungfu": 6004433,
+          "teacher": "1052,6004446|1051,6004447|1050,6004448|1049,6004449",
+          "roadAni": 4,
+          "map": 1031
+        },
+        {
+          "id": "3",
+          "sect": 3,
+          "introduction": 6004434,
+          "picture": "xuedao",
+          "kungfu": 6004435,
+          "teacher": "1166,6004471|1165,6004472",
+          "roadAni": 5,
+          "map": 1081
+        }
+      ]
+    },
+    {
+      "name": "sectType",
+      "file": "sectType.json",
+      "rows": 12,
+      "columns": [
+        "id",
+        "type",
+        "num",
+        "name"
+      ],
+      "first3": [
+        {
+          "id": "0",
+          "type": 1,
+          "num": 0,
+          "name": 0
+        },
+        {
+          "id": "1",
+          "type": 1,
+          "num": 6,
+          "name": 54103
+        },
+        {
+          "id": "2",
+          "type": 1,
+          "num": 7,
+          "name": 54101
+        }
+      ]
+    },
+    {
+      "name": "shop_entrance",
+      "file": "shop_entrance.json",
+      "rows": 11,
+      "columns": [
+        "shop_ID",
+        "shop_type",
+        "shop_name",
+        "active_id",
+        "shop_pic",
+        "sale_ad",
+        "show_time"
+      ],
+      "first3": [
+        {
+          "shop_ID": 1,
+          "shop_type": 1,
+          "shop_name": 5031,
+          "active_id": 0,
+          "shop_pic": "2020717itemshop",
+          "sale_ad": "4666",
+          "show_time": 0
+        },
+        {
+          "shop_ID": 6,
+          "shop_type": 2,
+          "shop_name": 4665,
+          "active_id": 0,
+          "shop_pic": "2020717goldshop",
+          "sale_ad": "4667",
+          "show_time": 0
+        },
+        {
+          "shop_ID": 8,
+          "shop_type": 3,
+          "shop_name": 4276,
+          "active_id": 0,
+          "shop_pic": "2020717xiakeling",
+          "sale_ad": "0",
+          "show_time": 0
+        }
+      ]
+    },
+    {
+      "name": "shop",
+      "file": "shop.json",
+      "rows": 19,
+      "columns": [
+        "ID",
+        "Item"
+      ],
+      "first3": [
+        {
+          "ID": 1,
+          "Item": [
+            4005
+          ]
+        },
+        {
+          "ID": 2,
+          "Item": [
+            3005,
+            3006
+          ]
+        },
+        {
+          "ID": 3,
+          "Item": [
+            2001,
+            3552,
+            3553,
+            3554,
+            3555,
+            3556
+          ]
+        }
+      ]
+    },
+    {
+      "name": "sim_shopconfig",
+      "file": "sim_shopconfig.json",
+      "rows": 8,
+      "columns": [
+        "id",
+        "type",
+        "name",
+        "des",
+        "food_bag",
+        "cookbook",
+        "price",
+        "sell_limit"
+      ],
+      "first3": [
+        {
+          "id": "1",
+          "type": 2,
+          "name": 202201099,
+          "des": [
+            202201267
+          ],
+          "food_bag": "1,16|2,16|3,16|6,12|7,8",
+          "cookbook": 0,
+          "price": 1,
+          "sell_limit": 30
+        },
+        {
+          "id": "2",
+          "type": 2,
+          "name": 202201100,
+          "des": [
+            202201268
+          ],
+          "food_bag": "4,16|5,8|8,4|9,2|10,2|12,1",
+          "cookbook": 0,
+          "price": 2,
+          "sell_limit": 30
+        },
+        {
+          "id": "3",
+          "type": 2,
+          "name": 202201101,
+          "des": [
+            202201269
+          ],
+          "food_bag": "11,15|13,6|14,4|15,1",
+          "cookbook": 0,
+          "price": 4,
+          "sell_limit": 30
+        }
+      ]
+    },
+    {
+      "name": "skill_random",
+      "file": "skill_random.json",
+      "rows": 8,
+      "columns": [
+        "Menpai",
+        "Skill1",
+        "Weapon1",
+        "BigSkill1",
+        "Skill2",
+        "Weapon2",
+        "BigSkill2",
+        "Skill3",
+        "Weapon3",
+        "BigSkill3",
+        "Common"
+      ],
+      "first3": [
+        {
+          "Menpai": 1,
+          "Skill1": 1003,
+          "Weapon1": 0,
+          "BigSkill1": [
+            1042,
+            1045
+          ],
+          "Skill2": 1004,
+          "Weapon2": 1014,
+          "BigSkill2": [
+            1043,
+            1045
+          ],
+          "Skill3": 0,
+          "Weapon3": 0,
+          "BigSkill3": [],
+          "Common": [
+            1,
+            1027,
+            1019
+          ]
+        },
+        {
+          "Menpai": 2,
+          "Skill1": 1000,
+          "Weapon1": 0,
+          "BigSkill1": [
+            1035,
+            1036,
+            1037,
+            1038
+          ],
+          "Skill2": 1001,
+          "Weapon2": 1014,
+          "BigSkill2": [
+            1039,
+            1041,
+            1040
+          ],
+          "Skill3": 1002,
+          "Weapon3": 1114,
+          "BigSkill3": [],
+          "Common": [
+            1,
+            1028,
+            1020
+          ]
+        },
+        {
+          "Menpai": 3,
+          "Skill1": 1005,
+          "Weapon1": 0,
+          "BigSkill1": [
+            1060,
+            1062
+          ],
+          "Skill2": 1006,
+          "Weapon2": 1114,
+          "BigSkill2": [
+            1165,
+            1062
+          ],
+          "Skill3": 0,
+          "Weapon3": 0,
+          "BigSkill3": [],
+          "Common": [
+            1,
+            1029,
+            1021
+          ]
+        }
+      ]
+    },
+    {
+      "name": "skillskin_shop_sale",
+      "file": "skillskin_shop_sale.json",
+      "rows": 1,
+      "columns": [
+        "id",
+        "number",
+        "sale"
+      ],
+      "first3": [
+        {
+          "id": "1",
+          "number": 3,
+          "sale": 90
+        }
+      ]
+    },
+    {
+      "name": "skillskin_shop",
+      "file": "skillskin_shop.json",
+      "rows": 35,
+      "columns": [
+        "id",
+        "type",
+        "item",
+        "price",
+        "weight",
+        "rare",
+        "ontime",
+        "offtime",
+        "pic"
+      ],
+      "first3": [
+        {
+          "id": "1",
+          "type": 1,
+          "item": 6658,
+          "price": 5,
+          "weight": 196,
+          "rare": 1,
+          "ontime": 1487088000000,
+          "offtime": 1487088000001,
+          "pic": "0"
+        },
+        {
+          "id": "2",
+          "type": 1,
+          "item": 6658,
+          "price": 5,
+          "weight": 196,
+          "rare": 1,
+          "ontime": 1487088000000,
+          "offtime": 1487088000001,
+          "pic": "0"
+        },
+        {
+          "id": "3",
+          "type": 1,
+          "item": 6658,
+          "price": 5,
+          "weight": 196,
+          "rare": 1,
+          "ontime": 1487088000000,
+          "offtime": 1487088000001,
+          "pic": "0"
+        }
+      ]
+    },
+    {
+      "name": "wench_random",
+      "file": "wench_random.json",
+      "rows": 11,
+      "columns": [
+        "plot",
+        "endmap",
+        "inplace",
+        "indialog",
+        "answer1",
+        "answer2",
+        "answer3",
+        "x",
+        "y",
+        "dialogs1",
+        "dialogs2"
+      ],
+      "first3": [
+        {
+          "plot": 1,
+          "endmap": 30001,
+          "inplace": [
+            760,
+            570
+          ],
+          "indialog": [
+            1102110,
+            1102120
+          ],
+          "answer1": [
+            1104101,
+            1104103
+          ],
+          "answer2": [
+            1104102,
+            1104104
+          ],
+          "answer3": 1105130,
+          "x": [
+            280,
+            360
+          ],
+          "y": [
+            480,
+            790
+          ],
+          "dialogs1": [
+            1103101
+          ],
+          "dialogs2": [
+            1103102
+          ]
+        },
+        {
+          "plot": 2,
+          "endmap": 30001,
+          "inplace": [
+            760,
+            570
+          ],
+          "indialog": [
+            1102110,
+            1102120
+          ],
+          "answer1": [
+            1104105,
+            1104107
+          ],
+          "answer2": [
+            1104106,
+            1104108
+          ],
+          "answer3": 1105130,
+          "x": [
+            280,
+            360
+          ],
+          "y": [
+            480,
+            790
+          ],
+          "dialogs1": [
+            1103101
+          ],
+          "dialogs2": [
+            1103102
+          ]
+        },
+        {
+          "plot": 3,
+          "endmap": 30001,
+          "inplace": [
+            760,
+            570
+          ],
+          "indialog": [
+            1102110,
+            1102120
+          ],
+          "answer1": [
+            1104109,
+            1104111
+          ],
+          "answer2": [
+            1104110,
+            1104112
+          ],
+          "answer3": 1105130,
+          "x": [
+            280,
+            360
+          ],
+          "y": [
+            480,
+            790
+          ],
+          "dialogs1": [
+            1103101
+          ],
+          "dialogs2": [
+            1103102
+          ]
+        }
+      ]
+    }
+  ],
+  "shopTablesJsonSummary": {
+    "source": "F:/BaoZouyxt/tools/cfg/shop_tables.json",
+    "topLevelKeys": [
+      "ok",
+      "tables",
+      "summary"
+    ],
+    "ok": 1,
+    "tableCount": 11,
+    "summary": [
+      {
+        "name": "shop",
+        "rows": 19,
+        "sampleKey": "1"
+      },
+      {
+        "name": "shop_entrance",
+        "rows": 11,
+        "sampleKey": "1"
+      },
+      {
+        "name": "random_shop",
+        "rows": 237,
+        "sampleKey": "3016"
+      },
+      {
+        "name": "lh_shop",
+        "rows": 116,
+        "sampleKey": "1"
+      },
+      {
+        "name": "house_shop",
+        "rows": 27,
+        "sampleKey": "3016"
+      },
+      {
+        "name": "ge_shop",
+        "rows": 25,
+        "sampleKey": "1"
+      },
+      {
+        "name": "sect_shop",
+        "rows": 13,
+        "sampleKey": "1"
+      },
+      {
+        "name": "mall",
+        "rows": 39,
+        "sampleKey": "1"
+      },
+      {
+        "name": "sim_shopconfig",
+        "rows": 8,
+        "sampleKey": "1"
+      },
+      {
+        "name": "recruit_shop",
+        "rows": 4,
+        "sampleKey": "1"
+      },
+      {
+        "name": "diceshop",
+        "rows": 14,
+        "sampleKey": "1"
+      }
+    ],
+    "tables": {
+      "shop": {
+        "rows": 19,
+        "firstRowKey": "1",
+        "firstRowColumnKeys": [
+          "ID",
+          "Item"
+        ],
+        "firstRow": {
+          "ID": 1,
+          "Item": [
+            4005
+          ]
+        }
+      },
+      "shop_entrance": {
+        "rows": 11,
+        "firstRowKey": "1",
+        "firstRowColumnKeys": [
+          "shop_ID",
+          "shop_type",
+          "shop_name",
+          "active_id",
+          "shop_pic",
+          "sale_ad",
+          "show_time"
+        ],
+        "firstRow": {
+          "shop_ID": 1,
+          "shop_type": 1,
+          "shop_name": 5031,
+          "active_id": 0,
+          "shop_pic": "2020717itemshop",
+          "sale_ad": "4666",
+          "show_time": 0
+        }
+      },
+      "random_shop": {
+        "rows": 237,
+        "firstRowKey": "3016",
+        "firstRowColumnKeys": [
+          "ID",
+          "npc",
+          "probability",
+          "payment",
+          "page",
+          "limit",
+          "isserver",
+          "price",
+          "sale",
+          "salebegintime",
+          "saleendtime"
+        ],
+        "firstRow": {
+          "ID": 3016,
+          "npc": 1009,
+          "probability": 10,
+          "payment": 2,
+          "page": 2,
+          "limit": 100,
+          "isserver": 1,
+          "price": 100,
+          "sale": 0,
+          "salebegintime": 0,
+          "saleendtime": 0
+        }
+      },
+      "lh_shop": {
+        "rows": 116,
+        "firstRowKey": "1",
+        "firstRowColumnKeys": [
+          "ID",
+          "item",
+          "npc",
+          "probability",
+          "payment",
+          "limit",
+          "thisnum",
+          "price",
+          "group"
+        ],
+        "firstRow": {
+          "ID": 1,
+          "item": 3146,
+          "npc": 10163,
+          "probability": 50,
+          "payment": 2,
+          "limit": 1,
+          "thisnum": 1,
+          "price": 30000,
+          "group": 0
+        }
+      },
+      "house_shop": {
+        "rows": 27,
+        "firstRowKey": "3016",
+        "firstRowColumnKeys": [
+          "ID",
+          "npc",
+          "probability",
+          "payment",
+          "limit",
+          "isserver",
+          "price",
+          "sale",
+          "salebegintime",
+          "saleendtime"
+        ],
+        "firstRow": {
+          "ID": 3016,
+          "npc": 10459,
+          "probability": 100,
+          "payment": 2,
+          "limit": 10,
+          "isserver": 0,
+          "price": 100,
+          "sale": 90,
+          "salebegintime": 1576684800000,
+          "saleendtime": 1578240000000
+        }
+      },
+      "ge_shop": {
+        "rows": 25,
+        "firstRowKey": "1",
+        "firstRowColumnKeys": [
+          "ID",
+          "Name",
+          "Description",
+          "Data",
+          "Price",
+          "camp",
+          "rankopen",
+          "rank1Num",
+          "rank2Num",
+          "rank3Num",
+          "rank4Num",
+          "rank5Num"
+        ],
+        "firstRow": {
+          "ID": 1,
+          "Name": 32316,
+          "Description": 37316,
+          "Data": [
+            3316,
+            1
+          ],
+          "Price": 4000,
+          "camp": 1,
+          "rankopen": 1,
+          "rank1Num": 0,
+          "rank2Num": 0,
+          "rank3Num": 0,
+          "rank4Num": 0,
+          "rank5Num": 0
+        }
+      },
+      "sect_shop": {
+        "rows": 13,
+        "firstRowKey": "1",
+        "firstRowColumnKeys": [
+          "ID",
+          "item",
+          "price",
+          "item_name",
+          "item_describe",
+          "sect_list"
+        ],
+        "firstRow": {
+          "ID": 1,
+          "item": 4220,
+          "price": 336,
+          "item_name": 33220,
+          "item_describe": 38220,
+          "sect_list": [
+            7
+          ]
+        }
+      },
+      "mall": {
+        "rows": 39,
+        "firstRowKey": "1",
+        "firstRowColumnKeys": [
+          "ID",
+          "Type",
+          "Name",
+          "Description",
+          "Price",
+          "Num",
+          "Discount",
+          "Limit",
+          "Belong",
+          "icon",
+          "Data",
+          "Begintime",
+          "Endtime",
+          "shopbegin",
+          "shopend"
+        ],
+        "firstRow": {
+          "ID": 1,
+          "Type": 1,
+          "Name": 52001,
+          "Description": 52101,
+          "Price": 100,
+          "Num": 0,
+          "Discount": 0,
+          "Limit": 0,
+          "Belong": 0,
+          "icon": "shop52001",
+          "Data": [
+            4003,
+            10000
+          ],
+          "Begintime": [],
+          "Endtime": [],
+          "shopbegin": [],
+          "shopend": []
+        }
+      },
+      "sim_shopconfig": {
+        "rows": 8,
+        "firstRowKey": "1",
+        "firstRowColumnKeys": [
+          "id",
+          "type",
+          "name",
+          "des",
+          "food_bag",
+          "cookbook",
+          "price",
+          "sell_limit"
+        ],
+        "firstRow": {
+          "id": "1",
+          "type": 2,
+          "name": 202201099,
+          "des": [
+            202201267
+          ],
+          "food_bag": "1,16|2,16|3,16|6,12|7,8",
+          "cookbook": 0,
+          "price": 1,
+          "sell_limit": 30
+        }
+      },
+      "recruit_shop": {
+        "rows": 4,
+        "firstRowKey": "1",
+        "firstRowColumnKeys": [
+          "id",
+          "item",
+          "num",
+          "integral",
+          "limittype",
+          "limit",
+          "begintime",
+          "endtime",
+          "type"
+        ],
+        "firstRow": {
+          "id": 1,
+          "item": 3056,
+          "num": 1,
+          "integral": 5,
+          "limittype": 1,
+          "limit": 1,
+          "begintime": 0,
+          "endtime": 0,
+          "type": 1
+        }
+      },
+      "diceshop": {
+        "rows": 14,
+        "firstRowKey": "1",
+        "firstRowColumnKeys": [
+          "id",
+          "type",
+          "data",
+          "ratio",
+          "price",
+          "num",
+          "limit"
+        ],
+        "firstRow": {
+          "id": 1,
+          "type": 1,
+          "data": 7426,
+          "ratio": 0,
+          "price": 10,
+          "num": 1,
+          "limit": 6
+        }
+      }
+    }
+  }
+}

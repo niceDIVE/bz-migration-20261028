@@ -1,0 +1,934 @@
+{
+  "generatedAt": "2026-10-22T00:10:35.611Z",
+  "queries": [
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 8017,
+      "raw": "this.fightEndCb = null;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 8237,
+      "raw": "var e = this.fightEndCb;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 8243,
+      "raw": "this.fightEndCb = null;"
+    },
+    {
+      "pattern": "BattleResultUI",
+      "file": "tools/index.js",
+      "line": 8249,
+      "raw": "t.npcID && 111 == u.getItem(t.npcID, \"npc\").Type ? o(null) : c.default.prefabs.load(\"BattleResultUI/normalBattle\", cc.Prefab, function(i, n) {"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 8254,
+      "raw": "s.resolve = e.fightEndCb;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 8255,
+      "raw": "e.fightEndCb = null;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 13051,
+      "raw": "r.fightEndCb = t;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 13069,
+      "raw": "p.fightEndCb = t;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 13134,
+      "raw": "n.fightEndCb = i;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 13144,
+      "raw": "n.fightEndCb = i;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 13154,
+      "raw": "i.fightEndCb = o;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 13165,
+      "raw": "i.fightEndCb = o;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 13175,
+      "raw": "i.fightEndCb = o;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 13185,
+      "raw": "i.fightEndCb = o;"
+    },
+    {
+      "pattern": "BattleResultUI",
+      "file": "tools/index.js",
+      "line": 15202,
+      "raw": "p.default.prefabs.release(\"BattleResultUI/normalBattle\", cc.Prefab);"
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 18056,
+      "raw": "t.prototype.CheckRoguePVEBattleResult = function() {"
+    },
+    {
+      "pattern": "BattleResultUI",
+      "file": "tools/index.js",
+      "line": 28407,
+      "raw": "c.default.prefabs.load(\"BattleResultUI/kuafuBattle\", cc.Prefab, function(i, n) {"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 28412,
+      "raw": "l.resolve = e.fightEndCb;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 28413,
+      "raw": "e.fightEndCb = null;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 31764,
+      "raw": "if (1 === e.eRet && o.fightEndCb) {"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 31765,
+      "raw": "o.fightEndCb(e);"
+    },
+    {
+      "pattern": "BattleResultUI",
+      "file": "tools/index.js",
+      "line": 52318,
+      "raw": "s.default.prefabs.release(\"BattleResultUI/fubenBattle\", cc.Prefab);"
+    },
+    {
+      "pattern": "BattleResultUI",
+      "file": "tools/index.js",
+      "line": 55143,
+      "raw": "if (t.isSingle) u.default.prefabs.load(\"BattleResultUI/normalBattle\", cc.Prefab, function(i, n) {"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 55148,
+      "raw": "a.resolve = e.fightEndCb;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 55155,
+      "raw": "e.fightEndCb({"
+    },
+    {
+      "pattern": "BattleResultUI",
+      "file": "tools/index.js",
+      "line": 55165,
+      "raw": "u.default.prefabs.load(\"BattleResultUI/\" + i, cc.Prefab, function(i, r) {"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 55170,
+      "raw": "s.resolve = e.fightEndCb;"
+    },
+    {
+      "pattern": "CheckBattleResult",
+      "file": "tools/index.js",
+      "line": 59589,
+      "raw": "BATTLE_END_REWARD: \"User.CheckBattleResult\","
+    },
+    {
+      "pattern": "BATTLE_END_REWARD",
+      "file": "tools/index.js",
+      "line": 59589,
+      "raw": "BATTLE_END_REWARD: \"User.CheckBattleResult\","
+    },
+    {
+      "pattern": "REQ_PVE_BATTLE",
+      "file": "tools/index.js",
+      "line": 59610,
+      "raw": "REQ_PVE_BATTLE: \"User.ReqSelfBattleInfo\","
+    },
+    {
+      "pattern": "ReqSelfBattleInfo",
+      "file": "tools/index.js",
+      "line": 59610,
+      "raw": "REQ_PVE_BATTLE: \"User.ReqSelfBattleInfo\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 59783,
+      "raw": "REQ_LANGHUAN_COMBAT: \"User.enterPVEBattle\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 59784,
+      "raw": "PVE_ACTION: \"User.beginPVEBattle\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 59785,
+      "raw": "INIT_MPPVE_BATTLE: \"User.enterMultiPVEBattle\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 59786,
+      "raw": "START_MPPVE_BATTLE: \"User.startMultiPVEBattle\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 59787,
+      "raw": "MPPVE_ACTION: \"User.beginMultiPVEBattle\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 60010,
+      "raw": "ENTER_PVEDOG_FIGHT: \"User.enterDogPVEBattle\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 60501,
+      "raw": "ROGUE_PVE_BATTLE_END: \"User.CheckRoguePVEBattleResult\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 60506,
+      "raw": "ROGUE_MPPVE_ACTION: \"User.beginRogueMultiPVEBattle\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 60577,
+      "raw": "REQ_ROGUE_PVE_COMBAT: \"User.enterRoguePVEBattle\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 60578,
+      "raw": "ROGUE_PVE_ACTION: \"User.beginRoguePVEBattle\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 60615,
+      "raw": "REQ_DOG_PARTNER_END_BATTLE: \"User.CheckDogPartnerPVEBattleResult\""
+    },
+    {
+      "pattern": "BattleResultUI",
+      "file": "tools/index.js",
+      "line": 67373,
+      "raw": "l.default.prefabs.release(\"BattleResultUI/kuafuBattle\", cc.Prefab);"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 67529,
+      "raw": "this.singleMgr.fightEndCb = e;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 67530,
+      "raw": "this.mpMgr.fightEndCb = e;"
+    },
+    {
+      "pattern": "REQ_PVE_BATTLE",
+      "file": "tools/index.js",
+      "line": 69157,
+      "raw": "r.MessageCenter.on(a.HttpConst.REQ_PVE_BATTLE, function(t, e) {"
+    },
+    {
+      "pattern": "REQ_PVE_BATTLE",
+      "file": "tools/index.js",
+      "line": 69166,
+      "raw": "s.NetMgr.http.sendRequest(a.HttpConst.REQ_PVE_BATTLE, {"
+    },
+    {
+      "pattern": "BATTLE_END_REWARD",
+      "file": "tools/index.js",
+      "line": 69196,
+      "raw": "s.NetMgr.http.sendRequest(a.HttpConst.BATTLE_END_REWARD, h);"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 83499,
+      "raw": "this.fightEndCb = null;"
+    },
+    {
+      "pattern": "BATTLE_END_REWARD",
+      "file": "tools/index.js",
+      "line": 89553,
+      "raw": "a.MessageCenter.on(s.HttpConst.BATTLE_END_REWARD, function(e, o) {"
+    },
+    {
+      "pattern": "BattleResultUI",
+      "file": "tools/index.js",
+      "line": 99330,
+      "raw": "u.default.prefabs.load(\"BattleResultUI/kuafuBattle\", cc.Prefab, function(i, n) {"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 99335,
+      "raw": "a.resolve = e.fightEndCb;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 99336,
+      "raw": "e.fightEndCb = null;"
+    },
+    {
+      "pattern": "BattleResultUI",
+      "file": "tools/index.js",
+      "line": 101438,
+      "raw": "e.isGoodEvilPk ? i(null) : v.default.prefabs.load(\"BattleResultUI/normalBattle\", cc.Prefab, function(e, n) {"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 101443,
+      "raw": "a.resolve = o.fightEndCb;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 101444,
+      "raw": "o.fightEndCb = null;"
+    },
+    {
+      "pattern": "BattleResultUI",
+      "file": "tools/index.js",
+      "line": 110965,
+      "raw": "u.default.prefabs.load(\"BattleResultUI/normalBattle\", cc.Prefab, function(i, n) {"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 110970,
+      "raw": "l.resolve = e.fightEndCb;"
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/index.js",
+      "line": 135400,
+      "raw": "i.MessageCenter.on(\"PVEBattleDataReInit\", function(e, o) {"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 135414,
+      "raw": "this.mgr.fightEndCb = function(t) {"
+    },
+    {
+      "pattern": "BattleResultUI",
+      "file": "tools/index.js",
+      "line": 146793,
+      "raw": "c.default.prefabs.load(\"BattleResultUI/kuafuBattle\", cc.Prefab, function(i, n) {"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 146798,
+      "raw": "l.resolve = e.fightEndCb;"
+    },
+    {
+      "pattern": "fightEnd",
+      "file": "tools/index.js",
+      "line": 146799,
+      "raw": "e.fightEndCb = null;"
+    },
+    {
+      "pattern": "BATTLE_END_REWARD",
+      "file": "tools/scripts3.js",
+      "line": 36355,
+      "raw": "p.MessageCenter.on(c.HttpConst.BATTLE_END_REWARD, this.onNpcFightEnd, this);"
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/scripts3.js",
+      "line": 72036,
+      "raw": "p: \"User.CheckRoguePVEBattleResult\","
+    },
+    {
+      "pattern": "PVEBattle",
+      "file": "tools/scripts3.js",
+      "line": 72037,
+      "raw": "\"User.CheckRoguePVEBattleResult\": {"
+    }
+  ],
+  "functions": [
+    {
+      "name": "on_REQ_PVE_BATTLE_callback",
+      "file": "tools/index.js",
+      "startLine": 69157,
+      "endLine": 69159,
+      "lines": [
+        "r.MessageCenter.on(a.HttpConst.REQ_PVE_BATTLE, function(t, e) {",
+        "1 === e.eRet && o.prepareForBattle(e);",
+        "}, o);"
+      ]
+    },
+    {
+      "name": "on_BATTLE_END_REWARD_callback_NormalRewards",
+      "file": "tools/index.js",
+      "startLine": 89553,
+      "endLine": 89561,
+      "lines": [
+        "a.MessageCenter.on(s.HttpConst.BATTLE_END_REWARD, function(e, o) {",
+        "var i = {}, n = t.getComponent(l.BattleResultMediator);",
+        "n.win = o.win;",
+        "o.hasOwnProperty(\"rewardArray\") && (i.rewards = o.rewardArray);",
+        "o.hasOwnProperty(\"equipObj\") && (i.equips = o.equipObj);",
+        "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);",
+        "i.rewards || i.equips || (n.noRwdNode.active = !0);",
+        "n.setRewards(i);",
+        "}, this);"
+      ]
+    },
+    {
+      "name": "on_BATTLE_END_REWARD_callback_GoodEvilModel_onNpcFightEnd",
+      "file": "tools/scripts3.js",
+      "startLine": 36573,
+      "endLine": 36585,
+      "lines": [
+        "t.prototype.onNpcFightEnd = function(t, e) {",
+        "if (e.goodAndEvilData) if (1 == e.eRet) if (e.win) {",
+        "this.setWinStr(e.goodAndEvilData.prestige, e.goodAndEvilData.contribution, e.goodAndEvilData.addScore);",
+        "this.setWinNpcData(this.npcInfo);",
+        "a.RoleBaseInfo.goodEvilPrestige = e.goodAndEvilData.prestige;",
+        "a.RoleBaseInfo.goodEvilContribution = e.goodAndEvilData.contribution;",
+        "a.RoleBaseInfo.goodEvilNpcLevel = 1;",
+        "this.onTaskFinish();",
+        "} else g.GoodEvilMgr.npcTarget.stopTaunt = !1; else if (4 == e.eRet) {",
+        "g.GoodEvilMgr.clearTask();",
+        "y.default.show(r.getText(6000916));",
+        "}",
+        "};"
+      ]
+    },
+    {
+      "name": "Local1v1Mgr.prototype.startBattle",
+      "file": "tools/index.js",
+      "startLine": 69162,
+      "endLine": 69173,
+      "lines": [
+        "e.prototype.startBattle = function(t, e) {",
+        "void 0 === e && (e = !1);",
+        "var o = p.playerInfo.entity;",
+        "this.isRmd = e;",
+        "s.NetMgr.http.sendRequest(a.HttpConst.REQ_PVE_BATTLE, {",
+        "npcID: t,",
+        "isRmd: e,",
+        "mp: o.mp.remaining,",
+        "gTime: o.totalGameTime.gameTime,",
+        "hgtimes: o.numStuffed",
+        "});",
+        "};"
+      ]
+    },
+    {
+      "name": "DogFightSingMgr.prototype.startBattle",
+      "file": "tools/index.js",
+      "startLine": 31774,
+      "endLine": 31784,
+      "lines": [
+        "e.prototype.startBattle = function(t, e) {",
+        "var o = l.playerInfo.entity;",
+        "this.pID = t;",
+        "h.NetMgr.http.sendRequest(c.HttpConst.REQ_DOG_PARTNER_PVE_BATTLE, {",
+        "fpId: t,",
+        "fRoleID: e,",
+        "mp: o.mp.remaining,",
+        "gTime: o.totalGameTime.gameTime,",
+        "hgtimes: o.numStuffed",
+        "});",
+        "};"
+      ]
+    },
+    {
+      "name": "BossBattleMgr.prototype.startBattle",
+      "file": "tools/index.js",
+      "startLine": 19645,
+      "endLine": 19655,
+      "lines": [
+        "e.prototype.startBattle = function(t, e, o) {",
+        "this.bossHp = o;",
+        "if (t.hasOwnProperty(\"veinObj\")) {",
+        "var i = t.veinObj[1];",
+        "for (var n in i) {",
+        "var r = u.getItem(n, \"acupoint\");",
+        "1 != r.meridians && 2 != r.meridians || u.getItem(r.meridians, \"meridians\").acupoint6.indexOf(parseInt(n)) >= 0 && (i[n] = 0);",
+        "}",
+        "}",
+        "this.prepareForBattleBoss(t, e, o);",
+        "};"
+      ]
+    },
+    {
+      "name": "Local1v1Base.prototype.prepareForBattle",
+      "file": "tools/index.js",
+      "startLine": 69015,
+      "endLine": 69031,
+      "lines": [
+        "e.prototype.prepareForBattle = function(t) {",
+        "this.npcID = t.npcID;",
+        "var e = h.getItem(this.npcID, \"npc\");",
+        "e && 111 == e.Type && (t.getargetType = 1);",
+        "l.parsePlayerData(t);",
+        "this.itemSkills = t.itemSkill;",
+        "var o = l.createPlayerBattleEntity(t);",
+        "o.itemSkills = t.itemSkill;",
+        "o.name = c.getText(\"10562\");",
+        "var i = null;",
+        "i = t.npcArr && t.npcArr.length > 0 ? this.generateNpcData(t.npcArr, t.npcID) : this.npcData;",
+        "var n = new p();",
+        "i.Camp = e.Camp;",
+        "l.initRivalEntity(n, i);",
+        "n.battleID = t.npcID != o.battleID ? t.npcID : t.npcID + 1;",
+        "this.initBattleSystem(o, n, Date.now());",
+        "};"
+      ]
+    },
+    {
+      "name": "DogFightSingMgr.prototype.prepareForBattle",
+      "file": "tools/index.js",
+      "startLine": 31785,
+      "endLine": 31799,
+      "lines": [
+        "e.prototype.prepareForBattle = function(t) {",
+        "r.parsePlayerData(t);",
+        "this.itemSkills = t.itemSkill;",
+        "var e = r.createPlayerBattleEntity(t);",
+        "e.itemSkills = t.itemSkill;",
+        "e.name = a.getText(\"10562\");",
+        "var o = t.dogPartnerData.fpId, i = t.dogPartnerData.fpLv, n = u.MadUtilsTS.getPartner({",
+        "partner2Id: o,",
+        "partner2lv: i",
+        "});",
+        "n.auto = !0;",
+        "var l = s.getItem(o, \"Friend\");",
+        "n.fakePName = l.model;",
+        "this.initBattleSystem(e, n, Date.now());",
+        "};"
+      ]
+    },
+    {
+      "name": "BossBattleMgr.prototype.prepareForBattleBoss",
+      "file": "tools/index.js",
+      "startLine": 19656,
+      "endLine": 19678,
+      "lines": [
+        "e.prototype.prepareForBattleBoss = function(t, e, o) {",
+        "r.parsePlayerData(t);",
+        "this.itemSkills = t.itemSkill;",
+        "var i = r.createPlayerBattleEntity(t);",
+        "i.itemSkills = t.itemSkill;",
+        "i.name = a.getText(\"10562\");",
+        "this.npcID = t.npcID;",
+        "var n = null;",
+        "n = t.npcArr && t.npcArr.length > 0 ? this.generateNpcData(t.npcArr, t.npcID) : this.npcData;",
+        "var l = new s(), c = u.getItem(this.npcID, \"npc\");",
+        "n.Camp = c.Camp;",
+        "r.initRivalEntity(l, n);",
+        "l.battleID = t.npcID != i.battleID ? t.npcID : t.npcID + 1;",
+        "this.godBonus.baseValue = 20 * e;",
+        "i.fdmgBonus.addFinalBonus(this.godBonus);",
+        "i.godBonus = this.godBonus;",
+        "var p = l;",
+        "p.hp.remaining = o;",
+        "p.exp = i.exp;",
+        "p.shenfa.baseValue += Math.floor(.1 * d.SkillTable.getMaxQgLv());",
+        "p.setSkill(p.qingongSkillID, d.SkillTable.getMaxQgLv());",
+        "this.initBattleSystem(i, l, Date.now());",
+        "};"
+      ]
+    },
+    {
+      "name": "B1v1Base.prototype.generateNpcData",
+      "file": "tools/index.js",
+      "startLine": 8093,
+      "endLine": 8137,
+      "lines": [
+        "e.prototype.generateNpcData = function(t, e) {",
+        "var o = {};",
+        "o.NpcID = e;",
+        "var i = u.getItem(e, \"npc\");",
+        "o.NpcName = i.NpcName;",
+        "o.ModelID = i.ModelID;",
+        "o.bili = t[0];",
+        "o.shenfa = t[1];",
+        "o.gengu = t[2];",
+        "o.wuxing = t[3];",
+        "o.exp = t[4];",
+        "o.HP = t[5];",
+        "o.MP = t[6];",
+        "o.Attack = t[7];",
+        "o.Hit = t[8];",
+        "o.Miss = t[18];",
+        "o.Defense = t[9];",
+        "o.face = t[10];",
+        "o.sex = t[11];",
+        "o.Weapon = t[12];",
+        "o.Equip = t[13];",
+        "o.AI = t[19];",
+        "o.jineng = t[14];",
+        "o.qinggong = t[15];",
+        "o.neigong = t[16];",
+        "u.getItem(o.jineng[0], \"skill\").Type == h.FIST ? o.fistSkill = [ o.jineng[0], o.jineng[1] ] : o.fistSkill = [ 1, o.jineng[1] ];",
+        "cc.log(\"NPCLevel>>>>>>>>>>>>>>>:::::::\" + o.jineng[1]);",
+        "o.AttributeType = t[17];",
+        "o.BreakDef = t[20];",
+        "o.InterDamRes = t[21];",
+        "o.Type = i.Type;",
+        "if (t[22]) {",
+        "for (var n = {}, a = 0; a < i.meridians.length; ++a) for (var s = i.meridians[a], l = u.getItem(s, \"meridians\"), c = 1; ;++c) {",
+        "var p = \"acupoint\" + c;",
+        "if (!l.hasOwnProperty(p)) break;",
+        "for (var f = t[22], d = l[p], g = 0; g < d.length; ++g) n[d[g]] = f;",
+        "}",
+        "o.acpLvDic = n;",
+        "}",
+        "o.HardModel = t[23];",
+        "o.fistCo = o.swordCo = o.bladeCo = o.stickCo = o.whipCo = o.hiddenCo = t[24];",
+        "t[25] && (o.excess = t[25]);",
+        "o.skillID2Level = r.MadUtilsTS.getNpcSkLvDic(o);",
+        "return o;",
+        "};"
+      ]
+    },
+    {
+      "name": "BossBattleMgr.prototype.generateNpcData",
+      "file": "tools/index.js",
+      "startLine": 18077,
+      "endLine": 18123,
+      "lines": [
+        "t.prototype.generateNpcData = function(t, e) {",
+        "var o = {};",
+        "o.NpcID = e;",
+        "var i = l.getItem(e, \"npc\");",
+        "o.NpcName = i.NpcName;",
+        "o.ModelID = i.ModelID;",
+        "o.bili = t[0];",
+        "o.shenfa = t[1];",
+        "o.gengu = t[2];",
+        "o.wuxing = t[3];",
+        "o.exp = t[4];",
+        "o.HP = t[5];",
+        "o.MP = t[6];",
+        "o.Attack = t[7];",
+        "o.Hit = t[8];",
+        "o.Miss = t[18];",
+        "o.Defense = t[9];",
+        "o.face = t[10];",
+        "o.sex = t[11];",
+        "o.Weapon = t[12];",
+        "o.Equip = t[13];",
+        "o.AI = t[19];",
+        "o.jineng = t[14];",
+        "o.qinggong = t[15];",
+        "o.neigong = t[16];",
+        "l.getItem(o.jineng[0], \"skill\").Type == a.FIST ? o.fistSkill = [ o.jineng[0], o.jineng[1] ] : o.fistSkill = [ 1, o.jineng[1] ];",
+        "cc.log(\"NPCLevel>>>>>>>>>>>>>>>:::::::\" + o.jineng[1]);",
+        "o.AttributeType = t[17];",
+        "o.BreakDef = t[20];",
+        "o.InterDamRes = t[21];",
+        "o.Type = i.Type;",
+        "if (t[22]) {",
+        "for (var n = {}, r = 0; r < i.meridians.length; ++r) for (var c = i.meridians[r], p = l.getItem(c, \"meridians\"), h = 1; ;++h) {",
+        "var u = \"acupoint\" + h;",
+        "if (!p.hasOwnProperty(u)) break;",
+        "for (var f = t[22], d = p[u], g = 0; g < d.length; ++g) n[d[g]] = f;",
+        "}",
+        "o.acpLvDic = n;",
+        "}",
+        "o.HardModel = t[23];",
+        "o.fistCo = o.swordCo = o.bladeCo = o.stickCo = o.whipCo = o.hiddenCo = t[24];",
+        "t[25] && (o.excess = t[25]);",
+        "t[26] && (o.jineng_trick = t[26]);",
+        "t[27] && (o.excess_trick = t[27]);",
+        "o.skillID2Level = s.MadUtilsTS.getNpcSkLvDic(o);",
+        "return o;",
+        "};"
+      ]
+    },
+    {
+      "name": "BattleResultMediator.prototype.setResult",
+      "file": "tools/index.js",
+      "startLine": 14968,
+      "endLine": 15011,
+      "lines": [
+        "o.prototype.setResult = function(t) {",
+        "this.result = t;",
+        "t.npcID && (this.npcID = t.npcID);",
+        "this.btRound.string = t.data[2] + 1;",
+        "var e = t.data[1];",
+        "this.dmgPercent.string = e + \"%\";",
+        "this.opponentName.string = t.npcID ? t.data[3] : k.RoleOtherInfo.changeInputWordStr(t.data[3]);",
+        "this.win = Boolean(t.data[0]);",
+        "this.esc = Boolean(t.esc);",
+        "var o = null;",
+        "if (this.win) {",
+        "var i = a.getResultItem(e);",
+        "o = \"ui/BattleResult/br_\" + (1 != v.playerInfo.entity.sex ? i.Man.toString() : i.Women.toString());",
+        "this.title.string = s.getText(10751).replace(/\\[e\\]/g, s.getText(i.Description));",
+        "this.description.string = s.getText(i.Evaluate);",
+        "this.dmgLabel.string = s.getText(10835);",
+        "this.judgeFightToKill();",
+        "} else if (this.esc) {",
+        "this.winNode2.active = this.winNode.active = !1;",
+        "this.description.string = s.getText(7337);",
+        "o = \"ui/BattleResult/flee_lose\";",
+        "this.fleeNode.active = !0;",
+        "this.title.node.active = !1;",
+        "} else {",
+        "this.winNode2.active = this.winNode.active = !1;",
+        "this.failNode.active = !0;",
+        "this.noRwdNodeFail.active = !0;",
+        "o = \"ui/BattleResult/br_\" + (1 != v.playerInfo.entity.sex ? \"4\" : \"8\");",
+        "this.title.string = s.getText(10772);",
+        "this.description.string = s.getText(10771);",
+        "this.dmgLabel.string = s.getText(10841);",
+        "this.loseTip.active = !0;",
+        "this.noRwdNode.active = !0;",
+        "2 == S.GSceneMgr.mode && (this.failNodeBtn1.active = !1);",
+        "}",
+        "this.win || m.MessageCenter.dispatch(y.EvName.PARTNER_EVENT, 2);",
+        "var n = this, r = cc.assetManager.getBundle(\"common_s\");",
+        "cc.sys.platform == cc.sys.BYTEDANCE_GAME && r && r.getInfoWithPath(o + \"\", cc.Texture2D) || (r = p.default.common);",
+        "r.load(o + \"\", cc.SpriteFrame, function(t, e) {",
+        "e.addRef();",
+        "n.spriteFrame = e;",
+        "cc.isValid(n.node, !0) ? n.sprite.spriteFrame = e : e.decRef();",
+        "});",
+        "};"
+      ]
+    },
+    {
+      "name": "BattleResultMediator.prototype.setElitSingleResult",
+      "file": "tools/index.js",
+      "startLine": 15012,
+      "endLine": 15054,
+      "lines": [
+        "o.prototype.setElitSingleResult = function(t) {",
+        "this.result = t;",
+        "t.npcID && (this.npcID = t.npcID);",
+        "var e = a.getItem(t.npcID, \"npc\");",
+        "this.btRound.string = t.rounds + 1;",
+        "var o = t.dmgPct;",
+        "this.dmgPercent.string = o + \"%\";",
+        "this.opponentName.string = s.getText(e.NpcName);",
+        "this.win = Boolean(t.win);",
+        "t.hasOwnProperty(\"esc\") && (this.esc = Boolean(t.esc));",
+        "var i = null;",
+        "if (this.win) {",
+        "var n = a.getResultItem(o);",
+        "i = \"ui/BattleResult/br_\" + (1 != v.playerInfo.entity.sex ? n.Man.toString() : n.Women.toString());",
+        "this.title.string = s.getText(10751).replace(/\\[e\\]/g, s.getText(n.Description));",
+        "this.description.string = s.getText(n.Evaluate);",
+        "this.dmgLabel.string = s.getText(10835);",
+        "} else if (this.esc) {",
+        "this.winNode2.active = this.winNode.active = !1;",
+        "i = \"ui/BattleResult/flee_lose\";",
+        "this.description.string = s.getText(7337);",
+        "this.fleeNode.active = !0;",
+        "this.title.node.active = !1;",
+        "} else {",
+        "this.winNode2.active = this.winNode.active = !1;",
+        "this.failNode.active = !0;",
+        "i = \"ui/BattleResult/br_\" + (1 != v.playerInfo.entity.sex ? \"4\" : \"8\");",
+        "this.title.string = s.getText(10772);",
+        "this.description.string = s.getText(10771);",
+        "this.dmgLabel.string = s.getText(10841);",
+        "this.loseTip.active = !0;",
+        "this.noRwdNode.active = !0;",
+        "this.failNodeBtn2.active = !1;",
+        "}",
+        "this.winNodeBtn.active = !1;",
+        "this.winNodeBtn3.active = !1;",
+        "var r = this;",
+        "p.default.common.load(i + \"\", cc.SpriteFrame, function(t, e) {",
+        "e.addRef();",
+        "r.spriteFrame = e;",
+        "cc.isValid(r.node, !0) ? r.sprite.spriteFrame = e : e.decRef();",
+        "});",
+        "};"
+      ]
+    },
+    {
+      "name": "BattleResultMediator.prototype.setRewards",
+      "file": "tools/index.js",
+      "startLine": 15055,
+      "endLine": 15085,
+      "lines": [
+        "o.prototype.setRewards = function(t) {",
+        "var e = t.rewards, o = t.equips, i = t.materias;",
+        "if (e) for (var n in e) {",
+        "var r = a.getItem(n, \"item\");",
+        "(S = (y = new cc.Node()).addComponent(cc.Label)).fontSize = 25;",
+        "S.lineHeight = 30;",
+        "S.string = s.getText(r.Name) + \" x\" + e[n];",
+        "S.node.color = cc.color(M.PackageModel.getItemLabelColor(r));",
+        "this.rewardContainer.addChild(y);",
+        "}",
+        "if (o) for (var l in o) {",
+        "var c = h.InventoryModel.parseEq(parseInt(l), o[l]), p = E.EqUtils.equipChangeNormalEq(l, c), u = a.getItem(c.itemID, \"item\"), f = s.getText(u.Name);",
+        "f += h.InventoryModel.getEqQuality(c.numAttr);",
+        "(S = (y = new cc.Node()).addComponent(cc.Label)).fontSize = 25;",
+        "S.lineHeight = 30;",
+        "S.node.color = cc.color(M.PackageModel.getItemLabelColor(p));",
+        "S.string = s.getText(f) + \" x\" + c.num;",
+        "this.rewardContainer.addChild(y);",
+        "}",
+        "if (i) for (var d = h.InventoryModel.crystalDic, g = 0; g < i.length; g++) {",
+        "var m = d[i[g]];",
+        "if (m) {",
+        "var y, v = a.getItem(m.itemId, \"item\").quality, _ = a.getItem(v, \"quality_color\").color, S = (y = new cc.Node()).addComponent(cc.Label);",
+        "y.color = cc.color(_);",
+        "S.fontSize = 25;",
+        "S.lineHeight = 30;",
+        "S.string = h.InventoryModel.getCrystalName(i[g]);",
+        "this.rewardContainer.addChild(y);",
+        "}",
+        "}",
+        "};"
+      ]
+    }
+  ],
+  "sendSites": [
+    {
+      "name": "CheckBattleResult_sendSite",
+      "file": "tools/index.js",
+      "target": "User.CheckBattleResult (HttpConst.BATTLE_END_REWARD)",
+      "startLine": 69186,
+      "endLine": 69206,
+      "lines": [
+        "hpmax: c.hp.finalValue,",
+        "win: n,",
+        "actionArr: this.actionArr,",
+        "seed: t.seed,",
+        "aDmgReceived: t.data[4],",
+        "bDmgReceived: t.data[5],",
+        "itemSkill: this.itemSkills,",
+        "forwards: o",
+        "};",
+        "this.isRmd ? o.push(Math.floor(1e5 * Math.random())) : Math.random() < .5 && o.shift();",
+        "s.NetMgr.http.sendRequest(a.HttpConst.BATTLE_END_REWARD, h);",
+        "};",
+        "return e;",
+        "}(c.Local1v1Base);",
+        "o.Local1v1Mgr = h;",
+        "cc._RF.pop();",
+        "}, {",
+        "\"../../core/events/MessageCenter\": \"MessageCenter\",",
+        "\"../../gui/battle/resultscripts/rewardscripts/NormalRewards\": \"NormalRewards\",",
+        "\"../../models/vos/PlayerInfo\": \"PlayerInfo\",",
+        "\"../../net/HttpConst\": \"HttpConst\","
+      ]
+    },
+    {
+      "name": "ReqSelfBattleInfo_sendSite",
+      "file": "tools/index.js",
+      "target": "User.ReqSelfBattleInfo (HttpConst.REQ_PVE_BATTLE)",
+      "startLine": 69156,
+      "endLine": 69176,
+      "lines": [
+        "o.isRmd = !1;",
+        "r.MessageCenter.on(a.HttpConst.REQ_PVE_BATTLE, function(t, e) {",
+        "1 === e.eRet && o.prepareForBattle(e);",
+        "}, o);",
+        "return o;",
+        "}",
+        "e.prototype.startBattle = function(t, e) {",
+        "void 0 === e && (e = !1);",
+        "var o = p.playerInfo.entity;",
+        "this.isRmd = e;",
+        "s.NetMgr.http.sendRequest(a.HttpConst.REQ_PVE_BATTLE, {",
+        "npcID: t,",
+        "isRmd: e,",
+        "mp: o.mp.remaining,",
+        "gTime: o.totalGameTime.gameTime,",
+        "hgtimes: o.numStuffed",
+        "});",
+        "};",
+        "e.prototype.endBattle = function(t, e) {",
+        "e && e.addComponent(l.NormalRewards);",
+        "var o = [ Math.floor(1e5 * Math.random()), Math.floor(1e5 * Math.random()) ], i = t.npcID, n = t.data[0], r = t.esc, c = p.playerInfo.entity, h = {"
+      ]
+    }
+  ],
+  "answers": {
+    "Q1": [
+      "tools/index.js:69157: r.MessageCenter.on(a.HttpConst.REQ_PVE_BATTLE, function(t, e) {",
+      "tools/index.js:69158: 1 === e.eRet && o.prepareForBattle(e);",
+      "tools/index.js:69159: }, o);",
+      "总结：在 REQ_PVE_BATTLE (User.ReqSelfBattleInfo) 的回调中，若应答缺少 eRet 字段或 e.eRet !== 1，则不会调用 prepareForBattle(e)，直接无操作提前退出。",
+      "若进入 prepareForBattle(e) (tools/index.js:69015)，该函数紧接着执行：",
+      "tools/index.js:69016: this.npcID = t.npcID;",
+      "tools/index.js:69019: l.parsePlayerData(t);",
+      "tools/index.js:74921: t.userAccount = e.baseValueAy[0];",
+      "tools/index.js:74807: y.getItem(t.WeapToSkill[u.FIST], ...)",
+      "若应答中缺失 baseValueAy（位于 tools/index.js:74921）或 WeapToSkill（位于 tools/index.js:74807），客户端在解构属性时会直接报 TypeError 抛错。"
+    ],
+    "Q2": [
+      "tools/index.js:69196: s.NetMgr.http.sendRequest(a.HttpConst.BATTLE_END_REWARD, h);",
+      "调用链层次：",
+      "直接发送函数：Local1v1Mgr.prototype.endBattle (tools/index.js:69174-69197)",
+      "往上一层：B1v1Base.prototype.doComplete 中 tackleResult 的 promise 回调 (tools/index.js:8219-8221)",
+      "证据：tools/index.js:8219: this.tackleResult(u).then(function(e) {",
+      "证据：tools/index.js:8220: t.endBattle(u, e);",
+      "往上两层：B1v1Base.prototype.onBattleComplete (tools/index.js:8191-8193)",
+      "证据：tools/index.js:8192: this.bs.esced || this.checkComplete() ? this.doComplete() : this.donotComplete();",
+      "驱动事件源：BtScPanelBase.prototype.gameComplete (tools/index.js:14161-14166) 派发 GAME_COMPLETE 事件（被 B1v1Base 监听: tools/index.js:8172）。"
+    ],
+    "Q3": [
+      "结论：战斗场景是客户端本地完全模拟，没有服务器逐帧交互。",
+      "证据1（随机数种子与本地战斗系统实例化）：tools/index.js:8145: i = new p(Number(o), t, e, this.pvpType);，并在本地传入 Date.now() 或应答种子 seed 创建 PCG 随机数生成器本地运行战斗引擎 (BattleSystem)。",
+      "证据2（本地状态推进）：tools/index.js:8175: i.start(); 本地 BattleSystem 自行执行技能释放、回合运算与 buff 结算 (tools/index.js:16016-16076)。",
+      "证据3（战斗动作仅本地入队并延迟结算）：tools/index.js:69101: this.actionArr.push(t); 用户点击操作全在客户端收集到 actionArr 中，直至整场战斗结束后，在 endBattle (tools/index.js:69188) 一次性将 actionArr、seed、win、aDmgReceived 打包发送给服务器 CheckBattleResult 进行单次验算结算。过程中没有任何网络帧同步。"
+    ]
+  },
+  "unverified": [],
+  "out_of_scope": []
+}

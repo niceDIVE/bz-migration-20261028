@@ -1,0 +1,11 @@
+# User.ReqGiveSupport   (HttpConst.LIKE)
+
+## 请求点 113973: s.NetMgr.http.sendRequest(a.HttpConst.LIKE, e, function() {}, !1, !1);
+   113965: };
+   113966: this.lastContent = o;
+   113967: s.NetMgr.http.sendRequest(a.HttpConst.CREATE_POST, i);
+   113968: };
+   113969: t.prototype.reqLike = function(t) {
+   113970: var e = {
+   113971: id: t
+   113972: };

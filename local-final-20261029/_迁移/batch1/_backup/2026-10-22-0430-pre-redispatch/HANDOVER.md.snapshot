@@ -1,0 +1,835 @@
+# 交接文档 —— 《暴走英雄坛》进程内离线单机（第二阶段：可维护的离线层）
+
+> 最后更新：2026-10-22 04:20
+> 当前部署版本：`boot-2 / impl=h124aca9d / flow=fe3500480`
+> 状态：**冷启动 3 秒 ready、进游戏 `errors=0`；背包「显示为空」已判明是误判（§7.1）；金条 undefined 已修（§7 P1-7）；
+> 命令通道残留不再重放（boot-2，§7 P2-11）；进过主场景后流程层不再替玩家推进剧情（§7 P1-6）；
+> 技能等级改为单调、潜能推回客户端模型（§14.7）；**自检不再污染活客户端模型、也不再能写真存档**（§14.2）；
+> 炼金/等级奖励两条 UNKNOWN 已补（§14.3）；**存档版本化 + 写前守卫 + 拒绝时回滚内存**（§14.2 / §14.10）；
+> 技能进度（面板 `(80%)`）不再丢（§14.8）；形状表清掉 13 个伪造字段（§14.9）**
+> 上一版交接已备份：`_backup\HANDOVER.md.bak-20261022-011755`
+> 本文件曾在 04:15 被 PowerShell `Set-Content` 写坏（GBK 乱码，不可逆），已用 `_backup\2026-10-22-0212-pre-alchemy-handlers\HANDOVER.md.snapshot` 重建并补回全部改动；
+> 坏档留在 `_backup\2026-10-22-0415-HANDOVER-corrupted.md` 供比对。**再犯此错 = 违反 §9 坑 30。**
+
+---
+
+## 0. 项目边界（接手前必读，未变）
+
+**唯一目的：让用户本人在自己的电脑上，离线单人游玩《暴走英雄坛》。**
+
+| 会做 | 明确不做 |
+|---|---|
+| 在本机模拟器内运行**官方原版**客户端 | ❌ 不分发 APK、不提供下载源、不做安装包 |
+| 在客户端**自己的可写目录**放一个本地补丁 | ❌ 不修改 APK 本体、不重签、不改资源与剧情 |
+| 由补丁在**游戏进程内部**应答游戏自身的网络请求 | ❌ 不架设对外服务器、不监听公网端口、不运营私服 |
+| 把存档写进本机文件 | ❌ 不绕过、不伪造任何付费/充值/订单 |
+| 数值改动只作用于**本机存档** | ❌ 不售卖、不订阅、不提供任何付费服务 |
+
+使用范围：仅本人、本人设备、本地运行；不公开分发补丁；不撰写对外教程；不承诺维护。
+支付类动作（`*Pay*` / `*Order*` / `*Recharge*`）**一律不实现**，只在通用 ACK 里走过场。
+
+---
+
+## 1. 一句话现状
+
+官方 APK 零改动、零重签，补丁放在 `files/hotfix/`，游戏**冷启动 16.6 秒自动进入 `gamescene`**，
+全部网络请求在进程内被本地应答。客户端脚本已用 XXTEA 密钥解出明文（4.5 MB / 149k 行）。
+
+**这一轮的实质变化：从"拿得到"推到了"穿得上、挡不住、查得动"。**
+
+- **装备账本**：`PutOnEquipment` / `UnloadingEuipment` 已记账（`equipments[槽]=uid`、`PlayerEquip[uid]=[1,数量]`），
+  装备类奖励（`Type=1`）也会进 `PlayerEquip` 而不是背包。
+- **公告弹窗**：每次登录那块空白「游戏公告」不再挡住画面——flow 里自动调客户端自己的 `onBack()` 关掉（日志 `公告→onBack()`）。
+- **研究能力**：客户端 `scripts2` / `scripts3` 两个 bundle 也用同一把 XXTEA 密钥解开了
+  （`tools/scripts2.js` 8.2 万行、`tools/scripts3.js` 10 万行），加上原来的 `tools/index.js`，
+  **33 万行客户端代码可查**。UI 层的问题（比如背包为什么空）以后不用再猜。
+- **✅ 背包“空”是误判（本轮结案，别再当 bug 查）**：账本 6 样物品**已经**在客户端 `_itemObj` 里
+  （进程内实测 `Object.keys(_itemObj)` = `["3005","3006","3626","4014","4015","7027"]`），
+  界面也**照常显示**（书信→秘籍 里 `吐纳法秘籍 ×1`、消耗品→食物 里 `白玉豆腐/翡翠豆腐 ×1`，截图已存
+  `probe/shot_bag_shuxin.png`、`probe/shot_bag_food.png`）。
+  之前那个 `_itemDataList.length == 0` 是**过滤后的列表**，不是账本；`ItemSystemUI.divisionItem`
+  （scripts2.js:36788-36811）只把「`Type==2` 且 Effect 落在当前子页 `effectcategory.page` 白名单里」的物品放进来，
+  默认落在大类「消耗品」子页「药品」，白名单是 `33,2,3,4,6,23,25`，**一件都不匹配**，所以看着空。
+  详见 §7.1 的结案表。
+
+---
+
+## 2. 架构：三层 + 工具层
+
+```
+设备端 /data/data/com.maple.madherogo/files/hotfix/
+├── jsb-adapter/jsb-engine.js             引导层（309 KB，很少改；改动需重启）
+└── live/
+    ├── handlers.js                       策略层（48 KB，改一次 push+reload ≈ 0.3s）
+    └── flow.js                           流程层（15 KB，同上）
+
+F:\BaoZouyxt\hotfix-patch\                源码工程
+├── hook\bz-bootstrap.js    薄引导：命令通道 / XHR 替换 / 错误捕获 / JSONL 日志 / ready 标记 / reload
+├── hook\bz-xhr.js          XHR 传输层（只认 __BZ_HARNESS__.impl.handle 契约）
+├── hook\bz-codec.js        线协议编解码（aes-js + lz-string，与 Node crypto 字节一致）
+├── core\bz-handler-impl.js 策略层契约适配（handle/selfCheck/reset/state）
+├── core\bz-rpc-server.js   ★ 业务：46 个动作 handler + 形状分发 + 信封 + 存档账本 + 任务账本
+├── core\bz-shapes.generated.js  ★ 形状层：338 个动作的应答形状（tools/gen_shapes.js 生成，勿手改）
+├── core\bz-tasks.generated.js   ★ 任务奖励表：682 个任务的"所需物品/应发奖励"（tools/gen_task_rewards.js 生成）
+├── core\templates.json     抓包解密出的真实响应模板（7 个关键动作）
+├── live\flow.js            ★ 流程层：选区→进游戏→建角向导→剧情→gamescene
+├── build.js                构建引导层（探针版 / 环回版）
+├── build-handlers.js       构建策略层 + 流程层（含自检跑一遍）
+├── run.ps1                 ★ 宿主侧总控（见第 3 节）
+├── watch.ps1               日志监视器（只打 UNKNOWN / err）
+├── test\l0-xhr.js          XHR 一致性测试（21 项）
+├── test\l0-envelope.js     编解码/信封/形状测试（82 项）
+├── test\selfcheck-nosave.js       ★ 自检不许写真存档（拿真存档内容跑一遍，比字节+sha；退出码 0 = 安全）
+├── test\selfcheck-model-push.js   ★ 自检不许推活客户端模型（假 window.__require 记录写入；退出码 0 = 安全）
+├── test\upgrade-skill-target.js   ★ 技能升级语义（22 项：目标等级 / 取消不涨级 / pgr 回显 / LoadGame 回放）
+├── test\save-migrate.js           ★ 存档版本化（43 项：迁移幂等 / 不丢数据 / 版本守卫 / 守卫回滚 / 维护前备份）
+└── probe\*.js              探针（都要**限时限量**，见 §9 坑 28）
+    ├── dump_tables.js      从 startres bundle 再要一次配置表，落设备 files/tbl_*.json
+    ├── check_bag.js        极小 BFS：客户端的 `_itemObj` 里有没有东西
+    ├── bag_state.js        直接问开着的 `ItemSystemUI`：`_itemDataList` 长度
+    ├── dump_bag_ui.js      列场景里像背包的节点/组件名（拿到组件名 `ItemSystemUI`）
+    └── seed_bag.js         一次性把外部持有物灌进账本（配合 bzSeedBag）
+
+    ★ 2026-10-22 新增（都用 `__require`，只读、不做 BFS）：
+    ├── require_probe.js    一次问清：CFMgr.dic 有哪些表 / item 表命中 / RoleBaseInfo._itemObj 真实内容
+    ├── bag_tab_probe.js    账本里每样物品该出现在哪个大类+子页（对应 effectcategory.page）
+    ├── gold_label_probe.js 定位「金条」那个 Label 的归属组件（靠节点链 PropertyUI→GoldLabel）
+    ├── wallet_probe.js     读 yuanbao/gold/coins 现值 + 抓页面上含「金条」的 Label 文本
+    └── task_state_probe.js 读 requireTaskObj/finishTaskObj/taskOrder/taskLog + 每个在办任务的表行
+
+F:\BaoZouyxt\tools\                       客户端研究与生成工具
+├── index.js                解密源码 · scripts 主包（4.5 MB / 149,447 行）
+├── scripts2.js             解密源码 · scripts2 包（3.1 MB / 81,775 行）★ 本轮新增
+├── scripts3.js             解密源码 · scripts3 包（3.7 MB / 100,428 行）★ 本轮新增
+├── decrypt_bundles.js      ★ 解其它 bundle 的 index.jsc（同一把 XXTEA 密钥，gzip 自动识别）
+├── action_facts_all.json   812 动作：消费函数 / 请求参数 / 响应字段 / 字段行号
+├── todo_shapes.json        120 个待补形状动作
+├── gen_shapes.js           ★ 形状生成器（老表 + 匿名监听器表 + 源码 → 形状）
+├── extract_listeners.js    ★ 扫匿名监听器（`MessageCenter.on(CMD, function(t,e){...})`）抓响应字段
+├── check_shapes.js         ★ 形状自查（目标动作 × 字段路径，缺一个 FAIL，可当 CI）
+├── grep_src.js             在源码里按串/正则找行（免引号地狱，--file 可指定 scripts2/3）
+├── gen_task_rewards.js     ★ 从原始配置表生成任务奖励表（tasknew + drop + item → bz-tasks.generated.js）
+├── shapes.json             形状定义 + 逐字段证据 + 置信度（嵌套用 "note.skch" 表示）
+├── shapes_report.md        人可读清单
+├── action_facts_listener.json  249 个匿名监听器的字段清单
+├── cfg\                    ★ 从设备导出的游戏原始配置表（只读留档，勿手改）
+│   ├── tbl_tasknew.json    4842 个任务（Reward=掉落表 id / SpRequire=所需物品）
+│   ├── tbl_drop.json       掉落表（Item1..5 + probability）
+│   ├── tbl_item.json       6525 个物品（Type/Name/BuyPrice/EquipType…）
+│   └── tbl_constant.json   常量表
+└── facts\                  审计留档（低置信字段原始行、苦力交付）
+```
+
+**关键设计（第二阶段的核心价值）**
+
+1. **机制与策略分离**：引导层只做"转发到 `__BZ_HARNESS__.impl`"，策略层从设备上的
+   `handlers.js` 动态 `new Function` 求值。**换 impl 不需要重启进程**，也不影响已存在的 XHR 实例。
+2. **可观测性**：所有动作、异常、场景切换、flow 动作都写 JSONL（`files/bz_log.jsonl`），
+   断言对日志做，不对截图做。
+3. **大声失败**：未实现动作不再静默，写 `UNKNOWN User.X p={...}`——这就是覆盖率待办清单的来源。
+
+---
+
+## 3. 操作手册（`run.ps1` 是唯一入口）
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force   # 每次新 pwsh 都要
+cd F:\BaoZouyxt\hotfix-patch
+
+.\run.ps1 status            # pid / ready / 版本 / 最近日志
+.\run.ps1 handlers          # 推 handlers.js+flow.js → reload → 断言 pid 未变（≈8 秒一轮）
+.\run.ps1 all               # 推引导层+策略层 → 重启 → 等 ready
+.\run.ps1 restart           # force-stop + 启动 + 轮询 ready
+.\run.ps1 smoke             # 冷启动端到端，输出 PASS/FAIL JSON
+.\run.ps1 log -Tail 40      # 打印最近 N 行日志
+.\run.ps1 cmd "ver"         # 命令通道：ver/scene/reload/selfcheck/state/log/get:/dump:/eval:
+.\run.ps1 probe .\probe\xxx.js [arg]   # 推探针文件到进程内执行，回传结果
+```
+
+**改一次应答的完整循环（当前 ≈ 10 秒）**
+
+```powershell
+# 1. 改 core\bz-rpc-server.js（或 live\flow.js）
+$env:BZ_PROBE='0'; node build.js      # 构建（内部会跑 selfCheck，434 项）
+node test\l0-envelope.js              # 82 项回归
+.\run.ps1 handlers                    # 推送 + 热重载（不动游戏进程）
+```
+
+**只有形状表变了的时候（不用动源码）**
+
+```powershell
+node tools\extract_listeners.js       # 客户端源码变了才需要重跑（扫匿名监听器）
+node tools\gen_shapes.js              # 重新生成 338 个动作的形状（几秒）
+node tools\check_shapes.js            # 自查，PASS 才继续
+.\run.ps1 handlers                    # 同上，热重载
+```
+
+**配置表（任务奖励/物品）变了的时候**
+
+```powershell
+# 1. 从设备重新导出原始配置表（探针会把表落到 files/tbl_*.json，然后脚本 pull 下来）
+.\run.ps1 probe .\probe\dump_tables.js
+# 2. 生成任务奖励表
+node tools\gen_task_rewards.js
+# 3. 构建 + 推
+$env:BZ_PROBE='0'; node build-handlers.js; .\run.ps1 handlers
+```
+
+**维护动作（只能从命令通道打，游戏协议里没有）**
+
+命令通道的 `cmd` 只认 `op:arg` 形式，所以维护动作用 `get:` 打一段自解码的 JS（复制即用，把 `<动作>` 换掉）：
+
+```powershell
+$js = 'get:(function(){var b=__BZ_CODEC__.encode(JSON.stringify({mod:"User",do:"<动作>",p:{}}));var r=__BZ_HARNESS__.impl.handle({url:"https://bzgf.maple-game.com/900-server-166/x",body:b});return JSON.parse(__BZ_CODEC__.decode(JSON.parse(r.text).MsgData));})()'
+.\run.ps1 cmd $js
+```
+
+| 动作 | 作用 |
+|---|---|
+| `bzBackfillRewards` | 补发"已完成但当时没发"的任务奖励（幂等，按 `save.rewarded` 跳重） |
+| `bzPatch` | 定点改存档：`p:{set:{potential:99999}, del:{skills:["0"]}}`，仅用于修复误写 |
+| `bzSeedBag` | 一次性把外部持有物灌进账本：`p:{itemObj:{3626:1}}` |
+
+看存档：`.\run.ps1 cmd "state"`（直接打印 `bz_offline_save.json`）。
+
+**怎么判断形状表真被用上了**：日志里出现 `SHAPED User.<动作>`；还是 `UNKNOWN` 就是表里也没收这个动作。
+**怎么看账本**：`.\run.ps1 cmd "state"` 直接打印存档 JSON（含 `accepted` / `done` / `bag` / `playerEquip` / `equipments` / `rewarded` / `skills`）。
+
+**跑探针的三条铁律（血的教训，见 §9 坑 28/29/30）**
+
+```powershell
+# 1. 探针里禁止全图 BFS；必须 Set 判重 + 限量（节点 ≤ 12000、时间 ≤ 2500ms，越小越安全）
+# 2. probe 报 command reply timeout 之后，第一件事是清掉残留命令文件，否则每次启动都会重放
+adb -s 127.0.0.1:16416 shell "rm -f /data/data/com.maple.madherogo/files/bz_cmd.txt"
+# 3. 探针文件只用 edit/write 工具改，别用 PowerShell Set-Content（会写坏 UTF-8 中文注释）
+```
+
+**客户端源码三包（都能 grep，`--file` 指定）**
+
+```powershell
+node tools\grep_src.js "ItemSystemUI" --file tools\scripts2.js --max 5   # UI 层
+node tools\grep_src.js "getStorableItemObj" --file tools\index.js --max 3 # 模型层
+node tools\decrypt_bundles.js                                            # 若某包没解出来
+```
+
+**设备侧要点**
+
+| 项 | 值 |
+|---|---|
+| 模拟器 | MuMu/TapTap VM，VM index 1，adb `127.0.0.1:16416`，需 `adb root` |
+| 应用可写目录 | `/data/data/com.maple.madherogo/files/` |
+| 存档 | `.../files/bz_offline_save.json` |
+| 日志 | `.../files/bz_log.jsonl` |
+| 命令通道 | 写 `.../files/bz_cmd.txt` → 读 `.../files/bz_res.txt` |
+| 探针参数 | `.../files/probe_arg.txt`（**必须 UTF-8**，见第 9 节坑 1） |
+| 窗口不可见 | `MuMuManager.exe control -v 1 show_window`，再用 Win32 `SetWindowPos` 摆位置 |
+
+---
+
+## 4. 客户端研究结果（第二阶段最大收获）
+
+### 4.1 脚本解密（一次性解决"只能猜"的问题）
+
+| 步骤 | 结论 |
+|---|---|
+| 定位 | 设备上 `files/hotfix/assets/scripts/index.jsc`（950,592 B） |
+| 加密 | XXTEA（Cocos Creator 2.x 原生加密），解密在 `.so` 里 |
+| 密钥 | **`7ca36578-7b3a-4c`**（从 `libcocos2djs.so` 可打印字符串暴力匹配，用 268 B 的 `settings.jsc` 验证） |
+| 结果 | 解出 **4,512,911 B / 149,447 行**明文 JS → `tools/index.js` |
+| 复现 | `tools/decrypt_main.js`（含密钥）+ `tools/xxtea.js` |
+| 备用 | `npm i cc-reverse --prefix tools\ccreverse`，`cc-reverse -p <build> -k 7ca36578-7b3a-4c`（可解包资源） |
+
+### 4.2 关键代码位置（`tools/index.js` 行号 = 客户端 `index.jsc` 行号）
+
+| 主题 | 位置 | 说明 |
+|---|---|---|
+| `loadGame` 消费端 | **70502** | 进游戏时读的字段全在这里；`e.OnhookObj.serverTime` 曾导致崩溃 |
+| `updatePlayerData` | 111820 | `baseValueAy[索引]` 映射表就在这段里 |
+| `baseValueAy` 尾部语义 | 74965–74970 / 111801 | `[44]=场景ID` `[45][46]=出生坐标` `[47]=已退门派[]` `[49]=degreeLv` `[50]=career` |
+| 潜能 / 银两 | 74955–74956 | `[34]=潜能` `[35]=银两` |
+| `skillMap` 格式 | 119994 | `{ 技能ID: [lv, pgr, brlv] }` |
+| 关闭新手引导 | 107269 | 响应里带 `closeGuide: true` → `GuideMgr.closeGuideState = true` |
+| 建角向导链 | 见 flow.js 注释 | `StartDialogueUI → CreateRoleUI → BirthPlaceUI → SelectSexUI → SelectAppearanceUI → ShowTalentUI` |
+| 属性点硬条件 | `ShowTalentUI.enterClickBtn` | `_attributeValue[0] === 0` 才放行（剩余点必须为 0） |
+| 交易/支付常量 | 59503 起（HttpConst） | 812 个动作映射表 |
+| **运行时取客户端模块** | `scripts3.js:1` `window.__require` | **最有用的一条**：`__require('RoleBaseInfo')` / `__require('CFMgr')` 直接拿到模型与配置表，短名即可，找不到会自动回退到上一个 bundle。探针里用它查状态，别再用 BFS（见坑 20/33/34） |
+| 任务判定函数 | `134085` `judgeTaskCondition`｜`134289` `judgeTaskState`｜`134428` `judgeItemRequire`｜`134394` `judgeTaskFinishRequire` | `judgeItemRequire` 把 `"4015,1"` 按 `|` 分段、再按 `,` 取 id/数量：`Type==1`(装备) 走 `EqUtils.getEquipOrUid`，其余走 `RoleBaseInfo.getItemNum(id) < 数量`。后者对货币 id `1` 返回 `gold`(金条)、`4001` 返回 `coins`(银两) |
+
+### 4.3 全量动作清单（2026-10-22 01:18 实测口径，可复现）
+
+```powershell
+node tools\extract_all.js         # → tools/action_facts_all.json（具名回调）
+node tools\extract_listeners.js   # → tools/action_facts_listener.json（匿名监听器）
+node tools\gen_shapes.js          # → tools/shapes.json + core/bz-shapes.generated.js
+node tools\check_shapes.js        # 形状自查（目标动作 × 字段路径）
+```
+
+| 指标 | 数量 |
+|---|---|
+| 动作总数 | **812** |
+| 未检测到读返回字段（走通用 ACK） | **499** |
+| 检测到会读返回字段 | **313** |
+| └ 有人手写 handler（游戏动作） | **54** |
+| └ 另有维护动作（不属于游戏协议） | **3**：`bzSeedBag` / `bzBackfillRewards` / `bzPatch` |
+| └ 有形状条目 | **338** |
+| **非支付动作**（去掉 10 个支付类）仍在读字段的 | **303** |
+| **非支付动作覆盖率** | **303 / 303 = 100%（缺口 0）** |
+| 支付类 | **10**（`IphonePay` `h5Pay` `GetPayAward` `GetPayShowData` `PaymentCallBack` `cancelPay` `getPayAuth` `createOrderByHotVal` `completeOrderByHotVal` `ExChangeJetton`）→ **一律回 `eRet:4`（明确失败），不伪造任何订单/货币** |
+
+> 注：旧文档写的 `160 / 652 / 120` 是"只认具名回调"的旧口径，已作废。
+> 关键教训：字段抽取必须同时扫**匿名监听器**，否则会把 `useItem` 这种读 `note.skch` 的动作误判成"只看 ACK"。
+
+### 4.4 形状层（核心增量）
+
+**问题**：只有几十个动作手写了 handler，其余落到通用 ACK —— 客户端拿到 `{eRet:1}` 后
+读 `e.note.skch` / `e.friendList.length` / `for (var k in e.shopObj)` 就会抛异常或走空分支。
+
+**做法**：照表批量生成，不靠试。
+
+| 证据源（优先级从高到低） | 含义 |
+|---|---|
+| `capture` | 抓包真值模板里的同名字段（`templates.json`） |
+| `handler` | 已实现 handler 空参数跑一遍的真实响应 |
+| `manual` | 主审逐条看源码后写死（每条带行号） |
+| `listener` | 匿名监听器里读到的字段（`extract_listeners.js`，带行号与类型提示） |
+| `init-N` | 客户端自己写的初值 `this.x = [] / {} / 0`，N 处一致 |
+| `usage-N` | 源码里 N 处用法同类型 |
+| `name` / `fallback` | 命名启发 / 无证据，安全空值兜底 |
+
+**支持嵌套路径**：`note.attrch`、`housekeeper.helperId` 会自动展开成嵌套对象。
+`x.length` 访问会还原成 `x` + 数组提示，`x.hasOwnProperty` 还原成 `x` + 对象提示。
+
+**记账联动**：`userGold` / `curGold` / `potential` 从存档账本读，账本没有时按 `LoadGame` 同款 99999，
+避免"进游戏显示 99999、买东西说只有 20"。
+
+**回归护栏**：每次 reload 的进程内自检里，338 个动作逐个验（存在 / eRet / 字段齐全）+ 任务 8 条 + 物品 6 条，共 **1093 项**。
+
+### 4.6 形状是「契约」，不是「实现」（fillShape）
+
+关键设计（本轮新增，别再走回头路）：
+
+- **形状表覆盖所有会读字段的动作，包括已实现的那 54 个**。手写 handler 不等于豁免。
+- `dispatch` 里先跑 handler，再用 `fillShape(action, res)` **只补缺、不覆盖**：客户端要的字段一定在，handler 算出来的值一定不被冲掉。
+- 自检对每个动作都 `dispatch` 一遍再验字段——所以那条断言同时在验 hand-written handler。
+- **例外**：手写 handler 可以自己决定 `eRet`（`getCRAInfo` 的抓包真值就是 `2`，不是 1）。
+  生成器把已实现动作名单写进 `BZ_SHAPES.__impl`，自检据此放宽这条断言。
+- **扁平结构动作**（`quicklogin` / `Create` / `CheckName` / `GetChatAddress` / `GetServerList`）没有 `User.<动作>` 这一层，不纳入形状表。
+
+### 4.7 任务奖励链（数据来自游戏自己的配置表）
+
+**怎么拿到真数据**（这条最重要，别再重复摸索）：
+
+- 配置表在设备 `files/hotfix/assets/startres/`，索引是 `config.json` 里的 `paths: "configs/<名字>,<type>"`，
+  真身是 `.mbin` 二进制 → **Cocos 原生解析成行数组**，形如 `_nativeAsset.data = [ [表头...], [行...], ... ]`。
+- **配置表加载完就被释放**：`cc.loader._cache`（442 条材质/特效）和 `cc.assetManager`（扫 1019 个节点）里都没有。
+- 正确做法：**自己再向 bundle 要一次**——`bundle.load(['configs/item'], cc.Asset, null, cb)`，
+  回调里拿 `asset._nativeAsset.data`。工具：`probe/dump_tables.js`（把表落到设备 `files/tbl_*.json` 再 pull）。
+- 表的主键要用 **`ID` 列**，不是第 0 列（第 0 列是 `__name__`，两者不一定相等）。
+
+**三张表怎么串起来**：
+
+| 表 | 关键列 | 含义 |
+|---|---|---|
+| `tasknew` | `Reward` | **掉落表 id**（不是物品 id！3054 → 物品 3626×1 + 货币） |
+| `tasknew` | `SpRequire` | 完成任务**必须携带**的物品：`"物品id,数量"`，多个用 `\|` 分隔；只写 id 表示客户端不校验数量 |
+| `drop` | `Item1..5` + `probability1..5` | 掉落展开：`[itemID, count]`；只收 `probability >= 100` 的条目 |
+| `item` | `Type` / `Name` / `BuyPrice` | `Type=1` 装备 / `2` 消耗品 / `3` 材料…；`Name` 是**语言表 id**，不是字面名字 |
+
+**运行时怎么用**（`core/bz-rpc-server.js`）：
+
+- `acceptTask(taskID)`：记账 + 按 `SpRequire` **补齐所需物品**（`have < want` 才补，已在包里就不动）。
+  没有这一步，客户端 `judgeItemRequire` 永远不通过 → 任务交不掉。实测：100150 需要 `4015×1`，
+  而 `4015` 正是前一个任务 100140 的奖励，之前奖励是空的，所以这链子断在这里。
+- `getFinishTaskAward(taskID)`：把任务移进 `done`；**同一个任务只发一次**（`save.rewarded` 记名单），
+  按 `Reward → drop → item` 展开后 `rewardArray = {物品id:数量}` 并写入 `bag`。
+- `bzBackfillRewards`（维护动作，只从命令通道打）：把 `done` 里"当时没发出去"的奖励补发一次。
+- 货币类 id（`1` `2` `4001` `4002` `4003`）不进奖励：客户端 `setItem` 对这五个 id 走特殊分支，
+  放进 `itemObj` 无效，真实服务器是走 `note.eco` 的，我们没有那个映射表。
+
+### 4.8 装备穿脱契约（照抄即可）
+
+客户端有**两本不同的账**，别搞混：
+
+| 账本 | 结构 | 含义 |
+|---|---|---|
+| `PlayerEquip` | `{ uid: [type, itemID, attrs, crystalIds, weaponSkinId] }` | **拥有的装备实例**。`type==1` 表示"无附加属性"，此时 `uid == itemID`、`num = data[1]`；`type>=2` 时 `itemID = data[1]`、属性在 `data[2]` |
+| `equipments` | `{ 装备位: uid }` | **当前穿在身上的**（槽位 1–8） |
+
+- **穿**：客户端先本地换好再发 `User.PutOnEquipment`，请求 `{EquipmentType, itemID, hp, hplmt, gTime, mp}`（index.jsc:65360-65370）。
+  服务器只负责记账：`equipments[EquipmentType] = itemID`，并确保 `playerEquip[uid]` 存在；应答只要 `eRet:1`（消费端仅派发刷新事件，index.jsc:65015）。
+- **卸**：请求只有 `{hp, hplmt, mp}`（**不带槽位**），应答成功后客户端自己清空 `<8` 的槽（index.jsc:92801）。服务器把 `equipments` 里槽位 `<8` 的项全删。
+- **不记账的后果**：重进游戏时 `LoadGame` 回放的还是旧 `equipments` → 装备白穿。
+- `Type=1` 的物品（装备）**不能进 `itemObj`**：客户端 `judgeItemRequire` 对装备走 `EqUtils.getEquipOrUid(itemID)`（index.jsc:44279），
+  看的是 `equipmentDic`（即 `PlayerEquip` 解析结果），不是背包数量。所以奖励发放要按 `BZ_ITEMTYPE` 分流（见 `grantItem`）。
+
+### 4.9 公告弹窗自动关闭（flow 层）
+
+- 现象：每次登录进主场景都会弹一块空白「游戏公告」，挡住整个画面，必须手动点 ✕。
+- 关法：`ItemSystemUI` 那套流程之外，公告弹窗的组件名就是 `NoticeUI`（`notice/NoticeUI` 预置体，`addComponent("NoticeUI")`）；
+  客户端自己的关闭入口是 `NoticeMgr.romeveNoticeUI()` → `PopUpMgr.removePopUp(noticeUI)`，但 `NoticeMgr` 不在全局，够不到。
+- 实现：`live/flow.js` 的 `stepNotice(scene)`——在主场景每 tick 找 `NoticeUI` / 名字匹配 `/^(Small)?Notice(UI|DetailUI)?$/` 的节点，
+  **先调组件自己的关闭方法**（`onBack` / `onClose` / `onCloseClick` / `onClickClose` / `closeUI` / `onBackClick`），
+  都没有才 `node.destroy()`。实测走的是 `onBack()`，干净关闭（日志 `[flow] 公告→onBack()`）。
+- 加这个是因为它是**每次登录都发生**的阻塞，不关掉玩家进游戏第一步就被挡。
+
+### 4.5 三个"重建入口"的账本契约（照抄即可，别再猜）
+
+客户端有三条路径会把本地状态**整份替换**成服务器给的，任何一条回空都会让玩家的进度清零：
+
+| 动作 | 客户端行为 | 我们要回 |
+|---|---|---|
+| `User.LoadGame` | `updatePlayerData` → `setSaveAllTaskDatas` / `setSaveAllItems` / `updateEquipments`（index.jsc:111820） | `finishTaskObj:["id,1"]`、`acceptTaskArray`、`acceptTaskOrder`、`taskLog`、`itemObj:{id:count}`、`PlayerEquip`、`equipments` |
+| `User.sycnTask` | 先 `finishTaskObj={}` 再整体替换，并把结果写回 LocalStorage（133515-133519） | `PlayerFinishTaskObj:{id:1}`、`acceptTaskMap:{id:id}`、`acceptTaskOrder`、`PlayerTaskLog`、`taskLog` |
+| `User.sycnPlayerItemData` | 先 `_itemObj={}`、`type2Items={}` 再按 `itemObj` 逐条 `setItem`（24016-24018） | `itemObj:{id:count}`（count>0 的**全部**持有物） |
+
+**格式陷阱**：`finishTaskObj` 在两个接口里形状不同——`LoadGame` 要**字符串数组** `["101080,1"]`，
+`sycnTask` 要**对象** `{"101080":1}`。同名字段两套格式，写错不报错、只是静默失效。
+
+**物品增减入口**（已记账）：`useItem` / `saleItem`（`saleArr`）/ `buyShopItem` / `QuickBuyItem` / `addItem`。
+维护入口 `bzSeedBag`（游戏协议里没有这个动作，只能从命令通道打进来）用于一次性把外部拿到的持有物灌进账本。
+
+---
+
+## 5. 协议事实（已验证，可直接复用）
+
+| 项 | 值 |
+|---|---|
+| 请求 | `{mod:"User", do:"<Action>", p:{...}}` → LZString(Base64) → AES-256-CBC → Hex |
+| Key / IV | `120734aa834dea925ca8d2e1bb6811c3`（UTF-8 = 32 B → AES-256）/ `33daee8409834c00` |
+| 响应信封 | 入口服 `:9898` → `{"MsgData":..}`；账号/游戏服 → `{"code":200,"MsgData":..}` |
+| 客户端实际读的外层键 | 还有 `errorCode`（见 `field_usage.json` 的 R1/R7），我们的 `code` 目前够用 |
+| 载荷两种形态 | 扁平（quicklogin/Create/CheckName/GetChatAddress）/ 包裹（其余：`p` + `User.<Action>` + `achievement`） |
+| 未实现动作 | 统一回 `wrapped(action,{eRet:1},{achievement})`，保证不卡 |
+
+**LoadGame 契约（`index.jsc:70502` 逐字段确认）**
+
+必须给：`baseValueAy`（≥48 项）、`OnhookObj.serverTime`、`skillMap`、`cycleLifeRetains`、
+`serverTime`；可选但建议：`serverFormatTime`、`housekeeper`、`bonusMap`、`equipments`、
+`veinObj`、`KillsItemObj`。**缺 `OnhookObj` 会崩、缺 `baseValueAy[47]` 会让拜师崩。**
+
+---
+
+## 6. 实测数据（可复现的验收基线，2026-10-22 01:18 更新）
+
+| 项 | 结果 |
+|---|---|
+| 冷启动 → gamescene | `ready` 约 3 s、随后 **~16 s 进主场景**，`errors=0`，7 次 RPC 全本地 |
+| 有档直进 | `flowSteps=2`（只 setServer + onEnterGame），不再重建角 |
+| 热重载 | push 124 KB（handlers）+ 17 KB（flow），reload **0.09–0.42 s**，pid 不变 |
+| L0 测试 | `l0-xhr` 21 项 + `l0-envelope` 82 项，全绿 |
+| 进程内自检 | 每次 reload 自动跑 **1100 项**（337 动作形状 + 任务账本 8 + 任务奖励 4 + 物品 6 + 装备 5 + 原有系列 + `selfcheck:noSaveWrite`） |
+| 存档测试（新增） | `test\save-migrate.js` **43 项**：迁移幂等/不丢数据/版本守卫/截断档不覆盖/守卫回滚/维护前备份 |
+| 自检安全性（新增） | `node test\selfcheck-nosave.js` → 真存档 0 改动；`node test\selfcheck-model-push.js` → 活客户端模型 0 次推送 |
+| 形状自查 | `node tools\check_shapes.js` → 目标动作 296 / 字段路径 593 PASS |
+| 支付拦截 | 进程内实测 `IphonePay` / `GetPayShowData` / `createOrderByHotVal` → 全部 `eRet:4`（失败） |
+| 装备账本实测 | 进程内 `PutOnEquipment{EquipmentType:1,itemID:7535}` → `equipments:{"1":7535}`；`UnloadingEuipment` → `equipments:{}` |
+| 公告自动关闭 | 每次进主场景日志出现 `[flow] 公告→onBack()`，截图核对画面无遮挡 |
+| 账本回放实测 | `LoadGame` → `itemObj` 6 种、`finishTaskObj` 10 条、`acceptTaskArray` `[100150]`、`equipments` `{}` |
+| `LoadGame` 负载生效证据 | 把存档 `name` 改成 `TESTNAME` 重启 → 角色面板名字确实变成 TESTNAME（测完已改回 `FZhou`） |
+| 客户端真实背包状态 | ✅ 账本 6 样已落地：`RoleBaseInfo._itemObj` = `{3005,3006,3626,4014,4015,7027}` 各 1、`type2Items[2]` 有值；`_itemDataList` 只在**当前子页**命中白名单时才非 0（见 §7.1） |
+| `window.__require` | ✅ 可用（`scripts3.js:1`）：`__require('RoleBaseInfo').RoleBaseInfo._itemObj` 进程内直接可读，不必再 BFS `window`（推翻坑 20） |
+| 金条 / 银两的字段链 | 金条＝`RoleBaseInfo.gold`（面板 `GoldLabel`，scripts2.js:49725），正规来源＝`InventoryDB.setGold`（index.jsc:64300）← `OnhookObj.curGold`（111905）。银两＝`RoleBaseInfo.coins` ← `baseValueAy[35]`。顶层 `curGold` 只有 `createRole`(70457) 读，老档走不到 |
+
+---
+
+## 7. 未完成清单（按优先级，2026-10-22 01:18 重排）
+
+### P0（直接影响"能不能玩下去"）
+
+1. ~~**背包界面是空的**~~ → **✅ 已结案：不是 bug，是默认子页为空**（2026-10-22 01:33）
+   - **事实**：6 样物品在客户端 `_itemObj` 里**都在**；打开背包点「书信」能看到 `吐纳法秘籍 ×1`，
+     点「消耗品→食物」能看到 `白玉豆腐 / 翡翠豆腐 ×1`（截图 `probe/shot_bag_shuxin.png`、`probe/shot_bag_food.png`）。
+   - **误判来源**：`ItemSystemUI._itemDataList` 是 `divisionItem()` 过滤后的**渲染列表**，不是账本。
+     过滤条件（scripts2.js:36805-36811）＝ `o[y].numbers > 0` **且** `2 == I.Type` **且**
+     物品 `Effect` 出现在 `effectcategory.page.split("|")[子页]` 的白名单里。
+     默认落在大类「消耗品」子页「药品」，白名单 `33,2,3,4,6,23,25` → 一件都不匹配 → 列表为 0，看着像空背包。
+   - **六样物品的真实归属**（进程内实测，`probe/bag_tab_probe.js`）：
+     | 物品 | Effect | 大类 | 子页 |
+     |---|---|---|---|
+     | 3005 / 3006（白玉豆腐 / 翡翠豆腐） | 1 | 消耗品 | 食物（`1,7,12`） |
+     | 3626（吐纳法秘籍） | 11 | 书信 | 秘籍（`5,11,40`） |
+     | 4014 / 4015 | 38 | 其他 | 第 3 页（`38,76`） |
+     | 7027 | 28 | 书信 | 特殊（`21,22,27,28,46,54,62,71`） |
+   - **教训**：把「UI 派生列表为空」当成「数据为空」是这次最大的误判，直接把上一轮带去查
+     `setSaveAllItems` / `getItem` / 配置表加载时序——方向全是白工（但也因此确认了那三处都没问题）。
+     判断"数据有没有"只认 `__require` 出来的模型字段，不认 UI 字段（§9 坑 33）。
+   - **留下的可复用手段**：`probe/require_probe.js`（模型+账本一次性体检）、`probe/bag_tab_probe.js`（物品归属判定）。
+2. **任务进度状态机**：`Require` 里"杀 N 个怪/采 N 个"这类计数我们没有状态机，
+   客户端 `judgeTaskCondition` 读的是它自己算的进度，多数情况够用；遇到推不动的任务再补。
+   - **2026-10-22 01:50 实测（先别照着"缺状态机"去写代码）**：进程内 `__require('RoleBaseInfo')` 读到
+     `requireTaskObj` 只有 `100150`（`taskState=0`）、`finishTaskObj` 10 个、`taskOrder` 11 个、`taskLog` 空；
+     任务面板正常渲染出「和小宝对话（主线任务）」；`100150` 的表行是 `Type=2 / Require=0 / SpRequire=4015,1 / Reward=0`，
+     包里正好有 4015×1 → **条件本来就满足**。
+   - **链子没断**：`tasknew` 里前置为 `100150` 的只有一个 ＝ `100160`（`Pre-Require="1,100150,0|0"`, `Reward=3008`）。
+     工具：`node tools\task_chain.js <taskID>`（算前置/后继/可达数；注意 `Pre-Require` 是 `flag,taskID,param|...` 结构串，
+     不是裸 id 列表，解析要按 `|` 分段再取第 2 段）。
+   - 结论：**当前没有"推不动"的任务证据**，这条保持"遇到再补"，别提前造状态机。
+3. ~~装备穿脱~~ → **已完成**（`PutOnEquipment` / `UnloadingEuipment` 记账 + `PlayerEquip` / `equipments` 回放 + 装备类奖励分流，见 §4.8）。
+4. ~~任务奖励~~ → **已完成**（`tasknew → drop → item` 原表链路；`rewardArray` 有值；`rewarded` 防重发）。
+5. ~~公告弹窗~~ → **已完成**（flow 自动调 `NoticeUI.onBack()`，见 §4.9）。
+
+### P1（体验）
+
+6. ~~**剧情自动跳过**~~ → **不做，并要求"让玩家自己看剧情"**（用户 2026-10-22 02:00 明确裁定）。
+   已加硬门控（`flow=fe3500480`）：`onTick` 里 `stepDialogue` / `stepStartAction` / `stepCreateRole` /
+   `stepBirthPlace` / `stepSelectSex` / `stepAppearance` / `stepTalent` / `stepDiscover` 全部包进
+   `if (!S.done.game)` —— **一旦进过主场景，流程层就不再替玩家点任何对话或剧情页**；
+   引导期仍自动推进（否则建角流程会卡死在等待点击上）。
+   - 主场景里流程层只剩 `stepNotice`（关公告，不是剧情）；`onTick` 的 gamescene 分支在剧情步骤之前就 `return`。
+   - 想连公告也不让流程层碰：在设备上 `touch <可写目录>/bz_noauto` 即可整体停用自动流程（删除该文件恢复）。
+   - 证据：`tools/facts/flow-autotap-audit.json`（flow.js 全部 11 处对话推进 / 8 处销毁 / 20 处点击的行号 + `onTick` 整段转录）。
+7. ~~**角色面板「金条：undefined」**~~ → **✅ 已修**（impl `hbb441fb3`）：根因是 `OnhookObj.curGold` 缺失
+   （面板 `GoldLabel` ← `RoleBaseInfo.gold` ← `InventoryDB.setGold(OnhookObj.curGold)`，index.jsc:111905→64300）。
+   `bz-rpc-server.js` 的 LoadGame 现在把 `curGold`（账本 `s.gold` 优先，否则 99999）与 `curJetton` 写进 `OnhookObj`。
+   冷启动实测门面显示 `金条：99999`（截图 `probe/shot_gold_fixed.png`）。顺带修掉了 `getItemNum(1)` 算成 NaN 的隐患。
+8. **窗口体验**：`MuMuManager control -v 1 show_window` 后 Win32 `SetWindowPos` 固定尺寸/位置。
+
+### P2（工程化）
+
+9. 形状层的弱证据（`listener-1` / `name` / `fallback` 共 200+ 条）继续收：`tools\shapes_report.md` 有逐条清单。
+10. `extract_listeners.js` 只认 `function(t, e)` 形式；箭头函数 / `this.xxx.bind` 形式的监听器还没覆盖。
+11. ~~`bz_cmd.txt` 的健壮性~~ → **✅ 已在 `boot-2` 根治**（见坑 29 的新对策）：
+    - **启动时丢弃残留**：`installCommandChannel()` 先跑 `discardStaleCmd()`——发现开机时已存在 `bz_cmd.txt`
+      就把内容留档到 `bz_cmd.stale.txt` 再删除，**绝不执行**。只有本次启动之后写入的命令才会被执行。
+    - **删不掉的命令不再重放**：轮询里 `removeFile` 后复查 `isFileExist`；还在就把文件清空并**拒绝执行**
+      （否则那个 700ms 定时器会把同一条命令无限重放，这是连续 ANR 的真正机理）。
+    - **验收（原故障重现）**：停机状态下植入 `get:1+1` → 启动后日志出现 1 条「启动时丢弃残留命令」、
+      `bz_cmd.stale.txt` 里是 `get:1+1`、`bz_cmd.txt` 已消失、`bz_res.txt` 仍是旧内容（**说明一次都没执行**）；
+      随后 `.\run.ps1 cmd "ver"` 正常返回 → 正常通道未受影响。
+    - 回滚点：`_backup\2026-10-22-012652-pre-bagprobe\bz-bootstrap.js.pre-cmdfix`（逆向重建，字节数 12767 与原文件一致，`node --check` 通过）。
+12. 归档早期实验产物（`gateway/`、`probe\*` 一次性脚本、`tools\spec*` 切片）。
+
+---
+
+## 8. 回滚与备份
+
+| 对象 | 位置 |
+|---|---|
+| 补丁源码（第二阶段前） | `_backup\2026-10-21-2058-pre-P0\`（hook/core/build.js/patch 产物，哈希已核对） |
+| 补丁源码（形状层前） | `_backup\2026-10-22-0038-pre-P0-shapes\`（5 个文件，含当时的 `patch\live\handlers.js`） |
+| 补丁源码（任务账本前） | `_backup\2026-10-22-0044-pre-task-ledger\`（5 个文件） |
+| 策略层单文件（奖励链前） | `_backup\2026-10-22-0107-bz-rpc-server.js` |
+| **自检隔离前（§14.2 前）** | `_backup\2026-10-22-0205-pre-selfcheck-isolation\`：两个 core 源文件 + `patch_live_handlers.js` + `patch_live_flow.js` + 设备存档（md5 `d8af398f…`）+ `bz_log.jsonl` |
+| **炼金/等级奖励 handler 前（§14.3 前）** | `_backup\2026-10-22-0212-pre-alchemy-handlers\`（含本文件的 `.snapshot`，04:15 事故后就是用它重建的） |
+| **技能目标等级前（§14.7 前）** | `_backup\2026-10-22-0232-pre-skill-target\`：两个 core 源文件 + `patch_live_handlers.js` + 设备存档（`39b5e890…`，lv=19/potential=97599） |
+| **技能进度落账前（§14.8 前）** | `_backup\2026-10-22-0250-pre-pgr-persist\`：`core_bz-rpc-server.js` + `patch_live_handlers.js` + `test_upgrade-skill-target.js` + 设备存档（`7ac1d403…`） |
+| **形状证据审计前（§14.9 前）** | `_backup\2026-10-22-0345-pre-shape-audit-fix\`：`extract_listeners.js` / `shapes.json` / `gen_shapes.js` / `bz-shapes.generated.js` / `patch_live_handlers.js` + 设备存档 |
+| **守卫回滚前（§14.10 前）** | `_backup\2026-10-22-0405-pre-guard-rollback\`：`core_bz-rpc-server.js` / `core_bz-handler-impl.js` / `patch_live_handlers.js` + 设备存档（`96c21eda…` 之前那一份） |
+| **本文件坏档（事故留证）** | `_backup\2026-10-22-0415-HANDOVER-corrupted.md`（PowerShell `Set-Content` 写坏的 GBK 乱码） |
+| 上一版交接文档 | `_backup\HANDOVER.md.bak-20261022-011755`（更早：`-010105`、`-005632`、`-005105`、`-004536`、`-001454`） |
+| 本轮（背包误判核查）现场 | `_backup\2026-10-22-012652-pre-bagprobe\`（`bz_offline_save.json`、`bz_log.jsonl`、`probe.js`、`probe_res.txt`、`flow.js.bak`、`bz-rpc-server.js.bak`、`HANDOVER.md.snapshot`） |
+| 游戏存档（含账本） | 设备 `files/bz_offline_save.json`；`.\run.ps1 cmd "state"` 随时可看；改前先复制一份到 `_backup\save-*` |
+| 当前存档真实内容 | `name=FZhou`、`bag={3005,3006,3626,4014,4015,7027 各 1}`、`playerEquip={}`、`equipments={}`、`rewarded` 10 个任务、`done` 10 个、`accepted` 11 个（含 100150） |
+| 卸载补丁（恢复原版） | `adb shell rm -rf /data/data/com.maple.madherogo/files/hotfix` |
+| 只回滚策略层 | 把 `handlers.js` / `flow.js` 换回上一版后 `.\run.ps1 handlers`（新备份目录里有当时设备上的那一份） |
+
+---
+
+## 9. 踩过的坑（含本阶段新增，务必先读）
+
+| # | 坑 | 症状 | 对策 |
+|---|---|---|---|
+| 1 | 探针参数用 ASCII 写文件 | 中文参数变 `?`，`probe` 找不到节点 | `run.ps1` 已改 UTF-8 无 BOM |
+| 2 | 用 .NET API 读写相对路径 | 报"找不到文件"，因为 .NET 用进程 CWD 不是 PS 位置 | 一律绝对路径 |
+| 3 | `Split-Path` 处理 POSIX 路径 | 变成反斜杠 → 设备端 `mkdir` 失败 | 用 `-replace '/[^/]+$',''` |
+| 4 | `adb` 守护进程被回收 | 中途 `device not found` | `run.ps1` 内部每次调用都重连重试 |
+| 5 | `adb exec-out screencap` 走 PS 管道 | PNG 被破坏 | 先 `screencap -p /data/local/tmp/x.png` 再 `pull` |
+| 6 | 游戏 HUD 有同名隐藏副本 | `press.js` 点到 inactive 的那份，"点了没反应" | 用**坐标点击**（`tap.js`）或按 active 过滤 |
+| 7 | 剧情层会挡住一切操作 | 玩家以为"卡死" | 点画面推进 / 「跳过剧情」 |
+| 8 | 引导要"拜师"但已拜过 | 无法再点，教程卡住 | `closeGuide:true` 关闭引导 |
+| 9 | 只回形状不记账 | 学技能后"回弹" | 账本：`skills` + `potential` 写档并在 LoadGame 回放 |
+| 10 | 工单漏了"交付物落盘" | 苦力模型跑完，结果丢失 | 工单强制 `tools/facts/batchN.json`，回传只作校验 |
+| 11 | 沙盒禁 spawn | `execFileSync`/`node --check` EPERM | 用 `require('vm').compileFunction` 代替 |
+| 12 | PowerShell 写文件把内容写成 `$null` | 文件被清空（`run.ps1` 事故） | 先 `Contains` 校验再写；改文件用 edit 工具 |
+| 13 | `sycnTask` 回 `PlayerFinishTaskObj: {}` | 客户端把它当真相，连本地缓存一起写成 `{}` → 已做过的任务被 NPC 重派（"接了又接"） | 按账本回放；自检加 `task:sync:notEmpty` 断言 |
+| 14 | 以为两个接口一个格式 | `LoadGame` 要 `finishTaskObj: ["101080,1"]`（字符串数组，客户端自己 `split(",")`），`sycnTask` 要 `{ "101080": 1 }`（对象） | 用 `taskLedger()` 一处产出两套形状；见 `bz-rpc-server.js` |
+| 15 | 照抓包抄钱包字段 | 抓到的是旧快照 `userGold:20`，与进游戏报的 99999 矛盾，客户端弹"银两不足" | 钱包/潜能类字段一律读账本，账本没有就按 LoadGame 同款值 |
+| 16 | 只给一行"读取处"推不出类型 | 291 个字段位里 119 个推不出数组/对象/标量 | 加证据源：抓包真值 → 真实 handler → 人工判定 → 客户端初值 `= [] / {}` → 全源用法扫描 |
+| 17 | 字段抽取只认具名回调 | `useItem` 被误判成"只看 ACK"，实际客户端读 `note.skch`（64757），我们回 `{eRet:1}` → `a.note.hasOwnProperty` 抛异常 | `tools/extract_listeners.js` 补扫匿名监听器，一次挖出 249 个动作 / 679 字段 |
+| 18 | `sycnPlayerItemData` 回空 | 客户端先 `_itemObj={}` 再按 `itemObj` 重建 → 每次同步把背包清空 | 回全部持有物（账本 `bag`）；自检加 `item:sync:itemObj` |
+| 19 | 以为 `finishTaskObj` 一种格式 | 见 4.5：`LoadGame` 要字符串数组、`sycnTask` 要对象 | 用 `taskLedger()` 一处产出两套 |
+| 20 | 想从客户端读背包 | `_itemObj` 在模块闭包里：`window` BFS 8000 节点找不到，`cc.js.getClassByName` 只有构造函数 | 改为"账本即真相"；一次性导入留了 `bzSeedBag` 维护动作 |
+| 21 | 拿真进程里的 handler 做验证 | `upgradeSkill` 空参数一打，`skillID` 缺省成 0，**真存档被写了 skills["0"] 并扣了 100 潜能** | 试打前先 `cmd "state"` 存档快照；已加维护动作 `bzPatch`（`{set,del}`）用于修复；非必要不在真进程打会写档的动作 |
+| 22 | 形状表给支付类回 `eRet:1` | 等于对客户端说"充值成功"，违反项目边界 | `dispatch` 里 `PAY_ACTION_RE` 一律拦成 `eRet:4`（明确失败），并记 `PAY_BLOCKED`；自检有 `shape:<动作>:payBlocked` 断言 |
+| 23 | 形状表跳过已实现动作 | 手写 handler 漏字段（`getFinishTaskAward` 少了 `clearBoxs/contribution/triggerBoxs`），形状修不到它 | 形状=契约：生成器覆盖全部会读字段的动作；`fillShape` 只补缺不覆盖；`BZ_SHAPES.__impl` 标出"eRet 由 handler 自定"的那些 |
+| 24 | 想从缓存里捞配置表 | `cc.loader._cache` / `cc.assetManager` 里都没有（配置加载完即释放），扫 1019 个节点也是 0 | **自己再要一次**：`bundle.load(['configs/item'], cc.Asset, null, cb)`，读 `asset._nativeAsset.data`；见 `probe/dump_tables.js` |
+| 25 | 以为 `Reward` 是物品 id | 3054 不在物品表里 → 展开出来是空的 | `Reward` 是**掉落表 id**；`drop.Item1..5=[id,count]`。只有少数任务直接写物品 id，要兜底 |
+| 26 | 表用第 0 列当主键 | 第 0 列是 `__name__`，和 `ID` 不一定相等 → 查表查不到 | 用 `ID`（或 `TaskID`）列作主键 |
+| 27 | 任务卡在"交不掉" | 任务 100150 的 `SpRequire` 要 `4015×1`，我们从不发物品 → `judgeItemRequire` 永远 false | `acceptTask` 时按 `SpRequire` 补齐；有了奖励链后 `4015` 本来就会由 100140 的奖励发放 |
+| 28 | **在跑着的游戏里做全图 BFS** | 用 `seen.indexOf(o)` 判重是 O(n²)，主线程卡死 → **Android ANR → MuMu 弹 Application Error → 强制停掉游戏**（logcat: `Input channel object ... Application Error`） | 探针里一律 `Set` 判重 + **限量**（节点上限 12000、时间预算 2500ms）；再小的上限（800 节点）最稳 |
+| 29 | **残留的 `bz_cmd.txt` 会在每次启动重放** | 上一条探针超时后命令文件没被消费，之后每次启动命令通道又执行一遍那段卡死代码 → 连续 ANR，看着像"游戏自己崩" | **已根治（boot-2）**：开机时已存在的 `bz_cmd.txt` 一律留档到 `bz_cmd.stale.txt` 后删除、**不执行**；轮询里 `removeFile` 后复查 `isFileExist`，删不掉就清空并拒绝执行（防 700ms 无限重放）。临时手段仍是 `adb shell rm -f files/bz_cmd.txt`。见 §7 P2-11 |
+| 30 | 用 PowerShell `Set-Content` 改含中文的 JS | 编码坏掉、注释把下一行吃掉 → 探针直接语法错/死循环 | 改文件只用 `edit` / `write` 工具；PS 只用来跑命令 |
+| 31 | 在真存档上做"改名"实验 | 为了验证 LoadGame 是否生效，把 `save.name` 改成 TESTNAME | 实验完立刻用 `bzPatch` 改回（本次已改回 `FZhou`）；做这类实验前先 `state` 存快照 |
+| 32 | 以为客户端会主动发物品同步 | 全客户端**没有**任何地方发送 `User.sycnPlayerItemData`（只有监听器 24014），它是服务器推送型 | 别指望客户端来要数据；环回只能应答，所以物品必须靠 `LoadGame` 带过去——这也是 §7.1 的难点所在 |
+| 33 | **把 UI 派生列表当成数据账本** | `ItemSystemUI._itemDataList.length == 0` 被当成"背包空"，实际 `_itemObj` 里 6 样都在；白查一整轮（`setSaveAllItems` / `getItem` / 配置表时序全白工） | 判断"数据有没有"只认模型字段（`__require` 出来的 `RoleBaseInfo._itemObj`）；UI 列表是**过滤后**的，天然可以为 0。见 §7.1 |
+| 34 | 以为客户端模型"在闭包里够不到"（坑 20 的结论） | BFS 扫 `window` 8000 节点找不到 `_itemObj`，于是放弃直读、改成"账本即真相" | **`window.__require` 就在 `scripts3.js:1`**：短名查本包、失败回退上一个 bundle。`__require('RoleBaseInfo').RoleBaseInfo._itemObj` 一步到位。坑 20 只是方法错，不是事实。工具 `probe/require_probe.js` |
+| 35 | 以为「金条：undefined」是 `RoleBaseInfo.yuanbao` 没给 | 面板印 undefined；给它赋值 `yuanbao` 后重开面板**仍然** undefined（`yuanbao` 本身实测就是 0） | **根因**：面板 `GoldLabel` 绑的是 `RoleBaseInfo.gold`（scripts2.js:49725），而 `gold` 的唯一正规来源是 `InventoryDB.setGold()`（64300）← `OnhookObj.curGold`（111905）；我们只给了顶层 `curGold`（那只被 `createRole` 70457 读），老档走不到 → `gold` 恒 undefined。**修法**：把 `curGold/curJetton` 写进 `OnhookObj`（`bz-rpc-server.js` LoadGame），冷启动实测面板显示 `金条：99999` |
+
+---
+
+## 10. 委派纪律（本阶段已建立，继续用）
+
+- 工程苦力 → `gemini-3.8-flash-low`（`provider: cmdc-gemini`），**只做机械转录**：读切片、抄行号、抄字段。
+- 工单必带：范围（绝对路径清单）、苦力约束（不判断/不推测）、交付格式（`行号: 原文`）、
+  **交付物落盘路径**、数据红线。
+- 主审只做：写工单、验收抽样（每份抽 1–2 条回源码核对）、判断与写入。
+- 已产出的证据链：`tools/spec2/`、`tools/spec3/`（切片）、`tools/facts/batch*.json`（用法取证）、
+  `tools/field_usage.json`（合并）、`tools/action_facts_all.json`（812 动作全量）。
+- 2026-10-22 01:33 这一轮的实际用法（可照抄）：4 单全部 `gemini-3.8-flash-low`，工单只给「读第 X-Y 行、逐字抄、标行号」，
+  交付强制落盘 `tools/facts/inv-w*.json` + 回传同一份 JSON；主审只做判定与抽样（抽 2 条回源码核对，1 次通过）。
+  效果：`index.js`+`scripts2`+`scripts3` 共 33 万行的检索基本没吃主上下文，
+  且从 `scripts3` 里挖出了 `window.__require`（推翻坑 20）与 `RogueRoleInfo` 第二本账。
+
+---
+
+## 11. 接手第一天怎么做（照做即可）
+
+1. `.\run.ps1 status` → 确认 `scene=gamescene`、`errors` 无。
+2. `node test\l0-envelope.js` → 82 项全绿。
+3. 打开模拟器窗口（第 3 节），肉眼确认画面与日志一致。
+4. 想改什么：改 `core\bz-rpc-server.js` → `node build.js` → `.\run.ps1 handlers`（**不重启**）。
+5. 玩家在玩时：`.\watch.ps1` 盯 `UNKNOWN` / `err`，出现就按第 4.2 节查源码补形状。
+6. 需要新动作：`node tools\extract_all.js` 查 `field_lines` → 回 `tools/index.js` 抄那一行 → 写 handler。
+
+---
+
+## 12. 给接手者的一句话
+
+**先看日志再动手，先查源码再猜形状。**
+第二阶段证明了：抓包和肉眼观察只能支撑到"能进游戏"，往后每一步都必须读客户端源码。
+现在源码已经解出来了（`tools/index.js` + 密钥），把"猜"换成"查"，是最省时间的一条路。
+
+---
+
+## 13. 2026-10-22 01:57 会话收尾交接（**已被 §14 取替；要接手直接读 §14**）
+
+> 本会话按用户裁定执行：**任务结束时上下文若 ≥60%，就自己写交接、开新会话**。本节就是这次交班。
+
+### 13.1 当前部署与实测状态（全部进程内验证过）
+
+| 项 | 值 |
+|---|---|
+| 版本 | `boot-2 / impl=he7190a3a / flow=fe3500480`（**本会话当时**的版本；当前见 §14.1 = `h124aca9d`） |
+| 运行 | `pid 24125`、`scene=gamescene`、`errors=0` |
+| 存档 | `potential=98699`、`skills={"1":[8,0,1],"7":[2,0,1],"8":[10,0,1],"1112":1,"1262":1}`、`bag={3005,3006,3626,4014,4016,7027}`、`done/rewarded` 各 12 个任务 |
+| 客户端一致性 | `__require` 直读：`potentials=98699`、`SkillTable.dic` `1=8 / 7=2 / 8=10` —— **与账本完全一致** |
+| 本项目录 | `_backup\2026-10-22-012652-pre-bagprobe\`（存档/日志/`flow.js.bak`/`bz-rpc-server.js.bak`/`bz-bootstrap.js.pre-cmdfix`/文档快照） |
+
+### 13.2 本会话修好的四件事（都有验收证据）
+
+1. **金条 `undefined`** → `OnhookObj.curGold`（面板 `GoldLabel` ← `RoleBaseInfo.gold` ← `InventoryDB.setGold(OnhookObj.curGold)`）。详见 §7 P1-7、坑 35。
+2. **命令通道残留重放**（`boot-2`）→ 启动丢弃 + 删不掉就拒绝执行。详见 §7 P2-11、坑 29。
+3. **剧情不再被自动推进**（`flow=fe3500480`）→ 进过主场景后 `stepDialogue/stepStartAction/...` 全部跳过。详见 §7 P1-6。
+4. **技能升级**（`impl=he7190a3a`）→ 等级单调不降（旧代码照抄客户端 `skillArr[1]`，请教"取消"时把 10 写成 2）；并把 `potentials`/`SkillTable.setSkill` 用 `window.__require` 推回客户端模型（该动作的应答消费端只读 `eRet`/`returnPro`，index.jsc:119842）。
+
+### 13.3 未解清单（按我判断的优先级）
+
+1. ~~**自检在污染真存档**~~ → **✅ 已结案（§14.2），但原诊断只对了一半**：
+   - **存档文件其实没被写**：`selfCheck()` 里 6 个实例全部 `makeServer(memMake())`，`persist()` 走内存 store。
+     可复跑证明：`node test\selfcheck-nosave.js` → `writesToSave=0`、字节与 sha 不变。
+   - **真正被污染的是活着的客户端模型**：`upgradeSkill` 结尾的 `window.__require` 推送在自检里也执行了，
+     每次 reload 把 `potentials` 写成 99699 并造出假技能 0（复跑：`node test\selfcheck-model-push.js`，
+     修前 `potPushes=[99899,99799,99699]`、`setSkill=[[0,1],[0,2],[0,3]]`，修后全空）。
+   - 这也解释了为什么存档 `potential` 一直是 98699、`skills` 里没有 `"0"` —— 存档从来没被自检改过。
+2. ~~**请教面板"学到 12、取消变 8"**~~ → **✅ 已结案（§14.7）**：真实请求参数已拿到
+   （`{"skillID":1,"skillArr":[15,0,1],"NPCID":1003,"flag":0}`），**`skillArr[0]` 是目标等级**、`[1]` 是进度 pgr。
+   旧代码读 `[1]`（恒 0）→ 落到 `cur+1`，于是"无论学几级都只涨一级、取消也涨一级"。已改：按 `[0]` 记账、目标≤当前即不动。
+3. ~~**`getAlchemyData` 抛异常**~~ → **✅ 已修（§14.3）**：手写 handler 回
+   `{eRet:1, data:{state:0,type:0,id:0,price:10,num:0}, alchemyGearConfig:{}}`。
+   消费端 `onGetAlchemyData`（scripts3.js:7005-7026）原来直接读 `e.data.state` → `TypeError`。
+   同级问题 `getLevelBonusData` 一并补了（scripts3.js:43812-43828）。
+4. **交任务后 3 次 `.includes` 异常**：`unhandledRejectedPromise TypeError: Cannot read property 'includes' of undefined`，紧跟 `getFinishTaskAward 100150`，只在登录窗口内出现 3 次、不复发。`onGetFinishTaskAward` 在 `index.js`/`scripts3.js` 里搜不到名字（匿名监听器），需再定位消费点。
+5. ~~**两个 `UNKNOWN` 动作**~~ → **✅ 已补（§14.3）**：`getAlchemyData`、`getLevelBonusData` 现在是手写 handler，
+   端上日志由 `UNKNOWN User.xxx` 变成 `dispatch User.xxx`。
+   - 另有 `UNKNOWN User.recordAttributes`（属性上报类，通用 ACK 够用，不卡进度；暂不实现）。
+
+### 13.4 ~~一条反直觉事实~~ → **已推翻（证据：`tools/facts/upgrade-skill-send-path.json`）**
+
+**上一条结论是搜漏了 `scripts2`，不是事实。**真实发送链：
+
+| 位置 | 代码 | 说明 |
+|---|---|---|
+| `scripts2.js:13923-13928` | `sendUpgradeReq(t,e)` → `SkillModel.reqChangeSkillLv(t, e.lv, e.pgr, e.brlv, teacher, type)` | 请教 UI 的发送入口（唯一调用点） |
+| `index.js:119873-119881` | `skillArr: [e, Math.floor(o), i]` → `sendRequest(UPGRADE_SKILL_LV, l)` | `skillArr = [目标等级, 进度, 突破等级]` |
+| `index.js:59581` | `UPGRADE_SKILL_LV: "User.upgradeSkill"` | 动作名常量 |
+| `index.js:119842-119845` | 只读 `eRet` / `returnPro` | 应答消费端 |
+
+教训：**凡判定"某函数有没有调用点"，三包必须全搜**（`index.js` / `scripts2.js` / `scripts3.js`）；
+且 grep 大小写敏感——搜 `getLevelBonusData` 抓不到 `onGetLevelBonusData`（本轮 WO-2 就据此报了一条假"无消费者"）。
+
+### 13.5 让模拟器窗口到前台（本会话实测可用，照抄）
+
+```powershell
+$m='D:\taptap\Support\android_emulator\engine\nx_main\MuMuManager.exe'
+& $m info -v 1            # 取 main_wnd / pid / adb_port（VM index=1，虚拟机名「暴走英雄坛游戏软件V1.0」）
+& $m control -v 1 show_window
+# show_window 只显示、不置顶，必须再补 Win32：
+#   ShowWindow(hwnd, 9) + SetWindowPos(hwnd, 0,0,0,0,0, SWP_SHOWWINDOW|NOSIZE|NOMOVE) + SetForegroundWindow(hwnd)
+# 复核：IsWindowVisible / IsIconic / GetForegroundWindow == hwnd
+```
+`hwnd` 从 `info -v 1` 的 `main_wnd` 十六进制转 `IntPtr`。当前 `main_wnd=001F110C`、rect `255,39 486×895`。
+
+### 13.6 委派实践（本会话踩到的坑，写进工单模板）
+
+- 工单里凡涉及"某函数有没有调用点"的判定，**必须写明三个 bundle 全搜**（`index.js` / `scripts2.js` / `scripts3.js`）——本会话漏了 `scripts3` 得出过错误结论。
+- 苦力交付仍是"强制落盘 + 回传只给行号"，回传 ≤250 字，主审抽样 1-2 条回源码核对。
+- 本会话采信率：≥80%。工人如实报 `function not found`（`acceptTask` 等是匿名监听器）是好行为，别当失败。
+- 已产证据：`tools/facts/inv-w*.json`（背包）、`task-t1-judge.json`（任务判定行号）、`flow-autotap-audit.json`（剧情自动点击全清单）、`cmd-channel-full.json`（引导层命令通道）、`includes-hunt.json`。
+
+### 13.7 下一个会话的第一件事（**已被 §14 取替，只看下面结论**）
+
+- §13.7 写这条时列的五件事：`status` 确认、记快照、修 13.3-1、让玩家点请教、修 13.3-3 —— **后三件都已做完**（见 §14.2 / §14.7 / §14.3）。
+- 现在开局照 §14.6 做（四条命令，按 `impl` 版本和四条回归自检）。
+
+---
+
+## 14. 2026-10-22 会话推进（**下一个会话从这一节读起**）
+
+> 本节记录本次会话（第三会话起）的全部改动与证据。`impl` 演进：`h81668f61` → `ha44900ea`（自检隔离）→ `h81668f61`（两条 handler）→ `hee1125fd`（技能目标等级）→ `h89800974`（技能进度落账）→ `h081f1ef7`（形状审计）→ `h45cf6863` → **`h124aca9d`（守卫回滚 + 维护备份 + 请求取证，当前）**。
+
+### 14.1 当前部署与实测
+
+| 项 | 值 |
+|---|---|
+| 版本 | `boot-2 / impl=h124aca9d / flow=fe3500480` |
+| reload | 196–266 ms，**pid 24125 全程未变**（所有改动都是热重载，没重启过游戏） |
+| 存档 | md5 `96c21eda8bb95775191b90b65449bcea`，`saveVersion=4`，`skills` 已全部归一成 `[lv,pgr,brlv]` |
+| 回归 | `l0-envelope` 82；进程内自检 **1100**；`save-migrate` **43**；`upgrade-skill-target` **22**；`selfcheck-nosave` / `selfcheck-model-push` 退出 0 |
+
+> ⚠ **看版本别只看 `.\run.ps1 status`**：`bz_ready.json` 只在启动/场景切换时刷新，热重载不改它，
+> 所以 reload 后 `status` 仍显示开机时的 `impl`。正确判据是 `.\run.ps1 handlers` 返回的 `reload:{...}` 或日志行的 `"impl"`。
+
+### 14.2 修：自检污染（13.3-1 的真正漏点）
+
+**结论：存档文件从来没被自检写过；被写的是活着的客户端模型。**（原 §13.3-1 的诊断只对了一半，已在原处更正）
+
+| 文件 | 改动 | 为什么 |
+|---|---|---|
+| `core/bz-handler-impl.js` | `makeServer(store)` 传 `sandbox: !!store` | 隔离实例要能自我识别，否则 handler 里"推给活客户端"的副作用拦不住 |
+| `core/bz-rpc-server.js` | `upgradeSkill` 的 `window.__require` 推送包进 `if (!env.sandbox)` | 自检拿内存空档跑 `upgradeSkill`，算出 `99999-100n` 并 `setSkill(0,lv)`，把假值写进活客户端 |
+| `core/bz-handler-impl.js` | `selfCheck()` 首尾比真存档字节；有变化就回写原始字节并把 `selfcheck:noSaveWrite` 判 FAIL | 护栏：将来任何 handler 直接落盘都会被当场抓住并还原 |
+
+可复跑用例（不用设备）：
+
+```powershell
+node test\selfcheck-nosave.js       # 退出 0 = 自检没写真存档（真存档内容塞进假 store，比字节+sha）
+node test\selfcheck-model-push.js   # 退出 0 = 自检没推活客户端模型（假 window.__require 记录 setter/setSkill）
+```
+
+修前 `selfcheck-model-push.js` 退出 1 并打印 `potPushes=[99899,99799,99699]`、`setSkill=[[0,1],[0,2],[0,3]]`（**这就是原故障重现**）；修后全空。
+
+### 14.3 修：两条 `UNKNOWN` → 手写 handler（13.3-3 / 13.3-5）
+
+| 动作 | 应答 | 依据 |
+|---|---|---|
+| `getAlchemyData` | `{eRet:1, data:{state:0,type:0,id:0,price:10,num:0}, alchemyGearConfig:{}}` | scripts3.js:7005-7026 读 `e.data.state`、`for..in e.alchemyGearConfig` |
+| `getLevelBonusData` | `{eRet:1, bonusObj:{}, endTime:0}` | scripts3.js:43812-43828 + `LevelBonusUI.loadItems`(43919-43926) 只 `for..in bonusObj` |
+
+**没有手改生成物**（`bz-shapes.generated.js` 仍由 `tools/gen_shapes.js` 产出）。端上验证：日志由 `UNKNOWN User.xxx` 变 `dispatch User.xxx`。
+
+### 14.4 推翻 §13.4
+
+`reqChangeSkillLv` 不是零调用点：`scripts2.js:13923-13928`（请教 UI 的 `sendUpgradeReq`）就是发送入口，`skillArr=[目标等级,进度,突破等级]`（`index.js:119876`）。详见 §13.4 表。
+
+### 14.5 委派与验收（可照抄）
+
+三个只读苦力（`gemini-3.8-flash-low`）并行、各 2–10 分钟、强制落盘 + 回传同一份 JSON：
+
+| 单 | 交付 | 验收结论 |
+|---|---|---|
+| WO-1 自检触碰面 | `tools/facts/selfcheck-touch-surface.json` | 可用（能落盘的只有 `persist()`/`reset()` 绑定的 `server`） |
+| WO-2 炼金/等级奖励字段 | `tools/facts/shape-alchemy-levelbonus.json` | 部分不可信：`unverified` 里"三包无消费者"是错的（grep 大小写漏了 `onGetLevelBonusData`） |
+| WO-3 技能升级发送路径 | `tools/facts/upgrade-skill-send-path.json` | 条目可用；**命令块是 GBK 乱码且 JSON 不合法**（工人用 `Select-String` 拼字符串导致），关键条目主审回源码核对通过 |
+| WO-A 存档快照形态 | `tools/facts/save-fixtures.json` | 可用：4 份快照 = 快照1 全裸数字、快照2–4 混形态 → 证实"形态指纹"必误判 |
+| WO-B/C 弱证据 / 写入点 | `weak-verified-a/b/all.json`（255 条，交叉核对 255/255 一致）、`save-write-paths.json`（49 条） | 可用；写入点按"赋值行"归 handler 会漏（背包写在 helper `bagAdd` 里） |
+
+三条硬规矩：①"某函数有无调用点"必须**三包全搜 + 大小写**；②让工人报 grep 命中必须给 `node tools\grep_src.js` 的原始输出（别让它自己拼字符串）；③工人报"某处无 X"时，主审换一个模式复搜再采信。
+
+### 14.6 下一个会话的第一件事（照做）
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+cd F:\BaoZouyxt\hotfix-patch
+.\run.ps1 status                                    # scene=gamescene；版本看 reload/日志
+.\run.ps1 cmd "state"                               # potential / skills / saveVersion 快照
+node test\l0-envelope.js                            # 82 项
+node test\save-migrate.js; node test\upgrade-skill-target.js
+node test\selfcheck-nosave.js; node test\selfcheck-model-push.js   # 两条都该退出 0
+```
+
+### 14.7 技能升级「目标等级 / 取消不涨级」（`hee1125fd`）
+
+用户原话：「无论学几级取消都是加一级」。端上日志（`skillArr` 真实值）坐实：
+
+| 点击 | 客户端发的 | 账本旧值 | 旧代码 | 应该是 |
+|---|---|---|---|---|
+| 1 | `[15,0,1]` | 12 | 13 | 15 |
+| 2（取消） | `[15,0,1]` | 13 | 14 | 不动 |
+| 3 | `[17,0,1]` | 14 | 15 | 17 |
+
+两个叠加的错：①**读错下标**——`skillArr[0]` 才是目标等级（`scripts2.js:13846-13854` 发 `lv: o.lv+1`），`[1]` 是 pgr（实测恒 0）；②**无条件至少 +1**，于是"取消"也涨级，且每次固定扣 100 潜能。
+
+改法：`reqLv = arr[0]`；`lv = max(curLv, reqLv)`；**目标 ≤ 当前 = 取消/重复 → 等级与潜能都不动**；潜能按 `100×(lv-curLv)` 扣；`note.skch[id]` 回显 `[lv,pgr,brlv]`。
+
+### 14.8 技能进度（面板 `(80%)`）不保存（`h89800974`）
+
+根因：`skillArr[1]` 是进度（端上实测 `[5,6,1]` = 等级不变、进度 6 = 面板 80%），而 14.7 的取消分支**什么都没写档** → 重进 `LoadGame` 回放 `[5,0,1]` 把 80% 抹平。
+
+改法：取消分支也把 `pgr/brlv` 写进账本并 `persist()`；`pushSkillToClient` 增加进度/突破等级推送（只推等级会让面板 `(xx%)` 与账本脱节）。**新增无效请求守卫**：缺 `skillArr` 或 `skillID=0` → 直接 ACK、绝不落账（这是新用例当场抓出的自造回归：无条件写档会写出假 `skills["0"]`）。
+
+### 14.9 形状表证据审计：清掉 13 个伪造字段（`h081f1ef7`）
+
+发现路径：给 255 个弱证据字段做确定性扫描时，看到 `BeginList.addComponent` 这种字段名本身就是 UI 方法，证据行是 `var i = o.addComponent("OnhookQueueBgUI")`。
+
+两个可重跑脚本（以后每次改形状表都要跑）：
+
+```powershell
+node tools\scan_weak_fields.js        # 255 个弱证据字段在三个 bundle 里的同名属性访问（一次扫全量）
+node tools\audit_shapes_evidence.js   # 逐字段核对 evid 的 "bundle:line"：那行到底有没有这个字段
+```
+
+| 文件 | 改动 |
+|---|---|
+| `tools/extract_listeners.js` | 捕获路径若紧跟 `(` 判为方法调用：单段（`addComponent`）丢弃；多段（`dataArr.pop`）**保留父字段** `dataArr` |
+| `tools/gen_shapes.js` | `MANUAL` 表 4 条 evid 指错行：`activityShows`→`index.js:57455`、`newAcc`→`scripts3.js:95797`、`FashionTimeMap`→`index.js:75623`。**这 4 条字段是真的，错的是引用** |
+
+结果：硬误报 14 → **0**；动作 338 → 337（`onBatchBreakByGold` 只剩伪造字段，整体剔除，`eRet` 由通用 ACK 覆盖）；字段 1105 → **1092**；自检 1103 → **1100**。
+
+教训：**`manual` 也会错，人工判定同样要过审计器**；另外我自己第一版审计把 `o.hasOwnProperty("skillid")` 误判成"证据行不含该字段"（误伤 20 条），补上 `hasOwnProperty(` / `'x' in o` 两种形态后降到 4 条 —— **判定器也要自证**。
+
+### 14.10 A04/B01 回执落地：守卫回滚 + 维护备份 + 请求取证（`h124aca9d`）
+
+回执原文 `docs/sota/reply-B01-A04.txt`，采纳台账 `docs/sota/B01-A04/adopted.md`。它挑出我们 6 个真问题，本轮先做不依赖事件层的三件：
+
+| 改动 | 为什么 |
+|---|---|
+| **守卫拒绝时回滚内存**（`_save = clone(_lastGood)`） | 原来只拒写、内存仍是脏的：坏值继续被投射成应答 → 客户端清空本地 → 后续动作把空写实。**这正是事故 A 的机理** |
+| **维护动作写前备份**：`bzPatch/bzSeedBag/bzBackfillRewards` 写前落一份 `<save>.pre-maint.json` | 事故 D 就是维护动作直接改档且没备份 |
+| **请求参数取证日志**：`REQ <动作> p={...}`（`ReqSelfBattleInfo/CheckBattleResult/acceptTask/getFinishTaskAward/killNpc/collect/obtainCrop`） | B01 的建模前提是"结算请求带什么"，而原来只打 `dispatch User.X` |
+
+端上验收（`impl=h124aca9d`，存档 md5 全程未动）：
+
+```
+bzPatch{set:{}}        → 生成 bz_offline_save.json.pre-maint.json（756 B）
+bzPatch 技能1→2         → ⚠ 写前守卫拒绝（动作 bzPatch）: 技能1等级下降 40→2 → 内存已回滚到上次落盘快照
+CheckBattleResult       → REQ CheckBattleResult p={"win":1,"npcID":1003}
+```
+
+顺带修了会误导人的日志：`bzPatch` 被拒后仍打印 `bzPatch set skills`，现在追加 `← 写档被守卫拒绝（见上一行原因），仅内存生效`。
+
+**弱证据字段核查（已固化）**：两片工人 255 个字段与确定性扫描 **255/255 一致**，合并存 `tools/facts/weak-verified-all.json`。但要说清：这只证明**字段名在 bundle 里作为属性访问存在**，不证明"是在应答上下文里读"（例：`BuyMount.sync` 的命中行是 `i.sync`，另一个对象）。这层要靠 MODE 表 + 变异测试。
+
+### 14.11 未解与下一步（按优先级）
+
+1. **等玩家打一场怪**：看 `REQ CheckBattleResult` 的真实参数（有没有怪物 id / 数量 / 战斗实例 id）。这一步决定击杀类任务能不能做——B01 的全部前提都压在它上面。
+2. **事件层**（大改，需单独授权）：`action → Event[] → 字段效果` 目录 + 守恒守卫（变化必须被事件解释），替换现在"只看方向"的规则。
+3. **v5 迁移**：引入 `taskProg{seq,pendingStart,battleWatermark,active{acc,c,legacy}}`，给老的在办任务打 `legacy` 标记，否则上线当天全被误拒。
+4. **MODE 表**（接口 × 字段路径 → snapshot/delta/replace）：判不出来的一律按 `replace` 处理。
+5. **`includes` 异常**仍未定位（登录窗口 3 次，紧跟 `getFinishTaskAward`），留档 `tools/facts/includes-hunt.json`。
+6. 调试通道还应改成独立路由 + `Maintenance` 事件（现在只是加了写前备份）。
+
+### 14.12 值班纪律（本轮新增，血的）
+
+- **禁止用 PowerShell `Set-Content` / `Out-File` 改含中文的文件**。本轮就把本文件写成了 GBK 乱码（1490 个 U+FFFD，不可逆），只能靠快照重建。改文件只用 `edit` / `write` 工具。
+- 崩溃或损坏后**先留证再修**：把坏档复制到 `_backup\…-corrupted` 再动手。
+- 每次改既有文件前先备份并核对 md5（本轮共 7 个备份目录，见 §8）。

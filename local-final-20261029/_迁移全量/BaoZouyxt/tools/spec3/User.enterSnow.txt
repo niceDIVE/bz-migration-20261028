@@ -1,0 +1,13 @@
+# User.enterSnow   (HttpConst.SNOWACTIVE)
+
+## 注册点 122462: r.MessageCenter.on(l.HttpConst.SNOWACTIVE, function(e, o) {
+
+## 请求点 122561: c.NetMgr.http.sendRequest(l.HttpConst.SNOWACTIVE, e);
+   122553: };
+   122554: t.prototype.reqSnowActive = function(t) {
+   122555: if (!this.acting) {
+   122556: void 0 === t && (t = 0);
+   122557: this.activeType = t;
+   122558: var e = {
+   122559: roleID: h.RoleBaseInfo.roleID
+   122560: };

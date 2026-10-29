@@ -1,0 +1,210 @@
+{
+  "killRate": 0.9886363636363636,
+  "applicable": 88,
+  "killed": 87,
+  "neverApplicable": [],
+  "results": [
+    {
+      "id": "M01.ivch_delta",
+      "why": "note.ivch 发增量而非绝对值（能反复卖）",
+      "applicable": 4,
+      "killed": 4,
+      "survivors": [],
+      "killedBy": {
+        "L1.IVCH_ABS": 4,
+        "L1.IVCH_VAL": 3
+      }
+    },
+    {
+      "id": "M02.eco_potential_key",
+      "why": "潜能键写成 potential（客户端只认 ptt）",
+      "applicable": 1,
+      "killed": 1,
+      "survivors": [],
+      "killedBy": {
+        "L1.ECO_KEY": 1,
+        "L1.NOTE_MISSING_ECO": 1
+      }
+    },
+    {
+      "id": "M03.skch_lv0",
+      "why": "下发 lv=0 的 skch（客户端删技能）",
+      "applicable": 2,
+      "killed": 2,
+      "survivors": [],
+      "killedBy": {
+        "L1.SKCH_LV0": 2,
+        "L4.DIFF": 1
+      }
+    },
+    {
+      "id": "M04.switch_zero",
+      "why": "开关字段回 0（F1：formulaID:0 → getItem(0) 得 null）",
+      "applicable": 5,
+      "killed": 5,
+      "survivors": [],
+      "killedBy": {
+        "L1.SWITCH_FALSY": 5,
+        "L4.DIFF": 1
+      }
+    },
+    {
+      "id": "M05.drop_required",
+      "why": "漏回必回字段（LoadGame 等重建入口）",
+      "applicable": 2,
+      "killed": 2,
+      "survivors": [],
+      "killedBy": {
+        "L1.REQUIRED": 2
+      }
+    },
+    {
+      "id": "M06.finishTaskObj_shape",
+      "why": "finishTaskObj 回成对象（LoadGame 要字符串数组）",
+      "applicable": 1,
+      "killed": 1,
+      "survivors": [],
+      "killedBy": {
+        "L1.SHAPE": 1
+      }
+    },
+    {
+      "id": "M07.itemObj_empty",
+      "why": "sycnPlayerItemData 回空 itemObj（客户端清空背包）",
+      "applicable": 2,
+      "killed": 2,
+      "survivors": [],
+      "killedBy": {
+        "L1.SHAPE": 2
+      }
+    },
+    {
+      "id": "M08.drop_note",
+      "why": "改了存档但没发 note（客户端显示过期）",
+      "applicable": 8,
+      "killed": 8,
+      "survivors": [],
+      "killedBy": {
+        "L1.NOTE_MISSING_SKCH": 2,
+        "L4.DIFF": 1,
+        "L1.NOTE_MISSING_IVCH": 4,
+        "L1.NOTE_MISSING_ECO": 5,
+        "L1.NOTE_MISSING_EQCH": 2
+      }
+    },
+    {
+      "id": "M09.sell_overpay",
+      "why": "结算多给 1 个铜币（存档与 note 同步错，只有守恒式能抓）",
+      "applicable": 3,
+      "killed": 2,
+      "survivors": [
+        "saleItem.equip90001"
+      ],
+      "killedBy": {
+        "L5.RULE": 2
+      }
+    },
+    {
+      "id": "M10.note_key_typo",
+      "why": "note 键名拼错（ivch→ivhc，客户端静默丢弃）",
+      "applicable": 4,
+      "killed": 4,
+      "survivors": [],
+      "killedBy": {
+        "L1.NOTE_KEY": 4,
+        "L1.NOTE_MISSING_IVCH": 4
+      }
+    },
+    {
+      "id": "M11.currency_in_bag",
+      "why": "货币进背包（4001 铜币写进 bag/ivch）",
+      "applicable": 10,
+      "killed": 10,
+      "survivors": [],
+      "killedBy": {
+        "L1.CURRENCY_IN_BAG": 10,
+        "L2.A_NE_SAVE": 10,
+        "L2.B_NE_SAVE": 10,
+        "L4.DIFF": 1,
+        "L5.CURRENCY_IN_BAG": 10,
+        "L1.SHAPE": 2
+      }
+    },
+    {
+      "id": "M12.yuanbao_forge",
+      "why": "元宝（付费货币）被加",
+      "applicable": 11,
+      "killed": 11,
+      "survivors": [],
+      "killedBy": {
+        "L2.A_NE_SAVE": 10,
+        "L2.B_NE_SAVE": 10,
+        "L4.DIFF": 1,
+        "L5.PAID_CURRENCY_UP": 11,
+        "L5.LOOP_PROFIT": 1,
+        "L5.PAY_WROTE_SAVE": 1
+      }
+    },
+    {
+      "id": "M13.eqch_shape",
+      "why": "eqch 少一层数组（[1,type,num]）",
+      "applicable": 1,
+      "killed": 1,
+      "survivors": [],
+      "killedBy": {
+        "L1.EQCH_SHAPE": 1
+      }
+    },
+    {
+      "id": "M14.client_diverge",
+      "why": "客户端增量路径状态与全量路径不同（L2 只靠快照能抓）",
+      "applicable": 10,
+      "killed": 10,
+      "survivors": [],
+      "killedBy": {
+        "L2.A_NE_B": 10,
+        "L2.A_NE_SAVE": 10
+      }
+    },
+    {
+      "id": "M15.swallowed_exception",
+      "why": "监听器抛异常被 MessageCenter 吞掉（战斗 npcArr[23] 先例）",
+      "applicable": 11,
+      "killed": 11,
+      "survivors": [],
+      "killedBy": {
+        "L0.EXCEPTION": 11
+      }
+    },
+    {
+      "id": "M16.pay_not_blocked",
+      "why": "付费动作回了 eRet:1",
+      "applicable": 1,
+      "killed": 1,
+      "survivors": [],
+      "killedBy": {
+        "L1.PAY_NOT_BLOCKED": 1
+      }
+    },
+    {
+      "id": "M17.fk_dangling",
+      "why": "外键指向表里不存在的 id",
+      "applicable": 1,
+      "killed": 1,
+      "survivors": [],
+      "killedBy": {
+        "L1.FK": 1
+      }
+    },
+    {
+      "id": "M18.envelope_no_code",
+      "why": "游戏服信封缺 code:200（客户端静默丢弃）",
+      "applicable": 11,
+      "killed": 11,
+      "survivors": [],
+      "killedBy": {
+        "L1.ENV_CODE": 11
+      }
+    }
+  ]
+}

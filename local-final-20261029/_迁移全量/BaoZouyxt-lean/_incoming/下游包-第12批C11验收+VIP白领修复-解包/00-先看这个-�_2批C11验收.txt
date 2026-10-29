@@ -1,0 +1,25 @@
+第12批 C11 周年通行证 验收：有条件通过。先堵一个白拿口，再算收口。
+
+★ 白拿口（已替你修好，在本包里）
+  receiveAnniversaryPassAward 的 VIP 档只认请求里的 vip=1，不核对 s.annPass.vip 是否真买过。
+  结果：不花 300 元宝买 VIP，只要请求带 vip=1，就能把 22 阶 VIP 奖励全部领走。
+  我在 /tmp 复现过：旧版 ⑤b 用例会失败（非 VIP 也能领到）。
+  修法：vip=1 且 P.vip!==1 时 noteReject('notVip') 回 eRet 2，不写档。拒绝码表里的 receiveAnniversaryPassAward 加了 notVip:2。
+  本包文件：
+    core/bz-rpc-server.js   在你们 AB7BE4F9… 的基础上只改这两处
+    test/c11-smoke.js       新增 ⑤b，跑出来 14/14
+  请做：覆盖后重新 build，跑 check_reject_codes、acceptance 全量和 c11-smoke，回执贴新 ver 和 md5。
+  以后凡是"免费档/付费档"这类双轨领取，服务端一律按存档判断档位，不信请求。
+
+四项自定口径全部追认：
+  ① endtime = now + 30 天，过期自动续期。我看过，续期只改 endT，rd/vrd/giftBuys 不清零，不会刷出重复领取。
+  ② VIP 300 元宝。
+  ③ 活跃度 10 gold/点，上限 565，超出部分钳掉。
+  ④ 礼包按元宝扣，限购照表。
+
+未做项：照你们登记的 ISSUE-11 挂着。活跃度来源和任务进度 dv 不累计，所以任务暂时领不了，这个可以接受。
+  全部批次跑完时，和 ISSUE-8 一起统一过一遍。
+第 37 批的 START_ROGUE / CHOOS_ROGUE 到时候再做。
+
+下一步：本补丁的冒烟通过后，按 relations.md 开第 13 批，两件事同一份回执交。
+升级报告的条件不变：存档写坏，或者能白拿钱/道具。

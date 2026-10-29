@@ -1,0 +1,132 @@
+# User.getSnowAward  (HttpConst.GET_SNOW_REWARD)
+# 出现 3 处
+
+122491: return;
+122492: }
+122493: r.MessageCenter.dispatch(p.EvName.SNOW_BALL_PO_EVENT);
+122494: } else if (1 == t.activeType) {
+122495: t.setFirecrackerHP(o.hp);
+122496: t.boxNum = o.boxnum;
+122497: 0 == t.boxNum ? a.default.show(n.getText(1094)) : c.NetMgr.http.sendReqWithMask(l.HttpConst.GET_SNOW_REWARD);
+122498: } else if (2 == t.activeType) {
+122499: u.WebSocketModel.openSocketNet("active");
+122500: t.setBeastState(o.eRet);
+122501: t.setSnowManHp(o.hp);
+122502: t.boxNum = o.boxnum;
+122503: }
+122504: }, this);
+122505: r.MessageCenter.on(l.HttpConst.USE_SNOW_BALL, function(e, o) {
+122506: if (1 == o.eRet) {
+122507: t.setSnowManHp(o.hp);
+122508: r.MessageCenter.dispatch(p.EvName.SNOW_REWRAD_EVENT, o);
+122509: } else {
+122510: t.activeState = 2;
+122511: a.default.show(n.getText(1093));
+122512: }
+122513: }, this);
+122514: r.MessageCenter.on(l.HttpConst.USE_BATCH_SNOW_BALL, function(e, o) {
+122515: t.setBeastState(o.eRet);
+122516: if (1 == o.eRet) {
+122517: t.setSnowManHp(o.hp);
+122518: r.MessageCenter.dispatch(p.EvName.SNOW_REWRAD_EVENT, o);
+122519: } else if (4 == o.eRet) {
+122520: a.default.show(n.getText(6126));
+122521: r.MessageCenter.dispatch(p.EvName.REFRESH_ACTIVE_UI);
+122522: } else {
+122523: t.activeState = 2;
+122524: a.default.show(n.getText(1093));
+122525: r.MessageCenter.dispatch(p.EvName.REFRESH_ACTIVE_UI);
+122526: }
+122527: r.MessageCenter.dispatch(p.EvName.REFRESH_BEAST_STATE);
+122528: }, this);
+122529: r.MessageCenter.on(l.HttpConst.GET_SNOW_REWARD, function(e, o) {
+122530: if (1 == o.eRet) {
+122531: n.getText(695);
+122532: var l = o.rewardArray;
+122533: for (var c in l) {
+122534: var h = i.getItem(c, "item");
+122535: n.getText(h.Name), l[c];
+122536: }
+122537: s.default.addShowRewardUI1(o.rewardArray, 0, {});
+---
+122538: } else 4 == o.eRet ? a.default.show(n.getText(1098)) : 3 == o.eRet ? a.default.show(n.getText(6148)) : 0 == o.eRet ? a.default.show(n.getText(1093)) : 2 == o.eRet && a.default.show(n.getText(6177));
+122539: 2 == t.activeType && (3 == o.eRet ? t.setBeastState(1) : t.setBeastState(0));
+122540: 2 == t.activeType && r.MessageCenter.dispatch(p.EvName.REFRESH_BEAST_STATE);
+122541: r.MessageCenter.dispatch(p.EvName.REMOVE_SNOWBOX_EVENT, t.treatureId);
+122542: }, this);
+122543: r.MessageCenter.on(l.HttpConst.USE_ALL_BALL, function(e, o) {
+122544: if (1 == o.eRet) {
+122545: t.setFirecrackerHP(o.hp);
+122546: f.MadUtilsTS.isNullObj(o.rewardArray) || s.default.addShowRewardUI1(o.rewardArray, 0, {});
+122547: r.MessageCenter.dispatch(p.EvName.REFRESH_FIRECRACK_EVENT);
+122548: } else a.default.show(n.getText(1093));
+122549: }, this);
+122550: };
+122551: t.prototype.getCurBox = function() {
+122552: return this.boxNum;
+122553: };
+122554: t.prototype.reqSnowActive = function(t) {
+122555: if (!this.acting) {
+122556: void 0 === t && (t = 0);
+122557: this.activeType = t;
+122558: var e = {
+122559: roleID: h.RoleBaseInfo.roleID
+122560: };
+122561: c.NetMgr.http.sendRequest(l.HttpConst.SNOWACTIVE, e);
+122562: }
+122563: };
+122564: t.prototype.reqAddSnowHp = function(t) {
+122565: var e = {
+122566: roleID: h.RoleBaseInfo.roleID,
+122567: type: t
+122568: };
+122569: c.NetMgr.http.sendReqWithMask(l.HttpConst.USE_SNOW_BALL, e);
+---
+122578: };
+122579: t.prototype.reqSnowReward = function(t) {
+122580: this.treatureId = t;
+122581: var e = {
+122582: roleID: h.RoleBaseInfo.roleID
+122583: };
+122584: c.NetMgr.http.sendReqWithMask(l.HttpConst.GET_SNOW_REWARD, e);
+122585: };
+122586: t.prototype.getSnowHp = function() {
+122587: return this.currentSnowHp;
+122588: };
+122589: t.prototype.setSnowManHp = function(t) {
+122590: this.currentSnowHp = t;
+122591: };
+122592: t.prototype.setBeastState = function(t) {
+122593: this.beastState = t;
+122594: };
+122595: t.prototype.getBeastState = function() {
+122596: return this.beastState;
+122597: };
+122598: t.prototype.getSnowInfo = function() {
+122599: var t = i.getSnowData(this.activeType), e = this.currentSnowHp, o = 0;
+122600: for (var n in t) {
+122601: if (e < t[n].hp) {
+122602: o = parseInt(n);
+122603: break;
+122604: }
+122605: o = parseInt(n);
+122606: }
+122607: return t[o];
+122608: };
+122609: t.prototype.getSnowNpcId = function() {
+122610: return this.getSnowInfo().type;
+122611: };
+122612: t.prototype.clearActiveState = function() {
+122613: this.activeState = 0;
+122614: };
+122615: t.prototype.getFirecrackerInfo = function() {
+122616: var t = i.getTable("springfestival"), e = this.firecrackerHp, o = 1;
+122617: for (var n in t) {
+122618: if (e < t[n].hp) {
+122619: o = parseInt(n);
+122620: break;
+122621: }
+122622: o = parseInt(n);
+122623: }
+122624: return t[o];
+---

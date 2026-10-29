@@ -1,0 +1,50 @@
+10-21 18:00:36.507  1076  3685 D nemuinit: Proxy: use callback: 1494, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:36.507  1076  3685 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:36.507  1076  3685 D nemuinit: Proxy: use callback: 2032, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:36.507  1076  3685 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:36.507  1076  3685 D nemuinit: Proxy: use callback: 1308, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:36.507  1076  3685 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:36.508  1076  3685 D nemuinit: Proxy: use callback: 1466, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: {"errcode":0,"message":"OK","return":{"active":"com.maple.madherogo","installed":[{"appName":"暴走英雄坛游戏软件V1.0","packageName":"com.maple.madherogo","version":"4.0.2","versionCode":112},{"appName":"TapTap Connector","packageName":"com.taptap","version":"0.0.6","versionCode":6}],"recent":[]}}
+10-21 18:00:36.508  1076  3685 D nemuinit: Proxy: finish handleNemuInitMessage
+10-21 18:00:38.374  1173  3675 D BufferPoolAccessor2.0: bufferpool2 0xe6601ef8 : 9(73728 size) total buffers - 5(40960 size) used buffers - 1192/1201 (recycle/alloc) - 9/2394 (fetch/transfer)
+10-21 18:00:38.375  1181  3676 D BufferPoolAccessor2.0: bufferpool2 0x7318f1bcd508 : 5(20548 size) total buffers - 1(4608 size) used buffers - 1194/1199 (recycle/alloc) - 8/1198 (fetch/transfer)
+10-21 18:00:42.634  1308  1346 E system_server: Cannot read thread CPU times for PID 1308
+10-21 18:00:42.629  1155  1155 I health@2.0-serv: type=1400 audit(0.0:4120): avc: denied { read } for name="present" dev="sysfs" ino=9311 scontext=u:r:init:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-21 18:00:42.629  1155  1155 I health@2.0-serv: type=1400 audit(0.0:4121): avc: denied { open } for path="/sys/devices/virtual/power_supply/battery/present" dev="sysfs" ino=9311 scontext=u:r:init:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+10-21 18:00:42.683  1076  1089 D nemuinit: start name: vapi, operation: {"uri":"/apps","method":"GET","params":{}}, id: 202
+10-21 18:00:42.683  1076  3686 D nemuinit: Proxy: use callback: 1494, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:42.683  1076  3686 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:42.683  1076  3686 D nemuinit: Proxy: use callback: 2032, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:42.683  1076  3686 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:42.683  1076  3686 D nemuinit: Proxy: use callback: 1308, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:42.683  1076  3686 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:42.684  1076  3686 D nemuinit: Proxy: use callback: 1466, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: {"errcode":0,"message":"OK","return":{"active":"com.maple.madherogo","installed":[{"appName":"暴走英雄坛游戏软件V1.0","packageName":"com.maple.madherogo","version":"4.0.2","versionCode":112},{"appName":"TapTap Connector","packageName":"com.taptap","version":"0.0.6","versionCode":6}],"recent":[]}}
+10-21 18:00:42.684  1076  3686 D nemuinit: Proxy: finish handleNemuInitMessage
+10-21 18:00:43.548  1173  3675 D BufferPoolAccessor2.0: bufferpool2 0xe6601ef8 : 9(73728 size) total buffers - 5(40960 size) used buffers - 1390/1399 (recycle/alloc) - 9/2790 (fetch/transfer)
+10-21 18:00:43.549  1181  3676 D BufferPoolAccessor2.0: bufferpool2 0x7318f1bcd508 : 5(20548 size) total buffers - 1(4608 size) used buffers - 1392/1397 (recycle/alloc) - 9/1396 (fetch/transfer)
+10-21 18:00:44.230  1308  1380 W DeviceIdleController: motion timeout went off and device isn't stationary
+10-21 18:00:44.363  1308  3687 I BackgroundDexOptService: Pinning optimized code {}
+10-21 18:00:48.713  1173  3675 D BufferPoolAccessor2.0: bufferpool2 0xe6601ef8 : 9(73728 size) total buffers - 5(40960 size) used buffers - 1588/1597 (recycle/alloc) - 9/3186 (fetch/transfer)
+10-21 18:00:48.713  1181  3676 D BufferPoolAccessor2.0: bufferpool2 0x7318f1bcd508 : 5(20548 size) total buffers - 1(4608 size) used buffers - 1590/1595 (recycle/alloc) - 11/1594 (fetch/transfer)
+10-21 18:00:48.875  1076  1089 D nemuinit: start name: vapi, operation: {"uri":"/apps","method":"GET","params":{}}, id: 203
+10-21 18:00:48.876  1076  3689 D nemuinit: Proxy: use callback: 1494, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:48.876  1076  3689 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:48.876  1076  3689 D nemuinit: Proxy: use callback: 2032, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:48.876  1076  3689 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:48.876  1076  3689 D nemuinit: Proxy: use callback: 1308, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:48.876  1076  3689 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:48.877  1076  3689 D nemuinit: Proxy: use callback: 1466, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: {"errcode":0,"message":"OK","return":{"active":"com.maple.madherogo","installed":[{"appName":"暴走英雄坛游戏软件V1.0","packageName":"com.maple.madherogo","version":"4.0.2","versionCode":112},{"appName":"TapTap Connector","packageName":"com.taptap","version":"0.0.6","versionCode":6}],"recent":[]}}
+10-21 18:00:48.877  1076  3689 D nemuinit: Proxy: finish handleNemuInitMessage
+10-21 18:00:53.876  1173  3675 D BufferPoolAccessor2.0: bufferpool2 0xe6601ef8 : 9(73728 size) total buffers - 5(40960 size) used buffers - 1785/1794 (recycle/alloc) - 9/3580 (fetch/transfer)
+10-21 18:00:53.876  1181  3676 D BufferPoolAccessor2.0: bufferpool2 0x7318f1bcd508 : 5(20548 size) total buffers - 1(4608 size) used buffers - 1787/1792 (recycle/alloc) - 11/1791 (fetch/transfer)
+10-21 18:00:55.064  1076  1089 D nemuinit: start name: vapi, operation: {"uri":"/apps","method":"GET","params":{}}, id: 204
+10-21 18:00:55.064  1076  3691 D nemuinit: Proxy: use callback: 1494, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:55.064  1076  3691 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:55.065  1076  3691 D nemuinit: Proxy: use callback: 2032, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:55.065  1076  3691 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:55.065  1076  3691 D nemuinit: Proxy: use callback: 1308, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: 
+10-21 18:00:55.065  1076  3691 D nemuinit: Proxy: not handleNemuInitMessage, use next callback
+10-21 18:00:55.065  1076  3691 D nemuinit: Proxy: use callback: 1466, handleNemuInitMessage, name: vapi, params: {"uri":"/apps","method":"GET","params":{}}, res: {"errcode":0,"message":"OK","return":{"active":"com.maple.madherogo","installed":[{"appName":"暴走英雄坛游戏软件V1.0","packageName":"com.maple.madherogo","version":"4.0.2","versionCode":112},{"appName":"TapTap Connector","packageName":"com.taptap","version":"0.0.6","versionCode":6}],"recent":[]}}
+10-21 18:00:55.065  1076  3691 D nemuinit: Proxy: finish handleNemuInitMessage
+10-21 18:00:59.039  1173  3675 D BufferPoolAccessor2.0: bufferpool2 0xe6601ef8 : 9(73728 size) total buffers - 5(40960 size) used buffers - 1983/1992 (recycle/alloc) - 9/3976 (fetch/transfer)
+10-21 18:00:59.039  1181  3676 D BufferPoolAccessor2.0: bufferpool2 0x7318f1bcd508 : 5(20548 size) total buffers - 1(4608 size) used buffers - 1985/1990 (recycle/alloc) - 12/1989 (fetch/transfer)

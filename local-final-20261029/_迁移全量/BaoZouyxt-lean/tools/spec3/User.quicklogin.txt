@@ -1,0 +1,13 @@
+# User.quicklogin   (HttpConst.QUICK_LOGIN)
+
+## 注册点 70337: v.MessageCenter.on(d.HttpConst.QUICK_LOGIN, function(e, o) {
+
+## 请求点 70392: S.NetMgr.loginHttp.sendRequest(d.HttpConst.QUICK_LOGIN, t);
+   70384: this.isLoginEnter = t;
+   70385: if (I.RoleBaseInfo.userAccount && "" != I.RoleBaseInfo.userAccount) {
+   70386: Y.uiMgr.hideNetworkUI();
+   70387: E.PopUpMgr.cleanupAll(!0);
+   70388: cc.director.loadScene("scenes/svrselect");
+   70389: }
+   70390: };
+   70391: e.prototype.login = function(t) {

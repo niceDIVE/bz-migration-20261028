@@ -1,0 +1,99 @@
+# User.beginRoguePVEBattle  (HttpConst.ROGUE_PVE_ACTION)
+# 出现 2 处
+
+104186: a.serverHp = o.attArr[3];
+104187: a.serverHpLimt = o.attArr[4];
+104188: }
+104189: t.initBattleSystemNew(r, a, o.randSeed);
+104190: }
+104191: }, t);
+104192: s.MessageCenter.on(l.HttpConst.ROGUE_PVE_ACTION, function(e, o) {
+104193: if (1 === o.eRet) {
+104194: t.syncData = o.attArr;
+104195: if (o.attArr && o.attArr.length > 0) {
+104196: t.bs.entityA.serverHp = o.attArr[0];
+104197: t.bs.entityA.serverHpLimt = o.attArr[1];
+104198: t.bs.entityB.serverHp = o.attArr[3];
+104199: t.bs.entityB.serverHpLimt = o.attArr[4];
+104200: } else {
+104201: t.bs.entityA.serverHp = 0;
+104202: t.bs.entityA.serverHpLimt = 1;
+104203: t.bs.entityB.serverHp = 0;
+104204: t.bs.entityB.serverHpLimt = 1;
+104205: }
+104206: var i = T.RoleBaseInfo.roleID + "";
+104207: o.paramID2 && "" != o.paramID2 && (i = o.paramID2);
+104208: switch (o.action) {
+104209: case 1:
+104210: t.bs.castSkill(i, o.paramID, 0, o.paramID1);
+104211: break;
+104212: 
+104213: case 2:
+104214: t.bs.usePotion(i, o.paramID);
+104215: t.reduceItem(o.paramID);
+104216: break;
+104217: 
+104218: case 3:
+104219: t.bs.breathe(i);
+104220: break;
+104221: 
+104222: case 6:
+104223: t.bs.switchPlayer(o.paramID, o.paramID1);
+104224: break;
+104225: 
+104226: case 13:
+104227: break;
+104228: 
+104229: case 0:
+104230: t.bs.escape(i);
+104231: }
+104232: if (o.attArr && o.attArr.length > 0) {
+---
+104454: o.prototype.sendAction = function(t, e, o) {
+104455: this.actionArr.push({
+104456: action: t,
+104457: paramID: e,
+104458: paramID1: o
+104459: });
+104460: d.NetMgr.http.sendRequest(l.HttpConst.ROGUE_PVE_ACTION, {
+104461: action: t,
+104462: paramID: e,
+104463: paramID1: o,
+104464: paramID2: this.bs.entityA.battleID
+104465: }, null, !0, !1, !1);
+104466: };
+104467: o.prototype.reqUseItem = function(e, o) {
+104468: var i = this;
+104469: return new Promise(function(n) {
+104470: i.itemUseResolve = n;
+104471: Promise.resolve().then(function() {
+104472: return t("../../../scripts3/model3/RogueRoleModel");
+104473: }).then(function(t) {
+104474: t.RogueRoleModel.useItemFunc(e, o, 1, !0);
+104475: });
+104476: });
+104477: };
+104478: o.prototype.doComplete = function() {
+104479: var t = this.bs, e = t.esced, o = t.finTarget, i = t.entityA, n = t.entityB;
+104480: t.entityAs && t.entityAs.length > 0 && (i = t.entityAs[0]);
+104481: t.entityBs && t.entityBs.length > 0 && (n = t.entityBs[0]);
+104482: var r = !e && o == i.battleID, a = r ? i.totalDmgReceived / i.initialHpLimit : n.totalDmgReceived / n.initialHpLimit;
+104483: a < 0 && (a = 0);
+104484: var s = this.bs.turn, l = [ r, (100 * a).toFixed(2), s, n.name, i.totalDmgReceived, n.totalDmgReceived, g.TimeMgr.getSTimestamp() - this.startT ], c = i.hp, p = i.mp, h = {
+104485: target: o,
+104486: esc: e,
+104487: data: l,
+104488: hp: c.remaining,
+104489: hplmt: c.limit,
+104490: mp: p.remaining,
+104491: aID: i.battleID,
+104492: bID: n.battleID,
+104493: bExp: n.exp,
+104494: entityA: t.entityA,
+104495: entityB: t.entityB,
+104496: seed: this.bs.seed
+104497: };
+104498: t.entityB instanceof u && (h.npcID = t.entityB.serverNpcID);
+104499: this.endBattle(h, null);
+104500: this.dispose();
+---

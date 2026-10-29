@@ -1,0 +1,182 @@
+{"t":1792674363752,"boot":"boot-2","impl":"(none)","flow":"(none)","kind":"info","msg":"XMLHttpRequest → 进程内环回（间接层 __BZ_HARNESS__.impl）"}
+{"t":1792674363753,"boot":"boot-2","impl":"(none)","flow":"(none)","kind":"info","msg":"bootstrap boot-2 文件系统就绪 /data/user/0/com.maple.madherogo/files/"}
+{"t":1792674363827,"boot":"boot-2","impl":"hb02589eb","flow":"(none)","kind":"info","msg":"策略层载入 hb02589eb"}
+{"t":1792674363912,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"info","msg":"流程层载入 ffaec47c3"}
+{"t":1792674363915,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"info","msg":"命令通道就绪 /data/user/0/com.maple.madherogo/files/bz_cmd.txt → /data/user/0/com.maple.madherogo/files/bz_res.txt"}
+{"t":1792674364434,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"scene","name":"SplashScene"}
+{"t":1792674364436,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] 进入场景 SplashScene"}
+{"t":1792674367057,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"scene","name":"gamelogo"}
+{"t":1792674367058,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] 进入场景 gamelogo"}
+{"t":1792674376714,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"xhr","msg":"xhr register 27ms 7B"}
+{"t":1792674376792,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetServerList"}
+{"t":1792674376883,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.GetServerList 63ms 2638B"}
+{"t":1792674376930,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.TellAction"}
+{"t":1792674376957,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.TellAction 43ms 334B"}
+{"t":1792674376985,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"xhr","msg":"xhr notice 11ms 28B"}
+{"t":1792674377169,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"scene","name":"svrselect"}
+{"t":1792674377170,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] 进入场景 svrselect"}
+{"t":1792674377171,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] 补 LoginMgr 登录态"}
+{"t":1792674377172,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] JSON.parse 读取探针已挂"}
+{"t":1792674377172,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] setServer 220 (混服26区)"}
+{"t":1792674377176,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"flow","msg":"setServer"}
+{"t":1792674377670,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R1"}
+{"t":1792674377692,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R2"}
+{"t":1792674377693,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.quicklogin"}
+{"t":1792674377694,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R3"}
+{"t":1792674377698,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R4"}
+{"t":1792674377703,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R5"}
+{"t":1792674377703,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R6"}
+{"t":1792674377714,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R7"}
+{"t":1792674377721,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R8"}
+{"t":1792674377721,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ChooseServer"}
+{"t":1792674377722,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R9"}
+{"t":1792674377725,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] onEnterGame（仅此一次）"}
+{"t":1792674377726,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] 发现未知弹窗 NetLoading 方法=[update]"}
+{"t":1792674377727,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] 发现未知弹窗 TextSubsituter 方法=[onLoad,traverseNode]"}
+{"t":1792674377727,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"flow","msg":"onEnterGame"}
+{"t":1792674377730,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R10"}
+{"t":1792674377735,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R11"}
+{"t":1792674377737,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R12"}
+{"t":1792674377742,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R13"}
+{"t":1792674377742,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R14"}
+{"t":1792674377743,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R15"}
+{"t":1792674377743,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R16"}
+{"t":1792674377744,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.quicklogin 49ms 537B"}
+{"t":1792674377744,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R17"}
+{"t":1792674377746,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R18"}
+{"t":1792674377747,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.ChooseServer 25ms 238B"}
+{"t":1792674377749,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R19"}
+{"t":1792674377760,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R20"}
+{"t":1792674377761,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.LoadGame"}
+{"t":1792674377761,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R21"}
+{"t":1792674377763,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R22"}
+{"t":1792674377764,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R23"}
+{"t":1792674377765,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R24"}
+{"t":1792674377766,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R25"}
+{"t":1792674377766,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R26"}
+{"t":1792674377768,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R27"}
+{"t":1792674377769,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R28"}
+{"t":1792674377770,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R29"}
+{"t":1792674377770,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[impl] LoadGame → 快照 FZhou 任务: 完成=19 进行中=2 物品=11 种"}
+{"t":1792674377771,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R30"}
+{"t":1792674377797,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R31"}
+{"t":1792674377804,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R32"}
+{"t":1792674377810,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R33"}
+{"t":1792674377814,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R34"}
+{"t":1792674377827,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R35"}
+{"t":1792674377830,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R36"}
+{"t":1792674377834,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R37"}
+{"t":1792674377835,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R38"}
+{"t":1792674377836,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R39"}
+{"t":1792674377836,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] SPY 捕获响应 R40"}
+{"t":1792674377868,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetChatAddress"}
+{"t":1792674377876,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.LoadGame 44ms 5017B"}
+{"t":1792674377902,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.GetChatAddress 20ms 697B"}
+{"t":1792674377970,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.TellAction"}
+{"t":1792674378110,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.TellAction 139ms 345B"}
+{"t":1792674378196,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"scene","name":"gamescene"}
+{"t":1792674378197,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] 进入场景 gamescene"}
+{"t":1792674378197,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] 已进入主场景 gamescene"}
+{"t":1792674378199,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"impl","msg":"[flow] 公告→onBack()"}
+{"t":1792674378200,"boot":"boot-2","impl":"hb02589eb","flow":"ffaec47c3","kind":"flow","msg":"notice:onBack"}
+{"t":1792675862459,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetServerList"}
+{"t":1792675862489,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetServerList"}
+{"t":1792675862515,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ChooseServer"}
+{"t":1792675862522,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ChooseServer"}
+{"t":1792675862525,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.TellAction"}
+{"t":1792675862535,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.TellAction"}
+{"t":1792675862542,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.quicklogin"}
+{"t":1792675862553,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.quicklogin"}
+{"t":1792675862559,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.CheckName"}
+{"t":1792675862562,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.CheckName"}
+{"t":1792675862564,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.Create"}
+{"t":1792675862588,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.Create"}
+{"t":1792675862610,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getCRAInfo"}
+{"t":1792675862616,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getCRAInfo"}
+{"t":1792675862625,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetChatAddress"}
+{"t":1792675862643,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetChatAddress"}
+{"t":1792675862648,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ acceptTask p={}"}
+{"t":1792675862648,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.acceptTask"}
+{"t":1792675862654,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ acceptTask p={}"}
+{"t":1792675862654,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.acceptTask"}
+{"t":1792675862657,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ getFinishTaskAward p={}"}
+{"t":1792675862658,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getFinishTaskAward"}
+{"t":1792675862661,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ getFinishTaskAward p={}"}
+{"t":1792675862661,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getFinishTaskAward"}
+{"t":1792675862663,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.OpenNovice"}
+{"t":1792675862665,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.OpenNovice"}
+{"t":1792675862666,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.joinSchool"}
+{"t":1792675862669,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.joinSchool"}
+{"t":1792675862670,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.upgradeSkill"}
+{"t":1792675862671,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] upgradeSkill 忽略无效请求 id=0 p={}"}
+{"t":1792675862673,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.upgradeSkill"}
+{"t":1792675862674,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] upgradeSkill 忽略无效请求 id=0 p={}"}
+{"t":1792675862675,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ ReqSelfBattleInfo p={}"}
+{"t":1792675862676,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ReqSelfBattleInfo"}
+{"t":1792675862682,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ ReqSelfBattleInfo p={}"}
+{"t":1792675862683,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ReqSelfBattleInfo"}
+{"t":1792675862685,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ CheckBattleResult p={}"}
+{"t":1792675862686,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.CheckBattleResult"}
+{"t":1792675862689,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ CheckBattleResult p={}"}
+{"t":1792675862689,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.CheckBattleResult"}
+{"t":1792675862691,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.neverSeenAction"}
+{"t":1792675862692,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] UNKNOWN User.neverSeenAction p={}"}
+{"t":1792675862750,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"reload","ok":true,"ms":364}
+{"t":1792675862802,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[flow] 进入场景 gamescene"}
+{"t":1792675862802,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[flow] 已进入主场景 gamescene"}
+{"t":1792675877054,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getAllActivity"}
+{"t":1792675877085,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getActivityCounts"}
+{"t":1792675877094,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.getAllActivity 27ms 569B"}
+{"t":1792675877115,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.getActivityCounts 27ms 537B"}
+{"t":1792675899714,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.recordAttributes"}
+{"t":1792675899715,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] UNKNOWN User.recordAttributes p={\"attrs\":[44,24,14,10,784,240,104,29,248,11,0,0,0,0,0,1,0,4,1,8,40,7,40],\"web\":false,\"clientVersion\":{\"android\":\"2.4.7\"},\"NeedUpdateVersion\":\"4.0.0\",\"userAccount\":\"9900012358565\",\"roleID\":16374,\"loginFlag\":1,\"inGameTime\":0,\"nonce\":\"17926758"}
+{"t":1792675899754,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.recordAttributes 45ms 345B"}
+{"t":1792675965758,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.useItem"}
+{"t":1792675965761,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 3003 x1 → 余 52"}
+{"t":1792675965762,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"impl","msg":"[impl] useItem 3003 饱食度 500 + 30 → 530（上限 540）"}
+{"t":1792675965801,"boot":"boot-2","impl":"h79a142f6","flow":"ffaec47c3","kind":"xhr","msg":"xhr User.useItem 34ms 473B"}
+{"t":1792676263306,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetServerList"}
+{"t":1792676263344,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetServerList"}
+{"t":1792676263361,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ChooseServer"}
+{"t":1792676263365,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ChooseServer"}
+{"t":1792676263367,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.TellAction"}
+{"t":1792676263370,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.TellAction"}
+{"t":1792676263374,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.quicklogin"}
+{"t":1792676263381,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.quicklogin"}
+{"t":1792676263383,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.CheckName"}
+{"t":1792676263388,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.CheckName"}
+{"t":1792676263390,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.Create"}
+{"t":1792676263398,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.Create"}
+{"t":1792676263402,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getCRAInfo"}
+{"t":1792676263408,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getCRAInfo"}
+{"t":1792676263411,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetChatAddress"}
+{"t":1792676263415,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.GetChatAddress"}
+{"t":1792676263417,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ acceptTask p={}"}
+{"t":1792676263417,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.acceptTask"}
+{"t":1792676263420,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ acceptTask p={}"}
+{"t":1792676263421,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.acceptTask"}
+{"t":1792676263425,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ getFinishTaskAward p={}"}
+{"t":1792676263425,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getFinishTaskAward"}
+{"t":1792676263428,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ getFinishTaskAward p={}"}
+{"t":1792676263429,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.getFinishTaskAward"}
+{"t":1792676263431,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.OpenNovice"}
+{"t":1792676263432,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.OpenNovice"}
+{"t":1792676263433,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.joinSchool"}
+{"t":1792676263435,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.joinSchool"}
+{"t":1792676263436,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.upgradeSkill"}
+{"t":1792676263437,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] upgradeSkill 忽略无效请求 id=0 p={}"}
+{"t":1792676263439,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.upgradeSkill"}
+{"t":1792676263440,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] upgradeSkill 忽略无效请求 id=0 p={}"}
+{"t":1792676263441,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ ReqSelfBattleInfo p={}"}
+{"t":1792676263442,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ReqSelfBattleInfo"}
+{"t":1792676263444,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ ReqSelfBattleInfo p={}"}
+{"t":1792676263445,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.ReqSelfBattleInfo"}
+{"t":1792676263447,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ CheckBattleResult p={}"}
+{"t":1792676263447,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.CheckBattleResult"}
+{"t":1792676263450,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] REQ CheckBattleResult p={}"}
+{"t":1792676263451,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.CheckBattleResult"}
+{"t":1792676263452,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] dispatch User.neverSeenAction"}
+{"t":1792676263453,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[impl] UNKNOWN User.neverSeenAction p={}"}
+{"t":1792676263494,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"reload","ok":true,"ms":257}
+{"t":1792676263503,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[flow] 进入场景 gamescene"}
+{"t":1792676263504,"boot":"boot-2","impl":"hf015c1c2","flow":"ffaec47c3","kind":"impl","msg":"[flow] 已进入主场景 gamescene"}

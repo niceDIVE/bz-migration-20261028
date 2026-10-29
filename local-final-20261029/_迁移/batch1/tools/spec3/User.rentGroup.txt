@@ -1,0 +1,21 @@
+# User.rentGroup   (HttpConst.RENT_EVENT)
+
+## 注册点 77020: i.MessageCenter.on(n.HttpConst.RENT_EVENT, this.callBackRentEvent, this);
+
+## 请求点 77406: _.NetMgr.http.sendRequest(n.HttpConst.RENT_EVENT, {
+   77398: _.NetMgr.http.sendRequest(n.HttpConst.BIRTHCHILD, {});
+   77399: };
+   77400: e.prototype.reqProposeNpc = function(t) {
+   77401: _.NetMgr.http.sendRequest(n.HttpConst.PROPOSE_NPC, {
+   77402: npcID: t
+   77403: });
+   77404: };
+   77405: e.prototype.reqRentTeam = function(t) {
+
+## 处理函数 callBackRentEvent (77129-77134)
+ 77129: e.prototype.callBackRentEvent = function(t, e) {
+ 77130: if (1 == e.eRet) {
+ 77131: this.rentProState = e.type;
+ 77132: this.marryPopTip(1);
+ 77133: } else p.default.show(r.getText("jh59"));
+ 77134: };

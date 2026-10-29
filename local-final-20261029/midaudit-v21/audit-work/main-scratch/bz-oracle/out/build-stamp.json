@@ -1,0 +1,16 @@
+{
+  "gen": "2026-10-23T06:30:37.350Z",
+  "files": {
+    "projector.js": {
+      "size": 4547,
+      "md5": "1d8194fedd2f4b357a9ce7d0fae3be53",
+      "sha8": "fe5bcd44"
+    },
+    "stub.js": {
+      "size": 2395,
+      "md5": "0185709aaf39b0446d74746293cfef15",
+      "sha8": "d817d8cb"
+    }
+  },
+  "impl": "hb3a33fa6"
+}

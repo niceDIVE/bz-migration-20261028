@@ -1,0 +1,156 @@
+# User.fashionEffect  (HttpConst.FASHION_EFFECT)
+# 出现 5 处
+
+ 75780: m.NetMgr.http.sendReqWithMask(l.HttpConst.ADD_CHANGE_FACE, e);
+ 75781: };
+ 75782: t.prototype.reqFashionEffect = function(t) {
+ 75783: var e = {
+ 75784: id: t
+ 75785: };
+ 75786: m.NetMgr.http.sendRequest(l.HttpConst.FASHION_EFFECT, e);
+ 75787: };
+ 75788: t.prototype.reqSetWingId = function(t) {
+ 75789: var e = {
+ 75790: wId: t
+ 75791: };
+ 75792: m.NetMgr.http.sendRequest(l.HttpConst.SET_PLAYER_WING_ID, e);
+ 75793: };
+ 75794: t.prototype.reqSetYpEffect = function(t) {
+ 75795: m.NetMgr.http.sendRequest(l.HttpConst.SET_YP_EFFECT_STATE, {
+ 75796: state: t
+ 75797: });
+ 75798: };
+ 75799: t.prototype.getNewFashionID = function(t) {
+ 75800: void 0 === t && (t = {});
+ 75801: var e = 0;
+ 75802: for (var o in this.currentFashion) if (parseInt(this.currentFashion[o]) > 0) {
+ 75803: e = this.checkTitivateValue(parseInt(this.currentFashion[o]), t);
+ 75804: break;
+ 75805: }
+ 75806: return e;
+ 75807: };
+ 75808: t.prototype.curCoatFashionID = function() {
+ 75809: for (var t = [ 8, 9 ], e = 0, o = 0; o < t.length; o++) {
+ 75810: var i = p.UserModel.entity.getEquipment(t[o]);
+ 75811: if (i) {
+ 75812: e = this.checkTitivateValue(parseInt(i.id));
+ 75813: break;
+ 75814: }
+ 75815: }
+ 75816: return e;
+ 75817: };
+ 75818: t.prototype.checkTitivateValue = function(t, e) {
+ 75819: void 0 === e && (e = {});
+ 75820: if (0 == t) return 0;
+ 75821: var o = r.getItem(t, "fashionall"), i = 0;
+ 75822: if (o && o.hasOwnProperty("titivate") && "0" != o.titivate) {
+ 75823: var n = o.titivate.split("&");
+ 75824: if (1 == n.length) this.checkFashionState(n[0], e) && (i = parseInt(n[0])); else if (2 == n.length) {
+ 75825: var a = n[0].split(","), s = n[1].split(",");
+ 75826: this.checkSexState(s) && this.checkFashionState(a, e) && (i = parseInt(a[0]));
+---
+ 81178: t.getComponent(m.PStater).state = e.isMoving ? m.State.STATE_MOVE : m.State.STATE_IDLE;
+ 81179: }, this);
+ 81180: this.node.on(f.EvName.DIRECTION_CHANGED, function() {
+ 81181: t.n2ch = !0;
+ 81182: }, this);
+ 81183: s.MessageCenter.on(f.EvName.ON_RESET_CHANGE, this.onSetSpeedBack, this);
+ 81184: s.MessageCenter.on(_.HttpConst.FASHION_EFFECT, this.onFashionEffect, this);
+ 81185: };
+ 81186: e.prototype.removeEventListeners = function() {
+ 81187: s.MessageCenter.off(f.EvName.ON_RESET_CHANGE, this.onSetSpeedBack, this);
+ 81188: s.MessageCenter.off(_.HttpConst.FASHION_EFFECT, this.onFashionEffect, this);
+ 81189: };
+ 81190: e.prototype.onSetSpeedBack = function() {
+ 81191: var t = this.getComponent(g.Runner);
+ 81192: if (!c.DriverModel.getLocationMountState() && 0 == u.UserModel.moveMode) {
+ 81193: t.running = 0;
+ 81194: t.coe = 1;
+ 81195: this.n2ch = !1;
+ 81196: }
+ 81197: };
+ 81198: e.prototype.start = function() {
+ 81199: this.addEventListeners();
+ 81200: var t = p.RoleOtherInfo.getRoleCoatBaseData();
+ 81201: t.isShowName = !0;
+ 81202: var e = this.getComponent("PlayerTitle");
+ 81203: if (e) {
+ 81204: e.isMount = !0;
+ 81205: e.RoleId = t.roleID;
+ 81206: e.showRoleBaseUI(t);
+ 81207: }
+ 81208: var o = this.getComponent("PlayerBubble");
+ 81209: o && (o.isMount = !0);
+ 81210: };
+ 81211: e.prototype.testMethod = function(t) {
+ 81212: var e = this.nonPic.convertToNodeSpaceAR(t, this.out), o = cc.rect(-30, 0, 60, 150);
+ 81213: this.outV2.x = e.x;
+ 81214: this.outV2.y = e.y;
+ 81215: return o.contains(this.outV2);
+ 81216: };
+ 81217: e.prototype.touchStart = function() {
+ 81218: p.RoleOtherInfo.isRoleTouch = !0;
+ 81219: s.MessageCenter.dispatch(f.EvName.STOP_PLAYER);
+ 81220: return !0;
+ 81221: };
+ 81222: e.prototype.touchEnd = function() {
+ 81223: if (this.onTouch && this.touchEndTime - this.touchStartTime >= 1e3 && p.RoleOtherInfo.isRoleTouch) {
+ 81224: p.RoleOtherInfo.isRoleTouch = !1;
+---
+ 81225: s.MessageCenter.dispatch(f.EvName.OPEN_HURT_EVENT);
+ 81226: return !0;
+ 81227: }
+ 81228: return !1;
+---
+ 97550: var e = t.getComponent("Runner");
+ 97551: t.getComponent(m.PStater).state = e.isMoving ? m.State.STATE_MOVE : m.State.STATE_IDLE;
+ 97552: }, this);
+ 97553: this.node.on(c.EvName.DIRECTION_CHANGED, function() {
+ 97554: t.n2ch = !0;
+ 97555: }, this);
+ 97556: l.MessageCenter.on(b.HttpConst.FASHION_EFFECT, this.onFashionEffect, this);
+ 97557: };
+ 97558: e.prototype.removeEventListeners = function() {
+ 97559: l.MessageCenter.off(b.HttpConst.FASHION_EFFECT, this.onFashionEffect, this);
+ 97560: };
+ 97561: e.prototype.start = function() {
+ 97562: this.addEventListeners();
+ 97563: var t = p.RoleOtherInfo.getRoleCoatBaseData();
+ 97564: t.isShowName = !0;
+ 97565: var e = this.getComponent("PlayerTitle");
+ 97566: if (e) {
+ 97567: e.RoleId = t.roleID;
+ 97568: e.showRoleBaseUI(t);
+ 97569: }
+ 97570: };
+ 97571: e.prototype.testMethod = function(t) {
+ 97572: var e = this.node.convertToNodeSpaceAR(t, this.out), o = cc.rect(-30, 0, 60, 150);
+ 97573: this.outV2.x = e.x;
+ 97574: this.outV2.y = e.y;
+ 97575: return o.contains(this.outV2);
+ 97576: };
+ 97577: e.prototype.touchStart = function() {
+ 97578: p.RoleOtherInfo.isRoleTouch = !0;
+ 97579: l.MessageCenter.dispatch(c.EvName.STOP_PLAYER);
+ 97580: return !0;
+ 97581: };
+ 97582: e.prototype.touchEnd = function() {
+ 97583: if (this.onTouch && this.touchEndTime - this.touchStartTime >= 1e3 && p.RoleOtherInfo.isRoleTouch) {
+ 97584: p.RoleOtherInfo.isRoleTouch = !1;
+ 97585: l.MessageCenter.dispatch(c.EvName.OPEN_HURT_EVENT);
+ 97586: return !0;
+ 97587: }
+ 97588: return !1;
+ 97589: };
+ 97590: e.prototype.setPlayer = function() {
+ 97591: this.armatureNode.active = !0;
+ 97592: 1e3 != f.GSceneMgr.curSceneID && 5e3 != f.GSceneMgr.curSceneID || .6 != this.scale && (this.scale = .8 * s.madConst.AVATAR_SCALE);
+ 97593: if (E.SchoolSquareModel.isLGIng || E.SchoolSquareModel.isCollective) {
+ 97594: this.startActName = "dazuo";
+ 97595: this.longStartActName = "long_dazuo";
+ 97596: this.getComponent(m.PStater).state = m.State.STATE_STUDY;
+---
+ 97597: }
+ 97598: this.skeleton.setCompleteListener(this.onComplete.bind(this));
+ 97599: this.armatureNode.setScale(cc.v3(this.scale * this.nodeScale, this.scale * this.nodeScale, 1));
+---

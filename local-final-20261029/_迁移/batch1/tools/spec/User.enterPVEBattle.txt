@@ -1,0 +1,106 @@
+# User.enterPVEBattle  (HttpConst.REQ_LANGHUAN_COMBAT)
+# 出现 3 处
+
+ 67542: this.parent.mgr = null;
+ 67543: this.parent = null;
+ 67544: }
+ 67545: };
+ 67546: t.prototype.startBattle = function(t) {
+ 67547: var e = i.UserModel.entity;
+ 67548: t.hasOwnProperty("floorLv") ? r.NetMgr.http.sendRequest(n.HttpConst.REQ_LANGHUAN_COMBAT, {
+ 67549: lv: t.floorLv,
+ 67550: npcID: t.npcID,
+ 67551: mp: e.mp.remaining,
+ 67552: gTime: e.totalGameTime.gameTime,
+ 67553: hgtimes: e.numStuffed
+ 67554: }) : r.NetMgr.http.sendRequest(n.HttpConst.REQ_LANGHUAN_COMBAT, {
+ 67555: npcID: t.npcID,
+ 67556: mp: e.mp.remaining,
+ 67557: gTime: e.totalGameTime.gameTime,
+ 67558: hgtimes: e.numStuffed
+ 67559: });
+ 67560: };
+ 67561: return t;
+ 67562: }();
+ 67563: o.LangHMode = l;
+ 67564: cc._RF.pop();
+ 67565: }, {
+ 67566: "../../models/UserModel": "UserModel",
+ 67567: "../../net/HttpConst": "HttpConst",
+ 67568: "../../net/NetMgr": "NetMgr",
+ 67569: "./LangHMpMgr": "LangHMpMgr",
+ 67570: "./LangHSingleMgr": "LangHSingleMgr"
+ 67571: } ],
+ 67572: LangHMpMgr: [ function(t, e, o) {
+ 67573: "use strict";
+ 67574: cc._RF.push(e, "5882biDvRxOxqnhICa14d2V", "LangHMpMgr");
+ 67575: var i, n = this && this.__extends || (i = function(t, e) {
+ 67576: return (i = Object.setPrototypeOf || {
+ 67577: __proto__: []
+ 67578: } instanceof Array && function(t, e) {
+ 67579: t.__proto__ = e;
+ 67580: } || function(t, e) {
+ 67581: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);
+ 67582: })(t, e);
+ 67583: }, function(t, e) {
+ 67584: i(t, e);
+ 67585: function o() {
+ 67586: this.constructor = t;
+ 67587: }
+ 67588: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());
+---
+ 67589: });
+ 67590: Object.defineProperty(o, "__esModule", {
+ 67591: value: !0
+ 67592: });
+ 67593: o.LangHMpMgr = void 0;
+ 67594: var r = t("../../core/events/MessageCenter"), a = t("../../gui/battle/resultscripts/rewardscripts/LangHRwds"), s = t("../../gui/mpbattle/TowerMPBattleUI"), l = t("../../models/MPBattleModel"), c = t("../../models/StoreModel"), p = t("../../net/HttpConst"), h = t("../../net/NetMgr"), u = t("../../utils/EvName"), f = t("../BundleMgr"), d = t("./SPMpBtMgr"), g = t("../../gameconfigs/LangMgr"), m = t("../../core/ui/mgrs/PopUpMgr"), y = t("../LayerMgr"), v = function(e) {
+---
+ 98826: n(o, e);
+ 98827: function o() {
+ 98828: var t = e.call(this) || this;
+ 98829: t.syncData = null;
+ 98830: t.reviveCost = 0;
+ 98831: t.tower = 0;
+ 98832: r.MessageCenter.on(a.HttpConst.REQ_LANGHUAN_COMBAT, function(e, o) {
+ 98833: if (1 === o.eRet) {
+ 98834: t.syncData = o.attArr;
+ 98835: t.reviveCost = o.gold;
+ 98836: var i = o.AttckData;
+ 98837: if (i.hasOwnProperty("veinObj")) {
+ 98838: var n = i.veinObj[1];
+ 98839: for (var r in n) {
+ 98840: var a = c.getItem(r, "acupoint");
+ 98841: 1 != a.meridians && 2 != a.meridians || c.getItem(a.meridians, "meridians").acupoint6.indexOf(parseInt(r)) >= 0 && (n[r] = 0);
+ 98842: }
+ 98843: }
+ 98844: t.tower && (o.AttckData.tower = 1);
+ 98845: l.parsePlayerData(o.AttckData);
+ 98846: var s = l.createPlayerBattleEntity(o.AttckData), h = t.generateNpcData(o.npcArr, o.npcID), u = new p();
+ 98847: l.initRivalEntity(u, h);
+ 98848: o.npcID != s.battleID ? u.battleID = o.npcID : u.battleID = o.npcID + 1;
+ 98849: t.initBattleSystem(s, u, o.randSeed);
+ 98850: }
+ 98851: }, t);
+ 98852: r.MessageCenter.on(a.HttpConst.PVE_ACTION, function(e, o) {
+ 98853: if (1 === o.eRet) {
+ 98854: t.syncData = o.attArr;
+ 98855: if (o.attArr && o.attArr.length > 0) {
+ 98856: if (t.bs.entityA.battleID == o.attArr[8]) {
+ 98857: t.bs.entityA.serverHp = o.attArr[0];
+ 98858: t.bs.entityA.serverHpLimt = o.attArr[1];
+ 98859: } else {
+ 98860: t.bs.entityA.serverHp = 0;
+ 98861: t.bs.entityA.serverHpLimt = 1;
+ 98862: }
+ 98863: if (t.bs.entityB.battleID == o.attArr[9]) {
+ 98864: t.bs.entityB.serverHp = o.attArr[3];
+ 98865: t.bs.entityB.serverHpLimt = o.attArr[4];
+ 98866: } else {
+ 98867: t.bs.entityB.serverHp = 0;
+ 98868: t.bs.entityB.serverHpLimt = 1;
+ 98869: }
+ 98870: } else {
+ 98871: t.bs.entityA.serverHp = 0;
+ 98872: t.bs.entityA.serverHpLimt = 1;
+---

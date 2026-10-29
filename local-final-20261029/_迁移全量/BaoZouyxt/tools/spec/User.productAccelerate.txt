@@ -1,0 +1,99 @@
+# User.productAccelerate  (HttpConst.PRODUCT_ACCELERATE)
+# 出现 2 处
+
+ 62229: r.MessageCenter.on(c.HttpConst.REDEEM_TABLE, this.onRedeemTable, this);
+ 62230: r.MessageCenter.on(c.HttpConst.GET_INN_COOK_LIST, this.onInnCookListEvent, this);
+ 62231: r.MessageCenter.on(c.HttpConst.GET_INN_PRODUCT_LIST, this.onInnProductListEvent, this);
+ 62232: r.MessageCenter.on(c.HttpConst.PRODUCT_RECEIVE, this.onInnCookRewardEvent, this);
+ 62233: r.MessageCenter.on(c.HttpConst.PRODUCT_START, this.onProductCookEvent, this);
+ 62234: r.MessageCenter.on(c.HttpConst.PRODUCT_UNLOCK, this.onOpenCookLandEvent, this);
+ 62235: r.MessageCenter.on(c.HttpConst.PRODUCT_ACCELERATE, this.onAddProductEvent, this);
+ 62236: r.MessageCenter.on(c.HttpConst.COOK_RECEIVE, this.onInnKitchenDataChanged, this);
+ 62237: r.MessageCenter.on(c.HttpConst.COOK_ACCELERATE, this.onInnKitchenDataChanged, this);
+ 62238: r.MessageCenter.on(c.HttpConst.COOK_START, this.onInnKitchenDataChanged, this);
+ 62239: r.MessageCenter.on(c.HttpConst.COOK_UNLOCK, this.onInnKitchenDataChanged, this);
+ 62240: r.MessageCenter.on(c.HttpConst.GET_INN_COOK, this.onCookBookData, this);
+ 62241: r.MessageCenter.on(c.HttpConst.DISH_UNLOCK, this.onDishUnlock, this);
+ 62242: r.MessageCenter.on(c.HttpConst.GET_INN_BAG_DATA, this.onBagsDataEvent, this);
+ 62243: r.MessageCenter.on(c.HttpConst.CREATE_ORDER_BY_HOTVAL, this.onCreateOrder, this);
+ 62244: r.MessageCenter.on(c.HttpConst.COMPLETE_ORDER_BY_HOTVAL, this.onFinishOrder, this);
+ 62245: r.MessageCenter.on(c.HttpConst.GET_INN_RANK, this.onShowInnRank, this);
+ 62246: r.MessageCenter.on(c.HttpConst.GET_INN_SHOP, this.onShowInnShop, this);
+ 62247: r.MessageCenter.on(c.HttpConst.INN_BUY_SHOP, this.onShopBuyItem, this);
+ 62248: };
+ 62249: e.prototype.onDishUnlock = function(t, e) {
+ 62250: if (1 == e.eRet) {
+ 62251: for (var o = e.unlockDish, a = 0, l = 0; l < o.length; l++) this.unlockDishData.indexOf(o[l]) < 0 && (a = o[l]);
+ 62252: if (a > 0) {
+ 62253: var c = i.getItem(a, "dishconfig");
+ 62254: h.default.show(n.getText(7901).replace(/\[1\]/, n.getText(c.name)));
+ 62255: }
+ 62256: this.unlockDishData = e.unlockDish;
+ 62257: this.updateMainMenu();
+ 62258: r.MessageCenter.dispatch(s.EvName.INN_UPDATE_BOOK);
+ 62259: }
+ 62260: };
+ 62261: e.prototype.onCookBookData = function(t, e) {
+ 62262: if (1 == e.eRet) {
+ 62263: this.unlockDishData = e.unlockDish;
+ 62264: this.bookBag = e.cookBook;
+ 62265: r.MessageCenter.dispatch(s.EvName.ON_SELECT_COOK_MANAGE, {
+ 62266: tag1: 3,
+ 62267: data: e
+ 62268: });
+ 62269: }
+ 62270: };
+ 62271: e.prototype.onBagsDataEvent = function(t, e) {
+ 62272: 1 == e.eRet && r.MessageCenter.dispatch(s.EvName.ON_SELECT_COOK_MANAGE, {
+ 62273: tag1: 2,
+ 62274: data: e
+ 62275: });
+---
+ 62450: p.NetMgr.http.sendReqWithMask(c.HttpConst.PRODUCT_START, {
+ 62451: productId: t,
+ 62452: foodsNumsId: e
+ 62453: });
+ 62454: };
+ 62455: e.prototype.reqQuickHarvest = function(t) {
+ 62456: p.NetMgr.http.sendReqWithMask(c.HttpConst.PRODUCT_ACCELERATE, {
+ 62457: productId: t
+ 62458: });
+ 62459: };
+ 62460: e.prototype.reqUnlockField = function(t) {
+ 62461: p.NetMgr.http.sendReqWithMask(c.HttpConst.PRODUCT_UNLOCK, {
+ 62462: productId: t
+ 62463: });
+ 62464: };
+ 62465: e.prototype.reqFoodUnlock = function(t) {
+ 62466: v.SoundMgr.playEffect("sim_newDish");
+ 62467: p.NetMgr.http.sendReqWithMask(c.HttpConst.DISH_UNLOCK, {
+ 62468: dishId: t
+ 62469: });
+ 62470: };
+ 62471: e.prototype.reqCookUnlock = function(t) {
+ 62472: p.NetMgr.http.sendReqWithMask(c.HttpConst.COOK_UNLOCK, {
+ 62473: cookNum: t
+ 62474: });
+ 62475: };
+ 62476: e.prototype.reqCookStart = function(t, e) {
+ 62477: var o = i.getItem(t, "dishconfig");
+ 62478: v.SoundMgr.playEffect([ "sim_rice", "sim_dish", "sim_soup" ][o.type - 1]);
+ 62479: p.NetMgr.http.sendReqWithMask(c.HttpConst.COOK_START, {
+ 62480: cookNum: this.curBenchData.idx,
+ 62481: dishId: t,
+ 62482: dishNum: e
+ 62483: });
+ 62484: };
+ 62485: e.prototype.reqCookReceive = function(t) {
+ 62486: v.SoundMgr.playEffect("sim_cook");
+ 62487: p.NetMgr.http.sendReqWithMask(c.HttpConst.COOK_RECEIVE, {
+ 62488: cookNum: t
+ 62489: });
+ 62490: };
+ 62491: e.prototype.reqCookAccelerate = function(t) {
+ 62492: p.NetMgr.http.sendReqWithMask(c.HttpConst.COOK_ACCELERATE, {
+ 62493: cookNum: t
+ 62494: });
+ 62495: };
+ 62496: e.prototype.reqTableUnlock = function(t) {
+---

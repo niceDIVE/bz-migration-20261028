@@ -1,0 +1,212 @@
+{
+  "id": "GetPayAward.blocked",
+  "action": "User.GetPayAward",
+  "req": {
+    "mod": "User",
+    "do": "GetPayAward",
+    "p": {
+      "productId": 1
+    }
+  },
+  "resp": {
+    "eRet": 4,
+    "reason": "PAY_BLOCKED"
+  },
+  "saveBefore": {
+    "account": "9900012358565",
+    "roleID": 16374,
+    "name": "FZhou",
+    "created": true,
+    "saveVersion": 9,
+    "coins": 1000,
+    "gold": 50,
+    "yuanbao": 0,
+    "potential": 300,
+    "contribution": 0,
+    "chip": 0,
+    "bag": {
+      "2001": 5,
+      "3001": 5,
+      "3101": 1
+    },
+    "playerEquip": {
+      "90001": [
+        3,
+        1
+      ]
+    },
+    "equipments": {
+      "1": 90001
+    },
+    "skills": {
+      "1112": [
+        2,
+        10,
+        1
+      ]
+    },
+    "accepted": [],
+    "done": [
+      101080
+    ],
+    "rewarded": [
+      101080
+    ],
+    "baseValueAy": [
+      "9900012358565",
+      "FZhou",
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "titles": {},
+    "hunger": 50,
+    "hungerMax": 100
+  },
+  "saveAfter": {
+    "account": "9900012358565",
+    "roleID": 16374,
+    "name": "FZhou",
+    "created": true,
+    "saveVersion": 9,
+    "coins": 1000,
+    "gold": 50,
+    "yuanbao": 0,
+    "potential": 300,
+    "contribution": 0,
+    "chip": 0,
+    "bag": {
+      "2001": 5,
+      "3001": 5,
+      "3101": 1
+    },
+    "playerEquip": {
+      "90001": [
+        3,
+        1
+      ]
+    },
+    "equipments": {
+      "1": 90001
+    },
+    "skills": {
+      "1112": [
+        2,
+        10,
+        1
+      ]
+    },
+    "accepted": [],
+    "done": [
+      101080
+    ],
+    "rewarded": [
+      101080
+    ],
+    "baseValueAy": [
+      "9900012358565",
+      "FZhou",
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "titles": {},
+    "hunger": 50,
+    "hungerMax": 100
+  },
+  "envelope": {
+    "error": 0,
+    "p": "User.GetPayAward",
+    "User.GetPayAward": {
+      "eRet": 4,
+      "reason": "PAY_BLOCKED"
+    }
+  },
+  "transport": "game",
+  "rawTransport": {
+    "code": 200
+  },
+  "exceptions": [],
+  "toasts": [],
+  "probe": {
+    "mode": "wrap-on"
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "status": "done",
+    "generatedAtLocal": "Thu Oct 22 2026 18:51:49 GMT+0800 (中国标准时间)",
+    "workOrder": "session3 日志取证（A-F 机械统计：只计数+摘录原行，不判断原因）",
+    "sourceDevicePath": "/data/data/com.maple.madherogo/files/bz_log.jsonl",
+    "sourceDeviceSerial": "127.0.0.1:16416",
+    "sourceLocalFile": "F:\\BaoZouyxt\\hotfix-patch\\probe\\log-pull-20261022-session3.jsonl",
+    "sourceLocalBytes": 26724,
+    "statsScript": "F:\\BaoZouyxt\\hotfix-patch\\probe\\log-stats-20261022-session3.js",
+    "timezoneNote": "所有 *_utc8 均为 t（毫秒）转 UTC+8 的 ISO8601",
+    "rules": {
+      "B": "msg 含 \"异常\"，或 kind=xhr 且 msg 匹配 /TypeError|Error/（逐字面执行）",
+      "C": "msg 含 \"UNKNOWN\"；动作名 = msg 中 \"UNKNOWN\" 后第一个空白分隔 token",
+      "D": "msg 含 \"useItem\"",
+      "E": "msg 匹配 /getAchieveData|Achieve/"
+    },
+    "limitations": [
+      "设备端原始文件字节数未核对（工单未授权 ls/wc 类命令）；完整性以本机拉取文件 26724 字节 / 178 非空行计",
+      "拉取方式: Start-Process 因本会话环境 NO_PROXY/no_proxy 重复键失败（未产生写入），改用 cmd /c 对同一条 adb exec-out cat 命令做本机重定向（字节保真）",
+      "统计仅覆盖本机拉取文件内容；未对设备端做二次校验读取"
+    ]
+  },
+  "commands": [
+    {
+      "cmd": "adb connect 127.0.0.1:16416",
+      "exitCode": 0,
+      "keyOutput": "already connected to 127.0.0.1:16416"
+    },
+    {
+      "cmd": "adb devices",
+      "exitCode": 0,
+      "keyOutput": "List of devices attached / T9Y0221708013594 device / 127.0.0.1:16416 device / emulator-5556 device"
+    },
+    {
+      "cmd": "cmd /c \"adb -s 127.0.0.1:16416 exec-out cat /data/data/com.maple.madherogo/files/bz_log.jsonl > F:\\BaoZouyxt\\hotfix-patch\\probe\\log-pull-20261022-session3.jsonl\"",
+      "exitCode": 0,
+      "keyOutput": "exitcode_cmd_adb=0; 本机文件 26724 字节"
+    },
+    {
+      "cmd": "node F:\\BaoZouyxt\\hotfix-patch\\probe\\log-stats-20261022-session3.js",
+      "exitCode": 0,
+      "keyOutput": "178 非空行/0 解析失败; A: (none)=2,h185c84c6=79,hc91aff6c=97; B=1(L157); C=3行3动作; D=3(L155,156,165); E=3(L176-178); boundary kind!=xhr含TypeError=2(L131,145)"
+    }
+  ],
+  "F_totals": {
+    "totalNonEmptyLines": 178,
+    "blankLines": 0,
+    "parseFailCount": 0,
+    "parseFailLineNos": [],
+    "parseFailListTruncated": false,
+    "linesWithoutValidT": 0,
+    "earliestT": 1792658177264,
+    "earliestT_utc8": "2026-10-22T16:36:17.264+08:00",
+    "latestT": 1792664367586,
+    "latestT_utc8": "2026-10-22T18:19:27.586+08:00"
+  },
+  "A_implGroups": [
+    {
+      "impl": "(none)",
+      "count": 2,
+      "firstLineNo": 1,
+      "firstT": 1792658177264,
+      "firstT_utc8": "2026-10-22T16:36:17.264+08:00",
+      "lastLineNo": 2,
+      "lastT": 1792658177265,
+      "lastT_utc8": "2026-10-22T16:36:17.265+08:00"
+    },
+    {
+      "impl": "h185c84c6",
+      "count": 79,
+      "firstLineNo": 3,
+      "firstT": 1792658177336,
+      "firstT_utc8": "2026-10-22T16:36:17.336+08:00",
+      "lastLineNo": 81,
+      "lastT": 1792658192241,
+      "lastT_utc8": "2026-10-22T16:36:32.241+08:00"
+    },
+    {
+      "impl": "hc91aff6c",
+      "count": 97,
+      "firstLineNo": 82,
+      "firstT": 1792659017171,
+      "firstT_utc8": "2026-10-22T16:50:17.171+08:00",
+      "lastLineNo": 178,
+      "lastT": 1792664367586,
+      "lastT_utc8": "2026-10-22T18:19:27.586+08:00"
+    }
+  ],
+  "B_abnormal": {
+    "count": 1,
+    "rule": "msg 含 \"异常\"，或 kind=xhr 且 msg 匹配 /TypeError|Error/",
+    "lines": [
+      {
+        "lineNo": 157,
+        "matchedBy": [
+          "msg含\"异常\"",
+          "kind=xhr且msg匹配/TypeError|Error/"
+        ],
+        "t": 1792662039995,
+        "t_utc8": "2026-10-22T17:40:39.995+08:00",
+        "raw": "{\"t\":1792662039995,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"xhr\",\"msg\":\"事件回调异常(readystatechange): TypeError: Cannot read property 'name' of null\"}"
+      }
+    ]
+  },
+  "C_unknown": {
+    "totalLines": 3,
+    "actionDistinctCount": 3,
+    "actionSourceRule": "msg 中 \"UNKNOWN\" 后第一个空白分隔 token",
+    "actions": [
+      {
+        "action": "User.getAchieveData",
+        "count": 1,
+        "lastT": 1792664367556,
+        "lastT_utc8": "2026-10-22T18:19:27.556+08:00",
+        "lastLineNo": 177,
+        "lineNos": [
+          177
+        ]
+      },
+      {
+        "action": "User.neverSeenAction",
+        "count": 1,
+        "lastT": 1792659017511,
+        "lastT_utc8": "2026-10-22T16:50:17.511+08:00",
+        "lastLineNo": 123,
+        "lineNos": [
+          123
+        ]
+      },
+      {
+        "action": "User.recordAttributes",
+        "count": 1,
+        "lastT": 1792661932992,
+        "lastT_utc8": "2026-10-22T17:38:52.992+08:00",
+        "lastLineNo": 150,
+        "lineNos": [
+          150
+        ]
+      }
+    ],
+    "lines": [
+      {
+        "lineNo": 123,
+        "action": "User.neverSeenAction",
+        "t": 1792659017511,
+        "t_utc8": "2026-10-22T16:50:17.511+08:00",
+        "raw": "{\"t\":1792659017511,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[impl] UNKNOWN User.neverSeenAction p={}\"}"
+      },
+      {
+        "lineNo": 150,
+        "action": "User.recordAttributes",
+        "t": 1792661932992,
+        "t_utc8": "2026-10-22T17:38:52.992+08:00",
+        "raw": "{\"t\":1792661932992,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[impl] UNKNOWN User.recordAttributes p={\\\"attrs\\\":[44,24,14,10,680,240,104,29,248,11,0,0,0,0,0,1,0,4,1,8,40,7,40],\\\"web\\\":false,\\\"clientVersion\\\":{\\\"android\\\":\\\"2.4.7\\\"},\\\"NeedUpdateVersion\\\":\\\"4.0.0\\\",\\\"userAccount\\\":\\\"9900012358565\\\",\\\"roleID\\\":16374,\\\"loginFlag\\\":1,\\\"inGameTime\\\":0,\\\"nonce\\\":\\\"17926619\"}"
+      },
+      {
+        "lineNo": 177,
+        "action": "User.getAchieveData",
+        "t": 1792664367556,
+        "t_utc8": "2026-10-22T18:19:27.556+08:00",
+        "raw": "{\"t\":1792664367556,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[impl] UNKNOWN User.getAchieveData p={\\\"aNum\\\":1,\\\"web\\\":false,\\\"clientVersion\\\":{\\\"android\\\":\\\"2.4.7\\\"},\\\"NeedUpdateVersion\\\":\\\"4.0.0\\\",\\\"userAccount\\\":\\\"9900012358565\\\",\\\"roleID\\\":16374,\\\"loginFlag\\\":1,\\\"inGameTime\\\":0,\\\"nonce\\\":\\\"17926643675391nlr1zwx\\\"}\"}"
+      }
+    ]
+  },
+  "D_useItem": {
+    "count": 3,
+    "lines": [
+      {
+        "lineNo": 155,
+        "t": 1792662039969,
+        "t_utc8": "2026-10-22T17:40:39.969+08:00",
+        "raw": "{\"t\":1792662039969,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[impl] dispatch User.useItem\"}"
+      },
+      {
+        "lineNo": 156,
+        "t": 1792662039971,
+        "t_utc8": "2026-10-22T17:40:39.971+08:00",
+        "raw": "{\"t\":1792662039971,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[impl] useItem 3626 x1 → 余 0\"}"
+      },
+      {
+        "lineNo": 165,
+        "t": 1792662040014,
+        "t_utc8": "2026-10-22T17:40:40.014+08:00",
+        "raw": "{\"t\":1792662040014,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"xhr\",\"msg\":\"xhr User.useItem 13ms 1017B\"}"
+      }
+    ]
+  },
+  "E_achieve": {
+    "count": 3,
+    "rule": "msg 匹配 /getAchieveData|Achieve/",
+    "lines": [
+      {
+        "lineNo": 176,
+        "t": 1792664367555,
+        "t_utc8": "2026-10-22T18:19:27.555+08:00",
+        "raw": "{\"t\":1792664367555,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[impl] dispatch User.getAchieveData\"}"
+      },
+      {
+        "lineNo": 177,
+        "t": 1792664367556,
+        "t_utc8": "2026-10-22T18:19:27.556+08:00",
+        "raw": "{\"t\":1792664367556,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"impl\",\"msg\":\"[impl] UNKNOWN User.getAchieveData p={\\\"aNum\\\":1,\\\"web\\\":false,\\\"clientVersion\\\":{\\\"android\\\":\\\"2.4.7\\\"},\\\"NeedUpdateVersion\\\":\\\"4.0.0\\\",\\\"userAccount\\\":\\\"9900012358565\\\",\\\"roleID\\\":16374,\\\"loginFlag\\\":1,\\\"inGameTime\\\":0,\\\"nonce\\\":\\\"17926643675391nlr1zwx\\\"}\"}"
+      },
+      {
+        "lineNo": 178,
+        "t": 1792664367586,
+        "t_utc8": "2026-10-22T18:19:27.586+08:00",
+        "raw": "{\"t\":1792664367586,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"xhr\",\"msg\":\"xhr User.getAchieveData 23ms 345B\"}"
+      }
+    ]
+  },
+  "boundaryNotes": {
+    "note": "只记录位置，不分析。工单 B 规则限定 kind=xhr；以下行为 kind!=xhr 且 msg 含 TypeError/Error，按字面不匹配 B，未计入 B。",
+    "kindNotXhrWithError": {
+      "count": 2,
+      "lines": [
+        {
+          "lineNo": 131,
+          "kind": "err",
+          "t": 1792661320384,
+          "t_utc8": "2026-10-22T17:28:40.384+08:00",
+          "raw": "{\"t\":1792661320384,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"err\",\"src\":\"console.error\",\"msg\":\" unhandledRejectedPromise TypeError: Cannot read property 'includes' of undefined\\nstacktrace: \\n\\n\"}"
+        },
+        {
+          "lineNo": 145,
+          "kind": "err",
+          "t": 1792661593955,
+          "t_utc8": "2026-10-22T17:33:13.955+08:00",
+          "raw": "{\"t\":1792661593955,\"boot\":\"boot-2\",\"impl\":\"hc91aff6c\",\"flow\":\"fe3500480\",\"kind\":\"err\",\"src\":\"console.error\",\"msg\":\" unhandledRejectedPromise TypeError: Cannot read property 'includes' of undefined\\nstacktrace: \\n\\n\"}"
+        }
+      ]
+    }
+  }
+}

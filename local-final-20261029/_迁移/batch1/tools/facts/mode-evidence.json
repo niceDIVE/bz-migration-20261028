@@ -1,0 +1,411 @@
+{
+  "task": "WO-D",
+  "items": [
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 111827,
+      "text": "this.setSaveAllItems(e); || kw=setSaveAllItems"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 112026,
+      "text": "e.prototype.setSaveAllItems = function(t) { || kw=setSaveAllItems"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 74351,
+      "text": "t.prototype.setSaveAllItems = function(t) { || kw=setSaveAllItems"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 74385,
+      "text": "this.setSaveAllItems(t); || kw=setSaveAllItems"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 111828,
+      "text": "this.setSaveAllTaskDatas(e); || kw=setSaveAllTaskDatas"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 112029,
+      "text": "e.prototype.setSaveAllTaskDatas = function(t) { || kw=setSaveAllTaskDatas"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 70480,
+      "text": "b.SaveDataMgr.updatePlayerData(e); || kw=updatePlayerData"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 70509,
+      "text": "b.SaveDataMgr.updatePlayerData(e); || kw=updatePlayerData"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 111820,
+      "text": "e.prototype.updatePlayerData = function(e) { || kw=updatePlayerData"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 71406,
+      "text": "m.RogueRoleModel.updatePlayerData(t.playerData, this.difficulty); || kw=updatePlayerData"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 74377,
+      "text": "t.prototype.updatePlayerData = function(t, e) { || kw=updatePlayerData"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 24016,
+      "text": "l.RoleBaseInfo._itemObj = {}; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 105944,
+      "text": "this._itemObj = {}; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 106215,
+      "text": "return this._itemObj; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 106219,
+      "text": "for (var e in this._itemObj) { || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 106220,
+      "text": "var o = this._itemObj[e], i = n.getItem(o.itemId, \"item\"); || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 106282,
+      "text": "this._itemObj.hasOwnProperty(t) || (this._itemObj[t] = new s.IvItem(t, 0, i.quality)); || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 106283,
+      "text": "this._itemObj[t].itemId = t; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 106284,
+      "text": "this._itemObj[t].numbers += e; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 106288,
+      "text": "this.type2Items[i.Type][t] = this._itemObj[t].numbers; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 106325,
+      "text": "if (this._itemObj.hasOwnProperty(t)) { || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 72909,
+      "text": "this._itemObj = {}; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73246,
+      "text": "this._itemObj.hasOwnProperty(t) || (this._itemObj[t] = new u.IvItem(t, 0, i.quality)); || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73247,
+      "text": "this._itemObj[t].itemId = t; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73248,
+      "text": "this._itemObj[t].numbers += e; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73252,
+      "text": "this.type2Items[i.Type][t] = this._itemObj[t].numbers; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73270,
+      "text": "if (this._itemObj.hasOwnProperty(t)) { || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73272,
+      "text": "this._itemObj[t].numbers -= e; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73273,
+      "text": "this.type2Items[i.Type][t] = this._itemObj[t].numbers; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73274,
+      "text": "if (this._itemObj[t].numbers <= 0) { || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73275,
+      "text": "delete this._itemObj[t]; || kw=_itemObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 8359,
+      "text": "for (var s = n.RoleBaseInfo.finishTaskObj; a.length > 0; ) { || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 20097,
+      "text": "if (l.RoleBaseInfo.finishTaskObj.hasOwnProperty(parseInt(t))) { || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 20098,
+      "text": "delete l.RoleBaseInfo.finishTaskObj[parseInt(t)]; || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 53248,
+      "text": "1 == t ? A.RoleBaseInfo.finishTaskObj && A.RoleBaseInfo.finishTaskObj.hasOwnProperty(e) && (o = !0) : 2 == t && Q.CopyFightModel.levelMap.indexOf(parseInt(e)) > 0 && (o = !0); || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 62435,
+      "text": "if (l.RoleBaseInfo.finishTaskObj.hasOwnProperty(\"L1000\")) if (0 == _.ColorVerModel.colorState) { || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 66923,
+      "text": "if (2 == e[0] && p.RoleBaseInfo.finishTaskObj && p.RoleBaseInfo.finishTaskObj.hasOwnProperty(e[1])) return !0; || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 68591,
+      "text": "var t = a.RoleBaseInfo.requireTaskObj, e = a.RoleBaseInfo.finishTaskObj, o = this._name.split(\":\"); || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 68799,
+      "text": "var e = l.RoleBaseInfo.finishTaskObj; || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 74338,
+      "text": "return 4 != m.GSceneMgr.mode && d.SchoolSquareModel.intoSchool <= 0 && g.RoleBaseInfo.finishTaskObj && g.RoleBaseInfo.finishTaskObj.hasOwnProperty(i.getConstByID(504)); || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 76804,
+      "text": "if (a.RoleBaseInfo.finishTaskObj && a.RoleBaseInfo.finishTaskObj.hasOwnProperty(t.properties.task)) { || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "line": 14394,
+      "text": "if (m.RoleBaseInfo.finishTaskObj.hasOwnProperty(101070)) return; || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "line": 14591,
+      "text": "16033 == this.npcData.NpcID && 2240 == L.GSceneMgr.curSceneID && R.default.getIntimacy(16033) < Math.ceil(o) && m.RoleBaseInfo.finishTaskObj.hasOwnProperty(407500) && this.btnArray.push(\"6003559\"); || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "line": 15032,
+      "text": "if (m.RoleBaseInfo.finishTaskObj.hasOwnProperty(\"L1000\")) { || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "line": 23064,
+      "text": "for (var t = [ 101060, 200500, 200020, 200070, 200050, 200030 ], e = c.RoleBaseInfo.finishTaskObj, o = 0; o < t.length; o++) e.hasOwnProperty(t[o]) && (this.allRole[o].active = !0); || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "line": 23824,
+      "text": "p.RoleBaseInfo.finishTaskObj && p.RoleBaseInfo.finishTaskObj.hasOwnProperty(r.getConstByID(504)) && (this.btns[1].active = !0); || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "line": 34915,
+      "text": "var i = y.RoleBaseInfo.finishTaskObj; || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "line": 37878,
+      "text": "e = l.RoleBaseInfo.finishTaskObj.hasOwnProperty(t); || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "line": 42727,
+      "text": "p.RoleBaseInfo.finishTaskObj && p.RoleBaseInfo.finishTaskObj.hasOwnProperty(r.getConstByID(504)) && (this.btns[1].active = !0); || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "line": 49821,
+      "text": "var t = v.RoleBaseInfo.finishTaskObj, e = L.GSceneMgr.getCurSceneID(); || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+      "line": 52503,
+      "text": "var t = c.getTable(\"StoryEnding\"), e = r.RoleBaseInfo.finishTaskObj, o = 1; || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 3171,
+      "text": "var A = m.RoleBaseInfo.finishTaskObj; || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 20287,
+      "text": "var e = c.getTable(\"StoryChapter\"), o = f.RoleBaseInfo.finishTaskObj, i = 0, s = 0; || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 20339,
+      "text": "e || o(f.RoleBaseInfo.finishTaskObj); || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 59354,
+      "text": "for (var e = f.RoleBaseInfo.finishTaskObj, o = y.RoleOtherInfo.reBirthTime, i = 0, s = 1; s < t.length; s++) { || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 86791,
+      "text": "for (var e = t.split(\"|\"), o = e[1].split(\",\"), i = parseInt(e[0]), s = p.RoleBaseInfo.finishTaskObj, n = 0, r = 0; r < o.length && !(s.hasOwnProperty(o[r]) && ++n >= i); r++) ; || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 99122,
+      "text": "var t = h.RoleBaseInfo.finishTaskObj; || kw=finishTaskObj"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 133521,
+      "text": "if (e.hasOwnProperty(\"acceptTaskMap\")) { || kw=acceptTaskMap"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 133523,
+      "text": "var n = e.acceptTaskMap; || kw=acceptTaskMap"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 24016,
+      "text": "l.RoleBaseInfo._itemObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 105940,
+      "text": "this.finishTaskObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 105944,
+      "text": "this._itemObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 111666,
+      "text": "v.RoleBaseInfo._itemObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 111671,
+      "text": "v.RoleBaseInfo.finishTaskObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 112032,
+      "text": "v.RoleBaseInfo.finishTaskObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 112045,
+      "text": "v.RoleBaseInfo.requireTaskObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 133188,
+      "text": "this.finishTaskObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 133208,
+      "text": "this.finishTaskObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 133515,
+      "text": "c.RoleBaseInfo.finishTaskObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 133522,
+      "text": "c.RoleBaseInfo.requireTaskObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 133774,
+      "text": "this.finishTaskObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 72909,
+      "text": "this._itemObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\scripts3.js",
+      "line": 73304,
+      "text": "this._itemObj = {}; || kw== {}"
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 112038,
+      "text": "v.RoleBaseInfo.finishTaskObj = o; || kw== o."
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 133517,
+      "text": "c.RoleBaseInfo.finishTaskObj = e.PlayerFinishTaskObj; || kw== e."
+    },
+    {
+      "file": "F:\\BaoZouyxt\\tools\\index.js",
+      "line": 133523,
+      "text": "var n = e.acceptTaskMap; || kw== e."
+    }
+  ],
+  "commands": [
+    "node tools\\grep_src.js \"setSaveAllItems\" --file tools\\index.js --max 10",
+    "node tools\\grep_src.js \"setSaveAllItems\" --file tools\\scripts2.js --max 10",
+    "node tools\\grep_src.js \"setSaveAllItems\" --file tools\\scripts3.js --max 10",
+    "node tools\\grep_src.js \"setSaveAllTaskDatas\" --file tools\\index.js --max 10",
+    "node tools\\grep_src.js \"setSaveAllTaskDatas\" --file tools\\scripts2.js --max 10",
+    "node tools\\grep_src.js \"setSaveAllTaskDatas\" --file tools\\scripts3.js --max 10",
+    "node tools\\grep_src.js \"updatePlayerData\" --file tools\\index.js --max 10",
+    "node tools\\grep_src.js \"updatePlayerData\" --file tools\\scripts2.js --max 10",
+    "node tools\\grep_src.js \"updatePlayerData\" --file tools\\scripts3.js --max 10",
+    "node tools\\grep_src.js \"_itemObj\" --file tools\\index.js --max 10",
+    "node tools\\grep_src.js \"_itemObj\" --file tools\\scripts2.js --max 10",
+    "node tools\\grep_src.js \"_itemObj\" --file tools\\scripts3.js --max 10",
+    "node tools\\grep_src.js \"finishTaskObj\" --file tools\\index.js --max 10",
+    "node tools\\grep_src.js \"finishTaskObj\" --file tools\\scripts2.js --max 10",
+    "node tools\\grep_src.js \"finishTaskObj\" --file tools\\scripts3.js --max 10",
+    "node tools\\grep_src.js \"acceptTaskMap\" --file tools\\index.js --max 10",
+    "node tools\\grep_src.js \"acceptTaskMap\" --file tools\\scripts2.js --max 10",
+    "node tools\\grep_src.js \"acceptTaskMap\" --file tools\\scripts3.js --max 10",
+    "node tools\\grep_src.js \"finishTaskObj = {}\" --file tools\\index.js --max 10",
+    "node tools\\grep_src.js \"_itemObj = {}\" --file tools\\index.js --max 10",
+    "node tools\\grep_src.js \"requireTaskObj = {}\" --file tools\\index.js --max 10",
+    "node tools\\grep_src.js \"finishTaskObj = e\" --file tools\\index.js --max 10",
+    "node tools\\grep_src.js \"finishTaskObj = o\" --file tools\\index.js --max 10"
+  ],
+  "unverified": []
+}

@@ -1,0 +1,13 @@
+# User.quickFinishTask   (HttpConst.QUICK_FINISH_TASK)
+
+## 注册点 43497: i.MessageCenter.on(n.HttpConst.QUICK_FINISH_TASK, function(e, o) {
+
+## 请求点 43547: f.NetMgr.http.sendRequest(n.HttpConst.QUICK_FINISH_TASK, {
+   43539: }
+   43540: }, this);
+   43541: };
+   43542: t.prototype.reqCircleHangTask = function() {
+   43543: f.NetMgr.http.sendRequest(n.HttpConst.GET_CIRCLE_TASK_LIST, {});
+   43544: };
+   43545: t.prototype.reqQuickFinishTask = function(t, e) {
+   43546: this.curTarget = e;

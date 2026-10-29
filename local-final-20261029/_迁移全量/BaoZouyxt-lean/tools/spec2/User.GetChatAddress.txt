@@ -1,0 +1,13 @@
+# User.GetChatAddress   (HttpConst.USER_GETCHATADDRESS)
+
+## 注册点 70350: v.MessageCenter.on(d.HttpConst.USER_GETCHATADDRESS, function(e, o) {
+
+## 请求点 70564: S.NetMgr.http.sendRequest(d.HttpConst.USER_GETCHATADDRESS, {
+   70556: };
+   70557: e.prototype.checkName = function(t, e, o) {
+   70558: this.roleAttribute = e;
+   70559: this.roleAttribute._attributeValue = [];
+   70560: this.roleAttribute._attributeValue = o;
+   70561: S.NetMgr.loginHttp.sendRequest(t, e);
+   70562: };
+   70563: e.prototype.setChatWebsoketIp = function() {

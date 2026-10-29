@@ -1,0 +1,969 @@
+{
+  "file": "F:\\BaoZouyxt\\tools\\index.js",
+  "segments": [
+    {
+      "range": "21895-21935",
+      "lines": [
+        {
+          "n": 21895,
+          "text": "if (t >= i.id && t < i.level) return i;"
+        },
+        {
+          "n": 21896,
+          "text": "}"
+        },
+        {
+          "n": 21897,
+          "text": "},"
+        },
+        {
+          "n": 21898,
+          "text": "getTable: function(t) {"
+        },
+        {
+          "n": 21899,
+          "text": "return this.dic[t] ? this.dic[t] : null;"
+        },
+        {
+          "n": 21900,
+          "text": "},"
+        },
+        {
+          "n": 21901,
+          "text": "getItem: function(t, e) {"
+        },
+        {
+          "n": 21902,
+          "text": "var o = this.getTable(e);"
+        },
+        {
+          "n": 21903,
+          "text": "if (o && o[t]) return o[t];"
+        },
+        {
+          "n": 21904,
+          "text": "l.show(e + \"---\\x3eID\" + t, 6);"
+        },
+        {
+          "n": 21905,
+          "text": "return null;"
+        },
+        {
+          "n": 21906,
+          "text": "},"
+        },
+        {
+          "n": 21907,
+          "text": "getConstByID: function(t) {"
+        },
+        {
+          "n": 21908,
+          "text": "var e = this.getItem(t, \"constant\");"
+        },
+        {
+          "n": 21909,
+          "text": "return e ? e.Date : null;"
+        },
+        {
+          "n": 21910,
+          "text": "},"
+        },
+        {
+          "n": 21911,
+          "text": "getConst: function(t) {"
+        },
+        {
+          "n": 21912,
+          "text": "return this.getConstByID(t);"
+        },
+        {
+          "n": 21913,
+          "text": "},"
+        },
+        {
+          "n": 21914,
+          "text": "parseAgeAttr: function(t) {"
+        },
+        {
+          "n": 21915,
+          "text": "var e = {};"
+        },
+        {
+          "n": 21916,
+          "text": "for (var o in t) for (var i in t[o]) if (\"age\" != i) {"
+        },
+        {
+          "n": 21917,
+          "text": "e[i] || (e[i] = {});"
+        },
+        {
+          "n": 21918,
+          "text": "e[i][o] = t[o][i];"
+        },
+        {
+          "n": 21919,
+          "text": "}"
+        },
+        {
+          "n": 21920,
+          "text": "return e;"
+        },
+        {
+          "n": 21921,
+          "text": "},"
+        },
+        {
+          "n": 21922,
+          "text": "getAttrlv1Conversion: function(t) {"
+        },
+        {
+          "n": 21923,
+          "text": "var e = this.getTable(\"Attribute_conversion\");"
+        },
+        {
+          "n": 21924,
+          "text": "return e[t] ? e[t].relation : null;"
+        },
+        {
+          "n": 21925,
+          "text": "},"
+        },
+        {
+          "n": 21926,
+          "text": "getAdventureTypeData: function(t) {"
+        },
+        {
+          "n": 21927,
+          "text": "var e, o = {};"
+        },
+        {
+          "n": 21928,
+          "text": "e = \"zh\" == r.lang ? this.getTable(\"adventure_all\") : this.getTable(\"t_adventure_all\");"
+        },
+        {
+          "n": 21929,
+          "text": "for (var i in e) e[i].type == t && (o[e[i].parameter] = e[i]);"
+        },
+        {
+          "n": 21930,
+          "text": "return o;"
+        },
+        {
+          "n": 21931,
+          "text": "},"
+        },
+        {
+          "n": 21932,
+          "text": "judgeAdventureItem: function(t, e) {"
+        },
+        {
+          "n": 21933,
+          "text": "return !!this.getAdventureTypeData(e).hasOwnProperty(t);"
+        },
+        {
+          "n": 21934,
+          "text": "},"
+        },
+        {
+          "n": 21935,
+          "text": "filterWords: function(t) {"
+        }
+      ]
+    },
+    {
+      "range": "65165-65205",
+      "lines": [
+        {
+          "n": 65165,
+          "text": "};"
+        },
+        {
+          "n": 65166,
+          "text": "e.prototype.getSpecEqArrByItemID = function(t) {"
+        },
+        {
+          "n": 65167,
+          "text": "return this.equipByItemID.hasOwnProperty(t) ? this.equipByItemID[t] : null;"
+        },
+        {
+          "n": 65168,
+          "text": "};"
+        },
+        {
+          "n": 65169,
+          "text": "e.prototype.canUseItem = function(t) {"
+        },
+        {
+          "n": 65170,
+          "text": "var e = i.getItem(t, \"item\");"
+        },
+        {
+          "n": 65171,
+          "text": "return !d.InventoryDB.useItem(e);"
+        },
+        {
+          "n": 65172,
+          "text": "};"
+        },
+        {
+          "n": 65173,
+          "text": "e.prototype.setItem = function(t, e) {"
+        },
+        {
+          "n": 65174,
+          "text": "var o = l.RoleBaseInfo.getItemObj();"
+        },
+        {
+          "n": 65175,
+          "text": "if (e <= 0) {"
+        },
+        {
+          "n": 65176,
+          "text": "if (o.hasOwnProperty(t)) {"
+        },
+        {
+          "n": 65177,
+          "text": "var n = i.getItem(t, \"item\");"
+        },
+        {
+          "n": 65178,
+          "text": "delete o[t];"
+        },
+        {
+          "n": 65179,
+          "text": "l.RoleBaseInfo.type2Items.hasOwnProperty(n.Type) && delete l.RoleBaseInfo.type2Items[n.Type][t];"
+        },
+        {
+          "n": 65180,
+          "text": "}"
+        },
+        {
+          "n": 65181,
+          "text": "this.setItemChecked([ t ], 0);"
+        },
+        {
+          "n": 65182,
+          "text": "} else if (n = i.getItem(t, \"item\")) {"
+        },
+        {
+          "n": 65183,
+          "text": "this.checkPlusItemNum(t, e);"
+        },
+        {
+          "n": 65184,
+          "text": "o.hasOwnProperty(t) ? o[t].numbers = e : o[t] = new g.IvItem(t, e, n.quality);"
+        },
+        {
+          "n": 65185,
+          "text": "l.RoleBaseInfo.type2Items.hasOwnProperty(n.Type) || (l.RoleBaseInfo.type2Items[n.Type] = {});"
+        },
+        {
+          "n": 65186,
+          "text": "l.RoleBaseInfo.type2Items[n.Type][t] = o[t].numbers;"
+        },
+        {
+          "n": 65187,
+          "text": "} else cc.log(\"no such item:\" + t);"
+        },
+        {
+          "n": 65188,
+          "text": "l.RoleBaseInfo.onItemCh(t);"
+        },
+        {
+          "n": 65189,
+          "text": "};"
+        },
+        {
+          "n": 65190,
+          "text": "e.prototype.sellItem = function(t) {"
+        },
+        {
+          "n": 65191,
+          "text": "for (var e = this.equipmentDic, o = 0, r = !1, s = \"\", p = 0; p < t.length; p++) {"
+        },
+        {
+          "n": 65192,
+          "text": "var h = t[p], u = 0;"
+        },
+        {
+          "n": 65193,
+          "text": "if (2 == h[0]) {"
+        },
+        {
+          "n": 65194,
+          "text": "u = e[h[1]].itemID;"
+        },
+        {
+          "n": 65195,
+          "text": "var f = i.getItem(u, \"item\");"
+        },
+        {
+          "n": 65196,
+          "text": "if (e[h[1]].numAttr >= 3 || parseInt(f.equiplevel) >= 200) {"
+        },
+        {
+          "n": 65197,
+          "text": "r = !0;"
+        },
+        {
+          "n": 65198,
+          "text": "var d = {"
+        },
+        {
+          "n": 65199,
+          "text": "itemId: u,"
+        },
+        {
+          "n": 65200,
+          "text": "uID: h[1],"
+        },
+        {
+          "n": 65201,
+          "text": "numAttr: e[h[1]].numAttr"
+        },
+        {
+          "n": 65202,
+          "text": "};"
+        },
+        {
+          "n": 65203,
+          "text": "s += T.PackageModel.getEquipOrItemName(d) + \"\\n\";"
+        },
+        {
+          "n": 65204,
+          "text": "}"
+        },
+        {
+          "n": 65205,
+          "text": "} else u = h[1];"
+        }
+      ]
+    },
+    {
+      "range": "69225-69265",
+      "lines": [
+        {
+          "n": 69225,
+          "text": "t.prototype.setUserData = function(t) {"
+        },
+        {
+          "n": 69226,
+          "text": "var e = i.RoleBaseInfo.userAccount;"
+        },
+        {
+          "n": 69227,
+          "text": "if (e) try {"
+        },
+        {
+          "n": 69228,
+          "text": "cc.sys.localStorage.setItem(e.toString(), JSON.stringify(t));"
+        },
+        {
+          "n": 69229,
+          "text": "} catch (t) {}"
+        },
+        {
+          "n": 69230,
+          "text": "};"
+        },
+        {
+          "n": 69231,
+          "text": "t.prototype.setItem = function(t, e) {"
+        },
+        {
+          "n": 69232,
+          "text": "var o = this.getUserData();"
+        },
+        {
+          "n": 69233,
+          "text": "o || (o = {});"
+        },
+        {
+          "n": 69234,
+          "text": "o[t] = e;"
+        },
+        {
+          "n": 69235,
+          "text": "this.setUserData(o);"
+        },
+        {
+          "n": 69236,
+          "text": "};"
+        },
+        {
+          "n": 69237,
+          "text": "t.prototype.removeItem = function(t) {"
+        },
+        {
+          "n": 69238,
+          "text": "var e = this.getUserData();"
+        },
+        {
+          "n": 69239,
+          "text": "if (e) {"
+        },
+        {
+          "n": 69240,
+          "text": "e[t] && delete e[t];"
+        },
+        {
+          "n": 69241,
+          "text": "this.setUserData(e);"
+        },
+        {
+          "n": 69242,
+          "text": "}"
+        },
+        {
+          "n": 69243,
+          "text": "};"
+        },
+        {
+          "n": 69244,
+          "text": "t.prototype.getItem = function(t) {"
+        },
+        {
+          "n": 69245,
+          "text": "var e = this.getUserData();"
+        },
+        {
+          "n": 69246,
+          "text": "return e && e.hasOwnProperty(t) ? e[t] : null;"
+        },
+        {
+          "n": 69247,
+          "text": "};"
+        },
+        {
+          "n": 69248,
+          "text": "t.prototype.clearData = function() {"
+        },
+        {
+          "n": 69249,
+          "text": "this.setUserData({});"
+        },
+        {
+          "n": 69250,
+          "text": "};"
+        },
+        {
+          "n": 69251,
+          "text": "return t;"
+        },
+        {
+          "n": 69252,
+          "text": "}();"
+        },
+        {
+          "n": 69253,
+          "text": "o.LocalStorageMgr = new n();"
+        },
+        {
+          "n": 69254,
+          "text": "var r = JSON.parse;"
+        },
+        {
+          "n": 69255,
+          "text": "JSON.parse = function(t, e) {"
+        },
+        {
+          "n": 69256,
+          "text": "return t ? r(t, e) : null;"
+        },
+        {
+          "n": 69257,
+          "text": "};"
+        },
+        {
+          "n": 69258,
+          "text": "cc._RF.pop();"
+        },
+        {
+          "n": 69259,
+          "text": "}, {"
+        },
+        {
+          "n": 69260,
+          "text": "\"../models/vos/RoleBaseInfo\": \"RoleBaseInfo\""
+        },
+        {
+          "n": 69261,
+          "text": "} ],"
+        },
+        {
+          "n": 69262,
+          "text": "LogModel: [ function(t, e, o) {"
+        },
+        {
+          "n": 69263,
+          "text": "\"use strict\";"
+        },
+        {
+          "n": 69264,
+          "text": "cc._RF.push(e, \"405c29SDbVPxJZ62JdOJzj/\", \"LogModel\");"
+        },
+        {
+          "n": 69265,
+          "text": "Object.defineProperty(o, \"__esModule\", {"
+        }
+      ]
+    },
+    {
+      "range": "106270-106345",
+      "lines": [
+        {
+          "n": 106270,
+          "text": "9: 6,"
+        },
+        {
+          "n": 106271,
+          "text": "2: 7,"
+        },
+        {
+          "n": 106272,
+          "text": "3: 8"
+        },
+        {
+          "n": 106273,
+          "text": "};"
+        },
+        {
+          "n": 106274,
+          "text": "this.potentials = 0;"
+        },
+        {
+          "n": 106275,
+          "text": "this.coins = 0;"
+        },
+        {
+          "n": 106276,
+          "text": "};"
+        },
+        {
+          "n": 106277,
+          "text": "e.prototype.setItem = function(t, e) {"
+        },
+        {
+          "n": 106278,
+          "text": "var o = h.playerInfo.entity;"
+        },
+        {
+          "n": 106279,
+          "text": "if (1 != t) if (4001 != t) if (4003 != t) if (4002 != t) if (2 != t) {"
+        },
+        {
+          "n": 106280,
+          "text": "var i = n.getItem(t, \"item\");"
+        },
+        {
+          "n": 106281,
+          "text": "if (i) {"
+        },
+        {
+          "n": 106282,
+          "text": "this._itemObj.hasOwnProperty(t) || (this._itemObj[t] = new s.IvItem(t, 0, i.quality));"
+        },
+        {
+          "n": 106283,
+          "text": "this._itemObj[t].itemId = t;"
+        },
+        {
+          "n": 106284,
+          "text": "this._itemObj[t].numbers += e;"
+        },
+        {
+          "n": 106285,
+          "text": "}"
+        },
+        {
+          "n": 106286,
+          "text": "if (i) {"
+        },
+        {
+          "n": 106287,
+          "text": "this.type2Items.hasOwnProperty(i.Type) || (this.type2Items[i.Type] = {});"
+        },
+        {
+          "n": 106288,
+          "text": "this.type2Items[i.Type][t] = this._itemObj[t].numbers;"
+        },
+        {
+          "n": 106289,
+          "text": "}"
+        },
+        {
+          "n": 106290,
+          "text": "this.onItemCh(t);"
+        },
+        {
+          "n": 106291,
+          "text": "} else {"
+        },
+        {
+          "n": 106292,
+          "text": "var r = parseInt(n.getConstByID(46));"
+        },
+        {
+          "n": 106293,
+          "text": "this.evilness += e;"
+        },
+        {
+          "n": 106294,
+          "text": "o.evilness += e;"
+        },
+        {
+          "n": 106295,
+          "text": "if (this.evilness > r) {"
+        },
+        {
+          "n": 106296,
+          "text": "this.evilness = r;"
+        },
+        {
+          "n": 106297,
+          "text": "o.evilness = r;"
+        },
+        {
+          "n": 106298,
+          "text": "} else if (this.evilness < -r) {"
+        },
+        {
+          "n": 106299,
+          "text": "this.evilness = -r;"
+        },
+        {
+          "n": 106300,
+          "text": "o.evilness = -r;"
+        },
+        {
+          "n": 106301,
+          "text": "}"
+        },
+        {
+          "n": 106302,
+          "text": "} else o.exp += e; else this.potentials += e; else this.coins += e; else this.gold += e;"
+        },
+        {
+          "n": 106303,
+          "text": "};"
+        },
+        {
+          "n": 106304,
+          "text": "e.prototype.onItemCh = function(t) {"
+        },
+        {
+          "n": 106305,
+          "text": "for (var e in this._itemCheck) {"
+        },
+        {
+          "n": 106306,
+          "text": "var o = this._itemCheck[e];"
+        },
+        {
+          "n": 106307,
+          "text": "o.itemIds.indexOf(t) >= 0 && o.checkFunc(t);"
+        },
+        {
+          "n": 106308,
+          "text": "}"
+        },
+        {
+          "n": 106309,
+          "text": "};"
+        },
+        {
+          "n": 106310,
+          "text": "e.prototype.forceItemCheck = function() {"
+        },
+        {
+          "n": 106311,
+          "text": "for (var t in this._itemCheck) this._itemCheck[t].checkFunc();"
+        },
+        {
+          "n": 106312,
+          "text": "};"
+        },
+        {
+          "n": 106313,
+          "text": "e.prototype.registerItemCheck = function(t, e, o) {"
+        },
+        {
+          "n": 106314,
+          "text": "e && e.length > 0 && o ? this._itemCheck[t] = {"
+        },
+        {
+          "n": 106315,
+          "text": "itemIds: e,"
+        },
+        {
+          "n": 106316,
+          "text": "checkFunc: o"
+        },
+        {
+          "n": 106317,
+          "text": "} : this._itemCheck[t] && delete this._itemCheck[t];"
+        },
+        {
+          "n": 106318,
+          "text": "};"
+        },
+        {
+          "n": 106319,
+          "text": "e.prototype.clearItemCheck = function() {"
+        },
+        {
+          "n": 106320,
+          "text": "this._itemCheck = {};"
+        },
+        {
+          "n": 106321,
+          "text": "};"
+        },
+        {
+          "n": 106322,
+          "text": "e.prototype.removeItem = function(t, e) {"
+        },
+        {
+          "n": 106323,
+          "text": "var o = h.playerInfo.entity;"
+        },
+        {
+          "n": 106324,
+          "text": "if (1 != t) if (4001 != t) if (4002 != t) if (4003 != t) if (2 != t) {"
+        },
+        {
+          "n": 106325,
+          "text": "if (this._itemObj.hasOwnProperty(t)) {"
+        },
+        {
+          "n": 106326,
+          "text": "var i = n.getItem(t, \"item\");"
+        },
+        {
+          "n": 106327,
+          "text": "this._itemObj[t].numbers -= e;"
+        },
+        {
+          "n": 106328,
+          "text": "this.type2Items[i.Type][t] = this._itemObj[t].numbers;"
+        },
+        {
+          "n": 106329,
+          "text": "if (this._itemObj[t].numbers <= 0) {"
+        },
+        {
+          "n": 106330,
+          "text": "delete this._itemObj[t];"
+        },
+        {
+          "n": 106331,
+          "text": "delete this.type2Items[i.Type][t];"
+        },
+        {
+          "n": 106332,
+          "text": "}"
+        },
+        {
+          "n": 106333,
+          "text": "}"
+        },
+        {
+          "n": 106334,
+          "text": "} else {"
+        },
+        {
+          "n": 106335,
+          "text": "var r = n.getConstByID(46);"
+        },
+        {
+          "n": 106336,
+          "text": "this.evilness -= e;"
+        },
+        {
+          "n": 106337,
+          "text": "o.evilness -= e;"
+        },
+        {
+          "n": 106338,
+          "text": "if (this.evilness < -r) {"
+        },
+        {
+          "n": 106339,
+          "text": "this.evilness = -r;"
+        },
+        {
+          "n": 106340,
+          "text": "o.evilness = -r;"
+        },
+        {
+          "n": 106341,
+          "text": "}"
+        },
+        {
+          "n": 106342,
+          "text": "} else o.exp >= e && (o.exp -= e); else this.potentials >= e && (this.potentials -= e); else this.coins >= e && (this.coins -= e); else {"
+        },
+        {
+          "n": 106343,
+          "text": "this.gold -= e;"
+        },
+        {
+          "n": 106344,
+          "text": "this.gold < 0 && (this.gold = 0);"
+        },
+        {
+          "n": 106345,
+          "text": "}"
+        }
+      ]
+    },
+    {
+      "range": "105935-105965",
+      "lines": [
+        {
+          "n": 105935,
+          "text": "this.numDeaths = 0;"
+        },
+        {
+          "n": 105936,
+          "text": "this.numStuffed = 0;"
+        },
+        {
+          "n": 105937,
+          "text": "this.thirst0Time = 0;"
+        },
+        {
+          "n": 105938,
+          "text": "this.level = 0;"
+        },
+        {
+          "n": 105939,
+          "text": "this.taskObj = {};"
+        },
+        {
+          "n": 105940,
+          "text": "this.finishTaskObj = {};"
+        },
+        {
+          "n": 105941,
+          "text": "this.masterTaskId = 0;"
+        },
+        {
+          "n": 105942,
+          "text": "this.fightTargetObj = {};"
+        },
+        {
+          "n": 105943,
+          "text": "this.visitorTaskData = {};"
+        },
+        {
+          "n": 105944,
+          "text": "this._itemObj = {};"
+        },
+        {
+          "n": 105945,
+          "text": "this.type2Items = {};"
+        },
+        {
+          "n": 105946,
+          "text": "this.equipObj = {};"
+        },
+        {
+          "n": 105947,
+          "text": "this.masters = [];"
+        },
+        {
+          "n": 105948,
+          "text": "this.equipments = {"
+        },
+        {
+          "n": 105949,
+          "text": "1: null,"
+        },
+        {
+          "n": 105950,
+          "text": "2: null,"
+        },
+        {
+          "n": 105951,
+          "text": "3: null,"
+        },
+        {
+          "n": 105952,
+          "text": "4: null,"
+        },
+        {
+          "n": 105953,
+          "text": "5: null,"
+        },
+        {
+          "n": 105954,
+          "text": "6: null,"
+        },
+        {
+          "n": 105955,
+          "text": "7: null"
+        },
+        {
+          "n": 105956,
+          "text": "};"
+        },
+        {
+          "n": 105957,
+          "text": "this.sType2SkillIDDic = {"
+        },
+        {
+          "n": 105958,
+          "text": "4: 1,"
+        },
+        {
+          "n": 105959,
+          "text": "5: 2,"
+        },
+        {
+          "n": 105960,
+          "text": "6: 3,"
+        },
+        {
+          "n": 105961,
+          "text": "7: 4,"
+        },
+        {
+          "n": 105962,
+          "text": "8: 5,"
+        },
+        {
+          "n": 105963,
+          "text": "9: 6,"
+        },
+        {
+          "n": 105964,
+          "text": "2: 7,"
+        },
+        {
+          "n": 105965,
+          "text": "3: 8"
+        }
+      ]
+    }
+  ],
+  "grep_hits": [
+    {
+      "n": 65173,
+      "text": "e.prototype.setItem = function(t, e) {"
+    },
+    {
+      "n": 69231,
+      "text": "t.prototype.setItem = function(t, e) {"
+    },
+    {
+      "n": 106277,
+      "text": "e.prototype.setItem = function(t, e) {"
+    },
+    {
+      "n": 138142,
+      "text": "e.prototype.setItem = function(t, e) {"
+    }
+  ],
+  "errors": ""
+}

@@ -1,0 +1,560 @@
+{
+  "file": "F:\\BaoZouyxt\\tools\\index.js",
+  "grep_hits": {
+    "A": [
+      {
+        "n": 21607,
+        "text": "this.dic = {};"
+      },
+      {
+        "n": 46155,
+        "text": "this.dic = {};"
+      },
+      {
+        "n": 67855,
+        "text": "this.dic = t;"
+      },
+      {
+        "n": 119989,
+        "text": "o.SkillTable.dic = {};"
+      },
+      {
+        "n": 120402,
+        "text": "this.dic = {};"
+      }
+    ],
+    "B": [
+      {
+        "n": 21607,
+        "text": "this.dic = {};"
+      },
+      {
+        "n": 21627,
+        "text": "if (p.json) this.dic[p.name] = p.json; else if (p.text) {"
+      },
+      {
+        "n": 21660,
+        "text": "this.dic[v] = h;"
+      },
+      {
+        "n": 21664,
+        "text": "var _ = this.dic.constant;"
+      },
+      {
+        "n": 21695,
+        "text": "this.dic.age_attr = this.age_attr;"
+      },
+      {
+        "n": 21899,
+        "text": "return this.dic[t] ? this.dic[t] : null;"
+      },
+      {
+        "n": 22182,
+        "text": "this.dic.sharePic = e;"
+      },
+      {
+        "n": 22215,
+        "text": "this.dic.skill_quality = e;"
+      },
+      {
+        "n": 46155,
+        "text": "this.dic = {};"
+      },
+      {
+        "n": 46159,
+        "text": "this.dic.hasOwnProperty(t) || (this.dic[t] = []);"
+      },
+      {
+        "n": 46160,
+        "text": "this.dic[t].push(e);"
+      },
+      {
+        "n": 46163,
+        "text": "for (var e in this.dic) for (var i = this.dic[e], n = i.length - 1; n >= 0; --n) if (i[n] == t) {"
+      },
+      {
+        "n": 46169,
+        "text": "if (this.dic.hasOwnProperty(t)) for (var o = this.dic[t], i = o.length - 1; i >= 0; --i) (0, "
+      },
+      {
+        "n": 67855,
+        "text": "this.dic = t;"
+      },
+      {
+        "n": 67858,
+        "text": "return cc.sys.platform == cc.sys.BYTEDANCE_GAME && this.dic[t + \"_dy\"] ? this.dic[t + \"_dy\"] : cc.sys.platform == cc.sys.WECHAT_GAME && this.dic[t + \"_wx\"] ? this.dic[t + \"_wx\"] : this.dic[t.toString()] ? this.dic[t.toString()] : this.dic.hasOwnProperty(t.toString()) ? this.dic[t.toString()] : t.toString();"
+      },
+      {
+        "n": 78298,
+        "text": "this.dict = new Map();"
+      },
+      {
+        "n": 78302,
+        "text": "this.dict.has(t) || this.dict.set(t, []);"
+      },
+      {
+        "n": 78303,
+        "text": "for (var i = this.dict.get(t), n = 0, r = i.length; n < r; n++) if (i[n][0] == e && i[n][1] == o) return;"
+      },
+      {
+        "n": 78308,
+        "text": "if (this.dict.has(t)) {"
+      },
+      {
+        "n": 78309,
+        "text": "for (var i = this.dict.get(t), n = i.length, r = 0; r < n; r++) if (i[r][0] == e && i[r][1] == o) {"
+      },
+      {
+        "n": 78313,
+        "text": "0 == i.length && this.dict.delete(t);"
+      },
+      {
+        "n": 78317,
+        "text": "this.dict.forEach(function(e, o, i) {"
+      },
+      {
+        "n": 78324,
+        "text": "if (this.dict.has(t)) for (var o = this.dict.get(t), i = o.length, n = 0; n < i; ) {"
+      },
+      {
+        "n": 78335,
+        "text": "this.dict = new Map();"
+      },
+      {
+        "n": 120064,
+        "text": "if (this.dic.hasOwnProperty(t)) {"
+      },
+      {
+        "n": 120065,
+        "text": "var o = this.dic[t];"
+      },
+      {
+        "n": 120071,
+        "text": "return this.dic.hasOwnProperty(t) ? this.dic[t.toString()] : null;"
+      },
+      {
+        "n": 120114,
+        "text": "if (!this.dic.hasOwnProperty(t.toString())) {"
+      },
+      {
+        "n": 120120,
+        "text": "this.dic[t.toString()] = i;"
+      },
+      {
+        "n": 120122,
+        "text": "this.dic[t].lv = e;"
+      }
+    ],
+    "C": [
+      {
+        "n": 107,
+        "text": "var r = t(\"../../../utils/EvName\"), a = t(\"./AtkActionBase\"), s = t(\"../../../gameconfigs/CFMgr\"), l = function(t) {"
+      },
+      {
+        "n": 244,
+        "text": "\"../../../gameconfigs/CFMgr\": \"CFMgr\","
+      },
+      {
+        "n": 386,
+        "text": "var i = t(\"../../../../utils/MadUtilsTS\"), n = t(\"../../../../gameconfigs/CFMgr\"), r = t(\"../../../../battlesystem/EquipmentType\"), a = function() {"
+      },
+      {
+        "n": 454,
+        "text": "\"../../../../gameconfigs/CFMgr\": \"CFMgr\","
+      },
+      {
+        "n": 602,
+        "text": "var i = t(\"../gameconfigs/CFMgr\"), n = t(\"../gameconfigs/LangMgr\"), r = t(\"../core/events/MessageCenter\"), a = t(\"../net/HttpConst\"), s = t(\"../utils/EvName\"), l = t(\"../models/UserModel\"), c = t(\"../net/NetMgr\"), p = t(\"../gui/uicomponents/Alert\"), h = t(\"./timebasedbuffs/TimeBasedBuffFactory\"), u = t(\"./NonBattleBuffModel\"), f = t(\"../mgrs/TimeMgr\"), d = function() {"
+      },
+      {
+        "n": 698,
+        "text": "\"../gameconfigs/CFMgr\": \"CFMgr\","
+      },
+      {
+        "n": 699,
+        "text": "\"../gameconfigs/LangMgr\": \"LangMgr\","
+      },
+      {
+        "n": 844,
+        "text": "var i = t(\"../../../gameconfigs/CFMgr\"), n = t(\"./ActionBase\"), r = t(\"./AOEActionBase\"), a = t(\"./AOEColAction\"), s = t(\"./AOEColActionB\"), l = t(\"./AOERowAction\"), c = t(\"./BreathAction\"), p = t(\"./ChainAtkAction\"), h = t(\"./EscAction\"), u = t(\"./MovAction\"), f = t(\"./MultiMeleeAction\"), d = t(\"./MultiRangedAtkAction\"), g = t(\"./STargetAtkAction\"), m = t(\"./SuicideAction\"), y = t(\"./SwitchAction\"), v = t(\"./UseItemAction\");"
+      },
+      {
+        "n": 923,
+        "text": "\"../../../gameconfigs/CFMgr\": \"CFMgr\","
+      },
+      {
+        "n": 1163,
+        "text": "var l = t(\"../../../gameconfigs/CFMgr\"), c = t(\"../../../gameconfigs/LangMgr\"), p = t(\"../../../battlesystem/Flags\"), h = t(\"../../../core/events/CustomEvent\"), u = t(\"../../../mgrs/BattlePlayMgr\"), f = t(\"../../../utils/EvName\"), d = t(\"../ancient/IBattleActor\"), g = t(\"../btcomps/ActorDir\"), m = t(\"../FSSettings\"), y = t(\"./FSceneBase\"), v = cc._decorator.ccclass, _ = function(t) {"
+      },
+      {
+        "n": 1349,
+        "text": "\"../../../gameconfigs/CFMgr\": \"CFMgr\","
+      },
+      {
+        "n": 1350,
+        "text": "\"../../../gameconfigs/LangMgr\": \"LangMgr\","
+      },
+      {
+        "n": 1365,
+        "text": "var i = t(\"../gameconfigs/LangMgr\"), n = t(\"../gameconfigs/CFMgr\"), r = t(\"../core/events/MessageCenter\"), a = t(\"../net/HttpConst\"), s = t(\"../mgrs/BundleMgr\"), l = t(\"../core/ui/mgrs/PopUpMgr\"), c = t(\"../mgrs/LayerMgr\"), p = t(\"../gui/uicomponents/Alert\"), h = t(\"../utils/EvName\"), u = t(\"./IntimacyModel\"), f = t(\"../mgrs/StoryDialogMgr\"), d = t(\"./RoleOtherInfo\"), g = t(\"../net/NetMgr\"), m = t(\"../utils/MadUtilsTS\"), y = t(\"../gamescenes/helpers/NpcFactory\"), v = t(\"../mgrs/TimeMgr\"), _ = t(\"./vos/PlayerInfo\"), S = t(\"./vos/RoleBaseInfo\"), M = t(\"./GrowthModel\"), E = t(\"./PackageModel\");"
+      },
+      {
+        "n": 2103,
+        "text": "\"../gameconfigs/CFMgr\": \"CFMgr\","
+      },
+      {
+        "n": 2104,
+        "text": "\"../gameconfigs/LangMgr\": \"LangMgr\","
+      },
+      {
+        "n": 2392,
+        "text": "var i = t(\"../core/events/MessageCenter\"), n = t(\"../net/HttpConst\"), r = t(\"../utils/EvName\"), a = t(\"../gameconfigs/CFMgr\"), s = t(\"../gameconfigs/LangMgr\"), l = t(\"../gameconfigs/AppData\"), c = t(\"../gameconfigs/Platform\"), p = t(\"./RumorModel\"), h = t(\"./InventoryModel\"), u = t(\"./InventoryDB\"), f = t(\"../gui/uicomponents/Alert\"), d = t(\"./SkillTable\"), g = t(\"../net/NetMgr\"), m = t(\"./vos/RoleBaseInfo\"), y = t(\"../mgrs/BundleMgr\"), v = t(\"../core/ui/mgrs/PopUpMgr\"), _ = t(\"../mgrs/LayerMgr\"), S = t(\"../utils/CryptoMgr\"), M = t(\"../mgrs/LoginMgr\"), E = t(\"./BytedanceModel\"), I = t(\"./WeiXinQQModel\"), b = t(\"./TowerModel\"), T = function() {"
+      },
+      {
+        "n": 2620,
+        "text": "\"../gameconfigs/AppData\": \"AppData\","
+      },
+      {
+        "n": 2621,
+        "text": "\"../gameconfigs/CFMgr\": \"CFMgr\","
+      },
+      {
+        "n": 2622,
+        "text": "\"../gameconfigs/LangMgr\": \"LangMgr\","
+      },
+      {
+        "n": 2623,
+        "text": "\"../gameconfigs/Platform\": \"Platform\","
+      },
+      {
+        "n": 2850,
+        "text": "var a = t(\"../../gameconfigs/CFMgr\"), s = t(\"../../mgrs/StoryDialogMgr\"), l = t(\"../../models/HouseAdventModel\"), c = t(\"../../models/NpcDeadModel\"), p = t(\"../../utils/LayerMask\"), h = t(\"../../utils/MadConst\"), u = t(\"../../utils/MadUtilsTS\"), f = t(\"./TouchableObj\"), d = cc._decorator.ccclass, g = function(t) {"
+      },
+      {
+        "n": 2959,
+        "text": "\"../../gameconfigs/CFMgr\": \"CFMgr\","
+      },
+      {
+        "n": 3119,
+        "text": "var a = t(\"../../gameconfigs/AppData\"), s = t(\"../../core/ui/mgrs/PopUpMgr\"), l = t(\"./UIComponent\"), c = cc._decorator.ccclass, p = function(t) {"
+      },
+      {
+        "n": 3291,
+        "text": "\"../../gameconfigs/AppData\": \"AppData\","
+      },
+      {
+        "n": 3898,
+        "text": "var r = t(\"../../battlesystem/SkillTypes\"), a = t(\"../../battlesystem/EquipmentType\"), s = t(\"../../gameconfigs/CFMgr\"), l = t(\"../BundleMgr\"), c = t(\"../../core/resmgr/ResMgr\"), p = t(\"../../utils/MadUtilsTS\"), h = t(\"../GameSettings\"), u = function() {"
+      },
+      {
+        "n": 4361,
+        "text": "\"../../gameconfigs/CFMgr\": \"CFMgr\","
+      },
+      {
+        "n": 4392,
+        "text": "var a = t(\"../../../utils/CryptoMgr\"), s = t(\"../../../gameconfigs/CFMgr\"), l = t(\"../../../gameconfigs/LangMgr\"), c = t(\"../../../battlesystem/EquipmentType\"), p = t(\"../../../battlesystem/SkillTypes\"), h = t(\"../../../utils/MadUtilsTS\"), u = t(\"../../../mgrs/SoundMgr\"), f = t(\"../../../utils/EvName\"), d = t(\"./IBattleActor\"), g = t(\"../../../mgrs/BattlePlayMgr\"), m = t(\"../../../utils/SFightUtils\"), y = t(\"../../../utils/SpineUtils\"), v = t(\"../btcomps/ActorStates\"), _ = t(\"../../../mgrs/BundleMgr\"), S = cc._decorator, M = S.ccclass, E = S.property, I = function() {}, b = function(t) {"
+      },
+      {
+        "n": 5328,
+        "text": "\"../../../gameconfigs/CFMgr\": \"CFMgr\","
+      },
+      {
+        "n": 5329,
+        "text": "\"../../../gameconfigs/LangMgr\": \"LangMgr\","
+      },
+      {
+        "n": 5363,
+        "text": "var r = t(\"../../../../core/events/MessageCenter\"), a = t(\"../../../../utils/EvName\"), s = t(\"./AncientPlayerBase\"), l = t(\"../../../../gameconfigs/CFMgr\"), c = t(\"./actions/ParryAction\"), p = t(\"./actions/DodgeAction\"), h = t(\"./actions/SpecialAtkAction\"), u = t(\"./actions/NormalAtkAction\"), f = t(\"./actions/SHTYAction\"), d = t(\"../AncientActor\"), g = t(\"./actions/DugujiujianAction\"), m = t(\"./actions/ResolveAction\"), y = t(\"./actions/TransferAction\"), v = t(\"./actions/DodgeAtkAction\"), _ = t(\"./actions/PartnerPlayerAction\"), S = t(\"./actions/NormalAtkDoubleAction\"), M = function(t) {"
+      }
+    ],
+    "D": []
+  },
+  "segments": [
+    {
+      "range": "21601-21613",
+      "lines": [
+        {
+          "n": 21601,
+          "text": "helperActionGroups: {},"
+        },
+        {
+          "n": 21602,
+          "text": "rogueSkillSeasonMap: {},"
+        },
+        {
+          "n": 21603,
+          "text": "eliteBossTaskArray: [],"
+        },
+        {
+          "n": 21604,
+          "text": "wifeAndParnertMap: {},"
+        },
+        {
+          "n": 21605,
+          "text": "partnerFreeAy: [],"
+        },
+        {
+          "n": 21606,
+          "text": "init: function(t) {"
+        },
+        {
+          "n": 21607,
+          "text": "this.dic = {};"
+        },
+        {
+          "n": 21608,
+          "text": "this.likenessArr = [];"
+        },
+        {
+          "n": 21609,
+          "text": "this.illustraSkill = {"
+        },
+        {
+          "n": 21610,
+          "text": "2: [],"
+        },
+        {
+          "n": 21611,
+          "text": "3: [],"
+        },
+        {
+          "n": 21612,
+          "text": "4: [],"
+        },
+        {
+          "n": 21613,
+          "text": "5: [],"
+        }
+      ]
+    },
+    {
+      "range": "46149-46161",
+      "lines": [
+        {
+          "n": 46149,
+          "text": "}, {} ],"
+        },
+        {
+          "n": 46150,
+          "text": "EventBus: [ function(t, e) {"
+        },
+        {
+          "n": 46151,
+          "text": "\"use strict\";"
+        },
+        {
+          "n": 46152,
+          "text": "cc._RF.push(e, \"9b005pbENpLOq9iz34a9jgL\", \"EventBus\");"
+        },
+        {
+          "n": 46153,
+          "text": "var o = t(\"./ArrayUtils\"), i = function() {"
+        },
+        {
+          "n": 46154,
+          "text": "function t() {"
+        },
+        {
+          "n": 46155,
+          "text": "this.dic = {};"
+        },
+        {
+          "n": 46156,
+          "text": "}"
+        },
+        {
+          "n": 46157,
+          "text": "var e = t.prototype;"
+        },
+        {
+          "n": 46158,
+          "text": "e.addListener = function(t, e) {"
+        },
+        {
+          "n": 46159,
+          "text": "this.dic.hasOwnProperty(t) || (this.dic[t] = []);"
+        },
+        {
+          "n": 46160,
+          "text": "this.dic[t].push(e);"
+        },
+        {
+          "n": 46161,
+          "text": "};"
+        }
+      ]
+    },
+    {
+      "range": "67849-67861",
+      "lines": [
+        {
+          "n": 67849,
+          "text": "} ],"
+        },
+        {
+          "n": 67850,
+          "text": "LangMgr: [ function(t, e) {"
+        },
+        {
+          "n": 67851,
+          "text": "\"use strict\";"
+        },
+        {
+          "n": 67852,
+          "text": "cc._RF.push(e, \"3e8ccOSlxNLl5w6QPcaT9Km\", \"LangMgr\");"
+        },
+        {
+          "n": 67853,
+          "text": "e.exports = {"
+        },
+        {
+          "n": 67854,
+          "text": "setDic: function(t) {"
+        },
+        {
+          "n": 67855,
+          "text": "this.dic = t;"
+        },
+        {
+          "n": 67856,
+          "text": "},"
+        },
+        {
+          "n": 67857,
+          "text": "getText: function(t) {"
+        },
+        {
+          "n": 67858,
+          "text": "return cc.sys.platform == cc.sys.BYTEDANCE_GAME && this.dic[t + \"_dy\"] ? this.dic[t + \"_dy\"] : cc.sys.platform == cc.sys.WECHAT_GAME && this.dic[t + \"_wx\"] ? this.dic[t + \"_wx\"] : this.dic[t.toString()] ? this.dic[t.toString()] : this.dic.hasOwnProperty(t.toString()) ? this.dic[t.toString()] : t.toString();"
+        },
+        {
+          "n": 67859,
+          "text": "},"
+        },
+        {
+          "n": 67860,
+          "text": "getSchool: function(t) {"
+        },
+        {
+          "n": 67861,
+          "text": "var e;"
+        }
+      ]
+    },
+    {
+      "range": "119983-119995",
+      "lines": [
+        {
+          "n": 119983,
+          "text": "cc._RF.push(e, \"f71b7XI44tClorzRwPaddqg\", \"SkillTable\");"
+        },
+        {
+          "n": 119984,
+          "text": "Object.defineProperty(o, \"__esModule\", {"
+        },
+        {
+          "n": 119985,
+          "text": "value: !0"
+        },
+        {
+          "n": 119986,
+          "text": "});"
+        },
+        {
+          "n": 119987,
+          "text": "o.SkillTable = void 0;"
+        },
+        {
+          "n": 119988,
+          "text": "o.SkillTable = {};"
+        },
+        {
+          "n": 119989,
+          "text": "o.SkillTable.dic = {};"
+        },
+        {
+          "n": 119990,
+          "text": "o.SkillTable._skillByClazz = {};"
+        },
+        {
+          "n": 119991,
+          "text": "o.SkillTable.cycleLifeRetains = [];"
+        },
+        {
+          "n": 119992,
+          "text": "var i = t(\"../gameconfigs/AppData\"), n = t(\"../gameconfigs/CFMgr\"), r = t(\"../battlesystem/SkillTypes\"), a = t(\"../core/events/MessageCenter\"), s = t(\"../utils/EvName\"), l = t(\"./vos/SkillItem\"), c = t(\"./RoleOtherInfo\"), p = t(\"./MarryModel\"), h = t(\"./vos/PlayerInfo\"), u = t(\"../gameconfigs/LangMgr\"), f = t(\"./vos/RoleBaseInfo\");"
+        },
+        {
+          "n": 119993,
+          "text": "o.SkillTable.skillknackmodel = null;"
+        },
+        {
+          "n": 119994,
+          "text": "o.SkillTable.init = function(e, o) {"
+        },
+        {
+          "n": 119995,
+          "text": "var i = this, n = null;"
+        }
+      ]
+    },
+    {
+      "range": "120396-120408",
+      "lines": [
+        {
+          "n": 120396,
+          "text": "};"
+        },
+        {
+          "n": 120397,
+          "text": "o.SkillTable.getSkillTypeDes = function(t) {"
+        },
+        {
+          "n": 120398,
+          "text": "for (var e = [ [ r.FIST, 16 ], [ r.BLADE, 396 ], [ r.STICK, 398 ], [ r.SWORD, 397 ], [ r.WHIP, 399 ], [ r.HIDDEN_WEAPON, 400 ], [ r.QINGONG, 18 ], [ r.NEIGONG, 19 ] ], o = 0; o < e.length; o++) if (e[o][0] == t) return u.getText(e[o][1]);"
+        },
+        {
+          "n": 120399,
+          "text": "return \"\";"
+        },
+        {
+          "n": 120400,
+          "text": "};"
+        },
+        {
+          "n": 120401,
+          "text": "o.SkillTable.destroy = function() {"
+        },
+        {
+          "n": 120402,
+          "text": "this.dic = {};"
+        },
+        {
+          "n": 120403,
+          "text": "this._skillByClazz = {};"
+        },
+        {
+          "n": 120404,
+          "text": "};"
+        },
+        {
+          "n": 120405,
+          "text": "cc._RF.pop();"
+        },
+        {
+          "n": 120406,
+          "text": "}, {"
+        },
+        {
+          "n": 120407,
+          "text": "\"../../scripts3/model3/SkillKnackModel\": void 0,"
+        },
+        {
+          "n": 120408,
+          "text": "\"../battlesystem/SkillTypes\": \"SkillTypes\","
+        }
+      ]
+    }
+  ],
+  "errors": "this\\.dic total=45; configs/ total=805"
+}

@@ -1,0 +1,2088 @@
+{
+ "archivedAt": "2026-10-26T17:36:39.181Z",
+ "rules": [
+  {
+   "id": "c08-ChallengePVP-AttckData",
+   "action": "ChallengePVP",
+   "field": [
+    "AttckData"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "ChallengePVP",
+     "AttckData"
+    ]
+   ],
+   "ev": "index.js:98836",
+   "why": "C08 PVE 战斗族：ChallengePVP 的 AttckData 按客户端消费端取值（index.js:98836）"
+  },
+  {
+   "id": "c08-ChallengePVP-EnemyData",
+   "action": "ChallengePVP",
+   "field": [
+    "EnemyData"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "ChallengePVP",
+     "EnemyData"
+    ]
+   ],
+   "ev": "index.js:101329",
+   "why": "C08 PVE 战斗族：ChallengePVP 的 EnemyData 按客户端消费端取值（index.js:101329）"
+  },
+  {
+   "id": "c08-ChallengePVP-eRet",
+   "action": "ChallengePVP",
+   "field": [
+    "eRet"
+   ],
+   "expect": 1,
+   "allowSigma": [],
+   "ev": "index.js:101327",
+   "why": "C08 PVE 战斗族：ChallengePVP 的 eRet 按客户端消费端取值（index.js:101327）"
+  },
+  {
+   "id": "c08-beginPVEBattle-action",
+   "action": "beginPVEBattle",
+   "field": [
+    "action"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "beginPVEBattle",
+     "action"
+    ]
+   ],
+   "ev": "index.js:98878",
+   "why": "C08 PVE 战斗族：beginPVEBattle 的 action 按客户端消费端取值（index.js:98878）"
+  },
+  {
+   "id": "c08-beginRoguePVEBattle-action",
+   "action": "beginRoguePVEBattle",
+   "field": [
+    "action"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "beginRoguePVEBattle",
+     "action"
+    ]
+   ],
+   "ev": "index.js:98878",
+   "why": "C08 PVE 战斗族：beginRoguePVEBattle 的 action 按客户端消费端取值（index.js:98878）"
+  },
+  {
+   "id": "c08-enterPVEBattle-1",
+   "action": "enterPVEBattle",
+   "field": [
+    "1"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.1[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.1[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.1[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.WeapToSkill.1"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.1"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 1 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterPVEBattle-1112",
+   "action": "enterPVEBattle",
+   "field": [
+    "1112"
+   ],
+   "expect": 3,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.1112[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.1112[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.1112[2]"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 1112 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterPVEBattle-1262",
+   "action": "enterPVEBattle",
+   "field": [
+    "1262"
+   ],
+   "expect": 3,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.1262[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.1262[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.1262[2]"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 1262 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterPVEBattle-2",
+   "action": "enterPVEBattle",
+   "field": [
+    "2"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.2[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.2[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.2[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.WeapToSkill.2"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.2"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 2 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterPVEBattle-3",
+   "action": "enterPVEBattle",
+   "field": [
+    "3"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.3[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.3[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.3[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.WeapToSkill.3"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.3"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 3 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterPVEBattle-4",
+   "action": "enterPVEBattle",
+   "field": [
+    "4"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.4[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.4[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.4[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.WeapToSkill.4"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.4"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 4 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterPVEBattle-5",
+   "action": "enterPVEBattle",
+   "field": [
+    "5"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.5[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.5[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.5[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.WeapToSkill.5"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.5"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 5 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterPVEBattle-6",
+   "action": "enterPVEBattle",
+   "field": [
+    "6"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.6[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.6[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.6[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.WeapToSkill.6"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.6"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 6 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterPVEBattle-7",
+   "action": "enterPVEBattle",
+   "field": [
+    "7"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.7[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.7[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.7[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.WeapToSkill.7"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.equipments.7"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 7 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterPVEBattle-8",
+   "action": "enterPVEBattle",
+   "field": [
+    "8"
+   ],
+   "expect": 4,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.8[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.8[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.8[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.WeapToSkill.8"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 8 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterPVEBattle-9",
+   "action": "enterPVEBattle",
+   "field": [
+    "9"
+   ],
+   "expect": 4,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.9[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.9[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.skillMap.9[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.WeapToSkill.9"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 9 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterPVEBattle-AttckData",
+   "action": "enterPVEBattle",
+   "field": [
+    "AttckData"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData"
+    ]
+   ],
+   "ev": "index.js:98836",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 AttckData 按客户端消费端取值（index.js:98836）"
+  },
+  {
+   "id": "c08-enterPVEBattle-addAtt",
+   "action": "enterPVEBattle",
+   "field": [
+    "addAtt"
+   ],
+   "expect": 4,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.addAtt[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.addAtt[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.addAtt[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.addAtt[3]"
+    ]
+   ],
+   "ev": "index.js:74853",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 addAtt 按客户端消费端取值（index.js:74853）"
+  },
+  {
+   "id": "c08-enterPVEBattle-baseValueAy",
+   "action": "enterPVEBattle",
+   "field": [
+    "baseValueAy"
+   ],
+   "expect": 48,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[3]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[4]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[5]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[6]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[7]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[8]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[9]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[10]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[11]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[12]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[13]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[14]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[15]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[16]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[17]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[18]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[19]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[20]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[21]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[22]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[23]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[24]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[25]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[26]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[27]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[28]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[29]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[30]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[31]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[32]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[33]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[34]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[35]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[36]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[37]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[38]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[39]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[40]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[41]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[42]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[43]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[44]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[45]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[46]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.baseValueAy[47]"
+    ]
+   ],
+   "ev": "index.js:74921",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 baseValueAy 按客户端消费端取值（index.js:74921）"
+  },
+  {
+   "id": "c08-enterPVEBattle-buffs",
+   "action": "enterPVEBattle",
+   "field": [
+    "buffs"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.buffs"
+    ]
+   ],
+   "ev": "index.js:74887",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 buffs 按客户端消费端取值（index.js:74887）"
+  },
+  {
+   "id": "c08-enterPVEBattle-equipTitle",
+   "action": "enterPVEBattle",
+   "field": [
+    "equipTitle"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.equipTitle"
+    ]
+   ],
+   "ev": "index.js:74886",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 equipTitle 按客户端消费端取值（index.js:74886）"
+  },
+  {
+   "id": "c08-enterPVEBattle-equips",
+   "action": "enterPVEBattle",
+   "field": [
+    "equips"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.equips"
+    ]
+   ],
+   "ev": "index.js:74788",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 equips 按客户端消费端取值（index.js:74788）"
+  },
+  {
+   "id": "c08-enterPVEBattle-fashionEffect",
+   "action": "enterPVEBattle",
+   "field": [
+    "fashionEffect"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.fashionEffect"
+    ]
+   ],
+   "ev": "index.js:74890",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 fashionEffect 按客户端消费端取值（index.js:74890）"
+  },
+  {
+   "id": "c08-enterPVEBattle-gemData",
+   "action": "enterPVEBattle",
+   "field": [
+    "gemData"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.gemData"
+    ]
+   ],
+   "ev": "index.js:74784",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 gemData 按客户端消费端取值（index.js:74784）"
+  },
+  {
+   "id": "c08-enterPVEBattle-gold",
+   "action": "enterPVEBattle",
+   "field": [
+    "gold"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "gold"
+    ]
+   ],
+   "ev": "index.js:98835",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 gold 按客户端消费端取值（index.js:98835）"
+  },
+  {
+   "id": "c08-enterPVEBattle-happinessNum",
+   "action": "enterPVEBattle",
+   "field": [
+    "happinessNum"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.happinessNum"
+    ]
+   ],
+   "ev": "index.js:74895",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 happinessNum 按客户端消费端取值（index.js:74895）"
+  },
+  {
+   "id": "c08-enterPVEBattle-inherit",
+   "action": "enterPVEBattle",
+   "field": [
+    "inherit"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.inherit"
+    ]
+   ],
+   "ev": "index.js:74791",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 inherit 按客户端消费端取值（index.js:74791）"
+  },
+  {
+   "id": "c08-enterPVEBattle-itemSkill",
+   "action": "enterPVEBattle",
+   "field": [
+    "itemSkill"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.itemSkill"
+    ]
+   ],
+   "ev": "index.js:74842",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 itemSkill 按客户端消费端取值（index.js:74842）"
+  },
+  {
+   "id": "c08-enterPVEBattle-npcArr",
+   "action": "enterPVEBattle",
+   "field": [
+    "npcArr"
+   ],
+   "expect": 31,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "npcArr"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[1]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[2]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[3]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[4]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[5]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[6]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[7]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[8]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[9]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[10]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[11]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[12]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[13]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[14][0]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[14][1]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[15][0]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[15][1]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[16][0]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[16][1]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[17]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[18]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[19]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[20]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[21]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[22]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[23][0]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[23][1]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[24]"
+    ],
+    [
+     "enterPVEBattle",
+     "npcArr[25]"
+    ]
+   ],
+   "ev": "index.js:98846",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 npcArr 按客户端消费端取值（index.js:98846）"
+  },
+  {
+   "id": "c08-enterPVEBattle-partnerSkillMap",
+   "action": "enterPVEBattle",
+   "field": [
+    "partnerSkillMap"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.partnerSkillMap"
+    ]
+   ],
+   "ev": "index.js:74896",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 partnerSkillMap 按客户端消费端取值（index.js:74896）"
+  },
+  {
+   "id": "c08-enterPVEBattle-randSeed",
+   "action": "enterPVEBattle",
+   "field": [
+    "randSeed"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "randSeed"
+    ]
+   ],
+   "ev": "index.js:98849",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 randSeed 按客户端消费端取值（index.js:98849）"
+  },
+  {
+   "id": "c08-enterPVEBattle-roleID",
+   "action": "enterPVEBattle",
+   "field": [
+    "roleID"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.roleID"
+    ]
+   ],
+   "ev": "index.js:74775",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 roleID 按客户端消费端取值（index.js:74775）"
+  },
+  {
+   "id": "c08-enterPVEBattle-roleRound",
+   "action": "enterPVEBattle",
+   "field": [
+    "roleRound"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.roleRound"
+    ]
+   ],
+   "ev": "index.js:74766",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 roleRound 按客户端消费端取值（index.js:74766）"
+  },
+  {
+   "id": "c08-enterPVEBattle-sceneType",
+   "action": "enterPVEBattle",
+   "field": [
+    "sceneType"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.sceneType"
+    ]
+   ],
+   "ev": "index.js:74771",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 sceneType 按客户端消费端取值（index.js:74771）"
+  },
+  {
+   "id": "c08-enterPVEBattle-veinObj",
+   "action": "enterPVEBattle",
+   "field": [
+    "veinObj"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.veinObj[0]"
+    ],
+    [
+     "enterPVEBattle",
+     "AttckData.veinObj[1]"
+    ]
+   ],
+   "ev": "index.js:74859",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 veinObj 按客户端消费端取值（index.js:74859）"
+  },
+  {
+   "id": "c08-enterPVEBattle-wId",
+   "action": "enterPVEBattle",
+   "field": [
+    "wId"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.wId"
+    ]
+   ],
+   "ev": "index.js:74892",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 wId 按客户端消费端取值（index.js:74892）"
+  },
+  {
+   "id": "c08-enterPVEBattle-weapToSkinData",
+   "action": "enterPVEBattle",
+   "field": [
+    "weapToSkinData"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.weapToSkinData"
+    ]
+   ],
+   "ev": "index.js:74889",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 weapToSkinData 按客户端消费端取值（index.js:74889）"
+  },
+  {
+   "id": "c08-enterPVEBattle-youngTimes",
+   "action": "enterPVEBattle",
+   "field": [
+    "youngTimes"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterPVEBattle",
+     "AttckData.youngTimes"
+    ]
+   ],
+   "ev": "index.js:74782",
+   "why": "C08 PVE 战斗族：enterPVEBattle 的 youngTimes 按客户端消费端取值（index.js:74782）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-1",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "1"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.1[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.1[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.1[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.WeapToSkill.1"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.1"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 1 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-1112",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "1112"
+   ],
+   "expect": 3,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.1112[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.1112[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.1112[2]"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 1112 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-1262",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "1262"
+   ],
+   "expect": 3,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.1262[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.1262[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.1262[2]"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 1262 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-2",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "2"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.2[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.2[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.2[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.WeapToSkill.2"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.2"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 2 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-3",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "3"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.3[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.3[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.3[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.WeapToSkill.3"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.3"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 3 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-4",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "4"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.4[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.4[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.4[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.WeapToSkill.4"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.4"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 4 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-5",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "5"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.5[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.5[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.5[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.WeapToSkill.5"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.5"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 5 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-6",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "6"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.6[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.6[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.6[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.WeapToSkill.6"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.6"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 6 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-7",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "7"
+   ],
+   "expect": 5,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.7[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.7[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.7[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.WeapToSkill.7"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipments.7"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 7 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-8",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "8"
+   ],
+   "expect": 4,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.8[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.8[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.8[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.WeapToSkill.8"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 8 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-9",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "9"
+   ],
+   "expect": 4,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.9[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.9[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.skillMap.9[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.WeapToSkill.9"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 9 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-addAtt",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "addAtt"
+   ],
+   "expect": 4,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.addAtt[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.addAtt[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.addAtt[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.addAtt[3]"
+    ]
+   ],
+   "ev": "index.js:74853",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 addAtt 按客户端消费端取值（index.js:74853）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-baseValueAy",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "baseValueAy"
+   ],
+   "expect": 48,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[3]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[4]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[5]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[6]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[7]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[8]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[9]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[10]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[11]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[12]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[13]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[14]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[15]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[16]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[17]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[18]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[19]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[20]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[21]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[22]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[23]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[24]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[25]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[26]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[27]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[28]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[29]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[30]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[31]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[32]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[33]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[34]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[35]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[36]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[37]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[38]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[39]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[40]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[41]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[42]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[43]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[44]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[45]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[46]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.baseValueAy[47]"
+    ]
+   ],
+   "ev": "index.js:74921",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 baseValueAy 按客户端消费端取值（index.js:74921）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-buffs",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "buffs"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.buffs"
+    ]
+   ],
+   "ev": "index.js:74887",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 buffs 按客户端消费端取值（index.js:74887）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-eliteBuffs",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "eliteBuffs"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.eliteBuffs"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 eliteBuffs 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-equipTitle",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "equipTitle"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equipTitle"
+    ]
+   ],
+   "ev": "index.js:74886",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 equipTitle 按客户端消费端取值（index.js:74886）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-equips",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "equips"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.equips"
+    ]
+   ],
+   "ev": "index.js:74788",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 equips 按客户端消费端取值（index.js:74788）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-fashionEffect",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "fashionEffect"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.fashionEffect"
+    ]
+   ],
+   "ev": "index.js:74890",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 fashionEffect 按客户端消费端取值（index.js:74890）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-floorBuff",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "floorBuff"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.floorBuff"
+    ]
+   ],
+   "ev": "index.js:74919",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 floorBuff 按客户端消费端取值（index.js:74919）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-gemData",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "gemData"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.gemData"
+    ]
+   ],
+   "ev": "index.js:74784",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 gemData 按客户端消费端取值（index.js:74784）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-happinessNum",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "happinessNum"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.happinessNum"
+    ]
+   ],
+   "ev": "index.js:74895",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 happinessNum 按客户端消费端取值（index.js:74895）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-inherit",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "inherit"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.inherit"
+    ]
+   ],
+   "ev": "index.js:74791",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 inherit 按客户端消费端取值（index.js:74791）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-itemSkill",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "itemSkill"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.itemSkill"
+    ]
+   ],
+   "ev": "index.js:74842",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 itemSkill 按客户端消费端取值（index.js:74842）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-npcArr",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "npcArr"
+   ],
+   "expect": 31,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "npcArr"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[2]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[3]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[4]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[5]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[6]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[7]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[8]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[9]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[10]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[11]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[12]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[13]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[14][0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[14][1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[15][0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[15][1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[16][0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[16][1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[17]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[18]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[19]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[20]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[21]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[22]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[23][0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[23][1]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[24]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "npcArr[25]"
+    ]
+   ],
+   "ev": "index.js:98846",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 npcArr 按客户端消费端取值（index.js:98846）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-partnerSkillMap",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "partnerSkillMap"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.partnerSkillMap"
+    ]
+   ],
+   "ev": "index.js:74896",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 partnerSkillMap 按客户端消费端取值（index.js:74896）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-randSeed",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "randSeed"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "randSeed"
+    ]
+   ],
+   "ev": "index.js:98849",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 randSeed 按客户端消费端取值（index.js:98849）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-roleID",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "roleID"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.roleID"
+    ]
+   ],
+   "ev": "index.js:74775",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 roleID 按客户端消费端取值（index.js:74775）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-roleRound",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "roleRound"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.roleRound"
+    ]
+   ],
+   "ev": "index.js:74766",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 roleRound 按客户端消费端取值（index.js:74766）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-sceneType",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "sceneType"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.sceneType"
+    ]
+   ],
+   "ev": "index.js:74771",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 sceneType 按客户端消费端取值（index.js:74771）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-veinObj",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "veinObj"
+   ],
+   "expect": 2,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.veinObj[0]"
+    ],
+    [
+     "enterRoguePVEBattle",
+     "AttckData.veinObj[1]"
+    ]
+   ],
+   "ev": "index.js:74859",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 veinObj 按客户端消费端取值（index.js:74859）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-wId",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "wId"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.wId"
+    ]
+   ],
+   "ev": "index.js:74892",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 wId 按客户端消费端取值（index.js:74892）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-weapToSkinData",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "weapToSkinData"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.weapToSkinData"
+    ]
+   ],
+   "ev": "index.js:74889",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 weapToSkinData 按客户端消费端取值（index.js:74889）"
+  },
+  {
+   "id": "c08-enterRoguePVEBattle-youngTimes",
+   "action": "enterRoguePVEBattle",
+   "field": [
+    "youngTimes"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "enterRoguePVEBattle",
+     "AttckData.youngTimes"
+    ]
+   ],
+   "ev": "index.js:74782",
+   "why": "C08 PVE 战斗族：enterRoguePVEBattle 的 youngTimes 按客户端消费端取值（index.js:74782）"
+  }
+ ]
+}

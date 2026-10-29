@@ -1,0 +1,20 @@
+# User.rankList   (HttpConst.USER_RANKLIST)
+
+## 注册点 101488: n.MessageCenter.on(r.HttpConst.USER_RANKLIST, this.onSuccessRankList, this);
+
+## 请求点 101499: l.NetMgr.http.sendRequest(r.HttpConst.USER_RANKLIST, {
+   101491: n.MessageCenter.on(r.HttpConst.CHANGEPLACE, function(t, e) {
+   101492: if (1 == e.eRet) {
+   101493: n.MessageCenter.dispatch(s.EvName.UPDATERANK, 1);
+   101494: a.default.show(i.getText(1121));
+   101495: } else 2 == e.eRet ? a.default.show(i.getText(1119)) : 4 == e.eRet && a.default.show(i.getText(1120));
+   101496: }, this);
+   101497: };
+   101498: t.prototype.reqRankList = function() {
+
+## 处理函数 onSuccessRankList (101515-101519)
+101515: t.prototype.onSuccessRankList = function(t, e) {
+101516: if (1 == e.eRet) {
+101517: this.cdTime = e.CDTime;
+101518: n.MessageCenter.dispatch(s.EvName.USER_RANKLIST, e);
+101519: }

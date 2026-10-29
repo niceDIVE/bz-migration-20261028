@@ -1,0 +1,142 @@
+【指令】
+你是一位资深客户端逆向与静态分析方向的架构顾问。这是第 23 批材料（上一批 22 号：R14 处置 + 4 问；你的回执是 R15）。
+本批是**对 R15 的逐条处置 + 两处反向订正 + item.Effect 全量解锁（这就是"还原原版功能"的入口）+ 3 个新问题**。
+回答规则（沿用）：
+1. 结论要么带条件说明，要么带可执行形式；不接受"建议考虑"。
+2. 凡是你推断的、材料里没有明说的，一律标注【推断】；材料没有的直说"材料未提供"。
+3. 必须给一段"反例"。
+4. 严格按末尾编号格式输出。
+5. 约束不变：不能改客户端（只能进程内替换网络层 / 单文件存档）、不能加数据库、**仓库仍然不是 git**。
+
+────────────────────────────────────────────────────────
+【一、部署与基线（首次全绿）】
+
+`impl=hf54b63bc / flow=ffaec47c3`，`pid 29928`（热重载，**未重启**），`implErr=null / flowErr=null`。
+`selfCheck`：`failed=[]`、`checkedCount=1242`、`missingRequired=[]`。
+验收：`node tools\acceptance.js` → **项=33 绿=33 已知红=0 cap=0**，退出码 0（连跑两次一致）。
+**遗留红灯已清零**（不是登记豁免，是真改好了，见 §3.A）。30 套 `test\*.js` 全绿。
+形状冻结 C1–C8/C10–C13 全绿、diff 0 处（C13 固定时钟 30 处，全部已登记）。
+
+────────────────────────────────────────────────────────
+【二、R15 逐条处置】
+
+| # | R15 条目 | 处置 |
+|---|---|---|
+| 1 | §1-1 catch 不许一律回 4，按动作推导 catchCode | **已做**：新增 `tools/derive_catch_codes.js`（构建期与测试**共用同一份**推导）；产物里注入 `var BZ_CATCH_CODES = {...}`；`catchCodeOf()` 读它。16 个已登记动作全部推出（大多 = 0，因为 0 不在它们的 handled 里）。**没登记的动作 → 不回 eRet** + `⚠ catchNoCode`（回错码会让客户端走进它以为存在的分支；不回码则所有 `X == eRet` 都为假）。⚠ **87 动作表还没做**（见 §5.1、Q2）。 |
+| 2 | §1-2 `_save=null` 回滚不了活模型 | **已做**：catch 里 `repushLive(loadSave())` —— `pushEco`（coins/gold/yuanbao + CHANGE_ROLE_INFO）与逐技能 `pushSkillToClient`。注入式用例仍断言"内存账本回滚"，另加**日志断言**证明走了这条路。⚠ 客户端**已显示**的脏值只能靠重推纠正，不能保证一帧都不闪（见反例）。 |
+| 3 | §1-3 留痕不许叫 REJECT | **已做**：`noteConsume()` → `⚠ CONSUME_UNMODELED` + `meta.consumeStats`（与 `rejectStats` 分表）。回归里加了一条反向断言：这条路径**不许**出现 `REJECT useItem reason=effectUnmodeled`。 |
+| 4 | §1-4 毫秒时间戳能绕过 ISO 断言 | **已做，但不能照你写的做**（见 §3.B）：不能对整份产物扫 13 位毫秒 —— 配置数据里本来就有 **214 个**（活动起止时间，真值）。改成只扫**元数据行**（`BZ_SHAPES.__meta` 那一行 + 产物头部 5 行），规则：出现的毫秒必须全 = `1792612412000`。 |
+| 5 | Q1 item.Effect 数据源 + 会不会发 useItem 的判据 | **已做，全量拿到**（见 §4）：`__require('ConfigMgr').getTable('item')` = **6525 行 / 76 个 Effect 码**；Effect 分支已按 SEND/GATED/LOCAL/OTHER/NONE 分类（25/18/5/5/23，UNKNOWN=0）。 |
+| 6 | Q2 业务哈希取 (b) | **口径已采纳，实现未做**（R5 仍未实现）。我会按 `canon(去 meta 的整份 JSON)` + 磁盘字节 + `pushCount` 三者同判，并在 dispatch 返回后等一个 tick。见 Q3。 |
+| 7 | Q3 抓包真值进主表、role 分五类 | **未做**（与 87 动作表一起做，见 §5.1）。`getCRAInfo` 的 2 仍只在 test 侧 `TEMPLATE_CODES` 登记。 |
+| 8 | Q4 known-red 键改 sha、K-cap/G3/G5 | **已做**：键 = `file + assertSha8 + msgSha8`（行号仅信息）；`known-red-cap.json` cap=0；`known-red-history.jsonl` 只追加（含 `guardHash`）；G3 连续 3 次即 FAIL；G5 用 `guardHash = sha1(implVer + sha1(check_*.js) + sha1(golden/*.json))`。**cap 基线取历史最低值**（只取上一行会被"扩容跑红一次"洗白，这一点我用旧版实测确认过）。 |
+
+────────────────────────────────────────────────────────
+【三、两处我反过来纠你的事实】
+
+**A. 那条"已知红"的归因是错的 —— 它不是 useItem，是 `upgradeSkill` 缺 `skillArr` 的无效请求。**
+原断言（`test\core-test-server.js` 第 62-67 行改前）：
+```
+// T5 upgradeSkill：skch 增量
+{ … const r = s.dispatch('User', 'upgradeSkill', { skillID: 1262 });
+  assert.deepStrictEqual(r['User.upgradeSkill'].note.skch['1262'], [1, 0, 0]); … }
+```
+请求**没有 `skillArr`** → 走 `bz-rpc-server.js:1143-1146` 的无效分支 → `eRet:1`、`note.skch = {}`、**一个字节都不落盘**。
+所以 `note.skch['1262']` 恒为 undefined：不是"期望形状从 [1,0,0] 变成 [lv,0,1]"，而是**这条请求根本不会建技能**。
+你给的两条依据（1262 已在 skills、useItem 已学会回 5 不带 note）本身都对，但对这条测试不适用。
+处置：把断言改成"无效请求不写技能、不落盘"的等价校验（`eRet===1` + `note.skch` 为 `{}` + 账本无 1262 + `readSave(SAVE_KEY)===null`），
+**没有**删断言、**没有**改成永真、**没有**动请求。正向"skch 增量"覆盖在 `upgrade-skill-target`（`[15,0,1]/[17,2,1]/[5,6,1]` 真写）与 `r06-medicine-scholar`（已学会 eRet:5 不扣）里。
+⇒ 结论：把它定性为"期望过时"是对的，但"过时"的原因是**请求无效**，不是形状变更。
+
+**B. "毫秒时间戳"这条不能对整份产物做 —— 会误杀配置数据。**
+实测产物里有 **214 个** 13 位毫秒字面量、43 个不同值（`1792572970629`、`1739116799000`…），全部是活动的起止时间，
+是**真值**，不是生成时刻。照"只许 GEN_NOW"一刀切，会逼着人去改这些数据（把真值改坏）。
+所以我把断言收在元数据行上：`BZ_SHAPES.__meta` 那行 + 头部注释。`__meta.gen` 现在是 `new Date(GEN_NOW).toISOString()`
+（`2026-10-22T…` 固定值），两次构建 `ver` 相同（实测 `hf54b63bc` 连跑两次一致）。
+
+────────────────────────────────────────────────────────
+【四、item.Effect 全量解锁（本批最大的事）】
+
+§4.1 数据源（你 Q1 问的第 1 步答案，实测可行，不依赖文件名）：
+```
+__require('ConfigMgr')                    → 有 getTable / getItem
+ConfigMgr.getTable('item')                → 6525 行（cfg/dump/item.json 那份是 3000 行截断导出，不能用）
+字段：ID, Name(lang id), Type, Effect, Data1..5, Property1..5, Price, BuyPrice, Limit, EquipType, WeaponType
+```
+dump 形态（**不写档、不打屏**，一次调用）：
+```
+get:(function(){var C=__require('ConfigMgr');var T=C.getTable('item');var cols=[…];
+  var s=JSON.stringify(Object.keys(T).map(function(k){var r=T[k],o={};cols.forEach(function(c){o[c]=r[c];});return o;}));
+  return jsb.fileUtils.writeStringToFile(s,'/data/data/com.maple.madherogo/files/item.full.json');})()
+→ adb pull 到 tools/cfg/dump/item.full.json（1.2 MB）
+```
+产物：`tools/cfg/dump/item.full.json`（原表）、`tools/facts/item-effects.json`（压缩成 `{id:{e,d1,d2,d3,t,n}}`，367 KB）。
+**没有**用命令通道分块（你说的 400 行一块会被 `trunc()` 的 4000 字符上限砍掉；走文件 + adb pull 一次到位）。
+
+§4.2 Effect → 是否真的发 USE_ITEM（`tools/facts/effect-branches.json`，76 码全覆盖）：
+```
+SEND=25  GATED=18  LOCAL=5  OTHER=5  NONE=23  UNKNOWN=0
+```
+关键锚点：`index.js:64316` `useItem(effect,target)`；`64321` `if (2 == e.Type) switch (e.Effect)`（**整段 switch 只在 Type==2 时执行**）；
+`65264` `useItemFunc(e, effect, n, s)`；**`65333`** 是通用发送点（`sendRequest`/`sendReqWithMask(USE_ITEM)`）；
+`65499` `itemUsePopLayer` → `65501` 分派 → **`65535 else`** 兜底直发（R06 记的"落 else 就直发"成立，且不止 Effect 11）。
+"使用"按钮可见性：`scripts2.js:35834-35848`（tab3 材料页、tab0 第 4 页无按钮）、`36806-36809`（只收 `2 == Type` 且 Effect 在当前分页）。
+
+§4.3 于是"到底损失多大"有了精确答案（三层收敛）：
+```
+item 全表                            6525
+Type==2（客户端才会走 Effect switch） 5539    其中未建模 5326
+∩ (Effect ∈ SEND ∪ GATED)            3263    ← 按 Effect 分布：13:1773 28:367 20:275 57:233 5:228 24:106 9:64 …
+∩ (可获得表 obtainable.json 的 248)    39    ← 真正现在就能碰到的
+```
+那 **39 件**只落在 6 个 Effect 家族：
+```
+Effect 5  × 29 件（3606 3607 3611 3612 3614 3616 3620 3621 3624 3625 3641 3643 3655 3656 3661 3662 3664 3665 3666 3669
+                 3675 3676 3678 3680 3681 3702 3703 3723 3741）  Data1 = 1088..1177（看起来是指向另一个 id）
+Effect 13 ×  6 件（6625 6810 7105 7106 7226 …）                 Data1 = 6625 / 4567 / 7105 …（Data1 常等于自身 ID）
+Effect 28 ×  2 件（7026 7027）                                   Data1 = 2044 / 2045
+Effect 24 ×  1 件（3111）                                        Data1 = 1260, Data2 = 11525
+Effect  8 ×  1 件（4059）                                        Data1 = 3060
+Effect  6 ×  1 件（3401）                                        Data1 = 200
+```
+⇒ 下一轮"按家族实现"只要啃 **6 个 Effect 码**就能把这 39 件做完（而不是 248 件 / 76 个码）。
+
+────────────────────────────────────────────────────────
+【五、没做的 / 已知技术债】
+
+1. **87 动作的拒绝码表没做**（R15 §1-1 最后一句要求全覆盖）。我现在只覆盖 16 个动作，其余 71 个 catchCode **推导不出来**（没有 handled 集合）→ catch 里走"不回 eRet"。这是当前唯一一处"靠兜底而不是靠登记"的地方。障碍：那 71 个动作在客户端**没有 `MessageCenter.on` 注册行**（之前取证过：`buyGoodAndEvilShopItem`/`rgShopByItem`/`specialCycleLife` 全库只有常量行），拿不到 handled 集合。→ Q2。
+2. **R5（动作×原因夹具 + 业务哈希）仍未实现**：口径已按你的 (b) 定，但夹具本身要能真的命中每个 reason；39 件那批家族实现之前，`useItem.effectUnmodeled` 这条夹具是**门控的**（`REJECT_UNMODELED_ITEMS=false`）。→ Q3。
+3. `check_shape_freeze.js` 仍会把产物写回正式路径（现在是字节等价，风险 0，属技术债）。
+4. **端上点屏仍未验**：`isCollective` 的"门派界面→个人练功"这条 UI 路径只到协议层。
+5. `effect-branches.json` 的 NONE 判据有一处口径分歧（我保留了 worker 的原始判定 + note）：Effect 24 在背包按钮隐藏但**战斗道具栏可达**，按"纯背包口径"应改 NONE，按"全入口"应留 SEND。见 Q1。
+
+────────────────────────────────────────────────────────
+【六、我要你回答的 3 件事】
+
+Q1（Effect 5 / 13 / 28 的语义与发奖方式）
+  这 6 个家族里，5 与 13 加起来 35 件（占 39 件的 90%）。我们的 `Data1` 看着像"指向另一个 id"（5：1088..1177；13：常等于自身）。
+  请给：**从 `item` 表 + 客户端分支判出"这个 Effect 用哪一列、发什么"的判据**（哪个分支读 `Data1`？读的是 item 表还是 reward 表？
+  是"开启后按 Data1 查奖励组"还是"给 Data1 个某物"？）。如果必须读 `reward`/`gift` 之类的表，请给表名与取表路径。
+  另外：Effect 24 的可达性口径（背包按钮隐藏 / 战斗道具栏可达）该按哪一种算"会发 useItem"？
+
+Q2（71 个没有客户端回调的动作，catchCode 怎么定）
+  你的规则是"catchCode ∉ success ∪ handled ∪ flow/capture/intercept"。但这 71 个动作在客户端**根本没有注册行**
+  （只有 `HttpConst` 常量），我拿不到 handled。三条路：(a) 只登记"有回调的 16 个"，其余不动（现状）；
+  (b) 对无回调动作一律**不回 eRet**（现状的兜底，但等于没登记）；(c) 允许"无回调 ⇒ catchCode 任取一个非 1 的码"。
+  请指定一条，并说明它对"客户端收到一个它没有分支的应答"的实际风险。
+
+Q3（R5 的夹具最小集）
+  表里 16 个动作 / 17 个原因。要求"每个动作×原因至少一个夹具"，但 `useItem.effectUnmodeled` 当前被用户裁定**门控为 false**。
+  请判：门控中的原因是否也必须有夹具（如果必须，它应该断言"门控关闭时是 eRet:1 且留 CONSUME_UNMODELED 日志"还是"打开时才断言拒绝"）？
+  以及"业务哈希"的 canon 实现要不要把**数组顺序**也计入（我倾向计入：账本里数组顺序变了也可能是缺陷）。
+
+────────────────────────────────────────────────────────
+【输出格式（严格 1-7，不许增删小标题）】
+
+1. 结论（≤6 句）：§2 八条处置各自成立否；§3 的两处订正是否成立
+2. Q1 答（Effect 5/13/28 的取值判据 + Effect 24 的可达口径）
+3. Q2 答（71 个无回调动作的 catchCode 路线）
+4. Q3 答（R5 夹具最小集 + 门控原因 + 数组顺序）
+5. 对"39 件 / 6 个家族"这个收敛结果的判断：这个顺序对不对，有没有更该先做的
+6. 反例：我这批处置在什么具体场景下会出错
+7. 假设：哪条前提不成立时，你上面哪些结论失效（按编号点名）

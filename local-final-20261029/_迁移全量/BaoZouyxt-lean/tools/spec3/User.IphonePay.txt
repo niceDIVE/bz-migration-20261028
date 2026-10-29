@@ -1,0 +1,19 @@
+# User.IphonePay   (HttpConst.IOS_PAY)
+
+## 注册点 130732: l.MessageCenter.on(p.HttpConst.IOS_PAY, this.onGetProduct, this);
+
+## 处理函数 onGetProduct (130934-130947)
+130934: e.prototype.onGetProduct = function(t, e) {
+130935: var o = this, i = this.unresolvedOrderDic[e.orderId];
+130936: if (i) {
+130937: ++i.numTried;
+130938: if (1 == e.eRet) {
+130939: this.receiveProduct(e.curGold, e);
+130940: this.receiveYuanBao(e.curYuanbao);
+130941: this.updateMonthCard(e);
+130942: this.updateFirstState();
+130943: if (cc.sys.isNative && 0 == r.platformID) {
+130944: E.LoginMgr.rewardSuccess(e.orderId);
+130945: 0 == C.ActiveModel.rechargedIsEnd && l.MessageCenter.dispatch(h.EvName.UPDATE_RECHARGED_BUTTON, {});
+130946: l.MessageCenter.dispatch(h.EvName.UPDATE_DAILY_GIFT_QUAN, {});
+130947: }

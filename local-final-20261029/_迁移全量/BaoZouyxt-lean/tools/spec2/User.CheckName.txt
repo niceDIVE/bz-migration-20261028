@@ -1,0 +1,3 @@
+# User.CheckName   (HttpConst.USER_CHECK_NAME)
+
+## 注册点 70340: v.MessageCenter.on(d.HttpConst.USER_CHECK_NAME, function(e, o) {

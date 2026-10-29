@@ -1,0 +1,104 @@
+=== L57510-L57575
+L57510| "./PackageModel": "PackageModel",
+L57511| "./RoleOtherInfo": "RoleOtherInfo",
+L57512| "./SchoolModel": "SchoolModel",
+L57513| "./StoreModel": "StoreModel"
+L57514| } ],
+L57515| HomePlantModel: [ function(t, e, o) {
+L57516| "use strict";
+L57517| cc._RF.push(e, "91f957faJZKPrC8TXEOxwHx", "HomePlantModel");
+L57518| Object.defineProperty(o, "__esModule", {
+L57519| value: !0
+L57520| });
+L57521| o.HomePlantModel = void 0;
+L57522| var i = t("../gameconfigs/CFMgr"), n = t("../gameconfigs/LangMgr"), r = t("../core/events/MessageCenter"), a = t("../gui/uicomponents/Alert"), s = t("../net/HttpConst"), l = t("./RoleOtherInfo"), c = t("../utils/EvName"), p = t("./GameStates"), h = t("./UserMo …[len=649]
+L57523| function e() {
+L57524| this.curMapId = 0;
+L57525| this.enterX = 0;
+L57526| this.enterY = 0;
+L57527| this.plantSeedData = {};
+L57528| this.buildScene = 0;
+L57529| this.soilArr = [];
+L57530| this.cropControlState = 0;
+L57531| this.homeShop = 0;
+L57532| this.typeId = 0;
+L57533| this.curFriendId = 0;
+L57534| this.dogData = {};
+L57535| this.isFriend = 0;
+L57536| this.curHomeScene = 0;
+L57537| this.homeType = 1;
+L57538| this.searchType = 0;
+L57539| this.shopSaleLimit = 0;
+L57540| this.isUpdateData = null;
+L57541| this.plantHomeUI = null;
+L57542| this.homeShopBgUI = null;
+L57543| this.homeLogUI = null;
+L57544| this.searchHomeUI = null;
+L57545| this.homeGeMap = {};
+L57546| this.recentSs = [];
+L57547| this.friendPartnerId = 0;
+L57548| this.rewardData = {};
+L57549| this.curMapId = 0;
+L57550| this.enterX = 0;
+L57551| this.enterY = 0;
+L57552| this.plantSeedData = {
+L57553| curMapId: 0,
+L57554| plantExp: 0
+L57555| };
+L57556| this.buildScene = 0;
+L57557| this.soilArr = [];
+L57558| this.cropControlState = 0;
+L57559| this.homeShop = 0;
+L57560| this.typeId = 0;
+L57561| this.curFriendId = 0;
+L57562| this.dogData = {};
+L57563| this.isFriend = 0;
+L57564| this.curHomeScene = 0;
+L57565| this.homeType = 1;
+L57566| this.shopSaleLimit = 0;
+L57567| this.searchType = 0;
+L57568| this.homeGeMap = {};
+L57569| this.rewardData = {};
+L57570| }
+L57571| e.prototype.init = function() {
+L57572| var e = this;
+L57573| r.MessageCenter.on(s.HttpConst.BUILD_HOMEFRARM, function(t, o) {
+L57574| if (1 == o.eRet) {
+L57575| l.RoleOtherInfo.homeFarmId = e.buildScene;
+=== L58360-L58395
+L58360| };
+L58361| e.prototype.setDogCurTime = function(t) {
+L58362| this.dogData.t = t;
+L58363| };
+L58364| e.prototype.getDogCurState = function() {
+L58365| var t = M.TimeMgr.getSTimestamp();
+L58366| return 1 == this.dogData.s || 0 == this.dogData.s && parseInt(this.dogData.t) < t;
+L58367| };
+L58368| e.prototype.getDogDeadValue = function() {
+L58369| var t = M.TimeMgr.getSTimestamp();
+L58370| return 1 == this.dogData.s || 0 == this.dogData.s && parseInt(this.dogData.t) < t ? 1 : 0;
+L58371| };
+L58372| e.prototype.destroy = function() {
+L58373| this.curMapId = 0;
+L58374| this.enterX = 0;
+L58375| this.enterY = 0;
+L58376| this.plantSeedData = {
+L58377| curMapId: 0,
+L58378| plantExp: 0
+L58379| };
+L58380| this.buildScene = 0;
+L58381| this.soilArr = [];
+L58382| this.cropControlState = 0;
+L58383| this.homeShop = 0;
+L58384| this.typeId = 0;
+L58385| this.curFriendId = 0;
+L58386| this.dogData = {};
+L58387| this.isFriend = 0;
+L58388| this.curHomeScene = 0;
+L58389| this.homeType = 1;
+L58390| this.shopSaleLimit = 0;
+L58391| this.searchType = 0;
+L58392| this.rewardData = {};
+L58393| };
+L58394| e.prototype.clear = function() {
+L58395| cc.sys.localStorage.removeItem(_.RoleBaseInfo.roleID + "homeCrop");

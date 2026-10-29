@@ -1,0 +1,13 @@
+# User.EneterCopy   (HttpConst.ENTER_DUNGEON)
+
+## 注册点 64075: r.MessageCenter.on(a.HttpConst.ENTER_DUNGEON, function(e, o) {
+
+## 请求点 64152: f.NetMgr.http.sendRequest(a.HttpConst.ENTER_DUNGEON, o);
+   64144: };
+   64145: f.NetMgr.http.sendRequest(a.HttpConst.GET_DUNGEON_INFO, e);
+   64146: };
+   64147: t.prototype.reqEnterDungeon = function(t, e) {
+   64148: var o = {
+   64149: copyID: t,
+   64150: state: e
+   64151: };

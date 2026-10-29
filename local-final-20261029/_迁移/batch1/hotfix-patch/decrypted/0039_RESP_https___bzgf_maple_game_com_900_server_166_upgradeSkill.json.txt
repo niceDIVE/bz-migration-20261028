@@ -1,0 +1,2 @@
+status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+{"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1112":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[117]}}

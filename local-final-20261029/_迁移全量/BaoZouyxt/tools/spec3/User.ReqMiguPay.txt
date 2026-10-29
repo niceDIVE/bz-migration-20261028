@@ -1,0 +1,20 @@
+# User.ReqMiguPay   (HttpConst.REQ_MIGU_PAY)
+
+## 注册点 130738: l.MessageCenter.on(p.HttpConst.REQ_MIGU_PAY, this.onGetMiguPaySign, this);
+
+## 请求点 130921: g.NetMgr.http.sendRequest(p.HttpConst.REQ_MIGU_PAY, e);
+   130913: };
+   130914: g.NetMgr.http.sendRequest(p.HttpConst.REQ_PRODUCT, e, function() {});
+   130915: }
+   130916: };
+   130917: e.prototype.reqMigoPay = function(t) {
+   130918: var e = {
+   130919: productID: t
+   130920: };
+
+## 处理函数 onGetMiguPaySign (130923-130927)
+130923: e.prototype.onGetMiguPaySign = function(t, e) {
+130924: this.payData = e;
+130925: this.payData = {
+130926: productID: this.miguPayObj.id.toString()
+130927: };

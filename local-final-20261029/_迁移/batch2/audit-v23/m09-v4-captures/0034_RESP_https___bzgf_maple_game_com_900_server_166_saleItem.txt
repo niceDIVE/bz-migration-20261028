@@ -1,0 +1,5 @@
+status=200 https://bzgf.maple-game.com/900-server-166/saleItem
+{
+  "code": 200,
+  "MsgData": "6ee14e7fc46a4b336d4aa80eb6581a7f2abb03d1117c5496b261723871cd5597"
+}

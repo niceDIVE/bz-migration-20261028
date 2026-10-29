@@ -1,0 +1,99 @@
+# User.getOptionalGiftData  (HttpConst.NEW_OPTIONALGIFT_DATA)
+# 出现 2 处
+
+130801: l.MessageCenter.dispatch("wulinMoneyItemEvent");
+130802: l.MessageCenter.dispatch("jumpFunMoneyEvent");
+130803: l.MessageCenter.dispatch("trainingRefrashItemEvent");
+130804: l.MessageCenter.dispatch("chessTaskRewardEvent");
+130805: }
+130806: }, this);
+130807: l.MessageCenter.on(p.HttpConst.NEW_OPTIONALGIFT_DATA, function(e, o) {
+130808: if (0 == o.eRet) {
+130809: c.default.show(i.getText("1093"));
+130810: l.MessageCenter.dispatch(h.EvName.CLOSE_GIFT_PACK);
+130811: } else if (1 == o.eRet) if (1 == t.homeUI) if (0 == t.optionalState) {
+130812: t.optionalState = !0;
+130813: u.default.prefabs.load("storeUI/NewOptionalGiftUI", cc.Prefab, function(t, e) {
+130814: var i = cc.instantiate(e);
+130815: f.PopUpMgr.addPopUp(i, d.LayerMgr.popUpLayer);
+130816: var n = i.getComponent("NewOptionalGiftUI");
+130817: n.setData(o);
+130818: n.setBackBtn();
+130819: });
+130820: } else l.MessageCenter.dispatch(h.EvName.UPDATE_GIFT_DATA, o); else {
+130821: o.type = 1;
+130822: l.MessageCenter.dispatch(h.EvName.GET_GIFT_DATA, o);
+130823: } else if (2 == o.eRet) {
+130824: c.default.show(i.getText("1093"));
+130825: l.MessageCenter.dispatch(h.EvName.CLOSE_GIFT_PACK);
+130826: } else {
+130827: c.default.show(i.getText("1093"));
+130828: l.MessageCenter.dispatch(h.EvName.CLOSE_GIFT_PACK);
+130829: }
+130830: }, this);
+130831: };
+130832: e.prototype.reqMyCardAuth = function(t, e) {
+130833: g.NetMgr.http.sendRequest(p.HttpConst.GET_MYCARD_AUTH, {
+130834: productID: t,
+130835: pName: i.getText(e)
+130836: });
+130837: };
+130838: e.prototype.onGetMyCardAuth = function(t, e) {
+130839: jsb.reflection.callStaticMethod("com/maple/madherogo/AppActivity", "platformPay", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "", e.AuthCode, "", "", "", "", "");
+130840: };
+130841: e.prototype.reqMyCardProduct = function(t) {
+130842: r.platformID;
+130843: var e = {
+130844: backJson: t
+130845: };
+130846: g.NetMgr.http.sendRequest(p.HttpConst.MYCARD_REQ_PRODUCT, e, function() {}, !1);
+130847: };
+---
+131300: });
+131301: };
+131302: e.prototype.openOptionalGiftUI = function(t) {
+131303: this.homeUI = t;
+131304: y.RoleOtherInfo.activityList.indexOf(23) >= 0 ? g.NetMgr.http.sendRequest(p.HttpConst.GET_GIFT_DATA, {
+131305: roleID: v.RoleBaseInfo.roleID
+131306: }) : y.RoleOtherInfo.activityList.indexOf(64) >= 0 && g.NetMgr.http.sendRequest(p.HttpConst.NEW_OPTIONALGIFT_DATA, {
+131307: roleID: v.RoleBaseInfo.roleID
+131308: });
+131309: };
+131310: e.prototype.destroy = function() {
+131311: this.payData = null;
+131312: this.iosLoading = null;
+131313: this.productDic = null;
+131314: this.buyItemId = 0;
+131315: this.buyItemNum = 0;
+131316: this.miguPayObj = {};
+131317: this.unresolvedOrderDic = {};
+131318: this.objData = null;
+131319: this.objData2 = null;
+131320: this.serverTime = 0;
+131321: this.nextRefreshTime = 0;
+131322: this.shopActiveData = [];
+131323: this.chargeShopUI = null;
+131324: this.shopActiveRes = {};
+131325: this.sucessRewardOrderObj = [];
+131326: };
+131327: e.prototype.saveOrder2Cache = function(t) {
+131328: if (!this.unresolvedOrderDic.hasOwnProperty(t)) {
+131329: var e = {
+131330: type: 0,
+131331: data: t,
+131332: numTried: 0,
+131333: numTries: 1
+131334: };
+131335: this.unresolvedOrderDic[t] = e;
+131336: }
+131337: };
+131338: return e;
+131339: }();
+131340: o.StoreModel = new D();
+131341: cc._RF.pop();
+131342: }, {
+131343: "../../scripts3/model3/ReturnModel": void 0,
+131344: "../core/events/MessageCenter": "MessageCenter",
+131345: "../core/libs/lz-string": "lz-string",
+131346: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+---

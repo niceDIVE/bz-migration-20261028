@@ -1,0 +1,483 @@
+{
+  "generatedAt": "2026-10-22T10:59:37.753Z",
+  "scannedActions": 337,
+  "scannedFields": 1071,
+  "hits": [
+    {
+      "action": "BuyTowerProp",
+      "field": "hjzcNum",
+      "evid": "index.js:137650  o.hasOwnProperty(\"hjzcNum\") && (t.towerItemData[5] = o.hjzcNum);"
+    },
+    {
+      "action": "CheckBattleResult",
+      "field": "gemId",
+      "evid": "index.js:89558  o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+    },
+    {
+      "action": "EndTraining",
+      "field": "skillArr",
+      "evid": "index.js:120584  if (o.hasOwnProperty(\"skillArr\") && o.skillArr.length) {"
+    },
+    {
+      "action": "EndTraining",
+      "field": "skillid",
+      "evid": "index.js:120590  if (o.hasOwnProperty(\"skillid\")) {"
+    },
+    {
+      "action": "EquipSuitsUpgrade",
+      "field": "equipInherit",
+      "evid": "index.js:142064  e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));"
+    },
+    {
+      "action": "FeedDog",
+      "field": "bigDog",
+      "evid": "index.js:58056  o.hasOwnProperty(\"bigDog\") && (e.dogData.id = o.bigDog);"
+    },
+    {
+      "action": "GetRandomEventAward",
+      "field": "liveness",
+      "evid": "index.js:143820  var c = i.hasOwnProperty(\"npcArr\") && i.npcArr && i.npcArr.length > 0, p = i.hasOwnProperty(\"liveness\");"
+    },
+    {
+      "action": "TowerBattleResult",
+      "field": "gemId",
+      "evid": "index.js:67711  o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+    },
+    {
+      "action": "TowerBattleResult",
+      "field": "muscle",
+      "evid": "index.js:67714  o.hasOwnProperty(\"muscle\") && (s.TowerModel.curStrengthNum = o.muscle);"
+    },
+    {
+      "action": "activateTowerEvent",
+      "field": "attrType",
+      "evid": "index.js:137825  o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);"
+    },
+    {
+      "action": "activateTowerEvent",
+      "field": "chickenLegNum",
+      "evid": "index.js:137827  o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);"
+    },
+    {
+      "action": "activateTowerEvent",
+      "field": "eggNpc",
+      "evid": "index.js:137826  o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];"
+    },
+    {
+      "action": "changeServer",
+      "field": "newAcc",
+      "evid": "scripts3.js:95797  ... o.hasOwnProperty(\"newAcc\") && (s = o.newAcc);"
+    },
+    {
+      "action": "chanllengeTower",
+      "field": "attrType",
+      "evid": "index.js:137599  o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);"
+    },
+    {
+      "action": "chanllengeTower",
+      "field": "chickenLegNum",
+      "evid": "index.js:137628  o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);"
+    },
+    {
+      "action": "chanllengeTower",
+      "field": "eggNpc",
+      "evid": "index.js:137625  o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];"
+    },
+    {
+      "action": "choosePandaEvent",
+      "field": "buffID",
+      "evid": "index.js:137680  } else if (o.hasOwnProperty(\"buffID\")) {"
+    },
+    {
+      "action": "dispossHomeEvent",
+      "field": "aExp",
+      "evid": "index.js:58001  o.hasOwnProperty(\"aExp\") && (l[7] = o.aExp);"
+    },
+    {
+      "action": "equipUpgrade",
+      "field": "equipInherit",
+      "evid": "index.js:142026  e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));"
+    },
+    {
+      "action": "explore",
+      "field": "fixedEvents",
+      "evid": "index.js:47200  if (i.hasOwnProperty(\"fixedEvents\")) {"
+    },
+    {
+      "action": "findOHomes",
+      "field": "homeArr",
+      "evid": "index.js:57918  if (o.hasOwnProperty(\"homeArr\")) {"
+    },
+    {
+      "action": "findOHomes",
+      "field": "recommendHomeArr",
+      "evid": "index.js:57933  if (o.hasOwnProperty(\"recommendHomeArr\")) {"
+    },
+    {
+      "action": "getCRAInfo",
+      "field": "birthId",
+      "evid": "index.js:23088  o.hasOwnProperty(\"birthId\") && (t.birthIdId = o.birthId);"
+    },
+    {
+      "action": "getCRAInfo",
+      "field": "faceId",
+      "evid": "index.js:23089  o.hasOwnProperty(\"faceId\") && (t.appearId = o.faceId);"
+    },
+    {
+      "action": "getCRAInfo",
+      "field": "talnetId",
+      "evid": "index.js:23090  o.hasOwnProperty(\"talnetId\") && (t.talentId = o.talnetId);"
+    },
+    {
+      "action": "getFasionShop",
+      "field": "shopArr",
+      "evid": "index.js:145349  if (1 == (o = o).eRet && o.hasOwnProperty(\"shopArr\")) {"
+    },
+    {
+      "action": "getFriendHomeList",
+      "field": "dog",
+      "evid": "index.js:57958  o.hasOwnProperty(\"dog\") && (e.dogData = o.dog);"
+    },
+    {
+      "action": "getHomeList",
+      "field": "bShop",
+      "evid": "index.js:57597  i.hasOwnProperty(\"bShop\") && (e.homeShop = i.bShop);"
+    },
+    {
+      "action": "getHomeList",
+      "field": "dog",
+      "evid": "index.js:57595  i.hasOwnProperty(\"dog\") && (e.dogData = i.dog);"
+    },
+    {
+      "action": "getHomeList",
+      "field": "friendPartnerAward",
+      "evid": "index.js:57633  i.hasOwnProperty(\"friendPartnerAward\") && (e.rewardData = i.friendPartnerAward);"
+    },
+    {
+      "action": "getItemData",
+      "field": "limittype",
+      "evid": "index.js:47082  o.hasOwnProperty(\"limittype\") && (i = o.limittype);"
+    },
+    {
+      "action": "homeSpeicalAward",
+      "field": "eid",
+      "evid": "index.js:57867  if (1 == e.eRet && e.hasOwnProperty(\"eid\") && e.hasOwnProperty(\"rewardArray\")) {"
+    },
+    {
+      "action": "jionChatPkServer",
+      "field": "newAcc",
+      "evid": "scripts3.js:95797  ... o.hasOwnProperty(\"newAcc\") && (s = o.newAcc);"
+    },
+    {
+      "action": "lookDogLog",
+      "field": "log",
+      "evid": "index.js:58048  1 == e.eRet && e.hasOwnProperty(\"log\") && r.MessageCenter.dispatch(c.EvName.HOME_LOG_EVENT, e.log);"
+    },
+    {
+      "action": "mulitiNpcBattleResult",
+      "field": "gemId",
+      "evid": "index.js:89341  o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+    },
+    {
+      "action": "obtainCrop",
+      "field": "aExp",
+      "evid": "index.js:57711  o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);"
+    },
+    {
+      "action": "onKeyDispossHomeEvent",
+      "field": "aExp",
+      "evid": "index.js:57797  o.hasOwnProperty(\"aExp\") && o.aExp > 0 && (f[7] = o.aExp);"
+    },
+    {
+      "action": "onKeyObtainCrop",
+      "field": "aExp",
+      "evid": "index.js:57753  i.hasOwnProperty(\"aExp\") && i.aExp > 0 && (h[7] = i.aExp);"
+    },
+    {
+      "action": "recommendOHomes",
+      "field": "friendHome",
+      "evid": "index.js:57891  if (o.hasOwnProperty(\"friendHome\")) for (var s = 0; s < o.friendHome.length; s++) if (o.friendHome[s][5] > 0) {"
+    },
+    {
+      "action": "recommendOHomes",
+      "field": "homeArr",
+      "evid": "index.js:57882  if (o.hasOwnProperty(\"homeArr\")) {"
+    },
+    {
+      "action": "stealCrop",
+      "field": "aExp",
+      "evid": "index.js:58028  o.hasOwnProperty(\"aExp\") && (p[7] = o.aExp);"
+    }
+  ],
+  "byAction": {
+    "BuyTowerProp": [
+      "hjzcNum"
+    ],
+    "CheckBattleResult": [
+      "gemId"
+    ],
+    "EndTraining": [
+      "skillArr",
+      "skillid"
+    ],
+    "EquipSuitsUpgrade": [
+      "equipInherit"
+    ],
+    "FeedDog": [
+      "bigDog"
+    ],
+    "GetRandomEventAward": [
+      "liveness"
+    ],
+    "TowerBattleResult": [
+      "gemId",
+      "muscle"
+    ],
+    "activateTowerEvent": [
+      "attrType",
+      "chickenLegNum",
+      "eggNpc"
+    ],
+    "changeServer": [
+      "newAcc"
+    ],
+    "chanllengeTower": [
+      "attrType",
+      "chickenLegNum",
+      "eggNpc"
+    ],
+    "choosePandaEvent": [
+      "buffID"
+    ],
+    "dispossHomeEvent": [
+      "aExp"
+    ],
+    "equipUpgrade": [
+      "equipInherit"
+    ],
+    "explore": [
+      "fixedEvents"
+    ],
+    "findOHomes": [
+      "homeArr",
+      "recommendHomeArr"
+    ],
+    "getCRAInfo": [
+      "birthId",
+      "faceId",
+      "talnetId"
+    ],
+    "getFasionShop": [
+      "shopArr"
+    ],
+    "getFriendHomeList": [
+      "dog"
+    ],
+    "getHomeList": [
+      "bShop",
+      "dog",
+      "friendPartnerAward"
+    ],
+    "getItemData": [
+      "limittype"
+    ],
+    "homeSpeicalAward": [
+      "eid"
+    ],
+    "jionChatPkServer": [
+      "newAcc"
+    ],
+    "lookDogLog": [
+      "log"
+    ],
+    "mulitiNpcBattleResult": [
+      "gemId"
+    ],
+    "obtainCrop": [
+      "aExp"
+    ],
+    "onKeyDispossHomeEvent": [
+      "aExp"
+    ],
+    "onKeyObtainCrop": [
+      "aExp"
+    ],
+    "recommendOHomes": [
+      "friendHome",
+      "homeArr"
+    ],
+    "stealCrop": [
+      "aExp"
+    ]
+  },
+  "skipped": [
+    {
+      "action": "ExChangeJetton",
+      "field": "getCoins"
+    },
+    {
+      "action": "ExChangeJetton",
+      "field": "getPotency"
+    },
+    {
+      "action": "GetShopAllActive",
+      "field": "activeEndTime"
+    },
+    {
+      "action": "OutSchool",
+      "field": "addComponent"
+    },
+    {
+      "action": "acceptTask",
+      "field": "triggerBoxs"
+    },
+    {
+      "action": "buyActivityNum",
+      "field": "activeNum"
+    },
+    {
+      "action": "buyInvitationCard",
+      "field": "pass_levelID"
+    },
+    {
+      "action": "changeServer",
+      "field": "newID"
+    },
+    {
+      "action": "completeOrderByHotVal",
+      "field": "hotVal"
+    },
+    {
+      "action": "completeOrderByHotVal",
+      "field": "mhv"
+    },
+    {
+      "action": "completeOrderByHotVal",
+      "field": "showRewardCookBook"
+    },
+    {
+      "action": "endPlayGame",
+      "field": "progree"
+    },
+    {
+      "action": "enterNextFloor",
+      "field": "floor"
+    },
+    {
+      "action": "enterNextFloor",
+      "field": "isStatus"
+    },
+    {
+      "action": "getAllActivity",
+      "field": "calendar"
+    },
+    {
+      "action": "getAllActivity",
+      "field": "digcellTaskRed"
+    },
+    {
+      "action": "getAllActivity",
+      "field": "geNianshouTaskRed"
+    },
+    {
+      "action": "getAllActivity",
+      "field": "geSchoolTaskRed"
+    },
+    {
+      "action": "getAllActivity",
+      "field": "supportCamp"
+    },
+    {
+      "action": "getAllActivity",
+      "field": "transGiftShow"
+    },
+    {
+      "action": "getDragon",
+      "field": "currentDragonId"
+    },
+    {
+      "action": "getFinishTaskAward",
+      "field": "contribution"
+    },
+    {
+      "action": "getFinishTaskAward",
+      "field": "triggerBoxs"
+    },
+    {
+      "action": "getInn",
+      "field": "showRewardPop"
+    },
+    {
+      "action": "getInn",
+      "field": "tableEndTime"
+    },
+    {
+      "action": "getInn",
+      "field": "tableStartTime"
+    },
+    {
+      "action": "getMasterPupilList",
+      "field": "passMeritRewardState"
+    },
+    {
+      "action": "getPayAuth",
+      "field": "AuthCode"
+    },
+    {
+      "action": "getSchoolTask",
+      "field": "currentServerTime"
+    },
+    {
+      "action": "getSchoolTask",
+      "field": "xyTodaySchoolId"
+    },
+    {
+      "action": "getTreasureFloor",
+      "field": "floor"
+    },
+    {
+      "action": "intoSchoolSquare",
+      "field": "schoolTitle"
+    },
+    {
+      "action": "joinSchool",
+      "field": "cdTimeDays"
+    },
+    {
+      "action": "marryAward",
+      "field": "guestID"
+    },
+    {
+      "action": "marryHouse",
+      "field": "houseID"
+    },
+    {
+      "action": "quitSchool",
+      "field": "openSchoolFirstTryBgUI"
+    },
+    {
+      "action": "redeemTable",
+      "field": "hotVal"
+    },
+    {
+      "action": "redeemTable",
+      "field": "mhv"
+    },
+    {
+      "action": "resetChildFoster",
+      "field": "foster_point"
+    },
+    {
+      "action": "setPlayerCardMoutsSycn",
+      "field": "sycn"
+    },
+    {
+      "action": "startEatByTable",
+      "field": "gn"
+    },
+    {
+      "action": "treasureAward",
+      "field": "isStatus"
+    }
+  ]
+}

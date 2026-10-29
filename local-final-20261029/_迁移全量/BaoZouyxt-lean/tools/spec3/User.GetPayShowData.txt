@@ -1,0 +1,32 @@
+# User.GetPayShowData   (HttpConst.GET_PAY_SHOW_DATA)
+
+## 注册点 130731: l.MessageCenter.on(p.HttpConst.GET_PAY_SHOW_DATA, this.onOpenStoreList, this);
+
+## 请求点 131009: }) : g.NetMgr.http.sendRequest(p.HttpConst.GET_PAY_SHOW_DATA, {
+   131001: this.objData = {
+   131002: back: 1
+   131003: };
+   131004: null != t && (this.objData = {
+   131005: back: t.back
+   131006: });
+   131007: r.mode == r.M_WEB || (cc.sys.os == cc.sys.OS_IOS && 1 == r.specialEdition ? g.NetMgr.http.sendRequest(p.HttpConst.GET_IOSPAY_SHOW_DATA, {
+   131008: roleID: v.RoleBaseInfo.roleID
+
+## 请求点 131021: g.NetMgr.http.sendRequest(p.HttpConst.GET_PAY_SHOW_DATA, {
+   131013: e.prototype.reqYuanBaoList = function(t) {
+   131014: void 0 === t && (t = null);
+   131015: this.objData = {
+   131016: back: 1
+   131017: };
+   131018: null != t && (this.objData = {
+   131019: back: t.back
+   131020: });
+
+## 处理函数 onOpenStoreList (131212-131218)
+131212: e.prototype.onOpenStoreList = function(t, e) {
+131213: if (1 == e.eRet && e.hasOwnProperty("ShopArray")) {
+131214: var o = {}, i = [];
+131215: for (var n in e.ShopArray) {
+131216: i.push(e.ShopArray[n]);
+131217: o[e.ShopArray[n].ID] = e.ShopArray[n];
+131218: }

@@ -1,0 +1,99 @@
+# User.boosRankList  (HttpConst.WB_DMG_RANKLIST)
+# 出现 2 处
+
+145511: e.prototype.init = function() {
+145512: var t = this;
+145513: this.numAtkBonus = new i("wbab");
+145514: this.numAtkBonus.value = 0;
+145515: a.MessageCenter.on(s.HttpConst.FIGHT_WORLD_BOSS, this.onGetBossData, this);
+145516: a.MessageCenter.on(s.HttpConst.UPLOAD_WB_DMG, this.onUploadDmg, this);
+145517: a.MessageCenter.on(s.HttpConst.WB_DMG_RANKLIST, this.onGetRankList, this);
+145518: a.MessageCenter.on(l.EvName.QUICK_BUY_COMPLETE + "1", function(e, o) {
+145519: t.setAtkBonus(o.num);
+145520: a.MessageCenter.dispatch(l.EvName.WB_GOD_HELP_BOUGHT, o.num);
+145521: }, this);
+145522: a.MessageCenter.on(s.HttpConst.GET_BOSS_REWARD, function(t, e) {
+145523: 3 == e.eRet ? c.default.show(r.getText(1127)) : 2 == e.eRet ? c.default.show(r.getText(1128)) : 1 == e.eRet && m.default.prefabs.load("worldBoss/DamageReward", cc.Prefab, function(t, o) {
+145524: var i = cc.instantiate(o);
+145525: y.PopUpMgr.addPopUp(i, v.LayerMgr.popUpLayer, 1, !0);
+145526: i.addComponent("WBRewardUI").setData({
+145527: firstPlayer: e.firstName,
+145528: lastKill: e.killName,
+145529: rewardDic: e.rewardArray,
+145530: killReward: e.killObj
+145531: });
+145532: });
+145533: }, this);
+145534: a.MessageCenter.on(l.EvName.UPLOAD_WB_DMG_DATA, this.onUploadDmgData, this);
+145535: };
+145536: e.prototype.reqBossReward = function() {
+145537: p.NetMgr.http.sendRequest(s.HttpConst.GET_BOSS_REWARD);
+145538: };
+145539: e.prototype.onGetRankList = function(t, e) {
+145540: a.MessageCenter.dispatch(l.EvName.ON_GET_WB_RANKLIST, e);
+145541: };
+145542: e.prototype.onUploadDmg = function(e, o) {
+145543: if (2 == o.eRet) {
+145544: c.default.show(r.getText(880));
+145545: this.end();
+145546: } else if (3 == o.eRet) {
+145547: if (h.RoleBaseInfo.roleID == o.killBoss) if (this.win) c.default.show(r.getText(882)); else {
+145548: var i = n.getItem(this.bossID, "npc");
+145549: c.default.show(r.getText(881).replace(/\[1\]/, r.getText(i.NpcName)));
+145550: } else c.default.show(r.getText(878));
+145551: var a = n.getItem(this.bossID, "npc"), s = r.getText(864).replace(/\[1\]/, r.getText(a.NpcName)).replace(/\[2\]/, o.killBossName);
+145552: _.bulletTitleMgr.show(s, 3);
+145553: this.end();
+145554: } else if (1 == o.eRet) {
+145555: this.bossHpMax = o.bossMaxHP;
+145556: this.bossHp = o.bossCurHP;
+145557: this.nxtAvailableTs = u.TimeMgr.getSTimestamp() + o.CDTime;
+---
+145614: S.BattleMgr.createBossFight(e.AttckData, e.buffNum, s.bossHp);
+145615: });
+145616: } else S.BattleMgr.createBossFight(e.AttckData, e.buffNum, this.bossHp);
+145617: } else c.default.show(r.getText(902));
+145618: };
+145619: e.prototype.reqRankList = function() {
+145620: p.NetMgr.http.sendRequest(s.HttpConst.WB_DMG_RANKLIST, {
+145621: userName: h.RoleBaseInfo.userName
+145622: });
+145623: };
+145624: e.prototype.start = function(t, e, o, i, n, r) {
+145625: this.bossID = e;
+145626: this.mapIDArr = o;
+145627: this.beginTime = i;
+145628: this.bossHp = n;
+145629: this.bossHpMax = r;
+145630: this.mapID = this.getBossMapID();
+145631: a.MessageCenter.dispatch(l.EvName.WB_NEW_EVENT);
+145632: };
+145633: e.prototype.setAtkBonus = function(t) {
+145634: this.numAtkBonus.value = t;
+145635: };
+145636: e.prototype.getAtkBonus = function() {
+145637: return this.numAtkBonus.value;
+145638: };
+145639: e.prototype.hasEvent = function() {
+145640: return 0 != this.bossID;
+145641: };
+145642: e.prototype.updateState = function() {
+145643: this.hasEvent() && u.TimeMgr.getSTimestamp() - this.beginTime > 18e5 && this.end();
+145644: };
+145645: e.prototype.genBossIfNeeded = function(t, e, o, i) {
+145646: void 0 === e && (e = 1);
+145647: void 0 === o && (o = 2);
+145648: void 0 === i && (i = !1);
+145649: if (null != t) {
+145650: this.removeBoss(t);
+145651: var n = [];
+145652: if (this.hasEvent() && null != t.id && this.mapID == t.id) {
+145653: t.sceneObjDic.forEach(function(t) {
+145654: var e = t.getComponent("Npc");
+145655: e && e.isHumanNpc() && f.NpcDeadModel.isNpcLive(e.getNpcID()) && n.push(e.getNpcID());
+145656: });
+145657: var r = null;
+145658: (r = i ? g.NpcFactory.createSpecialMiniNPC({
+145659: id: this.bossID
+145660: }) : g.NpcFactory.createSceneObj({
+---

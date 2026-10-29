@@ -1,0 +1,69 @@
+# User.ReqDogPartnerBattleInfo  (HttpConst.REQ_DOG_PARTNER_PVE_BATTLE)
+# 出现 2 处
+
+ 31754: });
+ 31755: o.DogFightSingMgr = void 0;
+ 31756: var r = t("../../utils/MadUtils"), a = t("../../gameconfigs/LangMgr"), s = t("../../gameconfigs/CFMgr"), l = t("../../models/vos/PlayerInfo"), c = t("../../net/HttpConst"), p = t("./Local1v1Mgr"), h = t("../../net/NetMgr"), u = t("../../utils/MadUtilsTS"), f = t("../../gui/battle/resultscripts/rewardscripts/NormalRewards"), d = t("../../core/events/MessageCenter"), g = t("../TimeMgr"), m = function(t) {
+ 31757: n(e, t);
+ 31758: function e(e) {
+ 31759: var o = t.call(this, e) || this;
+ 31760: d.MessageCenter.on(c.HttpConst.REQ_DOG_PARTNER_PVE_BATTLE, function(t, e) {
+ 31761: 1 === e.eRet && o.prepareForBattle(e);
+ 31762: }, o);
+ 31763: d.MessageCenter.on(c.HttpConst.REQ_DOG_PARTNER_END_BATTLE, function(t, e) {
+ 31764: if (1 === e.eRet && o.fightEndCb) {
+ 31765: o.fightEndCb(e);
+ 31766: o.dispose();
+ 31767: }
+ 31768: }, o);
+ 31769: return o;
+ 31770: }
+ 31771: e.prototype.getPanelScript = function() {
+ 31772: return "DogFightPanel";
+ 31773: };
+ 31774: e.prototype.startBattle = function(t, e) {
+ 31775: var o = l.playerInfo.entity;
+ 31776: this.pID = t;
+ 31777: h.NetMgr.http.sendRequest(c.HttpConst.REQ_DOG_PARTNER_PVE_BATTLE, {
+ 31778: fpId: t,
+ 31779: fRoleID: e,
+ 31780: mp: o.mp.remaining,
+ 31781: gTime: o.totalGameTime.gameTime,
+ 31782: hgtimes: o.numStuffed
+ 31783: });
+ 31784: };
+ 31785: e.prototype.prepareForBattle = function(t) {
+ 31786: r.parsePlayerData(t);
+ 31787: this.itemSkills = t.itemSkill;
+ 31788: var e = r.createPlayerBattleEntity(t);
+ 31789: e.itemSkills = t.itemSkill;
+ 31790: e.name = a.getText("10562");
+ 31791: var o = t.dogPartnerData.fpId, i = t.dogPartnerData.fpLv, n = u.MadUtilsTS.getPartner({
+ 31792: partner2Id: o,
+ 31793: partner2lv: i
+ 31794: });
+ 31795: n.auto = !0;
+ 31796: var l = s.getItem(o, "Friend");
+ 31797: n.fakePName = l.model;
+ 31798: this.initBattleSystem(e, n, Date.now());
+ 31799: };
+ 31800: e.prototype.doComplete = function() {
+---
+ 31801: var t = this.bs, e = t.esced, o = t.finTarget, i = t.entityA, n = t.entityB;
+ 31802: t.entityAs && t.entityAs.length > 0 && (i = t.entityAs[0]);
+ 31803: t.entityBs && t.entityBs.length > 0 && (n = t.entityBs[0]);
+ 31804: var r = !e && o == i.battleID, a = r ? i.totalDmgReceived / i.initialHpLimit : n.totalDmgReceived / n.initialHpLimit;
+ 31805: a < 0 && (a = 0);
+ 31806: var s = this.bs.turn, l = [ r, (100 * a).toFixed(2), s, n.name, i.totalDmgReceived, n.totalDmgReceived, g.TimeMgr.getSTimestamp() - this.startT ], c = i.hp, p = i.mp, h = {
+ 31807: target: o,
+ 31808: esc: e,
+ 31809: data: l,
+ 31810: hp: c.remaining,
+ 31811: hplmt: c.limit,
+ 31812: mp: p.remaining,
+ 31813: aID: i.battleID,
+ 31814: bID: n.battleID,
+ 31815: bExp: n.exp,
+ 31816: entityA: i,
+ 31817: entityB: n,
+---

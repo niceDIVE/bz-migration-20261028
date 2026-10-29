@@ -1,0 +1,18 @@
+# User.boosRankList   (HttpConst.WB_DMG_RANKLIST)
+
+## 注册点 145517: a.MessageCenter.on(s.HttpConst.WB_DMG_RANKLIST, this.onGetRankList, this);
+
+## 请求点 145620: p.NetMgr.http.sendRequest(s.HttpConst.WB_DMG_RANKLIST, {
+   145612: c.default.showPrompt(r.getText("6000165"), function() {
+   145613: s.showTips = !1;
+   145614: S.BattleMgr.createBossFight(e.AttckData, e.buffNum, s.bossHp);
+   145615: });
+   145616: } else S.BattleMgr.createBossFight(e.AttckData, e.buffNum, this.bossHp);
+   145617: } else c.default.show(r.getText(902));
+   145618: };
+   145619: e.prototype.reqRankList = function() {
+
+## 处理函数 onGetRankList (145539-145541)
+145539: e.prototype.onGetRankList = function(t, e) {
+145540: a.MessageCenter.dispatch(l.EvName.ON_GET_WB_RANKLIST, e);
+145541: };

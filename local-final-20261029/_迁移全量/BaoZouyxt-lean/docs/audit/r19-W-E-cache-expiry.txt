@@ -1,0 +1,127 @@
+# r19-W-E-cache-expiry.txt
+# 审计执行时刻: 2026-10-23
+# 复核基准时刻: 抓包 serverTime = 1792572970629；「30 天内到期」= 落在 1792572970629 ~ 1795164970629 之间。
+
+================================================================================
+【① 缓存污染审计】
+================================================================================
+
+1) function clone( 的定义（逐字贴，含行号）：
+hotfix-patch/core/bz-rpc-server.js:332
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+
+2) LoadGame 与 Create 中构造 base / tpl 的代码（逐字贴，含行号）：
+- hotfix-patch/core/bz-rpc-server.js:1035 (LoadGame)
+      var base = s.roleSnapshot ? clone(s.roleSnapshot) : clone(TPL.create);
+
+- hotfix-patch/core/bz-rpc-server.js:1012 (Create)
+      var r = clone(TPL.create);
+
+3) 全仓 grep TPL.create（排除 _backup 历史归档；代码与测试完整匹配）：
+hotfix-patch/core/bz-rpc-server.js:333:  function ach() { return (TPL.create && clone(TPL.create.achievement)) || { red: false, achieveRateId: 0 }; }
+hotfix-patch/core/bz-rpc-server.js:344:   *  背景：`TPL.create.activityResource = {"67":[null,1793177770630]}` 是**抓包真值**，
+hotfix-patch/core/bz-rpc-server.js:478:    var c = TPL.create || {};
+hotfix-patch/core/bz-rpc-server.js:931:    var tpl = clone(TPL.create || {});
+hotfix-patch/core/bz-rpc-server.js:949:    var tpl = (TPL.create && TPL.create.baseValueAy) || [];
+hotfix-patch/core/bz-rpc-server.js:1012:      var r = clone(TPL.create);
+hotfix-patch/core/bz-rpc-server.js:1035:      var base = s.roleSnapshot ? clone(s.roleSnapshot) : clone(TPL.create);
+hotfix-patch/core/bz-rpc-server.js:1073:      var snapCapture = num(base.serverTime, 0) > 1.6e12 ? num(base.serverTime, 0) : num(TPL.create.serverTime, 0);
+hotfix-patch/patch/live/handlers.js:741:function ach() { return (TPL.create && clone(TPL.create.achievement)) || { red: false, achieveRateId: 0 }; }
+hotfix-patch/patch/live/handlers.js:752:   *  背景：`TPL.create.activityResource = {"67":[null,1793177770630]}` 是**抓包真值**，
+hotfix-patch/patch/live/handlers.js:886:    var c = TPL.create || {};
+hotfix-patch/patch/live/handlers.js:1339:    var tpl = clone(TPL.create || {});
+hotfix-patch/patch/live/handlers.js:1357:    var tpl = (TPL.create && TPL.create.baseValueAy) || [];
+hotfix-patch/patch/live/handlers.js:1420:      var r = clone(TPL.create);
+hotfix-patch/patch/live/handlers.js:1443:      var base = s.roleSnapshot ? clone(s.roleSnapshot) : clone(TPL.create);
+hotfix-patch/patch/live/handlers.js:1481:      var snapCapture = num(base.serverTime, 0) > 1.6e12 ? num(base.serverTime, 0) : num(TPL.create.serverTime, 0);
+hotfix-patch/probe/handlers.device.now:563:function ach() { return (TPL.create && clone(TPL.create.achievement)) || { red: false, achieveRateId: 0 }; }
+hotfix-patch/probe/handlers.device.now:668:    var c = TPL.create || {};
+hotfix-patch/probe/handlers.device.now:1061:    var tpl = clone(TPL.create || {});
+hotfix-patch/probe/handlers.device.now:1079:    var tpl = (TPL.create && TPL.create.baseValueAy) || [];
+hotfix-patch/probe/handlers.device.now:1142:      var r = clone(TPL.create);
+hotfix-patch/probe/handlers.device.now:1163:      var base = s.roleSnapshot ? clone(s.roleSnapshot) : clone(TPL.create);
+hotfix-patch/test/r17-effect28.js:89:  const capture = Number(TPL.create.serverTime);
+
+4) 全仓 grep roleSnapshot（排除 _backup 历史归档；代码与测试完整匹配）：
+hotfix-patch/core/bz-rpc-server.js:940:    s.roleSnapshot = tpl;
+hotfix-patch/core/bz-rpc-server.js:1035:      var base = s.roleSnapshot ? clone(s.roleSnapshot) : clone(TPL.create);
+hotfix-patch/patch/live/handlers.js:1348:    s.roleSnapshot = tpl;
+hotfix-patch/patch/live/handlers.js:1443:      var base = s.roleSnapshot ? clone(s.roleSnapshot) : clone(TPL.create);
+hotfix-patch/probe/handlers.device.now:1070:    s.roleSnapshot = tpl;
+hotfix-patch/probe/handlers.device.now:1163:      var base = s.roleSnapshot ? clone(s.roleSnapshot) : clone(TPL.create);
+tools/facts/save-write-paths.json:116:    "text": "    s.roleSnapshot = tpl; || handler=none"
+
+5) 全仓 grep titleObj（排除 _backup 历史归档；代码与测试完整匹配）：
+hotfix-patch/core/bz-rpc-server.js:1105:      // 称号投射（SOTA R18 §1-2 / 假设 A6 判伪）：客户端读称号的**唯一**入口是 LoadGame 的 `titleObj`
+hotfix-patch/core/bz-rpc-server.js:1106:      //   `index.js:111919 n.AchieveModel.setAchieveData(e.hasOwnProperty("titleObj") ? e.titleObj : {})`
+hotfix-patch/core/bz-rpc-server.js:1114:      // ⚠ 模板 `templates.json → create.titleObj` 自带 `{e:0}`（e = 当前佩戴的称号，客户端 627 行读它），
+hotfix-patch/core/bz-rpc-server.js:1117:        var tObj = (base.titleObj && typeof base.titleObj === 'object') ? base.titleObj : {};
+hotfix-patch/core/bz-rpc-server.js:1126:        base.titleObj = tObj;
+hotfix-patch/core/bz-rpc-server.js:1127:        if (tN) env.log('LoadGame → 称号投射 ' + tN + ' 个 titleObj=' + JSON.stringify(tObj) + '（客户端 index.js:111919）');
+hotfix-patch/patch/live/handlers.js:1513:      // 称号投射（SOTA R18 §1-2 / 假设 A6 判伪）：客户端读称号的**唯一**入口是 LoadGame 的 `titleObj`
+hotfix-patch/patch/live/handlers.js:1514:      //   `index.js:111919 n.AchieveModel.setAchieveData(e.hasOwnProperty("titleObj") ? e.titleObj : {})`
+hotfix-patch/patch/live/handlers.js:1522:      // ⚠ 模板 `templates.json → create.titleObj` 自带 `{e:0}`（e = 当前佩戴的称号，客户端 627 行读它），
+hotfix-patch/patch/live/handlers.js:1525:        var tObj = (base.titleObj && typeof base.titleObj === 'object') ? base.titleObj : {};
+hotfix-patch/patch/live/handlers.js:1534:        base.titleObj = tObj;
+hotfix-patch/patch/live/handlers.js:1535:        if (tN) env.log('LoadGame → 称号投射 ' + tN + ' 个 titleObj=' + JSON.stringify(tObj) + '（客户端 index.js:111919）');
+hotfix-patch/probe/handlers.device.now:1233:      // 称号投射（SOTA R18 §1-2 / 假设 A6 判伪）：客户端读称号的**唯一**入口是 LoadGame 的 `titleObj`
+hotfix-patch/probe/handlers.device.now:1234:      //   `index.js:111919 n.AchieveModel.setAchieveData(e.hasOwnProperty("titleObj") ? e.titleObj : {})`
+hotfix-patch/probe/handlers.device.now:1242:      // ⚠ 模板 `templates.json → create.titleObj` 自带 `{e:0}`（e = 当前佩戴的称号，客户端 627 行读它），
+hotfix-patch/probe/handlers.device.now:1245:        var tObj = (base.titleObj && typeof base.titleObj === 'object') ? base.titleObj : {};
+hotfix-patch/probe/handlers.device.now:1254:        base.titleObj = tObj;
+hotfix-patch/probe/handlers.device.now:1255:        if (tN) env.log('LoadGame → 称号投射 ' + tN + ' 个 titleObj=' + JSON.stringify(tObj) + '（客户端 index.js:111919）');
+hotfix-patch/test/r18-titleobj-projection.js:1:/** r18-titleobj-projection.js — 验证 SOTA R18 称号投射（LoadGame titleObj）
+hotfix-patch/test/r18-titleobj-projection.js:75:  const lg = inner(b.dispatch('User', 'LoadGame', {}), 'LoadGame');
+hotfix-patch/test/r18-titleobj-projection.js:76:  assert.ok(lg.titleObj, 'LoadGame 应答必须带 titleObj（客户端 index.js:111919 只认它）');
+hotfix-patch/test/r18-titleobj-projection.js:77:  assert.strictEqual(lg.titleObj[String(e28.title)], 0,
+hotfix-patch/test/r18-titleobj-projection.js:78:    '永久称号必须投 0（>1 会被 getAchieveEndT/deleteTitle 当到期时间戳），实际=' + JSON.stringify(lg.titleObj));
+hotfix-patch/test/r18-titleobj-projection.js:84:  const lg = inner(ctx.make().dispatch('User', 'LoadGame', {}), 'LoadGame');
+hotfix-patch/test/r18-titleobj-projection.js:85:  // 模板 templates.json → create.titleObj 自带 {e:0}（e = 当前佩戴，客户端 627 行读），这是抓包真值，必须保留
+hotfix-patch/test/r18-titleobj-projection.js:86:  assert.ok(lg.titleObj, '模板里本来就带 titleObj（{e:0}），不该消失');
+hotfix-patch/test/r18-titleobj-projection.js:87:  assert.strictEqual(lg.titleObj.e, 0, 'e（当前佩戴）必须保留模板值 0');
+hotfix-patch/test/r18-titleobj-projection.js:88:  const numericKeys = Object.keys(lg.titleObj).filter((k) => /^\d+$/.test(k));
+hotfix-patch/test/r18-titleobj-projection.js:89:  assert.deepStrictEqual(numericKeys, [], '没有称号的存档不许出现数字键，实际=' + JSON.stringify(lg.titleObj));
+hotfix-patch/test/r18-titleobj-projection.js:96:  const lg = inner(ctx.make().dispatch('User', 'LoadGame', {}), 'LoadGame');
+hotfix-patch/test/r18-titleobj-projection.js:97:  assert.strictEqual(lg.titleObj['2044'], NOW + 86400000, '>1 = 到期 ms，必须原样');
+hotfix-patch/test/r18-titleobj-projection.js:98:  assert.strictEqual(lg.titleObj['2045'], 0, '=1 = 永久，必须归一成 0');
+hotfix-patch/test/r18-titleobj-projection.js:105:  const lg = inner(ctx.make().dispatch('User', 'LoadGame', {}), 'LoadGame');
+hotfix-patch/test/r18-titleobj-projection.js:106:  assert.ok(lg.titleObj, '有数字键就该投');
+hotfix-patch/test/r18-titleobj-projection.js:107:  assert.strictEqual(lg.titleObj.abc, undefined, '非数字键不许投（checkTitleBuff 会拿键查 player_title）');
+hotfix-patch/test/r18-titleobj-projection.js:108:  assert.deepStrictEqual(Object.keys(lg.titleObj).sort(), ['2045', 'e'],
+hotfix-patch/test/r18-titleobj-projection.js:109:    '只许有 2045（账本）与 e（模板保留），实际=' + JSON.stringify(lg.titleObj));
+hotfix-patch/test/r18-titleobj-projection.js:110:  assert.strictEqual(lg.titleObj['2045'], 0);
+tools/index.js:111919:n.AchieveModel.setAchieveData(e.hasOwnProperty("titleObj") ? e.titleObj : {});
+tools/shapes.json:16398:      "templates.json:create.titleObj.e"
+tools/shapes.json:31534:      "templates.json:create.titleObj.e"
+docs/audit/r18-verification.md:5:> 基线：`node tools\acceptance.js` → 开始时 **项=35 绿=35 已知红=0 cap=0**；本批三项修完 → **项=38 绿=38 已知红=0 cap=0，退出码 0**（新增 `r18-titleobj-projection` / `r18-skch-lv0` / `r18-unreachable`）。
+docs/audit/r18-verification.md:15:| W1 | gemini-3.8-flash-low（只读） | 三包符号扫描（numDeaths/titleObj/titles/REWARD_ITEM/ConsultUI/studyData/upgradeSkill/ITEMSCH） | `docs/audit/r18-W1-symbol-scan.md` | ~2 min |
+docs/audit/r18-verification.md:46:| `hotfix-patch/test/r18-titleobj-projection.js` | 4/4 绿 | 4/4 绿 | PASS（T1 重启投射/T2 模板保 e/T3 >1 到期 ms/T4 过滤非数字） |
+
+================================================================================
+【② 过期称号审计】
+================================================================================
+
+6) 新加投射代码所在的完整 if 块（逐字贴，含行号与注释）：
+hotfix-patch/core/bz-rpc-server.js:1116-1128
+1116:       if (s.titles && typeof s.titles === 'object') {
+1117:         var tObj = (base.titleObj && typeof base.titleObj === 'object') ? base.titleObj : {};
+1118:         var tN = 0;
+1119:         for (var tk in s.titles) {
+1120:           if (!s.titles.hasOwnProperty(tk)) continue;
+1121:           if (!/^\d+$/.test(String(tk))) continue;
+1122:           var tv = s.titles[tk];
+1123:           tObj[tk] = (typeof tv === 'number' && tv > 1) ? tv : 0;
+1124:           tN++;
+1125:         }
+1126:         base.titleObj = tObj;
+1127:         if (tN) env.log('LoadGame → 称号投射 ' + tN + ' 个 titleObj=' + JSON.stringify(tObj) + '（客户端 index.js:111919）');
+1128:       }
+
+7) 该块里过滤"value <= 当前时间"的语句情况：
+没有
+
+================================================================================
+【未验证】
+================================================================================
+1. 未验证客户端在收到带有已过期时间戳（tv <= 当前 serverTime）的 titleObj 时，内部是否会在前端启动时自动清理或在穿戴界面产生异常表现。
+2. 未验证多进程或高并发环境下 TPL 对象的只读冻结状态（Object.freeze 未在代码中显式调用）。

@@ -1,0 +1,17 @@
+del | enterPVEBattle | AttckData.equipments.1 | "null" | → |  | sigma | str+→absent
+del | enterPVEBattle | AttckData.equipments.2 | "null" | → |  | sigma | str+→absent
+del | enterPVEBattle | AttckData.equipments.3 | "null" | → |  | sigma | str+→absent
+del | enterPVEBattle | AttckData.equipments.4 | "null" | → |  | sigma | str+→absent
+del | enterPVEBattle | AttckData.equipments.5 | "null" | → |  | sigma | str+→absent
+del | enterPVEBattle | AttckData.equipments.6 | "null" | → |  | sigma | str+→absent
+del | enterPVEBattle | AttckData.equipments.7 | "null" | → |  | sigma | str+→absent
+del | enterRoguePVEBattle | AttckData.equipments.1 | "null" | → |  | sigma | str+→absent
+del | enterRoguePVEBattle | AttckData.equipments.2 | "null" | → |  | sigma | str+→absent
+del | enterRoguePVEBattle | AttckData.equipments.3 | "null" | → |  | sigma | str+→absent
+del | enterRoguePVEBattle | AttckData.equipments.4 | "null" | → |  | sigma | str+→absent
+del | enterRoguePVEBattle | AttckData.equipments.5 | "null" | → |  | sigma | str+→absent
+del | enterRoguePVEBattle | AttckData.equipments.6 | "null" | → |  | sigma | str+→absent
+del | enterRoguePVEBattle | AttckData.equipments.7 | "null" | → |  | sigma | str+→absent
+add | enterPVEBattle | AttckData.equipments |  | → | "{}" | sigma | absent→obj0
+add | enterRoguePVEBattle | AttckData.equipments |  | → | "{}" | sigma | absent→obj0
+diff 总数 = 16

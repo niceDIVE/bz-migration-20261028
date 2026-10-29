@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2026-10-21T22:30:46.389Z",
+  "build": {
+    "cmd": "$env:BZ_PROBE='0'; node build-handlers.js 2>&1 | Select-Object -Last 5",
+    "exit": 0,
+    "tail": [
+      "HANDLERS OK  ver=h986d3e0b  selfCheck=1117  bytes=617790  -> patch/live/handlers.js",
+      "FLOW     OK  bytes=17244  -> patch/live/flow.js"
+    ]
+  },
+  "tests": [
+    {
+      "name": "l0-envelope",
+      "cmd": "node test\\l0-envelope.js",
+      "exit": 0,
+      "tail": [
+        "  ok   reset 清空（无 baseValueAy）",
+        "[L0-2] PASS 82 项"
+      ],
+      "pass": true
+    },
+    {
+      "name": "l0-xhr",
+      "cmd": "node test\\l0-xhr.js",
+      "exit": 0,
+      "tail": [
+        "  ok   abort 后 send 不再改写响应",
+        "[L0-1] PASS 21 项"
+      ],
+      "pass": true
+    },
+    {
+      "name": "save-migrate",
+      "cmd": "node test\\save-migrate.js",
+      "exit": 0,
+      "tail": [
+        "    \"2026-10-22-0250-pre-pgr-persist\"",
+        "  ]"
+      ],
+      "pass": true
+    },
+    {
+      "name": "upgrade-skill-target",
+      "cmd": "node test\\upgrade-skill-target.js",
+      "exit": 0,
+      "tail": [
+        "    \"9\": [",
+        "      1,"
+      ],
+      "pass": true
+    },
+    {
+      "name": "selfcheck-nosave",
+      "cmd": "node test\\selfcheck-nosave.js",
+      "exit": 0,
+      "tail": [
+        "  },",
+        "  \"failedNames\": []"
+      ],
+      "pass": true
+    },
+    {
+      "name": "selfcheck-model-push",
+      "cmd": "node test\\selfcheck-model-push.js",
+      "exit": 0,
+      "tail": [
+        "  \"setItemCalls\": [],",
+        "  \"addEqCalls\": []"
+      ],
+      "pass": true
+    },
+    {
+      "name": "overlay-projection",
+      "cmd": "node test\\overlay-projection.js",
+      "exit": 0,
+      "tail": [
+        "  ok   T14 接任务推给活客户端",
+        "[overlay] PASS  14/14"
+      ],
+      "pass": true
+    },
+    {
+      "name": "drop-table",
+      "cmd": "node test\\drop-table.js",
+      "exit": 0,
+      "tail": [
+        "  ok   T8 数据自洽（npc→drop→条目）",
+        "[drop] PASS  8/8"
+      ],
+      "pass": true
+    },
+    {
+      "name": "push-grants",
+      "cmd": "node test\\push-grants.js",
+      "exit": 0,
+      "tail": [
+        "  ok   T5 没有客户端模型时不崩",
+        "[push] PASS  5/5"
+      ],
+      "pass": true
+    },
+    {
+      "name": "sale-coins",
+      "cmd": "node test\\sale-coins.js",
+      "exit": 0,
+      "tail": [
+        "  ok   T10 卖出量按真实库存截断（有 10 卖 50 → 只结算 10）",
+        "[sale] PASS  10/10"
+      ],
+      "pass": true
+    }
+  ],
+  "priceMap": {
+    "rawOutput": "{\"items\":2425,\"meta\":{\"items\":2425,\"zeroPrice\":4100},\"p1001\":100,\"p2302\":100,\"p3003\":20}"
+  },
+  "sourceCheck": {
+    "rawOutput": "{\"itemPrice\":true,\"equipItemIDOf\":true,\"pushCoins\":true,\"priceRefs\":3,\"ivchNote\":true}"
+  },
+  "handlersArtifact": {
+    "rawOutput": "{\"bytes\":617790,\"mtime\":\"2026-10-21T22:29:55.062Z\"}"
+  },
+  "unverified": []
+}

@@ -1,0 +1,155 @@
+A 行数=744  复跑行数=736
+diff 行数(含头)=220
+--- 
++++ 
+@@ -19,15 +19,14 @@
+   "reads": [
+-   "done"
+-  ],
+-  "writes": [
+-   "bag",
+-   "bloodArr",
+-   "contribution",
+-   "equipments",
+-   "fosterArr",
+-   "gold",
+-   "playerEquip",
+-   "rewarded",
+-   "saveVersion",
+-   "skills",
++   "done",
++   "rewarded",
++   "skills"
++  ],
++  "writes": [
++   "bag",
++   "bloodArr",
++   "contribution",
++   "equipments",
++   "fosterArr",
++   "gold",
++   "playerEquip",
+    "yuanbao"
+@@ -62,14 +61,15 @@
+    "done",
+-   "hungerMax",
+-   "rewarded",
+-   "skills"
+-  ],
+-  "writes": [
+-   "bag",
+-   "bloodArr",
+-   "contribution",
+-   "equipments",
+-   "fosterArr",
+-   "gold",
+-   "playerEquip",
++   "hungerMax"
++  ],
++  "writes": [
++   "bag",
++   "bloodArr",
++   "contribution",
++   "equipments",
++   "fosterArr",
++   "gold",
++   "playerEquip",
++   "rewarded",
++   "saveVersion",
++   "skills",
+    "yuanbao"
+@@ -169,15 +169,13 @@
+    "roleID",
+-   "roleSnapshot"
+-  ],
+-  "writes": [
+-   "bag",
+-   "bloodArr",
+-   "contribution",
+-   "equipments",
+-   "fosterArr",
+-   "gold",
+-   "playerEquip",
+-   "rewarded",
+-   "saveVersion",
+-   "skills",
++   "roleSnapshot",
++   "skills"
++  ],
++  "writes": [
++   "bag",
++   "bloodArr",
++   "contribution",
++   "equipments",
++   "fosterArr",
++   "gold",
++   "playerEquip",
+    "titles",
+@@ -225,3 +223,5 @@
+   "reads": [
+-   "done"
++   "done",
++   "rewarded",
++   "skills"
+   ],
+@@ -236,5 +236,2 @@
+    "playerEquip",
+-   "rewarded",
+-   "saveVersion",
+-   "skills",
+    "yuanbao"
+@@ -266,15 +263,14 @@
+   "reads": [
+-   "done"
+-  ],
+-  "writes": [
+-   "bag",
+-   "bloodArr",
+-   "contribution",
+-   "equipments",
+-   "fosterArr",
+-   "gold",
+-   "playerEquip",
+-   "rewarded",
+-   "saveVersion",
+-   "skills",
++   "done",
++   "rewarded",
++   "skills"
++  ],
++  "writes": [
++   "bag",
++   "bloodArr",
+JSON 语义相同: False
+A 键数=36 复跑键数=36 仅A有=[] 仅复跑有=[]
+键 User.BuyAcitivityShop 值不同:
+  A   = {"reads": ["done"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "rewarded", "saveVersion", "skills", "yuanbao"], "via": ["table:H"]}
+  复跑= {"reads": ["done", "rewarded", "skills"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "yuanbao"], "via": ["table:H"]}
+键 User.CheckBattleResult 值不同:
+  A   = {"reads": ["done", "hungerMax", "rewarded", "skills"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "yuanbao"], "via": ["literal", "table:H"]}
+  复跑= {"reads": ["done", "hungerMax"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "rewarded", "saveVersion", "skills", "yuanbao"], "via": ["literal", "table:H"]}
+键 User.LoadGame 值不同:
+  A   = {"reads": ["accepted", "baseValueAy", "chip", "coins", "done", "hungerMax", "name", "potential", "roleID", "roleSnapshot"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "rewarded", "saveVersion", "skills", "titles", "yuanbao"], "via": ["literal", "table:H"]}
+  复跑= {"reads": ["accepted", "baseValueAy", "chip", "coins", "done", "hungerMax", "name", "potential", "roleID", "roleSnapshot", "skills"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "titles", "yuanbao"], "via": ["literal", "table:H"]}
+键 User.QuickBuyItem 值不同:
+  A   = {"reads": ["done"], "writes": ["bag", "bloodArr", "coins", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "rewarded", "saveVersion", "skills", "yuanbao"], "via": ["table:H"]}
+  复跑= {"reads": ["done", "rewarded", "skills"], "writes": ["bag", "bloodArr", "coins", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "yuanbao"], "via": ["table:H"]}
+键 User.UnloadingEuipment 值不同:
+  A   = {"reads": ["done"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "rewarded", "saveVersion", "skills", "yuanbao"], "via": ["table:H"]}
+  复跑= {"reads": ["done", "rewarded", "skills"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "yuanbao"], "via": ["table:H"]}
+键 User.addItem 值不同:
+  A   = {"reads": ["done"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "rewarded", "saveVersion", "skills", "yuanbao"], "via": ["table:H"]}
+  复跑= {"reads": ["done", "rewarded", "skills"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "yuanbao"], "via": ["table:H"]}
+键 User.buyShopItem 值不同:
+  A   = {"reads": ["done", "hungerMax"], "writes": ["bag", "bloodArr", "coins", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "rewarded", "saveVersion", "skills", "yuanbao"], "via": ["literal", "table:H"]}
+  复跑= {"reads": ["done", "hungerMax", "rewarded", "skills"], "writes": ["bag", "bloodArr", "coins", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "yuanbao"], "via": ["literal", "table:H"]}
+键 User.buySpecialShopItem 值不同:
+  A   = {"reads": ["done"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "rewarded", "saveVersion", "skills", "yuanbao"], "via": ["table:H"]}
+  复跑= {"reads": ["done", "rewarded", "skills"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "yuanbao"], "via": ["table:H"]}
+键 User.saleItem 值不同:
+  A   = {"reads": ["done", "hungerMax"], "writes": ["bag", "bloodArr", "coins", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "rewarded", "saveVersion", "skills", "yuanbao"], "via": ["table:H"]}
+  复跑= {"reads": ["done", "hungerMax", "potential", "rewarded", "skills"], "writes": ["bag", "bloodArr", "coins", "contribution", "equipments", "fosterArr", "gold", "playerEquip", "yuanbao"], "via": ["table:H"]}
+键 User.useItem 值不同:
+  A   = {"reads": ["done"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "hunger", "hungerMax", "playerEquip", "rewarded", "saveVersion", "skills", "titles", "yuanbao"], "via": ["literal", "table:H"]}
+  复跑= {"reads": ["done", "rewarded"], "writes": ["bag", "bloodArr", "contribution", "equipments", "fosterArr", "gold", "hunger", "hungerMax", "playerEquip", "skills", "titles", "yuanbao"], "via": ["literal", "table:H"]}
+共同键中值不同的键数: 10

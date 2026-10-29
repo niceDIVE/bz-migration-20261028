@@ -1,0 +1,129 @@
+{
+  "generatedAt": "2026-10-22T19:40:00.000Z",
+  "docBytes": 118665,
+  "docLines": 1374,
+  "checks": [
+    {
+      "id": "C1",
+      "verdict": "HIT",
+      "where": "tools/index.js:74652",
+      "raw": "t.hp.addFinalBonus(new r(0, .01 * e.HardModel[0]));"
+    },
+    {
+      "id": "C2",
+      "verdict": "HIT",
+      "where": "tools/index.js:8093-8134",
+      "raw": "8093: e.prototype.generateNpcData = function(t, e) { ... 8132: o.HardModel = t[23];"
+    },
+    {
+      "id": "C3",
+      "verdict": "HIT",
+      "where": "tools/index.js:8145",
+      "raw": "i = new p(Number(o), t, e, this.pvpType);"
+    },
+    {
+      "id": "C4",
+      "verdict": "HIT",
+      "where": "tools/index.js:8175",
+      "raw": "i.start();"
+    },
+    {
+      "id": "C5",
+      "verdict": "HIT",
+      "where": "tools/index.js:69101",
+      "raw": "this.actionArr.push(t);"
+    },
+    {
+      "id": "C6",
+      "verdict": "HIT",
+      "where": "tools/index.js:69174-69197",
+      "raw": "69174: e.prototype.endBattle = function(t, e) { ... 69196: s.NetMgr.http.sendRequest(a.HttpConst.BATTLE_END_REWARD, h);"
+    },
+    {
+      "id": "C7",
+      "verdict": "HIT",
+      "where": "tools/index.js:77051",
+      "raw": "e.hasOwnProperty(\"cycleObj\") && (this.cycleData = e.cycleObj);"
+    },
+    {
+      "id": "C8",
+      "verdict": "HIT",
+      "where": "tools/scripts2.js:51009",
+      "raw": "for (var t = [], e = 0; e < 4; e++) t.push(p.MarryModel.cycleData[4][e]);"
+    },
+    {
+      "id": "C9",
+      "verdict": "HIT",
+      "where": "tools/scripts2.js:61720-61724",
+      "raw": "var n = [ 41, 42, 44, 43 ], r = this.data.split(\"|\"); ... this.getPathByNode(\"bg/toggleContainer/toggle\" + i + \"/label\" + i).getComponent(cc.Label).string = a.getText(n[i - 1]) + \"+\" + c[1];"
+    },
+    {
+      "id": "C10",
+      "verdict": "HIT",
+      "where": "tools/index.js:144101-144108",
+      "raw": "l.RoleBaseInfo.baseArmStrong = e.armStrong; ... l.RoleBaseInfo.understanding = e.understanding;"
+    },
+    {
+      "id": "C11",
+      "verdict": "HIT",
+      "where": "tools/index.js:144132",
+      "raw": "} else 2 == e.eRet ? f.StoreModel.openChargeList() : s.default.show(i.getText(\"910\"));"
+    },
+    {
+      "id": "C12",
+      "verdict": "HIT",
+      "where": "tools/index.js:64793-64796",
+      "raw": "if (a.hasOwnProperty(\"formulaID\")) { ... c.default.show(n.getText(1332).replace(/\\[1\\]/, n.getText(y.name)));"
+    },
+    {
+      "id": "C13",
+      "verdict": "HIT",
+      "where": "tools/scripts2.js:14671-14699",
+      "raw": "case \"90\": ... 26 == l ... 33 == l || 35 == l ... 117 == l"
+    },
+    {
+      "id": "C14",
+      "verdict": "HIT",
+      "where": "tools/index.js:1637-1642; 59618",
+      "raw": "1637: e.prototype.reqRandomShop = function(t) { ... npcID: t ... SPECIAL_SHOP ... | 59618: SPECIAL_SHOP: \"User.GetSpecialShopData\","
+    },
+    {
+      "id": "C15",
+      "verdict": "HIT",
+      "where": "tools/scripts3.js:36524-36541; tools/index.js:60444",
+      "raw": "getShopData: sendRequest(GET_GOOD_AND_EVIL_SHOP_DATA), this.shopData = e.shop, this.shopRefreshTime = e.nextRefreshTime | index.js:60444: GET_GOOD_AND_EVIL_SHOP_DATA: \"User.getGoodAndEvilShopData\","
+    },
+    {
+      "id": "C16",
+      "verdict": "HIT",
+      "where": "tools/index.js:47111-47116; 59698",
+      "raw": "reqExchangeBuy: sendRequest(EXCHANGE_ITEM, { itemID: t, itemNum: e, npcid: this.exchangeId }) | 59698: EXCHANGE_ITEM: \"User.exchangeItem\","
+    },
+    {
+      "id": "C17",
+      "verdict": "HIT",
+      "where": "tools/index.js:47076-47078",
+      "raw": "i.MessageCenter.on(n.HttpConst.GET_CHANGE_SHOP, function(t, e) { 1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EXCHANGE_SHOP_DATA, e.shopObj); }, this);"
+    },
+    {
+      "id": "C18",
+      "verdict": "HIT",
+      "where": "hotfix-patch/core/bz-rpc-server.js",
+      "raw": "washAdditionalArr: function (L1152), BRANCH_ONLY (L1294), base.cycleObj = [0, [], [0] (L743), function npcShopOf (L260), function pushEco (L270), bzGrantCur: function (L1589)"
+    },
+    {
+      "id": "C19",
+      "verdict": "HIT",
+      "where": "tools/gen_task_rewards.js",
+      "raw": "NPC_SLOTS = 26 (L279), hardModelMap (L262), BZ_ITEMPRICE (L156), BZ_ITEMBUYPRICE (L173), BZ_NPCSHOP (L211)"
+    },
+    {
+      "id": "C20",
+      "verdict": "HIT",
+      "where": "hotfix-patch/test/battle-npc-arr.js, hotfix-patch/test/wash-points.js",
+      "raw": "battle-npc-arr.js (exists, header has '26 格'); wash-points.js (exists, header has '26 格' / 契约)"
+    }
+  ],
+  "misses": [],
+  "unverified": []
+}

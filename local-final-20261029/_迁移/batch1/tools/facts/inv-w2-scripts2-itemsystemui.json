@@ -1,0 +1,992 @@
+{
+  "file": "F:\\BaoZouyxt\\tools\\scripts2.js",
+  "segments": [
+    {
+      "range": "35955-36015",
+      "lines": [
+        {
+          "n": 35955,
+          "text": "ItemSystemUI: [ function(t, e, o) {"
+        },
+        {
+          "n": 35956,
+          "text": "\"use strict\";"
+        },
+        {
+          "n": 35957,
+          "text": "cc._RF.push(e, \"8e21cZj+DhHOoH+PwGdne7v\", \"ItemSystemUI\");"
+        },
+        {
+          "n": 35958,
+          "text": "var i, s = this && this.__extends || (i = function(t, e) {"
+        },
+        {
+          "n": 35959,
+          "text": "return (i = Object.setPrototypeOf || {"
+        },
+        {
+          "n": 35960,
+          "text": "__proto__: []"
+        },
+        {
+          "n": 35961,
+          "text": "} instanceof Array && function(t, e) {"
+        },
+        {
+          "n": 35962,
+          "text": "t.__proto__ = e;"
+        },
+        {
+          "n": 35963,
+          "text": "} || function(t, e) {"
+        },
+        {
+          "n": 35964,
+          "text": "for (var o in e) Object.prototype.hasOwnProperty.call(e, o) && (t[o] = e[o]);"
+        },
+        {
+          "n": 35965,
+          "text": "})(t, e);"
+        },
+        {
+          "n": 35966,
+          "text": "}, function(t, e) {"
+        },
+        {
+          "n": 35967,
+          "text": "i(t, e);"
+        },
+        {
+          "n": 35968,
+          "text": "function o() {"
+        },
+        {
+          "n": 35969,
+          "text": "this.constructor = t;"
+        },
+        {
+          "n": 35970,
+          "text": "}"
+        },
+        {
+          "n": 35971,
+          "text": "t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());"
+        },
+        {
+          "n": 35972,
+          "text": "}), n = this && this.__decorate || function(t, e, o, i) {"
+        },
+        {
+          "n": 35973,
+          "text": "var s, n = arguments.length, r = n < 3 ? e : null === i ? i = Object.getOwnPropertyDescriptor(e, o) : i;"
+        },
+        {
+          "n": 35974,
+          "text": "if (\"object\" == typeof Reflect && \"function\" == typeof Reflect.decorate) r = Reflect.decorate(t, e, o, i); else for (var a = t.length - 1; a >= 0; a--) (s = t[a]) && (r = (n < 3 ? s(r) : n > 3 ? s(e, o, r) : s(e, o)) || r);"
+        },
+        {
+          "n": 35975,
+          "text": "return n > 3 && r && Object.defineProperty(e, o, r), r;"
+        },
+        {
+          "n": 35976,
+          "text": "};"
+        },
+        {
+          "n": 35977,
+          "text": "Object.defineProperty(o, \"__esModule\", {"
+        },
+        {
+          "n": 35978,
+          "text": "value: !0"
+        },
+        {
+          "n": 35979,
+          "text": "});"
+        },
+        {
+          "n": 35980,
+          "text": "o.ItemSystemUI = void 0;"
+        },
+        {
+          "n": 35981,
+          "text": "var r = t(\"../../../scripts/battlesystem/Equipment\"), a = t(\"../../../scripts/gameconfigs/LangMgr\"), c = t(\"../../../scripts/gameconfigs/CFMgr\"), l = t(\"../../../scripts/core/events/MessageCenter\"), p = t(\"../../../scripts/models/InhertEquipModel\"), h = t(\"../../../scripts/models/InventoryDB\"), d = t(\"../../../scripts/models/InventoryModel\"), u = t(\"../../../scripts/models/PackageModel\"), g = t(\"../../../scripts/models/SpecialAdventureModel\"), m = t(\"../../../scripts/models/TaskSystemMgr\"), f = t(\"../../../scripts/models/TowerModel\"), v = t(\"../../../scripts/models/vos/RoleBaseInfo\"), y = t(\"../../../scripts/gui/uicomponents/UIComponent\"), I = t(\"../../../scripts/utils/EqUtils\"), b = t(\"../../../scripts/gui/uicomponents/Alert\"), C = t(\"../../../scripts/models/UserModel\"), M = t(\"../../../scripts/mgrs/BundleMgr\"), _ = t(\"../../../scripts/core/ui/mgrs/PopUpMgr\"), B = t(\"../../../scripts/utils/EvName\"), N = t(\"../../../scripts/models/OneUnloadModel\"), L = t(\"../../../scripts/mgrs/LayerMgr\"), S = t(\"../../../scripts/utils/MadUtilsTS\"), T = t(\"../../../scripts/gui/guidUI/GuideMgr\"), P = t(\"../../../scripts/mgrs/LoginMgr\"), E = t(\"../../../scripts/models/MarryModel\"), U = t(\"../../../scripts/models/CopyFightModel\"), k = t(\"../../../scripts/net/HttpConst\"), R = t(\"../../../scripts/core/resmgr/ResMgr\"), O = t(\"../../../scripts/gameconfigs/AppData\"), w = cc._decorator.ccclass, x = function(t) {"
+        },
+        {
+          "n": 35982,
+          "text": "s(e, t);"
+        },
+        {
+          "n": 35983,
+          "text": "function e() {"
+        },
+        {
+          "n": 35984,
+          "text": "var e = null !== t && t.apply(this, arguments) || this;"
+        },
+        {
+          "n": 35985,
+          "text": "e.bg = null;"
+        },
+        {
+          "n": 35986,
+          "text": "e.desLabel = null;"
+        },
+        {
+          "n": 35987,
+          "text": "e.desLabel1 = null;"
+        },
+        {
+          "n": 35988,
+          "text": "e.timesLabel = null;"
+        },
+        {
+          "n": 35989,
+          "text": "e.selectBtnBg = null;"
+        },
+        {
+          "n": 35990,
+          "text": "e.toggles = [];"
+        },
+        {
+          "n": 35991,
+          "text": "e.tableBtns = [];"
+        },
+        {
+          "n": 35992,
+          "text": "e.settingBtn = null;"
+        },
+        {
+          "n": 35993,
+          "text": "e.totalLabel = null;"
+        },
+        {
+          "n": 35994,
+          "text": "e.sv = null;"
+        },
+        {
+          "n": 35995,
+          "text": "e.contentDes = null;"
+        },
+        {
+          "n": 35996,
+          "text": "e.contentDes1 = null;"
+        },
+        {
+          "n": 35997,
+          "text": "e.content = null;"
+        },
+        {
+          "n": 35998,
+          "text": "e.svList = [];"
+        },
+        {
+          "n": 35999,
+          "text": "e.lineH = null;"
+        },
+        {
+          "n": 36000,
+          "text": "e.titleLabel = null;"
+        },
+        {
+          "n": 36001,
+          "text": "e.titleNumLabel = null;"
+        },
+        {
+          "n": 36002,
+          "text": "e.quickBtn = null;"
+        },
+        {
+          "n": 36003,
+          "text": "e.quickBtn1 = null;"
+        },
+        {
+          "n": 36004,
+          "text": "e.loadBtn = null;"
+        },
+        {
+          "n": 36005,
+          "text": "e.equipLabel = null;"
+        },
+        {
+          "n": 36006,
+          "text": "e.itemPane = null;"
+        },
+        {
+          "n": 36007,
+          "text": "e.ItemCell = null;"
+        },
+        {
+          "n": 36008,
+          "text": "e.btnInlay = null;"
+        },
+        {
+          "n": 36009,
+          "text": "e.currentIndex = 0;"
+        },
+        {
+          "n": 36010,
+          "text": "e.currentScrollIndex = -1;"
+        },
+        {
+          "n": 36011,
+          "text": "e._currentSelectItem = null;"
+        },
+        {
+          "n": 36012,
+          "text": "e.itemTypeValue = 0;"
+        },
+        {
+          "n": 36013,
+          "text": "e._itemDataList = [];"
+        },
+        {
+          "n": 36014,
+          "text": "e._equipDataList = [];"
+        },
+        {
+          "n": 36015,
+          "text": "e.curLastIndex = 0;"
+        }
+      ]
+    },
+    {
+      "range": "36735-36840",
+      "lines": [
+        {
+          "n": 36735,
+          "text": "var a = c.getItem(o[i].itemId, \"item\"), l = c.getItem(1, \"effectcategory\").page.split(\"|\");"
+        },
+        {
+          "n": 36736,
+          "text": "if (2 == a.Type && l[this.itemTypeValue].split(\",\").indexOf(a.Effect.toString()) >= 0) {"
+        },
+        {
+          "n": 36737,
+          "text": "var p = this.newItems.indexOf(o[i].itemId);"
+        },
+        {
+          "n": 36738,
+          "text": "o[i].newTag = p >= 0 ? o[i].newTag = p + 1 : 0;"
+        },
+        {
+          "n": 36739,
+          "text": "this._itemDataList.unshift(o[i]);"
+        },
+        {
+          "n": 36740,
+          "text": "if (this.currentScrollIndex >= 0) {"
+        },
+        {
+          "n": 36741,
+          "text": "this.currentScrollIndex++;"
+        },
+        {
+          "n": 36742,
+          "text": "this.tagIndex++;"
+        },
+        {
+          "n": 36743,
+          "text": "this.itemIndex++;"
+        },
+        {
+          "n": 36744,
+          "text": "}"
+        },
+        {
+          "n": 36745,
+          "text": "}"
+        },
+        {
+          "n": 36746,
+          "text": "}"
+        },
+        {
+          "n": 36747,
+          "text": "}"
+        },
+        {
+          "n": 36748,
+          "text": "this.needUpdate = !0;"
+        },
+        {
+          "n": 36749,
+          "text": "};"
+        },
+        {
+          "n": 36750,
+          "text": "e.prototype.getCurrentEquip = function() {"
+        },
+        {
+          "n": 36751,
+          "text": "this._equipDataList = [];"
+        },
+        {
+          "n": 36752,
+          "text": "var t = d.InventoryModel.equipmentDic;"
+        },
+        {
+          "n": 36753,
+          "text": "for (var e in t) {"
+        },
+        {
+          "n": 36754,
+          "text": "var o = I.EqUtils.equipChangeNormalEq(e, t[e]);"
+        },
+        {
+          "n": 36755,
+          "text": "(n = this.newEquips.indexOf(parseInt(o.uID))) >= 0 && (o.newTag = n + 1);"
+        },
+        {
+          "n": 36756,
+          "text": "this._equipDataList.push(o);"
+        },
+        {
+          "n": 36757,
+          "text": "}"
+        },
+        {
+          "n": 36758,
+          "text": "var i = f.TowerModel.getTowerEquipMap();"
+        },
+        {
+          "n": 36759,
+          "text": "for (var s in i) {"
+        },
+        {
+          "n": 36760,
+          "text": "var n, r = f.TowerModel.towerCurEquipObj(s, i[s]);"
+        },
+        {
+          "n": 36761,
+          "text": "(n = this.newEquips.indexOf(parseInt(r.uID))) >= 0 && (r.newTag = n + 1);"
+        },
+        {
+          "n": 36762,
+          "text": "this._equipDataList.push(r);"
+        },
+        {
+          "n": 36763,
+          "text": "}"
+        },
+        {
+          "n": 36764,
+          "text": "var a = p.InhertEquipModel.allInhertEquips;"
+        },
+        {
+          "n": 36765,
+          "text": "this._equipDataList.sort(function(t, e) {"
+        },
+        {
+          "n": 36766,
+          "text": "var o = a.hasOwnProperty(t.uID), i = a.hasOwnProperty(e.uID);"
+        },
+        {
+          "n": 36767,
+          "text": "return 2 == t.type ? o && !i ? -1 : !o && i ? 1 : t.numAttr > e.numAttr ? -1 : t.numAttr < e.numAttr ? 1 : t.type > e.type ? 1 : t.type < e.type ? -1 : t.itemId > e.itemId ? -1 : t.itemId < e.itemId ? 1 : 0 : t.numAttr < e.numAttr ? 1 : t.numAttr > e.numAttr ? -1 : t.type > e.type ? 1 : t.type < e.type ? -1 : t.itemId > e.itemId ? -1 : t.itemId < e.itemId ? 1 : 0;"
+        },
+        {
+          "n": 36768,
+          "text": "});"
+        },
+        {
+          "n": 36769,
+          "text": "this.totalLabel.active = !0;"
+        },
+        {
+          "n": 36770,
+          "text": "this.totalLabel.getComponent(cc.Label).string = u.PackageModel.getPackageNum() + \"/\" + u.PackageModel.getMaxPackageNum();"
+        },
+        {
+          "n": 36771,
+          "text": "};"
+        },
+        {
+          "n": 36772,
+          "text": "e.prototype.itemClassfityShow = function(t) {"
+        },
+        {
+          "n": 36773,
+          "text": "this.titleLabel.active = !0;"
+        },
+        {
+          "n": 36774,
+          "text": "this.titleNumLabel.active = !0;"
+        },
+        {
+          "n": 36775,
+          "text": "this.totalLabel.active = !1;"
+        },
+        {
+          "n": 36776,
+          "text": "this.itemTypeValue = t;"
+        },
+        {
+          "n": 36777,
+          "text": "this.selectBtnBg.setPosition(cc.v3(this.tableBtns[t].position.x, this.tableBtns[t].position.y));"
+        },
+        {
+          "n": 36778,
+          "text": "this.divisionItem(this.currentIndex, t);"
+        },
+        {
+          "n": 36779,
+          "text": "this.showItemUI();"
+        },
+        {
+          "n": 36780,
+          "text": "this.addItem(t, !1);"
+        },
+        {
+          "n": 36781,
+          "text": "};"
+        },
+        {
+          "n": 36782,
+          "text": "e.prototype.showItemUI = function() {"
+        },
+        {
+          "n": 36783,
+          "text": "this._currentSelectItem = null;"
+        },
+        {
+          "n": 36784,
+          "text": "this.currentScrollIndex = -1;"
+        },
+        {
+          "n": 36785,
+          "text": "this.tagIndex = -1;"
+        },
+        {
+          "n": 36786,
+          "text": "this.itemIndex = -1;"
+        },
+        {
+          "n": 36787,
+          "text": "};"
+        },
+        {
+          "n": 36788,
+          "text": "e.prototype.divisionItem = function(t, e) {"
+        },
+        {
+          "n": 36789,
+          "text": "this._itemDataList = [];"
+        },
+        {
+          "n": 36790,
+          "text": "var o = v.RoleBaseInfo.getStorableItemObj(), i = f.TowerModel.getTowerUseItems(), s = U.CopyFightModel.getCopyItems();"
+        },
+        {
+          "n": 36791,
+          "text": "for (var n in i) o[n] = i[n];"
+        },
+        {
+          "n": 36792,
+          "text": "for (var n in s) o[n] = s[n];"
+        },
+        {
+          "n": 36793,
+          "text": "for (var r = 0; r < this.newItems.length; r++) o[this.newItems[r]] && (o[this.newItems[r]].newTag = r + 1);"
+        },
+        {
+          "n": 36794,
+          "text": "var a = {"
+        },
+        {
+          "n": 36795,
+          "text": "0: {},"
+        },
+        {
+          "n": 36796,
+          "text": "2: {},"
+        },
+        {
+          "n": 36797,
+          "text": "3: {}"
+        },
+        {
+          "n": 36798,
+          "text": "};"
+        },
+        {
+          "n": 36799,
+          "text": "a[0] = c.getItem(1, \"effectcategory\");"
+        },
+        {
+          "n": 36800,
+          "text": "a[2] = c.getItem(3, \"effectcategory\");"
+        },
+        {
+          "n": 36801,
+          "text": "a[3] = c.getItem(4, \"effectcategory\");"
+        },
+        {
+          "n": 36802,
+          "text": "var l = a[t].page.split(\"|\")[e].split(\",\"), p = a[t].name;"
+        },
+        {
+          "n": 36803,
+          "text": "this.setTableBtnLabel(p);"
+        },
+        {
+          "n": 36804,
+          "text": "var h = [], u = [], g = [ \"8\", \"13\", \"49\", \"50\", \"57\" ], m = [ \"18\", \"26\", \"30\", \"44\", \"52\", \"67\", \"70\" ];"
+        },
+        {
+          "n": 36805,
+          "text": "for (var y in o) if (o[y].numbers > 0) {"
+        },
+        {
+          "n": 36806,
+          "text": "var I = c.getItem(o[y].itemId, \"item\");"
+        },
+        {
+          "n": 36807,
+          "text": "if (I && 2 == I.Type && a.hasOwnProperty(t)) if (0 == t && 4 == e) g.indexOf(I.Effect.toString()) >= 0 ? h.push(o[y]) : m.indexOf(I.Effect.toString()) >= 0 ? u.push(o[y]) : l.indexOf(I.Effect.toString()) >= 0 && this._itemDataList.push(o[y]); else {"
+        },
+        {
+          "n": 36808,
+          "text": "if (76 == I.Effect && U.CopyFightModel.copyType != U.CopyFightModel.copyTypeMap.shadowValley) continue;"
+        },
+        {
+          "n": 36809,
+          "text": "l.indexOf(I.Effect.toString()) >= 0 && this._itemDataList.push(o[y]);"
+        },
+        {
+          "n": 36810,
+          "text": "}"
+        },
+        {
+          "n": 36811,
+          "text": "}"
+        },
+        {
+          "n": 36812,
+          "text": "if (l.indexOf(\"74\") >= 0) {"
+        },
+        {
+          "n": 36813,
+          "text": "var b = d.InventoryModel.getMateriaShowList(this.exQualities, this.showTypes);"
+        },
+        {
+          "n": 36814,
+          "text": "this._itemDataList = this._itemDataList.concat(b);"
+        },
+        {
+          "n": 36815,
+          "text": "}"
+        },
+        {
+          "n": 36816,
+          "text": "if (h.length > 0 || u.length > 0) {"
+        },
+        {
+          "n": 36817,
+          "text": "h.sort(function(t, e) {"
+        },
+        {
+          "n": 36818,
+          "text": "return 2 == t.type ? t.numAttr > e.numAttr ? -1 : 1 : t.quality < e.quality ? -1 : t.quality > e.quality ? 1 : void 0;"
+        },
+        {
+          "n": 36819,
+          "text": "});"
+        },
+        {
+          "n": 36820,
+          "text": "u.sort(function(t, e) {"
+        },
+        {
+          "n": 36821,
+          "text": "return 2 == t.type ? t.numAttr > e.numAttr ? -1 : 1 : t.quality < e.quality ? -1 : t.quality > e.quality ? 1 : void 0;"
+        },
+        {
+          "n": 36822,
+          "text": "});"
+        },
+        {
+          "n": 36823,
+          "text": "this._itemDataList = this._itemDataList.concat(h, u);"
+        },
+        {
+          "n": 36824,
+          "text": "}"
+        },
+        {
+          "n": 36825,
+          "text": "0 == this.currentIndex && 4 == this.itemTypeValue || this._itemDataList.sort(function(t, e) {"
+        },
+        {
+          "n": 36826,
+          "text": "return 2 == t.type ? t.numAttr > e.numAttr ? -1 : 1 : t.quality < e.quality ? 1 : t.quality > e.quality ? -1 : void 0;"
+        },
+        {
+          "n": 36827,
+          "text": "});"
+        },
+        {
+          "n": 36828,
+          "text": "this._itemDataList.sort(function(e, o) {"
+        },
+        {
+          "n": 36829,
+          "text": "var i = e.newTag ? e.newTag : 0, s = o.newTag ? o.newTag : 0;"
+        },
+        {
+          "n": 36830,
+          "text": "if (0 == t || 2 == t) {"
+        },
+        {
+          "n": 36831,
+          "text": "e.hasOwnProperty(\"topup\") || (e.topup = 0);"
+        },
+        {
+          "n": 36832,
+          "text": "o.hasOwnProperty(\"topup\") || (o.topup = 0);"
+        },
+        {
+          "n": 36833,
+          "text": "}"
+        },
+        {
+          "n": 36834,
+          "text": "if (i - s != 0) return s - i;"
+        },
+        {
+          "n": 36835,
+          "text": "if (0 == t || 2 == t) {"
+        },
+        {
+          "n": 36836,
+          "text": "var n = v.RoleBaseInfo.itemSort.indexOf(e.itemId), r = v.RoleBaseInfo.itemSort.indexOf(o.itemId);"
+        },
+        {
+          "n": 36837,
+          "text": "e.topup = 0;"
+        },
+        {
+          "n": 36838,
+          "text": "o.topup = 0;"
+        },
+        {
+          "n": 36839,
+          "text": "n >= 0 && (e.topup = 1);"
+        },
+        {
+          "n": 36840,
+          "text": "r >= 0 && (o.topup = 1);"
+        }
+      ]
+    },
+    {
+      "range": "37040-37065",
+      "lines": [
+        {
+          "n": 37040,
+          "text": "} else {"
+        },
+        {
+          "n": 37041,
+          "text": "this.weaponSkintip.active = !0;"
+        },
+        {
+          "n": 37042,
+          "text": "if (t && t.hasOwnProperty(\"weaponSkinId\") && t.weaponSkinId > 0) {"
+        },
+        {
+          "n": 37043,
+          "text": "this.equipLabel.getComponent(cc.Label)._forceUpdateRenderData();"
+        },
+        {
+          "n": 37044,
+          "text": "this.weaponSkintip.active = !0;"
+        },
+        {
+          "n": 37045,
+          "text": "var e;"
+        },
+        {
+          "n": 37046,
+          "text": "(e = this.equipLabel.getComponent(cc.Label)).fontSize * e.string.length < this.equipLabel.width ? this.weaponSkintip.x = this.equipLabel.x + e.fontSize * e.string.length * .5 + this.weaponSkintip.width + 45 : this.weaponSkintip.x = this.equipLabel.x + .5 * this.equipLabel.width + this.weaponSkintip.width + 50;"
+        },
+        {
+          "n": 37047,
+          "text": "} else this.weaponSkintip.active = !1;"
+        },
+        {
+          "n": 37048,
+          "text": "}"
+        },
+        {
+          "n": 37049,
+          "text": "};"
+        },
+        {
+          "n": 37050,
+          "text": "return n([ w ], e);"
+        },
+        {
+          "n": 37051,
+          "text": "}(y.UIComponent);"
+        },
+        {
+          "n": 37052,
+          "text": "o.ItemSystemUI = x;"
+        },
+        {
+          "n": 37053,
+          "text": "cc._RF.pop();"
+        },
+        {
+          "n": 37054,
+          "text": "}, {"
+        },
+        {
+          "n": 37055,
+          "text": "\"../../../scripts/battlesystem/Equipment\": void 0,"
+        },
+        {
+          "n": 37056,
+          "text": "\"../../../scripts/core/events/MessageCenter\": void 0,"
+        },
+        {
+          "n": 37057,
+          "text": "\"../../../scripts/core/resmgr/ResMgr\": void 0,"
+        },
+        {
+          "n": 37058,
+          "text": "\"../../../scripts/core/ui/mgrs/PopUpMgr\": void 0,"
+        },
+        {
+          "n": 37059,
+          "text": "\"../../../scripts/gameconfigs/AppData\": void 0,"
+        },
+        {
+          "n": 37060,
+          "text": "\"../../../scripts/gameconfigs/CFMgr\": void 0,"
+        },
+        {
+          "n": 37061,
+          "text": "\"../../../scripts/gameconfigs/LangMgr\": void 0,"
+        },
+        {
+          "n": 37062,
+          "text": "\"../../../scripts/gui/guidUI/GuideMgr\": void 0,"
+        },
+        {
+          "n": 37063,
+          "text": "\"../../../scripts/gui/uicomponents/Alert\": void 0,"
+        },
+        {
+          "n": 37064,
+          "text": "\"../../../scripts/gui/uicomponents/UIComponent\": void 0,"
+        },
+        {
+          "n": 37065,
+          "text": "\"../../../scripts/mgrs/BundleMgr\": void 0,"
+        }
+      ]
+    },
+    {
+      "range": "39505-39535",
+      "lines": [
+        {
+          "n": 39505,
+          "text": "this.showChildLayerUI(null, {"
+        },
+        {
+          "n": 39506,
+          "text": "index: t,"
+        },
+        {
+          "n": 39507,
+          "text": "viewName: this.viewName,"
+        },
+        {
+          "n": 39508,
+          "text": "scriptName: this.scriptName,"
+        },
+        {
+          "n": 39509,
+          "text": "tag: e"
+        },
+        {
+          "n": 39510,
+          "text": "});"
+        },
+        {
+          "n": 39511,
+          "text": "break;"
+        },
+        {
+          "n": 39512,
+          "text": ""
+        },
+        {
+          "n": 39513,
+          "text": "case 1:"
+        },
+        {
+          "n": 39514,
+          "text": "r.MessageCenter.dispatch(p.EvName.REMOVE_HANGUP_UI_EVENT);"
+        },
+        {
+          "n": 39515,
+          "text": "this.viewName = \"itemsUI/ItemSystemUI\";"
+        },
+        {
+          "n": 39516,
+          "text": "this.scriptName = \"ItemSystemUI\";"
+        },
+        {
+          "n": 39517,
+          "text": "this.showChildLayerUI(null, {"
+        },
+        {
+          "n": 39518,
+          "text": "index: t,"
+        },
+        {
+          "n": 39519,
+          "text": "viewName: this.viewName,"
+        },
+        {
+          "n": 39520,
+          "text": "scriptName: this.scriptName,"
+        },
+        {
+          "n": 39521,
+          "text": "tag: e"
+        },
+        {
+          "n": 39522,
+          "text": "});"
+        },
+        {
+          "n": 39523,
+          "text": "break;"
+        },
+        {
+          "n": 39524,
+          "text": ""
+        },
+        {
+          "n": 39525,
+          "text": "case 2:"
+        },
+        {
+          "n": 39526,
+          "text": "r.MessageCenter.dispatch(p.EvName.REMOVE_HANGUP_UI_EVENT);"
+        },
+        {
+          "n": 39527,
+          "text": "this.viewName = \"skillsUI/SkillSystemUI\";"
+        },
+        {
+          "n": 39528,
+          "text": "this.scriptName = \"SkillSystemUI\";"
+        },
+        {
+          "n": 39529,
+          "text": "this.showChildLayerUI(null, {"
+        },
+        {
+          "n": 39530,
+          "text": "index: t,"
+        },
+        {
+          "n": 39531,
+          "text": "viewName: this.viewName,"
+        },
+        {
+          "n": 39532,
+          "text": "scriptName: this.scriptName,"
+        },
+        {
+          "n": 39533,
+          "text": "tag: e"
+        },
+        {
+          "n": 39534,
+          "text": "});"
+        },
+        {
+          "n": 39535,
+          "text": "break;"
+        }
+      ]
+    }
+  ],
+  "grep_hits": [
+    {
+      "n": 24376,
+      "text": "this.divisionItem(t + 1);"
+    },
+    {
+      "n": 24383,
+      "text": "e.prototype.divisionItem = function(t) {"
+    },
+    {
+      "n": 24405,
+      "text": "this.divisionItem(t + 5);"
+    },
+    {
+      "n": 36172,
+      "text": "1 == this.currentIndex ? this.divisionEquip(this.itemTypeValue + 1) : this.divisionItem(this.currentIndex, this.itemTypeValue);"
+    },
+    {
+      "n": 36179,
+      "text": "this.divisionItem(this.currentIndex, this.itemTypeValue);"
+    },
+    {
+      "n": 36778,
+      "text": "this.divisionItem(this.currentIndex, t);"
+    },
+    {
+      "n": 36788,
+      "text": "e.prototype.divisionItem = function(t, e) {"
+    },
+    {
+      "n": 40816,
+      "text": "this.divisionItem(4);"
+    },
+    {
+      "n": 40878,
+      "text": "this.divisionItem(o);"
+    },
+    {
+      "n": 40899,
+      "text": "o.prototype.divisionItem = function(t) {"
+    },
+    {
+      "n": 41020,
+      "text": "this.divisionItem(this.selectedType);"
+    },
+    {
+      "n": 50457,
+      "text": "this.divisionItem();"
+    },
+    {
+      "n": 50475,
+      "text": "o.prototype.divisionItem = function() {"
+    },
+    {
+      "n": 50671,
+      "text": "this.divisionItem(t);"
+    },
+    {
+      "n": 50682,
+      "text": "o.prototype.divisionItem = function(e) {"
+    },
+    {
+      "n": 78998,
+      "text": "this.divisionItem(this.currentIndex, t);"
+    },
+    {
+      "n": 79031,
+      "text": "e.prototype.divisionItem = function(t, e) {"
+    }
+  ],
+  "errors": ""
+}

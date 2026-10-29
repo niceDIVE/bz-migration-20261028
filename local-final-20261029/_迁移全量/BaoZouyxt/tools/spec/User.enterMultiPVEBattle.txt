@@ -1,0 +1,51 @@
+# User.enterMultiPVEBattle  (HttpConst.INIT_MPPVE_BATTLE)
+# 出现 1 处
+
+110838: });
+110839: o.SPMpBtMgr = void 0;
+110840: var r = t("../../core/events/MessageCenter"), a = t("../../core/ui/mgrs/PopUpMgr"), s = t("../../gui/battle/resultscripts/BattleResultMediator"), l = t("../../gui/mpbattle/SPMPBattleUI"), c = t("../../net/HttpConst"), p = t("../../net/NetMgr"), h = t("../../utils/EvName"), u = t("../BundleMgr"), f = t("../LayerMgr"), d = t("../SoundMgr"), g = function(t) {
+110841: n(e, t);
+110842: function e() {
+110843: var e = t.call(this) || this;
+110844: r.MessageCenter.on(c.HttpConst.INIT_MPPVE_BATTLE, function(t, o) {
+110845: e.state.mainNpc = Number(o.npcID);
+110846: e.state.NpcId = Number(o.npcID);
+110847: o.hasOwnProperty("gold") && (e.state.reviveCost = Number(o.gold));
+110848: o.linepID && o.linepID.length > 0 && (o.linepID = o.linepID[0]);
+110849: e.initBattlePanel(o.linepID, o).then(function() {
+110850: o.battleData && e.playWithData(o.battleData);
+110851: var t = e.btUI.getComponent("MPUIMediator"), i = null;
+110852: i = o.battleData && o.battleData.hasOwnProperty("playerSkills") ? o.battleData : o;
+110853: if (t && i.hasOwnProperty("playerSkills")) {
+110854: var n = i.playerSkills[t.battleID];
+110855: if (n && n.dataArr) {
+110856: t.attackMpCost = n.mpCost;
+110857: t.dataArr = n.dataArr;
+110858: t.uiEffIds = n.uiEffIds;
+110859: t.summomState = n.summomState;
+110860: t.playerSkillsData = n;
+110861: if (0 == n.isPartner[t.battleID]) {
+110862: t.addDisabledBtn(9);
+110863: t.disabledBtnOne(9, !1, !1);
+110864: }
+110865: n.hasOwnProperty("atkSkillID") && (t.atkSkillID = n.atkSkillID);
+110866: }
+110867: }
+110868: });
+110869: }, e);
+110870: r.MessageCenter.on(c.HttpConst.START_MPPVE_BATTLE, function(t, o) {
+110871: if (1 == o.eRet) {
+110872: e.btUI && e.btUI.getComponent("MPUIMediator").setPartnerBtn(o);
+110873: e.playWithData(o);
+110874: }
+110875: }, e);
+110876: r.MessageCenter.on(c.HttpConst.MPPVE_ACTION, function(t, o) {
+110877: 1 == o.eRet && e.playWithData(o);
+110878: }, e);
+110879: r.MessageCenter.on(c.HttpConst.GET_MP_ULTSKILLS, function(t, o) {
+110880: var i;
+110881: if (1 == o.eRet) {
+110882: var n = e.btUI.getComponent("MPUIMediator");
+110883: if (n) {
+110884: if (o.dataArr && o.dataArr.length >= 1) {
+---

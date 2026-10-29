@@ -1,0 +1,99 @@
+# User.goldBreakAllSkill  (HttpConst.GOLD_BREAK_ALL_SKILL)
+# 出现 2 处
+
+120657: var i = setTimeout(function() {
+120658: clearTimeout(i);
+120659: s.MessageCenter.dispatch(p.EvName.REFRESH_BREAK_STATE);
+120660: }, 100);
+120661: } else 9 == o.eRet && l.default.show(r.getText(8102));
+120662: });
+120663: s.MessageCenter.on(c.HttpConst.GOLD_BREAK_ALL_SKILL, function(t, o) {
+120664: if (1 == o.eRet) {
+120665: e.updateBreakQueueData(o.qr, !0);
+120666: var i = setTimeout(function() {
+120667: clearTimeout(i);
+120668: s.MessageCenter.dispatch(p.EvName.REFRESH_BREAK_STATE);
+120669: }, 100);
+120670: } else 10 == o.eRet && l.default.show(r.getText(8102));
+120671: });
+120672: s.MessageCenter.on(c.HttpConst.BATCH_BREAK_BY_GOLD, function(o, i) {
+120673: if (1 == i.eRet) {
+120674: m.PopUpMgr.cleanup();
+120675: var n = {
+120676: wife: e.breakType > 1,
+120677: data: e.onFinishBreakQueue(i)
+120678: };
+120679: g.default.prefabs.load("comUI/BreakEndUI", cc.Prefab, function(t, e) {
+120680: var o = cc.instantiate(e);
+120681: m.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer);
+120682: var i = o.addComponent("BreakEndUI");
+120683: i.setData(n);
+120684: i.setLabelTitle("");
+120685: });
+120686: Promise.resolve().then(function() {
+120687: return t("../../scripts3/model3/PopGiftModel");
+120688: }).then(function(t) {
+120689: t.PopGiftModel.setHomeDataUI(i);
+120690: });
+120691: } else 11 == i.eRet && O.StoreModel.openChargeList();
+120692: }, this);
+120693: s.MessageCenter.on(c.HttpConst.BEGIN_HOOK_BREAK_LIST, function(t, o) {
+120694: if (1 == o.eRet) {
+120695: var i = o.qr;
+120696: e.updateBreakQueueData(i);
+120697: e.breakData = i;
+120698: m.PopUpMgr.cleanup();
+120699: var n = {
+120700: pathName: "comUI/ONHookUI",
+120701: scriptName: "BreakQueueUI",
+120702: wife: e.breakType > 1
+120703: };
+---
+121205: });
+121206: };
+121207: e.prototype.reqAccBreakQueue = function(t) {
+121208: 0 == t ? _.NetMgr.http.sendReqWithMask(c.HttpConst.GOLD_BREAK_CUR_SKILL, {
+121209: skillId: this.breakData.qcs,
+121210: type: this.breakType
+121211: }) : _.NetMgr.http.sendReqWithMask(c.HttpConst.GOLD_BREAK_ALL_SKILL, {
+121212: type: this.breakType
+121213: });
+121214: };
+121215: e.prototype.reqBatchBreak = function(t, e) {
+121216: this.breakType = e ? 2 : 1;
+121217: if (!(t.length <= 0)) {
+121218: for (var o = 0, n = i.getConstByID("39"), a = f.SkillTable.dic, s = 0; s < t.length; s++) o += n * (a[t[s]].brlv < 99 ? 99 : a[t[s]].brlv + 10) + 1;
+121219: var p = r.getText(7477) + o, h = r.getText(7480);
+121220: l.default.show(h, [ {
+121221: name: r.getText(332),
+121222: flag: 0
+121223: }, {
+121224: name: r.getText(333),
+121225: flag: 1
+121226: } ], function(e) {
+121227: 0 == e && _.NetMgr.http.sendReqWithMask(c.HttpConst.BATCH_BREAK_BY_GOLD, {
+121228: skills: t,
+121229: gold: o
+121230: });
+121231: }, p);
+121232: }
+121233: };
+121234: e.prototype.getSkillQueueAy = function() {
+121235: for (var t = [], e = this.skillQueue, o = this.lgObj, r = 0; r < e.length; r++) {
+121236: var a = i.getItem(e[r], "skill"), s = {};
+121237: s.id = e[r];
+121238: s.lv = f.SkillTable.getSkillLevel(e[r]);
+121239: var l = i.getItem(s.lv, "level"), c = f.SkillTable.getQualitySkillCoefficient(a, e[r]);
+121240: s.pgr = Math.floor(f.SkillTable.dic[s.id].pgr / (l.SkillPotential * c) * 100);
+121241: if (o.hasOwnProperty("id") && o.id == e[r]) {
+121242: s.lv = o.lv;
+121243: l = i.getItem(o.lv, "level");
+121244: s.pgr = Math.floor(o.prg / (l.SkillPotential * c) * 100);
+121245: }
+121246: s.n2b = !1;
+121247: s.full = !1;
+121248: s.on = !1;
+121249: t.push(s);
+121250: }
+121251: var p = [];
+---

@@ -1,0 +1,2 @@
+POST http://150.158.217.220:9898/TellAction
+{"mod":"User","do":"TellAction","p":{"type":43,"account":"9900012358565","channel":3,"TEObj":{"channel":"meple100221","distinct_id":"30253ab2-cc20-4e0b-bc42-2720aaa75e85","os":"Android"},"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":0,"loginFlag":"1","inGameTime":0,"nonce":"1792572547327bt9644wq"}}

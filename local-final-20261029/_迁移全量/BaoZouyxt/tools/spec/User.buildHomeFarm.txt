@@ -1,0 +1,99 @@
+# User.buildHomeFarm  (HttpConst.BUILD_HOMEFRARM)
+# 出现 2 处
+
+ 57567: this.searchType = 0;
+ 57568: this.homeGeMap = {};
+ 57569: this.rewardData = {};
+ 57570: }
+ 57571: e.prototype.init = function() {
+ 57572: var e = this;
+ 57573: r.MessageCenter.on(s.HttpConst.BUILD_HOMEFRARM, function(t, o) {
+ 57574: if (1 == o.eRet) {
+ 57575: l.RoleOtherInfo.homeFarmId = e.buildScene;
+ 57576: a.default.show(n.getText(3230));
+ 57577: } else 2 == o.eRet && a.default.show(n.getText(3226));
+ 57578: }, this);
+ 57579: r.MessageCenter.on(s.HttpConst.MOVE_HOME_FRAM, function(t, o) {
+ 57580: if (1 == o.eRet) {
+ 57581: l.RoleOtherInfo.homeFarmId = e.buildScene;
+ 57582: a.default.show(n.getText(3229));
+ 57583: } else 2 == o.eRet ? a.default.show(n.getText(3227)) : 3 == o.eRet ? a.default.show(n.getText(3243)) : 4 == o.eRet && a.default.show(n.getText(288));
+ 57584: }, this);
+ 57585: r.MessageCenter.on(s.HttpConst.GETHOME_LIST, function(o, i) {
+ 57586: if (1 == i.eRet) {
+ 57587: e.cropControlState = 0;
+ 57588: e.soilArr = [];
+ 57589: e.typeId = 0;
+ 57590: e.curFriendId = 0;
+ 57591: e.isFriend = 0;
+ 57592: i.recentSeeds ? e.recentSs = i.recentSeeds : e.recentSs.length = 0;
+ 57593: if (i.hasOwnProperty("soilArr")) {
+ 57594: e.plantSeedData.plantExp = i.exp;
+ 57595: i.hasOwnProperty("dog") && (e.dogData = i.dog);
+ 57596: e.soilArr = i.soilArr;
+ 57597: i.hasOwnProperty("bShop") && (e.homeShop = i.bShop);
+ 57598: var n = b.PartnerModel.getDailyPartnerDataByDtype(3);
+ 57599: e.friendPartnerId = n || 0;
+ 57600: if (e.isUpdateData) r.MessageCenter.dispatch(c.EvName.ALL_CROP_DATA_EVENT); else {
+ 57601: var a = l.RoleOtherInfo.homeFarmId;
+ 57602: e.curMapId = p.GameStates.getLastMapID();
+ 57603: if (null != h.UserModel.player) {
+ 57604: e.enterX = h.UserModel.player.x;
+ 57605: e.enterY = h.UserModel.player.y;
+ 57606: }
+ 57607: var s = u.MarryModel.marryHouseMap;
+ 57608: if (e.plantHomeUI) {
+ 57609: r.MessageCenter.dispatch(c.EvName.UPTATE_PLANT_HOME_UI, {
+ 57610: farmId: a,
+ 57611: type: s[a],
+ 57612: homeState: 0
+ 57613: });
+---
+ 58090: var e = l.RoleOtherInfo.homeFarmId;
+ 58091: if (e > 0) {
+ 58092: var o = u.MarryModel.marryHouseMap, i = o[e];
+ 58093: o[t] > i ? a.default.show(n.getText(3243)) : v.NetMgr.http.sendRequest(s.HttpConst.MOVE_HOME_FRAM, {
+ 58094: houseID: t
+ 58095: });
+ 58096: } else v.NetMgr.http.sendRequest(s.HttpConst.BUILD_HOMEFRARM, {
+ 58097: houseID: t
+ 58098: });
+ 58099: };
+ 58100: e.prototype.reqOpenHomeEvent = function() {
+ 58101: this.curHomeScene = l.RoleOtherInfo.homeFarmId;
+ 58102: v.NetMgr.http.sendReqWithMask(s.HttpConst.GETHOME_LIST, {});
+ 58103: };
+ 58104: e.prototype.reqHomeAllData = function() {
+ 58105: this.isUpdateData = !0;
+ 58106: v.NetMgr.http.sendRequest(s.HttpConst.GETHOME_LIST, {});
+ 58107: };
+ 58108: e.prototype.reqPlantingMsg = function(t, e) {
+ 58109: var o = {};
+ 58110: o[t] = e;
+ 58111: v.NetMgr.http.sendRequest(s.HttpConst.BATCH_SEED_CROP, {
+ 58112: seedCrops: o
+ 58113: });
+ 58114: };
+ 58115: e.prototype.reqMultiPlanting = function(t, e) {
+ 58116: for (var o = {}, i = 0, n = 0; n < this.soilArr.length; n++) if (!this.soilArr[n].m && this.soilArr[n].s > 0) {
+ 58117: o[n] = t;
+ 58118: if (++i >= e) break;
+ 58119: }
+ 58120: i < e && cc.error("数量不匹配？");
+ 58121: v.NetMgr.http.sendRequest(s.HttpConst.BATCH_SEED_CROP, {
+ 58122: seedCrops: o
+ 58123: });
+ 58124: };
+ 58125: e.prototype.reqRefrashSoild = function(t) {
+ 58126: this.curFriendId > 0 ? v.NetMgr.http.sendRequest(s.HttpConst.CROP_CHANGE_STATE, {
+ 58127: sIdx: t,
+ 58128: fid: this.curFriendId
+ 58129: }, null, !1) : v.NetMgr.http.sendRequest(s.HttpConst.CROP_CHANGE_STATE, {
+ 58130: sIdx: t
+ 58131: }, null, !1);
+ 58132: };
+ 58133: e.prototype.reqReclaimLand = function(t) {
+ 58134: v.NetMgr.http.sendRequest(s.HttpConst.RECLAIM_LAND, {
+ 58135: sIdx: t
+ 58136: });
+---

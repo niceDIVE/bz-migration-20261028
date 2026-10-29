@@ -1,0 +1,15 @@
+# User.BuyAcitivityShop   (HttpConst.ACTIVITE_SHOP)
+
+## 注册点 1405: r.MessageCenter.on(a.HttpConst.ACTIVITE_SHOP, this.activeShppCallBack.bind(this), this);
+
+## 请求点 1635: g.NetMgr.http.sendRequest(a.HttpConst.ACTIVITE_SHOP, i);
+   1627: };
+   1628: e.prototype.reqBuyActiveItem = function(t, e, o) {
+   1629: this.sum = e;
+   1630: this.curItemIsServer = o;
+   1631: var i = {
+   1632: itemID: t,
+   1633: itemNum: e
+   1634: };
+
+## 处理函数 bind —— 未找到定义

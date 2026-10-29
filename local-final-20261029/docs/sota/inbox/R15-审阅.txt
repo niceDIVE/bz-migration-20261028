@@ -1,0 +1,155 @@
+R15 审阅：item.Effect 数据源、业务哈希口径与登记表归位
+2026-10-22
+Table of Contents
+TOC \o "1-2" \h \z \u
+1. 结论
+§2 的七条处置都成立。 有两处需要补口径。第一处是 catch 和”未登记动作一律回 4”：4 在不同动作的回调里语义不同，ExChangeJetton 的 4 就是支付拦截。未登记动作的 catch 码应当按动作从 handled 推导出来，不能用常量 4（见反例 1）。第二处是 _save = null 只回滚了服务端账本。如果 handler 在抛出异常之前，已经通过 RoleBaseInfo 那个第二出口改了客户端活模型，或者已经把推送排进了队列，客户端的显示是回滚不了的（见反例 2）。
+用户裁定的”照扣但无效果、留痕”已正确执行。 但留痕不应该叫 REJECT：这条路径确实扣了物品、写了档，记成拒绝，会污染 rejectStats 的口径，也会和 R5c 的”拒绝不写档”在语义上自相矛盾。应当改名为 CONSUME_UNMODELED，单独计数（见反例 3）。
+纠偏 A 成立，而且比我 R14 的方案更硬。 它从源头禁止新的时间戳进入产物，而不是事后剥离。我接受这个改法，“正好 4 行”的断言作废。剩下一个漏洞：这条断言只认 ISO 格式，挡不住以毫秒数字形式写进产物的 Date.now()。需要让 C13 的字面量扫描也覆盖产物（见反例 4）。
+纠偏 B 成立。 把抓包得到的真值和我们自己的决策分开登记，方向是对的。但”分开”应当在同一份表里用 role 字段区分，而不是一张放主表、一张放 test 侧（见 Q3）。
+§2.1 的 20 处”发→不发”已经逐字段带证据登记，expect 精确到字段数。 这是 R07”发改不发必须附无逃逸证据”的正确落地。
+known-red 那一项已经存在超过 3 次冻结了（HANDOVER §7-14 里写的是”改前就红”）。按 G3，它现在就该判 FAIL，必须在一个批次内定性清楚（见 Q4）。
+2. Q1 答
+定位 item 表的可执行路径
+材料未提供配置资源的文件名，下面按”不依赖文件名”的顺序来定位：
+找到取表函数的定义：在 index.js 里 grep getItem\s*=\s*function|prototype\.getItem\s*=，读出它从哪个对象取数，例如 this._cfg[t][e]，其中 t 就是 "item"、"skill" 这样的表名。
+找到这个对象从哪里装载：顺着上一步那个对象往回追，grep loadRes|resources\.load|cc\.loader\.load 加上 config、cfg、json 这几个关键词，就能定位到资源路径，以及它是否经过压缩或打包。资源文件本身在 apk 或资源包里，三包里只有装载代码。
+字段名是不是 Effect：客户端在 index.js:64466 写的是 Effect == 23。抄出这一行的完整表达式，比如 U.Effect，就能确认这是表行对象上的字段名【推断，基本可定】。
+如果第 2 步发现资源是二进制的，或者经过了加密，就不要去离线解析，直接走下面的 live dump。
+live dump 形态（不写档，不打屏）
+// 第 1 步：只取总数和字段名，验证表对象可以访问
+get: (function(){ var M=__require(&#39;<第1步找到的模块名>&#39;), T=<从M取item表的表达式>;
+  var ks=Object.keys(T); return JSON.stringify({n:ks.length, cols:Object.keys(T[ks[0]])}); })()
+// 第 2 步：分块导出，每块 400 个 id，只取需要的列
+get: (function(k){ var M=__require(&#39;<模块名>&#39;), T=<item表>, ks=Object.keys(T).sort(function(a,b){return a-b;});
+  return JSON.stringify(ks.slice(k,k+400).map(function(id){ var r=T[id];
+    return [+id, r.Type, r.Effect, r.Data, r.Data2, r.Data3, r.Name]; })); })(0)
+结果经命令通道回到 PC 一侧，由 run.ps1 落到 tools/cfg/dump/item.full.json。这个过程不调用任何 handler，不碰 _save，也不 show() 任何东西。
+完整性断言：各块行数之和等于第 1 步的 n；已知的 21 条（ITEMEAT、ITEMFUN、ITEMSCH 覆盖的那些）全部能在导出里找到，而且 Effect 与现有常量一致。
+判断”客户端会不会为这个物品发 USE_ITEM”
+光看 Effect ∈ 18 个已知码 不够，因为同一个码的分支里，可能会被拦截，也可能去发别的请求。按分支给每个 Effect 码分类：
+类
+判据（以 :65333 的发送函数为锚点）
+
+SEND
+这个码所在的分支里，存在一条不经过 return 就能到达 sendRequest(USE_ITEM) 或 sendReqWithMask 的路径
+
+GATED
+能到达发送，但前面有前置拦截，比如 23 的满状态拦截（:64466）。记下拦截条件
+
+LOCAL
+分支只修改客户端模型、打开界面，不发 USE_ITEM
+
+OTHER
+分支发的是别的动作（打开某个界面后，再发另一个请求）
+
+NONE
+Effect 不在这条分发链里。还要再查一次物品详情界面”使用”按钮的显示条件；按钮不显示，就是不可达
+
+静态分类做完之后，用运行时做反证，而且不需要新增任何埋点：USE_ITEM 本来就全部落到我们的 handler 里。只要在现有的 useItem 日志里加上该物品的 Effect，跑一段时间之后，实际观测到的 Effect 集合必须是 SEND ∪ GATED 的子集。出现集合以外的码，就说明静态分类漏了。
+3. Q2 答
+指定 (b)，作用在内存对象上，并与磁盘字节一起比较
+function canon(o){ /* 递归按键名排序后 JSON.stringify，避免键序造成的假红 */ }
+function bizHash(){ var s = JSON.parse(JSON.stringify(loadSave())); delete s.meta; return sha1(canon(s)); }
+// R5 每个"动作 × 原因"夹具：
+var d0 = sha1(readFileBytes(SAVE)), b0 = bizHash(), p0 = pushCount();
+var r  = dispatch(action, fixtureReq);
+assert(r.eRet === expectedCode);
+assert(sha1(readFileBytes(SAVE)) === d0 || onlyMetaChanged(SAVE, d0));   // 允许 rejectStats 落盘，但只能改 meta
+assert(bizHash() === b0);          // 内存账本，除 meta 外不许有任何变化
+assert(pushCount() === p0);        // 不许走 L3 的任何一个出口
+assert(Object.keys(loadSave().meta).every(function(k){ return k===&#39;actionStats&#39; || k===&#39;rejectStats&#39;; }));
+三个候选各挡什么、漏什么
+候选
+挡住
+漏掉
+
+(a) 只比磁盘哈希
+拒绝路径上的写档
+内存缓存里的半写。这正是 catch 那件事的实质：内存改了，盘没改，下一次 persist 才写进去。另外，rejectStats 落盘会造成假红
+
+(b) 去掉 meta 之后的整份 JSON
+账本任何字段的变化，包括以后新增的字段
+meta 本身：要配合”meta 的键 ⊆ 白名单”这条断言，防止有人把业务数据藏进 meta。另外还漏掉客户端活模型
+
+(c) 业务投影（白名单字段）
+列出的那 10 个字段
+所有没列进去的字段，比如 hunger、rewardPending、以后新加的字段。白名单是逐步漏风的
+
+选 (b)，作用在内存对象上，再加上磁盘字节和推送计数器，三者一起比。 剩下的漏洞是 handler 用 setTimeout 之类延后执行的写入（断言执行时它还没发生）。按 ES5 单线程的模型，R5 的夹具应当在 dispatch 返回之后，再等一个 tick 才断言。
+4. Q3 答
+进主表，用 role 区分，test 侧不再保留独立的登记表。 理由有两条：
+R5c 的断言”eRet ∈ {1} ∪ 登记码”，以及运行时 catch 的取码，问的都是同一件事：“这个动作可能发出哪些码、每个码是什么意思”。namespace 必须只有一个，否则一张表改了，另一张不会同步红。
+第 1 节第 1 条要求 catch 码按动作推导，这就要求主表最终覆盖全部 87 个动作，没有拒绝码的动作也要有一条。
+表的形态和各自适用的断言：
+role
+含义
+适用断言
+
+reject
+我们的拒绝决策
+R1、R2 三态、R3
+
+flow
+我们发出的流程码
+F1、F2、F3
+
+capture
+抓包真值，原样 clone，比如 getCRAInfo 的 2
+Ca：值等于 templates.json 里对应路径上的值，模板一变就红；Cb：ev 指向模板条目的 id 和 sha8；Cc：客户端回调里这个码所在分支不是错误或提示分支（材料未提供这一项的取证，需要补）
+
+intercept
+dispatch 的统一拦截，比如 PAY_ACTION_RE 对 ExChangeJetton 回 4
+Ia：码等于拦截器里的常量；Ib：动作名能被拦截正则匹配到；Ic：这个动作的 handler 本体不会被执行到
+
+none
+应答里本来就不带 eRet（登录前、建角载荷）
+Na：应答里不许出现 eRet 键
+
+每个动作再加一个由脚本推导、不允许手填的字段 catchCode：它必须 ∉ success ∪ handled ∪ 本动作所有 flow、capture、intercept 码。如果推导不出这样的码（取值空间被占满了），就 FAIL，强迫人去看这个动作。R1 到 R3 仍然只作用于 role=reject 的条目，适用范围不需要变。
+5. Q4 答
+纳入，按缺陷登记处理，而且要比其他登记表更严。
+键的改法
+不用行号做键。改成 file + sha8(这一行断言规范化后的原文) + msgSha8，行号只作为附带信息保留。理由是在测试文件里插一行，行号就会变，于是表面上”移除了一条、又新增了一条”，人会顺手去更新登记表。久而久之，“改登记表让它变绿”就成了一种肌肉记忆（见反例 5）。
+棘轮规则
+规则
+断言
+
+K-new
+验收里出现一条不在登记表中的红，判 FAIL（你已经有了）
+
+K-stale
+登记表里有一项，但验收中这条已经变绿，判 FAIL（你已经有了）
+
+K-cap
+条目数 ≤ 快照里的 cap，cap 只许下降
+
+G3
+每一项的 addedAt 由 history 里第一次出现的序号推出；超过 3 次冻结仍未消失，判 FAIL
+
+G5
+扩容的唯一合法情形：本次的 guardHash 等于上一次验收通过时的 guardHash（也就是没有改任何代码、测试、金标准表，红是因为环境或日期而冒出来的），并且 approved-widening 里有对应的行
+
+G5 在这张表上的含义比别的表都更清楚。一条新出现的红，如果伴随着代码变更，那就是这次变更造成的回归，正确的处理是修掉或者回退，不能登记。只有在”什么都没改”的情况下冒出来的红，才允许登记。
+现存这一项的处理
+现存的这一项已经触发了 G3。它的现象是 note.skch["1262"] 期望 [1,0,0]，实际是 undefined。我判断这多半是测试期望过时了【推断】，依据有两条：设备存档里 1262 已经在 skills 中；本批 useItem 对”已学会”的情形会回 5 拒绝，而拒绝应答里不带 note。另外，A03 规定的归一形态是 [level,0,1]，而不是 [1,0,0]。
+处置分两种情况，都要在一个批次内完成：
+如果确认是期望过时：带上证据修改测试，并从登记表中移除，cap 随之降到 0；
+如果确认是真缺陷：修掉缺陷。
+无论哪种，都不要让它继续以”已知红”的身份滞留下去。
+6. 反例
+catch 默认回 4 撞上了 4 的流程语义：某个未登记的动作，客户端回调里的 4 是”弹出选择框”，或者是一个会解引用的提示分支（就像 useItem 原来的 4 会执行 getItem(U.Data2)）。这个 handler 一旦抛出异常，catch 回了 4，客户端就会打开一个空的选择界面，或者抛出 TypeError。注入式用例只测了”加金币再抛”这一个动作，覆盖不到这种情况。
+catch 回滚不了活模型：handler 先通过 __require(&#39;RoleBaseInfo&#39;) 把客户端金币写成了 999999，然后才抛出异常。_save = null 让服务端账本回滚了，但客户端在重新登录之前，会一直显示 999999，并且可能以此为依据发起购买请求，被拒绝之后就是一连串莫名其妙的失败。注入式用例断言的是”内存里的 coins 回滚了”，它查的是服务端那一份。
+留痕的标签用错了：日后有人写了一条断言”凡是有 REJECT 日志的请求，都不应该写档”，用来加强 R5c。effectUnmodeledConsumed 这条路径打着 REJECT 的标签，却真的写了档，这条断言就会红；有人为了让它变绿，可能会去改动写档逻辑。
+毫秒时间戳绕过 ISO 断言：日后某个生成器把 Date.now() 写进 __meta.genMs，ver 又开始每次都变，“产物里的 ISO 时间戳只许是 GEN_NOW”这条断言照样通过。
+known-red 按行号做键：在 core-test-server.js 的第 10 行加一条注释，第 65 行变成了第 66 行，验收同时报出”未登记的红”和”登记了却不再红”。最省事的处理就是改登记表，久而久之，改登记表就成了让验收变绿的常规手段。
+空请求拿到了 flow 码：washAdditionalArr {} 回的是 4 加上全 0 的 attrList。如果有一天客户端真的发出了一个字段缺失的洗髓请求（比如上一世没有附加属性），玩家会看到一个四条属性都是 0 的选择界面，而不是 :144075 那句”上一世无附加属性无法洗髓”。非法请求应当走 reject（6 或 7），F2 的测试不应该只拿空请求去跑 flow 分支。
+分块 dump 被截断：命令通道单次返回的长度有上限（材料未提供具体数值），400 行一块，如果碰上 Name 字段很长的物品，就可能被截断。完整性断言里的”各块行数之和等于 n”能抓到这种情况，前提是 PC 一侧要逐块校验 JSON 能否完整解析。
+7. 假设
+A1：getItem 背后的配置对象，在 live 进程里能用 __require 拿到，并且是一个以 id 为键的普通对象。如果它是懒加载的，或者经过了分片，第 2 节的 dump 形态需要先触发全量加载，或者逐片拼接。
+A2：index.js:64466 读取的确实是 item 表行上名为 Effect 的字段。如果它读的是另一张表，或者是一个派生字段，第 2 节的字段名结论失效，要按第 1 步的取数表达式重新确认。
+A3：USE_ITEM 全部经由我们替换过的网络层发出，没有旁路。如果有旁路（比如走 wulinPost），第 2 节”运行时反证”那一步会漏掉部分观测。
+A4：handler 都是同步执行完毕的。如果某个 handler 内部有 setTimeout 之类延后执行的写入，第 3 节”等一个 tick”不够，需要等这个 handler 所有的回调都执行完。
+A5：templates.json 里每个 capture 码都能定位到具体的模板条目和路径。如果有的码是运行时拼接出来的，第 4 节的 Ca、Cb 无法成立，这一类要改登记为 reject，或者 dynamic。
+A6：known-red 那一项的根因，是 useItem 对”已学会”的拒绝，或者是 A03 的归一形态。如果根因在别处，第 5 节的处置结论不变（一个批次内定性），但”多半是期望过时”这个【推断】作废。
+A7：RoleBaseInfo 第二出口在 catch 之前可能已经写入了活模型。如果所有对活模型的写入都在 handler 成功返回之后才统一执行，第 1 节第 1 条的第二处口径问题和反例 2 都不成立。

@@ -1,0 +1,785 @@
+{
+  "generatedAt": "2026-10-22T11:01:03.659Z",
+  "items": [
+    {
+      "action": "BuyTowerProp",
+      "field": "hjzcNum",
+      "bundle": "index.js",
+      "line": 137650,
+      "src": [
+        "t.updateTowerItem(n);",
+        "}",
+        "o.hasOwnProperty(\"hjzcNum\") && (t.towerItemData[5] = o.hjzcNum);",
+        "l.MessageCenter.dispatch(S.EvName.UPDATE_TOWER_ITEM_EVENT);",
+        "l.MessageCenter.dispatch(S.EvName.MYSTIC_SHOP_EVENT, i);",
+        "} else 2 == o.eRet ? y.default.show(a.getText(3073)) : 3 == o.eRet || y.default.show(a.getText(\"1184\"));",
+        "}, this);",
+        "l.MessageCenter.on(c.HttpConst.TOWER_GET_PANDA_EVENT, function(e, o) {",
+        "if (1 == o.eRet && o.hasOwnProperty(\"eventArr\")) {",
+        "var i = r.getItem(o.eventArr[0], \"lh_panda\"), n = r.getItem(o.eventArr[1], \"lh_panda\"), s = r.getItem(o.eventArr[2], \"lh_panda\");",
+        "y.default.show(a.getText(5922), [ {"
+      ]
+    },
+    {
+      "action": "CheckBattleResult",
+      "field": "gemId",
+      "bundle": "index.js",
+      "line": 89558,
+      "src": [
+        "o.hasOwnProperty(\"rewardArray\") && (i.rewards = o.rewardArray);",
+        "o.hasOwnProperty(\"equipObj\") && (i.equips = o.equipObj);",
+        "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);",
+        "i.rewards || i.equips || (n.noRwdNode.active = !0);",
+        "n.setRewards(i);",
+        "}, this);",
+        "};",
+        "e.prototype.onDestroy = function() {",
+        "a.MessageCenter.removeAll(this);",
+        "};",
+        "return r([ c ], e);"
+      ]
+    },
+    {
+      "action": "EndTraining",
+      "field": "skillArr",
+      "bundle": "index.js",
+      "line": 120584,
+      "src": [
+        "o.hasOwnProperty(\"isCollective\") && (B.SchoolSquareModel.isCollective = o.isCollective);",
+        "if (0 != e.endTipStr.length) {",
+        "if (o.hasOwnProperty(\"skillArr\") && o.skillArr.length) {",
+        "cc.log(\"=========修炼队列开启下一个练功==========\");",
+        "e.skillQueue = o.skillArr;",
+        "e.start(o.skillArr[0], B.SchoolSquareModel.isCollective);",
+        "} else {",
+        "e.skillQueue = [];",
+        "if (o.hasOwnProperty(\"skillid\")) {",
+        "cc.log(\"=======关闭练功=2========\");",
+        "s.MessageCenter.dispatch(p.EvName.END_SKILL_TRAINING_CLOSR, o.skillid);"
+      ]
+    },
+    {
+      "action": "EndTraining",
+      "field": "skillid",
+      "bundle": "index.js",
+      "line": 120590,
+      "src": [
+        "} else {",
+        "e.skillQueue = [];",
+        "if (o.hasOwnProperty(\"skillid\")) {",
+        "cc.log(\"=======关闭练功=2========\");",
+        "s.MessageCenter.dispatch(p.EvName.END_SKILL_TRAINING_CLOSR, o.skillid);",
+        "}",
+        "}",
+        "s.MessageCenter.dispatch(p.EvName.SELECT_QUEUE_SKILL);",
+        "} else {",
+        "B.SchoolSquareModel.isCollective = 0;",
+        "cc.log(\"=======关闭练功=1========\");"
+      ]
+    },
+    {
+      "action": "EquipSuitsUpgrade",
+      "field": "equipInherit",
+      "bundle": "index.js",
+      "line": 142064,
+      "src": [
+        "var o = Object.getOwnPropertyNames(e.playerEquip);",
+        "p.InventoryModel.updateEquipItem(e.playerEquip[o[0]], parseInt(o[0]));",
+        "e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));",
+        "}",
+        "r.MessageCenter.dispatch(l.EvName.UPGRADE_EQUIP_SUCCESS);",
+        "break;",
+        "",
+        "case 2:",
+        "case 3:",
+        "case 4:",
+        "break;"
+      ]
+    },
+    {
+      "action": "FeedDog",
+      "field": "bigDog",
+      "bundle": "index.js",
+      "line": 58056,
+      "src": [
+        "if (1 == o.eRet) {",
+        "o.hasOwnProperty(\"progress\") && (e.dogData.p = o.progress);",
+        "o.hasOwnProperty(\"bigDog\") && (e.dogData.id = o.bigDog);",
+        "r.MessageCenter.dispatch(c.EvName.FEED_DOG_EVENT, {});",
+        "} else o.eRet;",
+        "}, this);",
+        "};",
+        "e.prototype.reqBuildFarm = function(t, e) {",
+        "var o = \"\";",
+        "if (l.RoleOtherInfo.homeFarmId > 0) {",
+        "var r = i.getItem(28, \"home_plant_details\");"
+      ]
+    },
+    {
+      "action": "GetRandomEventAward",
+      "field": "liveness",
+      "bundle": "index.js",
+      "line": 143820,
+      "src": [
+        "break;",
+        "}",
+        "var c = i.hasOwnProperty(\"npcArr\") && i.npcArr && i.npcArr.length > 0, p = i.hasOwnProperty(\"liveness\");",
+        "if (n || c) {",
+        "var u = r.getText(695) + \"\\n\";",
+        "if (n) {",
+        "var f = i.rewardArray;",
+        "for (var l in f) {",
+        "var d = a.getItem(l, \"item\");",
+        "u += r.getText(d.Name) + (f[l] > 0 ? \" +\" : \"\") + f[l] + \"\\n\";",
+        "}"
+      ]
+    },
+    {
+      "action": "TowerBattleResult",
+      "field": "gemId",
+      "bundle": "index.js",
+      "line": 67711,
+      "src": [
+        "s.TowerModel.updateTowerItem(o.rewardArray);",
+        "}",
+        "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);",
+        "s.TowerModel.setKillMonsterState();",
+        "}",
+        "o.hasOwnProperty(\"muscle\") && (s.TowerModel.curStrengthNum = o.muscle);",
+        "if (o.hasOwnProperty(\"batch_sweep_data\")) {",
+        "s.TowerModel.setNewSweepData(o.batch_sweep_data);",
+        "a.MessageCenter.dispatch(c.EvName.CHEAK_SWEEP_EVENT_EVENT, s.TowerModel.getSweepRewardDatas());",
+        "}",
+        "}"
+      ]
+    },
+    {
+      "action": "TowerBattleResult",
+      "field": "muscle",
+      "bundle": "index.js",
+      "line": 67714,
+      "src": [
+        "s.TowerModel.setKillMonsterState();",
+        "}",
+        "o.hasOwnProperty(\"muscle\") && (s.TowerModel.curStrengthNum = o.muscle);",
+        "if (o.hasOwnProperty(\"batch_sweep_data\")) {",
+        "s.TowerModel.setNewSweepData(o.batch_sweep_data);",
+        "a.MessageCenter.dispatch(c.EvName.CHEAK_SWEEP_EVENT_EVENT, s.TowerModel.getSweepRewardDatas());",
+        "}",
+        "}",
+        "t.getComponent(p.BattleResultMediator).setRewards(i);",
+        "a.MessageCenter.dispatch(c.EvName.UPDATE_TOWER_ITEM_EVENT);",
+        "}, this);"
+      ]
+    },
+    {
+      "action": "activateTowerEvent",
+      "field": "attrType",
+      "bundle": "index.js",
+      "line": 137825,
+      "src": [
+        "o.hasOwnProperty(\"eventID\") && (t.randomEventId = o.eventID);",
+        "o.hasOwnProperty(\"muscle\") && (t.curStrengthNum = o.muscle);",
+        "o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);",
+        "o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];",
+        "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);",
+        "t.canActivateStatus = !!o.hasOwnProperty(\"canActivateStatus\") && o.canActivateStatus;",
+        "t.towerEventAy = o.hasOwnProperty(\"eventIds\") ? o.eventIds : [];",
+        "l.MessageCenter.dispatch(S.EvName.TOWER_AUTO_FIGHT_EVENT);",
+        "}",
+        "}, this);",
+        "};"
+      ]
+    },
+    {
+      "action": "activateTowerEvent",
+      "field": "chickenLegNum",
+      "bundle": "index.js",
+      "line": 137827,
+      "src": [
+        "o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);",
+        "o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];",
+        "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);",
+        "t.canActivateStatus = !!o.hasOwnProperty(\"canActivateStatus\") && o.canActivateStatus;",
+        "t.towerEventAy = o.hasOwnProperty(\"eventIds\") ? o.eventIds : [];",
+        "l.MessageCenter.dispatch(S.EvName.TOWER_AUTO_FIGHT_EVENT);",
+        "}",
+        "}, this);",
+        "};",
+        "e.prototype.setNewSweepData = function(t) {",
+        "if (t.hasOwnProperty(\"eggs\")) {"
+      ]
+    },
+    {
+      "action": "activateTowerEvent",
+      "field": "eggNpc",
+      "bundle": "index.js",
+      "line": 137826,
+      "src": [
+        "o.hasOwnProperty(\"muscle\") && (t.curStrengthNum = o.muscle);",
+        "o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);",
+        "o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];",
+        "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);",
+        "t.canActivateStatus = !!o.hasOwnProperty(\"canActivateStatus\") && o.canActivateStatus;",
+        "t.towerEventAy = o.hasOwnProperty(\"eventIds\") ? o.eventIds : [];",
+        "l.MessageCenter.dispatch(S.EvName.TOWER_AUTO_FIGHT_EVENT);",
+        "}",
+        "}, this);",
+        "};",
+        "e.prototype.setNewSweepData = function(t) {"
+      ]
+    },
+    {
+      "action": "changeServer",
+      "field": "newAcc",
+      "bundle": "scripts3.js",
+      "line": 95797,
+      "src": [
+        "t.signData = o.signData;",
+        "var s = T.RoleBaseInfo.userAccount;",
+        "!u.CrossServiceModel.isEnterCrossServer(!1) && o.hasOwnProperty(\"newAcc\") && (s = o.newAcc);",
+        "t.setNewServerUID([ t.signData.roleUniqueId, s, 0 ]);",
+        "v.MessageCenter.dispatch(i.EvName.JOIN_WULIN_PK_EVENT);",
+        "if (t.callback) {",
+        "var n = o.signData.roleUniqueId;",
+        "t.callback(n && n > 0);",
+        "t.callback = null;",
+        "}",
+        "} else if (t.callback) {"
+      ]
+    },
+    {
+      "action": "chanllengeTower",
+      "field": "attrType",
+      "bundle": "index.js",
+      "line": 137599,
+      "src": [
+        "o.hasOwnProperty(\"eventID\") && (t.randomEventId = o.eventID);",
+        "o.hasOwnProperty(\"muscle\") && (t.curStrengthNum = o.muscle);",
+        "o.hasOwnProperty(\"attrType\") && (t.attriType = o.attrType);",
+        "if (o.hasOwnProperty(\"equipments\")) {",
+        "var i = o.equipments;",
+        "for (var r in i) {",
+        "k.playerInfo.entity.putOffEquipment(parseInt(r));",
+        "if (i[r]) {",
+        "var s = m.InventoryModel.getEquipmentInfo(i[r]);",
+        "if (s) {",
+        "var l = {"
+      ]
+    },
+    {
+      "action": "chanllengeTower",
+      "field": "chickenLegNum",
+      "bundle": "index.js",
+      "line": 137628,
+      "src": [
+        "t.canActivateStatus = !!o.hasOwnProperty(\"canActivateStatus\") && o.canActivateStatus;",
+        "t.towerEventAy = o.hasOwnProperty(\"eventIds\") ? o.eventIds : [];",
+        "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);",
+        "} else 4 == o.eRet ? y.default.show(a.getText(3075)) : 2 == o.eRet ? y.default.show(a.getText(1624)) : v.GSceneMgr.mode = 0;",
+        "}, this);",
+        "l.MessageCenter.on(c.HttpConst.TOWER_SPECIAL_SHOP, function(e, o) {",
+        "1 == o.eRet ? o.hasOwnProperty(\"shopData\") && null == t.mysticShopUI && h.default.prefabs.load(\"towerUI/MysticShopUI\", cc.Prefab, function(e, i) {",
+        "var n = cc.instantiate(i);",
+        "u.PopUpMgr.addPopUp(n, f.LayerMgr.popUpLayer);",
+        "n.getComponent(\"MysticShopUI\").setData(o);",
+        "t.mysticShopUI = n;"
+      ]
+    },
+    {
+      "action": "chanllengeTower",
+      "field": "eggNpc",
+      "bundle": "index.js",
+      "line": 137625,
+      "src": [
+        "t.enterNextTower(o.mapID);",
+        "}",
+        "o.hasOwnProperty(\"eggNpc\") ? t.elitMasterData = o.eggNpc : t.elitMasterData = [];",
+        "t.canActivateStatus = !!o.hasOwnProperty(\"canActivateStatus\") && o.canActivateStatus;",
+        "t.towerEventAy = o.hasOwnProperty(\"eventIds\") ? o.eventIds : [];",
+        "o.hasOwnProperty(\"chickenLegNum\") && (t.toEatNum = o.chickenLegNum);",
+        "} else 4 == o.eRet ? y.default.show(a.getText(3075)) : 2 == o.eRet ? y.default.show(a.getText(1624)) : v.GSceneMgr.mode = 0;",
+        "}, this);",
+        "l.MessageCenter.on(c.HttpConst.TOWER_SPECIAL_SHOP, function(e, o) {",
+        "1 == o.eRet ? o.hasOwnProperty(\"shopData\") && null == t.mysticShopUI && h.default.prefabs.load(\"towerUI/MysticShopUI\", cc.Prefab, function(e, i) {",
+        "var n = cc.instantiate(i);"
+      ]
+    },
+    {
+      "action": "choosePandaEvent",
+      "field": "buffID",
+      "bundle": "index.js",
+      "line": 137680,
+      "src": [
+        "_.default.addShowRewardUI1(o.rewardArray, 0, {});",
+        "l.MessageCenter.dispatch(S.EvName.UPDATE_TOWER_ITEM_EVENT);",
+        "} else if (o.hasOwnProperty(\"buffID\")) {",
+        "t.towerBuffer.push(o.buffID);",
+        "var s = r.getItem(o.buffID, \"buff\"), c = {",
+        "str: a.getText(s.Description)",
+        "};",
+        "h.default.prefabs.load(\"comUI/KillDeadUI\", cc.Prefab, function(t, e) {",
+        "var o = cc.instantiate(e);",
+        "u.PopUpMgr.addPopUp(o, f.LayerMgr.popUpLayer);",
+        "o.addComponent(\"KillDeadUI\").setData(c);"
+      ]
+    },
+    {
+      "action": "dispossHomeEvent",
+      "field": "aExp",
+      "bundle": "index.js",
+      "line": 58001,
+      "src": [
+        "var l = {};",
+        "o.hasOwnProperty(\"exp\") && o.exp > 0 && (e.plantSeedData.plantExp = o.exp);",
+        "o.hasOwnProperty(\"aExp\") && (l[7] = o.aExp);",
+        "if (o.hasOwnProperty(\"rewardArray\")) for (var p in o.rewardArray) l[p] = o.rewardArray[p];",
+        "I.MadUtilsTS.isNullObj(l) ? 0 == o.flag && a.default.show(n.getText(3268)) : m.default.addShowRewardUI1(l, 0);",
+        "}",
+        "2 == o.eRet ? a.default.show(n.getText(3268)) : 3 == o.eRet ? a.default.show(n.getText(3317)) : -1 == o.eRet && a.default.show(n.getText(3320));",
+        "}, this);",
+        "r.MessageCenter.on(s.HttpConst.STEAL_CROP_EVENT, function(t, o) {",
+        "if (1 == o.eRet || 3 == o.eRet || 4 == o.eRet) {",
+        "var s = {"
+      ]
+    },
+    {
+      "action": "equipUpgrade",
+      "field": "equipInherit",
+      "bundle": "index.js",
+      "line": 142026,
+      "src": [
+        "var o = Object.getOwnPropertyNames(e.playerEquip);",
+        "p.InventoryModel.updateEquipItem(e.playerEquip[o[0]], parseInt(o[0]));",
+        "e.hasOwnProperty(\"equipInherit\") && c.InhertEquipModel.updateInhertEquipData(e.equipInherit, parseInt(o[0]));",
+        "}",
+        "r.MessageCenter.dispatch(l.EvName.UPGRADE_EQUIP_SUCCESS);",
+        "break;",
+        "",
+        "case 2:",
+        "case 3:",
+        "case 4:",
+        "case 5:"
+      ]
+    },
+    {
+      "action": "explore",
+      "field": "fixedEvents",
+      "bundle": "index.js",
+      "line": 47200,
+      "src": [
+        "} else e.resultData.resultMsg = \"7105\";",
+        "}",
+        "if (i.hasOwnProperty(\"fixedEvents\")) {",
+        "t.flag = 0;",
+        "e.mapHasExploredIds[e.resultData.mapId] = i.fixedEvents;",
+        "}",
+        "r.MessageCenter.dispatch(s.EvName.EXPLORE_POINT, e.resultData);",
+        "}, this);",
+        "};",
+        "t.prototype.getResultMsg = function(t, e, o) {",
+        "this.addMapHasExploredIds(this.resultData.mapId, this.resultData.exploreId);"
+      ]
+    },
+    {
+      "action": "findOHomes",
+      "field": "homeArr",
+      "bundle": "index.js",
+      "line": 57918,
+      "src": [
+        "e.searchType = 1;",
+        "var i = [];",
+        "if (o.hasOwnProperty(\"homeArr\")) {",
+        "for (var n = 0; n < o.homeArr.length; n++) parseInt(o.homeArr[n][6]) > 0 && i.push(o.homeArr[n]);",
+        "i.sort(function(t, e) {",
+        "return e[5] - e[5];",
+        "});",
+        "}",
+        "r.MessageCenter.dispatch(c.EvName.RECOMMEND_LIST_EVENT, i);",
+        "var a = [], s = [];",
+        "if (o.hasOwnProperty(\"homeArr\")) for (var l = 0; l < o.homeArr.length; l++) if (o.homeArr[l][5] > 0) {"
+      ]
+    },
+    {
+      "action": "findOHomes",
+      "field": "recommendHomeArr",
+      "bundle": "index.js",
+      "line": 57933,
+      "src": [
+        "}",
+        "var p = a.length;",
+        "if (o.hasOwnProperty(\"recommendHomeArr\")) {",
+        "for (var h = 0; h < o.recommendHomeArr.length; h++) if (o.recommendHomeArr[h][5] > 0) {",
+        "s.push(o.recommendHomeArr[h]);",
+        "s.sort(function(t, e) {",
+        "return e[5] - t[5];",
+        "});",
+        "}",
+        "for (var u = 0; u < s.length; u++) a.push(s[u]);",
+        "}"
+      ]
+    },
+    {
+      "action": "getCRAInfo",
+      "field": "birthId",
+      "bundle": "index.js",
+      "line": 23088,
+      "src": [
+        "i.MessageCenter.on(r.HttpConst.GET_CREATE_INFO, function(e, o) {",
+        "if (2 == o.eRet) i.MessageCenter.dispatch(u.EvName.RECEIVE_CREATE_INFO); else if (1 == o.eRet) {",
+        "o.hasOwnProperty(\"birthId\") && (t.birthIdId = o.birthId);",
+        "o.hasOwnProperty(\"faceId\") && (t.appearId = o.faceId);",
+        "o.hasOwnProperty(\"talnetId\") && (t.talentId = o.talnetId);",
+        "i.MessageCenter.dispatch(u.EvName.RECEIVE_CREATE_INFO);",
+        "} else cc.log(\"-----创角获取活动数据失败-----\");",
+        "}, this);",
+        "};",
+        "t.prototype.getCreateInfo = function() {",
+        "p.NetMgr.http.sendRequest(r.HttpConst.GET_CREATE_INFO, {"
+      ]
+    },
+    {
+      "action": "getCRAInfo",
+      "field": "faceId",
+      "bundle": "index.js",
+      "line": 23089,
+      "src": [
+        "if (2 == o.eRet) i.MessageCenter.dispatch(u.EvName.RECEIVE_CREATE_INFO); else if (1 == o.eRet) {",
+        "o.hasOwnProperty(\"birthId\") && (t.birthIdId = o.birthId);",
+        "o.hasOwnProperty(\"faceId\") && (t.appearId = o.faceId);",
+        "o.hasOwnProperty(\"talnetId\") && (t.talentId = o.talnetId);",
+        "i.MessageCenter.dispatch(u.EvName.RECEIVE_CREATE_INFO);",
+        "} else cc.log(\"-----创角获取活动数据失败-----\");",
+        "}, this);",
+        "};",
+        "t.prototype.getCreateInfo = function() {",
+        "p.NetMgr.http.sendRequest(r.HttpConst.GET_CREATE_INFO, {",
+        "roleID: h.RoleBaseInfo.roleID"
+      ]
+    },
+    {
+      "action": "getCRAInfo",
+      "field": "talnetId",
+      "bundle": "index.js",
+      "line": 23090,
+      "src": [
+        "o.hasOwnProperty(\"birthId\") && (t.birthIdId = o.birthId);",
+        "o.hasOwnProperty(\"faceId\") && (t.appearId = o.faceId);",
+        "o.hasOwnProperty(\"talnetId\") && (t.talentId = o.talnetId);",
+        "i.MessageCenter.dispatch(u.EvName.RECEIVE_CREATE_INFO);",
+        "} else cc.log(\"-----创角获取活动数据失败-----\");",
+        "}, this);",
+        "};",
+        "t.prototype.getCreateInfo = function() {",
+        "p.NetMgr.http.sendRequest(r.HttpConst.GET_CREATE_INFO, {",
+        "roleID: h.RoleBaseInfo.roleID",
+        "});"
+      ]
+    },
+    {
+      "action": "getFasionShop",
+      "field": "shopArr",
+      "bundle": "index.js",
+      "line": 145349,
+      "src": [
+        "}, this);",
+        "r.MessageCenter.on(a.HttpConst.GET_FASHION_SHOP, function(t, o) {",
+        "if (1 == (o = o).eRet && o.hasOwnProperty(\"shopArr\")) {",
+        "for (var i = 0; i < o.shopArr.length; i++) {",
+        "var n = o.shopArr[i];",
+        "e.shopArray[n[0]] = [];",
+        "e.shopArray[n[0]] = n[1];",
+        "}",
+        "e.setCurFashion(c.MarryModel.wifeUpdateData.eid);",
+        "u.default.prefabs.load(\"comUI/ShopBgUI\", cc.Prefab, function(t, e) {",
+        "var i = cc.instantiate(e);"
+      ]
+    },
+    {
+      "action": "getFriendHomeList",
+      "field": "dog",
+      "bundle": "index.js",
+      "line": 57958,
+      "src": [
+        "e.soilArr = [];",
+        "e.cropControlState = 0;",
+        "o.hasOwnProperty(\"dog\") && (e.dogData = o.dog);",
+        "if (o.hasOwnProperty(\"friendPartnerId\")) {",
+        "e.friendPartnerId = Number(o.friendPartnerId);",
+        "0 == e.friendPartnerId && (e.friendPartnerId = -1);",
+        "} else e.friendPartnerId = -1;",
+        "e.plantSeedData.plantExp = o.exp;",
+        "e.soilArr = o.soilArr;",
+        "e.isFriend = o.flag;",
+        "e.homeShop = 0;"
+      ]
+    },
+    {
+      "action": "getHomeList",
+      "field": "bShop",
+      "bundle": "index.js",
+      "line": 57597,
+      "src": [
+        "i.hasOwnProperty(\"dog\") && (e.dogData = i.dog);",
+        "e.soilArr = i.soilArr;",
+        "i.hasOwnProperty(\"bShop\") && (e.homeShop = i.bShop);",
+        "var n = b.PartnerModel.getDailyPartnerDataByDtype(3);",
+        "e.friendPartnerId = n || 0;",
+        "if (e.isUpdateData) r.MessageCenter.dispatch(c.EvName.ALL_CROP_DATA_EVENT); else {",
+        "var a = l.RoleOtherInfo.homeFarmId;",
+        "e.curMapId = p.GameStates.getLastMapID();",
+        "if (null != h.UserModel.player) {",
+        "e.enterX = h.UserModel.player.x;",
+        "e.enterY = h.UserModel.player.y;"
+      ]
+    },
+    {
+      "action": "getHomeList",
+      "field": "dog",
+      "bundle": "index.js",
+      "line": 57595,
+      "src": [
+        "if (i.hasOwnProperty(\"soilArr\")) {",
+        "e.plantSeedData.plantExp = i.exp;",
+        "i.hasOwnProperty(\"dog\") && (e.dogData = i.dog);",
+        "e.soilArr = i.soilArr;",
+        "i.hasOwnProperty(\"bShop\") && (e.homeShop = i.bShop);",
+        "var n = b.PartnerModel.getDailyPartnerDataByDtype(3);",
+        "e.friendPartnerId = n || 0;",
+        "if (e.isUpdateData) r.MessageCenter.dispatch(c.EvName.ALL_CROP_DATA_EVENT); else {",
+        "var a = l.RoleOtherInfo.homeFarmId;",
+        "e.curMapId = p.GameStates.getLastMapID();",
+        "if (null != h.UserModel.player) {"
+      ]
+    },
+    {
+      "action": "getHomeList",
+      "field": "friendPartnerAward",
+      "bundle": "index.js",
+      "line": 57633,
+      "src": [
+        "}",
+        "}",
+        "i.hasOwnProperty(\"friendPartnerAward\") && (e.rewardData = i.friendPartnerAward);",
+        "}",
+        "}, this);",
+        "r.MessageCenter.on(s.HttpConst.SEED_CROP, function(t, o) {",
+        "if (1 == o.eRet) {",
+        "var i = o.sIdx, n = {",
+        "m: {},",
+        "s: 1",
+        "};"
+      ]
+    },
+    {
+      "action": "getItemData",
+      "field": "limittype",
+      "bundle": "index.js",
+      "line": 47082,
+      "src": [
+        "if (1 == o.eRet) {",
+        "var i = 0;",
+        "o.hasOwnProperty(\"limittype\") && (i = o.limittype);",
+        "a.default.prefabs.load(\"comUI/tanchuang/SelectItem\", cc.Prefab, function(e, n) {",
+        "var r = cc.instantiate(n);",
+        "s.PopUpMgr.addPopUp(r, l.LayerMgr.popUpLayer, 1, !0);",
+        "r.addComponent(\"ExchangeBuyUI\").setDatas(t.curItemObj, o.limit, 0, i);",
+        "});",
+        "}",
+        "}, this);",
+        "i.MessageCenter.on(n.HttpConst.EXCHANGE_ITEM, function(t, e) {"
+      ]
+    },
+    {
+      "action": "homeSpeicalAward",
+      "field": "eid",
+      "bundle": "index.js",
+      "line": 57867,
+      "src": [
+        "r.MessageCenter.on(s.HttpConst.HOME_SPECIAL_AWARD, function(t, e) {",
+        "r.MessageCenter.dispatch(c.EvName.REMOVE_SEARCH_HOME_UI);",
+        "if (1 == e.eRet && e.hasOwnProperty(\"eid\") && e.hasOwnProperty(\"rewardArray\")) {",
+        "var o = {",
+        "itemId: 0,",
+        "num: 0",
+        "};",
+        "for (var i in e.rewardArray) {",
+        "o.itemId = i;",
+        "o.num = e.rewardArray[i];",
+        "}"
+      ]
+    },
+    {
+      "action": "jionChatPkServer",
+      "field": "newAcc",
+      "bundle": "scripts3.js",
+      "line": 95797,
+      "src": [
+        "t.signData = o.signData;",
+        "var s = T.RoleBaseInfo.userAccount;",
+        "!u.CrossServiceModel.isEnterCrossServer(!1) && o.hasOwnProperty(\"newAcc\") && (s = o.newAcc);",
+        "t.setNewServerUID([ t.signData.roleUniqueId, s, 0 ]);",
+        "v.MessageCenter.dispatch(i.EvName.JOIN_WULIN_PK_EVENT);",
+        "if (t.callback) {",
+        "var n = o.signData.roleUniqueId;",
+        "t.callback(n && n > 0);",
+        "t.callback = null;",
+        "}",
+        "} else if (t.callback) {"
+      ]
+    },
+    {
+      "action": "lookDogLog",
+      "field": "log",
+      "bundle": "index.js",
+      "line": 58048,
+      "src": [
+        "}, this);",
+        "r.MessageCenter.on(s.HttpConst.LOOK_DOG_LOG, function(t, e) {",
+        "1 == e.eRet && e.hasOwnProperty(\"log\") && r.MessageCenter.dispatch(c.EvName.HOME_LOG_EVENT, e.log);",
+        "}, this);",
+        "r.MessageCenter.on(s.HttpConst.DOG_BATTLE_RESULT, function(t, o) {",
+        "1 == o.eRet && o.win && e.setDogCurState(0, o.endTime);",
+        "}, this);",
+        "r.MessageCenter.on(s.HttpConst.FEED_DOG, function(t, o) {",
+        "if (1 == o.eRet) {",
+        "o.hasOwnProperty(\"progress\") && (e.dogData.p = o.progress);",
+        "o.hasOwnProperty(\"bigDog\") && (e.dogData.id = o.bigDog);"
+      ]
+    },
+    {
+      "action": "mulitiNpcBattleResult",
+      "field": "gemId",
+      "bundle": "index.js",
+      "line": 89341,
+      "src": [
+        "o.hasOwnProperty(\"rewardArray\") && (i.rewards = o.rewardArray);",
+        "o.hasOwnProperty(\"equipObj\") && (i.equips = o.equipObj);",
+        "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);",
+        "t.getComponent(p.BattleResultMediator).setRewards(i);",
+        "}, this);",
+        "};",
+        "o.prototype.onDestroy = function() {",
+        "a.MessageCenter.removeAll(this);",
+        "};",
+        "o.prototype.start = function() {",
+        "var e = s.playerInfo.entity, o = {"
+      ]
+    },
+    {
+      "action": "obtainCrop",
+      "field": "aExp",
+      "bundle": "index.js",
+      "line": 57711,
+      "src": [
+        "var n = {};",
+        "o.hasOwnProperty(\"exp\") && (e.plantSeedData.plantExp = o.exp);",
+        "o.hasOwnProperty(\"aExp\") && (n[7] = o.aExp);",
+        "if (o.hasOwnProperty(\"rewardArray\")) for (var a in o.rewardArray) n[a] = o.rewardArray[a];",
+        "I.MadUtilsTS.isNullObj(n) || m.default.addShowRewardUI1(n, 0);",
+        "} else if (3 == o.eRet) {",
+        "e.soilArr[o.sIdx].m.s = 0;",
+        "var s = {",
+        "s: 0,",
+        "landId: 0,",
+        "m: {}"
+      ]
+    },
+    {
+      "action": "onKeyDispossHomeEvent",
+      "field": "aExp",
+      "bundle": "index.js",
+      "line": 57797,
+      "src": [
+        "var f = {};",
+        "o.hasOwnProperty(\"exp\") && o.exp > 0 && (e.plantSeedData.plantExp = o.exp);",
+        "o.hasOwnProperty(\"aExp\") && o.aExp > 0 && (f[7] = o.aExp);",
+        "if (o.hasOwnProperty(\"rewardArray\")) for (var d in o.rewardArray) f[d] = o.rewardArray[d];",
+        "I.MadUtilsTS.isNullObj(f) ? 0 != o.flag || i ? i && a.default.show(n.getText(3171)) : a.default.show(n.getText(3268)) : m.default.addShowRewardUI1(f, 0);",
+        "}",
+        "}, this);",
+        "r.MessageCenter.on(s.HttpConst.RECLAIM_LAND, function(t, o) {",
+        "if (1 == o.eRet) {",
+        "e.soilArr[o.sIdx] = {",
+        "s: 1"
+      ]
+    },
+    {
+      "action": "onKeyObtainCrop",
+      "field": "aExp",
+      "bundle": "index.js",
+      "line": 57753,
+      "src": [
+        "var h = {};",
+        "i.hasOwnProperty(\"exp\") && (e.plantSeedData.plantExp = i.exp);",
+        "i.hasOwnProperty(\"aExp\") && i.aExp > 0 && (h[7] = i.aExp);",
+        "if (i.hasOwnProperty(\"rewardArray\")) for (var u in i.rewardArray) h[u] = i.rewardArray[u];",
+        "I.MadUtilsTS.isNullObj(h) || m.default.addShowRewardUI1(h, 0);",
+        "} else 2 == i.eRet ? a.default.show(n.getText(6000449)) : i.eRet;",
+        "}, this);",
+        "r.MessageCenter.on(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, function(t, o) {",
+        "if (1 == o.eRet) {",
+        "var i = !1, s = [], l = o.cropMap;",
+        "if (cc.js.isEmptyObject(l)) {"
+      ]
+    },
+    {
+      "action": "recommendOHomes",
+      "field": "friendHome",
+      "bundle": "index.js",
+      "line": 57891,
+      "src": [
+        "}",
+        "var n = [], a = [];",
+        "if (o.hasOwnProperty(\"friendHome\")) for (var s = 0; s < o.friendHome.length; s++) if (o.friendHome[s][5] > 0) {",
+        "n.push(o.friendHome[s]);",
+        "n.sort(function(t, e) {",
+        "return e[5] - t[5];",
+        "});",
+        "}",
+        "var l = n.length;",
+        "if (o.hasOwnProperty(\"homeArr\")) {",
+        "for (s = 0; s < o.homeArr.length; s++) if (o.homeArr[s][5] > 0) {"
+      ]
+    },
+    {
+      "action": "recommendOHomes",
+      "field": "homeArr",
+      "bundle": "index.js",
+      "line": 57882,
+      "src": [
+        "if (1 == o.eRet) {",
+        "o.hasOwnProperty(\"homeGeMap\") && (e.homeGeMap = o.homeGeMap);",
+        "if (o.hasOwnProperty(\"homeArr\")) {",
+        "e.searchType = 0;",
+        "var i = o.homeArr;",
+        "i.sort(function(t, e) {",
+        "return e[5] - t[5];",
+        "});",
+        "r.MessageCenter.dispatch(c.EvName.RECOMMEND_LIST_EVENT, i);",
+        "}",
+        "var n = [], a = [];"
+      ]
+    },
+    {
+      "action": "stealCrop",
+      "field": "aExp",
+      "bundle": "index.js",
+      "line": 58028,
+      "src": [
+        "var p = {};",
+        "o.hasOwnProperty(\"exp\") && (e.plantSeedData.plantExp = o.exp);",
+        "o.hasOwnProperty(\"aExp\") && (p[7] = o.aExp);",
+        "if (o.hasOwnProperty(\"rewardArray\")) for (var h in o.rewardArray) p[h] = o.rewardArray[h];",
+        "I.MadUtilsTS.isNullObj(p) || m.default.addShowRewardUI1(p, 0);",
+        "} else if (2 == o.eRet) {",
+        "e.soilArr[o.idx] = {",
+        "s: 1",
+        "};",
+        "var u = {",
+        "s: 1,"
+      ]
+    }
+  ],
+  "parseFail": []
+}

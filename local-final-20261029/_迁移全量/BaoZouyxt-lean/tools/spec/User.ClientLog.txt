@@ -1,0 +1,51 @@
+# User.ClientLog  (HttpConst.GAME_LOG)
+# 出现 1 处
+
+ 69286: t.prototype.sendLogReq = function(t) {
+ 69287: var e = {
+ 69288: loginfo: t,
+ 69289: flag: 0,
+ 69290: macAddress: ""
+ 69291: };
+ 69292: n.NetMgr.http.sendRequest(i.HttpConst.GAME_LOG, e, null, !1, !1, !1);
+ 69293: };
+ 69294: return t;
+ 69295: }();
+ 69296: o.logModel = new r();
+ 69297: cc._RF.pop();
+ 69298: }, {
+ 69299: "../net/HttpConst": "HttpConst",
+ 69300: "../net/NetMgr": "NetMgr"
+ 69301: } ],
+ 69302: LogOutMgr: [ function(t, e, o) {
+ 69303: "use strict";
+ 69304: cc._RF.push(e, "49708kZ6ZlFv7pYvW083pzu", "LogOutMgr");
+ 69305: Object.defineProperty(o, "__esModule", {
+ 69306: value: !0
+ 69307: });
+ 69308: var i = function() {
+ 69309: function t() {}
+ 69310: t.log = function(t) {
+ 69311: cc.log(t);
+ 69312: };
+ 69313: t.warn = function(t) {
+ 69314: console.warn("log", t);
+ 69315: };
+ 69316: t.error = function(t) {
+ 69317: console.error("error", t);
+ 69318: };
+ 69319: return t;
+ 69320: }();
+ 69321: o.default = i;
+ 69322: cc._RF.pop();
+ 69323: }, {} ],
+ 69324: LoginMgr: [ function(t, e, o) {
+ 69325: "use strict";
+ 69326: cc._RF.push(e, "8ca5b61TJhJvYPtO73o3P8j", "LoginMgr");
+ 69327: var i = this && this.__awaiter || function(t, e, o, i) {
+ 69328: return new (o || (o = Promise))(function(n, r) {
+ 69329: function a(t) {
+ 69330: try {
+ 69331: l(i.next(t));
+ 69332: } catch (t) {
+---

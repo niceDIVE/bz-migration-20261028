@@ -1,0 +1,13 @@
+# User.refreshNotice   (HttpConst.REFRESHNOTICE)
+
+## 注册点 108234: r.MessageCenter.on(s.HttpConst.REFRESHNOTICE, function(e, o) {
+
+## 请求点 108274: l.NetMgr.http.sendRequest(s.HttpConst.REFRESHNOTICE, e);
+   108266: r.MessageCenter.dispatch(c.EvName.REFRESH_DISPATCH_NOTICE_BUTTON, !1);
+   108267: }
+   108268: });
+   108269: };
+   108270: e.prototype.reqActiveNotice = function(t) {
+   108271: var e = {
+   108272: type: t
+   108273: };

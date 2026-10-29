@@ -1,0 +1,30 @@
+=== tools\index.js SEED_CROP_hits=7
+L45965| MULTIP_SEED_CROP: "multipleSeedCrop",
+L45966| CHANGE_SEED_CROP: "changeSeedCrop",
+L57636| r.MessageCenter.on(s.HttpConst.SEED_CROP, function(t, o) {
+L58111| v.NetMgr.http.sendRequest(s.HttpConst.BATCH_SEED_CROP, {
+L58121| v.NetMgr.http.sendRequest(s.HttpConst.BATCH_SEED_CROP, {
+L59846| SEED_CROP: "User.seedCrop",
+L59848| BATCH_SEED_CROP: "User.batchSeedCrop",
+=== tools\scripts3.js SEED_CROP_hits=0
+=== tools\scripts2.js SEED_CROP_hits=0
+=== 回调体 L57636-L57654
+L57636| r.MessageCenter.on(s.HttpConst.SEED_CROP, function(t, o) {
+L57637| if (1 == o.eRet) {
+L57638| var i = o.sIdx, n = {
+L57639| m: {},
+L57640| s: 1
+L57641| };
+L57642| o.crop.hasOwnProperty("m") && (n.m = o.crop.m);
+L57643| e.soilArr[i] = n;
+L57644| var a = {
+L57645| m: {},
+L57646| s: 1,
+L57647| landId: 0
+L57648| };
+L57649| a.m = n.m;
+L57650| a.landId = i;
+L57651| r.MessageCenter.dispatch(c.EvName.SEED_CROP_EVENT, a);
+L57652| }
+L57653| }, this);
+L57654| r.MessageCenter.on(s.HttpConst.BATCH_SEED_CROP, function(t, o) {

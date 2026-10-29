@@ -1,0 +1,11 @@
+{
+  "_说明": "设备端 dual 计划示例。先 backup，最后 restore；restore 后需重启进程或触发 LoadGame 才能让客户端模型同步。req 的参数请按真实物品/技能 id 改。",
+  "steps": [
+    {"op": "status"},
+    {"op": "backup", "tag": "before-oracle"},
+    {"op": "dual", "req": {"mod": "User", "do": "saleItem", "p": {"itemID": 2001, "num": 1}}},
+    {"op": "dual", "req": {"mod": "User", "do": "useItem", "p": {"itemID": 3001, "num": 1}}},
+    {"op": "dual", "req": {"mod": "User", "do": "upgradeSkill", "p": {"NPCID": 1003, "skillID": 1262, "flag": 0}}},
+    {"op": "restore", "tag": "before-oracle"}
+  ]
+}

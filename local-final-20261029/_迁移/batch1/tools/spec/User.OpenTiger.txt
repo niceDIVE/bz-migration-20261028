@@ -1,0 +1,70 @@
+# User.OpenTiger  (HttpConst.OPEN_TIGER)
+# 出现 2 处
+
+122281: }
+122282: t.prototype.init = function() {
+122283: n.MessageCenter.on(a.HttpConst.REQ_INSERT_COINS, function(t, e) {
+122284: 1 == e.eRet || 5 == e.eRet || (4 == e.eRet ? r.default.show(i.getText(1455)) : 6 == e.eRet && r.default.show(i.getText(4283)));
+122285: n.MessageCenter.dispatch(l.EvName.ON_GET_SLOT_RESULT, e);
+122286: }, this);
+122287: n.MessageCenter.on(a.HttpConst.OPEN_TIGER, function(t, e) {
+122288: o.SlotMachModel.useTime = e.hasOwnProperty("num") ? e.num : 0;
+122289: c.default.prefabs.load("fuben/TigerMachine", cc.Prefab, function(t, e) {
+122290: var o = cc.instantiate(e);
+122291: p.PopUpMgr.addPopUp(o, h.LayerMgr.popUpLayer);
+122292: o.addComponent("TigerMachine").setData(0);
+122293: });
+122294: }, this);
+122295: n.MessageCenter.on(a.HttpConst.CLEAEING_TIGER, function(t, e) {
+122296: 1 == e.eRet && (o.SlotMachModel.useTime = 0);
+122297: }, this);
+122298: };
+122299: t.prototype.reqInsertCoins = function(t) {
+122300: s.NetMgr.http.sendRequest(a.HttpConst.REQ_INSERT_COINS, {
+122301: NPCid: t
+122302: });
+122303: };
+122304: t.prototype.reqOpenTiger = function() {
+122305: s.NetMgr.http.sendRequest(a.HttpConst.OPEN_TIGER);
+122306: };
+122307: t.prototype.reqCleanTiger = function() {};
+122308: return t;
+122309: }();
+122310: o.SlotMachModel = new u();
+122311: cc._RF.pop();
+122312: }, {
+122313: "../core/events/MessageCenter": "MessageCenter",
+122314: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+122315: "../gameconfigs/LangMgr": "LangMgr",
+122316: "../gui/uicomponents/Alert": "Alert",
+122317: "../mgrs/BundleMgr": "BundleMgr",
+122318: "../mgrs/LayerMgr": "LayerMgr",
+122319: "../net/HttpConst": "HttpConst",
+122320: "../net/NetMgr": "NetMgr",
+122321: "../utils/EvName": "EvName"
+122322: } ],
+122323: SmokeSkill: [ function(t, e) {
+122324: "use strict";
+122325: cc._RF.push(e, "725bfcPgXVCU7JBMXuQC40r", "SmokeSkill");
+122326: function o(t, e) {
+122327: t.prototype = Object.create(e.prototype);
+---
+122328: t.prototype.constructor = t;
+122329: i(t, e);
+122330: }
+122331: function i(t, e) {
+122332: return (i = Object.setPrototypeOf || function(t, e) {
+122333: t.__proto__ = e;
+122334: return t;
+122335: })(t, e);
+122336: }
+122337: var n = function(t) {
+122338: o(e, t);
+122339: function e() {
+122340: return t.apply(this, arguments) || this;
+122341: }
+122342: e.prototype.reckoningFailed = function() {
+122343: this.dSkill.triggerBuff(this.feat, this._performer, !0);
+122344: };
+122345: return e;
+---

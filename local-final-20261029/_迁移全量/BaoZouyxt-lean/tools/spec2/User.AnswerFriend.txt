@@ -1,0 +1,18 @@
+# User.AnswerFriend   (HttpConst.USER_ANSWERFRIEND)
+
+## 注册点 132056: i.MessageCenter.on(n.HttpConst.USER_ANSWERFRIEND, this.answerSuccessCallBack, this);
+
+## 请求点 132206: a.NetMgr.http.sendRequest(n.HttpConst.USER_ANSWERFRIEND, o, function() {}.bind(this), !0, !1, !0);
+   132198: a.NetMgr.http.sendRequest(n.HttpConst.USER_FRIENDREGISTER, e, function() {}.bind(this), !0, !1, !0);
+   132199: };
+   132200: t.prototype.reqAnswerFriend = function(t, e) {
+   132201: var o = {
+   132202: roleID: r.RoleBaseInfo.roleID,
+   132203: fID: t,
+   132204: answer: e
+   132205: };
+
+## 处理函数 answerSuccessCallBack (132274-132276)
+132274: t.prototype.answerSuccessCallBack = function(t, e) {
+132275: i.MessageCenter.dispatch(c.EvName.USER_ANSWERFRIEND, e);
+132276: };

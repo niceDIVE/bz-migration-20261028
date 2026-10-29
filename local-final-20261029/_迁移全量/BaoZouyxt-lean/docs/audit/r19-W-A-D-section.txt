@@ -1,0 +1,28 @@
+﻿=== D 段全部（19 行）===
+总条数: 18
+  [templates] create.serverTime = 1792572970629 (2026-10-21T08:56:10.629Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [templates] create.activityResource.67[1] = 1793177770630 (2026-10-28T08:56:10.630Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [active] data.27.endtime[0] = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\active.json
+  [active] data.55.endtime[0] = 1792943999000 (2026-10-25T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\active.json
+  [exchange] data.2200.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2201.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2202.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2203.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2204.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2205.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2206.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2207.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2208.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2209.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2210.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2211.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2212.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [mall] data.39.shopend[0] = 1792943999000 (2026-10-25T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\mall.json
+
+=== B 段里 templates.*（2 条）===
+  [templates] create.serverTime = 1792572970629 (2026-10-21T08:56:10.629Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [templates] create.housekeeper.curTime = 1792512000000 (2026-10-20T16:00:00.000Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+
+=== E 段里 templates.*（2 条）===
+  [templates] create.serverOpenTime = 1790524800 (2026-09-27T16:00:00.000Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [templates] create.currentServerEndTime = 1798300800 (2026-12-26T16:00:00.000Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json

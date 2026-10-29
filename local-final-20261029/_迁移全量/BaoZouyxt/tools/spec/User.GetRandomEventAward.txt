@@ -1,0 +1,99 @@
+# User.GetRandomEventAward  (HttpConst.REQ_WM_ADV_RWD)
+# 出现 2 处
+
+143808: var t = this;
+143809: this.started = !1;
+143810: this.advNpcs = null;
+143811: this.triggered = !1;
+143812: this.advCurId = 0;
+143813: var e = this;
+143814: i.MessageCenter.on(n.HttpConst.REQ_WM_ADV_RWD, function(o, i) {
+143815: var n = !1;
+143816: if (i.hasOwnProperty("rewardArray")) for (var l in i.rewardArray) {
+143817: n = !0;
+143818: break;
+143819: }
+143820: var c = i.hasOwnProperty("npcArr") && i.npcArr && i.npcArr.length > 0, p = i.hasOwnProperty("liveness");
+143821: if (n || c) {
+143822: var u = r.getText(695) + "\n";
+143823: if (n) {
+143824: var f = i.rewardArray;
+143825: for (var l in f) {
+143826: var d = a.getItem(l, "item");
+143827: u += r.getText(d.Name) + (f[l] > 0 ? " +" : "") + f[l] + "\n";
+143828: }
+143829: }
+143830: if (c) {
+143831: var g = a.getItem(i.npcArr[0], "npc");
+143832: u += r.getText(g.NpcName) + r.getText("807") + (i.npcArr[1] > 0 ? "+" : "") + i.npcArr[1].toString() + "\n";
+143833: s.default.setNcpIntimacy(i.npcArr[0], i.npcArr[1]);
+143834: }
+143835: p && (u += r.getText(6010809) + "+" + i.liveness + "\n");
+143836: h.default.show(u);
+143837: }
+143838: t.refreshDispatch();
+143839: e.end();
+143840: }, this);
+143841: };
+143842: e.prototype.start = function() {
+143843: this.started = !0;
+143844: };
+143845: e.prototype.refreshDispatch = function() {
+143846: Promise.resolve().then(function() {
+143847: return t("../../scripts3/model3/DelegateModel");
+143848: }).then(function(t) {
+143849: -1 != t.DelegateModel.noticeIndex && (t.DelegateModel.noticeIndex = -1);
+143850: if (1 == t.DelegateModel.noticeArr.length) {
+143851: t.DelegateModel.noticeArr = [];
+143852: i.MessageCenter.dispatch(l.EvName.REFRESH_DISPATCH_NOTICE_BUTTON, !1);
+143853: }
+143854: });
+---
+143865: var o = {
+143866: adventureID: t,
+143867: award: e,
+143868: eventID: c.RumorModel.eventID
+143869: };
+143870: u.NewAdventureModel.isDeadMonster = !0;
+143871: p.NetMgr.http.sendRequest(n.HttpConst.REQ_WM_ADV_RWD, o);
+143872: this.advNpcs = null;
+143873: };
+143874: e.prototype.genPos = function(t, e) {
+143875: var o = {};
+143876: switch (e) {
+143877: case 1:
+143878: o.x = t.x + .75 * t.width;
+143879: o.y = t.y + .25 * t.height;
+143880: break;
+143881: 
+143882: case 2:
+143883: o.x = t.x + .25 * t.width;
+143884: o.y = t.y + .75 * t.height;
+143885: break;
+143886: 
+143887: case 1:
+143888: o.x = t.x + .75 * t.width;
+143889: o.y = t.y + .75 * t.height;
+143890: break;
+143891: 
+143892: default:
+143893: o.x = t.x + .25 * t.width;
+143894: o.y = t.y + .25 * t.height;
+143895: }
+143896: return o;
+143897: };
+143898: return e;
+143899: }();
+143900: o.WMapAdvModel = new f();
+143901: cc._RF.pop();
+143902: }, {
+143903: "../../scripts3/model3/DelegateModel": void 0,
+143904: "../core/events/MessageCenter": "MessageCenter",
+143905: "../gameconfigs/CFMgr": "CFMgr",
+143906: "../gameconfigs/LangMgr": "LangMgr",
+143907: "../gui/uicomponents/Alert": "Alert",
+143908: "../net/HttpConst": "HttpConst",
+143909: "../net/NetMgr": "NetMgr",
+143910: "../utils/EvName": "EvName",
+143911: "./IntimacyModel": "IntimacyModel",
+---

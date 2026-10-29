@@ -1,0 +1,1006 @@
+{
+ "generatedAt": "2026-10-21T20:46:34.787Z",
+ "q1_getTaskCallBack": {
+  "startLine": 133338,
+  "endLine": 133382,
+  "body": [
+   "133338: e.prototype.getTaskCallBack = function(e, o) {",
+   "133339: if (1 == o.eRet) {",
+   "133340: o.hasOwnProperty(\"triggerBoxs\") && Promise.resolve().then(function() {",
+   "133341: return t(\"../../scripts3/model3/MapBoxModel\");",
+   "133342: }).then(function(t) {",
+   "133343: t.MapBoxModel.addBox(o.triggerBoxs);",
+   "133344: });",
+   "133345: this.signNewTasks(this.npcTaskInfo.taskObj.TaskID);",
+   "133346: C.GuideMgr.enterFirstGuide(this.npcTaskInfo.taskObj.TaskID, 1);",
+   "133347: D.talkDataModel.reqTaskTalkData(parseInt(this.npcTaskInfo.taskObj.TaskID));",
+   "133348: if (0 == this.isOrBubble) {",
+   "133349: this.npcTaskInfo.hasOwnProperty(\"taskObj\") && this.clearHideTask(this.npcTaskInfo.taskObj.TaskID);",
+   "133350: b.default.operationalTasks(0, this.npcTaskInfo);",
+   "133351: if (b.default.blankTaskArray.length) return;",
+   "133352: var h = this.npcTaskInfo.taskObj.Fight;",
+   "133353: if (h > 0) {",
+   "133354: var u = {",
+   "133355: npcSceneID: 1,",
+   "133356: npcID: h,",
+   "133357: npcData: c.RoleBaseInfo.setCurrentNpcData(h),",
+   "133358: showbubble: !1",
+   "133359: };",
+   "133360: T.BattleMgr.startNpcFight(u);",
+   "133361: c.RoleBaseInfo.autoFightTaskId = this.npcTaskInfo.taskObj.TaskID;",
+   "133362: return;",
+   "133363: }",
+   "133364: var f = b.default.judgeCurTaskIsFinish(this.npcTaskInfo.taskObj.TaskID, this.npcId);",
+   "133365: 1 == f.npcState && b.default.finishTaskCheckUI(f);",
+   "133366: } else if (1 == this.isOrBubble) {",
+   "133367: b.default.operationalTasks(0, this.npcTaskInfo);",
+   "133368: r.MessageCenter.dispatch(l.EvName.ON_BUBBLE_TASK, 1);",
+   "133369: } else 2 == this.isOrBubble && b.default.operationalTasks(0, this.npcTaskInfo);",
+   "133370: } else if (4 == o.eRet) {",
+   "133371: var d = i.getItem(this.npcTaskInfo.taskObj.TaskID, \"tasktime\");",
+   "133372: d && d.hasOwnProperty(\"overtimetips_on\") && 0 == d.overtimetips_on && a.default.show(n.getText(\"1093\"));",
+   "133373: } else if (6 == o.eRet) {",
+   "133374: var g = i.getItem(o.skillId, \"skill\"), m = o.CDTime - o.serverTime, y = Math.floor(m / 864e5), v = Math.floor((m - 864e5 * y) / 36e5), _ = Math.floor((m - 864e5 * y - 36e5 * v) / 6e4), S = n.getText(6079).replace(/\\[1\\]/, n.getText(g.Name));",
+   "133375: y > 0 && (S += y + n.getText(3784));",
+   "133376: S += v + n.getText(3785);",
+   "133377: S += _ + n.getText(1414);",
+   "133378: a.default.show(S);",
+   "133379: } else p.NetMgr.http.sendRequest(s.HttpConst.SYCN_TASK, {",
+   "133380: roleID: c.RoleBaseInfo.roleID",
+   "133381: }, null, !1);",
+   "133382: };"
+  ],
+  "respFields": [
+   "eRet",
+   "hasOwnProperty",
+   "triggerBoxs",
+   "skillId",
+   "CDTime",
+   "serverTime"
+  ]
+ },
+ "q1_itemObj_hits": [
+  {
+   "file": "index.js",
+   "line": 24016,
+   "text": "l.RoleBaseInfo._itemObj = {};"
+  },
+  {
+   "file": "index.js",
+   "line": 24018,
+   "text": "for (var o in e.itemObj) parseInt(o) > 0 && parseInt(e.itemObj[o]) > 0 && l.RoleBaseInfo.setItem(parseInt(o), e.itemObj[o]);"
+  },
+  {
+   "file": "index.js",
+   "line": 54348,
+   "text": "for (var e = {}, o = {}, r = 0; r < t.itemObj.length; r++) {"
+  },
+  {
+   "file": "index.js",
+   "line": 54349,
+   "text": "var a = t.itemObj[r];"
+  },
+  {
+   "file": "index.js",
+   "line": 54357,
+   "text": "0 == t.itemObj.length && 0 == t.potentialreward && 0 == t.moneyreward ? c.default.show(i.getText(\"26023\")) : g.default.addShowRewardUI1(e, 0, o);"
+  },
+  {
+   "file": "index.js",
+   "line": 55930,
+   "text": "i.MessageCenter.dispatch(n.HttpConst.INVENTORY_CHNG, e.itemObj);"
+  },
+  {
+   "file": "index.js",
+   "line": 75684,
+   "text": "itemObj: this.currentMakeUp"
+  },
+  {
+   "file": "index.js",
+   "line": 75746,
+   "text": "itemObj: o"
+  },
+  {
+   "file": "index.js",
+   "line": 75770,
+   "text": "itemObj: {"
+  },
+  {
+   "file": "index.js",
+   "line": 105944,
+   "text": "this._itemObj = {};"
+  },
+  {
+   "file": "index.js",
+   "line": 106215,
+   "text": "return this._itemObj;"
+  },
+  {
+   "file": "index.js",
+   "line": 106219,
+   "text": "for (var e in this._itemObj) {"
+  },
+  {
+   "file": "index.js",
+   "line": 106220,
+   "text": "var o = this._itemObj[e], i = n.getItem(o.itemId, \"item\");"
+  },
+  {
+   "file": "index.js",
+   "line": 106282,
+   "text": "this._itemObj.hasOwnProperty(t) || (this._itemObj[t] = new s.IvItem(t, 0, i.quality));"
+  },
+  {
+   "file": "index.js",
+   "line": 106283,
+   "text": "this._itemObj[t].itemId = t;"
+  },
+  {
+   "file": "index.js",
+   "line": 106284,
+   "text": "this._itemObj[t].numbers += e;"
+  },
+  {
+   "file": "index.js",
+   "line": 106288,
+   "text": "this.type2Items[i.Type][t] = this._itemObj[t].numbers;"
+  },
+  {
+   "file": "index.js",
+   "line": 106325,
+   "text": "if (this._itemObj.hasOwnProperty(t)) {"
+  },
+  {
+   "file": "index.js",
+   "line": 106327,
+   "text": "this._itemObj[t].numbers -= e;"
+  },
+  {
+   "file": "index.js",
+   "line": 106328,
+   "text": "this.type2Items[i.Type][t] = this._itemObj[t].numbers;"
+  },
+  {
+   "file": "index.js",
+   "line": 106329,
+   "text": "if (this._itemObj[t].numbers <= 0) {"
+  },
+  {
+   "file": "index.js",
+   "line": 106330,
+   "text": "delete this._itemObj[t];"
+  },
+  {
+   "file": "index.js",
+   "line": 106354,
+   "text": "if (this._itemObj.hasOwnProperty(t)) return this._itemObj[t].numbers;"
+  },
+  {
+   "file": "index.js",
+   "line": 106363,
+   "text": "for (var o in this._itemObj) if (n.getItem(o, \"item\").Effect == t) {"
+  },
+  {
+   "file": "index.js",
+   "line": 106375,
+   "text": "if (this._itemObj.hasOwnProperty(t)) return this._itemObj[t].numbers;"
+  },
+  {
+   "file": "index.js",
+   "line": 111666,
+   "text": "v.RoleBaseInfo._itemObj = {};"
+  },
+  {
+   "file": "index.js",
+   "line": 112027,
+   "text": "if (t.hasOwnProperty(\"itemObj\")) for (var e in t.itemObj) parseInt(e) > 0 && parseInt(t.itemObj[e]) > 0 && v.RoleBaseInfo.setItem(parseInt(e), t.itemObj[e]);"
+  }
+ ],
+ "q1_msgdata_hits": [
+  {
+   "file": "index.js",
+   "line": 59213,
+   "text": "a.MsgData = decodeURI(a.MsgData);"
+  },
+  {
+   "file": "index.js",
+   "line": 59214,
+   "text": "var g = c.decrypt(a.MsgData, e.ckey, e.civ, 1);"
+  }
+ ],
+ "q1_generic_dispatch_hits": [
+  {
+   "file": "index.js",
+   "line": 55930,
+   "text": "i.MessageCenter.dispatch(n.HttpConst.INVENTORY_CHNG, e.itemObj);"
+  },
+  {
+   "file": "index.js",
+   "line": 115525,
+   "text": "l.MessageCenter.dispatch(y.HttpConst.INVENTORY_CHNG, i);"
+  }
+ ],
+ "q2_1_repeat_reads": [
+  {
+   "file": "index.js",
+   "line": 133645,
+   "text": "5 == n.Type || 6 == n.Type || 7 == n.Type || 8 == n.Type ? a = 2 : 1 == n.Repeat && (a = 3);",
+   "func": "reqFinishTaskMsg"
+  },
+  {
+   "file": "index.js",
+   "line": 134524,
+   "text": "if (0 == t.taskObj.Repeat) {",
+   "func": "updateTaskData"
+  },
+  {
+   "file": "index.js",
+   "line": 134557,
+   "text": "e.hasOwnProperty(\"taskObj\") && e.taskObj.hasOwnProperty(\"Repeat\") && 1 == e.taskObj.Repeat || e.hasOwnProperty(\"taskObj\") && e.taskObj.hasOwnProperty(\"Chain\") && e.taskObj.Chain == t.Chain && this.enterToNextTalk(e);",
+   "func": "nextTaskShow"
+  }
+ ],
+ "q2_2_finish_hasown": [
+  {
+   "file": "index.js",
+   "line": 20097,
+   "text": "if (l.RoleBaseInfo.finishTaskObj.hasOwnProperty(parseInt(t))) {",
+   "func": "clearCompletionEvent"
+  },
+  {
+   "file": "index.js",
+   "line": 53248,
+   "text": "1 == t ? A.RoleBaseInfo.finishTaskObj && A.RoleBaseInfo.finishTaskObj.hasOwnProperty(e) && (o = !0) : 2 == t && Q.CopyFightModel.levelMap.indexOf(parseInt(e)) > 0 && (o = !0);",
+   "func": "isSatisfy"
+  },
+  {
+   "file": "index.js",
+   "line": 62435,
+   "text": "if (l.RoleBaseInfo.finishTaskObj.hasOwnProperty(\"L1000\")) if (0 == _.ColorVerModel.colorState) {",
+   "func": "reqInnActive"
+  },
+  {
+   "file": "index.js",
+   "line": 66923,
+   "text": "if (2 == e[0] && p.RoleBaseInfo.finishTaskObj && p.RoleBaseInfo.finishTaskObj.hasOwnProperty(e[1])) return !0;",
+   "func": "isShow"
+  },
+  {
+   "file": "index.js",
+   "line": 74338,
+   "text": "return 4 != m.GSceneMgr.mode && d.SchoolSquareModel.intoSchool <= 0 && g.RoleBaseInfo.finishTaskObj && g.RoleBaseInfo.finishTaskObj.hasOwnProperty(i.getConstByID(504));",
+   "func": "isShowRogue"
+  },
+  {
+   "file": "index.js",
+   "line": 76804,
+   "text": "if (a.RoleBaseInfo.finishTaskObj && a.RoleBaseInfo.finishTaskObj.hasOwnProperty(t.properties.task)) {",
+   "func": "saveSpecialNpcData"
+  },
+  {
+   "file": "index.js",
+   "line": 77469,
+   "text": "if (8 == c.RoleBaseInfo.school && !c.RoleBaseInfo.finishTaskObj.hasOwnProperty(401360)) return !1;",
+   "func": "judgeIsShowProposeBtn"
+  },
+  {
+   "file": "index.js",
+   "line": 77989,
+   "text": "for (var t = 0; t < this.deleteTask.length; t++) a.RoleBaseInfo.finishTaskObj.hasOwnProperty(this.deleteTask[t]) && delete a.RoleBaseInfo.finishTaskObj[this.deleteTask[t]];",
+   "func": "deleteErrorTask"
+  },
+  {
+   "file": "index.js",
+   "line": 78074,
+   "text": "return !!a.RoleBaseInfo.finishTaskObj.hasOwnProperty(e.graduatetask1);",
+   "func": "isFinishMasterTask"
+  },
+  {
+   "file": "index.js",
+   "line": 78123,
+   "text": "for (var i = 0; i < o.length; i++) if (a.RoleBaseInfo.finishTaskObj.hasOwnProperty(parseInt(o[i]))) {",
+   "func": "checkTaskIsClear"
+  },
+  {
+   "file": "index.js",
+   "line": 80267,
+   "text": "if (!this.isDel && h.RoleBaseInfo.finishTaskObj && h.RoleBaseInfo.finishTaskObj.hasOwnProperty(this.taskId)) {",
+   "func": "isTaskMist"
+  },
+  {
+   "file": "index.js",
+   "line": 80281,
+   "text": "if (this.taskId == t && h.RoleBaseInfo.finishTaskObj && h.RoleBaseInfo.finishTaskObj.hasOwnProperty(this.taskId)) {",
+   "func": "checkTaskId"
+  },
+  {
+   "file": "index.js",
+   "line": 86596,
+   "text": "if (d.RoleBaseInfo.finishTaskObj.hasOwnProperty(o.endTask)) return;",
+   "func": "reaction"
+  },
+  {
+   "file": "index.js",
+   "line": 87384,
+   "text": "y.RoleBaseInfo.finishTaskObj.hasOwnProperty(\"L1000\") ? l.default.loadLockScene(l.default.prefabs, \"noticeboard/NoticeBoardUI\", function(t, e) {",
+   "func": "NpcToFuncType10"
+  },
+  {
+   "file": "index.js",
+   "line": 87564,
+   "text": "y.RoleBaseInfo.finishTaskObj.hasOwnProperty(101070) ? Promise.resolve().then(function() {",
+   "func": "NpcToFuncType80"
+  },
+  {
+   "file": "index.js",
+   "line": 87597,
+   "text": "if (!y.RoleBaseInfo.finishTaskObj.hasOwnProperty(\"L1000\")) {",
+   "func": "NpcToFuncType114"
+  },
+  {
+   "file": "index.js",
+   "line": 92118,
+   "text": "if (0 != parseInt(G[0]) && r.RoleBaseInfo.finishTaskObj && r.RoleBaseInfo.finishTaskObj.hasOwnProperty(parseInt(G[0]))) return;",
+   "func": "parseObj"
+  },
+  {
+   "file": "index.js",
+   "line": 98304,
+   "text": "if (s.RoleBaseInfo.finishTaskObj.hasOwnProperty(this.task)) {",
+   "func": "execute"
+  },
+  {
+   "file": "index.js",
+   "line": 112055,
+   "text": "v.RoleBaseInfo.finishTaskObj.hasOwnProperty(u.TaskID) || (v.RoleBaseInfo.requireTaskObj[u.TaskID] = f);",
+   "func": "setSaveAllTaskDatas"
+  },
+  {
+   "file": "index.js",
+   "line": 112899,
+   "text": "for (var t in this.scene._moveNpcInfo) if (v.RoleBaseInfo.finishTaskObj && v.RoleBaseInfo.finishTaskObj.hasOwnProperty(this.scene._moveNpcInfo[t].taskId)) {",
+   "func": "onNpcMoveEvent"
+  },
+  {
+   "file": "index.js",
+   "line": 112923,
+   "text": "if (o) for (var i = o.npc, n = o.atcion, r = o.modle, s = 0; s < i.length; s++) for (var l = i[s], c = a.getItem(l, \"npc\").order, p = 0; p < c.length; p++) if (v.RoleBaseInfo.finishTaskObj.hasOwnProperty(c[p])) {",
+   "func": "changeNpcModelImage"
+  },
+  {
+   "file": "index.js",
+   "line": 133271,
+   "text": "this.finishTaskObj.hasOwnProperty(\"taskObj\") && this.clearHideTask(this.finishTaskObj.taskObj.TaskID);",
+   "func": "finishRogueTaskCallBack"
+  },
+  {
+   "file": "index.js",
+   "line": 133473,
+   "text": "this.finishTaskObj.hasOwnProperty(\"taskObj\") && this.clearHideTask(this.finishTaskObj.taskObj.TaskID);",
+   "func": "taskFinishDataFunc"
+  },
+  {
+   "file": "index.js",
+   "line": 133533,
+   "text": "c.RoleBaseInfo.finishTaskObj.hasOwnProperty(a.TaskID) || (c.RoleBaseInfo.requireTaskObj[a.TaskID] = s);",
+   "func": "sycnTaskCallBack"
+  },
+  {
+   "file": "index.js",
+   "line": 133586,
+   "text": "this.finishTaskObj.hasOwnProperty(\"taskObj\") && this.clearHideTask(this.finishTaskObj.taskObj.TaskID);",
+   "func": "getCircleTaskCallBack"
+  },
+  {
+   "file": "index.js",
+   "line": 133628,
+   "text": "if (c.RoleBaseInfo.finishTaskObj.hasOwnProperty(r)) {",
+   "func": "checkOrderDelete"
+  },
+  {
+   "file": "index.js",
+   "line": 134002,
+   "text": "if (c.RoleBaseInfo.finishTaskObj.hasOwnProperty(t)) return !1;",
+   "func": "checkTaskStateUIFunc"
+  },
+  {
+   "file": "index.js",
+   "line": 134508,
+   "text": "if (e && e.hasOwnProperty(\"clear_task\") && e.clear_task.length > 0) for (var o = e.clear_task, i = 0; i < o.length; i++) if (l.RoleBaseInfo.finishTaskObj.hasOwnProperty(parseInt(o[i]))) {",
+   "func": "clearTaskListFunc"
+  },
+  {
+   "file": "index.js",
+   "line": 134626,
+   "text": "l.RoleBaseInfo.finishTaskObj.hasOwnProperty(t[1]) && (o = !0);",
+   "func": "judgePutEquipState"
+  },
+  {
+   "file": "index.js",
+   "line": 134672,
+   "text": "l.RoleBaseInfo.finishTaskObj.hasOwnProperty(t[1]) && (e = !0);",
+   "func": "judgeMasterTaskState"
+  },
+  {
+   "file": "index.js",
+   "line": 134863,
+   "text": "} else if (1 == t[0]) l.RoleBaseInfo.finishTaskObj.hasOwnProperty(t[1]) || (o = r.getText(t[2])); else if (12 == t[0]) {",
+   "func": "judgetAttruteValue"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 14394,
+   "text": "if (m.RoleBaseInfo.finishTaskObj.hasOwnProperty(101070)) return;",
+   "func": "setCurrentSelectBtn"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 14591,
+   "text": "16033 == this.npcData.NpcID && 2240 == L.GSceneMgr.curSceneID && R.default.getIntimacy(16033) < Math.ceil(o) && m.RoleBaseInfo.finishTaskObj.hasOwnProperty(407500) && this.btnArray.push(\"6003559\");",
+   "func": "setCurrentSelectBtn"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 15032,
+   "text": "if (m.RoleBaseInfo.finishTaskObj.hasOwnProperty(\"L1000\")) {",
+   "func": "selectCheckBtnCall"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 23824,
+   "text": "p.RoleBaseInfo.finishTaskObj && p.RoleBaseInfo.finishTaskObj.hasOwnProperty(r.getConstByID(504)) && (this.btns[1].active = !0);",
+   "func": "onLoad"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 37878,
+   "text": "e = l.RoleBaseInfo.finishTaskObj.hasOwnProperty(t);",
+   "func": "start"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 42727,
+   "text": "p.RoleBaseInfo.finishTaskObj && p.RoleBaseInfo.finishTaskObj.hasOwnProperty(r.getConstByID(504)) && (this.btns[1].active = !0);",
+   "func": "onLoad"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 52583,
+   "text": "r.RoleBaseInfo.finishTaskObj.hasOwnProperty(o[1]) && (e = !0);",
+   "func": "checkContidionState"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 67615,
+   "text": "if (!f.RoleBaseInfo.finishTaskObj.hasOwnProperty(\"L1000\")) {",
+   "func": "onTapEnterShop"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 68760,
+   "text": "a.RoleBaseInfo.finishTaskObj.hasOwnProperty(parseInt(t[1])) && (e = !0);",
+   "func": "judgeCondition"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 71685,
+   "text": "g.RoleBaseInfo.finishTaskObj.hasOwnProperty(101070) && (this.selectPagId = u.TaskModel.clickPageId);",
+   "func": "start"
+  }
+ ],
+ "q2_3_period_fields": [
+  {
+   "file": "index.js",
+   "line": 1565,
+   "text": "} else if (1 == e.eRet) s.default.prefabs.load(\"activeUI/dailygift\", cc.Prefab, function(t, o) {"
+  },
+  {
+   "file": "index.js",
+   "line": 13120,
+   "text": "hgtimes: t.numStuffed,"
+  },
+  {
+   "file": "index.js",
+   "line": 24722,
+   "text": "hgtimes: e.numStuffed"
+  },
+  {
+   "file": "index.js",
+   "line": 31782,
+   "text": "hgtimes: o.numStuffed"
+  },
+  {
+   "file": "index.js",
+   "line": 31832,
+   "text": "hgtimes: r.numStuffed,"
+  },
+  {
+   "file": "index.js",
+   "line": 51585,
+   "text": "a.numStuffed = e.hgtimes;"
+  },
+  {
+   "file": "index.js",
+   "line": 51667,
+   "text": "hgtimes: a.numStuffed"
+  },
+  {
+   "file": "index.js",
+   "line": 56261,
+   "text": "hgtimes: i.numStuffed"
+  },
+  {
+   "file": "index.js",
+   "line": 56288,
+   "text": "D.playerInfo.entity.numStuffed = o.hgtimes;"
+  },
+  {
+   "file": "index.js",
+   "line": 56663,
+   "text": "hgtimes: o.numStuffed,"
+  },
+  {
+   "file": "index.js",
+   "line": 56722,
+   "text": "D.playerInfo.entity.numStuffed = e.hgtimes;"
+  },
+  {
+   "file": "index.js",
+   "line": 58240,
+   "text": "hgtimes: e.numStuffed,"
+  },
+  {
+   "file": "index.js",
+   "line": 60117,
+   "text": "DAILY_PAY_ACTIVITY_AWARD: \"User.dailyPayActivityAward\","
+  },
+  {
+   "file": "index.js",
+   "line": 67168,
+   "text": "t.timesTxt = null;"
+  },
+  {
+   "file": "index.js",
+   "line": 67198,
+   "text": "this.timesTxt = this.liansheng.getChildByName(\"wintimeLabel\").getComponent(cc.Label);"
+  },
+  {
+   "file": "index.js",
+   "line": 67342,
+   "text": "this.timesTxt.string = \"X\" + d.ChatVSFightModel.winTime;"
+  },
+  {
+   "file": "index.js",
+   "line": 67553,
+   "text": "hgtimes: e.numStuffed"
+  },
+  {
+   "file": "index.js",
+   "line": 67558,
+   "text": "hgtimes: e.numStuffed"
+  },
+  {
+   "file": "index.js",
+   "line": 69171,
+   "text": "hgtimes: o.numStuffed"
+  },
+  {
+   "file": "index.js",
+   "line": 69184,
+   "text": "hgtimes: c.numStuffed,"
+  },
+  {
+   "file": "index.js",
+   "line": 71457,
+   "text": "hgtimes: a.numStuffed,"
+  },
+  {
+   "file": "index.js",
+   "line": 79870,
+   "text": "daily: [ 57, 23, 10 ],"
+  },
+  {
+   "file": "index.js",
+   "line": 86209,
+   "text": "c.UserModel.entity.numStuffed = e.hgtimes;"
+  },
+  {
+   "file": "index.js",
+   "line": 86272,
+   "text": "hgtimes: t.numStuffed"
+  },
+  {
+   "file": "index.js",
+   "line": 89352,
+   "text": "hgtimes: e.numStuffed"
+  },
+  {
+   "file": "index.js",
+   "line": 90242,
+   "text": "hgtimes: h.UserModel.entity.numStuffed"
+  },
+  {
+   "file": "index.js",
+   "line": 101352,
+   "text": "hgtimes: e.numStuffed"
+  },
+  {
+   "file": "index.js",
+   "line": 101398,
+   "text": "hgtimes: n.numStuffed,"
+  },
+  {
+   "file": "index.js",
+   "line": 104520,
+   "text": "hgtimes: c,"
+  },
+  {
+   "file": "index.js",
+   "line": 120745,
+   "text": "k.UserModel.entity.numStuffed = o.hgtimes;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 4302,
+   "text": "t.timestamp = 0;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 4373,
+   "text": "this.timestamp = Date.now();"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 4453,
+   "text": "var t = Date.now(), e = t - this.timestamp;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 4454,
+   "text": "this.timestamp = t;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 4571,
+   "text": "t.timestamp = 0;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 4617,
+   "text": "this.timestamp = b.TimeMgr.getSTimestamp();"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 4906,
+   "text": "var t = b.TimeMgr.getSTimestamp(), e = .001 * (t - this.timestamp);"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 4907,
+   "text": "this.timestamp = t;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 16977,
+   "text": "e.dailyText = null;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 16988,
+   "text": "this.dailyText = this.showUncheck.getChildByName(\"taskText\");"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 16993,
+   "text": "this.dailyText.getComponent(cc.Label).string = this.obj.taskDes;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 16994,
+   "text": "this.dailyText.getComponent(cc.Label)._forceUpdateRenderData();"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 17007,
+   "text": "this.dailyText.getComponent(cc.Label).string = this.obj.taskDes;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 17048,
+   "text": "e.dailyItem = null;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 17060,
+   "text": "this.dailyItem = this.getPathByNode(\"SkillInfoBg/item\");"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 17061,
+   "text": "this.dailyItem.addComponent(\"DailyCellRender\");"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 17062,
+   "text": "this.dailyItem.removeFromParent(!1);"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 17184,
+   "text": "for (var e = 0; e < this.dailyTaskData.length; e++) {"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 17185,
+   "text": "var o = a.getItem(e + 1, \"daily_active_tips\");"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 17191,
+   "text": "i.getComponent(\"EveryDayRender\").setData(e + 1, this.dailyTaskData[e]);"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 17193,
+   "text": "i.getComponent(\"EveryDayRender\").setData(e + 1, this.dailyTaskData[e]);"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 17217,
+   "text": "this.dailyTaskData = t;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 20222,
+   "text": "this.data = a.getItem(this.activeId, \"daily_active_tips\");"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 23758,
+   "text": "t.timestamp = 0;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 23822,
+   "text": "this.timestamp = 0;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 23911,
+   "text": "this.timestamp = g.TimeMgr.getSTimestamp();"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 24025,
+   "text": "var t = g.TimeMgr.getSTimestamp(), e = .001 * (t - this.timestamp);"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 24026,
+   "text": "this.timestamp = t;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 29678,
+   "text": "t.timestamp = 0;"
+  },
+  {
+   "file": "scripts2.js",
+   "line": 35988,
+   "text": "e.timesLabel = null;"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 3053,
+   "text": "var e = a.getItem(t, \"achieve_list\"), o = parseInt(e.type), i = parseInt(e.type1.split(\"|\")[0]), s = e.require.split(\"|\"), n = e.times;"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 3221,
+   "text": "if (n <= 0 || e.times > 1) n = e.times; else switch (o) {"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 3255,
+   "text": "n = e.times;"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 3265,
+   "text": "n = e.times;"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 9671,
+   "text": "e.timesLabel = null;"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 9697,
+   "text": "this.timesLabel = this.getPathByNode(\"downNode/times\");"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 9735,
+   "text": "this.timesLabel.active = m.CrossServiceModel.isEnterCrossServer(!1);"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 9771,
+   "text": "this.timesLabel.getComponent(cc.Label).string = g.getText(8980) + e + \"/\" + this.matchCounts[1];"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 9774,
+   "text": "this.timesLabel.active = t;"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 9811,
+   "text": "this.timesLabel.getComponent(cc.Label).string = g.getText(8980) + this.matchCounts[0] + \"/\" + this.matchCounts[1];"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 11165,
+   "text": "this.timesLabel.getComponent(cc.Label).string = h.getText(8980) + (i ? this.matchCounts[0] : 0) + \"/\" + this.matchCounts[1];"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 11168,
+   "text": "this.timesLabel.active = o;"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 16511,
+   "text": "this.refreshTask(e.taskMap);"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 16517,
+   "text": "this.refreshTask(e.taskMap);"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 16524,
+   "text": "this.refreshTask(e.taskMap);"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 16533,
+   "text": "e.prototype.refreshTask = function(t) {"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 30497,
+   "text": "e.times = null;"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 30509,
+   "text": "this.times = this.getPathByNode(\"times\").getComponent(cc.Label);"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 30561,
+   "text": "this.times.string = h.getText(6000485).replace(/\\[1\\]/g, e);"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 30564,
+   "text": "this.times.string = h.getText(6000483);"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 35234,
+   "text": "e.times = null;"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 35255,
+   "text": "this.times = this.getPathByNode(\"bgNode/times\").getComponent(cc.Label);"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 35307,
+   "text": "this.times.string = p.getText(6000542) + this.getRemainNum().toString();"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 39257,
+   "text": "e.timesLabel = null;"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 39270,
+   "text": "this.timesLabel = this.matchBtn.getChildByName(\"timesLabel\");"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 39356,
+   "text": "this.timesLabel.getComponent(cc.Label).string = g.getText(8980) + (s + \"/\") + this.matchCounts[1];"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 41538,
+   "text": "this.refreshTaskCareful();"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 41541,
+   "text": "e.prototype.refreshTaskCareful = function() {"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 41545,
+   "text": "this.refreshTaskCareful();"
+  },
+  {
+   "file": "scripts3.js",
+   "line": 44056,
+   "text": "this.des.string = r.getText(6001231).replace(/\\[1\\]/, this.data.times.toString());"
+  }
+ ],
+ "q3_1_prerequire_hits": [
+  {
+   "file": "index.js",
+   "line": 133552,
+   "text": "if (!s.hasOwnProperty(e.taskID) && !r.hasOwnProperty(e.taskID) && b.default.judgeTaskCondition(l[\"Pre-Require\"]) && b.default.judgeBranchId(l.branchid) && b.default.checkTaskTime(e.taskID)) {",
+   "func": "acccptCircleTaskCallBack"
+  },
+  {
+   "file": "index.js",
+   "line": 133754,
+   "text": "return !(o.hasOwnProperty(t) || e.hasOwnProperty(t) || !b.default.judgeTaskCondition(n[\"Pre-Require\"]) || !b.default.judgeBranchId(n.branchid));",
+   "func": "checkTaskIsRequire"
+  },
+  {
+   "file": "index.js",
+   "line": 134325,
+   "text": "if (!i.hasOwnProperty(r[a]) && !o.hasOwnProperty(r[a]) && this.judgeTaskCondition(s[\"Pre-Require\"]) && this.judgeBranchId(s.branchid) && this.checkTaskTime(r[a])) {",
+   "func": "judgeGetTaskState"
+  },
+  {
+   "file": "index.js",
+   "line": 134347,
+   "text": "if (!i.hasOwnProperty(t) && !o.hasOwnProperty(t) && this.judgeTaskCondition(r[\"Pre-Require\"]) && this.judgeBranchId(r.branchid)) {",
+   "func": "judgeNoNpcTask"
+  },
+  {
+   "file": "index.js",
+   "line": 134969,
+   "text": "if (!r.hasOwnProperty(o[u]) && f && !h.hasOwnProperty(o[u]) && this.checkTaskTime(parseInt(o[u])) && this.judgeTaskCondition(f[\"Pre-Require\"]) && this.judgeBranchId(f.branchid) && !E.NpcDeadModel.showNpcDeadUI(f.ReceiveNpc)) {",
+   "func": "checkMapTask"
+  },
+  {
+   "file": "index.js",
+   "line": 135061,
+   "text": "if (!i.hasOwnProperty(r[a]) && !o.hasOwnProperty(r[a]) && this.judgeTaskCondition(c[\"Pre-Require\"]) && this.judgeBranchId(c.branchid) && this.checkTaskTime(r[a])) {",
+   "func": "getCanRequireTask"
+  }
+ ],
+ "q3_2_parse_loops": [
+  {
+   "file": "index.js",
+   "startLine": 134085,
+   "endLine": 134092,
+   "body": [
+    "134085: t.judgeTaskCondition = function(t) {",
+    "134086: if (\"0\" == t) return !0;",
+    "134087: for (var e = t.split(\"|\"), o = e.length - 1, i = e[o], n = 0, r = 0; r < o; r++) this.checkAttribute(e[r]) && n++;",
+    "134088: if (0 == i) {",
+    "134089: if (n == o) return !0;",
+    "134090: } else if (i <= n) return !0;",
+    "134091: return !1;",
+    "134092: };"
+   ]
+  }
+ ],
+ "unverified": [
+  "q2_3_period_fields: index.js / scripts2.js / scripts3.js 三包均达 max=30 上限被截断，仅抄前 30 行",
+  "q2_1: scripts2.js 全文无 \"Repeat\" 任何命中；scripts3.js 仅有 addRepeat/changeRepeat/isRepeatTr/popRepeatTreasure 等，非 .Repeat、[\"Repeat\"]、Repeat 比较形式；故 q2_1 仅 index.js 3 条",
+  "q2_2: scripts3.js 无 finishTaskObj.hasOwnProperty 命中；index.js 31 条、scripts2.js 10 条，均未触 max=40",
+  "q1_itemObj_hits: 共 27 条（未触 max=60）；q1_msgdata_hits 共 2 条；q1_generic_dispatch_hits 共 2 条",
+  "q3_1: 仅 index.js 命中 6 条，scripts2.js / scripts3.js 无命中；解析 Pre-Require 的函数只有 index.js 134085 judgeTaskCondition",
+  "q1_getTaskCallBack.respFields 中的 hasOwnProperty 是方法名（o.hasOwnProperty），非应答数据字段，系 o. 后接标识符的机械匹配结果"
+ ]
+}

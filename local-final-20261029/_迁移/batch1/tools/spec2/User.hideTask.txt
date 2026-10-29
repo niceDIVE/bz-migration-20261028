@@ -1,0 +1,21 @@
+# User.hideTask   (HttpConst.HIDE_TASK)
+
+## 注册点 133220: r.MessageCenter.on(s.HttpConst.HIDE_TASK, this.hideTaskCallBack, this);
+
+## 请求点 133729: p.NetMgr.http.sendReqWithMask(s.HttpConst.HIDE_TASK, o);
+   133721: };
+   133722: e.prototype.reqHideTask = function(t, e) {
+   133723: var o = {
+   133724: type: t,
+   133725: tIDArr: e
+   133726: };
+   133727: this.hideType = t;
+   133728: this.taskAy = e;
+
+## 处理函数 hideTaskCallBack (133595-133600)
+133595: e.prototype.hideTaskCallBack = function(t, e) {
+133596: if (1 == e.eRet) if (1 == this.hideType) {
+133597: h.RoleOtherInfo.hTaskArr[this.taskAy[0]] = 1;
+133598: r.MessageCenter.dispatch(l.EvName.HIDE_TASK_EVENT, this.taskAy[0]);
+133599: } else this.clearHideTask(this.taskAy[0]);
+133600: };

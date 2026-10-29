@@ -1,0 +1,740 @@
+{
+    "generatedAt":  "2026-10-22 06:01:18",
+    "activity":  {
+                     "hits":  [
+                                  {
+                                      "file":  "index.js",
+                                      "line":  57400,
+                                      "text":  "i.addComponent(\"HomeActiveUI\").setData(e);",
+                                      "func":  "sevenTaskCallback"
+                                  },
+                                  {
+                                      "file":  "index.js",
+                                      "line":  57441,
+                                      "text":  "i.addComponent(\"HomeActiveUI\").setData(e);",
+                                      "func":  "everydayActiveCallback"
+                                  },
+                                  {
+                                      "file":  "scripts2.js",
+                                      "line":  29132,
+                                      "text":  "HomeActiveUI: [ function(t, e, o) {",
+                                      "func":  "(模块顶层, cc._RF 命名 HomeActiveUI)"
+                                  },
+                                  {
+                                      "file":  "scripts2.js",
+                                      "line":  29134,
+                                      "text":  "cc._RF.push(e, \"fbc45h/jotP8rJ0IzyGVbNi\", \"HomeActiveUI\");",
+                                      "func":  "(模块顶层)"
+                                  },
+                                  {
+                                      "file":  "scripts2.js",
+                                      "line":  29157,
+                                      "text":  "o.HomeActiveUI = void 0;",
+                                      "func":  "(模块顶层)"
+                                  },
+                                  {
+                                      "file":  "scripts2.js",
+                                      "line":  29258,
+                                      "text":  "o.HomeActiveUI = v;",
+                                      "func":  "(模块顶层)"
+                                  }
+                              ],
+                     "setData_body":  [
+                                          "29200: e.prototype.setData = function(t, e) {",
+                                          "29201: this.data = t;",
+                                          "29202: this.type = e;",
+                                          "29203: this.actDataMap = t.dataArr;",
+                                          "29204: };"
+                                      ],
+                     "respFields":  [
+                                        {
+                                            "field":  "dataArr",
+                                            "line":  29203,
+                                            "text":  "this.actDataMap = t.dataArr;"
+                                        }
+                                    ],
+                     "more_hits":  [
+                                       {
+                                           "kind":  "getSevenTaskList",
+                                           "file":  "index.js",
+                                           "line":  59622,
+                                           "text":  "REQ_SEVENTASK_EVENT: \"User.getSevenTaskList\",",
+                                           "func":  "HttpConst(模块对象, cc._RF 59485)"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  1894,
+                                           "text":  "var e = d.RoleOtherInfo.activityList, o = !1;",
+                                           "func":  "checkActive"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  1907,
+                                           "text":  "for (var e = d.RoleOtherInfo.activityList, o = 0; o \u003c e.length; o++) e[o] == t \u0026\u0026 e.splice(o, 1);",
+                                           "func":  "outTimeActive"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  57450,
+                                           "text":  "e.hasOwnProperty(\"activityList\") \u0026\u0026 (u.RoleOtherInfo.activityList = e.activityList);",
+                                           "func":  "onGetAllActivity"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  78930,
+                                           "text":  "} else if (101 == parseInt(i.Type) || 103 == parseInt(i.Type)) S.LoginMgr.isMiniIos(3) || (o = e.addComponent(\"MiniNpc\")); else if (105 == parseInt(i.Type)) A.RoleOtherInfo.activityList \u0026\u0026 A.RoleOtherInfo.activityList.includes(46) \u0026\u0026 (o = e.addComponent(\"MiniNpc\")); else if (112 == parseInt(i.Type)) C.MultiPlayerModel.wulinMgr \u0026\u0026 2 == C.MultiPlayerModel.wulinMgr.matchType \u0026\u0026 (o = e.addComponent(\"MiniNpc\")); else if (80 == parseInt(i.Type)) A.RoleOtherInfo.activityList.indexOf(25) \u003e= 0 \u0026\u0026 (o = e.addComponent(\"MiniNpc\")).setNpcScale(1e3 / 667); else if (82 == parseInt(i.Type)) A.RoleOtherInfo.activityList.indexOf(1025) \u003e= 0 \u0026\u0026 (o = e.addComponent(\"MiniNpc\")); else if (114 == parseInt(i.Type)) (A.RoleOtherInfo.activityList.includes(62) || A.RoleOtherInfo.activityList.includes(68)) \u0026\u0026 (o = e.addComponent(\"MiniNpc\")); else if (12508 == parseInt(t.id) || 12569 == parseInt(t.id)) A.RoleOtherInfo.activityList.includes(69) \u0026\u0026 (o = e.addComponent(\"MiniNpc\")); else if (125 == parseInt(i.Type)) T.ActiveModel.checkActive(73) \u0026\u0026 (o = e.addComponent(\"MiniNpc\")); else if (126 == parseInt(i.Type)) b.TimeMgr.getSTimestamp() \u003c 1e3 * A.RoleOtherInfo.mEndTime \u0026\u0026 (o = e.addComponent(\"MiniNpc\")); else if (127 == parseInt(i.Type)) {",
+                                           "func":  "createMiniNPC"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  90346,
+                                           "text":  "if (!d.RoleOtherInfo.activityList || !d.RoleOtherInfo.activityList.includes(46)) return null;",
+                                           "func":  "createSceneObj"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  90348,
+                                           "text":  "} else if (112 == parseInt(r.Type)) f.MultiPlayerModel.wulinMgr \u0026\u0026 2 == f.MultiPlayerModel.wulinMgr.matchType \u0026\u0026 (o = e.addComponent(\"NormalNpc\")); else if (80 == parseInt(r.Type)) d.RoleOtherInfo.activityList.indexOf(25) \u003e= 0 \u0026\u0026 (o = e.addComponent(\"NormalNpc\")).setNpcScale(1e3 / 667); else if (82 == parseInt(r.Type)) d.RoleOtherInfo.activityList.indexOf(1025) \u003e= 0 \u0026\u0026 (o = e.addComponent(\"NormalNpc\")); else if (83 == parseInt(r.Type)) o = e.addComponent(\"NPC83\"); else if (114 == parseInt(r.Type)) (d.RoleOtherInfo.activityList.includes(62) || d.RoleOtherInfo.activityList.includes(68)) \u0026\u0026 (o = e.addComponent(\"NormalNpc\")); else if (12508 == parseInt(t.id) || 12569 == parseInt(t.id)) d.RoleOtherInfo.activityList.includes(69) \u0026\u0026 (o = e.addComponent(\"HumanNpc\")); else if (119 == parseInt(r.Type)) (o = e.addComponent(\"RogueNpc\")).tag = 99; else if (125 == parseInt(r.Type)) c.ActiveModel.checkActive(73) \u0026\u0026 (o = e.addComponent(\"NormalNpc\")); else if (126 == parseInt(r.Type)) l.TimeMgr.getSTimestamp() \u003c 1e3 * d.RoleOtherInfo.mEndTime \u0026\u0026 (o = e.addComponent(\"Npc\")); else if (127 == parseInt(r.Type)) {",
+                                           "func":  "createSceneObj"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  98305,
+                                           "text":  "if (0 != this.activeID \u0026\u0026 l.RoleOtherInfo.activityList.indexOf(this.activeID) \u003c 0) {",
+                                           "func":  "execute"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  107174,
+                                           "text":  "this.activityList = [];",
+                                           "func":  "N 构造函数(RoleOtherInfo 类)"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  107250,
+                                           "text":  "if (e.hasOwnProperty(\"activityList\")) {",
+                                           "func":  "setRoleInfo"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  107251,
+                                           "text":  "this.activityList = e.activityList;",
+                                           "func":  "setRoleInfo"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  107252,
+                                           "text":  "this.activityList.indexOf(92) \u003e= 0 \u0026\u0026 Promise.resolve().then(function() {",
+                                           "func":  "setRoleInfo"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  108102,
+                                           "text":  "this.activityList = [];",
+                                           "func":  "N.prototype.destroy"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  108137,
+                                           "text":  "if (o.RoleOtherInfo.activityList.indexOf(91) \u003e= 0) for (var t = [ 20, 40, 60 ], e = 0; e \u003c t.length; e++) {",
+                                           "func":  "setActiveRedFun"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  108143,
+                                           "text":  "if (this.activityList.indexOf(t) \u003e= 0 \u0026\u0026 this.activeRedMap.hasOwnProperty(t)) {",
+                                           "func":  "getActiveItemNum"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "index.js",
+                                           "line":  122440,
+                                           "text":  "var o = _.RoleOtherInfo.activityList.includes(S.ActiveIDEnum.ClimbingTower), i = M.GSceneMgr.getCurSceneID();",
+                                           "func":  "showActionNpc"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "scripts2.js",
+                                           "line":  14592,
+                                           "text":  "k.RoleOtherInfo.activityList.indexOf(75) \u003e= 0 \u0026\u0026 10828 == this.npcData.NpcID \u0026\u0026 this.btnArray.push(\"6000488\");",
+                                           "func":  "setCurrentSelectBtn"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "scripts2.js",
+                                           "line":  29857,
+                                           "text":  "this.goldFurnaceBtn.active = !n \u0026\u0026 d.RoleOtherInfo.activityList.indexOf(67) \u003e= 0;",
+                                           "func":  "onLoad"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "scripts2.js",
+                                           "line":  30127,
+                                           "text":  "var t = d.RoleOtherInfo.activityList.indexOf(67);",
+                                           "func":  "onCloseAlchemyEvent"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "scripts2.js",
+                                           "line":  30128,
+                                           "text":  "d.RoleOtherInfo.activityList.splice(t, 1);",
+                                           "func":  "onCloseAlchemyEvent"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "scripts2.js",
+                                           "line":  30967,
+                                           "text":  "var e = d.RoleOtherInfo.activityList.indexOf(67);",
+                                           "func":  "onGoldFurnaceBtn"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "scripts2.js",
+                                           "line":  30968,
+                                           "text":  "d.RoleOtherInfo.activityList.splice(e, 1);",
+                                           "func":  "onGoldFurnaceBtn"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "scripts2.js",
+                                           "line":  31099,
+                                           "text":  "if (-1 == d.RoleOtherInfo.activityList.indexOf(92)) {",
+                                           "func":  "checkActivityRedState"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "scripts2.js",
+                                           "line":  31139,
+                                           "text":  "for (var s in this.newActiveNodeMap) this.newActiveNodeMap[s].btn.active = !i \u0026\u0026 d.RoleOtherInfo.activityList.indexOf(Number(s)) \u003e= 0;",
+                                           "func":  "setActiveButtonFunc"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "scripts3.js",
+                                           "line":  20982,
+                                           "text":  "d.RoleOtherInfo.activityList.includes(62) ? t = c.getSchool(this.data) : d.RoleOtherInfo.activityList.includes(68) \u0026\u0026 (t = c.getText(10 == this.data ? 6001875 : 6001876));",
+                                           "func":  "getSupportName"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "scripts3.js",
+                                           "line":  31991,
+                                           "text":  "-1 == u.RoleOtherInfo.activityList.indexOf(96) \u0026\u0026 cc.sys.localStorage.removeItem(\"FishShadowAction\");",
+                                           "func":  "init"
+                                       },
+                                       {
+                                           "kind":  "activityList",
+                                           "file":  "scripts3.js",
+                                           "line":  90377,
+                                           "text":  "this.btnRebate.active = M.RoleOtherInfo.activityList.includes(65);",
+                                           "func":  "setBtnRebate"
+                                       },
+                                       {
+                                           "kind":  "SevenDaysArr",
+                                           "file":  "index.js",
+                                           "line":  57433,
+                                           "text":  "e.hasOwnProperty(\"SevenDaysArr\") \u0026\u0026 (u.RoleOtherInfo.SevenDaysArr = e.SevenDaysArr);",
+                                           "func":  "everydayActiveCallback"
+                                       },
+                                       {
+                                           "kind":  "SevenDaysArr",
+                                           "file":  "index.js",
+                                           "line":  107170,
+                                           "text":  "this.SevenDaysArr = [];",
+                                           "func":  "N 构造函数(RoleOtherInfo 类)"
+                                       },
+                                       {
+                                           "kind":  "SevenDaysArr",
+                                           "file":  "index.js",
+                                           "line":  108095,
+                                           "text":  "this.SevenDaysArr = [];",
+                                           "func":  "N.prototype.destroy"
+                                       },
+                                       {
+                                           "kind":  "SevenDaysArr",
+                                           "file":  "scripts2.js",
+                                           "line":  81336,
+                                           "text":  "var t = this, e = a.RoleOtherInfo.SevenDaysArr, o = 1 == e[e.length - 1] ? e.length - 1 : e.length, i = cc.assetManager.getBundle(\"sevendaySign\");",
+                                           "func":  "start"
+                                       },
+                                       {
+                                           "kind":  "SevenDaysArr",
+                                           "file":  "scripts2.js",
+                                           "line":  81404,
+                                           "text":  "a.RoleOtherInfo.SevenDaysArr = [];",
+                                           "func":  "sevenDaysAwardsEvent"
+                                       },
+                                       {
+                                           "kind":  "SevenDaysArr",
+                                           "file":  "scripts2.js",
+                                           "line":  81407,
+                                           "text":  "e.hasOwnProperty(\"SevenDaysArr\") \u0026\u0026 (a.RoleOtherInfo.SevenDaysArr = e.SevenDaysArr);",
+                                           "func":  "sevenDaysAwardsEvent"
+                                       },
+                                       {
+                                           "kind":  "SevenDaysArr",
+                                           "file":  "scripts2.js",
+                                           "line":  81408,
+                                           "text":  "var o = a.RoleOtherInfo.SevenDaysArr;",
+                                           "func":  "sevenDaysAwardsEvent"
+                                       },
+                                       {
+                                           "kind":  "SevenDaysArr",
+                                           "file":  "scripts2.js",
+                                           "line":  81412,
+                                           "text":  "this.showAnim(this.awardArr[e.SevenDaysArr.length - 1], e.rewardArray);",
+                                           "func":  "sevenDaysAwardsEvent"
+                                       },
+                                       {
+                                           "kind":  "SevenDaysArr",
+                                           "file":  "scripts2.js",
+                                           "line":  81418,
+                                           "text":  "var o = this, i = a.RoleOtherInfo.SevenDaysArr, s = 1 == i[i.length - 1] ? i.length - 1 : i.length, n = t.convertToWorldSpaceAR(cc.v3());",
+                                           "func":  "showAnim"
+                                       },
+                                       {
+                                           "kind":  "SevenDaysArr",
+                                           "file":  "scripts3.js",
+                                           "line":  27467,
+                                           "text":  "e.hasOwnProperty(\"SevenDaysArr\") \u0026\u0026 (u.RoleOtherInfo.SevenDaysArr = e.SevenDaysArr);",
+                                           "func":  "onSevenDayData"
+                                       },
+                                       {
+                                           "kind":  "GET_EVERYDAY_ACTIVE(端点)",
+                                           "file":  "index.js",
+                                           "line":  57383,
+                                           "text":  "i.MessageCenter.on(l.HttpConst.GET_EVERYDAY_ACTIVE, this.everydayActiveCallback.bind(this), this);",
+                                           "func":  "init"
+                                       },
+                                       {
+                                           "kind":  "GET_EVERYDAY_ACTIVE(端点)",
+                                           "file":  "index.js",
+                                           "line":  57479,
+                                           "text":  "c.NetMgr.http.sendReqWithMask(l.HttpConst.GET_EVERYDAY_ACTIVE, {});",
+                                           "func":  "reqEveryDayActive"
+                                       },
+                                       {
+                                           "kind":  "GET_EVERYDAY_ACTIVE(端点)",
+                                           "file":  "index.js",
+                                           "line":  59716,
+                                           "text":  "GET_EVERYDAY_ACTIVE: \"User.getActivityCounts\",",
+                                           "func":  "HttpConst(模块对象)"
+                                       }
+                                   ]
+                 },
+    "battle":  {
+                   "hits":  [
+                                {
+                                    "file":  "index.js",
+                                    "line":  59610,
+                                    "text":  "REQ_PVE_BATTLE: \"User.ReqSelfBattleInfo\",",
+                                    "func":  "HttpConst(模块对象, cc._RF 59485)"
+                                },
+                                {
+                                    "file":  "index.js",
+                                    "line":  69157,
+                                    "text":  "r.MessageCenter.on(a.HttpConst.REQ_PVE_BATTLE, function(t, e) {",
+                                    "func":  "h 构造函数(Local1v1Mgr 类) 内联 MessageCenter.on 回调"
+                                },
+                                {
+                                    "file":  "index.js",
+                                    "line":  69166,
+                                    "text":  "s.NetMgr.http.sendRequest(a.HttpConst.REQ_PVE_BATTLE, {",
+                                    "func":  "startBattle"
+                                }
+                            ],
+                   "send_body":  [
+                                     "69122: \"../../gameconfigs/CFMgr\": \"CFMgr\",",
+                                     "69123: \"../../gameconfigs/LangMgr\": \"LangMgr\",",
+                                     "69124: \"../../models/InventoryModel\": \"InventoryModel\",",
+                                     "69125: \"../../utils/BtActionType\": \"BtActionType\",",
+                                     "69126: \"../../utils/EvName\": \"EvName\",",
+                                     "69127: \"../../utils/MadUtils\": \"MadUtils\",",
+                                     "69128: \"./B1v1Base\": \"B1v1Base\"",
+                                     "69129: } ],",
+                                     "69130: Local1v1Mgr: [ function(t, e, o) {",
+                                     "69131: \"use strict\";",
+                                     "69132: cc._RF.push(e, \"b777aroudRK/4zd8XcHYZlH\", \"Local1v1Mgr\");",
+                                     "69133: var i, n = this \u0026\u0026 this.__extends || (i = function(t, e) {",
+                                     "69134: return (i = Object.setPrototypeOf || {",
+                                     "69135: __proto__: []",
+                                     "69136: } instanceof Array \u0026\u0026 function(t, e) {",
+                                     "69137: t.__proto__ = e;",
+                                     "69138: } || function(t, e) {",
+                                     "69139: for (var o in e) Object.prototype.hasOwnProperty.call(e, o) \u0026\u0026 (t[o] = e[o]);",
+                                     "69140: })(t, e);",
+                                     "69141: }, function(t, e) {",
+                                     "69142: i(t, e);",
+                                     "69143: function o() {",
+                                     "69144: this.constructor = t;",
+                                     "69145: }",
+                                     "69146: t.prototype = null === e ? Object.create(e) : (o.prototype = e.prototype, new o());",
+                                     "69147: });",
+                                     "69148: Object.defineProperty(o, \"__esModule\", {",
+                                     "69149: value: !0",
+                                     "69150: });",
+                                     "69151: o.Local1v1Mgr = void 0;",
+                                     "69152: var r = t(\"../../core/events/MessageCenter\"), a = t(\"../../net/HttpConst\"), s = t(\"../../net/NetMgr\"), l = t(\"../../gui/battle/resultscripts/rewardscripts/NormalRewards\"), c = t(\"./Local1v1Base\"), p = t(\"../../models/vos/PlayerInfo\"), h = function(t) {",
+                                     "69153: n(e, t);",
+                                     "69154: function e(e) {",
+                                     "69155: var o = t.call(this, e) || this;",
+                                     "69156: o.isRmd = !1;",
+                                     "69157: r.MessageCenter.on(a.HttpConst.REQ_PVE_BATTLE, function(t, e) {",
+                                     "69158: 1 === e.eRet \u0026\u0026 o.prepareForBattle(e);",
+                                     "69159: }, o);",
+                                     "69160: return o;",
+                                     "69161: }",
+                                     "69162: e.prototype.startBattle = function(t, e) {",
+                                     "69163: void 0 === e \u0026\u0026 (e = !1);",
+                                     "69164: var o = p.playerInfo.entity;",
+                                     "69165: this.isRmd = e;",
+                                     "69166: s.NetMgr.http.sendRequest(a.HttpConst.REQ_PVE_BATTLE, {",
+                                     "69167: npcID: t,",
+                                     "69168: isRmd: e,",
+                                     "69169: mp: o.mp.remaining,",
+                                     "69170: gTime: o.totalGameTime.gameTime,",
+                                     "69171: hgtimes: o.numStuffed",
+                                     "69172: });",
+                                     "69173: };",
+                                     "69174: e.prototype.endBattle = function(t, e) {",
+                                     "69175: e \u0026\u0026 e.addComponent(l.NormalRewards);",
+                                     "69176: var o = [ Math.floor(1e5 * Math.random()), Math.floor(1e5 * Math.random()) ], i = t.npcID, n = t.data[0], r = t.esc, c = p.playerInfo.entity, h = {",
+                                     "69177: npcID: i,",
+                                     "69178: mplimit: c.mp.limit,",
+                                     "69179: mp: t.mp,",
+                                     "69180: hp: t.hp,",
+                                     "69181: hplimit: t.hplmt,",
+                                     "69182: loss: 0 == n \u0026\u0026 0 == r,",
+                                     "69183: hg: c.hungerConsumingSpeed.finalValue,",
+                                     "69184: hgtimes: c.numStuffed,",
+                                     "69185: gTime: c.totalGameTime.gameTime,",
+                                     "69186: hpmax: c.hp.finalValue,",
+                                     "69187: win: n,",
+                                     "69188: actionArr: this.actionArr,",
+                                     "69189: seed: t.seed,",
+                                     "69190: aDmgReceived: t.data[4],",
+                                     "69191: bDmgReceived: t.data[5],",
+                                     "69192: itemSkill: this.itemSkills,",
+                                     "69193: forwards: o",
+                                     "69194: };",
+                                     "69195: this.isRmd ? o.push(Math.floor(1e5 * Math.random())) : Math.random() \u003c .5 \u0026\u0026 o.shift();",
+                                     "69196: s.NetMgr.http.sendRequest(a.HttpConst.BATTLE_END_REWARD, h);",
+                                     "69197: };",
+                                     "69198: return e;",
+                                     "69199: }(c.Local1v1Base);",
+                                     "69200: o.Local1v1Mgr = h;",
+                                     "69201: cc._RF.pop();",
+                                     "69202: }, {",
+                                     "69203: \"../../core/events/MessageCenter\": \"MessageCenter\",",
+                                     "69204: \"../../gui/battle/resultscripts/rewardscripts/NormalRewards\": \"NormalRewards\",",
+                                     "69205: \"../../models/vos/PlayerInfo\": \"PlayerInfo\",",
+                                     "69206: \"../../net/HttpConst\": \"HttpConst\",",
+                                     "69207: \"../../net/NetMgr\": \"NetMgr\",",
+                                     "69208: \"./Local1v1Base\": \"Local1v1Base\"",
+                                     "69209: } ],",
+                                     "69210: LocalStorageMgr: [ function(t, e, o) {",
+                                     "69211: \"use strict\";",
+                                     "69212: cc._RF.push(e, \"0995aCAdgFBlKvn1xVOFpe5\", \"LocalStorageMgr\");",
+                                     "69213: Object.defineProperty(o, \"__esModule\", {"
+                                 ],
+                   "callback_body":  [
+                                         "69157: r.MessageCenter.on(a.HttpConst.REQ_PVE_BATTLE, function(t, e) {",
+                                         "69158: 1 === e.eRet \u0026\u0026 o.prepareForBattle(e);",
+                                         "69159: }, o);",
+                                         "69015: e.prototype.prepareForBattle = function(t) {",
+                                         "69016: this.npcID = t.npcID;",
+                                         "69017: var e = h.getItem(this.npcID, \"npc\");",
+                                         "69018: e \u0026\u0026 111 == e.Type \u0026\u0026 (t.getargetType = 1);",
+                                         "69019: l.parsePlayerData(t);",
+                                         "69020: this.itemSkills = t.itemSkill;",
+                                         "69021: var o = l.createPlayerBattleEntity(t);",
+                                         "69022: o.itemSkills = t.itemSkill;",
+                                         "69023: o.name = c.getText(\"10562\");",
+                                         "69024: var i = null;",
+                                         "69025: i = t.npcArr \u0026\u0026 t.npcArr.length \u003e 0 ? this.generateNpcData(t.npcArr, t.npcID) : this.npcData;",
+                                         "69026: var n = new p();",
+                                         "69027: i.Camp = e.Camp;",
+                                         "69028: l.initRivalEntity(n, i);",
+                                         "69029: n.battleID = t.npcID != o.battleID ? t.npcID : t.npcID + 1;",
+                                         "69030: this.initBattleSystem(o, n, Date.now());",
+                                         "69031: };"
+                                     ],
+                   "respFields":  [
+                                      {
+                                          "field":  "eRet",
+                                          "line":  69158,
+                                          "text":  "1 === e.eRet \u0026\u0026 o.prepareForBattle(e);"
+                                      },
+                                      {
+                                          "field":  "npcID",
+                                          "line":  69016,
+                                          "text":  "this.npcID = t.npcID;"
+                                      },
+                                      {
+                                          "field":  "getargetType",
+                                          "line":  69018,
+                                          "text":  "e \u0026\u0026 111 == e.Type \u0026\u0026 (t.getargetType = 1);"
+                                      },
+                                      {
+                                          "field":  "itemSkill",
+                                          "line":  69020,
+                                          "text":  "this.itemSkills = t.itemSkill;"
+                                      },
+                                      {
+                                          "field":  "npcArr",
+                                          "line":  69025,
+                                          "text":  "i = t.npcArr \u0026\u0026 t.npcArr.length \u003e 0 ? this.generateNpcData(t.npcArr, t.npcID) : this.npcData;"
+                                      }
+                                  ],
+                   "target_field":  {
+                                        "field":  "npcID",
+                                        "lines":  [
+                                                      69016,
+                                                      69025,
+                                                      69029
+                                                  ],
+                                        "note":  "应答里唯一被当作\"打谁\"传入的 ID 字段(原文行见 send_body / callback_body)"
+                                    }
+               },
+    "equip":  {
+                  "attr_hits":  [
+                                    {
+                                        "file":  "index.js",
+                                        "line":  7150,
+                                        "text":  "6 == this.dataN[0] \u0026\u0026 (this.target.id2AttributeDic[6].equipAttruteNum = this.bonus.baseValue);",
+                                        "func":  "apply"
+                                    },
+                                    {
+                                        "file":  "index.js",
+                                        "line":  7155,
+                                        "text":  "6 == this.dataN[0] \u0026\u0026 (this.target.id2AttributeDic[6].equipAttruteNum = -this.bonus.baseValue);",
+                                        "func":  "dispose"
+                                    },
+                                    {
+                                        "file":  "index.js",
+                                        "line":  41211,
+                                        "text":  "6 == this.dataN[0] \u0026\u0026 (this.target.id2AttributeDic[6].equipAttruteNum = this.bonus.baseValue);",
+                                        "func":  "apply"
+                                    },
+                                    {
+                                        "file":  "index.js",
+                                        "line":  41216,
+                                        "text":  "6 == this.dataN[0] \u0026\u0026 (this.target.id2AttributeDic[6].equipAttruteNum = -this.bonus.baseValue);",
+                                        "func":  "dispose"
+                                    },
+                                    {
+                                        "file":  "index.js",
+                                        "line":  44712,
+                                        "text":  "t.id2AttributeDic[6].equipAttruteNum = n.baseValue;",
+                                        "func":  "EquipmentBase.addProperty"
+                                    },
+                                    {
+                                        "file":  "index.js",
+                                        "line":  143293,
+                                        "text":  "(s = t.call(this, e, o, i, n, r, a) || this)._equipAttriteValue = 0;",
+                                        "func":  "e(VolatileAttrFixLimit 构造函数)"
+                                    },
+                                    {
+                                        "file":  "index.js",
+                                        "line":  143294,
+                                        "text":  "s._equipAttriteMult = 0;",
+                                        "func":  "e(VolatileAttrFixLimit 构造函数)"
+                                    },
+                                    {
+                                        "file":  "index.js",
+                                        "line":  143303,
+                                        "text":  "var a = (t + o - this._equipAttriteValue) * (1 + i);",
+                                        "func":  "newApplyBonuses"
+                                    },
+                                    {
+                                        "file":  "index.js",
+                                        "line":  143304,
+                                        "text":  "return Math.ceil(a / (1 + this._equipAttriteMult));",
+                                        "func":  "newApplyBonuses"
+                                    },
+                                    {
+                                        "file":  "index.js",
+                                        "line":  143320,
+                                        "text":  "key: \"equipAttruteNum\",",
+                                        "func":  "属性描述符 key \"equipAttruteNum\""
+                                    },
+                                    {
+                                        "file":  "index.js",
+                                        "line":  143322,
+                                        "text":  "this._equipAttriteValue += t;",
+                                        "func":  "set(equipAttruteNum)"
+                                    },
+                                    {
+                                        "file":  "index.js",
+                                        "line":  143327,
+                                        "text":  "this._equipAttriteMult += t;",
+                                        "func":  "set(equipStateAttruteMult)"
+                                    }
+                                ],
+                  "roleAttr_body":  [
+                                        "143289: var a = function(t) {",
+                                        "143290: n(e, t);",
+                                        "143291: function e(e, o, i, n, r, a) {",
+                                        "143292: var s;",
+                                        "143293: (s = t.call(this, e, o, i, n, r, a) || this)._equipAttriteValue = 0;",
+                                        "143294: s._equipAttriteMult = 0;",
+                                        "143295: return s;",
+                                        "143296: }",
+                                        "143297: e.prototype.newApplyBonuses = function(t, e) {",
+                                        "143298: for (var o = 0, i = 0, n = 0; n \u003c e.length; ++n) {",
+                                        "143299: var r = e[n];",
+                                        "143300: o += r.baseValue;",
+                                        "143301: i += r.baseMultiplier;",
+                                        "143302: }",
+                                        "143303: var a = (t + o - this._equipAttriteValue) * (1 + i);",
+                                        "143304: return Math.ceil(a / (1 + this._equipAttriteMult));",
+                                        "143305: };",
+                                        "143306: i(e, [ {",
+                                        "143307: key: \"limit\",",
+                                        "143308: get: function() {",
+                                        "143309: return this.finalValue;",
+                                        "143310: },",
+                                        "143311: set: function() {}",
+                                        "143312: }, {",
+                                        "143313: key: \"pkLimit\",",
+                                        "143314: get: function() {",
+                                        "143315: var t = this.getRawValue();",
+                                        "143316: t = this.newApplyBonuses(t, this._rawBonuses);",
+                                        "143317: return this.applyBonuses(t, this._finalBonuses);",
+                                        "143318: }",
+                                        "143319: }, {",
+                                        "143320: key: \"equipAttruteNum\",",
+                                        "143321: set: function(t) {",
+                                        "143322: this._equipAttriteValue += t;",
+                                        "143323: }",
+                                        "143324: }, {",
+                                        "143325: key: \"equipStateAttruteMult\",",
+                                        "143326: set: function(t) {",
+                                        "143327: this._equipAttriteMult += t;",
+                                        "143328: }",
+                                        "143329: } ]);",
+                                        "143330: return e;",
+                                        "143331: }(t(\"./VolatileAttribute\"));"
+                                    ],
+                  "EqItem_body":  [
+                                      "43634: EqItem: [ function(t, e, o) {",
+                                      "43635: \"use strict\";",
+                                      "43636: cc._RF.push(e, \"53b48aQYSFAKpiaOeUjVHfh\", \"EqItem\");",
+                                      "43637: Object.defineProperty(o, \"__esModule\", {",
+                                      "43638: value: !0",
+                                      "43639: });",
+                                      "43640: o.EqItem = void 0;",
+                                      "43641: var i = t(\"../../utils/MadNumber\"), n = function() {",
+                                      "43642: function t() {",
+                                      "43643: this.id = 0;",
+                                      "43644: this.type = 0;",
+                                      "43645: this.itemID = 0;",
+                                      "43646: this.attrs = null;",
+                                      "43647: this.numAttr = 0;",
+                                      "43648: this.crystalIds = null;",
+                                      "43649: this.weaponSkinId = 0;",
+                                      "43650: this._num = new i(\"eqn\");",
+                                      "43651: }",
+                                      "43652: Object.defineProperty(t.prototype, \"num\", {",
+                                      "43653: get: function() {",
+                                      "43654: return this._num.value;",
+                                      "43655: },",
+                                      "43656: set: function(t) {",
+                                      "43657: t = parseInt(t);",
+                                      "43658: this._num.value = t;",
+                                      "43659: },",
+                                      "43660: enumerable: !1,",
+                                      "43661: configurable: !0",
+                                      "43662: });",
+                                      "43663: return t;",
+                                      "43664: }();",
+                                      "43665: o.EqItem = n;",
+                                      "43666: cc._RF.pop();",
+                                      "43667: }, {",
+                                      "43668: \"../../utils/MadNumber\": \"MadNumber\"",
+                                      "43669: } ],"
+                                  ],
+                  "members":  [
+                                  {
+                                      "text":  "this.id = 0;",
+                                      "line":  43643
+                                  },
+                                  {
+                                      "text":  "this.type = 0;",
+                                      "line":  43644
+                                  },
+                                  {
+                                      "text":  "this.itemID = 0;",
+                                      "line":  43645
+                                  },
+                                  {
+                                      "text":  "this.attrs = null;",
+                                      "line":  43646
+                                  },
+                                  {
+                                      "text":  "this.numAttr = 0;",
+                                      "line":  43647
+                                  },
+                                  {
+                                      "text":  "this.crystalIds = null;",
+                                      "line":  43648
+                                  },
+                                  {
+                                      "text":  "this.weaponSkinId = 0;",
+                                      "line":  43649
+                                  },
+                                  {
+                                      "text":  "this._num = new i(\"eqn\");",
+                                      "line":  43650
+                                  },
+                                  {
+                                      "text":  "Object.defineProperty(t.prototype, \"num\", {",
+                                      "line":  43652
+                                  },
+                                  {
+                                      "text":  "get: function() {",
+                                      "line":  43653
+                                  },
+                                  {
+                                      "text":  "return this._num.value;",
+                                      "line":  43654
+                                  },
+                                  {
+                                      "text":  "set: function(t) {",
+                                      "line":  43656
+                                  },
+                                  {
+                                      "text":  "t = parseInt(t);",
+                                      "line":  43657
+                                  },
+                                  {
+                                      "text":  "this._num.value = t;",
+                                      "line":  43658
+                                  }
+                              ]
+              },
+    "unverified":  [
+                       "scripts3.js 中 HomeActiveUI 0 命中(该包无此界面)",
+                       "getEverydayActive 字面量在三包 0 命中;等价端点为 GET_EVERYDAY_ACTIVE = \"User.getActivityCounts\" (index.js:59716),其调用点见 more_hits",
+                       "getEquipAttr 字面量在三包 0 命中;仅存在 equipAttruteNum / equipStateAttruteMult 拼写形式,全部集中在 index.js",
+                       "ReqSelfBattleInfo 仅作为 HTTP 常量字符串出现(index.js:59610),三包内无同名函数/类/回调名",
+                       "index.js 中 activityList 共 17 命中,按 max 15 截取,未收录 index.js:131304、131306",
+                       "HomeActiveUI.setData 只读 dataArr;onLoad 里的 GrowthModel.getActiveSortData(this.data) 属另一层消费,本工单未展开",
+                       "Local1v1Base.prepareForBattle 内 parsePlayerData(t) / createPlayerBattleEntity(t) 为 MadUtils 外部工具函数,其逐字段读取未展开",
+                       "另有 DogFightSingMgr.prepareForBattle(index.js:31785)消费 REQ_DOG_PARTNER_PVE_BATTLE,非 ReqSelfBattleInfo,未收录正文"
+                   ]
+}

@@ -1,0 +1,31 @@
+﻿value | dispatch | eRet | 1 | → | 2 | sigma | num+→num+
+del | dispatch | housekeeper.helperId | 1 | → |  | sigma | num+→absent
+del | dispatch | housekeeper.dueTime | "null" | → |  | sigma | str+→absent
+del | dispatch | housekeeper.task | "{}" | → |  | sigma | obj0→absent
+del | dispatch | housekeeper.taskArr | "[]" | → |  | sigma | arr0→absent
+del | dispatch | housekeeper.noticeArr | "[]" | → |  | sigma | arr0→absent
+del | dispatch | housekeeper.noticeIndex | -1 | → |  | sigma | num-→absent
+del | dispatch | housekeeper.template | "null" | → |  | sigma | str+→absent
+del | dispatch | housekeeper.dispatchTime | 1792612412000 | → |  | sigma | num+→absent
+del | dispatch | housekeeper.dispatchEndTime | 1792614212000 | → |  | sigma | num+→absent
+del | dispatch | housekeeper.autoTime | -1 | → |  | sigma | num-→absent
+del | dispatch | housekeeper.evaluateType | 1 | → |  | sigma | num+→absent
+del | dispatch | housekeeper.type | -1 | → |  | sigma | num-→absent
+del | dispatch | housekeeper.taskRtm | 1792612412000 | → |  | sigma | num+→absent
+del | dispatch | housekeeper.noticeRtm | "null" | → |  | sigma | str+→absent
+del | dispatch | housekeeper.taskNum | "{}" | → |  | sigma | obj0→absent
+del | dispatch | housekeeper.mapId | 0 | → |  | sigma | num0→absent
+del | dispatch | housekeeper.templateInitTime | 0 | → |  | sigma | num0→absent
+del | dispatch | housekeeper.templateTask | "{}" | → |  | sigma | obj0→absent
+del | dispatch | housekeeper.matureArr | "[]" | → |  | sigma | arr0→absent
+del | dispatch | housekeeper.helperIdArr | "[]" | → |  | sigma | arr0→absent
+del | dispatch | housekeeper.helperRewardArr | "[]" | → |  | sigma | arr0→absent
+del | dispatch | housekeeper.e | 0 | → |  | sigma | num0→absent
+del | dispatch | housekeeper.tgd | "{}" | → |  | sigma | obj0→absent
+del | dispatch | housekeeper.curTime | 1792612412000 | → |  | sigma | num+→absent
+del | dispatch | housekeeper.canNoticeNum | 13 | → |  | sigma | num+→absent
+del | dispatch | note.ivch | "{}" | → |  | sigma | obj0→absent
+del | dispatch | note.eqch | "{}" | → |  | sigma | obj0→absent
+del | dispatch | note.attrch | "{}" | → |  | sigma | obj0→absent
+del | dispatch | note.eco.yuanbao | 0 | → |  | sigma | num0→absent
+diff 总数 = 30

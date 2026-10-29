@@ -1,0 +1,304 @@
+{
+  "generatedAt": "2026-10-21T23:37:04.661Z",
+  "tables": [
+    {
+      "name": "random_shop",
+      "rows": 237,
+      "columns": [
+        "ID",
+        "npc",
+        "probability",
+        "payment",
+        "page",
+        "limit",
+        "isserver",
+        "price",
+        "sale",
+        "salebegintime",
+        "saleendtime"
+      ],
+      "sample": "{\"ID\":3016,\"npc\":1009,\"probability\":10,\"payment\":2,\"page\":2,\"limit\":100,\"isserver\":1,\"price\":100,\"sale\":0,\"salebegintime\":0,\"saleendtime\":0}"
+    },
+    {
+      "name": "house_shop",
+      "rows": 27,
+      "columns": [
+        "ID",
+        "npc",
+        "probability",
+        "payment",
+        "limit",
+        "isserver",
+        "price",
+        "sale",
+        "salebegintime",
+        "saleendtime"
+      ],
+      "sample": "{\"ID\":3016,\"npc\":10459,\"probability\":100,\"payment\":2,\"limit\":10,\"isserver\":0,\"price\":100,\"sale\":90,\"salebegintime\":1576684800000,\"saleendtime\":1578240000000}"
+    },
+    {
+      "name": "lh_shop",
+      "rows": 116,
+      "columns": [
+        "ID",
+        "item",
+        "npc",
+        "probability",
+        "payment",
+        "limit",
+        "thisnum",
+        "price",
+        "group"
+      ],
+      "sample": "{\"ID\":1,\"item\":3146,\"npc\":10163,\"probability\":50,\"payment\":2,\"limit\":1,\"thisnum\":1,\"price\":30000,\"group\":0}"
+    },
+    {
+      "name": "sect_shop",
+      "rows": 13,
+      "columns": [
+        "ID",
+        "item",
+        "price",
+        "item_name",
+        "item_describe",
+        "sect_list"
+      ],
+      "sample": "{\"ID\":1,\"item\":4220,\"price\":336,\"item_name\":33220,\"item_describe\":38220,\"sect_list\":[7]}"
+    },
+    {
+      "name": "ge_shop",
+      "rows": 25,
+      "columns": [
+        "ID",
+        "Name",
+        "Description",
+        "Data",
+        "Price",
+        "camp",
+        "rankopen",
+        "rank1Num",
+        "rank2Num",
+        "rank3Num",
+        "rank4Num",
+        "rank5Num"
+      ],
+      "sample": "{\"ID\":1,\"Name\":32316,\"Description\":37316,\"Data\":[3316,1],\"Price\":4000,\"camp\":1,\"rankopen\":1,\"rank1Num\":0,\"rank2Num\":0,\"rank3Num\":0,\"rank4Num\":0,\"rank5Num\":0}"
+    },
+    {
+      "name": "diceshop",
+      "rows": 14,
+      "columns": [
+        "id",
+        "type",
+        "data",
+        "ratio",
+        "price",
+        "num",
+        "limit"
+      ],
+      "sample": "{\"id\":1,\"type\":1,\"data\":7426,\"ratio\":0,\"price\":10,\"num\":1,\"limit\":6}"
+    },
+    {
+      "name": "mall",
+      "rows": 39,
+      "columns": [
+        "ID",
+        "Type",
+        "Name",
+        "Description",
+        "Price",
+        "Num",
+        "Discount",
+        "Limit",
+        "Belong",
+        "icon",
+        "Data",
+        "Begintime",
+        "Endtime",
+        "shopbegin",
+        "shopend"
+      ],
+      "sample": "{\"ID\":1,\"Type\":1,\"Name\":52001,\"Description\":52101,\"Price\":100,\"Num\":0,\"Discount\":0,\"Limit\":0,\"Belong\":0,\"icon\":\"shop52001\",\"Data\":[4003,10000],\"Begintime\":[],\"Endtime\":[],\"shopbegin\":[],\"shopend\":[]}"
+    },
+    {
+      "name": "sim_shopconfig",
+      "rows": 8,
+      "columns": [
+        "id",
+        "type",
+        "name",
+        "des",
+        "food_bag",
+        "cookbook",
+        "price",
+        "sell_limit"
+      ],
+      "sample": "{\"id\":\"1\",\"type\":2,\"name\":202201099,\"des\":[202201267],\"food_bag\":\"1,16|2,16|3,16|6,12|7,8\",\"cookbook\":0,\"price\":1,\"sell_limit\":30}"
+    },
+    {
+      "name": "recruit_shop",
+      "rows": 4,
+      "columns": [
+        "id",
+        "item",
+        "num",
+        "integral",
+        "limittype",
+        "limit",
+        "begintime",
+        "endtime",
+        "type"
+      ],
+      "sample": "{\"id\":1,\"item\":3056,\"num\":1,\"integral\":5,\"limittype\":1,\"limit\":1,\"begintime\":0,\"endtime\":0,\"type\":1}"
+    },
+    {
+      "name": "shop",
+      "rows": 19,
+      "columns": [
+        "ID",
+        "Item"
+      ],
+      "sample": "{\"ID\":1,\"Item\":[4005]}"
+    },
+    {
+      "name": "shop_entrance",
+      "rows": 11,
+      "columns": [
+        "shop_ID",
+        "shop_type",
+        "shop_name",
+        "active_id",
+        "shop_pic",
+        "sale_ad",
+        "show_time"
+      ],
+      "sample": "{\"shop_ID\":1,\"shop_type\":1,\"shop_name\":5031,\"active_id\":0,\"shop_pic\":\"2020717itemshop\",\"sale_ad\":\"4666\",\"show_time\":0}"
+    }
+  ],
+  "npcTables": [
+    {
+      "name": "random_shop",
+      "distinctNpcs": 3,
+      "topNpcs": [
+        [
+          "1009",
+          179
+        ],
+        [
+          "10163",
+          52
+        ],
+        [
+          "10459",
+          6
+        ]
+      ],
+      "paymentDist": {
+        "1": 47,
+        "2": 190
+      },
+      "priceRange": [
+        8,
+        500000
+      ],
+      "limitRange": [
+        0,
+        1000
+      ],
+      "maxRowsPerNpc": 179,
+      "sample": "{\"ID\":3016,\"npc\":1009,\"probability\":10,\"payment\":2,\"page\":2,\"limit\":100,\"isserver\":1,\"price\":100,\"sale\":0,\"salebegintime\":0,\"saleendtime\":0}"
+    },
+    {
+      "name": "house_shop",
+      "distinctNpcs": 1,
+      "topNpcs": [
+        [
+          "10459",
+          27
+        ]
+      ],
+      "paymentDist": {
+        "1": 8,
+        "2": 19
+      },
+      "priceRange": [
+        10,
+        30000
+      ],
+      "limitRange": [
+        1,
+        60
+      ],
+      "maxRowsPerNpc": 27,
+      "sample": "{\"ID\":3016,\"npc\":10459,\"probability\":100,\"payment\":2,\"limit\":10,\"isserver\":0,\"price\":100,\"sale\":90,\"salebegintime\":1576684800000,\"saleendtime\":1578240000000}"
+    },
+    {
+      "name": "lh_shop",
+      "distinctNpcs": 3,
+      "topNpcs": [
+        [
+          "11191",
+          54
+        ],
+        [
+          "10163",
+          36
+        ],
+        [
+          "10459",
+          26
+        ]
+      ],
+      "paymentDist": {
+        "1": 37,
+        "2": 79
+      },
+      "priceRange": [
+        20,
+        90000
+      ],
+      "limitRange": [
+        1,
+        100
+      ],
+      "maxRowsPerNpc": 54,
+      "sample": "{\"ID\":1,\"item\":3146,\"npc\":10163,\"probability\":50,\"payment\":2,\"limit\":1,\"thisnum\":1,\"price\":30000,\"group\":0}"
+    }
+  ],
+  "ownershipColumns": [
+    {
+      "table": "sect_shop",
+      "column": "sect_list",
+      "rows": 13,
+      "sample": "{\"ID\":1,\"item\":4220,\"price\":336,\"item_name\":33220,\"item_describe\":38220,\"sect_list\":[7]}"
+    },
+    {
+      "table": "ge_shop",
+      "column": "camp",
+      "rows": 25,
+      "sample": "{\"ID\":1,\"Name\":32316,\"Description\":37316,\"Data\":[3316,1],\"Price\":4000,\"camp\":1,\"rankopen\":1,\"rank1Num\":0,\"rank2Num\":0,\"rank3Num\":0,\"rank4Num\":0,\"rank5Num\":0}"
+    },
+    {
+      "table": "diceshop",
+      "column": "type",
+      "rows": 14,
+      "sample": "{\"id\":1,\"type\":1,\"data\":7426,\"ratio\":0,\"price\":10,\"num\":1,\"limit\":6}"
+    }
+  ],
+  "answers": {
+    "Q1_npcToItemsTables": [
+      "lh_shop"
+    ],
+    "Q2_multiRowPerNpc": {
+      "random_shop": 179,
+      "house_shop": 27,
+      "lh_shop": 54
+    },
+    "Q3_itemMisses": {
+      "count": 0,
+      "samples": []
+    }
+  },
+  "unverified": [],
+  "out_of_scope": []
+}

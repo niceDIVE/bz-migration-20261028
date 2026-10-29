@@ -1,0 +1,1244 @@
+{
+  "generatedAt": "2026-10-21T22:17:20.209Z",
+  "queries": [
+    {
+      "pattern": "Property1",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:43930: return this.getAttrute(t.Property1, t.Data1) + this.getAttrute(t.Property2, t.Data2) + this.getAttrute(t.Property3, t.Data3) + this.getAttrute(t.Property4, t.Data4) + this.getAttrute(t.Property5, t.Data5);",
+        "tools/index.js:75715: t.Property1 > 0 && t.Property1 <= 10 && (o = o + n.getText(e[t.Property1 - 1]) + (t.Data1 > 0 ? \"+\" + t.Data1 : t.Data1).toString() + \"\\n\");"
+      ]
+    },
+    {
+      "pattern": "Property1",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Property1",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property1",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:24775: return m > 0 && parseInt(v) < y ? (e = e.replace(/\\[7\\]/, 0)).replace(/\\[6\\]/, 0) : (e = e.replace(/\\[6\\]/, u.max)).replace(/\\[7\\]/, h.property1);"
+      ]
+    },
+    {
+      "pattern": "property1",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property1",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Property2",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:43930: return this.getAttrute(t.Property1, t.Data1) + this.getAttrute(t.Property2, t.Data2) + this.getAttrute(t.Property3, t.Data3) + this.getAttrute(t.Property4, t.Data4) + this.getAttrute(t.Property5, t.Data5);",
+        "tools/index.js:75716: t.Property2 > 0 && t.Property2 <= 10 && (o = o + n.getText(e[t.Property2 - 1]) + (t.Data2 > 0 ? \"+\" + t.Data2 : t.Data2).toString() + \"\\n\");"
+      ]
+    },
+    {
+      "pattern": "Property2",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Property2",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property2",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property2",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property2",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Property3",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:43930: return this.getAttrute(t.Property1, t.Data1) + this.getAttrute(t.Property2, t.Data2) + this.getAttrute(t.Property3, t.Data3) + this.getAttrute(t.Property4, t.Data4) + this.getAttrute(t.Property5, t.Data5);",
+        "tools/index.js:75717: t.Property3 > 0 && t.Property3 <= 10 && (o = o + n.getText(e[t.Property3 - 1]) + (t.Data3 > 0 ? \"+\" + t.Data3 : t.Data3).toString() + \"\\n\");"
+      ]
+    },
+    {
+      "pattern": "Property3",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Property3",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property3",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property3",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property3",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Property4",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:43930: return this.getAttrute(t.Property1, t.Data1) + this.getAttrute(t.Property2, t.Data2) + this.getAttrute(t.Property3, t.Data3) + this.getAttrute(t.Property4, t.Data4) + this.getAttrute(t.Property5, t.Data5);",
+        "tools/index.js:75718: t.Property4 > 0 && t.Property4 <= 10 && (o = o + n.getText(e[t.Property4 - 1]) + (t.Data4 > 0 ? \"+\" + t.Data4 : t.Data4).toString() + \"\\n\");"
+      ]
+    },
+    {
+      "pattern": "Property4",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Property4",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property4",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property4",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property4",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Property5",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:43930: return this.getAttrute(t.Property1, t.Data1) + this.getAttrute(t.Property2, t.Data2) + this.getAttrute(t.Property3, t.Data3) + this.getAttrute(t.Property4, t.Data4) + this.getAttrute(t.Property5, t.Data5);",
+        "tools/index.js:75719: t.Property5 > 0 && (o = o + n.getText(e[t.Property5 - 1]) + (t.Data5 > 0 ? \"+\" + t.Data5 : t.Data5).toString());"
+      ]
+    },
+    {
+      "pattern": "Property5",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Property5",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property5",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property5",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "property5",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Data1",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:16568: var r = o.Data1;",
+        "tools/index.js:16574: this.attacker.heal(o.Data1, !0);",
+        "tools/index.js:16578: this.attacker.recoverMp(o.Data1, !0);",
+        "tools/index.js:16582: this.attacker.hp.limit += o.Data1;",
+        "tools/index.js:16591: this.attacker.heal(o.Data1, !0);",
+        "tools/index.js:26034: key: \"Data1\",",
+        "tools/index.js:26470: i.GData1 && Object.assign(n, JSON.parse(i.GData1));",
+        "tools/index.js:43886: for (var a = n.getItem(t, \"item\"), s = r.getText(a.Description) + \"\\n   \", l = this.chaosAttrSplit(e), c = Object.keys(l), p = [], h = n.getItem(a.Data1, \"gemgenerate\").attribute1.split(\"|\"), u = 0; u < h.length; u++) p.push(h[u].split(\",\")[0]);",
+        "tools/index.js:43905: var m = n.getItem(a.Data1, \"gemgenerate\").skill.split(\"|\");",
+        "tools/index.js:43918: for (var o = \"\", r = e[t], a = r.attrMap, s = n.getItem(r.itemId, \"item\"), l = this.chaosAttrSplit(a), c = Object.keys(l), p = n.getItem(s.Data1, \"gemgenerate\").attribute1.split(\"|\"), h = [], u = 0; u < p.length; u++) h.push(p[u].split(\",\")[0]);",
+        "tools/index.js:43930: return this.getAttrute(t.Property1, t.Data1) + this.getAttrute(t.Property2, t.Data2) + this.getAttrute(t.Property3, t.Data3) + this.getAttrute(t.Property4, t.Data4) + this.getAttrute(t.Property5, t.Data5);",
+        "tools/index.js:58549: Data1: n",
+        "tools/index.js:64343: if (h.SkillTable.dic.hasOwnProperty(e.Data1)) {",
+        "tools/index.js:64383: var b = i.getItem(e.ID, \"master_book\"), T = h.SkillTable.getSkillItem(e.Data1), C = T ? b.ConditionUp : b.Condition;",
+        "tools/index.js:64401: var k = [], D = e.Data1, N = T ? i.getItem(T.lv, \"level\") : null, R = i.getItem(D, \"skill\"), P = h.SkillTable.getQualitySkillCoefficient(R, D);",
+        "tools/index.js:64458: var n = \"ui/multilingual/\" + r.lang + \"/pic/\" + e.Data1;",
+        "tools/index.js:64460: Data1: [ n ],",
+        "tools/index.js:64483: s.default.show(n.getText(e.Data1));",
+        "tools/index.js:64491: signid: e.Data1,",
+        "tools/index.js:64832: A = A + n.getText(4007) + \"*\" + C.Data1;",
+        "tools/index.js:64974: t.RoleOtherInfo.buyAgeTime += a.itemNum * parseInt(l.Data1);",
+        "tools/index.js:64977: c.default.show(n.getText(1214).replace(/\\[1\\]/, a.itemNum * l.Data1));",
+        "tools/index.js:65319: var d = i.getItem(e, \"item\"), g = i.getItem(d.Data1, \"npc\"), y = n.getText(3457).replace(/\\[1\\]/, n.getText(g.NpcName));",
+        "tools/index.js:65761: var s = i.getItem(a.Data1, \"gemgenerate\");",
+        "tools/index.js:65989: Data1: c.Data1",
+        "tools/index.js:66003: Data1: c.Data1",
+        "tools/index.js:66011: return parseInt(e.Data1) - parseInt(t.Data1);",
+        "tools/index.js:75715: t.Property1 > 0 && t.Property1 <= 10 && (o = o + n.getText(e[t.Property1 - 1]) + (t.Data1 > 0 ? \"+\" + t.Data1 : t.Data1).toString() + \"\\n\");",
+        "tools/index.js:77366: Data1: [ t, e ],",
+        "tools/index.js:131517: s.addComponent(\"StoryDialogueShow\").setData1(t, e, o, r, p, h, u);"
+      ]
+    },
+    {
+      "pattern": "Data1",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:1984: var t = h.UserModel.entity.hunger, e = parseInt(t.remaining + this.itemNum * parseInt(this.data.Data1)), o = a.getText(6011437) + \":\" + e.toString() + \"/\" + t.limit.toString();",
+        "tools/scripts2.js:1991: var t = parseInt(v.playerInfo.entity.age.finalValue) - f.RoleOtherInfo.buyAgeTime, e = Math.ceil((t - 23) / parseInt(this.data.Data1));",
+        "tools/scripts2.js:2013: var i = h.UserModel.entity.hp, s = this.itemNum * parseInt(this.data.Data1);",
+        "tools/scripts2.js:2018: var n = h.UserModel.entity.mp, r = f.RoleOtherInfo.getAddDegreeMp(parseInt(this.data.Data1)), l = this.itemNum * r;",
+        "tools/scripts2.js:2022: var u = h.UserModel.entity.mpTrainedBonus.baseValue, v = m.SkillUtils.getMaxNGBonus(), y = c.getItem(this.itemId, \"item\"), I = Math.ceil((v - u) / y.Data1);",
+        "tools/scripts2.js:2029: var C = h.UserModel.entity.hp, M = C.limit - C.remaining, _ = Math.ceil(M / parseInt(this.data.Data1));",
+        "tools/scripts2.js:2032: var B = (n = h.UserModel.entity.mp).limit - n.remaining, N = (r = f.RoleOtherInfo.getAddDegreeMp(parseInt(this.data.Data1)), ",
+        "tools/scripts2.js:2037: y = c.getItem(this.itemId, \"item\"), I = Math.ceil((v - u) / y.Data1);",
+        "tools/scripts2.js:2050: if (this.itemNum * this.data.Data1 >= 10 * e.limit) {",
+        "tools/scripts2.js:2068: if (f.RoleOtherInfo.buyAgeTime + this.itemNum * this.data.Data1 > parseInt(o)) {",
+        "tools/scripts2.js:13440: this.setSpriteFrame(this.spriteNode, this.data.Data1[0]);",
+        "tools/scripts2.js:13458: if (this.currentIndex < this.data.Data1.length) this.setSpriteFrame(this.spriteNode, this.data.Data1[this.currentIndex], !0, function() {",
+        "tools/scripts2.js:20712: if (c.Data1 > 0) if (5 == c.Effect || 11 == c.Effect) if (d.SkillTable.isSkillLearned(c.Data1)) {",
+        "tools/scripts2.js:20715: } else this.isLearned.active = !1; else if (20 == c.Effect && g.RecastModel.CheckFormula(c.Data1)) {",
+        "tools/scripts2.js:37877: var t = this.data.Data1, e = a.default.judgeNoNpcTask(t).npcState;",
+        "tools/scripts2.js:45046: if (t.Data1 > 0) if (5 == t.Effect || 11 == t.Effect) if (m.SkillTable.isSkillLearned(t.Data1)) {",
+        "tools/scripts2.js:45049: } else this.isLearned.active = !1; else if (20 == t.Effect && f.RecastModel.CheckFormula(t.Data1)) {",
+        "tools/scripts2.js:51912: this.setSpriteFrame(this.spriteNode, this.data.Data1[0]);",
+        "tools/scripts2.js:51940: this.currentIndex < this.data.Data1.length ? this.setSpriteFrame(this.spriteNode, this.data.Data1[this.currentIndex], !0, function() {",
+        "tools/scripts2.js:52241: Data1: [ \"ui/multilingual/AppData.lang/pic/recruit_share\" ],",
+        "tools/scripts2.js:54632: if (s.Data1 > 0) if (5 == s.Effect || 11 == s.Effect) if (g.SkillTable.isSkillLearned(s.Data1)) {",
+        "tools/scripts2.js:54635: } else this.isLearned.active = !1; else if (20 == s.Effect && m.RecastModel.CheckFormula(s.Data1)) {",
+        "tools/scripts2.js:67288: this.label2.getComponent(cc.Label).string = Math.floor(parseInt(this.giftData.money[1]) * o.Data1 / 100) + \"\";",
+        "tools/scripts2.js:67289: this.ratio = o.Data1 / 100;",
+        "tools/scripts2.js:67298: this.label2.getComponent(cc.Label).string = Math.floor(parseInt(this.giftData.money[1]) * o.Data1 / 100) + \"\";",
+        "tools/scripts2.js:67299: this.ratio = o.Data1 / 100;",
+        "tools/scripts2.js:68226: e.prototype.setData1 = function(t, e, o, i, s, n, r) {",
+        "tools/scripts2.js:68578: this.setSpriteFrame(this.spriteNode, this.data.Data1[0]);",
+        "tools/scripts2.js:68596: this.currentIndex < this.data.Data1.length ? this.setSpriteFrame(this.spriteNode, this.data.Data1[this.currentIndex], !0, function() {",
+        "tools/scripts2.js:76701: var n = s * parseInt(o.Data1), r = v.MadUtilsTS.copyDataToNewData(i);"
+      ]
+    },
+    {
+      "pattern": "Data1",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:15665: e.rewardData1 = null;",
+        "tools/scripts3.js:15767: this.rewardData1 = t.reward1.split(\"|\");",
+        "tools/scripts3.js:15799: var i = this.rewardData1[this.selectItemIndex];",
+        "tools/scripts3.js:15815: var e = this.rewardData1[this.selectItemIndex];",
+        "tools/scripts3.js:15827: void 0 !== n && (r = -1 == n ? this.rewardData1[this.selectItemIndex] : this.rewardData2[n]);",
+        "tools/scripts3.js:15861: i.addComponent(\"BeachtreasureSelectUI\").setData(t.rewardData1);",
+        "tools/scripts3.js:15875: var i = [ this.rewardData1[this.selectItemIndex] ];",
+        "tools/scripts3.js:15937: var o = this.rewardData1[this.selectItemIndex];",
+        "tools/scripts3.js:15967: p = this.rewardData1[this.selectItemIndex];",
+        "tools/scripts3.js:15982: p = this.rewardData1[this.selectItemIndex];",
+        "tools/scripts3.js:24627: return i.getItem(e.Data1, \"gemgenerate\").type;",
+        "tools/scripts3.js:24630: return i.getItem(c.InventoryModel.crystalDic[t].itemId, \"item\").Data1;",
+        "tools/scripts3.js:24647: for (var n = i.getItem(o.itemId, \"item\"), r = p.EqUtils.chaosAttrSplit(o.attrMap), a = Object.keys(r), l = i.getItem(n.Data1, \"gemgenerate\").attribute1.split(\"|\"), h = [], d = 0; d < l.length; d++) h.push(l[d].split(\",\")[0]);",
+        "tools/scripts3.js:24682: for (var g = i.getItem(n.Data1, \"gemgenerate\").attribute2.split(\"|\"), m = 0; m < g.length; m++) u.push(g[m].split(\",\")[0]);",
+        "tools/scripts3.js:24683: g = i.getItem(n.Data1, \"gemgenerate\").attribute3.split(\"|\");",
+        "tools/scripts3.js:24686: var f = i.getItem(n.Data1, \"gemgenerate\").attribute1.split(\"|\");",
+        "tools/scripts3.js:24697: var C = Object.keys(a), I = i.getItem(n.Data1, \"gemgenerate\").attribute1.split(\"|\"), b = [];",
+        "tools/scripts3.js:24730: for (var r = i.getItem(n.itemId, \"item\"), a = p.EqUtils.chaosAttrSplit(e), l = Object.keys(a), h = i.getItem(r.Data1, \"gemgenerate\").attribute1.split(\"|\"), d = [], u = 0; u < h.length; u++) d.push(h[u].split(\",\")[0]);",
+        "tools/scripts3.js:24762: for (var r = p.EqUtils.chaosAttrSplit(n.attrMap), a = Object.keys(r), l = i.getItem(o.Data1, \"gemgenerate\").attribute1.split(\"|\"), h = [], d = 0; d < l.length; d++) h.push(l[d].split(\",\")[0]);",
+        "tools/scripts3.js:26641: e.skeletonData1 = null;",
+        "tools/scripts3.js:26881: g.skeletonData1 = x;",
+        "tools/scripts3.js:26899: if (this.skeletonData1) {",
+        "tools/scripts3.js:26900: this.skeletonData1.destroy();",
+        "tools/scripts3.js:26901: this.skeletonData1 = null;",
+        "tools/scripts3.js:47071: if (n && n.Data1) {",
+        "tools/scripts3.js:47072: this.refineCost = n.Data1;",
+        "tools/scripts3.js:47484: n && n.Data1 && (o = n.Data1);",
+        "tools/scripts3.js:64400: var i = p.RogueRoleInfo.entity.hp, s = this.itemNum * parseInt(this.data.Data1);",
+        "tools/scripts3.js:64405: var n = p.RogueRoleInfo.entity.mp, r = h.RogueUtils.getAddDegreeMp(parseInt(this.data.Data1)), d = this.itemNum * r;",
+        "tools/scripts3.js:64410: var u = p.RogueRoleInfo.entity.mpTrainedBonus.baseValue, g = h.RogueUtils.getMaxNGBonus(), m = c.getItem(this.itemId, \"item\"), f = Math.ceil((g - u) / m.Data1);",
+        "tools/scripts3.js:64417: var v = p.RogueRoleInfo.entity.hp, _ = v.limit - v.remaining, M = Math.ceil(_ / parseInt(this.data.Data1));",
+        "tools/scripts3.js:64420: var C = (n = p.RogueRoleInfo.entity.mp).limit - n.remaining, I = (r = h.RogueUtils.getAddDegreeMp(parseInt(this.data.Data1)), ",
+        "tools/scripts3.js:64425: m = c.getItem(this.itemId, \"item\"), f = Math.ceil((g - u) / m.Data1);",
+        "tools/scripts3.js:64436: parseInt(t.remaining + this.itemNum * parseInt(this.data.Data1)) >= t.limit && l.default.show(a.getText(239));",
+        "tools/scripts3.js:74414: Data1: r.Data1",
+        "tools/scripts3.js:74422: return parseInt(e.Data1) - parseInt(t.Data1);",
+        "tools/scripts3.js:76638: c.default.show(n.getText(t.Data1));",
+        "tools/scripts3.js:82353: e.skeletonData1 = null;",
+        "tools/scripts3.js:82476: e.skeletonData1 = o.skeletonData[0];",
+        "tools/scripts3.js:82481: e.player1Sc.skeletonData = e.skeletonData1;",
+        "tools/scripts3.js:82636: this.skeletonData1 && this.skeletonData1.destroy();",
+        "tools/scripts3.js:82646: this.skeletonData1 = null;",
+        "tools/scripts3.js:84672: for (var e = p.InventoryModel.crystalDic[t], o = c.getItem(e.itemId, \"item\"), i = c.getItem(o.Data1, \"gemgenerate\").attribute4.split(\"|\"), s = 0; s < i.length; s++) {",
+        "tools/scripts3.js:84840: for (var e = p.InventoryModel.crystalDic[t], o = c.getItem(e.itemId, \"item\"), i = c.getItem(o.Data1, \"gemgenerate\").attribute4.split(\"|\"), s = 0; s < i.length; s++) {",
+        "tools/scripts3.js:93341: this.setItemData1();",
+        "tools/scripts3.js:93356: for (var t = {}, e = 0; e < this.itemData1.length; e++) if (l.WarmUpModel.submitNums[e] > 0) {",
+        "tools/scripts3.js:93357: var o = this.itemData1[e];",
+        "tools/scripts3.js:93397: this.des.string = h.EqUtils.getEqDes(this.itemData1[t]);",
+        "tools/scripts3.js:93417: e.prototype.setItemData1 = function() {",
+        "tools/scripts3.js:93425: this.itemData1 = t;",
+        "tools/scripts3.js:93436: for (var o = 0; o < this.itemData1.length; o++) l.WarmUpModel.submitNums[o] = 0;",
+        "tools/scripts3.js:93437: t.total(this.itemData1.length);",
+        "tools/scripts3.js:93442: o.setMyData(e, this.itemData1[e], this);"
+      ]
+    },
+    {
+      "pattern": "data1",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:26002: this._data1 = new n(\"cidata1\");",
+        "tools/index.js:26036: return this._data1.value;",
+        "tools/index.js:26039: this._data1.value = t;"
+      ]
+    },
+    {
+      "pattern": "data1",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "data1",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Data2",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:10247: l = this.replaceName(/\\[5\\]/g, c, r.getText(p.Data2));",
+        "tools/index.js:16592: this.attacker.recoverMp(o.Data2, !0);",
+        "tools/index.js:21633: this.badWordData2 = s.decrypt(p.text.slice(1), this.getKey(4, 7, 5, 2), \"33daee8409834c00\", 1);",
+        "tools/index.js:21965: return this.badWordData2 ? this.badWordData2.split(\"|\") : [];",
+        "tools/index.js:26042: key: \"Data2\",",
+        "tools/index.js:26471: i.GData2 && Object.assign(n, JSON.parse(i.GData2));",
+        "tools/index.js:43930: return this.getAttrute(t.Property1, t.Data1) + this.getAttrute(t.Property2, t.Data2) + this.getAttrute(t.Property3, t.Data3) + this.getAttrute(t.Property4, t.Data4) + this.getAttrute(t.Property5, t.Data5);",
+        "tools/index.js:64902: var U = i.getItem(e.curItemId, \"item\"), x = n.getText(\"988\").replace(/\\[1\\]/, U.Data3), H = i.getItem(U.Data2, \"item\");",
+        "tools/index.js:75716: t.Property2 > 0 && t.Property2 <= 10 && (o = o + n.getText(e[t.Property2 - 1]) + (t.Data2 > 0 ? \"+\" + t.Data2 : t.Data2).toString() + \"\\n\");",
+        "tools/index.js:118080: var o = this.feat.get(\"SpecialData2\");",
+        "tools/index.js:130694: this.objData2 = null;",
+        "tools/index.js:130717: this.objData2 = null;",
+        "tools/index.js:131319: this.objData2 = null;"
+      ]
+    },
+    {
+      "pattern": "Data2",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:37879: this.labelContent.getComponent(cc.Label).string = r.getText(this.data.Data2);",
+        "tools/scripts2.js:78499: if (77 == t.Effect || !a.PackageModel.judgePackageLimit()) if (r.getItem(this.itemObj.itemId, \"lh_temporary\")) if (t.Data2 > 0 && d.TowerModel.getTowerItemNum(t.Data2) <= 0) {",
+        "tools/scripts2.js:78500: var e = h.getText(\"988\").replace(/\\[1\\]/, t.Data3), o = r.getItem(t.Data2, \"item\");",
+        "tools/scripts2.js:78503: } else t.Data4 > 0 ? c.MessageCenter.dispatch(l.EvName.MULTIP_USE_ITEM_EVENT, this.itemNum) : f.InventoryModel.reqUseItems(this.itemObj.itemId, this.itemNum); else if (t.Data2 > 0 && u.RoleBaseInfo.getItemNum(t.Data2) <= 0 && 77 != t.Effect) {",
+        "tools/scripts2.js:78505: o = r.getItem(t.Data2, \"item\");"
+      ]
+    },
+    {
+      "pattern": "Data2",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:15666: e.rewardData2 = null;",
+        "tools/scripts3.js:15752: if (this.storyNum >= this.maxNum && e == this.rewardData2.length + 1) {",
+        "tools/scripts3.js:15768: this.rewardData2 = t.reward2.split(\"|\");",
+        "tools/scripts3.js:15827: void 0 !== n && (r = -1 == n ? this.rewardData1[this.selectItemIndex] : this.rewardData2[n]);",
+        "tools/scripts3.js:15840: if (this.storyNum >= this.maxNum && t == this.rewardData2.length + 1) {",
+        "tools/scripts3.js:15876: i = i.concat(this.rewardData2);",
+        "tools/scripts3.js:15886: if (this.storyNum >= this.maxNum && n == this.rewardData2.length + 1) {",
+        "tools/scripts3.js:15968: } else p = this.rewardData2[a];",
+        "tools/scripts3.js:15983: } else p = this.rewardData2[a];",
+        "tools/scripts3.js:16036: this.storyNum >= this.maxNum && s == this.rewardData2.length + 1 || (this.label3.active = !0);",
+        "tools/scripts3.js:16046: if (this.storyNum >= this.maxNum && s == this.rewardData2.length + 1) {",
+        "tools/scripts3.js:39096: var t = u.RogueModel.mapData2, e = 0;",
+        "tools/scripts3.js:70832: this.mapData2 = {};",
+        "tools/scripts3.js:70971: this.mapData2 = e.mapData2.md;",
+        "tools/scripts3.js:70972: this.passPoints2 = e.mapData2.ps;",
+        "tools/scripts3.js:71278: if (e.mapData2) {",
+        "tools/scripts3.js:71279: this.mapData2 = e.mapData2.md;",
+        "tools/scripts3.js:71280: this.passPoints2 = e.mapData2.ps;",
+        "tools/scripts3.js:71301: if (e.mapData2) {",
+        "tools/scripts3.js:71302: this.mapData2 = e.mapData2.md;",
+        "tools/scripts3.js:71303: this.passPoints2 = e.mapData2.ps;",
+        "tools/scripts3.js:71390: this.mapData2 = t.mapData2.md;",
+        "tools/scripts3.js:71391: this.passPoints2 = t.mapData2.ps;",
+        "tools/scripts3.js:71740: 0 == this.isHide && 1 == e.isHide && (this.mapData = this.mapData2);",
+        "tools/scripts3.js:71745: this.mapData2 = e.mapData2.md;",
+        "tools/scripts3.js:71746: this.passPoints2 = e.mapData2.ps;",
+        "tools/scripts3.js:71812: if (e.mapData2) {",
+        "tools/scripts3.js:71813: this.mapData2 = e.mapData2.md;",
+        "tools/scripts3.js:71814: this.passPoints2 = e.mapData2.ps;",
+        "tools/scripts3.js:71839: if (e.mapData2) {",
+        "tools/scripts3.js:71840: this.mapData2 = e.mapData2.md;",
+        "tools/scripts3.js:71841: this.passPoints2 = e.mapData2.ps;",
+        "tools/scripts3.js:73979: var f = a.getItem(t.curItemId, \"item\"), y = c.getText(\"988\").replace(/\\[1\\]/, f.Data3), v = a.getItem(f.Data2, \"item\");",
+        "tools/scripts3.js:77146: var t = c.RogueModel.mapData2, e = !0;",
+        "tools/scripts3.js:82354: e.skeletonData2 = null;",
+        "tools/scripts3.js:82477: e.skeletonData2 = o.skeletonData[1];",
+        "tools/scripts3.js:82482: e.player2Sc.skeletonData = e.skeletonData2;",
+        "tools/scripts3.js:82534: this.player2Sc.skeletonData = this.skeletonData2;",
+        "tools/scripts3.js:82638: this.skeletonData2 && this.skeletonData2.destroy();",
+        "tools/scripts3.js:82647: this.skeletonData2 = null;",
+        "tools/scripts3.js:93344: this.setItemData2();",
+        "tools/scripts3.js:93363: for (e = 0; e < this.itemData2.length; e++) l.WarmUpModel.submitNums[e] > 0 && (i[this.itemData2[e]] = l.WarmUpModel.submitNums[e]);",
+        "tools/scripts3.js:93377: for (var o = 0; o < this.itemData2.length; o++) l.WarmUpModel.submitNums[o] = 0;",
+        "tools/scripts3.js:93378: t.total(this.itemData2.length);",
+        "tools/scripts3.js:93383: o.setMyData(e, this.itemData2[e], this);",
+        "tools/scripts3.js:93388: e.prototype.setItemData2 = function() {",
+        "tools/scripts3.js:93393: this.itemData2 = t;",
+        "tools/scripts3.js:93401: var e = p.getItem(this.itemData2[t], \"item\");"
+      ]
+    },
+    {
+      "pattern": "data2",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:12497: var i = this.getSkill(o.data2);",
+        "tools/index.js:12499: if (this.getCurrentUltimateSkills().indexOf(o.data2) < 0 || !this.isMpAvailable(o.data2) || !this.isUltimateSkillAvailable(o.data2)) continue;",
+        "tools/index.js:12652: if (this.getCurrentUltimateSkills().indexOf(o.data2) >= 0 && this.isMpAvailable(o.data2) && this.isUltimateSkillAvailable(o.data2)) {",
+        "tools/index.js:12653: this.ultAttack(o.data2);",
+        "tools/index.js:12659: if (this.getItemCD(o.data2) <= 0 && !this.hasEffectType(238) && !this.notUsePotion()) {",
+        "tools/index.js:12660: this.usePotion(o.data2);",
+        "tools/index.js:26003: this._data2 = new n(\"cidata2\");",
+        "tools/index.js:26044: return this._data2.value;",
+        "tools/index.js:26047: this._data2.value = t;",
+        "tools/index.js:74699: y && 1 == y.event && t.setSkill(y.data2, 1);",
+        "tools/index.js:84029: 1 == m.event && this.findRes4Skill2(m.data2, 1, e, o, i, n);"
+      ]
+    },
+    {
+      "pattern": "data2",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "data2",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "equiplevel",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:26010: key: \"equiplevel\",",
+        "tools/index.js:34095: i && (o = l.getItem(i.data.itemID, \"item\").equiplevel * this.dataM[1] / 1e4);",
+        "tools/index.js:43695: var r = n.getItem(o, \"item\"), a = n.getItem(r.equiplevel, \"random_attribute\"), s = this.getRdAttrType(t), l = n.getItem(s, \"random_config\"), c = a[this.type2Key[s]];",
+        "tools/index.js:44071: n += \"\\n\" + r.getText(7631) + t.equiplevel + \"\\n\";",
+        "tools/index.js:61517: var o = n.getItem(this.selectEquipData.itemId, \"item\"), r = n.getItem(this.inhertEquipData.itemId, \"item\"), s = Math.max(parseInt(o.equiplevel), parseInt(r.equiplevel)), l = n.getEquipPayData(s), p = l.item, h = n.getItem(p[0], \"item\"), u = l.item1, f = n.getItem(u[0], \"item\"), d = 1;",
+        "tools/index.js:65196: if (e[h[1]].numAttr >= 3 || parseInt(f.equiplevel) >= 200) {",
+        "tools/index.js:65579: if (O.SkillTable.getMyRoleArtLv() > 100 && c.equiplevel < 100) continue;",
+        "tools/index.js:66230: var r = o.getItem(i, \"item\"), a = o.getItem(r.equiplevel, \"random_attribute\"), s = this.getRdAttrType(t), l = o.getItem(s, \"random_config\"), c = a[this.type2Key[s]];",
+        "tools/index.js:93563: 1 == e.Type && (c.InhertEquipModel.allInhertEquips.hasOwnProperty(t.uID) ? o = !0 : 0 != parseInt(e.Effect) ? o = !0 : t.numAttr >= 3 && parseInt(e.equiplevel) >= 280 && (o = !0));"
+      ]
+    },
+    {
+      "pattern": "equiplevel",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:19123: return c.getItem(t.itemId, \"item\").equiplevel < 300 && 3 == t.numAttr;",
+        "tools/scripts2.js:19126: return c.getItem(t.itemId, \"item\").equiplevel < 300 && 4 == t.numAttr;",
+        "tools/scripts2.js:19130: o.equiplevel < 300 && 3 == t.numAttr && this.checkToggles[0].isChecked ? this.isInheritMain(o, t) || this.isUpgraded(t) ? this.isInheritMain(o, t) && !this.isUpgraded(t) ? e = this.checkToggles[1].isChecked : !this.isInheritMain(o, t) && this.isUpgraded(t) ? e = this.checkToggles[2].isChecked : this.isInheritMain(o, t) && this.isUpgraded(t) && (e = this.checkToggles[1].isChecked && this.checkToggles[2].isChecked) : e = !0 : o.equiplevel < 300 && 4 == t.numAttr && this.checkToggles[3].isChecked && (this.isInheritMain(o, t) || this.isUpgraded(t) ? this.isInheritMain(o, t) && !this.isUpgraded(t) ? e = this.checkToggles[1].isChecked : !this.isInheritMain(o, t) && this.isUpgraded(t) ? e = this.checkToggles[2].isChecked : this.isInheritMain(o, t) && this.isUpgraded(t) && (e = this.checkToggles[1].isChecked && this.checkToggles[2].isChecked) : e = !0);",
+        "tools/scripts2.js:19448: var t = d.getItem(this.selectEquipData.itemId, \"item\"), e = d.getItem(this.inhertEquipData.itemId, \"item\"), o = Math.max(parseInt(t.equiplevel), parseInt(e.equiplevel)), i = d.getEquipPayData(o), s = i.item, n = d.getItem(s[0], \"item\"), r = i.item1, c = d.getItem(r[0], \"item\");",
+        "tools/scripts2.js:20009: var t = this.getCurrentEquipObj(), e = h.getItem(t.itemId, \"item\"), o = h.getItem(e.equiplevel, \"washprice\"), i = 0, s = 0;",
+        "tools/scripts2.js:55611: n.equiplevel = s.equiplevel;",
+        "tools/scripts2.js:55691: if (parseInt(r.equiplevel) < parseInt(o)) {",
+        "tools/scripts2.js:60941: var t = a.InhertEquipModel.selectEquipData, e = l.getItem(t.itemId, \"item\"), o = parseInt(e.equiplevel), i = this.equipTypeList[this.currentIndex], s = l.getItem(i.itemId, \"item\");",
+        "tools/scripts2.js:60942: parseInt(s.equiplevel) < o || (i.numAttr, t.numAttr);"
+      ]
+    },
+    {
+      "pattern": "equiplevel",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Equiplevel",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Equiplevel",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Equiplevel",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "EquipLevel",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "EquipLevel",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "EquipLevel",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "\"equip\"",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "\"equip\"",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "\"equip\"",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:29243: this.equip = this.getPathByNode(\"equip\").getComponent(cc.Label);"
+      ]
+    },
+    {
+      "pattern": "\"Equip\"",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "\"Equip\"",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts2.js:20278: var e = [ \"Normal\", \"medicine\", \"Equip\", \"Event\", \"Limitormal\" ].indexOf(t.node.name);"
+      ]
+    },
+    {
+      "pattern": "\"Equip\"",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "getEquipAttr",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "getEquipAttr",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "getEquipAttr",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "GetEquipAttr",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "GetEquipAttr",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "GetEquipAttr",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "equipAttr",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:7150: 6 == this.dataN[0] && (this.target.id2AttributeDic[6].equipAttruteNum = this.bonus.baseValue);",
+        "tools/index.js:7155: 6 == this.dataN[0] && (this.target.id2AttributeDic[6].equipAttruteNum = -this.bonus.baseValue);",
+        "tools/index.js:41211: 6 == this.dataN[0] && (this.target.id2AttributeDic[6].equipAttruteNum = this.bonus.baseValue);",
+        "tools/index.js:41216: 6 == this.dataN[0] && (this.target.id2AttributeDic[6].equipAttruteNum = -this.bonus.baseValue);",
+        "tools/index.js:44712: t.id2AttributeDic[6].equipAttruteNum = n.baseValue;",
+        "tools/index.js:143293: (s = t.call(this, e, o, i, n, r, a) || this)._equipAttriteValue = 0;",
+        "tools/index.js:143294: s._equipAttriteMult = 0;",
+        "tools/index.js:143303: var a = (t + o - this._equipAttriteValue) * (1 + i);",
+        "tools/index.js:143304: return Math.ceil(a / (1 + this._equipAttriteMult));",
+        "tools/index.js:143320: key: \"equipAttruteNum\",",
+        "tools/index.js:143322: this._equipAttriteValue += t;",
+        "tools/index.js:143327: this._equipAttriteMult += t;"
+      ]
+    },
+    {
+      "pattern": "equipAttr",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "equipAttr",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "EquipAttr",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "EquipAttr",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "EquipAttr",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "attrch",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": [
+        "tools/index.js:59571: ATTR_CHANGE: \"attrch\",",
+        "tools/index.js:64779: if (a.note.hasOwnProperty(\"attrch\") && a.note.attrch.hasOwnProperty(\"mpTrained\")) {",
+        "tools/index.js:64781: l.RoleBaseInfo.mpTrained = a.note.attrch.mpTrained;",
+        "tools/index.js:138892: o.note.hasOwnProperty(\"attrch\") && o.note.attrch.hasOwnProperty(\"mpTrained\") && (d.RoleBaseInfo.mpTrained = o.note.attrch.mpTrained);"
+      ]
+    },
+    {
+      "pattern": "attrch",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "attrch",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": [
+        "tools/scripts3.js:23575: attrch: {},",
+        "tools/scripts3.js:72044: attrch: {",
+        "tools/scripts3.js:73924: case \"attrch\":",
+        "tools/scripts3.js:73968: if (o.note.hasOwnProperty(\"attrch\") && o.note.attrch.hasOwnProperty(\"mpTrained\")) {",
+        "tools/scripts3.js:73970: i.RogueRoleInfo.mpTrained = o.note.attrch.mpTrained;"
+      ]
+    },
+    {
+      "pattern": "Attrch",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Attrch",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "Attrch",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "AttrCh",
+      "file": "tools/index.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "AttrCh",
+      "file": "tools/scripts2.js",
+      "exit": 0,
+      "hits": []
+    },
+    {
+      "pattern": "AttrCh",
+      "file": "tools/scripts3.js",
+      "exit": 0,
+      "hits": []
+    }
+  ],
+  "functions": [
+    {
+      "name": "newApplyBonuses",
+      "file": "tools/index.js",
+      "startLine": 143297,
+      "endLine": 143305,
+      "lines": [
+        "143297: e.prototype.newApplyBonuses = function(t, e) {",
+        "143298: for (var o = 0, i = 0, n = 0; n < e.length; ++n) {",
+        "143299: var r = e[n];",
+        "143300: o += r.baseValue;",
+        "143301: i += r.baseMultiplier;",
+        "143302: }",
+        "143303: var a = (t + o - this._equipAttriteValue) * (1 + i);",
+        "143304: return Math.ceil(a / (1 + this._equipAttriteMult));",
+        "143305: };"
+      ]
+    },
+    {
+      "name": "equipAttruteNum (definition)",
+      "file": "tools/index.js",
+      "startLine": 143320,
+      "endLine": 143324,
+      "lines": [
+        "143320: key: \"equipAttruteNum\",",
+        "143321: set: function(t) {",
+        "143322: this._equipAttriteValue += t;",
+        "143323: }",
+        "143324: }, {"
+      ]
+    },
+    {
+      "name": "equipStateAttruteMult (definition)",
+      "file": "tools/index.js",
+      "startLine": 143325,
+      "endLine": 143329,
+      "lines": [
+        "143325: key: \"equipStateAttruteMult\",",
+        "143326: set: function(t) {",
+        "143327: this._equipAttriteMult += t;",
+        "143328: }",
+        "143329: } ]);"
+      ]
+    },
+    {
+      "name": "equipAttruteNum (usage at tools/index.js:7150)",
+      "file": "tools/index.js",
+      "startLine": 7150,
+      "endLine": 7150,
+      "lines": [
+        "7150: 6 == this.dataN[0] && (this.target.id2AttributeDic[6].equipAttruteNum = this.bonus.baseValue);"
+      ]
+    },
+    {
+      "name": "equipAttruteNum (usage at tools/index.js:7155)",
+      "file": "tools/index.js",
+      "startLine": 7155,
+      "endLine": 7155,
+      "lines": [
+        "7155: 6 == this.dataN[0] && (this.target.id2AttributeDic[6].equipAttruteNum = -this.bonus.baseValue);"
+      ]
+    },
+    {
+      "name": "equipAttruteNum (usage at tools/index.js:41211)",
+      "file": "tools/index.js",
+      "startLine": 41211,
+      "endLine": 41211,
+      "lines": [
+        "41211: 6 == this.dataN[0] && (this.target.id2AttributeDic[6].equipAttruteNum = this.bonus.baseValue);"
+      ]
+    },
+    {
+      "name": "equipAttruteNum (usage at tools/index.js:41216)",
+      "file": "tools/index.js",
+      "startLine": 41216,
+      "endLine": 41216,
+      "lines": [
+        "41216: 6 == this.dataN[0] && (this.target.id2AttributeDic[6].equipAttruteNum = -this.bonus.baseValue);"
+      ]
+    },
+    {
+      "name": "equipAttruteNum (usage at tools/index.js:44712)",
+      "file": "tools/index.js",
+      "startLine": 44712,
+      "endLine": 44712,
+      "lines": [
+        "44712: t.id2AttributeDic[6].equipAttruteNum = n.baseValue;"
+      ]
+    },
+    {
+      "name": "equipStateAttruteMult (usage at tools/index.js:7343)",
+      "file": "tools/index.js",
+      "startLine": 7343,
+      "endLine": 7343,
+      "lines": [
+        "7343: 6 == this.dataN[0] && (this.target.id2AttributeDic[6].equipStateAttruteMult = this.bonus.baseMultiplier);"
+      ]
+    },
+    {
+      "name": "equipStateAttruteMult (usage at tools/index.js:7348)",
+      "file": "tools/index.js",
+      "startLine": 7348,
+      "endLine": 7348,
+      "lines": [
+        "7348: 6 == this.dataN[0] && (this.target.id2AttributeDic[6].equipStateAttruteMult = -this.bonus.baseMultiplier);"
+      ]
+    },
+    {
+      "name": "parseEq (tools/index.js prototype 1)",
+      "file": "tools/index.js",
+      "startLine": 43747,
+      "endLine": 43763,
+      "lines": [
+        "43747: t.prototype.parseEq = function(t, e) {",
+        "43748: var o = {};",
+        "43749: o.id = parseInt(t);",
+        "43750: o.type = e[0];",
+        "43751: if (1 == o.type) {",
+        "43752: o.itemID = o.id;",
+        "43753: o.num = e[1];",
+        "43754: } else {",
+        "43755: o.itemID = e[1];",
+        "43756: o.num = 1;",
+        "43757: o.attrs = e[2];",
+        "43758: var i = 0;",
+        "43759: for (var n in o.attrs) ++i;",
+        "43760: o.numAttr = i;",
+        "43761: }",
+        "43762: return o;",
+        "43763: };"
+      ]
+    },
+    {
+      "name": "parseEq (tools/index.js InventoryModel prototype)",
+      "file": "tools/index.js",
+      "startLine": 65117,
+      "endLine": 65136,
+      "lines": [
+        "65117: e.prototype.parseEq = function(t, e) {",
+        "65118: var o = new f.EqItem();",
+        "65119: o.id = t;",
+        "65120: o.type = e[0];",
+        "65121: if (1 == o.type) {",
+        "65122: o.itemID = o.id;",
+        "65123: o.num = e[1];",
+        "65124: e[2] && (o.weaponSkinId = e[2]);",
+        "65125: } else {",
+        "65126: o.itemID = e[1];",
+        "65127: o.num = 1;",
+        "65128: o.attrs = e[2];",
+        "65129: var i = 0;",
+        "65130: for (var n in o.attrs) ++i;",
+        "65131: o.numAttr = i;",
+        "65132: e[3] && (o.crystalIds = e[3]);",
+        "65133: e[4] && (o.weaponSkinId = e[4]);",
+        "65134: }",
+        "65135: return o;",
+        "65136: };"
+      ]
+    },
+    {
+      "name": "parseEq (tools/index.js EqUtils object method)",
+      "file": "tools/index.js",
+      "startLine": 66282,
+      "endLine": 66305,
+      "lines": [
+        "66282: parseEq: function(t, e) {",
+        "66283: if (!e) return {",
+        "66284: itemID: t,",
+        "66285: num: 1",
+        "66286: };",
+        "66287: var o = {};",
+        "66288: o.id = parseInt(t);",
+        "66289: o.type = e[0];",
+        "66290: if (1 == o.type) {",
+        "66291: o.itemID = o.id;",
+        "66292: o.num = e[1];",
+        "66293: e[2] && (o.weaponSkinId = e[2]);",
+        "66294: } else {",
+        "66295: o.itemID = e[1];",
+        "66296: o.num = 1;",
+        "66297: o.attrs = e[2];",
+        "66298: var i = 0;",
+        "66299: for (var n in o.attrs) ++i;",
+        "66300: o.numAttr = i;",
+        "66301: o.crystalIds = e[3] ? e[3] : null;",
+        "66302: e[4] && (o.weaponSkinId = e[4]);",
+        "66303: }",
+        "66304: return o;",
+        "66305: },"
+      ]
+    },
+    {
+      "name": "parseEq (tools/scripts3.js RogueRoleInfo prototype)",
+      "file": "tools/scripts3.js",
+      "startLine": 73482,
+      "endLine": 73498,
+      "lines": [
+        "73482: t.prototype.parseEq = function(t, e) {",
+        "73483: var o = new m.EqItem();",
+        "73484: o.id = t;",
+        "73485: o.type = e[0];",
+        "73486: if (1 == o.type) {",
+        "73487: o.itemID = o.id;",
+        "73488: o.num = e[1];",
+        "73489: } else {",
+        "73490: o.itemID = e[1];",
+        "73491: o.num = 1;",
+        "73492: o.attrs = e[2];",
+        "73493: var i = 0;",
+        "73494: for (var s in o.attrs) ++i;",
+        "73495: o.numAttr = i;",
+        "73496: }",
+        "73497: return o;",
+        "73498: };"
+      ]
+    },
+    {
+      "name": "getEquipOrUid",
+      "file": "tools/index.js",
+      "startLine": 44279,
+      "endLine": 44301,
+      "lines": [
+        "44279: t.prototype.getEquipOrUid = function(t) {",
+        "44280: var e = 0, o = i.InventoryModel.equipmentDic;",
+        "44281: if (o.hasOwnProperty(t)) {",
+        "44282: var r = n.getItem(t, \"item\"), a = p.playerInfo.entity.getEquipment(r.EquipType);",
+        "44283: if (a && a.id == t) {",
+        "44284: if (o[t].num > 1) return t;",
+        "44285: } else if (o[t].num > 0) return t;",
+        "44286: }",
+        "44287: var s = i.InventoryModel.getSpecEqArrByItemID(t);",
+        "44288: if (null == s) return e;",
+        "44289: for (var l = 0; l < s.length; l++) if (s[l].itemID == t) {",
+        "44290: var c = n.getItem(t, \"item\"), h = p.playerInfo.entity.getEquipment(c.EquipType);",
+        "44291: if (h) {",
+        "44292: if (h.id != s[l].id && 1 == s[l].numAttr) {",
+        "44293: e = s[l].id;",
+        "44294: break;",
+        "44295: }",
+        "44296: } else if (1 == s[l].numAttr) {",
+        "44297: e = s[l].id;",
+        "44298: break;",
+        "44299: }",
+        "44300: }",
+        "44301: return e;"
+      ]
+    },
+    {
+      "name": "equipmentDic (constructor initialization in InventoryModel)",
+      "file": "tools/index.js",
+      "startLine": 64643,
+      "endLine": 64671,
+      "lines": [
+        "64643: function e() {",
+        "64644: this.curItemId = 0;",
+        "64645: this.boxType = 0;",
+        "64646: this.equipmentDic = {};",
+        "64647: this.equipByItemID = {};",
+        "64648: this.batchUse = !1;",
+        "64649: this.newName = \"\";",
+        "64650: this.newItems = [];",
+        "64651: this.newEquips = [];",
+        "64652: this.newMaterias = [];",
+        "64653: this.tipSkills = [];",
+        "64654: this.homeMark = !1;",
+        "64655: this.menuMarks = [ !1, !1 ];",
+        "64656: this.TreasureMap = null;",
+        "64657: this.lockEquips = [];",
+        "64658: this.batchType = 1;",
+        "64659: this.crystalDic = {};",
+        "64660: this.cGuarantee = [];",
+        "64661: this.suolNum = 0;",
+        "64662: this.fashEquipMap = {};",
+        "64663: this.batchItemNum = 0;",
+        "64664: this.batchNumMap = {};",
+        "64665: this.curItemId = 0;",
+        "64666: this.equipmentDic = {};",
+        "64667: this.equipByItemID = {};",
+        "64668: this.batchUse = !1;",
+        "64669: this.newName = \"\";",
+        "64670: this.fashEquipMap = {};",
+        "64671: }"
+      ]
+    },
+    {
+      "name": "equipmentDic (constructor initialization in RogueRoleInfo)",
+      "file": "tools/scripts3.js",
+      "startLine": 72909,
+      "endLine": 72921,
+      "lines": [
+        "72909: this._itemObj = {};",
+        "72910: this.type2Items = {};",
+        "72911: this.equipmentDic = {};",
+        "72912: this.equipByItemID = {};",
+        "72913: this.equipments = {",
+        "72914: 1: null,",
+        "72915: 2: null,",
+        "72916: 3: null,",
+        "72917: 4: null,",
+        "72918: 5: null,",
+        "72919: 6: null,",
+        "72920: 7: null",
+        "72921: };"
+      ]
+    }
+  ],
+  "indexMapping": [
+    {
+      "source": "tools/index.js:43749: o.id = parseInt(t);",
+      "note": "data key t -> o.id"
+    },
+    {
+      "source": "tools/index.js:43750: o.type = e[0];",
+      "note": "data[0] (e[0]) -> o.type"
+    },
+    {
+      "source": "tools/index.js:43752: o.itemID = o.id;",
+      "note": "data key t (o.id) -> o.itemID (when e[0] == 1)"
+    },
+    {
+      "source": "tools/index.js:43753: o.num = e[1];",
+      "note": "data[1] (e[1]) -> o.num (when e[0] == 1)"
+    },
+    {
+      "source": "tools/index.js:43755: o.itemID = e[1];",
+      "note": "data[1] (e[1]) -> o.itemID (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:43756: o.num = 1;",
+      "note": "constant 1 -> o.num (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:43757: o.attrs = e[2];",
+      "note": "data[2] (e[2]) -> o.attrs (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:65119: o.id = t;",
+      "note": "data key t -> o.id"
+    },
+    {
+      "source": "tools/index.js:65120: o.type = e[0];",
+      "note": "data[0] (e[0]) -> o.type"
+    },
+    {
+      "source": "tools/index.js:65122: o.itemID = o.id;",
+      "note": "data key t (o.id) -> o.itemID (when e[0] == 1)"
+    },
+    {
+      "source": "tools/index.js:65123: o.num = e[1];",
+      "note": "data[1] (e[1]) -> o.num (when e[0] == 1)"
+    },
+    {
+      "source": "tools/index.js:65124: e[2] && (o.weaponSkinId = e[2]);",
+      "note": "data[2] (e[2]) -> o.weaponSkinId (when e[0] == 1)"
+    },
+    {
+      "source": "tools/index.js:65126: o.itemID = e[1];",
+      "note": "data[1] (e[1]) -> o.itemID (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:65127: o.num = 1;",
+      "note": "constant 1 -> o.num (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:65128: o.attrs = e[2];",
+      "note": "data[2] (e[2]) -> o.attrs (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:65132: e[3] && (o.crystalIds = e[3]);",
+      "note": "data[3] (e[3]) -> o.crystalIds (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:65133: e[4] && (o.weaponSkinId = e[4]);",
+      "note": "data[4] (e[4]) -> o.weaponSkinId (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:66288: o.id = parseInt(t);",
+      "note": "data key t -> o.id"
+    },
+    {
+      "source": "tools/index.js:66289: o.type = e[0];",
+      "note": "data[0] (e[0]) -> o.type"
+    },
+    {
+      "source": "tools/index.js:66291: o.itemID = o.id;",
+      "note": "data key t (o.id) -> o.itemID (when e[0] == 1)"
+    },
+    {
+      "source": "tools/index.js:66292: o.num = e[1];",
+      "note": "data[1] (e[1]) -> o.num (when e[0] == 1)"
+    },
+    {
+      "source": "tools/index.js:66293: e[2] && (o.weaponSkinId = e[2]);",
+      "note": "data[2] (e[2]) -> o.weaponSkinId (when e[0] == 1)"
+    },
+    {
+      "source": "tools/index.js:66295: o.itemID = e[1];",
+      "note": "data[1] (e[1]) -> o.itemID (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:66296: o.num = 1;",
+      "note": "constant 1 -> o.num (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:66297: o.attrs = e[2];",
+      "note": "data[2] (e[2]) -> o.attrs (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:66301: o.crystalIds = e[3] ? e[3] : null;",
+      "note": "data[3] (e[3]) -> o.crystalIds (when e[0] != 1)"
+    },
+    {
+      "source": "tools/index.js:66302: e[4] && (o.weaponSkinId = e[4]);",
+      "note": "data[4] (e[4]) -> o.weaponSkinId (when e[0] != 1)"
+    },
+    {
+      "source": "tools/scripts3.js:73484: o.id = t;",
+      "note": "data key t -> o.id"
+    },
+    {
+      "source": "tools/scripts3.js:73485: o.type = e[0];",
+      "note": "data[0] (e[0]) -> o.type"
+    },
+    {
+      "source": "tools/scripts3.js:73487: o.itemID = o.id;",
+      "note": "data key t (o.id) -> o.itemID (when e[0] == 1)"
+    },
+    {
+      "source": "tools/scripts3.js:73488: o.num = e[1];",
+      "note": "data[1] (e[1]) -> o.num (when e[0] == 1)"
+    },
+    {
+      "source": "tools/scripts3.js:73490: o.itemID = e[1];",
+      "note": "data[1] (e[1]) -> o.itemID (when e[0] != 1)"
+    },
+    {
+      "source": "tools/scripts3.js:73491: o.num = 1;",
+      "note": "constant 1 -> o.num (when e[0] != 1)"
+    },
+    {
+      "source": "tools/scripts3.js:73492: o.attrs = e[2];",
+      "note": "data[2] (e[2]) -> o.attrs (when e[0] != 1)"
+    }
+  ],
+  "unverified": [
+    "Pattern Property1 in tools/scripts2.js: 0 hits",
+    "Pattern Property1 in tools/scripts3.js: 0 hits",
+    "Pattern property1 in tools/scripts2.js: 0 hits",
+    "Pattern property1 in tools/scripts3.js: 0 hits",
+    "Pattern Property2 in tools/scripts2.js: 0 hits",
+    "Pattern Property2 in tools/scripts3.js: 0 hits",
+    "Pattern property2 in tools/index.js: 0 hits",
+    "Pattern property2 in tools/scripts2.js: 0 hits",
+    "Pattern property2 in tools/scripts3.js: 0 hits",
+    "Pattern Property3 in tools/scripts2.js: 0 hits",
+    "Pattern Property3 in tools/scripts3.js: 0 hits",
+    "Pattern property3 in tools/index.js: 0 hits",
+    "Pattern property3 in tools/scripts2.js: 0 hits",
+    "Pattern property3 in tools/scripts3.js: 0 hits",
+    "Pattern Property4 in tools/scripts2.js: 0 hits",
+    "Pattern Property4 in tools/scripts3.js: 0 hits",
+    "Pattern property4 in tools/index.js: 0 hits",
+    "Pattern property4 in tools/scripts2.js: 0 hits",
+    "Pattern property4 in tools/scripts3.js: 0 hits",
+    "Pattern Property5 in tools/scripts2.js: 0 hits",
+    "Pattern Property5 in tools/scripts3.js: 0 hits",
+    "Pattern property5 in tools/index.js: 0 hits",
+    "Pattern property5 in tools/scripts2.js: 0 hits",
+    "Pattern property5 in tools/scripts3.js: 0 hits",
+    "Pattern data1 in tools/scripts2.js: 0 hits",
+    "Pattern data1 in tools/scripts3.js: 0 hits",
+    "Pattern data2 in tools/scripts2.js: 0 hits",
+    "Pattern data2 in tools/scripts3.js: 0 hits",
+    "Pattern equiplevel in tools/scripts3.js: 0 hits",
+    "Pattern Equiplevel in tools/index.js: 0 hits",
+    "Pattern Equiplevel in tools/scripts2.js: 0 hits",
+    "Pattern Equiplevel in tools/scripts3.js: 0 hits",
+    "Pattern EquipLevel in tools/index.js: 0 hits",
+    "Pattern EquipLevel in tools/scripts2.js: 0 hits",
+    "Pattern EquipLevel in tools/scripts3.js: 0 hits",
+    "Pattern \"equip\" in tools/index.js: 0 hits",
+    "Pattern \"equip\" in tools/scripts2.js: 0 hits",
+    "Pattern \"Equip\" in tools/index.js: 0 hits",
+    "Pattern \"Equip\" in tools/scripts3.js: 0 hits",
+    "Pattern getEquipAttr in tools/index.js: 0 hits",
+    "Pattern getEquipAttr in tools/scripts2.js: 0 hits",
+    "Pattern getEquipAttr in tools/scripts3.js: 0 hits",
+    "Pattern GetEquipAttr in tools/index.js: 0 hits",
+    "Pattern GetEquipAttr in tools/scripts2.js: 0 hits",
+    "Pattern GetEquipAttr in tools/scripts3.js: 0 hits",
+    "Pattern equipAttr in tools/scripts2.js: 0 hits",
+    "Pattern equipAttr in tools/scripts3.js: 0 hits",
+    "Pattern EquipAttr in tools/index.js: 0 hits",
+    "Pattern EquipAttr in tools/scripts2.js: 0 hits",
+    "Pattern EquipAttr in tools/scripts3.js: 0 hits",
+    "Pattern attrch in tools/scripts2.js: 0 hits",
+    "Pattern Attrch in tools/index.js: 0 hits",
+    "Pattern Attrch in tools/scripts2.js: 0 hits",
+    "Pattern Attrch in tools/scripts3.js: 0 hits",
+    "Pattern AttrCh in tools/index.js: 0 hits",
+    "Pattern AttrCh in tools/scripts2.js: 0 hits",
+    "Pattern AttrCh in tools/scripts3.js: 0 hits"
+  ],
+  "out_of_scope": []
+}

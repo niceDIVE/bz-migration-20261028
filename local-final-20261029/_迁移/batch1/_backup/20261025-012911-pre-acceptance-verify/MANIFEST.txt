@@ -1,0 +1,1 @@
+﻿Purpose: pre-run backup of tools/golden before acceptance verification (read/append-only tool). Run at 20261025-012911

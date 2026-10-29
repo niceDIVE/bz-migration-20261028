@@ -1,0 +1,99 @@
+# User.BeginTitivate  (HttpConst.REQ_BEGINTITIVATE)
+# 出现 2 处
+
+ 75523: this.currentFashion = {};
+ 75524: this.tempData = {};
+ 75525: }
+ 75526: t.prototype.init = function() {
+ 75527: var t = this;
+ 75528: s.MessageCenter.on(l.HttpConst.GET_FASHION_LIST, this.onGetFashionList, this);
+ 75529: s.MessageCenter.on(l.HttpConst.REQ_BEGINTITIVATE, function(e, o) {
+ 75530: if (1 == o.eRet) {
+ 75531: t.read(t.currentMakeUp);
+ 75532: s.MessageCenter.dispatch(u.EvName.MAKE_UP_FASHION_SUCCESS, t.currentMakeUp);
+ 75533: c.default.show(n.getText("967"));
+ 75534: } else c.default.show(n.getText("968"));
+ 75535: t.currentMakeUp = {};
+ 75536: }, this);
+ 75537: s.MessageCenter.on(u.EvName.GET_FASHION_DATA_EVENT, function(t, e) {
+ 75538: var o = new Promise(function(t) {
+ 75539: y.default.prefabs.load("shopUI/FashionShopUI", cc.Prefab, function(e, o) {
+ 75540: t(o);
+ 75541: });
+ 75542: }), n = new Promise(function(t) {
+ 75543: y.default.prefabs.load("comUI/ShopBgUI", cc.Prefab, function(e, o) {
+ 75544: t(o);
+ 75545: });
+ 75546: });
+ 75547: Promise.all([ o, n ]).then(function(t) {
+ 75548: var o = i(t, 2), n = (o[0], o[1]), r = cc.instantiate(n);
+ 75549: v.PopUpMgr.addPopUp(r, _.LayerMgr.popUpLayer);
+ 75550: r.addComponent("FashionShopMainUI").showFashionShop(e);
+ 75551: });
+ 75552: });
+ 75553: s.MessageCenter.on(l.HttpConst.REQ_BUY_FASHION, function(e, o) {
+ 75554: if (1 == o.eRet) {
+ 75555: o.hasOwnProperty("titivateObj") && t.read(o.titivateObj);
+ 75556: for (var i in t.tempData) {
+ 75557: p.UserModel.entity.putOffEquipment(i);
+ 75558: if (t.tempData[i][0] > 0) {
+ 75559: var r = h.InventoryModel.getEquipmentInfo(t.tempData[i][0]), l = {
+ 75560: id: r.id,
+ 75561: type: r.type,
+ 75562: itemID: r.itemID,
+ 75563: attrs: r.attrs,
+ 75564: numAttr: r.numAttr,
+ 75565: crystalIds: r.crystalIds
+ 75566: };
+ 75567: r.itemID;
+ 75568: d.RoleBaseInfo.equipments[i] = r.id;
+ 75569: p.UserModel.entity.putOnEquipment(new a(l), i);
+---
+ 75677: var i = e[o], r = this.roleMakeUpItem[o];
+ 75678: if (parseInt(o) < 5 && i != r) {
+ 75679: t.push(i);
+ 75680: parseInt(o);
+ 75681: }
+ 75682: }
+ 75683: t.length > 0 ? this.judgeCostItem(this.currentMakeUp) ? m.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_BEGINTITIVATE, {
+ 75684: itemObj: this.currentMakeUp
+ 75685: }) : c.default.show(n.getText("968")) : c.default.show(n.getText(964));
+ 75686: };
+ 75687: t.prototype.getypFaceID = function() {
+ 75688: return this.roleMakeUpItem.hasOwnProperty(5) && this.roleMakeUpItem[5] > 0 ? this.roleMakeUpItem[5] : 0;
+ 75689: };
+ 75690: t.prototype.judgeCostItem = function(t) {
+ 75691: var e = !0;
+ 75692: for (var o in t) if (t[o] > 0) {
+ 75693: var i = r.getTable("titivate")[t[o]].deduction;
+ 75694: if (d.RoleBaseInfo.getItemNum(i[0]) < i[1]) {
+ 75695: e = !1;
+ 75696: break;
+ 75697: }
+ 75698: }
+ 75699: return e;
+ 75700: };
+ 75701: t.prototype.getRoleMakeInfo = function() {
+ 75702: return this.roleMakeUpItem;
+ 75703: };
+ 75704: t.prototype.setMakeId = function(t, e) {
+ 75705: this.currentMakeUp[t] = e;
+ 75706: };
+ 75707: t.prototype.getMakeId = function() {
+ 75708: return this.currentMakeUp;
+ 75709: };
+ 75710: t.prototype.clearMakeUp = function() {
+ 75711: this.currentMakeUp = {};
+ 75712: };
+ 75713: t.prototype.getFashionAttribute = function(t) {
+ 75714: var e = [ 41, 42, 43, 44, 2, 3, 46, 47, 48, 49 ], o = n.getText(t.Description) + "\n";
+ 75715: t.Property1 > 0 && t.Property1 <= 10 && (o = o + n.getText(e[t.Property1 - 1]) + (t.Data1 > 0 ? "+" + t.Data1 : t.Data1).toString() + "\n");
+ 75716: t.Property2 > 0 && t.Property2 <= 10 && (o = o + n.getText(e[t.Property2 - 1]) + (t.Data2 > 0 ? "+" + t.Data2 : t.Data2).toString() + "\n");
+ 75717: t.Property3 > 0 && t.Property3 <= 10 && (o = o + n.getText(e[t.Property3 - 1]) + (t.Data3 > 0 ? "+" + t.Data3 : t.Data3).toString() + "\n");
+ 75718: t.Property4 > 0 && t.Property4 <= 10 && (o = o + n.getText(e[t.Property4 - 1]) + (t.Data4 > 0 ? "+" + t.Data4 : t.Data4).toString() + "\n");
+ 75719: t.Property5 > 0 && (o = o + n.getText(e[t.Property5 - 1]) + (t.Data5 > 0 ? "+" + t.Data5 : t.Data5).toString());
+ 75720: return o;
+ 75721: };
+ 75722: t.prototype.setFashionData = function(t, e) {
+ 75723: this.currentFashion[t] = e;
+---

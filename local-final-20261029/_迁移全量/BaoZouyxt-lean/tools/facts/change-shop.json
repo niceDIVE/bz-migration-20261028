@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-10-24T12:00:00.000Z",
+  "queries": [
+    "tools/index.js:47076: i.MessageCenter.on(n.HttpConst.GET_CHANGE_SHOP, function(t, e) {",
+    "tools/index.js:47101: u.NetMgr.http.sendRequest(n.HttpConst.GET_CHANGE_SHOP, {",
+    "tools/index.js:59695: GET_CHANGE_SHOP: \"User.getChangeShop\",",
+    "tools/scripts2.js: (no match) GET_CHANGE_SHOP",
+    "tools/scripts3.js: (no match) GET_CHANGE_SHOP"
+  ],
+  "functions": [
+    {
+      "name": "sendRequest(GET_CHANGE_SHOP) (tools/index.js:47099-47104)",
+      "file": "tools/index.js",
+      "lines": "47099-47104",
+      "code": "t.prototype.reqExchangeItemData = function(t) {\n    this.exchangeId = t;\n    u.NetMgr.http.sendRequest(n.HttpConst.GET_CHANGE_SHOP, {\n        npcid: t\n    });\n};"
+    },
+    {
+      "name": "MessageCenter.on(GET_CHANGE_SHOP) (tools/index.js:47076-47078)",
+      "file": "tools/index.js",
+      "lines": "47076-47078",
+      "code": "i.MessageCenter.on(n.HttpConst.GET_CHANGE_SHOP, function(t, e) {\n    1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EXCHANGE_SHOP_DATA, e.shopObj);\n}, this);"
+    },
+    {
+      "name": "ExchangeRender.prototype.setData (tools/scripts2.js:20696-20729)",
+      "file": "tools/scripts2.js",
+      "lines": "20696-20729",
+      "code": "e.prototype.setData = function(t, e, o, i, s) {\n    void 0 === i && (i = 0);\n    void 0 === s && (s = !1);\n    this.selectIndex = e;\n    this.tag = o;\n    this.index = i;\n    this.selectTag = s;\n    this.curItemData = t;\n    var n = t, c = r.getItem(n[2], \"item\"), p = n[3] > 1 ? \"x\" + n[3] : \"\";\n    if (c) {\n        this.itemName.getComponent(cc.Label).string = l.getText(c.Name) + p;\n        for (var h = n[4].split(\"|\"), m = \"\", f = !1, y = 0; y < h.length; y++) {\n            var I = h[y].split(\",\"), b = r.getItem(I[0], \"item\"), C = this.getItemNum(I[0]), M = \":\" + I[1] + \"/\" + C.toString();\n            m = m + l.getText(b.Name) + M + \"  \";\n            parseInt(I[1]) > C && (f = !0);\n        }\n        if (c.Data1 > 0) if (5 == c.Effect || 11 == c.Effect) if (d.SkillTable.isSkillLearned(c.Data1)) {\n            this.setSpriteFrame(this.isLearned, \"ui/multilingual/\" + u.lang + \"/pic/Learned\");\n            this.isLearned.active = !0;\n        } else this.isLearned.active = !1; else if (20 == c.Effect && g.RecastModel.CheckFormula(c.Data1)) {\n            this.setSpriteFrame(this.isLearned, \"ui/multilingual/\" + u.lang + \"/pic/Learned\");\n            this.isLearned.active = !0;\n        } else this.isLearned.active = !1; else this.isLearned.active = !1;\n        this.expendItem.getComponent(cc.Label).string = m;\n        this.expendItem.color = f ? cc.color(150, 150, 150, 255) : cc.color(0, 0, 0, 255);\n        this.descName.getComponent(cc.Label).string = l.getText(\"3266\") + \":\" + a.RoleBaseInfo.getItemNum(n[2]);\n        if (this.getSprNode) {\n            var _ = this;\n            this.setSpriteFrame(this.getSprNode, \"ui/zhounianqing/g_get\", !1, function() {\n                _.getSprNode.active = v.HalloweenShopModel.judgeItemState(n[9]);\n            });\n        }\n    }\n};"
+    },
+    {
+      "name": "ExchangeBuyUI.prototype.setDatas (tools/scripts2.js:20406-20421)",
+      "file": "tools/scripts2.js",
+      "lines": "20406-20421",
+      "code": "o.prototype.setDatas = function(t, e, o, i) {\n    void 0 === i && (i = 0);\n    this.curtype = o;\n    this.limitType = t[1];\n    this.objectItem = t;\n    this.limitNum = e;\n    this.curRealType = i;\n    this.limitNum >= 0 && (this.curNum = Math.min(this.curNum, this.limitNum));\n    this.itemsArray = t[4].split(\"|\");\n    var s = l.getItem(this.objectItem[2], \"item\"), n = \"\";\n    t[3] > 1 && (n = \"x\" + t[3]);\n    this.nameTxt.getComponent(cc.Label).string = p.getText(s.Name) + n;\n    this.itemDesText.getComponent(cc.Label).string = p.getText(s.Description) + v.InventoryModel.getCycleNotRemainDes(s);\n    this.amountTxt.getComponent(cc.Label).string = p.getText(\"3266\") + \":\" + d.RoleBaseInfo.getItemNum(this.objectItem[2]);\n    this.showBaseData();\n};"
+    }
+  ],
+  "answers": {
+    "Q1": [
+      "tools/index.js:47077: 1 == e.eRet && i.MessageCenter.dispatch(r.EvName.EXCHANGE_SHOP_DATA, e.shopObj); -> 应答对象包含字段 eRet 和 shopObj"
+    ],
+    "Q2": [
+      "tools/scripts2.js:20512: return e && 1 == e.Type ? y.EqUtils.equipNum(t) : d.RoleBaseInfo.getItemNum(t);",
+      "tools/scripts2.js:20517: if (this.getItemNum(i[0]) < parseInt(i[1]) * this.curNum)",
+      "tools/scripts2.js:20456: return Math.floor(d.RoleBaseInfo.getItemNum(+o) / +i);",
+      "tools/scripts2.js:20694: return e && 1 == e.Type ? f.EqUtils.equipNum(t) : a.RoleBaseInfo.getItemNum(t);",
+      "原文中未出现 RoleBaseInfo.gold / coins / yuanbao，消耗通过道具/货币ID经 RoleBaseInfo.getItemNum(t) 扣减（配置表 item 格式 n[4]: \"itemId,count|...\"）"
+    ],
+    "Q3": [
+      "tools/index.js:47111-47116: t.prototype.reqExchangeBuy = function(t, e) { u.NetMgr.http.sendRequest(n.HttpConst.EXCHANGE_ITEM, { itemID: t, itemNum: e, npcid: this.exchangeId }); };",
+      "tools/index.js:47090: i.MessageCenter.on(n.HttpConst.EXCHANGE_ITEM, function(t, e) {",
+      "tools/index.js:59698: EXCHANGE_ITEM: \"User.exchangeItem\",",
+      "购买动作名为 EXCHANGE_ITEM（协议命令字 \"User.exchangeItem\"），在 ExchangeModel 中方法名为 reqExchangeBuy"
+    ]
+  },
+  "unverified": []
+}

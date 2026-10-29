@@ -1,0 +1,13 @@
+# User.PopEquip   (HttpConst.POP_EQUIP_STORAGE)
+
+## 注册点 61060: i.MessageCenter.on(n.HttpConst.POP_EQUIP_STORAGE, function(e, o) {
+
+## 请求点 61096: u.NetMgr.http.sendRequest(n.HttpConst.POP_EQUIP_STORAGE, {
+   61088: var t = r.MarryModel.bedLevel;
+   61089: return l.getItem(t, "bedlevel");
+   61090: };
+   61091: t.prototype.reqUpgradeStorage = function() {
+   61092: u.NetMgr.http.sendRequest(n.HttpConst.UPGRADE_STORAGE, {});
+   61093: };
+   61094: t.prototype.reqPopEquip = function(t, e) {
+   61095: this.popingItem = t;

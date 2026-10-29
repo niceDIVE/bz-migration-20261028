@@ -1,0 +1,42 @@
+﻿=== 读入表数 = 442 ／ Effect13 件数 = 1780 ===
+
+### id 6625 出现在 1 张表的键集里: item(3000键)
+   [item] row={"ID":6625,"Condition1":[],"Condition2":[],"Condition3":[],"Condition4":[],"Condition5":[],"Name":2101848,"Description":2301848,"Type":2,"BuyPrice":0,"Price":0,"Effect":13,"EquipType":0,"WeaponType":0,"Limit":1,"Property1":0,"Data1":6625,"Property2":0,"Data2":0,"Property3":0,"Data3":0,"Property4":0,
+       奖励样字段: icon_item(n=1,known=0) ; box_condition(n=1,known=0)
+
+### id 6810 出现在 2 张表的键集里: item(3000键), lh_temporary(64键)
+   [item] row={"ID":6810,"Condition1":[],"Condition2":[],"Condition3":[],"Condition4":[],"Condition5":[],"Name":2102033,"Description":2302033,"Type":2,"BuyPrice":0,"Price":0,"Effect":13,"EquipType":0,"WeaponType":0,"Limit":1,"Property1":0,"Data1":4567,"Property2":0,"Data2":0,"Property3":0,"Data3":0,"Property4":0,
+       奖励样字段: icon_item(n=1,known=0) ; box_condition(n=1,known=0)
+   [lh_temporary] row={"id":6810,"main":1,"icon":"lh_17"}
+       奖励样字段: 无
+
+### id 7105 出现在 0 张表的键集里: —
+
+### id 7106 出现在 0 张表的键集里: —
+
+### id 7226 出现在 0 张表的键集里: —
+
+### id 4567 出现在 3 张表的键集里: buff(4149键), item(3000键), lh_temporary(64键)
+   [buff] row={"BuffID":4567,"null":"","Name":0,"Type":2,"Effect":313,"DataN":[22],"DataM":[6],"diejia":0,"ReplaceLevel":0,"withbuff":[],"interval":1,"round":99999,"Description":0,"diejiaDescription":0,"IsDebreak":1,"IsResist":0,"SkillLevel":0,"TypeTag":[],"EffectDes":0,"actnum":0,"act":"0","hit":0,"effect":"0","
+       奖励样字段: DataN(n=1,known=0) ; DataM(n=1,known=0) ; act(n=1,known=0) ; effect(n=1,known=0) ; point(n=1,known=0) ; icon(n=1,known=0) ; settleAct(n=1,known=0) ; Nact(n=1,known=0) ; Neffect(n=1,known=0) ; scale(n=2,known=0) ; Npoint(n=1,known=0)
+   [item] row={"ID":4567,"Condition1":[],"Condition2":[],"Condition3":[],"Condition4":[],"Condition5":[],"Name":33567,"Description":38567,"Type":2,"BuyPrice":0,"Price":100,"Effect":23,"EquipType":0,"WeaponType":0,"Limit":1,"Property1":0,"Data1":0,"Property2":0,"Data2":0,"Property3":0,"Data3":0,"Property4":0,"Data
+       奖励样字段: icon_item(n=1,known=0) ; box_condition(n=1,known=0)
+   [lh_temporary] row={"id":4567,"main":0,"icon":"0"}
+       奖励样字段: icon(n=1,known=0)
+
+=== B. R18 §2③ 分支判定（键 = Data1 还是键 = ID）===
+有键 6810 的表: item,lh_temporary
+有键 4567 的表: buff,item,lh_temporary
+两者都有的表: item,lh_temporary  → 若为空则不是"冲突"
+只有 4567 的表: buff
+只有 6810 的表: （无）
+
+=== C. 4567 自身的 item 行（R18 辅助证据：关键 = Data1 的支持/反驳）===
+{"ID":4567,"Name":33567,"Type":2,"Effect":23,"Data1":0,"Data2":0,"Data3":0}
+
+=== D. 5 件礼物自身行（ID/Data1/Effect 对照）===
+{"ID":6625,"Name":2101848,"Type":2,"Effect":13,"Data1":6625,"Data2":0,"Data3":0}
+{"ID":6810,"Name":2102033,"Type":2,"Effect":13,"Data1":4567,"Data2":0,"Data3":0}
+{"ID":7105,"Name":2102328,"Type":2,"Effect":13,"Data1":7105,"Data2":0,"Data3":0}
+{"ID":7106,"Name":2102329,"Type":2,"Effect":13,"Data1":7106,"Data2":0,"Data3":0}
+{"ID":7226,"Name":2102449,"Type":2,"Effect":13,"Data1":7226,"Data2":0,"Data3":0}

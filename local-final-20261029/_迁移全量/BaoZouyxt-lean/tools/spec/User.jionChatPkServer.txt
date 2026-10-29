@@ -1,0 +1,99 @@
+# User.jionChatPkServer  (HttpConst.JOIN_CHATPK_SERVER)
+# 出现 2 处
+
+ 23956: this.hungData = {};
+ 23957: this.scoreArray = [];
+ 23958: this.winTime = 0;
+ 23959: this.powerNum = 0;
+ 23960: this.scoreState = !1;
+ 23961: var t = this;
+ 23962: a.MessageCenter.on(s.HttpConst.JOIN_CHATPK_SERVER, function(e, o) {
+ 23963: if (1 == o.eRet) {
+ 23964: t.signData = o.signData;
+ 23965: t.roleUniqueId = o.signData.roleUniqueId;
+ 23966: t.newAccount = o.newAcc;
+ 23967: t.officeMatch = o.agreeOfflineMatch;
+ 23968: t.getFirstEnterAward();
+ 23969: t.reqOpenWorldMatch();
+ 23970: }
+ 23971: }, this);
+ 23972: a.MessageCenter.on(s.HttpConst.STC_CHATPK_MATCHRES, function(e, o) {
+ 23973: if (0 == o.ret) {
+ 23974: t.powerNum = o.PowerLevel;
+ 23975: t.scoreArray = [];
+ 23976: o.hasOwnProperty("target") && a.MessageCenter.dispatch(m.EvName.CHATVS_FIGHT_EVENT, o.target);
+ 23977: }
+ 23978: }, this);
+ 23979: a.MessageCenter.on(s.HttpConst.STC_BATTLEAWARD_SHOW, function(e, o) {
+ 23980: t.chatPKReward = {};
+ 23981: t.scoreArray = [ 0, 0 ];
+ 23982: t.ponitArray = [ 0, 0 ];
+ 23983: t.winTime = 0;
+ 23984: t.BattleResultflag = 1;
+ 23985: o.hasOwnProperty("oldScore") && (t.scoreArray[0] = o.oldScore);
+ 23986: o.hasOwnProperty("newScore") && (t.scoreArray[1] = o.newScore);
+ 23987: o.hasOwnProperty("PersistWinCount") && (t.winTime = o.PersistWinCount);
+ 23988: o.hasOwnProperty("oldTournamentPoint") && (t.ponitArray[0] = o.oldTournamentPoint);
+ 23989: o.hasOwnProperty("newTournamentPoint") && (t.ponitArray[1] = o.newTournamentPoint);
+ 23990: if (o.SpoilShow.length) {
+ 23991: t.chatPKReward = JSON.parse(o.SpoilShow);
+ 23992: for (var i in t.chatPKReward) if (1 == parseInt(i)) {
+ 23993: var n = Math.floor(t.chatPKReward[i]);
+ 23994: l.RoleBaseInfo.potentials += n;
+ 23995: } else if (2 == parseInt(i)) {
+ 23996: var r = Math.floor(t.chatPKReward[i]);
+ 23997: l.RoleBaseInfo.coins += r;
+ 23998: } else if (3 == parseInt(i)) {
+ 23999: var s = Math.floor(t.chatPKReward[i]);
+ 24000: c.UserModel.entity.exp += s;
+ 24001: } else if (4 == parseInt(i)) {
+ 24002: var p = t.chatPKReward[i];
+---
+ 24082: var o = {
+ 24083: linkId: v.WebSocketModel.linkData.linkID,
+ 24084: avgPower: g.SkillTable.getMySkEvalLv(),
+ 24085: inser: _.SServerFightModel.curSeverID,
+ 24086: channel: cc.sys.isNative ? 1 : 2
+ 24087: };
+ 24088: h.NetMgr.http.sendReqWithMask(s.HttpConst.JOIN_CHATPK_SERVER, o);
+ 24089: } else y.default.show("跨服网络不稳定");
+ 24090: }
+ 24091: };
+ 24092: t.prototype.reqStartCheckRole = function() {
+ 24093: var t = c.UserModel.entity, e = Math.floor(t.age.finalValue) - u.RoleOtherInfo.buyAgeTime, o = 0, r = 0, a = 0, h = 0, m = 0;
+ 24094: if (t.getEquipment(3)) {
+ 24095: var y = t.getEquipment(3).id;
+ 24096: o = f.InventoryModel.getEquipmentInfo(y).itemID;
+ 24097: d.InhertEquipModel.allInhertEquips.hasOwnProperty(y) && (o = d.InhertEquipModel.allInhertEquips[y]);
+ 24098: }
+ 24099: if (t.getEquipment(2)) {
+ 24100: var v = t.getEquipment(2).id;
+ 24101: r = f.InventoryModel.getEquipmentInfo(v).itemID;
+ 24102: d.InhertEquipModel.allInhertEquips.hasOwnProperty(v) && (r = d.InhertEquipModel.allInhertEquips[v]);
+ 24103: }
+ 24104: if (t.getEquipment(1)) {
+ 24105: var _ = t.getEquipment(1).id;
+ 24106: a = f.InventoryModel.getEquipmentInfo(_).itemID;
+ 24107: d.InhertEquipModel.allInhertEquips.hasOwnProperty(_) && (a = d.InhertEquipModel.allInhertEquips[_]);
+ 24108: }
+ 24109: if (t.getEquipment(8)) {
+ 24110: var E = t.getEquipment(8).id;
+ 24111: h = f.InventoryModel.getEquipmentInfo(E).itemID;
+ 24112: }
+ 24113: if (t.getEquipment(9)) {
+ 24114: var I = t.getEquipment(9).id;
+ 24115: m = f.InventoryModel.getEquipmentInfo(I).itemID;
+ 24116: }
+ 24117: var b = i.FIST, T = c.UserModel.entity.getEquippedSkill(i.FIST), C = c.UserModel.entity.getEquipment(1);
+ 24118: if (C) {
+ 24119: var A = f.InventoryModel.equipmentDic[C.id];
+ 24120: switch (n.getItem(A.itemID, "item").WeaponType) {
+ 24121: case 1:
+ 24122: b = i.SWORD;
+ 24123: break;
+ 24124: 
+ 24125: case 2:
+ 24126: b = i.BLADE;
+ 24127: break;
+ 24128: 
+---

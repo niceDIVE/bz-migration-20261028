@@ -1,0 +1,23 @@
+# User.cancelChatPk   (HttpConst.CANCEL_CHAT_PK)
+
+## 注册点 24021: a.MessageCenter.on(s.HttpConst.CANCEL_CHAT_PK, function(e, o) {
+
+## 请求点 24178: h.NetMgr.http.sendRequest(s.HttpConst.CANCEL_CHAT_PK, {});
+   24170: this.signData.UseAccurateMatch = 1 == this.chatPkOption;
+   24171: p.Net.sendMsg(s.HttpConst.CTS_CHATPK_MATCH_REQ, this.signData);
+   24172: };
+   24173: t.prototype.reqCancelCheckPKRole = function() {
+   24174: this.cancelPkState = 0;
+   24175: p.Net.sendMsg(s.HttpConst.CTS_CHATPK_MATCH_CANCEL_REQ, {
+   24176: roleUniqueId: this.roleUniqueId
+   24177: });
+
+## 请求点 24182: h.NetMgr.http.sendRequest(s.HttpConst.CANCEL_CHAT_PK, {});
+   24174: this.cancelPkState = 0;
+   24175: p.Net.sendMsg(s.HttpConst.CTS_CHATPK_MATCH_CANCEL_REQ, {
+   24176: roleUniqueId: this.roleUniqueId
+   24177: });
+   24178: h.NetMgr.http.sendRequest(s.HttpConst.CANCEL_CHAT_PK, {});
+   24179: };
+   24180: t.prototype.reqConnectServer = function() {
+   24181: this.cancelPkState = 1;

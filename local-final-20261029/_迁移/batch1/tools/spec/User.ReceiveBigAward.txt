@@ -1,0 +1,99 @@
+# User.ReceiveBigAward  (HttpConst.GET_RECEIVE_BIG_AWARD)
+# 出现 2 处
+
+ 55235: }
+ 55236: e.prototype.init = function() {
+ 55237: this.themeActiveAy = [];
+ 55238: r.MessageCenter.on(a.HttpConst.GET_GROWUP_DATA, this.growupDataCallback.bind(this));
+ 55239: r.MessageCenter.on(a.HttpConst.GET_BIG_GROWUP_DATA, this.bigGrowupDataCallback.bind(this));
+ 55240: r.MessageCenter.on(a.HttpConst.GET_RECEIVE_AWARD, this.receiveAwardCallback.bind(this));
+ 55241: r.MessageCenter.on(a.HttpConst.GET_RECEIVE_BIG_AWARD, this.receiveAwardCallback.bind(this));
+ 55242: r.MessageCenter.on(a.HttpConst.GET_PAY_DATA, this.payDataCallback.bind(this));
+ 55243: r.MessageCenter.on(a.HttpConst.GET_BIG_PAY_DATA, this.payDataCallback.bind(this));
+ 55244: r.MessageCenter.on(a.HttpConst.GET_PAY_STATE_DATA, this.payStateAwardCallback.bind(this));
+ 55245: r.MessageCenter.on(a.HttpConst.GET_BIGPAY_STATE_DATA, this.payStateAwardCallback.bind(this));
+ 55246: r.MessageCenter.on(a.HttpConst.GFUI_BUY_GIFT, this.onBuyGift.bind(this));
+ 55247: r.MessageCenter.on(a.HttpConst.GFUI_BUY_BIG_GIFT, this.onBuyBigGift.bind(this));
+ 55248: };
+ 55249: e.prototype.onBuyGift = function(t, e) {
+ 55250: if (1 == e.eRet) {
+ 55251: c.default.show(i.getText("7297"));
+ 55252: this.reqGrowUpData();
+ 55253: } else 4 == e.eRet ? c.default.show(i.getText("7353")) : 5 == e.eRet && c.default.show(i.getText("8845"));
+ 55254: };
+ 55255: e.prototype.onBuyBigGift = function(t, e) {
+ 55256: if (1 == e.eRet) {
+ 55257: c.default.show(i.getText("7297"));
+ 55258: this.reqBigGrowUpData();
+ 55259: } else 4 == e.eRet ? c.default.show(i.getText("7353")) : 5 == e.eRet && c.default.show(i.getText("8845"));
+ 55260: };
+ 55261: e.prototype.growupDataCallback = function(t, e) {
+ 55262: if (1 == e.eRet) {
+ 55263: this.payStates[0] = e.hasOwnProperty("paystata") ? e.paystata : 0;
+ 55264: r.MessageCenter.dispatch(s.EvName.GET_GROUP_DATA_EVENT, e);
+ 55265: }
+ 55266: };
+ 55267: e.prototype.bigGrowupDataCallback = function(t, e) {
+ 55268: if (1 == e.eRet) {
+ 55269: this.payStates[1] = e.hasOwnProperty("paystata") ? e.paystata : 0;
+ 55270: r.MessageCenter.dispatch(s.EvName.GET_BIG_GROUP_DATA_EVENT, e);
+ 55271: }
+ 55272: };
+ 55273: e.prototype.receiveAwardCallback = function(t, e) {
+ 55274: if (1 == e.eRet) {
+ 55275: l.default.addShowRewardUI1(e.rewardArray, 0);
+ 55276: r.MessageCenter.dispatch(s.EvName.UPDATE_GROUP_DATA_EVENT, this.tag);
+ 55277: }
+ 55278: };
+ 55279: e.prototype.payDataCallback = function(t, e) {
+ 55280: if (1 == e.eRet) {
+ 55281: var o = e.payData, n = this, r = [ 4299, 7354 ], a = r[this.curIndex], s = (r = [ 4298, 7307 ])[this.curIndex];
+---
+ 55320: p.NetMgr.http.sendReqWithMask(a.HttpConst.GET_RECEIVE_AWARD, {
+ 55321: Growid: t
+ 55322: });
+ 55323: };
+ 55324: e.prototype.reqBigGrowReward = function(t) {
+ 55325: this.tag = t;
+ 55326: p.NetMgr.http.sendReqWithMask(a.HttpConst.GET_RECEIVE_BIG_AWARD, {
+ 55327: Growid: t
+ 55328: });
+ 55329: };
+ 55330: e.prototype.reqGrowPayData = function() {
+ 55331: if (0 == this.curIndex) p.NetMgr.http.sendReqWithMask(a.HttpConst.GET_PAY_DATA, {}); else if (1 == this.curIndex) {
+ 55332: if (0 == this.payStates[0]) {
+ 55333: c.default.show(i.getText(7355));
+ 55334: return;
+ 55335: }
+ 55336: p.NetMgr.http.sendReqWithMask(a.HttpConst.GET_BIG_PAY_DATA, {});
+ 55337: }
+ 55338: };
+ 55339: e.prototype.reqRechargeMoney = function(e) {
+ 55340: var o = e.ID;
+ 55341: Promise.resolve().then(function() {
+ 55342: return t("./StoreModel");
+ 55343: }).then(function(t) {
+ 55344: t.StoreModel.buyItem(o, e.nameID, e.getGold, e.money);
+ 55345: });
+ 55346: };
+ 55347: e.prototype.getActiveSortData = function(t) {
+ 55348: var e = n.getTable("active_order"), o = [];
+ 55349: for (var i in e) {
+ 55350: var r = e[i];
+ 55351: -1 == this.themeActiveAy.indexOf(r.active) && this.getActiveState(t, r.number, r.active) && o.push(r);
+ 55352: }
+ 55353: o.sort(function(t, e) {
+ 55354: return t.id - e.id;
+ 55355: });
+ 55356: return o;
+ 55357: };
+ 55358: e.prototype.getActiveState = function(t, e, o) {
+ 55359: if (1001 == e && h.RoleOtherInfo.activeObj[0]) return !0;
+ 55360: if (1002 == e && h.RoleOtherInfo.activeObj[0] <= 0) return !0;
+ 55361: if (1003 == e && (0 != h.RoleOtherInfo.activeObj[1] || 0 == f.ActiveModel.rechargedIsEnd) && 0 != m.HomeActiveModel.activeShowList[0]) return !0;
+ 55362: if (1004 == e && 0 != m.HomeActiveModel.activeShowList[1]) return !0;
+ 55363: if (1005 == e) {
+ 55364: var i = u.TimeMgr.getSTimestamp(), r = 1e3 * n.getConstByID(132);
+ 55365: if (1e3 * n.getConstByID(156) <= i && i <= r) return !0;
+ 55366: } else {
+---

@@ -1,0 +1,11 @@
+# User.npcRevive   (HttpConst.NPC_REVIVE)
+
+## 请求点 90234: p.NetMgr.http.sendRequest(a.HttpConst.NPC_REVIVE, e);
+   90226: type: e
+   90227: };
+   90228: t.length && p.NetMgr.http.sendRequest(a.HttpConst.KILL_NPC, o);
+   90229: };
+   90230: t.prototype.reliveOfNpc = function(t) {
+   90231: var e = {
+   90232: npcIDArr: t
+   90233: };

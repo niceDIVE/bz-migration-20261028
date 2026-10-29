@@ -1,0 +1,5 @@
+# index.js：149447 行，1160 个脚本区间
+# scripts2.js：81775 行，509 个脚本区间
+# scripts3.js：100428 行，663 个脚本区间
+# 枢纽事件 4 个不参与认面板：GET_PRECAMP_SUCCESS、SEED_CROP_EVENT、UPDATE_PLAYER_EVENT、USE_NEW_ITEM_EVENT
+# 902 个动作拿到面板；来源计数 {'site': 917, 'event': 488, 'ref': 63}；726 个找到常量定义行

@@ -1,0 +1,108 @@
+# User.getFinishTaskAward  (HttpConst.FINISH_TASK)
+# 出现 3 处
+
+133210: this.hideType = 1;
+133211: this.taskAy = [];
+133212: this.trackMapId = "";
+133213: this.trackNpcId = 0;
+133214: this.clickPageId = 0;
+133215: r.MessageCenter.on(s.HttpConst.GET_TASK, this.getTaskCallBack, this);
+133216: r.MessageCenter.on(s.HttpConst.FINISH_TASK, this.finishTaskCallBack, this);
+133217: r.MessageCenter.on(s.HttpConst.SYCN_TASK, this.sycnTaskCallBack, this);
+133218: r.MessageCenter.on(s.HttpConst.ACCEPTCIRCLETASK, this.acccptCircleTaskCallBack, this);
+133219: r.MessageCenter.on(s.HttpConst.GETCIRCLETASK, this.getCircleTaskCallBack, this);
+133220: r.MessageCenter.on(s.HttpConst.HIDE_TASK, this.hideTaskCallBack, this);
+133221: r.MessageCenter.on(l.EvName.FIGHT_TASK_DATA_SET, this.onSetFightTaskCallBack, this);
+133222: r.MessageCenter.on(s.HttpConst.ROGUE_ACCEPT_TASK, this.getRogueTaskCallBack, this);
+133223: r.MessageCenter.on(s.HttpConst.ROGUE_FINISHTASK_REWARD, this.finishRogueTaskCallBack, this);
+133224: };
+133225: e.prototype.getRogueTaskCallBack = function(e, o) {
+133226: if (1 == o.eRet) {
+133227: if (0 == this.isOrBubble) {
+133228: this.npcTaskInfo.hasOwnProperty("taskObj") && this.clearHideTask(this.npcTaskInfo.taskObj.TaskID);
+133229: b.default.operationalTasks(0, this.npcTaskInfo);
+133230: if (b.default.blankTaskArray.length) return;
+133231: var s = this.npcTaskInfo.taskObj.Fight;
+133232: if (s > 0) {
+133233: T.BattleMgr.startRoguePVEFight({
+133234: npcID: s
+133235: });
+133236: c.RoleBaseInfo.autoFightTaskId = this.npcTaskInfo.taskObj.TaskID;
+133237: return;
+133238: }
+133239: var p = b.default.judgeCurTaskIsFinish(this.npcTaskInfo.taskObj.TaskID, this.npcId);
+133240: 1 == p.npcState && b.default.finishTaskCheckUI(p);
+133241: } else if (1 == this.isOrBubble) {
+133242: b.default.operationalTasks(0, this.npcTaskInfo);
+133243: r.MessageCenter.dispatch(l.EvName.ON_BUBBLE_TASK, 1);
+133244: } else 2 == this.isOrBubble && b.default.operationalTasks(0, this.npcTaskInfo);
+133245: Promise.resolve().then(function() {
+133246: return t("../../scripts3/model3/RogueModel");
+133247: }).then(function(t) {
+133248: return t.RogueModel.checkTaskTips();
+133249: });
+133250: } else if (4 == o.eRet) {
+133251: var h = i.getItem(this.npcTaskInfo.taskObj.TaskID, "tasktime");
+133252: h && h.hasOwnProperty("overtimetips_on") && 0 == h.overtimetips_on && a.default.show(n.getText("1093"));
+133253: } else if (6 == o.eRet) {
+133254: var u = i.getItem(o.skillId, "skill"), f = o.CDTime - o.serverTime, d = Math.floor(f / 864e5), g = Math.floor((f - 864e5 * d) / 36e5), m = Math.floor((f - 864e5 * d - 36e5 * g) / 6e4), y = n.getText(6079).replace(/\[1\]/, n.getText(u.Name));
+133255: d > 0 && (y += d + n.getText(3784));
+133256: y += g + n.getText(3785);
+---
+133843: }).then(function(t) {
+133844: var e = t.RogueRoleInfo.entity;
+133845: o.hp = e.hp.remaining;
+133846: o.hplmt = e.hp.limit;
+133847: o.hpfinalValue = e.hp.finalValue;
+133848: p.NetMgr.http.sendReqWithMask(s.HttpConst.ROGUE_FINISHTASK_REWARD, o);
+133849: }) : p.NetMgr.http.sendReqWithMask(s.HttpConst.FINISH_TASK, o);
+133850: }
+133851: };
+133852: e.prototype.judgeYearTask = function(t, e, o, i) {
+133853: if (t == e) this.checkSpecialTask(o, i); else {
+133854: this.taskSelectId = t;
+133855: i.choose = t;
+133856: cc.log("完成任务ID == " + i.taskID);
+133857: p.NetMgr.http.sendReqWithMask(s.HttpConst.FINISH_TASK, i);
+133858: }
+133859: };
+133860: e.prototype.birthdayTaskCheck = function() {
+133861: var t = c.RoleBaseInfo.finishTaskObj, e = f.GSceneMgr.getCurSceneID();
+133862: return !(!{
+133863: 60015: 1,
+133864: 60016: 1,
+133865: 60017: 1
+133866: }.hasOwnProperty(e) || !t.hasOwnProperty(212320) || t.hasOwnProperty(212650));
+133867: };
+133868: e.prototype.birthdayMapTaskCheck = function() {
+133869: var t = c.RoleBaseInfo.finishTaskObj, e = f.GSceneMgr.curSceneID;
+133870: return !(!{
+133871: 60015: 1,
+133872: 60016: 1,
+133873: 60017: 1
+133874: }.hasOwnProperty(e) || !t.hasOwnProperty(212320) || t.hasOwnProperty(212650));
+133875: };
+133876: e.prototype.getPresetDressId = function(t) {
+133877: for (var e = 0; e < t.length; e++) {
+133878: var o = t[e].split(",");
+133879: if ("3" == o[0]) return parseInt(o[1]);
+133880: }
+133881: return 0;
+133882: };
+133883: e.prototype.completeTask = function(t) {
+133884: var e = this.checkTask(t);
+133885: if (this.trackTaskId == t) if (e == t || 0 == e) 0 != this.trackTaskType ? this.stopTrack() : 0 == (e = this.searchkTaskList()) ? this.stopTrack() : this.taskTrack(e) || this.stopTrack(); else {
+133886: var o = i.getItem(e, "tasknew");
+133887: o && 3 != o.track && this.taskTrack(e) || this.stopTrack();
+133888: } else 0 == this.trackTaskType && (0 == (e = this.searchkTaskList()) ? this.stopTrack() : this.taskTrack(e) || this.stopTrack());
+133889: this.checkHideTask();
+---
+133890: };
+133891: e.prototype.checkHideTask = function() {
+133892: var t = c.RoleBaseInfo.finishTaskObj, e = null;
+133893: for (var o in t) if ("L1000" != o && h.RoleOtherInfo.hTaskArr.hasOwnProperty(o) && (e = i.getTask(o)) && e.Completetips) {
+133894: var n = e.Completetips.split("|");
+133895: parseInt(n[0]) > 0 && !this.checkCompleteTip(n[1], parseInt(n[2])) && this.reqHideTask(2, [ parseInt(o) ]);
+133896: }
+133897: };
+---

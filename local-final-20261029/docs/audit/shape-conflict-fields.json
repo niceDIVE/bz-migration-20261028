@@ -1,0 +1,1255 @@
+{
+  "classDistribution": {
+    "契约": 218,
+    "开关": 67,
+    "键集合契约": 8,
+    "惰性": 53,
+    "惰性可缺": 10
+  },
+  "totalFields": 356,
+  "conflicts": [
+    {
+      "field": "titivateObj",
+      "readPoints": 12,
+      "modes": [
+        "keyset",
+        "presence",
+        "deref-index"
+      ],
+      "actions": [
+        "BuyFashion",
+        "upFashionFaceState"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 75555,
+        "mode": "presence",
+        "code": "o.hasOwnProperty(\"titivateObj\") && t.read(o.titivateObj);"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 74223,
+        "mode": "keyset",
+        "code": "return n && n.hasOwnProperty(\"titivateObj\") && n.titivateObj.hasOwnProperty(5) && n.titivateObj[5] > 0 ? \"14006_1_0_face\" : n.hasOwnProperty(\"MakeUpID\") && n.MakeUpID > 0 ? \"14006_1_0_face\" : r.toString() + \"_\" + a + \"_\" + t + \"_face\";"
+      }
+    },
+    {
+      "field": "rewardArray",
+      "readPoints": 12,
+      "modes": [
+        "presence",
+        "deref-index",
+        "truthy"
+      ],
+      "actions": [
+        "BuyHomeCrop",
+        "CheckBattleResult",
+        "GetBossAward",
+        "GetNoticeAward",
+        "GetRandomEventAward",
+        "LeaveCopy",
+        "OutSchool",
+        "Storehouse",
+        "TowerBattleResult",
+        "UseAllBall",
+        "answerReward",
+        "bringSpecialAward",
+        "buyActivityNum",
+        "buyAnniversaryPassGift",
+        "buyGiftPermanent",
+        "buySchoolShop",
+        "choosePandaEvent",
+        "chooseSecretEvent",
+        "collect",
+        "dispossHomeEvent",
+        "endMake",
+        "endMakeMedicine",
+        "equipBatchResolve",
+        "equipInherit",
+        "equipResolve",
+        "explore",
+        "getActivityAward",
+        "getCircleTaskAward",
+        "getEnterAward",
+        "getEventAward",
+        "getFinishTaskAward",
+        "getGiftPermanentAward",
+        "getSnowAward",
+        "getSpecialAward",
+        "getsharePicAward",
+        "homeSpeicalAward",
+        "intoCollectiveCultivation",
+        "leaveTower",
+        "marryAward",
+        "mulitiNpcBattleResult",
+        "obtainCrop",
+        "onKeyDispossHomeEvent",
+        "onKeyObtainCrop",
+        "onekeyCompleteSchoolTask",
+        "passCardAward",
+        "pileGameAward",
+        "receiveAccRechargAward",
+        "receiveBindingRecuitAward",
+        "receiveChatPkSportsPointAward",
+        "receiveRecuitAward",
+        "resetRole",
+        "schoolTaskComplete",
+        "smallGameAward",
+        "stealCrop",
+        "sweepCopy"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 1529,
+        "mode": "presence",
+        "code": "if (o.hasOwnProperty(\"rewardArray\") && !i.isNullMap(o.rewardArray)) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 1530,
+        "mode": "deref-index",
+        "code": "0 != a && (o.rewardArray[2] = a);"
+      }
+    },
+    {
+      "field": "gemId",
+      "readPoints": 12,
+      "modes": [
+        "presence",
+        "deref-index",
+        "deref-index-alias",
+        "deref-dot-alias"
+      ],
+      "actions": [
+        "CheckBattleResult",
+        "TowerBattleResult",
+        "mulitiNpcBattleResult"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 67711,
+        "mode": "presence",
+        "code": "o.hasOwnProperty(\"gemId\") && (i.materias = o.gemId);"
+      },
+      "derefEvidence": {
+        "bundle": "scripts3.js",
+        "line": 24429,
+        "mode": "deref-index",
+        "code": "var o = e.gemId[0];"
+      }
+    },
+    {
+      "field": "OnhookObj",
+      "readPoints": 12,
+      "modes": [
+        "member-store",
+        "keyset",
+        "presence",
+        "deref-dot-alias"
+      ],
+      "actions": [
+        "CheckOnHook"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 111901,
+        "mode": "presence",
+        "code": "if (e.hasOwnProperty(\"OnhookObj\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 111836,
+        "mode": "keyset",
+        "code": "e.OnhookObj && e.OnhookObj.hasOwnProperty(\"isCollective\") && (z.SchoolSquareModel.isCollective = e.OnhookObj.isCollective);"
+      }
+    },
+    {
+      "field": "awardArr",
+      "readPoints": 12,
+      "modes": [
+        "deref-index",
+        "presence",
+        "deref-dot",
+        "deref-index-alias"
+      ],
+      "actions": [
+        "EndFish",
+        "LookFishAward",
+        "passCardAward"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 117746,
+        "mode": "presence",
+        "code": "if (e.hasOwnProperty(\"awardArr\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 51586,
+        "mode": "deref-index",
+        "code": "for (var s in e.awardArr) d.InventoryDB.addItem(parseInt(s), e.awardArr[s]);"
+      }
+    },
+    {
+      "field": "note",
+      "readPoints": 12,
+      "modes": [
+        "deref-index",
+        "presence",
+        "keyset",
+        "deref-dot"
+      ],
+      "actions": [
+        "EndMeditation",
+        "addItem",
+        "buyShopItem",
+        "saleItem",
+        "useItem"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 64728,
+        "mode": "presence",
+        "code": "if (o.hasOwnProperty(\"note\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 59325,
+        "mode": "deref-index",
+        "code": "if (g[I].note) for (var E in g[I].note) f.MessageCenter.dispatch(E, g[I].note[E]);"
+      }
+    },
+    {
+      "field": "exp",
+      "readPoints": 12,
+      "modes": [
+        "truthy",
+        "presence",
+        "deref-index"
+      ],
+      "actions": [
+        "EndPlayWooks",
+        "UserWifeProp",
+        "dispossHomeEvent",
+        "getFriendHomeList",
+        "getHomeList",
+        "obtainCrop",
+        "onKeyDispossHomeEvent",
+        "onKeyObtainCrop",
+        "stealCrop",
+        "upgradeWifeLevel"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57710,
+        "mode": "presence",
+        "code": "o.hasOwnProperty(\"exp\") && (e.plantSeedData.plantExp = o.exp);"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 64081,
+        "mode": "deref-index",
+        "code": "var r = i.getItem(o.copyID, \"fuben\").exp[o.state - 1];"
+      }
+    },
+    {
+      "field": "skillArr",
+      "readPoints": 10,
+      "modes": [
+        "presence",
+        "deref-index",
+        "member-store",
+        "deref-dot-alias"
+      ],
+      "actions": [
+        "EndTraining"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 120584,
+        "mode": "presence",
+        "code": "if (o.hasOwnProperty(\"skillArr\") && o.skillArr.length) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 120587,
+        "mode": "deref-index",
+        "code": "e.start(o.skillArr[0], B.SchoolSquareModel.isCollective);"
+      }
+    },
+    {
+      "field": "skillid",
+      "readPoints": 12,
+      "modes": [
+        "deref-dot",
+        "truthy",
+        "presence",
+        "member-store"
+      ],
+      "actions": [
+        "EndTraining"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 120590,
+        "mode": "presence",
+        "code": "if (o.hasOwnProperty(\"skillid\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 19099,
+        "mode": "deref-dot",
+        "code": "var o = a.SkillTable.dic, i = s.getItem(t.skillid.toString(), \"skill\");"
+      }
+    },
+    {
+      "field": "playerEquip",
+      "readPoints": 5,
+      "modes": [
+        "presence",
+        "deref-index"
+      ],
+      "actions": [
+        "EquipSuitsUpgrade",
+        "equipUpgrade"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 142023,
+        "mode": "presence",
+        "code": "if (e.hasOwnProperty(\"playerEquip\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 142025,
+        "mode": "deref-index",
+        "code": "p.InventoryModel.updateEquipItem(e.playerEquip[o[0]], parseInt(o[0]));"
+      }
+    },
+    {
+      "field": "progress",
+      "readPoints": 12,
+      "modes": [
+        "member-store",
+        "presence",
+        "deref-dot"
+      ],
+      "actions": [
+        "FeedDog",
+        "beginPlayGame"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 51695,
+        "mode": "presence",
+        "code": "if (t.hasOwnProperty(\"progress\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 63836,
+        "mode": "deref-dot",
+        "code": "this.progress.node.active = !0;"
+      }
+    },
+    {
+      "field": "friendList",
+      "readPoints": 12,
+      "modes": [
+        "deref-dot",
+        "deref-index",
+        "presence"
+      ],
+      "actions": [
+        "FriendList",
+        "GetOnHookFriendLis"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 132212,
+        "mode": "presence",
+        "code": "if (e.hasOwnProperty(\"friendList\")) for (var n in e.friendList) o[e.friendList[n].friendId] = !0;"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 80033,
+        "mode": "deref-dot",
+        "code": "for (var o in e.friendList) this.friendList.push(e.friendList[o]);"
+      }
+    },
+    {
+      "field": "shopData",
+      "readPoints": 12,
+      "modes": [
+        "presence",
+        "deref-index",
+        "member-store"
+      ],
+      "actions": [
+        "GetHouseShopData",
+        "GetTowerSpecialShop"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 1468,
+        "mode": "presence",
+        "code": "if (e.hasOwnProperty(\"shopData\")) cc.director.once(cc.Director.EVENT_AFTER_DRAW, function() {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 138270,
+        "mode": "deref-index",
+        "code": "var t = this.shopData[14].eventID;"
+      }
+    },
+    {
+      "field": "batch_sweep_data",
+      "readPoints": 12,
+      "modes": [
+        "presence",
+        "deref-dot"
+      ],
+      "actions": [
+        "GetNewSweepTowerData",
+        "TowerBattleResult",
+        "choosePandaEvent",
+        "chooseSecretEvent",
+        "closeNewSweepTowerByLv",
+        "newSweepTower"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 67715,
+        "mode": "presence",
+        "code": "if (o.hasOwnProperty(\"batch_sweep_data\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 137777,
+        "mode": "deref-dot",
+        "code": "t.curFloorNum = o.batch_sweep_data.clv;"
+      }
+    },
+    {
+      "field": "ShopArray",
+      "readPoints": 5,
+      "modes": [
+        "presence",
+        "deref-index",
+        "deref-dot"
+      ],
+      "actions": [
+        "GetPayShowData"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 131213,
+        "mode": "presence",
+        "code": "if (1 == e.eRet && e.hasOwnProperty(\"ShopArray\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 131216,
+        "mode": "deref-index",
+        "code": "i.push(e.ShopArray[n]);"
+      }
+    },
+    {
+      "field": "npcArr",
+      "readPoints": 12,
+      "modes": [
+        "deref-dot",
+        "presence",
+        "deref-index",
+        "deref-index-alias",
+        "deref-dot-alias"
+      ],
+      "actions": [
+        "GetRandomEventAward",
+        "activateTowerEvent",
+        "chanllengeTower",
+        "enterPVEBattle",
+        "enterRoguePVEBattle"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 143820,
+        "mode": "presence",
+        "code": "var c = i.hasOwnProperty(\"npcArr\") && i.npcArr && i.npcArr.length > 0, p = i.hasOwnProperty(\"liveness\");"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 19664,
+        "mode": "deref-dot",
+        "code": "n = t.npcArr && t.npcArr.length > 0 ? this.generateNpcData(t.npcArr, t.npcID) : this.npcData;"
+      }
+    },
+    {
+      "field": "girlData",
+      "readPoints": 4,
+      "modes": [
+        "presence",
+        "deref-index",
+        "keyset"
+      ],
+      "actions": [
+        "GetWhoreData"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 51115,
+        "mode": "presence",
+        "code": "o.hasOwnProperty(\"girlData\") && (e.girlData = o.girlData);"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 51142,
+        "mode": "deref-index",
+        "code": "t.girlData[n.npcID] = n.eTime;"
+      }
+    },
+    {
+      "field": "num",
+      "readPoints": 12,
+      "modes": [
+        "truthy",
+        "presence",
+        "deref-dot"
+      ],
+      "actions": [
+        "OpenTiger",
+        "changeDelegateTask"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 122288,
+        "mode": "presence",
+        "code": "o.SlotMachModel.useTime = e.hasOwnProperty(\"num\") ? e.num : 0;"
+      },
+      "derefEvidence": {
+        "bundle": "scripts2.js",
+        "line": 30306,
+        "mode": "deref-dot",
+        "code": "i = (i = c.getText(\"6001905\").replace(/\\[1\\]/, n.floor.toString())).replace(/\\[2\\]/, n.num.toString());"
+      }
+    },
+    {
+      "field": "clearBoxs",
+      "readPoints": 4,
+      "modes": [
+        "presence",
+        "deref-dot"
+      ],
+      "actions": [
+        "OutSchool",
+        "getFinishTaskAward",
+        "joinSchool"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 77855,
+        "mode": "presence",
+        "code": "o.hasOwnProperty(\"clearBoxs\") && Promise.resolve().then(function() {"
+      },
+      "derefEvidence": {
+        "bundle": "scripts3.js",
+        "line": 44604,
+        "mode": "deref-dot",
+        "code": "return !t.clearBoxs.includes(e);"
+      }
+    },
+    {
+      "field": "npcIDArr",
+      "readPoints": 8,
+      "modes": [
+        "presence",
+        "deref-index",
+        "deref-dot"
+      ],
+      "actions": [
+        "OutSchool",
+        "exitSchool",
+        "killNpc"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 1539,
+        "mode": "presence",
+        "code": "o.hasOwnProperty(\"npcIDArr\") && o.hasOwnProperty(\"endTime\") && Promise.resolve().then(function() {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 90061,
+        "mode": "deref-index",
+        "code": "var r = i.getItem(e.npcIDArr[0], \"npc\"), a = {"
+      }
+    },
+    {
+      "field": "textArr",
+      "readPoints": 2,
+      "modes": [
+        "presence",
+        "deref-index"
+      ],
+      "actions": [
+        "OutSchool"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 77906,
+        "mode": "presence",
+        "code": "}) : o.hasOwnProperty(\"isSeniorSchool\") && o.hasOwnProperty(\"textArr\") && m.default.prefabs.load(\"goodEvil/goodEvilCareer/GoodEvilCareerUI\", cc.Prefab, function(t, e) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 103614,
+        "mode": "deref-index",
+        "code": "this.rewardObj.rewardMap.textArr && this.rewardObj.rewardMap.textArr[0] ? this.desLabel.string = p.getText(this.rewardObj.rewardMap.email).replace(/\\[1\\]/g, this.rewardObj.rewardMap.textArr[0].toString()) : this.desLabel.string = p.getText(this.rewardObj.rewardMap.email);"
+      }
+    },
+    {
+      "field": "equipments",
+      "readPoints": 12,
+      "modes": [
+        "deref-index",
+        "truthy",
+        "keyset",
+        "presence"
+      ],
+      "actions": [
+        "PutOnEquipment",
+        "chanllengeTower"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 106832,
+        "mode": "presence",
+        "code": "if (t.hasOwnProperty(\"equipments\") && t.equipments) for (var q in t.equipments) if (null != t.equipments[q] && 0 != t.equipments[q]) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 4133,
+        "mode": "deref-index",
+        "code": "for (var h in t.equipments) if (I = t.equipments[h]) for (var u = s.getItem(t.equipments[h].getDisplayID(), \"item\"), f = 0; f < u.BuffSet.length; ++f) this.findStateRes(u.BuffSet[f], t);"
+      }
+    },
+    {
+      "field": "needItem",
+      "readPoints": 3,
+      "modes": [
+        "deref-index",
+        "presence",
+        "member-store"
+      ],
+      "actions": [
+        "Storehouse"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 139335,
+        "mode": "presence",
+        "code": "var c = o.hasOwnProperty(\"needItem\") ? o.needItem[1] : 0;"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 139319,
+        "mode": "deref-index",
+        "code": "var r = i.getText(987).replace(/\\[1\\]/, o.needItem[1]);"
+      }
+    },
+    {
+      "field": "awardObj",
+      "readPoints": 12,
+      "modes": [
+        "presence",
+        "keyset",
+        "deref-dot-alias"
+      ],
+      "actions": [
+        "TowerBattleResult",
+        "getUsedItemAward",
+        "newSweepTower"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 67705,
+        "mode": "presence",
+        "code": "o.hasOwnProperty(\"awardObj\") && (i.rewards = o.awardObj);"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 67706,
+        "mode": "keyset",
+        "code": "o.hasOwnProperty(\"awardObj\") && o.awardObj.hasOwnProperty(\"5\") && (s.TowerModel.towerItemData.hasOwnProperty(\"5\") ? s.TowerModel.towerItemData[5] += o.awardObj[5] : s.TowerModel.towerItemData[5] = o.awardObj[5]);"
+      }
+    },
+    {
+      "field": "bloodArr",
+      "readPoints": 7,
+      "modes": [
+        "presence",
+        "deref-index"
+      ],
+      "actions": [
+        "WashMedicine",
+        "washAdditionalArr"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 144052,
+        "mode": "presence",
+        "code": "e.hasOwnProperty(\"bloodArr\") && (p.MarryModel.cycleData[8] = e.bloodArr);"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 144058,
+        "mode": "deref-index",
+        "code": "h.UserModel.entity.strength.baseValue = i + e.bloodArr[0] + o[7][0];"
+      }
+    },
+    {
+      "field": "inherit",
+      "readPoints": 11,
+      "modes": [
+        "member-store",
+        "keyset",
+        "presence",
+        "deref-index"
+      ],
+      "actions": [
+        "beginCast",
+        "checkLive",
+        "endCast"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 102092,
+        "mode": "presence",
+        "code": "o.hasOwnProperty(\"inherit\") && o.inherit.length && c.InhertEquipModel.allInhertEquips.hasOwnProperty(o.inherit[0]) && delete c.InhertEquipModel.allInhertEquips[o.inherit[0]];"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 74791,
+        "mode": "keyset",
+        "code": "var l = t.inherit && t.inherit.hasOwnProperty(i) ? t.inherit[i][0] : 0;"
+      }
+    },
+    {
+      "field": "choose",
+      "readPoints": 12,
+      "modes": [
+        "member-store",
+        "presence",
+        "deref-dot"
+      ],
+      "actions": [
+        "beginPlayGame"
+      ],
+      "presenceEvidence": {
+        "bundle": "scripts2.js",
+        "line": 47546,
+        "mode": "presence",
+        "code": "null != e && e[this.configid].hasOwnProperty(\"choose\" + i) && (n = e[this.configid][\"choose\" + i]);"
+      },
+      "derefEvidence": {
+        "bundle": "scripts3.js",
+        "line": 65683,
+        "mode": "deref-dot",
+        "code": "for (var e = 0; e < t.choose.length; e++) {"
+      }
+    },
+    {
+      "field": "gold",
+      "readPoints": 12,
+      "modes": [
+        "truthy",
+        "deref-dot",
+        "presence"
+      ],
+      "actions": [
+        "canBuyActivityNum",
+        "enterMultiPVEBattle",
+        "enterPVEBattle",
+        "h5Pay"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 110847,
+        "mode": "presence",
+        "code": "o.hasOwnProperty(\"gold\") && (e.state.reviveCost = Number(o.gold));"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 55779,
+        "mode": "deref-dot",
+        "code": "this.goldNum.getComponent(cc.Label).string = p.RoleBaseInfo.gold.toString();"
+      }
+    },
+    {
+      "field": "taskObj",
+      "readPoints": 12,
+      "modes": [
+        "deref-index",
+        "presence",
+        "truthy",
+        "deref-dot"
+      ],
+      "actions": [
+        "changeDelegateTask",
+        "getSevenTaskList"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57388,
+        "mode": "presence",
+        "code": "if (e.hasOwnProperty(\"taskObj\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 43519,
+        "mode": "deref-index",
+        "code": "var a = o.taskObj[r], s = {};"
+      }
+    },
+    {
+      "field": "crop",
+      "readPoints": 10,
+      "modes": [
+        "keyset",
+        "presence"
+      ],
+      "actions": [
+        "changeSate",
+        "dispossHomeEvent",
+        "expediteCrop",
+        "seedCrop",
+        "stealCrop"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57980,
+        "mode": "presence",
+        "code": "if (o.hasOwnProperty(\"crop\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 57642,
+        "mode": "keyset",
+        "code": "o.crop.hasOwnProperty(\"m\") && (n.m = o.crop.m);"
+      }
+    },
+    {
+      "field": "m",
+      "readPoints": 12,
+      "modes": [
+        "presence",
+        "deref-dot",
+        "truthy",
+        "keyset"
+      ],
+      "actions": [
+        "changeSate",
+        "dispossHomeEvent",
+        "expediteCrop",
+        "seedCrop",
+        "stealCrop"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57642,
+        "mode": "presence",
+        "code": "o.crop.hasOwnProperty(\"m\") && (n.m = o.crop.m);"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 57715,
+        "mode": "deref-dot",
+        "code": "e.soilArr[o.sIdx].m.s = 0;"
+      }
+    },
+    {
+      "field": "newAcc",
+      "readPoints": 12,
+      "modes": [
+        "deref-dot",
+        "presence",
+        "deref-dot-alias"
+      ],
+      "actions": [
+        "changeServer",
+        "jionChatPkServer"
+      ],
+      "presenceEvidence": {
+        "bundle": "scripts3.js",
+        "line": 95797,
+        "mode": "presence",
+        "code": "!u.CrossServiceModel.isEnterCrossServer(!1) && o.hasOwnProperty(\"newAcc\") && (s = o.newAcc);"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 111138,
+        "mode": "deref-dot",
+        "code": "cc.sys.localStorage.setItem(\"userAccount\", t.newAcc.toString());"
+      }
+    },
+    {
+      "field": "formulaArr",
+      "readPoints": 6,
+      "modes": [
+        "deref-dot",
+        "presence",
+        "member-store"
+      ],
+      "actions": [
+        "checkLive"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 70465,
+        "mode": "presence",
+        "code": "e.hasOwnProperty(\"formulaArr\") && (V.RecastModel.formulaArr = e.formulaArr);"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 64795,
+        "mode": "deref-dot",
+        "code": "R.RecastModel.formulaArr.push(\"\" + a.formulaID);"
+      }
+    },
+    {
+      "field": "exchangeNpcArr",
+      "readPoints": 2,
+      "modes": [
+        "presence",
+        "deref-index"
+      ],
+      "actions": [
+        "enterRoguePVEBattle"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 104162,
+        "mode": "presence",
+        "code": "if (o.hasOwnProperty(\"exchangeNpcArr\") && o.exchangeNpcArr.length > 0) for (l = 0; l < o.exchangeNpcArr.length; l++) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 104163,
+        "mode": "deref-index",
+        "code": "var _ = o.exchangeNpcArr[l], S = t.generateNpcData(_, _[_.length - 1]);"
+      }
+    },
+    {
+      "field": "homeArr",
+      "readPoints": 12,
+      "modes": [
+        "presence",
+        "deref-dot",
+        "deref-index",
+        "deref-dot-alias"
+      ],
+      "actions": [
+        "findOHomes",
+        "recommendOHomes"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57882,
+        "mode": "presence",
+        "code": "if (o.hasOwnProperty(\"homeArr\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 57899,
+        "mode": "deref-dot",
+        "code": "for (s = 0; s < o.homeArr.length; s++) if (o.homeArr[s][5] > 0) {"
+      }
+    },
+    {
+      "field": "homeGeMap",
+      "readPoints": 3,
+      "modes": [
+        "presence",
+        "keyset"
+      ],
+      "actions": [
+        "findOHomes",
+        "recommendOHomes"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57881,
+        "mode": "presence",
+        "code": "o.hasOwnProperty(\"homeGeMap\") && (e.homeGeMap = o.homeGeMap);"
+      },
+      "derefEvidence": {
+        "bundle": "scripts2.js",
+        "line": 59396,
+        "mode": "keyset",
+        "code": "c.HomePlantModel.homeGeMap.hasOwnProperty(this.data[0]) && (this.labels[1].getComponent(cc.Label).string = a.getSchool(this.data[2]) + \"|\" + a.getSchool(c.HomePlantModel.homeGeMap[this.data[0]]));"
+      }
+    },
+    {
+      "field": "recommendHomeArr",
+      "readPoints": 3,
+      "modes": [
+        "presence",
+        "deref-dot",
+        "deref-index"
+      ],
+      "actions": [
+        "findOHomes"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57933,
+        "mode": "presence",
+        "code": "if (o.hasOwnProperty(\"recommendHomeArr\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 57934,
+        "mode": "deref-dot",
+        "code": "for (var h = 0; h < o.recommendHomeArr.length; h++) if (o.recommendHomeArr[h][5] > 0) {"
+      }
+    },
+    {
+      "field": "activityList",
+      "readPoints": 12,
+      "modes": [
+        "presence",
+        "deref-dot",
+        "member-store"
+      ],
+      "actions": [
+        "getAllActivity"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57450,
+        "mode": "presence",
+        "code": "e.hasOwnProperty(\"activityList\") && (u.RoleOtherInfo.activityList = e.activityList);"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 90346,
+        "mode": "deref-dot",
+        "code": "if (!d.RoleOtherInfo.activityList || !d.RoleOtherInfo.activityList.includes(46)) return null;"
+      }
+    },
+    {
+      "field": "shopArr",
+      "readPoints": 4,
+      "modes": [
+        "presence",
+        "deref-dot",
+        "deref-index"
+      ],
+      "actions": [
+        "getBackShop",
+        "getFasionShop"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57848,
+        "mode": "presence",
+        "code": "if (1 == o.eRet) if (o.hasOwnProperty(\"shopArr\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 145350,
+        "mode": "deref-dot",
+        "code": "for (var i = 0; i < o.shopArr.length; i++) {"
+      }
+    },
+    {
+      "field": "dog",
+      "readPoints": 12,
+      "modes": [
+        "presence",
+        "deref-dot"
+      ],
+      "actions": [
+        "getFriendHomeList",
+        "getHomeList"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57595,
+        "mode": "presence",
+        "code": "i.hasOwnProperty(\"dog\") && (e.dogData = i.dog);"
+      },
+      "derefEvidence": {
+        "bundle": "scripts2.js",
+        "line": 48523,
+        "mode": "deref-dot",
+        "code": "this.dogPos.push(this.dog.getPosition());"
+      }
+    },
+    {
+      "field": "soilArr",
+      "readPoints": 12,
+      "modes": [
+        "presence",
+        "deref-index"
+      ],
+      "actions": [
+        "getFriendHomeList",
+        "getHomeList"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57593,
+        "mode": "presence",
+        "code": "if (i.hasOwnProperty(\"soilArr\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 57643,
+        "mode": "deref-index",
+        "code": "e.soilArr[i] = n;"
+      }
+    },
+    {
+      "field": "eventArr",
+      "readPoints": 3,
+      "modes": [
+        "presence",
+        "deref-index"
+      ],
+      "actions": [
+        "getPandaEvent"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 137656,
+        "mode": "presence",
+        "code": "if (1 == o.eRet && o.hasOwnProperty(\"eventArr\")) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 137657,
+        "mode": "deref-index",
+        "code": "var i = r.getItem(o.eventArr[0], \"lh_panda\"), n = r.getItem(o.eventArr[1], \"lh_panda\"), s = r.getItem(o.eventArr[2], \"lh_panda\");"
+      }
+    },
+    {
+      "field": "childName",
+      "readPoints": 6,
+      "modes": [
+        "deref-dot",
+        "presence",
+        "deref-dot-alias"
+      ],
+      "actions": [
+        "giveChildName"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 55434,
+        "mode": "presence",
+        "code": "if (2 != l && !a.MarryModel.childData.hasOwnProperty(\"childName\") && o > 0) s.default.addDialogEvent(n.Description, 0, null, this.divorceComicsFunc.bind(this)); else {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 24867,
+        "mode": "deref-dot",
+        "code": "if (0 == p.MarryModel.childData.childName.length) s.default.prefabs.load(\"marrySystem/NameAlert\", cc.Prefab, function(t, e) {"
+      }
+    },
+    {
+      "field": "friendHome",
+      "readPoints": 2,
+      "modes": [
+        "presence",
+        "deref-index"
+      ],
+      "actions": [
+        "recommendOHomes"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 57891,
+        "mode": "presence",
+        "code": "if (o.hasOwnProperty(\"friendHome\")) for (var s = 0; s < o.friendHome.length; s++) if (o.friendHome[s][5] > 0) {"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 57892,
+        "mode": "deref-index",
+        "code": "n.push(o.friendHome[s]);"
+      }
+    },
+    {
+      "field": "playArr",
+      "readPoints": 4,
+      "modes": [
+        "presence",
+        "deref-index",
+        "deref-dot"
+      ],
+      "actions": [
+        "resetChildFoster"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 24641,
+        "mode": "presence",
+        "code": "e.hasOwnProperty(\"playArr\") && (c.MarryModel.childData.playArr = e.playArr);"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 77090,
+        "mode": "deref-index",
+        "code": "this.childData.playArr[t] += e;"
+      }
+    },
+    {
+      "field": "itemObj",
+      "readPoints": 12,
+      "modes": [
+        "deref-index",
+        "deref-dot",
+        "presence"
+      ],
+      "actions": [
+        "sycnPlayerItemData"
+      ],
+      "presenceEvidence": {
+        "bundle": "index.js",
+        "line": 112027,
+        "mode": "presence",
+        "code": "if (t.hasOwnProperty(\"itemObj\")) for (var e in t.itemObj) parseInt(e) > 0 && parseInt(t.itemObj[e]) > 0 && v.RoleBaseInfo.setItem(parseInt(e), t.itemObj[e]);"
+      },
+      "derefEvidence": {
+        "bundle": "index.js",
+        "line": 24018,
+        "mode": "deref-index",
+        "code": "for (var o in e.itemObj) parseInt(o) > 0 && parseInt(e.itemObj[o]) > 0 && l.RoleBaseInfo.setItem(parseInt(o), e.itemObj[o]);"
+      }
+    },
+    {
+      "field": "FashionArr",
+      "readPoints": 6,
+      "modes": [
+        "presence",
+        "deref-index"
+      ],
+      "actions": [
+        "GetFashionList"
+      ],
+      "presenceEvidence": {
+        "bundle": "scripts2.js",
+        "line": 21461,
+        "mode": "presence",
+        "code": "if (this.data.hasOwnProperty(\"FashionArr\")) for (var u = 0; u < this.data.FashionArr.length; u++) {"
+      },
+      "derefEvidence": {
+        "bundle": "scripts2.js",
+        "line": 21462,
+        "mode": "deref-index",
+        "code": "var m = this.data.FashionArr[u][0], f = r.getItem(m, \"item\"), v = r.getItem(m, \"fashionall\");"
+      }
+    }
+  ],
+  "conflictCount": 47
+}

@@ -1,0 +1,99 @@
+# User.GetWhoreData  (HttpConst.WHORING_GIRL_EVENT)
+# 出现 2 处
+
+ 51106: this.randomGirl = {};
+ 51107: this.randomIndex = 0;
+ 51108: this.randomAy = [];
+ 51109: this.randomDialogInfo = {};
+ 51110: this.tempMakeId = 0;
+ 51111: var e = this;
+ 51112: i.MessageCenter.on(n.HttpConst.WHORING_GIRL_EVENT, function(t, o) {
+ 51113: if (1 == o.eRet) {
+ 51114: e.resetGirlData();
+ 51115: o.hasOwnProperty("girlData") && (e.girlData = o.girlData);
+ 51116: r.default.addDialogEvent(1101e3, e.npcId, function() {
+ 51117: i.MessageCenter.dispatch(a.EvName.BROTHEL_EVENT, 0);
+ 51118: e.setCurrentState(1);
+ 51119: });
+ 51120: } else {
+ 51121: v.RumorModel.spType = 0;
+ 51122: s.default.show(l.getText(1e3));
+ 51123: }
+ 51124: }, this);
+ 51125: i.MessageCenter.on(n.HttpConst.CHOOSE_GIRL_EVENT, function(o, n) {
+ 51126: if (1 == n.eRet) {
+ 51127: var p = Math.floor(Math.random() * t.girlInfo.plots.length);
+ 51128: t.randomIndex = t.girlInfo.plots[p];
+ 51129: var h = c.getItem(t.randomIndex, "wench_random");
+ 51130: t.randomDialogInfo = h;
+ 51131: t.randomDialogAy(h);
+ 51132: r.default.addDialogEvent(t.girlInfo.ondialog, t.npcId, function() {
+ 51133: var t, o = {};
+ 51134: o[e.npcId] = {
+ 51135: x: h.inplace[0],
+ 51136: y: h.inplace[1]
+ 51137: };
+ 51138: null === (t = _.GSceneMgr.go2Scene(h.endmap)) || void 0 === t || t.then(function() {
+ 51139: i.MessageCenter.dispatch(a.EvName.ADD_FING_GIRL_EVENT, o);
+ 51140: });
+ 51141: });
+ 51142: t.girlData[n.npcID] = n.eTime;
+ 51143: } else s.default.show(l.getText(1088));
+ 51144: }, this);
+ 51145: i.MessageCenter.on(n.HttpConst.WHORING_EVENT, function(e, o) {
+ 51146: if (1 == o.eRet) {
+ 51147: var i = o.makeID, n = c.getItem(i, "make"), r = t.randomGirl[t.npcId], a = r.reality, s = r.picture;
+ 51148: a > 0 && p.default.setNcpIntimacy(r.reality, Math.floor(n.feeling));
+ 51149: if (s.length) {
+ 51150: t.tempMakeId = i;
+ 51151: t.showPlayPic(s);
+ 51152: } else t.showBrothelEndUI(i);
+---
+ 51221: };
+ 51222: t.prototype.reqGirlAllData = function(t) {
+ 51223: this.npcId = t;
+ 51224: var e = {
+ 51225: roleID: d.RoleBaseInfo.roleID
+ 51226: };
+ 51227: g.NetMgr.http.sendRequest(n.HttpConst.WHORING_GIRL_EVENT, e);
+ 51228: };
+ 51229: t.prototype.resetGirlData = function() {
+ 51230: this.curState = 0;
+ 51231: this.progressIndex = 0;
+ 51232: this.girlState = 0;
+ 51233: this.curIndex = 0;
+ 51234: this.girlData = {};
+ 51235: this.girlInfo = {};
+ 51236: this.randomGirl = {};
+ 51237: this.randomIndex = 0;
+ 51238: this.randomAy = [];
+ 51239: this.randomDialogInfo = {};
+ 51240: };
+ 51241: t.prototype.reqChooseGirl = function(t) {
+ 51242: this.npcId = t;
+ 51243: var e = {
+ 51244: npcID: t
+ 51245: };
+ 51246: g.NetMgr.http.sendRequest(n.HttpConst.CHOOSE_GIRL_EVENT, e);
+ 51247: };
+ 51248: t.prototype.reqWhoringMsg = function(t, e) {
+ 51249: var o = {
+ 51250: npcID: t,
+ 51251: flag: e,
+ 51252: hglmt: m.UserModel.entity.hunger.limit
+ 51253: };
+ 51254: this.npcId = t;
+ 51255: g.NetMgr.http.sendRequest(n.HttpConst.WHORING_EVENT, o);
+ 51256: };
+ 51257: t.prototype.setWhoringLogic = function(t) {
+ 51258: var e = this.randomGirl[t];
+ 51259: this.girlInfo = e;
+ 51260: this.npcId = t;
+ 51261: if (this.randomIndex > 0) this.girlState > 0 ? this.talkNpcThreeDialog() : this.dialogStart(); else {
+ 51262: this.girlState = 0;
+ 51263: var o = y.TimeMgr.getSTimestamp();
+ 51264: if (1 == c.getTable("wench")[t].famous && this.girlData.hasOwnProperty(t) && o <= this.girlData[t][1] && 1 == this.girlData[t][0]) this.reqChooseGirl(t); else {
+ 51265: var i = this;
+ 51266: r.default.addSpecialDialog(e.stdialog, t, null, function() {
+ 51267: i.reqChooseGirl(t);
+---

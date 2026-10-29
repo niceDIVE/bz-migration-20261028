@@ -1,0 +1,69 @@
+=== tools\index.js soilArr_hits=28
+L57529| this.soilArr = [];
+L57557| this.soilArr = [];
+L57588| e.soilArr = [];
+L57593| if (i.hasOwnProperty("soilArr")) {
+L57596| e.soilArr = i.soilArr;
+L57643| e.soilArr[i] = n;
+L57663| e.soilArr[a] = l;
+L57685| e.soilArr[o.sIdx] = i;
+L57700| e.soilArr[o.sIdx] = {
+L57715| e.soilArr[o.sIdx].m.s = 0;
+L57740| e.soilArr[i.obtainLands[l]] = {
+L57767| e.soilArr[parseInt(p)] = {
+L57783| e.soilArr[parseInt(p)] = u;
+L57804| e.soilArr[o.sIdx] = {
+L57813| e.soilArr[o.sIdx] = {
+L57834| e.soilArr[o.sIdx] = i;
+L57954| if (o.hasOwnProperty("soilArr")) {
+L57956| e.soilArr = [];
+L57964| e.soilArr = o.soilArr;
+L57988| e.soilArr[o.idx] = i;
+L58016| e.soilArr[o.idx] = s;
+L58032| e.soilArr[o.idx] = {
+L58116| for (var o = {}, i = 0, n = 0; n < this.soilArr.length; n++) if (!this.soilArr[n].m && this.soilArr[n].s > 0) {
+L58249| var e = this, o = this.soilArr[t], r = this;
+L58335| this.soilArr.length > 0 && (t = this.soilArr.length);
+L58339| for (var t = 0, e = 0; e < this.soilArr.length; e++) 1 == this.soilArr[e].s && t++;
+L58343| for (var t = 0, e = 0; e < this.soilArr.length; e++) 1 != this.soilArr[e].s || this.soilArr[e].hasOwnProperty("m") || t++;
+L58381| this.soilArr = [];
+--- tools\index.js recentSeeds count=2
+L57592| i.recentSeeds ? e.recentSs = i.recentSeeds : e.recentSs.length = 0;
+L57672| e.recentSs = o.recentSeeds;
+--- tools\index.js plantExp count=10
+L57554| plantExp: 0
+L57594| e.plantSeedData.plantExp = i.exp;
+L57710| o.hasOwnProperty("exp") && (e.plantSeedData.plantExp = o.exp);
+L57752| i.hasOwnProperty("exp") && (e.plantSeedData.plantExp = i.exp);
+L57796| o.hasOwnProperty("exp") && o.exp > 0 && (e.plantSeedData.plantExp = o.exp);
+L57963| e.plantSeedData.plantExp = o.exp;
+--- tools\index.js productHomeEvent count=2
+L57876| y.PlantSystemMgr.productHomeEvent(e.eid, o);
+L95693| t.prototype.productHomeEvent = function(t, e) {
+--- tools\index.js PlantSystemMgr count=9
+L57522| var i = t("../gameconfigs/CFMgr"), n = t("../gameconfigs/LangMgr"), r = t("../core/events/MessageCenter"), a = t("../gui/uicomponents/Alert"), s = t("../net/HttpConst"), l = t("./R …[len=649]
+L57876| y.PlantSystemMgr.productHomeEvent(e.eid, o);
+L58303| if (0 == y.PlantSystemMgr.getCurStateNeedTime(e.id, e.s, e)) a.default.show(n.getText(3249)); else {
+L58412| "../mgrs/PlantSystemMgr": "PlantSystemMgr",
+L95563| PlantSystemMgr: [ function(t, e, o) {
+L95565| cc._RF.push(e, "18eddtgeXBMIZzvOvKnXSsh", "PlantSystemMgr");
+=== tools\scripts3.js soilArr_hits=0
+--- tools\scripts3.js recentSeeds count=0
+--- tools\scripts3.js plantExp count=0
+--- tools\scripts3.js productHomeEvent count=0
+--- tools\scripts3.js PlantSystemMgr count=0
+=== tools\scripts2.js soilArr_hits=3
+L37665| if (p.HomePlantModel.soilArr[this.landId].hasOwnProperty("m")) {
+L37666| this.seedCrop(p.HomePlantModel.soilArr[this.landId]);
+L49179| datas: r.HomePlantModel.soilArr[o]
+--- tools\scripts2.js recentSeeds count=0
+--- tools\scripts2.js plantExp count=1
+L48717| var t = a.getText(3185) + ": " + d.HomePlantModel.plantSeedData.plantExp;
+--- tools\scripts2.js productHomeEvent count=0
+--- tools\scripts2.js PlantSystemMgr count=10
+L37574| var r = t("../../../scripts/gameconfigs/CFMgr"), a = t("../../../scripts/gameconfigs/LangMgr"), c = t("../../../scripts/core/events/MessageCenter"), l = t("../../../scripts/mgrs/Pl …[len=431]
+L37723| this.totalTime = l.PlantSystemMgr.getCurStateNeedTime(this.datas.m.id, this.cropState, this.datas.m);
+L37724| this.cropCurFinishT = l.PlantSystemMgr.getCropShowTime(this.totalTime, this.bgTime, this.datas);
+L37735| this.cropCurFinishT = l.PlantSystemMgr.getCropShowTime(o, this.bgTime, this.datas);
+L37795| this.datas.m.hasOwnProperty("id") && (e = l.PlantSystemMgr.getCropGrowingTime(this.cropState, this.datas.m.id));
+L37809| }, o = l.PlantSystemMgr.getCropPestState(this.datas.m);

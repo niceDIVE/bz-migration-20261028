@@ -1,0 +1,91 @@
+{
+  "__meta": {
+    "source": "item",
+    "tables": 2,
+    "families": 4,
+    "tally": {
+      "PARAM-ONLY": 1,
+      "FK-RESOLVED": 2,
+      "CAPTURE-SUSPECT": 1
+    },
+    "minHit": 0.95,
+    "idFloor": 1000,
+    "caveat": "命中率只说明值域重合，不证明语义；PARAM-ONLY 与 FK-RESOLVED 仍需读客户端使用点确认【推断】"
+  },
+  "families": {
+    "1": {
+      "rows": 2,
+      "sampleIds": [
+        3001,
+        3002
+      ],
+      "verdict": "PARAM-ONLY",
+      "cols": {
+        "Data1": {
+          "nonzero": 2,
+          "distinct": 2,
+          "bestTable": null,
+          "hitRate": 0,
+          "idLike": false
+        }
+      }
+    },
+    "11": {
+      "rows": 2,
+      "sampleIds": [
+        3101,
+        3102
+      ],
+      "verdict": "FK-RESOLVED",
+      "cols": {
+        "Data1": {
+          "nonzero": 2,
+          "distinct": 2,
+          "bestTable": "skill",
+          "hitRate": 1,
+          "idLike": true
+        }
+      }
+    },
+    "13": {
+      "rows": 2,
+      "sampleIds": [
+        3201,
+        3202
+      ],
+      "verdict": "CAPTURE-SUSPECT",
+      "cols": {
+        "Data1": {
+          "nonzero": 2,
+          "distinct": 2,
+          "bestTable": null,
+          "hitRate": 0,
+          "idLike": true
+        }
+      }
+    },
+    "21": {
+      "rows": 1,
+      "sampleIds": [
+        3301
+      ],
+      "verdict": "FK-RESOLVED",
+      "cols": {
+        "Data1": {
+          "nonzero": 2,
+          "distinct": 2,
+          "bestTable": "item",
+          "hitRate": 1,
+          "idLike": true
+        },
+        "Data2": {
+          "nonzero": 2,
+          "distinct": 2,
+          "bestTable": null,
+          "hitRate": 0,
+          "idLike": false
+        }
+      }
+    }
+  }
+}

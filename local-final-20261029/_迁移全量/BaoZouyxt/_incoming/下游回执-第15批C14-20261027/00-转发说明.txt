@@ -1,0 +1,19 @@
+【给转发人看的 30 秒版】
+
+这是"第 15 批 C14〔斗狗〕（档 A）"的下游回执包，里面有什么：
+
+  01-receipt-第15批C14.txt   回执正文（做了什么 / 门禁数据 / 真机验证 / 自定口径申报 / 待裁项）
+  02-manifest.txt            逐文件 md5 + 怎么验
+  core\                      完整 core（bz-rpc-server.js + templates + 全部 generated 表，解包即可跑测试）
+  bz-rpc-server.js           根级副本（= core\ 里那份，方便直接对照）
+  facts\                     C14 取证与策略 / 执行记录 / 四工人报告 / 主审摸底 / OPEN-ISSUES
+  test\                      全部测试（含本轮新增 c14-smoke.js）
+
+  ⚠ 要发的就这一个 zip，不要单独再发别的文件。
+
+怎么验（3 步）：
+  1. md5 core\bz-rpc-server.js 应与 manifest 里的"部署版"一致
+  2. 解包目录内：node test/c14-smoke.js   → 期望 "全部通过（10 条）"
+  3. 解包目录内：node test/c13-smoke.js   → 回归绿；node test/c12-smoke.js 同
+
+升级报告条件不变：存档写坏，或者能白拿钱/道具。本批没有发钱口（喂狗是纯消耗）。

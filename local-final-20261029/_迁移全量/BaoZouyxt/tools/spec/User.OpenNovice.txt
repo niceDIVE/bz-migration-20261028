@@ -1,0 +1,60 @@
+# User.OpenNovice  (HttpConst.OPEN_NOVICE)
+# 出现 2 处
+
+ 55599: var i = cc.instantiate(e);
+ 55600: i.getComponent("BeginGuideUI").setGuidData(o);
+ 55601: n.PopUpMgr.addPopUp(i, f.LayerMgr.topLayer, 0);
+ 55602: });
+ 55603: }
+ 55604: }, this);
+ 55605: i.MessageCenter.on(l.HttpConst.OPEN_NOVICE, function() {
+ 55606: t.setBeginGuide(0);
+ 55607: t.setGuideState(t.guideID);
+ 55608: }, this);
+ 55609: };
+ 55610: t.prototype.reqCurrentGuideId = function(t) {
+ 55611: this.guideID = t;
+ 55612: this.guideState = !1;
+ 55613: c.NetMgr.http.sendRequest(l.HttpConst.OPEN_NOVICE, {
+ 55614: noviceID: t
+ 55615: });
+ 55616: 840990 == t && (this.bigMapGuide = !0);
+ 55617: };
+ 55618: t.prototype.enterFirstGuide = function(t, e) {
+ 55619: if (!this.closeGuideState && !(s.RoleOtherInfo.reBirthTime > 0 || 1 == this.guidAy[0] || this.guidAy[0] >= t)) {
+ 55620: var o = h.getItem(t, "newguide");
+ 55621: if (o && o.start == e) {
+ 55622: i.MessageCenter.dispatch(p.EvName.OPEN_MENU_EVENT, 0);
+ 55623: i.MessageCenter.dispatch(p.EvName.GUIDE_EVENT, o);
+ 55624: } else if (o && o.start == e) {
+ 55625: i.MessageCenter.dispatch(p.EvName.OPEN_MENU_EVENT, 0);
+ 55626: i.MessageCenter.dispatch(p.EvName.GUIDE_EVENT, o);
+ 55627: }
+ 55628: }
+ 55629: };
+ 55630: t.prototype.setGuideData = function(t) {
+ 55631: this.guidAy = t;
+ 55632: };
+ 55633: t.prototype.addGuidePage = function(t, e) {
+ 55634: e ? this.guideMap[e] = t : this.guideMap[t.node.name] = t;
+ 55635: };
+ 55636: t.prototype.getGuidePage = function(t) {
+ 55637: return !(!this.guideMap.hasOwnProperty(t) || null == this.guideMap[t]) && this.guideMap[t];
+ 55638: };
+ 55639: t.prototype.deleteGuidePage = function(t) {
+ 55640: if (this.guideMap.hasOwnProperty(t)) {
+ 55641: this.guideMap[t] = null;
+ 55642: delete this.guideMap[t];
+ 55643: }
+ 55644: };
+ 55645: t.prototype.setBeginGuide = function(t) {
+---
+ 55646: var e = u.RoleBaseInfo.roleID;
+ 55647: a.LocalStorageMgr.setItem("&*%guide*&" + e, t.toString());
+ 55648: };
+ 55649: t.prototype.judgeGuideState = function() {
+ 55650: var t = !1, e = u.RoleBaseInfo.roleID, o = 0;
+ 55651: a.LocalStorageMgr.getItem("&*%guide*&" + e) && (o = parseInt(a.LocalStorageMgr.getItem("&*%guide*&" + e)));
+ 55652: if (0 == o) return t;
+ 55653: var n = h.getItem(o, "newguide");
+---

@@ -1,0 +1,67 @@
+算法 v2.5 回执 + C05 补正（2026-10-25）
+
+════ 一、v2.5 extract_shape stdout JSON ════
+
+  {"actions": 235, "kinds": {"array|object|array|string": 117, "array|array|string": 26, "container": 113, "array|string": 17, "array|array|object|array|string": 8, "array|object": 12, "scalar": 22, "": 11, "array": 24, "array|object|object|scalar": 4, "array|object|array|string|scalar": 2, "array|array|object": 2}, "unsafe": 204, "zeroIsWrong": 336, "note": "正则启发式【推断】；consumedAt 是复核用的落点"}
+
+  对比 v2.4：actions 150→235，zeroIsWrong 196→336，unsafe 132→204（你们预估的"unsafe 涨是误报"对）
+  耗时 13.4s（v2.4 是 3.7s，补抽展开明显更重，但仍在可接受范围）
+
+════ 二、两条 trace 的 [trace] 行（原样贴回）════
+
+  1) --trace User.passCardData
+     [trace] User.passCardData 契约字段=[] 补抽=False → []
+     [trace] User.passCardData 发送点=['index.js:55858', 'index.js:55965'] 重发判定=[]
+
+     ⚠ 问题：**补抽=False**，也就是没有展开回调 → 字段仍然是 []，没有抽到 passCard。
+       发送点认出来了（55858 是 MessageCenter.on(PASS_CARD_DATA) 注册处、55965 是另一个），
+       但字段补抽这条没生效。按 README 你们说"fields 为空时自己展开回调抽字段"，
+       在这个动作上没有触发。回调是 `this.onGetPassCardData`（index.js:55858 绑定的方法名），
+       方法体在 index.js:55867，里面读 `e.passCard.p` / `e.passCard.n` / `e.passCard.award`。
+
+  2) --trace User.getBigGrowupData
+     [trace] User.getBigGrowupData 契约字段=[] 补抽=True → ['prototype']
+     [trace] User.getBigGrowupData.prototype @ index.js:55267 exprs=['\\.prototype\\b', '\\[\\s*["\\']prototype["\\']\\s*\\]'] this=[] kinds=[]
+     [trace] User.getBigGrowupData 发送点=['index.js:55239', 'index.js:55306'] 重发判定=[]
+
+     ⚠ 问题：补抽=True 了，但抽出来的是 **'prototype'** —— 这是正则把
+       `xxx.prototype.某方法` 里的 `.prototype` 当成字段名了，属于假字段（不是真响应字段）。
+       同时**重发判定=[]**，没识别到这动作的空数据重发。而实际情况是：
+       NewGFUI 在 dataArr[1] 为空时会每 14~15ms 重发一次 getBigGrowupData、永不收敛
+       （客户端 scripts2.js:46175 `1 == t && reqBigGrowUpData()`，我们第 1 批踩过这个死锁）。
+       所以这条"重发判定"是最该被识破的一处，现在还是空的。
+
+  小结：v2.5 的发送点识别到位（4 个发送点全对），但字段补抽两处都还没到位 ——
+        一处没展开（passCardData），一处展开后抽到正则假字段（getBigGrowupData 抽到 prototype）。
+
+════ 三、passObj：确认你们的结论，人工登记保留 ════
+
+  你们说的 (c) 和我们查到的一致：服务端在发（bz-rpc-server.js:1845 `passObj: rows`），
+  客户端 `showInviteActionUI(this.data.passObj)`（scripts2.js:48291）是整包转手、别处再读，
+  工具追不到属合理。tools/golden/approved-widening.json 里那条人工登记保留不动。
+
+════ 四、C05 补正：物品 id 已按客户端证据换成 7602 ════
+
+  你们给的查法奏效了，而且是**两个独立调用点互证**，不是猜的：
+    index.js:121375   `itemId: 7602`   （SkillUpgradeModel.showAddBreakRateUI）
+    scripts2.js:4805  `itemId: 7602`   （onUpLv）
+    → 该值流到 AddBreakRateUI 的 this.data.itemId → this.itemId（scripts2.js:599）
+      → RoleBaseInfo.getItemNum(this.itemId)（scripts2.js:600）
+
+  **同时发现单位也错了**（原来按"件数"发，实际是"百分点"）：
+    scripts2.js:607  `10 * this.useItemNum + "%"`        → 每件 +10%
+    scripts2.js:602  `itemBreakAdditionNum / 10`          → 该累计值除以 10 才是件数
+    scripts2.js:622-624 `getMaxNum = min(t, (100-curRate)/10)` → 上限也是按 10 一件算
+  所以 itemAddition 应回 `use * 10`。已改：AID 176→7602，itemAddition use→use*10。
+  （item.json 截断导出这事我们记下了，表里查不到 7602 不代表不存在。）
+
+  改后：c05-smoke 16/16 仍全过（断言 bag 7602 10→8、itemAddition=20）；
+  验收 39/39 绿；形状冻结 diff 0；线上 impl=h62a81bfb，selfCheck 1256 全过。
+  bz-rpc-server.js 244,782 B  md5 7C651895B0879107A935C620A6DD8CBD
+
+  另三条卡点按你们拍的：rgUseItem 的 buff 留到肉鸽批；雪球奖励口径不动；退门派保留贡献不动。
+
+════ 五、第 3 批 C02 任务主线：收到，已排为下一步 ════
+
+  按 relations.md 的 C02（19 个，已有 3 个）开做；circle_task.json 的混淆数值
+  先按客户端读 cfMon 的方式解码再落表。

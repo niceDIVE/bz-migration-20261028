@@ -1,0 +1,1 @@
+{"name":"gemrefine","rows":3,"cols":["id","level","attribute","cost","gold_price"],"data":{"1":{"id":1,"level":1,"attribute":[2,3],"cost":400,"gold_price":100},"2":{"id":2,"level":2,"attribute":[1],"cost":400,"gold_price":100},"3":{"id":3,"level":3,"attribute":[4],"cost":800,"gold_price":100}}}

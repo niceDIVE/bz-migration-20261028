@@ -1,0 +1,13 @@
+# User.BeginRecoverMP   (HttpConst.BEGIN_RECOVER_MP)
+
+## 注册点 138896: r.MessageCenter.on(s.HttpConst.BEGIN_RECOVER_MP, function(e, o) {
+
+## 请求点 138918: u.NetMgr.http.sendRequest(s.HttpConst.BEGIN_RECOVER_MP, {});
+   138910: r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);
+   138911: }, this);
+   138912: r.MessageCenter.on(s.HttpConst.VIGOR_DAZUO, function(t, e) {
+   138913: r.MessageCenter.dispatch(l.EvName.REFRESH_VIGORS, e.vigor);
+   138914: a.default.show(n.getText(3259).replace(/\[1\]/, m.playerInfo.entity.mp.limit));
+   138915: }, this);
+   138916: };
+   138917: t.prototype.startRecoverMp = function() {

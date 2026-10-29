@@ -1,0 +1,3 @@
+467bb742278790144a3b4c2d813ecd40  bz-rpc-server.js
+5c646b90101548a7f38733ad26bfffd0  bz-shapes.generated.js
+c445cfd42d90494cb9b1e63ccb0a6bf5  handlers.js.prebuild

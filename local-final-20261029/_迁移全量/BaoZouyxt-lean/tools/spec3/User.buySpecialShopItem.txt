@@ -1,0 +1,13 @@
+# User.buySpecialShopItem   (HttpConst.BUY_SPECIAL_GOODS)
+
+## 注册点 123376: i.MessageCenter.on(n.HttpConst.BUY_SPECIAL_GOODS, function(t, e) {
+
+## 请求点 123392: r.NetMgr.http.sendRequest(n.HttpConst.BUY_SPECIAL_GOODS, i);
+   123384: r.NetMgr.http.sendRequest(n.HttpConst.GET_SPGOODS_LIST, e);
+   123385: };
+   123386: t.prototype.reqBuy = function(t, e, o) {
+   123387: var i = {
+   123388: npcid: t,
+   123389: itemID: e,
+   123390: itemNum: o
+   123391: };

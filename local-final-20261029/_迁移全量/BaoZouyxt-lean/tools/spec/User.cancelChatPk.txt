@@ -1,0 +1,104 @@
+# User.cancelChatPk  (HttpConst.CANCEL_CHAT_PK)
+# 出现 3 处
+
+ 24015: if (1 == e.eRet) {
+ 24016: l.RoleBaseInfo._itemObj = {};
+ 24017: l.RoleBaseInfo.type2Items = {};
+ 24018: for (var o in e.itemObj) parseInt(o) > 0 && parseInt(e.itemObj[o]) > 0 && l.RoleBaseInfo.setItem(parseInt(o), e.itemObj[o]);
+ 24019: }
+ 24020: }, this);
+ 24021: a.MessageCenter.on(s.HttpConst.CANCEL_CHAT_PK, function(e, o) {
+ 24022: if (1 == o.eRet && 0 == t.cancelPkState) {
+ 24023: t.reqCloseWorldMatch();
+ 24024: t.startPkFight = !1;
+ 24025: }
+ 24026: }, this);
+ 24027: a.MessageCenter.on(s.HttpConst.CHAT_PK_ACTIVITY, function(t, e) {
+ 24028: if (1 == e.eRet) {
+ 24029: this.chatPkOption = e.option;
+ 24030: a.MessageCenter.dispatch(m.EvName.CHAT_MATCH_NPC_EVENT, e.NpcId);
+ 24031: } else 2 == e.eRet && y.default.show(r.getText(5933));
+ 24032: }, this);
+ 24033: a.MessageCenter.on(s.HttpConst.RECEIVE_CHAT_PK_POINTAWARD, function(t, e) {
+ 24034: e.hasOwnProperty("rewardArray") && E.default.addShowRewardUI1(e.rewardArray, 0, {});
+ 24035: }, this);
+ 24036: a.MessageCenter.on(s.HttpConst.STC_ADDED_MATCH_INFONOTIFY, function(e, o) {
+ 24037: n.getChatPkScoreData(o.Score).id >= 4 && (t.scoreState = !0);
+ 24038: t.startPkFight = !0;
+ 24039: }, this);
+ 24040: a.MessageCenter.on(s.HttpConst.STC_OPEN_MATCH_INTERFACERES, function(e, o) {
+ 24041: t.pkStartTime = o.NowSystemTime;
+ 24042: t.pkEndTime = o.SeasonEndTime;
+ 24043: o.hasOwnProperty("canMatchTime") && o.canMatchTime.length > 1 && (t.canMatchTimeAy = o.canMatchTime);
+ 24044: I.default.prefabs.load("chats/BattleMatch", cc.Prefab, function(t, e) {
+ 24045: var o = cc.instantiate(e);
+ 24046: o.addComponent("ReadyPkUI");
+ 24047: b.PopUpMgr.addPopUp(o, T.LayerMgr.popUpLayer, 1, !0);
+ 24048: });
+ 24049: }, this);
+ 24050: a.MessageCenter.on(s.HttpConst.STC_UPDATE_ROLE_SCORE_NOTIFY, function(e, o) {
+ 24051: o.hasOwnProperty("RoleScore") && (t.scoreArray[1] = o.RoleScore);
+ 24052: }, this);
+ 24053: a.MessageCenter.on(s.HttpConst.STC_WORLD_MATCH_TIP, function(t, e) {
+ 24054: e.hasOwnProperty("UniqueRoleId") && a.MessageCenter.dispatch(m.EvName.CHAT_PK_BURROR_EVENT, e);
+ 24055: }, this);
+ 24056: a.MessageCenter.on(s.HttpConst.RES_WORLD_OFFLINE_MATCH_REC, function(t, e) {
+ 24057: e.hasOwnProperty("show_world_offline_match_battle_record_list") ? a.MessageCenter.dispatch(m.EvName.SHOW_OFFLINE_REC, e.show_world_offline_match_battle_record_list) : cc.log("聊天跨服PK离线对战记录没有收到数据！！！");
+ 24058: }, this);
+ 24059: };
+ 24060: t.prototype.getFirstEnterAward = function() {
+ 24061: h.NetMgr.http.sendRequest(s.HttpConst.RECEIVE_CHAT_PK_POINTAWARD, {});
+---
+ 24172: };
+ 24173: t.prototype.reqCancelCheckPKRole = function() {
+ 24174: this.cancelPkState = 0;
+ 24175: p.Net.sendMsg(s.HttpConst.CTS_CHATPK_MATCH_CANCEL_REQ, {
+ 24176: roleUniqueId: this.roleUniqueId
+ 24177: });
+ 24178: h.NetMgr.http.sendRequest(s.HttpConst.CANCEL_CHAT_PK, {});
+ 24179: };
+ 24180: t.prototype.reqConnectServer = function() {
+ 24181: this.cancelPkState = 1;
+ 24182: h.NetMgr.http.sendRequest(s.HttpConst.CANCEL_CHAT_PK, {});
+ 24183: };
+ 24184: t.prototype.reqLoadRoleWorldData = function(t) {
+ 24185: 0 != t && p.Net.sendMsg(s.HttpConst.CTS_CHATPK_MATCH_CANCEL_REQ, {
+ 24186: roleUniqueId: t
+ 24187: });
+ 24188: };
+ 24189: t.prototype.reqCancelPk = function() {
+ 24190: p.Net.sendMsg(s.HttpConst.CTS_CHAT_DOWN_POWER_REQ, {});
+ 24191: };
+ 24192: t.prototype.reqChatVideoList = function(t, e) {
+ 24193: void 0 === e && (e = {});
+ 24194: 0 == t ? h.NetMgr.chatPkHttp.sendRequest(s.HttpConst.REQ_SUBTITLE_NEW, {}, null) : 1 == t ? h.NetMgr.chatPkHttp.sendRequest(s.HttpConst.REQ_SUBTITLE_HOT, {}, null) : 2 == t && h.NetMgr.chatPkHttp.sendRequest(s.HttpConst.REQ_WORLD_RANK, e, null);
+ 24195: };
+ 24196: t.prototype.reqOpenWorldMatch = function() {
+ 24197: p.Net.sendMsg(s.HttpConst.CTS_OPEN_MATCH_INTERFACE_REQ, {});
+ 24198: };
+ 24199: t.prototype.reqCloseWorldMatch = function() {
+ 24200: p.Net.sendMsg(s.HttpConst.CTS_CLOSE_MATCH_INTERFACE_REQ, {});
+ 24201: };
+ 24202: t.prototype.reqQuickWorldMatch = function(t) {
+ 24203: p.Net.sendMsg(s.HttpConst.CTS_SHORTOUT_WORLD_MATCH_INTERFACE_REQ, {
+ 24204: TargetUniqueRoleId: t
+ 24205: });
+ 24206: };
+ 24207: t.prototype.reqMatchNpcOrRole = function() {
+ 24208: h.NetMgr.http.sendReqWithMask(s.HttpConst.CHAT_PK_ACTIVITY, {});
+ 24209: };
+ 24210: t.prototype.getPkEndTime = function() {
+ 24211: var t = 0;
+ 24212: this.pkEndTime >= this.pkStartTime && (t = Math.floor(this.pkEndTime - this.pkStartTime));
+ 24213: var e = t / 60, o = Math.floor(e / 1440), i = Math.floor(e % 1440 / 60), n = Math.floor(e % 1440 % 60);
+ 24214: n = Math.max(1, n);
+ 24215: var a = r.getText(5973).replace(/\[1\]/, o.toString());
+ 24216: return (a = a.replace(/\[1\]/, i.toString())).replace(/\[1\]/, n.toString());
+ 24217: };
+ 24218: t.prototype.reqOfflineMatchRec = function() {
+---
+ 24219: h.NetMgr.chatPkHttp.sendRequest(s.HttpConst.REQ_WORLD_OFFLINE_MATCH_REC, o.ChatVSFightModel.roleUniqueId, null, !0);
+ 24220: };
+ 24221: t.prototype.destroy = function() {
+ 24222: this.chatPKReward = {};
+---

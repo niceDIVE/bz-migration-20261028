@@ -1,0 +1,37 @@
+# User.acceptTask   (HttpConst.GET_TASK)
+
+## 注册点 133215: r.MessageCenter.on(s.HttpConst.GET_TASK, this.getTaskCallBack, this);
+
+## 请求点 133616: 3 == t.taskObj.TaskType && f.GSceneMgr.mode == f.GSceneMgr.modeMap.rogue ? p.NetMgr.http.sendReqWithMask(s.HttpConst.ROGUE_ACCEPT_TASK, n) : p.NetMgr.http.sendReqWithMask(s.HttpConst.GET_TASK, n);
+   133608: this.isOrBubble = e;
+   133609: this.npcId = o;
+   133610: this.npcTaskInfo = t;
+   133611: var i = this.checkOrderDelete(parseInt(t.taskObj.TaskID)), n = {
+   133612: taskID: t.taskObj.TaskID,
+   133613: delOrder: i
+   133614: };
+   133615: cc.log("请求接取任务ID == " + t.taskObj.TaskID);
+
+## 处理函数 getTaskCallBack (133338-133359)
+133338: e.prototype.getTaskCallBack = function(e, o) {
+133339: if (1 == o.eRet) {
+133340: o.hasOwnProperty("triggerBoxs") && Promise.resolve().then(function() {
+133341: return t("../../scripts3/model3/MapBoxModel");
+133342: }).then(function(t) {
+133343: t.MapBoxModel.addBox(o.triggerBoxs);
+133344: });
+133345: this.signNewTasks(this.npcTaskInfo.taskObj.TaskID);
+133346: C.GuideMgr.enterFirstGuide(this.npcTaskInfo.taskObj.TaskID, 1);
+133347: D.talkDataModel.reqTaskTalkData(parseInt(this.npcTaskInfo.taskObj.TaskID));
+133348: if (0 == this.isOrBubble) {
+133349: this.npcTaskInfo.hasOwnProperty("taskObj") && this.clearHideTask(this.npcTaskInfo.taskObj.TaskID);
+133350: b.default.operationalTasks(0, this.npcTaskInfo);
+133351: if (b.default.blankTaskArray.length) return;
+133352: var h = this.npcTaskInfo.taskObj.Fight;
+133353: if (h > 0) {
+133354: var u = {
+133355: npcSceneID: 1,
+133356: npcID: h,
+133357: npcData: c.RoleBaseInfo.setCurrentNpcData(h),
+133358: showbubble: !1
+133359: };

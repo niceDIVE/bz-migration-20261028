@@ -1,0 +1,58 @@
+# User.chooseState  (HttpConst.CHOOSE_STATE)
+# 出现 2 处
+
+ 29346: this.cardID = 0;
+ 29347: this.eventID = 0;
+ 29348: this.pathId = 0;
+ 29349: this.birthPox = null;
+ 29350: this.currentIdx = 0;
+ 29351: this.dartCardPos = {};
+ 29352: n.MessageCenter.on(r.HttpConst.CHOOSE_STATE, function(e, o) {
+ 29353: 1 == o.eRet && (s.RoleOtherInfo.randomNpcLevel = t.selectTag);
+ 29354: }, this);
+ 29355: };
+ 29356: e.prototype.reqSetRandomNpcLevel = function(t) {
+ 29357: this.selectTag = t;
+ 29358: a.NetMgr.http.sendRequest(r.HttpConst.CHOOSE_STATE, {
+ 29359: state: t
+ 29360: });
+ 29361: };
+ 29362: e.prototype.setOpenDart = function(t) {
+ 29363: this.dartState = 1;
+ 29364: this.eventID = t;
+ 29365: this.save();
+ 29366: n.MessageCenter.dispatch(l.EvName.START_DART_EVENT);
+ 29367: };
+ 29368: e.prototype.getDartState = function() {
+ 29369: return this.dartState;
+ 29370: };
+ 29371: e.prototype.endDartState = function() {
+ 29372: this.dartState = 0;
+ 29373: this.cardID = 0;
+ 29374: this.pathId = 0;
+ 29375: this.currentIdx = 0;
+ 29376: c.RoleBaseInfo.killOrDart = 0;
+ 29377: this.selectTag = 1;
+ 29378: this.eventID = 0;
+ 29379: this.birthPox = null;
+ 29380: };
+ 29381: e.prototype.getPathPosition = function() {
+ 29382: for (var t = [], e = i.getItem(this.pathId, "dart"), o = e.x, n = e.y, r = 0; r < o.length; r++) {
+ 29383: var a = cc.v2(parseInt(o[r]), parseInt(n[r]));
+ 29384: t.push(a);
+ 29385: }
+ 29386: return t;
+ 29387: };
+ 29388: e.prototype.randDartCardEvent = function() {
+ 29389: var t = i.getTable("dart"), e = 0;
+ 29390: for (var o in t) e++;
+ 29391: this.pathId = Math.floor(Math.random() * (e - 1) + 1);
+ 29392: this.currentIdx = 0;
+---
+ 29393: this.save();
+ 29394: };
+ 29395: e.prototype.setNextPoint = function() {
+ 29396: this.currentIdx++;
+ 29397: };
+ 29398: e.prototype.getDartCardPathId = function() {
+---

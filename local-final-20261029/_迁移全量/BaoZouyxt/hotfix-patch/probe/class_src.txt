@@ -1,0 +1,17 @@
+
+########## LoginModel : NOT FOUND ##########
+
+########## SvrListModel : NOT FOUND ##########
+
+########## GSceneMgr : NOT FOUND ##########
+
+########## LoginMgr(window) ##########
+
+=== LoginMgr(window).errorLogin ===
+function(t) {
+n.isErrLogin = t;
+}
+
+########## CreateRoleModel : NOT FOUND ##########
+
+########## RoleBaseInfo : NOT FOUND ##########

@@ -1,0 +1,99 @@
+# User.sweepCopy  (HttpConst.SWEEP_DUNGEON)
+# 出现 2 处
+
+ 64092: }
+ 64093: }, this);
+ 64094: r.MessageCenter.on(a.HttpConst.END_DUNGEON_ADVENTURE, function(e, o) {
+ 64095: t.showRewards(o.rewardArray, o.liveness);
+ 64096: t.end();
+ 64097: }, this);
+ 64098: r.MessageCenter.on(a.HttpConst.SWEEP_DUNGEON, function(e, o) {
+ 64099: if (1 == o.eRet) t.showRewards(o.rewardArray, o.liveness); else if (3 == o.eRet) g.LoginMgr.isMiniIos(1) ? l.default.show(n.getText(591)) : l.default.show(n.getText(1180) + "\n" + n.getText(1043), [ {
+ 64100: flag: 0,
+ 64101: name: n.getText("930")
+ 64102: } ], function(t) {
+ 64103: 0 == t && c.StoreModel.reqStoreList();
+ 64104: }); else if (5 == o.eRet) {
+ 64105: var r = i.getItem(o.copyID, "fuben").exp[o.state - 1];
+ 64106: l.default.show(n.getText(1242).replace(/\[1\]/, r));
+ 64107: }
+ 64108: }, this);
+ 64109: };
+ 64110: t.prototype.start = function(t) {
+ 64111: if (!this._started) {
+ 64112: this._started = !0;
+ 64113: p.GSceneMgr.mode = 1;
+ 64114: this.killedNpc = {};
+ 64115: this.killedNpcTmp = {};
+ 64116: var e = i.getItem(t, "fuben").Spawn[this.level];
+ 64117: this.entrMap = h.GameStates.getLastMapID();
+ 64118: this.entrX = u.UserModel.player.position.x;
+ 64119: this.entrY = u.UserModel.player.position.y;
+ 64120: p.GSceneMgr.go2Scene(e);
+ 64121: }
+ 64122: };
+ 64123: t.prototype.end = function() {
+ 64124: p.GSceneMgr.mode = 0;
+ 64125: p.GSceneMgr.go2Scene(this.entrMap, cc.v3(this.entrX, this.entrY, 0));
+ 64126: this.clear();
+ 64127: };
+ 64128: t.prototype.clear = function() {
+ 64129: this.killedNpc = null;
+ 64130: this.killedNpcTmp = null;
+ 64131: this.dungeonID = 0;
+ 64132: this.level = 0;
+ 64133: this.entrMap = 0;
+ 64134: this.entrX = 0;
+ 64135: this.entrY = 0;
+ 64136: this._started = !1;
+ 64137: this.perfect = !1;
+ 64138: this.completeMap = {};
+---
+ 64171: flag: this.perfect
+ 64172: };
+ 64173: f.NetMgr.http.sendRequest(a.HttpConst.END_DUNGEON_ADVENTURE, i);
+ 64174: };
+ 64175: t.prototype.reqSweep = function(t, e, o) {
+ 64176: void 0 === o && (o = 1);
+ 64177: f.NetMgr.http.sendRequest(a.HttpConst.SWEEP_DUNGEON, {
+ 64178: copyID: t,
+ 64179: state: e + 1,
+ 64180: sweepCount: o
+ 64181: });
+ 64182: };
+ 64183: t.prototype.showRewards = function(t, e) {
+ 64184: var o = "", r = 0;
+ 64185: for (var a in t) {
+ 64186: var s = i.getItem(a, "item");
+ 64187: 0 != r && (o += "\n");
+ 64188: o += n.getText(s.Name) + " x" + t[a];
+ 64189: ++r;
+ 64190: }
+ 64191: if (e) {
+ 64192: 0 != r && (o += "\n");
+ 64193: o += n.getText(6010809) + "x" + e;
+ 64194: }
+ 64195: 1 == this.level ? d.SpecialAdventureModel.reqSpecialAdventure(2, null, o) : "" != o && l.default.show(o, null, null, n.getText(123));
+ 64196: };
+ 64197: t.prototype.destroy = function() {
+ 64198: p.GSceneMgr.mode = 0;
+ 64199: this.clear();
+ 64200: };
+ 64201: return t;
+ 64202: }();
+ 64203: o.InstDungeonModel = new m();
+ 64204: cc._RF.pop();
+ 64205: }, {
+ 64206: "../core/events/MessageCenter": "MessageCenter",
+ 64207: "../gameconfigs/CFMgr": "CFMgr",
+ 64208: "../gameconfigs/LangMgr": "LangMgr",
+ 64209: "../gui/uicomponents/Alert": "Alert",
+ 64210: "../mgrs/GSceneMgr": "GSceneMgr",
+ 64211: "../mgrs/LoginMgr": "LoginMgr",
+ 64212: "../net/HttpConst": "HttpConst",
+ 64213: "../net/NetMgr": "NetMgr",
+ 64214: "../utils/EvName": "EvName",
+ 64215: "./GameStates": "GameStates",
+ 64216: "./SpecialAdventureModel": "SpecialAdventureModel",
+ 64217: "./StoreModel": "StoreModel",
+---

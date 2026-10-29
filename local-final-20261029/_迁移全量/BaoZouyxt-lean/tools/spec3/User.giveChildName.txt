@@ -1,0 +1,21 @@
+# User.giveChildName   (HttpConst.GIVE_CHILD_NAME)
+
+## 注册点 24613: r.MessageCenter.on(s.HttpConst.GIVE_CHILD_NAME, this.setChildNameCallBack, this);
+
+## 请求点 24707: u.NetMgr.http.sendRequest(s.HttpConst.GIVE_CHILD_NAME, {
+   24699: };
+   24700: t.prototype.reqChooseSex = function(t) {
+   24701: this.chooseSexId = t;
+   24702: u.NetMgr.http.sendRequest(s.HttpConst.CHOOSE_SEX, {
+   24703: sex: t
+   24704: });
+   24705: };
+   24706: t.prototype.reqSetName = function(t) {
+
+## 处理函数 setChildNameCallBack (24621-24626)
+ 24621: t.prototype.setChildNameCallBack = function(t, e) {
+ 24622: if (1 == e.eRet) {
+ 24623: c.MarryModel.childData.childName = e.childName;
+ 24624: r.MessageCenter.dispatch(l.EvName.SET_CHILD_NAME_EVENT);
+ 24625: } else 99 == e.eRet ? a.default.show(i.getText("480")) : a.default.show(i.getText(427));
+ 24626: };

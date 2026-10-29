@@ -1,0 +1,99 @@
+# User.getSevenTaskList  (HttpConst.REQ_SEVENTASK_EVENT)
+# 出现 2 处
+
+ 57374: this.calendarStr = "";
+ 57375: }
+ 57376: t.prototype.init = function() {
+ 57377: this.taskId = 0;
+ 57378: this.target = null;
+ 57379: this.objData = null;
+ 57380: i.MessageCenter.on(l.HttpConst.REQ_SEVENTASK_EVENT, this.sevenTaskCallback.bind(this), this);
+ 57381: i.MessageCenter.on(l.HttpConst.REQ_SEVENREWARD_EVENT, this.sevenRewardCallback.bind(this), this);
+ 57382: i.MessageCenter.on(l.HttpConst.REQ_FIRST_PAY_EVENT, this.fristPayCallback.bind(this), this);
+ 57383: i.MessageCenter.on(l.HttpConst.GET_EVERYDAY_ACTIVE, this.everydayActiveCallback.bind(this), this);
+ 57384: i.MessageCenter.on(l.HttpConst.GET_ALL_ACTIVITY, this.onGetAllActivity, this);
+ 57385: i.MessageCenter.on(l.HttpConst.REQ_AWARD_RECHARDED, this.onGetAwardRechard, this);
+ 57386: };
+ 57387: t.prototype.sevenTaskCallback = function(t, e) {
+ 57388: if (e.hasOwnProperty("taskObj")) {
+ 57389: if (this.checkNull(e.taskObj)) {
+ 57390: this.reqEveryDayActive();
+ 57391: u.RoleOtherInfo.activeObj[0] = 0;
+ 57392: return;
+ 57393: }
+ 57394: this.objData ? i.MessageCenter.dispatch(p.EvName.STORE_SHOW_UI, {
+ 57395: type: this.objData.type,
+ 57396: back: this.objData.back,
+ 57397: data: e
+ 57398: }) : a.default.prefabs.load("comUI/ComBgUI", cc.Prefab, function(t, o) {
+ 57399: var i = cc.instantiate(o);
+ 57400: i.addComponent("HomeActiveUI").setData(e);
+ 57401: n.PopUpMgr.addPopUp(i, s.LayerMgr.popUpLayer);
+ 57402: });
+ 57403: }
+ 57404: this.objData = null;
+ 57405: };
+ 57406: t.prototype.checkNull = function(t) {
+ 57407: for (var e in t) return !1;
+ 57408: return !0;
+ 57409: };
+ 57410: t.prototype.sevenRewardCallback = function(t, e) {
+ 57411: if (1 == e.eRet) {
+ 57412: e.hasOwnProperty("rewardArray") && d.default.addShowRewardUI1(e.rewardArray, 0);
+ 57413: i.MessageCenter.dispatch(p.EvName.SEVEN_REWARD_EVENT, this.taskId);
+ 57414: this.target.updateBtnEvent();
+ 57415: } else r.default.show(h.getText(1025));
+ 57416: };
+ 57417: t.prototype.fristPayCallback = function(t, e) {
+ 57418: if (1 == e.eRet) {
+ 57419: e.hasOwnProperty("rewardArray") && d.default.addShowRewardUI1(e.rewardArray, 0);
+ 57420: i.MessageCenter.dispatch(p.EvName.FIRST_RECHARGE_REWRAD, 0);
+---
+ 57457: u.RoleOtherInfo.setActivityData(80, e.transGiftShow);
+ 57458: u.RoleOtherInfo.activeObj[0] ? this.reqSevenDayActive() : this.reqEveryDayActive();
+ 57459: };
+ 57460: t.prototype.reqSevenDayActive = function(t) {
+ 57461: void 0 === t && (t = null);
+ 57462: this.objData = t;
+ 57463: c.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_SEVENTASK_EVENT, {});
+ 57464: };
+ 57465: t.prototype.reqSevenDayReward = function(t, e) {
+ 57466: var o = {
+ 57467: taskID: t
+ 57468: };
+ 57469: this.taskId = t;
+ 57470: this.target = e;
+ 57471: c.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_SEVENREWARD_EVENT, o);
+ 57472: };
+ 57473: t.prototype.reqFirstPayReward = function() {
+ 57474: g.PackageModel.judgePackageLimit() || c.NetMgr.http.sendReqWithMask(l.HttpConst.REQ_FIRST_PAY_EVENT, {});
+ 57475: };
+ 57476: t.prototype.reqEveryDayActive = function(t) {
+ 57477: void 0 === t && (t = null);
+ 57478: this.objData = t;
+ 57479: c.NetMgr.http.sendReqWithMask(l.HttpConst.GET_EVERYDAY_ACTIVE, {});
+ 57480: };
+ 57481: t.prototype.reqGetAllActivity = function(t) {
+ 57482: void 0 === t && (t = 0);
+ 57483: this.showId = t;
+ 57484: c.NetMgr.http.sendReqWithMask(l.HttpConst.GET_ALL_ACTIVITY, {});
+ 57485: };
+ 57486: t.prototype.setAdventEventData = function(t) {
+ 57487: for (var e = [], o = 1; o < arguments.length; o++) e[o - 1] = arguments[o];
+ 57488: };
+ 57489: t.prototype.destroy = function() {
+ 57490: this.taskId = 0;
+ 57491: this.target = null;
+ 57492: this.objData = null;
+ 57493: this.activeShowList = [ 1, 1 ];
+ 57494: };
+ 57495: return t;
+ 57496: }();
+ 57497: o.HomeActiveModel = new y();
+ 57498: cc._RF.pop();
+ 57499: }, {
+ 57500: "../core/events/MessageCenter": "MessageCenter",
+ 57501: "../core/ui/mgrs/PopUpMgr": "PopUpMgr",
+ 57502: "../gameconfigs/LangMgr": "LangMgr",
+ 57503: "../gui/uicomponents/Alert": "Alert",
+---

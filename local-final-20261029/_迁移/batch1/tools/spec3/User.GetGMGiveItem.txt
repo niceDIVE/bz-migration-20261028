@@ -1,0 +1,13 @@
+# User.GetGMGiveItem   (HttpConst.GET_GMGIVE_ITEM)
+
+## 注册点 88286: i.MessageCenter.on(n.HttpConst.GET_GMGIVE_ITEM, function(t, e) {
+
+## 请求点 88309: r.NetMgr.http.sendRequest(n.HttpConst.GET_GMGIVE_ITEM, e);
+   88301: };
+   88302: t.prototype.sendOnlineList = function(t, e) {
+   88303: i.MessageCenter.dispatch(a.EvName.GET_GMGIVE_ITEM_LIST, e);
+   88304: };
+   88305: t.prototype.reqGMGetReward = function(t) {
+   88306: var e = {
+   88307: indexID: t
+   88308: };

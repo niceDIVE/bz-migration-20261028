@@ -1,0 +1,99 @@
+# User.GetSchoolReview  (HttpConst.GET_SCHOOL_POSTS)
+# 出现 2 处
+
+113567: this.lastContent = {};
+113568: this.npcData = [];
+113569: this.firstAppointData = [];
+113570: this.goupaiAppointData = [];
+113571: this.weirenAppointData = [];
+113572: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_RANK, this.onGetSchoolRank, this);
+113573: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_POSTS, this.onGetSchoolPost, this);
+113574: r.MessageCenter.on(a.HttpConst.CREATE_POST, this.onCreatePost, this);
+113575: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_TASK, this.onGetSchoolTask, this);
+113576: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_SHOP, this.onGetSchoolShop, this);
+113577: r.MessageCenter.on(a.HttpConst.ACCEPT_SCHOOL_TASK, this.onAcceptSchoolTask, this);
+113578: r.MessageCenter.on(a.HttpConst.SCHOOL_TASK_COMPLETE, this.onSchoolTaskComplete, this);
+113579: r.MessageCenter.on(a.HttpConst.SCHOOL_TASK_AWARD, this.onSchoolTaskAward, this);
+113580: r.MessageCenter.on(a.HttpConst.SCHOOL_RECEIVE_WAGES, this.onSchoolReceiveWages, this);
+113581: r.MessageCenter.on(a.HttpConst.BUY_SCHOOL_SHOP, this.onBuySchoolShop, this);
+113582: r.MessageCenter.on(a.HttpConst.REFRESH_SCHOOL_TASK, this.onRefreshSchoolTask, this);
+113583: r.MessageCenter.on(a.HttpConst.ONE_KEY_COMPLETE_SCHOOL_TASK, this.onOnekeyCompleteSchoolTask, this);
+113584: r.MessageCenter.on(a.HttpConst.AFFILIATION_SCHOOL, this.onAffiliationSchool, this);
+113585: r.MessageCenter.on(a.HttpConst.QUIT_SCHOOL, this.onQuitSchool, this);
+113586: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_FIRSTTRY, this.onGetSchoolFirstTry, this);
+113587: r.MessageCenter.on(a.HttpConst.INTO_SCHOOL_ARENA, this.onInfoSchoolArena, this);
+113588: r.MessageCenter.on(a.HttpConst.SCHOOL_SECTLEADER, this.onSchoolSectLeader, this);
+113589: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_APPOINT, this.onGetSchoolAppoint, this);
+113590: r.MessageCenter.on(a.HttpConst.SCHOOL_TAKE_OFFICE_APPLY, this.onSchoolTakeOfficeApply, this);
+113591: r.MessageCenter.on(a.HttpConst.SCHOOL_APPOINT, this.onSchoolAppoint, this);
+113592: r.MessageCenter.on(a.HttpConst.STC_OPEN_SCHOOL_MAINPAGE_RES, this.onOpenSchoolMainPageRes, this);
+113593: r.MessageCenter.on(a.HttpConst.STC_SCHOOL_STATUS_NOTIFY, this.onSchoolStatusNotify, this);
+113594: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_MASTER, this.onLookRoleInfo, this);
+113595: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_PUPIL, this.onLookRoleInfo, this);
+113596: r.MessageCenter.on(a.HttpConst.GET_APPLY_INFO, this.onLookRoleInfo, this);
+113597: r.MessageCenter.on(a.HttpConst.GET_SCHOOL_ROLE_INFO, this.onLookRoleInfo, this);
+113598: };
+113599: t.prototype.onCreatePost = function(t, e) {
+113600: 1 == e.eRet ? r.MessageCenter.dispatch(l.EvName.CREATE_POST_SUCCEED, e.id) : 2 == e.eRet ? c.default.show(i.getText(858)) : 99 == e.eRet && c.default.show(i.getText("480"));
+113601: };
+113602: t.prototype.onGetSchoolRank = function(t, e) {
+113603: 1 == e.eRet && r.MessageCenter.dispatch(l.EvName.GOT_RANK_LIST, e);
+113604: };
+113605: t.prototype.onGetSchoolPost = function(t, e) {
+113606: if (1 == e.eRet) if (1 == e.type) r.MessageCenter.dispatch(l.EvName.ON_GET_MOSTLIKED, e.reviewList); else {
+113607: ++this.newPostPage;
+113608: this.theresmore = this.newPostPage < e.maxPage;
+113609: r.MessageCenter.dispatch(l.EvName.ON_GET_PAGE, e.reviewList);
+113610: }
+113611: };
+113612: t.prototype.onGetSchoolTask = function(t, e) {
+113613: this.schoolTaskData = e;
+---
+113952: t.prototype.reqPostPage = function(t, e, o) {
+113953: var i = {
+113954: school: t,
+113955: type: e,
+113956: page: o
+113957: };
+113958: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_POSTS, i);
+113959: };
+113960: t.prototype.reqCreatPost = function(t, e, o) {
+113961: var i = {
+113962: school: t,
+113963: userName: e,
+113964: userContent: o
+113965: };
+113966: this.lastContent = o;
+113967: s.NetMgr.http.sendRequest(a.HttpConst.CREATE_POST, i);
+113968: };
+113969: t.prototype.reqLike = function(t) {
+113970: var e = {
+113971: id: t
+113972: };
+113973: s.NetMgr.http.sendRequest(a.HttpConst.LIKE, e, function() {}, !1, !1);
+113974: };
+113975: t.prototype.reqSchoolRank = function(t) {
+113976: var e = {
+113977: school: t
+113978: };
+113979: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_RANK, e);
+113980: };
+113981: t.prototype.reqSchoolTask = function() {
+113982: var t = {
+113983: schoolId: this.othenSchool
+113984: };
+113985: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_TASK, t);
+113986: };
+113987: t.prototype.reqSchoolShop = function() {
+113988: var t = {
+113989: schoolId: this.othenSchool
+113990: };
+113991: s.NetMgr.http.sendRequest(a.HttpConst.GET_SCHOOL_SHOP, t);
+113992: };
+113993: t.prototype.reqAcceptSchoolTask = function(t) {
+113994: this.taskTag = t;
+113995: var e = {
+113996: schoolId: this.othenSchool,
+113997: index: t
+113998: };
+---

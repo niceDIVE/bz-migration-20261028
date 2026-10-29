@@ -1,0 +1,71 @@
+总行数=14738 段标记=【A. 毫秒字面量统计】 | 【B. 疑似活动窗口（键路径含 begin|end|start|time|tims|open|close|dt|Date）】 | 【C. 已经过去（值 < 1792572970629）】 | 【D. 30 天内到期（1792572970629 <= 值 <= 1795164970629）】 | 【E. 10 位秒级的项（1e9 <= 值 < 1e12）】
+===== 【A. 毫秒字面量统计】  行数=45 =====
+【A. 毫秒字面量统计】
+毫秒字面量总数: 7726
+涉及表数: 41
+按表汇总:
+  - exchange: 1719
+  - drop: 1446
+  - tasktime: 1374
+  - merchant: 940
+  - hlexchange: 546
+  - fashionall: 394
+  - active: 225
+  - gift_permanent: 178
+... (省略 33 行)
+===== 【B. 疑似活动窗口（键路径含 begin|end|start|time|tims|open|close|dt|Date）】  行数=6192 =====
+【B. 疑似活动窗口（键路径含 begin|end|start|time|tims|open|close|dt|Date）】
+总条数: 6190
+  [templates] create.serverTime = 1792572970629 (2026-10-21T08:56:10.629Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [templates] create.housekeeper.curTime = 1792512000000 (2026-10-20T16:00:00.000Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [achieve_group] data.14.opentime = 1727712000000 (2024-09-30T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_group.json
+  [achieve_list] data.1796.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1797.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1798.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1799.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1800.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1801.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1802.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+... (省略 6180 行)
+===== 【C. 已经过去（值 < 1792572970629）】  行数=6128 =====
+【C. 已经过去（值 < 1792572970629）】
+总条数: 6126
+  [templates] create.housekeeper.taskRtm = 1792512000000 (2026-10-20T16:00:00.000Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [templates] create.housekeeper.curTime = 1792512000000 (2026-10-20T16:00:00.000Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [achieve_group] data.14.opentime = 1727712000000 (2024-09-30T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_group.json
+  [achieve_list] data.1796.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1797.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1798.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1799.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1800.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1801.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+  [achieve_list] data.1802.opentime = 1766678400000 (2025-12-25T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\achieve_list.json
+... (省略 6116 行)
+===== 【D. 30 天内到期（1792572970629 <= 值 <= 1795164970629）】  行数=20 =====
+【D. 30 天内到期（1792572970629 <= 值 <= 1795164970629）】
+总条数: 18
+  [templates] create.serverTime = 1792572970629 (2026-10-21T08:56:10.629Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [templates] create.activityResource.67[1] = 1793177770630 (2026-10-28T08:56:10.630Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [active] data.27.endtime[0] = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\active.json
+  [active] data.55.endtime[0] = 1792943999000 (2026-10-25T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\active.json
+  [exchange] data.2200.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2201.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2202.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2203.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2204.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+  [exchange] data.2205.endtime = 1793030399000 (2026-10-26T15:59:59.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\exchange.json
+... (省略 8 行)
+===== 【E. 10 位秒级的项（1e9 <= 值 < 1e12）】  行数=2335 =====
+【E. 10 位秒级的项（1e9 <= 值 < 1e12）】
+总条数: 2333
+  [templates] create.serverOpenTime = 1790524800 (2026-09-27T16:00:00.000Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [templates] create.currentServerEndTime = 1798300800 (2026-12-26T16:00:00.000Z) | 文件: F:\BaoZouyxt\hotfix-patch\core\templates.json
+  [activityshop] data.1009.begintime = 1506787200 (2017-09-30T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\activityshop.json
+  [activityshop] data.1009.endtime = 1507478400 (2017-10-08T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\activityshop.json
+  [activityshop] data.1288.begintime = 1506787200 (2017-09-30T16:00:00.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\activityshop.json
+  [activityshop] data.1288.endtime = 4070883661 (2098-12-31T17:01:01.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\activityshop.json
+  [circle_task] data.2._Exp.chsm[0] = 2033422426 (2034-06-08T23:33:46.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\circle_task.json
+  [circle_task] data.4._Exp.chsm[0] = 2033422516 (2034-06-08T23:35:16.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\circle_task.json
+  [circle_task] data.6._Exp.chsm[0] = 2033422616 (2034-06-08T23:36:56.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\circle_task.json
+  [circle_task] data.8._Exp.chsm[0] = 2033422716 (2034-06-08T23:38:36.000Z) | 文件: F:\BaoZouyxt\tools\cfg\dump\circle_task.json
+... (省略 2323 行)

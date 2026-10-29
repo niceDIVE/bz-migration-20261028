@@ -1,0 +1,117 @@
+{
+ "archivedAt": "2026-10-25T14:38:52.662Z",
+ "rules": [
+  {
+   "id": "V26-C03-2",
+   "action": "CheckBattleResult",
+   "field": [
+    "gemId"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "CheckBattleResult",
+     "gemId"
+    ]
+   ],
+   "reason": "第 4 批 C03 落地后 gen_shapes 重算了共享字段默认值：gemId 由 0（num0）改为 []（arr0）。这是类型修正——客户端 scripts3.js:24429 是 e.gemId[0]，按下标读，必须可索引。注意 CheckBattleResult 的 handler 本轮未改，这是同名字段默认值被本批新 handler 带动的连带变化，属有意且安全。",
+   "ev": "scripts3.js:24429"
+  },
+  {
+   "id": "V26-C03-3",
+   "action": "TowerBattleResult",
+   "field": [
+    "gemId"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "TowerBattleResult",
+     "gemId"
+    ]
+   ],
+   "reason": "新增 handler 落地，gemId 明写 []。客户端 scripts3.js:24429 按 e.gemId[0] 下标读，数组才可索引；给 0 会得到 undefined[0]。",
+   "ev": "scripts3.js:24429"
+  },
+  {
+   "id": "V26-C03-4",
+   "action": "mulitiNpcBattleResult",
+   "field": [
+    "gemId"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "mulitiNpcBattleResult",
+     "gemId"
+    ]
+   ],
+   "reason": "同上：gemId 明写 [] 以匹配 scripts3.js:24429 的下标读。",
+   "ev": "scripts3.js:24429"
+  },
+  {
+   "id": "V26-C03-5",
+   "action": "activateTowerEvent",
+   "field": [
+    "eventID"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "activateTowerEvent",
+     "eventID"
+    ]
+   ],
+   "reason": "新增 handler 落地，eventID 由形状默认 0（num0）改为 {}（obj0）。shape-hints 标注 kind=container，客户端 index.js:29362 按容器用（键访问）；给 0 会在属性访问处得到 undefined 而不是对象。",
+   "ev": "index.js:29362"
+  },
+  {
+   "id": "V26-C03-6",
+   "action": "chanllengeTower",
+   "field": [
+    "eventID"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "chanllengeTower",
+     "eventID"
+    ]
+   ],
+   "reason": "同上：eventID 明写 {}，匹配 kind=container 与 index.js:29362 的容器用法。",
+   "ev": "index.js:29362"
+  },
+  {
+   "id": "V26-C03-7",
+   "action": "houseSpecial",
+   "field": [
+    "eventID"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "houseSpecial",
+     "eventID"
+    ]
+   ],
+   "reason": "连带变化：houseSpecial 的 handler 本轮未改，是 eventID 这个共享字段的默认值被本批新 handler 从 0 带成 {}。同样是类型修正（container），客户端 index.js:29362 按容器用。",
+   "ev": "index.js:29362"
+  },
+  {
+   "id": "V26-C03-8",
+   "action": "mulitiNpcBattleResult",
+   "field": [
+    "equipObj"
+   ],
+   "expect": 1,
+   "allowSigma": [
+    [
+     "mulitiNpcBattleResult",
+     "equipObj"
+    ]
+   ],
+   "reason": "新增字段（absent→obj0）：shape-hints 标 crashOnMissing=true，所以必须显式下发。客户端 index.js:1620 的 isNullMap 是 for (var o in t) 遍历容器，空对象安全；缺字段则 t 为 undefined，虽然 for-in 不抛，但下游属性访问会抛，故补上 {}。",
+   "ev": "index.js:1620"
+  }
+ ]
+}

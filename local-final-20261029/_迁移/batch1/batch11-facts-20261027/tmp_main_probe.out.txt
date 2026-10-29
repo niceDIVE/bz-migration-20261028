@@ -1,0 +1,66 @@
+===== tools\index.js lines=149447 chars=4506239
+--- OBTAINCROP hits=3
+  L57698: r.MessageCenter.on(s.HttpConst.OBTAINCROP, function(t, o) {
+  L58159: v.NetMgr.http.sendRequest(s.HttpConst.OBTAINCROP, {
+  L59847: OBTAINCROP: "User.obtainCrop",
+--- STEAL_CROP_EVENT hits=3
+  L58007: r.MessageCenter.on(s.HttpConst.STEAL_CROP_EVENT, function(t, o) {
+  L58218: v.NetMgr.http.sendRequest(s.HttpConst.STEAL_CROP_EVENT, {
+  L59861: STEAL_CROP_EVENT: "User.stealCrop",
+--- CROP_CHANGE_STATE hits=4
+  L57676: r.MessageCenter.on(s.HttpConst.CROP_CHANGE_STATE, function(t, o) {
+  L58126: ? v.NetMgr.http.sendRequest(s.HttpConst.CROP_CHANGE_STATE, {
+  L58129: : v.NetMgr.http.sendRequest(s.HttpConst.CROP_CHANGE_STATE, {
+  L59849: CROP_CHANGE_STATE: "User.changeSate",
+--- EXPEDITE_CROP hits=3
+  L57825: r.MessageCenter.on(s.HttpConst.EXPEDITE_CROP, function(t, o) {
+  L58144: v.NetMgr.http.sendRequest(s.HttpConst.EXPEDITE_CROP, {
+  L59852: EXPEDITE_CROP: "User.expediteCrop",
+--- CLEAN_DEAD_CROP hits=3
+  L57811: r.MessageCenter.on(s.HttpConst.CLEAN_DEAD_CROP, function(t, o) {
+  L58139: v.NetMgr.http.sendRequest(s.HttpConst.CLEAN_DEAD_CROP, {
+  L59851: CLEAN_DEAD_CROP: "User.cleanDeadCrop",
+--- DISPOSS_HOME_EVENT hits=6
+  L57758: r.MessageCenter.on(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, function(t, o) {
+  L57979: r.MessageCenter.on(s.HttpConst.DISPOSS_HOME_EVENT, function(t, o) {
+  L58181: gr.http.sendRequest(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, {});
+  L58215: v.NetMgr.http.sendRequest(s.HttpConst.DISPOSS_HOME_EVENT, e);
+--- ONE_KEY_OBTAIN_CROP hits=3
+  L57726: r.MessageCenter.on(s.HttpConst.ONE_KEY_OBTAIN_CROP, function(o, i) {
+  L58178: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_OBTAIN_CROP, e);
+  L60409: ONE_KEY_OBTAIN_CROP: "User.onKeyObtainCrop",
+--- ONE_KEY_DISPOSS_HOME_EVENT hits=3
+  L57758: r.MessageCenter.on(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, function(t, o) {
+  L58181: v.NetMgr.http.sendRequest(s.HttpConst.ONE_KEY_DISPOSS_HOME_EVENT, {});
+  L60410: ONE_KEY_DISPOSS_HOME_EVENT: "User.onKeyDispossHomeEvent",
+--- BATCH_SEED_CROP hits=6
+  L45406: BATCH_SEED_CROP_EVENT: "batchSeedCropEvent",
+  L57654: r.MessageCenter.on(s.HttpConst.BATCH_SEED_CROP, function(t, o) {
+  L57673: r.MessageCenter.dispatch(c.EvName.BATCH_SEED_CROP_EVENT, i);
+  L58111: v.NetMgr.http.sendRequest(s.HttpConst.BATCH_SEED_CROP, {
+===== tools\scripts3.js lines=100428 chars=3729871
+--- OBTAINCROP hits=0
+--- STEAL_CROP_EVENT hits=0
+--- CROP_CHANGE_STATE hits=0
+--- EXPEDITE_CROP hits=0
+--- CLEAN_DEAD_CROP hits=0
+--- DISPOSS_HOME_EVENT hits=0
+--- ONE_KEY_OBTAIN_CROP hits=0
+--- ONE_KEY_DISPOSS_HOME_EVENT hits=0
+--- BATCH_SEED_CROP hits=0
+===== tools\scripts2.js lines=81775 chars=3102041
+--- OBTAINCROP hits=0
+--- STEAL_CROP_EVENT hits=0
+--- CROP_CHANGE_STATE hits=0
+--- EXPEDITE_CROP hits=0
+--- CLEAN_DEAD_CROP hits=0
+--- DISPOSS_HOME_EVENT hits=0
+--- ONE_KEY_OBTAIN_CROP hits=0
+--- ONE_KEY_DISPOSS_HOME_EVENT hits=0
+--- BATCH_SEED_CROP hits=4
+  L49157: c.MessageCenter.on(l.EvName.BATCH_SEED_CROP_EVENT, this.onBatchSeedCrop, this);
+  L49161: c.MessageCenter.off(l.EvName.BATCH_SEED_CROP_EVENT, this.onBatchSeedCrop, this);
+  L65473: c.MessageCenter.on(u.EvName.BATCH_SEED_CROP_EVENT, this.onPlantSuccess, this);
+  L65478: c.MessageCenter.off(u.EvName.BATCH_SEED_CROP_EVENT, this.onPlantSuccess, this);
+===== tools\index.js PlantLandUI hits=0
+===== tools\scripts3.js PlantLandUI hits=0

@@ -1,0 +1,120 @@
+### StartDialogueUI ###
+
+=== start ===
+function() {
+this.wordIndex = 0;
+this.isComplete = !1;
+this.isPlayText = !0;
+var t = this, e = l.getText(4046);
+e = (e = (e = (e = (e = (e = (e = (e = (e = (e = (e = (e = (e = e + "\n\n" + l.getText(4047)) + "\n" + l.getText(4048)) + "\n" + l.getText(4049)) + "\n" + l.getText(4050)) + "\n" + l.getText(4051)) + "\n" + l.getText(4052)) + "\n" + l.getText(4053)) + "\n" + l.getText(4054)) + "\n" + l.getText(4055)) + "\n" + l.getText(4056)) + "\n" + l.getText(4057)) + "\n" + l.getText(4058)) + "\n" + l.getText(4059);
+this.textLabel.string = "";
+this.node.on(cc.Node.EventType.TOUCH_END, function() {
+t.nextPage();
+}, this);
+this.currentShowStr = e;
+this.typerEffect(this.textLabel, this.currentShowStr, 40, function() {
+t.isComplete = !0;
+for (var e = t.currentShowStr.split("").length, o = 0; o < e; o++) clearTimeout(t.timeIdAy[o]);
+t.isPlayText || (t.textLabel.string = t.currentShowStr);
+t.wordIndex = 0;
+t.timeIdAy = [];
+});
+this.gif = this.getPathByNode("NewNode");
+if (d.LoginMgr.checkMiniGame()) {
+d.LoginMgr.reportReady();
+var o = 0;
+if (1 == d.LoginMgr.dySceneID) {
+var i = this.gif.addComponent(h.default);
+i.setPath("ui/dyGifRes/1/d1_1");
+i.setPlayCompleteCallback(function() {
+if (0 == o) {
+o += 1;
+i.setPath("ui/dyGifRes/1/d1_2");
+}
+});
+} else if (0 == d.LoginMgr.dySceneID) this.gif.addComponent(h.default).setPath("ui/dyGifRes/2/d2_1"); else if (2 == d.LoginMgr.dySceneID) {
+var s = this.gif.addComponent(h.default);
+s.setPath("ui/dyGifRes/3/d3_1");
+s.setPlayCompleteCallback(function() {
+if (0 == o) {
+o += 1;
+s.setPath("ui/dyGifRes/3/d3_2");
+}
+});
+}
+}
+}
+
+=== typerEffect ===
+function(t, e, o, i) {
+for (var s = e.split(""), n = s.length, r = this, a = 0; a < n; ++a) {
+var c = setTimeout(function() {
+t.string = t.string + s[r.wordIndex++];
+r.isPlayText ? parseInt(r.wordIndex) > n - 1 && null != i && i() : i();
+}, o * a);
+r.timeIdAy.push(c);
+}
+}
+
+=== nextPage ===
+function() {
+var t = this;
+if (this.isPlayText) this.isPlayText = !1; else if (t.isComplete) {
+t.isComplete = !1;
+var e = setTimeout(function() {
+clearTimeout(e);
+a.PopUpMgr.removePopUp(t.node);
+c.default.prefabs.load("Login/CreateRoleUI", cc.Prefab, function(t, e) {
+var o = cc.instantiate(e);
+a.PopUpMgr.addPopUp(o, p.LayerMgr.topLayer, 0);
+});
+}.bind(this), 1e3);
+}
+}
+
+=== onDestroy ===
+function() {
+t.prototype.onDestroy.call(this);
+for (var e = 0; e < this.timeIdAy.length; e++) clearTimeout(this.timeIdAy[e]);
+}
+
+### instance fields ###
+_super = null
+_name = ""
+_objFlags = 124928
+__scriptAsset = false
+_enabled = true
+_id = "Comp.2525"
+viewMap = {}
+lbMap = {}
+data = null
+prefabName = "Login/StartDialogueUI"
+paths = {}
+isOnClick = true
+lastToggle = null
+prefabMap = null
+_tHandler = null
+_delayTween = null
+_closeEvents = []
+wordIndex = 0
+timeIdAy = []
+isComplete = true
+isPlayText = true
+currentShowStr = "欢迎使用暴走自助转生系统\n\n通过本系统开启崭新的人生\n      武侠世界构架中…  \n      修仙世界构架中…  \n      魔幻世界构架中…  \n      科幻世界构架中…  \n      完成度--11%…     \n      完成度--32%…     \n      完成度--56%…     \n      完成度--100%!!    \n  暴走世界系统构架已完成 \n欢迎前往暴走世界进行体验 \n       祝您游戏愉快      \n       点击屏幕继续……  "
+name = "StartDialogueUI<StartDialogueUI>"
+uuid = "Comp.2525"
+enabled = true
+enabledInHierarchy = true
+_isOnLoadCalled = 16384
+update = null
+lateUpdate = null
+__preload = null
+onEnable = null
+onFocusInEditor = null
+onLostFocusInEditor = null
+resetInEditor = null
+_getLocalBounds = null
+onRestore = null
+__scriptUuid = ""
+isValid = true
+_deserialize = null

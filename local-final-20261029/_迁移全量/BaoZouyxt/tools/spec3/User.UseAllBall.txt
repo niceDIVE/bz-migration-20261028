@@ -1,0 +1,13 @@
+# User.UseAllBall   (HttpConst.USE_ALL_BALL)
+
+## 注册点 122543: r.MessageCenter.on(l.HttpConst.USE_ALL_BALL, function(e, o) {
+
+## 请求点 122627: c.NetMgr.http.sendRequest(l.HttpConst.USE_ALL_BALL, {});
+   122619: o = parseInt(n);
+   122620: break;
+   122621: }
+   122622: o = parseInt(n);
+   122623: }
+   122624: return t[o];
+   122625: };
+   122626: t.prototype.reqThrowFirecracker = function() {

@@ -1,0 +1,8 @@
+{"2001":{"ID":2001,"Type":1,"Price":50,"BuyPrice":60},
+ "3001":{"ID":3001,"Type":2,"Effect":1,"Data1":30,"Price":5,"BuyPrice":10},
+ "3002":{"ID":3002,"Type":2,"Effect":1,"Data1":60,"Price":8,"BuyPrice":15},
+ "3101":{"ID":3101,"Type":2,"Effect":11,"Data1":1112,"Price":0,"BuyPrice":0},
+ "3102":{"ID":3102,"Type":2,"Effect":11,"Data1":1262,"Price":0,"BuyPrice":0},
+ "3201":{"ID":3201,"Type":2,"Effect":13,"Data1":880001,"Price":0,"BuyPrice":0},
+ "3202":{"ID":3202,"Type":2,"Effect":13,"Data1":880002,"Price":0,"BuyPrice":0},
+ "3301":{"ID":3301,"Type":2,"Effect":21,"Data1":"2001,3001","Data2":"2,5","Price":0,"BuyPrice":0}}

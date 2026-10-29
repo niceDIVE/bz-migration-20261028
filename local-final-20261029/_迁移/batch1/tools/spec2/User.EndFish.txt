@@ -1,0 +1,31 @@
+# User.EndFish   (HttpConst.END_FISHING)
+
+## 注册点 51426: r.MessageCenter.on(s.HttpConst.END_FISHING, this.onEndFishing, this);
+
+## 请求点 51678: g.NetMgr.http.sendRequest(s.HttpConst.END_FISHING, o);
+   51670: };
+   51671: e.prototype.reqFinish = function(t) {
+   51672: this.pondID = t;
+   51673: var e = y.playerInfo.entity, o = {
+   51674: fishpondID: t,
+   51675: hglmt: e.hunger.limit,
+   51676: speed: e.hungerConsumingSpeed.finalValue
+   51677: };
+
+## 处理函数 onEndFishing (51576-51591)
+ 51576: e.prototype.onEndFishing = function(t, e) {
+ 51577: if (1 == e.eRet) {
+ 51578: this.setAutoStartHung(e);
+ 51579: this.hungActionState(e, !1);
+ 51580: var o = .001 * (e.serverTime - e.beginTime);
+ 51581: o > this.getTotalTime() && (o = this.getTotalTime());
+ 51582: var a = y.playerInfo.entity;
+ 51583: a.totalGameTime.gameTime = e.gTime;
+ 51584: a.hunger.remaining = e.hg;
+ 51585: a.numStuffed = e.hgtimes;
+ 51586: for (var s in e.awardArr) d.InventoryDB.addItem(parseInt(s), e.awardArr[s]);
+ 51587: for (var u = [], f = 0; f < e.extraArr.length; f++) {
+ 51588: var g = e.extraArr[f];
+ 51589: d.InventoryDB.addItem(g[0], g[1]);
+ 51590: u.push(g[2]);
+ 51591: }

@@ -1,0 +1,99 @@
+# User.stopBreaklist  (HttpConst.STOP_BREAK_LIST)
+# 出现 2 处
+
+120707: var o = e.addComponent("BreakBgUI");
+120708: o.setData(n);
+120709: o.setLabelTitle(r.getText(263));
+120710: });
+120711: }
+120712: }, this);
+120713: s.MessageCenter.on(c.HttpConst.STOP_BREAK_LIST, function(t, o) {
+120714: if (1 == o.eRet) if (o.qr.f) e.updateBreakQueueData(o.qr); else {
+120715: e.breakData = {};
+120716: s.MessageCenter.dispatch(p.EvName.ON_HOOK_BG_CLOSE);
+120717: 1 == e.breakType && g.default.prefabs.load("home/MainMenuUI", cc.Prefab, function(t, e) {
+120718: var o = cc.instantiate(e);
+120719: o.addComponent("MainMenuUI").setData({
+120720: tag: 2,
+120721: tag1: 1
+120722: });
+120723: m.PopUpMgr.addPopUp(o, y.LayerMgr.popUpLayer);
+120724: });
+120725: e.breakQueue = [];
+120726: e.doneList = [];
+120727: e.costArr = {};
+120728: e.breaking = !1;
+120729: e.breakType = 0;
+120730: }
+120731: });
+120732: s.MessageCenter.on(c.HttpConst.REFRESH_HOOK_BREAK_LIST, function(t, o) {
+120733: if (1 == o.eRet) {
+120734: e.updateBreakQueueData(o.qr, !0);
+120735: var i = setTimeout(function() {
+120736: clearTimeout(i);
+120737: s.MessageCenter.dispatch(p.EvName.REFRESH_BREAK_STATE);
+120738: }, 100);
+120739: }
+120740: });
+120741: s.MessageCenter.on(c.HttpConst.QUEUE_CHECK_BREAK, function(t, o) {
+120742: if (1 == o.eRet) {
+120743: k.UserModel.entity.totalGameTime.gameTime = o.gTime;
+120744: k.UserModel.entity.hunger.remaining = o.hg;
+120745: k.UserModel.entity.numStuffed = o.hgtimes;
+120746: e.onFinishBreakQueue(o);
+120747: e.updateUseItemNum(o);
+120748: }
+120749: });
+120750: };
+120751: e.prototype.start = function(t, e) {
+120752: void 0 === e && (e = 0);
+120753: var o = T.playerInfo.entity, i = {
+---
+121197: num: n,
+121198: type: this.breakType
+121199: });
+121200: }
+121201: };
+121202: e.prototype.reqQuitBreakQueue = function() {
+121203: _.NetMgr.http.sendReqWithMask(c.HttpConst.STOP_BREAK_LIST, {
+121204: type: this.breakType
+121205: });
+121206: };
+121207: e.prototype.reqAccBreakQueue = function(t) {
+121208: 0 == t ? _.NetMgr.http.sendReqWithMask(c.HttpConst.GOLD_BREAK_CUR_SKILL, {
+121209: skillId: this.breakData.qcs,
+121210: type: this.breakType
+121211: }) : _.NetMgr.http.sendReqWithMask(c.HttpConst.GOLD_BREAK_ALL_SKILL, {
+121212: type: this.breakType
+121213: });
+121214: };
+121215: e.prototype.reqBatchBreak = function(t, e) {
+121216: this.breakType = e ? 2 : 1;
+121217: if (!(t.length <= 0)) {
+121218: for (var o = 0, n = i.getConstByID("39"), a = f.SkillTable.dic, s = 0; s < t.length; s++) o += n * (a[t[s]].brlv < 99 ? 99 : a[t[s]].brlv + 10) + 1;
+121219: var p = r.getText(7477) + o, h = r.getText(7480);
+121220: l.default.show(h, [ {
+121221: name: r.getText(332),
+121222: flag: 0
+121223: }, {
+121224: name: r.getText(333),
+121225: flag: 1
+121226: } ], function(e) {
+121227: 0 == e && _.NetMgr.http.sendReqWithMask(c.HttpConst.BATCH_BREAK_BY_GOLD, {
+121228: skills: t,
+121229: gold: o
+121230: });
+121231: }, p);
+121232: }
+121233: };
+121234: e.prototype.getSkillQueueAy = function() {
+121235: for (var t = [], e = this.skillQueue, o = this.lgObj, r = 0; r < e.length; r++) {
+121236: var a = i.getItem(e[r], "skill"), s = {};
+121237: s.id = e[r];
+121238: s.lv = f.SkillTable.getSkillLevel(e[r]);
+121239: var l = i.getItem(s.lv, "level"), c = f.SkillTable.getQualitySkillCoefficient(a, e[r]);
+121240: s.pgr = Math.floor(f.SkillTable.dic[s.id].pgr / (l.SkillPotential * c) * 100);
+121241: if (o.hasOwnProperty("id") && o.id == e[r]) {
+121242: s.lv = o.lv;
+121243: l = i.getItem(o.lv, "level");
+---

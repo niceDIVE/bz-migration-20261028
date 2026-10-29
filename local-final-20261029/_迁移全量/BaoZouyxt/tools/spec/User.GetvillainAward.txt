@@ -1,0 +1,99 @@
+# User.GetvillainAward  (HttpConst.SAVR_VILLAGE)
+# 出现 2 处
+
+  1400: this.doubleEndTime = 0;
+  1401: this.tempData = null;
+  1402: }
+  1403: e.prototype.init = function() {
+  1404: r.MessageCenter.on(a.HttpConst.SPECIAL_SHOP, this.specialShopCallBack.bind(this), this);
+  1405: r.MessageCenter.on(a.HttpConst.ACTIVITE_SHOP, this.activeShppCallBack.bind(this), this);
+  1406: r.MessageCenter.on(a.HttpConst.SAVR_VILLAGE, this.savrVillageCallBack.bind(this), this);
+  1407: r.MessageCenter.on(a.HttpConst.GET_PAYSIGN_DATA, this.getPaySignCallBack.bind(this), this);
+  1408: r.MessageCenter.on(a.HttpConst.GET_PAYSIGN_AWARD, this.paySignRewardCallBack.bind(this), this);
+  1409: r.MessageCenter.on(a.HttpConst.GET_CRL_ACTIVE_DATA, this.crlActiveDataCallBack.bind(this), this);
+  1410: r.MessageCenter.on(a.HttpConst.CRL_GET_REWARD, this.crlGetRewardCallBack.bind(this), this);
+  1411: r.MessageCenter.on(a.HttpConst.CRL_ACTIVE_PAYINFO, this.crlActivePayinfoCallBack.bind(this), this);
+  1412: r.MessageCenter.on(a.HttpConst.GET_CRL_ACTIVE_PAY_RESULT, this.getCrlActivePayResultCallBack.bind(this), this);
+  1413: r.MessageCenter.on(a.HttpConst.GET_FURNACE_DATA, this.getFurnaceData.bind(this), this);
+  1414: r.MessageCenter.on(a.HttpConst.START_REFINING_FURNACE, this.startRefiningFurnace.bind(this), this);
+  1415: r.MessageCenter.on(a.HttpConst.PUT_REFINING_ITEM_FURNACE, this.putRefiningItemFurnace.bind(this), this);
+  1416: r.MessageCenter.on(a.HttpConst.GET_REFINING_RESOURCE, this.getRefiningResource.bind(this), this);
+  1417: r.MessageCenter.on(a.HttpConst.GET_SCRATH_LOTTO, this.onGetScrathData.bind(this), this);
+  1418: r.MessageCenter.on(a.HttpConst.SCRAPING_LOTTERY, this.onScrapLottery.bind(this), this);
+  1419: r.MessageCenter.on(a.HttpConst.BUY_TICKET, this.onBuyTicket.bind(this), this);
+  1420: r.MessageCenter.on(a.HttpConst.GET_NATIONAL_DAY_COPY, this.onGetNationalCopy.bind(this), this);
+  1421: };
+  1422: e.prototype.onGetNationalCopy = function(t, e) {
+  1423: var o = this;
+  1424: if (1 == e.eRet) {
+  1425: if (!this.tempData) return;
+  1426: s.default.prefabs.load("checkNpc/ConvstnBoard", cc.Prefab, function(t, i) {
+  1427: var n = cc.instantiate(i);
+  1428: l.PopUpMgr.addPopUp(n, c.LayerMgr.popUpLayer, 2, !1);
+  1429: n.addComponent("ConvstnBoard").setNpcData(e, o.tempData);
+  1430: o.tempData = null;
+  1431: });
+  1432: } else p.default.show(i.getText(1093));
+  1433: };
+  1434: e.prototype.onGetScrathData = function(t, e) {
+  1435: 1 == e.eRet && r.MessageCenter.dispatch(h.EvName.GET_SCRAPE_EVENT, e);
+  1436: };
+  1437: e.prototype.onScrapLottery = function(t, e) {
+  1438: if (1 == e.eRet) {
+  1439: d.RoleOtherInfo.setActivityData(66, !1);
+  1440: r.MessageCenter.dispatch(h.EvName.SCRAPE_SUCCESS_EVENT, e);
+  1441: }
+  1442: };
+  1443: e.prototype.onBuyTicket = function(t, e) {
+  1444: 1 == e.eRet && r.MessageCenter.dispatch(h.EvName.BUY_ITEM_SUCCESS, e);
+  1445: };
+  1446: e.prototype.getFurnaceData = function(t, e) {
+---
+  1747: var o = {
+  1748: eventID: this.ActiveEventId,
+  1749: typeID: t,
+  1750: flag: e ? 1 : 0
+  1751: };
+  1752: o.npcIDArr = this.serverToKillNpc();
+  1753: g.NetMgr.http.sendRequest(a.HttpConst.SAVR_VILLAGE, o);
+  1754: };
+  1755: e.prototype.serverToKillNpc = function() {
+  1756: var t = n.getTable("destroy_town"), e = [];
+  1757: for (var o in t) 5 != t[o].type && 7 != t[o].type || e.push(o);
+  1758: return e;
+  1759: };
+  1760: e.prototype.saveKillNpc = function(t) {
+  1761: this.killNpcMap[t] = !0;
+  1762: };
+  1763: e.prototype.getKillBadManNum = function() {
+  1764: var t = 0, e = n.getTable("destroy_town");
+  1765: for (var o in this.killNpcMap) 3 == e[o].type && t++;
+  1766: return t;
+  1767: };
+  1768: e.prototype.getKillsNum = function() {
+  1769: var t = 0, e = n.getTable("destroy_town");
+  1770: for (var o in this.killNpcMap) 2 == e[o].type && t++;
+  1771: return t;
+  1772: };
+  1773: e.prototype.getNpcDeadState = function(t) {
+  1774: return !!this.killNpcMap.hasOwnProperty(t);
+  1775: };
+  1776: e.prototype.getRandomBeggarAy = function() {
+  1777: var t = [], e = n.getTable("beggar");
+  1778: for (var o in e) t.push(e[o]);
+  1779: var i = Math.floor(Math.random() * t.length);
+  1780: this.randOldManObj = t[i];
+  1781: };
+  1782: e.prototype.getRandomBeggarInfo = function() {
+  1783: return this.randOldManObj;
+  1784: };
+  1785: e.prototype.reqLimitPayData = function(t) {
+  1786: void 0 === t && (t = 0);
+  1787: this.stopOnce = t;
+  1788: g.NetMgr.http.sendReqWithMask(a.HttpConst.GET_PAYSIGN_DATA, {});
+  1789: };
+  1790: e.prototype.reqGetSignPayReward = function() {
+  1791: d.RoleOtherInfo.rechargeLimitArr.length > 0 && g.NetMgr.http.sendReqWithMask(a.HttpConst.GET_PAYSIGN_AWARD, {
+  1792: payid: parseInt(d.RoleOtherInfo.rechargeLimitArr[0])
+  1793: });
+---

@@ -1,0 +1,32 @@
+# User.OnCheckBreak   (HttpConst.CHECK_BREAK)
+
+## 注册点 56229: i.MessageCenter.on(l.HttpConst.CHECK_BREAK, this.onCheckBreak, this);
+
+## 请求点 56276: c.NetMgr.http.sendRequest(l.HttpConst.CHECK_BREAK, o);
+   56268: var e = D.playerInfo.entity, o = {
+   56269: flag: t,
+   56270: maxHP: e.hp.finalValue,
+   56271: maxMP: e.mp.finalValue,
+   56272: hglmt: e.hunger.limit,
+   56273: speed: e.hungerConsumingSpeed.finalValue
+   56274: };
+   56275: N.CrossServiceModel.needLocalUrlAndPort(function() {
+
+## 处理函数 onCheckBreak (56279-56295)
+ 56279: e.prototype.onCheckBreak = function(e, o) {
+ 56280: this.hangFinish = 1 == o.finish;
+ 56281: if (1 == o.eRet || 0 == o.eRet) {
+ 56282: if (!this.isBreaking) return;
+ 56283: o.hasOwnProperty("itemAddition") && (this.itemBreakAdditionNum = o.itemAddition);
+ 56284: this.updateUseItemNum(o);
+ 56285: var l = 1 == o.eRet;
+ 56286: D.playerInfo.entity.totalGameTime.gameTime = o.gTime;
+ 56287: D.playerInfo.entity.hunger.remaining = o.hg;
+ 56288: D.playerInfo.entity.numStuffed = o.hgtimes;
+ 56289: o.hasOwnProperty("roleGold") && d.InventoryDB.setGold(o.roleGold);
+ 56290: var c = {
+ 56291: skillID: o.skillID,
+ 56292: lv: o.skillLevel,
+ 56293: timeElapsed: .001 * o.usedTime,
+ 56294: success: l
+ 56295: };

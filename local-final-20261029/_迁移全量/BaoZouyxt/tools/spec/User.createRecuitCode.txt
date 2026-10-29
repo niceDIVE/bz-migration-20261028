@@ -1,0 +1,51 @@
+# User.createRecuitCode  (HttpConst.CREATE_RECUIT_CODE)
+# 出现 1 处
+
+102386: l.NetMgr.http.sendRequest(r.HttpConst.GET_RECUIT_MESSAGE, e);
+102387: };
+102388: t.prototype.requestBoundRecruit = function() {
+102389: var t = {
+102390: roleID: s.RoleBaseInfo.roleID
+102391: };
+102392: l.NetMgr.http.sendRequest(r.HttpConst.CREATE_RECUIT_CODE, t);
+102393: };
+102394: t.prototype.requestBoundInvitee = function(t) {
+102395: var e = {
+102396: roleID: s.RoleBaseInfo.roleID,
+102397: code: t
+102398: };
+102399: l.NetMgr.http.sendRequest(r.HttpConst.BIND_RECUIT_CODE, e);
+102400: };
+102401: t.prototype.requestAward = function(t, e) {
+102402: this.awardState = e;
+102403: var o = {
+102404: roleID: s.RoleBaseInfo.roleID,
+102405: id: t
+102406: };
+102407: l.NetMgr.http.sendRequest(r.HttpConst.RECEIVE_RECUIT_AWARD, o);
+102408: };
+102409: t.prototype.requestBindingRecruitAward = function(t, e) {
+102410: var o = {
+102411: roleID: s.RoleBaseInfo.roleID,
+102412: bindingRoleId: t,
+102413: id: e
+102414: };
+102415: l.NetMgr.http.sendRequest(r.HttpConst.RECEIVE_BIND_RECUITAWARD, o);
+102416: };
+102417: return t;
+102418: }();
+102419: o.RecruitModel = new p();
+102420: cc._RF.pop();
+102421: }, {
+102422: "../core/events/MessageCenter": "MessageCenter",
+102423: "../gui/uicomponents/Alert": "Alert",
+102424: "../mgrs/StoryDialogMgr": "StoryDialogMgr",
+102425: "../net/HttpConst": "HttpConst",
+102426: "../net/NetMgr": "NetMgr",
+102427: "../utils/EvName": "EvName",
+102428: "./vos/RoleBaseInfo": "RoleBaseInfo"
+102429: } ],
+102430: RectUtils: [ function(t, e, o) {
+102431: "use strict";
+102432: cc._RF.push(e, "43af2sCE75IIoWZnCQWY5zQ", "RectUtils");
+---

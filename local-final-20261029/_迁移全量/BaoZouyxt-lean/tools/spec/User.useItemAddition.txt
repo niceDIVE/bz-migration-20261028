@@ -1,0 +1,99 @@
+# User.useItemAddition  (HttpConst.USE_ITEM_ADDITION)
+# 出现 2 处
+
+ 56228: i.MessageCenter.on(l.HttpConst.USER_ONHOOK_BREAK, this.onBreakReqReturn, this);
+ 56229: i.MessageCenter.on(l.HttpConst.CHECK_BREAK, this.onCheckBreak, this);
+ 56230: i.MessageCenter.on(l.HttpConst.GET_BREAK_FRIENDLIST, this.onGetBrList, this);
+ 56231: i.MessageCenter.on(l.HttpConst.REQ_DOUBLE_BR, this.onReqDouble, this);
+ 56232: i.MessageCenter.on(l.HttpConst.USER_DOUBLE_TRAINING, this.onDoubleTraining, this);
+ 56233: i.MessageCenter.on(l.HttpConst.END_DOUBLE_TRAINING, this.onEndDoubleTraining, this);
+ 56234: i.MessageCenter.on(l.HttpConst.USE_ITEM_ADDITION, this.addBreakRate, this);
+ 56235: i.MessageCenter.on(l.HttpConst.SET_ONHOOK_WOOK_STATE, this.onHookWoodStateCh, this);
+ 56236: };
+ 56237: e.prototype.reqInstantFinish = function() {
+ 56238: this.checkBreak(1);
+ 56239: };
+ 56240: e.prototype.requestBrFriendList = function() {
+ 56241: c.NetMgr.http.sendRequest(l.HttpConst.GET_BREAK_FRIENDLIST, {});
+ 56242: };
+ 56243: e.prototype.requestDouble = function(t) {
+ 56244: var e = {
+ 56245: friendID: t,
+ 56246: sponsorName: y.RoleBaseInfo.userName
+ 56247: };
+ 56248: c.NetMgr.http.sendRequest(l.HttpConst.REQ_DOUBLE_BR, e);
+ 56249: };
+ 56250: e.prototype.requestBreak = function(t, e, o) {
+ 56251: void 0 === o && (o = null);
+ 56252: void 0 === o && (o = !1);
+ 56253: this.id = t;
+ 56254: this.lv = e;
+ 56255: var i = D.playerInfo.entity, n = {
+ 56256: onHookOperate: o ? 2 : 1,
+ 56257: skillID: t,
+ 56258: skillLevel: e,
+ 56259: hg: i.hunger.remaining,
+ 56260: gTime: i.totalGameTime.gameTime,
+ 56261: hgtimes: i.numStuffed
+ 56262: };
+ 56263: c.NetMgr.http.sendRequest(l.HttpConst.USER_ONHOOK_BREAK, n);
+ 56264: };
+ 56265: e.prototype.checkBreak = function(t) {
+ 56266: void 0 === t && (t = null);
+ 56267: void 0 === t && (t = 0);
+ 56268: var e = D.playerInfo.entity, o = {
+ 56269: flag: t,
+ 56270: maxHP: e.hp.finalValue,
+ 56271: maxMP: e.mp.finalValue,
+ 56272: hglmt: e.hunger.limit,
+ 56273: speed: e.hungerConsumingSpeed.finalValue
+ 56274: };
+---
+ 56845: this.timeRemaining = Math.abs(e.needTime);
+ 56846: this.breakBonus = e.sucRate;
+ 56847: i.MessageCenter.dispatch(h.EvName.REFRESH_BREAK_STATE);
+ 56848: }
+ 56849: };
+ 56850: e.prototype.reqAddBreakRate = function(t) {
+ 56851: c.NetMgr.http.sendRequest(l.HttpConst.USE_ITEM_ADDITION, {
+ 56852: count: t
+ 56853: });
+ 56854: };
+ 56855: e.prototype.addBreakRate = function(t, e) {
+ 56856: if (1 == e.eRet) {
+ 56857: this.itemBreakAdditionNum += e.itemAddition;
+ 56858: i.MessageCenter.dispatch(h.EvName.REFRESH_BREAK_RATE_EVENT, e.itemAddition);
+ 56859: }
+ 56860: };
+ 56861: e.prototype.updateUseItemNum = function(t) {
+ 56862: if (t.hasOwnProperty("upItemAddition")) for (var e in t.upItemAddition) k.InventoryModel.setItem(parseInt(e), t.upItemAddition[e]);
+ 56863: };
+ 56864: e.prototype.reqHookWoodStateCh = function() {
+ 56865: c.NetMgr.http.sendRequest(l.HttpConst.SET_ONHOOK_WOOK_STATE, {});
+ 56866: };
+ 56867: e.prototype.onHookWoodStateCh = function(t, e) {
+ 56868: if (1 == e.eRet) {
+ 56869: this.woodState = this.woodState > 0 ? 0 : 1;
+ 56870: i.MessageCenter.dispatch(h.EvName.ON_HOOK_WOOD_STATE_CHANGE);
+ 56871: }
+ 56872: };
+ 56873: e.prototype.saveCrossData = function(t) {
+ 56874: void 0 === t && (t = null);
+ 56875: this.crossData = t;
+ 56876: };
+ 56877: e.prototype.clearCrossData = function() {
+ 56878: this.crossData = null;
+ 56879: };
+ 56880: e.prototype.destroy = function() {
+ 56881: this.status = 0;
+ 56882: this.isIdle = !1;
+ 56883: this.hangFinish = !1;
+ 56884: this.timeRemaining = 0;
+ 56885: this.totalTime = 0;
+ 56886: this.isDouble = !1;
+ 56887: this.breakBonus = 0;
+ 56888: this.isBreaking = !1;
+ 56889: this.actFriends = null;
+ 56890: this.endMonthCardTime = 0;
+ 56891: this.id = 0;
+---

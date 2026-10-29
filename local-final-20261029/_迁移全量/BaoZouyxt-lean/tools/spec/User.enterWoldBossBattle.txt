@@ -1,0 +1,99 @@
+# User.enterWoldBossBattle  (HttpConst.FIGHT_WORLD_BOSS)
+# 出现 2 处
+
+ 13110: e.setMgr(i);
+ 13111: });
+ 13112: };
+ 13113: t.prototype.startBossFight = function() {
+ 13114: this.mode = i.BattleTypes.WBOSS;
+ 13115: var t = u.UserModel.entity;
+ 13116: f.NetMgr.http.sendRequest(d.HttpConst.FIGHT_WORLD_BOSS, {
+ 13117: maxQgLv: g.SkillTable.getMaxQgLv(),
+ 13118: mp: t.mp.remaining,
+ 13119: gTime: t.totalGameTime.gameTime,
+ 13120: hgtimes: t.numStuffed,
+ 13121: hg: t.hungerConsumingSpeed.finalValue
+ 13122: });
+ 13123: };
+ 13124: t.prototype.createBossFight = function(t, e, o) {
+ 13125: var i = new M.BossfightMgr();
+ 13126: i.startBattle(t, e, o);
+ 13127: this.setMgr(i);
+ 13128: };
+ 13129: t.prototype.startDogFight = function(t, e) {
+ 13130: var o = this;
+ 13131: this.mode = i.BattleTypes.DOG;
+ 13132: return new Promise(function(i) {
+ 13133: var n = new p.DogFightMgr();
+ 13134: n.fightEndCb = i;
+ 13135: n.startBattle(t, e);
+ 13136: o.setMgr(n);
+ 13137: });
+ 13138: };
+ 13139: t.prototype.startDogPartnerFight = function(t, e) {
+ 13140: var o = this;
+ 13141: this.mode = i.BattleTypes.DOG_PARTNER_PVE;
+ 13142: return new Promise(function(i) {
+ 13143: var n = new C.DogFightSingMgr(null);
+ 13144: n.fightEndCb = i;
+ 13145: n.startBattle(t, e);
+ 13146: o.setMgr(n);
+ 13147: });
+ 13148: };
+ 13149: t.prototype.startRankFight = function(t) {
+ 13150: var e = this;
+ 13151: this.mode = i.BattleTypes.RANKED;
+ 13152: return new Promise(function(o) {
+ 13153: var i = new h.RankMgr();
+ 13154: i.fightEndCb = o;
+ 13155: i.startBattle(t);
+ 13156: e.setMgr(i);
+---
+145509: this.showTips = !0;
+145510: }
+145511: e.prototype.init = function() {
+145512: var t = this;
+145513: this.numAtkBonus = new i("wbab");
+145514: this.numAtkBonus.value = 0;
+145515: a.MessageCenter.on(s.HttpConst.FIGHT_WORLD_BOSS, this.onGetBossData, this);
+145516: a.MessageCenter.on(s.HttpConst.UPLOAD_WB_DMG, this.onUploadDmg, this);
+145517: a.MessageCenter.on(s.HttpConst.WB_DMG_RANKLIST, this.onGetRankList, this);
+145518: a.MessageCenter.on(l.EvName.QUICK_BUY_COMPLETE + "1", function(e, o) {
+145519: t.setAtkBonus(o.num);
+145520: a.MessageCenter.dispatch(l.EvName.WB_GOD_HELP_BOUGHT, o.num);
+145521: }, this);
+145522: a.MessageCenter.on(s.HttpConst.GET_BOSS_REWARD, function(t, e) {
+145523: 3 == e.eRet ? c.default.show(r.getText(1127)) : 2 == e.eRet ? c.default.show(r.getText(1128)) : 1 == e.eRet && m.default.prefabs.load("worldBoss/DamageReward", cc.Prefab, function(t, o) {
+145524: var i = cc.instantiate(o);
+145525: y.PopUpMgr.addPopUp(i, v.LayerMgr.popUpLayer, 1, !0);
+145526: i.addComponent("WBRewardUI").setData({
+145527: firstPlayer: e.firstName,
+145528: lastKill: e.killName,
+145529: rewardDic: e.rewardArray,
+145530: killReward: e.killObj
+145531: });
+145532: });
+145533: }, this);
+145534: a.MessageCenter.on(l.EvName.UPLOAD_WB_DMG_DATA, this.onUploadDmgData, this);
+145535: };
+145536: e.prototype.reqBossReward = function() {
+145537: p.NetMgr.http.sendRequest(s.HttpConst.GET_BOSS_REWARD);
+145538: };
+145539: e.prototype.onGetRankList = function(t, e) {
+145540: a.MessageCenter.dispatch(l.EvName.ON_GET_WB_RANKLIST, e);
+145541: };
+145542: e.prototype.onUploadDmg = function(e, o) {
+145543: if (2 == o.eRet) {
+145544: c.default.show(r.getText(880));
+145545: this.end();
+145546: } else if (3 == o.eRet) {
+145547: if (h.RoleBaseInfo.roleID == o.killBoss) if (this.win) c.default.show(r.getText(882)); else {
+145548: var i = n.getItem(this.bossID, "npc");
+145549: c.default.show(r.getText(881).replace(/\[1\]/, r.getText(i.NpcName)));
+145550: } else c.default.show(r.getText(878));
+145551: var a = n.getItem(this.bossID, "npc"), s = r.getText(864).replace(/\[1\]/, r.getText(a.NpcName)).replace(/\[2\]/, o.killBossName);
+145552: _.bulletTitleMgr.show(s, 3);
+145553: this.end();
+145554: } else if (1 == o.eRet) {
+145555: this.bossHpMax = o.bossMaxHP;
+---

@@ -1,0 +1,337 @@
+# 交接文档 —— 《暴走英雄坛》进程内离线单机（第二阶段：可维护的离线层）
+
+> 最后更新：2026-10-22 00:45
+> 当前部署版本：`boot-1 / impl=h39559cb2 / flow=fd136de5b`
+> 状态：**冷启动 16.7 秒全自动进游戏；热重载 0.3 秒；非支付动作 127/127 全会应答（形状层）**
+> 上一版交接（第二阶段）已备份：`_backup\HANDOVER.md.bak-20261022-004536`
+
+---
+
+## 0. 项目边界（接手前必读，未变）
+
+**唯一目的：让用户本人在自己的电脑上，离线单人游玩《暴走英雄坛》。**
+
+| 会做 | 明确不做 |
+|---|---|
+| 在本机模拟器内运行**官方原版**客户端 | ❌ 不分发 APK、不提供下载源、不做安装包 |
+| 在客户端**自己的可写目录**放一个本地补丁 | ❌ 不修改 APK 本体、不重签、不改资源与剧情 |
+| 由补丁在**游戏进程内部**应答游戏自身的网络请求 | ❌ 不架设对外服务器、不监听公网端口、不运营私服 |
+| 把存档写进本机文件 | ❌ 不绕过、不伪造任何付费/充值/订单 |
+| 数值改动只作用于**本机存档** | ❌ 不售卖、不订阅、不提供任何付费服务 |
+
+使用范围：仅本人、本人设备、本地运行；不公开分发补丁；不撰写对外教程；不承诺维护。
+支付类动作（`*Pay*` / `*Order*` / `*Recharge*`）**一律不实现**，只在通用 ACK 里走过场。
+
+---
+
+## 1. 一句话现状
+
+官方 APK 零改动、零重签，补丁放在 `files/hotfix/`，游戏**冷启动 16.7 秒自动进入 `gamescene`**，
+全部网络请求在进程内被本地应答。客户端脚本已用 XXTEA 密钥解出明文（4.5 MB / 149k 行）。
+
+**这一轮的实质变化：不再"玩一次补一个动作"。** 812 个动作里要读返回字段的 127 个，
+现在全部按表生成应答（形状层），非支付动作覆盖率 100%；查不到证据的 62 条按安全空值兜底并留档。
+剩下真正缺的不是"应答形状"，而是**真相**：物品、装备、任务奖励这些"值"还没有账本。
+换句话说：**门早开了，现在客服会答话了，接下来要让它记得住你干了什么。**
+
+---
+
+## 2. 架构：三层 + 工具层
+
+```
+设备端 /data/data/com.maple.madherogo/files/hotfix/
+├── jsb-adapter/jsb-engine.js             引导层（309 KB，很少改；改动需重启）
+└── live/
+    ├── handlers.js                       策略层（48 KB，改一次 push+reload ≈ 0.3s）
+    └── flow.js                           流程层（15 KB，同上）
+
+F:\BaoZouyxt\hotfix-patch\                源码工程
+├── hook\bz-bootstrap.js    薄引导：命令通道 / XHR 替换 / 错误捕获 / JSONL 日志 / ready 标记 / reload
+├── hook\bz-xhr.js          XHR 传输层（只认 __BZ_HARNESS__.impl.handle 契约）
+├── hook\bz-codec.js        线协议编解码（aes-js + lz-string，与 Node crypto 字节一致）
+├── core\bz-handler-impl.js 策略层契约适配（handle/selfCheck/reset/state）
+├── core\bz-rpc-server.js   ★ 业务：46 个动作 handler + 形状分发 + 信封 + 存档账本 + 任务账本
+├── core\bz-shapes.generated.js  ★ 形状层：120 个动作的应答形状（由 tools/gen_shapes.js 生成，勿手改）
+├── core\templates.json     抓包解密出的真实响应模板（7 个关键动作）
+├── live\flow.js            ★ 流程层：选区→进游戏→建角向导→剧情→gamescene
+├── build.js                构建引导层（探针版 / 环回版）
+├── build-handlers.js       构建策略层 + 流程层（含自检跑一遍）
+├── run.ps1                 ★ 宿主侧总控（见第 3 节）
+├── watch.ps1               日志监视器（只打 UNKNOWN / err）
+├── test\l0-xhr.js          XHR 一致性测试（21 项）
+├── test\l0-envelope.js     编解码/信封/形状测试（82 项）
+└── probe\*.js              一次性探针（场景树/组件源码/点击/截图辅助）
+
+F:\BaoZouyxt\tools\                       客户端研究与生成工具
+├── index.js                解密源码（4.5 MB / 149,447 行）
+├── action_facts_all.json   812 动作：消费函数 / 请求参数 / 响应字段 / 字段行号
+├── todo_shapes.json        120 个待补形状动作
+├── gen_shapes.js           ★ 形状生成器（读上面两张表 + 源码 → 生成形状）
+├── check_shapes.js         ★ 形状自查（120 动作 × 291 字段位，缺一个 FAIL，可当 CI）
+├── shapes.json             形状定义 + 逐字段证据 + 置信度
+├── shapes_report.md        人可读清单
+└── facts\                  审计留档（低置信字段原始行、苦力交付）
+```
+
+**关键设计（第二阶段的核心价值）**
+
+1. **机制与策略分离**：引导层只做"转发到 `__BZ_HARNESS__.impl`"，策略层从设备上的
+   `handlers.js` 动态 `new Function` 求值。**换 impl 不需要重启进程**，也不影响已存在的 XHR 实例。
+2. **可观测性**：所有动作、异常、场景切换、flow 动作都写 JSONL（`files/bz_log.jsonl`），
+   断言对日志做，不对截图做。
+3. **大声失败**：未实现动作不再静默，写 `UNKNOWN User.X p={...}`——这就是覆盖率待办清单的来源。
+
+---
+
+## 3. 操作手册（`run.ps1` 是唯一入口）
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force   # 每次新 pwsh 都要
+cd F:\BaoZouyxt\hotfix-patch
+
+.\run.ps1 status            # pid / ready / 版本 / 最近日志
+.\run.ps1 handlers          # 推 handlers.js+flow.js → reload → 断言 pid 未变（≈8 秒一轮）
+.\run.ps1 all               # 推引导层+策略层 → 重启 → 等 ready
+.\run.ps1 restart           # force-stop + 启动 + 轮询 ready
+.\run.ps1 smoke             # 冷启动端到端，输出 PASS/FAIL JSON
+.\run.ps1 log -Tail 40      # 打印最近 N 行日志
+.\run.ps1 cmd "ver"         # 命令通道：ver/scene/reload/selfcheck/state/log/get:/dump:/eval:
+.\run.ps1 probe .\probe\xxx.js [arg]   # 推探针文件到进程内执行，回传结果
+```
+
+**改一次应答的完整循环（当前 ≈ 10 秒）**
+
+```powershell
+# 1. 改 core\bz-rpc-server.js（或 live\flow.js）
+$env:BZ_PROBE='0'; node build.js      # 构建（内部会跑 selfCheck，434 项）
+node test\l0-envelope.js              # 82 项回归
+.\run.ps1 handlers                    # 推送 + 热重载（不动游戏进程）
+```
+
+**只有形状表变了的时候（不用动源码）**
+
+```powershell
+node tools\gen_shapes.js              # 重新生成 120 个动作的形状（几秒）
+node tools\check_shapes.js            # 自查，PASS 才继续
+.\run.ps1 handlers                    # 同上，热重载
+```
+
+**怎么判断形状表真被用上了**：日志里出现 `SHAPED User.<动作>`；还是 `UNKNOWN` 就是表里也没收这个动作。
+
+**设备侧要点**
+
+| 项 | 值 |
+|---|---|
+| 模拟器 | MuMu/TapTap VM，VM index 1，adb `127.0.0.1:16416`，需 `adb root` |
+| 应用可写目录 | `/data/data/com.maple.madherogo/files/` |
+| 存档 | `.../files/bz_offline_save.json` |
+| 日志 | `.../files/bz_log.jsonl` |
+| 命令通道 | 写 `.../files/bz_cmd.txt` → 读 `.../files/bz_res.txt` |
+| 探针参数 | `.../files/probe_arg.txt`（**必须 UTF-8**，见第 9 节坑 1） |
+| 窗口不可见 | `MuMuManager.exe control -v 1 show_window`，再用 Win32 `SetWindowPos` 摆位置 |
+
+---
+
+## 4. 客户端研究结果（第二阶段最大收获）
+
+### 4.1 脚本解密（一次性解决"只能猜"的问题）
+
+| 步骤 | 结论 |
+|---|---|
+| 定位 | 设备上 `files/hotfix/assets/scripts/index.jsc`（950,592 B） |
+| 加密 | XXTEA（Cocos Creator 2.x 原生加密），解密在 `.so` 里 |
+| 密钥 | **`7ca36578-7b3a-4c`**（从 `libcocos2djs.so` 可打印字符串暴力匹配，用 268 B 的 `settings.jsc` 验证） |
+| 结果 | 解出 **4,512,911 B / 149,447 行**明文 JS → `tools/index.js` |
+| 复现 | `tools/decrypt_main.js`（含密钥）+ `tools/xxtea.js` |
+| 备用 | `npm i cc-reverse --prefix tools\ccreverse`，`cc-reverse -p <build> -k 7ca36578-7b3a-4c`（可解包资源） |
+
+### 4.2 关键代码位置（`tools/index.js` 行号 = 客户端 `index.jsc` 行号）
+
+| 主题 | 位置 | 说明 |
+|---|---|---|
+| `loadGame` 消费端 | **70502** | 进游戏时读的字段全在这里；`e.OnhookObj.serverTime` 曾导致崩溃 |
+| `updatePlayerData` | 111820 | `baseValueAy[索引]` 映射表就在这段里 |
+| `baseValueAy` 尾部语义 | 74965–74970 / 111801 | `[44]=场景ID` `[45][46]=出生坐标` `[47]=已退门派[]` `[49]=degreeLv` `[50]=career` |
+| 潜能 / 银两 | 74955–74956 | `[34]=潜能` `[35]=银两` |
+| `skillMap` 格式 | 119994 | `{ 技能ID: [lv, pgr, brlv] }` |
+| 关闭新手引导 | 107269 | 响应里带 `closeGuide: true` → `GuideMgr.closeGuideState = true` |
+| 建角向导链 | 见 flow.js 注释 | `StartDialogueUI → CreateRoleUI → BirthPlaceUI → SelectSexUI → SelectAppearanceUI → ShowTalentUI` |
+| 属性点硬条件 | `ShowTalentUI.enterClickBtn` | `_attributeValue[0] === 0` 才放行（剩余点必须为 0） |
+| 交易/支付常量 | 59503 起（HttpConst） | 812 个动作映射表 |
+
+### 4.3 全量动作清单（2026-10-22 实测口径，可复现）
+
+```powershell
+node tools\extract_all.js     # → tools/action_facts_all.json
+node tools\gen_shapes.js      # → tools/shapes.json + core/bz-shapes.generated.js
+node tools\check_shapes.js    # 形状自查（120 动作 × 291 字段位）
+```
+
+| 指标 | 数量 |
+|---|---|
+| 动作总数 | **812** |
+| 只要 ACK（客户端不看返回体） | **685** |
+| 会读返回字段、必须有形状 | **127** |
+| └ 其中手写 handler 覆盖 | **25** |
+| └ 其中形状层覆盖 | **94** |
+| └ 仍未覆盖 | **8**（全部是支付类，按项目边界故意不做） |
+| **非支付动作覆盖率** | **127 / 127 = 100%** |
+
+> 口径说明：`127` = `response_fields` 去掉 `eRet` 后仍非空的动作数。旧文档写的 `160 / 652 / 120` 是含 `eRet` 与含支付类的旧口径，已作废。
+
+### 4.4 形状层（本轮新增，第二阶段的核心增量）
+
+**问题**：812 个动作里只有 46 个手写了 handler，其余落到通用 ACK —— 客户端拿到 `{eRet:1}` 后
+读 `e.friendList.length` / `for (var k in e.shopObj)` 就会抛异常或走空分支。
+
+**做法**：不再"玩一次补一个"，而是**照表批量生成**。
+
+| 证据源（优先级从高到低） | 含义 |
+|---|---|
+| `capture` | 抓包真值模板里的同名字段（`templates.json`） |
+| `handler` | 已实现 handler 空参数跑一遍拿到的真实响应 |
+| `manual` | 主审逐条看源码后写死的人工判定（每条必带行号） |
+| `init-N` | 客户端自己写的初值 `this.x = [] / {} / 0`，N 处一致 |
+| `usage-N` | 源码里 N 处用法指向同一类型（`.length` → 数组、`x[k]`/`x.sub` → 对象…） |
+| `name` / `fallback` | 只有命名启发 / 完全没证据，按安全空值兜底 |
+
+**效果**：`eRet:1` + 客户端真会读的字段（类型正确、值为空）。目标只到"不崩、不乱跳分支"，
+**不等于功能完整**——"值该是什么"仍要账本（见 7.1）。
+
+**记账联动**：`userGold` / `curGold` / `potential` 三个字段不从抓包抄，改从存档账本读；
+账本没有时按 `LoadGame` 同款"资源给足"值（99999），避免出现"进游戏显示 99999、买东西说只有 20"。
+
+**回归护栏**：每次 reload 的进程内自检里，120 个动作 × 3 条断言（存在 / eRet=1 / 字段齐全）全部跑一遍。
+
+---
+
+## 5. 协议事实（已验证，可直接复用）
+
+| 项 | 值 |
+|---|---|
+| 请求 | `{mod:"User", do:"<Action>", p:{...}}` → LZString(Base64) → AES-256-CBC → Hex |
+| Key / IV | `120734aa834dea925ca8d2e1bb6811c3`（UTF-8 = 32 B → AES-256）/ `33daee8409834c00` |
+| 响应信封 | 入口服 `:9898` → `{"MsgData":..}`；账号/游戏服 → `{"code":200,"MsgData":..}` |
+| 客户端实际读的外层键 | 还有 `errorCode`（见 `field_usage.json` 的 R1/R7），我们的 `code` 目前够用 |
+| 载荷两种形态 | 扁平（quicklogin/Create/CheckName/GetChatAddress）/ 包裹（其余：`p` + `User.<Action>` + `achievement`） |
+| 未实现动作 | 统一回 `wrapped(action,{eRet:1},{achievement})`，保证不卡 |
+
+**LoadGame 契约（`index.jsc:70502` 逐字段确认）**
+
+必须给：`baseValueAy`（≥48 项）、`OnhookObj.serverTime`、`skillMap`、`cycleLifeRetains`、
+`serverTime`；可选但建议：`serverFormatTime`、`housekeeper`、`bonusMap`、`equipments`、
+`veinObj`、`KillsItemObj`。**缺 `OnhookObj` 会崩、缺 `baseValueAy[47]` 会让拜师崩。**
+
+---
+
+## 6. 实测数据（可复现的验收基线，2026-10-22 00:52 更新）
+
+| 项 | 结果 |
+|---|---|
+| 冷启动 → gamescene | **16.7 s**（形状层接入后；接入前 16.1–16.3），`errors=0`，7 次 RPC 全本地 |
+| 有档直进 | `flowSteps=2`（只 setServer + onEnterGame），不再重建角 |
+| 热重载 | push 48 KB + reload **0.30–0.42 s**，pid 不变 |
+| L0 测试 | `l0-xhr` 21 项 + `l0-envelope` 82 项，全绿 |
+| 进程内自检 | 每次 reload 自动跑 **434 项**（原 64 + 形状 362 + 任务账本 8；隔离内存存档，不碰真档） |
+| 形状自查 | `node tools\check_shapes.js` → 120 动作 / 291 字段位 PASS |
+| 任务账本实测 | 进程内 `User.sycnTask` → `PlayerFinishTaskObj` 回 10 项已完成、`acceptTaskMap` 回 1 项进行中（100150） |
+| 冒烟 | `.\run.ps1 smoke` → `{"ok":true,"scene":"gamescene","gameSec":16.7,"errors":0}` |
+
+---
+
+## 7. 未完成清单（按优先级，2026-10-22 00:52 重排）
+
+### P0（直接影响"能不能玩下去"）
+
+1. **任务账本：回放已做，奖励与状态机仍未做**（本轮完成一半）
+   - ✅ 已做：`LoadGame` 回放 `finishTaskObj`（`["id,1"]` 数组）+ `acceptTaskArray` + `acceptTaskOrder`；
+     `sycnTask` 回放 `PlayerFinishTaskObj`（对象）+ `acceptTaskMap` + `acceptTaskOrder`。
+     这两处原本一个都不给 / 回了空 `{}`，是"重启后任务记忆归零、NPC 重派已完成任务"的机制。
+   - ❌ 还缺：`getFinishTaskAward` 的 `rewardArray` 仍是空对象（客户端 `changeSceneShowReward`
+     判空就直接跳过奖励 UI，所以不崩，但也**没有奖励**）；任务进度（杀怪数/采集数）没有状态机。
+2. **账本扩展**：技能/潜能已记账（`upgradeSkill` 写 `skills[id]=[lv,0,1]`、扣 `potential`；
+   `LoadGame` 回放 `skillMap` 与 `baseValueAy[34][35]`）。**还缺**：物品/装备（`itemObj`/`equipments`/`PlayerEquip`）、
+   任务奖励落袋、饱食/口渴（`[30][31]`）、门派贡献。
+3. ~~120 个待形状动作~~ → **已完成**（形状层 94 个 + 手工 25 个 = 127/127 非支付动作全覆盖）。
+   SHAPED 日志可供观测：`grep SHAPED bz_log.jsonl` 能看到哪些形状真被用到了。
+
+### P1（体验）
+
+4. **剧情自动跳过**：游戏内全屏剧情（带「跳过剧情」）会挡住玩家，流程层目前只处理登录期弹窗。
+   已确认可用真实坐标点击推进（`probe\tap.js` 换算 + `adb input tap`）。
+5. **公告弹窗**：每次登录弹空白「游戏公告」，可用 `SmallNoticeUI.onBack()` 关；
+   更稳的做法是在 `flow.js` 里检测到就自动关。
+6. **窗口体验**：`MuMuManager control -v 1 show_window` 之后用 Win32 `SetWindowPos` 固定尺寸/位置。
+
+### P2（工程化）
+
+7. 把形状层的 `fallback`/`name`（62 条）继续收证据：`tools\facts\residual_fields.md` 里有每条的全部出现行。
+8. 把 812 个动作的 `field_lines` 做成一张可查表（已有一半）。
+9. 归档早期实验产物（`gateway/`、`probe\*` 里的一次性脚本、`tools\spec*` 切片）。
+
+---
+
+## 8. 回滚与备份
+
+| 对象 | 位置 |
+|---|---|
+| 补丁源码（第二阶段前） | `_backup\2026-10-21-2058-pre-P0\`（hook/core/build.js/patch 产物，哈希已核对） |
+| 补丁源码（形状层前） | `_backup\2026-10-22-0038-pre-P0-shapes\`（5 个文件，含当时的 `patch\live\handlers.js`） |
+| 补丁源码（任务账本前） | `_backup\2026-10-22-0044-pre-task-ledger\`（5 个文件） |
+| 上一版交接文档 | `_backup\HANDOVER.md.bak-20261022-004536`（更早：`-001454`） |
+| 游戏存档 | `_backup\save-*\bz_offline_save.json` |
+| 卸载补丁（恢复原版） | `adb shell rm -rf /data/data/com.maple.madherogo/files/hotfix` |
+| 只回滚策略层 | 把 `handlers.js` / `flow.js` 换回上一版后 `.\run.ps1 handlers`（新备份目录里有当时设备上的那一份） |
+
+---
+
+## 9. 踩过的坑（含本阶段新增，务必先读）
+
+| # | 坑 | 症状 | 对策 |
+|---|---|---|---|
+| 1 | 探针参数用 ASCII 写文件 | 中文参数变 `?`，`probe` 找不到节点 | `run.ps1` 已改 UTF-8 无 BOM |
+| 2 | 用 .NET API 读写相对路径 | 报"找不到文件"，因为 .NET 用进程 CWD 不是 PS 位置 | 一律绝对路径 |
+| 3 | `Split-Path` 处理 POSIX 路径 | 变成反斜杠 → 设备端 `mkdir` 失败 | 用 `-replace '/[^/]+$',''` |
+| 4 | `adb` 守护进程被回收 | 中途 `device not found` | `run.ps1` 内部每次调用都重连重试 |
+| 5 | `adb exec-out screencap` 走 PS 管道 | PNG 被破坏 | 先 `screencap -p /data/local/tmp/x.png` 再 `pull` |
+| 6 | 游戏 HUD 有同名隐藏副本 | `press.js` 点到 inactive 的那份，"点了没反应" | 用**坐标点击**（`tap.js`）或按 active 过滤 |
+| 7 | 剧情层会挡住一切操作 | 玩家以为"卡死" | 点画面推进 / 「跳过剧情」 |
+| 8 | 引导要"拜师"但已拜过 | 无法再点，教程卡住 | `closeGuide:true` 关闭引导 |
+| 9 | 只回形状不记账 | 学技能后"回弹" | 账本：`skills` + `potential` 写档并在 LoadGame 回放 |
+| 10 | 工单漏了"交付物落盘" | 苦力模型跑完，结果丢失 | 工单强制 `tools/facts/batchN.json`，回传只作校验 |
+| 11 | 沙盒禁 spawn | `execFileSync`/`node --check` EPERM | 用 `require('vm').compileFunction` 代替 |
+| 12 | PowerShell 写文件把内容写成 `$null` | 文件被清空（`run.ps1` 事故） | 先 `Contains` 校验再写；改文件用 edit 工具 |
+| 13 | `sycnTask` 回 `PlayerFinishTaskObj: {}` | 客户端把它当真相，连本地缓存一起写成 `{}` → 已做过的任务被 NPC 重派（"接了又接"） | 按账本回放；自检加 `task:sync:notEmpty` 断言 |
+| 14 | 以为两个接口一个格式 | `LoadGame` 要 `finishTaskObj: ["101080,1"]`（字符串数组，客户端自己 `split(",")`），`sycnTask` 要 `{ "101080": 1 }`（对象） | 用 `taskLedger()` 一处产出两套形状；见 `bz-rpc-server.js` |
+| 15 | 照抓包抄钱包字段 | 抓到的是旧快照 `userGold:20`，与进游戏报的 99999 矛盾，客户端弹"银两不足" | 钱包/潜能类字段一律读账本，账本没有就按 LoadGame 同款值 |
+| 16 | 只给一行"读取处"推不出类型 | 291 个字段位里 119 个推不出数组/对象/标量 | 加证据源：抓包真值 → 真实 handler → 人工判定 → 客户端初值 `= [] / {}` → 全源用法扫描 |
+
+---
+
+## 10. 委派纪律（本阶段已建立，继续用）
+
+- 工程苦力 → `gemini-3.8-flash-low`（`provider: cmdc-gemini`），**只做机械转录**：读切片、抄行号、抄字段。
+- 工单必带：范围（绝对路径清单）、苦力约束（不判断/不推测）、交付格式（`行号: 原文`）、
+  **交付物落盘路径**、数据红线。
+- 主审只做：写工单、验收抽样（每份抽 1–2 条回源码核对）、判断与写入。
+- 已产出的证据链：`tools/spec2/`、`tools/spec3/`（切片）、`tools/facts/batch*.json`（用法取证）、
+  `tools/field_usage.json`（合并）、`tools/action_facts_all.json`（812 动作全量）。
+
+---
+
+## 11. 接手第一天怎么做（照做即可）
+
+1. `.\run.ps1 status` → 确认 `scene=gamescene`、`errors` 无。
+2. `node test\l0-envelope.js` → 82 项全绿。
+3. 打开模拟器窗口（第 3 节），肉眼确认画面与日志一致。
+4. 想改什么：改 `core\bz-rpc-server.js` → `node build.js` → `.\run.ps1 handlers`（**不重启**）。
+5. 玩家在玩时：`.\watch.ps1` 盯 `UNKNOWN` / `err`，出现就按第 4.2 节查源码补形状。
+6. 需要新动作：`node tools\extract_all.js` 查 `field_lines` → 回 `tools/index.js` 抄那一行 → 写 handler。
+
+---
+
+## 12. 给接手者的一句话
+
+**先看日志再动手，先查源码再猜形状。**
+第二阶段证明了：抓包和肉眼观察只能支撑到"能进游戏"，往后每一步都必须读客户端源码。
+现在源码已经解出来了（`tools/index.js` + 密钥），把"猜"换成"查"，是最省时间的一条路。

@@ -1,0 +1,168 @@
+# ==============================================================================
+# 审计报告：r19-W-C1 抓包猎 - 原版服务端 upgradeSkill 应答与模式检索取证
+# 交付文件路径：F:\BaoZouyxt\docs\audit\r19-W-C1-capture-hunt.txt
+# ==============================================================================
+
+## 一、扫描范围
+1. F:\BaoZouyxt\hotfix-patch\decrypted\*.txt （共 54 个文件）
+2. F:\BaoZouyxt\hotfix-patch\captures\ 下所有文件 （共 54 个文件）
+3. F:\BaoZouyxt\hotfix-patch\core\templates.json （1 个文件）
+合计扫描文件：109 个
+
+## 二、6 个检索模式逐行匹配统计与命中清单
+
+### 模式 1 (upgradeSkill)
+命中行数：12 行
+命中文档与行号：
+- F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+  原文：POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573065628v5ckw23q"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+  原文：status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\decrypted\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1262":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[102]}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+  原文：POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573070377k2px6ik5"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:1
+  原文：status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\decrypted\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1112":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[117]}}
+- F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+  原文：POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+  原文：status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+  原文：POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+- F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt:1
+  原文：status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+
+### 模式 2 (skillArr)
+命中行数：2 行
+命中文档与行号：
+- F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573065628v5ckw23q"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573070377k2px6ik5"}}
+
+### 模式 3 (NPCID)
+命中行数：8 行
+命中文档与行号：
+- F:\BaoZouyxt\hotfix-patch\decrypted\0018_RESP_https___bzgf_maple_game_com_900_server_166_Create.json.txt:2
+  原文：{"eRet":1,"roleID":16374,"serverTime":1792572970629,"activityResource":{"67":[null,1793177770630]},"hlexchangeActive":1,"shopActive":1,"enterRewardState":0,"reputationLevelId":0,"progressActive":"0.000","NumActive":0,"bonusMap":{"1":[0,70],"2":[0,99],"3":[0,120],"4":[0,140],"5":[0,160],"6":[0,190],"7":[0,210],"8":[0,230],"9":[0,250],"10":[0,270],"11":[0,300]},"activityList":[33,70,32,35,67,7],"wulinData":[0,0,0],"accRechargedData":{"isMainShow":1,"isEnd":0,"isRedDot":0},"equipSqlitTime":0,"housekeeper":{"helperId":1,"dueTime":null,"task":{},"taskArr":[],"noticeArr":[],"noticeIndex":-1,"template":null,"dispatchTime":null,"dispatchEndTime":null,"autoTime":-1,"evaluateType":1,"type":-1,"taskRtm":1792512000000,"noticeRtm":null,"taskNum":{},"mapId":0,"templateInitTime":0,"templateTask":{},"matureArr":[],"helperIdArr":[],"helperRewardArr":[],"e":0,"tgd":{},"curTime":1792512000000,"canNoticeNum":13},"titleObj":{"e":0},"serverOpenTime":1790524800,"currentServerEndTime":1798300800,"activityArrFlag":[1,1],"curGold":20,"curJetton":0,"washTimes":0,"veinObj":[0,{}],"curYuanbao":0,"baseValueAy":["9900012358565","114545",0,0,282,301,318,40,20,10,10,100,100,80,0,20,0,0,0,50,13,0,0,0,100,100,0,600,600,200,0,100,0,1,0,0,0,40,20,10,10,0,0,0,1004,0,0,[]],"itemObj":{"4001":0,"4003":0},"mountsObj":{"e":0},"PlayerEquip":{},"inheritObj":{},"noviceArr":[0,0],"killNum":0,"originId":1,"maxArtLevel":0,"friendWookUs":[1,2],"friendHookUs":[1],"setting":[1,2,0],"skillGrasp":{"skillGrasp":{},"knackBag":[],"skillGraspHistory":{},"achievementReward":{}},"isMaster":0,"advertSharingSwitch":[1,1,0,0,1],"welfareCode":"5300BF7FFFBF","skillSkinData":{"skinData":{},"weapToSkinData":{}},"gemData":{"bd":[0,0],"jc":0},"wId":0,"wArr":[],"itemSort":[],"taskLog":[],"acceptTaskArray":[],"marryObj":{"proposeNpc":[],"leaveNpc":[],"marryNpc":0,"marryTime":0,"receiveNpc":0,"rentGroup":0,"weddType":0,"houseObj":{},"bodyState":0,"happinessNum":0,"dropNpcID":[],"bedLevel":0,"specialType":0,"specialObj":{},"fetationTime":0,"childState":-1,"childObj":{},"maxWuxin":[0,0],"maxDregreeExp":0,"beforeChildWash":[0,1],"washLastNum":0,"washBdLastNum":1,"cycleObj":[0,[],[],{"pTims":0,"eTims":0},[0,0,0,0,0,0,0,0],[0,0,0,0,0],[],[0,0,0,0,0,0,0,0],[0,0,0,0],1]},"achievement":{"red":false,"achieveRateId":0}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0033_REQ_https___bzgf_maple_game_com_900_server_166_joinSchool.json.txt:2
+  原文：{"mod":"User","do":"joinSchool","p":{"npcID":1003,"school":0,"taskArr":[],"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"17925730619469kk9ceb4"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0034_RESP_https___bzgf_maple_game_com_900_server_166_joinSchool.json.txt:2
+  原文：{"error":0,"p":"User.joinSchool","User.joinSchool":{"eRet":1,"note":{"attrch":{},"skch":{}},"npcID":1003},"achievement":{"red":true,"achieveRateId":0}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573065628v5ckw23q"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573070377k2px6ik5"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0046_REQ_https___bzgf_maple_game_com_900_server_166_ReqSelfBattleInfo.json.txt:2
+  原文：{"mod":"User","do":"ReqSelfBattleInfo","p":{"npcID":310003,"isRmd":false,"mp":200,"gTime":0,"hgtimes":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"17925730867343ufsg1q0"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0048_RESP_https___bzgf_maple_game_com_900_server_166_ReqSelfBattleInfo.json.txt:2
+  原文：{"error":0,"p":"User.ReqSelfBattleInfo","User.ReqSelfBattleInfo":{"eRet":1,"baseValueAy":["","114545",0,0,282,301,318,40,20,10,10,100,100,80,0,20,0,41,390,50,13,0,0,0,100,100,0,600,600,200,0,100,0,1,390,980,0,40,20,10,10,0,0,0,1004,0,0,[],0,0],"skillMap":{"1":[1,0,1],"2":[1,0,1],"3":[1,0,1],"4":[1,0,1],"5":[1,0,1],"6":[1,0,1],"7":[1,0,1],"8":[1,0,1],"9":[1,0,1],"1112":[1,0,0],"1262":[1,0,0]},"WeapToSkill":{"1":null,"2":7,"3":8,"4":1,"5":2,"6":3,"7":4,"8":5,"9":6},"equipments":{"1":null,"2":null,"3":null,"4":null,"5":null,"6":null,"7":null},"equips":{},"npcArr":[20,50,20,20,11,81,-80,0,300,0,-1,0,0,[],[1,1],[7,1],[8,1],1,-40,[],0,0,0,[-66,0],0,"0"],"npcID":310003,"roleID":16374,"addAtt":[0,0,0,0],"youngTimes":0,"veinObj":[0,{}],"equipTitle":0,"inherit":null,"itemSkill":[],"buffs":[],"weapToSkinData":{},"fashionEffect":0,"wId":0,"gemData":{},"partnerSkillMap":{},"happinessNum":0,"roleRound":0,"sceneType":2},"achievement":{"red":true,"achieveRateId":0}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0049_REQ_https___bzgf_maple_game_com_900_server_166_CheckBattleResult.json.txt:2
+  原文：{"mod":"User","do":"CheckBattleResult","p":{"npcID":310003,"mplimit":200,"mp":200,"hp":519,"hplimit":600,"loss":false,"hg":40,"hgtimes":0,"gTime":0,"hpmax":600,"win":true,"actionArr":[{"t":1,"id":"16374","skillID":1,"useMp":false}],"seed":1792573086885,"aDmgReceived":81,"bDmgReceived":164,"itemSkill":[],"forwards":[81802],"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573098178y5gyfxat"}}
+
+### 模式 4 (带引号的 flag 后跟冒号)
+命中行数：3 行
+命中文档与行号：
+- F:\BaoZouyxt\hotfix-patch\decrypted\0009_REQ_https___bzgf_maple_game_com_800_server_166_quicklogin.json.txt:2
+  原文：{"mod":"User","do":"quicklogin","p":{"account":"9900012358565","pwd":"123456","checkObj":{"app":"tfy-xf","sdk":"meple100221","uin":"9900012358565","sess":"YTh3MFZHdjVCTVV2NjFwcVR4WVNJNG9lazBQNzNSRy8wNFRjYmxLdkdwYm9KR3cveWY1cjBrV2hFdzZBanVoT1NYanVYYzJKeDZua2hXTDRmenozWWJ3PQ==","newPack":1},"channel":"meple100221","flag":1,"macAdress":"12E8666805C7454DBB7452F851DA9FA8D4405CB2","platform":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":0,"loginFlag":"1","inGameTime":0,"nonce":"1792572730662vxl0osk3"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573065628v5ckw23q"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573070377k2px6ik5"}}
+
+### 模式 5 (titleObj)
+命中行数：1 行
+命中文档与行号：
+- F:\BaoZouyxt\hotfix-patch\decrypted\0018_RESP_https___bzgf_maple_game_com_900_server_166_Create.json.txt:2
+  原文：{"eRet":1,"roleID":16374,"serverTime":1792572970629,"activityResource":{"67":[null,1793177770630]},"hlexchangeActive":1,"shopActive":1,"enterRewardState":0,"reputationLevelId":0,"progressActive":"0.000","NumActive":0,"bonusMap":{"1":[0,70],"2":[0,99],"3":[0,120],"4":[0,140],"5":[0,160],"6":[0,190],"7":[0,210],"8":[0,230],"9":[0,250],"10":[0,270],"11":[0,300]},"activityList":[33,70,32,35,67,7],"wulinData":[0,0,0],"accRechargedData":{"isMainShow":1,"isEnd":0,"isRedDot":0},"equipSqlitTime":0,"housekeeper":{"helperId":1,"dueTime":null,"task":{},"taskArr":[],"noticeArr":[],"noticeIndex":-1,"template":null,"dispatchTime":null,"dispatchEndTime":null,"autoTime":-1,"evaluateType":1,"type":-1,"taskRtm":1792512000000,"noticeRtm":null,"taskNum":{},"mapId":0,"templateInitTime":0,"templateTask":{},"matureArr":[],"helperIdArr":[],"helperRewardArr":[],"e":0,"tgd":{},"curTime":1792512000000,"canNoticeNum":13},"titleObj":{"e":0},"serverOpenTime":1790524800,"currentServerEndTime":1798300800,"activityArrFlag":[1,1],"curGold":20,"curJetton":0,"washTimes":0,"veinObj":[0,{}],"curYuanbao":0,"baseValueAy":["9900012358565","114545",0,0,282,301,318,40,20,10,10,100,100,80,0,20,0,0,0,50,13,0,0,0,100,100,0,600,600,200,0,100,0,1,0,0,0,40,20,10,10,0,0,0,1004,0,0,[]],"itemObj":{"4001":0,"4003":0},"mountsObj":{"e":0},"PlayerEquip":{},"inheritObj":{},"noviceArr":[0,0],"killNum":0,"originId":1,"maxArtLevel":0,"friendWookUs":[1,2],"friendHookUs":[1],"setting":[1,2,0],"skillGrasp":{"skillGrasp":{},"knackBag":[],"skillGraspHistory":{},"achievementReward":{}},"isMaster":0,"advertSharingSwitch":[1,1,0,0,1],"welfareCode":"5300BF7FFFBF","skillSkinData":{"skinData":{},"weapToSkinData":{}},"gemData":{"bd":[0,0],"jc":0},"wId":0,"wArr":[],"itemSort":[],"taskLog":[],"acceptTaskArray":[],"marryObj":{"proposeNpc":[],"leaveNpc":[],"marryNpc":0,"marryTime":0,"receiveNpc":0,"rentGroup":0,"weddType":0,"houseObj":{},"bodyState":0,"happinessNum":0,"dropNpcID":[],"bedLevel":0,"specialType":0,"specialObj":{},"fetationTime":0,"childState":-1,"childObj":{},"maxWuxin":[0,0],"maxDregreeExp":0,"beforeChildWash":[0,1],"washLastNum":0,"washBdLastNum":1,"cycleObj":[0,[],[],{"pTims":0,"eTims":0},[0,0,0,0,0,0,0,0],[0,0,0,0,0],[],[0,0,0,0,0,0,0,0],[0,0,0,0],1]},"achievement":{"red":false,"achieveRateId":0}}
+
+### 模式 6 (itemObj 或 useItem)
+命中行数：1 行
+命中文档与行号：
+- F:\BaoZouyxt\hotfix-patch\decrypted\0018_RESP_https___bzgf_maple_game_com_900_server_166_Create.json.txt:2
+  原文：{"eRet":1,"roleID":16374,"serverTime":1792572970629,"activityResource":{"67":[null,1793177770630]},"hlexchangeActive":1,"shopActive":1,"enterRewardState":0,"reputationLevelId":0,"progressActive":"0.000","NumActive":0,"bonusMap":{"1":[0,70],"2":[0,99],"3":[0,120],"4":[0,140],"5":[0,160],"6":[0,190],"7":[0,210],"8":[0,230],"9":[0,250],"10":[0,270],"11":[0,300]},"activityList":[33,70,32,35,67,7],"wulinData":[0,0,0],"accRechargedData":{"isMainShow":1,"isEnd":0,"isRedDot":0},"equipSqlitTime":0,"housekeeper":{"helperId":1,"dueTime":null,"task":{},"taskArr":[],"noticeArr":[],"noticeIndex":-1,"template":null,"dispatchTime":null,"dispatchEndTime":null,"autoTime":-1,"evaluateType":1,"type":-1,"taskRtm":1792512000000,"noticeRtm":null,"taskNum":{},"mapId":0,"templateInitTime":0,"templateTask":{},"matureArr":[],"helperIdArr":[],"helperRewardArr":[],"e":0,"tgd":{},"curTime":1792512000000,"canNoticeNum":13},"titleObj":{"e":0},"serverOpenTime":1790524800,"currentServerEndTime":1798300800,"activityArrFlag":[1,1],"curGold":20,"curJetton":0,"washTimes":0,"veinObj":[0,{}],"curYuanbao":0,"baseValueAy":["9900012358565","114545",0,0,282,301,318,40,20,10,10,100,100,80,0,20,0,0,0,50,13,0,0,0,100,100,0,600,600,200,0,100,0,1,0,0,0,40,20,10,10,0,0,0,1004,0,0,[]],"itemObj":{"4001":0,"4003":0},"mountsObj":{"e":0},"PlayerEquip":{},"inheritObj":{},"noviceArr":[0,0],"killNum":0,"originId":1,"maxArtLevel":0,"friendWookUs":[1,2],"friendHookUs":[1],"setting":[1,2,0],"skillGrasp":{"skillGrasp":{},"knackBag":[],"skillGraspHistory":{},"achievementReward":{}},"isMaster":0,"advertSharingSwitch":[1,1,0,0,1],"welfareCode":"5300BF7FFFBF","skillSkinData":{"skinData":{},"weapToSkinData":{}},"gemData":{"bd":[0,0],"jc":0},"wId":0,"wArr":[],"itemSort":[],"taskLog":[],"acceptTaskArray":[],"marryObj":{"proposeNpc":[],"leaveNpc":[],"marryNpc":0,"marryTime":0,"receiveNpc":0,"rentGroup":0,"weddType":0,"houseObj":{},"bodyState":0,"happinessNum":0,"dropNpcID":[],"bedLevel":0,"specialType":0,"specialObj":{},"fetationTime":0,"childState":-1,"childObj":{},"maxWuxin":[0,0],"maxDregreeExp":0,"beforeChildWash":[0,1],"washLastNum":0,"washBdLastNum":1,"cycleObj":[0,[],[],{"pTims":0,"eTims":0},[0,0,0,0,0,0,0,0],[0,0,0,0,0],[],[0,0,0,0,0,0,0,0],[0,0,0,0],1]},"achievement":{"red":false,"achieveRateId":0}}
+
+### [补充对比] 模式 3 若采用忽略大小写 (?i)NPCID 匹配
+命中行数：8 行（含精确大写 NPCID 2行，其余 6 行为小驼峰 npcID 或 dropNpcID 等字段）
+- F:\BaoZouyxt\hotfix-patch\decrypted\0018_RESP_https___bzgf_maple_game_com_900_server_166_Create.json.txt:2
+  原文：{"eRet":1,"roleID":16374,"serverTime":1792572970629,"activityResource":{"67":[null,1793177770630]},"hlexchangeActive":1,"shopActive":1,"enterRewardState":0,"reputationLevelId":0,"progressActive":"0.000","NumActive":0,"bonusMap":{"1":[0,70],"2":[0,99],"3":[0,120],"4":[0,140],"5":[0,160],"6":[0,190],"7":[0,210],"8":[0,230],"9":[0,250],"10":[0,270],"11":[0,300]},"activityList":[33,70,32,35,67,7],"wulinData":[0,0,0],"accRechargedData":{"isMainShow":1,"isEnd":0,"isRedDot":0},"equipSqlitTime":0,"housekeeper":{"helperId":1,"dueTime":null,"task":{},"taskArr":[],"noticeArr":[],"noticeIndex":-1,"template":null,"dispatchTime":null,"dispatchEndTime":null,"autoTime":-1,"evaluateType":1,"type":-1,"taskRtm":1792512000000,"noticeRtm":null,"taskNum":{},"mapId":0,"templateInitTime":0,"templateTask":{},"matureArr":[],"helperIdArr":[],"helperRewardArr":[],"e":0,"tgd":{},"curTime":1792512000000,"canNoticeNum":13},"titleObj":{"e":0},"serverOpenTime":1790524800,"currentServerEndTime":1798300800,"activityArrFlag":[1,1],"curGold":20,"curJetton":0,"washTimes":0,"veinObj":[0,{}],"curYuanbao":0,"baseValueAy":["9900012358565","114545",0,0,282,301,318,40,20,10,10,100,100,80,0,20,0,0,0,50,13,0,0,0,100,100,0,600,600,200,0,100,0,1,0,0,0,40,20,10,10,0,0,0,1004,0,0,[]],"itemObj":{"4001":0,"4003":0},"mountsObj":{"e":0},"PlayerEquip":{},"inheritObj":{},"noviceArr":[0,0],"killNum":0,"originId":1,"maxArtLevel":0,"friendWookUs":[1,2],"friendHookUs":[1],"setting":[1,2,0],"skillGrasp":{"skillGrasp":{},"knackBag":[],"skillGraspHistory":{},"achievementReward":{}},"isMaster":0,"advertSharingSwitch":[1,1,0,0,1],"welfareCode":"5300BF7FFFBF","skillSkinData":{"skinData":{},"weapToSkinData":{}},"gemData":{"bd":[0,0],"jc":0},"wId":0,"wArr":[],"itemSort":[],"taskLog":[],"acceptTaskArray":[],"marryObj":{"proposeNpc":[],"leaveNpc":[],"marryNpc":0,"marryTime":0,"receiveNpc":0,"rentGroup":0,"weddType":0,"houseObj":{},"bodyState":0,"happinessNum":0,"dropNpcID":[],"bedLevel":0,"specialType":0,"specialObj":{},"fetationTime":0,"childState":-1,"childObj":{},"maxWuxin":[0,0],"maxDregreeExp":0,"beforeChildWash":[0,1],"washLastNum":0,"washBdLastNum":1,"cycleObj":[0,[],[],{"pTims":0,"eTims":0},[0,0,0,0,0,0,0,0],[0,0,0,0,0],[],[0,0,0,0,0,0,0,0],[0,0,0,0],1]},"achievement":{"red":false,"achieveRateId":0}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0033_REQ_https___bzgf_maple_game_com_900_server_166_joinSchool.json.txt:2
+  原文：{"mod":"User","do":"joinSchool","p":{"npcID":1003,"school":0,"taskArr":[],"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"17925730619469kk9ceb4"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0034_RESP_https___bzgf_maple_game_com_900_server_166_joinSchool.json.txt:2
+  原文：{"error":0,"p":"User.joinSchool","User.joinSchool":{"eRet":1,"note":{"attrch":{},"skch":{}},"npcID":1003},"achievement":{"red":true,"achieveRateId":0}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573065628v5ckw23q"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt:2
+  原文：{"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573070377k2px6ik5"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0046_REQ_https___bzgf_maple_game_com_900_server_166_ReqSelfBattleInfo.json.txt:2
+  原文：{"mod":"User","do":"ReqSelfBattleInfo","p":{"npcID":310003,"isRmd":false,"mp":200,"gTime":0,"hgtimes":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"17925730867343ufsg1q0"}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0048_RESP_https___bzgf_maple_game_com_900_server_166_ReqSelfBattleInfo.json.txt:2
+  原文：{"error":0,"p":"User.ReqSelfBattleInfo","User.ReqSelfBattleInfo":{"eRet":1,"baseValueAy":["","114545",0,0,282,301,318,40,20,10,10,100,100,80,0,20,0,41,390,50,13,0,0,0,100,100,0,600,600,200,0,100,0,1,390,980,0,40,20,10,10,0,0,0,1004,0,0,[],0,0],"skillMap":{"1":[1,0,1],"2":[1,0,1],"3":[1,0,1],"4":[1,0,1],"5":[1,0,1],"6":[1,0,1],"7":[1,0,1],"8":[1,0,1],"9":[1,0,1],"1112":[1,0,0],"1262":[1,0,0]},"WeapToSkill":{"1":null,"2":7,"3":8,"4":1,"5":2,"6":3,"7":4,"8":5,"9":6},"equipments":{"1":null,"2":null,"3":null,"4":null,"5":null,"6":null,"7":null},"equips":{},"npcArr":[20,50,20,20,11,81,-80,0,300,0,-1,0,0,[],[1,1],[7,1],[8,1],1,-40,[],0,0,0,[-66,0],0,"0"],"npcID":310003,"roleID":16374,"addAtt":[0,0,0,0],"youngTimes":0,"veinObj":[0,{}],"equipTitle":0,"inherit":null,"itemSkill":[],"buffs":[],"weapToSkinData":{},"fashionEffect":0,"wId":0,"gemData":{},"partnerSkillMap":{},"happinessNum":0,"roleRound":0,"sceneType":2},"achievement":{"red":true,"achieveRateId":0}}
+- F:\BaoZouyxt\hotfix-patch\decrypted\0049_REQ_https___bzgf_maple_game_com_900_server_166_CheckBattleResult.json.txt:2
+  原文：{"mod":"User","do":"CheckBattleResult","p":{"npcID":310003,"mplimit":200,"mp":200,"hp":519,"hplimit":600,"loss":false,"hg":40,"hgtimes":0,"gTime":0,"hpmax":600,"win":true,"actionArr":[{"t":1,"id":"16374","skillID":1,"useMp":false}],"seed":1792573086885,"aDmgReceived":81,"bDmgReceived":164,"itemSkill":[],"forwards":[81802],"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573098178y5gyfxat"}}
+
+## 三、必须回答的三个问题（Qa / Qb / Qc）
+
+### Qa. 有没有任何一条 upgradeSkill 的应答（文件名以 RESP 开头且含 upgradeSkill）？
+答：有。
+共有 4 个文件命中（decrypted 下 2 个解密明文文件，captures 下 2 个抓包文件）。整段原文如下：
+
+1. F:\BaoZouyxt\hotfix-patch\decrypted\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt
+status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+{"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1262":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[102]}}
+
+2. F:\BaoZouyxt\hotfix-patch\decrypted\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt
+status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+{"error":0,"p":"User.upgradeSkill","User.upgradeSkill":{"eRet":1,"note":{"eco":{},"skch":{"1112":[1,0,0]}}},"achievement":{"red":true,"achieveRateId":0,"nIds":[117]}}
+
+3. F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0036_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt
+status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+{
+  "code": 200,
+  "MsgData": "f408f02f7f343e4b723e6c04ec098a5f798de776f42551472e27d752e043bd989b7228cb9fe650d2e0f227e251468401a28bb465ff8cf76798bf5fc5ec291317e1c57925fcdf020c397690831b67d26acda2d673fd364038472642b5daf9f78a99e8dd1c750e7b049a690b371dac8b2854979a639bf817a2705992dd4be0e4ad0b79979303bb66ac03f403ae002ff461eb3117e34247c25e4fcff9f76f2b6e0e166392cb0ed926a0391e934d69c55994f26395ac2c16c5f8a68b0d04a332c2cd"
+}
+
+4. F:\BaoZouyxt\hotfix-patch\captures\bz_capture\0039_RESP_https___bzgf_maple_game_com_900_server_166_upgradeSkill.txt
+status=200 https://bzgf.maple-game.com/900-server-166/upgradeSkill
+{
+  "code": 200,
+  "MsgData": "f408f02f7f343e4b723e6c04ec098a5f798de776f42551472e27d752e043bd989b7228cb9fe650d2e0f227e251468401a28bb465ff8cf76798bf5fc5ec291317e1c57925fcdf020c397690831b67d26acda2d673fd364038472642b5daf9f78af095778d00da5bb63ec73a92d9f1064057ea33b1afe257b110f30031abe45ba59a447c41fdc592b37ac8c04471e35e54d291f212b0a790215a23edf2d62cc21af4d2e87db57f8a5e765361b232856ce119032f1bab4a90b1237c7071968e8d15"
+}
+
+### Qb. templates.json 里有没有 upgradeSkill 的应答模板？
+答：没有。
+证据：F:\BaoZouyxt\hotfix-patch\core\templates.json:1 全文为单行 JSON，包含的顶级键仅为 quicklogin, create, getChatAddress, reqSelfBattleInfo, checkBattleResult, getFinishTaskAward, getCRAInfo, getServerList，不存在 upgradeSkill。
+
+### Qc. decrypted 目录里升级相关的 REQ 各带什么字段？把文件名 + 完整内容贴出来
+答：decrypted 目录中升级相关的 REQ 共有 2 个文件（0035_REQ 与 0037_REQ）。
+字段列表：
+- 顶层字段：mod, do, p
+- p 对象字段：skillID, skillArr, NPCID, flag, web, clientVersion (包含 android 子字段), NeedUpdateVersion, userAccount, roleID, loginFlag, inGameTime, nonce
+
+1. F:\BaoZouyxt\hotfix-patch\decrypted\0035_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt
+POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+{"mod":"User","do":"upgradeSkill","p":{"skillID":1262,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573065628v5ckw23q"}}
+
+2. F:\BaoZouyxt\hotfix-patch\decrypted\0037_REQ_https___bzgf_maple_game_com_900_server_166_upgradeSkill.json.txt
+POST https://bzgf.maple-game.com/900-server-166/upgradeSkill
+{"mod":"User","do":"upgradeSkill","p":{"skillID":1112,"skillArr":[1,0,1],"NPCID":1003,"flag":0,"web":false,"clientVersion":{"android":"2.4.7"},"NeedUpdateVersion":"4.0.0","userAccount":"9900012358565","roleID":16374,"loginFlag":99,"inGameTime":0,"nonce":"1792573070377k2px6ik5"}}
+
+## 四、执行命令审计记录
+1. 命令：pwsh 检查路径存在性
+   退出码：0
+   关键输出：decrypted 存在，captures 存在，templates.json 存在
+2. 命令：逐行扫描统计 6 个模式
+   退出码：0
+   关键输出：完成 109 个文件扫描
+3. 命令：Node.js 解析 templates.json 顶级键名
+   退出码：0
+   关键输出：Has upgradeSkill: false
+
+未验证

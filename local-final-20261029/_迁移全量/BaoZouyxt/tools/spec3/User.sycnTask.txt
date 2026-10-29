@@ -1,0 +1,53 @@
+# User.sycnTask   (HttpConst.SYCN_TASK)
+
+## 注册点 133217: r.MessageCenter.on(s.HttpConst.SYCN_TASK, this.sycnTaskCallBack, this);
+
+## 请求点 133379: } else p.NetMgr.http.sendRequest(s.HttpConst.SYCN_TASK, {
+   133371: var d = i.getItem(this.npcTaskInfo.taskObj.TaskID, "tasktime");
+   133372: d && d.hasOwnProperty("overtimetips_on") && 0 == d.overtimetips_on && a.default.show(n.getText("1093"));
+   133373: } else if (6 == o.eRet) {
+   133374: var g = i.getItem(o.skillId, "skill"), m = o.CDTime - o.serverTime, y = Math.floor(m / 864e5), v = Math.floor((m - 864e5 * y) / 36e5), _ = Math.floor((m - 864e5 * y - 36e5 * v) / 6e4), S = n.getText(6079).replace(/\[1\]/, n.getText(g.Name));
+   133375: y > 0 && (S += y + n.getText(3784));
+   133376: S += v + n.getText(3785);
+   133377: S += _ + n.getText(1414);
+   133378: a.default.show(S);
+
+## 请求点 133463: } else if (4 == o.eRet) a.default.show(n.getText("931")); else if (5 == o.eRet) a.default.show(n.getText("932")); else if (2 == o.eRet) p.NetMgr.http.sendRequest(s.HttpConst.SYCN_TASK, {
+   133455: }
+   133456: };
+   133457: d.default.prefabs.load("comUI/KillDeadUI", cc.Prefab, function(t, e) {
+   133458: var o = cc.instantiate(e);
+   133459: g.PopUpMgr.addPopUp(o, m.LayerMgr.popUpLayer);
+   133460: o.addComponent("KillDeadUI").setData(N);
+   133461: });
+   133462: }
+
+## 请求点 133587: } else 4 == e.eRet ? a.default.show(n.getText("931")) : 5 == e.eRet ? a.default.show(n.getText("932")) : 2 == e.eRet ? p.NetMgr.http.sendRequest(s.HttpConst.SYCN_TASK, {
+   133579: var f = i.getItem(u, "item");
+   133580: l += n.getText(f.Name) + " x" + h[u] + "\n";
+   133581: }
+   133582: l += n.getText(6 == r ? 4277 : 4278);
+   133583: a.default.show(l, [], null, n.getText(123));
+   133584: } else v.default.addShowRewardUI1(e.rewardArray, o, e.equipObj);
+   133585: }
+   133586: this.finishTaskObj.hasOwnProperty("taskObj") && this.clearHideTask(this.finishTaskObj.taskObj.TaskID);
+
+## 请求点 137576: g.NetMgr.http.sendRequest(c.HttpConst.SYCN_TASK, {
+   137568: t.setTowerEquips(t.towerEquipData);
+   137569: if (null == t.towerStartUI) {
+   137570: h.default.prefabs.load("towerUI/TowerStartUI", cc.Prefab, function(e, i) {
+   137571: var n = cc.instantiate(i);
+   137572: u.PopUpMgr.addPopUp(n, f.LayerMgr.popUpLayer, 1, !0);
+   137573: n.addComponent("TowerStartUI").setData(o.towerArray);
+   137574: t.towerStartUI = n;
+   137575: });
+
+## 处理函数 sycnTaskCallBack (133513-133520)
+133513: e.prototype.sycnTaskCallBack = function(t, e) {
+133514: if (1 == e.eRet) {
+133515: c.RoleBaseInfo.finishTaskObj = {};
+133516: if (e.hasOwnProperty("PlayerFinishTaskObj") && e.PlayerFinishTaskObj) {
+133517: c.RoleBaseInfo.finishTaskObj = e.PlayerFinishTaskObj;
+133518: var o = JSON.stringify(c.RoleBaseInfo.finishTaskObj);
+133519: y.LocalStorageMgr.setItem(c.RoleBaseInfo.roleID + "$#&A", o);
+133520: }

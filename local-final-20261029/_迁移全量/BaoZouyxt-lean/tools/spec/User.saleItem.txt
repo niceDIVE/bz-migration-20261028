@@ -1,0 +1,107 @@
+# User.saleItem  (HttpConst.SELL_ITEM)
+# 出现 3 处
+
+ 64720: 
+ 64721: case "yuanbao":
+ 64722: l.RoleBaseInfo.yuanbao = e[o];
+ 64723: }
+ 64724: r.MessageCenter.dispatch(s.EvName.SHOP_BUY_ITEM);
+ 64725: }, this);
+ 64726: r.MessageCenter.on(a.HttpConst.SELL_ITEM, function(t, o) {
+ 64727: if (1 == o.eRet) {
+ 64728: if (o.hasOwnProperty("note")) {
+ 64729: var i = 0;
+ 64730: if (o.note.hasOwnProperty("ivch") && !e.judgeObjectIsNull(o.note.ivch)) for (var n in o.note.ivch) i = Number(n); else if (o.note.hasOwnProperty("eqch") && !e.judgeObjectIsNull(o.note.eqch)) for (var a in o.note.eqch) i = Number(a);
+ 64731: r.MessageCenter.dispatch(s.EvName.SHOP_BUY_ITEM, {
+ 64732: itemId: i
+ 64733: });
+ 64734: }
+ 64735: } else if (5 == o.eRet) {
+ 64736: cc.log("锁定装备不能出售");
+ 64737: r.MessageCenter.dispatch(s.EvName.SHOP_BUY_ITEM);
+ 64738: } else if (6 == o.eRet) {
+ 64739: cc.log("服务器获取锁定装备数据出错");
+ 64740: r.MessageCenter.dispatch(s.EvName.SHOP_BUY_ITEM);
+ 64741: }
+ 64742: }, this);
+ 64743: r.MessageCenter.on(a.HttpConst.BUY_SHOP_ITEM, function(t, o) {
+ 64744: if (1 == o.eRet) {
+ 64745: var i = 0;
+ 64746: if (o.hasOwnProperty("note")) {
+ 64747: if (o.note.hasOwnProperty("ivch") && !e.judgeObjectIsNull(o.note.ivch)) for (var a in o.note.ivch) i = Number(a); else if (o.note.hasOwnProperty("eqch") && !e.judgeObjectIsNull(o.note.eqch)) for (var a in o.note.eqch) i = Number(a);
+ 64748: r.MessageCenter.dispatch(s.EvName.SHOP_BUY_ITEM, {
+ 64749: itemId: i
+ 64750: });
+ 64751: }
+ 64752: } else 4 == o.eRet && c.default.show(n.getText("1184"));
+ 64753: }, this);
+ 64754: r.MessageCenter.on(a.HttpConst.USE_ITEM, function(o, a) {
+ 64755: if (1 == a.eRet) {
+ 64756: var p = !1;
+ 64757: if (a.note.hasOwnProperty("skch")) {
+ 64758: var h = a.note.skch, u = 0;
+ 64759: for (var f in h) u = Number(f);
+ 64760: if (u > 0) {
+ 64761: var d = i.getItem(u, "skill");
+ 64762: c.default.show(n.getText(422).replace(/\[67\]/g, n.getText(d.Name)));
+ 64763: }
+ 64764: } else if (a.hasOwnProperty("rewardArray")) if (e.batchUse) {
+ 64765: e.batchUse = !1;
+ 64766: r.MessageCenter.dispatch(s.EvName.SAVE_BOX_REWARD_EVENT, a);
+---
+ 65241: name: n.getText("333")
+ 65242: } ], function(e) {
+ 65243: if (0 == e) {
+ 65244: var o = {
+ 65245: saleArr: t
+ 65246: };
+ 65247: m.NetMgr.http.sendRequest(a.HttpConst.SELL_ITEM, o);
+ 65248: }
+ 65249: }.bind(this));
+ 65250: } else {
+ 65251: var S = {
+ 65252: saleArr: t
+ 65253: };
+ 65254: m.NetMgr.http.sendRequest(a.HttpConst.SELL_ITEM, S);
+ 65255: }
+ 65256: };
+ 65257: e.prototype.buyItem = function(t, e) {
+ 65258: var o = {
+ 65259: itemID: t,
+ 65260: itemNum: e
+ 65261: };
+ 65262: m.NetMgr.http.sendRequest(a.HttpConst.BUY_SHOP_ITEM, o);
+ 65263: };
+ 65264: e.prototype.useItemFunc = function(e, o, r, s) {
+ 65265: var l = this;
+ 65266: void 0 === r && (r = 0);
+ 65267: void 0 === s && (s = !1);
+ 65268: if ((8 == o || 13 == o) && T.PackageModel.judgePackageLimit()) return !0;
+ 65269: if (34 != o && 32 != o || !C.CrossServiceModel.isEnterCrossServer()) {
+ 65270: this.batchUse = !1;
+ 65271: this.curItemId = e;
+ 65272: void 0 === s && (s = !1);
+ 65273: var f = {
+ 65274: itemID: e,
+ 65275: itemNum: r
+ 65276: };
+ 65277: if (2 == o) {
+ 65278: f.curHp = k.playerInfo.entity.hp.remaining;
+ 65279: f.maxhpLimit = k.playerInfo.entity.hp.limit;
+ 65280: } else if (3 == o) {
+ 65281: f.curMp = k.playerInfo.entity.mp.remaining;
+ 65282: f.maxmpLimit = k.playerInfo.entity.mp.limit;
+ 65283: } else if (6 == o) {
+ 65284: f.maxhpLimit = k.playerInfo.entity.hp.limit;
+ 65285: f.hpfinalValue = k.playerInfo.entity.hp.finalValue;
+ 65286: } else if (25 == o) {
+ 65287: f.curHp = k.playerInfo.entity.hp.remaining;
+---
+ 65288: f.maxhpLimit = k.playerInfo.entity.hp.limit;
+ 65289: f.curMp = k.playerInfo.entity.mp.remaining;
+ 65290: f.maxmpLimit = k.playerInfo.entity.mp.limit;
+ 65291: } else if (23 == o) {
+ 65292: f.curHp = k.playerInfo.entity.hp.finalValue;
+ 65293: f.maxhpLimit = f.curHp;
+ 65294: f.curMp = k.playerInfo.entity.mp.finalValue;
+---

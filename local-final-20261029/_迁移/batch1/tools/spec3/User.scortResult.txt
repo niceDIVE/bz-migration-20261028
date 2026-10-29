@@ -1,0 +1,13 @@
+# User.scortResult   (HttpConst.SCORTRESULT)
+
+## 注册点 88446: r.MessageCenter.on(a.HttpConst.SCORTRESULT, function(e, o) {
+
+## 请求点 88638: v.NetMgr.http.sendRequest(a.HttpConst.SCORTRESULT, {
+   88630: this.isDeadMonster = !0;
+   88631: r.MessageCenter.dispatch(h.EvName.OVER_DARTCARD_TASK, !0);
+   88632: }
+   88633: };
+   88634: e.prototype.reqAwards = function(t) {
+   88635: 1 == this.adventureType ? y.RumorModel.reqActiveGetReward(t) : 2 == this.adventureType && m.WMapAdvModel.reqAdvReward(m.WMapAdvModel.advCurId, 3);
+   88636: };
+   88637: e.prototype.reqSpecialEvent = function() {

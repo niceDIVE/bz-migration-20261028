@@ -1,0 +1,66 @@
+{
+ "User.getFinishTaskAward": {
+  "reads": [
+   "SkillTable"
+  ],
+  "writes": [
+   "bag",
+   "potential",
+   "school",
+   "skills"
+  ]
+ },
+ "User.ReqSelfBattleInfo": {
+  "reads": [
+   "baseValueAy"
+  ],
+  "writes": []
+ },
+ "User.CheckBattleResult": {
+  "reads": [
+   "achieve",
+   "chip",
+   "hungerMax"
+  ],
+  "writes": [
+   "bag",
+   "bloodArr",
+   "equipments",
+   "gold",
+   "hunger",
+   "playerEquip",
+   "skills",
+   "titles"
+  ]
+ },
+ "User.useItem": {
+  "reads": [
+   "BuyPrice",
+   "bag",
+   "equipments"
+  ],
+  "writes": [
+   "coins",
+   "contribution",
+   "gold",
+   "playerEquip"
+  ]
+ },
+ "User.equipWeapon": {
+  "reads": [
+   "coins",
+   "contribution",
+   "done",
+   "equipments",
+   "gold",
+   "hungerMax",
+   "roleID",
+   "yuanbao"
+  ],
+  "writes": [
+   "bag",
+   "playerEquip",
+   "rewarded"
+  ]
+ }
+}

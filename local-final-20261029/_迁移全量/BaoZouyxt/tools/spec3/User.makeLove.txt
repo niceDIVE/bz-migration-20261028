@@ -1,0 +1,24 @@
+# User.makeLove   (HttpConst.MAKE_LOVE)
+
+## 注册点 77029: i.MessageCenter.on(n.HttpConst.MAKE_LOVE, this.callBackMakeLove, this);
+
+## 请求点 77449: _.NetMgr.http.sendRequest(n.HttpConst.MAKE_LOVE, {
+   77441: guestID: t
+   77442: });
+   77443: };
+   77444: e.prototype.reqStartWedding = function() {
+   77445: _.NetMgr.http.sendRequest(n.HttpConst.BEGIN_WEDDING, {});
+   77446: };
+   77447: e.prototype.reqMakeLove = function(t) {
+   77448: this.chooseType = t;
+
+## 处理函数 callBackMakeLove (77278-77286)
+ 77278: e.prototype.callBackMakeLove = function(t, e) {
+ 77279: var o = this, i = a.getItem(1299, "npc"), n = 0, s = e.eRet;
+ 77280: if (1 == s) {
+ 77281: this.loveState = 1;
+ 77282: n = c.RoleBaseInfo.sexId > 0 ? i.BehindBattle[0] : i.BeforeBattle;
+ 77283: } else if (5 == s) {
+ 77284: this.loveState = 2;
+ 77285: this.fetationTime = e.fetationTime;
+ 77286: }

@@ -1,0 +1,99 @@
+# User.ChooseGirl  (HttpConst.CHOOSE_GIRL_EVENT)
+# 出现 2 处
+
+ 51119: });
+ 51120: } else {
+ 51121: v.RumorModel.spType = 0;
+ 51122: s.default.show(l.getText(1e3));
+ 51123: }
+ 51124: }, this);
+ 51125: i.MessageCenter.on(n.HttpConst.CHOOSE_GIRL_EVENT, function(o, n) {
+ 51126: if (1 == n.eRet) {
+ 51127: var p = Math.floor(Math.random() * t.girlInfo.plots.length);
+ 51128: t.randomIndex = t.girlInfo.plots[p];
+ 51129: var h = c.getItem(t.randomIndex, "wench_random");
+ 51130: t.randomDialogInfo = h;
+ 51131: t.randomDialogAy(h);
+ 51132: r.default.addDialogEvent(t.girlInfo.ondialog, t.npcId, function() {
+ 51133: var t, o = {};
+ 51134: o[e.npcId] = {
+ 51135: x: h.inplace[0],
+ 51136: y: h.inplace[1]
+ 51137: };
+ 51138: null === (t = _.GSceneMgr.go2Scene(h.endmap)) || void 0 === t || t.then(function() {
+ 51139: i.MessageCenter.dispatch(a.EvName.ADD_FING_GIRL_EVENT, o);
+ 51140: });
+ 51141: });
+ 51142: t.girlData[n.npcID] = n.eTime;
+ 51143: } else s.default.show(l.getText(1088));
+ 51144: }, this);
+ 51145: i.MessageCenter.on(n.HttpConst.WHORING_EVENT, function(e, o) {
+ 51146: if (1 == o.eRet) {
+ 51147: var i = o.makeID, n = c.getItem(i, "make"), r = t.randomGirl[t.npcId], a = r.reality, s = r.picture;
+ 51148: a > 0 && p.default.setNcpIntimacy(r.reality, Math.floor(n.feeling));
+ 51149: if (s.length) {
+ 51150: t.tempMakeId = i;
+ 51151: t.showPlayPic(s);
+ 51152: } else t.showBrothelEndUI(i);
+ 51153: }
+ 51154: }, this);
+ 51155: i.MessageCenter.on(n.HttpConst.INVITE_NPC_GETLIKE, function(t, o) {
+ 51156: if (1 == o.eRet) {
+ 51157: var i = c.getItem(o.eventId, "like_event");
+ 51158: e.inviteEventObj = i;
+ 51159: r.default.addDialogEvent(i.dialogue, e.npcId, null, e.reqGetInviteReward.bind(e));
+ 51160: } else if (4 == o.eRet) {
+ 51161: e.inviteEventObj = {};
+ 51162: r.default.addDialogEvent(1810121, 0);
+ 51163: }
+ 51164: }, this);
+ 51165: i.MessageCenter.on(n.HttpConst.INVITE_NPC_OPTION, function(t, o) {
+---
+ 51240: };
+ 51241: t.prototype.reqChooseGirl = function(t) {
+ 51242: this.npcId = t;
+ 51243: var e = {
+ 51244: npcID: t
+ 51245: };
+ 51246: g.NetMgr.http.sendRequest(n.HttpConst.CHOOSE_GIRL_EVENT, e);
+ 51247: };
+ 51248: t.prototype.reqWhoringMsg = function(t, e) {
+ 51249: var o = {
+ 51250: npcID: t,
+ 51251: flag: e,
+ 51252: hglmt: m.UserModel.entity.hunger.limit
+ 51253: };
+ 51254: this.npcId = t;
+ 51255: g.NetMgr.http.sendRequest(n.HttpConst.WHORING_EVENT, o);
+ 51256: };
+ 51257: t.prototype.setWhoringLogic = function(t) {
+ 51258: var e = this.randomGirl[t];
+ 51259: this.girlInfo = e;
+ 51260: this.npcId = t;
+ 51261: if (this.randomIndex > 0) this.girlState > 0 ? this.talkNpcThreeDialog() : this.dialogStart(); else {
+ 51262: this.girlState = 0;
+ 51263: var o = y.TimeMgr.getSTimestamp();
+ 51264: if (1 == c.getTable("wench")[t].famous && this.girlData.hasOwnProperty(t) && o <= this.girlData[t][1] && 1 == this.girlData[t][0]) this.reqChooseGirl(t); else {
+ 51265: var i = this;
+ 51266: r.default.addSpecialDialog(e.stdialog, t, null, function() {
+ 51267: i.reqChooseGirl(t);
+ 51268: }, null, null, e.nameStr);
+ 51269: }
+ 51270: }
+ 51271: };
+ 51272: t.prototype.dialogStart = function() {
+ 51273: var t = this;
+ 51274: if (this.curIndex < this.randomAy.length) {
+ 51275: var e = this.randomAy[this.curIndex];
+ 51276: r.default.addDialogEvent(e, this.npcId, null, function() {
+ 51277: t.selectOneCallBack();
+ 51278: }, function() {
+ 51279: t.selectTwoCallBack();
+ 51280: }, function() {
+ 51281: t.jumpDialogTalk();
+ 51282: });
+ 51283: } else this.selectThreeCallBack();
+ 51284: this.progressIndex = 0;
+ 51285: };
+ 51286: t.prototype.selectOneCallBack = function() {
+---

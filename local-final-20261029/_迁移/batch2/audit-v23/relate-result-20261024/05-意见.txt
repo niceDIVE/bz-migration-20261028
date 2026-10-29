@@ -1,0 +1,63 @@
+第 5 步：看结果的几句话（10 条，按 00-指令.txt 第 5 点要求）
+============================================================
+依据：out\relations.md（本轮回跑版，699 个动作｜242 边｜75 簇｜孤立 467）。
+除第 10 条外，每条都能在 relations.md / relations.json 里对上簇号。
+
+1) C02（第 1 批）分得不对：USE_ITEM、ROGUE_USE_ITEM 与 BATTLE_END_REWARD、
+   SERVER_NPC_BATTLE_END、DOG_BATTLE_RESULT 是被「共享 rw:bag」并到一起的。
+   写起来不是一回事：USE_ITEM 要做 Effect 族（食物/回血/秘籍/称号/礼包），
+   战斗结算要做 npcArr + 奖励投射。建议 C02 里切两刀，别让 USE_ITEM 排在三族
+   BATTLE_END 前面。
+
+2) 交易族整族散掉：SELL_ITEM、BUY_SHOP_ITEM、BUY_MARKET_ITEM、BUY_SCHOOL_SHOP、
+   BUY_SPECIAL_GOODS、BUY_MOUNT、BUY_FORMULA_DATA、QUICK_BUY、REQ_BUY_FASHION、
+   REQ_BUY_GIFT 全在「孤立 467」里；成对的只有 ROGUE_BUY_STORE/ROGUE_SELL_STORE、
+   DICE_BUY/SELL_PLACE_GOODS、POP_EQUIP_STORAGE/PUSH_EQUIP_STORAGE。
+   原因是成对规则只认同名替换（BUY_X→SALE_X），而真实名字是 SELL_ITEM、不是
+   SALE_ITEM（registry 里 SALE_ITEM 压根不存在，SELL_ITEM 的协议名是 User.saleItem，
+   BUY 侧是 User.buyShopItem 这一类）。建议给 pair 补一张别名表，或交易族直接按
+   rw（都写 bag + coins）连。
+
+3) 任务族被切成四份：FINISH_TASK 在 C02、HIDE_TASK 在 C20（它是被 fk:skill 拉进
+   rogue 任务的，跟流氓任务没关系）、ONE_KEY_COMPLETE_SCHOOL_TASK 在 C70、
+   ACCEPT_SCHOOL_TASK / DELEGATE_TASK / CHANGE_DELEGATE_TASK /
+   CIRCLE_TASK_TASK / ACCEPTCIRCLETASK 在孤立里。接任务/交任务/一键完成/师门奖励
+   动的是同一块存档（note.ivch + finishTaskObj），按现在的批次排会被四处各改一遍。
+   任务族值得单独强制成一簇。
+
+4) C17（第 17 批）把老婆和穴位并在一起了：UPGRADE_WIFE_LEVEL、USE_WIFE_PROP
+   应当并到 C10 婚姻族（BEGIN_WEDDING / BIRTHCHILD / MAKE_LOVE / MARRY_AWARD；
+   DIVORCENPC、ADOPTCHILD、CHOOSE_GIRL_EVENT 现在还在孤立里），
+   UPGRADE_ACUPOINT、RESET_ACUPOINT 另立一簇。现在这两族是靠 lv/UPGRADE 两个
+   泛词连上的。
+
+5) C13（第 13 批）里的 RECEIVE_ACHIEVEMENT_REWARD 跟摸奖无关，应并到 C19 成就族
+   （那里已有 RECEIVE_ACHIEVE_REWARD / RECEIVE_ACHIEVE_RATE_REWARD /
+   RECEIVE_ACHIEVE_SUIT_REWARD）。注意成就领奖有两个写法（ACHIEVEMENT / ACHIEVE），
+   字面不同但同一族，词干归一化后能自动连上。
+
+6) 狗战斗四件套被切成三处：DOG_BATTLE_RESULT 在 C02、
+   REQ_DOG_PARTNER_END_BATTLE / REQ_DOG_PARTNER_PVE_BATTLE 在 C46、
+   ENTER_PVEDOG_FIGHT / FEED_DOG 在孤立里。建议合成一簇。
+
+7) C26（第 26 批）的「共享字段」是 TeamBrief / eightDiagramsInfo / OpenedGear /
+   ApplyInfoList（队伍 + 八阵图），跟摸龙没有关系——GET_DRAGON / CALL_DRAGON /
+   MAKE_WISH_DRAGON 只是名字里都有 DRAGON。也就是说这一簇的标签不可信，别拿它当
+   「共享契约」看。龙族还缺 BEGIN_DRAGON_ROLLDICE（在孤立里）。
+
+8) C32（第 32 批）的 USE_SNOW_BALL / USE_BATCH_SNOW_BALL / USE_ALL_BALL 是道具使用，
+   应当并进 USE_ITEM 那一簇；现在被 BALL 这个词单独拎出来，`FIELD:hp` 也帮了倒忙。
+
+9) C06（第 4 批，BEGIN/END 打坐练功恢复）是这轮最干净的一簇，但排期上提醒一句：
+   END_DAZUO / END_LIANGONG 在本工程里是**已知做不了结算**的（请求不带时长，
+   见 HANDOVER 缺口 #5 / R10 Q1；这两条就是 User.EndMeditation / User.EndTraining），
+   别按普通 END 的工期排，先按「只回成功不结算」写。
+
+10) 图里没体现、但我知道的联动：完成副本（END_DUNGEON_ADVENTURE，C28）会推进成就
+    （C19 / C13）与每日任务进度。这条这轮没出来，是因为存档读写信号只覆盖到 5 个
+    动作（见 运行凭证.md §4），副本结算写的那几个键没进 rw，边就断了。
+
+—— 另附一条口径提醒（不是意见，是数据问题）：
+   包内自带的 out\relations.md 把 USE_ITEM 和 BUTLER_DISPATCH 并成 C01（靠
+   field:housekeeper），本轮回跑后它们已经分开（管家族现在是 C09，道具在 C02）。
+   也就是说包内自带那份是按「无 rw」跑出来的，拿它当基线对比会差一批。

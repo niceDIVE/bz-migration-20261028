@@ -1,0 +1,43 @@
+{
+ "archivedAt": "2026-10-26T20:08:58.325Z",
+ "rules": [
+  {
+   "id": "c10b-getHomeList",
+   "field": [
+    "bShop"
+   ],
+   "action": "getHomeList",
+   "expect": 1,
+   "allowSigma": [
+    [
+     "getHomeList",
+     "bShop"
+    ]
+   ],
+   "ev": "index.js:57585",
+   "why": "C10 后续修正：bShop 被形状表归为\"开关\"，发 0 会刷\"开关字段值不合法\"（真机日志实证，client 57597 用 hasOwnProperty）。改为不发 —— 客户端 homeShop 仍为默认 0，行为等价"
+  },
+  {
+   "id": "c10b-homeSpeicalAward",
+   "field": [
+    "eRet",
+    "eid",
+    "rewardArray"
+   ],
+   "action": "homeSpeicalAward",
+   "expect": 3,
+   "allowSigma": [
+    [
+     "homeSpeicalAward",
+     "eid"
+    ],
+    [
+     "homeSpeicalAward",
+     "rewardArray"
+    ]
+   ],
+   "ev": "index.js:59855",
+   "why": "C10 同面板修复：SHAPED 兜底的 {eRet:1,eid:0,rewardArray:{}} 会让客户端 productHomeEvent(0,…) 裸读 null 表的 .describe → 真机 TypeError（index.js:95694）。改成 eRet 2（回调里只 dispatch REMOVE_SEARCH_HOME_UI，57866），eid/rewardArray 一并收掉"
+  }
+ ]
+}

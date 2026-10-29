@@ -1,0 +1,21 @@
+# User.clearGeSchoolClothing   (HttpConst.CLEAR_SXHOOL_CD)
+
+## 注册点 77840: i.MessageCenter.on(r.HttpConst.CLEAR_SXHOOL_CD, this.onClearCDSchool, this);
+
+## 请求点 77881: u.NetMgr.http.sendRequest(r.HttpConst.CLEAR_SXHOOL_CD, {
+   77873: var f = o.cdTimeDays, d = {
+   77874: 10: l.getText(6001027),
+   77875: 11: l.getText(6001028)
+   77876: };
+   77877: m.default.prefabs.load("comUI/MasterAlertUI", cc.Prefab, function(t, e) {
+   77878: var i = cc.instantiate(e);
+   77879: y.PopUpMgr.addPopUp(i, v.LayerMgr.topLayer);
+   77880: i.addComponent("MasterAlertUI").setData(d[o.seniorSchool].replace(/\[1\]/, f.toString()), null, function() {
+
+## 处理函数 onClearCDSchool (77847-77852)
+ 77847: e.prototype.onClearCDSchool = function(t, e) {
+ 77848: 1 == e.eRet ? n.default.show(l.getText(6001029), [ {
+ 77849: name: l.getText("6001032"),
+ 77850: flag: 0
+ 77851: } ]) : 5 == e.eRet && n.default.show(l.getText(9223));
+ 77852: };

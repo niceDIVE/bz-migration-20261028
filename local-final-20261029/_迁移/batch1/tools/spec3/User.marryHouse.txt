@@ -1,0 +1,23 @@
+# User.marryHouse   (HttpConst.BUY_HOUSE_EVENT)
+
+## 注册点 77022: i.MessageCenter.on(n.HttpConst.BUY_HOUSE_EVENT, this.callBackBuyHouseEvent, this);
+
+## 请求点 77431: _.NetMgr.http.sendRequest(n.HttpConst.BUY_HOUSE_EVENT, {
+   77423: npcID: t,
+   77424: flag: e
+   77425: });
+   77426: };
+   77427: e.prototype.reqWriteBook = function() {
+   77428: _.NetMgr.http.sendRequest(n.HttpConst.WRITE_BOOK_EVENT, {});
+   77429: };
+   77430: e.prototype.reqBuyHouse = function(t, e) {
+
+## 处理函数 callBackBuyHouseEvent (77222-77229)
+ 77222: e.prototype.callBackBuyHouseEvent = function(t, e) {
+ 77223: if (1 == e.eRet) {
+ 77224: var o = a.getBuildHouseObj(e.houseID);
+ 77225: this.houseMap[o.mapid_real] = e.type;
+ 77226: this.marryHouseMap[e.houseID] = e.type;
+ 77227: p.default.show(r.getText("jh66"));
+ 77228: } else 4 == e.eRet ? p.default.show(r.getText("3203")) : p.default.show(r.getText("jh59"));
+ 77229: };
